@@ -24,6 +24,14 @@ doesn't break binary compatibility, it's not compatible with Java standard (
 which I must regretfully violate because it sucks), being exclusive to Java 8
 and backport won't be possible.
 
+##### Functions
+ - String: left/right/padLeft/padRight/...
+ - Iterable: all/any/concat/filter/map/first/groupBy/avg/max/...
+ - Iterator: *same as Iterable*
+ - nio/Path: copy/delete (recursively)
+ - dom/NodeList: asList
+ - ......
+
 ##### Dependencies
  - OpenJDK (as source): the standard classes such as *Iterable*. Note those
    source files have different license(s).
@@ -44,6 +52,7 @@ and backport won't be possible.
    javadoc.
  - Primitive methods are named differently instead of using overloads (
    *firstOfMin* and *firstOfMinInt*), because they tend to break Java IDEs.
+ - No extension to Array classes for now because I don't know how to do it.
  - No test suite available. Some code may be broken since I never test them.
 
 ------------------------------------------------------------------------------

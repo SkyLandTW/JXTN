@@ -8,16 +8,15 @@ Java 8 API Extensions and Utilities
 ###### License: Public Domain
 ###### Author:  AqD
 
-------------------------------------------------------------------------------
-
-## Projects:
- - jxtn.core.axi: Extensions to Java 8 API, to be put into *endorsed* dir.
- - jxtn.core.fmpp: FMPP/FreeMarker data loaders for code generation.
- - jxtn.jfx.builders: Replacement of deprecated JavaFX builders API.
+#### Projects:
+ - **jxtn.core.axi:** Extensions to Java 8 API, to be put into *endorsed* dir.
+ - **jxtn.core.fmpp:** FMPP/FreeMarker data loaders for code generation.
+ - **jxtn.jfx.builders:** Replacement of deprecated JavaFX builders API.
 
 ------------------------------------------------------------------------------
 
-### jxtn.core.axi
+jxtn.core.axi
+-------------
 
 Adds non-standard default methods such as *Iterable.filter* and *map* into
 standard Java API, in attempt to make Java programming bearable. While it
@@ -31,14 +30,14 @@ and backport won't be possible.
 
 ##### Installation
  1. Build *jxtn.core.axi.jar*
- 2. Create the directory __jre/endorsed__ or __jre8/endorsed__
- 3. Put *jxtn.core.axi.jar* into __endorsed__
- 4. Classes in *jxtn.core.axi.jar* (or any other jar files in __endorsed__)
+ 2. Create the directory _jre/endorsed_ or _jre8/endorsed_
+ 3. Put *jxtn.core.axi.jar* into _endorsed_
+ 4. Classes in *jxtn.core.axi.jar* (or any other jar files in _endorsed_)
     automatically override anything provided in standard Java class library.
  5. You may have to configure IDEs for code inspection to work correctly.
-    * Eclipse: add jars under __endorsed__ to your JRE system libraries.
-    * Intellij: same as above, and edit __config\options\jdk.table.xml__ to
-      change the order of JARs (JARs under __endorsed__ should be at top).
+    * Eclipse: add jars under _endorsed_ to your JRE system libraries.
+    * Intellij: same as above, and edit _config\options\jdk.table.xml_ to
+      change the order of JARs (JARs under _endorsed_ should be at top).
 
 ##### Notes
  - Comments are written in Chinese until I find ways to make dual-language
@@ -49,9 +48,11 @@ and backport won't be possible.
 
 ------------------------------------------------------------------------------
 
-### jxtn.core.fmpp
+jxtn.core.fmpp
+-------------
 
 Provides following data loaders:
+
  - **JarReflectionDataLoader:** translate reflection information from JARs to
    XML, to be used for Java-to-Java code generators (such as builder classes).
  - **SqlSchemaDataLoader:** translate SQL schema to XML, to be used for Java
@@ -62,7 +63,7 @@ Provides following data loaders:
 
 ##### Installation
  1. Build *jxtn.core.fmpp.jar*
- 2. Drop *jxtn.core.fmpp.jar* into __fmpp\lib__
+ 2. Drop *jxtn.core.fmpp.jar* into _fmpp\lib_
 
 ##### Notes
  - Comments are written in Chinese until I find ways to make dual-language
@@ -72,7 +73,8 @@ Provides following data loaders:
 
 ------------------------------------------------------------------------------
 
-### jxtn.jfx.builders
+jxtn.jfx.builders
+-------------
 
 Re-creates the deprecated JavaFX builders, based on FMPP/FreeMarker template
 engine. It also provides bindings and you may easily extend the functionality
@@ -107,8 +109,8 @@ builders are already included but untested).
    ```
 
    You can also add the static *create()* methods back easily by modifying
-   __javafx.ftl__, if you don't have to use Eclipse JDT compiler.
+   _javafx.ftl_, if you don't have to use Eclipse JDT compiler.
  - Selection model builders are omitted because Oracle uses weird class
    hierarchies - there are internal classes in-between public classes...
- - You may remove ControlsFX builders (everything under __org/controlsfx/*__).
+ - You may remove ControlsFX builders (everything under _org/controlsfx/*_).
 

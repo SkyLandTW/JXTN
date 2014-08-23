@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class AccordionBuilder<Z extends Accordion, B extends AccordionBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasExpandedPane;
     protected javafx.scene.control.TitledPane valExpandedPane;
@@ -26,21 +25,25 @@ public class AccordionBuilder<Z extends Accordion, B extends AccordionBuilder<Z,
 
     protected boolean boundExpandedPane;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.control.TitledPane> obsrvExpandedPane;
-    public void applyTo(Accordion instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasExpandedPane)
             instance.setExpandedPane(this.valExpandedPane);
         if (this.hasPanes)
             instance.getPanes().setAll(this.valPanes);
         if (this.boundExpandedPane)
             instance.expandedPaneProperty().bind(this.obsrvExpandedPane);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Accordion#setExpandedPane}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B expandedPane(javafx.scene.control.TitledPane value)
     {
@@ -49,6 +52,12 @@ public class AccordionBuilder<Z extends Accordion, B extends AccordionBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Accordion#getPanes}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B panes(java.util.Collection<javafx.scene.control.TitledPane> value)
     {
@@ -57,6 +66,12 @@ public class AccordionBuilder<Z extends Accordion, B extends AccordionBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Accordion#getPanes}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B panes(javafx.scene.control.TitledPane... value)
@@ -66,6 +81,12 @@ public class AccordionBuilder<Z extends Accordion, B extends AccordionBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Accordion#expandedPaneProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindExpandedPane(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TitledPane> source)
     {
@@ -75,12 +96,17 @@ public class AccordionBuilder<Z extends Accordion, B extends AccordionBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 建構{@link Accordion}物件
+     *
+     * @return 新的{@link Accordion}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Accordion build()
     {
         Accordion instance = new Accordion();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

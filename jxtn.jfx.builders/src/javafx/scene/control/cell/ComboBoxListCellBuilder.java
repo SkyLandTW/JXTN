@@ -16,7 +16,6 @@ package javafx.scene.control.cell;
 public class ComboBoxListCellBuilder<T extends java.lang.Object, Z extends ComboBoxListCell<T>, B extends ComboBoxListCellBuilder<T, Z, B>>
         extends javafx.scene.control.ListCellBuilder<T, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasComboBoxEditable;
     protected boolean valComboBoxEditable;
@@ -32,11 +31,11 @@ public class ComboBoxListCellBuilder<T extends java.lang.Object, Z extends Combo
 
     protected boolean boundConverter;
     protected javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> obsrvConverter;
-    public void applyTo(ComboBoxListCell<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasComboBoxEditable)
             instance.setComboBoxEditable(this.valComboBoxEditable);
         if (this.hasConverter)
@@ -47,10 +46,14 @@ public class ComboBoxListCellBuilder<T extends java.lang.Object, Z extends Combo
             instance.comboBoxEditableProperty().bind(this.obsrvComboBoxEditable);
         if (this.boundConverter)
             instance.converterProperty().bind(this.obsrvConverter);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxListCell#setComboBoxEditable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B comboBoxEditable(boolean value)
     {
@@ -59,6 +62,12 @@ public class ComboBoxListCellBuilder<T extends java.lang.Object, Z extends Combo
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxListCell#setConverter}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B converter(javafx.util.StringConverter<T> value)
     {
@@ -67,6 +76,12 @@ public class ComboBoxListCellBuilder<T extends java.lang.Object, Z extends Combo
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link ComboBoxListCell#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B items(java.util.Collection<T> value)
     {
@@ -75,6 +90,12 @@ public class ComboBoxListCellBuilder<T extends java.lang.Object, Z extends Combo
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link ComboBoxListCell#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B items(T... value)
@@ -84,6 +105,12 @@ public class ComboBoxListCellBuilder<T extends java.lang.Object, Z extends Combo
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxListCell#comboBoxEditableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindComboBoxEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -93,6 +120,12 @@ public class ComboBoxListCellBuilder<T extends java.lang.Object, Z extends Combo
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxListCell#converterProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
     {
@@ -102,12 +135,17 @@ public class ComboBoxListCellBuilder<T extends java.lang.Object, Z extends Combo
         return (B) this;
     }
 
+    /**
+     * 建構{@link ComboBoxListCell}物件
+     *
+     * @return 新的{@link ComboBoxListCell}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ComboBoxListCell<T> build()
     {
         ComboBoxListCell<T> instance = new ComboBoxListCell<T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

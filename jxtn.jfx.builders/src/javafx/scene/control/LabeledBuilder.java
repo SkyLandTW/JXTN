@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAlignment;
     protected javafx.geometry.Pos valAlignment;
@@ -101,11 +100,11 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
 
     protected boolean boundWrapText;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvWrapText;
-    public void applyTo(Labeled instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAlignment)
             instance.setAlignment(this.valAlignment);
         if (this.hasContentDisplay)
@@ -162,10 +161,14 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
             instance.underlineProperty().bind(this.obsrvUnderline);
         if (this.boundWrapText)
             instance.wrapTextProperty().bind(this.obsrvWrapText);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Labeled#setAlignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B alignment(javafx.geometry.Pos value)
     {
@@ -174,6 +177,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#setContentDisplay}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B contentDisplay(javafx.scene.control.ContentDisplay value)
     {
@@ -182,6 +191,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#setEllipsisString}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B ellipsisString(java.lang.String value)
     {
@@ -190,6 +205,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#setFont}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B font(javafx.scene.text.Font value)
     {
@@ -198,6 +219,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#setGraphic}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B graphic(javafx.scene.Node value)
     {
@@ -206,6 +233,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#setGraphicTextGap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B graphicTextGap(double value)
     {
@@ -214,6 +247,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#setLineSpacing}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B lineSpacing(double value)
     {
@@ -222,6 +261,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#setMnemonicParsing}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B mnemonicParsing(boolean value)
     {
@@ -230,6 +275,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#setText}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B text(java.lang.String value)
     {
@@ -238,6 +289,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#setTextAlignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B textAlignment(javafx.scene.text.TextAlignment value)
     {
@@ -246,6 +303,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#setTextFill}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B textFill(javafx.scene.paint.Paint value)
     {
@@ -254,6 +317,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#setTextOverrun}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B textOverrun(javafx.scene.control.OverrunStyle value)
     {
@@ -262,6 +331,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#setUnderline}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B underline(boolean value)
     {
@@ -270,6 +345,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#setWrapText}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B wrapText(boolean value)
     {
@@ -278,6 +359,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#alignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
@@ -287,6 +374,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#contentDisplayProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindContentDisplay(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContentDisplay> source)
     {
@@ -296,6 +389,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#ellipsisStringProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEllipsisString(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -305,6 +404,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#fontProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFont(javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> source)
     {
@@ -314,6 +419,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#graphicProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -323,6 +434,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#graphicTextGapProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindGraphicTextGap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -332,6 +449,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#lineSpacingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLineSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -341,6 +464,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#mnemonicParsingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMnemonicParsing(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -350,6 +479,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#textAlignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTextAlignment(javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextAlignment> source)
     {
@@ -359,6 +494,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#textFillProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTextFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
@@ -368,6 +509,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#textOverrunProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTextOverrun(javafx.beans.value.ObservableValue<? extends javafx.scene.control.OverrunStyle> source)
     {
@@ -377,6 +524,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#textProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -386,6 +539,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#underlineProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindUnderline(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -395,6 +554,12 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Labeled#wrapTextProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindWrapText(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {

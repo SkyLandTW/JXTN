@@ -16,7 +16,6 @@ package org.controlsfx.control.textfield;
 public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomTextFieldBuilder<Z, B>>
         extends javafx.scene.control.TextFieldBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasLeft;
     protected javafx.scene.Node valLeft;
@@ -29,11 +28,11 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
 
     protected boolean boundRight;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvRight;
-    public void applyTo(CustomTextField instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasLeft)
             instance.setLeft(this.valLeft);
         if (this.hasRight)
@@ -42,10 +41,14 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
             instance.leftProperty().bind(this.obsrvLeft);
         if (this.boundRight)
             instance.rightProperty().bind(this.obsrvRight);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link CustomTextField#setLeft}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B left(javafx.scene.Node value)
     {
@@ -54,6 +57,12 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CustomTextField#setRight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B right(javafx.scene.Node value)
     {
@@ -62,6 +71,12 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CustomTextField#leftProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLeft(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -71,6 +86,12 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CustomTextField#rightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRight(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -80,12 +101,17 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
         return (B) this;
     }
 
+    /**
+     * 建構{@link CustomTextField}物件
+     *
+     * @return 新的{@link CustomTextField}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public CustomTextField build()
     {
         CustomTextField instance = new CustomTextField();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

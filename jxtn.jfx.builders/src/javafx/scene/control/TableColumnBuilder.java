@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends TableColumn<S, T>, B extends TableColumnBuilder<S, T, Z, B>>
         extends javafx.scene.control.TableColumnBaseBuilder<S, T, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCellFactory;
     protected javafx.util.Callback<javafx.scene.control.TableColumn<S, T>, javafx.scene.control.TableCell<S, T>> valCellFactory;
@@ -56,11 +55,11 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
 
     protected boolean boundSortType;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.control.TableColumn.SortType> obsrvSortType;
-    public void applyTo(TableColumn<S, T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCellFactory)
             instance.setCellFactory(this.valCellFactory);
         if (this.hasCellValueFactory)
@@ -87,10 +86,14 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
             instance.onEditStartProperty().bind(this.obsrvOnEditStart);
         if (this.boundSortType)
             instance.sortTypeProperty().bind(this.obsrvSortType);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link TableColumn#setCellFactory}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cellFactory(javafx.util.Callback<javafx.scene.control.TableColumn<S, T>, javafx.scene.control.TableCell<S, T>> value)
     {
@@ -99,6 +102,12 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumn#setCellValueFactory}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cellValueFactory(javafx.util.Callback<javafx.scene.control.TableColumn.CellDataFeatures<S, T>, javafx.beans.value.ObservableValue<T>> value)
     {
@@ -107,6 +116,12 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TableColumn#getColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B columns(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
     {
@@ -115,6 +130,12 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TableColumn#getColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B columns(javafx.scene.control.TableColumn<S, ?>... value)
@@ -124,6 +145,12 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumn#setOnEditCancel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onEditCancel(javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>> value)
     {
@@ -132,6 +159,12 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumn#setOnEditCommit}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onEditCommit(javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>> value)
     {
@@ -140,6 +173,12 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumn#setOnEditStart}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onEditStart(javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>> value)
     {
@@ -148,6 +187,12 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumn#setSortType}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B sortType(javafx.scene.control.TableColumn.SortType value)
     {
@@ -156,6 +201,12 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumn#cellFactoryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableColumn<S, T>, javafx.scene.control.TableCell<S, T>>> source)
     {
@@ -165,6 +216,12 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumn#cellValueFactoryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCellValueFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableColumn.CellDataFeatures<S, T>, javafx.beans.value.ObservableValue<T>>> source)
     {
@@ -174,6 +231,12 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumn#onEditCancelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnEditCancel(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> source)
     {
@@ -183,6 +246,12 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumn#onEditCommitProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnEditCommit(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> source)
     {
@@ -192,6 +261,12 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumn#onEditStartProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnEditStart(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> source)
     {
@@ -201,6 +276,12 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumn#sortTypeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSortType(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TableColumn.SortType> source)
     {
@@ -210,12 +291,17 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
         return (B) this;
     }
 
+    /**
+     * 建構{@link TableColumn}物件
+     *
+     * @return 新的{@link TableColumn}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public TableColumn<S, T> build()
     {
         TableColumn<S, T> instance = new TableColumn<S, T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

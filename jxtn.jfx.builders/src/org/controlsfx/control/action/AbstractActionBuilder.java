@@ -16,7 +16,6 @@ package org.controlsfx.control.action;
 public class AbstractActionBuilder<Z extends AbstractAction, B extends AbstractActionBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAccelerator;
     protected javafx.scene.input.KeyCombination valAccelerator;
@@ -32,11 +31,11 @@ public class AbstractActionBuilder<Z extends AbstractAction, B extends AbstractA
 
     protected boolean hasText;
     protected java.lang.String valText;
-    public void applyTo(AbstractAction instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAccelerator)
             instance.setAccelerator(this.valAccelerator);
         if (this.hasDisabled)
@@ -47,10 +46,14 @@ public class AbstractActionBuilder<Z extends AbstractAction, B extends AbstractA
             instance.setLongText(this.valLongText);
         if (this.hasText)
             instance.setText(this.valText);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link AbstractAction#setAccelerator}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B accelerator(javafx.scene.input.KeyCombination value)
     {
@@ -59,6 +62,12 @@ public class AbstractActionBuilder<Z extends AbstractAction, B extends AbstractA
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link AbstractAction#setDisabled}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B disabled(boolean value)
     {
@@ -67,6 +76,12 @@ public class AbstractActionBuilder<Z extends AbstractAction, B extends AbstractA
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link AbstractAction#setGraphic}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B graphic(javafx.scene.Node value)
     {
@@ -75,6 +90,12 @@ public class AbstractActionBuilder<Z extends AbstractAction, B extends AbstractA
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link AbstractAction#setLongText}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B longText(java.lang.String value)
     {
@@ -83,6 +104,12 @@ public class AbstractActionBuilder<Z extends AbstractAction, B extends AbstractA
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link AbstractAction#setText}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B text(java.lang.String value)
     {

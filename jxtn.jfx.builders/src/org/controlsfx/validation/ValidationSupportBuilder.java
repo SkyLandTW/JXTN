@@ -16,21 +16,24 @@ package org.controlsfx.validation;
 public class ValidationSupportBuilder<Z extends ValidationSupport, B extends ValidationSupportBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasValidationDecorator;
     protected org.controlsfx.validation.decoration.ValidationDecoration valValidationDecorator;
-    public void applyTo(ValidationSupport instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasValidationDecorator)
             instance.setValidationDecorator(this.valValidationDecorator);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ValidationSupport#setValidationDecorator}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B validationDecorator(org.controlsfx.validation.decoration.ValidationDecoration value)
     {
@@ -39,12 +42,17 @@ public class ValidationSupportBuilder<Z extends ValidationSupport, B extends Val
         return (B) this;
     }
 
+    /**
+     * 建構{@link ValidationSupport}物件
+     *
+     * @return 新的{@link ValidationSupport}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ValidationSupport build()
     {
         ValidationSupport instance = new ValidationSupport();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

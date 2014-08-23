@@ -16,7 +16,6 @@ package org.controlsfx.control;
 public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCrumbBar<T>, B extends BreadCrumbBarBuilder<T, Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAutoNavigationEnabled;
     protected boolean valAutoNavigationEnabled;
@@ -41,11 +40,11 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
 
     protected boolean boundSelectedCrumb;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeItem<T>> obsrvSelectedCrumb;
-    public void applyTo(BreadCrumbBar<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAutoNavigationEnabled)
             instance.setAutoNavigationEnabled(this.valAutoNavigationEnabled);
         if (this.hasCrumbFactory)
@@ -62,10 +61,14 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
             instance.onCrumbActionProperty().bind(this.obsrvOnCrumbAction);
         if (this.boundSelectedCrumb)
             instance.selectedCrumbProperty().bind(this.obsrvSelectedCrumb);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link BreadCrumbBar#setAutoNavigationEnabled}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B autoNavigationEnabled(boolean value)
     {
@@ -74,6 +77,12 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BreadCrumbBar#setCrumbFactory}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B crumbFactory(javafx.util.Callback<javafx.scene.control.TreeItem<T>, javafx.scene.control.Button> value)
     {
@@ -82,6 +91,12 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BreadCrumbBar#setOnCrumbAction}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onCrumbAction(javafx.event.EventHandler<org.controlsfx.control.BreadCrumbBar.BreadCrumbActionEvent<T>> value)
     {
@@ -90,6 +105,12 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BreadCrumbBar#setSelectedCrumb}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B selectedCrumb(javafx.scene.control.TreeItem<T> value)
     {
@@ -98,6 +119,12 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BreadCrumbBar#autoNavigationEnabledProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAutoNavigationEnabled(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -107,6 +134,12 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BreadCrumbBar#crumbFactoryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCrumbFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeItem<T>, javafx.scene.control.Button>> source)
     {
@@ -116,6 +149,12 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BreadCrumbBar#onCrumbActionProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnCrumbAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.BreadCrumbBar.BreadCrumbActionEvent<T>>> source)
     {
@@ -125,6 +164,12 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BreadCrumbBar#selectedCrumbProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSelectedCrumb(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeItem<T>> source)
     {
@@ -134,12 +179,17 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
         return (B) this;
     }
 
+    /**
+     * 建構{@link BreadCrumbBar}物件
+     *
+     * @return 新的{@link BreadCrumbBar}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public BreadCrumbBar<T> build()
     {
         BreadCrumbBar<T> instance = new BreadCrumbBar<T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

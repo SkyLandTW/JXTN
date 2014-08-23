@@ -16,7 +16,6 @@ package javafx.scene;
 public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCamera;
     protected javafx.scene.Camera valCamera;
@@ -290,11 +289,11 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
 
     protected boolean boundRoot;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.Parent> obsrvRoot;
-    public void applyTo(Scene instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCamera)
             instance.setCamera(this.valCamera);
         if (this.hasCursor)
@@ -477,10 +476,14 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
             instance.onZoomStartedProperty().bind(this.obsrvOnZoomStarted);
         if (this.boundRoot)
             instance.rootProperty().bind(this.obsrvRoot);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Scene#setCamera}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B camera(javafx.scene.Camera value)
     {
@@ -489,6 +492,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setCursor}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cursor(javafx.scene.Cursor value)
     {
@@ -497,6 +506,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setEventDispatcher}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B eventDispatcher(javafx.event.EventDispatcher value)
     {
@@ -505,6 +520,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setFill}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fill(javafx.scene.paint.Paint value)
     {
@@ -513,6 +534,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setNodeOrientation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B nodeOrientation(javafx.geometry.NodeOrientation value)
     {
@@ -521,6 +548,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnContextMenuRequested}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onContextMenuRequested(javafx.event.EventHandler<? super javafx.scene.input.ContextMenuEvent> value)
     {
@@ -529,6 +562,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnDragDetected}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onDragDetected(javafx.event.EventHandler<? super javafx.scene.input.MouseEvent> value)
     {
@@ -537,6 +576,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnDragDone}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onDragDone(javafx.event.EventHandler<? super javafx.scene.input.DragEvent> value)
     {
@@ -545,6 +590,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnDragDropped}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onDragDropped(javafx.event.EventHandler<? super javafx.scene.input.DragEvent> value)
     {
@@ -553,6 +604,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnDragEntered}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onDragEntered(javafx.event.EventHandler<? super javafx.scene.input.DragEvent> value)
     {
@@ -561,6 +618,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnDragExited}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onDragExited(javafx.event.EventHandler<? super javafx.scene.input.DragEvent> value)
     {
@@ -569,6 +632,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnDragOver}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onDragOver(javafx.event.EventHandler<? super javafx.scene.input.DragEvent> value)
     {
@@ -577,6 +646,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnInputMethodTextChanged}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onInputMethodTextChanged(javafx.event.EventHandler<? super javafx.scene.input.InputMethodEvent> value)
     {
@@ -585,6 +660,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnKeyPressed}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onKeyPressed(javafx.event.EventHandler<? super javafx.scene.input.KeyEvent> value)
     {
@@ -593,6 +674,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnKeyReleased}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onKeyReleased(javafx.event.EventHandler<? super javafx.scene.input.KeyEvent> value)
     {
@@ -601,6 +688,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnKeyTyped}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onKeyTyped(javafx.event.EventHandler<? super javafx.scene.input.KeyEvent> value)
     {
@@ -609,6 +702,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnMouseClicked}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseClicked(javafx.event.EventHandler<? super javafx.scene.input.MouseEvent> value)
     {
@@ -617,6 +716,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnMouseDragEntered}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseDragEntered(javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent> value)
     {
@@ -625,6 +730,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnMouseDragExited}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseDragExited(javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent> value)
     {
@@ -633,6 +744,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnMouseDragOver}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseDragOver(javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent> value)
     {
@@ -641,6 +758,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnMouseDragReleased}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseDragReleased(javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent> value)
     {
@@ -649,6 +772,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnMouseDragged}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseDragged(javafx.event.EventHandler<? super javafx.scene.input.MouseEvent> value)
     {
@@ -657,6 +786,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnMouseEntered}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseEntered(javafx.event.EventHandler<? super javafx.scene.input.MouseEvent> value)
     {
@@ -665,6 +800,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnMouseExited}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseExited(javafx.event.EventHandler<? super javafx.scene.input.MouseEvent> value)
     {
@@ -673,6 +814,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnMouseMoved}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseMoved(javafx.event.EventHandler<? super javafx.scene.input.MouseEvent> value)
     {
@@ -681,6 +828,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnMousePressed}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMousePressed(javafx.event.EventHandler<? super javafx.scene.input.MouseEvent> value)
     {
@@ -689,6 +842,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnMouseReleased}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseReleased(javafx.event.EventHandler<? super javafx.scene.input.MouseEvent> value)
     {
@@ -697,6 +856,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnRotate}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onRotate(javafx.event.EventHandler<? super javafx.scene.input.RotateEvent> value)
     {
@@ -705,6 +870,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnRotationFinished}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onRotationFinished(javafx.event.EventHandler<? super javafx.scene.input.RotateEvent> value)
     {
@@ -713,6 +884,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnRotationStarted}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onRotationStarted(javafx.event.EventHandler<? super javafx.scene.input.RotateEvent> value)
     {
@@ -721,6 +898,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnScroll}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onScroll(javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent> value)
     {
@@ -729,6 +912,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnScrollFinished}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onScrollFinished(javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent> value)
     {
@@ -737,6 +926,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnScrollStarted}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onScrollStarted(javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent> value)
     {
@@ -745,6 +940,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnSwipeDown}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onSwipeDown(javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent> value)
     {
@@ -753,6 +954,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnSwipeLeft}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onSwipeLeft(javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent> value)
     {
@@ -761,6 +968,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnSwipeRight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onSwipeRight(javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent> value)
     {
@@ -769,6 +982,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnSwipeUp}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onSwipeUp(javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent> value)
     {
@@ -777,6 +996,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnTouchMoved}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onTouchMoved(javafx.event.EventHandler<? super javafx.scene.input.TouchEvent> value)
     {
@@ -785,6 +1010,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnTouchPressed}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onTouchPressed(javafx.event.EventHandler<? super javafx.scene.input.TouchEvent> value)
     {
@@ -793,6 +1024,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnTouchReleased}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onTouchReleased(javafx.event.EventHandler<? super javafx.scene.input.TouchEvent> value)
     {
@@ -801,6 +1038,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnTouchStationary}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onTouchStationary(javafx.event.EventHandler<? super javafx.scene.input.TouchEvent> value)
     {
@@ -809,6 +1052,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnZoom}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onZoom(javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent> value)
     {
@@ -817,6 +1066,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnZoomFinished}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onZoomFinished(javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent> value)
     {
@@ -825,6 +1080,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setOnZoomStarted}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onZoomStarted(javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent> value)
     {
@@ -833,6 +1094,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#setRoot}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B root(javafx.scene.Parent value)
     {
@@ -841,6 +1108,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Scene#getStylesheets}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B stylesheets(java.util.Collection<java.lang.String> value)
     {
@@ -849,6 +1122,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Scene#getStylesheets}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B stylesheets(java.lang.String... value)
@@ -858,6 +1137,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#cameraProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCamera(javafx.beans.value.ObservableValue<? extends javafx.scene.Camera> source)
     {
@@ -867,6 +1152,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#cursorProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCursor(javafx.beans.value.ObservableValue<? extends javafx.scene.Cursor> source)
     {
@@ -876,6 +1167,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#eventDispatcherProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEventDispatcher(javafx.beans.value.ObservableValue<? extends javafx.event.EventDispatcher> source)
     {
@@ -885,6 +1182,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#fillProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
@@ -894,6 +1197,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#nodeOrientationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindNodeOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.NodeOrientation> source)
     {
@@ -903,6 +1212,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onContextMenuRequestedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnContextMenuRequested(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ContextMenuEvent>> source)
     {
@@ -912,6 +1227,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onDragDetectedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnDragDetected(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
@@ -921,6 +1242,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onDragDoneProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnDragDone(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
@@ -930,6 +1257,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onDragDroppedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnDragDropped(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
@@ -939,6 +1272,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onDragEnteredProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnDragEntered(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
@@ -948,6 +1287,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onDragExitedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnDragExited(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
@@ -957,6 +1302,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onDragOverProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnDragOver(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
@@ -966,6 +1317,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onInputMethodTextChangedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnInputMethodTextChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.InputMethodEvent>> source)
     {
@@ -975,6 +1332,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onKeyPressedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnKeyPressed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> source)
     {
@@ -984,6 +1347,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onKeyReleasedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnKeyReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> source)
     {
@@ -993,6 +1362,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onKeyTypedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnKeyTyped(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> source)
     {
@@ -1002,6 +1377,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onMouseClickedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseClicked(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
@@ -1011,6 +1392,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onMouseDragEnteredProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseDragEntered(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
     {
@@ -1020,6 +1407,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onMouseDragExitedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseDragExited(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
     {
@@ -1029,6 +1422,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onMouseDragOverProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseDragOver(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
     {
@@ -1038,6 +1437,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onMouseDragReleasedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseDragReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
     {
@@ -1047,6 +1452,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onMouseDraggedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseDragged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
@@ -1056,6 +1467,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onMouseEnteredProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseEntered(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
@@ -1065,6 +1482,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onMouseExitedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseExited(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
@@ -1074,6 +1497,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onMouseMovedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseMoved(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
@@ -1083,6 +1512,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onMousePressedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMousePressed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
@@ -1092,6 +1527,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onMouseReleasedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
@@ -1101,6 +1542,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onRotateProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnRotate(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> source)
     {
@@ -1110,6 +1557,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onRotationFinishedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnRotationFinished(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> source)
     {
@@ -1119,6 +1572,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onRotationStartedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnRotationStarted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> source)
     {
@@ -1128,6 +1587,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onScrollFinishedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnScrollFinished(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> source)
     {
@@ -1137,6 +1602,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onScrollProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnScroll(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> source)
     {
@@ -1146,6 +1617,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onScrollStartedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnScrollStarted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> source)
     {
@@ -1155,6 +1632,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onSwipeDownProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnSwipeDown(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
     {
@@ -1164,6 +1647,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onSwipeLeftProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnSwipeLeft(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
     {
@@ -1173,6 +1662,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onSwipeRightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnSwipeRight(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
     {
@@ -1182,6 +1677,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onSwipeUpProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnSwipeUp(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
     {
@@ -1191,6 +1692,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onTouchMovedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnTouchMoved(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
     {
@@ -1200,6 +1707,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onTouchPressedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnTouchPressed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
     {
@@ -1209,6 +1722,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onTouchReleasedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnTouchReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
     {
@@ -1218,6 +1737,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onTouchStationaryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnTouchStationary(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
     {
@@ -1227,6 +1752,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onZoomFinishedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnZoomFinished(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> source)
     {
@@ -1236,6 +1767,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onZoomProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnZoom(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> source)
     {
@@ -1245,6 +1782,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#onZoomStartedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnZoomStarted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> source)
     {
@@ -1254,6 +1797,12 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scene#rootProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRoot(javafx.beans.value.ObservableValue<? extends javafx.scene.Parent> source)
     {
@@ -1263,11 +1812,16 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Scene}物件
+     *
+     * @return 新的{@link Scene}物件實體
+     */
     @SuppressWarnings("unchecked")
     public Scene build(javafx.scene.Parent arg0)
     {
         Scene instance = new Scene(arg0);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

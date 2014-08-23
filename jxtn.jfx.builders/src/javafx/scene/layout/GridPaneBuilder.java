@@ -16,7 +16,6 @@ package javafx.scene.layout;
 public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>>
         extends javafx.scene.layout.PaneBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAlignment;
     protected javafx.geometry.Pos valAlignment;
@@ -47,11 +46,11 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
 
     protected boolean boundVgap;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvVgap;
-    public void applyTo(GridPane instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAlignment)
             instance.setAlignment(this.valAlignment);
         if (this.hasColumnConstraints)
@@ -72,10 +71,14 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
             instance.hgapProperty().bind(this.obsrvHgap);
         if (this.boundVgap)
             instance.vgapProperty().bind(this.obsrvVgap);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link GridPane#setAlignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B alignment(javafx.geometry.Pos value)
     {
@@ -84,6 +87,12 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link GridPane#getColumnConstraints}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B columnConstraints(java.util.Collection<javafx.scene.layout.ColumnConstraints> value)
     {
@@ -92,6 +101,12 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link GridPane#getColumnConstraints}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B columnConstraints(javafx.scene.layout.ColumnConstraints... value)
@@ -101,6 +116,12 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridPane#setGridLinesVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B gridLinesVisible(boolean value)
     {
@@ -109,6 +130,12 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridPane#setHgap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B hgap(double value)
     {
@@ -117,6 +144,12 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link GridPane#getRowConstraints}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B rowConstraints(java.util.Collection<javafx.scene.layout.RowConstraints> value)
     {
@@ -125,6 +158,12 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link GridPane#getRowConstraints}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B rowConstraints(javafx.scene.layout.RowConstraints... value)
@@ -134,6 +173,12 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridPane#setVgap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B vgap(double value)
     {
@@ -142,6 +187,12 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridPane#alignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
@@ -151,6 +202,12 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridPane#gridLinesVisibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindGridLinesVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -160,6 +217,12 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridPane#hgapProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHgap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -169,6 +232,12 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridPane#vgapProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindVgap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -178,12 +247,17 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 建構{@link GridPane}物件
+     *
+     * @return 新的{@link GridPane}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public GridPane build()
     {
         GridPane instance = new GridPane();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

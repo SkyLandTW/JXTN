@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extends CellBuilder<T, Z, B>>
         extends javafx.scene.control.LabeledBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasEditable;
     protected boolean valEditable;
@@ -29,11 +28,11 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
 
     protected boolean boundItem;
     protected javafx.beans.value.ObservableValue<? extends T> obsrvItem;
-    public void applyTo(Cell<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasEditable)
             instance.setEditable(this.valEditable);
         if (this.hasItem)
@@ -42,10 +41,14 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
             instance.editableProperty().bind(this.obsrvEditable);
         if (this.boundItem)
             instance.itemProperty().bind(this.obsrvItem);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Cell#setEditable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B editable(boolean value)
     {
@@ -54,6 +57,12 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Cell#setItem}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B item(T value)
     {
@@ -62,6 +71,12 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Cell#editableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -71,6 +86,12 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Cell#itemProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindItem(javafx.beans.value.ObservableValue<? extends T> source)
     {
@@ -80,12 +101,17 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 建構{@link Cell}物件
+     *
+     * @return 新的{@link Cell}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Cell<T> build()
     {
         Cell<T> instance = new Cell<T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,21 +16,24 @@ package javafx.scene.control;
 public class ToggleGroupBuilder<Z extends ToggleGroup, B extends ToggleGroupBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasToggles;
     protected java.util.Collection<javafx.scene.control.Toggle> valToggles;
-    public void applyTo(ToggleGroup instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasToggles)
             instance.getToggles().setAll(this.valToggles);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link ToggleGroup#getToggles}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B toggles(java.util.Collection<javafx.scene.control.Toggle> value)
     {
@@ -39,6 +42,12 @@ public class ToggleGroupBuilder<Z extends ToggleGroup, B extends ToggleGroupBuil
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link ToggleGroup#getToggles}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B toggles(javafx.scene.control.Toggle... value)
@@ -48,12 +57,17 @@ public class ToggleGroupBuilder<Z extends ToggleGroup, B extends ToggleGroupBuil
         return (B) this;
     }
 
+    /**
+     * 建構{@link ToggleGroup}物件
+     *
+     * @return 新的{@link ToggleGroup}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ToggleGroup build()
     {
         ToggleGroup instance = new ToggleGroup();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

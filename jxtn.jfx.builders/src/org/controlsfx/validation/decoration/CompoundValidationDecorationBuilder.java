@@ -16,21 +16,23 @@ package org.controlsfx.validation.decoration;
 public class CompoundValidationDecorationBuilder<Z extends CompoundValidationDecoration, B extends CompoundValidationDecorationBuilder<Z, B>>
         extends org.controlsfx.validation.decoration.AbstractValidationDecorationBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(CompoundValidationDecoration instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link CompoundValidationDecoration}物件
+     *
+     * @return 新的{@link CompoundValidationDecoration}物件實體
+     */
     @SuppressWarnings("unchecked")
     public CompoundValidationDecoration build(java.util.Collection<org.controlsfx.validation.decoration.ValidationDecoration> arg0)
     {
         CompoundValidationDecoration instance = new CompoundValidationDecoration(arg0);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

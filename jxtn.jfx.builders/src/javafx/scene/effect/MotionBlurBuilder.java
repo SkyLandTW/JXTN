@@ -16,7 +16,6 @@ package javafx.scene.effect;
 public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAngle;
     protected double valAngle;
@@ -35,11 +34,11 @@ public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder
 
     protected boolean boundRadius;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvRadius;
-    public void applyTo(MotionBlur instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAngle)
             instance.setAngle(this.valAngle);
         if (this.hasInput)
@@ -52,10 +51,14 @@ public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder
             instance.inputProperty().bind(this.obsrvInput);
         if (this.boundRadius)
             instance.radiusProperty().bind(this.obsrvRadius);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link MotionBlur#setAngle}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B angle(double value)
     {
@@ -64,6 +67,12 @@ public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MotionBlur#setInput}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B input(javafx.scene.effect.Effect value)
     {
@@ -72,6 +81,12 @@ public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MotionBlur#setRadius}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B radius(double value)
     {
@@ -80,6 +95,12 @@ public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MotionBlur#angleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAngle(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -89,6 +110,12 @@ public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MotionBlur#inputProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
@@ -98,6 +125,12 @@ public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MotionBlur#radiusProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -107,12 +140,17 @@ public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder
         return (B) this;
     }
 
+    /**
+     * 建構{@link MotionBlur}物件
+     *
+     * @return 新的{@link MotionBlur}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public MotionBlur build()
     {
         MotionBlur instance = new MotionBlur();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

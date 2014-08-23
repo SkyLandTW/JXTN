@@ -16,7 +16,6 @@ package javafx.stage;
 public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends DirectoryChooserBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasInitialDirectory;
     protected java.io.File valInitialDirectory;
@@ -29,11 +28,11 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
 
     protected boolean boundTitle;
     protected javafx.beans.value.ObservableValue<? extends String> obsrvTitle;
-    public void applyTo(DirectoryChooser instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasInitialDirectory)
             instance.setInitialDirectory(this.valInitialDirectory);
         if (this.hasTitle)
@@ -42,10 +41,14 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
             instance.initialDirectoryProperty().bind(this.obsrvInitialDirectory);
         if (this.boundTitle)
             instance.titleProperty().bind(this.obsrvTitle);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link DirectoryChooser#setInitialDirectory}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B initialDirectory(java.io.File value)
     {
@@ -54,6 +57,12 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DirectoryChooser#setTitle}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B title(java.lang.String value)
     {
@@ -62,6 +71,12 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DirectoryChooser#initialDirectoryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindInitialDirectory(javafx.beans.value.ObservableValue<? extends java.io.File> source)
     {
@@ -71,6 +86,12 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DirectoryChooser#titleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTitle(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -80,12 +101,17 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
         return (B) this;
     }
 
+    /**
+     * 建構{@link DirectoryChooser}物件
+     *
+     * @return 新的{@link DirectoryChooser}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public DirectoryChooser build()
     {
         DirectoryChooser instance = new DirectoryChooser();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,7 +16,6 @@ package javafx.scene.effect;
 public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBottomOpacity;
     protected double valBottomOpacity;
@@ -47,11 +46,11 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
 
     protected boolean boundTopOpacity;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvTopOpacity;
-    public void applyTo(Reflection instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBottomOpacity)
             instance.setBottomOpacity(this.valBottomOpacity);
         if (this.hasFraction)
@@ -72,10 +71,14 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
             instance.topOffsetProperty().bind(this.obsrvTopOffset);
         if (this.boundTopOpacity)
             instance.topOpacityProperty().bind(this.obsrvTopOpacity);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Reflection#setBottomOpacity}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bottomOpacity(double value)
     {
@@ -84,6 +87,12 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Reflection#setFraction}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fraction(double value)
     {
@@ -92,6 +101,12 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Reflection#setInput}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B input(javafx.scene.effect.Effect value)
     {
@@ -100,6 +115,12 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Reflection#setTopOffset}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B topOffset(double value)
     {
@@ -108,6 +129,12 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Reflection#setTopOpacity}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B topOpacity(double value)
     {
@@ -116,6 +143,12 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Reflection#bottomOpacityProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindBottomOpacity(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -125,6 +158,12 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Reflection#fractionProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFraction(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -134,6 +173,12 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Reflection#inputProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
@@ -143,6 +188,12 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Reflection#topOffsetProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTopOffset(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -152,6 +203,12 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Reflection#topOpacityProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTopOpacity(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -161,12 +218,17 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
         return (B) this;
     }
 
+    /**
+     * 建構{@link Reflection}物件
+     *
+     * @return 新的{@link Reflection}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Reflection build()
     {
         Reflection instance = new Reflection();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

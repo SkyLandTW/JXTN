@@ -16,7 +16,6 @@ package javafx.scene.effect;
 public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBlurType;
     protected javafx.scene.effect.BlurType valBlurType;
@@ -71,11 +70,11 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
 
     protected boolean boundWidth;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvWidth;
-    public void applyTo(DropShadow instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBlurType)
             instance.setBlurType(this.valBlurType);
         if (this.hasColor)
@@ -112,10 +111,14 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
             instance.spreadProperty().bind(this.obsrvSpread);
         if (this.boundWidth)
             instance.widthProperty().bind(this.obsrvWidth);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link DropShadow#setBlurType}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B blurType(javafx.scene.effect.BlurType value)
     {
@@ -124,6 +127,12 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DropShadow#setColor}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B color(javafx.scene.paint.Color value)
     {
@@ -132,6 +141,12 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DropShadow#setHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B height(double value)
     {
@@ -140,6 +155,12 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DropShadow#setInput}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B input(javafx.scene.effect.Effect value)
     {
@@ -148,6 +169,12 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DropShadow#setOffsetX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B offsetX(double value)
     {
@@ -156,6 +183,12 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DropShadow#setOffsetY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B offsetY(double value)
     {
@@ -164,6 +197,12 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DropShadow#setRadius}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B radius(double value)
     {
@@ -172,6 +211,12 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DropShadow#setSpread}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B spread(double value)
     {
@@ -180,6 +225,12 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DropShadow#setWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B width(double value)
     {
@@ -188,6 +239,12 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DropShadow#blurTypeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindBlurType(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.BlurType> source)
     {
@@ -197,6 +254,12 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DropShadow#colorProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindColor(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> source)
     {
@@ -206,6 +269,12 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DropShadow#heightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -215,6 +284,12 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DropShadow#inputProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
@@ -224,6 +299,12 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DropShadow#offsetXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOffsetX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -233,6 +314,12 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DropShadow#offsetYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOffsetY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -242,6 +329,12 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DropShadow#radiusProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -251,6 +344,12 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DropShadow#spreadProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSpread(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -260,6 +359,12 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DropShadow#widthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -269,12 +374,17 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         return (B) this;
     }
 
+    /**
+     * 建構{@link DropShadow}物件
+     *
+     * @return 新的{@link DropShadow}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public DropShadow build()
     {
         DropShadow instance = new DropShadow();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,22 +16,24 @@ package javafx.scene.control;
 public class ProgressBarBuilder<Z extends ProgressBar, B extends ProgressBarBuilder<Z, B>>
         extends javafx.scene.control.ProgressIndicatorBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(ProgressBar instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link ProgressBar}物件
+     *
+     * @return 新的{@link ProgressBar}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ProgressBar build()
     {
         ProgressBar instance = new ProgressBar();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,21 +16,23 @@ package org.controlsfx.glyphfont;
 public class GlyphBuilder<Z extends Glyph, B extends GlyphBuilder<Z, B>>
         extends javafx.scene.control.LabelBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(Glyph instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link Glyph}物件
+     *
+     * @return 新的{@link Glyph}物件實體
+     */
     @SuppressWarnings("unchecked")
     public Glyph build(java.lang.String arg0, java.lang.Character arg1, double arg2, javafx.scene.paint.Color arg3)
     {
         Glyph instance = new Glyph(arg0, arg1, arg2, arg3);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

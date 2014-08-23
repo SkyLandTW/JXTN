@@ -16,7 +16,6 @@ package javafx.scene.chart;
 public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
         extends javafx.scene.layout.RegionBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAnimated;
     protected boolean valAnimated;
@@ -47,11 +46,11 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
 
     protected boolean boundTitleSide;
     protected javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> obsrvTitleSide;
-    public void applyTo(Chart instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAnimated)
             instance.setAnimated(this.valAnimated);
         if (this.hasLegendSide)
@@ -72,10 +71,14 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
             instance.titleProperty().bind(this.obsrvTitle);
         if (this.boundTitleSide)
             instance.titleSideProperty().bind(this.obsrvTitleSide);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Chart#setAnimated}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B animated(boolean value)
     {
@@ -84,6 +87,12 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Chart#setLegendSide}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B legendSide(javafx.geometry.Side value)
     {
@@ -92,6 +101,12 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Chart#setLegendVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B legendVisible(boolean value)
     {
@@ -100,6 +115,12 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Chart#setTitle}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B title(java.lang.String value)
     {
@@ -108,6 +129,12 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Chart#setTitleSide}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B titleSide(javafx.geometry.Side value)
     {
@@ -116,6 +143,12 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Chart#animatedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAnimated(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -125,6 +158,12 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Chart#legendSideProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLegendSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
@@ -134,6 +173,12 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Chart#legendVisibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLegendVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -143,6 +188,12 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Chart#titleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTitle(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -152,6 +203,12 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Chart#titleSideProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTitleSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {

@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>, B extends TableViewBuilder<S, Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasColumnResizePolicy;
     protected javafx.util.Callback<javafx.scene.control.TableView.ResizeFeatures, java.lang.Boolean> valColumnResizePolicy;
@@ -95,11 +94,11 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
 
     protected boolean boundTableMenuButtonVisible;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvTableMenuButtonVisible;
-    public void applyTo(TableView<S> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasColumnResizePolicy)
             instance.setColumnResizePolicy(this.valColumnResizePolicy);
         if (this.hasColumns)
@@ -152,10 +151,14 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
             instance.sortPolicyProperty().bind(this.obsrvSortPolicy);
         if (this.boundTableMenuButtonVisible)
             instance.tableMenuButtonVisibleProperty().bind(this.obsrvTableMenuButtonVisible);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link TableView#setColumnResizePolicy}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B columnResizePolicy(javafx.util.Callback<javafx.scene.control.TableView.ResizeFeatures, java.lang.Boolean> value)
     {
@@ -164,6 +167,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TableView#getColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B columns(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
     {
@@ -172,6 +181,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TableView#getColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B columns(javafx.scene.control.TableColumn<S, ?>... value)
@@ -181,6 +196,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#setEditable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B editable(boolean value)
     {
@@ -189,6 +210,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#setFixedCellSize}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fixedCellSize(double value)
     {
@@ -197,6 +224,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#setFocusModel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B focusModel(javafx.scene.control.TableView.TableViewFocusModel<S> value)
     {
@@ -205,6 +238,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#setItems}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B items(javafx.collections.ObservableList<S> value)
     {
@@ -213,6 +252,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#setOnScrollTo}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onScrollTo(javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>> value)
     {
@@ -221,6 +266,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#setOnScrollToColumn}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onScrollToColumn(javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<javafx.scene.control.TableColumn<S, ?>>> value)
     {
@@ -229,6 +280,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#setOnSort}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onSort(javafx.event.EventHandler<javafx.scene.control.SortEvent<javafx.scene.control.TableView<S>>> value)
     {
@@ -237,6 +294,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#setPlaceholder}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B placeholder(javafx.scene.Node value)
     {
@@ -245,6 +308,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#setRowFactory}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B rowFactory(javafx.util.Callback<javafx.scene.control.TableView<S>, javafx.scene.control.TableRow<S>> value)
     {
@@ -253,6 +322,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#setSelectionModel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B selectionModel(javafx.scene.control.TableView.TableViewSelectionModel<S> value)
     {
@@ -261,6 +336,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TableView#getSortOrder}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B sortOrder(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
     {
@@ -269,6 +350,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TableView#getSortOrder}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B sortOrder(javafx.scene.control.TableColumn<S, ?>... value)
@@ -278,6 +365,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#setSortPolicy}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B sortPolicy(javafx.util.Callback<javafx.scene.control.TableView<S>, java.lang.Boolean> value)
     {
@@ -286,6 +379,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#setTableMenuButtonVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tableMenuButtonVisible(boolean value)
     {
@@ -294,6 +393,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TableView#getVisibleLeafColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B visibleLeafColumns(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
     {
@@ -302,6 +407,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TableView#getVisibleLeafColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B visibleLeafColumns(javafx.scene.control.TableColumn<S, ?>... value)
@@ -311,6 +422,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#columnResizePolicyProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindColumnResizePolicy(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableView.ResizeFeatures, java.lang.Boolean>> source)
     {
@@ -320,6 +437,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#editableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -329,6 +452,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#fixedCellSizeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFixedCellSize(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -338,6 +467,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#focusModelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFocusModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TableView.TableViewFocusModel<S>> source)
     {
@@ -347,6 +482,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#itemsProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindItems(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<S>> source)
     {
@@ -356,6 +497,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#placeholderProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPlaceholder(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -365,6 +512,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#rowFactoryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRowFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableView<S>, javafx.scene.control.TableRow<S>>> source)
     {
@@ -374,6 +527,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#selectionModelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TableView.TableViewSelectionModel<S>> source)
     {
@@ -383,6 +542,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#sortPolicyProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSortPolicy(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableView<S>, java.lang.Boolean>> source)
     {
@@ -392,6 +557,12 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableView#tableMenuButtonVisibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTableMenuButtonVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -401,12 +572,17 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         return (B) this;
     }
 
+    /**
+     * 建構{@link TableView}物件
+     *
+     * @return 新的{@link TableView}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public TableView<S> build()
     {
         TableView<S> instance = new TableView<S>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

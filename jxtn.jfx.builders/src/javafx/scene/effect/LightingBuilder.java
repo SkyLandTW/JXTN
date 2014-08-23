@@ -16,7 +16,6 @@ package javafx.scene.effect;
 public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBumpInput;
     protected javafx.scene.effect.Effect valBumpInput;
@@ -59,11 +58,11 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
 
     protected boolean boundSurfaceScale;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvSurfaceScale;
-    public void applyTo(Lighting instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBumpInput)
             instance.setBumpInput(this.valBumpInput);
         if (this.hasContentInput)
@@ -92,10 +91,14 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
             instance.specularExponentProperty().bind(this.obsrvSpecularExponent);
         if (this.boundSurfaceScale)
             instance.surfaceScaleProperty().bind(this.obsrvSurfaceScale);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Lighting#setBumpInput}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bumpInput(javafx.scene.effect.Effect value)
     {
@@ -104,6 +107,12 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Lighting#setContentInput}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B contentInput(javafx.scene.effect.Effect value)
     {
@@ -112,6 +121,12 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Lighting#setDiffuseConstant}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B diffuseConstant(double value)
     {
@@ -120,6 +135,12 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Lighting#setLight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B light(javafx.scene.effect.Light value)
     {
@@ -128,6 +149,12 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Lighting#setSpecularConstant}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B specularConstant(double value)
     {
@@ -136,6 +163,12 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Lighting#setSpecularExponent}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B specularExponent(double value)
     {
@@ -144,6 +177,12 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Lighting#setSurfaceScale}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B surfaceScale(double value)
     {
@@ -152,6 +191,12 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Lighting#bumpInputProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindBumpInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
@@ -161,6 +206,12 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Lighting#contentInputProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindContentInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
@@ -170,6 +221,12 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Lighting#diffuseConstantProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindDiffuseConstant(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -179,6 +236,12 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Lighting#lightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLight(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Light> source)
     {
@@ -188,6 +251,12 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Lighting#specularConstantProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSpecularConstant(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -197,6 +266,12 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Lighting#specularExponentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSpecularExponent(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -206,6 +281,12 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Lighting#surfaceScaleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSurfaceScale(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -215,12 +296,17 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Lighting}物件
+     *
+     * @return 新的{@link Lighting}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Lighting build()
     {
         Lighting instance = new Lighting();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

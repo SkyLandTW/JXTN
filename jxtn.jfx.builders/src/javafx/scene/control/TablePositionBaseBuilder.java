@@ -16,13 +16,10 @@ package javafx.scene.control;
 public class TablePositionBaseBuilder<TC extends javafx.scene.control.TableColumnBase, Z extends TablePositionBase<TC>, B extends TablePositionBaseBuilder<TC, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(TablePositionBase<TC> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 }

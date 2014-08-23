@@ -16,7 +16,6 @@ package javafx.scene.web;
 public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasConfirmHandler;
     protected javafx.util.Callback<java.lang.String, java.lang.Boolean> valConfirmHandler;
@@ -89,11 +88,11 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
 
     protected boolean boundUserStyleSheetLocation;
     protected javafx.beans.value.ObservableValue<? extends String> obsrvUserStyleSheetLocation;
-    public void applyTo(WebEngine instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasConfirmHandler)
             instance.setConfirmHandler(this.valConfirmHandler);
         if (this.hasCreatePopupHandler)
@@ -142,10 +141,14 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
             instance.userDataDirectoryProperty().bind(this.obsrvUserDataDirectory);
         if (this.boundUserStyleSheetLocation)
             instance.userStyleSheetLocationProperty().bind(this.obsrvUserStyleSheetLocation);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#setConfirmHandler}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B confirmHandler(javafx.util.Callback<java.lang.String, java.lang.Boolean> value)
     {
@@ -154,6 +157,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#setCreatePopupHandler}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B createPopupHandler(javafx.util.Callback<javafx.scene.web.PopupFeatures, javafx.scene.web.WebEngine> value)
     {
@@ -162,6 +171,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#setJavaScriptEnabled}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B javaScriptEnabled(boolean value)
     {
@@ -170,6 +185,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#setOnAlert}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onAlert(javafx.event.EventHandler<javafx.scene.web.WebEvent<java.lang.String>> value)
     {
@@ -178,6 +199,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#setOnError}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onError(javafx.event.EventHandler<javafx.scene.web.WebErrorEvent> value)
     {
@@ -186,6 +213,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#setOnResized}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onResized(javafx.event.EventHandler<javafx.scene.web.WebEvent<javafx.geometry.Rectangle2D>> value)
     {
@@ -194,6 +227,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#setOnStatusChanged}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onStatusChanged(javafx.event.EventHandler<javafx.scene.web.WebEvent<java.lang.String>> value)
     {
@@ -202,6 +241,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#setOnVisibilityChanged}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onVisibilityChanged(javafx.event.EventHandler<javafx.scene.web.WebEvent<java.lang.Boolean>> value)
     {
@@ -210,6 +255,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#setPromptHandler}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B promptHandler(javafx.util.Callback<javafx.scene.web.PromptData, java.lang.String> value)
     {
@@ -218,6 +269,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#setUserAgent}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B userAgent(java.lang.String value)
     {
@@ -226,6 +283,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#setUserDataDirectory}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B userDataDirectory(java.io.File value)
     {
@@ -234,6 +297,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#setUserStyleSheetLocation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B userStyleSheetLocation(java.lang.String value)
     {
@@ -242,6 +311,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#confirmHandlerProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindConfirmHandler(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<java.lang.String, java.lang.Boolean>> source)
     {
@@ -251,6 +326,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#createPopupHandlerProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCreatePopupHandler(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.web.PopupFeatures, javafx.scene.web.WebEngine>> source)
     {
@@ -260,6 +341,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#javaScriptEnabledProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindJavaScriptEnabled(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -269,6 +356,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#onAlertProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnAlert(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.web.WebEvent<java.lang.String>>> source)
     {
@@ -278,6 +371,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#onErrorProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnError(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.web.WebErrorEvent>> source)
     {
@@ -287,6 +386,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#onResizedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnResized(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.web.WebEvent<javafx.geometry.Rectangle2D>>> source)
     {
@@ -296,6 +401,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#onStatusChangedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnStatusChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.web.WebEvent<java.lang.String>>> source)
     {
@@ -305,6 +416,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#onVisibilityChangedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnVisibilityChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.web.WebEvent<java.lang.Boolean>>> source)
     {
@@ -314,6 +431,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#promptHandlerProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPromptHandler(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.web.PromptData, java.lang.String>> source)
     {
@@ -323,6 +446,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#userAgentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindUserAgent(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -332,6 +461,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#userDataDirectoryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindUserDataDirectory(javafx.beans.value.ObservableValue<? extends java.io.File> source)
     {
@@ -341,6 +476,12 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebEngine#userStyleSheetLocationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindUserStyleSheetLocation(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -350,12 +491,17 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 建構{@link WebEngine}物件
+     *
+     * @return 新的{@link WebEngine}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public WebEngine build()
     {
         WebEngine instance = new WebEngine();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

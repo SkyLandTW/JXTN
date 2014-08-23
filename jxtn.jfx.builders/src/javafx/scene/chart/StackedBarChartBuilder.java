@@ -16,21 +16,24 @@ package javafx.scene.chart;
 public class StackedBarChartBuilder<X extends java.lang.Object, Y extends java.lang.Object, Z extends StackedBarChart<X, Y>, B extends StackedBarChartBuilder<X, Y, Z, B>>
         extends javafx.scene.chart.XYChartBuilder<X, Y, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCategoryGap;
     protected double valCategoryGap;
-    public void applyTo(StackedBarChart<X, Y> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCategoryGap)
             instance.setCategoryGap(this.valCategoryGap);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link StackedBarChart#setCategoryGap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B categoryGap(double value)
     {
@@ -39,11 +42,16 @@ public class StackedBarChartBuilder<X extends java.lang.Object, Y extends java.l
         return (B) this;
     }
 
+    /**
+     * 建構{@link StackedBarChart}物件
+     *
+     * @return 新的{@link StackedBarChart}物件實體
+     */
     @SuppressWarnings("unchecked")
     public StackedBarChart<X, Y> build(javafx.scene.chart.Axis<X> arg0, javafx.scene.chart.Axis<Y> arg1)
     {
         StackedBarChart<X, Y> instance = new StackedBarChart<X, Y>(arg0, arg1);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

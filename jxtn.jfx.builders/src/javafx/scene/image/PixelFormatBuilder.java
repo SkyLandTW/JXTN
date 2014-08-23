@@ -16,13 +16,10 @@ package javafx.scene.image;
 public class PixelFormatBuilder<T extends java.nio.Buffer, Z extends PixelFormat<T>, B extends PixelFormatBuilder<T, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(PixelFormat<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 }

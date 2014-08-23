@@ -16,7 +16,6 @@ package javafx.scene;
 public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBlendMode;
     protected javafx.scene.effect.BlendMode valBlendMode;
@@ -515,11 +514,11 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
 
     protected boolean boundVisible;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvVisible;
-    public void applyTo(Node instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBlendMode)
             instance.setBlendMode(this.valBlendMode);
         if (this.hasCache)
@@ -852,10 +851,14 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
             instance.translateZProperty().bind(this.obsrvTranslateZ);
         if (this.boundVisible)
             instance.visibleProperty().bind(this.obsrvVisible);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Node#setBlendMode}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B blendMode(javafx.scene.effect.BlendMode value)
     {
@@ -864,6 +867,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setCache}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cache(boolean value)
     {
@@ -872,6 +881,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setCacheHint}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cacheHint(javafx.scene.CacheHint value)
     {
@@ -880,6 +895,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setClip}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B clip(javafx.scene.Node value)
     {
@@ -888,6 +909,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setCursor}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cursor(javafx.scene.Cursor value)
     {
@@ -896,6 +923,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setDepthTest}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B depthTest(javafx.scene.DepthTest value)
     {
@@ -904,6 +937,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setDisable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B disable(boolean value)
     {
@@ -912,6 +951,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setEffect}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B effect(javafx.scene.effect.Effect value)
     {
@@ -920,6 +965,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setEventDispatcher}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B eventDispatcher(javafx.event.EventDispatcher value)
     {
@@ -928,6 +979,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setFocusTraversable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B focusTraversable(boolean value)
     {
@@ -936,6 +993,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setId}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B id(java.lang.String value)
     {
@@ -944,6 +1007,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setInputMethodRequests}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B inputMethodRequests(javafx.scene.input.InputMethodRequests value)
     {
@@ -952,6 +1021,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setLayoutX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B layoutX(double value)
     {
@@ -960,6 +1035,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setLayoutY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B layoutY(double value)
     {
@@ -968,6 +1049,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setManaged}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B managed(boolean value)
     {
@@ -976,6 +1063,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setMouseTransparent}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B mouseTransparent(boolean value)
     {
@@ -984,6 +1077,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setNodeOrientation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B nodeOrientation(javafx.geometry.NodeOrientation value)
     {
@@ -992,6 +1091,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnContextMenuRequested}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onContextMenuRequested(javafx.event.EventHandler<? super javafx.scene.input.ContextMenuEvent> value)
     {
@@ -1000,6 +1105,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnDragDetected}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onDragDetected(javafx.event.EventHandler<? super javafx.scene.input.MouseEvent> value)
     {
@@ -1008,6 +1119,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnDragDone}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onDragDone(javafx.event.EventHandler<? super javafx.scene.input.DragEvent> value)
     {
@@ -1016,6 +1133,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnDragDropped}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onDragDropped(javafx.event.EventHandler<? super javafx.scene.input.DragEvent> value)
     {
@@ -1024,6 +1147,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnDragEntered}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onDragEntered(javafx.event.EventHandler<? super javafx.scene.input.DragEvent> value)
     {
@@ -1032,6 +1161,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnDragExited}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onDragExited(javafx.event.EventHandler<? super javafx.scene.input.DragEvent> value)
     {
@@ -1040,6 +1175,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnDragOver}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onDragOver(javafx.event.EventHandler<? super javafx.scene.input.DragEvent> value)
     {
@@ -1048,6 +1189,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnInputMethodTextChanged}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onInputMethodTextChanged(javafx.event.EventHandler<? super javafx.scene.input.InputMethodEvent> value)
     {
@@ -1056,6 +1203,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnKeyPressed}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onKeyPressed(javafx.event.EventHandler<? super javafx.scene.input.KeyEvent> value)
     {
@@ -1064,6 +1217,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnKeyReleased}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onKeyReleased(javafx.event.EventHandler<? super javafx.scene.input.KeyEvent> value)
     {
@@ -1072,6 +1231,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnKeyTyped}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onKeyTyped(javafx.event.EventHandler<? super javafx.scene.input.KeyEvent> value)
     {
@@ -1080,6 +1245,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnMouseClicked}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseClicked(javafx.event.EventHandler<? super javafx.scene.input.MouseEvent> value)
     {
@@ -1088,6 +1259,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnMouseDragEntered}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseDragEntered(javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent> value)
     {
@@ -1096,6 +1273,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnMouseDragExited}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseDragExited(javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent> value)
     {
@@ -1104,6 +1287,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnMouseDragOver}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseDragOver(javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent> value)
     {
@@ -1112,6 +1301,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnMouseDragReleased}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseDragReleased(javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent> value)
     {
@@ -1120,6 +1315,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnMouseDragged}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseDragged(javafx.event.EventHandler<? super javafx.scene.input.MouseEvent> value)
     {
@@ -1128,6 +1329,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnMouseEntered}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseEntered(javafx.event.EventHandler<? super javafx.scene.input.MouseEvent> value)
     {
@@ -1136,6 +1343,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnMouseExited}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseExited(javafx.event.EventHandler<? super javafx.scene.input.MouseEvent> value)
     {
@@ -1144,6 +1357,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnMouseMoved}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseMoved(javafx.event.EventHandler<? super javafx.scene.input.MouseEvent> value)
     {
@@ -1152,6 +1371,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnMousePressed}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMousePressed(javafx.event.EventHandler<? super javafx.scene.input.MouseEvent> value)
     {
@@ -1160,6 +1385,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnMouseReleased}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMouseReleased(javafx.event.EventHandler<? super javafx.scene.input.MouseEvent> value)
     {
@@ -1168,6 +1399,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnRotate}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onRotate(javafx.event.EventHandler<? super javafx.scene.input.RotateEvent> value)
     {
@@ -1176,6 +1413,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnRotationFinished}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onRotationFinished(javafx.event.EventHandler<? super javafx.scene.input.RotateEvent> value)
     {
@@ -1184,6 +1427,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnRotationStarted}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onRotationStarted(javafx.event.EventHandler<? super javafx.scene.input.RotateEvent> value)
     {
@@ -1192,6 +1441,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnScroll}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onScroll(javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent> value)
     {
@@ -1200,6 +1455,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnScrollFinished}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onScrollFinished(javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent> value)
     {
@@ -1208,6 +1469,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnScrollStarted}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onScrollStarted(javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent> value)
     {
@@ -1216,6 +1483,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnSwipeDown}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onSwipeDown(javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent> value)
     {
@@ -1224,6 +1497,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnSwipeLeft}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onSwipeLeft(javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent> value)
     {
@@ -1232,6 +1511,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnSwipeRight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onSwipeRight(javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent> value)
     {
@@ -1240,6 +1525,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnSwipeUp}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onSwipeUp(javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent> value)
     {
@@ -1248,6 +1539,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnTouchMoved}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onTouchMoved(javafx.event.EventHandler<? super javafx.scene.input.TouchEvent> value)
     {
@@ -1256,6 +1553,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnTouchPressed}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onTouchPressed(javafx.event.EventHandler<? super javafx.scene.input.TouchEvent> value)
     {
@@ -1264,6 +1567,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnTouchReleased}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onTouchReleased(javafx.event.EventHandler<? super javafx.scene.input.TouchEvent> value)
     {
@@ -1272,6 +1581,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnTouchStationary}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onTouchStationary(javafx.event.EventHandler<? super javafx.scene.input.TouchEvent> value)
     {
@@ -1280,6 +1595,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnZoom}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onZoom(javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent> value)
     {
@@ -1288,6 +1609,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnZoomFinished}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onZoomFinished(javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent> value)
     {
@@ -1296,6 +1623,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOnZoomStarted}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onZoomStarted(javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent> value)
     {
@@ -1304,6 +1637,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setOpacity}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B opacity(double value)
     {
@@ -1312,6 +1651,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setPickOnBounds}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B pickOnBounds(boolean value)
     {
@@ -1320,6 +1665,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setRotate}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B rotate(double value)
     {
@@ -1328,6 +1679,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setRotationAxis}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B rotationAxis(javafx.geometry.Point3D value)
     {
@@ -1336,6 +1693,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setScaleX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B scaleX(double value)
     {
@@ -1344,6 +1707,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setScaleY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B scaleY(double value)
     {
@@ -1352,6 +1721,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setScaleZ}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B scaleZ(double value)
     {
@@ -1360,6 +1735,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setStyle}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B style(java.lang.String value)
     {
@@ -1368,6 +1749,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Node#getStyleClass}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B styleClass(java.util.Collection<java.lang.String> value)
     {
@@ -1376,6 +1763,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Node#getStyleClass}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B styleClass(java.lang.String... value)
@@ -1385,6 +1778,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Node#getTransforms}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B transforms(java.util.Collection<javafx.scene.transform.Transform> value)
     {
@@ -1393,6 +1792,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Node#getTransforms}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B transforms(javafx.scene.transform.Transform... value)
@@ -1402,6 +1807,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setTranslateX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B translateX(double value)
     {
@@ -1410,6 +1821,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setTranslateY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B translateY(double value)
     {
@@ -1418,6 +1835,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setTranslateZ}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B translateZ(double value)
     {
@@ -1426,6 +1849,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setUserData}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B userData(java.lang.Object value)
     {
@@ -1434,6 +1863,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B visible(boolean value)
     {
@@ -1442,6 +1877,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setAnchorPane_bottomAnchor}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B AnchorPane_bottomAnchor(java.lang.Double value)
     {
@@ -1450,6 +1891,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setAnchorPane_leftAnchor}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B AnchorPane_leftAnchor(java.lang.Double value)
     {
@@ -1458,6 +1905,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setAnchorPane_rightAnchor}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B AnchorPane_rightAnchor(java.lang.Double value)
     {
@@ -1466,6 +1919,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setAnchorPane_topAnchor}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B AnchorPane_topAnchor(java.lang.Double value)
     {
@@ -1474,6 +1933,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setBorderPane_alignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B BorderPane_alignment(javafx.geometry.Pos value)
     {
@@ -1482,6 +1947,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setBorderPane_margin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B BorderPane_margin(javafx.geometry.Insets value)
     {
@@ -1490,6 +1961,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setFlowPane_margin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B FlowPane_margin(javafx.geometry.Insets value)
     {
@@ -1498,6 +1975,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setGridPane_columnIndex}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B GridPane_columnIndex(java.lang.Integer value)
     {
@@ -1506,6 +1989,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setGridPane_columnSpan}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B GridPane_columnSpan(java.lang.Integer value)
     {
@@ -1514,6 +2003,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setGridPane_fillHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B GridPane_fillHeight(java.lang.Boolean value)
     {
@@ -1522,6 +2017,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setGridPane_fillWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B GridPane_fillWidth(java.lang.Boolean value)
     {
@@ -1530,6 +2031,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setGridPane_halignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B GridPane_halignment(javafx.geometry.HPos value)
     {
@@ -1538,6 +2045,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setGridPane_hgrow}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B GridPane_hgrow(javafx.scene.layout.Priority value)
     {
@@ -1546,6 +2059,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setGridPane_margin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B GridPane_margin(javafx.geometry.Insets value)
     {
@@ -1554,6 +2073,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setGridPane_rowIndex}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B GridPane_rowIndex(java.lang.Integer value)
     {
@@ -1562,6 +2087,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setGridPane_rowSpan}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B GridPane_rowSpan(java.lang.Integer value)
     {
@@ -1570,6 +2101,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setGridPane_valignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B GridPane_valignment(javafx.geometry.VPos value)
     {
@@ -1578,6 +2115,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setGridPane_vgrow}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B GridPane_vgrow(javafx.scene.layout.Priority value)
     {
@@ -1586,6 +2129,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setHBox_hgrow}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B HBox_hgrow(javafx.scene.layout.Priority value)
     {
@@ -1594,6 +2143,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setHBox_margin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B HBox_margin(javafx.geometry.Insets value)
     {
@@ -1602,6 +2157,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setSplitPane_resizableWithParent}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B SplitPane_resizableWithParent(java.lang.Boolean value)
     {
@@ -1610,6 +2171,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setStackPane_alignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B StackPane_alignment(javafx.geometry.Pos value)
     {
@@ -1618,6 +2185,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setStackPane_margin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B StackPane_margin(javafx.geometry.Insets value)
     {
@@ -1626,6 +2199,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setTilePane_alignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B TilePane_alignment(javafx.geometry.Pos value)
     {
@@ -1634,6 +2213,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setTilePane_margin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B TilePane_margin(javafx.geometry.Insets value)
     {
@@ -1642,6 +2227,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setVBox_margin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B VBox_margin(javafx.geometry.Insets value)
     {
@@ -1650,6 +2241,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#setVBox_vgrow}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B VBox_vgrow(javafx.scene.layout.Priority value)
     {
@@ -1658,6 +2255,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#blendModeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindBlendMode(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.BlendMode> source)
     {
@@ -1667,6 +2270,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#cacheHintProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCacheHint(javafx.beans.value.ObservableValue<? extends javafx.scene.CacheHint> source)
     {
@@ -1676,6 +2285,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#cacheProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCache(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -1685,6 +2300,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#clipProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindClip(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -1694,6 +2315,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#cursorProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCursor(javafx.beans.value.ObservableValue<? extends javafx.scene.Cursor> source)
     {
@@ -1703,6 +2330,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#depthTestProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindDepthTest(javafx.beans.value.ObservableValue<? extends javafx.scene.DepthTest> source)
     {
@@ -1712,6 +2345,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#disableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindDisable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -1721,6 +2360,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#effectProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEffect(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
@@ -1730,6 +2375,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#eventDispatcherProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEventDispatcher(javafx.beans.value.ObservableValue<? extends javafx.event.EventDispatcher> source)
     {
@@ -1739,6 +2390,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#focusTraversableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFocusTraversable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -1748,6 +2405,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#idProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindId(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -1757,6 +2420,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#inputMethodRequestsProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindInputMethodRequests(javafx.beans.value.ObservableValue<? extends javafx.scene.input.InputMethodRequests> source)
     {
@@ -1766,6 +2435,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#layoutXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLayoutX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -1775,6 +2450,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#layoutYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLayoutY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -1784,6 +2465,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#managedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindManaged(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -1793,6 +2480,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#mouseTransparentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMouseTransparent(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -1802,6 +2495,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#nodeOrientationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindNodeOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.NodeOrientation> source)
     {
@@ -1811,6 +2510,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onContextMenuRequestedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnContextMenuRequested(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ContextMenuEvent>> source)
     {
@@ -1820,6 +2525,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onDragDetectedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnDragDetected(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
@@ -1829,6 +2540,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onDragDoneProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnDragDone(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
@@ -1838,6 +2555,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onDragDroppedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnDragDropped(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
@@ -1847,6 +2570,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onDragEnteredProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnDragEntered(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
@@ -1856,6 +2585,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onDragExitedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnDragExited(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
@@ -1865,6 +2600,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onDragOverProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnDragOver(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
@@ -1874,6 +2615,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onInputMethodTextChangedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnInputMethodTextChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.InputMethodEvent>> source)
     {
@@ -1883,6 +2630,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onKeyPressedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnKeyPressed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> source)
     {
@@ -1892,6 +2645,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onKeyReleasedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnKeyReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> source)
     {
@@ -1901,6 +2660,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onKeyTypedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnKeyTyped(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> source)
     {
@@ -1910,6 +2675,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onMouseClickedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseClicked(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
@@ -1919,6 +2690,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onMouseDragEnteredProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseDragEntered(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
     {
@@ -1928,6 +2705,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onMouseDragExitedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseDragExited(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
     {
@@ -1937,6 +2720,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onMouseDragOverProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseDragOver(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
     {
@@ -1946,6 +2735,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onMouseDragReleasedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseDragReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
     {
@@ -1955,6 +2750,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onMouseDraggedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseDragged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
@@ -1964,6 +2765,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onMouseEnteredProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseEntered(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
@@ -1973,6 +2780,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onMouseExitedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseExited(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
@@ -1982,6 +2795,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onMouseMovedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseMoved(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
@@ -1991,6 +2810,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onMousePressedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMousePressed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
@@ -2000,6 +2825,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onMouseReleasedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMouseReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
@@ -2009,6 +2840,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onRotateProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnRotate(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> source)
     {
@@ -2018,6 +2855,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onRotationFinishedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnRotationFinished(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> source)
     {
@@ -2027,6 +2870,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onRotationStartedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnRotationStarted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> source)
     {
@@ -2036,6 +2885,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onScrollFinishedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnScrollFinished(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> source)
     {
@@ -2045,6 +2900,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onScrollProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnScroll(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> source)
     {
@@ -2054,6 +2915,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onScrollStartedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnScrollStarted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> source)
     {
@@ -2063,6 +2930,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onSwipeDownProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnSwipeDown(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
     {
@@ -2072,6 +2945,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onSwipeLeftProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnSwipeLeft(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
     {
@@ -2081,6 +2960,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onSwipeRightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnSwipeRight(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
     {
@@ -2090,6 +2975,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onSwipeUpProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnSwipeUp(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
     {
@@ -2099,6 +2990,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onTouchMovedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnTouchMoved(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
     {
@@ -2108,6 +3005,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onTouchPressedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnTouchPressed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
     {
@@ -2117,6 +3020,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onTouchReleasedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnTouchReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
     {
@@ -2126,6 +3035,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onTouchStationaryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnTouchStationary(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
     {
@@ -2135,6 +3050,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onZoomFinishedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnZoomFinished(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> source)
     {
@@ -2144,6 +3065,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onZoomProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnZoom(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> source)
     {
@@ -2153,6 +3080,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#onZoomStartedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnZoomStarted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> source)
     {
@@ -2162,6 +3095,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#opacityProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOpacity(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -2171,6 +3110,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#pickOnBoundsProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPickOnBounds(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -2180,6 +3125,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#rotateProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRotate(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -2189,6 +3140,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#rotationAxisProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRotationAxis(javafx.beans.value.ObservableValue<? extends javafx.geometry.Point3D> source)
     {
@@ -2198,6 +3155,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#scaleXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindScaleX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -2207,6 +3170,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#scaleYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindScaleY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -2216,6 +3185,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#scaleZProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindScaleZ(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -2225,6 +3200,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#styleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStyle(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -2234,6 +3215,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#translateXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTranslateX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -2243,6 +3230,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#translateYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTranslateY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -2252,6 +3245,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#translateZProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTranslateZ(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -2261,6 +3260,12 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Node#visibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {

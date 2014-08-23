@@ -16,7 +16,6 @@ package javafx.scene.canvas;
 public class GraphicsContextBuilder<Z extends GraphicsContext, B extends GraphicsContextBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasEffect;
     protected javafx.scene.effect.Effect valEffect;
@@ -59,11 +58,11 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
 
     protected boolean hasTransform;
     protected javafx.scene.transform.Affine valTransform;
-    public void applyTo(GraphicsContext instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasEffect)
             instance.setEffect(this.valEffect);
         if (this.hasFill)
@@ -92,10 +91,14 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
             instance.setTextBaseline(this.valTextBaseline);
         if (this.hasTransform)
             instance.setTransform(this.valTransform);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link GraphicsContext#setEffect}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B effect(javafx.scene.effect.Effect value)
     {
@@ -104,6 +107,12 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GraphicsContext#setFill}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fill(javafx.scene.paint.Paint value)
     {
@@ -112,6 +121,12 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GraphicsContext#setFillRule}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fillRule(javafx.scene.shape.FillRule value)
     {
@@ -120,6 +135,12 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GraphicsContext#setFont}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B font(javafx.scene.text.Font value)
     {
@@ -128,6 +149,12 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GraphicsContext#setGlobalAlpha}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B globalAlpha(double value)
     {
@@ -136,6 +163,12 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GraphicsContext#setGlobalBlendMode}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B globalBlendMode(javafx.scene.effect.BlendMode value)
     {
@@ -144,6 +177,12 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GraphicsContext#setLineCap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B lineCap(javafx.scene.shape.StrokeLineCap value)
     {
@@ -152,6 +191,12 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GraphicsContext#setLineJoin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B lineJoin(javafx.scene.shape.StrokeLineJoin value)
     {
@@ -160,6 +205,12 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GraphicsContext#setLineWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B lineWidth(double value)
     {
@@ -168,6 +219,12 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GraphicsContext#setMiterLimit}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B miterLimit(double value)
     {
@@ -176,6 +233,12 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GraphicsContext#setStroke}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B stroke(javafx.scene.paint.Paint value)
     {
@@ -184,6 +247,12 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GraphicsContext#setTextAlign}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B textAlign(javafx.scene.text.TextAlignment value)
     {
@@ -192,6 +261,12 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GraphicsContext#setTextBaseline}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B textBaseline(javafx.geometry.VPos value)
     {
@@ -200,6 +275,12 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GraphicsContext#setTransform}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B transform(javafx.scene.transform.Affine value)
     {

@@ -16,7 +16,6 @@ package javafx.scene.paint;
 public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMaterialBuilder<Z, B>>
         extends javafx.scene.paint.MaterialBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBumpMap;
     protected javafx.scene.image.Image valBumpMap;
@@ -59,11 +58,11 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
 
     protected boolean boundSpecularPower;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvSpecularPower;
-    public void applyTo(PhongMaterial instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBumpMap)
             instance.setBumpMap(this.valBumpMap);
         if (this.hasDiffuseColor)
@@ -92,10 +91,14 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
             instance.specularMapProperty().bind(this.obsrvSpecularMap);
         if (this.boundSpecularPower)
             instance.specularPowerProperty().bind(this.obsrvSpecularPower);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link PhongMaterial#setBumpMap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bumpMap(javafx.scene.image.Image value)
     {
@@ -104,6 +107,12 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PhongMaterial#setDiffuseColor}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B diffuseColor(javafx.scene.paint.Color value)
     {
@@ -112,6 +121,12 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PhongMaterial#setDiffuseMap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B diffuseMap(javafx.scene.image.Image value)
     {
@@ -120,6 +135,12 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PhongMaterial#setSelfIlluminationMap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B selfIlluminationMap(javafx.scene.image.Image value)
     {
@@ -128,6 +149,12 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PhongMaterial#setSpecularColor}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B specularColor(javafx.scene.paint.Color value)
     {
@@ -136,6 +163,12 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PhongMaterial#setSpecularMap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B specularMap(javafx.scene.image.Image value)
     {
@@ -144,6 +177,12 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PhongMaterial#setSpecularPower}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B specularPower(double value)
     {
@@ -152,6 +191,12 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PhongMaterial#bumpMapProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindBumpMap(javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> source)
     {
@@ -161,6 +206,12 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PhongMaterial#diffuseColorProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindDiffuseColor(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> source)
     {
@@ -170,6 +221,12 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PhongMaterial#diffuseMapProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindDiffuseMap(javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> source)
     {
@@ -179,6 +236,12 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PhongMaterial#selfIlluminationMapProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSelfIlluminationMap(javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> source)
     {
@@ -188,6 +251,12 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PhongMaterial#specularColorProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSpecularColor(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> source)
     {
@@ -197,6 +266,12 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PhongMaterial#specularMapProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSpecularMap(javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> source)
     {
@@ -206,6 +281,12 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PhongMaterial#specularPowerProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSpecularPower(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -215,12 +296,17 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
         return (B) this;
     }
 
+    /**
+     * 建構{@link PhongMaterial}物件
+     *
+     * @return 新的{@link PhongMaterial}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public PhongMaterial build()
     {
         PhongMaterial instance = new PhongMaterial();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

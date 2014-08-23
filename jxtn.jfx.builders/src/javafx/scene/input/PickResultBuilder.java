@@ -16,21 +16,23 @@ package javafx.scene.input;
 public class PickResultBuilder<Z extends PickResult, B extends PickResultBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(PickResult instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link PickResult}物件
+     *
+     * @return 新的{@link PickResult}物件實體
+     */
     @SuppressWarnings("unchecked")
     public PickResult build(javafx.event.EventTarget arg0, double arg1, double arg2)
     {
         PickResult instance = new PickResult(arg0, arg1, arg2);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

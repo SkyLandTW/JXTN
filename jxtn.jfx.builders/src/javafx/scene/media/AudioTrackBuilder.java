@@ -16,13 +16,10 @@ package javafx.scene.media;
 public class AudioTrackBuilder<Z extends AudioTrack, B extends AudioTrackBuilder<Z, B>>
         extends javafx.scene.media.TrackBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(AudioTrack instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 }

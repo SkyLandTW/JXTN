@@ -16,7 +16,6 @@ package org.controlsfx.control;
 public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends HyperlinkLabelBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasOnAction;
     protected javafx.event.EventHandler<javafx.event.ActionEvent> valOnAction;
@@ -29,11 +28,11 @@ public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends Hyperlink
 
     protected boolean boundText;
     protected javafx.beans.value.ObservableValue<? extends String> obsrvText;
-    public void applyTo(HyperlinkLabel instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasOnAction)
             instance.setOnAction(this.valOnAction);
         if (this.hasText)
@@ -42,10 +41,14 @@ public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends Hyperlink
             instance.onActionProperty().bind(this.obsrvOnAction);
         if (this.boundText)
             instance.textProperty().bind(this.obsrvText);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link HyperlinkLabel#setOnAction}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onAction(javafx.event.EventHandler<javafx.event.ActionEvent> value)
     {
@@ -54,6 +57,12 @@ public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends Hyperlink
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HyperlinkLabel#setText}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B text(java.lang.String value)
     {
@@ -62,6 +71,12 @@ public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends Hyperlink
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HyperlinkLabel#onActionProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
     {
@@ -71,6 +86,12 @@ public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends Hyperlink
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HyperlinkLabel#textProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -80,12 +101,17 @@ public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends Hyperlink
         return (B) this;
     }
 
+    /**
+     * 建構{@link HyperlinkLabel}物件
+     *
+     * @return 新的{@link HyperlinkLabel}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public HyperlinkLabel build()
     {
         HyperlinkLabel instance = new HyperlinkLabel();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

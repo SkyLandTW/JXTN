@@ -16,26 +16,29 @@ package javafx.scene.input;
 public class MnemonicBuilder<Z extends Mnemonic, B extends MnemonicBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasKeyCombination;
     protected javafx.scene.input.KeyCombination valKeyCombination;
 
     protected boolean hasNode;
     protected javafx.scene.Node valNode;
-    public void applyTo(Mnemonic instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasKeyCombination)
             instance.setKeyCombination(this.valKeyCombination);
         if (this.hasNode)
             instance.setNode(this.valNode);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Mnemonic#setKeyCombination}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B keyCombination(javafx.scene.input.KeyCombination value)
     {
@@ -44,6 +47,12 @@ public class MnemonicBuilder<Z extends Mnemonic, B extends MnemonicBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Mnemonic#setNode}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B node(javafx.scene.Node value)
     {
@@ -52,11 +61,16 @@ public class MnemonicBuilder<Z extends Mnemonic, B extends MnemonicBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Mnemonic}物件
+     *
+     * @return 新的{@link Mnemonic}物件實體
+     */
     @SuppressWarnings("unchecked")
     public Mnemonic build(javafx.scene.Node arg0, javafx.scene.input.KeyCombination arg1)
     {
         Mnemonic instance = new Mnemonic(arg0, arg1);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

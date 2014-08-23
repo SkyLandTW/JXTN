@@ -16,22 +16,24 @@ package javafx.scene.input;
 public class ClipboardContentBuilder<Z extends ClipboardContent, B extends ClipboardContentBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(ClipboardContent instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link ClipboardContent}物件
+     *
+     * @return 新的{@link ClipboardContent}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ClipboardContent build()
     {
         ClipboardContent instance = new ClipboardContent();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

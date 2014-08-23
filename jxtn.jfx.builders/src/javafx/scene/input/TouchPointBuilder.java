@@ -16,21 +16,23 @@ package javafx.scene.input;
 public class TouchPointBuilder<Z extends TouchPoint, B extends TouchPointBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(TouchPoint instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link TouchPoint}物件
+     *
+     * @return 新的{@link TouchPoint}物件實體
+     */
     @SuppressWarnings("unchecked")
     public TouchPoint build(int arg0, javafx.scene.input.TouchPoint.State arg1, double arg2, double arg3, double arg4, double arg5, javafx.event.EventTarget arg6, javafx.scene.input.PickResult arg7)
     {
         TouchPoint instance = new TouchPoint(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

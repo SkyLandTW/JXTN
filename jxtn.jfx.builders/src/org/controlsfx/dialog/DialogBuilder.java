@@ -16,7 +16,6 @@ package org.controlsfx.dialog;
 public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasActions;
     protected java.util.Collection<org.controlsfx.control.action.Action> valActions;
@@ -28,7 +27,7 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
     protected boolean valClosable;
 
     protected boolean hasContent;
-    protected javafx.scene.Node valContent;
+    protected java.lang.String valContent;
 
     protected boolean hasExpandableContent;
     protected javafx.scene.Node valExpandableContent;
@@ -40,7 +39,7 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
     protected boolean valIconifiable;
 
     protected boolean hasMasthead;
-    protected java.lang.String valMasthead;
+    protected javafx.scene.Node valMasthead;
 
     protected boolean hasResizable;
     protected boolean valResizable;
@@ -53,11 +52,11 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
 
     protected boolean hasTitle;
     protected java.lang.String valTitle;
-    public void applyTo(Dialog instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasActions)
             instance.getActions().setAll(this.valActions);
         if (this.hasBackgroundEffect)
@@ -82,10 +81,14 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
             instance.getStylesheets().setAll(this.valStylesheets);
         if (this.hasTitle)
             instance.setTitle(this.valTitle);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link Dialog#getActions}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B actions(java.util.Collection<org.controlsfx.control.action.Action> value)
     {
@@ -94,6 +97,12 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Dialog#getActions}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B actions(org.controlsfx.control.action.Action... value)
@@ -103,6 +112,12 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Dialog#setBackgroundEffect}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B backgroundEffect(javafx.scene.effect.Effect value)
     {
@@ -111,6 +126,12 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Dialog#setClosable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B closable(boolean value)
     {
@@ -119,14 +140,26 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Dialog#setContent}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
-    public B content(javafx.scene.Node value)
+    public B content(java.lang.String value)
     {
         this.hasContent = true;
         this.valContent = value;
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Dialog#setExpandableContent}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B expandableContent(javafx.scene.Node value)
     {
@@ -135,6 +168,12 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Dialog#setGraphic}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B graphic(javafx.scene.Node value)
     {
@@ -143,6 +182,12 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Dialog#setIconifiable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B iconifiable(boolean value)
     {
@@ -151,14 +196,26 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Dialog#setMasthead}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
-    public B masthead(java.lang.String value)
+    public B masthead(javafx.scene.Node value)
     {
         this.hasMasthead = true;
         this.valMasthead = value;
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Dialog#setResizable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B resizable(boolean value)
     {
@@ -167,6 +224,12 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Dialog#setResult}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B result(org.controlsfx.control.action.Action value)
     {
@@ -175,6 +238,12 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Dialog#getStylesheets}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B stylesheets(java.util.Collection<java.lang.String> value)
     {
@@ -183,6 +252,12 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Dialog#getStylesheets}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B stylesheets(java.lang.String... value)
@@ -192,6 +267,12 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Dialog#setTitle}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B title(java.lang.String value)
     {
@@ -200,11 +281,16 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Dialog}物件
+     *
+     * @return 新的{@link Dialog}物件實體
+     */
     @SuppressWarnings("unchecked")
     public Dialog build(java.lang.Object arg0, java.lang.String arg1)
     {
         Dialog instance = new Dialog(arg0, arg1);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

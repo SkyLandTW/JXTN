@@ -16,22 +16,24 @@ package javafx.scene.control;
 public class IndexedCellBuilder<T extends java.lang.Object, Z extends IndexedCell<T>, B extends IndexedCellBuilder<T, Z, B>>
         extends javafx.scene.control.CellBuilder<T, Z, B>
 {
-    private boolean applied;
-    public void applyTo(IndexedCell<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link IndexedCell}物件
+     *
+     * @return 新的{@link IndexedCell}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public IndexedCell<T> build()
     {
         IndexedCell<T> instance = new IndexedCell<T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

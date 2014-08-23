@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>, B extends ChoiceBoxBuilder<T, Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasConverter;
     protected javafx.util.StringConverter<T> valConverter;
@@ -35,11 +34,11 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
 
     protected boolean boundSelectionModel;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.control.SingleSelectionModel<T>> obsrvSelectionModel;
-    public void applyTo(ChoiceBox<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasConverter)
             instance.setConverter(this.valConverter);
         if (this.hasItems)
@@ -52,10 +51,14 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
             instance.itemsProperty().bind(this.obsrvItems);
         if (this.boundSelectionModel)
             instance.selectionModelProperty().bind(this.obsrvSelectionModel);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ChoiceBox#setConverter}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B converter(javafx.util.StringConverter<T> value)
     {
@@ -64,6 +67,12 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ChoiceBox#setItems}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B items(javafx.collections.ObservableList<T> value)
     {
@@ -72,6 +81,12 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ChoiceBox#setSelectionModel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B selectionModel(javafx.scene.control.SingleSelectionModel<T> value)
     {
@@ -80,6 +95,12 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ChoiceBox#setValue}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B value(T value)
     {
@@ -88,6 +109,12 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ChoiceBox#itemsProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindItems(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<T>> source)
     {
@@ -97,6 +124,12 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ChoiceBox#selectionModelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.SingleSelectionModel<T>> source)
     {
@@ -106,12 +139,17 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
         return (B) this;
     }
 
+    /**
+     * 建構{@link ChoiceBox}物件
+     *
+     * @return 新的{@link ChoiceBox}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ChoiceBox<T> build()
     {
         ChoiceBox<T> instance = new ChoiceBox<T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

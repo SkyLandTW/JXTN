@@ -16,21 +16,23 @@ package javafx.scene.image;
 public class ImageBuilder<Z extends Image, B extends ImageBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(Image instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link Image}物件
+     *
+     * @return 新的{@link Image}物件實體
+     */
     @SuppressWarnings("unchecked")
     public Image build(java.io.InputStream arg0)
     {
         Image instance = new Image(arg0);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

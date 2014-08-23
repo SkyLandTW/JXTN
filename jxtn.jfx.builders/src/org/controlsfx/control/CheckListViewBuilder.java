@@ -16,26 +16,29 @@ package org.controlsfx.control;
 public class CheckListViewBuilder<T extends java.lang.Object, Z extends CheckListView<T>, B extends CheckListViewBuilder<T, Z, B>>
         extends javafx.scene.control.ListViewBuilder<T, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCheckModel;
     protected javafx.scene.control.MultipleSelectionModel<T> valCheckModel;
 
     protected boolean boundCheckModel;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> obsrvCheckModel;
-    public void applyTo(CheckListView<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCheckModel)
             instance.setCheckModel(this.valCheckModel);
         if (this.boundCheckModel)
             instance.checkModelProperty().bind(this.obsrvCheckModel);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link CheckListView#setCheckModel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B checkModel(javafx.scene.control.MultipleSelectionModel<T> value)
     {
@@ -44,6 +47,12 @@ public class CheckListViewBuilder<T extends java.lang.Object, Z extends CheckLis
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CheckListView#checkModelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCheckModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> source)
     {
@@ -53,12 +62,17 @@ public class CheckListViewBuilder<T extends java.lang.Object, Z extends CheckLis
         return (B) this;
     }
 
+    /**
+     * 建構{@link CheckListView}物件
+     *
+     * @return 新的{@link CheckListView}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public CheckListView<T> build()
     {
         CheckListView<T> instance = new CheckListView<T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

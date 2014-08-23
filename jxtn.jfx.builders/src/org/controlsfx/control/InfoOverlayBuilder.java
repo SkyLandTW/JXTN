@@ -16,7 +16,6 @@ package org.controlsfx.control;
 public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasContent;
     protected javafx.scene.Node valContent;
@@ -35,11 +34,11 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
 
     protected boolean boundText;
     protected javafx.beans.value.ObservableValue<? extends String> obsrvText;
-    public void applyTo(InfoOverlay instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasContent)
             instance.setContent(this.valContent);
         if (this.hasShowOnHover)
@@ -52,10 +51,14 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
             instance.showOnHoverProperty().bind(this.obsrvShowOnHover);
         if (this.boundText)
             instance.textProperty().bind(this.obsrvText);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link InfoOverlay#setContent}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B content(javafx.scene.Node value)
     {
@@ -64,6 +67,12 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link InfoOverlay#setShowOnHover}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B showOnHover(boolean value)
     {
@@ -72,6 +81,12 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link InfoOverlay#setText}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B text(java.lang.String value)
     {
@@ -80,6 +95,12 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link InfoOverlay#contentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -89,6 +110,12 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link InfoOverlay#showOnHoverProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindShowOnHover(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -98,6 +125,12 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link InfoOverlay#textProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -107,12 +140,17 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
         return (B) this;
     }
 
+    /**
+     * 建構{@link InfoOverlay}物件
+     *
+     * @return 新的{@link InfoOverlay}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public InfoOverlay build()
     {
         InfoOverlay instance = new InfoOverlay();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

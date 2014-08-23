@@ -16,21 +16,23 @@ package javafx.scene.layout;
 public class BackgroundBuilder<Z extends Background, B extends BackgroundBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(Background instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link Background}物件
+     *
+     * @return 新的{@link Background}物件實體
+     */
     @SuppressWarnings("unchecked")
     public Background build(javafx.scene.layout.BackgroundImage[] arg0)
     {
         Background instance = new Background(arg0);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

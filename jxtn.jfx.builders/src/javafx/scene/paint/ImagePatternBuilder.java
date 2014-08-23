@@ -16,21 +16,23 @@ package javafx.scene.paint;
 public class ImagePatternBuilder<Z extends ImagePattern, B extends ImagePatternBuilder<Z, B>>
         extends javafx.scene.paint.PaintBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(ImagePattern instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link ImagePattern}物件
+     *
+     * @return 新的{@link ImagePattern}物件實體
+     */
     @SuppressWarnings("unchecked")
     public ImagePattern build(javafx.scene.image.Image arg0)
     {
         ImagePattern instance = new ImagePattern(arg0);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

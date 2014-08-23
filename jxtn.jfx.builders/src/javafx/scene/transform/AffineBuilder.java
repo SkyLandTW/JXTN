@@ -16,7 +16,6 @@ package javafx.scene.transform;
 public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         extends javafx.scene.transform.TransformBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasMxx;
     protected double valMxx;
@@ -92,11 +91,11 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
 
     protected boolean boundTz;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvTz;
-    public void applyTo(Affine instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasMxx)
             instance.setMxx(this.valMxx);
         if (this.hasMxy)
@@ -147,10 +146,14 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
             instance.tyProperty().bind(this.obsrvTy);
         if (this.boundTz)
             instance.tzProperty().bind(this.obsrvTz);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Affine#setMxx}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B mxx(double value)
     {
@@ -159,6 +162,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#setMxy}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B mxy(double value)
     {
@@ -167,6 +176,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#setMxz}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B mxz(double value)
     {
@@ -175,6 +190,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#setMyx}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B myx(double value)
     {
@@ -183,6 +204,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#setMyy}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B myy(double value)
     {
@@ -191,6 +218,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#setMyz}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B myz(double value)
     {
@@ -199,6 +232,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#setMzx}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B mzx(double value)
     {
@@ -207,6 +246,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#setMzy}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B mzy(double value)
     {
@@ -215,6 +260,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#setMzz}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B mzz(double value)
     {
@@ -223,6 +274,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#setToTransform}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B toTransform(javafx.scene.transform.Transform value)
     {
@@ -231,6 +288,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#setTx}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tx(double value)
     {
@@ -239,6 +302,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#setTy}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B ty(double value)
     {
@@ -247,6 +316,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#setTz}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tz(double value)
     {
@@ -255,6 +330,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#mxxProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMxx(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -264,6 +345,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#mxyProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMxy(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -273,6 +360,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#mxzProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMxz(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -282,6 +375,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#myxProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMyx(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -291,6 +390,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#myyProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMyy(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -300,6 +405,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#myzProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMyz(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -309,6 +420,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#mzxProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMzx(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -318,6 +435,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#mzyProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMzy(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -327,6 +450,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#mzzProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMzz(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -336,6 +465,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#txProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTx(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -345,6 +480,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#tyProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTy(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -354,6 +495,12 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Affine#tzProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTz(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -363,12 +510,17 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Affine}物件
+     *
+     * @return 新的{@link Affine}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Affine build()
     {
         Affine instance = new Affine();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

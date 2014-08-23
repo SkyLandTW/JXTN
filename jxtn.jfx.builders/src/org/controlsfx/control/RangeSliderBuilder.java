@@ -16,7 +16,6 @@ package org.controlsfx.control;
 public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBlockIncrement;
     protected double valBlockIncrement;
@@ -95,11 +94,11 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
 
     protected boolean boundSnapToTicks;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvSnapToTicks;
-    public void applyTo(RangeSlider instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBlockIncrement)
             instance.setBlockIncrement(this.valBlockIncrement);
         if (this.hasHighValue)
@@ -152,10 +151,14 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
             instance.showTickMarksProperty().bind(this.obsrvShowTickMarks);
         if (this.boundSnapToTicks)
             instance.snapToTicksProperty().bind(this.obsrvSnapToTicks);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#setBlockIncrement}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B blockIncrement(double value)
     {
@@ -164,6 +167,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#setHighValue}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B highValue(double value)
     {
@@ -172,6 +181,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#setHighValueChanging}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B highValueChanging(boolean value)
     {
@@ -180,6 +195,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#setLowValue}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B lowValue(double value)
     {
@@ -188,6 +209,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#setLowValueChanging}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B lowValueChanging(boolean value)
     {
@@ -196,6 +223,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#setMajorTickUnit}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B majorTickUnit(double value)
     {
@@ -204,6 +237,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#setMax}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B max(double value)
     {
@@ -212,6 +251,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#setMin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B min(double value)
     {
@@ -220,6 +265,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#setMinorTickCount}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B minorTickCount(int value)
     {
@@ -228,6 +279,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#setOrientation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B orientation(javafx.geometry.Orientation value)
     {
@@ -236,6 +293,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#setShowTickLabels}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B showTickLabels(boolean value)
     {
@@ -244,6 +307,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#setShowTickMarks}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B showTickMarks(boolean value)
     {
@@ -252,6 +321,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#setSnapToTicks}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B snapToTicks(boolean value)
     {
@@ -260,6 +335,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#blockIncrementProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindBlockIncrement(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -269,6 +350,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#highValueChangingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHighValueChanging(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -278,6 +365,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#highValueProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHighValue(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -287,6 +380,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#lowValueChangingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLowValueChanging(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -296,6 +395,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#lowValueProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLowValue(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -305,6 +410,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#majorTickUnitProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMajorTickUnit(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -314,6 +425,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#maxProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMax(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -323,6 +440,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#minProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMin(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -332,6 +455,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#minorTickCountProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMinorTickCount(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
@@ -341,6 +470,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#orientationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
@@ -350,6 +485,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#showTickLabelsProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindShowTickLabels(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -359,6 +500,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#showTickMarksProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindShowTickMarks(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -368,6 +515,12 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RangeSlider#snapToTicksProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSnapToTicks(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -377,12 +530,17 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
         return (B) this;
     }
 
+    /**
+     * 建構{@link RangeSlider}物件
+     *
+     * @return 新的{@link RangeSlider}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public RangeSlider build()
     {
         RangeSlider instance = new RangeSlider();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

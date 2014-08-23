@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends CheckBoxTreeItem<T>, B extends CheckBoxTreeItemBuilder<T, Z, B>>
         extends javafx.scene.control.TreeItemBuilder<T, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasIndependent;
     protected boolean valIndependent;
@@ -35,11 +34,11 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
 
     protected boolean boundSelected;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvSelected;
-    public void applyTo(CheckBoxTreeItem<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasIndependent)
             instance.setIndependent(this.valIndependent);
         if (this.hasIndeterminate)
@@ -52,10 +51,14 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
             instance.indeterminateProperty().bind(this.obsrvIndeterminate);
         if (this.boundSelected)
             instance.selectedProperty().bind(this.obsrvSelected);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link CheckBoxTreeItem#setIndependent}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B independent(boolean value)
     {
@@ -64,6 +67,12 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CheckBoxTreeItem#setIndeterminate}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B indeterminate(boolean value)
     {
@@ -72,6 +81,12 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CheckBoxTreeItem#setSelected}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B selected(boolean value)
     {
@@ -80,6 +95,12 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CheckBoxTreeItem#independentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindIndependent(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -89,6 +110,12 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CheckBoxTreeItem#indeterminateProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindIndeterminate(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -98,6 +125,12 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CheckBoxTreeItem#selectedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSelected(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -107,12 +140,17 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
         return (B) this;
     }
 
+    /**
+     * 建構{@link CheckBoxTreeItem}物件
+     *
+     * @return 新的{@link CheckBoxTreeItem}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public CheckBoxTreeItem<T> build()
     {
         CheckBoxTreeItem<T> instance = new CheckBoxTreeItem<T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

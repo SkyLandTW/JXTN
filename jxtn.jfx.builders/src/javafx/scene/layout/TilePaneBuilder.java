@@ -16,7 +16,6 @@ package javafx.scene.layout;
 public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>>
         extends javafx.scene.layout.PaneBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAlignment;
     protected javafx.geometry.Pos valAlignment;
@@ -71,11 +70,11 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
 
     protected boolean boundVgap;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvVgap;
-    public void applyTo(TilePane instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAlignment)
             instance.setAlignment(this.valAlignment);
         if (this.hasHgap)
@@ -112,10 +111,14 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
             instance.tileAlignmentProperty().bind(this.obsrvTileAlignment);
         if (this.boundVgap)
             instance.vgapProperty().bind(this.obsrvVgap);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link TilePane#setAlignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B alignment(javafx.geometry.Pos value)
     {
@@ -124,6 +127,12 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TilePane#setHgap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B hgap(double value)
     {
@@ -132,6 +141,12 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TilePane#setOrientation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B orientation(javafx.geometry.Orientation value)
     {
@@ -140,6 +155,12 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TilePane#setPrefColumns}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefColumns(int value)
     {
@@ -148,6 +169,12 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TilePane#setPrefRows}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefRows(int value)
     {
@@ -156,6 +183,12 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TilePane#setPrefTileHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefTileHeight(double value)
     {
@@ -164,6 +197,12 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TilePane#setPrefTileWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefTileWidth(double value)
     {
@@ -172,6 +211,12 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TilePane#setTileAlignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tileAlignment(javafx.geometry.Pos value)
     {
@@ -180,6 +225,12 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TilePane#setVgap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B vgap(double value)
     {
@@ -188,6 +239,12 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TilePane#alignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
@@ -197,6 +254,12 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TilePane#hgapProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHgap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -206,6 +269,12 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TilePane#orientationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
@@ -215,6 +284,12 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TilePane#prefColumnsProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPrefColumns(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
@@ -224,6 +299,12 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TilePane#prefRowsProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPrefRows(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
@@ -233,6 +314,12 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TilePane#prefTileHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPrefTileHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -242,6 +329,12 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TilePane#prefTileWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPrefTileWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -251,6 +344,12 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TilePane#tileAlignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTileAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
@@ -260,6 +359,12 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TilePane#vgapProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindVgap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -269,12 +374,17 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 建構{@link TilePane}物件
+     *
+     * @return 新的{@link TilePane}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public TilePane build()
     {
         TilePane instance = new TilePane();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,7 +16,6 @@ package javafx.scene.shape;
 public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasControlX;
     protected double valControlX;
@@ -53,11 +52,11 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
 
     protected boolean boundStartY;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvStartY;
-    public void applyTo(QuadCurve instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasControlX)
             instance.setControlX(this.valControlX);
         if (this.hasControlY)
@@ -82,10 +81,14 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
             instance.startXProperty().bind(this.obsrvStartX);
         if (this.boundStartY)
             instance.startYProperty().bind(this.obsrvStartY);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link QuadCurve#setControlX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B controlX(double value)
     {
@@ -94,6 +97,12 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link QuadCurve#setControlY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B controlY(double value)
     {
@@ -102,6 +111,12 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link QuadCurve#setEndX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B endX(double value)
     {
@@ -110,6 +125,12 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link QuadCurve#setEndY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B endY(double value)
     {
@@ -118,6 +139,12 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link QuadCurve#setStartX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B startX(double value)
     {
@@ -126,6 +153,12 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link QuadCurve#setStartY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B startY(double value)
     {
@@ -134,6 +167,12 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link QuadCurve#controlXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindControlX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -143,6 +182,12 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link QuadCurve#controlYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindControlY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -152,6 +197,12 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link QuadCurve#endXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEndX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -161,6 +212,12 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link QuadCurve#endYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEndY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -170,6 +227,12 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link QuadCurve#startXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStartX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -179,6 +242,12 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link QuadCurve#startYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStartY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -188,12 +257,17 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 建構{@link QuadCurve}物件
+     *
+     * @return 新的{@link QuadCurve}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public QuadCurve build()
     {
         QuadCurve instance = new QuadCurve();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,7 +16,6 @@ package org.controlsfx.control.spreadsheet;
 public class SpreadsheetColumnBuilder<Z extends SpreadsheetColumn, B extends SpreadsheetColumnBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasFixed;
     protected boolean valFixed;
@@ -26,21 +25,25 @@ public class SpreadsheetColumnBuilder<Z extends SpreadsheetColumn, B extends Spr
 
     protected boolean hasResizable;
     protected boolean valResizable;
-    public void applyTo(SpreadsheetColumn instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasFixed)
             instance.setFixed(this.valFixed);
         if (this.hasPrefWidth)
             instance.setPrefWidth(this.valPrefWidth);
         if (this.hasResizable)
             instance.setResizable(this.valResizable);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetColumn#setFixed}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fixed(boolean value)
     {
@@ -49,6 +52,12 @@ public class SpreadsheetColumnBuilder<Z extends SpreadsheetColumn, B extends Spr
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetColumn#setPrefWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefWidth(double value)
     {
@@ -57,6 +66,12 @@ public class SpreadsheetColumnBuilder<Z extends SpreadsheetColumn, B extends Spr
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetColumn#setResizable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B resizable(boolean value)
     {

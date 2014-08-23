@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasClosable;
     protected boolean valClosable;
@@ -95,11 +94,11 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
 
     protected boolean boundTooltip;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.control.Tooltip> obsrvTooltip;
-    public void applyTo(Tab instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasClosable)
             instance.setClosable(this.valClosable);
         if (this.hasContent)
@@ -152,10 +151,14 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
             instance.textProperty().bind(this.obsrvText);
         if (this.boundTooltip)
             instance.tooltipProperty().bind(this.obsrvTooltip);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Tab#setClosable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B closable(boolean value)
     {
@@ -164,6 +167,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#setContent}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B content(javafx.scene.Node value)
     {
@@ -172,6 +181,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#setContextMenu}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B contextMenu(javafx.scene.control.ContextMenu value)
     {
@@ -180,6 +195,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#setDisable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B disable(boolean value)
     {
@@ -188,6 +209,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#setGraphic}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B graphic(javafx.scene.Node value)
     {
@@ -196,6 +223,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#setId}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B id(java.lang.String value)
     {
@@ -204,6 +237,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#setOnCloseRequest}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onCloseRequest(javafx.event.EventHandler<javafx.event.Event> value)
     {
@@ -212,6 +251,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#setOnClosed}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onClosed(javafx.event.EventHandler<javafx.event.Event> value)
     {
@@ -220,6 +265,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#setOnSelectionChanged}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onSelectionChanged(javafx.event.EventHandler<javafx.event.Event> value)
     {
@@ -228,6 +279,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#setStyle}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B style(java.lang.String value)
     {
@@ -236,6 +293,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Tab#getStyleClass}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B styleClass(java.util.Collection<java.lang.String> value)
     {
@@ -244,6 +307,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Tab#getStyleClass}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B styleClass(java.lang.String... value)
@@ -253,6 +322,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#setText}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B text(java.lang.String value)
     {
@@ -261,6 +336,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#setTooltip}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tooltip(javafx.scene.control.Tooltip value)
     {
@@ -269,6 +350,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#setUserData}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B userData(java.lang.Object value)
     {
@@ -277,6 +364,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#closableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindClosable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -286,6 +379,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#contentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -295,6 +394,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#contextMenuProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindContextMenu(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContextMenu> source)
     {
@@ -304,6 +409,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#disableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindDisable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -313,6 +424,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#graphicProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -322,6 +439,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#idProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindId(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -331,6 +454,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#onCloseRequestProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnCloseRequest(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
@@ -340,6 +469,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#onClosedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnClosed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
@@ -349,6 +484,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#onSelectionChangedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnSelectionChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
@@ -358,6 +499,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#styleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStyle(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -367,6 +514,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#textProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -376,6 +529,12 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tab#tooltipProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTooltip(javafx.beans.value.ObservableValue<? extends javafx.scene.control.Tooltip> source)
     {
@@ -385,12 +544,17 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Tab}物件
+     *
+     * @return 新的{@link Tab}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Tab build()
     {
         Tab instance = new Tab();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

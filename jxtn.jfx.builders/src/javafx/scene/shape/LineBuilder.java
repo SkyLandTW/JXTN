@@ -16,7 +16,6 @@ package javafx.scene.shape;
 public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasEndX;
     protected double valEndX;
@@ -41,11 +40,11 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
 
     protected boolean boundStartY;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvStartY;
-    public void applyTo(Line instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasEndX)
             instance.setEndX(this.valEndX);
         if (this.hasEndY)
@@ -62,10 +61,14 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
             instance.startXProperty().bind(this.obsrvStartX);
         if (this.boundStartY)
             instance.startYProperty().bind(this.obsrvStartY);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Line#setEndX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B endX(double value)
     {
@@ -74,6 +77,12 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Line#setEndY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B endY(double value)
     {
@@ -82,6 +91,12 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Line#setStartX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B startX(double value)
     {
@@ -90,6 +105,12 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Line#setStartY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B startY(double value)
     {
@@ -98,6 +119,12 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Line#endXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEndX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -107,6 +134,12 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Line#endYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEndY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -116,6 +149,12 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Line#startXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStartX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -125,6 +164,12 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Line#startYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStartY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -134,12 +179,17 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Line}物件
+     *
+     * @return 新的{@link Line}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Line build()
     {
         Line instance = new Line();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

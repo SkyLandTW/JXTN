@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAccelerator;
     protected javafx.scene.input.KeyCombination valAccelerator;
@@ -83,11 +82,11 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
 
     protected boolean boundVisible;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvVisible;
-    public void applyTo(MenuItem instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAccelerator)
             instance.setAccelerator(this.valAccelerator);
         if (this.hasDisable)
@@ -132,10 +131,14 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
             instance.textProperty().bind(this.obsrvText);
         if (this.boundVisible)
             instance.visibleProperty().bind(this.obsrvVisible);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#setAccelerator}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B accelerator(javafx.scene.input.KeyCombination value)
     {
@@ -144,6 +147,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#setDisable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B disable(boolean value)
     {
@@ -152,6 +161,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#setGraphic}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B graphic(javafx.scene.Node value)
     {
@@ -160,6 +175,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#setId}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B id(java.lang.String value)
     {
@@ -168,6 +189,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#setMnemonicParsing}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B mnemonicParsing(boolean value)
     {
@@ -176,6 +203,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#setOnAction}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onAction(javafx.event.EventHandler<javafx.event.ActionEvent> value)
     {
@@ -184,6 +217,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#setOnMenuValidation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMenuValidation(javafx.event.EventHandler<javafx.event.Event> value)
     {
@@ -192,6 +231,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#setStyle}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B style(java.lang.String value)
     {
@@ -200,6 +245,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link MenuItem#getStyleClass}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B styleClass(java.util.Collection<java.lang.String> value)
     {
@@ -208,6 +259,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link MenuItem#getStyleClass}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B styleClass(java.lang.String... value)
@@ -217,6 +274,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#setText}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B text(java.lang.String value)
     {
@@ -225,6 +288,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#setUserData}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B userData(java.lang.Object value)
     {
@@ -233,6 +302,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#setVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B visible(boolean value)
     {
@@ -241,6 +316,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#acceleratorProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAccelerator(javafx.beans.value.ObservableValue<? extends javafx.scene.input.KeyCombination> source)
     {
@@ -250,6 +331,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#disableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindDisable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -259,6 +346,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#graphicProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -268,6 +361,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#idProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindId(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -277,6 +376,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#mnemonicParsingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMnemonicParsing(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -286,6 +391,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#onActionProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
     {
@@ -295,6 +406,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#onMenuValidationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnMenuValidation(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
@@ -304,6 +421,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#styleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStyle(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -313,6 +436,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#textProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -322,6 +451,12 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuItem#visibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -331,12 +466,17 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 建構{@link MenuItem}物件
+     *
+     * @return 新的{@link MenuItem}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public MenuItem build()
     {
         MenuItem instance = new MenuItem();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

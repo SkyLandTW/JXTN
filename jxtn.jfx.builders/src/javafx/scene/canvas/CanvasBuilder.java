@@ -16,7 +16,6 @@ package javafx.scene.canvas;
 public class CanvasBuilder<Z extends Canvas, B extends CanvasBuilder<Z, B>>
         extends javafx.scene.NodeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasHeight;
     protected double valHeight;
@@ -29,11 +28,11 @@ public class CanvasBuilder<Z extends Canvas, B extends CanvasBuilder<Z, B>>
 
     protected boolean boundWidth;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvWidth;
-    public void applyTo(Canvas instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasHeight)
             instance.setHeight(this.valHeight);
         if (this.hasWidth)
@@ -42,10 +41,14 @@ public class CanvasBuilder<Z extends Canvas, B extends CanvasBuilder<Z, B>>
             instance.heightProperty().bind(this.obsrvHeight);
         if (this.boundWidth)
             instance.widthProperty().bind(this.obsrvWidth);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Canvas#setHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B height(double value)
     {
@@ -54,6 +57,12 @@ public class CanvasBuilder<Z extends Canvas, B extends CanvasBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Canvas#setWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B width(double value)
     {
@@ -62,6 +71,12 @@ public class CanvasBuilder<Z extends Canvas, B extends CanvasBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Canvas#heightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -71,6 +86,12 @@ public class CanvasBuilder<Z extends Canvas, B extends CanvasBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Canvas#widthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -80,12 +101,17 @@ public class CanvasBuilder<Z extends Canvas, B extends CanvasBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Canvas}物件
+     *
+     * @return 新的{@link Canvas}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Canvas build()
     {
         Canvas instance = new Canvas();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

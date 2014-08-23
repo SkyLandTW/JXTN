@@ -16,7 +16,6 @@ package javafx.scene.shape;
 public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCenterX;
     protected double valCenterX;
@@ -35,11 +34,11 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
 
     protected boolean boundRadius;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvRadius;
-    public void applyTo(Circle instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCenterX)
             instance.setCenterX(this.valCenterX);
         if (this.hasCenterY)
@@ -52,10 +51,14 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
             instance.centerYProperty().bind(this.obsrvCenterY);
         if (this.boundRadius)
             instance.radiusProperty().bind(this.obsrvRadius);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Circle#setCenterX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B centerX(double value)
     {
@@ -64,6 +67,12 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Circle#setCenterY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B centerY(double value)
     {
@@ -72,6 +81,12 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Circle#setRadius}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B radius(double value)
     {
@@ -80,6 +95,12 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Circle#centerXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCenterX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -89,6 +110,12 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Circle#centerYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCenterY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -98,6 +125,12 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Circle#radiusProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -107,12 +140,17 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Circle}物件
+     *
+     * @return 新的{@link Circle}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Circle build()
     {
         Circle instance = new Circle();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

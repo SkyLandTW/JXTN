@@ -16,7 +16,6 @@ package org.controlsfx.control;
 public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMinusSliderBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasOnValueChanged;
     protected javafx.event.EventHandler<org.controlsfx.control.PlusMinusSlider.PlusMinusEvent> valOnValueChanged;
@@ -29,11 +28,11 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
 
     protected boolean boundOrientation;
     protected javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrvOrientation;
-    public void applyTo(PlusMinusSlider instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasOnValueChanged)
             instance.setOnValueChanged(this.valOnValueChanged);
         if (this.hasOrientation)
@@ -42,10 +41,14 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
             instance.onValueChangedProperty().bind(this.obsrvOnValueChanged);
         if (this.boundOrientation)
             instance.orientationProperty().bind(this.obsrvOrientation);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link PlusMinusSlider#setOnValueChanged}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onValueChanged(javafx.event.EventHandler<org.controlsfx.control.PlusMinusSlider.PlusMinusEvent> value)
     {
@@ -54,6 +57,12 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PlusMinusSlider#setOrientation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B orientation(javafx.geometry.Orientation value)
     {
@@ -62,6 +71,12 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PlusMinusSlider#onValueChangedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnValueChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.PlusMinusSlider.PlusMinusEvent>> source)
     {
@@ -71,6 +86,12 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PlusMinusSlider#orientationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
@@ -80,12 +101,17 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
         return (B) this;
     }
 
+    /**
+     * 建構{@link PlusMinusSlider}物件
+     *
+     * @return 新的{@link PlusMinusSlider}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public PlusMinusSlider build()
     {
         PlusMinusSlider instance = new PlusMinusSlider();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

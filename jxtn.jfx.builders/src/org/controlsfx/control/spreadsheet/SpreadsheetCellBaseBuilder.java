@@ -16,7 +16,6 @@ package org.controlsfx.control.spreadsheet;
 public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends SpreadsheetCellBaseBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasColumnSpan;
     protected int valColumnSpan;
@@ -53,11 +52,11 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
 
     protected boolean boundItem;
     protected javafx.beans.value.ObservableValue<? extends java.lang.Object> obsrvItem;
-    public void applyTo(SpreadsheetCellBase instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasColumnSpan)
             instance.setColumnSpan(this.valColumnSpan);
         if (this.hasCommented)
@@ -82,10 +81,14 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
             instance.formatProperty().bind(this.obsrvFormat);
         if (this.boundItem)
             instance.itemProperty().bind(this.obsrvItem);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#setColumnSpan}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B columnSpan(int value)
     {
@@ -94,6 +97,12 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#setCommented}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B commented(boolean value)
     {
@@ -102,6 +111,12 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#setEditable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B editable(boolean value)
     {
@@ -110,6 +125,12 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#setFormat}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B format(java.lang.String value)
     {
@@ -118,6 +139,12 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#setGraphic}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B graphic(javafx.scene.Node value)
     {
@@ -126,6 +153,12 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#setItem}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B item(java.lang.Object value)
     {
@@ -134,6 +167,12 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#setRowSpan}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B rowSpan(int value)
     {
@@ -142,6 +181,12 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#setTooltip}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tooltip(java.lang.String value)
     {
@@ -150,6 +195,12 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#commentedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCommented(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -159,6 +210,12 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#editableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -168,6 +225,12 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#formatProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFormat(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -177,6 +240,12 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#itemProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindItem(javafx.beans.value.ObservableValue<? extends java.lang.Object> source)
     {
@@ -186,11 +255,16 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
         return (B) this;
     }
 
+    /**
+     * 建構{@link SpreadsheetCellBase}物件
+     *
+     * @return 新的{@link SpreadsheetCellBase}物件實體
+     */
     @SuppressWarnings("unchecked")
     public SpreadsheetCellBase build(int arg0, int arg1, int arg2, int arg3)
     {
         SpreadsheetCellBase instance = new SpreadsheetCellBase(arg0, arg1, arg2, arg3);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

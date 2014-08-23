@@ -16,7 +16,6 @@ package javafx.scene.shape;
 public class MoveToBuilder<Z extends MoveTo, B extends MoveToBuilder<Z, B>>
         extends javafx.scene.shape.PathElementBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasX;
     protected double valX;
@@ -29,11 +28,11 @@ public class MoveToBuilder<Z extends MoveTo, B extends MoveToBuilder<Z, B>>
 
     protected boolean boundY;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvY;
-    public void applyTo(MoveTo instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasX)
             instance.setX(this.valX);
         if (this.hasY)
@@ -42,10 +41,14 @@ public class MoveToBuilder<Z extends MoveTo, B extends MoveToBuilder<Z, B>>
             instance.xProperty().bind(this.obsrvX);
         if (this.boundY)
             instance.yProperty().bind(this.obsrvY);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link MoveTo#setX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B x(double value)
     {
@@ -54,6 +57,12 @@ public class MoveToBuilder<Z extends MoveTo, B extends MoveToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MoveTo#setY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B y(double value)
     {
@@ -62,6 +71,12 @@ public class MoveToBuilder<Z extends MoveTo, B extends MoveToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MoveTo#xProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -71,6 +86,12 @@ public class MoveToBuilder<Z extends MoveTo, B extends MoveToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MoveTo#yProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -80,12 +101,17 @@ public class MoveToBuilder<Z extends MoveTo, B extends MoveToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link MoveTo}物件
+     *
+     * @return 新的{@link MoveTo}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public MoveTo build()
     {
         MoveTo instance = new MoveTo();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

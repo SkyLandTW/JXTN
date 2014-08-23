@@ -16,22 +16,24 @@ package org.controlsfx.control.cell;
 public class MediaImageCellBuilder<Z extends MediaImageCell, B extends MediaImageCellBuilder<Z, B>>
         extends org.controlsfx.control.GridCellBuilder<javafx.scene.media.Media, Z, B>
 {
-    private boolean applied;
-    public void applyTo(MediaImageCell instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link MediaImageCell}物件
+     *
+     * @return 新的{@link MediaImageCell}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public MediaImageCell build()
     {
         MediaImageCell instance = new MediaImageCell();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

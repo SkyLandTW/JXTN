@@ -16,7 +16,6 @@ package org.controlsfx.control;
 public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasButtonMinWidth;
     protected double valButtonMinWidth;
@@ -38,11 +37,11 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
 
     protected boolean boundButtonUniformSize;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvButtonUniformSize;
-    public void applyTo(ButtonBar instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasButtonMinWidth)
             instance.setButtonMinWidth(this.valButtonMinWidth);
         if (this.hasButtonOrder)
@@ -57,10 +56,14 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
             instance.buttonOrderProperty().bind(this.obsrvButtonOrder);
         if (this.boundButtonUniformSize)
             instance.buttonUniformSizeProperty().bind(this.obsrvButtonUniformSize);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ButtonBar#setButtonMinWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B buttonMinWidth(double value)
     {
@@ -69,6 +72,12 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ButtonBar#setButtonOrder}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B buttonOrder(java.lang.String value)
     {
@@ -77,6 +86,12 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ButtonBar#setButtonUniformSize}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B buttonUniformSize(boolean value)
     {
@@ -85,6 +100,12 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link ButtonBar#getButtons}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B buttons(java.util.Collection<javafx.scene.control.ButtonBase> value)
     {
@@ -93,6 +114,12 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link ButtonBar#getButtons}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B buttons(javafx.scene.control.ButtonBase... value)
@@ -102,6 +129,12 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ButtonBar#buttonMinWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindButtonMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -111,6 +144,12 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ButtonBar#buttonOrderProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindButtonOrder(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -120,6 +159,12 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ButtonBar#buttonUniformSizeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindButtonUniformSize(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -129,12 +174,17 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 建構{@link ButtonBar}物件
+     *
+     * @return 新的{@link ButtonBar}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ButtonBar build()
     {
         ButtonBar instance = new ButtonBar();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

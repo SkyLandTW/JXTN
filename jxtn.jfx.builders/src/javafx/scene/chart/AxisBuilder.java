@@ -16,7 +16,6 @@ package javafx.scene.chart;
 public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extends AxisBuilder<T, Z, B>>
         extends javafx.scene.layout.RegionBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAnimated;
     protected boolean valAnimated;
@@ -86,11 +85,11 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
 
     protected boolean boundTickMarkVisible;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvTickMarkVisible;
-    public void applyTo(Axis<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAnimated)
             instance.setAnimated(this.valAnimated);
         if (this.hasAutoRanging)
@@ -137,10 +136,14 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
             instance.tickLengthProperty().bind(this.obsrvTickLength);
         if (this.boundTickMarkVisible)
             instance.tickMarkVisibleProperty().bind(this.obsrvTickMarkVisible);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Axis#setAnimated}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B animated(boolean value)
     {
@@ -149,6 +152,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#setAutoRanging}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B autoRanging(boolean value)
     {
@@ -157,6 +166,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#setLabel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B label(java.lang.String value)
     {
@@ -165,6 +180,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#setSide}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B side(javafx.geometry.Side value)
     {
@@ -173,6 +194,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#setTickLabelFill}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tickLabelFill(javafx.scene.paint.Paint value)
     {
@@ -181,6 +208,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#setTickLabelFont}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tickLabelFont(javafx.scene.text.Font value)
     {
@@ -189,6 +222,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#setTickLabelGap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tickLabelGap(double value)
     {
@@ -197,6 +236,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#setTickLabelRotation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tickLabelRotation(double value)
     {
@@ -205,6 +250,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#setTickLabelsVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tickLabelsVisible(boolean value)
     {
@@ -213,6 +264,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#setTickLength}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tickLength(double value)
     {
@@ -221,6 +278,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#setTickMarkVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tickMarkVisible(boolean value)
     {
@@ -229,6 +292,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Axis#getTickMarks}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tickMarks(java.util.Collection<javafx.scene.chart.Axis.TickMark<T>> value)
     {
@@ -237,6 +306,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Axis#getTickMarks}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B tickMarks(javafx.scene.chart.Axis.TickMark<T>... value)
@@ -246,6 +321,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#animatedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAnimated(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -255,6 +336,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#autoRangingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAutoRanging(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -264,6 +351,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#labelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLabel(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
     {
@@ -273,6 +366,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#sideProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
@@ -282,6 +381,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#tickLabelFillProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTickLabelFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
@@ -291,6 +396,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#tickLabelFontProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTickLabelFont(javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> source)
     {
@@ -300,6 +411,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#tickLabelGapProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTickLabelGap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -309,6 +426,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#tickLabelRotationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTickLabelRotation(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -318,6 +441,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#tickLabelsVisibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTickLabelsVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -327,6 +456,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#tickLengthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTickLength(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -336,6 +471,12 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Axis#tickMarkVisibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTickMarkVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {

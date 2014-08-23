@@ -39,28 +39,53 @@ import java.util.function.Consumer;
  */
 public class AbstractBuilder<Z, B extends AbstractBuilder<Z, B>>
 {
+    /**
+     * 建構後執行動作集合
+     */
     protected ArrayList<Consumer<? super Z>> afterBuildActions;
 
-    @SuppressWarnings("unused")
-    public void applyTo(Object instance)
+    /**
+     * 套用建構器的屬性設定
+     *
+     * @param instance 要套用屬性的物件實體
+     */
+    public void applyTo(Z instance)
     {
+        assert (instance != null);
         //
     }
 
+    /**
+     * 註冊物件建構後的執行動作
+     *
+     * @param action 執行動作
+     */
     public final void afterBuild(Consumer<? super Z> action)
     {
+        assert (action != null);
         if (this.afterBuildActions == null)
             this.afterBuildActions = new ArrayList<>();
         this.afterBuildActions.add(action);
     }
 
+    /**
+     * 建構物件
+     *
+     * @return 建構的物件
+     */
     public Object build()
     {
         return new Object();
     }
 
+    /**
+     * 呼叫建構後的執行動作({@link #afterBuildActions})
+     *
+     * @param instance 要執行動作的目標物件
+     */
     protected final void doAfterBuild(Z instance)
     {
+        assert (instance != null);
         if (this.afterBuildActions != null)
         {
             for (Consumer<? super Z> action : this.afterBuildActions)

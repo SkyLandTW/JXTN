@@ -16,21 +16,23 @@ package javafx.scene.paint;
 public class ColorBuilder<Z extends Color, B extends ColorBuilder<Z, B>>
         extends javafx.scene.paint.PaintBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(Color instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link Color}物件
+     *
+     * @return 新的{@link Color}物件實體
+     */
     @SuppressWarnings("unchecked")
     public Color build(double arg0, double arg1, double arg2, double arg3)
     {
         Color instance = new Color(arg0, arg1, arg2, arg3);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

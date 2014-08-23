@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class MenuBarBuilder<Z extends MenuBar, B extends MenuBarBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasMenus;
     protected java.util.Collection<javafx.scene.control.Menu> valMenus;
@@ -26,21 +25,25 @@ public class MenuBarBuilder<Z extends MenuBar, B extends MenuBarBuilder<Z, B>>
 
     protected boolean boundUseSystemMenuBar;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvUseSystemMenuBar;
-    public void applyTo(MenuBar instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasMenus)
             instance.getMenus().setAll(this.valMenus);
         if (this.hasUseSystemMenuBar)
             instance.setUseSystemMenuBar(this.valUseSystemMenuBar);
         if (this.boundUseSystemMenuBar)
             instance.useSystemMenuBarProperty().bind(this.obsrvUseSystemMenuBar);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link MenuBar#getMenus}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B menus(java.util.Collection<javafx.scene.control.Menu> value)
     {
@@ -49,6 +52,12 @@ public class MenuBarBuilder<Z extends MenuBar, B extends MenuBarBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link MenuBar#getMenus}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B menus(javafx.scene.control.Menu... value)
@@ -58,6 +67,12 @@ public class MenuBarBuilder<Z extends MenuBar, B extends MenuBarBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuBar#setUseSystemMenuBar}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B useSystemMenuBar(boolean value)
     {
@@ -66,6 +81,12 @@ public class MenuBarBuilder<Z extends MenuBar, B extends MenuBarBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuBar#useSystemMenuBarProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindUseSystemMenuBar(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -75,12 +96,17 @@ public class MenuBarBuilder<Z extends MenuBar, B extends MenuBarBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link MenuBar}物件
+     *
+     * @return 新的{@link MenuBar}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public MenuBar build()
     {
         MenuBar instance = new MenuBar();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

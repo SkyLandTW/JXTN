@@ -16,21 +16,23 @@ package javafx.scene.layout;
 public class CornerRadiiBuilder<Z extends CornerRadii, B extends CornerRadiiBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(CornerRadii instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link CornerRadii}物件
+     *
+     * @return 新的{@link CornerRadii}物件實體
+     */
     @SuppressWarnings("unchecked")
     public CornerRadii build(double arg0)
     {
         CornerRadii instance = new CornerRadii(arg0);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

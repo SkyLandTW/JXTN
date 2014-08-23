@@ -16,7 +16,6 @@ package javafx.scene.layout;
 public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends ColumnConstraintsBuilder<Z, B>>
         extends javafx.scene.layout.ConstraintsBaseBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasFillWidth;
     protected boolean valFillWidth;
@@ -59,11 +58,11 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
 
     protected boolean boundPrefWidth;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvPrefWidth;
-    public void applyTo(ColumnConstraints instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasFillWidth)
             instance.setFillWidth(this.valFillWidth);
         if (this.hasHalignment)
@@ -92,10 +91,14 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
             instance.percentWidthProperty().bind(this.obsrvPercentWidth);
         if (this.boundPrefWidth)
             instance.prefWidthProperty().bind(this.obsrvPrefWidth);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ColumnConstraints#setFillWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fillWidth(boolean value)
     {
@@ -104,6 +107,12 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColumnConstraints#setHalignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B halignment(javafx.geometry.HPos value)
     {
@@ -112,6 +121,12 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColumnConstraints#setHgrow}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B hgrow(javafx.scene.layout.Priority value)
     {
@@ -120,6 +135,12 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColumnConstraints#setMaxWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B maxWidth(double value)
     {
@@ -128,6 +149,12 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColumnConstraints#setMinWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B minWidth(double value)
     {
@@ -136,6 +163,12 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColumnConstraints#setPercentWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B percentWidth(double value)
     {
@@ -144,6 +177,12 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColumnConstraints#setPrefWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefWidth(double value)
     {
@@ -152,6 +191,12 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColumnConstraints#fillWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFillWidth(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -161,6 +206,12 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColumnConstraints#halignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHalignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.HPos> source)
     {
@@ -170,6 +221,12 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColumnConstraints#hgrowProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHgrow(javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Priority> source)
     {
@@ -179,6 +236,12 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColumnConstraints#maxWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -188,6 +251,12 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColumnConstraints#minWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -197,6 +266,12 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColumnConstraints#percentWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPercentWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -206,6 +281,12 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColumnConstraints#prefWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -215,12 +296,17 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
         return (B) this;
     }
 
+    /**
+     * 建構{@link ColumnConstraints}物件
+     *
+     * @return 新的{@link ColumnConstraints}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ColumnConstraints build()
     {
         ColumnConstraints instance = new ColumnConstraints();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

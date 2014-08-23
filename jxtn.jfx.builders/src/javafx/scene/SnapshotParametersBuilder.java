@@ -16,7 +16,6 @@ package javafx.scene;
 public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends SnapshotParametersBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCamera;
     protected javafx.scene.Camera valCamera;
@@ -32,11 +31,11 @@ public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends S
 
     protected boolean hasViewport;
     protected javafx.geometry.Rectangle2D valViewport;
-    public void applyTo(SnapshotParameters instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCamera)
             instance.setCamera(this.valCamera);
         if (this.hasDepthBuffer)
@@ -47,10 +46,14 @@ public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends S
             instance.setTransform(this.valTransform);
         if (this.hasViewport)
             instance.setViewport(this.valViewport);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link SnapshotParameters#setCamera}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B camera(javafx.scene.Camera value)
     {
@@ -59,6 +62,12 @@ public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends S
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SnapshotParameters#setDepthBuffer}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B depthBuffer(boolean value)
     {
@@ -67,6 +76,12 @@ public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends S
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SnapshotParameters#setFill}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fill(javafx.scene.paint.Paint value)
     {
@@ -75,6 +90,12 @@ public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends S
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SnapshotParameters#setTransform}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B transform(javafx.scene.transform.Transform value)
     {
@@ -83,6 +104,12 @@ public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends S
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SnapshotParameters#setViewport}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B viewport(javafx.geometry.Rectangle2D value)
     {
@@ -91,12 +118,17 @@ public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends S
         return (B) this;
     }
 
+    /**
+     * 建構{@link SnapshotParameters}物件
+     *
+     * @return 新的{@link SnapshotParameters}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public SnapshotParameters build()
     {
         SnapshotParameters instance = new SnapshotParameters();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

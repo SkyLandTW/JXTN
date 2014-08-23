@@ -16,22 +16,24 @@ package org.controlsfx.tools;
 public class UtilsBuilder<Z extends Utils, B extends UtilsBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(Utils instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link Utils}物件
+     *
+     * @return 新的{@link Utils}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Utils build()
     {
         Utils instance = new Utils();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

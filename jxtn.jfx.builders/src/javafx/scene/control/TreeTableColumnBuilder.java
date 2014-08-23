@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends TreeTableColumn<S, T>, B extends TreeTableColumnBuilder<S, T, Z, B>>
         extends javafx.scene.control.TableColumnBaseBuilder<javafx.scene.control.TreeItem<S>, T, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCellFactory;
     protected javafx.util.Callback<javafx.scene.control.TreeTableColumn<S, T>, javafx.scene.control.TreeTableCell<S, T>> valCellFactory;
@@ -56,11 +55,11 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
 
     protected boolean boundSortType;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableColumn.SortType> obsrvSortType;
-    public void applyTo(TreeTableColumn<S, T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCellFactory)
             instance.setCellFactory(this.valCellFactory);
         if (this.hasCellValueFactory)
@@ -87,10 +86,14 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
             instance.onEditStartProperty().bind(this.obsrvOnEditStart);
         if (this.boundSortType)
             instance.sortTypeProperty().bind(this.obsrvSortType);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link TreeTableColumn#setCellFactory}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cellFactory(javafx.util.Callback<javafx.scene.control.TreeTableColumn<S, T>, javafx.scene.control.TreeTableCell<S, T>> value)
     {
@@ -99,6 +102,12 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableColumn#setCellValueFactory}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cellValueFactory(javafx.util.Callback<javafx.scene.control.TreeTableColumn.CellDataFeatures<S, T>, javafx.beans.value.ObservableValue<T>> value)
     {
@@ -107,6 +116,12 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TreeTableColumn#getColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B columns(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
     {
@@ -115,6 +130,12 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TreeTableColumn#getColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B columns(javafx.scene.control.TreeTableColumn<S, ?>... value)
@@ -124,6 +145,12 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableColumn#setOnEditCancel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onEditCancel(javafx.event.EventHandler<javafx.scene.control.TreeTableColumn.CellEditEvent<S, T>> value)
     {
@@ -132,6 +159,12 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableColumn#setOnEditCommit}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onEditCommit(javafx.event.EventHandler<javafx.scene.control.TreeTableColumn.CellEditEvent<S, T>> value)
     {
@@ -140,6 +173,12 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableColumn#setOnEditStart}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onEditStart(javafx.event.EventHandler<javafx.scene.control.TreeTableColumn.CellEditEvent<S, T>> value)
     {
@@ -148,6 +187,12 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableColumn#setSortType}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B sortType(javafx.scene.control.TreeTableColumn.SortType value)
     {
@@ -156,6 +201,12 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableColumn#cellFactoryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableColumn<S, T>, javafx.scene.control.TreeTableCell<S, T>>> source)
     {
@@ -165,6 +216,12 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableColumn#cellValueFactoryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCellValueFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableColumn.CellDataFeatures<S, T>, javafx.beans.value.ObservableValue<T>>> source)
     {
@@ -174,6 +231,12 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableColumn#onEditCancelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnEditCancel(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TreeTableColumn.CellEditEvent<S, T>>> source)
     {
@@ -183,6 +246,12 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableColumn#onEditCommitProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnEditCommit(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TreeTableColumn.CellEditEvent<S, T>>> source)
     {
@@ -192,6 +261,12 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableColumn#onEditStartProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnEditStart(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TreeTableColumn.CellEditEvent<S, T>>> source)
     {
@@ -201,6 +276,12 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableColumn#sortTypeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSortType(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableColumn.SortType> source)
     {
@@ -210,12 +291,17 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 建構{@link TreeTableColumn}物件
+     *
+     * @return 新的{@link TreeTableColumn}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public TreeTableColumn<S, T> build()
     {
         TreeTableColumn<S, T> instance = new TreeTableColumn<S, T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

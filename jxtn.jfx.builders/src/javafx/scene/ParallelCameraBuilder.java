@@ -16,22 +16,24 @@ package javafx.scene;
 public class ParallelCameraBuilder<Z extends ParallelCamera, B extends ParallelCameraBuilder<Z, B>>
         extends javafx.scene.CameraBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(ParallelCamera instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link ParallelCamera}物件
+     *
+     * @return 新的{@link ParallelCamera}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ParallelCamera build()
     {
         ParallelCamera instance = new ParallelCamera();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

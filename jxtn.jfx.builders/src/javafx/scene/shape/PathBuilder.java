@@ -16,7 +16,6 @@ package javafx.scene.shape;
 public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasElements;
     protected java.util.Collection<javafx.scene.shape.PathElement> valElements;
@@ -26,21 +25,25 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
 
     protected boolean boundFillRule;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.shape.FillRule> obsrvFillRule;
-    public void applyTo(Path instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasElements)
             instance.getElements().setAll(this.valElements);
         if (this.hasFillRule)
             instance.setFillRule(this.valFillRule);
         if (this.boundFillRule)
             instance.fillRuleProperty().bind(this.obsrvFillRule);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link Path#getElements}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B elements(java.util.Collection<javafx.scene.shape.PathElement> value)
     {
@@ -49,6 +52,12 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Path#getElements}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B elements(javafx.scene.shape.PathElement... value)
@@ -58,6 +67,12 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Path#setFillRule}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fillRule(javafx.scene.shape.FillRule value)
     {
@@ -66,6 +81,12 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Path#fillRuleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFillRule(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.FillRule> source)
     {
@@ -75,12 +96,17 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Path}物件
+     *
+     * @return 新的{@link Path}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Path build()
     {
         Path instance = new Path();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

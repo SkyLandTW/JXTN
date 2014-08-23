@@ -16,13 +16,10 @@ package org.controlsfx.glyphfont;
 public class GlyphFontRegistryBuilder<Z extends GlyphFontRegistry, B extends GlyphFontRegistryBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(GlyphFontRegistry instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 }

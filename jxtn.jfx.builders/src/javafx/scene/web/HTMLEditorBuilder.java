@@ -16,21 +16,24 @@ package javafx.scene.web;
 public class HTMLEditorBuilder<Z extends HTMLEditor, B extends HTMLEditorBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasHtmlText;
     protected java.lang.String valHtmlText;
-    public void applyTo(HTMLEditor instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasHtmlText)
             instance.setHtmlText(this.valHtmlText);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link HTMLEditor#setHtmlText}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B htmlText(java.lang.String value)
     {
@@ -39,12 +42,17 @@ public class HTMLEditorBuilder<Z extends HTMLEditor, B extends HTMLEditorBuilder
         return (B) this;
     }
 
+    /**
+     * 建構{@link HTMLEditor}物件
+     *
+     * @return 新的{@link HTMLEditor}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public HTMLEditor build()
     {
         HTMLEditor instance = new HTMLEditor();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

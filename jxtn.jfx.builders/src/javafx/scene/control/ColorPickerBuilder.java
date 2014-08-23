@@ -16,21 +16,24 @@ package javafx.scene.control;
 public class ColorPickerBuilder<Z extends ColorPicker, B extends ColorPickerBuilder<Z, B>>
         extends javafx.scene.control.ComboBoxBaseBuilder<javafx.scene.paint.Color, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCustomColors;
     protected java.util.Collection<javafx.scene.paint.Color> valCustomColors;
-    public void applyTo(ColorPicker instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCustomColors)
             instance.getCustomColors().setAll(this.valCustomColors);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link ColorPicker#getCustomColors}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B customColors(java.util.Collection<javafx.scene.paint.Color> value)
     {
@@ -39,6 +42,12 @@ public class ColorPickerBuilder<Z extends ColorPicker, B extends ColorPickerBuil
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link ColorPicker#getCustomColors}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B customColors(javafx.scene.paint.Color... value)
@@ -48,12 +57,17 @@ public class ColorPickerBuilder<Z extends ColorPicker, B extends ColorPickerBuil
         return (B) this;
     }
 
+    /**
+     * 建構{@link ColorPicker}物件
+     *
+     * @return 新的{@link ColorPicker}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ColorPicker build()
     {
         ColorPicker instance = new ColorPicker();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

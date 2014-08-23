@@ -16,21 +16,23 @@ package org.controlsfx.dialog;
 public class DefaultDialogActionBuilder<Z extends DefaultDialogAction, B extends DefaultDialogActionBuilder<Z, B>>
         extends org.controlsfx.control.action.AbstractActionBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(DefaultDialogAction instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link DefaultDialogAction}物件
+     *
+     * @return 新的{@link DefaultDialogAction}物件實體
+     */
     @SuppressWarnings("unchecked")
     public DefaultDialogAction build(java.lang.String arg0)
     {
         DefaultDialogAction instance = new DefaultDialogAction(arg0);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

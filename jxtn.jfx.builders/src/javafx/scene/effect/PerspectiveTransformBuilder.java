@@ -16,7 +16,6 @@ package javafx.scene.effect;
 public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B extends PerspectiveTransformBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasInput;
     protected javafx.scene.effect.Effect valInput;
@@ -71,11 +70,11 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
 
     protected boolean boundUry;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvUry;
-    public void applyTo(PerspectiveTransform instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasInput)
             instance.setInput(this.valInput);
         if (this.hasLlx)
@@ -112,10 +111,14 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
             instance.urxProperty().bind(this.obsrvUrx);
         if (this.boundUry)
             instance.uryProperty().bind(this.obsrvUry);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveTransform#setInput}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B input(javafx.scene.effect.Effect value)
     {
@@ -124,6 +127,12 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveTransform#setLlx}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B llx(double value)
     {
@@ -132,6 +141,12 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveTransform#setLly}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B lly(double value)
     {
@@ -140,6 +155,12 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveTransform#setLrx}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B lrx(double value)
     {
@@ -148,6 +169,12 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveTransform#setLry}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B lry(double value)
     {
@@ -156,6 +183,12 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveTransform#setUlx}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B ulx(double value)
     {
@@ -164,6 +197,12 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveTransform#setUly}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B uly(double value)
     {
@@ -172,6 +211,12 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveTransform#setUrx}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B urx(double value)
     {
@@ -180,6 +225,12 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveTransform#setUry}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B ury(double value)
     {
@@ -188,6 +239,12 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveTransform#inputProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
@@ -197,6 +254,12 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveTransform#llxProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLlx(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -206,6 +269,12 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveTransform#llyProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLly(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -215,6 +284,12 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveTransform#lrxProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLrx(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -224,6 +299,12 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveTransform#lryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLry(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -233,6 +314,12 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveTransform#ulxProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindUlx(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -242,6 +329,12 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveTransform#ulyProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindUly(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -251,6 +344,12 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveTransform#urxProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindUrx(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -260,6 +359,12 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveTransform#uryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindUry(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -269,12 +374,17 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         return (B) this;
     }
 
+    /**
+     * 建構{@link PerspectiveTransform}物件
+     *
+     * @return 新的{@link PerspectiveTransform}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public PerspectiveTransform build()
     {
         PerspectiveTransform instance = new PerspectiveTransform();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

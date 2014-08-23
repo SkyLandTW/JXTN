@@ -16,22 +16,24 @@ package javafx.scene.shape;
 public class ClosePathBuilder<Z extends ClosePath, B extends ClosePathBuilder<Z, B>>
         extends javafx.scene.shape.PathElementBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(ClosePath instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link ClosePath}物件
+     *
+     * @return 新的{@link ClosePath}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ClosePath build()
     {
         ClosePath instance = new ClosePath();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

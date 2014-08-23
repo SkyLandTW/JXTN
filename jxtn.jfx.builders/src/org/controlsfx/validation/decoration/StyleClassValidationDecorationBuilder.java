@@ -16,22 +16,24 @@ package org.controlsfx.validation.decoration;
 public class StyleClassValidationDecorationBuilder<Z extends StyleClassValidationDecoration, B extends StyleClassValidationDecorationBuilder<Z, B>>
         extends org.controlsfx.validation.decoration.AbstractValidationDecorationBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(StyleClassValidationDecoration instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link StyleClassValidationDecoration}物件
+     *
+     * @return 新的{@link StyleClassValidationDecoration}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public StyleClassValidationDecoration build()
     {
         StyleClassValidationDecoration instance = new StyleClassValidationDecoration();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

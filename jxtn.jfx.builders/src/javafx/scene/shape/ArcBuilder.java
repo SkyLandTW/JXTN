@@ -16,7 +16,6 @@ package javafx.scene.shape;
 public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCenterX;
     protected double valCenterX;
@@ -59,11 +58,11 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
 
     protected boolean boundType;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.shape.ArcType> obsrvType;
-    public void applyTo(Arc instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCenterX)
             instance.setCenterX(this.valCenterX);
         if (this.hasCenterY)
@@ -92,10 +91,14 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
             instance.startAngleProperty().bind(this.obsrvStartAngle);
         if (this.boundType)
             instance.typeProperty().bind(this.obsrvType);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Arc#setCenterX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B centerX(double value)
     {
@@ -104,6 +107,12 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Arc#setCenterY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B centerY(double value)
     {
@@ -112,6 +121,12 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Arc#setLength}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B length(double value)
     {
@@ -120,6 +135,12 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Arc#setRadiusX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B radiusX(double value)
     {
@@ -128,6 +149,12 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Arc#setRadiusY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B radiusY(double value)
     {
@@ -136,6 +163,12 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Arc#setStartAngle}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B startAngle(double value)
     {
@@ -144,6 +177,12 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Arc#setType}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B type(javafx.scene.shape.ArcType value)
     {
@@ -152,6 +191,12 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Arc#centerXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCenterX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -161,6 +206,12 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Arc#centerYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCenterY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -170,6 +221,12 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Arc#lengthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLength(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -179,6 +236,12 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Arc#radiusXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRadiusX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -188,6 +251,12 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Arc#radiusYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRadiusY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -197,6 +266,12 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Arc#startAngleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStartAngle(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -206,6 +281,12 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Arc#typeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindType(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.ArcType> source)
     {
@@ -215,12 +296,17 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Arc}物件
+     *
+     * @return 新的{@link Arc}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Arc build()
     {
         Arc instance = new Arc();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

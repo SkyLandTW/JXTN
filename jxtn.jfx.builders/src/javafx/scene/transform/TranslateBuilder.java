@@ -16,7 +16,6 @@ package javafx.scene.transform;
 public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z, B>>
         extends javafx.scene.transform.TransformBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasX;
     protected double valX;
@@ -35,11 +34,11 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
 
     protected boolean boundZ;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvZ;
-    public void applyTo(Translate instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasX)
             instance.setX(this.valX);
         if (this.hasY)
@@ -52,10 +51,14 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
             instance.yProperty().bind(this.obsrvY);
         if (this.boundZ)
             instance.zProperty().bind(this.obsrvZ);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Translate#setX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B x(double value)
     {
@@ -64,6 +67,12 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Translate#setY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B y(double value)
     {
@@ -72,6 +81,12 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Translate#setZ}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B z(double value)
     {
@@ -80,6 +95,12 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Translate#xProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -89,6 +110,12 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Translate#yProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -98,6 +125,12 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Translate#zProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindZ(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -107,12 +140,17 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 建構{@link Translate}物件
+     *
+     * @return 新的{@link Translate}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Translate build()
     {
         Translate instance = new Translate();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

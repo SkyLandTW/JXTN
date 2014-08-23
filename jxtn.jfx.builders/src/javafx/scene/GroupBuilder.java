@@ -16,7 +16,6 @@ package javafx.scene;
 public class GroupBuilder<Z extends Group, B extends GroupBuilder<Z, B>>
         extends javafx.scene.ParentBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAutoSizeChildren;
     protected boolean valAutoSizeChildren;
@@ -26,21 +25,25 @@ public class GroupBuilder<Z extends Group, B extends GroupBuilder<Z, B>>
 
     protected boolean boundAutoSizeChildren;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvAutoSizeChildren;
-    public void applyTo(Group instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAutoSizeChildren)
             instance.setAutoSizeChildren(this.valAutoSizeChildren);
         if (this.hasChildren)
             instance.getChildren().setAll(this.valChildren);
         if (this.boundAutoSizeChildren)
             instance.autoSizeChildrenProperty().bind(this.obsrvAutoSizeChildren);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Group#setAutoSizeChildren}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B autoSizeChildren(boolean value)
     {
@@ -49,6 +52,12 @@ public class GroupBuilder<Z extends Group, B extends GroupBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Group#getChildren}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B children(java.util.Collection<javafx.scene.Node> value)
     {
@@ -57,6 +66,12 @@ public class GroupBuilder<Z extends Group, B extends GroupBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Group#getChildren}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B children(javafx.scene.Node... value)
@@ -66,6 +81,12 @@ public class GroupBuilder<Z extends Group, B extends GroupBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Group#autoSizeChildrenProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAutoSizeChildren(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -75,12 +96,17 @@ public class GroupBuilder<Z extends Group, B extends GroupBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Group}物件
+     *
+     * @return 新的{@link Group}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Group build()
     {
         Group instance = new Group();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

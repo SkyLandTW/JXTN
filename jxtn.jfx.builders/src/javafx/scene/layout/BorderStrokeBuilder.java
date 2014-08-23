@@ -16,21 +16,23 @@ package javafx.scene.layout;
 public class BorderStrokeBuilder<Z extends BorderStroke, B extends BorderStrokeBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(BorderStroke instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link BorderStroke}物件
+     *
+     * @return 新的{@link BorderStroke}物件實體
+     */
     @SuppressWarnings("unchecked")
     public BorderStroke build(javafx.scene.paint.Paint arg0, javafx.scene.layout.BorderStrokeStyle arg1, javafx.scene.layout.CornerRadii arg2, javafx.scene.layout.BorderWidths arg3)
     {
         BorderStroke instance = new BorderStroke(arg0, arg1, arg2, arg3);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

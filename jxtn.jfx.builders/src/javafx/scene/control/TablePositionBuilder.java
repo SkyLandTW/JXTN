@@ -16,21 +16,23 @@ package javafx.scene.control;
 public class TablePositionBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends TablePosition<S, T>, B extends TablePositionBuilder<S, T, Z, B>>
         extends javafx.scene.control.TablePositionBaseBuilder<javafx.scene.control.TableColumn<S, T>, Z, B>
 {
-    private boolean applied;
-    public void applyTo(TablePosition<S, T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link TablePosition}物件
+     *
+     * @return 新的{@link TablePosition}物件實體
+     */
     @SuppressWarnings("unchecked")
     public TablePosition<S, T> build(javafx.scene.control.TableView<S> arg0, int arg1, javafx.scene.control.TableColumn<S, T> arg2)
     {
         TablePosition<S, T> instance = new TablePosition<S, T>(arg0, arg1, arg2);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

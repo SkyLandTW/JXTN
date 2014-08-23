@@ -16,21 +16,23 @@ package javafx.scene.input;
 public class DataFormatBuilder<Z extends DataFormat, B extends DataFormatBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(DataFormat instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link DataFormat}物件
+     *
+     * @return 新的{@link DataFormat}物件實體
+     */
     @SuppressWarnings("unchecked")
     public DataFormat build(java.lang.String[] arg0)
     {
         DataFormat instance = new DataFormat(arg0);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

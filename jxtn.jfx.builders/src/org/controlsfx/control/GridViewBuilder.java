@@ -16,7 +16,6 @@ package org.controlsfx.control;
 public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, B extends GridViewBuilder<T, Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCellFactory;
     protected javafx.util.Callback<org.controlsfx.control.GridView<T>, org.controlsfx.control.GridCell<T>> valCellFactory;
@@ -53,11 +52,11 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
 
     protected boolean boundVerticalCellSpacing;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvVerticalCellSpacing;
-    public void applyTo(GridView<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCellFactory)
             instance.setCellFactory(this.valCellFactory);
         if (this.hasCellHeight)
@@ -82,10 +81,14 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
             instance.itemsProperty().bind(this.obsrvItems);
         if (this.boundVerticalCellSpacing)
             instance.verticalCellSpacingProperty().bind(this.obsrvVerticalCellSpacing);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link GridView#setCellFactory}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cellFactory(javafx.util.Callback<org.controlsfx.control.GridView<T>, org.controlsfx.control.GridCell<T>> value)
     {
@@ -94,6 +97,12 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridView#setCellHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cellHeight(double value)
     {
@@ -102,6 +111,12 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridView#setCellWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cellWidth(double value)
     {
@@ -110,6 +125,12 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridView#setHorizontalCellSpacing}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B horizontalCellSpacing(double value)
     {
@@ -118,6 +139,12 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridView#setItems}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B items(javafx.collections.ObservableList<T> value)
     {
@@ -126,6 +153,12 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridView#setVerticalCellSpacing}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B verticalCellSpacing(double value)
     {
@@ -134,6 +167,12 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridView#cellFactoryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<org.controlsfx.control.GridView<T>, org.controlsfx.control.GridCell<T>>> source)
     {
@@ -143,6 +182,12 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridView#cellHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCellHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -152,6 +197,12 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridView#cellWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCellWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -161,6 +212,12 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridView#horizontalCellSpacingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHorizontalCellSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -170,6 +227,12 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridView#itemsProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindItems(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<T>> source)
     {
@@ -179,6 +242,12 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridView#verticalCellSpacingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindVerticalCellSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -188,12 +257,17 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
         return (B) this;
     }
 
+    /**
+     * 建構{@link GridView}物件
+     *
+     * @return 新的{@link GridView}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public GridView<T> build()
     {
         GridView<T> instance = new GridView<T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

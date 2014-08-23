@@ -16,7 +16,6 @@ package javafx.scene.shape;
 public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         extends javafx.scene.NodeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasFill;
     protected javafx.scene.paint.Paint valFill;
@@ -74,11 +73,11 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
 
     protected boolean boundStrokeWidth;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvStrokeWidth;
-    public void applyTo(Shape instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasFill)
             instance.setFill(this.valFill);
         if (this.hasSmooth)
@@ -117,10 +116,14 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
             instance.strokeTypeProperty().bind(this.obsrvStrokeType);
         if (this.boundStrokeWidth)
             instance.strokeWidthProperty().bind(this.obsrvStrokeWidth);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Shape#setFill}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fill(javafx.scene.paint.Paint value)
     {
@@ -129,6 +132,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape#setSmooth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B smooth(boolean value)
     {
@@ -137,6 +146,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape#setStroke}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B stroke(javafx.scene.paint.Paint value)
     {
@@ -145,6 +160,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Shape#getStrokeDashArray}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B strokeDashArray(java.util.Collection<java.lang.Double> value)
     {
@@ -153,6 +174,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Shape#getStrokeDashArray}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B strokeDashArray(java.lang.Double... value)
@@ -162,6 +189,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape#setStrokeDashOffset}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B strokeDashOffset(double value)
     {
@@ -170,6 +203,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape#setStrokeLineCap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B strokeLineCap(javafx.scene.shape.StrokeLineCap value)
     {
@@ -178,6 +217,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape#setStrokeLineJoin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B strokeLineJoin(javafx.scene.shape.StrokeLineJoin value)
     {
@@ -186,6 +231,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape#setStrokeMiterLimit}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B strokeMiterLimit(double value)
     {
@@ -194,6 +245,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape#setStrokeType}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B strokeType(javafx.scene.shape.StrokeType value)
     {
@@ -202,6 +259,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape#setStrokeWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B strokeWidth(double value)
     {
@@ -210,6 +273,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape#fillProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
@@ -219,6 +288,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape#smoothProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSmooth(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -228,6 +303,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape#strokeDashOffsetProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStrokeDashOffset(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -237,6 +318,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape#strokeLineCapProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStrokeLineCap(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.StrokeLineCap> source)
     {
@@ -246,6 +333,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape#strokeLineJoinProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStrokeLineJoin(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.StrokeLineJoin> source)
     {
@@ -255,6 +348,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape#strokeMiterLimitProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStrokeMiterLimit(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -264,6 +363,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape#strokeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStroke(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
@@ -273,6 +378,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape#strokeTypeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStrokeType(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.StrokeType> source)
     {
@@ -282,6 +393,12 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape#strokeWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStrokeWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {

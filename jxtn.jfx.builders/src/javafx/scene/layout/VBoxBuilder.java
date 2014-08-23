@@ -16,7 +16,6 @@ package javafx.scene.layout;
 public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
         extends javafx.scene.layout.PaneBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAlignment;
     protected javafx.geometry.Pos valAlignment;
@@ -35,11 +34,11 @@ public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
 
     protected boolean boundSpacing;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvSpacing;
-    public void applyTo(VBox instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAlignment)
             instance.setAlignment(this.valAlignment);
         if (this.hasFillWidth)
@@ -52,10 +51,14 @@ public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
             instance.fillWidthProperty().bind(this.obsrvFillWidth);
         if (this.boundSpacing)
             instance.spacingProperty().bind(this.obsrvSpacing);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link VBox#setAlignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B alignment(javafx.geometry.Pos value)
     {
@@ -64,6 +67,12 @@ public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link VBox#setFillWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fillWidth(boolean value)
     {
@@ -72,6 +81,12 @@ public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link VBox#setSpacing}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B spacing(double value)
     {
@@ -80,6 +95,12 @@ public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link VBox#alignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
@@ -89,6 +110,12 @@ public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link VBox#fillWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFillWidth(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -98,6 +125,12 @@ public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link VBox#spacingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -107,12 +140,17 @@ public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link VBox}物件
+     *
+     * @return 新的{@link VBox}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public VBox build()
     {
         VBox instance = new VBox();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

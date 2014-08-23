@@ -16,22 +16,24 @@ package org.controlsfx.control.cell;
 public class ImageGridCellBuilder<Z extends ImageGridCell, B extends ImageGridCellBuilder<Z, B>>
         extends org.controlsfx.control.GridCellBuilder<javafx.scene.image.Image, Z, B>
 {
-    private boolean applied;
-    public void applyTo(ImageGridCell instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link ImageGridCell}物件
+     *
+     * @return 新的{@link ImageGridCell}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ImageGridCell build()
     {
         ImageGridCell instance = new ImageGridCell();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,21 +16,23 @@ package javafx.scene.image;
 public class WritableImageBuilder<Z extends WritableImage, B extends WritableImageBuilder<Z, B>>
         extends javafx.scene.image.ImageBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(WritableImage instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link WritableImage}物件
+     *
+     * @return 新的{@link WritableImage}物件實體
+     */
     @SuppressWarnings("unchecked")
     public WritableImage build(int arg0, int arg1)
     {
         WritableImage instance = new WritableImage(arg0, arg1);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,7 +16,6 @@ package org.controlsfx.control;
 public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
         extends javafx.scene.control.PopupControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasArrowIndent;
     protected double valArrowIndent;
@@ -65,11 +64,11 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
 
     protected boolean boundDetachedTitle;
     protected javafx.beans.value.ObservableValue<? extends String> obsrvDetachedTitle;
-    public void applyTo(PopOver instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasArrowIndent)
             instance.setArrowIndent(this.valArrowIndent);
         if (this.hasArrowLocation)
@@ -102,10 +101,14 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
             instance.detachedProperty().bind(this.obsrvDetached);
         if (this.boundDetachedTitle)
             instance.detachedTitleProperty().bind(this.obsrvDetachedTitle);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link PopOver#setArrowIndent}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B arrowIndent(double value)
     {
@@ -114,6 +117,12 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopOver#setArrowLocation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B arrowLocation(org.controlsfx.control.PopOver.ArrowLocation value)
     {
@@ -122,6 +131,12 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopOver#setArrowSize}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B arrowSize(double value)
     {
@@ -130,6 +145,12 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopOver#setContentNode}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B contentNode(javafx.scene.Node value)
     {
@@ -138,6 +159,12 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopOver#setCornerRadius}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cornerRadius(double value)
     {
@@ -146,6 +173,12 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopOver#setDetachable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B detachable(boolean value)
     {
@@ -154,6 +187,12 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopOver#setDetached}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B detached(boolean value)
     {
@@ -162,6 +201,12 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopOver#setDetachedTitle}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B detachedTitle(java.lang.String value)
     {
@@ -170,6 +215,12 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopOver#arrowIndentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindArrowIndent(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -179,6 +230,12 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopOver#arrowLocationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindArrowLocation(javafx.beans.value.ObservableValue<? extends org.controlsfx.control.PopOver.ArrowLocation> source)
     {
@@ -188,6 +245,12 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopOver#arrowSizeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindArrowSize(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -197,6 +260,12 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopOver#contentNodeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindContentNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -206,6 +275,12 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopOver#cornerRadiusProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCornerRadius(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -215,6 +290,12 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopOver#detachableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindDetachable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -224,6 +305,12 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopOver#detachedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindDetached(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -233,6 +320,12 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopOver#detachedTitleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindDetachedTitle(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -242,12 +335,17 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link PopOver}物件
+     *
+     * @return 新的{@link PopOver}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public PopOver build()
     {
         PopOver instance = new PopOver();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

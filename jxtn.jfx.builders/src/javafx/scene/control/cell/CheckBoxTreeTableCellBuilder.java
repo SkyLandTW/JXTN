@@ -16,7 +16,6 @@ package javafx.scene.control.cell;
 public class CheckBoxTreeTableCellBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends CheckBoxTreeTableCell<S, T>, B extends CheckBoxTreeTableCellBuilder<S, T, Z, B>>
         extends javafx.scene.control.TreeTableCellBuilder<S, T, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasConverter;
     protected javafx.util.StringConverter<T> valConverter;
@@ -29,11 +28,11 @@ public class CheckBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
 
     protected boolean boundSelectedStateCallback;
     protected javafx.beans.value.ObservableValue<? extends javafx.util.Callback<java.lang.Integer, javafx.beans.value.ObservableValue<java.lang.Boolean>>> obsrvSelectedStateCallback;
-    public void applyTo(CheckBoxTreeTableCell<S, T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasConverter)
             instance.setConverter(this.valConverter);
         if (this.hasSelectedStateCallback)
@@ -42,10 +41,14 @@ public class CheckBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
             instance.converterProperty().bind(this.obsrvConverter);
         if (this.boundSelectedStateCallback)
             instance.selectedStateCallbackProperty().bind(this.obsrvSelectedStateCallback);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link CheckBoxTreeTableCell#setConverter}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B converter(javafx.util.StringConverter<T> value)
     {
@@ -54,6 +57,12 @@ public class CheckBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CheckBoxTreeTableCell#setSelectedStateCallback}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B selectedStateCallback(javafx.util.Callback<java.lang.Integer, javafx.beans.value.ObservableValue<java.lang.Boolean>> value)
     {
@@ -62,6 +71,12 @@ public class CheckBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CheckBoxTreeTableCell#converterProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
     {
@@ -71,6 +86,12 @@ public class CheckBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CheckBoxTreeTableCell#selectedStateCallbackProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSelectedStateCallback(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<java.lang.Integer, javafx.beans.value.ObservableValue<java.lang.Boolean>>> source)
     {
@@ -80,12 +101,17 @@ public class CheckBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
         return (B) this;
     }
 
+    /**
+     * 建構{@link CheckBoxTreeTableCell}物件
+     *
+     * @return 新的{@link CheckBoxTreeTableCell}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public CheckBoxTreeTableCell<S, T> build()
     {
         CheckBoxTreeTableCell<S, T> instance = new CheckBoxTreeTableCell<S, T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

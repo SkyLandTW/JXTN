@@ -16,22 +16,24 @@ package javafx.scene.control;
 public class DateCellBuilder<Z extends DateCell, B extends DateCellBuilder<Z, B>>
         extends javafx.scene.control.CellBuilder<java.time.LocalDate, Z, B>
 {
-    private boolean applied;
-    public void applyTo(DateCell instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link DateCell}物件
+     *
+     * @return 新的{@link DateCell}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public DateCell build()
     {
         DateCell instance = new DateCell();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

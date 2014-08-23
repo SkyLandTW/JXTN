@@ -16,7 +16,6 @@ package javafx.scene.web;
 public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
         extends javafx.scene.ParentBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasContextMenuEnabled;
     protected boolean valContextMenuEnabled;
@@ -56,11 +55,11 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
 
     protected boolean boundZoom;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvZoom;
-    public void applyTo(WebView instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasContextMenuEnabled)
             instance.setContextMenuEnabled(this.valContextMenuEnabled);
         if (this.hasFontScale)
@@ -87,10 +86,14 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
             instance.fontSmoothingTypeProperty().bind(this.obsrvFontSmoothingType);
         if (this.boundZoom)
             instance.zoomProperty().bind(this.obsrvZoom);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link WebView#setContextMenuEnabled}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B contextMenuEnabled(boolean value)
     {
@@ -99,6 +102,12 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebView#setFontScale}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fontScale(double value)
     {
@@ -107,6 +116,12 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebView#setFontSmoothingType}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fontSmoothingType(javafx.scene.text.FontSmoothingType value)
     {
@@ -115,6 +130,12 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebView#setMaxHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B maxHeight(double value)
     {
@@ -123,6 +144,12 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebView#setMaxWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B maxWidth(double value)
     {
@@ -131,6 +158,12 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebView#setMinHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B minHeight(double value)
     {
@@ -139,6 +172,12 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebView#setMinWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B minWidth(double value)
     {
@@ -147,6 +186,12 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebView#setPrefHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefHeight(double value)
     {
@@ -155,6 +200,12 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebView#setPrefWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefWidth(double value)
     {
@@ -163,6 +214,12 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebView#setZoom}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B zoom(double value)
     {
@@ -171,6 +228,12 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebView#contextMenuEnabledProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindContextMenuEnabled(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -180,6 +243,12 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebView#fontSmoothingTypeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFontSmoothingType(javafx.beans.value.ObservableValue<? extends javafx.scene.text.FontSmoothingType> source)
     {
@@ -189,6 +258,12 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebView#zoomProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindZoom(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -198,12 +273,17 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link WebView}物件
+     *
+     * @return 新的{@link WebView}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public WebView build()
     {
         WebView instance = new WebView();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

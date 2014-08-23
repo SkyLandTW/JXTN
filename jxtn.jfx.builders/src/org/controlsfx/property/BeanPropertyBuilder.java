@@ -16,26 +16,29 @@ package org.controlsfx.property;
 public class BeanPropertyBuilder<Z extends BeanProperty, B extends BeanPropertyBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasEditable;
     protected boolean valEditable;
 
     protected boolean hasValue;
     protected java.lang.Object valValue;
-    public void applyTo(BeanProperty instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasEditable)
             instance.setEditable(this.valEditable);
         if (this.hasValue)
             instance.setValue(this.valValue);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link BeanProperty#setEditable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B editable(boolean value)
     {
@@ -44,6 +47,12 @@ public class BeanPropertyBuilder<Z extends BeanProperty, B extends BeanPropertyB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BeanProperty#setValue}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B value(java.lang.Object value)
     {
@@ -52,11 +61,16 @@ public class BeanPropertyBuilder<Z extends BeanProperty, B extends BeanPropertyB
         return (B) this;
     }
 
+    /**
+     * 建構{@link BeanProperty}物件
+     *
+     * @return 新的{@link BeanProperty}物件實體
+     */
     @SuppressWarnings("unchecked")
     public BeanProperty build(java.lang.Object arg0, java.beans.PropertyDescriptor arg1)
     {
         BeanProperty instance = new BeanProperty(arg0, arg1);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

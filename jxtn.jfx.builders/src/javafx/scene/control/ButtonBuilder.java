@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
         extends javafx.scene.control.ButtonBaseBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCancelButton;
     protected boolean valCancelButton;
@@ -29,11 +28,11 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
 
     protected boolean boundDefaultButton;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvDefaultButton;
-    public void applyTo(Button instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCancelButton)
             instance.setCancelButton(this.valCancelButton);
         if (this.hasDefaultButton)
@@ -42,10 +41,14 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
             instance.cancelButtonProperty().bind(this.obsrvCancelButton);
         if (this.boundDefaultButton)
             instance.defaultButtonProperty().bind(this.obsrvDefaultButton);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Button#setCancelButton}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cancelButton(boolean value)
     {
@@ -54,6 +57,12 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Button#setDefaultButton}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B defaultButton(boolean value)
     {
@@ -62,6 +71,12 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Button#cancelButtonProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCancelButton(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -71,6 +86,12 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Button#defaultButtonProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindDefaultButton(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -80,12 +101,17 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Button}物件
+     *
+     * @return 新的{@link Button}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Button build()
     {
         Button instance = new Button();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,7 +16,6 @@ package javafx.scene.shape;
 public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
         extends javafx.scene.shape.PathElementBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasLargeArcFlag;
     protected boolean valLargeArcFlag;
@@ -59,11 +58,11 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
 
     protected boolean boundY;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvY;
-    public void applyTo(ArcTo instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasLargeArcFlag)
             instance.setLargeArcFlag(this.valLargeArcFlag);
         if (this.hasRadiusX)
@@ -92,10 +91,14 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
             instance.xProperty().bind(this.obsrvX);
         if (this.boundY)
             instance.yProperty().bind(this.obsrvY);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ArcTo#setLargeArcFlag}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B largeArcFlag(boolean value)
     {
@@ -104,6 +107,12 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ArcTo#setRadiusX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B radiusX(double value)
     {
@@ -112,6 +121,12 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ArcTo#setRadiusY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B radiusY(double value)
     {
@@ -120,6 +135,12 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ArcTo#setSweepFlag}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B sweepFlag(boolean value)
     {
@@ -128,6 +149,12 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ArcTo#setX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B x(double value)
     {
@@ -136,6 +163,12 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ArcTo#setXAxisRotation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B xAxisRotation(double value)
     {
@@ -144,6 +177,12 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ArcTo#setY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B y(double value)
     {
@@ -152,6 +191,12 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ArcTo#XAxisRotationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindXAxisRotation(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -161,6 +206,12 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ArcTo#largeArcFlagProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLargeArcFlag(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -170,6 +221,12 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ArcTo#radiusXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRadiusX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -179,6 +236,12 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ArcTo#radiusYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRadiusY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -188,6 +251,12 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ArcTo#sweepFlagProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSweepFlag(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -197,6 +266,12 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ArcTo#xProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -206,6 +281,12 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ArcTo#yProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -215,12 +296,17 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link ArcTo}物件
+     *
+     * @return 新的{@link ArcTo}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ArcTo build()
     {
         ArcTo instance = new ArcTo();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,26 +16,29 @@ package javafx.scene.effect;
 public class LightBuilder<Z extends Light, B extends LightBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasColor;
     protected javafx.scene.paint.Color valColor;
 
     protected boolean boundColor;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> obsrvColor;
-    public void applyTo(Light instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasColor)
             instance.setColor(this.valColor);
         if (this.boundColor)
             instance.colorProperty().bind(this.obsrvColor);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Light#setColor}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B color(javafx.scene.paint.Color value)
     {
@@ -44,6 +47,12 @@ public class LightBuilder<Z extends Light, B extends LightBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Light#colorProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindColor(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> source)
     {

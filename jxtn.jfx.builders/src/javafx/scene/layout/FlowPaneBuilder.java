@@ -16,7 +16,6 @@ package javafx.scene.layout;
 public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>>
         extends javafx.scene.layout.PaneBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAlignment;
     protected javafx.geometry.Pos valAlignment;
@@ -59,11 +58,11 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
 
     protected boolean boundVgap;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvVgap;
-    public void applyTo(FlowPane instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAlignment)
             instance.setAlignment(this.valAlignment);
         if (this.hasColumnHalignment)
@@ -92,10 +91,14 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
             instance.rowValignmentProperty().bind(this.obsrvRowValignment);
         if (this.boundVgap)
             instance.vgapProperty().bind(this.obsrvVgap);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link FlowPane#setAlignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B alignment(javafx.geometry.Pos value)
     {
@@ -104,6 +107,12 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FlowPane#setColumnHalignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B columnHalignment(javafx.geometry.HPos value)
     {
@@ -112,6 +121,12 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FlowPane#setHgap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B hgap(double value)
     {
@@ -120,6 +135,12 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FlowPane#setOrientation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B orientation(javafx.geometry.Orientation value)
     {
@@ -128,6 +149,12 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FlowPane#setPrefWrapLength}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefWrapLength(double value)
     {
@@ -136,6 +163,12 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FlowPane#setRowValignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B rowValignment(javafx.geometry.VPos value)
     {
@@ -144,6 +177,12 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FlowPane#setVgap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B vgap(double value)
     {
@@ -152,6 +191,12 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FlowPane#alignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
@@ -161,6 +206,12 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FlowPane#columnHalignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindColumnHalignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.HPos> source)
     {
@@ -170,6 +221,12 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FlowPane#hgapProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHgap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -179,6 +236,12 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FlowPane#orientationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
@@ -188,6 +251,12 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FlowPane#prefWrapLengthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPrefWrapLength(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -197,6 +266,12 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FlowPane#rowValignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRowValignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> source)
     {
@@ -206,6 +281,12 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FlowPane#vgapProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindVgap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -215,12 +296,17 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 建構{@link FlowPane}物件
+     *
+     * @return 新的{@link FlowPane}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public FlowPane build()
     {
         FlowPane instance = new FlowPane();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

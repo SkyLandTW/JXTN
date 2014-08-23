@@ -16,7 +16,6 @@ package org.controlsfx.control;
 public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenSidesPaneBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBottom;
     protected javafx.scene.Node valBottom;
@@ -59,11 +58,11 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
 
     protected boolean boundTriggerDistance;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvTriggerDistance;
-    public void applyTo(HiddenSidesPane instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBottom)
             instance.setBottom(this.valBottom);
         if (this.hasContent)
@@ -92,10 +91,14 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
             instance.topProperty().bind(this.obsrvTop);
         if (this.boundTriggerDistance)
             instance.triggerDistanceProperty().bind(this.obsrvTriggerDistance);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link HiddenSidesPane#setBottom}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bottom(javafx.scene.Node value)
     {
@@ -104,6 +107,12 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HiddenSidesPane#setContent}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B content(javafx.scene.Node value)
     {
@@ -112,6 +121,12 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HiddenSidesPane#setLeft}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B left(javafx.scene.Node value)
     {
@@ -120,6 +135,12 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HiddenSidesPane#setPinnedSide}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B pinnedSide(javafx.geometry.Side value)
     {
@@ -128,6 +149,12 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HiddenSidesPane#setRight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B right(javafx.scene.Node value)
     {
@@ -136,6 +163,12 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HiddenSidesPane#setTop}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B top(javafx.scene.Node value)
     {
@@ -144,6 +177,12 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HiddenSidesPane#setTriggerDistance}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B triggerDistance(double value)
     {
@@ -152,6 +191,12 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HiddenSidesPane#bottomProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindBottom(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -161,6 +206,12 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HiddenSidesPane#contentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -170,6 +221,12 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HiddenSidesPane#leftProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLeft(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -179,6 +236,12 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HiddenSidesPane#pinnedSideProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPinnedSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
@@ -188,6 +251,12 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HiddenSidesPane#rightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRight(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -197,6 +266,12 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HiddenSidesPane#topProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTop(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -206,6 +281,12 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HiddenSidesPane#triggerDistanceProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTriggerDistance(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -215,12 +296,17 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
         return (B) this;
     }
 
+    /**
+     * 建構{@link HiddenSidesPane}物件
+     *
+     * @return 新的{@link HiddenSidesPane}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public HiddenSidesPane build()
     {
         HiddenSidesPane instance = new HiddenSidesPane();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

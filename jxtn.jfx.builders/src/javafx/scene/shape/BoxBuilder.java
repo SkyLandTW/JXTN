@@ -16,7 +16,6 @@ package javafx.scene.shape;
 public class BoxBuilder<Z extends Box, B extends BoxBuilder<Z, B>>
         extends javafx.scene.shape.Shape3DBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasDepth;
     protected double valDepth;
@@ -35,11 +34,11 @@ public class BoxBuilder<Z extends Box, B extends BoxBuilder<Z, B>>
 
     protected boolean boundWidth;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvWidth;
-    public void applyTo(Box instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasDepth)
             instance.setDepth(this.valDepth);
         if (this.hasHeight)
@@ -52,10 +51,14 @@ public class BoxBuilder<Z extends Box, B extends BoxBuilder<Z, B>>
             instance.heightProperty().bind(this.obsrvHeight);
         if (this.boundWidth)
             instance.widthProperty().bind(this.obsrvWidth);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Box#setDepth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B depth(double value)
     {
@@ -64,6 +67,12 @@ public class BoxBuilder<Z extends Box, B extends BoxBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Box#setHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B height(double value)
     {
@@ -72,6 +81,12 @@ public class BoxBuilder<Z extends Box, B extends BoxBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Box#setWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B width(double value)
     {
@@ -80,6 +95,12 @@ public class BoxBuilder<Z extends Box, B extends BoxBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Box#depthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindDepth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -89,6 +110,12 @@ public class BoxBuilder<Z extends Box, B extends BoxBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Box#heightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -98,6 +125,12 @@ public class BoxBuilder<Z extends Box, B extends BoxBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Box#widthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -107,12 +140,17 @@ public class BoxBuilder<Z extends Box, B extends BoxBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Box}物件
+     *
+     * @return 新的{@link Box}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Box build()
     {
         Box instance = new Box();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

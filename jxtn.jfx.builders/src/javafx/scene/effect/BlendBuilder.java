@@ -16,7 +16,6 @@ package javafx.scene.effect;
 public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBottomInput;
     protected javafx.scene.effect.Effect valBottomInput;
@@ -41,11 +40,11 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
 
     protected boolean boundTopInput;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrvTopInput;
-    public void applyTo(Blend instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBottomInput)
             instance.setBottomInput(this.valBottomInput);
         if (this.hasMode)
@@ -62,10 +61,14 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
             instance.opacityProperty().bind(this.obsrvOpacity);
         if (this.boundTopInput)
             instance.topInputProperty().bind(this.obsrvTopInput);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Blend#setBottomInput}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bottomInput(javafx.scene.effect.Effect value)
     {
@@ -74,6 +77,12 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Blend#setMode}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B mode(javafx.scene.effect.BlendMode value)
     {
@@ -82,6 +91,12 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Blend#setOpacity}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B opacity(double value)
     {
@@ -90,6 +105,12 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Blend#setTopInput}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B topInput(javafx.scene.effect.Effect value)
     {
@@ -98,6 +119,12 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Blend#bottomInputProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindBottomInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
@@ -107,6 +134,12 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Blend#modeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMode(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.BlendMode> source)
     {
@@ -116,6 +149,12 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Blend#opacityProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOpacity(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -125,6 +164,12 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Blend#topInputProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTopInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
@@ -134,12 +179,17 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Blend}物件
+     *
+     * @return 新的{@link Blend}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Blend build()
     {
         Blend instance = new Blend();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

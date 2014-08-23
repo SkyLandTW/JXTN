@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class TextInputControlBuilder<Z extends TextInputControl, B extends TextInputControlBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasEditable;
     protected boolean valEditable;
@@ -41,11 +40,11 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
 
     protected boolean boundText;
     protected javafx.beans.value.ObservableValue<? extends String> obsrvText;
-    public void applyTo(TextInputControl instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasEditable)
             instance.setEditable(this.valEditable);
         if (this.hasFont)
@@ -62,10 +61,14 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
             instance.promptTextProperty().bind(this.obsrvPromptText);
         if (this.boundText)
             instance.textProperty().bind(this.obsrvText);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link TextInputControl#setEditable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B editable(boolean value)
     {
@@ -74,6 +77,12 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextInputControl#setFont}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B font(javafx.scene.text.Font value)
     {
@@ -82,6 +91,12 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextInputControl#setPromptText}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B promptText(java.lang.String value)
     {
@@ -90,6 +105,12 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextInputControl#setText}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B text(java.lang.String value)
     {
@@ -98,6 +119,12 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextInputControl#editableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -107,6 +134,12 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextInputControl#fontProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFont(javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> source)
     {
@@ -116,6 +149,12 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextInputControl#promptTextProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPromptText(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -125,6 +164,12 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextInputControl#textProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {

@@ -16,21 +16,24 @@ package javafx.scene.input;
 public class ClipboardBuilder<Z extends Clipboard, B extends ClipboardBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasContent;
     protected java.util.Map<javafx.scene.input.DataFormat, java.lang.Object> valContent;
-    public void applyTo(Clipboard instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasContent)
             instance.setContent(this.valContent);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Clipboard#setContent}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B content(java.util.Map<javafx.scene.input.DataFormat, java.lang.Object> value)
     {

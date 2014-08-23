@@ -16,26 +16,29 @@ package javafx.scene.chart;
 public class AreaChartBuilder<X extends java.lang.Object, Y extends java.lang.Object, Z extends AreaChart<X, Y>, B extends AreaChartBuilder<X, Y, Z, B>>
         extends javafx.scene.chart.XYChartBuilder<X, Y, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCreateSymbols;
     protected boolean valCreateSymbols;
 
     protected boolean boundCreateSymbols;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvCreateSymbols;
-    public void applyTo(AreaChart<X, Y> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCreateSymbols)
             instance.setCreateSymbols(this.valCreateSymbols);
         if (this.boundCreateSymbols)
             instance.createSymbolsProperty().bind(this.obsrvCreateSymbols);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link AreaChart#setCreateSymbols}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B createSymbols(boolean value)
     {
@@ -44,6 +47,12 @@ public class AreaChartBuilder<X extends java.lang.Object, Y extends java.lang.Ob
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link AreaChart#createSymbolsProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCreateSymbols(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -53,11 +62,16 @@ public class AreaChartBuilder<X extends java.lang.Object, Y extends java.lang.Ob
         return (B) this;
     }
 
+    /**
+     * 建構{@link AreaChart}物件
+     *
+     * @return 新的{@link AreaChart}物件實體
+     */
     @SuppressWarnings("unchecked")
     public AreaChart<X, Y> build(javafx.scene.chart.Axis<X> arg0, javafx.scene.chart.Axis<Y> arg1)
     {
         AreaChart<X, Y> instance = new AreaChart<X, Y>(arg0, arg1);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,26 +16,29 @@ package javafx.scene.layout;
 public class StackPaneBuilder<Z extends StackPane, B extends StackPaneBuilder<Z, B>>
         extends javafx.scene.layout.PaneBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAlignment;
     protected javafx.geometry.Pos valAlignment;
 
     protected boolean boundAlignment;
     protected javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> obsrvAlignment;
-    public void applyTo(StackPane instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAlignment)
             instance.setAlignment(this.valAlignment);
         if (this.boundAlignment)
             instance.alignmentProperty().bind(this.obsrvAlignment);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link StackPane#setAlignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B alignment(javafx.geometry.Pos value)
     {
@@ -44,6 +47,12 @@ public class StackPaneBuilder<Z extends StackPane, B extends StackPaneBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link StackPane#alignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
@@ -53,12 +62,17 @@ public class StackPaneBuilder<Z extends StackPane, B extends StackPaneBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 建構{@link StackPane}物件
+     *
+     * @return 新的{@link StackPane}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public StackPane build()
     {
         StackPane instance = new StackPane();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,7 +16,6 @@ package javafx.scene;
 public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>>
         extends javafx.scene.NodeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCamera;
     protected javafx.scene.Camera valCamera;
@@ -47,11 +46,11 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
 
     protected boolean boundWidth;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvWidth;
-    public void applyTo(SubScene instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCamera)
             instance.setCamera(this.valCamera);
         if (this.hasFill)
@@ -72,10 +71,14 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
             instance.rootProperty().bind(this.obsrvRoot);
         if (this.boundWidth)
             instance.widthProperty().bind(this.obsrvWidth);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link SubScene#setCamera}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B camera(javafx.scene.Camera value)
     {
@@ -84,6 +87,12 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SubScene#setFill}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fill(javafx.scene.paint.Paint value)
     {
@@ -92,6 +101,12 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SubScene#setHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B height(double value)
     {
@@ -100,6 +115,12 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SubScene#setRoot}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B root(javafx.scene.Parent value)
     {
@@ -108,6 +129,12 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SubScene#setWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B width(double value)
     {
@@ -116,6 +143,12 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SubScene#cameraProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCamera(javafx.beans.value.ObservableValue<? extends javafx.scene.Camera> source)
     {
@@ -125,6 +158,12 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SubScene#fillProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
@@ -134,6 +173,12 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SubScene#heightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -143,6 +188,12 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SubScene#rootProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRoot(javafx.beans.value.ObservableValue<? extends javafx.scene.Parent> source)
     {
@@ -152,6 +203,12 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SubScene#widthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -161,11 +218,16 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 建構{@link SubScene}物件
+     *
+     * @return 新的{@link SubScene}物件實體
+     */
     @SuppressWarnings("unchecked")
     public SubScene build(javafx.scene.Parent arg0, double arg1, double arg2)
     {
         SubScene instance = new SubScene(arg0, arg1, arg2);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -116,7 +116,6 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
     </#if>
 {
-    private boolean applied;
  <#-- 一般屬性欄位 -->
   <#list class.property as property>
    <#if property.setter?size != 0 && property.setter.@abstract == "false" && property.setter.@override == "false">
@@ -139,13 +138,12 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
    </#if>
   </#list>
  <#-- 結束屬性欄位 -->
+ <#-- 套用屬性方法 -->
 
- <#-- 套用屬性方法-->
-    public void applyTo(${class.@genericName} instance)
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
       <#-- 套用一般屬性 -->
       <#list class.property as property>
        <#if property.setter?size != 0 && property.setter.@abstract == "false" && property.setter.@override == "false">
@@ -169,13 +167,17 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
        </#if>
       </#list>
       <#-- 套用結束 -->
-        //
-        this.applied = true;
     }
  <#-- 一般屬性setter -->
   <#list class.property as property>
    <#if property.setter?size != 0 && property.setter.@abstract == "false">
 
+    /**
+     * 設定屬性{@link ${class.@name}#set${property.@name?cap_first}}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     <#if property.setter.@override == "true">
     @Override
     </#if>
@@ -188,6 +190,12 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
     }
    <#elseif property.@rawType?contains(".ObservableList") && property.getter.@abstract == "false">
 
+    /**
+     * 設定集合屬性{@link ${class.@name}#get${property.@name?cap_first}}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     <#if property.getter.@override == "true">
     @Override
     </#if>
@@ -199,6 +207,12 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link ${class.@name}#get${property.@name?cap_first}}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     <#if property.getter.@override == "true">
     @Override
     </#if>
@@ -217,6 +231,12 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
    <#if isFXProp(method)>
     <#assign fxPropName = method.@name?substring(0, method.@name?length - 8)>
 
+    /**
+     * 設定屬性{@link ${class.@name}#${fxPropName}Property}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bind${fxPropName?cap_first}(javafx.beans.value.ObservableValue<? extends ${getFXType(method.@returnType)}> source)
     {
@@ -231,6 +251,11 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
  <#-- 建構方法 -->
  <#if class.@abstract == "false" && class.constructor?size != 0>
 
+    /**
+     * 建構{@link ${class.@name}}物件
+     *
+     * @return 新的{@link ${class.@name}}物件實體
+     */
    <#if class.constructor[0].@parameterCount == "0">
     @Override
    </#if>
@@ -238,7 +263,7 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
     public ${class.@genericName} build(${class.constructor[0].@parametersDeclaration})
     {
         ${class.@genericName} instance = new ${class.@genericName}(${class.constructor[0].@parametersCall});
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,7 +16,6 @@ package javafx.scene.effect;
 public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasHeight;
     protected double valHeight;
@@ -47,11 +46,11 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
 
     protected boolean boundY;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvY;
-    public void applyTo(ColorInput instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasHeight)
             instance.setHeight(this.valHeight);
         if (this.hasPaint)
@@ -72,10 +71,14 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
             instance.xProperty().bind(this.obsrvX);
         if (this.boundY)
             instance.yProperty().bind(this.obsrvY);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ColorInput#setHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B height(double value)
     {
@@ -84,6 +87,12 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColorInput#setPaint}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B paint(javafx.scene.paint.Paint value)
     {
@@ -92,6 +101,12 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColorInput#setWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B width(double value)
     {
@@ -100,6 +115,12 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColorInput#setX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B x(double value)
     {
@@ -108,6 +129,12 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColorInput#setY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B y(double value)
     {
@@ -116,6 +143,12 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColorInput#heightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -125,6 +158,12 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColorInput#paintProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPaint(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
@@ -134,6 +173,12 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColorInput#widthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -143,6 +188,12 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColorInput#xProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -152,6 +203,12 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColorInput#yProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -161,12 +218,17 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
         return (B) this;
     }
 
+    /**
+     * 建構{@link ColorInput}物件
+     *
+     * @return 新的{@link ColorInput}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ColorInput build()
     {
         ColorInput instance = new ColorInput();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

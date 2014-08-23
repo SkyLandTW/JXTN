@@ -16,7 +16,6 @@ package javafx.scene;
 public class CameraBuilder<Z extends Camera, B extends CameraBuilder<Z, B>>
         extends javafx.scene.NodeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasFarClip;
     protected double valFarClip;
@@ -29,11 +28,11 @@ public class CameraBuilder<Z extends Camera, B extends CameraBuilder<Z, B>>
 
     protected boolean boundNearClip;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvNearClip;
-    public void applyTo(Camera instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasFarClip)
             instance.setFarClip(this.valFarClip);
         if (this.hasNearClip)
@@ -42,10 +41,14 @@ public class CameraBuilder<Z extends Camera, B extends CameraBuilder<Z, B>>
             instance.farClipProperty().bind(this.obsrvFarClip);
         if (this.boundNearClip)
             instance.nearClipProperty().bind(this.obsrvNearClip);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Camera#setFarClip}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B farClip(double value)
     {
@@ -54,6 +57,12 @@ public class CameraBuilder<Z extends Camera, B extends CameraBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Camera#setNearClip}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B nearClip(double value)
     {
@@ -62,6 +71,12 @@ public class CameraBuilder<Z extends Camera, B extends CameraBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Camera#farClipProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFarClip(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -71,6 +86,12 @@ public class CameraBuilder<Z extends Camera, B extends CameraBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Camera#nearClipProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindNearClip(javafx.beans.value.ObservableValue<? extends Double> source)
     {

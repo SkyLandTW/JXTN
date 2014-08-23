@@ -16,21 +16,24 @@ package org.controlsfx.control.action;
 public class ActionGroupBuilder<Z extends ActionGroup, B extends ActionGroupBuilder<Z, B>>
         extends org.controlsfx.control.action.AbstractActionBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasActions;
     protected java.util.Collection<org.controlsfx.control.action.Action> valActions;
-    public void applyTo(ActionGroup instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasActions)
             instance.getActions().setAll(this.valActions);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link ActionGroup#getActions}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B actions(java.util.Collection<org.controlsfx.control.action.Action> value)
     {
@@ -39,6 +42,12 @@ public class ActionGroupBuilder<Z extends ActionGroup, B extends ActionGroupBuil
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link ActionGroup#getActions}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B actions(org.controlsfx.control.action.Action... value)
@@ -48,11 +57,16 @@ public class ActionGroupBuilder<Z extends ActionGroup, B extends ActionGroupBuil
         return (B) this;
     }
 
+    /**
+     * 建構{@link ActionGroup}物件
+     *
+     * @return 新的{@link ActionGroup}物件實體
+     */
     @SuppressWarnings("unchecked")
     public ActionGroup build(java.lang.String arg0, java.util.Collection<org.controlsfx.control.action.Action> arg1)
     {
         ActionGroup instance = new ActionGroup(arg0, arg1);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

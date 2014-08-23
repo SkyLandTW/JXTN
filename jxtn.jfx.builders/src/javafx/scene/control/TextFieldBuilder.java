@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z, B>>
         extends javafx.scene.control.TextInputControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAlignment;
     protected javafx.geometry.Pos valAlignment;
@@ -35,11 +34,11 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
 
     protected boolean boundPrefColumnCount;
     protected javafx.beans.value.ObservableValue<? extends Integer> obsrvPrefColumnCount;
-    public void applyTo(TextField instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAlignment)
             instance.setAlignment(this.valAlignment);
         if (this.hasOnAction)
@@ -52,10 +51,14 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
             instance.onActionProperty().bind(this.obsrvOnAction);
         if (this.boundPrefColumnCount)
             instance.prefColumnCountProperty().bind(this.obsrvPrefColumnCount);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link TextField#setAlignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B alignment(javafx.geometry.Pos value)
     {
@@ -64,6 +67,12 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextField#setOnAction}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onAction(javafx.event.EventHandler<javafx.event.ActionEvent> value)
     {
@@ -72,6 +81,12 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextField#setPrefColumnCount}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefColumnCount(int value)
     {
@@ -80,6 +95,12 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextField#alignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
@@ -89,6 +110,12 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextField#onActionProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
     {
@@ -98,6 +125,12 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextField#prefColumnCountProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPrefColumnCount(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
@@ -107,12 +140,17 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 建構{@link TextField}物件
+     *
+     * @return 新的{@link TextField}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public TextField build()
     {
         TextField instance = new TextField();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

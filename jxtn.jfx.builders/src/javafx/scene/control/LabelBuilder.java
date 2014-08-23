@@ -16,21 +16,24 @@ package javafx.scene.control;
 public class LabelBuilder<Z extends Label, B extends LabelBuilder<Z, B>>
         extends javafx.scene.control.LabeledBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasLabelFor;
     protected javafx.scene.Node valLabelFor;
-    public void applyTo(Label instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasLabelFor)
             instance.setLabelFor(this.valLabelFor);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Label#setLabelFor}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B labelFor(javafx.scene.Node value)
     {
@@ -39,12 +42,17 @@ public class LabelBuilder<Z extends Label, B extends LabelBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Label}物件
+     *
+     * @return 新的{@link Label}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Label build()
     {
         Label instance = new Label();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

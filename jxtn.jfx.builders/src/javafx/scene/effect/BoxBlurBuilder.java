@@ -16,7 +16,6 @@ package javafx.scene.effect;
 public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasHeight;
     protected double valHeight;
@@ -41,11 +40,11 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
 
     protected boolean boundWidth;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvWidth;
-    public void applyTo(BoxBlur instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasHeight)
             instance.setHeight(this.valHeight);
         if (this.hasInput)
@@ -62,10 +61,14 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
             instance.iterationsProperty().bind(this.obsrvIterations);
         if (this.boundWidth)
             instance.widthProperty().bind(this.obsrvWidth);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link BoxBlur#setHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B height(double value)
     {
@@ -74,6 +77,12 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BoxBlur#setInput}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B input(javafx.scene.effect.Effect value)
     {
@@ -82,6 +91,12 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BoxBlur#setIterations}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B iterations(int value)
     {
@@ -90,6 +105,12 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BoxBlur#setWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B width(double value)
     {
@@ -98,6 +119,12 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BoxBlur#heightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -107,6 +134,12 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BoxBlur#inputProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
@@ -116,6 +149,12 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BoxBlur#iterationsProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindIterations(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
@@ -125,6 +164,12 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BoxBlur#widthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -134,12 +179,17 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link BoxBlur}物件
+     *
+     * @return 新的{@link BoxBlur}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public BoxBlur build()
     {
         BoxBlur instance = new BoxBlur();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

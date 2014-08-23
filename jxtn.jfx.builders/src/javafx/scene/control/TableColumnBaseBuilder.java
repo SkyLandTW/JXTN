@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends TableColumnBase<S, T>, B extends TableColumnBaseBuilder<S, T, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasComparator;
     protected java.util.Comparator<T> valComparator;
@@ -107,11 +106,11 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
 
     protected boolean boundVisible;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvVisible;
-    public void applyTo(TableColumnBase<S, T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasComparator)
             instance.setComparator(this.valComparator);
         if (this.hasContextMenu)
@@ -172,10 +171,14 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
             instance.textProperty().bind(this.obsrvText);
         if (this.boundVisible)
             instance.visibleProperty().bind(this.obsrvVisible);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#setComparator}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B comparator(java.util.Comparator<T> value)
     {
@@ -184,6 +187,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#setContextMenu}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B contextMenu(javafx.scene.control.ContextMenu value)
     {
@@ -192,6 +201,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#setEditable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B editable(boolean value)
     {
@@ -200,6 +215,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#setGraphic}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B graphic(javafx.scene.Node value)
     {
@@ -208,6 +229,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#setId}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B id(java.lang.String value)
     {
@@ -216,6 +243,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#setMaxWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B maxWidth(double value)
     {
@@ -224,6 +257,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#setMinWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B minWidth(double value)
     {
@@ -232,6 +271,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#setPrefWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefWidth(double value)
     {
@@ -240,6 +285,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#setResizable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B resizable(boolean value)
     {
@@ -248,6 +299,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#setSortNode}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B sortNode(javafx.scene.Node value)
     {
@@ -256,6 +313,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#setSortable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B sortable(boolean value)
     {
@@ -264,6 +327,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#setStyle}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B style(java.lang.String value)
     {
@@ -272,6 +341,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TableColumnBase#getStyleClass}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B styleClass(java.util.Collection<java.lang.String> value)
     {
@@ -280,6 +355,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TableColumnBase#getStyleClass}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B styleClass(java.lang.String... value)
@@ -289,6 +370,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#setText}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B text(java.lang.String value)
     {
@@ -297,6 +384,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#setUserData}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B userData(java.lang.Object value)
     {
@@ -305,6 +398,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#setVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B visible(boolean value)
     {
@@ -313,6 +412,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#comparatorProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindComparator(javafx.beans.value.ObservableValue<? extends java.util.Comparator<T>> source)
     {
@@ -322,6 +427,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#contextMenuProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindContextMenu(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContextMenu> source)
     {
@@ -331,6 +442,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#editableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -340,6 +457,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#graphicProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -349,6 +472,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#idProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindId(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -358,6 +487,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#maxWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -367,6 +502,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#minWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -376,6 +517,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#prefWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -385,6 +532,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#resizableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindResizable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -394,6 +547,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#sortNodeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSortNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -403,6 +562,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#sortableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSortable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -412,6 +577,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#styleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStyle(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -421,6 +592,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#textProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -430,6 +607,12 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TableColumnBase#visibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {

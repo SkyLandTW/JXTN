@@ -16,7 +16,6 @@ package javafx.scene.chart;
 public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Object, Z extends XYChart<X, Y>, B extends XYChartBuilder<X, Y, Z, B>>
         extends javafx.scene.chart.ChartBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAlternativeColumnFillVisible;
     protected boolean valAlternativeColumnFillVisible;
@@ -59,11 +58,11 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
 
     protected boolean boundVerticalZeroLineVisible;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvVerticalZeroLineVisible;
-    public void applyTo(XYChart<X, Y> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAlternativeColumnFillVisible)
             instance.setAlternativeColumnFillVisible(this.valAlternativeColumnFillVisible);
         if (this.hasAlternativeRowFillVisible)
@@ -92,10 +91,14 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
             instance.verticalGridLinesVisibleProperty().bind(this.obsrvVerticalGridLinesVisible);
         if (this.boundVerticalZeroLineVisible)
             instance.verticalZeroLineVisibleProperty().bind(this.obsrvVerticalZeroLineVisible);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link XYChart#setAlternativeColumnFillVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B alternativeColumnFillVisible(boolean value)
     {
@@ -104,6 +107,12 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link XYChart#setAlternativeRowFillVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B alternativeRowFillVisible(boolean value)
     {
@@ -112,6 +121,12 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link XYChart#setData}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B data(javafx.collections.ObservableList<javafx.scene.chart.XYChart.Series<X, Y>> value)
     {
@@ -120,6 +135,12 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link XYChart#setHorizontalGridLinesVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B horizontalGridLinesVisible(boolean value)
     {
@@ -128,6 +149,12 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link XYChart#setHorizontalZeroLineVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B horizontalZeroLineVisible(boolean value)
     {
@@ -136,6 +163,12 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link XYChart#setVerticalGridLinesVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B verticalGridLinesVisible(boolean value)
     {
@@ -144,6 +177,12 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link XYChart#setVerticalZeroLineVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B verticalZeroLineVisible(boolean value)
     {
@@ -152,6 +191,12 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link XYChart#alternativeColumnFillVisibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAlternativeColumnFillVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -161,6 +206,12 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link XYChart#alternativeRowFillVisibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAlternativeRowFillVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -170,6 +221,12 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link XYChart#dataProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindData(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<javafx.scene.chart.XYChart.Series<X, Y>>> source)
     {
@@ -179,6 +236,12 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link XYChart#horizontalGridLinesVisibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHorizontalGridLinesVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -188,6 +251,12 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link XYChart#horizontalZeroLineVisibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHorizontalZeroLineVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -197,6 +266,12 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link XYChart#verticalGridLinesVisibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindVerticalGridLinesVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -206,6 +281,12 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link XYChart#verticalZeroLineVisibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindVerticalZeroLineVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {

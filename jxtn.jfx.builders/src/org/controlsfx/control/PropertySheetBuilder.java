@@ -16,7 +16,6 @@ package org.controlsfx.control;
 public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertySheetBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasItems;
     protected java.util.Collection<org.controlsfx.control.PropertySheet.Item> valItems;
@@ -44,11 +43,11 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
 
     protected boolean boundSearchBoxVisible;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvSearchBoxVisible;
-    public void applyTo(PropertySheet instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasItems)
             instance.getItems().setAll(this.valItems);
         if (this.hasMode)
@@ -67,10 +66,14 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
             instance.modeSwitcherVisibleProperty().bind(this.obsrvModeSwitcherVisible);
         if (this.boundSearchBoxVisible)
             instance.searchBoxVisibleProperty().bind(this.obsrvSearchBoxVisible);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link PropertySheet#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B items(java.util.Collection<org.controlsfx.control.PropertySheet.Item> value)
     {
@@ -79,6 +82,12 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link PropertySheet#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B items(org.controlsfx.control.PropertySheet.Item... value)
@@ -88,6 +97,12 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PropertySheet#setMode}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B mode(org.controlsfx.control.PropertySheet.Mode value)
     {
@@ -96,6 +111,12 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PropertySheet#setModeSwitcherVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B modeSwitcherVisible(boolean value)
     {
@@ -104,6 +125,12 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PropertySheet#setPropertyEditorFactory}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B propertyEditorFactory(javafx.util.Callback<org.controlsfx.control.PropertySheet.Item, org.controlsfx.property.editor.PropertyEditor<?>> value)
     {
@@ -112,6 +139,12 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PropertySheet#setSearchBoxVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B searchBoxVisible(boolean value)
     {
@@ -120,6 +153,12 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PropertySheet#setTitleFilter}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B titleFilter(java.lang.String value)
     {
@@ -128,6 +167,12 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PropertySheet#modeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMode(javafx.beans.value.ObservableValue<? extends org.controlsfx.control.PropertySheet.Mode> source)
     {
@@ -137,6 +182,12 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PropertySheet#modeSwitcherVisibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindModeSwitcherVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -146,6 +197,12 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PropertySheet#searchBoxVisibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSearchBoxVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -155,12 +212,17 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
         return (B) this;
     }
 
+    /**
+     * 建構{@link PropertySheet}物件
+     *
+     * @return 新的{@link PropertySheet}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public PropertySheet build()
     {
         PropertySheet instance = new PropertySheet();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

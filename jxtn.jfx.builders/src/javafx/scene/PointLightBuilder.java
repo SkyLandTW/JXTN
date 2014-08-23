@@ -16,22 +16,24 @@ package javafx.scene;
 public class PointLightBuilder<Z extends PointLight, B extends PointLightBuilder<Z, B>>
         extends javafx.scene.LightBaseBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(PointLight instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link PointLight}物件
+     *
+     * @return 新的{@link PointLight}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public PointLight build()
     {
         PointLight instance = new PointLight();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

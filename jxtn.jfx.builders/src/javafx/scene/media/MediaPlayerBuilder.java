@@ -16,7 +16,6 @@ package javafx.scene.media;
 public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAudioSpectrumInterval;
     protected double valAudioSpectrumInterval;
@@ -83,11 +82,11 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
 
     protected boolean hasVolume;
     protected double valVolume;
-    public void applyTo(MediaPlayer instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAudioSpectrumInterval)
             instance.setAudioSpectrumInterval(this.valAudioSpectrumInterval);
         if (this.hasAudioSpectrumListener)
@@ -132,10 +131,14 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
             instance.setStopTime(this.valStopTime);
         if (this.hasVolume)
             instance.setVolume(this.valVolume);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setAudioSpectrumInterval}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B audioSpectrumInterval(double value)
     {
@@ -144,6 +147,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setAudioSpectrumListener}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B audioSpectrumListener(javafx.scene.media.AudioSpectrumListener value)
     {
@@ -152,6 +161,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setAudioSpectrumNumBands}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B audioSpectrumNumBands(int value)
     {
@@ -160,6 +175,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setAudioSpectrumThreshold}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B audioSpectrumThreshold(int value)
     {
@@ -168,6 +189,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setAutoPlay}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B autoPlay(boolean value)
     {
@@ -176,6 +203,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setBalance}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B balance(double value)
     {
@@ -184,6 +217,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setCycleCount}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cycleCount(int value)
     {
@@ -192,6 +231,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setMute}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B mute(boolean value)
     {
@@ -200,6 +245,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setOnEndOfMedia}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onEndOfMedia(java.lang.Runnable value)
     {
@@ -208,6 +259,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setOnError}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onError(java.lang.Runnable value)
     {
@@ -216,6 +273,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setOnHalted}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onHalted(java.lang.Runnable value)
     {
@@ -224,6 +287,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setOnMarker}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onMarker(javafx.event.EventHandler<javafx.scene.media.MediaMarkerEvent> value)
     {
@@ -232,6 +301,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setOnPaused}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onPaused(java.lang.Runnable value)
     {
@@ -240,6 +315,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setOnPlaying}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onPlaying(java.lang.Runnable value)
     {
@@ -248,6 +329,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setOnReady}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onReady(java.lang.Runnable value)
     {
@@ -256,6 +343,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setOnRepeat}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onRepeat(java.lang.Runnable value)
     {
@@ -264,6 +357,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setOnStalled}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onStalled(java.lang.Runnable value)
     {
@@ -272,6 +371,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setOnStopped}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onStopped(java.lang.Runnable value)
     {
@@ -280,6 +385,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setRate}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B rate(double value)
     {
@@ -288,6 +399,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setStartTime}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B startTime(javafx.util.Duration value)
     {
@@ -296,6 +413,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setStopTime}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B stopTime(javafx.util.Duration value)
     {
@@ -304,6 +427,12 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaPlayer#setVolume}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B volume(double value)
     {
@@ -312,11 +441,16 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
         return (B) this;
     }
 
+    /**
+     * 建構{@link MediaPlayer}物件
+     *
+     * @return 新的{@link MediaPlayer}物件實體
+     */
     @SuppressWarnings("unchecked")
     public MediaPlayer build(javafx.scene.media.Media arg0)
     {
         MediaPlayer instance = new MediaPlayer(arg0);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

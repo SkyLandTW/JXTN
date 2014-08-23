@@ -16,7 +16,6 @@ package javafx.scene.effect;
 public class DisplacementMapBuilder<Z extends DisplacementMap, B extends DisplacementMapBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasInput;
     protected javafx.scene.effect.Effect valInput;
@@ -59,11 +58,11 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
 
     protected boolean boundWrap;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvWrap;
-    public void applyTo(DisplacementMap instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasInput)
             instance.setInput(this.valInput);
         if (this.hasMapData)
@@ -92,10 +91,14 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
             instance.scaleYProperty().bind(this.obsrvScaleY);
         if (this.boundWrap)
             instance.wrapProperty().bind(this.obsrvWrap);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link DisplacementMap#setInput}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B input(javafx.scene.effect.Effect value)
     {
@@ -104,6 +107,12 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DisplacementMap#setMapData}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B mapData(javafx.scene.effect.FloatMap value)
     {
@@ -112,6 +121,12 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DisplacementMap#setOffsetX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B offsetX(double value)
     {
@@ -120,6 +135,12 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DisplacementMap#setOffsetY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B offsetY(double value)
     {
@@ -128,6 +149,12 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DisplacementMap#setScaleX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B scaleX(double value)
     {
@@ -136,6 +163,12 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DisplacementMap#setScaleY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B scaleY(double value)
     {
@@ -144,6 +177,12 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DisplacementMap#setWrap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B wrap(boolean value)
     {
@@ -152,6 +191,12 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DisplacementMap#inputProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
@@ -161,6 +206,12 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DisplacementMap#mapDataProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMapData(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.FloatMap> source)
     {
@@ -170,6 +221,12 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DisplacementMap#offsetXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOffsetX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -179,6 +236,12 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DisplacementMap#offsetYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOffsetY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -188,6 +251,12 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DisplacementMap#scaleXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindScaleX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -197,6 +266,12 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DisplacementMap#scaleYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindScaleY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -206,6 +281,12 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DisplacementMap#wrapProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindWrap(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -215,12 +296,17 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
         return (B) this;
     }
 
+    /**
+     * 建構{@link DisplacementMap}物件
+     *
+     * @return 新的{@link DisplacementMap}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public DisplacementMap build()
     {
         DisplacementMap instance = new DisplacementMap();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,26 +16,29 @@ package javafx.scene.transform;
 public class TransformBuilder<Z extends Transform, B extends TransformBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasOnTransformChanged;
     protected javafx.event.EventHandler<? super javafx.scene.transform.TransformChangedEvent> valOnTransformChanged;
 
     protected boolean boundOnTransformChanged;
     protected javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.transform.TransformChangedEvent>> obsrvOnTransformChanged;
-    public void applyTo(Transform instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasOnTransformChanged)
             instance.setOnTransformChanged(this.valOnTransformChanged);
         if (this.boundOnTransformChanged)
             instance.onTransformChangedProperty().bind(this.obsrvOnTransformChanged);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Transform#setOnTransformChanged}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onTransformChanged(javafx.event.EventHandler<? super javafx.scene.transform.TransformChangedEvent> value)
     {
@@ -44,6 +47,12 @@ public class TransformBuilder<Z extends Transform, B extends TransformBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Transform#onTransformChangedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnTransformChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.transform.TransformChangedEvent>> source)
     {

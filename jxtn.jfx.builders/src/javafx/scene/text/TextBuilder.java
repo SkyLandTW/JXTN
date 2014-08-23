@@ -16,7 +16,6 @@ package javafx.scene.text;
 public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBoundsType;
     protected javafx.scene.text.TextBoundsType valBoundsType;
@@ -89,11 +88,11 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
 
     protected boolean boundY;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvY;
-    public void applyTo(Text instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBoundsType)
             instance.setBoundsType(this.valBoundsType);
         if (this.hasFont)
@@ -142,10 +141,14 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
             instance.xProperty().bind(this.obsrvX);
         if (this.boundY)
             instance.yProperty().bind(this.obsrvY);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Text#setBoundsType}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B boundsType(javafx.scene.text.TextBoundsType value)
     {
@@ -154,6 +157,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#setFont}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B font(javafx.scene.text.Font value)
     {
@@ -162,6 +171,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#setFontSmoothingType}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fontSmoothingType(javafx.scene.text.FontSmoothingType value)
     {
@@ -170,6 +185,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#setLineSpacing}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B lineSpacing(double value)
     {
@@ -178,6 +199,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#setStrikethrough}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B strikethrough(boolean value)
     {
@@ -186,6 +213,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#setText}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B text(java.lang.String value)
     {
@@ -194,6 +227,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#setTextAlignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B textAlignment(javafx.scene.text.TextAlignment value)
     {
@@ -202,6 +241,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#setTextOrigin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B textOrigin(javafx.geometry.VPos value)
     {
@@ -210,6 +255,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#setUnderline}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B underline(boolean value)
     {
@@ -218,6 +269,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#setWrappingWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B wrappingWidth(double value)
     {
@@ -226,6 +283,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#setX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B x(double value)
     {
@@ -234,6 +297,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#setY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B y(double value)
     {
@@ -242,6 +311,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#boundsTypeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindBoundsType(javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextBoundsType> source)
     {
@@ -251,6 +326,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#fontProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFont(javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> source)
     {
@@ -260,6 +341,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#fontSmoothingTypeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFontSmoothingType(javafx.beans.value.ObservableValue<? extends javafx.scene.text.FontSmoothingType> source)
     {
@@ -269,6 +356,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#lineSpacingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLineSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -278,6 +371,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#strikethroughProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStrikethrough(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -287,6 +386,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#textAlignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTextAlignment(javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextAlignment> source)
     {
@@ -296,6 +401,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#textOriginProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTextOrigin(javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> source)
     {
@@ -305,6 +416,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#textProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -314,6 +431,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#underlineProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindUnderline(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -323,6 +446,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#wrappingWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindWrappingWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -332,6 +461,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#xProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -341,6 +476,12 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Text#yProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -350,12 +491,17 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Text}物件
+     *
+     * @return 新的{@link Text}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Text build()
     {
         Text instance = new Text();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

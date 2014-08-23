@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasHalignment;
     protected javafx.geometry.HPos valHalignment;
@@ -35,11 +34,11 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
 
     protected boolean boundValignment;
     protected javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> obsrvValignment;
-    public void applyTo(Separator instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasHalignment)
             instance.setHalignment(this.valHalignment);
         if (this.hasOrientation)
@@ -52,10 +51,14 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
             instance.orientationProperty().bind(this.obsrvOrientation);
         if (this.boundValignment)
             instance.valignmentProperty().bind(this.obsrvValignment);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Separator#setHalignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B halignment(javafx.geometry.HPos value)
     {
@@ -64,6 +67,12 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Separator#setOrientation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B orientation(javafx.geometry.Orientation value)
     {
@@ -72,6 +81,12 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Separator#setValignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B valignment(javafx.geometry.VPos value)
     {
@@ -80,6 +95,12 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Separator#halignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHalignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.HPos> source)
     {
@@ -89,6 +110,12 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Separator#orientationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
@@ -98,6 +125,12 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Separator#valignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindValignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> source)
     {
@@ -107,12 +140,17 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 建構{@link Separator}物件
+     *
+     * @return 新的{@link Separator}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Separator build()
     {
         Separator instance = new Separator();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

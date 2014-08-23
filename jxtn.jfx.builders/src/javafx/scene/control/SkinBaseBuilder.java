@@ -16,21 +16,24 @@ package javafx.scene.control;
 public class SkinBaseBuilder<C extends javafx.scene.control.Control, Z extends SkinBase<C>, B extends SkinBaseBuilder<C, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasChildren;
     protected java.util.Collection<javafx.scene.Node> valChildren;
-    public void applyTo(SkinBase<C> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasChildren)
             instance.getChildren().setAll(this.valChildren);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link SkinBase#getChildren}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B children(java.util.Collection<javafx.scene.Node> value)
     {
@@ -39,6 +42,12 @@ public class SkinBaseBuilder<C extends javafx.scene.control.Control, Z extends S
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link SkinBase#getChildren}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B children(javafx.scene.Node... value)

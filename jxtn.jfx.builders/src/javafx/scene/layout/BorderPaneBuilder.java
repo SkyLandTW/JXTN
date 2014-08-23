@@ -16,7 +16,6 @@ package javafx.scene.layout;
 public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder<Z, B>>
         extends javafx.scene.layout.PaneBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBottom;
     protected javafx.scene.Node valBottom;
@@ -47,11 +46,11 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
 
     protected boolean boundTop;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvTop;
-    public void applyTo(BorderPane instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBottom)
             instance.setBottom(this.valBottom);
         if (this.hasCenter)
@@ -72,10 +71,14 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
             instance.rightProperty().bind(this.obsrvRight);
         if (this.boundTop)
             instance.topProperty().bind(this.obsrvTop);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link BorderPane#setBottom}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bottom(javafx.scene.Node value)
     {
@@ -84,6 +87,12 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BorderPane#setCenter}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B center(javafx.scene.Node value)
     {
@@ -92,6 +101,12 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BorderPane#setLeft}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B left(javafx.scene.Node value)
     {
@@ -100,6 +115,12 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BorderPane#setRight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B right(javafx.scene.Node value)
     {
@@ -108,6 +129,12 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BorderPane#setTop}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B top(javafx.scene.Node value)
     {
@@ -116,6 +143,12 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BorderPane#bottomProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindBottom(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -125,6 +158,12 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BorderPane#centerProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCenter(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -134,6 +173,12 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BorderPane#leftProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLeft(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -143,6 +188,12 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BorderPane#rightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRight(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -152,6 +203,12 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BorderPane#topProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTop(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -161,12 +218,17 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 建構{@link BorderPane}物件
+     *
+     * @return 新的{@link BorderPane}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public BorderPane build()
     {
         BorderPane instance = new BorderPane();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
         extends javafx.scene.layout.RegionBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasContextMenu;
     protected javafx.scene.control.ContextMenu valContextMenu;
@@ -35,11 +34,11 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
 
     protected boolean boundTooltip;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.control.Tooltip> obsrvTooltip;
-    public void applyTo(Control instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasContextMenu)
             instance.setContextMenu(this.valContextMenu);
         if (this.hasSkin)
@@ -52,10 +51,14 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
             instance.skinProperty().bind(this.obsrvSkin);
         if (this.boundTooltip)
             instance.tooltipProperty().bind(this.obsrvTooltip);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Control#setContextMenu}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B contextMenu(javafx.scene.control.ContextMenu value)
     {
@@ -64,6 +67,12 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Control#setSkin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B skin(javafx.scene.control.Skin<?> value)
     {
@@ -72,6 +81,12 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Control#setTooltip}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tooltip(javafx.scene.control.Tooltip value)
     {
@@ -80,6 +95,12 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Control#contextMenuProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindContextMenu(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContextMenu> source)
     {
@@ -89,6 +110,12 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Control#skinProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSkin(javafx.beans.value.ObservableValue<? extends javafx.scene.control.Skin<?>> source)
     {
@@ -98,6 +125,12 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Control#tooltipProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTooltip(javafx.beans.value.ObservableValue<? extends javafx.scene.control.Tooltip> source)
     {

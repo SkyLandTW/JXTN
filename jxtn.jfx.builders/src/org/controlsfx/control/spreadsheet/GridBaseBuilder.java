@@ -16,7 +16,6 @@ package org.controlsfx.control.spreadsheet;
 public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasColumnHeaders;
     protected java.util.Collection<java.lang.String> valColumnHeaders;
@@ -32,11 +31,11 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
 
     protected boolean hasRows;
     protected java.util.Collection<javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell>> valRows;
-    public void applyTo(GridBase instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasColumnHeaders)
             instance.getColumnHeaders().setAll(this.valColumnHeaders);
         if (this.hasLocked)
@@ -47,10 +46,14 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
             instance.setRowHeightCallback(this.valRowHeightCallback);
         if (this.hasRows)
             instance.setRows(this.valRows);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link GridBase#getColumnHeaders}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B columnHeaders(java.util.Collection<java.lang.String> value)
     {
@@ -59,6 +62,12 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link GridBase#getColumnHeaders}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B columnHeaders(java.lang.String... value)
@@ -68,6 +77,12 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridBase#setLocked}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B locked(java.lang.Boolean value)
     {
@@ -76,6 +91,12 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link GridBase#getRowHeaders}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B rowHeaders(java.util.Collection<java.lang.String> value)
     {
@@ -84,6 +105,12 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link GridBase#getRowHeaders}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B rowHeaders(java.lang.String... value)
@@ -93,6 +120,12 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridBase#setRowHeightCallback}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B rowHeightCallback(javafx.util.Callback<java.lang.Integer, java.lang.Double> value)
     {
@@ -101,6 +134,12 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link GridBase#setRows}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B rows(java.util.Collection<javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell>> value)
     {
@@ -109,12 +148,17 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 建構{@link GridBase}物件
+     *
+     * @return 新的{@link GridBase}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public GridBase build()
     {
         GridBase instance = new GridBase();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

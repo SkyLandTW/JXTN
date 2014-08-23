@@ -16,13 +16,10 @@ package javafx.scene.media;
 public class VideoTrackBuilder<Z extends VideoTrack, B extends VideoTrackBuilder<Z, B>>
         extends javafx.scene.media.TrackBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(VideoTrack instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 }

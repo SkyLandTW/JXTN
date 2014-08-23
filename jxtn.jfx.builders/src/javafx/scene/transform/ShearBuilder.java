@@ -16,7 +16,6 @@ package javafx.scene.transform;
 public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
         extends javafx.scene.transform.TransformBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasPivotX;
     protected double valPivotX;
@@ -41,11 +40,11 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
 
     protected boolean boundY;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvY;
-    public void applyTo(Shear instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasPivotX)
             instance.setPivotX(this.valPivotX);
         if (this.hasPivotY)
@@ -62,10 +61,14 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
             instance.xProperty().bind(this.obsrvX);
         if (this.boundY)
             instance.yProperty().bind(this.obsrvY);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Shear#setPivotX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B pivotX(double value)
     {
@@ -74,6 +77,12 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shear#setPivotY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B pivotY(double value)
     {
@@ -82,6 +91,12 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shear#setX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B x(double value)
     {
@@ -90,6 +105,12 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shear#setY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B y(double value)
     {
@@ -98,6 +119,12 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shear#pivotXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPivotX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -107,6 +134,12 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shear#pivotYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPivotY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -116,6 +149,12 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shear#xProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -125,6 +164,12 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shear#yProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -134,12 +179,17 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Shear}物件
+     *
+     * @return 新的{@link Shear}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Shear build()
     {
         Shear instance = new Shear();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

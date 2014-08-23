@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasContent;
     protected javafx.scene.Node valContent;
@@ -107,11 +106,11 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
 
     protected boolean boundVvalue;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvVvalue;
-    public void applyTo(ScrollPane instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasContent)
             instance.setContent(this.valContent);
         if (this.hasFitToHeight)
@@ -172,10 +171,14 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
             instance.vminProperty().bind(this.obsrvVmin);
         if (this.boundVvalue)
             instance.vvalueProperty().bind(this.obsrvVvalue);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#setContent}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B content(javafx.scene.Node value)
     {
@@ -184,6 +187,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#setFitToHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fitToHeight(boolean value)
     {
@@ -192,6 +201,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#setFitToWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fitToWidth(boolean value)
     {
@@ -200,6 +215,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#setHbarPolicy}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B hbarPolicy(javafx.scene.control.ScrollPane.ScrollBarPolicy value)
     {
@@ -208,6 +229,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#setHmax}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B hmax(double value)
     {
@@ -216,6 +243,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#setHmin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B hmin(double value)
     {
@@ -224,6 +257,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#setHvalue}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B hvalue(double value)
     {
@@ -232,6 +271,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#setPannable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B pannable(boolean value)
     {
@@ -240,6 +285,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#setPrefViewportHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefViewportHeight(double value)
     {
@@ -248,6 +299,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#setPrefViewportWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefViewportWidth(double value)
     {
@@ -256,6 +313,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#setVbarPolicy}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B vbarPolicy(javafx.scene.control.ScrollPane.ScrollBarPolicy value)
     {
@@ -264,6 +327,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#setViewportBounds}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B viewportBounds(javafx.geometry.Bounds value)
     {
@@ -272,6 +341,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#setVmax}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B vmax(double value)
     {
@@ -280,6 +355,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#setVmin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B vmin(double value)
     {
@@ -288,6 +369,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#setVvalue}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B vvalue(double value)
     {
@@ -296,6 +383,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#contentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -305,6 +398,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#fitToHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFitToHeight(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -314,6 +413,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#fitToWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFitToWidth(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -323,6 +428,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#hbarPolicyProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHbarPolicy(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ScrollPane.ScrollBarPolicy> source)
     {
@@ -332,6 +443,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#hmaxProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHmax(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -341,6 +458,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#hminProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHmin(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -350,6 +473,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#hvalueProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHvalue(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -359,6 +488,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#pannableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPannable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -368,6 +503,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#prefViewportHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPrefViewportHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -377,6 +518,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#prefViewportWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPrefViewportWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -386,6 +533,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#vbarPolicyProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindVbarPolicy(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ScrollPane.ScrollBarPolicy> source)
     {
@@ -395,6 +548,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#viewportBoundsProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindViewportBounds(javafx.beans.value.ObservableValue<? extends javafx.geometry.Bounds> source)
     {
@@ -404,6 +563,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#vmaxProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindVmax(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -413,6 +578,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#vminProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindVmin(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -422,6 +593,12 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollPane#vvalueProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindVvalue(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -431,12 +608,17 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 建構{@link ScrollPane}物件
+     *
+     * @return 新的{@link ScrollPane}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ScrollPane build()
     {
         ScrollPane instance = new ScrollPane();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

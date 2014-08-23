@@ -16,7 +16,6 @@ package javafx.scene.control.cell;
 public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends ComboBoxTableCell<S, T>, B extends ComboBoxTableCellBuilder<S, T, Z, B>>
         extends javafx.scene.control.TableCellBuilder<S, T, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasComboBoxEditable;
     protected boolean valComboBoxEditable;
@@ -32,11 +31,11 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
 
     protected boolean boundConverter;
     protected javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> obsrvConverter;
-    public void applyTo(ComboBoxTableCell<S, T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasComboBoxEditable)
             instance.setComboBoxEditable(this.valComboBoxEditable);
         if (this.hasConverter)
@@ -47,10 +46,14 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
             instance.comboBoxEditableProperty().bind(this.obsrvComboBoxEditable);
         if (this.boundConverter)
             instance.converterProperty().bind(this.obsrvConverter);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxTableCell#setComboBoxEditable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B comboBoxEditable(boolean value)
     {
@@ -59,6 +62,12 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxTableCell#setConverter}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B converter(javafx.util.StringConverter<T> value)
     {
@@ -67,6 +76,12 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link ComboBoxTableCell#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B items(java.util.Collection<T> value)
     {
@@ -75,6 +90,12 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link ComboBoxTableCell#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B items(T... value)
@@ -84,6 +105,12 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxTableCell#comboBoxEditableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindComboBoxEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -93,6 +120,12 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxTableCell#converterProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
     {
@@ -102,12 +135,17 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
         return (B) this;
     }
 
+    /**
+     * 建構{@link ComboBoxTableCell}物件
+     *
+     * @return 新的{@link ComboBoxTableCell}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ComboBoxTableCell<S, T> build()
     {
         ComboBoxTableCell<S, T> instance = new ComboBoxTableCell<S, T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

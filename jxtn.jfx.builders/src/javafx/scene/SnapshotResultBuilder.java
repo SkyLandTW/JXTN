@@ -16,13 +16,10 @@ package javafx.scene;
 public class SnapshotResultBuilder<Z extends SnapshotResult, B extends SnapshotResultBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(SnapshotResult instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 }

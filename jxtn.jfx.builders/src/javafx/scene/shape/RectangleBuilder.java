@@ -16,7 +16,6 @@ package javafx.scene.shape;
 public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasArcHeight;
     protected double valArcHeight;
@@ -53,11 +52,11 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
 
     protected boolean boundY;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvY;
-    public void applyTo(Rectangle instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasArcHeight)
             instance.setArcHeight(this.valArcHeight);
         if (this.hasArcWidth)
@@ -82,10 +81,14 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
             instance.xProperty().bind(this.obsrvX);
         if (this.boundY)
             instance.yProperty().bind(this.obsrvY);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Rectangle#setArcHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B arcHeight(double value)
     {
@@ -94,6 +97,12 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rectangle#setArcWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B arcWidth(double value)
     {
@@ -102,6 +111,12 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rectangle#setHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B height(double value)
     {
@@ -110,6 +125,12 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rectangle#setWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B width(double value)
     {
@@ -118,6 +139,12 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rectangle#setX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B x(double value)
     {
@@ -126,6 +153,12 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rectangle#setY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B y(double value)
     {
@@ -134,6 +167,12 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rectangle#arcHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindArcHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -143,6 +182,12 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rectangle#arcWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindArcWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -152,6 +197,12 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rectangle#heightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -161,6 +212,12 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rectangle#widthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -170,6 +227,12 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rectangle#xProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -179,6 +242,12 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rectangle#yProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -188,12 +257,17 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 建構{@link Rectangle}物件
+     *
+     * @return 新的{@link Rectangle}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Rectangle build()
     {
         Rectangle instance = new Rectangle();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

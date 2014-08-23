@@ -16,7 +16,6 @@ package javafx.stage;
 public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuilder<Z, B>>
         extends javafx.stage.WindowBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAnchorLocation;
     protected javafx.stage.PopupWindow.AnchorLocation valAnchorLocation;
@@ -59,11 +58,11 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
 
     protected boolean boundOnAutoHide;
     protected javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrvOnAutoHide;
-    public void applyTo(PopupWindow instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAnchorLocation)
             instance.setAnchorLocation(this.valAnchorLocation);
         if (this.hasAnchorX)
@@ -92,10 +91,14 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
             instance.hideOnEscapeProperty().bind(this.obsrvHideOnEscape);
         if (this.boundOnAutoHide)
             instance.onAutoHideProperty().bind(this.obsrvOnAutoHide);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link PopupWindow#setAnchorLocation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B anchorLocation(javafx.stage.PopupWindow.AnchorLocation value)
     {
@@ -104,6 +107,12 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupWindow#setAnchorX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B anchorX(double value)
     {
@@ -112,6 +121,12 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupWindow#setAnchorY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B anchorY(double value)
     {
@@ -120,6 +135,12 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupWindow#setAutoFix}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B autoFix(boolean value)
     {
@@ -128,6 +149,12 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupWindow#setAutoHide}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B autoHide(boolean value)
     {
@@ -136,6 +163,12 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupWindow#setConsumeAutoHidingEvents}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B consumeAutoHidingEvents(boolean value)
     {
@@ -144,6 +177,12 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupWindow#setHideOnEscape}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B hideOnEscape(boolean value)
     {
@@ -152,6 +191,12 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupWindow#setOnAutoHide}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onAutoHide(javafx.event.EventHandler<javafx.event.Event> value)
     {
@@ -160,6 +205,12 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupWindow#anchorLocationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAnchorLocation(javafx.beans.value.ObservableValue<? extends javafx.stage.PopupWindow.AnchorLocation> source)
     {
@@ -169,6 +220,12 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupWindow#autoFixProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAutoFix(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -178,6 +235,12 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupWindow#autoHideProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAutoHide(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -187,6 +250,12 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupWindow#consumeAutoHidingEventsProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindConsumeAutoHidingEvents(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -196,6 +265,12 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupWindow#hideOnEscapeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHideOnEscape(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -205,6 +280,12 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupWindow#onAutoHideProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnAutoHide(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {

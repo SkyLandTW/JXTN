@@ -16,7 +16,6 @@ package javafx.scene.chart;
 public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>>
         extends javafx.scene.chart.ChartBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasClockwise;
     protected boolean valClockwise;
@@ -47,11 +46,11 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
 
     protected boolean boundStartAngle;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvStartAngle;
-    public void applyTo(PieChart instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasClockwise)
             instance.setClockwise(this.valClockwise);
         if (this.hasData)
@@ -72,10 +71,14 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
             instance.labelsVisibleProperty().bind(this.obsrvLabelsVisible);
         if (this.boundStartAngle)
             instance.startAngleProperty().bind(this.obsrvStartAngle);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link PieChart#setClockwise}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B clockwise(boolean value)
     {
@@ -84,6 +87,12 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PieChart#setData}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B data(javafx.collections.ObservableList<javafx.scene.chart.PieChart.Data> value)
     {
@@ -92,6 +101,12 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PieChart#setLabelLineLength}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B labelLineLength(double value)
     {
@@ -100,6 +115,12 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PieChart#setLabelsVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B labelsVisible(boolean value)
     {
@@ -108,6 +129,12 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PieChart#setStartAngle}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B startAngle(double value)
     {
@@ -116,6 +143,12 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PieChart#clockwiseProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindClockwise(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -125,6 +158,12 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PieChart#dataProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindData(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<javafx.scene.chart.PieChart.Data>> source)
     {
@@ -134,6 +173,12 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PieChart#labelLineLengthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLabelLineLength(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -143,6 +188,12 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PieChart#labelsVisibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLabelsVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -152,6 +203,12 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PieChart#startAngleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStartAngle(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -161,12 +218,17 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 建構{@link PieChart}物件
+     *
+     * @return 新的{@link PieChart}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public PieChart build()
     {
         PieChart instance = new PieChart();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

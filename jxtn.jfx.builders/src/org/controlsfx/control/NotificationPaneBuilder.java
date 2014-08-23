@@ -16,7 +16,6 @@ package org.controlsfx.control;
 public class NotificationPaneBuilder<Z extends NotificationPane, B extends NotificationPaneBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasActions;
     protected java.util.Collection<org.controlsfx.control.action.Action> valActions;
@@ -68,11 +67,11 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
 
     protected boolean boundText;
     protected javafx.beans.value.ObservableValue<? extends String> obsrvText;
-    public void applyTo(NotificationPane instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasActions)
             instance.getActions().setAll(this.valActions);
         if (this.hasContent)
@@ -107,10 +106,14 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
             instance.showFromTopProperty().bind(this.obsrvShowFromTop);
         if (this.boundText)
             instance.textProperty().bind(this.obsrvText);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link NotificationPane#getActions}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B actions(java.util.Collection<org.controlsfx.control.action.Action> value)
     {
@@ -119,6 +122,12 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link NotificationPane#getActions}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B actions(org.controlsfx.control.action.Action... value)
@@ -128,6 +137,12 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NotificationPane#setContent}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B content(javafx.scene.Node value)
     {
@@ -136,6 +151,12 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NotificationPane#setGraphic}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B graphic(javafx.scene.Node value)
     {
@@ -144,6 +165,12 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NotificationPane#setOnHidden}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onHidden(javafx.event.EventHandler<javafx.event.Event> value)
     {
@@ -152,6 +179,12 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NotificationPane#setOnHiding}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onHiding(javafx.event.EventHandler<javafx.event.Event> value)
     {
@@ -160,6 +193,12 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NotificationPane#setOnShowing}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onShowing(javafx.event.EventHandler<javafx.event.Event> value)
     {
@@ -168,6 +207,12 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NotificationPane#setOnShown}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onShown(javafx.event.EventHandler<javafx.event.Event> value)
     {
@@ -176,6 +221,12 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NotificationPane#setShowFromTop}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B showFromTop(boolean value)
     {
@@ -184,6 +235,12 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NotificationPane#setText}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B text(java.lang.String value)
     {
@@ -192,6 +249,12 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NotificationPane#contentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -201,6 +264,12 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NotificationPane#graphicProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -210,6 +279,12 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NotificationPane#onHiddenProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnHidden(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
@@ -219,6 +294,12 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NotificationPane#onHidingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnHiding(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
@@ -228,6 +309,12 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NotificationPane#onShowingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnShowing(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
@@ -237,6 +324,12 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NotificationPane#onShownProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnShown(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
@@ -246,6 +339,12 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NotificationPane#showFromTopProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindShowFromTop(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -255,6 +354,12 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NotificationPane#textProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -264,12 +369,17 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         return (B) this;
     }
 
+    /**
+     * 建構{@link NotificationPane}物件
+     *
+     * @return 新的{@link NotificationPane}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public NotificationPane build()
     {
         NotificationPane instance = new NotificationPane();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

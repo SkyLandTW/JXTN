@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBlockIncrement;
     protected double valBlockIncrement;
@@ -59,11 +58,11 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
 
     protected boolean boundVisibleAmount;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvVisibleAmount;
-    public void applyTo(ScrollBar instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBlockIncrement)
             instance.setBlockIncrement(this.valBlockIncrement);
         if (this.hasMax)
@@ -92,10 +91,14 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
             instance.valueProperty().bind(this.obsrvValue);
         if (this.boundVisibleAmount)
             instance.visibleAmountProperty().bind(this.obsrvVisibleAmount);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ScrollBar#setBlockIncrement}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B blockIncrement(double value)
     {
@@ -104,6 +107,12 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollBar#setMax}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B max(double value)
     {
@@ -112,6 +121,12 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollBar#setMin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B min(double value)
     {
@@ -120,6 +135,12 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollBar#setOrientation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B orientation(javafx.geometry.Orientation value)
     {
@@ -128,6 +149,12 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollBar#setUnitIncrement}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B unitIncrement(double value)
     {
@@ -136,6 +163,12 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollBar#setValue}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B value(double value)
     {
@@ -144,6 +177,12 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollBar#setVisibleAmount}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B visibleAmount(double value)
     {
@@ -152,6 +191,12 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollBar#blockIncrementProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindBlockIncrement(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -161,6 +206,12 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollBar#maxProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMax(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -170,6 +221,12 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollBar#minProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMin(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -179,6 +236,12 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollBar#orientationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
@@ -188,6 +251,12 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollBar#unitIncrementProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindUnitIncrement(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -197,6 +266,12 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollBar#valueProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindValue(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -206,6 +281,12 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ScrollBar#visibleAmountProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindVisibleAmount(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -215,12 +296,17 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 建構{@link ScrollBar}物件
+     *
+     * @return 新的{@link ScrollBar}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ScrollBar build()
     {
         ScrollBar instance = new ScrollBar();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

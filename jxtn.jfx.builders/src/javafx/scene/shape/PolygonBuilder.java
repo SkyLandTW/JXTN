@@ -16,21 +16,24 @@ package javafx.scene.shape;
 public class PolygonBuilder<Z extends Polygon, B extends PolygonBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasPoints;
     protected java.util.Collection<java.lang.Double> valPoints;
-    public void applyTo(Polygon instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasPoints)
             instance.getPoints().setAll(this.valPoints);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link Polygon#getPoints}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B points(java.util.Collection<java.lang.Double> value)
     {
@@ -39,6 +42,12 @@ public class PolygonBuilder<Z extends Polygon, B extends PolygonBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Polygon#getPoints}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B points(java.lang.Double... value)
@@ -48,12 +57,17 @@ public class PolygonBuilder<Z extends Polygon, B extends PolygonBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Polygon}物件
+     *
+     * @return 新的{@link Polygon}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Polygon build()
     {
         Polygon instance = new Polygon();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

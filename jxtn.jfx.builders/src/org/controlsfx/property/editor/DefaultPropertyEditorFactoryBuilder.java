@@ -16,22 +16,24 @@ package org.controlsfx.property.editor;
 public class DefaultPropertyEditorFactoryBuilder<Z extends DefaultPropertyEditorFactory, B extends DefaultPropertyEditorFactoryBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(DefaultPropertyEditorFactory instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link DefaultPropertyEditorFactory}物件
+     *
+     * @return 新的{@link DefaultPropertyEditorFactory}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public DefaultPropertyEditorFactory build()
     {
         DefaultPropertyEditorFactory instance = new DefaultPropertyEditorFactory();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

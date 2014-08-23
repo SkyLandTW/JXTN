@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, B extends ListViewBuilder<T, Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCellFactory;
     protected javafx.util.Callback<javafx.scene.control.ListView<T>, javafx.scene.control.ListCell<T>> valCellFactory;
@@ -86,11 +85,11 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
 
     protected boolean boundSelectionModel;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> obsrvSelectionModel;
-    public void applyTo(ListView<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCellFactory)
             instance.setCellFactory(this.valCellFactory);
         if (this.hasEditable)
@@ -137,10 +136,14 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
             instance.placeholderProperty().bind(this.obsrvPlaceholder);
         if (this.boundSelectionModel)
             instance.selectionModelProperty().bind(this.obsrvSelectionModel);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ListView#setCellFactory}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cellFactory(javafx.util.Callback<javafx.scene.control.ListView<T>, javafx.scene.control.ListCell<T>> value)
     {
@@ -149,6 +152,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#setEditable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B editable(boolean value)
     {
@@ -157,6 +166,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#setFixedCellSize}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fixedCellSize(double value)
     {
@@ -165,6 +180,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#setFocusModel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B focusModel(javafx.scene.control.FocusModel<T> value)
     {
@@ -173,6 +194,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#setItems}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B items(javafx.collections.ObservableList<T> value)
     {
@@ -181,6 +208,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#setOnEditCancel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onEditCancel(javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>> value)
     {
@@ -189,6 +222,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#setOnEditCommit}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onEditCommit(javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>> value)
     {
@@ -197,6 +236,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#setOnEditStart}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onEditStart(javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>> value)
     {
@@ -205,6 +250,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#setOnScrollTo}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onScrollTo(javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>> value)
     {
@@ -213,6 +264,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#setOrientation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B orientation(javafx.geometry.Orientation value)
     {
@@ -221,6 +278,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#setPlaceholder}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B placeholder(javafx.scene.Node value)
     {
@@ -229,6 +292,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#setSelectionModel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B selectionModel(javafx.scene.control.MultipleSelectionModel<T> value)
     {
@@ -237,6 +306,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#cellFactoryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.ListView<T>, javafx.scene.control.ListCell<T>>> source)
     {
@@ -246,6 +321,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#editableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -255,6 +336,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#fixedCellSizeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFixedCellSize(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -264,6 +351,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#focusModelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFocusModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.FocusModel<T>> source)
     {
@@ -273,6 +366,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#itemsProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindItems(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<T>> source)
     {
@@ -282,6 +381,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#onEditCancelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnEditCancel(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> source)
     {
@@ -291,6 +396,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#onEditCommitProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnEditCommit(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> source)
     {
@@ -300,6 +411,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#onEditStartProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnEditStart(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> source)
     {
@@ -309,6 +426,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#orientationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
@@ -318,6 +441,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#placeholderProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPlaceholder(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -327,6 +456,12 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ListView#selectionModelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> source)
     {
@@ -336,12 +471,17 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         return (B) this;
     }
 
+    /**
+     * 建構{@link ListView}物件
+     *
+     * @return 新的{@link ListView}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ListView<T> build()
     {
         ListView<T> instance = new ListView<T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

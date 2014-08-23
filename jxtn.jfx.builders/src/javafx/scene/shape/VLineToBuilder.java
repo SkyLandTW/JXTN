@@ -16,26 +16,29 @@ package javafx.scene.shape;
 public class VLineToBuilder<Z extends VLineTo, B extends VLineToBuilder<Z, B>>
         extends javafx.scene.shape.PathElementBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasY;
     protected double valY;
 
     protected boolean boundY;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvY;
-    public void applyTo(VLineTo instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasY)
             instance.setY(this.valY);
         if (this.boundY)
             instance.yProperty().bind(this.obsrvY);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link VLineTo#setY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B y(double value)
     {
@@ -44,6 +47,12 @@ public class VLineToBuilder<Z extends VLineTo, B extends VLineToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link VLineTo#yProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -53,12 +62,17 @@ public class VLineToBuilder<Z extends VLineTo, B extends VLineToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link VLineTo}物件
+     *
+     * @return 新的{@link VLineTo}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public VLineTo build()
     {
         VLineTo instance = new VLineTo();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

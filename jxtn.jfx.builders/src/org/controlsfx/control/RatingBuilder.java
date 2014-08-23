@@ -16,7 +16,6 @@ package org.controlsfx.control;
 public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasMax;
     protected int valMax;
@@ -47,11 +46,11 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
 
     protected boolean boundUpdateOnHover;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvUpdateOnHover;
-    public void applyTo(Rating instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasMax)
             instance.setMax(this.valMax);
         if (this.hasOrientation)
@@ -72,10 +71,14 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
             instance.ratingProperty().bind(this.obsrvRating);
         if (this.boundUpdateOnHover)
             instance.updateOnHoverProperty().bind(this.obsrvUpdateOnHover);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Rating#setMax}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B max(int value)
     {
@@ -84,6 +87,12 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rating#setOrientation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B orientation(javafx.geometry.Orientation value)
     {
@@ -92,6 +101,12 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rating#setPartialRating}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B partialRating(boolean value)
     {
@@ -100,6 +115,12 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rating#setRating}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B rating(double value)
     {
@@ -108,6 +129,12 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rating#setUpdateOnHover}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B updateOnHover(boolean value)
     {
@@ -116,6 +143,12 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rating#maxProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMax(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
@@ -125,6 +158,12 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rating#orientationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
@@ -134,6 +173,12 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rating#partialRatingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPartialRating(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -143,6 +188,12 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rating#ratingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRating(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -152,6 +203,12 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rating#updateOnHoverProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindUpdateOnHover(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -161,12 +218,17 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Rating}物件
+     *
+     * @return 新的{@link Rating}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Rating build()
     {
         Rating instance = new Rating();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,26 +16,29 @@ package javafx.scene.control.cell;
 public class TextFieldListCellBuilder<T extends java.lang.Object, Z extends TextFieldListCell<T>, B extends TextFieldListCellBuilder<T, Z, B>>
         extends javafx.scene.control.ListCellBuilder<T, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasConverter;
     protected javafx.util.StringConverter<T> valConverter;
 
     protected boolean boundConverter;
     protected javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> obsrvConverter;
-    public void applyTo(TextFieldListCell<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasConverter)
             instance.setConverter(this.valConverter);
         if (this.boundConverter)
             instance.converterProperty().bind(this.obsrvConverter);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link TextFieldListCell#setConverter}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B converter(javafx.util.StringConverter<T> value)
     {
@@ -44,6 +47,12 @@ public class TextFieldListCellBuilder<T extends java.lang.Object, Z extends Text
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextFieldListCell#converterProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
     {
@@ -53,12 +62,17 @@ public class TextFieldListCellBuilder<T extends java.lang.Object, Z extends Text
         return (B) this;
     }
 
+    /**
+     * 建構{@link TextFieldListCell}物件
+     *
+     * @return 新的{@link TextFieldListCell}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public TextFieldListCell<T> build()
     {
         TextFieldListCell<T> instance = new TextFieldListCell<T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

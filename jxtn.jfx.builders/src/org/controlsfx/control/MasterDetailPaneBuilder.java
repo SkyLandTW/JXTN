@@ -16,7 +16,6 @@ package org.controlsfx.control;
 public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends MasterDetailPaneBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAnimated;
     protected boolean valAnimated;
@@ -53,11 +52,11 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
 
     protected boolean boundShowDetailNode;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvShowDetailNode;
-    public void applyTo(MasterDetailPane instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAnimated)
             instance.setAnimated(this.valAnimated);
         if (this.hasDetailNode)
@@ -82,10 +81,14 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
             instance.masterNodeProperty().bind(this.obsrvMasterNode);
         if (this.boundShowDetailNode)
             instance.showDetailNodeProperty().bind(this.obsrvShowDetailNode);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link MasterDetailPane#setAnimated}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B animated(boolean value)
     {
@@ -94,6 +97,12 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MasterDetailPane#setDetailNode}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B detailNode(javafx.scene.Node value)
     {
@@ -102,6 +111,12 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MasterDetailPane#setDetailSide}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B detailSide(javafx.geometry.Side value)
     {
@@ -110,6 +125,12 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MasterDetailPane#setDividerPosition}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B dividerPosition(double value)
     {
@@ -118,6 +139,12 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MasterDetailPane#setMasterNode}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B masterNode(javafx.scene.Node value)
     {
@@ -126,6 +153,12 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MasterDetailPane#setShowDetailNode}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B showDetailNode(boolean value)
     {
@@ -134,6 +167,12 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MasterDetailPane#animatedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAnimated(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -143,6 +182,12 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MasterDetailPane#detailNodeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindDetailNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -152,6 +197,12 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MasterDetailPane#detailSideProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindDetailSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
@@ -161,6 +212,12 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MasterDetailPane#dividerPositionProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindDividerPosition(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -170,6 +227,12 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MasterDetailPane#masterNodeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMasterNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -179,6 +242,12 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MasterDetailPane#showDetailNodeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindShowDetailNode(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -188,12 +257,17 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
         return (B) this;
     }
 
+    /**
+     * 建構{@link MasterDetailPane}物件
+     *
+     * @return 新的{@link MasterDetailPane}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public MasterDetailPane build()
     {
         MasterDetailPane instance = new MasterDetailPane();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

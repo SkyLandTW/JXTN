@@ -16,26 +16,29 @@ package javafx.scene.control;
 public class ButtonBaseBuilder<Z extends ButtonBase, B extends ButtonBaseBuilder<Z, B>>
         extends javafx.scene.control.LabeledBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasOnAction;
     protected javafx.event.EventHandler<javafx.event.ActionEvent> valOnAction;
 
     protected boolean boundOnAction;
     protected javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> obsrvOnAction;
-    public void applyTo(ButtonBase instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasOnAction)
             instance.setOnAction(this.valOnAction);
         if (this.boundOnAction)
             instance.onActionProperty().bind(this.obsrvOnAction);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ButtonBase#setOnAction}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onAction(javafx.event.EventHandler<javafx.event.ActionEvent> value)
     {
@@ -44,6 +47,12 @@ public class ButtonBaseBuilder<Z extends ButtonBase, B extends ButtonBaseBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ButtonBase#onActionProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
     {

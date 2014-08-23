@@ -16,7 +16,6 @@ package javafx.scene.input;
 public class DragboardBuilder<Z extends Dragboard, B extends DragboardBuilder<Z, B>>
         extends javafx.scene.input.ClipboardBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasDragView;
     protected javafx.scene.image.Image valDragView;
@@ -26,21 +25,25 @@ public class DragboardBuilder<Z extends Dragboard, B extends DragboardBuilder<Z,
 
     protected boolean hasDragViewOffsetY;
     protected double valDragViewOffsetY;
-    public void applyTo(Dragboard instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasDragView)
             instance.setDragView(this.valDragView);
         if (this.hasDragViewOffsetX)
             instance.setDragViewOffsetX(this.valDragViewOffsetX);
         if (this.hasDragViewOffsetY)
             instance.setDragViewOffsetY(this.valDragViewOffsetY);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Dragboard#setDragView}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B dragView(javafx.scene.image.Image value)
     {
@@ -49,6 +52,12 @@ public class DragboardBuilder<Z extends Dragboard, B extends DragboardBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Dragboard#setDragViewOffsetX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B dragViewOffsetX(double value)
     {
@@ -57,6 +66,12 @@ public class DragboardBuilder<Z extends Dragboard, B extends DragboardBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Dragboard#setDragViewOffsetY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B dragViewOffsetY(double value)
     {

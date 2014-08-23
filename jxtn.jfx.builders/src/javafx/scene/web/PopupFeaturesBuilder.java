@@ -16,21 +16,23 @@ package javafx.scene.web;
 public class PopupFeaturesBuilder<Z extends PopupFeatures, B extends PopupFeaturesBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(PopupFeatures instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link PopupFeatures}物件
+     *
+     * @return 新的{@link PopupFeatures}物件實體
+     */
     @SuppressWarnings("unchecked")
     public PopupFeatures build(boolean arg0, boolean arg1, boolean arg2, boolean arg3)
     {
         PopupFeatures instance = new PopupFeatures(arg0, arg1, arg2, arg3);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

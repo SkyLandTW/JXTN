@@ -16,13 +16,10 @@ package org.controlsfx.validation.decoration;
 public class AbstractValidationDecorationBuilder<Z extends AbstractValidationDecoration, B extends AbstractValidationDecorationBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(AbstractValidationDecoration instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 }

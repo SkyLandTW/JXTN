@@ -16,7 +16,6 @@ package javafx.scene.effect;
 public class GlowBuilder<Z extends Glow, B extends GlowBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasInput;
     protected javafx.scene.effect.Effect valInput;
@@ -29,11 +28,11 @@ public class GlowBuilder<Z extends Glow, B extends GlowBuilder<Z, B>>
 
     protected boolean boundLevel;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvLevel;
-    public void applyTo(Glow instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasInput)
             instance.setInput(this.valInput);
         if (this.hasLevel)
@@ -42,10 +41,14 @@ public class GlowBuilder<Z extends Glow, B extends GlowBuilder<Z, B>>
             instance.inputProperty().bind(this.obsrvInput);
         if (this.boundLevel)
             instance.levelProperty().bind(this.obsrvLevel);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Glow#setInput}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B input(javafx.scene.effect.Effect value)
     {
@@ -54,6 +57,12 @@ public class GlowBuilder<Z extends Glow, B extends GlowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Glow#setLevel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B level(double value)
     {
@@ -62,6 +71,12 @@ public class GlowBuilder<Z extends Glow, B extends GlowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Glow#inputProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
@@ -71,6 +86,12 @@ public class GlowBuilder<Z extends Glow, B extends GlowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Glow#levelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLevel(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -80,12 +101,17 @@ public class GlowBuilder<Z extends Glow, B extends GlowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Glow}物件
+     *
+     * @return 新的{@link Glow}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Glow build()
     {
         Glow instance = new Glow();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

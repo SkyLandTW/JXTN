@@ -16,7 +16,6 @@ package javafx.scene.shape;
 public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
         extends javafx.scene.NodeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCullFace;
     protected javafx.scene.shape.CullFace valCullFace;
@@ -35,11 +34,11 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
 
     protected boolean boundMaterial;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Material> obsrvMaterial;
-    public void applyTo(Shape3D instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCullFace)
             instance.setCullFace(this.valCullFace);
         if (this.hasDrawMode)
@@ -52,10 +51,14 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
             instance.drawModeProperty().bind(this.obsrvDrawMode);
         if (this.boundMaterial)
             instance.materialProperty().bind(this.obsrvMaterial);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Shape3D#setCullFace}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cullFace(javafx.scene.shape.CullFace value)
     {
@@ -64,6 +67,12 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape3D#setDrawMode}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B drawMode(javafx.scene.shape.DrawMode value)
     {
@@ -72,6 +81,12 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape3D#setMaterial}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B material(javafx.scene.paint.Material value)
     {
@@ -80,6 +95,12 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape3D#cullFaceProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCullFace(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.CullFace> source)
     {
@@ -89,6 +110,12 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape3D#drawModeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindDrawMode(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.DrawMode> source)
     {
@@ -98,6 +125,12 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shape3D#materialProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMaterial(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Material> source)
     {

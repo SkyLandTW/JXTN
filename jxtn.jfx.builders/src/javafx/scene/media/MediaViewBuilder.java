@@ -16,7 +16,6 @@ package javafx.scene.media;
 public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z, B>>
         extends javafx.scene.NodeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasFitHeight;
     protected double valFitHeight;
@@ -71,11 +70,11 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
 
     protected boolean boundY;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvY;
-    public void applyTo(MediaView instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasFitHeight)
             instance.setFitHeight(this.valFitHeight);
         if (this.hasFitWidth)
@@ -112,10 +111,14 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
             instance.xProperty().bind(this.obsrvX);
         if (this.boundY)
             instance.yProperty().bind(this.obsrvY);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link MediaView#setFitHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fitHeight(double value)
     {
@@ -124,6 +127,12 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaView#setFitWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fitWidth(double value)
     {
@@ -132,6 +141,12 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaView#setMediaPlayer}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B mediaPlayer(javafx.scene.media.MediaPlayer value)
     {
@@ -140,6 +155,12 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaView#setOnError}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onError(javafx.event.EventHandler<javafx.scene.media.MediaErrorEvent> value)
     {
@@ -148,6 +169,12 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaView#setPreserveRatio}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B preserveRatio(boolean value)
     {
@@ -156,6 +183,12 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaView#setSmooth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B smooth(boolean value)
     {
@@ -164,6 +197,12 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaView#setViewport}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B viewport(javafx.geometry.Rectangle2D value)
     {
@@ -172,6 +211,12 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaView#setX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B x(double value)
     {
@@ -180,6 +225,12 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaView#setY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B y(double value)
     {
@@ -188,6 +239,12 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaView#fitHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFitHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -197,6 +254,12 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaView#fitWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFitWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -206,6 +269,12 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaView#mediaPlayerProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMediaPlayer(javafx.beans.value.ObservableValue<? extends javafx.scene.media.MediaPlayer> source)
     {
@@ -215,6 +284,12 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaView#onErrorProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnError(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.media.MediaErrorEvent>> source)
     {
@@ -224,6 +299,12 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaView#preserveRatioProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPreserveRatio(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -233,6 +314,12 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaView#smoothProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSmooth(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -242,6 +329,12 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaView#viewportProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindViewport(javafx.beans.value.ObservableValue<? extends javafx.geometry.Rectangle2D> source)
     {
@@ -251,6 +344,12 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaView#xProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -260,6 +359,12 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MediaView#yProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -269,12 +374,17 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 建構{@link MediaView}物件
+     *
+     * @return 新的{@link MediaView}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public MediaView build()
     {
         MediaView instance = new MediaView();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

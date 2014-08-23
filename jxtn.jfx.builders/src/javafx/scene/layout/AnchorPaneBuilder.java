@@ -16,22 +16,24 @@ package javafx.scene.layout;
 public class AnchorPaneBuilder<Z extends AnchorPane, B extends AnchorPaneBuilder<Z, B>>
         extends javafx.scene.layout.PaneBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(AnchorPane instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link AnchorPane}物件
+     *
+     * @return 新的{@link AnchorPane}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public AnchorPane build()
     {
         AnchorPane instance = new AnchorPane();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,26 +16,29 @@ package javafx.scene;
 public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
         extends javafx.scene.NodeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasChildrenUnmodifiable;
     protected java.util.Collection<javafx.scene.Node> valChildrenUnmodifiable;
 
     protected boolean hasStylesheets;
     protected java.util.Collection<java.lang.String> valStylesheets;
-    public void applyTo(Parent instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasChildrenUnmodifiable)
             instance.getChildrenUnmodifiable().setAll(this.valChildrenUnmodifiable);
         if (this.hasStylesheets)
             instance.getStylesheets().setAll(this.valStylesheets);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link Parent#getChildrenUnmodifiable}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B childrenUnmodifiable(java.util.Collection<javafx.scene.Node> value)
     {
@@ -44,6 +47,12 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Parent#getChildrenUnmodifiable}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B childrenUnmodifiable(javafx.scene.Node... value)
@@ -53,6 +62,12 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Parent#getStylesheets}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B stylesheets(java.util.Collection<java.lang.String> value)
     {
@@ -61,6 +76,12 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Parent#getStylesheets}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B stylesheets(java.lang.String... value)

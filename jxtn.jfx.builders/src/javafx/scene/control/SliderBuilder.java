@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBlockIncrement;
     protected double valBlockIncrement;
@@ -89,11 +88,11 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
 
     protected boolean boundValue;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvValue;
-    public void applyTo(Slider instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBlockIncrement)
             instance.setBlockIncrement(this.valBlockIncrement);
         if (this.hasLabelFormatter)
@@ -142,10 +141,14 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
             instance.valueChangingProperty().bind(this.obsrvValueChanging);
         if (this.boundValue)
             instance.valueProperty().bind(this.obsrvValue);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Slider#setBlockIncrement}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B blockIncrement(double value)
     {
@@ -154,6 +157,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#setLabelFormatter}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B labelFormatter(javafx.util.StringConverter<java.lang.Double> value)
     {
@@ -162,6 +171,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#setMajorTickUnit}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B majorTickUnit(double value)
     {
@@ -170,6 +185,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#setMax}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B max(double value)
     {
@@ -178,6 +199,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#setMin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B min(double value)
     {
@@ -186,6 +213,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#setMinorTickCount}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B minorTickCount(int value)
     {
@@ -194,6 +227,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#setOrientation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B orientation(javafx.geometry.Orientation value)
     {
@@ -202,6 +241,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#setShowTickLabels}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B showTickLabels(boolean value)
     {
@@ -210,6 +255,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#setShowTickMarks}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B showTickMarks(boolean value)
     {
@@ -218,6 +269,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#setSnapToTicks}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B snapToTicks(boolean value)
     {
@@ -226,6 +283,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#setValue}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B value(double value)
     {
@@ -234,6 +297,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#setValueChanging}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B valueChanging(boolean value)
     {
@@ -242,6 +311,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#blockIncrementProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindBlockIncrement(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -251,6 +326,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#labelFormatterProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLabelFormatter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<java.lang.Double>> source)
     {
@@ -260,6 +341,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#majorTickUnitProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMajorTickUnit(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -269,6 +356,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#maxProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMax(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -278,6 +371,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#minProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMin(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -287,6 +386,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#minorTickCountProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMinorTickCount(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
@@ -296,6 +401,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#orientationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
@@ -305,6 +416,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#showTickLabelsProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindShowTickLabels(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -314,6 +431,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#showTickMarksProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindShowTickMarks(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -323,6 +446,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#snapToTicksProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSnapToTicks(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -332,6 +461,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#valueChangingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindValueChanging(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -341,6 +476,12 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Slider#valueProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindValue(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -350,12 +491,17 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Slider}物件
+     *
+     * @return 新的{@link Slider}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Slider build()
     {
         Slider instance = new Slider();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

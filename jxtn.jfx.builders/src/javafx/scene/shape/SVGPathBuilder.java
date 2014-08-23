@@ -16,7 +16,6 @@ package javafx.scene.shape;
 public class SVGPathBuilder<Z extends SVGPath, B extends SVGPathBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasContent;
     protected java.lang.String valContent;
@@ -29,11 +28,11 @@ public class SVGPathBuilder<Z extends SVGPath, B extends SVGPathBuilder<Z, B>>
 
     protected boolean boundFillRule;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.shape.FillRule> obsrvFillRule;
-    public void applyTo(SVGPath instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasContent)
             instance.setContent(this.valContent);
         if (this.hasFillRule)
@@ -42,10 +41,14 @@ public class SVGPathBuilder<Z extends SVGPath, B extends SVGPathBuilder<Z, B>>
             instance.contentProperty().bind(this.obsrvContent);
         if (this.boundFillRule)
             instance.fillRuleProperty().bind(this.obsrvFillRule);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link SVGPath#setContent}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B content(java.lang.String value)
     {
@@ -54,6 +57,12 @@ public class SVGPathBuilder<Z extends SVGPath, B extends SVGPathBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SVGPath#setFillRule}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fillRule(javafx.scene.shape.FillRule value)
     {
@@ -62,6 +71,12 @@ public class SVGPathBuilder<Z extends SVGPath, B extends SVGPathBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SVGPath#contentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindContent(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -71,6 +86,12 @@ public class SVGPathBuilder<Z extends SVGPath, B extends SVGPathBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SVGPath#fillRuleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFillRule(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.FillRule> source)
     {
@@ -80,12 +101,17 @@ public class SVGPathBuilder<Z extends SVGPath, B extends SVGPathBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link SVGPath}物件
+     *
+     * @return 新的{@link SVGPath}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public SVGPath build()
     {
         SVGPath instance = new SVGPath();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

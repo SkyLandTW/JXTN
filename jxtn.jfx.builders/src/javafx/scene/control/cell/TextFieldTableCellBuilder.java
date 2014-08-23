@@ -16,26 +16,29 @@ package javafx.scene.control.cell;
 public class TextFieldTableCellBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends TextFieldTableCell<S, T>, B extends TextFieldTableCellBuilder<S, T, Z, B>>
         extends javafx.scene.control.TableCellBuilder<S, T, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasConverter;
     protected javafx.util.StringConverter<T> valConverter;
 
     protected boolean boundConverter;
     protected javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> obsrvConverter;
-    public void applyTo(TextFieldTableCell<S, T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasConverter)
             instance.setConverter(this.valConverter);
         if (this.boundConverter)
             instance.converterProperty().bind(this.obsrvConverter);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link TextFieldTableCell#setConverter}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B converter(javafx.util.StringConverter<T> value)
     {
@@ -44,6 +47,12 @@ public class TextFieldTableCellBuilder<S extends java.lang.Object, T extends jav
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextFieldTableCell#converterProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
     {
@@ -53,12 +62,17 @@ public class TextFieldTableCellBuilder<S extends java.lang.Object, T extends jav
         return (B) this;
     }
 
+    /**
+     * 建構{@link TextFieldTableCell}物件
+     *
+     * @return 新的{@link TextFieldTableCell}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public TextFieldTableCell<S, T> build()
     {
         TextFieldTableCell<S, T> instance = new TextFieldTableCell<S, T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,22 +16,24 @@ package org.controlsfx.glyphfont;
 public class FontAwesomeBuilder<Z extends FontAwesome, B extends FontAwesomeBuilder<Z, B>>
         extends org.controlsfx.glyphfont.GlyphFontBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(FontAwesome instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link FontAwesome}物件
+     *
+     * @return 新的{@link FontAwesome}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public FontAwesome build()
     {
         FontAwesome instance = new FontAwesome();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

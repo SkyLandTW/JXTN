@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder<Z, B>>
         extends javafx.scene.control.LabeledBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAnimated;
     protected boolean valAnimated;
@@ -41,11 +40,11 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
 
     protected boolean boundExpanded;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvExpanded;
-    public void applyTo(TitledPane instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAnimated)
             instance.setAnimated(this.valAnimated);
         if (this.hasCollapsible)
@@ -62,10 +61,14 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
             instance.contentProperty().bind(this.obsrvContent);
         if (this.boundExpanded)
             instance.expandedProperty().bind(this.obsrvExpanded);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link TitledPane#setAnimated}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B animated(boolean value)
     {
@@ -74,6 +77,12 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TitledPane#setCollapsible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B collapsible(boolean value)
     {
@@ -82,6 +91,12 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TitledPane#setContent}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B content(javafx.scene.Node value)
     {
@@ -90,6 +105,12 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TitledPane#setExpanded}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B expanded(boolean value)
     {
@@ -98,6 +119,12 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TitledPane#animatedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAnimated(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -107,6 +134,12 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TitledPane#collapsibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCollapsible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -116,6 +149,12 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TitledPane#contentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -125,6 +164,12 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TitledPane#expandedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindExpanded(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -134,12 +179,17 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
         return (B) this;
     }
 
+    /**
+     * 建構{@link TitledPane}物件
+     *
+     * @return 新的{@link TitledPane}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public TitledPane build()
     {
         TitledPane instance = new TitledPane();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

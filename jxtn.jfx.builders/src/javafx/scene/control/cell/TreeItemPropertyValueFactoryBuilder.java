@@ -16,21 +16,23 @@ package javafx.scene.control.cell;
 public class TreeItemPropertyValueFactoryBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends TreeItemPropertyValueFactory<S, T>, B extends TreeItemPropertyValueFactoryBuilder<S, T, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(TreeItemPropertyValueFactory<S, T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link TreeItemPropertyValueFactory}物件
+     *
+     * @return 新的{@link TreeItemPropertyValueFactory}物件實體
+     */
     @SuppressWarnings("unchecked")
     public TreeItemPropertyValueFactory<S, T> build(java.lang.String arg0)
     {
         TreeItemPropertyValueFactory<S, T> instance = new TreeItemPropertyValueFactory<S, T>(arg0);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

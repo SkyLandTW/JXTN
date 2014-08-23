@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTableView<S>, B extends TreeTableViewBuilder<S, Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasColumnResizePolicy;
     protected javafx.util.Callback<javafx.scene.control.TreeTableView.ResizeFeatures, java.lang.Boolean> valColumnResizePolicy;
@@ -113,11 +112,11 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
 
     protected boolean boundTreeColumn;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableColumn<S, ?>> obsrvTreeColumn;
-    public void applyTo(TreeTableView<S> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasColumnResizePolicy)
             instance.setColumnResizePolicy(this.valColumnResizePolicy);
         if (this.hasColumns)
@@ -182,10 +181,14 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
             instance.tableMenuButtonVisibleProperty().bind(this.obsrvTableMenuButtonVisible);
         if (this.boundTreeColumn)
             instance.treeColumnProperty().bind(this.obsrvTreeColumn);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#setColumnResizePolicy}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B columnResizePolicy(javafx.util.Callback<javafx.scene.control.TreeTableView.ResizeFeatures, java.lang.Boolean> value)
     {
@@ -194,6 +197,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TreeTableView#getColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B columns(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
     {
@@ -202,6 +211,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TreeTableView#getColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B columns(javafx.scene.control.TreeTableColumn<S, ?>... value)
@@ -211,6 +226,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#setEditable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B editable(boolean value)
     {
@@ -219,6 +240,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#setFixedCellSize}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fixedCellSize(double value)
     {
@@ -227,6 +254,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#setFocusModel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B focusModel(javafx.scene.control.TreeTableView.TreeTableViewFocusModel<S> value)
     {
@@ -235,6 +268,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#setOnScrollTo}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onScrollTo(javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>> value)
     {
@@ -243,6 +282,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#setOnScrollToColumn}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onScrollToColumn(javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<javafx.scene.control.TreeTableColumn<S, ?>>> value)
     {
@@ -251,6 +296,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#setOnSort}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onSort(javafx.event.EventHandler<javafx.scene.control.SortEvent<javafx.scene.control.TreeTableView<S>>> value)
     {
@@ -259,6 +310,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#setPlaceholder}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B placeholder(javafx.scene.Node value)
     {
@@ -267,6 +324,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#setRoot}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B root(javafx.scene.control.TreeItem<S> value)
     {
@@ -275,6 +338,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#setRowFactory}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B rowFactory(javafx.util.Callback<javafx.scene.control.TreeTableView<S>, javafx.scene.control.TreeTableRow<S>> value)
     {
@@ -283,6 +352,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#setSelectionModel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B selectionModel(javafx.scene.control.TreeTableView.TreeTableViewSelectionModel<S> value)
     {
@@ -291,6 +366,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#setShowRoot}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B showRoot(boolean value)
     {
@@ -299,6 +380,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#setSortMode}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B sortMode(javafx.scene.control.TreeSortMode value)
     {
@@ -307,6 +394,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TreeTableView#getSortOrder}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B sortOrder(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
     {
@@ -315,6 +408,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TreeTableView#getSortOrder}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B sortOrder(javafx.scene.control.TreeTableColumn<S, ?>... value)
@@ -324,6 +423,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#setSortPolicy}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B sortPolicy(javafx.util.Callback<javafx.scene.control.TreeTableView<S>, java.lang.Boolean> value)
     {
@@ -332,6 +437,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#setTableMenuButtonVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tableMenuButtonVisible(boolean value)
     {
@@ -340,6 +451,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#setTreeColumn}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B treeColumn(javafx.scene.control.TreeTableColumn<S, ?> value)
     {
@@ -348,6 +465,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TreeTableView#getVisibleLeafColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B visibleLeafColumns(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
     {
@@ -356,6 +479,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TreeTableView#getVisibleLeafColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B visibleLeafColumns(javafx.scene.control.TreeTableColumn<S, ?>... value)
@@ -365,6 +494,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#columnResizePolicyProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindColumnResizePolicy(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableView.ResizeFeatures, java.lang.Boolean>> source)
     {
@@ -374,6 +509,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#editableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -383,6 +524,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#fixedCellSizeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFixedCellSize(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -392,6 +539,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#focusModelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFocusModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableView.TreeTableViewFocusModel<S>> source)
     {
@@ -401,6 +554,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#placeholderProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPlaceholder(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -410,6 +569,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#rootProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRoot(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeItem<S>> source)
     {
@@ -419,6 +584,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#rowFactoryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRowFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableView<S>, javafx.scene.control.TreeTableRow<S>>> source)
     {
@@ -428,6 +599,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#selectionModelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableView.TreeTableViewSelectionModel<S>> source)
     {
@@ -437,6 +614,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#showRootProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindShowRoot(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -446,6 +629,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#sortModeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSortMode(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeSortMode> source)
     {
@@ -455,6 +644,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#sortPolicyProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSortPolicy(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableView<S>, java.lang.Boolean>> source)
     {
@@ -464,6 +659,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#tableMenuButtonVisibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTableMenuButtonVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -473,6 +674,12 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeTableView#treeColumnProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTreeColumn(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableColumn<S, ?>> source)
     {
@@ -482,12 +689,17 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         return (B) this;
     }
 
+    /**
+     * 建構{@link TreeTableView}物件
+     *
+     * @return 新的{@link TreeTableView}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public TreeTableView<S> build()
     {
         TreeTableView<S> instance = new TreeTableView<S>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

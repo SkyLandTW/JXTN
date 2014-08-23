@@ -16,21 +16,23 @@ package javafx.scene.transform;
 public class NonInvertibleTransformExceptionBuilder<Z extends NonInvertibleTransformException, B extends NonInvertibleTransformExceptionBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(NonInvertibleTransformException instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link NonInvertibleTransformException}物件
+     *
+     * @return 新的{@link NonInvertibleTransformException}物件實體
+     */
     @SuppressWarnings("unchecked")
     public NonInvertibleTransformException build(java.lang.String arg0)
     {
         NonInvertibleTransformException instance = new NonInvertibleTransformException(arg0);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,13 +16,10 @@ package javafx.scene.image;
 public class WritablePixelFormatBuilder<T extends java.nio.Buffer, Z extends WritablePixelFormat<T>, B extends WritablePixelFormatBuilder<T, Z, B>>
         extends javafx.scene.image.PixelFormatBuilder<T, Z, B>
 {
-    private boolean applied;
-    public void applyTo(WritablePixelFormat<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 }

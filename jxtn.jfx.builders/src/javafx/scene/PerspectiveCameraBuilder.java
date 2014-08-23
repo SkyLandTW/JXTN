@@ -16,7 +16,6 @@ package javafx.scene;
 public class PerspectiveCameraBuilder<Z extends PerspectiveCamera, B extends PerspectiveCameraBuilder<Z, B>>
         extends javafx.scene.CameraBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasFieldOfView;
     protected double valFieldOfView;
@@ -29,11 +28,11 @@ public class PerspectiveCameraBuilder<Z extends PerspectiveCamera, B extends Per
 
     protected boolean boundVerticalFieldOfView;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvVerticalFieldOfView;
-    public void applyTo(PerspectiveCamera instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasFieldOfView)
             instance.setFieldOfView(this.valFieldOfView);
         if (this.hasVerticalFieldOfView)
@@ -42,10 +41,14 @@ public class PerspectiveCameraBuilder<Z extends PerspectiveCamera, B extends Per
             instance.fieldOfViewProperty().bind(this.obsrvFieldOfView);
         if (this.boundVerticalFieldOfView)
             instance.verticalFieldOfViewProperty().bind(this.obsrvVerticalFieldOfView);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveCamera#setFieldOfView}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fieldOfView(double value)
     {
@@ -54,6 +57,12 @@ public class PerspectiveCameraBuilder<Z extends PerspectiveCamera, B extends Per
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveCamera#setVerticalFieldOfView}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B verticalFieldOfView(boolean value)
     {
@@ -62,6 +71,12 @@ public class PerspectiveCameraBuilder<Z extends PerspectiveCamera, B extends Per
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveCamera#fieldOfViewProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFieldOfView(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -71,6 +86,12 @@ public class PerspectiveCameraBuilder<Z extends PerspectiveCamera, B extends Per
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PerspectiveCamera#verticalFieldOfViewProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindVerticalFieldOfView(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -80,12 +101,17 @@ public class PerspectiveCameraBuilder<Z extends PerspectiveCamera, B extends Per
         return (B) this;
     }
 
+    /**
+     * 建構{@link PerspectiveCamera}物件
+     *
+     * @return 新的{@link PerspectiveCamera}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public PerspectiveCamera build()
     {
         PerspectiveCamera instance = new PerspectiveCamera();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

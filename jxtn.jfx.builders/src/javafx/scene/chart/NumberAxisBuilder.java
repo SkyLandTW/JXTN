@@ -16,7 +16,6 @@ package javafx.scene.chart;
 public class NumberAxisBuilder<Z extends NumberAxis, B extends NumberAxisBuilder<Z, B>>
         extends javafx.scene.chart.ValueAxisBuilder<java.lang.Number, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasForceZeroInRange;
     protected boolean valForceZeroInRange;
@@ -29,11 +28,11 @@ public class NumberAxisBuilder<Z extends NumberAxis, B extends NumberAxisBuilder
 
     protected boolean boundTickUnit;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvTickUnit;
-    public void applyTo(NumberAxis instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasForceZeroInRange)
             instance.setForceZeroInRange(this.valForceZeroInRange);
         if (this.hasTickUnit)
@@ -42,10 +41,14 @@ public class NumberAxisBuilder<Z extends NumberAxis, B extends NumberAxisBuilder
             instance.forceZeroInRangeProperty().bind(this.obsrvForceZeroInRange);
         if (this.boundTickUnit)
             instance.tickUnitProperty().bind(this.obsrvTickUnit);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link NumberAxis#setForceZeroInRange}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B forceZeroInRange(boolean value)
     {
@@ -54,6 +57,12 @@ public class NumberAxisBuilder<Z extends NumberAxis, B extends NumberAxisBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NumberAxis#setTickUnit}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tickUnit(double value)
     {
@@ -62,6 +71,12 @@ public class NumberAxisBuilder<Z extends NumberAxis, B extends NumberAxisBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NumberAxis#forceZeroInRangeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindForceZeroInRange(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -71,6 +86,12 @@ public class NumberAxisBuilder<Z extends NumberAxis, B extends NumberAxisBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link NumberAxis#tickUnitProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTickUnit(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -80,12 +101,17 @@ public class NumberAxisBuilder<Z extends NumberAxis, B extends NumberAxisBuilder
         return (B) this;
     }
 
+    /**
+     * 建構{@link NumberAxis}物件
+     *
+     * @return 新的{@link NumberAxis}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public NumberAxis build()
     {
         NumberAxis instance = new NumberAxis();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

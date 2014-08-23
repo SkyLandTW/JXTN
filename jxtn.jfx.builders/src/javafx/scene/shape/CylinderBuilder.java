@@ -16,7 +16,6 @@ package javafx.scene.shape;
 public class CylinderBuilder<Z extends Cylinder, B extends CylinderBuilder<Z, B>>
         extends javafx.scene.shape.Shape3DBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasHeight;
     protected double valHeight;
@@ -29,11 +28,11 @@ public class CylinderBuilder<Z extends Cylinder, B extends CylinderBuilder<Z, B>
 
     protected boolean boundRadius;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvRadius;
-    public void applyTo(Cylinder instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasHeight)
             instance.setHeight(this.valHeight);
         if (this.hasRadius)
@@ -42,10 +41,14 @@ public class CylinderBuilder<Z extends Cylinder, B extends CylinderBuilder<Z, B>
             instance.heightProperty().bind(this.obsrvHeight);
         if (this.boundRadius)
             instance.radiusProperty().bind(this.obsrvRadius);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Cylinder#setHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B height(double value)
     {
@@ -54,6 +57,12 @@ public class CylinderBuilder<Z extends Cylinder, B extends CylinderBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Cylinder#setRadius}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B radius(double value)
     {
@@ -62,6 +71,12 @@ public class CylinderBuilder<Z extends Cylinder, B extends CylinderBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Cylinder#heightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -71,6 +86,12 @@ public class CylinderBuilder<Z extends Cylinder, B extends CylinderBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Cylinder#radiusProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -80,12 +101,17 @@ public class CylinderBuilder<Z extends Cylinder, B extends CylinderBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Cylinder}物件
+     *
+     * @return 新的{@link Cylinder}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Cylinder build()
     {
         Cylinder instance = new Cylinder();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,7 +16,6 @@ package org.controlsfx.control.textfield;
 public class AutoCompletionBindingBuilder<T extends java.lang.Object, Z extends AutoCompletionBinding<T>, B extends AutoCompletionBindingBuilder<T, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasOnAutoCompleted;
     protected javafx.event.EventHandler<org.controlsfx.control.textfield.AutoCompletionBinding.AutoCompletionEvent<T>> valOnAutoCompleted;
@@ -26,21 +25,25 @@ public class AutoCompletionBindingBuilder<T extends java.lang.Object, Z extends 
 
     protected boolean boundOnAutoCompleted;
     protected javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.textfield.AutoCompletionBinding.AutoCompletionEvent<T>>> obsrvOnAutoCompleted;
-    public void applyTo(AutoCompletionBinding<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasOnAutoCompleted)
             instance.setOnAutoCompleted(this.valOnAutoCompleted);
         if (this.hasUserInput)
             instance.setUserInput(this.valUserInput);
         if (this.boundOnAutoCompleted)
             instance.onAutoCompletedProperty().bind(this.obsrvOnAutoCompleted);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link AutoCompletionBinding#setOnAutoCompleted}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onAutoCompleted(javafx.event.EventHandler<org.controlsfx.control.textfield.AutoCompletionBinding.AutoCompletionEvent<T>> value)
     {
@@ -49,6 +52,12 @@ public class AutoCompletionBindingBuilder<T extends java.lang.Object, Z extends 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link AutoCompletionBinding#setUserInput}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B userInput(java.lang.String value)
     {
@@ -57,6 +66,12 @@ public class AutoCompletionBindingBuilder<T extends java.lang.Object, Z extends 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link AutoCompletionBinding#onAutoCompletedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnAutoCompleted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.textfield.AutoCompletionBinding.AutoCompletionEvent<T>>> source)
     {

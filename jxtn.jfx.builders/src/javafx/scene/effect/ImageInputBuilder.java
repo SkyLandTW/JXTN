@@ -16,7 +16,6 @@ package javafx.scene.effect;
 public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasSource;
     protected javafx.scene.image.Image valSource;
@@ -35,11 +34,11 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
 
     protected boolean boundY;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvY;
-    public void applyTo(ImageInput instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasSource)
             instance.setSource(this.valSource);
         if (this.hasX)
@@ -52,10 +51,14 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
             instance.xProperty().bind(this.obsrvX);
         if (this.boundY)
             instance.yProperty().bind(this.obsrvY);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ImageInput#setSource}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B source(javafx.scene.image.Image value)
     {
@@ -64,6 +67,12 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageInput#setX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B x(double value)
     {
@@ -72,6 +81,12 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageInput#setY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B y(double value)
     {
@@ -80,6 +95,12 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageInput#sourceProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSource(javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> source)
     {
@@ -89,6 +110,12 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageInput#xProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -98,6 +125,12 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageInput#yProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -107,12 +140,17 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
         return (B) this;
     }
 
+    /**
+     * 建構{@link ImageInput}物件
+     *
+     * @return 新的{@link ImageInput}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ImageInput build()
     {
         ImageInput instance = new ImageInput();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,21 +16,23 @@ package javafx.scene.web;
 public class PromptDataBuilder<Z extends PromptData, B extends PromptDataBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(PromptData instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link PromptData}物件
+     *
+     * @return 新的{@link PromptData}物件實體
+     */
     @SuppressWarnings("unchecked")
     public PromptData build(java.lang.String arg0, java.lang.String arg1)
     {
         PromptData instance = new PromptData(arg0, arg1);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

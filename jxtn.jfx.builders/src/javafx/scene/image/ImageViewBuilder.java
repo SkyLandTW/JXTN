@@ -16,7 +16,6 @@ package javafx.scene.image;
 public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z, B>>
         extends javafx.scene.NodeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasFitHeight;
     protected double valFitHeight;
@@ -65,11 +64,11 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
 
     protected boolean boundY;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvY;
-    public void applyTo(ImageView instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasFitHeight)
             instance.setFitHeight(this.valFitHeight);
         if (this.hasFitWidth)
@@ -102,10 +101,14 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
             instance.xProperty().bind(this.obsrvX);
         if (this.boundY)
             instance.yProperty().bind(this.obsrvY);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ImageView#setFitHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fitHeight(double value)
     {
@@ -114,6 +117,12 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageView#setFitWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fitWidth(double value)
     {
@@ -122,6 +131,12 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageView#setImage}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B image(javafx.scene.image.Image value)
     {
@@ -130,6 +145,12 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageView#setPreserveRatio}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B preserveRatio(boolean value)
     {
@@ -138,6 +159,12 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageView#setSmooth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B smooth(boolean value)
     {
@@ -146,6 +173,12 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageView#setViewport}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B viewport(javafx.geometry.Rectangle2D value)
     {
@@ -154,6 +187,12 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageView#setX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B x(double value)
     {
@@ -162,6 +201,12 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageView#setY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B y(double value)
     {
@@ -170,6 +215,12 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageView#fitHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFitHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -179,6 +230,12 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageView#fitWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFitWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -188,6 +245,12 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageView#imageProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindImage(javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> source)
     {
@@ -197,6 +260,12 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageView#preserveRatioProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPreserveRatio(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -206,6 +275,12 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageView#smoothProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSmooth(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -215,6 +290,12 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageView#viewportProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindViewport(javafx.beans.value.ObservableValue<? extends javafx.geometry.Rectangle2D> source)
     {
@@ -224,6 +305,12 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageView#xProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -233,6 +320,12 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ImageView#yProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -242,12 +335,17 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 建構{@link ImageView}物件
+     *
+     * @return 新的{@link ImageView}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ImageView build()
     {
         ImageView instance = new ImageView();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,22 +16,24 @@ package javafx.scene.control;
 public class SplitMenuButtonBuilder<Z extends SplitMenuButton, B extends SplitMenuButtonBuilder<Z, B>>
         extends javafx.scene.control.MenuButtonBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(SplitMenuButton instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link SplitMenuButton}物件
+     *
+     * @return 新的{@link SplitMenuButton}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public SplitMenuButton build()
     {
         SplitMenuButton instance = new SplitMenuButton();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,7 +16,6 @@ package javafx.scene.media;
 public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBalance;
     protected double valBalance;
@@ -35,11 +34,11 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
 
     protected boolean hasVolume;
     protected double valVolume;
-    public void applyTo(AudioClip instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBalance)
             instance.setBalance(this.valBalance);
         if (this.hasCycleCount)
@@ -52,10 +51,14 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
             instance.setRate(this.valRate);
         if (this.hasVolume)
             instance.setVolume(this.valVolume);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link AudioClip#setBalance}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B balance(double value)
     {
@@ -64,6 +67,12 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link AudioClip#setCycleCount}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cycleCount(int value)
     {
@@ -72,6 +81,12 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link AudioClip#setPan}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B pan(double value)
     {
@@ -80,6 +95,12 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link AudioClip#setPriority}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B priority(int value)
     {
@@ -88,6 +109,12 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link AudioClip#setRate}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B rate(double value)
     {
@@ -96,6 +123,12 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link AudioClip#setVolume}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B volume(double value)
     {
@@ -104,11 +137,16 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 建構{@link AudioClip}物件
+     *
+     * @return 新的{@link AudioClip}物件實體
+     */
     @SuppressWarnings("unchecked")
     public AudioClip build(java.lang.String arg0)
     {
         AudioClip instance = new AudioClip(arg0);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

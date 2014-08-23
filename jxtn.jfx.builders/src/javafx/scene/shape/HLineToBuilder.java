@@ -16,26 +16,29 @@ package javafx.scene.shape;
 public class HLineToBuilder<Z extends HLineTo, B extends HLineToBuilder<Z, B>>
         extends javafx.scene.shape.PathElementBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasX;
     protected double valX;
 
     protected boolean boundX;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvX;
-    public void applyTo(HLineTo instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasX)
             instance.setX(this.valX);
         if (this.boundX)
             instance.xProperty().bind(this.obsrvX);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link HLineTo#setX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B x(double value)
     {
@@ -44,6 +47,12 @@ public class HLineToBuilder<Z extends HLineTo, B extends HLineToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HLineTo#xProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -53,12 +62,17 @@ public class HLineToBuilder<Z extends HLineTo, B extends HLineToBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link HLineTo}物件
+     *
+     * @return 新的{@link HLineTo}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public HLineTo build()
     {
         HLineTo instance = new HLineTo();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

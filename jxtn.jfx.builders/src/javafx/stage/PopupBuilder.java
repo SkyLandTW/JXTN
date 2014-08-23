@@ -16,21 +16,24 @@ package javafx.stage;
 public class PopupBuilder<Z extends Popup, B extends PopupBuilder<Z, B>>
         extends javafx.stage.PopupWindowBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasContent;
     protected java.util.Collection<javafx.scene.Node> valContent;
-    public void applyTo(Popup instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasContent)
             instance.getContent().setAll(this.valContent);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link Popup#getContent}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B content(java.util.Collection<javafx.scene.Node> value)
     {
@@ -39,6 +42,12 @@ public class PopupBuilder<Z extends Popup, B extends PopupBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Popup#getContent}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B content(javafx.scene.Node... value)
@@ -48,12 +57,17 @@ public class PopupBuilder<Z extends Popup, B extends PopupBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Popup}物件
+     *
+     * @return 新的{@link Popup}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Popup build()
     {
         Popup instance = new Popup();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

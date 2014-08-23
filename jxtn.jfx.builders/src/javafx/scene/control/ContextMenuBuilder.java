@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuilder<Z, B>>
         extends javafx.scene.control.PopupControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasImpl_showRelativeToWindow;
     protected boolean valImpl_showRelativeToWindow;
@@ -32,11 +31,11 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
 
     protected boolean boundOnAction;
     protected javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> obsrvOnAction;
-    public void applyTo(ContextMenu instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasImpl_showRelativeToWindow)
             instance.setImpl_showRelativeToWindow(this.valImpl_showRelativeToWindow);
         if (this.hasItems)
@@ -47,10 +46,14 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
             instance.impl_showRelativeToWindowProperty().bind(this.obsrvImpl_showRelativeToWindow);
         if (this.boundOnAction)
             instance.onActionProperty().bind(this.obsrvOnAction);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ContextMenu#setImpl_showRelativeToWindow}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B impl_showRelativeToWindow(boolean value)
     {
@@ -59,6 +62,12 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link ContextMenu#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B items(java.util.Collection<javafx.scene.control.MenuItem> value)
     {
@@ -67,6 +76,12 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link ContextMenu#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B items(javafx.scene.control.MenuItem... value)
@@ -76,6 +91,12 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ContextMenu#setOnAction}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onAction(javafx.event.EventHandler<javafx.event.ActionEvent> value)
     {
@@ -84,6 +105,12 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ContextMenu#impl_showRelativeToWindowProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindImpl_showRelativeToWindow(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -93,6 +120,12 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ContextMenu#onActionProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
     {
@@ -102,12 +135,17 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
         return (B) this;
     }
 
+    /**
+     * 建構{@link ContextMenu}物件
+     *
+     * @return 新的{@link ContextMenu}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ContextMenu build()
     {
         ContextMenu instance = new ContextMenu();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

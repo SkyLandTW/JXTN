@@ -16,7 +16,6 @@ package javafx.scene.transform;
 public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
         extends javafx.scene.transform.TransformBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAngle;
     protected double valAngle;
@@ -47,11 +46,11 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
 
     protected boolean boundPivotZ;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvPivotZ;
-    public void applyTo(Rotate instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAngle)
             instance.setAngle(this.valAngle);
         if (this.hasAxis)
@@ -72,10 +71,14 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
             instance.pivotYProperty().bind(this.obsrvPivotY);
         if (this.boundPivotZ)
             instance.pivotZProperty().bind(this.obsrvPivotZ);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Rotate#setAngle}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B angle(double value)
     {
@@ -84,6 +87,12 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rotate#setAxis}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B axis(javafx.geometry.Point3D value)
     {
@@ -92,6 +101,12 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rotate#setPivotX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B pivotX(double value)
     {
@@ -100,6 +115,12 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rotate#setPivotY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B pivotY(double value)
     {
@@ -108,6 +129,12 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rotate#setPivotZ}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B pivotZ(double value)
     {
@@ -116,6 +143,12 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rotate#angleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAngle(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -125,6 +158,12 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rotate#axisProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAxis(javafx.beans.value.ObservableValue<? extends javafx.geometry.Point3D> source)
     {
@@ -134,6 +173,12 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rotate#pivotXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPivotX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -143,6 +188,12 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rotate#pivotYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPivotY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -152,6 +203,12 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Rotate#pivotZProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPivotZ(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -161,12 +218,17 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Rotate}物件
+     *
+     * @return 新的{@link Rotate}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Rotate build()
     {
         Rotate instance = new Rotate();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

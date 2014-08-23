@@ -16,7 +16,6 @@ package javafx.stage;
 public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasExtensionFilters;
     protected java.util.Collection<javafx.stage.FileChooser.ExtensionFilter> valExtensionFilters;
@@ -44,11 +43,11 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
 
     protected boolean boundTitle;
     protected javafx.beans.value.ObservableValue<? extends String> obsrvTitle;
-    public void applyTo(FileChooser instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasExtensionFilters)
             instance.getExtensionFilters().setAll(this.valExtensionFilters);
         if (this.hasInitialDirectory)
@@ -67,10 +66,14 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
             instance.selectedExtensionFilterProperty().bind(this.obsrvSelectedExtensionFilter);
         if (this.boundTitle)
             instance.titleProperty().bind(this.obsrvTitle);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link FileChooser#getExtensionFilters}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B extensionFilters(java.util.Collection<javafx.stage.FileChooser.ExtensionFilter> value)
     {
@@ -79,6 +82,12 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link FileChooser#getExtensionFilters}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B extensionFilters(javafx.stage.FileChooser.ExtensionFilter... value)
@@ -88,6 +97,12 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FileChooser#setInitialDirectory}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B initialDirectory(java.io.File value)
     {
@@ -96,6 +111,12 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FileChooser#setInitialFileName}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B initialFileName(java.lang.String value)
     {
@@ -104,6 +125,12 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FileChooser#setSelectedExtensionFilter}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B selectedExtensionFilter(javafx.stage.FileChooser.ExtensionFilter value)
     {
@@ -112,6 +139,12 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FileChooser#setTitle}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B title(java.lang.String value)
     {
@@ -120,6 +153,12 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FileChooser#initialDirectoryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindInitialDirectory(javafx.beans.value.ObservableValue<? extends java.io.File> source)
     {
@@ -129,6 +168,12 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FileChooser#initialFileNameProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindInitialFileName(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
     {
@@ -138,6 +183,12 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FileChooser#selectedExtensionFilterProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSelectedExtensionFilter(javafx.beans.value.ObservableValue<? extends javafx.stage.FileChooser.ExtensionFilter> source)
     {
@@ -147,6 +198,12 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link FileChooser#titleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTitle(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -156,12 +213,17 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
         return (B) this;
     }
 
+    /**
+     * 建構{@link FileChooser}物件
+     *
+     * @return 新的{@link FileChooser}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public FileChooser build()
     {
         FileChooser instance = new FileChooser();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

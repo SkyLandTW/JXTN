@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         extends javafx.scene.control.PopupControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasContentDisplay;
     protected javafx.scene.control.ContentDisplay valContentDisplay;
@@ -65,11 +64,11 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
 
     protected boolean boundWrapText;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvWrapText;
-    public void applyTo(Tooltip instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasContentDisplay)
             instance.setContentDisplay(this.valContentDisplay);
         if (this.hasFont)
@@ -102,10 +101,14 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
             instance.textProperty().bind(this.obsrvText);
         if (this.boundWrapText)
             instance.wrapTextProperty().bind(this.obsrvWrapText);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Tooltip#setContentDisplay}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B contentDisplay(javafx.scene.control.ContentDisplay value)
     {
@@ -114,6 +117,12 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tooltip#setFont}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B font(javafx.scene.text.Font value)
     {
@@ -122,6 +131,12 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tooltip#setGraphic}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B graphic(javafx.scene.Node value)
     {
@@ -130,6 +145,12 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tooltip#setGraphicTextGap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B graphicTextGap(double value)
     {
@@ -138,6 +159,12 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tooltip#setText}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B text(java.lang.String value)
     {
@@ -146,6 +173,12 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tooltip#setTextAlignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B textAlignment(javafx.scene.text.TextAlignment value)
     {
@@ -154,6 +187,12 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tooltip#setTextOverrun}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B textOverrun(javafx.scene.control.OverrunStyle value)
     {
@@ -162,6 +201,12 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tooltip#setWrapText}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B wrapText(boolean value)
     {
@@ -170,6 +215,12 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tooltip#contentDisplayProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindContentDisplay(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContentDisplay> source)
     {
@@ -179,6 +230,12 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tooltip#fontProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFont(javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> source)
     {
@@ -188,6 +245,12 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tooltip#graphicProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -197,6 +260,12 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tooltip#graphicTextGapProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindGraphicTextGap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -206,6 +275,12 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tooltip#textAlignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTextAlignment(javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextAlignment> source)
     {
@@ -215,6 +290,12 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tooltip#textOverrunProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTextOverrun(javafx.beans.value.ObservableValue<? extends javafx.scene.control.OverrunStyle> source)
     {
@@ -224,6 +305,12 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tooltip#textProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -233,6 +320,12 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Tooltip#wrapTextProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindWrapText(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -242,12 +335,17 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Tooltip}物件
+     *
+     * @return 新的{@link Tooltip}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Tooltip build()
     {
         Tooltip instance = new Tooltip();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

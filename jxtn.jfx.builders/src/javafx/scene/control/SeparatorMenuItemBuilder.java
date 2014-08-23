@@ -16,22 +16,24 @@ package javafx.scene.control;
 public class SeparatorMenuItemBuilder<Z extends SeparatorMenuItem, B extends SeparatorMenuItemBuilder<Z, B>>
         extends javafx.scene.control.CustomMenuItemBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(SeparatorMenuItem instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link SeparatorMenuItem}物件
+     *
+     * @return 新的{@link SeparatorMenuItem}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public SeparatorMenuItem build()
     {
         SeparatorMenuItem instance = new SeparatorMenuItem();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

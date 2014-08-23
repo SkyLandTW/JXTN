@@ -16,7 +16,6 @@ package javafx.scene.shape;
 public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCenterX;
     protected double valCenterX;
@@ -41,11 +40,11 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
 
     protected boolean boundRadiusY;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvRadiusY;
-    public void applyTo(Ellipse instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCenterX)
             instance.setCenterX(this.valCenterX);
         if (this.hasCenterY)
@@ -62,10 +61,14 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
             instance.radiusXProperty().bind(this.obsrvRadiusX);
         if (this.boundRadiusY)
             instance.radiusYProperty().bind(this.obsrvRadiusY);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Ellipse#setCenterX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B centerX(double value)
     {
@@ -74,6 +77,12 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Ellipse#setCenterY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B centerY(double value)
     {
@@ -82,6 +91,12 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Ellipse#setRadiusX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B radiusX(double value)
     {
@@ -90,6 +105,12 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Ellipse#setRadiusY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B radiusY(double value)
     {
@@ -98,6 +119,12 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Ellipse#centerXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCenterX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -107,6 +134,12 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Ellipse#centerYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCenterY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -116,6 +149,12 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Ellipse#radiusXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRadiusX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -125,6 +164,12 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Ellipse#radiusYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRadiusY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -134,12 +179,17 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Ellipse}物件
+     *
+     * @return 新的{@link Ellipse}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Ellipse build()
     {
         Ellipse instance = new Ellipse();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

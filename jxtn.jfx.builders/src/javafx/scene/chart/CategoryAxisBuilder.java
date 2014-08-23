@@ -16,7 +16,6 @@ package javafx.scene.chart;
 public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisBuilder<Z, B>>
         extends javafx.scene.chart.AxisBuilder<java.lang.String, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCategories;
     protected javafx.collections.ObservableList<java.lang.String> valCategories;
@@ -38,11 +37,11 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
 
     protected boolean boundStartMargin;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvStartMargin;
-    public void applyTo(CategoryAxis instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCategories)
             instance.setCategories(this.valCategories);
         if (this.hasEndMargin)
@@ -57,10 +56,14 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
             instance.gapStartAndEndProperty().bind(this.obsrvGapStartAndEnd);
         if (this.boundStartMargin)
             instance.startMarginProperty().bind(this.obsrvStartMargin);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link CategoryAxis#setCategories}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B categories(javafx.collections.ObservableList<java.lang.String> value)
     {
@@ -69,6 +72,12 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CategoryAxis#setEndMargin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B endMargin(double value)
     {
@@ -77,6 +86,12 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CategoryAxis#setGapStartAndEnd}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B gapStartAndEnd(boolean value)
     {
@@ -85,6 +100,12 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CategoryAxis#setStartMargin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B startMargin(double value)
     {
@@ -93,6 +114,12 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CategoryAxis#endMarginProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEndMargin(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -102,6 +129,12 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CategoryAxis#gapStartAndEndProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindGapStartAndEnd(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -111,6 +144,12 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CategoryAxis#startMarginProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStartMargin(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -120,12 +159,17 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
         return (B) this;
     }
 
+    /**
+     * 建構{@link CategoryAxis}物件
+     *
+     * @return 新的{@link CategoryAxis}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public CategoryAxis build()
     {
         CategoryAxis instance = new CategoryAxis();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

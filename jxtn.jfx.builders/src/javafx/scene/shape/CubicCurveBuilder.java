@@ -16,7 +16,6 @@ package javafx.scene.shape;
 public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasControlX1;
     protected double valControlX1;
@@ -65,11 +64,11 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
 
     protected boolean boundStartY;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvStartY;
-    public void applyTo(CubicCurve instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasControlX1)
             instance.setControlX1(this.valControlX1);
         if (this.hasControlX2)
@@ -102,10 +101,14 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
             instance.startXProperty().bind(this.obsrvStartX);
         if (this.boundStartY)
             instance.startYProperty().bind(this.obsrvStartY);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link CubicCurve#setControlX1}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B controlX1(double value)
     {
@@ -114,6 +117,12 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CubicCurve#setControlX2}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B controlX2(double value)
     {
@@ -122,6 +131,12 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CubicCurve#setControlY1}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B controlY1(double value)
     {
@@ -130,6 +145,12 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CubicCurve#setControlY2}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B controlY2(double value)
     {
@@ -138,6 +159,12 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CubicCurve#setEndX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B endX(double value)
     {
@@ -146,6 +173,12 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CubicCurve#setEndY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B endY(double value)
     {
@@ -154,6 +187,12 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CubicCurve#setStartX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B startX(double value)
     {
@@ -162,6 +201,12 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CubicCurve#setStartY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B startY(double value)
     {
@@ -170,6 +215,12 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CubicCurve#controlX1Property}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindControlX1(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -179,6 +230,12 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CubicCurve#controlX2Property}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindControlX2(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -188,6 +245,12 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CubicCurve#controlY1Property}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindControlY1(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -197,6 +260,12 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CubicCurve#controlY2Property}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindControlY2(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -206,6 +275,12 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CubicCurve#endXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEndX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -215,6 +290,12 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CubicCurve#endYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEndY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -224,6 +305,12 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CubicCurve#startXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStartX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -233,6 +320,12 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CubicCurve#startYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStartY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -242,12 +335,17 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
         return (B) this;
     }
 
+    /**
+     * 建構{@link CubicCurve}物件
+     *
+     * @return 新的{@link CubicCurve}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public CubicCurve build()
     {
         CubicCurve instance = new CubicCurve();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

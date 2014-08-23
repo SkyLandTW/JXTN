@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder<Z, B>>
         extends javafx.scene.control.ComboBoxBaseBuilder<java.time.LocalDate, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasChronology;
     protected java.time.chrono.Chronology valChronology;
@@ -41,11 +40,11 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
 
     protected boolean boundShowWeekNumbers;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvShowWeekNumbers;
-    public void applyTo(DatePicker instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasChronology)
             instance.setChronology(this.valChronology);
         if (this.hasConverter)
@@ -62,10 +61,14 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
             instance.dayCellFactoryProperty().bind(this.obsrvDayCellFactory);
         if (this.boundShowWeekNumbers)
             instance.showWeekNumbersProperty().bind(this.obsrvShowWeekNumbers);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link DatePicker#setChronology}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B chronology(java.time.chrono.Chronology value)
     {
@@ -74,6 +77,12 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DatePicker#setConverter}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B converter(javafx.util.StringConverter<java.time.LocalDate> value)
     {
@@ -82,6 +91,12 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DatePicker#setDayCellFactory}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B dayCellFactory(javafx.util.Callback<javafx.scene.control.DatePicker, javafx.scene.control.DateCell> value)
     {
@@ -90,6 +105,12 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DatePicker#setShowWeekNumbers}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B showWeekNumbers(boolean value)
     {
@@ -98,6 +119,12 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DatePicker#chronologyProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindChronology(javafx.beans.value.ObservableValue<? extends java.time.chrono.Chronology> source)
     {
@@ -107,6 +134,12 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DatePicker#converterProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<java.time.LocalDate>> source)
     {
@@ -116,6 +149,12 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DatePicker#dayCellFactoryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindDayCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.DatePicker, javafx.scene.control.DateCell>> source)
     {
@@ -125,6 +164,12 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link DatePicker#showWeekNumbersProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindShowWeekNumbers(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -134,12 +179,17 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
         return (B) this;
     }
 
+    /**
+     * 建構{@link DatePicker}物件
+     *
+     * @return 新的{@link DatePicker}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public DatePicker build()
     {
         DatePicker instance = new DatePicker();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

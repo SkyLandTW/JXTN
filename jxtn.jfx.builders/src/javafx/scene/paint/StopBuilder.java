@@ -16,21 +16,23 @@ package javafx.scene.paint;
 public class StopBuilder<Z extends Stop, B extends StopBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(Stop instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link Stop}物件
+     *
+     * @return 新的{@link Stop}物件實體
+     */
     @SuppressWarnings("unchecked")
     public Stop build(double arg0, javafx.scene.paint.Color arg1)
     {
         Stop instance = new Stop(arg0, arg1);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

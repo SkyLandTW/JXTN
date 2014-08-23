@@ -16,26 +16,29 @@ package javafx.scene.media;
 public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasOnError;
     protected java.lang.Runnable valOnError;
 
     protected boolean hasTracks;
     protected java.util.Collection<javafx.scene.media.Track> valTracks;
-    public void applyTo(Media instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasOnError)
             instance.setOnError(this.valOnError);
         if (this.hasTracks)
             instance.getTracks().setAll(this.valTracks);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Media#setOnError}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onError(java.lang.Runnable value)
     {
@@ -44,6 +47,12 @@ public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Media#getTracks}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tracks(java.util.Collection<javafx.scene.media.Track> value)
     {
@@ -52,6 +61,12 @@ public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Media#getTracks}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B tracks(javafx.scene.media.Track... value)
@@ -61,11 +76,16 @@ public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Media}物件
+     *
+     * @return 新的{@link Media}物件實體
+     */
     @SuppressWarnings("unchecked")
     public Media build(java.lang.String arg0)
     {
         Media instance = new Media(arg0);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

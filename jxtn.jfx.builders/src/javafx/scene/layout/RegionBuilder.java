@@ -16,7 +16,6 @@ package javafx.scene.layout;
 public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         extends javafx.scene.ParentBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBackground;
     protected javafx.scene.layout.Background valBackground;
@@ -107,11 +106,11 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
 
     protected boolean boundSnapToPixel;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvSnapToPixel;
-    public void applyTo(Region instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBackground)
             instance.setBackground(this.valBackground);
         if (this.hasBorder)
@@ -172,10 +171,14 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
             instance.shapeProperty().bind(this.obsrvShape);
         if (this.boundSnapToPixel)
             instance.snapToPixelProperty().bind(this.obsrvSnapToPixel);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Region#setBackground}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B background(javafx.scene.layout.Background value)
     {
@@ -184,6 +187,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#setBorder}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B border(javafx.scene.layout.Border value)
     {
@@ -192,6 +201,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#setCacheShape}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cacheShape(boolean value)
     {
@@ -200,6 +215,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#setCenterShape}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B centerShape(boolean value)
     {
@@ -208,6 +229,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#setMaxHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B maxHeight(double value)
     {
@@ -216,6 +243,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#setMaxWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B maxWidth(double value)
     {
@@ -224,6 +257,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#setMinHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B minHeight(double value)
     {
@@ -232,6 +271,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#setMinWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B minWidth(double value)
     {
@@ -240,6 +285,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#setOpaqueInsets}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B opaqueInsets(javafx.geometry.Insets value)
     {
@@ -248,6 +299,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#setPadding}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B padding(javafx.geometry.Insets value)
     {
@@ -256,6 +313,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#setPrefHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefHeight(double value)
     {
@@ -264,6 +327,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#setPrefWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefWidth(double value)
     {
@@ -272,6 +341,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#setScaleShape}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B scaleShape(boolean value)
     {
@@ -280,6 +355,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#setShape}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B shape(javafx.scene.shape.Shape value)
     {
@@ -288,6 +369,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#setSnapToPixel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B snapToPixel(boolean value)
     {
@@ -296,6 +383,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#backgroundProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindBackground(javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Background> source)
     {
@@ -305,6 +398,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#borderProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindBorder(javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Border> source)
     {
@@ -314,6 +413,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#cacheShapeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCacheShape(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -323,6 +428,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#centerShapeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCenterShape(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -332,6 +443,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#maxHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -341,6 +458,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#maxWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -350,6 +473,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#minHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -359,6 +488,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#minWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -368,6 +503,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#opaqueInsetsProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOpaqueInsets(javafx.beans.value.ObservableValue<? extends javafx.geometry.Insets> source)
     {
@@ -377,6 +518,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#paddingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPadding(javafx.beans.value.ObservableValue<? extends javafx.geometry.Insets> source)
     {
@@ -386,6 +533,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#prefHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPrefHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -395,6 +548,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#prefWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -404,6 +563,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#scaleShapeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindScaleShape(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -413,6 +578,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#shapeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindShape(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.Shape> source)
     {
@@ -422,6 +593,12 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Region#snapToPixelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSnapToPixel(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -431,12 +608,17 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Region}物件
+     *
+     * @return 新的{@link Region}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Region build()
     {
         Region instance = new Region();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

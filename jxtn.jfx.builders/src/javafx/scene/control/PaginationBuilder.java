@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCurrentPageIndex;
     protected int valCurrentPageIndex;
@@ -41,11 +40,11 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
 
     protected boolean boundPageFactory;
     protected javafx.beans.value.ObservableValue<? extends javafx.util.Callback<java.lang.Integer, javafx.scene.Node>> obsrvPageFactory;
-    public void applyTo(Pagination instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCurrentPageIndex)
             instance.setCurrentPageIndex(this.valCurrentPageIndex);
         if (this.hasMaxPageIndicatorCount)
@@ -62,10 +61,14 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
             instance.pageCountProperty().bind(this.obsrvPageCount);
         if (this.boundPageFactory)
             instance.pageFactoryProperty().bind(this.obsrvPageFactory);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Pagination#setCurrentPageIndex}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B currentPageIndex(int value)
     {
@@ -74,6 +77,12 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Pagination#setMaxPageIndicatorCount}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B maxPageIndicatorCount(int value)
     {
@@ -82,6 +91,12 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Pagination#setPageCount}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B pageCount(int value)
     {
@@ -90,6 +105,12 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Pagination#setPageFactory}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B pageFactory(javafx.util.Callback<java.lang.Integer, javafx.scene.Node> value)
     {
@@ -98,6 +119,12 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Pagination#currentPageIndexProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCurrentPageIndex(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
@@ -107,6 +134,12 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Pagination#maxPageIndicatorCountProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMaxPageIndicatorCount(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
@@ -116,6 +149,12 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Pagination#pageCountProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPageCount(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
@@ -125,6 +164,12 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Pagination#pageFactoryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPageFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<java.lang.Integer, javafx.scene.Node>> source)
     {
@@ -134,12 +179,17 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
         return (B) this;
     }
 
+    /**
+     * 建構{@link Pagination}物件
+     *
+     * @return 新的{@link Pagination}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Pagination build()
     {
         Pagination instance = new Pagination();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

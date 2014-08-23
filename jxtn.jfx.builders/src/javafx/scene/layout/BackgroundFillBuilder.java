@@ -16,21 +16,23 @@ package javafx.scene.layout;
 public class BackgroundFillBuilder<Z extends BackgroundFill, B extends BackgroundFillBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(BackgroundFill instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link BackgroundFill}物件
+     *
+     * @return 新的{@link BackgroundFill}物件實體
+     */
     @SuppressWarnings("unchecked")
     public BackgroundFill build(javafx.scene.paint.Paint arg0, javafx.scene.layout.CornerRadii arg1, javafx.geometry.Insets arg2)
     {
         BackgroundFill instance = new BackgroundFill(arg0, arg1, arg2);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

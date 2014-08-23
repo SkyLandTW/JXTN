@@ -16,26 +16,29 @@ package javafx.scene.control;
 public class ProgressIndicatorBuilder<Z extends ProgressIndicator, B extends ProgressIndicatorBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasProgress;
     protected double valProgress;
 
     protected boolean boundProgress;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvProgress;
-    public void applyTo(ProgressIndicator instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasProgress)
             instance.setProgress(this.valProgress);
         if (this.boundProgress)
             instance.progressProperty().bind(this.obsrvProgress);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ProgressIndicator#setProgress}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B progress(double value)
     {
@@ -44,6 +47,12 @@ public class ProgressIndicatorBuilder<Z extends ProgressIndicator, B extends Pro
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ProgressIndicator#progressProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindProgress(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -53,12 +62,17 @@ public class ProgressIndicatorBuilder<Z extends ProgressIndicator, B extends Pro
         return (B) this;
     }
 
+    /**
+     * 建構{@link ProgressIndicator}物件
+     *
+     * @return 新的{@link ProgressIndicator}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ProgressIndicator build()
     {
         ProgressIndicator instance = new ProgressIndicator();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

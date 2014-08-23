@@ -16,7 +16,6 @@ package javafx.scene.layout;
 public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstraintsBuilder<Z, B>>
         extends javafx.scene.layout.ConstraintsBaseBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasFillHeight;
     protected boolean valFillHeight;
@@ -59,11 +58,11 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
 
     protected boolean boundVgrow;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Priority> obsrvVgrow;
-    public void applyTo(RowConstraints instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasFillHeight)
             instance.setFillHeight(this.valFillHeight);
         if (this.hasMaxHeight)
@@ -92,10 +91,14 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
             instance.valignmentProperty().bind(this.obsrvValignment);
         if (this.boundVgrow)
             instance.vgrowProperty().bind(this.obsrvVgrow);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link RowConstraints#setFillHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fillHeight(boolean value)
     {
@@ -104,6 +107,12 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RowConstraints#setMaxHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B maxHeight(double value)
     {
@@ -112,6 +121,12 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RowConstraints#setMinHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B minHeight(double value)
     {
@@ -120,6 +135,12 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RowConstraints#setPercentHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B percentHeight(double value)
     {
@@ -128,6 +149,12 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RowConstraints#setPrefHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefHeight(double value)
     {
@@ -136,6 +163,12 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RowConstraints#setValignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B valignment(javafx.geometry.VPos value)
     {
@@ -144,6 +177,12 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RowConstraints#setVgrow}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B vgrow(javafx.scene.layout.Priority value)
     {
@@ -152,6 +191,12 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RowConstraints#fillHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFillHeight(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -161,6 +206,12 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RowConstraints#maxHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -170,6 +221,12 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RowConstraints#minHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -179,6 +236,12 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RowConstraints#percentHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPercentHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -188,6 +251,12 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RowConstraints#prefHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPrefHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -197,6 +266,12 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RowConstraints#valignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindValignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> source)
     {
@@ -206,6 +281,12 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link RowConstraints#vgrowProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindVgrow(javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Priority> source)
     {
@@ -215,12 +296,17 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
         return (B) this;
     }
 
+    /**
+     * 建構{@link RowConstraints}物件
+     *
+     * @return 新的{@link RowConstraints}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public RowConstraints build()
     {
         RowConstraints instance = new RowConstraints();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

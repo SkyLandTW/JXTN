@@ -16,26 +16,29 @@ package javafx.scene.shape;
 public class MeshViewBuilder<Z extends MeshView, B extends MeshViewBuilder<Z, B>>
         extends javafx.scene.shape.Shape3DBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasMesh;
     protected javafx.scene.shape.Mesh valMesh;
 
     protected boolean boundMesh;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.shape.Mesh> obsrvMesh;
-    public void applyTo(MeshView instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasMesh)
             instance.setMesh(this.valMesh);
         if (this.boundMesh)
             instance.meshProperty().bind(this.obsrvMesh);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link MeshView#setMesh}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B mesh(javafx.scene.shape.Mesh value)
     {
@@ -44,6 +47,12 @@ public class MeshViewBuilder<Z extends MeshView, B extends MeshViewBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MeshView#meshProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMesh(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.Mesh> source)
     {
@@ -53,12 +62,17 @@ public class MeshViewBuilder<Z extends MeshView, B extends MeshViewBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 建構{@link MeshView}物件
+     *
+     * @return 新的{@link MeshView}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public MeshView build()
     {
         MeshView instance = new MeshView();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

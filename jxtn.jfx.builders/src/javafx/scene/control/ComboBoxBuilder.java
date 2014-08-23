@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, B extends ComboBoxBuilder<T, Z, B>>
         extends javafx.scene.control.ComboBoxBaseBuilder<T, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasButtonCell;
     protected javafx.scene.control.ListCell<T> valButtonCell;
@@ -47,11 +46,11 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
 
     protected boolean boundVisibleRowCount;
     protected javafx.beans.value.ObservableValue<? extends Integer> obsrvVisibleRowCount;
-    public void applyTo(ComboBox<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasButtonCell)
             instance.setButtonCell(this.valButtonCell);
         if (this.hasCellFactory)
@@ -72,10 +71,14 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
             instance.selectionModelProperty().bind(this.obsrvSelectionModel);
         if (this.boundVisibleRowCount)
             instance.visibleRowCountProperty().bind(this.obsrvVisibleRowCount);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ComboBox#setButtonCell}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B buttonCell(javafx.scene.control.ListCell<T> value)
     {
@@ -84,6 +87,12 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBox#setCellFactory}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cellFactory(javafx.util.Callback<javafx.scene.control.ListView<T>, javafx.scene.control.ListCell<T>> value)
     {
@@ -92,6 +101,12 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBox#setConverter}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B converter(javafx.util.StringConverter<T> value)
     {
@@ -100,6 +115,12 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBox#setItems}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B items(javafx.collections.ObservableList<T> value)
     {
@@ -108,6 +129,12 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBox#setPlaceholder}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B placeholder(javafx.scene.Node value)
     {
@@ -116,6 +143,12 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBox#setSelectionModel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B selectionModel(javafx.scene.control.SingleSelectionModel<T> value)
     {
@@ -124,6 +157,12 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBox#setVisibleRowCount}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B visibleRowCount(int value)
     {
@@ -132,6 +171,12 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBox#placeholderProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPlaceholder(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -141,6 +186,12 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBox#selectionModelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.SingleSelectionModel<T>> source)
     {
@@ -150,6 +201,12 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBox#visibleRowCountProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindVisibleRowCount(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
@@ -159,12 +216,17 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
         return (B) this;
     }
 
+    /**
+     * 建構{@link ComboBox}物件
+     *
+     * @return 新的{@link ComboBox}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ComboBox<T> build()
     {
         ComboBox<T> instance = new ComboBox<T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

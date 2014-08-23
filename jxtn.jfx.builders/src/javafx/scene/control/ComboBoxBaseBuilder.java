@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxBase<T>, B extends ComboBoxBaseBuilder<T, Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasEditable;
     protected boolean valEditable;
@@ -59,11 +58,11 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
 
     protected boolean boundPromptText;
     protected javafx.beans.value.ObservableValue<? extends String> obsrvPromptText;
-    public void applyTo(ComboBoxBase<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasEditable)
             instance.setEditable(this.valEditable);
         if (this.hasOnAction)
@@ -92,10 +91,14 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
             instance.onShownProperty().bind(this.obsrvOnShown);
         if (this.boundPromptText)
             instance.promptTextProperty().bind(this.obsrvPromptText);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxBase#setEditable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B editable(boolean value)
     {
@@ -104,6 +107,12 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxBase#setOnAction}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onAction(javafx.event.EventHandler<javafx.event.ActionEvent> value)
     {
@@ -112,6 +121,12 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxBase#setOnHidden}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onHidden(javafx.event.EventHandler<javafx.event.Event> value)
     {
@@ -120,6 +135,12 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxBase#setOnHiding}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onHiding(javafx.event.EventHandler<javafx.event.Event> value)
     {
@@ -128,6 +149,12 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxBase#setOnShowing}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onShowing(javafx.event.EventHandler<javafx.event.Event> value)
     {
@@ -136,6 +163,12 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxBase#setOnShown}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onShown(javafx.event.EventHandler<javafx.event.Event> value)
     {
@@ -144,6 +177,12 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxBase#setPromptText}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B promptText(java.lang.String value)
     {
@@ -152,6 +191,12 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxBase#setValue}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B value(T value)
     {
@@ -160,6 +205,12 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxBase#onActionProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
     {
@@ -169,6 +220,12 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxBase#onHiddenProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnHidden(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
@@ -178,6 +235,12 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxBase#onHidingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnHiding(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
@@ -187,6 +250,12 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxBase#onShowingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnShowing(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
@@ -196,6 +265,12 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxBase#onShownProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnShown(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
@@ -205,6 +280,12 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ComboBoxBase#promptTextProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPromptText(javafx.beans.value.ObservableValue<? extends String> source)
     {

@@ -16,7 +16,6 @@ package javafx.scene.layout;
 public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
         extends javafx.scene.layout.PaneBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAlignment;
     protected javafx.geometry.Pos valAlignment;
@@ -35,11 +34,11 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
 
     protected boolean boundSpacing;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvSpacing;
-    public void applyTo(HBox instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAlignment)
             instance.setAlignment(this.valAlignment);
         if (this.hasFillHeight)
@@ -52,10 +51,14 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
             instance.fillHeightProperty().bind(this.obsrvFillHeight);
         if (this.boundSpacing)
             instance.spacingProperty().bind(this.obsrvSpacing);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link HBox#setAlignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B alignment(javafx.geometry.Pos value)
     {
@@ -64,6 +67,12 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HBox#setFillHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fillHeight(boolean value)
     {
@@ -72,6 +81,12 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HBox#setSpacing}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B spacing(double value)
     {
@@ -80,6 +95,12 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HBox#alignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
@@ -89,6 +110,12 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HBox#fillHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFillHeight(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -98,6 +125,12 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link HBox#spacingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -107,12 +140,17 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link HBox}物件
+     *
+     * @return 新的{@link HBox}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public HBox build()
     {
         HBox instance = new HBox();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

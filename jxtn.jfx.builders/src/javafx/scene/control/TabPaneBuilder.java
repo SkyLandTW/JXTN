@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasRotateGraphic;
     protected boolean valRotateGraphic;
@@ -68,11 +67,11 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
 
     protected boolean boundTabMinWidth;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvTabMinWidth;
-    public void applyTo(TabPane instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasRotateGraphic)
             instance.setRotateGraphic(this.valRotateGraphic);
         if (this.hasSelectionModel)
@@ -107,10 +106,14 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
             instance.tabMinHeightProperty().bind(this.obsrvTabMinHeight);
         if (this.boundTabMinWidth)
             instance.tabMinWidthProperty().bind(this.obsrvTabMinWidth);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link TabPane#setRotateGraphic}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B rotateGraphic(boolean value)
     {
@@ -119,6 +122,12 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TabPane#setSelectionModel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B selectionModel(javafx.scene.control.SingleSelectionModel<javafx.scene.control.Tab> value)
     {
@@ -127,6 +136,12 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TabPane#setSide}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B side(javafx.geometry.Side value)
     {
@@ -135,6 +150,12 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TabPane#setTabClosingPolicy}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tabClosingPolicy(javafx.scene.control.TabPane.TabClosingPolicy value)
     {
@@ -143,6 +164,12 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TabPane#setTabMaxHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tabMaxHeight(double value)
     {
@@ -151,6 +178,12 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TabPane#setTabMaxWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tabMaxWidth(double value)
     {
@@ -159,6 +192,12 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TabPane#setTabMinHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tabMinHeight(double value)
     {
@@ -167,6 +206,12 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TabPane#setTabMinWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tabMinWidth(double value)
     {
@@ -175,6 +220,12 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TabPane#getTabs}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tabs(java.util.Collection<javafx.scene.control.Tab> value)
     {
@@ -183,6 +234,12 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TabPane#getTabs}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B tabs(javafx.scene.control.Tab... value)
@@ -192,6 +249,12 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TabPane#rotateGraphicProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRotateGraphic(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -201,6 +264,12 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TabPane#selectionModelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.SingleSelectionModel<javafx.scene.control.Tab>> source)
     {
@@ -210,6 +279,12 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TabPane#sideProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
@@ -219,6 +294,12 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TabPane#tabClosingPolicyProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTabClosingPolicy(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TabPane.TabClosingPolicy> source)
     {
@@ -228,6 +309,12 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TabPane#tabMaxHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTabMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -237,6 +324,12 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TabPane#tabMaxWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTabMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -246,6 +339,12 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TabPane#tabMinHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTabMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -255,6 +354,12 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TabPane#tabMinWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTabMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -264,12 +369,17 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link TabPane}物件
+     *
+     * @return 新的{@link TabPane}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public TabPane build()
     {
         TabPane instance = new TabPane();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

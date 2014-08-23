@@ -16,7 +16,6 @@ package javafx.stage;
 public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasEventDispatcher;
     protected javafx.event.EventDispatcher valEventDispatcher;
@@ -71,11 +70,11 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
 
     protected boolean boundOpacity;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvOpacity;
-    public void applyTo(Window instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasEventDispatcher)
             instance.setEventDispatcher(this.valEventDispatcher);
         if (this.hasHeight)
@@ -112,10 +111,14 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
             instance.onShownProperty().bind(this.obsrvOnShown);
         if (this.boundOpacity)
             instance.opacityProperty().bind(this.obsrvOpacity);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Window#setEventDispatcher}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B eventDispatcher(javafx.event.EventDispatcher value)
     {
@@ -124,6 +127,12 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Window#setHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B height(double value)
     {
@@ -132,6 +141,12 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Window#setOnCloseRequest}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onCloseRequest(javafx.event.EventHandler<javafx.stage.WindowEvent> value)
     {
@@ -140,6 +155,12 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Window#setOnHidden}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onHidden(javafx.event.EventHandler<javafx.stage.WindowEvent> value)
     {
@@ -148,6 +169,12 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Window#setOnHiding}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onHiding(javafx.event.EventHandler<javafx.stage.WindowEvent> value)
     {
@@ -156,6 +183,12 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Window#setOnShowing}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onShowing(javafx.event.EventHandler<javafx.stage.WindowEvent> value)
     {
@@ -164,6 +197,12 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Window#setOnShown}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onShown(javafx.event.EventHandler<javafx.stage.WindowEvent> value)
     {
@@ -172,6 +211,12 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Window#setOpacity}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B opacity(double value)
     {
@@ -180,6 +225,12 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Window#setWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B width(double value)
     {
@@ -188,6 +239,12 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Window#setX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B x(double value)
     {
@@ -196,6 +253,12 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Window#setY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B y(double value)
     {
@@ -204,6 +267,12 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Window#eventDispatcherProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEventDispatcher(javafx.beans.value.ObservableValue<? extends javafx.event.EventDispatcher> source)
     {
@@ -213,6 +282,12 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Window#onCloseRequestProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnCloseRequest(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
     {
@@ -222,6 +297,12 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Window#onHiddenProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnHidden(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
     {
@@ -231,6 +312,12 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Window#onHidingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnHiding(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
     {
@@ -240,6 +327,12 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Window#onShowingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnShowing(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
     {
@@ -249,6 +342,12 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Window#onShownProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnShown(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
     {
@@ -258,6 +357,12 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Window#opacityProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOpacity(javafx.beans.value.ObservableValue<? extends Double> source)
     {

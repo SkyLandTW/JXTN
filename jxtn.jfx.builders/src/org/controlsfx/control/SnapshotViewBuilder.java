@@ -16,7 +16,6 @@ package org.controlsfx.control;
 public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasFixedSelectionRatio;
     protected double valFixedSelectionRatio;
@@ -38,11 +37,11 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
 
     protected boolean boundNode;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvNode;
-    public void applyTo(SnapshotView instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasFixedSelectionRatio)
             instance.setFixedSelectionRatio(this.valFixedSelectionRatio);
         if (this.hasNode)
@@ -57,10 +56,14 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
             instance.setSelectionRatioFixed(this.valSelectionRatioFixed);
         if (this.boundNode)
             instance.nodeProperty().bind(this.obsrvNode);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link SnapshotView#setFixedSelectionRatio}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fixedSelectionRatio(double value)
     {
@@ -69,6 +72,12 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SnapshotView#setNode}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B node(javafx.scene.Node value)
     {
@@ -77,6 +86,12 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SnapshotView#setSelection}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B selection(javafx.geometry.Rectangle2D value)
     {
@@ -85,6 +100,12 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SnapshotView#setSelectionActive}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B selectionActive(boolean value)
     {
@@ -93,6 +114,12 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SnapshotView#setSelectionActivityExplicitlyManaged}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B selectionActivityExplicitlyManaged(boolean value)
     {
@@ -101,6 +128,12 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SnapshotView#setSelectionRatioFixed}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B selectionRatioFixed(boolean value)
     {
@@ -109,6 +142,12 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SnapshotView#nodeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -118,12 +157,17 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
         return (B) this;
     }
 
+    /**
+     * 建構{@link SnapshotView}物件
+     *
+     * @return 新的{@link SnapshotView}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public SnapshotView build()
     {
         SnapshotView instance = new SnapshotView();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

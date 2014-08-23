@@ -16,7 +16,6 @@ package javafx.scene.text;
 public class TextFlowBuilder<Z extends TextFlow, B extends TextFlowBuilder<Z, B>>
         extends javafx.scene.layout.PaneBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasLineSpacing;
     protected double valLineSpacing;
@@ -29,11 +28,11 @@ public class TextFlowBuilder<Z extends TextFlow, B extends TextFlowBuilder<Z, B>
 
     protected boolean boundTextAlignment;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextAlignment> obsrvTextAlignment;
-    public void applyTo(TextFlow instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasLineSpacing)
             instance.setLineSpacing(this.valLineSpacing);
         if (this.hasTextAlignment)
@@ -42,10 +41,14 @@ public class TextFlowBuilder<Z extends TextFlow, B extends TextFlowBuilder<Z, B>
             instance.lineSpacingProperty().bind(this.obsrvLineSpacing);
         if (this.boundTextAlignment)
             instance.textAlignmentProperty().bind(this.obsrvTextAlignment);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link TextFlow#setLineSpacing}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B lineSpacing(double value)
     {
@@ -54,6 +57,12 @@ public class TextFlowBuilder<Z extends TextFlow, B extends TextFlowBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextFlow#setTextAlignment}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B textAlignment(javafx.scene.text.TextAlignment value)
     {
@@ -62,6 +71,12 @@ public class TextFlowBuilder<Z extends TextFlow, B extends TextFlowBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextFlow#lineSpacingProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLineSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -71,6 +86,12 @@ public class TextFlowBuilder<Z extends TextFlow, B extends TextFlowBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextFlow#textAlignmentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTextAlignment(javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextAlignment> source)
     {
@@ -80,12 +101,17 @@ public class TextFlowBuilder<Z extends TextFlow, B extends TextFlowBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 建構{@link TextFlow}物件
+     *
+     * @return 新的{@link TextFlow}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public TextFlow build()
     {
         TextFlow instance = new TextFlow();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

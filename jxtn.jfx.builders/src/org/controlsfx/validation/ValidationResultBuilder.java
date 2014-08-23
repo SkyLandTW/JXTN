@@ -16,22 +16,24 @@ package org.controlsfx.validation;
 public class ValidationResultBuilder<Z extends ValidationResult, B extends ValidationResultBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(ValidationResult instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link ValidationResult}物件
+     *
+     * @return 新的{@link ValidationResult}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ValidationResult build()
     {
         ValidationResult instance = new ValidationResult();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

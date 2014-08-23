@@ -16,7 +16,6 @@ package javafx.scene.transform;
 public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
         extends javafx.scene.transform.TransformBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasPivotX;
     protected double valPivotX;
@@ -53,11 +52,11 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
 
     protected boolean boundZ;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvZ;
-    public void applyTo(Scale instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasPivotX)
             instance.setPivotX(this.valPivotX);
         if (this.hasPivotY)
@@ -82,10 +81,14 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
             instance.yProperty().bind(this.obsrvY);
         if (this.boundZ)
             instance.zProperty().bind(this.obsrvZ);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Scale#setPivotX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B pivotX(double value)
     {
@@ -94,6 +97,12 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scale#setPivotY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B pivotY(double value)
     {
@@ -102,6 +111,12 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scale#setPivotZ}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B pivotZ(double value)
     {
@@ -110,6 +125,12 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scale#setX}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B x(double value)
     {
@@ -118,6 +139,12 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scale#setY}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B y(double value)
     {
@@ -126,6 +153,12 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scale#setZ}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B z(double value)
     {
@@ -134,6 +167,12 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scale#pivotXProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPivotX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -143,6 +182,12 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scale#pivotYProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPivotY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -152,6 +197,12 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scale#pivotZProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPivotZ(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -161,6 +212,12 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scale#xProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -170,6 +227,12 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scale#yProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -179,6 +242,12 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Scale#zProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindZ(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -188,12 +257,17 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Scale}物件
+     *
+     * @return 新的{@link Scale}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Scale build()
     {
         Scale instance = new Scale();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

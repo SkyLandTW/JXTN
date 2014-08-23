@@ -16,21 +16,23 @@ package javafx.scene.input;
 public class InputMethodTextRunBuilder<Z extends InputMethodTextRun, B extends InputMethodTextRunBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(InputMethodTextRun instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link InputMethodTextRun}物件
+     *
+     * @return 新的{@link InputMethodTextRun}物件實體
+     */
     @SuppressWarnings("unchecked")
     public InputMethodTextRun build(java.lang.String arg0, javafx.scene.input.InputMethodHighlight arg1)
     {
         InputMethodTextRun instance = new InputMethodTextRun(arg0, arg1);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

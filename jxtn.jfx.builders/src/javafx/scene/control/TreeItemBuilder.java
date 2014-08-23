@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, B extends TreeItemBuilder<T, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasChildren;
     protected java.util.Collection<javafx.scene.control.TreeItem<T>> valChildren;
@@ -38,11 +37,11 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
 
     protected boolean boundValue;
     protected javafx.beans.value.ObservableValue<? extends T> obsrvValue;
-    public void applyTo(TreeItem<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasChildren)
             instance.getChildren().setAll(this.valChildren);
         if (this.hasExpanded)
@@ -57,10 +56,14 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
             instance.graphicProperty().bind(this.obsrvGraphic);
         if (this.boundValue)
             instance.valueProperty().bind(this.obsrvValue);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link TreeItem#getChildren}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B children(java.util.Collection<javafx.scene.control.TreeItem<T>> value)
     {
@@ -69,6 +72,12 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TreeItem#getChildren}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B children(javafx.scene.control.TreeItem<T>... value)
@@ -78,6 +87,12 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeItem#setExpanded}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B expanded(boolean value)
     {
@@ -86,6 +101,12 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeItem#setGraphic}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B graphic(javafx.scene.Node value)
     {
@@ -94,6 +115,12 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeItem#setValue}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B value(T value)
     {
@@ -102,6 +129,12 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeItem#expandedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindExpanded(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -111,6 +144,12 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeItem#graphicProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -120,6 +159,12 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeItem#valueProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindValue(javafx.beans.value.ObservableValue<? extends T> source)
     {
@@ -129,12 +174,17 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
         return (B) this;
     }
 
+    /**
+     * 建構{@link TreeItem}物件
+     *
+     * @return 新的{@link TreeItem}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public TreeItem<T> build()
     {
         TreeItem<T> instance = new TreeItem<T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

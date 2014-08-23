@@ -16,26 +16,29 @@ package javafx.scene.shape;
 public class PathElementBuilder<Z extends PathElement, B extends PathElementBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAbsolute;
     protected boolean valAbsolute;
 
     protected boolean boundAbsolute;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvAbsolute;
-    public void applyTo(PathElement instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAbsolute)
             instance.setAbsolute(this.valAbsolute);
         if (this.boundAbsolute)
             instance.absoluteProperty().bind(this.obsrvAbsolute);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link PathElement#setAbsolute}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B absolute(boolean value)
     {
@@ -44,6 +47,12 @@ public class PathElementBuilder<Z extends PathElement, B extends PathElementBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PathElement#absoluteProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAbsolute(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {

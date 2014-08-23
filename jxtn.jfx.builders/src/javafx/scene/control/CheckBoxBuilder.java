@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>>
         extends javafx.scene.control.ButtonBaseBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasAllowIndeterminate;
     protected boolean valAllowIndeterminate;
@@ -35,11 +34,11 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
 
     protected boolean boundSelected;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvSelected;
-    public void applyTo(CheckBox instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasAllowIndeterminate)
             instance.setAllowIndeterminate(this.valAllowIndeterminate);
         if (this.hasIndeterminate)
@@ -52,10 +51,14 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
             instance.indeterminateProperty().bind(this.obsrvIndeterminate);
         if (this.boundSelected)
             instance.selectedProperty().bind(this.obsrvSelected);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link CheckBox#setAllowIndeterminate}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B allowIndeterminate(boolean value)
     {
@@ -64,6 +67,12 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CheckBox#setIndeterminate}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B indeterminate(boolean value)
     {
@@ -72,6 +81,12 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CheckBox#setSelected}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B selected(boolean value)
     {
@@ -80,6 +95,12 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CheckBox#allowIndeterminateProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindAllowIndeterminate(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -89,6 +110,12 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CheckBox#indeterminateProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindIndeterminate(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -98,6 +125,12 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CheckBox#selectedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSelected(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -107,12 +140,17 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 建構{@link CheckBox}物件
+     *
+     * @return 新的{@link CheckBox}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public CheckBox build()
     {
         CheckBox instance = new CheckBox();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

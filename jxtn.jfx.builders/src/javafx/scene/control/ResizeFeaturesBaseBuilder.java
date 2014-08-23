@@ -16,21 +16,23 @@ package javafx.scene.control;
 public class ResizeFeaturesBaseBuilder<S extends java.lang.Object, Z extends ResizeFeaturesBase<S>, B extends ResizeFeaturesBaseBuilder<S, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(ResizeFeaturesBase<S> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link ResizeFeaturesBase}物件
+     *
+     * @return 新的{@link ResizeFeaturesBase}物件實體
+     */
     @SuppressWarnings("unchecked")
     public ResizeFeaturesBase<S> build(javafx.scene.control.TableColumnBase<S, ?> arg0, java.lang.Double arg1)
     {
         ResizeFeaturesBase<S> instance = new ResizeFeaturesBase<S>(arg0, arg1);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

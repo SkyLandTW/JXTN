@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, B extends TreeViewBuilder<T, Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCellFactory;
     protected javafx.util.Callback<javafx.scene.control.TreeView<T>, javafx.scene.control.TreeCell<T>> valCellFactory;
@@ -80,11 +79,11 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
 
     protected boolean boundShowRoot;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvShowRoot;
-    public void applyTo(TreeView<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCellFactory)
             instance.setCellFactory(this.valCellFactory);
         if (this.hasEditable)
@@ -127,10 +126,14 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
             instance.selectionModelProperty().bind(this.obsrvSelectionModel);
         if (this.boundShowRoot)
             instance.showRootProperty().bind(this.obsrvShowRoot);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link TreeView#setCellFactory}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B cellFactory(javafx.util.Callback<javafx.scene.control.TreeView<T>, javafx.scene.control.TreeCell<T>> value)
     {
@@ -139,6 +142,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#setEditable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B editable(boolean value)
     {
@@ -147,6 +156,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#setFixedCellSize}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fixedCellSize(double value)
     {
@@ -155,6 +170,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#setFocusModel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B focusModel(javafx.scene.control.FocusModel<javafx.scene.control.TreeItem<T>> value)
     {
@@ -163,6 +184,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#setOnEditCancel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onEditCancel(javafx.event.EventHandler<javafx.scene.control.TreeView.EditEvent<T>> value)
     {
@@ -171,6 +198,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#setOnEditCommit}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onEditCommit(javafx.event.EventHandler<javafx.scene.control.TreeView.EditEvent<T>> value)
     {
@@ -179,6 +212,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#setOnEditStart}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onEditStart(javafx.event.EventHandler<javafx.scene.control.TreeView.EditEvent<T>> value)
     {
@@ -187,6 +226,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#setOnScrollTo}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B onScrollTo(javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>> value)
     {
@@ -195,6 +240,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#setRoot}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B root(javafx.scene.control.TreeItem<T> value)
     {
@@ -203,6 +254,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#setSelectionModel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B selectionModel(javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>> value)
     {
@@ -211,6 +268,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#setShowRoot}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B showRoot(boolean value)
     {
@@ -219,6 +282,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#cellFactoryProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeView<T>, javafx.scene.control.TreeCell<T>>> source)
     {
@@ -228,6 +297,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#editableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -237,6 +312,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#fixedCellSizeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFixedCellSize(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -246,6 +327,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#focusModelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFocusModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.FocusModel<javafx.scene.control.TreeItem<T>>> source)
     {
@@ -255,6 +342,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#onEditCancelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnEditCancel(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TreeView.EditEvent<T>>> source)
     {
@@ -264,6 +357,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#onEditCommitProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnEditCommit(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TreeView.EditEvent<T>>> source)
     {
@@ -273,6 +372,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#onEditStartProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOnEditStart(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TreeView.EditEvent<T>>> source)
     {
@@ -282,6 +387,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#rootProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRoot(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeItem<T>> source)
     {
@@ -291,6 +402,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#selectionModelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>>> source)
     {
@@ -300,6 +417,12 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TreeView#showRootProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindShowRoot(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -309,12 +432,17 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         return (B) this;
     }
 
+    /**
+     * 建構{@link TreeView}物件
+     *
+     * @return 新的{@link TreeView}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public TreeView<T> build()
     {
         TreeView<T> instance = new TreeView<T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,22 +16,24 @@ package javafx.scene.control;
 public class RadioButtonBuilder<Z extends RadioButton, B extends RadioButtonBuilder<Z, B>>
         extends javafx.scene.control.ToggleButtonBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(RadioButton instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link RadioButton}物件
+     *
+     * @return 新的{@link RadioButton}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public RadioButton build()
     {
         RadioButton instance = new RadioButton();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

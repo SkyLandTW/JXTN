@@ -16,7 +16,6 @@ package javafx.scene.effect;
 public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBlurType;
     protected javafx.scene.effect.BlurType valBlurType;
@@ -53,11 +52,11 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
 
     protected boolean boundWidth;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvWidth;
-    public void applyTo(Shadow instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBlurType)
             instance.setBlurType(this.valBlurType);
         if (this.hasColor)
@@ -82,10 +81,14 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
             instance.radiusProperty().bind(this.obsrvRadius);
         if (this.boundWidth)
             instance.widthProperty().bind(this.obsrvWidth);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Shadow#setBlurType}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B blurType(javafx.scene.effect.BlurType value)
     {
@@ -94,6 +97,12 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shadow#setColor}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B color(javafx.scene.paint.Color value)
     {
@@ -102,6 +111,12 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shadow#setHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B height(double value)
     {
@@ -110,6 +125,12 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shadow#setInput}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B input(javafx.scene.effect.Effect value)
     {
@@ -118,6 +139,12 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shadow#setRadius}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B radius(double value)
     {
@@ -126,6 +153,12 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shadow#setWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B width(double value)
     {
@@ -134,6 +167,12 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shadow#blurTypeProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindBlurType(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.BlurType> source)
     {
@@ -143,6 +182,12 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shadow#colorProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindColor(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> source)
     {
@@ -152,6 +197,12 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shadow#heightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -161,6 +212,12 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shadow#inputProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
@@ -170,6 +227,12 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shadow#radiusProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -179,6 +242,12 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Shadow#widthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -188,12 +257,17 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Shadow}物件
+     *
+     * @return 新的{@link Shadow}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Shadow build()
     {
         Shadow instance = new Shadow();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

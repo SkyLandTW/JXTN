@@ -16,21 +16,23 @@ package org.controlsfx.control.spreadsheet;
 public class GridChangeBuilder<Z extends GridChange, B extends GridChangeBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(GridChange instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link GridChange}物件
+     *
+     * @return 新的{@link GridChange}物件實體
+     */
     @SuppressWarnings("unchecked")
     public GridChange build(int arg0, int arg1, java.lang.Object arg2, java.lang.Object arg3)
     {
         GridChange instance = new GridChange(arg0, arg1, arg2, arg3);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

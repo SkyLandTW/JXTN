@@ -16,22 +16,24 @@ package javafx.scene.control;
 public class TableRowBuilder<T extends java.lang.Object, Z extends TableRow<T>, B extends TableRowBuilder<T, Z, B>>
         extends javafx.scene.control.IndexedCellBuilder<T, Z, B>
 {
-    private boolean applied;
-    public void applyTo(TableRow<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link TableRow}物件
+     *
+     * @return 新的{@link TableRow}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public TableRow<T> build()
     {
         TableRow<T> instance = new TableRow<T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

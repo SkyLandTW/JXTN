@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class CustomMenuItemBuilder<Z extends CustomMenuItem, B extends CustomMenuItemBuilder<Z, B>>
         extends javafx.scene.control.MenuItemBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasContent;
     protected javafx.scene.Node valContent;
@@ -29,11 +28,11 @@ public class CustomMenuItemBuilder<Z extends CustomMenuItem, B extends CustomMen
 
     protected boolean boundHideOnClick;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvHideOnClick;
-    public void applyTo(CustomMenuItem instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasContent)
             instance.setContent(this.valContent);
         if (this.hasHideOnClick)
@@ -42,10 +41,14 @@ public class CustomMenuItemBuilder<Z extends CustomMenuItem, B extends CustomMen
             instance.contentProperty().bind(this.obsrvContent);
         if (this.boundHideOnClick)
             instance.hideOnClickProperty().bind(this.obsrvHideOnClick);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link CustomMenuItem#setContent}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B content(javafx.scene.Node value)
     {
@@ -54,6 +57,12 @@ public class CustomMenuItemBuilder<Z extends CustomMenuItem, B extends CustomMen
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CustomMenuItem#setHideOnClick}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B hideOnClick(boolean value)
     {
@@ -62,6 +71,12 @@ public class CustomMenuItemBuilder<Z extends CustomMenuItem, B extends CustomMen
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CustomMenuItem#contentProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
@@ -71,6 +86,12 @@ public class CustomMenuItemBuilder<Z extends CustomMenuItem, B extends CustomMen
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CustomMenuItem#hideOnClickProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHideOnClick(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -80,12 +101,17 @@ public class CustomMenuItemBuilder<Z extends CustomMenuItem, B extends CustomMen
         return (B) this;
     }
 
+    /**
+     * 建構{@link CustomMenuItem}物件
+     *
+     * @return 新的{@link CustomMenuItem}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public CustomMenuItem build()
     {
         CustomMenuItem instance = new CustomMenuItem();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

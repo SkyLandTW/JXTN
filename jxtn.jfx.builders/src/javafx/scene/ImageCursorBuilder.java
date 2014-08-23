@@ -16,22 +16,24 @@ package javafx.scene;
 public class ImageCursorBuilder<Z extends ImageCursor, B extends ImageCursorBuilder<Z, B>>
         extends javafx.scene.CursorBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(ImageCursor instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link ImageCursor}物件
+     *
+     * @return 新的{@link ImageCursor}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ImageCursor build()
     {
         ImageCursor instance = new ImageCursor();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

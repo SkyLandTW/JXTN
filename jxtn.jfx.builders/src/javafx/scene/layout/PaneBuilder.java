@@ -16,21 +16,24 @@ package javafx.scene.layout;
 public class PaneBuilder<Z extends Pane, B extends PaneBuilder<Z, B>>
         extends javafx.scene.layout.RegionBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasChildren;
     protected java.util.Collection<javafx.scene.Node> valChildren;
-    public void applyTo(Pane instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasChildren)
             instance.getChildren().setAll(this.valChildren);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link Pane#getChildren}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B children(java.util.Collection<javafx.scene.Node> value)
     {
@@ -39,6 +42,12 @@ public class PaneBuilder<Z extends Pane, B extends PaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Pane#getChildren}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B children(javafx.scene.Node... value)
@@ -48,12 +57,17 @@ public class PaneBuilder<Z extends Pane, B extends PaneBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Pane}物件
+     *
+     * @return 新的{@link Pane}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Pane build()
     {
         Pane instance = new Pane();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

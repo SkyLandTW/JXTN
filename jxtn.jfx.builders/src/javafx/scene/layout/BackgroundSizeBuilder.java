@@ -16,21 +16,23 @@ package javafx.scene.layout;
 public class BackgroundSizeBuilder<Z extends BackgroundSize, B extends BackgroundSizeBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(BackgroundSize instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link BackgroundSize}物件
+     *
+     * @return 新的{@link BackgroundSize}物件實體
+     */
     @SuppressWarnings("unchecked")
     public BackgroundSize build(double arg0, double arg1, boolean arg2, boolean arg3, boolean arg4, boolean arg5)
     {
         BackgroundSize instance = new BackgroundSize(arg0, arg1, arg2, arg3, arg4, arg5);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

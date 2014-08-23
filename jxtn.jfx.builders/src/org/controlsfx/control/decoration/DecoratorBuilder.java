@@ -16,13 +16,10 @@ package org.controlsfx.control.decoration;
 public class DecoratorBuilder<Z extends Decorator, B extends DecoratorBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(Decorator instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 }

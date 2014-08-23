@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>>
         extends javafx.scene.control.TextInputControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasParagraphs;
     protected java.util.Collection<java.lang.CharSequence> valParagraphs;
@@ -50,11 +49,11 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
 
     protected boolean boundWrapText;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvWrapText;
-    public void applyTo(TextArea instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasParagraphs)
             instance.getParagraphs().setAll(this.valParagraphs);
         if (this.hasPrefColumnCount)
@@ -77,10 +76,14 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
             instance.scrollTopProperty().bind(this.obsrvScrollTop);
         if (this.boundWrapText)
             instance.wrapTextProperty().bind(this.obsrvWrapText);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link TextArea#getParagraphs}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B paragraphs(java.util.Collection<java.lang.CharSequence> value)
     {
@@ -89,6 +92,12 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link TextArea#getParagraphs}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B paragraphs(java.lang.CharSequence... value)
@@ -98,6 +107,12 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextArea#setPrefColumnCount}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefColumnCount(int value)
     {
@@ -106,6 +121,12 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextArea#setPrefRowCount}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefRowCount(int value)
     {
@@ -114,6 +135,12 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextArea#setScrollLeft}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B scrollLeft(double value)
     {
@@ -122,6 +149,12 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextArea#setScrollTop}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B scrollTop(double value)
     {
@@ -130,6 +163,12 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextArea#setWrapText}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B wrapText(boolean value)
     {
@@ -138,6 +177,12 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextArea#prefColumnCountProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPrefColumnCount(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
@@ -147,6 +192,12 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextArea#prefRowCountProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPrefRowCount(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
@@ -156,6 +207,12 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextArea#scrollLeftProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindScrollLeft(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -165,6 +222,12 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextArea#scrollTopProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindScrollTop(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -174,6 +237,12 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link TextArea#wrapTextProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindWrapText(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -183,12 +252,17 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
         return (B) this;
     }
 
+    /**
+     * 建構{@link TextArea}物件
+     *
+     * @return 新的{@link TextArea}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public TextArea build()
     {
         TextArea instance = new TextArea();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

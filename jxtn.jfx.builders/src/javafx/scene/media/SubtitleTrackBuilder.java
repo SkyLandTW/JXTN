@@ -16,13 +16,10 @@ package javafx.scene.media;
 public class SubtitleTrackBuilder<Z extends SubtitleTrack, B extends SubtitleTrackBuilder<Z, B>>
         extends javafx.scene.media.TrackBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(SubtitleTrack instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 }

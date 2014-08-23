@@ -16,21 +16,23 @@ package javafx.scene.control.cell;
 public class PropertyValueFactoryBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends PropertyValueFactory<S, T>, B extends PropertyValueFactoryBuilder<S, T, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(PropertyValueFactory<S, T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link PropertyValueFactory}物件
+     *
+     * @return 新的{@link PropertyValueFactory}物件實體
+     */
     @SuppressWarnings("unchecked")
     public PropertyValueFactory<S, T> build(java.lang.String arg0)
     {
         PropertyValueFactory<S, T> instance = new PropertyValueFactory<S, T>(arg0);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

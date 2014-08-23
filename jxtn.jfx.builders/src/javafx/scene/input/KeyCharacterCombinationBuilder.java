@@ -16,21 +16,23 @@ package javafx.scene.input;
 public class KeyCharacterCombinationBuilder<Z extends KeyCharacterCombination, B extends KeyCharacterCombinationBuilder<Z, B>>
         extends javafx.scene.input.KeyCombinationBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(KeyCharacterCombination instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link KeyCharacterCombination}物件
+     *
+     * @return 新的{@link KeyCharacterCombination}物件實體
+     */
     @SuppressWarnings("unchecked")
     public KeyCharacterCombination build(java.lang.String arg0, javafx.scene.input.KeyCombination.Modifier[] arg1)
     {
         KeyCharacterCombination instance = new KeyCharacterCombination(arg0, arg1);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

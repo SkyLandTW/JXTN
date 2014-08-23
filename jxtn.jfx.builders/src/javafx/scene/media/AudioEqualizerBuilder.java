@@ -16,26 +16,29 @@ package javafx.scene.media;
 public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqualizerBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBands;
     protected java.util.Collection<javafx.scene.media.EqualizerBand> valBands;
 
     protected boolean hasEnabled;
     protected boolean valEnabled;
-    public void applyTo(AudioEqualizer instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBands)
             instance.getBands().setAll(this.valBands);
         if (this.hasEnabled)
             instance.setEnabled(this.valEnabled);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link AudioEqualizer#getBands}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bands(java.util.Collection<javafx.scene.media.EqualizerBand> value)
     {
@@ -44,6 +47,12 @@ public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqua
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link AudioEqualizer#getBands}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B bands(javafx.scene.media.EqualizerBand... value)
@@ -53,6 +62,12 @@ public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqua
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link AudioEqualizer#setEnabled}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B enabled(boolean value)
     {

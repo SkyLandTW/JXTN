@@ -16,21 +16,23 @@ package javafx.scene.paint;
 public class RadialGradientBuilder<Z extends RadialGradient, B extends RadialGradientBuilder<Z, B>>
         extends javafx.scene.paint.PaintBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(RadialGradient instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link RadialGradient}物件
+     *
+     * @return 新的{@link RadialGradient}物件實體
+     */
     @SuppressWarnings("unchecked")
     public RadialGradient build(double arg0, double arg1, double arg2, double arg3, double arg4, boolean arg5, javafx.scene.paint.CycleMethod arg6, java.util.List<javafx.scene.paint.Stop> arg7)
     {
         RadialGradient instance = new RadialGradient(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

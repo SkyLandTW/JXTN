@@ -16,21 +16,23 @@ package javafx.scene.control;
 public class TreeTablePositionBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends TreeTablePosition<S, T>, B extends TreeTablePositionBuilder<S, T, Z, B>>
         extends javafx.scene.control.TablePositionBaseBuilder<javafx.scene.control.TreeTableColumn<S, T>, Z, B>
 {
-    private boolean applied;
-    public void applyTo(TreeTablePosition<S, T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link TreeTablePosition}物件
+     *
+     * @return 新的{@link TreeTablePosition}物件實體
+     */
     @SuppressWarnings("unchecked")
     public TreeTablePosition<S, T> build(javafx.scene.control.TreeTableView<S> arg0, int arg1, javafx.scene.control.TreeTableColumn<S, T> arg2)
     {
         TreeTablePosition<S, T> instance = new TreeTablePosition<S, T>(arg0, arg1, arg2);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

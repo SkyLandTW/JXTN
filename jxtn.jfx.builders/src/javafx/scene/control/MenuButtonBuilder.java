@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class MenuButtonBuilder<Z extends MenuButton, B extends MenuButtonBuilder<Z, B>>
         extends javafx.scene.control.ButtonBaseBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasItems;
     protected java.util.Collection<javafx.scene.control.MenuItem> valItems;
@@ -26,21 +25,25 @@ public class MenuButtonBuilder<Z extends MenuButton, B extends MenuButtonBuilder
 
     protected boolean boundPopupSide;
     protected javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> obsrvPopupSide;
-    public void applyTo(MenuButton instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasItems)
             instance.getItems().setAll(this.valItems);
         if (this.hasPopupSide)
             instance.setPopupSide(this.valPopupSide);
         if (this.boundPopupSide)
             instance.popupSideProperty().bind(this.obsrvPopupSide);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link MenuButton#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B items(java.util.Collection<javafx.scene.control.MenuItem> value)
     {
@@ -49,6 +52,12 @@ public class MenuButtonBuilder<Z extends MenuButton, B extends MenuButtonBuilder
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link MenuButton#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B items(javafx.scene.control.MenuItem... value)
@@ -58,6 +67,12 @@ public class MenuButtonBuilder<Z extends MenuButton, B extends MenuButtonBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuButton#setPopupSide}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B popupSide(javafx.geometry.Side value)
     {
@@ -66,6 +81,12 @@ public class MenuButtonBuilder<Z extends MenuButton, B extends MenuButtonBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link MenuButton#popupSideProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPopupSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
@@ -75,12 +96,17 @@ public class MenuButtonBuilder<Z extends MenuButton, B extends MenuButtonBuilder
         return (B) this;
     }
 
+    /**
+     * 建構{@link MenuButton}物件
+     *
+     * @return 新的{@link MenuButton}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public MenuButton build()
     {
         MenuButton instance = new MenuButton();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

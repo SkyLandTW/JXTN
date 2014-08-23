@@ -16,13 +16,10 @@ package org.controlsfx.control.action;
 public class ActionUtilsBuilder<Z extends ActionUtils, B extends ActionUtilsBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(ActionUtils instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 }

@@ -16,21 +16,23 @@ package javafx.scene.chart;
 public class BubbleChartBuilder<X extends java.lang.Object, Y extends java.lang.Object, Z extends BubbleChart<X, Y>, B extends BubbleChartBuilder<X, Y, Z, B>>
         extends javafx.scene.chart.XYChartBuilder<X, Y, Z, B>
 {
-    private boolean applied;
-    public void applyTo(BubbleChart<X, Y> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link BubbleChart}物件
+     *
+     * @return 新的{@link BubbleChart}物件實體
+     */
     @SuppressWarnings("unchecked")
     public BubbleChart<X, Y> build(javafx.scene.chart.Axis<X> arg0, javafx.scene.chart.Axis<Y> arg1)
     {
         BubbleChart<X, Y> instance = new BubbleChart<X, Y>(arg0, arg1);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

@@ -16,21 +16,23 @@ package javafx.scene.layout;
 public class BorderImageBuilder<Z extends BorderImage, B extends BorderImageBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(BorderImage instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link BorderImage}物件
+     *
+     * @return 新的{@link BorderImage}物件實體
+     */
     @SuppressWarnings("unchecked")
     public BorderImage build(javafx.scene.image.Image arg0, javafx.scene.layout.BorderWidths arg1, javafx.geometry.Insets arg2, javafx.scene.layout.BorderWidths arg3, boolean arg4, javafx.scene.layout.BorderRepeat arg5, javafx.scene.layout.BorderRepeat arg6)
     {
         BorderImage instance = new BorderImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

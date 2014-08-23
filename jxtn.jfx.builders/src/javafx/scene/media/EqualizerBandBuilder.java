@@ -16,7 +16,6 @@ package javafx.scene.media;
 public class EqualizerBandBuilder<Z extends EqualizerBand, B extends EqualizerBandBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBandwidth;
     protected double valBandwidth;
@@ -26,21 +25,25 @@ public class EqualizerBandBuilder<Z extends EqualizerBand, B extends EqualizerBa
 
     protected boolean hasGain;
     protected double valGain;
-    public void applyTo(EqualizerBand instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBandwidth)
             instance.setBandwidth(this.valBandwidth);
         if (this.hasCenterFrequency)
             instance.setCenterFrequency(this.valCenterFrequency);
         if (this.hasGain)
             instance.setGain(this.valGain);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link EqualizerBand#setBandwidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bandwidth(double value)
     {
@@ -49,6 +52,12 @@ public class EqualizerBandBuilder<Z extends EqualizerBand, B extends EqualizerBa
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link EqualizerBand#setCenterFrequency}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B centerFrequency(double value)
     {
@@ -57,6 +66,12 @@ public class EqualizerBandBuilder<Z extends EqualizerBand, B extends EqualizerBa
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link EqualizerBand#setGain}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B gain(double value)
     {
@@ -65,12 +80,17 @@ public class EqualizerBandBuilder<Z extends EqualizerBand, B extends EqualizerBa
         return (B) this;
     }
 
+    /**
+     * 建構{@link EqualizerBand}物件
+     *
+     * @return 新的{@link EqualizerBand}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public EqualizerBand build()
     {
         EqualizerBand instance = new EqualizerBand();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

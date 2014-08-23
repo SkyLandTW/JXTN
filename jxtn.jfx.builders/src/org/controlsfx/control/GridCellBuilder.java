@@ -16,22 +16,24 @@ package org.controlsfx.control;
 public class GridCellBuilder<T extends java.lang.Object, Z extends GridCell<T>, B extends GridCellBuilder<T, Z, B>>
         extends javafx.scene.control.IndexedCellBuilder<T, Z, B>
 {
-    private boolean applied;
-    public void applyTo(GridCell<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link GridCell}物件
+     *
+     * @return 新的{@link GridCell}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public GridCell<T> build()
     {
         GridCell<T> instance = new GridCell<T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

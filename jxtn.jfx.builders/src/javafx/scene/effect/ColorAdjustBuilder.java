@@ -16,7 +16,6 @@ package javafx.scene.effect;
 public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBrightness;
     protected double valBrightness;
@@ -47,11 +46,11 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
 
     protected boolean boundSaturation;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvSaturation;
-    public void applyTo(ColorAdjust instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBrightness)
             instance.setBrightness(this.valBrightness);
         if (this.hasContrast)
@@ -72,10 +71,14 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
             instance.inputProperty().bind(this.obsrvInput);
         if (this.boundSaturation)
             instance.saturationProperty().bind(this.obsrvSaturation);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ColorAdjust#setBrightness}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B brightness(double value)
     {
@@ -84,6 +87,12 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColorAdjust#setContrast}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B contrast(double value)
     {
@@ -92,6 +101,12 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColorAdjust#setHue}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B hue(double value)
     {
@@ -100,6 +115,12 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColorAdjust#setInput}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B input(javafx.scene.effect.Effect value)
     {
@@ -108,6 +129,12 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColorAdjust#setSaturation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B saturation(double value)
     {
@@ -116,6 +143,12 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColorAdjust#brightnessProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindBrightness(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -125,6 +158,12 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColorAdjust#contrastProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindContrast(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -134,6 +173,12 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColorAdjust#hueProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindHue(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -143,6 +188,12 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColorAdjust#inputProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
@@ -152,6 +203,12 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ColorAdjust#saturationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSaturation(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -161,12 +218,17 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
         return (B) this;
     }
 
+    /**
+     * 建構{@link ColorAdjust}物件
+     *
+     * @return 新的{@link ColorAdjust}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ColorAdjust build()
     {
         ColorAdjust instance = new ColorAdjust();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

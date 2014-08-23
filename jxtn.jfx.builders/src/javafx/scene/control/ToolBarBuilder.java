@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class ToolBarBuilder<Z extends ToolBar, B extends ToolBarBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasItems;
     protected java.util.Collection<javafx.scene.Node> valItems;
@@ -26,21 +25,25 @@ public class ToolBarBuilder<Z extends ToolBar, B extends ToolBarBuilder<Z, B>>
 
     protected boolean boundOrientation;
     protected javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrvOrientation;
-    public void applyTo(ToolBar instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasItems)
             instance.getItems().setAll(this.valItems);
         if (this.hasOrientation)
             instance.setOrientation(this.valOrientation);
         if (this.boundOrientation)
             instance.orientationProperty().bind(this.obsrvOrientation);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link ToolBar#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B items(java.util.Collection<javafx.scene.Node> value)
     {
@@ -49,6 +52,12 @@ public class ToolBarBuilder<Z extends ToolBar, B extends ToolBarBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link ToolBar#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B items(javafx.scene.Node... value)
@@ -58,6 +67,12 @@ public class ToolBarBuilder<Z extends ToolBar, B extends ToolBarBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ToolBar#setOrientation}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B orientation(javafx.geometry.Orientation value)
     {
@@ -66,6 +81,12 @@ public class ToolBarBuilder<Z extends ToolBar, B extends ToolBarBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ToolBar#orientationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
@@ -75,12 +96,17 @@ public class ToolBarBuilder<Z extends ToolBar, B extends ToolBarBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link ToolBar}物件
+     *
+     * @return 新的{@link ToolBar}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public ToolBar build()
     {
         ToolBar instance = new ToolBar();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

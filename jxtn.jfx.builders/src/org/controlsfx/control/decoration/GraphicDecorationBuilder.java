@@ -16,21 +16,23 @@ package org.controlsfx.control.decoration;
 public class GraphicDecorationBuilder<Z extends GraphicDecoration, B extends GraphicDecorationBuilder<Z, B>>
         extends org.controlsfx.control.decoration.DecorationBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(GraphicDecoration instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link GraphicDecoration}物件
+     *
+     * @return 新的{@link GraphicDecoration}物件實體
+     */
     @SuppressWarnings("unchecked")
     public GraphicDecoration build(javafx.scene.Node arg0)
     {
         GraphicDecoration instance = new GraphicDecoration(arg0);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

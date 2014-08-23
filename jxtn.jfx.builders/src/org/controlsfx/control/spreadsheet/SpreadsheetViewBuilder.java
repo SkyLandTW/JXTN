@@ -16,7 +16,6 @@ package org.controlsfx.control.spreadsheet;
 public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends SpreadsheetViewBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasColumnPickerCallback;
     protected javafx.util.Callback<java.lang.Integer, java.lang.Void> valColumnPickerCallback;
@@ -65,11 +64,11 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
 
     protected boolean boundShowRowHeader;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvShowRowHeader;
-    public void applyTo(SpreadsheetView instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasColumnPickerCallback)
             instance.setColumnPickerCallback(this.valColumnPickerCallback);
         if (this.hasColumnPickers)
@@ -102,10 +101,14 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
             instance.showColumnHeaderProperty().bind(this.obsrvShowColumnHeader);
         if (this.boundShowRowHeader)
             instance.showRowHeaderProperty().bind(this.obsrvShowRowHeader);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetView#setColumnPickerCallback}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B columnPickerCallback(javafx.util.Callback<java.lang.Integer, java.lang.Void> value)
     {
@@ -114,6 +117,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link SpreadsheetView#getColumnPickers}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B columnPickers(java.util.Collection<java.lang.Integer> value)
     {
@@ -122,6 +131,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link SpreadsheetView#getColumnPickers}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B columnPickers(java.lang.Integer... value)
@@ -131,6 +146,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link SpreadsheetView#getColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B columns(java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn> value)
     {
@@ -139,6 +160,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link SpreadsheetView#getColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B columns(org.controlsfx.control.spreadsheet.SpreadsheetColumn... value)
@@ -148,6 +175,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetView#setEditable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B editable(boolean value)
     {
@@ -156,6 +189,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link SpreadsheetView#getFixedColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fixedColumns(java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn> value)
     {
@@ -164,6 +203,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link SpreadsheetView#getFixedColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B fixedColumns(org.controlsfx.control.spreadsheet.SpreadsheetColumn... value)
@@ -173,6 +218,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link SpreadsheetView#getFixedRows}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fixedRows(java.util.Collection<java.lang.Integer> value)
     {
@@ -181,6 +232,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link SpreadsheetView#getFixedRows}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B fixedRows(java.lang.Integer... value)
@@ -190,6 +247,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetView#setFixingColumnsAllowed}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fixingColumnsAllowed(boolean value)
     {
@@ -198,6 +261,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetView#setFixingRowsAllowed}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fixingRowsAllowed(boolean value)
     {
@@ -206,6 +275,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetView#setGrid}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B grid(org.controlsfx.control.spreadsheet.Grid value)
     {
@@ -214,6 +289,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetView#setRowPickerCallback}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B rowPickerCallback(javafx.util.Callback<java.lang.Integer, java.lang.Void> value)
     {
@@ -222,6 +303,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link SpreadsheetView#getRowPickers}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B rowPickers(java.util.Collection<java.lang.Integer> value)
     {
@@ -230,6 +317,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link SpreadsheetView#getRowPickers}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B rowPickers(java.lang.Integer... value)
@@ -239,6 +332,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetView#setShowColumnHeader}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B showColumnHeader(boolean value)
     {
@@ -247,6 +346,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetView#setShowRowHeader}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B showRowHeader(boolean value)
     {
@@ -255,6 +360,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetView#editableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -264,6 +375,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetView#showColumnHeaderProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindShowColumnHeader(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -273,6 +390,12 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link SpreadsheetView#showRowHeaderProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindShowRowHeader(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -282,12 +405,17 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         return (B) this;
     }
 
+    /**
+     * 建構{@link SpreadsheetView}物件
+     *
+     * @return 新的{@link SpreadsheetView}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public SpreadsheetView build()
     {
         SpreadsheetView instance = new SpreadsheetView();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

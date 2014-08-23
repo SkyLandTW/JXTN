@@ -16,21 +16,23 @@ package javafx.scene.layout;
 public class BorderWidthsBuilder<Z extends BorderWidths, B extends BorderWidthsBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(BorderWidths instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 
+    /**
+     * 建構{@link BorderWidths}物件
+     *
+     * @return 新的{@link BorderWidths}物件實體
+     */
     @SuppressWarnings("unchecked")
     public BorderWidths build(double arg0)
     {
         BorderWidths instance = new BorderWidths(arg0);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

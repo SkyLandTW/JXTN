@@ -16,26 +16,29 @@ package javafx.scene.web;
 public class WebHistoryBuilder<Z extends WebHistory, B extends WebHistoryBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasEntries;
     protected java.util.Collection<javafx.scene.web.WebHistory.Entry> valEntries;
 
     protected boolean hasMaxSize;
     protected int valMaxSize;
-    public void applyTo(WebHistory instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasEntries)
             instance.getEntries().setAll(this.valEntries);
         if (this.hasMaxSize)
             instance.setMaxSize(this.valMaxSize);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link WebHistory#getEntries}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B entries(java.util.Collection<javafx.scene.web.WebHistory.Entry> value)
     {
@@ -44,6 +47,12 @@ public class WebHistoryBuilder<Z extends WebHistory, B extends WebHistoryBuilder
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link WebHistory#getEntries}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B entries(javafx.scene.web.WebHistory.Entry... value)
@@ -53,6 +62,12 @@ public class WebHistoryBuilder<Z extends WebHistory, B extends WebHistoryBuilder
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link WebHistory#setMaxSize}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B maxSize(int value)
     {

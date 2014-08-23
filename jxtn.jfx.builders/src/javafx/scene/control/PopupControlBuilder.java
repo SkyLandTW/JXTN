@@ -16,7 +16,6 @@ package javafx.scene.control;
 public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlBuilder<Z, B>>
         extends javafx.stage.PopupWindowBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasId;
     protected java.lang.String valId;
@@ -74,11 +73,11 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
 
     protected boolean boundStyle;
     protected javafx.beans.value.ObservableValue<? extends String> obsrvStyle;
-    public void applyTo(PopupControl instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasId)
             instance.setId(this.valId);
         if (this.hasMaxHeight)
@@ -117,10 +116,14 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
             instance.skinProperty().bind(this.obsrvSkin);
         if (this.boundStyle)
             instance.styleProperty().bind(this.obsrvStyle);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link PopupControl#setId}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B id(java.lang.String value)
     {
@@ -129,6 +132,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupControl#setMaxHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B maxHeight(double value)
     {
@@ -137,6 +146,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupControl#setMaxWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B maxWidth(double value)
     {
@@ -145,6 +160,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupControl#setMinHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B minHeight(double value)
     {
@@ -153,6 +174,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupControl#setMinWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B minWidth(double value)
     {
@@ -161,6 +188,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupControl#setPrefHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefHeight(double value)
     {
@@ -169,6 +202,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupControl#setPrefWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B prefWidth(double value)
     {
@@ -177,6 +216,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupControl#setSkin}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B skin(javafx.scene.control.Skin<?> value)
     {
@@ -185,6 +230,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupControl#setStyle}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B style(java.lang.String value)
     {
@@ -193,6 +244,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link PopupControl#getStyleClass}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B styleClass(java.util.Collection<java.lang.String> value)
     {
@@ -201,6 +258,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link PopupControl#getStyleClass}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B styleClass(java.lang.String... value)
@@ -210,6 +273,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupControl#idProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindId(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -219,6 +288,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupControl#maxHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -228,6 +303,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupControl#maxWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -237,6 +318,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupControl#minHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -246,6 +333,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupControl#minWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -255,6 +348,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupControl#prefHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPrefHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -264,6 +363,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupControl#prefWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -273,6 +378,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupControl#skinProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSkin(javafx.beans.value.ObservableValue<? extends javafx.scene.control.Skin<?>> source)
     {
@@ -282,6 +393,12 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link PopupControl#styleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindStyle(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -291,12 +408,17 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         return (B) this;
     }
 
+    /**
+     * 建構{@link PopupControl}物件
+     *
+     * @return 新的{@link PopupControl}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public PopupControl build()
     {
         PopupControl instance = new PopupControl();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

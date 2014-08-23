@@ -16,26 +16,29 @@ package javafx.scene.control;
 public class CheckMenuItemBuilder<Z extends CheckMenuItem, B extends CheckMenuItemBuilder<Z, B>>
         extends javafx.scene.control.MenuItemBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasSelected;
     protected boolean valSelected;
 
     protected boolean boundSelected;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvSelected;
-    public void applyTo(CheckMenuItem instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasSelected)
             instance.setSelected(this.valSelected);
         if (this.boundSelected)
             instance.selectedProperty().bind(this.obsrvSelected);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link CheckMenuItem#setSelected}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B selected(boolean value)
     {
@@ -44,6 +47,12 @@ public class CheckMenuItemBuilder<Z extends CheckMenuItem, B extends CheckMenuIt
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CheckMenuItem#selectedProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindSelected(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -53,12 +62,17 @@ public class CheckMenuItemBuilder<Z extends CheckMenuItem, B extends CheckMenuIt
         return (B) this;
     }
 
+    /**
+     * 建構{@link CheckMenuItem}物件
+     *
+     * @return 新的{@link CheckMenuItem}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public CheckMenuItem build()
     {
         CheckMenuItem instance = new CheckMenuItem();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

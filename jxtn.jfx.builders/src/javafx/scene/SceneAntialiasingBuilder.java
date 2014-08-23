@@ -16,13 +16,10 @@ package javafx.scene;
 public class SceneAntialiasingBuilder<Z extends SceneAntialiasing, B extends SceneAntialiasingBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
 {
-    private boolean applied;
-    public void applyTo(SceneAntialiasing instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
-        //
-        this.applied = true;
     }
 }

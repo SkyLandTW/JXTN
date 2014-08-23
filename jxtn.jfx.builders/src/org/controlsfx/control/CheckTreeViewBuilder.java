@@ -16,26 +16,29 @@ package org.controlsfx.control;
 public class CheckTreeViewBuilder<T extends java.lang.Object, Z extends CheckTreeView<T>, B extends CheckTreeViewBuilder<T, Z, B>>
         extends javafx.scene.control.TreeViewBuilder<T, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasCheckModel;
     protected javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>> valCheckModel;
 
     protected boolean boundCheckModel;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>>> obsrvCheckModel;
-    public void applyTo(CheckTreeView<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasCheckModel)
             instance.setCheckModel(this.valCheckModel);
         if (this.boundCheckModel)
             instance.checkModelProperty().bind(this.obsrvCheckModel);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link CheckTreeView#setCheckModel}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B checkModel(javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>> value)
     {
@@ -44,6 +47,12 @@ public class CheckTreeViewBuilder<T extends java.lang.Object, Z extends CheckTre
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link CheckTreeView#checkModelProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCheckModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>>> source)
     {
@@ -53,12 +62,17 @@ public class CheckTreeViewBuilder<T extends java.lang.Object, Z extends CheckTre
         return (B) this;
     }
 
+    /**
+     * 建構{@link CheckTreeView}物件
+     *
+     * @return 新的{@link CheckTreeView}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public CheckTreeView<T> build()
     {
         CheckTreeView<T> instance = new CheckTreeView<T>();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

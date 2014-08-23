@@ -16,21 +16,24 @@ package org.controlsfx.control;
 public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends SegmentedButtonBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasButtons;
     protected java.util.Collection<javafx.scene.control.ToggleButton> valButtons;
-    public void applyTo(SegmentedButton instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasButtons)
             instance.getButtons().setAll(this.valButtons);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定集合屬性{@link SegmentedButton#getButtons}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B buttons(java.util.Collection<javafx.scene.control.ToggleButton> value)
     {
@@ -39,6 +42,12 @@ public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends Segment
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link SegmentedButton#getButtons}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B buttons(javafx.scene.control.ToggleButton... value)
@@ -48,12 +57,17 @@ public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends Segment
         return (B) this;
     }
 
+    /**
+     * 建構{@link SegmentedButton}物件
+     *
+     * @return 新的{@link SegmentedButton}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public SegmentedButton build()
     {
         SegmentedButton instance = new SegmentedButton();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

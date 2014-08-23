@@ -16,7 +16,6 @@ package javafx.scene;
 public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z, B>>
         extends javafx.scene.NodeBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasColor;
     protected javafx.scene.paint.Color valColor;
@@ -32,11 +31,11 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
 
     protected boolean boundLightOn;
     protected javafx.beans.value.ObservableValue<? extends Boolean> obsrvLightOn;
-    public void applyTo(LightBase instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasColor)
             instance.setColor(this.valColor);
         if (this.hasLightOn)
@@ -47,10 +46,14 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
             instance.colorProperty().bind(this.obsrvColor);
         if (this.boundLightOn)
             instance.lightOnProperty().bind(this.obsrvLightOn);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link LightBase#setColor}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B color(javafx.scene.paint.Color value)
     {
@@ -59,6 +62,12 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link LightBase#setLightOn}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B lightOn(boolean value)
     {
@@ -67,6 +76,12 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link LightBase#getScope}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B scope(java.util.Collection<javafx.scene.Node> value)
     {
@@ -75,6 +90,12 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link LightBase#getScope}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B scope(javafx.scene.Node... value)
@@ -84,6 +105,12 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link LightBase#colorProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindColor(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> source)
     {
@@ -93,6 +120,12 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link LightBase#lightOnProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLightOn(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {

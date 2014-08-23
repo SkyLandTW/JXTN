@@ -16,7 +16,6 @@ package javafx.scene.chart;
 public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>, B extends ValueAxisBuilder<T, Z, B>>
         extends javafx.scene.chart.AxisBuilder<T, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasLowerBound;
     protected double valLowerBound;
@@ -53,11 +52,11 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
 
     protected boolean boundUpperBound;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvUpperBound;
-    public void applyTo(ValueAxis<T> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasLowerBound)
             instance.setLowerBound(this.valLowerBound);
         if (this.hasMinorTickCount)
@@ -82,10 +81,14 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
             instance.tickLabelFormatterProperty().bind(this.obsrvTickLabelFormatter);
         if (this.boundUpperBound)
             instance.upperBoundProperty().bind(this.obsrvUpperBound);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link ValueAxis#setLowerBound}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B lowerBound(double value)
     {
@@ -94,6 +97,12 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ValueAxis#setMinorTickCount}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B minorTickCount(int value)
     {
@@ -102,6 +111,12 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ValueAxis#setMinorTickLength}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B minorTickLength(double value)
     {
@@ -110,6 +125,12 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ValueAxis#setMinorTickVisible}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B minorTickVisible(boolean value)
     {
@@ -118,6 +139,12 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ValueAxis#setTickLabelFormatter}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B tickLabelFormatter(javafx.util.StringConverter<T> value)
     {
@@ -126,6 +153,12 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ValueAxis#setUpperBound}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B upperBound(double value)
     {
@@ -134,6 +167,12 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ValueAxis#lowerBoundProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindLowerBound(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -143,6 +182,12 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ValueAxis#minorTickCountProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMinorTickCount(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
@@ -152,6 +197,12 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ValueAxis#minorTickLengthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMinorTickLength(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -161,6 +212,12 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ValueAxis#minorTickVisibleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMinorTickVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -170,6 +227,12 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ValueAxis#tickLabelFormatterProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTickLabelFormatter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
     {
@@ -179,6 +242,12 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link ValueAxis#upperBoundProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindUpperBound(javafx.beans.value.ObservableValue<? extends Double> source)
     {

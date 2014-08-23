@@ -16,7 +16,6 @@ package javafx.stage;
 public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         extends javafx.stage.WindowBuilder<Z, B>
 {
-    private boolean applied;
 
     protected boolean hasFullScreen;
     protected boolean valFullScreen;
@@ -80,11 +79,11 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
 
     protected boolean boundTitle;
     protected javafx.beans.value.ObservableValue<? extends String> obsrvTitle;
-    public void applyTo(Stage instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasFullScreen)
             instance.setFullScreen(this.valFullScreen);
         if (this.hasFullScreenExitHint)
@@ -127,10 +126,14 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
             instance.resizableProperty().bind(this.obsrvResizable);
         if (this.boundTitle)
             instance.titleProperty().bind(this.obsrvTitle);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link Stage#setFullScreen}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fullScreen(boolean value)
     {
@@ -139,6 +142,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#setFullScreenExitHint}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fullScreenExitHint(java.lang.String value)
     {
@@ -147,6 +156,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#setFullScreenExitKeyCombination}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B fullScreenExitKeyCombination(javafx.scene.input.KeyCombination value)
     {
@@ -155,6 +170,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#setIconified}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B iconified(boolean value)
     {
@@ -163,6 +184,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Stage#getIcons}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B icons(java.util.Collection<javafx.scene.image.Image> value)
     {
@@ -171,6 +198,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定集合屬性{@link Stage#getIcons}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
     @SafeVarargs
     @SuppressWarnings("unchecked")
     public final B icons(javafx.scene.image.Image... value)
@@ -180,6 +213,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#setMaxHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B maxHeight(double value)
     {
@@ -188,6 +227,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#setMaxWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B maxWidth(double value)
     {
@@ -196,6 +241,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#setMaximized}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B maximized(boolean value)
     {
@@ -204,6 +255,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#setMinHeight}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B minHeight(double value)
     {
@@ -212,6 +269,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#setMinWidth}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B minWidth(double value)
     {
@@ -220,6 +283,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#setResizable}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B resizable(boolean value)
     {
@@ -228,6 +297,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#setScene}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B scene(javafx.scene.Scene value)
     {
@@ -236,6 +311,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#setTitle}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B title(java.lang.String value)
     {
@@ -244,6 +325,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#fullScreenExitHintProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFullScreenExitHint(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
     {
@@ -253,6 +340,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#fullScreenExitKeyProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindFullScreenExitKey(javafx.beans.value.ObservableValue<? extends javafx.scene.input.KeyCombination> source)
     {
@@ -262,6 +355,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#maxHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -271,6 +370,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#maxWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -280,6 +385,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#minHeightProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -289,6 +400,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#minWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -298,6 +415,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#resizableProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindResizable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
@@ -307,6 +430,12 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link Stage#titleProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindTitle(javafx.beans.value.ObservableValue<? extends String> source)
     {
@@ -316,12 +445,17 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         return (B) this;
     }
 
+    /**
+     * 建構{@link Stage}物件
+     *
+     * @return 新的{@link Stage}物件實體
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Stage build()
     {
         Stage instance = new Stage();
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

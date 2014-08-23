@@ -16,7 +16,6 @@ package javafx.scene.chart;
 public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Object, Z extends BarChart<X, Y>, B extends BarChartBuilder<X, Y, Z, B>>
         extends javafx.scene.chart.XYChartBuilder<X, Y, Z, B>
 {
-    private boolean applied;
 
     protected boolean hasBarGap;
     protected double valBarGap;
@@ -29,11 +28,11 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
 
     protected boolean boundCategoryGap;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvCategoryGap;
-    public void applyTo(BarChart<X, Y> instance)
+
+    @Override
+    public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.applied)
-            throw new IllegalStateException();
         if (this.hasBarGap)
             instance.setBarGap(this.valBarGap);
         if (this.hasCategoryGap)
@@ -42,10 +41,14 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
             instance.barGapProperty().bind(this.obsrvBarGap);
         if (this.boundCategoryGap)
             instance.categoryGapProperty().bind(this.obsrvCategoryGap);
-        //
-        this.applied = true;
     }
 
+    /**
+     * 設定屬性{@link BarChart#setBarGap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B barGap(double value)
     {
@@ -54,6 +57,12 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BarChart#setCategoryGap}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B categoryGap(double value)
     {
@@ -62,6 +71,12 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BarChart#barGapProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindBarGap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -71,6 +86,12 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
         return (B) this;
     }
 
+    /**
+     * 設定屬性{@link BarChart#categoryGapProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
     @SuppressWarnings("unchecked")
     public B bindCategoryGap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
@@ -80,11 +101,16 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
         return (B) this;
     }
 
+    /**
+     * 建構{@link BarChart}物件
+     *
+     * @return 新的{@link BarChart}物件實體
+     */
     @SuppressWarnings("unchecked")
     public BarChart<X, Y> build(javafx.scene.chart.Axis<X> arg0, javafx.scene.chart.Axis<Y> arg1)
     {
         BarChart<X, Y> instance = new BarChart<X, Y>(arg0, arg1);
-        this.applyTo(instance);
+        this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }

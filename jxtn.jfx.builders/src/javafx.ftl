@@ -172,12 +172,21 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
   <#list class.property as property>
    <#if property.setter?size != 0 && property.setter.@abstract == "false">
 
+    <#if property.@static == "false">
     /**
      * 設定屬性{@link ${class.@name}#set${property.@name?cap_first}}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
      */
+    <#else>
+    /**
+     * 設定屬性{@link ${property.@staticType}#set${property.@staticName?cap_first}}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    </#if>
     <#if property.setter.@override == "true">
     @Override
     </#if>

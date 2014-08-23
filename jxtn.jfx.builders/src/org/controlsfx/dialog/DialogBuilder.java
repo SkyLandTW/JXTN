@@ -39,7 +39,7 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
     protected boolean valIconifiable;
 
     protected boolean hasMasthead;
-    protected javafx.scene.Node valMasthead;
+    protected java.lang.String valMasthead;
 
     protected boolean hasResizable;
     protected boolean valResizable;
@@ -203,7 +203,7 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B masthead(javafx.scene.Node value)
+    public B masthead(java.lang.String value)
     {
         this.hasMasthead = true;
         this.valMasthead = value;

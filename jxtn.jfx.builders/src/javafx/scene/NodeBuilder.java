@@ -1878,7 +1878,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setAnchorPane_bottomAnchor}
+     * 設定屬性{@link javafx.scene.layout.AnchorPane#setBottomAnchor}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1892,7 +1892,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setAnchorPane_leftAnchor}
+     * 設定屬性{@link javafx.scene.layout.AnchorPane#setLeftAnchor}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1906,7 +1906,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setAnchorPane_rightAnchor}
+     * 設定屬性{@link javafx.scene.layout.AnchorPane#setRightAnchor}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1920,7 +1920,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setAnchorPane_topAnchor}
+     * 設定屬性{@link javafx.scene.layout.AnchorPane#setTopAnchor}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1934,7 +1934,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setBorderPane_alignment}
+     * 設定屬性{@link javafx.scene.layout.BorderPane#setAlignment}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1948,7 +1948,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setBorderPane_margin}
+     * 設定屬性{@link javafx.scene.layout.BorderPane#setMargin}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1962,7 +1962,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setFlowPane_margin}
+     * 設定屬性{@link javafx.scene.layout.FlowPane#setMargin}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1976,7 +1976,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setGridPane_columnIndex}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setColumnIndex}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1990,7 +1990,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setGridPane_columnSpan}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setColumnSpan}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2004,7 +2004,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setGridPane_fillHeight}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setFillHeight}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2018,7 +2018,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setGridPane_fillWidth}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setFillWidth}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2032,7 +2032,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setGridPane_halignment}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setHalignment}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2046,7 +2046,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setGridPane_hgrow}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setHgrow}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2060,7 +2060,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setGridPane_margin}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setMargin}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2074,7 +2074,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setGridPane_rowIndex}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setRowIndex}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2088,7 +2088,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setGridPane_rowSpan}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setRowSpan}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2102,7 +2102,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setGridPane_valignment}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setValignment}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2116,7 +2116,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setGridPane_vgrow}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setVgrow}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2130,7 +2130,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setHBox_hgrow}
+     * 設定屬性{@link javafx.scene.layout.HBox#setHgrow}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2144,7 +2144,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setHBox_margin}
+     * 設定屬性{@link javafx.scene.layout.HBox#setMargin}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2158,7 +2158,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setSplitPane_resizableWithParent}
+     * 設定屬性{@link javafx.scene.control.SplitPane#setResizableWithParent}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2172,7 +2172,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setStackPane_alignment}
+     * 設定屬性{@link javafx.scene.layout.StackPane#setAlignment}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2186,7 +2186,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setStackPane_margin}
+     * 設定屬性{@link javafx.scene.layout.StackPane#setMargin}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2200,7 +2200,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setTilePane_alignment}
+     * 設定屬性{@link javafx.scene.layout.TilePane#setAlignment}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2214,7 +2214,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setTilePane_margin}
+     * 設定屬性{@link javafx.scene.layout.TilePane#setMargin}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2228,7 +2228,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setVBox_margin}
+     * 設定屬性{@link javafx.scene.layout.VBox#setMargin}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2242,7 +2242,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setVBox_vgrow}
+     * 設定屬性{@link javafx.scene.layout.VBox#setVgrow}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

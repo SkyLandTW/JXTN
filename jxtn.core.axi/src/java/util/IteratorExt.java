@@ -34,7 +34,10 @@ import java.util.function.ToDoubleFunction;
 import java.util.function.ToIntFunction;
 import java.util.function.ToLongFunction;
 
+import jxtn.core.axi.collections.ConcatedIterator;
 import jxtn.core.axi.collections.FilteredIterator;
+import jxtn.core.axi.collections.LinkLineIterator;
+import jxtn.core.axi.collections.LinkTreeIterator;
 import jxtn.core.axi.collections.MappedIterator;
 
 /**
@@ -48,6 +51,64 @@ import jxtn.core.axi.collections.MappedIterator;
  */
 public interface IteratorExt<E>
 {
+    /**
+     * 結合多個列舉器
+     *
+     * @param iterators 要結合的列舉器集合
+     * @return 結合的列舉器
+     */
+    @SafeVarargs
+    public static <T> Iterator<T> concatAll(Iterator<T>... iterators)
+    {
+        return new ConcatedIterator<>(Arrays.asList(iterators).iterator());
+    }
+
+    /**
+     * 結合多個列舉器
+     *
+     * @param iteratorIterable 要結合的列舉器的列舉
+     * @return 結合的列舉器
+     */
+    public static <T> Iterator<T> concatAll(Iterable<Iterator<T>> iteratorIterable)
+    {
+        return new ConcatedIterator<>(iteratorIterable.iterator());
+    }
+
+    /**
+     * 結合多個列舉器
+     *
+     * @param iteratorIterator 要結合的列舉器的列舉器
+     * @return 結合的列舉器
+     */
+    public static <T> Iterator<T> concatAll(Iterator<Iterator<T>> iteratorIterator)
+    {
+        return new ConcatedIterator<>(iteratorIterator);
+    }
+
+    /**
+     * 建立線性結構的串接列舉器
+     *
+     * @param item 初始項目
+     * @param getNext 取得每個項目的下一個項目的函數，傳回null表示結尾
+     * @return 串接列舉器
+     */
+    public static <T> Iterator<T> linkLine(T item, Function<? super T, ? extends T> getNext)
+    {
+        return new LinkLineIterator<>(item, getNext);
+    }
+
+    /**
+     * 建立樹狀結構的串接列舉器
+     *
+     * @param item 初始項目；根結點
+     * @param getChildren 取得每個項目的子項目集合，傳回null表示結尾
+     * @return 串接列舉器
+     */
+    public static <T> Iterator<T> linkTree(T item, Function<? super T, ? extends Iterator<? extends T>> getChildren)
+    {
+        return new LinkTreeIterator<>(item, getChildren);
+    }
+
     /************************************************************************
      * 條件測試
      ************************************************************************/
@@ -487,7 +548,7 @@ public interface IteratorExt<E>
      * @return 排序後的結果，不依賴原有的列舉
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    default <V extends Comparable> List<E> orderBy(Function<E, V> getKey)
+    default <V extends Comparable> ArrayList<E> orderBy(Function<E, V> getKey)
     {
         Iterator<E> thiz = (Iterator<E>) this;
         ArrayList<E> sorted = thiz.toArrayList();
@@ -503,6 +564,20 @@ public interface IteratorExt<E>
                     return 1;
                 return v1.compareTo(v2);
             });
+        return sorted;
+    }
+
+    /**
+     * 依照比較器做排序
+     *
+     * @param comparator 項目的比較器
+     * @return 排序後的結果，不依賴原有的列舉
+     */
+    default ArrayList<E> orderBy(Comparator<E> comparator)
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        ArrayList<E> sorted = thiz.toArrayList();
+        sorted.sort(comparator);
         return sorted;
     }
 

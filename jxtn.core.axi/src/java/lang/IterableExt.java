@@ -28,8 +28,11 @@
 package java.lang;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.function.Function;
@@ -40,6 +43,8 @@ import java.util.function.ToLongFunction;
 
 import jxtn.core.axi.collections.ConcatedIterator;
 import jxtn.core.axi.collections.FilteredIterator;
+import jxtn.core.axi.collections.LinkLineIterator;
+import jxtn.core.axi.collections.LinkTreeIterator;
 import jxtn.core.axi.collections.MappedIterator;
 
 /**
@@ -53,6 +58,68 @@ import jxtn.core.axi.collections.MappedIterator;
  */
 public interface IterableExt<T>
 {
+    /**
+     * 結合多個列舉
+     *
+     * @param iterables 要結合的列舉集合
+     * @return 結合的列舉
+     */
+    @SafeVarargs
+    public static <T> Iterable<T> concatAll(Iterable<T>... iterables)
+    {
+        return () -> new ConcatedIterator<>(Arrays.asList(iterables).iterator().map(Iterable::iterator));
+    }
+
+    /**
+     * 結合多個列舉
+     *
+     * @param iterableIterable 要結合的列舉的列舉
+     * @return 結合的列舉
+     */
+    public static <T> Iterable<T> concatAll(Iterable<Iterable<T>> iterableIterable)
+    {
+        return () -> new ConcatedIterator<>(iterableIterable.iterator().map(Iterable::iterator));
+    }
+
+    /**
+     * 結合多個列舉
+     *
+     * @param iterableIterator 要結合的列舉的列舉器
+     * @return 結合的列舉
+     */
+    public static <T> Iterable<T> concatAll(Iterator<Iterable<T>> iterableIterator)
+    {
+        return () -> new ConcatedIterator<>(iterableIterator.map(Iterable::iterator));
+    }
+
+    /**
+     * 建立線性結構的串接列舉
+     *
+     * @param item 初始項目
+     * @param getNext 取得每個項目的下一個項目的函數，傳回null表示結尾
+     * @return 串接列舉
+     */
+    public static <T> Iterable<T> linkLine(T item, Function<? super T, ? extends T> getNext)
+    {
+        return () -> new LinkLineIterator<>(item, getNext);
+    }
+
+    /**
+     * 建立樹狀結構的串接列舉
+     *
+     * @param item 初始項目；根結點
+     * @param getChildren 取得每個項目的子項目集合，傳回null表示結尾
+     * @return 串接列舉
+     */
+    public static <T> Iterable<T> linkTree(T item, Function<? super T, ? extends Iterable<? extends T>> getChildren)
+    {
+        return () -> new LinkTreeIterator<>(item, t ->
+            {
+                Iterable<? extends T> children = getChildren.apply(t);
+                return children == null ? null : children.iterator();
+            });
+    }
+
     /************************************************************************
      * 條件測試
      ************************************************************************/
@@ -327,10 +394,22 @@ public interface IterableExt<T>
      * @return 排序後的結果，不依賴原有的列舉
      */
     @SuppressWarnings({ "rawtypes" })
-    default <V extends Comparable> List<T> orderBy(Function<T, V> getKey)
+    default <V extends Comparable> ArrayList<T> orderBy(Function<T, V> getKey)
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().orderBy(getKey);
+    }
+
+    /**
+     * 依照鍵值做排序
+     *
+     * @param comparator 項目的比較器
+     * @return 排序後的結果，不依賴原有的列舉
+     */
+    default ArrayList<T> orderBy(Comparator<T> comparator)
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return thiz.iterator().orderBy(comparator);
     }
 
     /**

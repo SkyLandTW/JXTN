@@ -37,9 +37,21 @@ import java.util.Iterator;
  */
 public class ConcatedIterator<T> extends AbstractIterator<T>
 {
-    protected final Iterator<Iterator<T>> parentIterator;
+    /**
+     * 提供來源列舉器的列舉器
+     */
+    protected final Iterator<Iterator<T>> sourceIterator;
 
-    protected Iterator<T> currentParent;
+    /**
+     * 目前的來源列舉器
+     * <p>
+     * 即{@link #sourceIterator}的目前項目
+     * </p>
+     */
+    protected Iterator<T> currentSource;
+
+    private long sourceIteratorSteps;
+    private long currentSourceSteps;
 
     /**
      * 建立新的列舉
@@ -47,11 +59,38 @@ public class ConcatedIterator<T> extends AbstractIterator<T>
      * {@link ConcatedIterator}會依照{@code parentIterator}內的順序展開列舉各項目
      * </p>
      *
-     * @param parentIterable 來源列舉的列舉器
+     * @param parentIterable 來源列舉器的列舉器
      */
-    public ConcatedIterator(Iterator<Iterator<T>> parentIterator)
+    public ConcatedIterator(Iterator<Iterator<T>> sourceIterator)
     {
-        this.parentIterator = parentIterator;
+        this.sourceIterator = sourceIterator;
+    }
+
+    @Override
+    public String toString()
+    {
+        return super.toString() + String.format(",srcSteps=%d,curSteps=%d",
+                this.sourceIteratorSteps, this.currentSourceSteps);
+    }
+
+    /**
+     * 取得來源列舉器的列舉器的進行次數
+     *
+     * @return {@link #sourceIterator}的進行次數
+     */
+    public final long getSourceIteratorSteps()
+    {
+        return this.sourceIteratorSteps;
+    }
+
+    /**
+     * 取得目前的來源列舉器的進行次數
+     *
+     * @return {@link #currentSource}的進行次數
+     */
+    public final long getCurrentSourceSteps()
+    {
+        return this.currentSourceSteps;
     }
 
     @Override
@@ -59,16 +98,20 @@ public class ConcatedIterator<T> extends AbstractIterator<T>
     {
         while (true)
         {
-            if (this.currentParent == null)
+            if (this.currentSource == null)
             {
-                if (!this.parentIterator.hasNext())
+                if (!this.sourceIterator.hasNext())
                     return this.end();
-                this.currentParent = this.parentIterator.next();
+                this.sourceIteratorSteps += 1;
+                this.currentSource = this.sourceIterator.next();
             }
-            if (this.currentParent.hasNext())
-                return this.currentParent.next();
+            if (this.currentSource.hasNext())
+            {
+                this.currentSourceSteps += 1;
+                return this.currentSource.next();
+            }
             else
-                this.currentParent = null;
+                this.currentSource = null;
         }
     }
 }

@@ -27,52 +27,33 @@
 
 package jxtn.core.axi.collections;
 
+import java.util.Enumeration;
 import java.util.Iterator;
-import java.util.function.Function;
 
 /**
- * 依照指定函數做對照的列舉器
+ * {@link Enumeration}的列舉器界接
  *
  * @author AqD
- * @param <T> 來源列舉項目型態
- * @param <R> 目的列舉項目型態
+ * @param <E> 列舉項目型態
  */
-public class MappedIterator<T, R> extends AbstractIterator<R>
+public class EnumerationIterator<E> implements Iterator<E>
 {
-    /**
-     * 來源列舉器
-     */
-    protected final Iterator<T> source;
+    protected final Enumeration<E> enumeration;
 
-    /**
-     * 對照函數
-     */
-    protected final Function<? super T, R> mapper;
-
-    /**
-     * 建立指定函數做對照的列舉器
-     * <p>
-     * {@link MappedIterator}會依照{@code mapper}將每個{@code parent}的項目做轉換
-     * </p>
-     *
-     * @param source 來源列舉器
-     * @param mapper 對照函數
-     */
-    public MappedIterator(Iterator<T> source, Function<? super T, R> mapper)
+    public EnumerationIterator(Enumeration<E> enumeration)
     {
-        this.source = source;
-        this.mapper = mapper;
+        this.enumeration = enumeration;
     }
 
     @Override
-    protected R fetchNext()
+    public boolean hasNext()
     {
-        if (this.source.hasNext())
-        {
-            T nextT = this.source.next();
-            R nextR = this.mapper.apply(nextT);
-            return nextR;
-        }
-        return this.end();
+        return this.enumeration.hasMoreElements();
+    }
+
+    @Override
+    public E next()
+    {
+        return this.enumeration.nextElement();
     }
 }

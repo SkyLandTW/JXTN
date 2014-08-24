@@ -38,12 +38,17 @@ import java.util.function.Predicate;
  */
 public class FilteredIterator<T> extends AbstractIterator<T>
 {
+    /**
+     * 來源列舉器
+     */
     protected final Iterator<T> source;
+
+    /**
+     * 過濾條件
+     */
     protected final Predicate<? super T> filter;
 
-    protected boolean needPrefetch = true;
-    protected boolean preHasNext;
-    protected T preNext;
+    private long sourceSteps;
 
     /**
      * 建立新的過濾列舉
@@ -51,7 +56,7 @@ public class FilteredIterator<T> extends AbstractIterator<T>
      * {@link FilteredIterator}會依照{@code filter}的條件過濾{@code parent}
      * </p>
      *
-     * @param source 原始列舉器
+     * @param source 來源列舉器
      * @param filter 過濾條件
      */
     public FilteredIterator(Iterator<T> source, Predicate<? super T> filter)
@@ -61,11 +66,28 @@ public class FilteredIterator<T> extends AbstractIterator<T>
     }
 
     @Override
+    public String toString()
+    {
+        return super.toString() + String.format(",srcSteps=%d", this.sourceSteps);
+    }
+
+    /**
+     * 取得來源列舉器的進行次數
+     *
+     * @return {@link #source}的進行次數(過濾前的)
+     */
+    public final long getSourceSteps()
+    {
+        return this.sourceSteps;
+    }
+
+    @Override
     protected T fetchNext()
     {
         while (this.source.hasNext())
         {
             T item = this.source.next();
+            this.sourceSteps += 1;
             if (this.filter.test(item))
             {
                 return item;

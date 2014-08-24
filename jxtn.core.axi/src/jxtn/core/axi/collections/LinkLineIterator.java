@@ -37,9 +37,19 @@ import java.util.function.Function;
  */
 public class LinkLineIterator<T> extends AbstractIterator<T>
 {
+    /**
+     * 初始項目
+     */
     protected final T initial;
+
+    /**
+     * 取得每個項目的下一個項目的函數
+     */
     protected final Function<? super T, ? extends T> getNext;
 
+    /**
+     * 目前項目
+     */
     protected T current;
 
     /**
@@ -61,7 +71,7 @@ public class LinkLineIterator<T> extends AbstractIterator<T>
     protected T fetchNext()
     {
         // 取得項目
-        if (this.atHead())
+        if (this.isAtHead())
             this.current = this.initial;
         else
             this.current = this.getNext.apply(this.current);

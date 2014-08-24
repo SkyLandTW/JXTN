@@ -25,54 +25,26 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-package jxtn.core.axi.collections;
+package java.util;
 
-import java.util.Iterator;
-import java.util.function.Function;
+import jxtn.core.axi.collections.EnumerationIterator;
 
 /**
- * 依照指定函數做對照的列舉器
+ * {@link Enumeration}的延伸功能
  *
  * @author AqD
- * @param <T> 來源列舉項目型態
- * @param <R> 目的列舉項目型態
+ * @param <E> 列舉項目型態
  */
-public class MappedIterator<T, R> extends AbstractIterator<R>
+public interface EnumerationExt<E>
 {
     /**
-     * 來源列舉器
-     */
-    protected final Iterator<T> source;
-
-    /**
-     * 對照函數
-     */
-    protected final Function<? super T, R> mapper;
-
-    /**
-     * 建立指定函數做對照的列舉器
-     * <p>
-     * {@link MappedIterator}會依照{@code mapper}將每個{@code parent}的項目做轉換
-     * </p>
+     * 傳回代表目前物件的列舉器
      *
-     * @param source 來源列舉器
-     * @param mapper 對照函數
+     * @return 目前物件的列舉器
      */
-    public MappedIterator(Iterator<T> source, Function<? super T, R> mapper)
+    default Iterator<E> asIterator()
     {
-        this.source = source;
-        this.mapper = mapper;
-    }
-
-    @Override
-    protected R fetchNext()
-    {
-        if (this.source.hasNext())
-        {
-            T nextT = this.source.next();
-            R nextR = this.mapper.apply(nextT);
-            return nextR;
-        }
-        return this.end();
+        Enumeration<E> thiz = (Enumeration<E>) this;
+        return new EnumerationIterator<>(thiz);
     }
 }

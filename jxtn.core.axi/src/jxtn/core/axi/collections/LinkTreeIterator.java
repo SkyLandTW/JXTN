@@ -42,10 +42,23 @@ import java.util.function.Function;
  */
 public class LinkTreeIterator<T> extends AbstractIterator<T>
 {
+    /**
+     * 初始項目
+     */
     protected final T initial;
-    protected final Function<? super T, ? extends Iterable<? extends T>> getChildren;
 
-    protected Stack<Entry> stack = new Stack<>();
+    /**
+     * 取得每個項目的子項目集合的函數
+     */
+    protected final Function<? super T, ? extends Iterator<? extends T>> getChildren;
+
+    /**
+     * 堆疊
+     * <p>
+     * 堆疊的最外層表示目前項目，內一層即是目前項目的上層，依此類推
+     * </p>
+     */
+    protected final Stack<Entry> stack = new Stack<>();
 
     /**
      * 建立新的串接列舉
@@ -54,18 +67,28 @@ public class LinkTreeIterator<T> extends AbstractIterator<T>
      * </p>
      *
      * @param initial 初始項目
-     * @param getChildren 取得每個項目的下一個項目，傳回null表示結束
+     * @param getChildren 取得每個項目的子項目集合，傳回null表示結束
      */
-    public LinkTreeIterator(T initial, Function<? super T, ? extends Iterable<? extends T>> getChildren)
+    public LinkTreeIterator(T initial, Function<? super T, ? extends Iterator<? extends T>> getChildren)
     {
         this.initial = initial;
         this.getChildren = getChildren;
     }
 
+    /**
+     * 取得目前進行的深度
+     *
+     * @return 目前進行的深度(根項目為1)
+     */
+    public int getDepth()
+    {
+        return this.stack.size();
+    }
+
     @Override
     protected T fetchNext()
     {
-        if (this.atHead())
+        if (this.isAtHead())
         {
             if (this.initial == null)
                 return this.end();
@@ -91,17 +114,34 @@ public class LinkTreeIterator<T> extends AbstractIterator<T>
         return this.end();
     }
 
+    /**
+     * 堆疊紀錄
+     *
+     * @author AqD
+     */
     public class Entry
     {
+        /**
+         * 目前項目
+         */
         public final T item;
+
+        /**
+         * 目前項目的子項目列舉器
+         */
         public final Iterator<? extends T> children;
 
+        /**
+         * 建立新紀錄
+         *
+         * @param item 項目
+         */
         public Entry(T item)
         {
             this.item = item;
-            Iterable<? extends T> childrenIterable = LinkTreeIterator.this.getChildren.apply(this.item);
-            if (childrenIterable != null)
-                this.children = childrenIterable.iterator();
+            Iterator<? extends T> childrenIterator = LinkTreeIterator.this.getChildren.apply(this.item);
+            if (childrenIterator != null)
+                this.children = childrenIterator;
             else
                 this.children = null;
         }

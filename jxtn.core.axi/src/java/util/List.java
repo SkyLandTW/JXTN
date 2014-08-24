@@ -108,7 +108,7 @@ import java.util.function.UnaryOperator;
  * @see AbstractSequentialList
  * @since 1.2
  */
-
+@SuppressWarnings("all")
 public interface List<E> extends Collection<E>, ListExt<E> {
     // Query Operations
 

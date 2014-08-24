@@ -141,7 +141,7 @@ import java.util.stream.StreamSupport;
  * @see     AbstractCollection
  * @since 1.2
  */
-
+@SuppressWarnings("all")
 public interface Collection<E> extends Iterable<E>, CollectionExt<E> {
     // Query Operations
 

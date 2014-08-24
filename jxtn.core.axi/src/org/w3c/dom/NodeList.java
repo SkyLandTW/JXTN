@@ -50,6 +50,7 @@ package org.w3c.dom;
  * index, starting from 0.
  * <p>See also the <a href='http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407'>Document Object Model (DOM) Level 3 Core Specification</a>.
  */
+@SuppressWarnings("all")
 public interface NodeList extends NodeListExt {
     /**
      * Returns the <code>index</code>th item in the collection. If

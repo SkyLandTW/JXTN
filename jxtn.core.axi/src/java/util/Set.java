@@ -82,7 +82,7 @@ package java.util;
  * @see Collections#EMPTY_SET
  * @since 1.2
  */
-
+@SuppressWarnings("all")
 public interface Set<E> extends Collection<E>, SetExt<E> {
     // Query Operations
 

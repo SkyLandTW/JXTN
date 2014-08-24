@@ -127,6 +127,7 @@ import java.util.function.Function;
  * @see Set
  * @since 1.2
  */
+@SuppressWarnings("all")
 public interface Map<K,V> extends MapExt<K,V> {
     // Query Operations
 

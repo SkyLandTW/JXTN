@@ -59,7 +59,7 @@ public class ConcatedIterator<T> extends AbstractIterator<T>
      * {@link ConcatedIterator}會依照{@code parentIterator}內的順序展開列舉各項目
      * </p>
      *
-     * @param parentIterable 來源列舉器的列舉器
+     * @param sourceIterator 來源列舉器的列舉器
      */
     public ConcatedIterator(Iterator<Iterator<T>> sourceIterator)
     {

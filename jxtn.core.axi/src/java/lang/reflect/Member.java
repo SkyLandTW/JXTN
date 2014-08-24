@@ -37,8 +37,8 @@ package java.lang.reflect;
  *
  * @author Nakul Saraiya
  */
-public
-interface Member extends MemberExt {
+@SuppressWarnings("all")
+public interface Member extends MemberExt {
 
     /**
      * Identifies the set of all public members of a class or interface,

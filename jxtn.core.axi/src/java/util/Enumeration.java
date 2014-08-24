@@ -59,6 +59,7 @@ package java.util;
  * @author  Lee Boynton
  * @since   JDK1.0
  */
+@SuppressWarnings("all")
 public interface Enumeration<E> extends EnumerationExt<E> {
     /**
      * Tests if this enumeration contains more elements.

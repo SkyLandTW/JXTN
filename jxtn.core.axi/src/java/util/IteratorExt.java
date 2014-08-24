@@ -584,6 +584,7 @@ public interface IteratorExt<E>
     /**
      * 建立陣列
      *
+     * @param type 陣列項目型態
      * @return 陣列
      */
     @SuppressWarnings("unchecked")

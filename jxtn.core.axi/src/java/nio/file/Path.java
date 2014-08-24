@@ -95,7 +95,7 @@ import java.util.Iterator;
  * @since 1.7
  * @see Paths
  */
-
+@SuppressWarnings("all")
 public interface Path
     extends Comparable<Path>, Iterable<Path>, Watchable, PathExt
 {

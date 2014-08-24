@@ -105,7 +105,7 @@ package java.util;
  * @see ClassCastException
  * @since 1.2
  */
-
+@SuppressWarnings("all")
 public interface SortedSet<E> extends Set<E>, SortedSetExt<E> {
     /**
      * Returns the comparator used to order the elements in this set,

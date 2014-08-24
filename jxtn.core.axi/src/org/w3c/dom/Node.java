@@ -163,6 +163,7 @@ package org.w3c.dom;
  * </table>
  * <p>See also the <a href='http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407'>Document Object Model (DOM) Level 3 Core Specification</a>.
  */
+@SuppressWarnings("all")
 public interface Node extends NodeExt {
     // NodeType
     /**

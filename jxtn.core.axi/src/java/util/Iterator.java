@@ -52,6 +52,7 @@ import java.util.function.Consumer;
  * @see Iterable
  * @since 1.2
  */
+@SuppressWarnings("all")
 public interface Iterator<E> extends IteratorExt<E> {
     /**
      * Returns {@code true} if the iteration has more elements.

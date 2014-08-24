@@ -31,7 +31,7 @@ package java.util;
  * {@link SortedSet}的延伸功能
  *
  * @author AqD
- * @param <E>
+ * @param <E> 集項目型態
  */
 public interface SortedSetExt<E> extends SetExt<E>
 {

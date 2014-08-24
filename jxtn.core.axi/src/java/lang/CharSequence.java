@@ -56,6 +56,7 @@ import java.util.stream.StreamSupport;
  * @since 1.4
  * @spec JSR-51
  */
+@SuppressWarnings("all")
 public interface CharSequence extends CharSequenceExt {
     /**
      * Returns the length of this character sequence.  The length is the number

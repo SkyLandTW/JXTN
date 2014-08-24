@@ -414,7 +414,8 @@ public interface IterableExt<T>
 
     /**
      * 建立陣列
-     *
+     * 
+     * @param type 陣列項目型態
      * @return 陣列
      */
     default T[] toArray(Class<T> type)

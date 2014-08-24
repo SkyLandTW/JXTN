@@ -142,6 +142,7 @@ package java.util;
  * @author Doug Lea
  * @param <E> the type of elements held in this collection
  */
+@SuppressWarnings("all")
 public interface Queue<E> extends Collection<E>, QueueExt<E> {
     /**
      * Inserts the specified element into this queue if it is possible to do so

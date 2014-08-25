@@ -18,11 +18,9 @@ Java 8 API Extensions and Utilities
 jxtn.core.axi
 -------------
 
-Adds non-standard default methods such as *Iterable.filter* and *map* into
-standard Java API, in attempt to make Java programming bearable. While it
-doesn't break binary compatibility, it's not compatible with Java standard (
-which I must regretfully violate because it sucks), being exclusive to Java 8
-and backport won't be possible.
+Fixes generic Collections API and adds non-standard default methods such as
+*Iterable.filter* and *map* into Java API, in attempt to make Java programming
+bearable.
 
 ##### Functions
  - String: left/right/padLeft/padRight/...
@@ -30,7 +28,7 @@ and backport won't be possible.
  - Iterator: *same as Iterable*
  - nio/Path: copy/delete (recursively)
  - dom/NodeList: asList
- - ......
+ - correct generic functions such as Collection.remove(E) and Map.get(K)
 
 ##### Dependencies
  - OpenJDK (as source): the standard classes such as *Iterable*. Note those

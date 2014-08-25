@@ -59,13 +59,16 @@ public class AbstractBuilder<Z, B extends AbstractBuilder<Z, B>>
      * 註冊物件建構後的執行動作
      *
      * @param action 執行動作
+     * @return 目前建構器(this)
      */
-    public final void afterBuild(Consumer<? super Z> action)
+    @SuppressWarnings("unchecked")
+    public final B afterBuild(Consumer<? super Z> action)
     {
         assert (action != null);
         if (this.afterBuildActions == null)
             this.afterBuildActions = new ArrayList<>();
         this.afterBuildActions.add(action);
+        return (B) this;
     }
 
     /**

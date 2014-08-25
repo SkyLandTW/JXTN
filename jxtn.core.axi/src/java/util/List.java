@@ -146,7 +146,7 @@ public interface List<E> extends Collection<E>, ListExt<E> {
      * (<a href="Collection.html#optional-restrictions">optional</a>)
      */
     @Override
-    boolean contains(Object o);
+    boolean contains(E o);
 
     /**
      * Returns an iterator over the elements in this list in proper sequence.
@@ -267,7 +267,7 @@ public interface List<E> extends Collection<E>, ListExt<E> {
      *         is not supported by this list
      */
     @Override
-    boolean remove(Object o);
+    boolean remove(E o);
 
 
     // Bulk Modification Operations
@@ -291,7 +291,7 @@ public interface List<E> extends Collection<E>, ListExt<E> {
      * @see #contains(Object)
      */
     @Override
-    boolean containsAll(Collection<?> c);
+    boolean containsAll(Collection<? extends E> c);
 
     /**
      * Appends all of the elements in the specified collection to the end of
@@ -365,7 +365,7 @@ public interface List<E> extends Collection<E>, ListExt<E> {
      * @see #contains(Object)
      */
     @Override
-    boolean removeAll(Collection<?> c);
+    boolean removeAll(Collection<? extends E> c);
 
     /**
      * Retains only the elements in this list that are contained in the
@@ -388,7 +388,7 @@ public interface List<E> extends Collection<E>, ListExt<E> {
      * @see #contains(Object)
      */
     @Override
-    boolean retainAll(Collection<?> c);
+    boolean retainAll(Collection<? extends E> c);
 
     /**
      * Replaces each element of this list with the result of applying the
@@ -590,7 +590,7 @@ public interface List<E> extends Collection<E>, ListExt<E> {
      *         list does not permit null elements
      *         (<a href="Collection.html#optional-restrictions">optional</a>)
      */
-    int indexOf(Object o);
+    int indexOf(E o);
 
     /**
      * Returns the index of the last occurrence of the specified element
@@ -609,7 +609,7 @@ public interface List<E> extends Collection<E>, ListExt<E> {
      *         list does not permit null elements
      *         (<a href="Collection.html#optional-restrictions">optional</a>)
      */
-    int lastIndexOf(Object o);
+    int lastIndexOf(E o);
 
 
     // List Iterators

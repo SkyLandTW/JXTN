@@ -164,7 +164,7 @@ public interface Map<K,V> extends MapExt<K,V> {
      *         does not permit null keys
      * (<a href="Collection.html#optional-restrictions">optional</a>)
      */
-    boolean containsKey(Object key);
+    boolean containsKey(K key);
 
     /**
      * Returns <tt>true</tt> if this map maps one or more keys to the
@@ -184,7 +184,7 @@ public interface Map<K,V> extends MapExt<K,V> {
      *         map does not permit null values
      * (<a href="Collection.html#optional-restrictions">optional</a>)
      */
-    boolean containsValue(Object value);
+    boolean containsValue(V value);
 
     /**
      * Returns the value to which the specified key is mapped,
@@ -211,7 +211,7 @@ public interface Map<K,V> extends MapExt<K,V> {
      *         does not permit null keys
      * (<a href="Collection.html#optional-restrictions">optional</a>)
      */
-    V get(Object key);
+    V get(K key);
 
     // Modification Operations
 
@@ -271,7 +271,7 @@ public interface Map<K,V> extends MapExt<K,V> {
      *         map does not permit null keys
      * (<a href="Collection.html#optional-restrictions">optional</a>)
      */
-    V remove(Object key);
+    V remove(K key);
 
 
     // Bulk Operations
@@ -589,7 +589,7 @@ public interface Map<K,V> extends MapExt<K,V> {
      * (<a href="Collection.html#optional-restrictions">optional</a>)
      * @since 1.8
      */
-    default V getOrDefault(Object key, V defaultValue) {
+    default V getOrDefault(K key, V defaultValue) {
         V v;
         return (((v = this.get(key)) != null) || this.containsKey(key))
                 ? v
@@ -787,8 +787,8 @@ public interface Map<K,V> extends MapExt<K,V> {
      *         (<a href="Collection.html#optional-restrictions">optional</a>)
      * @since 1.8
      */
-    default boolean remove(Object key, Object value) {
-        Object curValue = this.get(key);
+    default boolean remove(K key, V value) {
+        V curValue = this.get(key);
         if (!Objects.equals(curValue, value) ||
                 (curValue == null && !this.containsKey(key))) {
             return false;
@@ -840,7 +840,7 @@ public interface Map<K,V> extends MapExt<K,V> {
      * @since 1.8
      */
     default boolean replace(K key, V oldValue, V newValue) {
-        Object curValue = this.get(key);
+        V curValue = this.get(key);
         if (!Objects.equals(curValue, oldValue) ||
                 (curValue == null && !this.containsKey(key))) {
             return false;

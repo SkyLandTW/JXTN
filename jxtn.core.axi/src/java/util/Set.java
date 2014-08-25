@@ -120,7 +120,7 @@ public interface Set<E> extends Collection<E>, SetExt<E> {
      * (<a href="Collection.html#optional-restrictions">optional</a>)
      */
     @Override
-    boolean contains(Object o);
+    boolean contains(E o);
 
     /**
      * Returns an iterator over the elements in this set.  The elements are
@@ -255,7 +255,7 @@ public interface Set<E> extends Collection<E>, SetExt<E> {
      *         is not supported by this set
      */
     @Override
-    boolean remove(Object o);
+    boolean remove(E o);
 
 
     // Bulk Operations
@@ -280,7 +280,7 @@ public interface Set<E> extends Collection<E>, SetExt<E> {
      * @see    #contains(Object)
      */
     @Override
-    boolean containsAll(Collection<?> c);
+    boolean containsAll(Collection<? extends E> c);
 
     /**
      * Adds all of the elements in the specified collection to this set if
@@ -329,7 +329,7 @@ public interface Set<E> extends Collection<E>, SetExt<E> {
      * @see #remove(Object)
      */
     @Override
-    boolean retainAll(Collection<?> c);
+    boolean retainAll(Collection<? extends E> c);
 
     /**
      * Removes from this set all of its elements that are contained in the
@@ -353,7 +353,7 @@ public interface Set<E> extends Collection<E>, SetExt<E> {
      * @see #contains(Object)
      */
     @Override
-    boolean removeAll(Collection<?> c);
+    boolean removeAll(Collection<? extends E> c);
 
     /**
      * Removes all of the elements from this set (optional operation).

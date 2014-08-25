@@ -177,7 +177,7 @@ public interface Collection<E> extends Iterable<E>, CollectionExt<E> {
      *         collection does not permit null elements
      *         (<a href="#optional-restrictions">optional</a>)
      */
-    boolean contains(Object o);
+    boolean contains(E o);
 
     /**
      * Returns an iterator over the elements in this collection.  There are no
@@ -310,7 +310,7 @@ public interface Collection<E> extends Iterable<E>, CollectionExt<E> {
      * @throws UnsupportedOperationException if the <tt>remove</tt> operation
      *         is not supported by this collection
      */
-    boolean remove(Object o);
+    boolean remove(E o);
 
 
     // Bulk Operations
@@ -333,7 +333,7 @@ public interface Collection<E> extends Iterable<E>, CollectionExt<E> {
      *         or if the specified collection is null.
      * @see    #contains(Object)
      */
-    boolean containsAll(Collection<?> c);
+    boolean containsAll(Collection<? extends E> c);
 
     /**
      * Adds all of the elements in the specified collection to this collection
@@ -384,7 +384,7 @@ public interface Collection<E> extends Iterable<E>, CollectionExt<E> {
      * @see #remove(Object)
      * @see #contains(Object)
      */
-    boolean removeAll(Collection<?> c);
+    boolean removeAll(Collection<? extends E> c);
 
     /**
      * Removes all of the elements of this collection that satisfy the given
@@ -443,7 +443,7 @@ public interface Collection<E> extends Iterable<E>, CollectionExt<E> {
      * @see #remove(Object)
      * @see #contains(Object)
      */
-    boolean retainAll(Collection<?> c);
+    boolean retainAll(Collection<? extends E> c);
 
     /**
      * Removes all of the elements from this collection (optional operation).

@@ -155,6 +155,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     protected boolean hasStylesheets;
     protected java.util.Collection<java.lang.String> valStylesheets;
 
+    protected boolean hasUserAgentStylesheet;
+    protected java.lang.String valUserAgentStylesheet;
+
     protected boolean boundCamera;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.Camera> obsrvCamera;
 
@@ -290,6 +293,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     protected boolean boundRoot;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.Parent> obsrvRoot;
 
+    protected boolean boundUserAgentStylesheet;
+    protected javafx.beans.value.ObservableValue<? extends java.lang.String> obsrvUserAgentStylesheet;
+
     @Override
     public void applyTo(Z instance)
     {
@@ -386,6 +392,8 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
             instance.setRoot(this.valRoot);
         if (this.hasStylesheets)
             instance.getStylesheets().setAll(this.valStylesheets);
+        if (this.hasUserAgentStylesheet)
+            instance.setUserAgentStylesheet(this.valUserAgentStylesheet);
         if (this.boundCamera)
             instance.cameraProperty().bind(this.obsrvCamera);
         if (this.boundCursor)
@@ -476,6 +484,8 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
             instance.onZoomStartedProperty().bind(this.obsrvOnZoomStarted);
         if (this.boundRoot)
             instance.rootProperty().bind(this.obsrvRoot);
+        if (this.boundUserAgentStylesheet)
+            instance.userAgentStylesheetProperty().bind(this.obsrvUserAgentStylesheet);
     }
 
     /**
@@ -1134,6 +1144,20 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     {
         this.hasStylesheets = true;
         this.valStylesheets = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#setUserAgentStylesheet}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B userAgentStylesheet(java.lang.String value)
+    {
+        this.hasUserAgentStylesheet = true;
+        this.valUserAgentStylesheet = value;
         return (B) this;
     }
 
@@ -1809,6 +1833,21 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         assert (source != null);
         this.boundRoot = true;
         this.obsrvRoot = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#userAgentStylesheetProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B bindUserAgentStylesheet(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
+    {
+        assert (source != null);
+        this.boundUserAgentStylesheet = true;
+        this.obsrvUserAgentStylesheet = source;
         return (B) this;
     }
 

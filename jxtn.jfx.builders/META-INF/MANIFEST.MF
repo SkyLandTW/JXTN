@@ -7,7 +7,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: JXTN@GitHub
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
- lib/controlsfx-8.0.6.jar
+ lib/controlsfx-8.0.6_20.jar
 Export-Package: javafx.scene,
  javafx.scene.canvas,
  javafx.scene.chart,

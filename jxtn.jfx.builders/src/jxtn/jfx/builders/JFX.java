@@ -1515,6 +1515,30 @@ public final class JFX
     }
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.table.TableMenuButtonAccessorBuilder<org.controlsfx.control.table.TableMenuButtonAccessor, ?> tableMenuButtonAccessor()
+    {
+        return new org.controlsfx.control.table.TableMenuButtonAccessorBuilder();
+    }
+
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.table.model.JavaFXTableModelsBuilder<org.controlsfx.control.table.model.JavaFXTableModels, ?> javaFXTableModels()
+    {
+        return new org.controlsfx.control.table.model.JavaFXTableModelsBuilder();
+    }
+
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <S extends java.lang.Object> org.controlsfx.control.table.model.TableModelTableViewBuilder<S, org.controlsfx.control.table.model.TableModelTableView<S>, ?> tableModelTableView()
+    {
+        return new org.controlsfx.control.table.model.TableModelTableViewBuilder();
+    }
+
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <S extends java.lang.Object, T extends java.lang.Object> org.controlsfx.control.table.model.TableModelValueFactoryBuilder<S, T, org.controlsfx.control.table.model.TableModelValueFactory<S, T>, ?> tableModelValueFactory()
+    {
+        return new org.controlsfx.control.table.model.TableModelValueFactoryBuilder();
+    }
+
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static org.controlsfx.control.textfield.CustomPasswordFieldBuilder<org.controlsfx.control.textfield.CustomPasswordField, ?> customPasswordField()
     {
         return new org.controlsfx.control.textfield.CustomPasswordFieldBuilder();

@@ -17,6 +17,9 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         extends javafx.stage.WindowBuilder<Z, B>
 {
 
+    protected boolean hasAlwaysOnTop;
+    protected boolean valAlwaysOnTop;
+
     protected boolean hasFullScreen;
     protected boolean valFullScreen;
 
@@ -84,6 +87,8 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     public void applyTo(Z instance)
     {
         super.applyTo(instance);
+        if (this.hasAlwaysOnTop)
+            instance.setAlwaysOnTop(this.valAlwaysOnTop);
         if (this.hasFullScreen)
             instance.setFullScreen(this.valFullScreen);
         if (this.hasFullScreenExitHint)
@@ -126,6 +131,20 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
             instance.resizableProperty().bind(this.obsrvResizable);
         if (this.boundTitle)
             instance.titleProperty().bind(this.obsrvTitle);
+    }
+
+    /**
+     * 設定屬性{@link Stage#setAlwaysOnTop}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B alwaysOnTop(boolean value)
+    {
+        this.hasAlwaysOnTop = true;
+        this.valAlwaysOnTop = value;
+        return (B) this;
     }
 
     /**

@@ -29,6 +29,9 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     protected boolean hasRoot;
     protected javafx.scene.Parent valRoot;
 
+    protected boolean hasUserAgentStylesheet;
+    protected java.lang.String valUserAgentStylesheet;
+
     protected boolean hasWidth;
     protected double valWidth;
 
@@ -43,6 +46,9 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
 
     protected boolean boundRoot;
     protected javafx.beans.value.ObservableValue<? extends javafx.scene.Parent> obsrvRoot;
+
+    protected boolean boundUserAgentStylesheet;
+    protected javafx.beans.value.ObservableValue<? extends java.lang.String> obsrvUserAgentStylesheet;
 
     protected boolean boundWidth;
     protected javafx.beans.value.ObservableValue<? extends Double> obsrvWidth;
@@ -59,6 +65,8 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
             instance.setHeight(this.valHeight);
         if (this.hasRoot)
             instance.setRoot(this.valRoot);
+        if (this.hasUserAgentStylesheet)
+            instance.setUserAgentStylesheet(this.valUserAgentStylesheet);
         if (this.hasWidth)
             instance.setWidth(this.valWidth);
         if (this.boundCamera)
@@ -69,6 +77,8 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
             instance.heightProperty().bind(this.obsrvHeight);
         if (this.boundRoot)
             instance.rootProperty().bind(this.obsrvRoot);
+        if (this.boundUserAgentStylesheet)
+            instance.userAgentStylesheetProperty().bind(this.obsrvUserAgentStylesheet);
         if (this.boundWidth)
             instance.widthProperty().bind(this.obsrvWidth);
     }
@@ -126,6 +136,20 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     {
         this.hasRoot = true;
         this.valRoot = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SubScene#setUserAgentStylesheet}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B userAgentStylesheet(java.lang.String value)
+    {
+        this.hasUserAgentStylesheet = true;
+        this.valUserAgentStylesheet = value;
         return (B) this;
     }
 
@@ -200,6 +224,21 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
         assert (source != null);
         this.boundRoot = true;
         this.obsrvRoot = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SubScene#userAgentStylesheetProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B bindUserAgentStylesheet(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
+    {
+        assert (source != null);
+        this.boundUserAgentStylesheet = true;
+        this.obsrvUserAgentStylesheet = source;
         return (B) this;
     }
 

@@ -31,7 +31,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -88,7 +87,7 @@ public class SqlSchemaDataLoader extends XmlDataLoader
                     while (rs.next())
                     {
                         String tableName = rs.getString("TABLE_NAME");
-                        Element tableElem = schemaRoot.getChildNodes().asList()
+                        Element tableElem = schemaRoot.getChildNodes().iterable()
                                 .ofType(Element.class)
                                 .filter(elem -> elem.getAttribute("name").equals(tableName))
                                 .firstOrNull();
@@ -108,10 +107,10 @@ public class SqlSchemaDataLoader extends XmlDataLoader
             }
         }
         // 排除輔助欄位
-        for (Node tableNode : schemaRoot.getElementsByTagName("table").asList())
+        for (Node tableNode : schemaRoot.getElementsByTagName("table").iterable())
         {
             Element tableElem = (Element) tableNode;
-            List<Node> columnListCopy = new ArrayList<>(tableElem.getElementsByTagName("column").asList());
+            List<Node> columnListCopy = tableElem.getElementsByTagName("column").iterable().toArrayList();
             Set<String> columnNameSet = new HashSet<>();
             columnListCopy.forEach(cn -> columnNameSet.add(((Element) cn).getAttribute("name")));
             for (Node columnNode : columnListCopy)

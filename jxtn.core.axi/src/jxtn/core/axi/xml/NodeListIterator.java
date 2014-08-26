@@ -27,30 +27,30 @@
 
 package jxtn.core.axi.xml;
 
-import java.util.AbstractList;
-import java.util.RandomAccess;
+import java.util.Objects;
+
+import jxtn.core.axi.collections.AbstractIterator;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class NodeListWrapper extends AbstractList<Node> implements RandomAccess
+public class NodeListIterator extends AbstractIterator<Node>
 {
     protected final NodeList list;
 
-    public NodeListWrapper(NodeList l)
+    public NodeListIterator(NodeList list)
     {
-        this.list = l;
+        Objects.requireNonNull(list);
+        this.list = list;
     }
 
     @Override
-    public Node get(int index)
+    protected Node fetchNext()
     {
-        return this.list.item(index);
-    }
-
-    @Override
-    public int size()
-    {
-        return this.list.getLength();
+        int index = (int) this.getSteps();
+        if (index < this.list.getLength())
+            return this.list.item(index);
+        else
+            return this.end();
     }
 }

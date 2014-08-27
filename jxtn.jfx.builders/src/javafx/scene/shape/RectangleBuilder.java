@@ -84,7 +84,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#setArcHeight}
+     * 設定屬性{@link Rectangle#setArcHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -98,7 +98,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#setArcWidth}
+     * 設定屬性{@link Rectangle#setArcWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -112,7 +112,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#setHeight}
+     * 設定屬性{@link Rectangle#setHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -126,7 +126,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#setWidth}
+     * 設定屬性{@link Rectangle#setWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -140,7 +140,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#setX}
+     * 設定屬性{@link Rectangle#setX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -154,7 +154,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#setY}
+     * 設定屬性{@link Rectangle#setY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

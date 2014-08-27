@@ -54,7 +54,7 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
     }
 
     /**
-     * 設定屬性{@link ImageInput#setSource}
+     * 設定屬性{@link ImageInput#setSource(javafx.scene.image.Image)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -68,7 +68,7 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
     }
 
     /**
-     * 設定屬性{@link ImageInput#setX}
+     * 設定屬性{@link ImageInput#setX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -82,7 +82,7 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
     }
 
     /**
-     * 設定屬性{@link ImageInput#setY}
+     * 設定屬性{@link ImageInput#setY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

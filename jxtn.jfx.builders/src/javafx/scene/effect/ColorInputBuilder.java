@@ -74,7 +74,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#setHeight}
+     * 設定屬性{@link ColorInput#setHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -88,7 +88,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#setPaint}
+     * 設定屬性{@link ColorInput#setPaint(javafx.scene.paint.Paint)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -102,7 +102,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#setWidth}
+     * 設定屬性{@link ColorInput#setWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -116,7 +116,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#setX}
+     * 設定屬性{@link ColorInput#setX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -130,7 +130,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#setY}
+     * 設定屬性{@link ColorInput#setY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

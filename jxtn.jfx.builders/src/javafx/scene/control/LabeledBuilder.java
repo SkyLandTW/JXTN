@@ -164,7 +164,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setAlignment}
+     * 設定屬性{@link Labeled#setAlignment(javafx.geometry.Pos)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -178,7 +178,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setContentDisplay}
+     * 設定屬性{@link Labeled#setContentDisplay(javafx.scene.control.ContentDisplay)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -192,7 +192,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setEllipsisString}
+     * 設定屬性{@link Labeled#setEllipsisString(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -206,7 +206,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setFont}
+     * 設定屬性{@link Labeled#setFont(javafx.scene.text.Font)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -220,7 +220,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setGraphic}
+     * 設定屬性{@link Labeled#setGraphic(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -234,7 +234,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setGraphicTextGap}
+     * 設定屬性{@link Labeled#setGraphicTextGap(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -248,7 +248,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setLineSpacing}
+     * 設定屬性{@link Labeled#setLineSpacing(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -262,7 +262,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setMnemonicParsing}
+     * 設定屬性{@link Labeled#setMnemonicParsing(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -276,7 +276,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setText}
+     * 設定屬性{@link Labeled#setText(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -290,7 +290,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setTextAlignment}
+     * 設定屬性{@link Labeled#setTextAlignment(javafx.scene.text.TextAlignment)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -304,7 +304,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setTextFill}
+     * 設定屬性{@link Labeled#setTextFill(javafx.scene.paint.Paint)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -318,7 +318,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setTextOverrun}
+     * 設定屬性{@link Labeled#setTextOverrun(javafx.scene.control.OverrunStyle)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -332,7 +332,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setUnderline}
+     * 設定屬性{@link Labeled#setUnderline(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -346,7 +346,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setWrapText}
+     * 設定屬性{@link Labeled#setWrapText(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

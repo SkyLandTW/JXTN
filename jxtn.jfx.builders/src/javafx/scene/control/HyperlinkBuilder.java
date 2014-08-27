@@ -34,7 +34,7 @@ public class HyperlinkBuilder<Z extends Hyperlink, B extends HyperlinkBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Hyperlink#setVisited}
+     * 設定屬性{@link Hyperlink#setVisited(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

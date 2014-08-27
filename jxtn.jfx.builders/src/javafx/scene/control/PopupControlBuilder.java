@@ -119,7 +119,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#setId}
+     * 設定屬性{@link PopupControl#setId(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -133,7 +133,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#setMaxHeight}
+     * 設定屬性{@link PopupControl#setMaxHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -147,7 +147,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#setMaxWidth}
+     * 設定屬性{@link PopupControl#setMaxWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -161,7 +161,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#setMinHeight}
+     * 設定屬性{@link PopupControl#setMinHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -175,7 +175,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#setMinWidth}
+     * 設定屬性{@link PopupControl#setMinWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -189,7 +189,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#setPrefHeight}
+     * 設定屬性{@link PopupControl#setPrefHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -203,7 +203,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#setPrefWidth}
+     * 設定屬性{@link PopupControl#setPrefWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -217,7 +217,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#setSkin}
+     * 設定屬性{@link PopupControl#setSkin(javafx.scene.control.Skin)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -231,7 +231,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#setStyle}
+     * 設定屬性{@link PopupControl#setStyle(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

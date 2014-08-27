@@ -89,7 +89,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#setCellFactory}
+     * 設定屬性{@link TreeTableColumn#setCellFactory(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -103,7 +103,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#setCellValueFactory}
+     * 設定屬性{@link TreeTableColumn#setCellValueFactory(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -146,7 +146,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#setOnEditCancel}
+     * 設定屬性{@link TreeTableColumn#setOnEditCancel(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -160,7 +160,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#setOnEditCommit}
+     * 設定屬性{@link TreeTableColumn#setOnEditCommit(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -174,7 +174,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#setOnEditStart}
+     * 設定屬性{@link TreeTableColumn#setOnEditStart(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -188,7 +188,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#setSortType}
+     * 設定屬性{@link TreeTableColumn#setSortType(javafx.scene.control.TreeTableColumn.SortType)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

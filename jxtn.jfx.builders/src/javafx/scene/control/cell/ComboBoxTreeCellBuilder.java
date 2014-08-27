@@ -49,7 +49,7 @@ public class ComboBoxTreeCellBuilder<T extends java.lang.Object, Z extends Combo
     }
 
     /**
-     * 設定屬性{@link ComboBoxTreeCell#setComboBoxEditable}
+     * 設定屬性{@link ComboBoxTreeCell#setComboBoxEditable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -63,7 +63,7 @@ public class ComboBoxTreeCellBuilder<T extends java.lang.Object, Z extends Combo
     }
 
     /**
-     * 設定屬性{@link ComboBoxTreeCell#setConverter}
+     * 設定屬性{@link ComboBoxTreeCell#setConverter(javafx.util.StringConverter)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

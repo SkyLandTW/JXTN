@@ -54,7 +54,7 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 設定屬性{@link CheckBoxTreeItem#setIndependent}
+     * 設定屬性{@link CheckBoxTreeItem#setIndependent(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -68,7 +68,7 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 設定屬性{@link CheckBoxTreeItem#setIndeterminate}
+     * 設定屬性{@link CheckBoxTreeItem#setIndeterminate(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -82,7 +82,7 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 設定屬性{@link CheckBoxTreeItem#setSelected}
+     * 設定屬性{@link CheckBoxTreeItem#setSelected(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

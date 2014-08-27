@@ -64,7 +64,7 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     }
 
     /**
-     * 設定屬性{@link BreadCrumbBar#setAutoNavigationEnabled}
+     * 設定屬性{@link BreadCrumbBar#setAutoNavigationEnabled(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -78,7 +78,7 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     }
 
     /**
-     * 設定屬性{@link BreadCrumbBar#setCrumbFactory}
+     * 設定屬性{@link BreadCrumbBar#setCrumbFactory(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -92,7 +92,7 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     }
 
     /**
-     * 設定屬性{@link BreadCrumbBar#setOnCrumbAction}
+     * 設定屬性{@link BreadCrumbBar#setOnCrumbAction(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -106,7 +106,7 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     }
 
     /**
-     * 設定屬性{@link BreadCrumbBar#setSelectedCrumb}
+     * 設定屬性{@link BreadCrumbBar#setSelectedCrumb(javafx.scene.control.TreeItem)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

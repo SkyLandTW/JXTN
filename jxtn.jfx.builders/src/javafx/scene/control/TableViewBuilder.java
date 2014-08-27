@@ -154,7 +154,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setColumnResizePolicy}
+     * 設定屬性{@link TableView#setColumnResizePolicy(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -197,7 +197,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setEditable}
+     * 設定屬性{@link TableView#setEditable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -211,7 +211,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setFixedCellSize}
+     * 設定屬性{@link TableView#setFixedCellSize(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -225,7 +225,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setFocusModel}
+     * 設定屬性{@link TableView#setFocusModel(javafx.scene.control.TableView.TableViewFocusModel)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -239,7 +239,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setItems}
+     * 設定屬性{@link TableView#setItems(javafx.collections.ObservableList)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -253,7 +253,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setOnScrollTo}
+     * 設定屬性{@link TableView#setOnScrollTo(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -267,7 +267,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setOnScrollToColumn}
+     * 設定屬性{@link TableView#setOnScrollToColumn(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -281,7 +281,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setOnSort}
+     * 設定屬性{@link TableView#setOnSort(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -295,7 +295,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setPlaceholder}
+     * 設定屬性{@link TableView#setPlaceholder(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -309,7 +309,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setRowFactory}
+     * 設定屬性{@link TableView#setRowFactory(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -323,7 +323,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setSelectionModel}
+     * 設定屬性{@link TableView#setSelectionModel(javafx.scene.control.TableView.TableViewSelectionModel)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -366,7 +366,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setSortPolicy}
+     * 設定屬性{@link TableView#setSortPolicy(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -380,7 +380,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setTableMenuButtonVisible}
+     * 設定屬性{@link TableView#setTableMenuButtonVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

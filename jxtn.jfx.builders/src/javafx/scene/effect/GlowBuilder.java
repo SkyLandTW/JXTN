@@ -44,7 +44,7 @@ public class GlowBuilder<Z extends Glow, B extends GlowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Glow#setInput}
+     * 設定屬性{@link Glow#setInput(javafx.scene.effect.Effect)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class GlowBuilder<Z extends Glow, B extends GlowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Glow#setLevel}
+     * 設定屬性{@link Glow#setLevel(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

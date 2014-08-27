@@ -34,7 +34,7 @@ public class LightBuilder<Z extends Light, B extends LightBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Light#setColor}
+     * 設定屬性{@link Light#setColor(javafx.scene.paint.Color)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

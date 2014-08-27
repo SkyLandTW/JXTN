@@ -44,7 +44,7 @@ public class CheckBoxListCellBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 設定屬性{@link CheckBoxListCell#setConverter}
+     * 設定屬性{@link CheckBoxListCell#setConverter(javafx.util.StringConverter)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class CheckBoxListCellBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 設定屬性{@link CheckBoxListCell#setSelectedStateCallback}
+     * 設定屬性{@link CheckBoxListCell#setSelectedStateCallback(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

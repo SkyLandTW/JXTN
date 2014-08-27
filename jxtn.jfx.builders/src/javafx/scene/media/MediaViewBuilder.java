@@ -114,7 +114,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#setFitHeight}
+     * 設定屬性{@link MediaView#setFitHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -128,7 +128,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#setFitWidth}
+     * 設定屬性{@link MediaView#setFitWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -142,7 +142,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#setMediaPlayer}
+     * 設定屬性{@link MediaView#setMediaPlayer(javafx.scene.media.MediaPlayer)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -156,7 +156,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#setOnError}
+     * 設定屬性{@link MediaView#setOnError(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -170,7 +170,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#setPreserveRatio}
+     * 設定屬性{@link MediaView#setPreserveRatio(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -184,7 +184,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#setSmooth}
+     * 設定屬性{@link MediaView#setSmooth(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -198,7 +198,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#setViewport}
+     * 設定屬性{@link MediaView#setViewport(javafx.geometry.Rectangle2D)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -212,7 +212,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#setX}
+     * 設定屬性{@link MediaView#setX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -226,7 +226,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#setY}
+     * 設定屬性{@link MediaView#setY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

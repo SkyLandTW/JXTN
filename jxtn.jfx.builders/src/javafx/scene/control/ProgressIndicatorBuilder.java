@@ -34,7 +34,7 @@ public class ProgressIndicatorBuilder<Z extends ProgressIndicator, B extends Pro
     }
 
     /**
-     * 設定屬性{@link ProgressIndicator#setProgress}
+     * 設定屬性{@link ProgressIndicator#setProgress(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

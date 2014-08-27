@@ -34,7 +34,7 @@ public class CheckListViewBuilder<T extends java.lang.Object, Z extends CheckLis
     }
 
     /**
-     * 設定屬性{@link CheckListView#setCheckModel}
+     * 設定屬性{@link CheckListView#setCheckModel(javafx.scene.control.MultipleSelectionModel)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

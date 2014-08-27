@@ -68,7 +68,7 @@ public class MenuBarBuilder<Z extends MenuBar, B extends MenuBarBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link MenuBar#setUseSystemMenuBar}
+     * 設定屬性{@link MenuBar#setUseSystemMenuBar(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

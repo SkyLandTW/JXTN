@@ -68,7 +68,7 @@ public class MenuButtonBuilder<Z extends MenuButton, B extends MenuButtonBuilder
     }
 
     /**
-     * 設定屬性{@link MenuButton#setPopupSide}
+     * 設定屬性{@link MenuButton#setPopupSide(javafx.geometry.Side)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

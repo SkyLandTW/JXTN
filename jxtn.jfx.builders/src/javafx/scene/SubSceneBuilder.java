@@ -84,7 +84,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#setCamera}
+     * 設定屬性{@link SubScene#setCamera(javafx.scene.Camera)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -98,7 +98,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#setFill}
+     * 設定屬性{@link SubScene#setFill(javafx.scene.paint.Paint)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -112,7 +112,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#setHeight}
+     * 設定屬性{@link SubScene#setHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -126,7 +126,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#setRoot}
+     * 設定屬性{@link SubScene#setRoot(javafx.scene.Parent)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -140,7 +140,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#setUserAgentStylesheet}
+     * 設定屬性{@link SubScene#setUserAgentStylesheet(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -154,7 +154,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#setWidth}
+     * 設定屬性{@link SubScene#setWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

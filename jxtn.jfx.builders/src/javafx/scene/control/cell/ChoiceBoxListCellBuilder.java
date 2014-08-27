@@ -39,7 +39,7 @@ public class ChoiceBoxListCellBuilder<T extends java.lang.Object, Z extends Choi
     }
 
     /**
-     * 設定屬性{@link ChoiceBoxListCell#setConverter}
+     * 設定屬性{@link ChoiceBoxListCell#setConverter(javafx.util.StringConverter)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

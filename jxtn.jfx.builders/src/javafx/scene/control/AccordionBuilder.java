@@ -39,7 +39,7 @@ public class AccordionBuilder<Z extends Accordion, B extends AccordionBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Accordion#setExpandedPane}
+     * 設定屬性{@link Accordion#setExpandedPane(javafx.scene.control.TitledPane)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

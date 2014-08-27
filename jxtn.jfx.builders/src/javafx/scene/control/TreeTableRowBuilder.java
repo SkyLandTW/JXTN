@@ -34,7 +34,7 @@ public class TreeTableRowBuilder<T extends java.lang.Object, Z extends TreeTable
     }
 
     /**
-     * 設定屬性{@link TreeTableRow#setDisclosureNode}
+     * 設定屬性{@link TreeTableRow#setDisclosureNode(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

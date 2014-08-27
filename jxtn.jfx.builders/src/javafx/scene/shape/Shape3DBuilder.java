@@ -54,7 +54,7 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape3D#setCullFace}
+     * 設定屬性{@link Shape3D#setCullFace(javafx.scene.shape.CullFace)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -68,7 +68,7 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape3D#setDrawMode}
+     * 設定屬性{@link Shape3D#setDrawMode(javafx.scene.shape.DrawMode)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -82,7 +82,7 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape3D#setMaterial}
+     * 設定屬性{@link Shape3D#setMaterial(javafx.scene.paint.Material)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

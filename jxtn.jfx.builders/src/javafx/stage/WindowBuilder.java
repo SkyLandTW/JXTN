@@ -114,7 +114,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setEventDispatcher}
+     * 設定屬性{@link Window#setEventDispatcher(javafx.event.EventDispatcher)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -128,7 +128,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setHeight}
+     * 設定屬性{@link Window#setHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -142,7 +142,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setOnCloseRequest}
+     * 設定屬性{@link Window#setOnCloseRequest(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -156,7 +156,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setOnHidden}
+     * 設定屬性{@link Window#setOnHidden(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -170,7 +170,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setOnHiding}
+     * 設定屬性{@link Window#setOnHiding(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -184,7 +184,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setOnShowing}
+     * 設定屬性{@link Window#setOnShowing(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -198,7 +198,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setOnShown}
+     * 設定屬性{@link Window#setOnShown(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -212,7 +212,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setOpacity}
+     * 設定屬性{@link Window#setOpacity(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -226,7 +226,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setWidth}
+     * 設定屬性{@link Window#setWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -240,7 +240,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setX}
+     * 設定屬性{@link Window#setX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -254,7 +254,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setY}
+     * 設定屬性{@link Window#setY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

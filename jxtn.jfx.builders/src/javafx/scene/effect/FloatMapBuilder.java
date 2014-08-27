@@ -44,7 +44,7 @@ public class FloatMapBuilder<Z extends FloatMap, B extends FloatMapBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link FloatMap#setHeight}
+     * 設定屬性{@link FloatMap#setHeight(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class FloatMapBuilder<Z extends FloatMap, B extends FloatMapBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link FloatMap#setWidth}
+     * 設定屬性{@link FloatMap#setWidth(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

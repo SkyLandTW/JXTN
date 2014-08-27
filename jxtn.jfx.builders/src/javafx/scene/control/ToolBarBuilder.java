@@ -68,7 +68,7 @@ public class ToolBarBuilder<Z extends ToolBar, B extends ToolBarBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ToolBar#setOrientation}
+     * 設定屬性{@link ToolBar#setOrientation(javafx.geometry.Orientation)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

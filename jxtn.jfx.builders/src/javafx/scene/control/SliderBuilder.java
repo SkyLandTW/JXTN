@@ -144,7 +144,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setBlockIncrement}
+     * 設定屬性{@link Slider#setBlockIncrement(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -158,7 +158,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setLabelFormatter}
+     * 設定屬性{@link Slider#setLabelFormatter(javafx.util.StringConverter)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -172,7 +172,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setMajorTickUnit}
+     * 設定屬性{@link Slider#setMajorTickUnit(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -186,7 +186,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setMax}
+     * 設定屬性{@link Slider#setMax(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -200,7 +200,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setMin}
+     * 設定屬性{@link Slider#setMin(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -214,7 +214,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setMinorTickCount}
+     * 設定屬性{@link Slider#setMinorTickCount(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -228,7 +228,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setOrientation}
+     * 設定屬性{@link Slider#setOrientation(javafx.geometry.Orientation)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -242,7 +242,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setShowTickLabels}
+     * 設定屬性{@link Slider#setShowTickLabels(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -256,7 +256,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setShowTickMarks}
+     * 設定屬性{@link Slider#setShowTickMarks(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -270,7 +270,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setSnapToTicks}
+     * 設定屬性{@link Slider#setSnapToTicks(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -284,7 +284,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setValue}
+     * 設定屬性{@link Slider#setValue(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -298,7 +298,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setValueChanging}
+     * 設定屬性{@link Slider#setValueChanging(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

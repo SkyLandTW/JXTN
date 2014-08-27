@@ -854,7 +854,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setBlendMode}
+     * 設定屬性{@link Node#setBlendMode(javafx.scene.effect.BlendMode)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -868,7 +868,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setCache}
+     * 設定屬性{@link Node#setCache(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -882,7 +882,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setCacheHint}
+     * 設定屬性{@link Node#setCacheHint(javafx.scene.CacheHint)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -896,7 +896,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setClip}
+     * 設定屬性{@link Node#setClip(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -910,7 +910,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setCursor}
+     * 設定屬性{@link Node#setCursor(javafx.scene.Cursor)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -924,7 +924,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setDepthTest}
+     * 設定屬性{@link Node#setDepthTest(javafx.scene.DepthTest)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -938,7 +938,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setDisable}
+     * 設定屬性{@link Node#setDisable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -952,7 +952,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setEffect}
+     * 設定屬性{@link Node#setEffect(javafx.scene.effect.Effect)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -966,7 +966,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setEventDispatcher}
+     * 設定屬性{@link Node#setEventDispatcher(javafx.event.EventDispatcher)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -980,7 +980,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setFocusTraversable}
+     * 設定屬性{@link Node#setFocusTraversable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -994,7 +994,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setId}
+     * 設定屬性{@link Node#setId(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1008,7 +1008,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setInputMethodRequests}
+     * 設定屬性{@link Node#setInputMethodRequests(javafx.scene.input.InputMethodRequests)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1022,7 +1022,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setLayoutX}
+     * 設定屬性{@link Node#setLayoutX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1036,7 +1036,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setLayoutY}
+     * 設定屬性{@link Node#setLayoutY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1050,7 +1050,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setManaged}
+     * 設定屬性{@link Node#setManaged(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1064,7 +1064,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setMouseTransparent}
+     * 設定屬性{@link Node#setMouseTransparent(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1078,7 +1078,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setNodeOrientation}
+     * 設定屬性{@link Node#setNodeOrientation(javafx.geometry.NodeOrientation)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1092,7 +1092,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnContextMenuRequested}
+     * 設定屬性{@link Node#setOnContextMenuRequested(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1106,7 +1106,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnDragDetected}
+     * 設定屬性{@link Node#setOnDragDetected(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1120,7 +1120,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnDragDone}
+     * 設定屬性{@link Node#setOnDragDone(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1134,7 +1134,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnDragDropped}
+     * 設定屬性{@link Node#setOnDragDropped(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1148,7 +1148,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnDragEntered}
+     * 設定屬性{@link Node#setOnDragEntered(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1162,7 +1162,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnDragExited}
+     * 設定屬性{@link Node#setOnDragExited(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1176,7 +1176,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnDragOver}
+     * 設定屬性{@link Node#setOnDragOver(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1190,7 +1190,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnInputMethodTextChanged}
+     * 設定屬性{@link Node#setOnInputMethodTextChanged(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1204,7 +1204,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnKeyPressed}
+     * 設定屬性{@link Node#setOnKeyPressed(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1218,7 +1218,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnKeyReleased}
+     * 設定屬性{@link Node#setOnKeyReleased(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1232,7 +1232,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnKeyTyped}
+     * 設定屬性{@link Node#setOnKeyTyped(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1246,7 +1246,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseClicked}
+     * 設定屬性{@link Node#setOnMouseClicked(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1260,7 +1260,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseDragEntered}
+     * 設定屬性{@link Node#setOnMouseDragEntered(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1274,7 +1274,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseDragExited}
+     * 設定屬性{@link Node#setOnMouseDragExited(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1288,7 +1288,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseDragOver}
+     * 設定屬性{@link Node#setOnMouseDragOver(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1302,7 +1302,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseDragReleased}
+     * 設定屬性{@link Node#setOnMouseDragReleased(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1316,7 +1316,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseDragged}
+     * 設定屬性{@link Node#setOnMouseDragged(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1330,7 +1330,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseEntered}
+     * 設定屬性{@link Node#setOnMouseEntered(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1344,7 +1344,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseExited}
+     * 設定屬性{@link Node#setOnMouseExited(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1358,7 +1358,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseMoved}
+     * 設定屬性{@link Node#setOnMouseMoved(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1372,7 +1372,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMousePressed}
+     * 設定屬性{@link Node#setOnMousePressed(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1386,7 +1386,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseReleased}
+     * 設定屬性{@link Node#setOnMouseReleased(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1400,7 +1400,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnRotate}
+     * 設定屬性{@link Node#setOnRotate(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1414,7 +1414,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnRotationFinished}
+     * 設定屬性{@link Node#setOnRotationFinished(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1428,7 +1428,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnRotationStarted}
+     * 設定屬性{@link Node#setOnRotationStarted(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1442,7 +1442,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnScroll}
+     * 設定屬性{@link Node#setOnScroll(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1456,7 +1456,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnScrollFinished}
+     * 設定屬性{@link Node#setOnScrollFinished(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1470,7 +1470,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnScrollStarted}
+     * 設定屬性{@link Node#setOnScrollStarted(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1484,7 +1484,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnSwipeDown}
+     * 設定屬性{@link Node#setOnSwipeDown(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1498,7 +1498,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnSwipeLeft}
+     * 設定屬性{@link Node#setOnSwipeLeft(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1512,7 +1512,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnSwipeRight}
+     * 設定屬性{@link Node#setOnSwipeRight(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1526,7 +1526,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnSwipeUp}
+     * 設定屬性{@link Node#setOnSwipeUp(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1540,7 +1540,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnTouchMoved}
+     * 設定屬性{@link Node#setOnTouchMoved(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1554,7 +1554,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnTouchPressed}
+     * 設定屬性{@link Node#setOnTouchPressed(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1568,7 +1568,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnTouchReleased}
+     * 設定屬性{@link Node#setOnTouchReleased(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1582,7 +1582,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnTouchStationary}
+     * 設定屬性{@link Node#setOnTouchStationary(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1596,7 +1596,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnZoom}
+     * 設定屬性{@link Node#setOnZoom(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1610,7 +1610,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnZoomFinished}
+     * 設定屬性{@link Node#setOnZoomFinished(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1624,7 +1624,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnZoomStarted}
+     * 設定屬性{@link Node#setOnZoomStarted(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1638,7 +1638,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOpacity}
+     * 設定屬性{@link Node#setOpacity(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1652,7 +1652,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setPickOnBounds}
+     * 設定屬性{@link Node#setPickOnBounds(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1666,7 +1666,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setRotate}
+     * 設定屬性{@link Node#setRotate(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1680,7 +1680,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setRotationAxis}
+     * 設定屬性{@link Node#setRotationAxis(javafx.geometry.Point3D)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1694,7 +1694,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setScaleX}
+     * 設定屬性{@link Node#setScaleX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1708,7 +1708,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setScaleY}
+     * 設定屬性{@link Node#setScaleY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1722,7 +1722,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setScaleZ}
+     * 設定屬性{@link Node#setScaleZ(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1736,7 +1736,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setStyle}
+     * 設定屬性{@link Node#setStyle(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1808,7 +1808,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setTranslateX}
+     * 設定屬性{@link Node#setTranslateX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1822,7 +1822,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setTranslateY}
+     * 設定屬性{@link Node#setTranslateY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1836,7 +1836,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setTranslateZ}
+     * 設定屬性{@link Node#setTranslateZ(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1850,7 +1850,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setUserData}
+     * 設定屬性{@link Node#setUserData(java.lang.Object)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1864,7 +1864,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setVisible}
+     * 設定屬性{@link Node#setVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

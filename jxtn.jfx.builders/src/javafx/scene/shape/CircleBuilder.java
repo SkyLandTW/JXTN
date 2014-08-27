@@ -54,7 +54,7 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Circle#setCenterX}
+     * 設定屬性{@link Circle#setCenterX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -68,7 +68,7 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Circle#setCenterY}
+     * 設定屬性{@link Circle#setCenterY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -82,7 +82,7 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Circle#setRadius}
+     * 設定屬性{@link Circle#setRadius(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

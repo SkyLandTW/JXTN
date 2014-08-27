@@ -98,7 +98,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Menu#setOnHidden}
+     * 設定屬性{@link Menu#setOnHidden(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -112,7 +112,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Menu#setOnHiding}
+     * 設定屬性{@link Menu#setOnHiding(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -126,7 +126,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Menu#setOnShowing}
+     * 設定屬性{@link Menu#setOnShowing(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -140,7 +140,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Menu#setOnShown}
+     * 設定屬性{@link Menu#setOnShown(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

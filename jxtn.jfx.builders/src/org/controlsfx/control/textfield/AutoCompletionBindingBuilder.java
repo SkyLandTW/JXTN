@@ -39,7 +39,7 @@ public class AutoCompletionBindingBuilder<T extends java.lang.Object, Z extends 
     }
 
     /**
-     * 設定屬性{@link AutoCompletionBinding#setOnAutoCompleted}
+     * 設定屬性{@link AutoCompletionBinding#setOnAutoCompleted(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -53,7 +53,7 @@ public class AutoCompletionBindingBuilder<T extends java.lang.Object, Z extends 
     }
 
     /**
-     * 設定屬性{@link AutoCompletionBinding#setUserInput}
+     * 設定屬性{@link AutoCompletionBinding#setUserInput(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

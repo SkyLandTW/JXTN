@@ -44,7 +44,7 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
     }
 
     /**
-     * 設定屬性{@link DirectoryChooser#setInitialDirectory}
+     * 設定屬性{@link DirectoryChooser#setInitialDirectory(java.io.File)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
     }
 
     /**
-     * 設定屬性{@link DirectoryChooser#setTitle}
+     * 設定屬性{@link DirectoryChooser#setTitle(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

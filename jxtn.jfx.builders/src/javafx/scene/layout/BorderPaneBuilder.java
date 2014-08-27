@@ -74,7 +74,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#setBottom}
+     * 設定屬性{@link BorderPane#setBottom(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -88,7 +88,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#setCenter}
+     * 設定屬性{@link BorderPane#setCenter(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -102,7 +102,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#setLeft}
+     * 設定屬性{@link BorderPane#setLeft(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -116,7 +116,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#setRight}
+     * 設定屬性{@link BorderPane#setRight(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -130,7 +130,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#setTop}
+     * 設定屬性{@link BorderPane#setTop(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

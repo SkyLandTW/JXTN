@@ -138,7 +138,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#setContent}
+     * 設定屬性{@link NotificationPane#setContent(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -152,7 +152,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#setGraphic}
+     * 設定屬性{@link NotificationPane#setGraphic(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -166,7 +166,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#setOnHidden}
+     * 設定屬性{@link NotificationPane#setOnHidden(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -180,7 +180,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#setOnHiding}
+     * 設定屬性{@link NotificationPane#setOnHiding(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -194,7 +194,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#setOnShowing}
+     * 設定屬性{@link NotificationPane#setOnShowing(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -208,7 +208,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#setOnShown}
+     * 設定屬性{@link NotificationPane#setOnShown(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -222,7 +222,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#setShowFromTop}
+     * 設定屬性{@link NotificationPane#setShowFromTop(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -236,7 +236,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#setText}
+     * 設定屬性{@link NotificationPane#setText(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -84,7 +84,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#setAnimated}
+     * 設定屬性{@link MasterDetailPane#setAnimated(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -98,7 +98,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#setDetailNode}
+     * 設定屬性{@link MasterDetailPane#setDetailNode(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -112,7 +112,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#setDetailSide}
+     * 設定屬性{@link MasterDetailPane#setDetailSide(javafx.geometry.Side)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -126,7 +126,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#setDividerPosition}
+     * 設定屬性{@link MasterDetailPane#setDividerPosition(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -140,7 +140,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#setMasterNode}
+     * 設定屬性{@link MasterDetailPane#setMasterNode(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -154,7 +154,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#setShowDetailNode}
+     * 設定屬性{@link MasterDetailPane#setShowDetailNode(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

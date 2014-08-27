@@ -134,7 +134,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setAlwaysOnTop}
+     * 設定屬性{@link Stage#setAlwaysOnTop(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -148,7 +148,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setFullScreen}
+     * 設定屬性{@link Stage#setFullScreen(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -162,7 +162,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setFullScreenExitHint}
+     * 設定屬性{@link Stage#setFullScreenExitHint(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -176,7 +176,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setFullScreenExitKeyCombination}
+     * 設定屬性{@link Stage#setFullScreenExitKeyCombination(javafx.scene.input.KeyCombination)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -190,7 +190,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setIconified}
+     * 設定屬性{@link Stage#setIconified(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -233,7 +233,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setMaxHeight}
+     * 設定屬性{@link Stage#setMaxHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -247,7 +247,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setMaxWidth}
+     * 設定屬性{@link Stage#setMaxWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -261,7 +261,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setMaximized}
+     * 設定屬性{@link Stage#setMaximized(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -275,7 +275,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setMinHeight}
+     * 設定屬性{@link Stage#setMinHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -289,7 +289,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setMinWidth}
+     * 設定屬性{@link Stage#setMinWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -303,7 +303,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setResizable}
+     * 設定屬性{@link Stage#setResizable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -317,7 +317,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setScene}
+     * 設定屬性{@link Stage#setScene(javafx.scene.Scene)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -331,7 +331,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setTitle}
+     * 設定屬性{@link Stage#setTitle(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

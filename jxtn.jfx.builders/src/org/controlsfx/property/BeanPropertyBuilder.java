@@ -34,7 +34,7 @@ public class BeanPropertyBuilder<Z extends BeanProperty, B extends BeanPropertyB
     }
 
     /**
-     * 設定屬性{@link BeanProperty#setEditable}
+     * 設定屬性{@link BeanProperty#setEditable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -48,7 +48,7 @@ public class BeanPropertyBuilder<Z extends BeanProperty, B extends BeanPropertyB
     }
 
     /**
-     * 設定屬性{@link BeanProperty#setValue}
+     * 設定屬性{@link BeanProperty#setValue(java.lang.Object)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

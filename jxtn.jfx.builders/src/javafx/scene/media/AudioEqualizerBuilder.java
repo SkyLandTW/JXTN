@@ -63,7 +63,7 @@ public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqua
     }
 
     /**
-     * 設定屬性{@link AudioEqualizer#setEnabled}
+     * 設定屬性{@link AudioEqualizer#setEnabled(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

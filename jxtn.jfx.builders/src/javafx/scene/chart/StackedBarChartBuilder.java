@@ -29,7 +29,7 @@ public class StackedBarChartBuilder<X extends java.lang.Object, Y extends java.l
     }
 
     /**
-     * 設定屬性{@link StackedBarChart#setCategoryGap}
+     * 設定屬性{@link StackedBarChart#setCategoryGap(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

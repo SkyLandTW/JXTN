@@ -64,7 +64,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Blend#setBottomInput}
+     * 設定屬性{@link Blend#setBottomInput(javafx.scene.effect.Effect)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -78,7 +78,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Blend#setMode}
+     * 設定屬性{@link Blend#setMode(javafx.scene.effect.BlendMode)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -92,7 +92,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Blend#setOpacity}
+     * 設定屬性{@link Blend#setOpacity(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -106,7 +106,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Blend#setTopInput}
+     * 設定屬性{@link Blend#setTopInput(javafx.scene.effect.Effect)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -44,7 +44,7 @@ public class GaussianBlurBuilder<Z extends GaussianBlur, B extends GaussianBlurB
     }
 
     /**
-     * 設定屬性{@link GaussianBlur#setInput}
+     * 設定屬性{@link GaussianBlur#setInput(javafx.scene.effect.Effect)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class GaussianBlurBuilder<Z extends GaussianBlur, B extends GaussianBlurB
     }
 
     /**
-     * 設定屬性{@link GaussianBlur#setRadius}
+     * 設定屬性{@link GaussianBlur#setRadius(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

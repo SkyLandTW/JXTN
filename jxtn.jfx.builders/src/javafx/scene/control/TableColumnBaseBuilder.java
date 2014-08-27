@@ -174,7 +174,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setComparator}
+     * 設定屬性{@link TableColumnBase#setComparator(java.util.Comparator)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -188,7 +188,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setContextMenu}
+     * 設定屬性{@link TableColumnBase#setContextMenu(javafx.scene.control.ContextMenu)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -202,7 +202,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setEditable}
+     * 設定屬性{@link TableColumnBase#setEditable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -216,7 +216,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setGraphic}
+     * 設定屬性{@link TableColumnBase#setGraphic(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -230,7 +230,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setId}
+     * 設定屬性{@link TableColumnBase#setId(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -244,7 +244,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setMaxWidth}
+     * 設定屬性{@link TableColumnBase#setMaxWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -258,7 +258,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setMinWidth}
+     * 設定屬性{@link TableColumnBase#setMinWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -272,7 +272,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setPrefWidth}
+     * 設定屬性{@link TableColumnBase#setPrefWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -286,7 +286,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setResizable}
+     * 設定屬性{@link TableColumnBase#setResizable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -300,7 +300,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setSortNode}
+     * 設定屬性{@link TableColumnBase#setSortNode(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -314,7 +314,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setSortable}
+     * 設定屬性{@link TableColumnBase#setSortable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -328,7 +328,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setStyle}
+     * 設定屬性{@link TableColumnBase#setStyle(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -371,7 +371,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setText}
+     * 設定屬性{@link TableColumnBase#setText(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -385,7 +385,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setUserData}
+     * 設定屬性{@link TableColumnBase#setUserData(java.lang.Object)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -399,7 +399,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setVisible}
+     * 設定屬性{@link TableColumnBase#setVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

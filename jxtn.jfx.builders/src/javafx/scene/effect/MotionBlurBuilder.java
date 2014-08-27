@@ -54,7 +54,7 @@ public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder
     }
 
     /**
-     * 設定屬性{@link MotionBlur#setAngle}
+     * 設定屬性{@link MotionBlur#setAngle(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -68,7 +68,7 @@ public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder
     }
 
     /**
-     * 設定屬性{@link MotionBlur#setInput}
+     * 設定屬性{@link MotionBlur#setInput(javafx.scene.effect.Effect)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -82,7 +82,7 @@ public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder
     }
 
     /**
-     * 設定屬性{@link MotionBlur#setRadius}
+     * 設定屬性{@link MotionBlur#setRadius(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

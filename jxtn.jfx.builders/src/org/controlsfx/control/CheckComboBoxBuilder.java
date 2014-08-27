@@ -39,7 +39,7 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
     }
 
     /**
-     * 設定屬性{@link CheckComboBox#setCheckModel}
+     * 設定屬性{@link CheckComboBox#setCheckModel(javafx.scene.control.MultipleSelectionModel)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

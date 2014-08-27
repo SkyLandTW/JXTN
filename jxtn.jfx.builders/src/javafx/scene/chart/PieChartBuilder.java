@@ -74,7 +74,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#setClockwise}
+     * 設定屬性{@link PieChart#setClockwise(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -88,7 +88,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#setData}
+     * 設定屬性{@link PieChart#setData(javafx.collections.ObservableList)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -102,7 +102,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#setLabelLineLength}
+     * 設定屬性{@link PieChart#setLabelLineLength(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -116,7 +116,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#setLabelsVisible}
+     * 設定屬性{@link PieChart#setLabelsVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -130,7 +130,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#setStartAngle}
+     * 設定屬性{@link PieChart#setStartAngle(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

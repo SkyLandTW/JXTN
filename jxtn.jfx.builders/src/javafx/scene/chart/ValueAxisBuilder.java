@@ -84,7 +84,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#setLowerBound}
+     * 設定屬性{@link ValueAxis#setLowerBound(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -98,7 +98,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#setMinorTickCount}
+     * 設定屬性{@link ValueAxis#setMinorTickCount(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -112,7 +112,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#setMinorTickLength}
+     * 設定屬性{@link ValueAxis#setMinorTickLength(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -126,7 +126,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#setMinorTickVisible}
+     * 設定屬性{@link ValueAxis#setMinorTickVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -140,7 +140,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#setTickLabelFormatter}
+     * 設定屬性{@link ValueAxis#setTickLabelFormatter(javafx.util.StringConverter)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -154,7 +154,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#setUpperBound}
+     * 設定屬性{@link ValueAxis#setUpperBound(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

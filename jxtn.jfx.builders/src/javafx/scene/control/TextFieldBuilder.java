@@ -54,7 +54,7 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link TextField#setAlignment}
+     * 設定屬性{@link TextField#setAlignment(javafx.geometry.Pos)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -68,7 +68,7 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link TextField#setOnAction}
+     * 設定屬性{@link TextField#setOnAction(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -82,7 +82,7 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link TextField#setPrefColumnCount}
+     * 設定屬性{@link TextField#setPrefColumnCount(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

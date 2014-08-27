@@ -179,7 +179,7 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
 
     <#if property.@static == "false">
     /**
-     * 設定屬性{@link ${class.@name}#set${property.@name?cap_first}(${setter.@genericType})}
+     * 設定屬性{@link ${class.@name}#set${property.@name?cap_first}(${setter.@rawType})}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

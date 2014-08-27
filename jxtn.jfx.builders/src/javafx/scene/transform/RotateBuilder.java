@@ -74,7 +74,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#setAngle}
+     * 設定屬性{@link Rotate#setAngle(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -88,7 +88,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#setAxis}
+     * 設定屬性{@link Rotate#setAxis(javafx.geometry.Point3D)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -102,7 +102,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#setPivotX}
+     * 設定屬性{@link Rotate#setPivotX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -116,7 +116,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#setPivotY}
+     * 設定屬性{@link Rotate#setPivotY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -130,7 +130,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#setPivotZ}
+     * 設定屬性{@link Rotate#setPivotZ(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

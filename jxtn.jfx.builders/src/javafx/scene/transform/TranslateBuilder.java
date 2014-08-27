@@ -54,7 +54,7 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Translate#setX}
+     * 設定屬性{@link Translate#setX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -68,7 +68,7 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Translate#setY}
+     * 設定屬性{@link Translate#setY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -82,7 +82,7 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Translate#setZ}
+     * 設定屬性{@link Translate#setZ(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

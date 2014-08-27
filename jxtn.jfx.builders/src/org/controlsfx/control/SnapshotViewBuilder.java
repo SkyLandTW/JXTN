@@ -59,7 +59,7 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
     }
 
     /**
-     * 設定屬性{@link SnapshotView#setFixedSelectionRatio}
+     * 設定屬性{@link SnapshotView#setFixedSelectionRatio(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -73,7 +73,7 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
     }
 
     /**
-     * 設定屬性{@link SnapshotView#setNode}
+     * 設定屬性{@link SnapshotView#setNode(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -87,7 +87,7 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
     }
 
     /**
-     * 設定屬性{@link SnapshotView#setSelection}
+     * 設定屬性{@link SnapshotView#setSelection(javafx.geometry.Rectangle2D)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -101,7 +101,7 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
     }
 
     /**
-     * 設定屬性{@link SnapshotView#setSelectionActive}
+     * 設定屬性{@link SnapshotView#setSelectionActive(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -115,7 +115,7 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
     }
 
     /**
-     * 設定屬性{@link SnapshotView#setSelectionActivityExplicitlyManaged}
+     * 設定屬性{@link SnapshotView#setSelectionActivityExplicitlyManaged(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -129,7 +129,7 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
     }
 
     /**
-     * 設定屬性{@link SnapshotView#setSelectionRatioFixed}
+     * 設定屬性{@link SnapshotView#setSelectionRatioFixed(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

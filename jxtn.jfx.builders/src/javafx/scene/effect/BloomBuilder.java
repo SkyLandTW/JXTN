@@ -44,7 +44,7 @@ public class BloomBuilder<Z extends Bloom, B extends BloomBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Bloom#setInput}
+     * 設定屬性{@link Bloom#setInput(javafx.scene.effect.Effect)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class BloomBuilder<Z extends Bloom, B extends BloomBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Bloom#setThreshold}
+     * 設定屬性{@link Bloom#setThreshold(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

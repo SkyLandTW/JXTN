@@ -44,7 +44,7 @@ public class ToggleButtonBuilder<Z extends ToggleButton, B extends ToggleButtonB
     }
 
     /**
-     * 設定屬性{@link ToggleButton#setSelected}
+     * 設定屬性{@link ToggleButton#setSelected(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class ToggleButtonBuilder<Z extends ToggleButton, B extends ToggleButtonB
     }
 
     /**
-     * 設定屬性{@link ToggleButton#setToggleGroup}
+     * 設定屬性{@link ToggleButton#setToggleGroup(javafx.scene.control.ToggleGroup)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

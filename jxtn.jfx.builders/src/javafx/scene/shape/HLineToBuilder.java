@@ -34,7 +34,7 @@ public class HLineToBuilder<Z extends HLineTo, B extends HLineToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link HLineTo#setX}
+     * 設定屬性{@link HLineTo#setX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

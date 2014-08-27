@@ -104,7 +104,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#setControlX1}
+     * 設定屬性{@link CubicCurve#setControlX1(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -118,7 +118,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#setControlX2}
+     * 設定屬性{@link CubicCurve#setControlX2(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -132,7 +132,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#setControlY1}
+     * 設定屬性{@link CubicCurve#setControlY1(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -146,7 +146,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#setControlY2}
+     * 設定屬性{@link CubicCurve#setControlY2(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -160,7 +160,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#setEndX}
+     * 設定屬性{@link CubicCurve#setEndX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -174,7 +174,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#setEndY}
+     * 設定屬性{@link CubicCurve#setEndY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -188,7 +188,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#setStartX}
+     * 設定屬性{@link CubicCurve#setStartX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -202,7 +202,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#setStartY}
+     * 設定屬性{@link CubicCurve#setStartY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

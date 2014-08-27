@@ -64,7 +64,7 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     }
 
     /**
-     * 設定屬性{@link TextInputControl#setEditable}
+     * 設定屬性{@link TextInputControl#setEditable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -78,7 +78,7 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     }
 
     /**
-     * 設定屬性{@link TextInputControl#setFont}
+     * 設定屬性{@link TextInputControl#setFont(javafx.scene.text.Font)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -92,7 +92,7 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     }
 
     /**
-     * 設定屬性{@link TextInputControl#setPromptText}
+     * 設定屬性{@link TextInputControl#setPromptText(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -106,7 +106,7 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     }
 
     /**
-     * 設定屬性{@link TextInputControl#setText}
+     * 設定屬性{@link TextInputControl#setText(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -44,7 +44,7 @@ public class MoveToBuilder<Z extends MoveTo, B extends MoveToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link MoveTo#setX}
+     * 設定屬性{@link MoveTo#setX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class MoveToBuilder<Z extends MoveTo, B extends MoveToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link MoveTo#setY}
+     * 設定屬性{@link MoveTo#setY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

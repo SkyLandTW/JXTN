@@ -49,7 +49,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link SplitPane#setDividerPositions}
+     * 設定屬性{@link SplitPane#setDividerPositions(double[])}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -121,7 +121,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link SplitPane#setOrientation}
+     * 設定屬性{@link SplitPane#setOrientation(javafx.geometry.Orientation)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

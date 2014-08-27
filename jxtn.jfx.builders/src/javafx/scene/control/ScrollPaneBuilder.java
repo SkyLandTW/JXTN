@@ -174,7 +174,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setContent}
+     * 設定屬性{@link ScrollPane#setContent(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -188,7 +188,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setFitToHeight}
+     * 設定屬性{@link ScrollPane#setFitToHeight(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -202,7 +202,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setFitToWidth}
+     * 設定屬性{@link ScrollPane#setFitToWidth(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -216,7 +216,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setHbarPolicy}
+     * 設定屬性{@link ScrollPane#setHbarPolicy(javafx.scene.control.ScrollPane.ScrollBarPolicy)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -230,7 +230,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setHmax}
+     * 設定屬性{@link ScrollPane#setHmax(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -244,7 +244,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setHmin}
+     * 設定屬性{@link ScrollPane#setHmin(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -258,7 +258,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setHvalue}
+     * 設定屬性{@link ScrollPane#setHvalue(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -272,7 +272,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setPannable}
+     * 設定屬性{@link ScrollPane#setPannable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -286,7 +286,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setPrefViewportHeight}
+     * 設定屬性{@link ScrollPane#setPrefViewportHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -300,7 +300,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setPrefViewportWidth}
+     * 設定屬性{@link ScrollPane#setPrefViewportWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -314,7 +314,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setVbarPolicy}
+     * 設定屬性{@link ScrollPane#setVbarPolicy(javafx.scene.control.ScrollPane.ScrollBarPolicy)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -328,7 +328,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setViewportBounds}
+     * 設定屬性{@link ScrollPane#setViewportBounds(javafx.geometry.Bounds)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -342,7 +342,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setVmax}
+     * 設定屬性{@link ScrollPane#setVmax(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -356,7 +356,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setVmin}
+     * 設定屬性{@link ScrollPane#setVmin(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -370,7 +370,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setVvalue}
+     * 設定屬性{@link ScrollPane#setVvalue(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

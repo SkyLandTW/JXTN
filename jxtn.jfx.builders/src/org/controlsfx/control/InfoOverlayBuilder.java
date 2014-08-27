@@ -54,7 +54,7 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
     }
 
     /**
-     * 設定屬性{@link InfoOverlay#setContent}
+     * 設定屬性{@link InfoOverlay#setContent(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -68,7 +68,7 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
     }
 
     /**
-     * 設定屬性{@link InfoOverlay#setShowOnHover}
+     * 設定屬性{@link InfoOverlay#setShowOnHover(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -82,7 +82,7 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
     }
 
     /**
-     * 設定屬性{@link InfoOverlay#setText}
+     * 設定屬性{@link InfoOverlay#setText(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

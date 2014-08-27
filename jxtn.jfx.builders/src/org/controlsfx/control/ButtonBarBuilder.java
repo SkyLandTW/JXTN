@@ -59,7 +59,7 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ButtonBar#setButtonMinWidth}
+     * 設定屬性{@link ButtonBar#setButtonMinWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -73,7 +73,7 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ButtonBar#setButtonOrder}
+     * 設定屬性{@link ButtonBar#setButtonOrder(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -87,7 +87,7 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ButtonBar#setButtonUniformSize}
+     * 設定屬性{@link ButtonBar#setButtonUniformSize(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

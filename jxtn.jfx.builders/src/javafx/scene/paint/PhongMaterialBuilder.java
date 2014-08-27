@@ -94,7 +94,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#setBumpMap}
+     * 設定屬性{@link PhongMaterial#setBumpMap(javafx.scene.image.Image)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -108,7 +108,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#setDiffuseColor}
+     * 設定屬性{@link PhongMaterial#setDiffuseColor(javafx.scene.paint.Color)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -122,7 +122,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#setDiffuseMap}
+     * 設定屬性{@link PhongMaterial#setDiffuseMap(javafx.scene.image.Image)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#setSelfIlluminationMap}
+     * 設定屬性{@link PhongMaterial#setSelfIlluminationMap(javafx.scene.image.Image)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -150,7 +150,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#setSpecularColor}
+     * 設定屬性{@link PhongMaterial#setSpecularColor(javafx.scene.paint.Color)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -164,7 +164,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#setSpecularMap}
+     * 設定屬性{@link PhongMaterial#setSpecularMap(javafx.scene.image.Image)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -178,7 +178,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#setSpecularPower}
+     * 設定屬性{@link PhongMaterial#setSpecularPower(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

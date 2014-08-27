@@ -44,7 +44,7 @@ public class CylinderBuilder<Z extends Cylinder, B extends CylinderBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Cylinder#setHeight}
+     * 設定屬性{@link Cylinder#setHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class CylinderBuilder<Z extends Cylinder, B extends CylinderBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Cylinder#setRadius}
+     * 設定屬性{@link Cylinder#setRadius(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -44,7 +44,7 @@ public class TextFlowBuilder<Z extends TextFlow, B extends TextFlowBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextFlow#setLineSpacing}
+     * 設定屬性{@link TextFlow#setLineSpacing(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class TextFlowBuilder<Z extends TextFlow, B extends TextFlowBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextFlow#setTextAlignment}
+     * 設定屬性{@link TextFlow#setTextAlignment(javafx.scene.text.TextAlignment)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

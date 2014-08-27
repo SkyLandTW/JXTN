@@ -104,7 +104,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#setArrowIndent}
+     * 設定屬性{@link PopOver#setArrowIndent(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -118,7 +118,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#setArrowLocation}
+     * 設定屬性{@link PopOver#setArrowLocation(org.controlsfx.control.PopOver.ArrowLocation)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -132,7 +132,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#setArrowSize}
+     * 設定屬性{@link PopOver#setArrowSize(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -146,7 +146,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#setContentNode}
+     * 設定屬性{@link PopOver#setContentNode(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -160,7 +160,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#setCornerRadius}
+     * 設定屬性{@link PopOver#setCornerRadius(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -174,7 +174,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#setDetachable}
+     * 設定屬性{@link PopOver#setDetachable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -188,7 +188,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#setDetached}
+     * 設定屬性{@link PopOver#setDetached(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -202,7 +202,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#setDetachedTitle}
+     * 設定屬性{@link PopOver#setDetachedTitle(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -49,7 +49,7 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
     }
 
     /**
-     * 設定屬性{@link ContextMenu#setImpl_showRelativeToWindow}
+     * 設定屬性{@link ContextMenu#setImpl_showRelativeToWindow(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -92,7 +92,7 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
     }
 
     /**
-     * 設定屬性{@link ContextMenu#setOnAction}
+     * 設定屬性{@link ContextMenu#setOnAction(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

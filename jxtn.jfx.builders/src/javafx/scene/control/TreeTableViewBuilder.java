@@ -184,7 +184,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setColumnResizePolicy}
+     * 設定屬性{@link TreeTableView#setColumnResizePolicy(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -227,7 +227,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setEditable}
+     * 設定屬性{@link TreeTableView#setEditable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -241,7 +241,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setFixedCellSize}
+     * 設定屬性{@link TreeTableView#setFixedCellSize(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -255,7 +255,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setFocusModel}
+     * 設定屬性{@link TreeTableView#setFocusModel(javafx.scene.control.TreeTableView.TreeTableViewFocusModel)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -269,7 +269,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setOnScrollTo}
+     * 設定屬性{@link TreeTableView#setOnScrollTo(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -283,7 +283,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setOnScrollToColumn}
+     * 設定屬性{@link TreeTableView#setOnScrollToColumn(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -297,7 +297,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setOnSort}
+     * 設定屬性{@link TreeTableView#setOnSort(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -311,7 +311,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setPlaceholder}
+     * 設定屬性{@link TreeTableView#setPlaceholder(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -325,7 +325,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setRoot}
+     * 設定屬性{@link TreeTableView#setRoot(javafx.scene.control.TreeItem)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -339,7 +339,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setRowFactory}
+     * 設定屬性{@link TreeTableView#setRowFactory(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -353,7 +353,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setSelectionModel}
+     * 設定屬性{@link TreeTableView#setSelectionModel(javafx.scene.control.TreeTableView.TreeTableViewSelectionModel)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -367,7 +367,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setShowRoot}
+     * 設定屬性{@link TreeTableView#setShowRoot(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -381,7 +381,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setSortMode}
+     * 設定屬性{@link TreeTableView#setSortMode(javafx.scene.control.TreeSortMode)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -424,7 +424,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setSortPolicy}
+     * 設定屬性{@link TreeTableView#setSortPolicy(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -438,7 +438,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setTableMenuButtonVisible}
+     * 設定屬性{@link TreeTableView#setTableMenuButtonVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -452,7 +452,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setTreeColumn}
+     * 設定屬性{@link TreeTableView#setTreeColumn(javafx.scene.control.TreeTableColumn)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

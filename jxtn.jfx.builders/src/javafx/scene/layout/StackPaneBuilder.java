@@ -34,7 +34,7 @@ public class StackPaneBuilder<Z extends StackPane, B extends StackPaneBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link StackPane#setAlignment}
+     * 設定屬性{@link StackPane#setAlignment(javafx.geometry.Pos)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

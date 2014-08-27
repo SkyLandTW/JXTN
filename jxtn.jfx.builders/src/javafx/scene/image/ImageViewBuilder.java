@@ -104,7 +104,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#setFitHeight}
+     * 設定屬性{@link ImageView#setFitHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -118,7 +118,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#setFitWidth}
+     * 設定屬性{@link ImageView#setFitWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -132,7 +132,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#setImage}
+     * 設定屬性{@link ImageView#setImage(javafx.scene.image.Image)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -146,7 +146,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#setPreserveRatio}
+     * 設定屬性{@link ImageView#setPreserveRatio(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -160,7 +160,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#setSmooth}
+     * 設定屬性{@link ImageView#setSmooth(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -174,7 +174,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#setViewport}
+     * 設定屬性{@link ImageView#setViewport(javafx.geometry.Rectangle2D)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -188,7 +188,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#setX}
+     * 設定屬性{@link ImageView#setX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -202,7 +202,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#setY}
+     * 設定屬性{@link ImageView#setY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

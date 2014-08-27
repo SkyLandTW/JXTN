@@ -64,7 +64,7 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
     }
 
     /**
-     * 設定屬性{@link Pagination#setCurrentPageIndex}
+     * 設定屬性{@link Pagination#setCurrentPageIndex(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -78,7 +78,7 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
     }
 
     /**
-     * 設定屬性{@link Pagination#setMaxPageIndicatorCount}
+     * 設定屬性{@link Pagination#setMaxPageIndicatorCount(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -92,7 +92,7 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
     }
 
     /**
-     * 設定屬性{@link Pagination#setPageCount}
+     * 設定屬性{@link Pagination#setPageCount(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -106,7 +106,7 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
     }
 
     /**
-     * 設定屬性{@link Pagination#setPageFactory}
+     * 設定屬性{@link Pagination#setPageFactory(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

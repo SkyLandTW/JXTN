@@ -63,7 +63,7 @@ public class WebHistoryBuilder<Z extends WebHistory, B extends WebHistoryBuilder
     }
 
     /**
-     * 設定屬性{@link WebHistory#setMaxSize}
+     * 設定屬性{@link WebHistory#setMaxSize(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -74,7 +74,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridPane#setAlignment}
+     * 設定屬性{@link GridPane#setAlignment(javafx.geometry.Pos)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -117,7 +117,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridPane#setGridLinesVisible}
+     * 設定屬性{@link GridPane#setGridLinesVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -131,7 +131,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridPane#setHgap}
+     * 設定屬性{@link GridPane#setHgap(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -174,7 +174,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridPane#setVgap}
+     * 設定屬性{@link GridPane#setVgap(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

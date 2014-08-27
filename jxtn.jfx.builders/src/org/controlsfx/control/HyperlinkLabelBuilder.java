@@ -44,7 +44,7 @@ public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends Hyperlink
     }
 
     /**
-     * 設定屬性{@link HyperlinkLabel#setOnAction}
+     * 設定屬性{@link HyperlinkLabel#setOnAction(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends Hyperlink
     }
 
     /**
-     * 設定屬性{@link HyperlinkLabel#setText}
+     * 設定屬性{@link HyperlinkLabel#setText(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

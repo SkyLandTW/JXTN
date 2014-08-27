@@ -44,7 +44,7 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
     }
 
     /**
-     * 設定屬性{@link BarChart#setBarGap}
+     * 設定屬性{@link BarChart#setBarGap(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
     }
 
     /**
-     * 設定屬性{@link BarChart#setCategoryGap}
+     * 設定屬性{@link BarChart#setCategoryGap(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

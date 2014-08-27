@@ -29,7 +29,7 @@ public class ValidationSupportBuilder<Z extends ValidationSupport, B extends Val
     }
 
     /**
-     * 設定屬性{@link ValidationSupport#setValidationDecorator}
+     * 設定屬性{@link ValidationSupport#setValidationDecorator(org.controlsfx.validation.decoration.ValidationDecoration)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -39,7 +39,7 @@ public class DragboardBuilder<Z extends Dragboard, B extends DragboardBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Dragboard#setDragView}
+     * 設定屬性{@link Dragboard#setDragView(javafx.scene.image.Image)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -53,7 +53,7 @@ public class DragboardBuilder<Z extends Dragboard, B extends DragboardBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Dragboard#setDragViewOffsetX}
+     * 設定屬性{@link Dragboard#setDragViewOffsetX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -67,7 +67,7 @@ public class DragboardBuilder<Z extends Dragboard, B extends DragboardBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Dragboard#setDragViewOffsetY}
+     * 設定屬性{@link Dragboard#setDragViewOffsetY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

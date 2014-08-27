@@ -74,7 +74,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#setAnimated}
+     * 設定屬性{@link Chart#setAnimated(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -88,7 +88,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#setLegendSide}
+     * 設定屬性{@link Chart#setLegendSide(javafx.geometry.Side)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -102,7 +102,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#setLegendVisible}
+     * 設定屬性{@link Chart#setLegendVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -116,7 +116,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#setTitle}
+     * 設定屬性{@link Chart#setTitle(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -130,7 +130,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#setTitleSide}
+     * 設定屬性{@link Chart#setTitleSide(javafx.geometry.Side)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

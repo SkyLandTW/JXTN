@@ -88,7 +88,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeItem#setExpanded}
+     * 設定屬性{@link TreeItem#setExpanded(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -102,7 +102,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeItem#setGraphic}
+     * 設定屬性{@link TreeItem#setGraphic(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -116,7 +116,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeItem#setValue}
+     * 設定屬性{@link TreeItem#setValue(T)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

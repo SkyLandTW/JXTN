@@ -29,7 +29,7 @@ public class HTMLEditorBuilder<Z extends HTMLEditor, B extends HTMLEditorBuilder
     }
 
     /**
-     * 設定屬性{@link HTMLEditor#setHtmlText}
+     * 設定屬性{@link HTMLEditor#setHtmlText(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

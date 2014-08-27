@@ -34,7 +34,7 @@ public class CheckMenuItemBuilder<Z extends CheckMenuItem, B extends CheckMenuIt
     }
 
     /**
-     * 設定屬性{@link CheckMenuItem#setSelected}
+     * 設定屬性{@link CheckMenuItem#setSelected(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

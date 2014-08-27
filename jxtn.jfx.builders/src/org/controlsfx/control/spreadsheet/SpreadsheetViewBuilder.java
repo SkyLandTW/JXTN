@@ -104,7 +104,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#setColumnPickerCallback}
+     * 設定屬性{@link SpreadsheetView#setColumnPickerCallback(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -176,7 +176,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#setEditable}
+     * 設定屬性{@link SpreadsheetView#setEditable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -248,7 +248,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#setFixingColumnsAllowed}
+     * 設定屬性{@link SpreadsheetView#setFixingColumnsAllowed(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -262,7 +262,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#setFixingRowsAllowed}
+     * 設定屬性{@link SpreadsheetView#setFixingRowsAllowed(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -276,7 +276,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#setGrid}
+     * 設定屬性{@link SpreadsheetView#setGrid(org.controlsfx.control.spreadsheet.Grid)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -290,7 +290,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#setRowPickerCallback}
+     * 設定屬性{@link SpreadsheetView#setRowPickerCallback(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -333,7 +333,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#setShowColumnHeader}
+     * 設定屬性{@link SpreadsheetView#setShowColumnHeader(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -347,7 +347,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#setShowRowHeader}
+     * 設定屬性{@link SpreadsheetView#setShowRowHeader(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -74,7 +74,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#setBottomOpacity}
+     * 設定屬性{@link Reflection#setBottomOpacity(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -88,7 +88,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#setFraction}
+     * 設定屬性{@link Reflection#setFraction(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -102,7 +102,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#setInput}
+     * 設定屬性{@link Reflection#setInput(javafx.scene.effect.Effect)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -116,7 +116,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#setTopOffset}
+     * 設定屬性{@link Reflection#setTopOffset(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -130,7 +130,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#setTopOpacity}
+     * 設定屬性{@link Reflection#setTopOpacity(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

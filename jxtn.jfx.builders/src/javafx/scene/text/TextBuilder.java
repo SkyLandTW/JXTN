@@ -144,7 +144,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setBoundsType}
+     * 設定屬性{@link Text#setBoundsType(javafx.scene.text.TextBoundsType)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -158,7 +158,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setFont}
+     * 設定屬性{@link Text#setFont(javafx.scene.text.Font)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -172,7 +172,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setFontSmoothingType}
+     * 設定屬性{@link Text#setFontSmoothingType(javafx.scene.text.FontSmoothingType)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -186,7 +186,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setLineSpacing}
+     * 設定屬性{@link Text#setLineSpacing(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -200,7 +200,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setStrikethrough}
+     * 設定屬性{@link Text#setStrikethrough(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -214,7 +214,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setText}
+     * 設定屬性{@link Text#setText(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -228,7 +228,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setTextAlignment}
+     * 設定屬性{@link Text#setTextAlignment(javafx.scene.text.TextAlignment)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -242,7 +242,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setTextOrigin}
+     * 設定屬性{@link Text#setTextOrigin(javafx.geometry.VPos)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -256,7 +256,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setUnderline}
+     * 設定屬性{@link Text#setUnderline(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -270,7 +270,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setWrappingWidth}
+     * 設定屬性{@link Text#setWrappingWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -284,7 +284,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setX}
+     * 設定屬性{@link Text#setX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -298,7 +298,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setY}
+     * 設定屬性{@link Text#setY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

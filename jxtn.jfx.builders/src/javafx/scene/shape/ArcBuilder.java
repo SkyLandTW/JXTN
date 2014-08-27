@@ -94,7 +94,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#setCenterX}
+     * 設定屬性{@link Arc#setCenterX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -108,7 +108,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#setCenterY}
+     * 設定屬性{@link Arc#setCenterY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -122,7 +122,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#setLength}
+     * 設定屬性{@link Arc#setLength(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#setRadiusX}
+     * 設定屬性{@link Arc#setRadiusX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -150,7 +150,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#setRadiusY}
+     * 設定屬性{@link Arc#setRadiusY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -164,7 +164,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#setStartAngle}
+     * 設定屬性{@link Arc#setStartAngle(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -178,7 +178,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#setType}
+     * 設定屬性{@link Arc#setType(javafx.scene.shape.ArcType)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

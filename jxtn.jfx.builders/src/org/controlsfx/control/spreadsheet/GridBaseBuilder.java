@@ -78,7 +78,7 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridBase#setLocked}
+     * 設定屬性{@link GridBase#setLocked(java.lang.Boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -121,7 +121,7 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridBase#setRowHeightCallback}
+     * 設定屬性{@link GridBase#setRowHeightCallback(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -135,7 +135,7 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridBase#setRows}
+     * 設定屬性{@link GridBase#setRows(java.util.Collection)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

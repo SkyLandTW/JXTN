@@ -34,7 +34,7 @@ public class LineChartBuilder<X extends java.lang.Object, Y extends java.lang.Ob
     }
 
     /**
-     * 設定屬性{@link LineChart#setCreateSymbols}
+     * 設定屬性{@link LineChart#setCreateSymbols(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

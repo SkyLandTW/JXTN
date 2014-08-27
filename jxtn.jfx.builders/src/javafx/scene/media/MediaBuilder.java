@@ -34,7 +34,7 @@ public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Media#setOnError}
+     * 設定屬性{@link Media#setOnError(java.lang.Runnable)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

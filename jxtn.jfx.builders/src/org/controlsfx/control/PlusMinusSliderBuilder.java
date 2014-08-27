@@ -44,7 +44,7 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
     }
 
     /**
-     * 設定屬性{@link PlusMinusSlider#setOnValueChanged}
+     * 設定屬性{@link PlusMinusSlider#setOnValueChanged(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
     }
 
     /**
-     * 設定屬性{@link PlusMinusSlider#setOrientation}
+     * 設定屬性{@link PlusMinusSlider#setOrientation(javafx.geometry.Orientation)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

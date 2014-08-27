@@ -154,7 +154,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setBlockIncrement}
+     * 設定屬性{@link RangeSlider#setBlockIncrement(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -168,7 +168,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setHighValue}
+     * 設定屬性{@link RangeSlider#setHighValue(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -182,7 +182,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setHighValueChanging}
+     * 設定屬性{@link RangeSlider#setHighValueChanging(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -196,7 +196,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setLowValue}
+     * 設定屬性{@link RangeSlider#setLowValue(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -210,7 +210,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setLowValueChanging}
+     * 設定屬性{@link RangeSlider#setLowValueChanging(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -224,7 +224,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setMajorTickUnit}
+     * 設定屬性{@link RangeSlider#setMajorTickUnit(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -238,7 +238,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setMax}
+     * 設定屬性{@link RangeSlider#setMax(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -252,7 +252,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setMin}
+     * 設定屬性{@link RangeSlider#setMin(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -266,7 +266,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setMinorTickCount}
+     * 設定屬性{@link RangeSlider#setMinorTickCount(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -280,7 +280,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setOrientation}
+     * 設定屬性{@link RangeSlider#setOrientation(javafx.geometry.Orientation)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -294,7 +294,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setShowTickLabels}
+     * 設定屬性{@link RangeSlider#setShowTickLabels(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -308,7 +308,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setShowTickMarks}
+     * 設定屬性{@link RangeSlider#setShowTickMarks(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -322,7 +322,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setSnapToTicks}
+     * 設定屬性{@link RangeSlider#setSnapToTicks(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

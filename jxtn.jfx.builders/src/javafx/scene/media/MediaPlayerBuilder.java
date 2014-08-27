@@ -134,7 +134,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setAudioSpectrumInterval}
+     * 設定屬性{@link MediaPlayer#setAudioSpectrumInterval(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -148,7 +148,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setAudioSpectrumListener}
+     * 設定屬性{@link MediaPlayer#setAudioSpectrumListener(javafx.scene.media.AudioSpectrumListener)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -162,7 +162,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setAudioSpectrumNumBands}
+     * 設定屬性{@link MediaPlayer#setAudioSpectrumNumBands(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -176,7 +176,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setAudioSpectrumThreshold}
+     * 設定屬性{@link MediaPlayer#setAudioSpectrumThreshold(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -190,7 +190,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setAutoPlay}
+     * 設定屬性{@link MediaPlayer#setAutoPlay(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -204,7 +204,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setBalance}
+     * 設定屬性{@link MediaPlayer#setBalance(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -218,7 +218,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setCycleCount}
+     * 設定屬性{@link MediaPlayer#setCycleCount(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -232,7 +232,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setMute}
+     * 設定屬性{@link MediaPlayer#setMute(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -246,7 +246,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setOnEndOfMedia}
+     * 設定屬性{@link MediaPlayer#setOnEndOfMedia(java.lang.Runnable)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -260,7 +260,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setOnError}
+     * 設定屬性{@link MediaPlayer#setOnError(java.lang.Runnable)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -274,7 +274,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setOnHalted}
+     * 設定屬性{@link MediaPlayer#setOnHalted(java.lang.Runnable)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -288,7 +288,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setOnMarker}
+     * 設定屬性{@link MediaPlayer#setOnMarker(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -302,7 +302,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setOnPaused}
+     * 設定屬性{@link MediaPlayer#setOnPaused(java.lang.Runnable)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -316,7 +316,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setOnPlaying}
+     * 設定屬性{@link MediaPlayer#setOnPlaying(java.lang.Runnable)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -330,7 +330,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setOnReady}
+     * 設定屬性{@link MediaPlayer#setOnReady(java.lang.Runnable)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -344,7 +344,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setOnRepeat}
+     * 設定屬性{@link MediaPlayer#setOnRepeat(java.lang.Runnable)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -358,7 +358,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setOnStalled}
+     * 設定屬性{@link MediaPlayer#setOnStalled(java.lang.Runnable)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -372,7 +372,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setOnStopped}
+     * 設定屬性{@link MediaPlayer#setOnStopped(java.lang.Runnable)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -386,7 +386,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setRate}
+     * 設定屬性{@link MediaPlayer#setRate(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -400,7 +400,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setStartTime}
+     * 設定屬性{@link MediaPlayer#setStartTime(javafx.util.Duration)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -414,7 +414,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setStopTime}
+     * 設定屬性{@link MediaPlayer#setStopTime(javafx.util.Duration)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -428,7 +428,7 @@ public class MediaPlayerBuilder<Z extends MediaPlayer, B extends MediaPlayerBuil
     }
 
     /**
-     * 設定屬性{@link MediaPlayer#setVolume}
+     * 設定屬性{@link MediaPlayer#setVolume(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -64,7 +64,7 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link BoxBlur#setHeight}
+     * 設定屬性{@link BoxBlur#setHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -78,7 +78,7 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link BoxBlur#setInput}
+     * 設定屬性{@link BoxBlur#setInput(javafx.scene.effect.Effect)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -92,7 +92,7 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link BoxBlur#setIterations}
+     * 設定屬性{@link BoxBlur#setIterations(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -106,7 +106,7 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link BoxBlur#setWidth}
+     * 設定屬性{@link BoxBlur#setWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

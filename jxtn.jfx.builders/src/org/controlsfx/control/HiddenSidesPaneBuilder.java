@@ -94,7 +94,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#setBottom}
+     * 設定屬性{@link HiddenSidesPane#setBottom(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -108,7 +108,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#setContent}
+     * 設定屬性{@link HiddenSidesPane#setContent(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -122,7 +122,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#setLeft}
+     * 設定屬性{@link HiddenSidesPane#setLeft(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#setPinnedSide}
+     * 設定屬性{@link HiddenSidesPane#setPinnedSide(javafx.geometry.Side)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -150,7 +150,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#setRight}
+     * 設定屬性{@link HiddenSidesPane#setRight(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -164,7 +164,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#setTop}
+     * 設定屬性{@link HiddenSidesPane#setTop(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -178,7 +178,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#setTriggerDistance}
+     * 設定屬性{@link HiddenSidesPane#setTriggerDistance(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

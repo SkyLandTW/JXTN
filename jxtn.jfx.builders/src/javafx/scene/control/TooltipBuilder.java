@@ -104,7 +104,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#setContentDisplay}
+     * 設定屬性{@link Tooltip#setContentDisplay(javafx.scene.control.ContentDisplay)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -118,7 +118,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#setFont}
+     * 設定屬性{@link Tooltip#setFont(javafx.scene.text.Font)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -132,7 +132,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#setGraphic}
+     * 設定屬性{@link Tooltip#setGraphic(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -146,7 +146,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#setGraphicTextGap}
+     * 設定屬性{@link Tooltip#setGraphicTextGap(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -160,7 +160,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#setText}
+     * 設定屬性{@link Tooltip#setText(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -174,7 +174,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#setTextAlignment}
+     * 設定屬性{@link Tooltip#setTextAlignment(javafx.scene.text.TextAlignment)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -188,7 +188,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#setTextOverrun}
+     * 設定屬性{@link Tooltip#setTextOverrun(javafx.scene.control.OverrunStyle)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -202,7 +202,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#setWrapText}
+     * 設定屬性{@link Tooltip#setWrapText(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

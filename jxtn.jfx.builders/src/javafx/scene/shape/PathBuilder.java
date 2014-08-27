@@ -68,7 +68,7 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Path#setFillRule}
+     * 設定屬性{@link Path#setFillRule(javafx.scene.shape.FillRule)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -94,7 +94,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#setBumpInput}
+     * 設定屬性{@link Lighting#setBumpInput(javafx.scene.effect.Effect)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -108,7 +108,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#setContentInput}
+     * 設定屬性{@link Lighting#setContentInput(javafx.scene.effect.Effect)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -122,7 +122,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#setDiffuseConstant}
+     * 設定屬性{@link Lighting#setDiffuseConstant(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#setLight}
+     * 設定屬性{@link Lighting#setLight(javafx.scene.effect.Light)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -150,7 +150,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#setSpecularConstant}
+     * 設定屬性{@link Lighting#setSpecularConstant(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -164,7 +164,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#setSpecularExponent}
+     * 設定屬性{@link Lighting#setSpecularExponent(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -178,7 +178,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#setSurfaceScale}
+     * 設定屬性{@link Lighting#setSurfaceScale(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

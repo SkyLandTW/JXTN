@@ -34,7 +34,7 @@ public class TextFieldTreeCellBuilder<T extends java.lang.Object, Z extends Text
     }
 
     /**
-     * 設定屬性{@link TextFieldTreeCell#setConverter}
+     * 設定屬性{@link TextFieldTreeCell#setConverter(javafx.util.StringConverter)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

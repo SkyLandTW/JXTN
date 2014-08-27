@@ -94,7 +94,7 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
     }
 
     /**
-     * 設定屬性{@link ColumnConstraints#setFillWidth}
+     * 設定屬性{@link ColumnConstraints#setFillWidth(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -108,7 +108,7 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
     }
 
     /**
-     * 設定屬性{@link ColumnConstraints#setHalignment}
+     * 設定屬性{@link ColumnConstraints#setHalignment(javafx.geometry.HPos)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -122,7 +122,7 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
     }
 
     /**
-     * 設定屬性{@link ColumnConstraints#setHgrow}
+     * 設定屬性{@link ColumnConstraints#setHgrow(javafx.scene.layout.Priority)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
     }
 
     /**
-     * 設定屬性{@link ColumnConstraints#setMaxWidth}
+     * 設定屬性{@link ColumnConstraints#setMaxWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -150,7 +150,7 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
     }
 
     /**
-     * 設定屬性{@link ColumnConstraints#setMinWidth}
+     * 設定屬性{@link ColumnConstraints#setMinWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -164,7 +164,7 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
     }
 
     /**
-     * 設定屬性{@link ColumnConstraints#setPercentWidth}
+     * 設定屬性{@link ColumnConstraints#setPercentWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -178,7 +178,7 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
     }
 
     /**
-     * 設定屬性{@link ColumnConstraints#setPrefWidth}
+     * 設定屬性{@link ColumnConstraints#setPrefWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

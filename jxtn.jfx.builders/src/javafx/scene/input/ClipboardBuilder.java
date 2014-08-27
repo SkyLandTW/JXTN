@@ -29,7 +29,7 @@ public class ClipboardBuilder<Z extends Clipboard, B extends ClipboardBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Clipboard#setContent}
+     * 設定屬性{@link Clipboard#setContent(java.util.Map)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

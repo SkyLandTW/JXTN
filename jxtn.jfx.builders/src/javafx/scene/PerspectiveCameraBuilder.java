@@ -44,7 +44,7 @@ public class PerspectiveCameraBuilder<Z extends PerspectiveCamera, B extends Per
     }
 
     /**
-     * 設定屬性{@link PerspectiveCamera#setFieldOfView}
+     * 設定屬性{@link PerspectiveCamera#setFieldOfView(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class PerspectiveCameraBuilder<Z extends PerspectiveCamera, B extends Per
     }
 
     /**
-     * 設定屬性{@link PerspectiveCamera#setVerticalFieldOfView}
+     * 設定屬性{@link PerspectiveCamera#setVerticalFieldOfView(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

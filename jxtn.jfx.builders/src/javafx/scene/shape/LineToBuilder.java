@@ -44,7 +44,7 @@ public class LineToBuilder<Z extends LineTo, B extends LineToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link LineTo#setX}
+     * 設定屬性{@link LineTo#setX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class LineToBuilder<Z extends LineTo, B extends LineToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link LineTo#setY}
+     * 設定屬性{@link LineTo#setY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

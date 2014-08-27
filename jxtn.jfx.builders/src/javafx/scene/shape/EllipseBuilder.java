@@ -64,7 +64,7 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Ellipse#setCenterX}
+     * 設定屬性{@link Ellipse#setCenterX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -78,7 +78,7 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Ellipse#setCenterY}
+     * 設定屬性{@link Ellipse#setCenterY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -92,7 +92,7 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Ellipse#setRadiusX}
+     * 設定屬性{@link Ellipse#setRadiusX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -106,7 +106,7 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Ellipse#setRadiusY}
+     * 設定屬性{@link Ellipse#setRadiusY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

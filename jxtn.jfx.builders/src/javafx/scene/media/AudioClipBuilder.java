@@ -54,7 +54,7 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link AudioClip#setBalance}
+     * 設定屬性{@link AudioClip#setBalance(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -68,7 +68,7 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link AudioClip#setCycleCount}
+     * 設定屬性{@link AudioClip#setCycleCount(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -82,7 +82,7 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link AudioClip#setPan}
+     * 設定屬性{@link AudioClip#setPan(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -96,7 +96,7 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link AudioClip#setPriority}
+     * 設定屬性{@link AudioClip#setPriority(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -110,7 +110,7 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link AudioClip#setRate}
+     * 設定屬性{@link AudioClip#setRate(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -124,7 +124,7 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link AudioClip#setVolume}
+     * 設定屬性{@link AudioClip#setVolume(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

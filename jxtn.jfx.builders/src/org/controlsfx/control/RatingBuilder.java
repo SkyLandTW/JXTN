@@ -74,7 +74,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#setMax}
+     * 設定屬性{@link Rating#setMax(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -88,7 +88,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#setOrientation}
+     * 設定屬性{@link Rating#setOrientation(javafx.geometry.Orientation)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -102,7 +102,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#setPartialRating}
+     * 設定屬性{@link Rating#setPartialRating(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -116,7 +116,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#setRating}
+     * 設定屬性{@link Rating#setRating(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -130,7 +130,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#setUpdateOnHover}
+     * 設定屬性{@link Rating#setUpdateOnHover(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

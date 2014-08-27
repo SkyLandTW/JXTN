@@ -54,7 +54,7 @@ public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link VBox#setAlignment}
+     * 設定屬性{@link VBox#setAlignment(javafx.geometry.Pos)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -68,7 +68,7 @@ public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link VBox#setFillWidth}
+     * 設定屬性{@link VBox#setFillWidth(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -82,7 +82,7 @@ public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link VBox#setSpacing}
+     * 設定屬性{@link VBox#setSpacing(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -114,7 +114,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#setAlignment}
+     * 設定屬性{@link TilePane#setAlignment(javafx.geometry.Pos)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -128,7 +128,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#setHgap}
+     * 設定屬性{@link TilePane#setHgap(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -142,7 +142,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#setOrientation}
+     * 設定屬性{@link TilePane#setOrientation(javafx.geometry.Orientation)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -156,7 +156,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#setPrefColumns}
+     * 設定屬性{@link TilePane#setPrefColumns(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -170,7 +170,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#setPrefRows}
+     * 設定屬性{@link TilePane#setPrefRows(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -184,7 +184,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#setPrefTileHeight}
+     * 設定屬性{@link TilePane#setPrefTileHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -198,7 +198,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#setPrefTileWidth}
+     * 設定屬性{@link TilePane#setPrefTileWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -212,7 +212,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#setTileAlignment}
+     * 設定屬性{@link TilePane#setTileAlignment(javafx.geometry.Pos)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -226,7 +226,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#setVgap}
+     * 設定屬性{@link TilePane#setVgap(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

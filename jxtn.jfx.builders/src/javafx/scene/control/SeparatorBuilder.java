@@ -54,7 +54,7 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Separator#setHalignment}
+     * 設定屬性{@link Separator#setHalignment(javafx.geometry.HPos)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -68,7 +68,7 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Separator#setOrientation}
+     * 設定屬性{@link Separator#setOrientation(javafx.geometry.Orientation)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -82,7 +82,7 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Separator#setValignment}
+     * 設定屬性{@link Separator#setValignment(javafx.geometry.VPos)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

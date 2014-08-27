@@ -94,7 +94,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#setLargeArcFlag}
+     * 設定屬性{@link ArcTo#setLargeArcFlag(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -108,7 +108,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#setRadiusX}
+     * 設定屬性{@link ArcTo#setRadiusX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -122,7 +122,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#setRadiusY}
+     * 設定屬性{@link ArcTo#setRadiusY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#setSweepFlag}
+     * 設定屬性{@link ArcTo#setSweepFlag(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -150,7 +150,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#setX}
+     * 設定屬性{@link ArcTo#setX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -164,7 +164,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#setXAxisRotation}
+     * 設定屬性{@link ArcTo#setXAxisRotation(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -178,7 +178,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#setY}
+     * 設定屬性{@link ArcTo#setY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

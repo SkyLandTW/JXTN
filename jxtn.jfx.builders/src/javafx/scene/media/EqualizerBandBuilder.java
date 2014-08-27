@@ -39,7 +39,7 @@ public class EqualizerBandBuilder<Z extends EqualizerBand, B extends EqualizerBa
     }
 
     /**
-     * 設定屬性{@link EqualizerBand#setBandwidth}
+     * 設定屬性{@link EqualizerBand#setBandwidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -53,7 +53,7 @@ public class EqualizerBandBuilder<Z extends EqualizerBand, B extends EqualizerBa
     }
 
     /**
-     * 設定屬性{@link EqualizerBand#setCenterFrequency}
+     * 設定屬性{@link EqualizerBand#setCenterFrequency(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -67,7 +67,7 @@ public class EqualizerBandBuilder<Z extends EqualizerBand, B extends EqualizerBa
     }
 
     /**
-     * 設定屬性{@link EqualizerBand#setGain}
+     * 設定屬性{@link EqualizerBand#setGain(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

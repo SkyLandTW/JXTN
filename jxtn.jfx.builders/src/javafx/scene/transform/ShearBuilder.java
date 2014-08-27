@@ -64,7 +64,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shear#setPivotX}
+     * 設定屬性{@link Shear#setPivotX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -78,7 +78,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shear#setPivotY}
+     * 設定屬性{@link Shear#setPivotY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -92,7 +92,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shear#setX}
+     * 設定屬性{@link Shear#setX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -106,7 +106,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shear#setY}
+     * 設定屬性{@link Shear#setY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

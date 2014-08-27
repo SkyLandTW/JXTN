@@ -44,7 +44,7 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
     }
 
     /**
-     * 設定屬性{@link CustomTextField#setLeft}
+     * 設定屬性{@link CustomTextField#setLeft(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
     }
 
     /**
-     * 設定屬性{@link CustomTextField#setRight}
+     * 設定屬性{@link CustomTextField#setRight(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

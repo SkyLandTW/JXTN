@@ -54,7 +54,7 @@ public class BoxBuilder<Z extends Box, B extends BoxBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Box#setDepth}
+     * 設定屬性{@link Box#setDepth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -68,7 +68,7 @@ public class BoxBuilder<Z extends Box, B extends BoxBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Box#setHeight}
+     * 設定屬性{@link Box#setHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -82,7 +82,7 @@ public class BoxBuilder<Z extends Box, B extends BoxBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Box#setWidth}
+     * 設定屬性{@link Box#setWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

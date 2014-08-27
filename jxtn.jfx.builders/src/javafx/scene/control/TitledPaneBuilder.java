@@ -64,7 +64,7 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     }
 
     /**
-     * 設定屬性{@link TitledPane#setAnimated}
+     * 設定屬性{@link TitledPane#setAnimated(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -78,7 +78,7 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     }
 
     /**
-     * 設定屬性{@link TitledPane#setCollapsible}
+     * 設定屬性{@link TitledPane#setCollapsible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -92,7 +92,7 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     }
 
     /**
-     * 設定屬性{@link TitledPane#setContent}
+     * 設定屬性{@link TitledPane#setContent(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -106,7 +106,7 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     }
 
     /**
-     * 設定屬性{@link TitledPane#setExpanded}
+     * 設定屬性{@link TitledPane#setExpanded(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -119,7 +119,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#setFill}
+     * 設定屬性{@link Shape#setFill(javafx.scene.paint.Paint)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -133,7 +133,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#setSmooth}
+     * 設定屬性{@link Shape#setSmooth(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -147,7 +147,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#setStroke}
+     * 設定屬性{@link Shape#setStroke(javafx.scene.paint.Paint)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -190,7 +190,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#setStrokeDashOffset}
+     * 設定屬性{@link Shape#setStrokeDashOffset(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -204,7 +204,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#setStrokeLineCap}
+     * 設定屬性{@link Shape#setStrokeLineCap(javafx.scene.shape.StrokeLineCap)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -218,7 +218,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#setStrokeLineJoin}
+     * 設定屬性{@link Shape#setStrokeLineJoin(javafx.scene.shape.StrokeLineJoin)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -232,7 +232,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#setStrokeMiterLimit}
+     * 設定屬性{@link Shape#setStrokeMiterLimit(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -246,7 +246,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#setStrokeType}
+     * 設定屬性{@link Shape#setStrokeType(javafx.scene.shape.StrokeType)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -260,7 +260,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#setStrokeWidth}
+     * 設定屬性{@link Shape#setStrokeWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

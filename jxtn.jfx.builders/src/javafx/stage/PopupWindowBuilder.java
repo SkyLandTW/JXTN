@@ -94,7 +94,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#setAnchorLocation}
+     * 設定屬性{@link PopupWindow#setAnchorLocation(javafx.stage.PopupWindow.AnchorLocation)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -108,7 +108,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#setAnchorX}
+     * 設定屬性{@link PopupWindow#setAnchorX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -122,7 +122,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#setAnchorY}
+     * 設定屬性{@link PopupWindow#setAnchorY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#setAutoFix}
+     * 設定屬性{@link PopupWindow#setAutoFix(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -150,7 +150,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#setAutoHide}
+     * 設定屬性{@link PopupWindow#setAutoHide(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -164,7 +164,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#setConsumeAutoHidingEvents}
+     * 設定屬性{@link PopupWindow#setConsumeAutoHidingEvents(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -178,7 +178,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#setHideOnEscape}
+     * 設定屬性{@link PopupWindow#setHideOnEscape(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -192,7 +192,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#setOnAutoHide}
+     * 設定屬性{@link PopupWindow#setOnAutoHide(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

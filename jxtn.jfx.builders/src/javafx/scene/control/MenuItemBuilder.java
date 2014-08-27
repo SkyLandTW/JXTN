@@ -134,7 +134,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setAccelerator}
+     * 設定屬性{@link MenuItem#setAccelerator(javafx.scene.input.KeyCombination)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -148,7 +148,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setDisable}
+     * 設定屬性{@link MenuItem#setDisable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -162,7 +162,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setGraphic}
+     * 設定屬性{@link MenuItem#setGraphic(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -176,7 +176,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setId}
+     * 設定屬性{@link MenuItem#setId(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -190,7 +190,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setMnemonicParsing}
+     * 設定屬性{@link MenuItem#setMnemonicParsing(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -204,7 +204,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setOnAction}
+     * 設定屬性{@link MenuItem#setOnAction(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -218,7 +218,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setOnMenuValidation}
+     * 設定屬性{@link MenuItem#setOnMenuValidation(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -232,7 +232,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setStyle}
+     * 設定屬性{@link MenuItem#setStyle(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -275,7 +275,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setText}
+     * 設定屬性{@link MenuItem#setText(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -289,7 +289,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setUserData}
+     * 設定屬性{@link MenuItem#setUserData(java.lang.Object)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -303,7 +303,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setVisible}
+     * 設定屬性{@link MenuItem#setVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

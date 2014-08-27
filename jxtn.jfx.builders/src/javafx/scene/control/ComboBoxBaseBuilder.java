@@ -94,7 +94,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#setEditable}
+     * 設定屬性{@link ComboBoxBase#setEditable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -108,7 +108,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#setOnAction}
+     * 設定屬性{@link ComboBoxBase#setOnAction(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -122,7 +122,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#setOnHidden}
+     * 設定屬性{@link ComboBoxBase#setOnHidden(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#setOnHiding}
+     * 設定屬性{@link ComboBoxBase#setOnHiding(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -150,7 +150,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#setOnShowing}
+     * 設定屬性{@link ComboBoxBase#setOnShowing(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -164,7 +164,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#setOnShown}
+     * 設定屬性{@link ComboBoxBase#setOnShown(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -178,7 +178,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#setPromptText}
+     * 設定屬性{@link ComboBoxBase#setPromptText(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -192,7 +192,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#setValue}
+     * 設定屬性{@link ComboBoxBase#setValue(T)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

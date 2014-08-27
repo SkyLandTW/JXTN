@@ -84,7 +84,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#setColumnSpan}
+     * 設定屬性{@link SpreadsheetCellBase#setColumnSpan(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -98,7 +98,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#setCommented}
+     * 設定屬性{@link SpreadsheetCellBase#setCommented(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -112,7 +112,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#setEditable}
+     * 設定屬性{@link SpreadsheetCellBase#setEditable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -126,7 +126,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#setFormat}
+     * 設定屬性{@link SpreadsheetCellBase#setFormat(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -140,7 +140,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#setGraphic}
+     * 設定屬性{@link SpreadsheetCellBase#setGraphic(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -154,7 +154,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#setItem}
+     * 設定屬性{@link SpreadsheetCellBase#setItem(java.lang.Object)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -168,7 +168,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#setRowSpan}
+     * 設定屬性{@link SpreadsheetCellBase#setRowSpan(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -182,7 +182,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#setTooltip}
+     * 設定屬性{@link SpreadsheetCellBase#setTooltip(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

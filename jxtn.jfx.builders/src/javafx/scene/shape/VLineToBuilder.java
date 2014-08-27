@@ -34,7 +34,7 @@ public class VLineToBuilder<Z extends VLineTo, B extends VLineToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link VLineTo#setY}
+     * 設定屬性{@link VLineTo#setY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

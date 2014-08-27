@@ -44,7 +44,7 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Button#setCancelButton}
+     * 設定屬性{@link Button#setCancelButton(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Button#setDefaultButton}
+     * 設定屬性{@link Button#setDefaultButton(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

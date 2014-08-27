@@ -54,7 +54,7 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link CheckBox#setAllowIndeterminate}
+     * 設定屬性{@link CheckBox#setAllowIndeterminate(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -68,7 +68,7 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link CheckBox#setIndeterminate}
+     * 設定屬性{@link CheckBox#setIndeterminate(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -82,7 +82,7 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link CheckBox#setSelected}
+     * 設定屬性{@link CheckBox#setSelected(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -94,7 +94,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#setInput}
+     * 設定屬性{@link DisplacementMap#setInput(javafx.scene.effect.Effect)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -108,7 +108,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#setMapData}
+     * 設定屬性{@link DisplacementMap#setMapData(javafx.scene.effect.FloatMap)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -122,7 +122,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#setOffsetX}
+     * 設定屬性{@link DisplacementMap#setOffsetX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#setOffsetY}
+     * 設定屬性{@link DisplacementMap#setOffsetY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -150,7 +150,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#setScaleX}
+     * 設定屬性{@link DisplacementMap#setScaleX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -164,7 +164,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#setScaleY}
+     * 設定屬性{@link DisplacementMap#setScaleY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -178,7 +178,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#setWrap}
+     * 設定屬性{@link DisplacementMap#setWrap(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

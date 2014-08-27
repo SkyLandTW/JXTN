@@ -34,7 +34,7 @@ public class CheckTreeViewBuilder<T extends java.lang.Object, Z extends CheckTre
     }
 
     /**
-     * 設定屬性{@link CheckTreeView#setCheckModel}
+     * 設定屬性{@link CheckTreeView#setCheckModel(javafx.scene.control.MultipleSelectionModel)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

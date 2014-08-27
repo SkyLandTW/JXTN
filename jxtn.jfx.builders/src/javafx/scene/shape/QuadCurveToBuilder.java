@@ -64,7 +64,7 @@ public class QuadCurveToBuilder<Z extends QuadCurveTo, B extends QuadCurveToBuil
     }
 
     /**
-     * 設定屬性{@link QuadCurveTo#setControlX}
+     * 設定屬性{@link QuadCurveTo#setControlX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -78,7 +78,7 @@ public class QuadCurveToBuilder<Z extends QuadCurveTo, B extends QuadCurveToBuil
     }
 
     /**
-     * 設定屬性{@link QuadCurveTo#setControlY}
+     * 設定屬性{@link QuadCurveTo#setControlY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -92,7 +92,7 @@ public class QuadCurveToBuilder<Z extends QuadCurveTo, B extends QuadCurveToBuil
     }
 
     /**
-     * 設定屬性{@link QuadCurveTo#setX}
+     * 設定屬性{@link QuadCurveTo#setX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -106,7 +106,7 @@ public class QuadCurveToBuilder<Z extends QuadCurveTo, B extends QuadCurveToBuil
     }
 
     /**
-     * 設定屬性{@link QuadCurveTo#setY}
+     * 設定屬性{@link QuadCurveTo#setY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

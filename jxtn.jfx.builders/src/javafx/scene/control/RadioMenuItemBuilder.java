@@ -44,7 +44,7 @@ public class RadioMenuItemBuilder<Z extends RadioMenuItem, B extends RadioMenuIt
     }
 
     /**
-     * 設定屬性{@link RadioMenuItem#setSelected}
+     * 設定屬性{@link RadioMenuItem#setSelected(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class RadioMenuItemBuilder<Z extends RadioMenuItem, B extends RadioMenuIt
     }
 
     /**
-     * 設定屬性{@link RadioMenuItem#setToggleGroup}
+     * 設定屬性{@link RadioMenuItem#setToggleGroup(javafx.scene.control.ToggleGroup)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

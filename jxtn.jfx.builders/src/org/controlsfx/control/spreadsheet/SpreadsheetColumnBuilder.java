@@ -39,7 +39,7 @@ public class SpreadsheetColumnBuilder<Z extends SpreadsheetColumn, B extends Spr
     }
 
     /**
-     * 設定屬性{@link SpreadsheetColumn#setFixed}
+     * 設定屬性{@link SpreadsheetColumn#setFixed(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -53,7 +53,7 @@ public class SpreadsheetColumnBuilder<Z extends SpreadsheetColumn, B extends Spr
     }
 
     /**
-     * 設定屬性{@link SpreadsheetColumn#setPrefWidth}
+     * 設定屬性{@link SpreadsheetColumn#setPrefWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -67,7 +67,7 @@ public class SpreadsheetColumnBuilder<Z extends SpreadsheetColumn, B extends Spr
     }
 
     /**
-     * 設定屬性{@link SpreadsheetColumn#setResizable}
+     * 設定屬性{@link SpreadsheetColumn#setResizable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

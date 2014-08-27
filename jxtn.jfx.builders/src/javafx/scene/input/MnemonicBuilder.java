@@ -34,7 +34,7 @@ public class MnemonicBuilder<Z extends Mnemonic, B extends MnemonicBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Mnemonic#setKeyCombination}
+     * 設定屬性{@link Mnemonic#setKeyCombination(javafx.scene.input.KeyCombination)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -48,7 +48,7 @@ public class MnemonicBuilder<Z extends Mnemonic, B extends MnemonicBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Mnemonic#setNode}
+     * 設定屬性{@link Mnemonic#setNode(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

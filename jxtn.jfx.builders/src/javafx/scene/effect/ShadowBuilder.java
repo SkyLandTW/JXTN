@@ -84,7 +84,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#setBlurType}
+     * 設定屬性{@link Shadow#setBlurType(javafx.scene.effect.BlurType)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -98,7 +98,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#setColor}
+     * 設定屬性{@link Shadow#setColor(javafx.scene.paint.Color)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -112,7 +112,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#setHeight}
+     * 設定屬性{@link Shadow#setHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -126,7 +126,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#setInput}
+     * 設定屬性{@link Shadow#setInput(javafx.scene.effect.Effect)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -140,7 +140,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#setRadius}
+     * 設定屬性{@link Shadow#setRadius(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -154,7 +154,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#setWidth}
+     * 設定屬性{@link Shadow#setWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

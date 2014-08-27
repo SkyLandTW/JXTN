@@ -129,7 +129,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setCellFactory}
+     * 設定屬性{@link TreeView#setCellFactory(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -143,7 +143,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setEditable}
+     * 設定屬性{@link TreeView#setEditable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -157,7 +157,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setFixedCellSize}
+     * 設定屬性{@link TreeView#setFixedCellSize(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -171,7 +171,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setFocusModel}
+     * 設定屬性{@link TreeView#setFocusModel(javafx.scene.control.FocusModel)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -185,7 +185,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setOnEditCancel}
+     * 設定屬性{@link TreeView#setOnEditCancel(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -199,7 +199,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setOnEditCommit}
+     * 設定屬性{@link TreeView#setOnEditCommit(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -213,7 +213,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setOnEditStart}
+     * 設定屬性{@link TreeView#setOnEditStart(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -227,7 +227,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setOnScrollTo}
+     * 設定屬性{@link TreeView#setOnScrollTo(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -241,7 +241,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setRoot}
+     * 設定屬性{@link TreeView#setRoot(javafx.scene.control.TreeItem)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -255,7 +255,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setSelectionModel}
+     * 設定屬性{@link TreeView#setSelectionModel(javafx.scene.control.MultipleSelectionModel)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -269,7 +269,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setShowRoot}
+     * 設定屬性{@link TreeView#setShowRoot(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

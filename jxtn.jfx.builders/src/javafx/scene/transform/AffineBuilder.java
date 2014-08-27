@@ -149,7 +149,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setMxx}
+     * 設定屬性{@link Affine#setMxx(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -163,7 +163,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setMxy}
+     * 設定屬性{@link Affine#setMxy(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -177,7 +177,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setMxz}
+     * 設定屬性{@link Affine#setMxz(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -191,7 +191,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setMyx}
+     * 設定屬性{@link Affine#setMyx(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -205,7 +205,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setMyy}
+     * 設定屬性{@link Affine#setMyy(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -219,7 +219,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setMyz}
+     * 設定屬性{@link Affine#setMyz(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -233,7 +233,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setMzx}
+     * 設定屬性{@link Affine#setMzx(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -247,7 +247,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setMzy}
+     * 設定屬性{@link Affine#setMzy(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -261,7 +261,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setMzz}
+     * 設定屬性{@link Affine#setMzz(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -275,7 +275,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setToTransform}
+     * 設定屬性{@link Affine#setToTransform(javafx.scene.transform.Transform)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -289,7 +289,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setTx}
+     * 設定屬性{@link Affine#setTx(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -303,7 +303,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setTy}
+     * 設定屬性{@link Affine#setTy(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -317,7 +317,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setTz}
+     * 設定屬性{@link Affine#setTz(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

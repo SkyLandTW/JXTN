@@ -44,7 +44,7 @@ public class CameraBuilder<Z extends Camera, B extends CameraBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Camera#setFarClip}
+     * 設定屬性{@link Camera#setFarClip(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class CameraBuilder<Z extends Camera, B extends CameraBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Camera#setNearClip}
+     * 設定屬性{@link Camera#setNearClip(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -108,7 +108,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#setPrefColumnCount}
+     * 設定屬性{@link TextArea#setPrefColumnCount(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -122,7 +122,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#setPrefRowCount}
+     * 設定屬性{@link TextArea#setPrefRowCount(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#setScrollLeft}
+     * 設定屬性{@link TextArea#setScrollLeft(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -150,7 +150,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#setScrollTop}
+     * 設定屬性{@link TextArea#setScrollTop(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -164,7 +164,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#setWrapText}
+     * 設定屬性{@link TextArea#setWrapText(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

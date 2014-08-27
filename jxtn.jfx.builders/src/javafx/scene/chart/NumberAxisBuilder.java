@@ -44,7 +44,7 @@ public class NumberAxisBuilder<Z extends NumberAxis, B extends NumberAxisBuilder
     }
 
     /**
-     * 設定屬性{@link NumberAxis#setForceZeroInRange}
+     * 設定屬性{@link NumberAxis#setForceZeroInRange(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class NumberAxisBuilder<Z extends NumberAxis, B extends NumberAxisBuilder
     }
 
     /**
-     * 設定屬性{@link NumberAxis#setTickUnit}
+     * 設定屬性{@link NumberAxis#setTickUnit(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

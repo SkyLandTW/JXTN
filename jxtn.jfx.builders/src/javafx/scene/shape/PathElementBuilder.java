@@ -34,7 +34,7 @@ public class PathElementBuilder<Z extends PathElement, B extends PathElementBuil
     }
 
     /**
-     * 設定屬性{@link PathElement#setAbsolute}
+     * 設定屬性{@link PathElement#setAbsolute(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

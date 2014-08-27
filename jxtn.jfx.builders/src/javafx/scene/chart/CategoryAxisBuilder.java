@@ -59,7 +59,7 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
     }
 
     /**
-     * 設定屬性{@link CategoryAxis#setCategories}
+     * 設定屬性{@link CategoryAxis#setCategories(javafx.collections.ObservableList)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -73,7 +73,7 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
     }
 
     /**
-     * 設定屬性{@link CategoryAxis#setEndMargin}
+     * 設定屬性{@link CategoryAxis#setEndMargin(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -87,7 +87,7 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
     }
 
     /**
-     * 設定屬性{@link CategoryAxis#setGapStartAndEnd}
+     * 設定屬性{@link CategoryAxis#setGapStartAndEnd(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -101,7 +101,7 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
     }
 
     /**
-     * 設定屬性{@link CategoryAxis#setStartMargin}
+     * 設定屬性{@link CategoryAxis#setStartMargin(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

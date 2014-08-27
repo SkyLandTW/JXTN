@@ -54,7 +54,7 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Control#setContextMenu}
+     * 設定屬性{@link Control#setContextMenu(javafx.scene.control.ContextMenu)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -68,7 +68,7 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Control#setSkin}
+     * 設定屬性{@link Control#setSkin(javafx.scene.control.Skin)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -82,7 +82,7 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Control#setTooltip}
+     * 設定屬性{@link Control#setTooltip(javafx.scene.control.Tooltip)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

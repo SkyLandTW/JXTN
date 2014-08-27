@@ -44,7 +44,7 @@ public class CustomPasswordFieldBuilder<Z extends CustomPasswordField, B extends
     }
 
     /**
-     * 設定屬性{@link CustomPasswordField#setLeft}
+     * 設定屬性{@link CustomPasswordField#setLeft(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class CustomPasswordFieldBuilder<Z extends CustomPasswordField, B extends
     }
 
     /**
-     * 設定屬性{@link CustomPasswordField#setRight}
+     * 設定屬性{@link CustomPasswordField#setRight(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

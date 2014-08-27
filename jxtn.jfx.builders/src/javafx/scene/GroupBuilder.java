@@ -39,7 +39,7 @@ public class GroupBuilder<Z extends Group, B extends GroupBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Group#setAutoSizeChildren}
+     * 設定屬性{@link Group#setAutoSizeChildren(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

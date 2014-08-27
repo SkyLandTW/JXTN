@@ -84,7 +84,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#setPivotX}
+     * 設定屬性{@link Scale#setPivotX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -98,7 +98,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#setPivotY}
+     * 設定屬性{@link Scale#setPivotY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -112,7 +112,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#setPivotZ}
+     * 設定屬性{@link Scale#setPivotZ(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -126,7 +126,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#setX}
+     * 設定屬性{@link Scale#setX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -140,7 +140,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#setY}
+     * 設定屬性{@link Scale#setY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -154,7 +154,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#setZ}
+     * 設定屬性{@link Scale#setZ(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

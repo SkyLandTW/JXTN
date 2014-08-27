@@ -44,7 +44,7 @@ public class SepiaToneBuilder<Z extends SepiaTone, B extends SepiaToneBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link SepiaTone#setInput}
+     * 設定屬性{@link SepiaTone#setInput(javafx.scene.effect.Effect)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class SepiaToneBuilder<Z extends SepiaTone, B extends SepiaToneBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link SepiaTone#setLevel}
+     * 設定屬性{@link SepiaTone#setLevel(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

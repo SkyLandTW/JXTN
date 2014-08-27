@@ -154,7 +154,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setClosable}
+     * 設定屬性{@link Tab#setClosable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -168,7 +168,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setContent}
+     * 設定屬性{@link Tab#setContent(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -182,7 +182,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setContextMenu}
+     * 設定屬性{@link Tab#setContextMenu(javafx.scene.control.ContextMenu)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -196,7 +196,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setDisable}
+     * 設定屬性{@link Tab#setDisable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -210,7 +210,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setGraphic}
+     * 設定屬性{@link Tab#setGraphic(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -224,7 +224,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setId}
+     * 設定屬性{@link Tab#setId(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -238,7 +238,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setOnCloseRequest}
+     * 設定屬性{@link Tab#setOnCloseRequest(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -252,7 +252,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setOnClosed}
+     * 設定屬性{@link Tab#setOnClosed(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -266,7 +266,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setOnSelectionChanged}
+     * 設定屬性{@link Tab#setOnSelectionChanged(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -280,7 +280,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setStyle}
+     * 設定屬性{@link Tab#setStyle(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -323,7 +323,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setText}
+     * 設定屬性{@link Tab#setText(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -337,7 +337,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setTooltip}
+     * 設定屬性{@link Tab#setTooltip(javafx.scene.control.Tooltip)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -351,7 +351,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setUserData}
+     * 設定屬性{@link Tab#setUserData(java.lang.Object)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

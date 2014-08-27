@@ -84,7 +84,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#setControlX1}
+     * 設定屬性{@link CubicCurveTo#setControlX1(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -98,7 +98,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#setControlX2}
+     * 設定屬性{@link CubicCurveTo#setControlX2(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -112,7 +112,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#setControlY1}
+     * 設定屬性{@link CubicCurveTo#setControlY1(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -126,7 +126,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#setControlY2}
+     * 設定屬性{@link CubicCurveTo#setControlY2(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -140,7 +140,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#setX}
+     * 設定屬性{@link CubicCurveTo#setX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -154,7 +154,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#setY}
+     * 設定屬性{@link CubicCurveTo#setY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

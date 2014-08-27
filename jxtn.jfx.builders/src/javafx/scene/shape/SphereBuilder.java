@@ -34,7 +34,7 @@ public class SphereBuilder<Z extends Sphere, B extends SphereBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Sphere#setRadius}
+     * 設定屬性{@link Sphere#setRadius(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

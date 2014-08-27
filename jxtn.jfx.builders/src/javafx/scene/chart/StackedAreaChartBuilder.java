@@ -34,7 +34,7 @@ public class StackedAreaChartBuilder<X extends java.lang.Object, Y extends java.
     }
 
     /**
-     * 設定屬性{@link StackedAreaChart#setCreateSymbols}
+     * 設定屬性{@link StackedAreaChart#setCreateSymbols(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

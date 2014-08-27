@@ -64,7 +64,7 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     }
 
     /**
-     * 設定屬性{@link DatePicker#setChronology}
+     * 設定屬性{@link DatePicker#setChronology(java.time.chrono.Chronology)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -78,7 +78,7 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     }
 
     /**
-     * 設定屬性{@link DatePicker#setConverter}
+     * 設定屬性{@link DatePicker#setConverter(javafx.util.StringConverter)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -92,7 +92,7 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     }
 
     /**
-     * 設定屬性{@link DatePicker#setDayCellFactory}
+     * 設定屬性{@link DatePicker#setDayCellFactory(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -106,7 +106,7 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     }
 
     /**
-     * 設定屬性{@link DatePicker#setShowWeekNumbers}
+     * 設定屬性{@link DatePicker#setShowWeekNumbers(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

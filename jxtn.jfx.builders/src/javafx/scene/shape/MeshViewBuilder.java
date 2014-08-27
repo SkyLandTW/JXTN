@@ -34,7 +34,7 @@ public class MeshViewBuilder<Z extends MeshView, B extends MeshViewBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MeshView#setMesh}
+     * 設定屬性{@link MeshView#setMesh(javafx.scene.shape.Mesh)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

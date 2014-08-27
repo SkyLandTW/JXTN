@@ -94,7 +94,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#setAlternativeColumnFillVisible}
+     * 設定屬性{@link XYChart#setAlternativeColumnFillVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -108,7 +108,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#setAlternativeRowFillVisible}
+     * 設定屬性{@link XYChart#setAlternativeRowFillVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -122,7 +122,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#setData}
+     * 設定屬性{@link XYChart#setData(javafx.collections.ObservableList)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#setHorizontalGridLinesVisible}
+     * 設定屬性{@link XYChart#setHorizontalGridLinesVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -150,7 +150,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#setHorizontalZeroLineVisible}
+     * 設定屬性{@link XYChart#setHorizontalZeroLineVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -164,7 +164,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#setVerticalGridLinesVisible}
+     * 設定屬性{@link XYChart#setVerticalGridLinesVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -178,7 +178,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#setVerticalZeroLineVisible}
+     * 設定屬性{@link XYChart#setVerticalZeroLineVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

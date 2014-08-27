@@ -49,7 +49,7 @@ public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends S
     }
 
     /**
-     * 設定屬性{@link SnapshotParameters#setCamera}
+     * 設定屬性{@link SnapshotParameters#setCamera(javafx.scene.Camera)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -63,7 +63,7 @@ public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends S
     }
 
     /**
-     * 設定屬性{@link SnapshotParameters#setDepthBuffer}
+     * 設定屬性{@link SnapshotParameters#setDepthBuffer(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -77,7 +77,7 @@ public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends S
     }
 
     /**
-     * 設定屬性{@link SnapshotParameters#setFill}
+     * 設定屬性{@link SnapshotParameters#setFill(javafx.scene.paint.Paint)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -91,7 +91,7 @@ public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends S
     }
 
     /**
-     * 設定屬性{@link SnapshotParameters#setTransform}
+     * 設定屬性{@link SnapshotParameters#setTransform(javafx.scene.transform.Transform)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -105,7 +105,7 @@ public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends S
     }
 
     /**
-     * 設定屬性{@link SnapshotParameters#setViewport}
+     * 設定屬性{@link SnapshotParameters#setViewport(javafx.geometry.Rectangle2D)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -29,7 +29,7 @@ public class LabelBuilder<Z extends Label, B extends LabelBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Label#setLabelFor}
+     * 設定屬性{@link Label#setLabelFor(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

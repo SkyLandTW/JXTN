@@ -114,7 +114,7 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
     }
 
     /**
-     * 設定屬性{@link DropShadow#setBlurType}
+     * 設定屬性{@link DropShadow#setBlurType(javafx.scene.effect.BlurType)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -128,7 +128,7 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
     }
 
     /**
-     * 設定屬性{@link DropShadow#setColor}
+     * 設定屬性{@link DropShadow#setColor(javafx.scene.paint.Color)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -142,7 +142,7 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
     }
 
     /**
-     * 設定屬性{@link DropShadow#setHeight}
+     * 設定屬性{@link DropShadow#setHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -156,7 +156,7 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
     }
 
     /**
-     * 設定屬性{@link DropShadow#setInput}
+     * 設定屬性{@link DropShadow#setInput(javafx.scene.effect.Effect)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -170,7 +170,7 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
     }
 
     /**
-     * 設定屬性{@link DropShadow#setOffsetX}
+     * 設定屬性{@link DropShadow#setOffsetX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -184,7 +184,7 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
     }
 
     /**
-     * 設定屬性{@link DropShadow#setOffsetY}
+     * 設定屬性{@link DropShadow#setOffsetY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -198,7 +198,7 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
     }
 
     /**
-     * 設定屬性{@link DropShadow#setRadius}
+     * 設定屬性{@link DropShadow#setRadius(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -212,7 +212,7 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
     }
 
     /**
-     * 設定屬性{@link DropShadow#setSpread}
+     * 設定屬性{@link DropShadow#setSpread(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -226,7 +226,7 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
     }
 
     /**
-     * 設定屬性{@link DropShadow#setWidth}
+     * 設定屬性{@link DropShadow#setWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

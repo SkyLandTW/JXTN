@@ -64,7 +64,7 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Line#setEndX}
+     * 設定屬性{@link Line#setEndX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -78,7 +78,7 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Line#setEndY}
+     * 設定屬性{@link Line#setEndY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -92,7 +92,7 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Line#setStartX}
+     * 設定屬性{@link Line#setStartX(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -106,7 +106,7 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Line#setStartY}
+     * 設定屬性{@link Line#setStartY(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

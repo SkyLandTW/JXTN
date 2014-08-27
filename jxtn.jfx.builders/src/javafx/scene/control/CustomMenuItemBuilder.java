@@ -44,7 +44,7 @@ public class CustomMenuItemBuilder<Z extends CustomMenuItem, B extends CustomMen
     }
 
     /**
-     * 設定屬性{@link CustomMenuItem#setContent}
+     * 設定屬性{@link CustomMenuItem#setContent(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class CustomMenuItemBuilder<Z extends CustomMenuItem, B extends CustomMen
     }
 
     /**
-     * 設定屬性{@link CustomMenuItem#setHideOnClick}
+     * 設定屬性{@link CustomMenuItem#setHideOnClick(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

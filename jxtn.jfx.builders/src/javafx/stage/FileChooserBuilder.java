@@ -98,7 +98,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 設定屬性{@link FileChooser#setInitialDirectory}
+     * 設定屬性{@link FileChooser#setInitialDirectory(java.io.File)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -112,7 +112,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 設定屬性{@link FileChooser#setInitialFileName}
+     * 設定屬性{@link FileChooser#setInitialFileName(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -126,7 +126,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 設定屬性{@link FileChooser#setSelectedExtensionFilter}
+     * 設定屬性{@link FileChooser#setSelectedExtensionFilter(javafx.stage.FileChooser.ExtensionFilter)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -140,7 +140,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 設定屬性{@link FileChooser#setTitle}
+     * 設定屬性{@link FileChooser#setTitle(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

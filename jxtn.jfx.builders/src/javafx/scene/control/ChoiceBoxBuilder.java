@@ -54,7 +54,7 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
     }
 
     /**
-     * 設定屬性{@link ChoiceBox#setConverter}
+     * 設定屬性{@link ChoiceBox#setConverter(javafx.util.StringConverter)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -68,7 +68,7 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
     }
 
     /**
-     * 設定屬性{@link ChoiceBox#setItems}
+     * 設定屬性{@link ChoiceBox#setItems(javafx.collections.ObservableList)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -82,7 +82,7 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
     }
 
     /**
-     * 設定屬性{@link ChoiceBox#setSelectionModel}
+     * 設定屬性{@link ChoiceBox#setSelectionModel(javafx.scene.control.SingleSelectionModel)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -96,7 +96,7 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
     }
 
     /**
-     * 設定屬性{@link ChoiceBox#setValue}
+     * 設定屬性{@link ChoiceBox#setValue(T)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -74,7 +74,7 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
     }
 
     /**
-     * 設定屬性{@link ComboBox#setButtonCell}
+     * 設定屬性{@link ComboBox#setButtonCell(javafx.scene.control.ListCell)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -88,7 +88,7 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
     }
 
     /**
-     * 設定屬性{@link ComboBox#setCellFactory}
+     * 設定屬性{@link ComboBox#setCellFactory(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -102,7 +102,7 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
     }
 
     /**
-     * 設定屬性{@link ComboBox#setConverter}
+     * 設定屬性{@link ComboBox#setConverter(javafx.util.StringConverter)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -116,7 +116,7 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
     }
 
     /**
-     * 設定屬性{@link ComboBox#setItems}
+     * 設定屬性{@link ComboBox#setItems(javafx.collections.ObservableList)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -130,7 +130,7 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
     }
 
     /**
-     * 設定屬性{@link ComboBox#setPlaceholder}
+     * 設定屬性{@link ComboBox#setPlaceholder(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -144,7 +144,7 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
     }
 
     /**
-     * 設定屬性{@link ComboBox#setSelectionModel}
+     * 設定屬性{@link ComboBox#setSelectionModel(javafx.scene.control.SingleSelectionModel)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -158,7 +158,7 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
     }
 
     /**
-     * 設定屬性{@link ComboBox#setVisibleRowCount}
+     * 設定屬性{@link ComboBox#setVisibleRowCount(int)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

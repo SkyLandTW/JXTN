@@ -139,7 +139,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setAnimated}
+     * 設定屬性{@link Axis#setAnimated(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setAutoRanging}
+     * 設定屬性{@link Axis#setAutoRanging(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setLabel}
+     * 設定屬性{@link Axis#setLabel(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setSide}
+     * 設定屬性{@link Axis#setSide(javafx.geometry.Side)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setTickLabelFill}
+     * 設定屬性{@link Axis#setTickLabelFill(javafx.scene.paint.Paint)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setTickLabelFont}
+     * 設定屬性{@link Axis#setTickLabelFont(javafx.scene.text.Font)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setTickLabelGap}
+     * 設定屬性{@link Axis#setTickLabelGap(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -237,7 +237,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setTickLabelRotation}
+     * 設定屬性{@link Axis#setTickLabelRotation(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -251,7 +251,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setTickLabelsVisible}
+     * 設定屬性{@link Axis#setTickLabelsVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -265,7 +265,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setTickLength}
+     * 設定屬性{@link Axis#setTickLength(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -279,7 +279,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setTickMarkVisible}
+     * 設定屬性{@link Axis#setTickMarkVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -49,7 +49,7 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link LightBase#setColor}
+     * 設定屬性{@link LightBase#setColor(javafx.scene.paint.Color)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -63,7 +63,7 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link LightBase#setLightOn}
+     * 設定屬性{@link LightBase#setLightOn(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

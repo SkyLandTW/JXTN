@@ -84,7 +84,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#setCellFactory}
+     * 設定屬性{@link GridView#setCellFactory(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -98,7 +98,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#setCellHeight}
+     * 設定屬性{@link GridView#setCellHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -112,7 +112,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#setCellWidth}
+     * 設定屬性{@link GridView#setCellWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -126,7 +126,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#setHorizontalCellSpacing}
+     * 設定屬性{@link GridView#setHorizontalCellSpacing(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -140,7 +140,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#setItems}
+     * 設定屬性{@link GridView#setItems(javafx.collections.ObservableList)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -154,7 +154,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#setVerticalCellSpacing}
+     * 設定屬性{@link GridView#setVerticalCellSpacing(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

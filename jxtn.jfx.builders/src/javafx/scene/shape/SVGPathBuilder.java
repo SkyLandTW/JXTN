@@ -44,7 +44,7 @@ public class SVGPathBuilder<Z extends SVGPath, B extends SVGPathBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link SVGPath#setContent}
+     * 設定屬性{@link SVGPath#setContent(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class SVGPathBuilder<Z extends SVGPath, B extends SVGPathBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link SVGPath#setFillRule}
+     * 設定屬性{@link SVGPath#setFillRule(javafx.scene.shape.FillRule)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

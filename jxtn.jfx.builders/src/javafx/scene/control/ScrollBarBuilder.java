@@ -94,7 +94,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#setBlockIncrement}
+     * 設定屬性{@link ScrollBar#setBlockIncrement(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -108,7 +108,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#setMax}
+     * 設定屬性{@link ScrollBar#setMax(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -122,7 +122,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#setMin}
+     * 設定屬性{@link ScrollBar#setMin(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#setOrientation}
+     * 設定屬性{@link ScrollBar#setOrientation(javafx.geometry.Orientation)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -150,7 +150,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#setUnitIncrement}
+     * 設定屬性{@link ScrollBar#setUnitIncrement(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -164,7 +164,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#setValue}
+     * 設定屬性{@link ScrollBar#setValue(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -178,7 +178,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#setVisibleAmount}
+     * 設定屬性{@link ScrollBar#setVisibleAmount(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

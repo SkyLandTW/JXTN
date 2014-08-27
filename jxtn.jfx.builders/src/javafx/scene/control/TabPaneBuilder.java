@@ -109,7 +109,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#setRotateGraphic}
+     * 設定屬性{@link TabPane#setRotateGraphic(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -123,7 +123,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#setSelectionModel}
+     * 設定屬性{@link TabPane#setSelectionModel(javafx.scene.control.SingleSelectionModel)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -137,7 +137,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#setSide}
+     * 設定屬性{@link TabPane#setSide(javafx.geometry.Side)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -151,7 +151,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#setTabClosingPolicy}
+     * 設定屬性{@link TabPane#setTabClosingPolicy(javafx.scene.control.TabPane.TabClosingPolicy)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -165,7 +165,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#setTabMaxHeight}
+     * 設定屬性{@link TabPane#setTabMaxHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -179,7 +179,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#setTabMaxWidth}
+     * 設定屬性{@link TabPane#setTabMaxWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -193,7 +193,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#setTabMinHeight}
+     * 設定屬性{@link TabPane#setTabMinHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -207,7 +207,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#setTabMinWidth}
+     * 設定屬性{@link TabPane#setTabMinWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

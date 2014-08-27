@@ -49,7 +49,7 @@ public class AbstractActionBuilder<Z extends AbstractAction, B extends AbstractA
     }
 
     /**
-     * 設定屬性{@link AbstractAction#setAccelerator}
+     * 設定屬性{@link AbstractAction#setAccelerator(javafx.scene.input.KeyCombination)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -63,7 +63,7 @@ public class AbstractActionBuilder<Z extends AbstractAction, B extends AbstractA
     }
 
     /**
-     * 設定屬性{@link AbstractAction#setDisabled}
+     * 設定屬性{@link AbstractAction#setDisabled(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -77,7 +77,7 @@ public class AbstractActionBuilder<Z extends AbstractAction, B extends AbstractA
     }
 
     /**
-     * 設定屬性{@link AbstractAction#setGraphic}
+     * 設定屬性{@link AbstractAction#setGraphic(javafx.scene.Node)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -91,7 +91,7 @@ public class AbstractActionBuilder<Z extends AbstractAction, B extends AbstractA
     }
 
     /**
-     * 設定屬性{@link AbstractAction#setLongText}
+     * 設定屬性{@link AbstractAction#setLongText(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -105,7 +105,7 @@ public class AbstractActionBuilder<Z extends AbstractAction, B extends AbstractA
     }
 
     /**
-     * 設定屬性{@link AbstractAction#setText}
+     * 設定屬性{@link AbstractAction#setText(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -44,7 +44,7 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Cell#setEditable}
+     * 設定屬性{@link Cell#setEditable(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -58,7 +58,7 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Cell#setItem}
+     * 設定屬性{@link Cell#setItem(T)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

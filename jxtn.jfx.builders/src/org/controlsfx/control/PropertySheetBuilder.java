@@ -98,7 +98,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 設定屬性{@link PropertySheet#setMode}
+     * 設定屬性{@link PropertySheet#setMode(org.controlsfx.control.PropertySheet.Mode)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -112,7 +112,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 設定屬性{@link PropertySheet#setModeSwitcherVisible}
+     * 設定屬性{@link PropertySheet#setModeSwitcherVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -126,7 +126,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 設定屬性{@link PropertySheet#setPropertyEditorFactory}
+     * 設定屬性{@link PropertySheet#setPropertyEditorFactory(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -140,7 +140,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 設定屬性{@link PropertySheet#setSearchBoxVisible}
+     * 設定屬性{@link PropertySheet#setSearchBoxVisible(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -154,7 +154,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 設定屬性{@link PropertySheet#setTitleFilter}
+     * 設定屬性{@link PropertySheet#setTitleFilter(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

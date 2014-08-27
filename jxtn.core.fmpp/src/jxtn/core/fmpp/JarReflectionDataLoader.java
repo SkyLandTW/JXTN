@@ -354,8 +354,19 @@ public class JarReflectionDataLoader extends XmlDataLoader
         {
             Element elemSetter = this.describeMethod(doc, setter);
             elemSetter.setAttribute("index", setterIndex == 0 ? "" : Integer.toString(setterIndex));
-            elemSetter.setAttribute("genericType", this.fixGenericTypeName(
-                    setter.getGenericParameterTypes()[0].getTypeName()));
+            String gType = this.fixGenericTypeName(setter.getGenericParameterTypes()[0].getTypeName());
+            elemSetter.setAttribute("genericType", gType);
+            int ltIndex = gType.indexOf("<");
+            if (ltIndex >= 0)
+            {
+                elemSetter.setAttribute("genericParam", gType.substring(ltIndex + 1, gType.length() - 1));
+                elemSetter.setAttribute("rawType", gType.substring(0, ltIndex));
+            }
+            else
+            {
+                elemSetter.setAttribute("genericParam", "");
+                elemSetter.setAttribute("rawType", gType);
+            }
             elem.appendChild(doc.renameNode(elemSetter, null, "setter"));
             if (this.checkMethodOverride(setter))
                 elem.setAttribute("override", "true");

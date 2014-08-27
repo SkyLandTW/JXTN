@@ -74,7 +74,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#setBrightness}
+     * 設定屬性{@link ColorAdjust#setBrightness(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -88,7 +88,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#setContrast}
+     * 設定屬性{@link ColorAdjust#setContrast(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -102,7 +102,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#setHue}
+     * 設定屬性{@link ColorAdjust#setHue(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -116,7 +116,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#setInput}
+     * 設定屬性{@link ColorAdjust#setInput(javafx.scene.effect.Effect)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -130,7 +130,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#setSaturation}
+     * 設定屬性{@link ColorAdjust#setSaturation(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

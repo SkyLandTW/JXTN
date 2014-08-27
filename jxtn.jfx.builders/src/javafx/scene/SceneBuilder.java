@@ -489,7 +489,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setCamera}
+     * 設定屬性{@link Scene#setCamera(javafx.scene.Camera)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -503,7 +503,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setCursor}
+     * 設定屬性{@link Scene#setCursor(javafx.scene.Cursor)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -517,7 +517,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setEventDispatcher}
+     * 設定屬性{@link Scene#setEventDispatcher(javafx.event.EventDispatcher)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -531,7 +531,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setFill}
+     * 設定屬性{@link Scene#setFill(javafx.scene.paint.Paint)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -545,7 +545,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setNodeOrientation}
+     * 設定屬性{@link Scene#setNodeOrientation(javafx.geometry.NodeOrientation)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -559,7 +559,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnContextMenuRequested}
+     * 設定屬性{@link Scene#setOnContextMenuRequested(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -573,7 +573,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnDragDetected}
+     * 設定屬性{@link Scene#setOnDragDetected(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -587,7 +587,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnDragDone}
+     * 設定屬性{@link Scene#setOnDragDone(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -601,7 +601,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnDragDropped}
+     * 設定屬性{@link Scene#setOnDragDropped(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -615,7 +615,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnDragEntered}
+     * 設定屬性{@link Scene#setOnDragEntered(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -629,7 +629,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnDragExited}
+     * 設定屬性{@link Scene#setOnDragExited(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -643,7 +643,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnDragOver}
+     * 設定屬性{@link Scene#setOnDragOver(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -657,7 +657,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnInputMethodTextChanged}
+     * 設定屬性{@link Scene#setOnInputMethodTextChanged(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -671,7 +671,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnKeyPressed}
+     * 設定屬性{@link Scene#setOnKeyPressed(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -685,7 +685,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnKeyReleased}
+     * 設定屬性{@link Scene#setOnKeyReleased(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -699,7 +699,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnKeyTyped}
+     * 設定屬性{@link Scene#setOnKeyTyped(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -713,7 +713,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseClicked}
+     * 設定屬性{@link Scene#setOnMouseClicked(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -727,7 +727,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseDragEntered}
+     * 設定屬性{@link Scene#setOnMouseDragEntered(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -741,7 +741,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseDragExited}
+     * 設定屬性{@link Scene#setOnMouseDragExited(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -755,7 +755,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseDragOver}
+     * 設定屬性{@link Scene#setOnMouseDragOver(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -769,7 +769,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseDragReleased}
+     * 設定屬性{@link Scene#setOnMouseDragReleased(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -783,7 +783,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseDragged}
+     * 設定屬性{@link Scene#setOnMouseDragged(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -797,7 +797,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseEntered}
+     * 設定屬性{@link Scene#setOnMouseEntered(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -811,7 +811,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseExited}
+     * 設定屬性{@link Scene#setOnMouseExited(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -825,7 +825,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseMoved}
+     * 設定屬性{@link Scene#setOnMouseMoved(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -839,7 +839,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMousePressed}
+     * 設定屬性{@link Scene#setOnMousePressed(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -853,7 +853,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseReleased}
+     * 設定屬性{@link Scene#setOnMouseReleased(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -867,7 +867,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnRotate}
+     * 設定屬性{@link Scene#setOnRotate(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -881,7 +881,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnRotationFinished}
+     * 設定屬性{@link Scene#setOnRotationFinished(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -895,7 +895,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnRotationStarted}
+     * 設定屬性{@link Scene#setOnRotationStarted(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -909,7 +909,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnScroll}
+     * 設定屬性{@link Scene#setOnScroll(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -923,7 +923,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnScrollFinished}
+     * 設定屬性{@link Scene#setOnScrollFinished(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -937,7 +937,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnScrollStarted}
+     * 設定屬性{@link Scene#setOnScrollStarted(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -951,7 +951,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnSwipeDown}
+     * 設定屬性{@link Scene#setOnSwipeDown(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -965,7 +965,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnSwipeLeft}
+     * 設定屬性{@link Scene#setOnSwipeLeft(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -979,7 +979,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnSwipeRight}
+     * 設定屬性{@link Scene#setOnSwipeRight(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -993,7 +993,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnSwipeUp}
+     * 設定屬性{@link Scene#setOnSwipeUp(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1007,7 +1007,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnTouchMoved}
+     * 設定屬性{@link Scene#setOnTouchMoved(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1021,7 +1021,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnTouchPressed}
+     * 設定屬性{@link Scene#setOnTouchPressed(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1035,7 +1035,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnTouchReleased}
+     * 設定屬性{@link Scene#setOnTouchReleased(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1049,7 +1049,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnTouchStationary}
+     * 設定屬性{@link Scene#setOnTouchStationary(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1063,7 +1063,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnZoom}
+     * 設定屬性{@link Scene#setOnZoom(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1077,7 +1077,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnZoomFinished}
+     * 設定屬性{@link Scene#setOnZoomFinished(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1091,7 +1091,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnZoomStarted}
+     * 設定屬性{@link Scene#setOnZoomStarted(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1105,7 +1105,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setRoot}
+     * 設定屬性{@link Scene#setRoot(javafx.scene.Parent)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1148,7 +1148,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setUserAgentStylesheet}
+     * 設定屬性{@link Scene#setUserAgentStylesheet(java.lang.String)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

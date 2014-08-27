@@ -54,7 +54,7 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link HBox#setAlignment}
+     * 設定屬性{@link HBox#setAlignment(javafx.geometry.Pos)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -68,7 +68,7 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link HBox#setFillHeight}
+     * 設定屬性{@link HBox#setFillHeight(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -82,7 +82,7 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link HBox#setSpacing}
+     * 設定屬性{@link HBox#setSpacing(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

@@ -89,7 +89,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setContextMenuEnabled}
+     * 設定屬性{@link WebView#setContextMenuEnabled(boolean)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -103,7 +103,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setFontScale}
+     * 設定屬性{@link WebView#setFontScale(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -117,7 +117,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setFontSmoothingType}
+     * 設定屬性{@link WebView#setFontSmoothingType(javafx.scene.text.FontSmoothingType)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -131,7 +131,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setMaxHeight}
+     * 設定屬性{@link WebView#setMaxHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -145,7 +145,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setMaxWidth}
+     * 設定屬性{@link WebView#setMaxWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -159,7 +159,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setMinHeight}
+     * 設定屬性{@link WebView#setMinHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -173,7 +173,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setMinWidth}
+     * 設定屬性{@link WebView#setMinWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -187,7 +187,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setPrefHeight}
+     * 設定屬性{@link WebView#setPrefHeight(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -201,7 +201,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setPrefWidth}
+     * 設定屬性{@link WebView#setPrefWidth(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -215,7 +215,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setZoom}
+     * 設定屬性{@link WebView#setZoom(double)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

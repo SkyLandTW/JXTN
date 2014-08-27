@@ -89,7 +89,7 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
     }
 
     /**
-     * 設定屬性{@link TableColumn#setCellFactory}
+     * 設定屬性{@link TableColumn#setCellFactory(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -103,7 +103,7 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
     }
 
     /**
-     * 設定屬性{@link TableColumn#setCellValueFactory}
+     * 設定屬性{@link TableColumn#setCellValueFactory(javafx.util.Callback)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -146,7 +146,7 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
     }
 
     /**
-     * 設定屬性{@link TableColumn#setOnEditCancel}
+     * 設定屬性{@link TableColumn#setOnEditCancel(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -160,7 +160,7 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
     }
 
     /**
-     * 設定屬性{@link TableColumn#setOnEditCommit}
+     * 設定屬性{@link TableColumn#setOnEditCommit(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -174,7 +174,7 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
     }
 
     /**
-     * 設定屬性{@link TableColumn#setOnEditStart}
+     * 設定屬性{@link TableColumn#setOnEditStart(javafx.event.EventHandler)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -188,7 +188,7 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
     }
 
     /**
-     * 設定屬性{@link TableColumn#setSortType}
+     * 設定屬性{@link TableColumn#setSortType(javafx.scene.control.TableColumn.SortType)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

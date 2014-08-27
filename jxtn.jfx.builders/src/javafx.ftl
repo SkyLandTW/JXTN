@@ -118,11 +118,13 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
 {
  <#-- 一般屬性欄位 -->
   <#list class.property as property>
-   <#if property.setter?size != 0 && property.setter.@abstract == "false" && property.setter.@override == "false">
+   <#if property.setter?size != 0 && property.setter[0].@abstract == "false" && property.setter[0].@override == "false">
+    <#list property.setter as setter>
 
-    protected boolean has${property.@name?cap_first};
-    protected ${property.@genericType} val${property.@name?cap_first};
-   <#elseif property.@rawType?contains(".ObservableList") && property.getter.@abstract == "false" && property.getter.@override == "false">
+    protected boolean has${property.@name?cap_first}${setter.@index};
+    protected ${setter.@genericType} val${property.@name?cap_first}${setter.@index};
+    </#list>
+   <#elseif property.@rawType?contains(".ObservableList") && property.getter?size != 0 && property.getter.@abstract == "false" && property.getter.@override == "false">
 
     protected boolean has${property.@name?cap_first};
     protected java.util.Collection<${property.@genericParam}> val${property.@name?cap_first};
@@ -146,14 +148,16 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
         super.applyTo(instance);
       <#-- 套用一般屬性 -->
       <#list class.property as property>
-       <#if property.setter?size != 0 && property.setter.@abstract == "false" && property.setter.@override == "false">
-        if (this.has${property.@name?cap_first})
+       <#if property.setter?size != 0 && property.setter[0].@abstract == "false" && property.setter[0].@override == "false">
+        <#list property.setter as setter>
+        if (this.has${property.@name?cap_first}${setter.@index})
           <#if property.@static == "false">
-            instance.set${property.@name?cap_first}(this.val${property.@name?cap_first});
+            instance.set${property.@name?cap_first}(this.val${property.@name?cap_first}${setter.@index});
           <#else>
             ${property.@staticType}.set${property.@staticName?cap_first}(instance, this.val${property.@name?cap_first});
           </#if>
-       <#elseif property.@rawType?contains(".ObservableList") && property.getter.@abstract == "false" && property.getter.@override == "false">
+         </#list>
+       <#elseif property.@rawType?contains(".ObservableList") && property.getter?size != 0 && property.getter.@abstract == "false" && property.getter.@override == "false">
         if (this.has${property.@name?cap_first})
             instance.get${property.@name?cap_first}().setAll(this.val${property.@name?cap_first});
        </#if>
@@ -170,11 +174,12 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
     }
  <#-- 一般屬性setter -->
   <#list class.property as property>
-   <#if property.setter?size != 0 && property.setter.@abstract == "false">
+   <#if property.setter?size != 0 && property.setter[0].@abstract == "false">
+    <#list property.setter as setter>
 
     <#if property.@static == "false">
     /**
-     * 設定屬性{@link ${class.@name}#set${property.@name?cap_first}}
+     * 設定屬性{@link ${class.@name}#set${property.@name?cap_first}(${setter.@genericType})}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -187,16 +192,17 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
      * @return 目前的建構器(this)
      */
     </#if>
-    <#if property.setter.@override == "true">
+    <#if property.setter[0].@override == "true">
     @Override
     </#if>
     @SuppressWarnings("unchecked")
-    public B ${property.@name}(${property.@genericType} value)
+    public B ${property.@name}(${setter.@genericType} value)
     {
-        this.has${property.@name?cap_first} = true;
-        this.val${property.@name?cap_first} = value;
+        this.has${property.@name?cap_first}${setter.@index} = true;
+        this.val${property.@name?cap_first}${setter.@index} = value;
         return (B) this;
     }
+    </#list>
    <#elseif property.@rawType?contains(".ObservableList") && property.getter.@abstract == "false">
 
     /**

@@ -517,71 +517,6 @@ public interface IteratorExt<E>
      ************************************************************************/
 
     /**
-     * 依照鍵值做分群
-     *
-     * @param getKey 計算每個項目的鍵值
-     * @return 分群後的結果，不依賴原有的列舉
-     */
-    default <K> HashMap<K, ArrayList<E>> groupBy(Function<? super E, K> getKey)
-    {
-        Iterator<E> thiz = (Iterator<E>) this;
-        HashMap<K, ArrayList<E>> result = new HashMap<>();
-        while (thiz.hasNext())
-        {
-            E item = thiz.next();
-            K key = getKey.apply(item);
-            ArrayList<E> list = result.get(key);
-            if (list == null)
-            {
-                list = new ArrayList<>();
-                result.put(key, list);
-            }
-            list.add(item);
-        }
-        return result;
-    }
-
-    /**
-     * 依照鍵值做排序
-     *
-     * @param getKey 計算每個項目的鍵值
-     * @return 排序後的結果，不依賴原有的列舉
-     */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    default <V extends Comparable> ArrayList<E> orderBy(Function<E, V> getKey)
-    {
-        Iterator<E> thiz = (Iterator<E>) this;
-        ArrayList<E> sorted = thiz.toArrayList();
-        sorted.sort((c1, c2) ->
-            {
-                V v1 = getKey.apply(c1);
-                V v2 = getKey.apply(c2);
-                if (v1 == null && v2 == null)
-                    return 0;
-                if (v1 == null)
-                    return -1;
-                if (v2 == null)
-                    return 1;
-                return v1.compareTo(v2);
-            });
-        return sorted;
-    }
-
-    /**
-     * 依照比較器做排序
-     *
-     * @param comparator 項目的比較器
-     * @return 排序後的結果，不依賴原有的列舉
-     */
-    default ArrayList<E> orderBy(Comparator<E> comparator)
-    {
-        Iterator<E> thiz = (Iterator<E>) this;
-        ArrayList<E> sorted = thiz.toArrayList();
-        sorted.sort(comparator);
-        return sorted;
-    }
-
-    /**
      * 建立陣列
      *
      * @param type 陣列項目型態
@@ -610,6 +545,46 @@ public interface IteratorExt<E>
             coll.add(thiz.next());
         }
         return coll;
+    }
+
+    /**
+     * 建立{@link ArrayList}，依照鍵值做排序
+     *
+     * @param getKey 計算每個項目的鍵值
+     * @return {@link ArrayList}，已排序
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    default <V extends Comparable> ArrayList<E> toArrayListSorted(Function<E, V> getKey)
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        ArrayList<E> sorted = thiz.toArrayList();
+        sorted.sort((c1, c2) ->
+            {
+                V v1 = getKey.apply(c1);
+                V v2 = getKey.apply(c2);
+                if (v1 == null && v2 == null)
+                    return 0;
+                if (v1 == null)
+                    return -1;
+                if (v2 == null)
+                    return 1;
+                return v1.compareTo(v2);
+            });
+        return sorted;
+    }
+
+    /**
+     * 建立{@link ArrayList}，依照比較器做排序
+     *
+     * @param comparator 項目的比較器
+     * @return {@link ArrayList}，已排序
+     */
+    default ArrayList<E> toArrayListSorted(Comparator<E> comparator)
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        ArrayList<E> sorted = thiz.toArrayList();
+        sorted.sort(comparator);
+        return sorted;
     }
 
     /**
@@ -650,6 +625,31 @@ public interface IteratorExt<E>
             coll.put(k, v);
         }
         return coll;
+    }
+
+    /**
+     * 建立{@link HashMap}，依照鍵值做分群
+     *
+     * @param getKey 計算每個項目的鍵值
+     * @return {@link HashMap}，已分群組
+     */
+    default <K> HashMap<K, ArrayList<E>> toHashMapGrouped(Function<? super E, K> getKey)
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        HashMap<K, ArrayList<E>> result = new HashMap<>();
+        while (thiz.hasNext())
+        {
+            E item = thiz.next();
+            K key = getKey.apply(item);
+            ArrayList<E> list = result.get(key);
+            if (list == null)
+            {
+                list = new ArrayList<>();
+                result.put(key, list);
+            }
+            list.add(item);
+        }
+        return result;
     }
 
     /**

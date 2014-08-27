@@ -376,45 +376,8 @@ public interface IterableExt<T>
      ************************************************************************/
 
     /**
-     * 依照鍵值做分群
-     *
-     * @param getKey 計算每個項目的鍵值
-     * @return 分群後的結果，不依賴原有的列舉
-     */
-    default <K> HashMap<K, ArrayList<T>> groupBy(Function<? super T, K> getKey)
-    {
-        Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().groupBy(getKey);
-    }
-
-    /**
-     * 依照鍵值做排序
-     *
-     * @param getKey 計算每個項目的鍵值
-     * @return 排序後的結果，不依賴原有的列舉
-     */
-    @SuppressWarnings({ "rawtypes" })
-    default <V extends Comparable> ArrayList<T> orderBy(Function<T, V> getKey)
-    {
-        Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().orderBy(getKey);
-    }
-
-    /**
-     * 依照鍵值做排序
-     *
-     * @param comparator 項目的比較器
-     * @return 排序後的結果，不依賴原有的列舉
-     */
-    default ArrayList<T> orderBy(Comparator<T> comparator)
-    {
-        Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().orderBy(comparator);
-    }
-
-    /**
      * 建立陣列
-     * 
+     *
      * @param type 陣列項目型態
      * @return 陣列
      */
@@ -433,6 +396,31 @@ public interface IterableExt<T>
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().toArrayList();
+    }
+
+    /**
+     * 建立{@link ArrayList}，依照鍵值做排序
+     *
+     * @param getKey 計算每個項目的鍵值
+     * @return {@link ArrayList}，已排序
+     */
+    @SuppressWarnings({ "rawtypes" })
+    default <V extends Comparable> ArrayList<T> toArrayListSorted(Function<T, V> getKey)
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return thiz.iterator().toArrayListSorted(getKey);
+    }
+
+    /**
+     * 建立{@link ArrayList}，依照比較器做排序
+     *
+     * @param comparator 項目的比較器
+     * @return {@link ArrayList}，已排序
+     */
+    default ArrayList<T> toArrayListSorted(Comparator<T> comparator)
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return thiz.iterator().toArrayListSorted(comparator);
     }
 
     /**
@@ -458,6 +446,18 @@ public interface IterableExt<T>
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().toHashMap(getKey, getValue);
+    }
+
+    /**
+     * 建立{@link HashMap}，依照鍵值做分群
+     *
+     * @param getKey 計算每個項目的鍵值
+     * @return {@link HashMap}，已分群組
+     */
+    default <K> HashMap<K, ArrayList<T>> toHashMapGrouped(Function<? super T, K> getKey)
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return thiz.iterator().toHashMapGrouped(getKey);
     }
 
     /**

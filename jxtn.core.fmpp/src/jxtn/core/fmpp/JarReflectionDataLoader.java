@@ -43,6 +43,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -148,8 +149,8 @@ public class JarReflectionDataLoader extends XmlDataLoader
                             .filter(m -> m.isPublic() && m.isStatic()
                                     && !m.isAnnotationPresent(Deprecated.class)
                                     && this.isStaticGetterOrSetter(m))
-                            .orderBy(m -> m.getName())
-                            .groupBy(m -> this.getPropertyName(m.getName()));
+                            .toArrayListSorted(m -> m.getName())
+                            .toHashMapGrouped(m -> this.getPropertyName(m.getName()));
                     for (String prop : tmpMap.keySet())
                     {
                         ArrayList<Method> mList = tmpMap.get(prop);
@@ -247,19 +248,19 @@ public class JarReflectionDataLoader extends XmlDataLoader
                     }
                     for (Constructor constructor : Arrays.asList(klass.getDeclaredConstructors())
                             .filter(c -> c.isPublic() && !c.isAnnotationPresent(Deprecated.class))
-                            .orderBy(c -> c.getParameterCount()))
+                            .toArrayListSorted(c -> c.getParameterCount()))
                     {
                         elemClass.appendChild(this.describeConstructor(xmlDoc, constructor));
                     }
                     for (Field field : Arrays.asList(klass.getDeclaredFields())
                             .filter(f -> f.isPublic() && !f.isAnnotationPresent(Deprecated.class))
-                            .orderBy(f -> f.getName()))
+                            .toArrayListSorted(f -> f.getName()))
                     {
                         elemClass.appendChild(this.describeField(xmlDoc, field));
                     }
                     for (Method method : Arrays.asList(klass.getDeclaredMethods())
                             .filter(m -> m.isPublic() && !m.isAnnotationPresent(Deprecated.class))
-                            .orderBy(m -> m.getName() + " " + m.toGenericString()))
+                            .toArrayListSorted(m -> m.getName() + " " + m.toGenericString()))
                     {
                         elemClass.appendChild(this.describeMethod(xmlDoc, method));
                     }
@@ -269,22 +270,40 @@ public class JarReflectionDataLoader extends XmlDataLoader
                             .filter(m -> m.isPublic() && !m.isStatic()
                                     && !m.isAnnotationPresent(Deprecated.class)
                                     && this.isGetterOrSetter(m))
-                            .orderBy(m -> m.getName())
-                            .groupBy(m -> this.getPropertyName(m.getName()));
-                    for (String propName : propertyMap.keySet().orderBy(n -> n))
+                            .toArrayListSorted(m -> m.getName())
+                            .toHashMapGrouped(m -> this.getPropertyName(m.getName()));
+                    for (String propName : propertyMap.keySet().toArrayListSorted(n -> n))
                     {
                         ArrayList<Method> propAccessors = propertyMap.get(propName);
-                        Method getter = propAccessors.first().getName().startsWith("set")
-                                ? null : propAccessors.first();
-                        Method setter = propAccessors.last().getName().startsWith("set")
-                                ? propAccessors.last() : null;
-                        elemClass.appendChild(this.describeProperty(xmlDoc, propName, getter, setter));
+                        List<Method> getterList = propAccessors
+                                .filter(m -> m.getName().startsWith("get") || m.getName().startsWith("is"))
+                                .toArrayList();
+                        if (getterList.size() > 1)
+                        {
+                            System.out.println("duplicated property getters: " + propName + "; "
+                                    + String.join(", ", getterList.map(m -> m.getName() + m.getParameters().length)));
+                        }
+                        Method getter = getterList.firstOrNull();
+                        List<Method> setterList = propAccessors
+                                .filter(m -> m.getName().startsWith("set"))
+                                .toArrayListSorted(
+                                        m -> ((getter == null
+                                                || getter.getGenericReturnType()
+                                                .equals(m.getGenericParameterTypes()[0]))
+                                                ? "0" : "1")
+                                                + "," + m.getGenericParameterTypes()[0].getTypeName());
+                        if (getterList.size() == 0 && setterList.size() == 0)
+                        {
+                            System.out.println("empty property: " + propName);
+                            continue;
+                        }
+                        elemClass.appendChild(this.describeProperty(xmlDoc, propName, getter, setterList));
                     }
                     // Static Properties
                     HashMap<String, ArrayList<Method>> staticPropertyMap = staticPropertyMapRegistry.get(klass);
                     if (staticPropertyMap != null)
                     {
-                        for (String propName : staticPropertyMap.keySet().orderBy(n -> n))
+                        for (String propName : staticPropertyMap.keySet().toArrayListSorted(n -> n))
                         {
                             ArrayList<Method> propAccessors = staticPropertyMap.get(propName);
                             Method getter = propAccessors.get(0);
@@ -307,21 +326,21 @@ public class JarReflectionDataLoader extends XmlDataLoader
         }
     }
 
-    protected Element describeProperty(Document doc, String name, Method getter, Method setter)
+    protected Element describeProperty(Document doc, String name, Method getter, Collection<Method> setterList)
     {
         Element elem = doc.createElement("property");
         elem.setAttribute("name", name);
         elem.setAttribute("override", "false");
         elem.setAttribute("static", "false");
-        if (setter != null)
+        if (getter != null)
         {
             elem.setAttribute("genericType", this.fixGenericTypeName(
-                    setter.getParameters()[0].getParameterizedType().getTypeName()));
+                    getter.getGenericReturnType().getTypeName()));
         }
         else
         {
             elem.setAttribute("genericType", this.fixGenericTypeName(
-                    getter.getGenericReturnType().getTypeName()));
+                    setterList.first().getParameters()[0].getParameterizedType().getTypeName()));
         }
         if (getter != null)
         {
@@ -330,12 +349,17 @@ public class JarReflectionDataLoader extends XmlDataLoader
             if (this.checkMethodOverride(getter))
                 elem.setAttribute("override", "true");
         }
-        if (setter != null)
+        int setterIndex = 0;
+        for (Method setter : setterList)
         {
             Element elemSetter = this.describeMethod(doc, setter);
+            elemSetter.setAttribute("index", setterIndex == 0 ? "" : Integer.toString(setterIndex));
+            elemSetter.setAttribute("genericType", this.fixGenericTypeName(
+                    setter.getGenericParameterTypes()[0].getTypeName()));
             elem.appendChild(doc.renameNode(elemSetter, null, "setter"));
             if (this.checkMethodOverride(setter))
                 elem.setAttribute("override", "true");
+            setterIndex += 1;
         }
         String gtype = elem.getAttribute("genericType");
         int index = gtype.indexOf("<");
@@ -365,6 +389,7 @@ public class JarReflectionDataLoader extends XmlDataLoader
         Element elemGetter = this.describeMethod(doc, getter);
         elem.appendChild(doc.renameNode(elemGetter, null, "getter"));
         Element elemSetter = this.describeMethod(doc, setter);
+        elemSetter.setAttribute("index", "");
         elem.appendChild(doc.renameNode(elemSetter, null, "setter"));
         String gtype = elem.getAttribute("genericType");
         int index = gtype.indexOf("<");
@@ -372,11 +397,17 @@ public class JarReflectionDataLoader extends XmlDataLoader
         {
             elem.setAttribute("genericParam", gtype.substring(index + 1, gtype.length() - 1));
             elem.setAttribute("rawType", gtype.substring(0, index));
+            elemSetter.setAttribute("genericType", gtype);
+            elemSetter.setAttribute("genericParam", gtype.substring(index + 1, gtype.length() - 1));
+            elemSetter.setAttribute("rawType", gtype.substring(0, index));
         }
         else
         {
             elem.setAttribute("genericParam", "");
             elem.setAttribute("rawType", gtype);
+            elemSetter.setAttribute("genericType", gtype);
+            elemSetter.setAttribute("genericParam", "");
+            elemSetter.setAttribute("rawType", gtype);
         }
         return elem;
     }

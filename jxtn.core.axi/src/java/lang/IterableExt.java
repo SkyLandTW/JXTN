@@ -61,6 +61,7 @@ public interface IterableExt<T>
     /**
      * 結合多個列舉
      *
+     * @param <T> 列舉項目型態
      * @param iterables 要結合的列舉集合
      * @return 結合的列舉
      */
@@ -73,6 +74,7 @@ public interface IterableExt<T>
     /**
      * 結合多個列舉
      *
+     * @param <T> 列舉項目型態
      * @param iterableIterable 要結合的列舉的列舉
      * @return 結合的列舉
      */
@@ -84,6 +86,7 @@ public interface IterableExt<T>
     /**
      * 結合多個列舉
      *
+     * @param <T> 列舉項目型態
      * @param iterableIterator 要結合的列舉的列舉器
      * @return 結合的列舉
      */
@@ -95,6 +98,7 @@ public interface IterableExt<T>
     /**
      * 建立線性結構的串接列舉
      *
+     * @param <T> 列舉項目型態
      * @param item 初始項目
      * @param getNext 取得每個項目的下一個項目的函數，傳回null表示結尾
      * @return 串接列舉
@@ -107,6 +111,7 @@ public interface IterableExt<T>
     /**
      * 建立樹狀結構的串接列舉
      *
+     * @param <T> 列舉項目型態
      * @param item 初始項目；根結點
      * @param getChildren 取得每個項目的子項目集合，傳回null表示結尾
      * @return 串接列舉
@@ -155,6 +160,7 @@ public interface IterableExt<T>
     /**
      * 將目前列舉作為指定項目型態的列舉傳回
      *
+     * @param <V> 傳回項目型態
      * @return 指定項目型態的列舉(物件仍為目前列舉)
      */
     @SuppressWarnings("unchecked")
@@ -194,6 +200,7 @@ public interface IterableExt<T>
     /**
      * 依照對照函數建立對照列舉
      *
+     * @param <R> 對照項目型態
      * @param mapper 對照項目的函數
      * @return 對照列舉，依賴原有的列舉
      */
@@ -206,6 +213,7 @@ public interface IterableExt<T>
     /**
      * 取得指定型態的項目列舉
      *
+     * @param <R> 要取得的項目型態
      * @param type 要取得項目的型態
      * @return 包含{@code type}型態項目的列舉
      */
@@ -270,6 +278,7 @@ public interface IterableExt<T>
     /**
      * 取得第一個可計算出最大數值的項目
      *
+     * @param <V> 數值型態
      * @param getValue 計算項目數值的函數
      * @return 第一個計算出最大數值的項目
      * @throws NoSuchElementException 沒有項目
@@ -322,6 +331,7 @@ public interface IterableExt<T>
     /**
      * 取得第一個可計算出最小數值的項目
      *
+     * @param <V> 數值型態
      * @param getValue 計算項目數值的函數
      * @return 第一個計算出最小數值的項目
      * @throws NoSuchElementException 沒有項目
@@ -401,6 +411,7 @@ public interface IterableExt<T>
     /**
      * 建立{@link ArrayList}，依照鍵值做排序
      *
+     * @param <V> 鍵值型態
      * @param getKey 計算每個項目的鍵值
      * @return {@link ArrayList}，已排序
      */
@@ -426,6 +437,7 @@ public interface IterableExt<T>
     /**
      * 建立{@link HashMap}
      *
+     * @param <K> {@link HashMap}鍵值型態
      * @param getKey 計算項目於新{@link HashMap}內的鍵值
      * @return {@link HashMap}
      */
@@ -438,6 +450,8 @@ public interface IterableExt<T>
     /**
      * 建立{@link HashMap}
      *
+     * @param <K> {@link HashMap}鍵值型態
+     * @param <V> {@link HashMap}項目值型態
      * @param getKey 計算項目於新{@link HashMap}內的鍵值
      * @param getValue 計算項目於新{@link HashMap}內的項目值
      * @return {@link HashMap}
@@ -451,6 +465,7 @@ public interface IterableExt<T>
     /**
      * 建立{@link HashMap}，依照鍵值做分群
      *
+     * @param <K> 分群鍵值型態
      * @param getKey 計算每個項目的鍵值
      * @return {@link HashMap}，已分群組
      */

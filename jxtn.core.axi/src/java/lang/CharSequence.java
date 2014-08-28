@@ -58,6 +58,7 @@ import java.util.stream.StreamSupport;
  */
 @SuppressWarnings("all")
 public interface CharSequence extends CharSequenceExt {
+
     /**
      * Returns the length of this character sequence.  The length is the number
      * of 16-bit <code>char</code>s in the sequence.
@@ -155,10 +156,10 @@ public interface CharSequence extends CharSequenceExt {
         }
 
         return StreamSupport.intStream(() ->
-        Spliterators.spliterator(
-                new CharIterator(),
-                this.length(),
-                Spliterator.ORDERED),
+                Spliterators.spliterator(
+                        new CharIterator(),
+                        this.length(),
+                        Spliterator.ORDERED),
                 Spliterator.SUBSIZED | Spliterator.SIZED | Spliterator.ORDERED,
                 false);
     }
@@ -230,9 +231,9 @@ public interface CharSequence extends CharSequenceExt {
         }
 
         return StreamSupport.intStream(() ->
-        Spliterators.spliteratorUnknownSize(
-                new CodePointIterator(),
-                Spliterator.ORDERED),
+                Spliterators.spliteratorUnknownSize(
+                        new CodePointIterator(),
+                        Spliterator.ORDERED),
                 Spliterator.ORDERED,
                 false);
     }

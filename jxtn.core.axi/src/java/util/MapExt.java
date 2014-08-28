@@ -42,6 +42,7 @@ public interface MapExt<K, V>
     /**
      * 對照目前的項目值以產生新的{@link HashMap}
      *
+     * @param <V2> 對照項目值型態
      * @param mapper 對照項目值的函數
      * @return 對照後的新{@link HashMap}(不依賴原有的)
      */
@@ -56,6 +57,7 @@ public interface MapExt<K, V>
     /**
      * 對照目前的項目值以產生新的{@link HashMap}
      *
+     * @param <V2> 對照項目值型態
      * @param mapper 對照項目值的函數
      * @return 對照後的新{@link HashMap}(不依賴原有的)
      */

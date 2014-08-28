@@ -26,7 +26,6 @@ bearable.
  - String: left/right/padLeft/padRight/...
  - Iterable: all/any/concat/filter/map/first/groupBy/avg/max/...
  - Iterator: *same as Iterable*
- - nio/Path: copy/delete (recursively)
  - dom/NodeList: asList
  - correct generic functions such as Collection.remove(E) and Map.get(K)
 
@@ -52,6 +51,7 @@ bearable.
    *firstOfMin* and *firstOfMinInt*), because they tend to break Java IDEs.
  - No extension to Array classes for now because I don't know how to do it.
  - No test suite available. Some code may be broken since I never test them.
+ - AXI should only be used with the latest released version of Oracle JDK/JRE.
 
 ------------------------------------------------------------------------------
 

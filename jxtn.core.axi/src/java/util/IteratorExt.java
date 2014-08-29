@@ -293,28 +293,26 @@ public interface IteratorExt<E>
      *
      * @param <V> 數值型態
      * @param getValue 計算項目數值的函數
-     * @return 下一個計算出最大數值的項目
+     * @return 下一個計算出最大數值的項目(跳過NULL數值)
      * @throws NoSuchElementException 沒有下一筆項目
      */
     default <V extends Comparable<V>> E nextOfMax(Function<? super E, V> getValue)
     {
         Iterator<E> thiz = (Iterator<E>) this;
-        E maxE = null;
-        V maxV = null;
-        boolean head = true;
+        if (!thiz.hasNext())
+            throw new NoSuchElementException();
+        E maxE = thiz.next();
+        V maxV = getValue.apply(maxE);
         while (thiz.hasNext())
         {
-            E e = thiz.next();
-            V v = getValue.apply(e);
-            if (head || maxV == null || maxV.compareTo(v) < 0)
+            E curE = thiz.next();
+            V curV = getValue.apply(curE);
+            if (maxV == null || maxV.compareTo(curV) < 0)
             {
-                maxV = v;
-                maxE = e;
-                head = false;
+                maxV = curV;
+                maxE = curE;
             }
         }
-        if (head)
-            throw new NoSuchElementException();
         return maxE;
     }
 
@@ -328,22 +326,20 @@ public interface IteratorExt<E>
     default E nextOfMaxDouble(ToDoubleFunction<E> getValue)
     {
         Iterator<E> thiz = (Iterator<E>) this;
-        E maxE = null;
-        double maxV = Double.MIN_VALUE;
-        boolean head = true;
+        if (!thiz.hasNext())
+            throw new NoSuchElementException();
+        E maxE = thiz.next();
+        double maxV = getValue.applyAsDouble(maxE);
         while (thiz.hasNext())
         {
-            E e = thiz.next();
-            double v = getValue.applyAsDouble(e);
-            if (head || maxV < v)
+            E curE = thiz.next();
+            double curV = getValue.applyAsDouble(curE);
+            if (maxV < curV)
             {
-                maxV = v;
-                maxE = e;
-                head = false;
+                maxV = curV;
+                maxE = curE;
             }
         }
-        if (head)
-            throw new NoSuchElementException();
         return maxE;
     }
 
@@ -357,22 +353,20 @@ public interface IteratorExt<E>
     default E nextOfMaxInt(ToIntFunction<E> getValue)
     {
         Iterator<E> thiz = (Iterator<E>) this;
-        E maxE = null;
-        int maxV = Integer.MIN_VALUE;
-        boolean head = true;
+        if (!thiz.hasNext())
+            throw new NoSuchElementException();
+        E maxE = thiz.next();
+        int maxV = getValue.applyAsInt(maxE);
         while (thiz.hasNext())
         {
-            E e = thiz.next();
-            int v = getValue.applyAsInt(e);
-            if (head || maxV < v)
+            E curE = thiz.next();
+            int curV = getValue.applyAsInt(curE);
+            if (maxV < curV)
             {
-                maxV = v;
-                maxE = e;
-                head = false;
+                maxV = curV;
+                maxE = curE;
             }
         }
-        if (head)
-            throw new NoSuchElementException();
         return maxE;
     }
 
@@ -386,22 +380,20 @@ public interface IteratorExt<E>
     default E nextOfMaxLong(ToLongFunction<E> getValue)
     {
         Iterator<E> thiz = (Iterator<E>) this;
-        E maxE = null;
-        long maxV = Long.MIN_VALUE;
-        boolean head = true;
+        if (!thiz.hasNext())
+            throw new NoSuchElementException();
+        E maxE = thiz.next();
+        long maxV = getValue.applyAsLong(maxE);
         while (thiz.hasNext())
         {
-            E e = thiz.next();
-            long v = getValue.applyAsLong(e);
-            if (head || maxV < v)
+            E curE = thiz.next();
+            long curV = getValue.applyAsLong(curE);
+            if (maxV < curV)
             {
-                maxV = v;
-                maxE = e;
-                head = false;
+                maxV = curV;
+                maxE = curE;
             }
         }
-        if (head)
-            throw new NoSuchElementException();
         return maxE;
     }
 
@@ -410,28 +402,26 @@ public interface IteratorExt<E>
      *
      * @param <V> 數值型態
      * @param getValue 計算項目數值的函數
-     * @return 下一個計算出最小數值的項目
+     * @return 下一個計算出最小數值的項目(跳過NULL數值)
      * @throws NoSuchElementException 沒有下一筆項目
      */
     default <V extends Comparable<V>> E nextOfMin(Function<? super E, V> getValue)
     {
         Iterator<E> thiz = (Iterator<E>) this;
-        E minE = null;
-        V minV = null;
-        boolean head = true;
+        if (!thiz.hasNext())
+            throw new NoSuchElementException();
+        E minE = thiz.next();
+        V minV = getValue.apply(minE);
         while (thiz.hasNext())
         {
-            E e = thiz.next();
-            V v = getValue.apply(e);
-            if (head || minV == null || minV.compareTo(v) > 0)
+            E curE = thiz.next();
+            V curV = getValue.apply(curE);
+            if (minV == null || minV.compareTo(curV) > 0)
             {
-                minV = v;
-                minE = e;
-                head = false;
+                minV = curV;
+                minE = curE;
             }
         }
-        if (head)
-            throw new NoSuchElementException();
         return minE;
     }
 
@@ -445,22 +435,20 @@ public interface IteratorExt<E>
     default E nextOfMinDouble(ToDoubleFunction<E> getValue)
     {
         Iterator<E> thiz = (Iterator<E>) this;
-        E minE = null;
-        double minV = Double.MAX_VALUE;
-        boolean head = true;
+        if (!thiz.hasNext())
+            throw new NoSuchElementException();
+        E minE = thiz.next();
+        double minV = getValue.applyAsDouble(minE);
         while (thiz.hasNext())
         {
-            E e = thiz.next();
-            double v = getValue.applyAsDouble(e);
-            if (head || minV > v)
+            E curE = thiz.next();
+            double curV = getValue.applyAsDouble(curE);
+            if (minV > curV)
             {
-                minV = v;
-                minE = e;
-                head = false;
+                minV = curV;
+                minE = curE;
             }
         }
-        if (head)
-            throw new NoSuchElementException();
         return minE;
     }
 
@@ -474,22 +462,20 @@ public interface IteratorExt<E>
     default E nextOfMinInt(ToIntFunction<E> getValue)
     {
         Iterator<E> thiz = (Iterator<E>) this;
-        E minE = null;
-        int minV = Integer.MAX_VALUE;
-        boolean head = true;
+        if (!thiz.hasNext())
+            throw new NoSuchElementException();
+        E minE = thiz.next();
+        int minV = getValue.applyAsInt(minE);
         while (thiz.hasNext())
         {
-            E e = thiz.next();
-            int v = getValue.applyAsInt(e);
-            if (head || minV > v)
+            E curE = thiz.next();
+            int curV = getValue.applyAsInt(curE);
+            if (minV > curV)
             {
-                minV = v;
-                minE = e;
-                head = false;
+                minV = curV;
+                minE = curE;
             }
         }
-        if (head)
-            throw new NoSuchElementException();
         return minE;
     }
 
@@ -503,22 +489,20 @@ public interface IteratorExt<E>
     default E nextOfMinLong(ToLongFunction<E> getValue)
     {
         Iterator<E> thiz = (Iterator<E>) this;
-        E minE = null;
-        long minV = Long.MAX_VALUE;
-        boolean head = true;
+        if (!thiz.hasNext())
+            throw new NoSuchElementException();
+        E minE = thiz.next();
+        long minV = getValue.applyAsLong(minE);
         while (thiz.hasNext())
         {
-            E e = thiz.next();
-            long v = getValue.applyAsLong(e);
-            if (head || minV > v)
+            E curE = thiz.next();
+            long curV = getValue.applyAsLong(curE);
+            if (minV > curV)
             {
-                minV = v;
-                minE = e;
-                head = false;
+                minV = curV;
+                minE = curE;
             }
         }
-        if (head)
-            throw new NoSuchElementException();
         return minE;
     }
 

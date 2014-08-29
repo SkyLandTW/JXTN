@@ -102,9 +102,9 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundX = true;
         this.obsrvX = source;
         return (B) this;
@@ -117,9 +117,9 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundY = true;
         this.obsrvY = source;
         return (B) this;
@@ -132,9 +132,9 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindZ(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindZ(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundZ = true;
         this.obsrvZ = source;
         return (B) this;

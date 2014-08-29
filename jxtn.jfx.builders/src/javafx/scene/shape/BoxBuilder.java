@@ -102,9 +102,9 @@ public class BoxBuilder<Z extends Box, B extends BoxBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindDepth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindDepth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundDepth = true;
         this.obsrvDepth = source;
         return (B) this;
@@ -117,9 +117,9 @@ public class BoxBuilder<Z extends Box, B extends BoxBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHeight = true;
         this.obsrvHeight = source;
         return (B) this;
@@ -132,9 +132,9 @@ public class BoxBuilder<Z extends Box, B extends BoxBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundWidth = true;
         this.obsrvWidth = source;
         return (B) this;

@@ -59,7 +59,7 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B items(java.util.Collection<T> value)
+    public final B items(java.util.Collection<T> value)
     {
         this.hasItems = true;
         this.valItems = value;
@@ -88,9 +88,9 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCheckModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> source)
+    public final B bindCheckModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCheckModel = true;
         this.obsrvCheckModel = source;
         return (B) this;

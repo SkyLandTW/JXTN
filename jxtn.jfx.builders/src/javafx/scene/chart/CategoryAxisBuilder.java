@@ -121,9 +121,9 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindEndMargin(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindEndMargin(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundEndMargin = true;
         this.obsrvEndMargin = source;
         return (B) this;
@@ -136,9 +136,9 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindGapStartAndEnd(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindGapStartAndEnd(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundGapStartAndEnd = true;
         this.obsrvGapStartAndEnd = source;
         return (B) this;
@@ -151,9 +151,9 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindStartMargin(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindStartMargin(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundStartMargin = true;
         this.obsrvStartMargin = source;
         return (B) this;

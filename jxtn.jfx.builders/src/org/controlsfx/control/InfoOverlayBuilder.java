@@ -102,9 +102,9 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundContent = true;
         this.obsrvContent = source;
         return (B) this;
@@ -117,9 +117,9 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindShowOnHover(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindShowOnHover(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundShowOnHover = true;
         this.obsrvShowOnHover = source;
         return (B) this;
@@ -132,9 +132,9 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindText(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundText = true;
         this.obsrvText = source;
         return (B) this;

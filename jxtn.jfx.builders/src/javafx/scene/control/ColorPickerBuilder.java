@@ -35,7 +35,7 @@ public class ColorPickerBuilder<Z extends ColorPicker, B extends ColorPickerBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B customColors(java.util.Collection<javafx.scene.paint.Color> value)
+    public final B customColors(java.util.Collection<javafx.scene.paint.Color> value)
     {
         this.hasCustomColors = true;
         this.valCustomColors = value;

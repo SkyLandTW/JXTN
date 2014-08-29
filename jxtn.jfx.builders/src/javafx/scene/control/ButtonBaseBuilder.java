@@ -54,9 +54,9 @@ public class ButtonBaseBuilder<Z extends ButtonBase, B extends ButtonBaseBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
+    public final B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnAction = true;
         this.obsrvOnAction = source;
         return (B) this;

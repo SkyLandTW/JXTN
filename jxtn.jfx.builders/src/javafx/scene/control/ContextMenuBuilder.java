@@ -69,7 +69,7 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B items(java.util.Collection<javafx.scene.control.MenuItem> value)
+    public final B items(java.util.Collection<javafx.scene.control.MenuItem> value)
     {
         this.hasItems = true;
         this.valItems = value;
@@ -112,9 +112,9 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindImpl_showRelativeToWindow(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindImpl_showRelativeToWindow(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundImpl_showRelativeToWindow = true;
         this.obsrvImpl_showRelativeToWindow = source;
         return (B) this;
@@ -127,9 +127,9 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
+    public final B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnAction = true;
         this.obsrvOnAction = source;
         return (B) this;

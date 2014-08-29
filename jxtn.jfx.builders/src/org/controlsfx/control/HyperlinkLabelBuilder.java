@@ -78,9 +78,9 @@ public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends Hyperlink
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
+    public final B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnAction = true;
         this.obsrvOnAction = source;
         return (B) this;
@@ -93,9 +93,9 @@ public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends Hyperlink
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindText(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundText = true;
         this.obsrvText = source;
         return (B) this;

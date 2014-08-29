@@ -54,9 +54,9 @@ public class PathElementBuilder<Z extends PathElement, B extends PathElementBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAbsolute(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindAbsolute(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAbsolute = true;
         this.obsrvAbsolute = source;
         return (B) this;

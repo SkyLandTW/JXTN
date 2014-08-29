@@ -178,9 +178,9 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPlaceholder(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindPlaceholder(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPlaceholder = true;
         this.obsrvPlaceholder = source;
         return (B) this;
@@ -193,9 +193,9 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.SingleSelectionModel<T>> source)
+    public final B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.SingleSelectionModel<T>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSelectionModel = true;
         this.obsrvSelectionModel = source;
         return (B) this;
@@ -208,9 +208,9 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindVisibleRowCount(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindVisibleRowCount(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundVisibleRowCount = true;
         this.obsrvVisibleRowCount = source;
         return (B) this;

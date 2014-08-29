@@ -246,9 +246,9 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
+    public final B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAlignment = true;
         this.obsrvAlignment = source;
         return (B) this;
@@ -261,9 +261,9 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHgap(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHgap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHgap = true;
         this.obsrvHgap = source;
         return (B) this;
@@ -276,9 +276,9 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
+    public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOrientation = true;
         this.obsrvOrientation = source;
         return (B) this;
@@ -291,9 +291,9 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPrefColumns(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindPrefColumns(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPrefColumns = true;
         this.obsrvPrefColumns = source;
         return (B) this;
@@ -306,9 +306,9 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPrefRows(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindPrefRows(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPrefRows = true;
         this.obsrvPrefRows = source;
         return (B) this;
@@ -321,9 +321,9 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPrefTileHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefTileHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPrefTileHeight = true;
         this.obsrvPrefTileHeight = source;
         return (B) this;
@@ -336,9 +336,9 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPrefTileWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefTileWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPrefTileWidth = true;
         this.obsrvPrefTileWidth = source;
         return (B) this;
@@ -351,9 +351,9 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTileAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
+    public final B bindTileAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTileAlignment = true;
         this.obsrvTileAlignment = source;
         return (B) this;
@@ -366,9 +366,9 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindVgap(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindVgap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundVgap = true;
         this.obsrvVgap = source;
         return (B) this;

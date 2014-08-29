@@ -107,7 +107,7 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B buttons(java.util.Collection<javafx.scene.control.ButtonBase> value)
+    public final B buttons(java.util.Collection<javafx.scene.control.ButtonBase> value)
     {
         this.hasButtons = true;
         this.valButtons = value;
@@ -136,9 +136,9 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindButtonMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindButtonMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundButtonMinWidth = true;
         this.obsrvButtonMinWidth = source;
         return (B) this;
@@ -151,9 +151,9 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindButtonOrder(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindButtonOrder(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundButtonOrder = true;
         this.obsrvButtonOrder = source;
         return (B) this;
@@ -166,9 +166,9 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindButtonUniformSize(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindButtonUniformSize(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundButtonUniformSize = true;
         this.obsrvButtonUniformSize = source;
         return (B) this;

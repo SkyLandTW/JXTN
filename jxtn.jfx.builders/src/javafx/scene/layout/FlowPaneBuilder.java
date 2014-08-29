@@ -198,9 +198,9 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
+    public final B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAlignment = true;
         this.obsrvAlignment = source;
         return (B) this;
@@ -213,9 +213,9 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindColumnHalignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.HPos> source)
+    public final B bindColumnHalignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.HPos> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundColumnHalignment = true;
         this.obsrvColumnHalignment = source;
         return (B) this;
@@ -228,9 +228,9 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHgap(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHgap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHgap = true;
         this.obsrvHgap = source;
         return (B) this;
@@ -243,9 +243,9 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
+    public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOrientation = true;
         this.obsrvOrientation = source;
         return (B) this;
@@ -258,9 +258,9 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPrefWrapLength(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefWrapLength(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPrefWrapLength = true;
         this.obsrvPrefWrapLength = source;
         return (B) this;
@@ -273,9 +273,9 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRowValignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> source)
+    public final B bindRowValignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRowValignment = true;
         this.obsrvRowValignment = source;
         return (B) this;
@@ -288,9 +288,9 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindVgap(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindVgap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundVgap = true;
         this.obsrvVgap = source;
         return (B) this;

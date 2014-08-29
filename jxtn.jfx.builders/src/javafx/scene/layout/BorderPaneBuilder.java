@@ -150,9 +150,9 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindBottom(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindBottom(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundBottom = true;
         this.obsrvBottom = source;
         return (B) this;
@@ -165,9 +165,9 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCenter(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindCenter(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCenter = true;
         this.obsrvCenter = source;
         return (B) this;
@@ -180,9 +180,9 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLeft(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindLeft(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLeft = true;
         this.obsrvLeft = source;
         return (B) this;
@@ -195,9 +195,9 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRight(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindRight(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRight = true;
         this.obsrvRight = source;
         return (B) this;
@@ -210,9 +210,9 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTop(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindTop(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTop = true;
         this.obsrvTop = source;
         return (B) this;

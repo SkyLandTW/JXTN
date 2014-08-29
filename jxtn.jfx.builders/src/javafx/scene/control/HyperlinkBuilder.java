@@ -54,9 +54,9 @@ public class HyperlinkBuilder<Z extends Hyperlink, B extends HyperlinkBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindVisited(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindVisited(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundVisited = true;
         this.obsrvVisited = source;
         return (B) this;

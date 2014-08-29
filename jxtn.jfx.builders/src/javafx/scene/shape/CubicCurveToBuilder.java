@@ -174,9 +174,9 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindControlX1(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindControlX1(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundControlX1 = true;
         this.obsrvControlX1 = source;
         return (B) this;
@@ -189,9 +189,9 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindControlX2(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindControlX2(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundControlX2 = true;
         this.obsrvControlX2 = source;
         return (B) this;
@@ -204,9 +204,9 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindControlY1(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindControlY1(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundControlY1 = true;
         this.obsrvControlY1 = source;
         return (B) this;
@@ -219,9 +219,9 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindControlY2(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindControlY2(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundControlY2 = true;
         this.obsrvControlY2 = source;
         return (B) this;
@@ -234,9 +234,9 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundX = true;
         this.obsrvX = source;
         return (B) this;
@@ -249,9 +249,9 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundY = true;
         this.obsrvY = source;
         return (B) this;

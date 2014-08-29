@@ -102,9 +102,9 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
+    public final B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAlignment = true;
         this.obsrvAlignment = source;
         return (B) this;
@@ -117,9 +117,9 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
+    public final B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnAction = true;
         this.obsrvOnAction = source;
         return (B) this;
@@ -132,9 +132,9 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPrefColumnCount(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindPrefColumnCount(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPrefColumnCount = true;
         this.obsrvPrefColumnCount = source;
         return (B) this;

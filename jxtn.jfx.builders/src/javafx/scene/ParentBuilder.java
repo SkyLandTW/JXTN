@@ -40,7 +40,7 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B childrenUnmodifiable(java.util.Collection<javafx.scene.Node> value)
+    public final B childrenUnmodifiable(java.util.Collection<javafx.scene.Node> value)
     {
         this.hasChildrenUnmodifiable = true;
         this.valChildrenUnmodifiable = value;
@@ -69,7 +69,7 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B stylesheets(java.util.Collection<java.lang.String> value)
+    public final B stylesheets(java.util.Collection<java.lang.String> value)
     {
         this.hasStylesheets = true;
         this.valStylesheets = value;

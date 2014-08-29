@@ -102,9 +102,9 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindContextMenu(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContextMenu> source)
+    public final B bindContextMenu(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContextMenu> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundContextMenu = true;
         this.obsrvContextMenu = source;
         return (B) this;
@@ -117,9 +117,9 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSkin(javafx.beans.value.ObservableValue<? extends javafx.scene.control.Skin<?>> source)
+    public final B bindSkin(javafx.beans.value.ObservableValue<? extends javafx.scene.control.Skin<?>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSkin = true;
         this.obsrvSkin = source;
         return (B) this;
@@ -132,9 +132,9 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTooltip(javafx.beans.value.ObservableValue<? extends javafx.scene.control.Tooltip> source)
+    public final B bindTooltip(javafx.beans.value.ObservableValue<? extends javafx.scene.control.Tooltip> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTooltip = true;
         this.obsrvTooltip = source;
         return (B) this;

@@ -150,9 +150,9 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHeight = true;
         this.obsrvHeight = source;
         return (B) this;
@@ -165,9 +165,9 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPaint(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
+    public final B bindPaint(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPaint = true;
         this.obsrvPaint = source;
         return (B) this;
@@ -180,9 +180,9 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundWidth = true;
         this.obsrvWidth = source;
         return (B) this;
@@ -195,9 +195,9 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundX = true;
         this.obsrvX = source;
         return (B) this;
@@ -210,9 +210,9 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundY = true;
         this.obsrvY = source;
         return (B) this;

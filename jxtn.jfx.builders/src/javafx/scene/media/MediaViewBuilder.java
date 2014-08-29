@@ -246,9 +246,9 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFitHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindFitHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFitHeight = true;
         this.obsrvFitHeight = source;
         return (B) this;
@@ -261,9 +261,9 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFitWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindFitWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFitWidth = true;
         this.obsrvFitWidth = source;
         return (B) this;
@@ -276,9 +276,9 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMediaPlayer(javafx.beans.value.ObservableValue<? extends javafx.scene.media.MediaPlayer> source)
+    public final B bindMediaPlayer(javafx.beans.value.ObservableValue<? extends javafx.scene.media.MediaPlayer> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMediaPlayer = true;
         this.obsrvMediaPlayer = source;
         return (B) this;
@@ -291,9 +291,9 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnError(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.media.MediaErrorEvent>> source)
+    public final B bindOnError(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.media.MediaErrorEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnError = true;
         this.obsrvOnError = source;
         return (B) this;
@@ -306,9 +306,9 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPreserveRatio(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindPreserveRatio(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPreserveRatio = true;
         this.obsrvPreserveRatio = source;
         return (B) this;
@@ -321,9 +321,9 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSmooth(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindSmooth(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSmooth = true;
         this.obsrvSmooth = source;
         return (B) this;
@@ -336,9 +336,9 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindViewport(javafx.beans.value.ObservableValue<? extends javafx.geometry.Rectangle2D> source)
+    public final B bindViewport(javafx.beans.value.ObservableValue<? extends javafx.geometry.Rectangle2D> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundViewport = true;
         this.obsrvViewport = source;
         return (B) this;
@@ -351,9 +351,9 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundX = true;
         this.obsrvX = source;
         return (B) this;
@@ -366,9 +366,9 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundY = true;
         this.obsrvY = source;
         return (B) this;

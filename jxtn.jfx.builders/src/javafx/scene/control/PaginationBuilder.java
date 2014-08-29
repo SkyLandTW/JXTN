@@ -126,9 +126,9 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCurrentPageIndex(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindCurrentPageIndex(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCurrentPageIndex = true;
         this.obsrvCurrentPageIndex = source;
         return (B) this;
@@ -141,9 +141,9 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMaxPageIndicatorCount(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindMaxPageIndicatorCount(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMaxPageIndicatorCount = true;
         this.obsrvMaxPageIndicatorCount = source;
         return (B) this;
@@ -156,9 +156,9 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPageCount(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindPageCount(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPageCount = true;
         this.obsrvPageCount = source;
         return (B) this;
@@ -171,9 +171,9 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPageFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<java.lang.Integer, javafx.scene.Node>> source)
+    public final B bindPageFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<java.lang.Integer, javafx.scene.Node>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPageFactory = true;
         this.obsrvPageFactory = source;
         return (B) this;

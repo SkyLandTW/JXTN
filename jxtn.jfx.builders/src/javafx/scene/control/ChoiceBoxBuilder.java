@@ -116,9 +116,9 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindItems(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<T>> source)
+    public final B bindItems(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<T>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundItems = true;
         this.obsrvItems = source;
         return (B) this;
@@ -131,9 +131,9 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.SingleSelectionModel<T>> source)
+    public final B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.SingleSelectionModel<T>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSelectionModel = true;
         this.obsrvSelectionModel = source;
         return (B) this;

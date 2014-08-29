@@ -174,9 +174,9 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPivotX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPivotX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPivotX = true;
         this.obsrvPivotX = source;
         return (B) this;
@@ -189,9 +189,9 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPivotY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPivotY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPivotY = true;
         this.obsrvPivotY = source;
         return (B) this;
@@ -204,9 +204,9 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPivotZ(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPivotZ(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPivotZ = true;
         this.obsrvPivotZ = source;
         return (B) this;
@@ -219,9 +219,9 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundX = true;
         this.obsrvX = source;
         return (B) this;
@@ -234,9 +234,9 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundY = true;
         this.obsrvY = source;
         return (B) this;
@@ -249,9 +249,9 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindZ(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindZ(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundZ = true;
         this.obsrvZ = source;
         return (B) this;

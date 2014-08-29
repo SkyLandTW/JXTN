@@ -126,9 +126,9 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHeight = true;
         this.obsrvHeight = source;
         return (B) this;
@@ -141,9 +141,9 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
+    public final B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundInput = true;
         this.obsrvInput = source;
         return (B) this;
@@ -156,9 +156,9 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindIterations(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindIterations(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundIterations = true;
         this.obsrvIterations = source;
         return (B) this;
@@ -171,9 +171,9 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundWidth = true;
         this.obsrvWidth = source;
         return (B) this;

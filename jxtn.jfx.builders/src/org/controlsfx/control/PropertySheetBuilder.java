@@ -75,7 +75,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B items(java.util.Collection<org.controlsfx.control.PropertySheet.Item> value)
+    public final B items(java.util.Collection<org.controlsfx.control.PropertySheet.Item> value)
     {
         this.hasItems = true;
         this.valItems = value;
@@ -174,9 +174,9 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMode(javafx.beans.value.ObservableValue<? extends org.controlsfx.control.PropertySheet.Mode> source)
+    public final B bindMode(javafx.beans.value.ObservableValue<? extends org.controlsfx.control.PropertySheet.Mode> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMode = true;
         this.obsrvMode = source;
         return (B) this;
@@ -189,9 +189,9 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindModeSwitcherVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindModeSwitcherVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundModeSwitcherVisible = true;
         this.obsrvModeSwitcherVisible = source;
         return (B) this;
@@ -204,9 +204,9 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSearchBoxVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindSearchBoxVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSearchBoxVisible = true;
         this.obsrvSearchBoxVisible = source;
         return (B) this;

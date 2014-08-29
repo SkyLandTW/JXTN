@@ -126,9 +126,9 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundEditable = true;
         this.obsrvEditable = source;
         return (B) this;
@@ -141,9 +141,9 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFont(javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> source)
+    public final B bindFont(javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFont = true;
         this.obsrvFont = source;
         return (B) this;
@@ -156,9 +156,9 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPromptText(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindPromptText(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPromptText = true;
         this.obsrvPromptText = source;
         return (B) this;
@@ -171,9 +171,9 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindText(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundText = true;
         this.obsrvText = source;
         return (B) this;

@@ -215,7 +215,7 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
     @Override
     </#if>
     @SuppressWarnings("unchecked")
-    public B ${property.@name}(java.util.Collection<${property.@genericParam}> value)
+    public final B ${property.@name}(java.util.Collection<${property.@genericParam}> value)
     {
         this.has${property.@name?cap_first} = true;
         this.val${property.@name?cap_first} = value;
@@ -253,9 +253,9 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bind${fxPropName?cap_first}(javafx.beans.value.ObservableValue<? extends ${getFXType(method.@returnType)}> source)
+    public final B bind${fxPropName?cap_first}(javafx.beans.value.ObservableValue<? extends ${getFXType(method.@returnType)}> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.bound${fxPropName?cap_first} = true;
         this.obsrv${fxPropName?cap_first} = source;
         return (B) this;

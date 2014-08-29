@@ -337,9 +337,9 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMxx(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMxx(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMxx = true;
         this.obsrvMxx = source;
         return (B) this;
@@ -352,9 +352,9 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMxy(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMxy(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMxy = true;
         this.obsrvMxy = source;
         return (B) this;
@@ -367,9 +367,9 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMxz(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMxz(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMxz = true;
         this.obsrvMxz = source;
         return (B) this;
@@ -382,9 +382,9 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMyx(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMyx(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMyx = true;
         this.obsrvMyx = source;
         return (B) this;
@@ -397,9 +397,9 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMyy(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMyy(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMyy = true;
         this.obsrvMyy = source;
         return (B) this;
@@ -412,9 +412,9 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMyz(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMyz(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMyz = true;
         this.obsrvMyz = source;
         return (B) this;
@@ -427,9 +427,9 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMzx(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMzx(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMzx = true;
         this.obsrvMzx = source;
         return (B) this;
@@ -442,9 +442,9 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMzy(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMzy(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMzy = true;
         this.obsrvMzy = source;
         return (B) this;
@@ -457,9 +457,9 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMzz(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMzz(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMzz = true;
         this.obsrvMzz = source;
         return (B) this;
@@ -472,9 +472,9 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTx(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTx(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTx = true;
         this.obsrvTx = source;
         return (B) this;
@@ -487,9 +487,9 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTy(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTy(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTy = true;
         this.obsrvTy = source;
         return (B) this;
@@ -502,9 +502,9 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTz(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTz(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTz = true;
         this.obsrvTz = source;
         return (B) this;

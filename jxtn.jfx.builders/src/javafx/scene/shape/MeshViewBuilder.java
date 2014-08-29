@@ -54,9 +54,9 @@ public class MeshViewBuilder<Z extends MeshView, B extends MeshViewBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMesh(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.Mesh> source)
+    public final B bindMesh(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.Mesh> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMesh = true;
         this.obsrvMesh = source;
         return (B) this;

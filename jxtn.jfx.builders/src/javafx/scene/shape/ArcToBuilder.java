@@ -198,9 +198,9 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindXAxisRotation(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindXAxisRotation(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundXAxisRotation = true;
         this.obsrvXAxisRotation = source;
         return (B) this;
@@ -213,9 +213,9 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLargeArcFlag(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindLargeArcFlag(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLargeArcFlag = true;
         this.obsrvLargeArcFlag = source;
         return (B) this;
@@ -228,9 +228,9 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRadiusX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRadiusX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRadiusX = true;
         this.obsrvRadiusX = source;
         return (B) this;
@@ -243,9 +243,9 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRadiusY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRadiusY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRadiusY = true;
         this.obsrvRadiusY = source;
         return (B) this;
@@ -258,9 +258,9 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSweepFlag(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindSweepFlag(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSweepFlag = true;
         this.obsrvSweepFlag = source;
         return (B) this;
@@ -273,9 +273,9 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundX = true;
         this.obsrvX = source;
         return (B) this;
@@ -288,9 +288,9 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundY = true;
         this.obsrvY = source;
         return (B) this;

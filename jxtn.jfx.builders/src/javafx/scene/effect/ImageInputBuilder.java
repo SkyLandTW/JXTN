@@ -102,9 +102,9 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSource(javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> source)
+    public final B bindSource(javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSource = true;
         this.obsrvSource = source;
         return (B) this;
@@ -117,9 +117,9 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundX = true;
         this.obsrvX = source;
         return (B) this;
@@ -132,9 +132,9 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundY = true;
         this.obsrvY = source;
         return (B) this;

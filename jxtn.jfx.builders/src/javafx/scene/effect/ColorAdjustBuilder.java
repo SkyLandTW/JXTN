@@ -150,9 +150,9 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindBrightness(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindBrightness(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundBrightness = true;
         this.obsrvBrightness = source;
         return (B) this;
@@ -165,9 +165,9 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindContrast(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindContrast(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundContrast = true;
         this.obsrvContrast = source;
         return (B) this;
@@ -180,9 +180,9 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHue(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHue(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHue = true;
         this.obsrvHue = source;
         return (B) this;
@@ -195,9 +195,9 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
+    public final B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundInput = true;
         this.obsrvInput = source;
         return (B) this;
@@ -210,9 +210,9 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSaturation(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindSaturation(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSaturation = true;
         this.obsrvSaturation = source;
         return (B) this;

@@ -126,9 +126,9 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCenterX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindCenterX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCenterX = true;
         this.obsrvCenterX = source;
         return (B) this;
@@ -141,9 +141,9 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCenterY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindCenterY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCenterY = true;
         this.obsrvCenterY = source;
         return (B) this;
@@ -156,9 +156,9 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRadiusX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRadiusX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRadiusX = true;
         this.obsrvRadiusX = source;
         return (B) this;
@@ -171,9 +171,9 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRadiusY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRadiusY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRadiusY = true;
         this.obsrvRadiusY = source;
         return (B) this;

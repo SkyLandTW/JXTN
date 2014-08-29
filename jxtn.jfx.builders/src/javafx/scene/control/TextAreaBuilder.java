@@ -85,7 +85,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B paragraphs(java.util.Collection<java.lang.CharSequence> value)
+    public final B paragraphs(java.util.Collection<java.lang.CharSequence> value)
     {
         this.hasParagraphs = true;
         this.valParagraphs = value;
@@ -184,9 +184,9 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPrefColumnCount(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindPrefColumnCount(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPrefColumnCount = true;
         this.obsrvPrefColumnCount = source;
         return (B) this;
@@ -199,9 +199,9 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPrefRowCount(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindPrefRowCount(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPrefRowCount = true;
         this.obsrvPrefRowCount = source;
         return (B) this;
@@ -214,9 +214,9 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindScrollLeft(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindScrollLeft(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundScrollLeft = true;
         this.obsrvScrollLeft = source;
         return (B) this;
@@ -229,9 +229,9 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindScrollTop(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindScrollTop(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundScrollTop = true;
         this.obsrvScrollTop = source;
         return (B) this;
@@ -244,9 +244,9 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindWrapText(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindWrapText(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundWrapText = true;
         this.obsrvWrapText = source;
         return (B) this;

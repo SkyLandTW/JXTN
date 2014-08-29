@@ -78,9 +78,9 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCancelButton(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindCancelButton(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCancelButton = true;
         this.obsrvCancelButton = source;
         return (B) this;
@@ -93,9 +93,9 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindDefaultButton(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindDefaultButton(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundDefaultButton = true;
         this.obsrvDefaultButton = source;
         return (B) this;

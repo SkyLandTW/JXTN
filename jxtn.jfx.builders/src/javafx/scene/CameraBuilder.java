@@ -78,9 +78,9 @@ public class CameraBuilder<Z extends Camera, B extends CameraBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFarClip(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindFarClip(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFarClip = true;
         this.obsrvFarClip = source;
         return (B) this;
@@ -93,9 +93,9 @@ public class CameraBuilder<Z extends Camera, B extends CameraBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindNearClip(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindNearClip(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundNearClip = true;
         this.obsrvNearClip = source;
         return (B) this;

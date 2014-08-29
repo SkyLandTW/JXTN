@@ -318,9 +318,9 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindBlockIncrement(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindBlockIncrement(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundBlockIncrement = true;
         this.obsrvBlockIncrement = source;
         return (B) this;
@@ -333,9 +333,9 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLabelFormatter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<java.lang.Double>> source)
+    public final B bindLabelFormatter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<java.lang.Double>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLabelFormatter = true;
         this.obsrvLabelFormatter = source;
         return (B) this;
@@ -348,9 +348,9 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMajorTickUnit(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMajorTickUnit(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMajorTickUnit = true;
         this.obsrvMajorTickUnit = source;
         return (B) this;
@@ -363,9 +363,9 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMax(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMax(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMax = true;
         this.obsrvMax = source;
         return (B) this;
@@ -378,9 +378,9 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMin(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMin(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMin = true;
         this.obsrvMin = source;
         return (B) this;
@@ -393,9 +393,9 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMinorTickCount(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindMinorTickCount(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMinorTickCount = true;
         this.obsrvMinorTickCount = source;
         return (B) this;
@@ -408,9 +408,9 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
+    public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOrientation = true;
         this.obsrvOrientation = source;
         return (B) this;
@@ -423,9 +423,9 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindShowTickLabels(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindShowTickLabels(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundShowTickLabels = true;
         this.obsrvShowTickLabels = source;
         return (B) this;
@@ -438,9 +438,9 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindShowTickMarks(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindShowTickMarks(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundShowTickMarks = true;
         this.obsrvShowTickMarks = source;
         return (B) this;
@@ -453,9 +453,9 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSnapToTicks(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindSnapToTicks(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSnapToTicks = true;
         this.obsrvSnapToTicks = source;
         return (B) this;
@@ -468,9 +468,9 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindValueChanging(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindValueChanging(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundValueChanging = true;
         this.obsrvValueChanging = source;
         return (B) this;
@@ -483,9 +483,9 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindValue(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindValue(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundValue = true;
         this.obsrvValue = source;
         return (B) this;

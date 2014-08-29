@@ -78,9 +78,9 @@ public class TextFlowBuilder<Z extends TextFlow, B extends TextFlowBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLineSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindLineSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLineSpacing = true;
         this.obsrvLineSpacing = source;
         return (B) this;
@@ -93,9 +93,9 @@ public class TextFlowBuilder<Z extends TextFlow, B extends TextFlowBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTextAlignment(javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextAlignment> source)
+    public final B bindTextAlignment(javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextAlignment> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTextAlignment = true;
         this.obsrvTextAlignment = source;
         return (B) this;

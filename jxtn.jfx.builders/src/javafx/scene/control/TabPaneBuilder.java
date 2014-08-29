@@ -227,7 +227,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B tabs(java.util.Collection<javafx.scene.control.Tab> value)
+    public final B tabs(java.util.Collection<javafx.scene.control.Tab> value)
     {
         this.hasTabs = true;
         this.valTabs = value;
@@ -256,9 +256,9 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRotateGraphic(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindRotateGraphic(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRotateGraphic = true;
         this.obsrvRotateGraphic = source;
         return (B) this;
@@ -271,9 +271,9 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.SingleSelectionModel<javafx.scene.control.Tab>> source)
+    public final B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.SingleSelectionModel<javafx.scene.control.Tab>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSelectionModel = true;
         this.obsrvSelectionModel = source;
         return (B) this;
@@ -286,9 +286,9 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
+    public final B bindSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSide = true;
         this.obsrvSide = source;
         return (B) this;
@@ -301,9 +301,9 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTabClosingPolicy(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TabPane.TabClosingPolicy> source)
+    public final B bindTabClosingPolicy(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TabPane.TabClosingPolicy> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTabClosingPolicy = true;
         this.obsrvTabClosingPolicy = source;
         return (B) this;
@@ -316,9 +316,9 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTabMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTabMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTabMaxHeight = true;
         this.obsrvTabMaxHeight = source;
         return (B) this;
@@ -331,9 +331,9 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTabMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTabMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTabMaxWidth = true;
         this.obsrvTabMaxWidth = source;
         return (B) this;
@@ -346,9 +346,9 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTabMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTabMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTabMinHeight = true;
         this.obsrvTabMinHeight = source;
         return (B) this;
@@ -361,9 +361,9 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTabMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTabMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTabMinWidth = true;
         this.obsrvTabMinWidth = source;
         return (B) this;

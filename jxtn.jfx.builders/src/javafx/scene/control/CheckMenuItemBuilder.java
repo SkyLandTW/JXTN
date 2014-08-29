@@ -54,9 +54,9 @@ public class CheckMenuItemBuilder<Z extends CheckMenuItem, B extends CheckMenuIt
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSelected(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindSelected(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSelected = true;
         this.obsrvSelected = source;
         return (B) this;

@@ -126,9 +126,9 @@ public class QuadCurveToBuilder<Z extends QuadCurveTo, B extends QuadCurveToBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindControlX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindControlX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundControlX = true;
         this.obsrvControlX = source;
         return (B) this;
@@ -141,9 +141,9 @@ public class QuadCurveToBuilder<Z extends QuadCurveTo, B extends QuadCurveToBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindControlY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindControlY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundControlY = true;
         this.obsrvControlY = source;
         return (B) this;
@@ -156,9 +156,9 @@ public class QuadCurveToBuilder<Z extends QuadCurveTo, B extends QuadCurveToBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundX = true;
         this.obsrvX = source;
         return (B) this;
@@ -171,9 +171,9 @@ public class QuadCurveToBuilder<Z extends QuadCurveTo, B extends QuadCurveToBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundY = true;
         this.obsrvY = source;
         return (B) this;

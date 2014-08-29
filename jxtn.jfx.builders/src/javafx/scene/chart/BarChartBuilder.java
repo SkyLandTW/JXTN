@@ -78,9 +78,9 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindBarGap(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindBarGap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundBarGap = true;
         this.obsrvBarGap = source;
         return (B) this;
@@ -93,9 +93,9 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCategoryGap(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindCategoryGap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCategoryGap = true;
         this.obsrvCategoryGap = source;
         return (B) this;

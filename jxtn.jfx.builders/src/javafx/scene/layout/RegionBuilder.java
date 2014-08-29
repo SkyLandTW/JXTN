@@ -390,9 +390,9 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindBackground(javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Background> source)
+    public final B bindBackground(javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Background> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundBackground = true;
         this.obsrvBackground = source;
         return (B) this;
@@ -405,9 +405,9 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindBorder(javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Border> source)
+    public final B bindBorder(javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Border> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundBorder = true;
         this.obsrvBorder = source;
         return (B) this;
@@ -420,9 +420,9 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCacheShape(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindCacheShape(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCacheShape = true;
         this.obsrvCacheShape = source;
         return (B) this;
@@ -435,9 +435,9 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCenterShape(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindCenterShape(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCenterShape = true;
         this.obsrvCenterShape = source;
         return (B) this;
@@ -450,9 +450,9 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMaxHeight = true;
         this.obsrvMaxHeight = source;
         return (B) this;
@@ -465,9 +465,9 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMaxWidth = true;
         this.obsrvMaxWidth = source;
         return (B) this;
@@ -480,9 +480,9 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMinHeight = true;
         this.obsrvMinHeight = source;
         return (B) this;
@@ -495,9 +495,9 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMinWidth = true;
         this.obsrvMinWidth = source;
         return (B) this;
@@ -510,9 +510,9 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOpaqueInsets(javafx.beans.value.ObservableValue<? extends javafx.geometry.Insets> source)
+    public final B bindOpaqueInsets(javafx.beans.value.ObservableValue<? extends javafx.geometry.Insets> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOpaqueInsets = true;
         this.obsrvOpaqueInsets = source;
         return (B) this;
@@ -525,9 +525,9 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPadding(javafx.beans.value.ObservableValue<? extends javafx.geometry.Insets> source)
+    public final B bindPadding(javafx.beans.value.ObservableValue<? extends javafx.geometry.Insets> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPadding = true;
         this.obsrvPadding = source;
         return (B) this;
@@ -540,9 +540,9 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPrefHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPrefHeight = true;
         this.obsrvPrefHeight = source;
         return (B) this;
@@ -555,9 +555,9 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPrefWidth = true;
         this.obsrvPrefWidth = source;
         return (B) this;
@@ -570,9 +570,9 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindScaleShape(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindScaleShape(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundScaleShape = true;
         this.obsrvScaleShape = source;
         return (B) this;
@@ -585,9 +585,9 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindShape(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.Shape> source)
+    public final B bindShape(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.Shape> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundShape = true;
         this.obsrvShape = source;
         return (B) this;
@@ -600,9 +600,9 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSnapToPixel(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindSnapToPixel(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSnapToPixel = true;
         this.obsrvSnapToPixel = source;
         return (B) this;

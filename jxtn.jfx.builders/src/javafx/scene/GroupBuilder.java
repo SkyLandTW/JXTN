@@ -59,7 +59,7 @@ public class GroupBuilder<Z extends Group, B extends GroupBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B children(java.util.Collection<javafx.scene.Node> value)
+    public final B children(java.util.Collection<javafx.scene.Node> value)
     {
         this.hasChildren = true;
         this.valChildren = value;
@@ -88,9 +88,9 @@ public class GroupBuilder<Z extends Group, B extends GroupBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAutoSizeChildren(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindAutoSizeChildren(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAutoSizeChildren = true;
         this.obsrvAutoSizeChildren = source;
         return (B) this;

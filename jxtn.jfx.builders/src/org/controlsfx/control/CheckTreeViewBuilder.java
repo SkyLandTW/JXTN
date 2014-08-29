@@ -54,9 +54,9 @@ public class CheckTreeViewBuilder<T extends java.lang.Object, Z extends CheckTre
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCheckModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>>> source)
+    public final B bindCheckModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCheckModel = true;
         this.obsrvCheckModel = source;
         return (B) this;

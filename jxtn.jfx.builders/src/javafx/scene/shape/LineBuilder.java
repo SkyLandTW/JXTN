@@ -126,9 +126,9 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindEndX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindEndX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundEndX = true;
         this.obsrvEndX = source;
         return (B) this;
@@ -141,9 +141,9 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindEndY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindEndY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundEndY = true;
         this.obsrvEndY = source;
         return (B) this;
@@ -156,9 +156,9 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindStartX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindStartX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundStartX = true;
         this.obsrvStartX = source;
         return (B) this;
@@ -171,9 +171,9 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindStartY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindStartY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundStartY = true;
         this.obsrvStartY = source;
         return (B) this;

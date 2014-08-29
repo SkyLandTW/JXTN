@@ -198,9 +198,9 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindBlockIncrement(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindBlockIncrement(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundBlockIncrement = true;
         this.obsrvBlockIncrement = source;
         return (B) this;
@@ -213,9 +213,9 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMax(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMax(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMax = true;
         this.obsrvMax = source;
         return (B) this;
@@ -228,9 +228,9 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMin(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMin(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMin = true;
         this.obsrvMin = source;
         return (B) this;
@@ -243,9 +243,9 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
+    public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOrientation = true;
         this.obsrvOrientation = source;
         return (B) this;
@@ -258,9 +258,9 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindUnitIncrement(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindUnitIncrement(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundUnitIncrement = true;
         this.obsrvUnitIncrement = source;
         return (B) this;
@@ -273,9 +273,9 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindValue(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindValue(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundValue = true;
         this.obsrvValue = source;
         return (B) this;
@@ -288,9 +288,9 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindVisibleAmount(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindVisibleAmount(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundVisibleAmount = true;
         this.obsrvVisibleAmount = source;
         return (B) this;

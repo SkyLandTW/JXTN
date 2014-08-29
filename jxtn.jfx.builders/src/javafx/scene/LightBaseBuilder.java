@@ -83,7 +83,7 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B scope(java.util.Collection<javafx.scene.Node> value)
+    public final B scope(java.util.Collection<javafx.scene.Node> value)
     {
         this.hasScope = true;
         this.valScope = value;
@@ -112,9 +112,9 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindColor(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> source)
+    public final B bindColor(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundColor = true;
         this.obsrvColor = source;
         return (B) this;
@@ -127,9 +127,9 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLightOn(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindLightOn(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLightOn = true;
         this.obsrvLightOn = source;
         return (B) this;

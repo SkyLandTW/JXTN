@@ -54,9 +54,9 @@ public class TransformBuilder<Z extends Transform, B extends TransformBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnTransformChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.transform.TransformChangedEvent>> source)
+    public final B bindOnTransformChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.transform.TransformChangedEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnTransformChanged = true;
         this.obsrvOnTransformChanged = source;
         return (B) this;

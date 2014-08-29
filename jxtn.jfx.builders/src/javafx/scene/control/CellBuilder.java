@@ -78,9 +78,9 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundEditable = true;
         this.obsrvEditable = source;
         return (B) this;
@@ -93,9 +93,9 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindItem(javafx.beans.value.ObservableValue<? extends T> source)
+    public final B bindItem(javafx.beans.value.ObservableValue<? extends T> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundItem = true;
         this.obsrvItem = source;
         return (B) this;

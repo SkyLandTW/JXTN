@@ -54,9 +54,9 @@ public class CheckListViewBuilder<T extends java.lang.Object, Z extends CheckLis
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCheckModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> source)
+    public final B bindCheckModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCheckModel = true;
         this.obsrvCheckModel = source;
         return (B) this;

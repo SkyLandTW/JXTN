@@ -78,9 +78,9 @@ public class NumberAxisBuilder<Z extends NumberAxis, B extends NumberAxisBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindForceZeroInRange(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindForceZeroInRange(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundForceZeroInRange = true;
         this.obsrvForceZeroInRange = source;
         return (B) this;
@@ -93,9 +93,9 @@ public class NumberAxisBuilder<Z extends NumberAxis, B extends NumberAxisBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTickUnit(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTickUnit(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTickUnit = true;
         this.obsrvTickUnit = source;
         return (B) this;

@@ -174,9 +174,9 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<org.controlsfx.control.GridView<T>, org.controlsfx.control.GridCell<T>>> source)
+    public final B bindCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<org.controlsfx.control.GridView<T>, org.controlsfx.control.GridCell<T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCellFactory = true;
         this.obsrvCellFactory = source;
         return (B) this;
@@ -189,9 +189,9 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCellHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindCellHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCellHeight = true;
         this.obsrvCellHeight = source;
         return (B) this;
@@ -204,9 +204,9 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCellWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindCellWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCellWidth = true;
         this.obsrvCellWidth = source;
         return (B) this;
@@ -219,9 +219,9 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHorizontalCellSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHorizontalCellSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHorizontalCellSpacing = true;
         this.obsrvHorizontalCellSpacing = source;
         return (B) this;
@@ -234,9 +234,9 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindItems(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<T>> source)
+    public final B bindItems(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<T>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundItems = true;
         this.obsrvItems = source;
         return (B) this;
@@ -249,9 +249,9 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindVerticalCellSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindVerticalCellSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundVerticalCellSpacing = true;
         this.obsrvVerticalCellSpacing = source;
         return (B) this;

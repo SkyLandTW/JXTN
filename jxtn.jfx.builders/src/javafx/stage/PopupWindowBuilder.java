@@ -212,9 +212,9 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAnchorLocation(javafx.beans.value.ObservableValue<? extends javafx.stage.PopupWindow.AnchorLocation> source)
+    public final B bindAnchorLocation(javafx.beans.value.ObservableValue<? extends javafx.stage.PopupWindow.AnchorLocation> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAnchorLocation = true;
         this.obsrvAnchorLocation = source;
         return (B) this;
@@ -227,9 +227,9 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAutoFix(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindAutoFix(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAutoFix = true;
         this.obsrvAutoFix = source;
         return (B) this;
@@ -242,9 +242,9 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAutoHide(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindAutoHide(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAutoHide = true;
         this.obsrvAutoHide = source;
         return (B) this;
@@ -257,9 +257,9 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindConsumeAutoHidingEvents(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindConsumeAutoHidingEvents(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundConsumeAutoHidingEvents = true;
         this.obsrvConsumeAutoHidingEvents = source;
         return (B) this;
@@ -272,9 +272,9 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHideOnEscape(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindHideOnEscape(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHideOnEscape = true;
         this.obsrvHideOnEscape = source;
         return (B) this;
@@ -287,9 +287,9 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnAutoHide(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
+    public final B bindOnAutoHide(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnAutoHide = true;
         this.obsrvOnAutoHide = source;
         return (B) this;

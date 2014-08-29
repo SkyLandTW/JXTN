@@ -235,9 +235,9 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindContextMenuEnabled(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindContextMenuEnabled(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundContextMenuEnabled = true;
         this.obsrvContextMenuEnabled = source;
         return (B) this;
@@ -250,9 +250,9 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFontSmoothingType(javafx.beans.value.ObservableValue<? extends javafx.scene.text.FontSmoothingType> source)
+    public final B bindFontSmoothingType(javafx.beans.value.ObservableValue<? extends javafx.scene.text.FontSmoothingType> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFontSmoothingType = true;
         this.obsrvFontSmoothingType = source;
         return (B) this;
@@ -265,9 +265,9 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindZoom(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindZoom(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundZoom = true;
         this.obsrvZoom = source;
         return (B) this;

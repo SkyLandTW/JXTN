@@ -78,9 +78,9 @@ public class CustomMenuItemBuilder<Z extends CustomMenuItem, B extends CustomMen
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundContent = true;
         this.obsrvContent = source;
         return (B) this;
@@ -93,9 +93,9 @@ public class CustomMenuItemBuilder<Z extends CustomMenuItem, B extends CustomMen
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHideOnClick(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindHideOnClick(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHideOnClick = true;
         this.obsrvHideOnClick = source;
         return (B) this;

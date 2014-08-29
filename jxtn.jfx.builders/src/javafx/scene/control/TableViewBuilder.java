@@ -174,7 +174,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B columns(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
+    public final B columns(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
     {
         this.hasColumns = true;
         this.valColumns = value;
@@ -343,7 +343,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B sortOrder(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
+    public final B sortOrder(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
     {
         this.hasSortOrder = true;
         this.valSortOrder = value;
@@ -400,7 +400,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B visibleLeafColumns(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
+    public final B visibleLeafColumns(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
     {
         this.hasVisibleLeafColumns = true;
         this.valVisibleLeafColumns = value;
@@ -429,9 +429,9 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindColumnResizePolicy(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableView.ResizeFeatures, java.lang.Boolean>> source)
+    public final B bindColumnResizePolicy(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableView.ResizeFeatures, java.lang.Boolean>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundColumnResizePolicy = true;
         this.obsrvColumnResizePolicy = source;
         return (B) this;
@@ -444,9 +444,9 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundEditable = true;
         this.obsrvEditable = source;
         return (B) this;
@@ -459,9 +459,9 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFixedCellSize(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindFixedCellSize(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFixedCellSize = true;
         this.obsrvFixedCellSize = source;
         return (B) this;
@@ -474,9 +474,9 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFocusModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TableView.TableViewFocusModel<S>> source)
+    public final B bindFocusModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TableView.TableViewFocusModel<S>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFocusModel = true;
         this.obsrvFocusModel = source;
         return (B) this;
@@ -489,9 +489,9 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindItems(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<S>> source)
+    public final B bindItems(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<S>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundItems = true;
         this.obsrvItems = source;
         return (B) this;
@@ -504,9 +504,9 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPlaceholder(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindPlaceholder(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPlaceholder = true;
         this.obsrvPlaceholder = source;
         return (B) this;
@@ -519,9 +519,9 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRowFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableView<S>, javafx.scene.control.TableRow<S>>> source)
+    public final B bindRowFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableView<S>, javafx.scene.control.TableRow<S>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRowFactory = true;
         this.obsrvRowFactory = source;
         return (B) this;
@@ -534,9 +534,9 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TableView.TableViewSelectionModel<S>> source)
+    public final B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TableView.TableViewSelectionModel<S>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSelectionModel = true;
         this.obsrvSelectionModel = source;
         return (B) this;
@@ -549,9 +549,9 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSortPolicy(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableView<S>, java.lang.Boolean>> source)
+    public final B bindSortPolicy(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableView<S>, java.lang.Boolean>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSortPolicy = true;
         this.obsrvSortPolicy = source;
         return (B) this;
@@ -564,9 +564,9 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTableMenuButtonVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindTableMenuButtonVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTableMenuButtonVisible = true;
         this.obsrvTableMenuButtonVisible = source;
         return (B) this;

@@ -123,7 +123,7 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B columns(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
+    public final B columns(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
     {
         this.hasColumns = true;
         this.valColumns = value;
@@ -208,9 +208,9 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableColumn<S, T>, javafx.scene.control.TableCell<S, T>>> source)
+    public final B bindCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableColumn<S, T>, javafx.scene.control.TableCell<S, T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCellFactory = true;
         this.obsrvCellFactory = source;
         return (B) this;
@@ -223,9 +223,9 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCellValueFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableColumn.CellDataFeatures<S, T>, javafx.beans.value.ObservableValue<T>>> source)
+    public final B bindCellValueFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableColumn.CellDataFeatures<S, T>, javafx.beans.value.ObservableValue<T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCellValueFactory = true;
         this.obsrvCellValueFactory = source;
         return (B) this;
@@ -238,9 +238,9 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnEditCancel(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> source)
+    public final B bindOnEditCancel(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnEditCancel = true;
         this.obsrvOnEditCancel = source;
         return (B) this;
@@ -253,9 +253,9 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnEditCommit(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> source)
+    public final B bindOnEditCommit(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnEditCommit = true;
         this.obsrvOnEditCommit = source;
         return (B) this;
@@ -268,9 +268,9 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnEditStart(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> source)
+    public final B bindOnEditStart(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnEditStart = true;
         this.obsrvOnEditStart = source;
         return (B) this;
@@ -283,9 +283,9 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSortType(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TableColumn.SortType> source)
+    public final B bindSortType(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TableColumn.SortType> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSortType = true;
         this.obsrvSortType = source;
         return (B) this;

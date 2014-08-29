@@ -100,7 +100,7 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B actions(java.util.Collection<org.controlsfx.control.action.Action> value)
+    public final B actions(java.util.Collection<org.controlsfx.control.action.Action> value)
     {
         this.hasActions = true;
         this.valActions = value;
@@ -283,7 +283,7 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B stylesheets(java.util.Collection<java.lang.String> value)
+    public final B stylesheets(java.util.Collection<java.lang.String> value)
     {
         this.hasStylesheets = true;
         this.valStylesheets = value;

@@ -150,9 +150,9 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAngle(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindAngle(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAngle = true;
         this.obsrvAngle = source;
         return (B) this;
@@ -165,9 +165,9 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAxis(javafx.beans.value.ObservableValue<? extends javafx.geometry.Point3D> source)
+    public final B bindAxis(javafx.beans.value.ObservableValue<? extends javafx.geometry.Point3D> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAxis = true;
         this.obsrvAxis = source;
         return (B) this;
@@ -180,9 +180,9 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPivotX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPivotX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPivotX = true;
         this.obsrvPivotX = source;
         return (B) this;
@@ -195,9 +195,9 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPivotY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPivotY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPivotY = true;
         this.obsrvPivotY = source;
         return (B) this;
@@ -210,9 +210,9 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPivotZ(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPivotZ(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPivotZ = true;
         this.obsrvPivotZ = source;
         return (B) this;

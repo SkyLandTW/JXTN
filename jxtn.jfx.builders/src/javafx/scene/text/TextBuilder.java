@@ -318,9 +318,9 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindBoundsType(javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextBoundsType> source)
+    public final B bindBoundsType(javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextBoundsType> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundBoundsType = true;
         this.obsrvBoundsType = source;
         return (B) this;
@@ -333,9 +333,9 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFont(javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> source)
+    public final B bindFont(javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFont = true;
         this.obsrvFont = source;
         return (B) this;
@@ -348,9 +348,9 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFontSmoothingType(javafx.beans.value.ObservableValue<? extends javafx.scene.text.FontSmoothingType> source)
+    public final B bindFontSmoothingType(javafx.beans.value.ObservableValue<? extends javafx.scene.text.FontSmoothingType> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFontSmoothingType = true;
         this.obsrvFontSmoothingType = source;
         return (B) this;
@@ -363,9 +363,9 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLineSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindLineSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLineSpacing = true;
         this.obsrvLineSpacing = source;
         return (B) this;
@@ -378,9 +378,9 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindStrikethrough(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindStrikethrough(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundStrikethrough = true;
         this.obsrvStrikethrough = source;
         return (B) this;
@@ -393,9 +393,9 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTextAlignment(javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextAlignment> source)
+    public final B bindTextAlignment(javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextAlignment> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTextAlignment = true;
         this.obsrvTextAlignment = source;
         return (B) this;
@@ -408,9 +408,9 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTextOrigin(javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> source)
+    public final B bindTextOrigin(javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTextOrigin = true;
         this.obsrvTextOrigin = source;
         return (B) this;
@@ -423,9 +423,9 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindText(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundText = true;
         this.obsrvText = source;
         return (B) this;
@@ -438,9 +438,9 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindUnderline(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindUnderline(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundUnderline = true;
         this.obsrvUnderline = source;
         return (B) this;
@@ -453,9 +453,9 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindWrappingWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindWrappingWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundWrappingWidth = true;
         this.obsrvWrappingWidth = source;
         return (B) this;
@@ -468,9 +468,9 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundX = true;
         this.obsrvX = source;
         return (B) this;
@@ -483,9 +483,9 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundY = true;
         this.obsrvY = source;
         return (B) this;

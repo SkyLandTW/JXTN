@@ -59,7 +59,7 @@ public class AccordionBuilder<Z extends Accordion, B extends AccordionBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B panes(java.util.Collection<javafx.scene.control.TitledPane> value)
+    public final B panes(java.util.Collection<javafx.scene.control.TitledPane> value)
     {
         this.hasPanes = true;
         this.valPanes = value;
@@ -88,9 +88,9 @@ public class AccordionBuilder<Z extends Accordion, B extends AccordionBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindExpandedPane(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TitledPane> source)
+    public final B bindExpandedPane(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TitledPane> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundExpandedPane = true;
         this.obsrvExpandedPane = source;
         return (B) this;

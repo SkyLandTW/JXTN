@@ -78,9 +78,9 @@ public class CheckBoxTreeCellBuilder<T extends java.lang.Object, Z extends Check
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<javafx.scene.control.TreeItem<T>>> source)
+    public final B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<javafx.scene.control.TreeItem<T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundConverter = true;
         this.obsrvConverter = source;
         return (B) this;
@@ -93,9 +93,9 @@ public class CheckBoxTreeCellBuilder<T extends java.lang.Object, Z extends Check
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSelectedStateCallback(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeItem<T>, javafx.beans.value.ObservableValue<java.lang.Boolean>>> source)
+    public final B bindSelectedStateCallback(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeItem<T>, javafx.beans.value.ObservableValue<java.lang.Boolean>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSelectedStateCallback = true;
         this.obsrvSelectedStateCallback = source;
         return (B) this;

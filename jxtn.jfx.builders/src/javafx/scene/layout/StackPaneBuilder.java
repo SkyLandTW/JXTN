@@ -54,9 +54,9 @@ public class StackPaneBuilder<Z extends StackPane, B extends StackPaneBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
+    public final B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAlignment = true;
         this.obsrvAlignment = source;
         return (B) this;

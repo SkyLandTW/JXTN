@@ -126,9 +126,9 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindChronology(javafx.beans.value.ObservableValue<? extends java.time.chrono.Chronology> source)
+    public final B bindChronology(javafx.beans.value.ObservableValue<? extends java.time.chrono.Chronology> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundChronology = true;
         this.obsrvChronology = source;
         return (B) this;
@@ -141,9 +141,9 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<java.time.LocalDate>> source)
+    public final B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<java.time.LocalDate>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundConverter = true;
         this.obsrvConverter = source;
         return (B) this;
@@ -156,9 +156,9 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindDayCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.DatePicker, javafx.scene.control.DateCell>> source)
+    public final B bindDayCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.DatePicker, javafx.scene.control.DateCell>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundDayCellFactory = true;
         this.obsrvDayCellFactory = source;
         return (B) this;
@@ -171,9 +171,9 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindShowWeekNumbers(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindShowWeekNumbers(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundShowWeekNumbers = true;
         this.obsrvShowWeekNumbers = source;
         return (B) this;

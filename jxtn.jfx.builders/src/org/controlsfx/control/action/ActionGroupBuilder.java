@@ -35,7 +35,7 @@ public class ActionGroupBuilder<Z extends ActionGroup, B extends ActionGroupBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B actions(java.util.Collection<org.controlsfx.control.action.Action> value)
+    public final B actions(java.util.Collection<org.controlsfx.control.action.Action> value)
     {
         this.hasActions = true;
         this.valActions = value;

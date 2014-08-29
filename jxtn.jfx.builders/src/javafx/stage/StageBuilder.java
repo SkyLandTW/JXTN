@@ -210,7 +210,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B icons(java.util.Collection<javafx.scene.image.Image> value)
+    public final B icons(java.util.Collection<javafx.scene.image.Image> value)
     {
         this.hasIcons = true;
         this.valIcons = value;
@@ -351,9 +351,9 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFullScreenExitHint(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
+    public final B bindFullScreenExitHint(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFullScreenExitHint = true;
         this.obsrvFullScreenExitHint = source;
         return (B) this;
@@ -366,9 +366,9 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFullScreenExitKey(javafx.beans.value.ObservableValue<? extends javafx.scene.input.KeyCombination> source)
+    public final B bindFullScreenExitKey(javafx.beans.value.ObservableValue<? extends javafx.scene.input.KeyCombination> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFullScreenExitKey = true;
         this.obsrvFullScreenExitKey = source;
         return (B) this;
@@ -381,9 +381,9 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMaxHeight = true;
         this.obsrvMaxHeight = source;
         return (B) this;
@@ -396,9 +396,9 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMaxWidth = true;
         this.obsrvMaxWidth = source;
         return (B) this;
@@ -411,9 +411,9 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMinHeight = true;
         this.obsrvMinHeight = source;
         return (B) this;
@@ -426,9 +426,9 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMinWidth = true;
         this.obsrvMinWidth = source;
         return (B) this;
@@ -441,9 +441,9 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindResizable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindResizable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundResizable = true;
         this.obsrvResizable = source;
         return (B) this;
@@ -456,9 +456,9 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTitle(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindTitle(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTitle = true;
         this.obsrvTitle = source;
         return (B) this;

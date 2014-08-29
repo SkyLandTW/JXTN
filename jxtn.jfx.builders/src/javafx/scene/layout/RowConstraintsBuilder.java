@@ -198,9 +198,9 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFillHeight(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindFillHeight(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFillHeight = true;
         this.obsrvFillHeight = source;
         return (B) this;
@@ -213,9 +213,9 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMaxHeight = true;
         this.obsrvMaxHeight = source;
         return (B) this;
@@ -228,9 +228,9 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMinHeight = true;
         this.obsrvMinHeight = source;
         return (B) this;
@@ -243,9 +243,9 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPercentHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPercentHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPercentHeight = true;
         this.obsrvPercentHeight = source;
         return (B) this;
@@ -258,9 +258,9 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPrefHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPrefHeight = true;
         this.obsrvPrefHeight = source;
         return (B) this;
@@ -273,9 +273,9 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindValignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> source)
+    public final B bindValignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundValignment = true;
         this.obsrvValignment = source;
         return (B) this;
@@ -288,9 +288,9 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindVgrow(javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Priority> source)
+    public final B bindVgrow(javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Priority> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundVgrow = true;
         this.obsrvVgrow = source;
         return (B) this;

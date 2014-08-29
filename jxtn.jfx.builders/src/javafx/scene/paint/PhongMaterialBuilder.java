@@ -198,9 +198,9 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindBumpMap(javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> source)
+    public final B bindBumpMap(javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundBumpMap = true;
         this.obsrvBumpMap = source;
         return (B) this;
@@ -213,9 +213,9 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindDiffuseColor(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> source)
+    public final B bindDiffuseColor(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundDiffuseColor = true;
         this.obsrvDiffuseColor = source;
         return (B) this;
@@ -228,9 +228,9 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindDiffuseMap(javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> source)
+    public final B bindDiffuseMap(javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundDiffuseMap = true;
         this.obsrvDiffuseMap = source;
         return (B) this;
@@ -243,9 +243,9 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSelfIlluminationMap(javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> source)
+    public final B bindSelfIlluminationMap(javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSelfIlluminationMap = true;
         this.obsrvSelfIlluminationMap = source;
         return (B) this;
@@ -258,9 +258,9 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSpecularColor(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> source)
+    public final B bindSpecularColor(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSpecularColor = true;
         this.obsrvSpecularColor = source;
         return (B) this;
@@ -273,9 +273,9 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSpecularMap(javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> source)
+    public final B bindSpecularMap(javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSpecularMap = true;
         this.obsrvSpecularMap = source;
         return (B) this;
@@ -288,9 +288,9 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSpecularPower(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindSpecularPower(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSpecularPower = true;
         this.obsrvSpecularPower = source;
         return (B) this;

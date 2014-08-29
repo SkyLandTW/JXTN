@@ -83,7 +83,7 @@ public class ComboBoxTreeCellBuilder<T extends java.lang.Object, Z extends Combo
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B items(java.util.Collection<T> value)
+    public final B items(java.util.Collection<T> value)
     {
         this.hasItems = true;
         this.valItems = value;
@@ -112,9 +112,9 @@ public class ComboBoxTreeCellBuilder<T extends java.lang.Object, Z extends Combo
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindComboBoxEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindComboBoxEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundComboBoxEditable = true;
         this.obsrvComboBoxEditable = source;
         return (B) this;
@@ -127,9 +127,9 @@ public class ComboBoxTreeCellBuilder<T extends java.lang.Object, Z extends Combo
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
+    public final B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundConverter = true;
         this.obsrvConverter = source;
         return (B) this;

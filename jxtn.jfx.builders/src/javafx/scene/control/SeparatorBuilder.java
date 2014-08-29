@@ -102,9 +102,9 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHalignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.HPos> source)
+    public final B bindHalignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.HPos> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHalignment = true;
         this.obsrvHalignment = source;
         return (B) this;
@@ -117,9 +117,9 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
+    public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOrientation = true;
         this.obsrvOrientation = source;
         return (B) this;
@@ -132,9 +132,9 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindValignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> source)
+    public final B bindValignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundValignment = true;
         this.obsrvValignment = source;
         return (B) this;

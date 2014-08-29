@@ -78,9 +78,9 @@ public class CheckBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
+    public final B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundConverter = true;
         this.obsrvConverter = source;
         return (B) this;
@@ -93,9 +93,9 @@ public class CheckBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSelectedStateCallback(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<java.lang.Integer, javafx.beans.value.ObservableValue<java.lang.Boolean>>> source)
+    public final B bindSelectedStateCallback(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<java.lang.Integer, javafx.beans.value.ObservableValue<java.lang.Boolean>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSelectedStateCallback = true;
         this.obsrvSelectedStateCallback = source;
         return (B) this;

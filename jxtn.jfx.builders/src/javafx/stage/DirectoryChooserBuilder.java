@@ -78,9 +78,9 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindInitialDirectory(javafx.beans.value.ObservableValue<? extends java.io.File> source)
+    public final B bindInitialDirectory(javafx.beans.value.ObservableValue<? extends java.io.File> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundInitialDirectory = true;
         this.obsrvInitialDirectory = source;
         return (B) this;
@@ -93,9 +93,9 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTitle(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindTitle(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTitle = true;
         this.obsrvTitle = source;
         return (B) this;

@@ -40,7 +40,7 @@ public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqua
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bands(java.util.Collection<javafx.scene.media.EqualizerBand> value)
+    public final B bands(java.util.Collection<javafx.scene.media.EqualizerBand> value)
     {
         this.hasBands = true;
         this.valBands = value;

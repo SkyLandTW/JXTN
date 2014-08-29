@@ -246,9 +246,9 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
+    public final B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundInput = true;
         this.obsrvInput = source;
         return (B) this;
@@ -261,9 +261,9 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLlx(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindLlx(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLlx = true;
         this.obsrvLlx = source;
         return (B) this;
@@ -276,9 +276,9 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLly(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindLly(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLly = true;
         this.obsrvLly = source;
         return (B) this;
@@ -291,9 +291,9 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLrx(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindLrx(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLrx = true;
         this.obsrvLrx = source;
         return (B) this;
@@ -306,9 +306,9 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLry(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindLry(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLry = true;
         this.obsrvLry = source;
         return (B) this;
@@ -321,9 +321,9 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindUlx(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindUlx(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundUlx = true;
         this.obsrvUlx = source;
         return (B) this;
@@ -336,9 +336,9 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindUly(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindUly(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundUly = true;
         this.obsrvUly = source;
         return (B) this;
@@ -351,9 +351,9 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindUrx(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindUrx(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundUrx = true;
         this.obsrvUrx = source;
         return (B) this;
@@ -366,9 +366,9 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindUry(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindUry(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundUry = true;
         this.obsrvUry = source;
         return (B) this;

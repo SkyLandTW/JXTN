@@ -252,7 +252,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B styleClass(java.util.Collection<java.lang.String> value)
+    public final B styleClass(java.util.Collection<java.lang.String> value)
     {
         this.hasStyleClass = true;
         this.valStyleClass = value;
@@ -323,9 +323,9 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAccelerator(javafx.beans.value.ObservableValue<? extends javafx.scene.input.KeyCombination> source)
+    public final B bindAccelerator(javafx.beans.value.ObservableValue<? extends javafx.scene.input.KeyCombination> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAccelerator = true;
         this.obsrvAccelerator = source;
         return (B) this;
@@ -338,9 +338,9 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindDisable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindDisable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundDisable = true;
         this.obsrvDisable = source;
         return (B) this;
@@ -353,9 +353,9 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundGraphic = true;
         this.obsrvGraphic = source;
         return (B) this;
@@ -368,9 +368,9 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindId(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindId(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundId = true;
         this.obsrvId = source;
         return (B) this;
@@ -383,9 +383,9 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMnemonicParsing(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindMnemonicParsing(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMnemonicParsing = true;
         this.obsrvMnemonicParsing = source;
         return (B) this;
@@ -398,9 +398,9 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
+    public final B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnAction = true;
         this.obsrvOnAction = source;
         return (B) this;
@@ -413,9 +413,9 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnMenuValidation(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
+    public final B bindOnMenuValidation(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnMenuValidation = true;
         this.obsrvOnMenuValidation = source;
         return (B) this;
@@ -428,9 +428,9 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindStyle(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindStyle(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundStyle = true;
         this.obsrvStyle = source;
         return (B) this;
@@ -443,9 +443,9 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindText(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundText = true;
         this.obsrvText = source;
         return (B) this;
@@ -458,9 +458,9 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundVisible = true;
         this.obsrvVisible = source;
         return (B) this;

@@ -78,9 +78,9 @@ public class RadioMenuItemBuilder<Z extends RadioMenuItem, B extends RadioMenuIt
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSelected(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindSelected(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSelected = true;
         this.obsrvSelected = source;
         return (B) this;
@@ -93,9 +93,9 @@ public class RadioMenuItemBuilder<Z extends RadioMenuItem, B extends RadioMenuIt
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindToggleGroup(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ToggleGroup> source)
+    public final B bindToggleGroup(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ToggleGroup> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundToggleGroup = true;
         this.obsrvToggleGroup = source;
         return (B) this;

@@ -222,9 +222,9 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindArrowIndent(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindArrowIndent(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundArrowIndent = true;
         this.obsrvArrowIndent = source;
         return (B) this;
@@ -237,9 +237,9 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindArrowLocation(javafx.beans.value.ObservableValue<? extends org.controlsfx.control.PopOver.ArrowLocation> source)
+    public final B bindArrowLocation(javafx.beans.value.ObservableValue<? extends org.controlsfx.control.PopOver.ArrowLocation> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundArrowLocation = true;
         this.obsrvArrowLocation = source;
         return (B) this;
@@ -252,9 +252,9 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindArrowSize(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindArrowSize(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundArrowSize = true;
         this.obsrvArrowSize = source;
         return (B) this;
@@ -267,9 +267,9 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindContentNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindContentNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundContentNode = true;
         this.obsrvContentNode = source;
         return (B) this;
@@ -282,9 +282,9 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCornerRadius(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindCornerRadius(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCornerRadius = true;
         this.obsrvCornerRadius = source;
         return (B) this;
@@ -297,9 +297,9 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindDetachable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindDetachable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundDetachable = true;
         this.obsrvDetachable = source;
         return (B) this;
@@ -312,9 +312,9 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindDetached(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindDetached(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundDetached = true;
         this.obsrvDetached = source;
         return (B) this;
@@ -327,9 +327,9 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindDetachedTitle(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindDetachedTitle(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundDetachedTitle = true;
         this.obsrvDetachedTitle = source;
         return (B) this;

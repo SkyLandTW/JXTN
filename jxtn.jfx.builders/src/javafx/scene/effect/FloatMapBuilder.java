@@ -78,9 +78,9 @@ public class FloatMapBuilder<Z extends FloatMap, B extends FloatMapBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHeight(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHeight = true;
         this.obsrvHeight = source;
         return (B) this;
@@ -93,9 +93,9 @@ public class FloatMapBuilder<Z extends FloatMap, B extends FloatMapBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindWidth(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindWidth(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundWidth = true;
         this.obsrvWidth = source;
         return (B) this;

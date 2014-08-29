@@ -94,7 +94,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B columnConstraints(java.util.Collection<javafx.scene.layout.ColumnConstraints> value)
+    public final B columnConstraints(java.util.Collection<javafx.scene.layout.ColumnConstraints> value)
     {
         this.hasColumnConstraints = true;
         this.valColumnConstraints = value;
@@ -151,7 +151,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B rowConstraints(java.util.Collection<javafx.scene.layout.RowConstraints> value)
+    public final B rowConstraints(java.util.Collection<javafx.scene.layout.RowConstraints> value)
     {
         this.hasRowConstraints = true;
         this.valRowConstraints = value;
@@ -194,9 +194,9 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
+    public final B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAlignment = true;
         this.obsrvAlignment = source;
         return (B) this;
@@ -209,9 +209,9 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindGridLinesVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindGridLinesVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundGridLinesVisible = true;
         this.obsrvGridLinesVisible = source;
         return (B) this;
@@ -224,9 +224,9 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHgap(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHgap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHgap = true;
         this.obsrvHgap = source;
         return (B) this;
@@ -239,9 +239,9 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindVgap(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindVgap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundVgap = true;
         this.obsrvVgap = source;
         return (B) this;

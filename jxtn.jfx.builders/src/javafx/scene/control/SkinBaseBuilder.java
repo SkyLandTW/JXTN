@@ -35,7 +35,7 @@ public class SkinBaseBuilder<C extends javafx.scene.control.Control, Z extends S
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B children(java.util.Collection<javafx.scene.Node> value)
+    public final B children(java.util.Collection<javafx.scene.Node> value)
     {
         this.hasChildren = true;
         this.valChildren = value;

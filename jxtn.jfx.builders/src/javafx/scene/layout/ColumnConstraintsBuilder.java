@@ -198,9 +198,9 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFillWidth(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindFillWidth(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFillWidth = true;
         this.obsrvFillWidth = source;
         return (B) this;
@@ -213,9 +213,9 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHalignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.HPos> source)
+    public final B bindHalignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.HPos> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHalignment = true;
         this.obsrvHalignment = source;
         return (B) this;
@@ -228,9 +228,9 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHgrow(javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Priority> source)
+    public final B bindHgrow(javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Priority> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHgrow = true;
         this.obsrvHgrow = source;
         return (B) this;
@@ -243,9 +243,9 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMaxWidth = true;
         this.obsrvMaxWidth = source;
         return (B) this;
@@ -258,9 +258,9 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMinWidth = true;
         this.obsrvMinWidth = source;
         return (B) this;
@@ -273,9 +273,9 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPercentWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPercentWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPercentWidth = true;
         this.obsrvPercentWidth = source;
         return (B) this;
@@ -288,9 +288,9 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPrefWidth = true;
         this.obsrvPrefWidth = source;
         return (B) this;

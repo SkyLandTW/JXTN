@@ -28,6 +28,7 @@
 package jxtn.jfx.builders;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
@@ -51,7 +52,7 @@ public class AbstractBuilder<Z, B extends AbstractBuilder<Z, B>>
      */
     public void applyTo(Z instance)
     {
-        assert (instance != null);
+        Objects.requireNonNull(instance);
         //
     }
 
@@ -64,7 +65,7 @@ public class AbstractBuilder<Z, B extends AbstractBuilder<Z, B>>
     @SuppressWarnings("unchecked")
     public final B afterBuild(Consumer<? super Z> action)
     {
-        assert (action != null);
+        Objects.requireNonNull(action);
         if (this.afterBuildActions == null)
             this.afterBuildActions = new ArrayList<>();
         this.afterBuildActions.add(action);
@@ -88,7 +89,7 @@ public class AbstractBuilder<Z, B extends AbstractBuilder<Z, B>>
      */
     protected final void doAfterBuild(Z instance)
     {
-        assert (instance != null);
+        Objects.requireNonNull(instance);
         if (this.afterBuildActions != null)
         {
             for (Consumer<? super Z> action : this.afterBuildActions)

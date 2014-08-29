@@ -126,9 +126,9 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAnimated(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindAnimated(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAnimated = true;
         this.obsrvAnimated = source;
         return (B) this;
@@ -141,9 +141,9 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCollapsible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindCollapsible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCollapsible = true;
         this.obsrvCollapsible = source;
         return (B) this;
@@ -156,9 +156,9 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundContent = true;
         this.obsrvContent = source;
         return (B) this;
@@ -171,9 +171,9 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindExpanded(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindExpanded(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundExpanded = true;
         this.obsrvExpanded = source;
         return (B) this;

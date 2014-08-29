@@ -27,6 +27,7 @@
 
 package jxtn.core.axi.collections;
 
+import java.util.Objects;
 import java.util.function.Function;
 
 /**
@@ -58,11 +59,12 @@ public class LinkLineIterator<T> extends AbstractIterator<T>
      * {@link LinkLineIterator}會依照{@code getNext}取得目前項目的下一個項目
      * </p>
      *
-     * @param initial 初始項目
+     * @param initial 初始項目，可為null(空列舉)
      * @param getNext 取得每個項目的下一個項目，傳回null表示結束
      */
     public LinkLineIterator(T initial, Function<? super T, ? extends T> getNext)
     {
+        Objects.requireNonNull(getNext);
         this.initial = initial;
         this.getNext = getNext;
     }

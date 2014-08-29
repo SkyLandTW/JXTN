@@ -102,9 +102,9 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCullFace(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.CullFace> source)
+    public final B bindCullFace(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.CullFace> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCullFace = true;
         this.obsrvCullFace = source;
         return (B) this;
@@ -117,9 +117,9 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindDrawMode(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.DrawMode> source)
+    public final B bindDrawMode(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.DrawMode> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundDrawMode = true;
         this.obsrvDrawMode = source;
         return (B) this;
@@ -132,9 +132,9 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMaterial(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Material> source)
+    public final B bindMaterial(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Material> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMaterial = true;
         this.obsrvMaterial = source;
         return (B) this;

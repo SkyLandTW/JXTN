@@ -65,7 +65,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B children(java.util.Collection<javafx.scene.control.TreeItem<T>> value)
+    public final B children(java.util.Collection<javafx.scene.control.TreeItem<T>> value)
     {
         this.hasChildren = true;
         this.valChildren = value;
@@ -136,9 +136,9 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindExpanded(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindExpanded(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundExpanded = true;
         this.obsrvExpanded = source;
         return (B) this;
@@ -151,9 +151,9 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundGraphic = true;
         this.obsrvGraphic = source;
         return (B) this;
@@ -166,9 +166,9 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindValue(javafx.beans.value.ObservableValue<? extends T> source)
+    public final B bindValue(javafx.beans.value.ObservableValue<? extends T> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundValue = true;
         this.obsrvValue = source;
         return (B) this;

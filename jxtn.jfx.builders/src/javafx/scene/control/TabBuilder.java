@@ -300,7 +300,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B styleClass(java.util.Collection<java.lang.String> value)
+    public final B styleClass(java.util.Collection<java.lang.String> value)
     {
         this.hasStyleClass = true;
         this.valStyleClass = value;
@@ -371,9 +371,9 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindClosable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindClosable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundClosable = true;
         this.obsrvClosable = source;
         return (B) this;
@@ -386,9 +386,9 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundContent = true;
         this.obsrvContent = source;
         return (B) this;
@@ -401,9 +401,9 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindContextMenu(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContextMenu> source)
+    public final B bindContextMenu(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContextMenu> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundContextMenu = true;
         this.obsrvContextMenu = source;
         return (B) this;
@@ -416,9 +416,9 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindDisable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindDisable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundDisable = true;
         this.obsrvDisable = source;
         return (B) this;
@@ -431,9 +431,9 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundGraphic = true;
         this.obsrvGraphic = source;
         return (B) this;
@@ -446,9 +446,9 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindId(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindId(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundId = true;
         this.obsrvId = source;
         return (B) this;
@@ -461,9 +461,9 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnCloseRequest(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
+    public final B bindOnCloseRequest(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnCloseRequest = true;
         this.obsrvOnCloseRequest = source;
         return (B) this;
@@ -476,9 +476,9 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnClosed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
+    public final B bindOnClosed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnClosed = true;
         this.obsrvOnClosed = source;
         return (B) this;
@@ -491,9 +491,9 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnSelectionChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
+    public final B bindOnSelectionChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnSelectionChanged = true;
         this.obsrvOnSelectionChanged = source;
         return (B) this;
@@ -506,9 +506,9 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindStyle(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindStyle(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundStyle = true;
         this.obsrvStyle = source;
         return (B) this;
@@ -521,9 +521,9 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindText(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundText = true;
         this.obsrvText = source;
         return (B) this;
@@ -536,9 +536,9 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTooltip(javafx.beans.value.ObservableValue<? extends javafx.scene.control.Tooltip> source)
+    public final B bindTooltip(javafx.beans.value.ObservableValue<? extends javafx.scene.control.Tooltip> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTooltip = true;
         this.obsrvTooltip = source;
         return (B) this;

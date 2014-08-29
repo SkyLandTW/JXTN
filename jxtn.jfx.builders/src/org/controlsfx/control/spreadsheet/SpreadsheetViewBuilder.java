@@ -124,7 +124,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B columnPickers(java.util.Collection<java.lang.Integer> value)
+    public final B columnPickers(java.util.Collection<java.lang.Integer> value)
     {
         this.hasColumnPickers = true;
         this.valColumnPickers = value;
@@ -153,7 +153,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B columns(java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn> value)
+    public final B columns(java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn> value)
     {
         this.hasColumns = true;
         this.valColumns = value;
@@ -196,7 +196,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B fixedColumns(java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn> value)
+    public final B fixedColumns(java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn> value)
     {
         this.hasFixedColumns = true;
         this.valFixedColumns = value;
@@ -225,7 +225,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B fixedRows(java.util.Collection<java.lang.Integer> value)
+    public final B fixedRows(java.util.Collection<java.lang.Integer> value)
     {
         this.hasFixedRows = true;
         this.valFixedRows = value;
@@ -310,7 +310,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B rowPickers(java.util.Collection<java.lang.Integer> value)
+    public final B rowPickers(java.util.Collection<java.lang.Integer> value)
     {
         this.hasRowPickers = true;
         this.valRowPickers = value;
@@ -367,9 +367,9 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundEditable = true;
         this.obsrvEditable = source;
         return (B) this;
@@ -382,9 +382,9 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindShowColumnHeader(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindShowColumnHeader(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundShowColumnHeader = true;
         this.obsrvShowColumnHeader = source;
         return (B) this;
@@ -397,9 +397,9 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindShowRowHeader(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindShowRowHeader(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundShowRowHeader = true;
         this.obsrvShowRowHeader = source;
         return (B) this;

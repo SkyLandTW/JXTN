@@ -348,7 +348,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B styleClass(java.util.Collection<java.lang.String> value)
+    public final B styleClass(java.util.Collection<java.lang.String> value)
     {
         this.hasStyleClass = true;
         this.valStyleClass = value;
@@ -419,9 +419,9 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindComparator(javafx.beans.value.ObservableValue<? extends java.util.Comparator<T>> source)
+    public final B bindComparator(javafx.beans.value.ObservableValue<? extends java.util.Comparator<T>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundComparator = true;
         this.obsrvComparator = source;
         return (B) this;
@@ -434,9 +434,9 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindContextMenu(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContextMenu> source)
+    public final B bindContextMenu(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContextMenu> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundContextMenu = true;
         this.obsrvContextMenu = source;
         return (B) this;
@@ -449,9 +449,9 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundEditable = true;
         this.obsrvEditable = source;
         return (B) this;
@@ -464,9 +464,9 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundGraphic = true;
         this.obsrvGraphic = source;
         return (B) this;
@@ -479,9 +479,9 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindId(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindId(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundId = true;
         this.obsrvId = source;
         return (B) this;
@@ -494,9 +494,9 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMaxWidth = true;
         this.obsrvMaxWidth = source;
         return (B) this;
@@ -509,9 +509,9 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMinWidth = true;
         this.obsrvMinWidth = source;
         return (B) this;
@@ -524,9 +524,9 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPrefWidth = true;
         this.obsrvPrefWidth = source;
         return (B) this;
@@ -539,9 +539,9 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindResizable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindResizable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundResizable = true;
         this.obsrvResizable = source;
         return (B) this;
@@ -554,9 +554,9 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSortNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindSortNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSortNode = true;
         this.obsrvSortNode = source;
         return (B) this;
@@ -569,9 +569,9 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSortable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindSortable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSortable = true;
         this.obsrvSortable = source;
         return (B) this;
@@ -584,9 +584,9 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindStyle(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindStyle(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundStyle = true;
         this.obsrvStyle = source;
         return (B) this;
@@ -599,9 +599,9 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindText(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundText = true;
         this.obsrvText = source;
         return (B) this;
@@ -614,9 +614,9 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundVisible = true;
         this.obsrvVisible = source;
         return (B) this;

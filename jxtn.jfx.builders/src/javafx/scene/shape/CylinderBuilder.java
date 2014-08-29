@@ -78,9 +78,9 @@ public class CylinderBuilder<Z extends Cylinder, B extends CylinderBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHeight = true;
         this.obsrvHeight = source;
         return (B) this;
@@ -93,9 +93,9 @@ public class CylinderBuilder<Z extends Cylinder, B extends CylinderBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRadius = true;
         this.obsrvRadius = source;
         return (B) this;

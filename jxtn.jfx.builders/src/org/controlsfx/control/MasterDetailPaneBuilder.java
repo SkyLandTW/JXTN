@@ -174,9 +174,9 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAnimated(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindAnimated(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAnimated = true;
         this.obsrvAnimated = source;
         return (B) this;
@@ -189,9 +189,9 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindDetailNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindDetailNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundDetailNode = true;
         this.obsrvDetailNode = source;
         return (B) this;
@@ -204,9 +204,9 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindDetailSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
+    public final B bindDetailSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundDetailSide = true;
         this.obsrvDetailSide = source;
         return (B) this;
@@ -219,9 +219,9 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindDividerPosition(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindDividerPosition(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundDividerPosition = true;
         this.obsrvDividerPosition = source;
         return (B) this;
@@ -234,9 +234,9 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMasterNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindMasterNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMasterNode = true;
         this.obsrvMasterNode = source;
         return (B) this;
@@ -249,9 +249,9 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindShowDetailNode(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindShowDetailNode(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundShowDetailNode = true;
         this.obsrvShowDetailNode = source;
         return (B) this;

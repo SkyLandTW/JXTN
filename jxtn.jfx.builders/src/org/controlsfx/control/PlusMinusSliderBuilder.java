@@ -78,9 +78,9 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnValueChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.PlusMinusSlider.PlusMinusEvent>> source)
+    public final B bindOnValueChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.PlusMinusSlider.PlusMinusEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnValueChanged = true;
         this.obsrvOnValueChanged = source;
         return (B) this;
@@ -93,9 +93,9 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
+    public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOrientation = true;
         this.obsrvOrientation = source;
         return (B) this;

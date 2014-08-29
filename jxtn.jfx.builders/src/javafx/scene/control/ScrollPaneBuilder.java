@@ -390,9 +390,9 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundContent = true;
         this.obsrvContent = source;
         return (B) this;
@@ -405,9 +405,9 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFitToHeight(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindFitToHeight(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFitToHeight = true;
         this.obsrvFitToHeight = source;
         return (B) this;
@@ -420,9 +420,9 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFitToWidth(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindFitToWidth(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFitToWidth = true;
         this.obsrvFitToWidth = source;
         return (B) this;
@@ -435,9 +435,9 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHbarPolicy(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ScrollPane.ScrollBarPolicy> source)
+    public final B bindHbarPolicy(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ScrollPane.ScrollBarPolicy> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHbarPolicy = true;
         this.obsrvHbarPolicy = source;
         return (B) this;
@@ -450,9 +450,9 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHmax(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHmax(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHmax = true;
         this.obsrvHmax = source;
         return (B) this;
@@ -465,9 +465,9 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHmin(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHmin(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHmin = true;
         this.obsrvHmin = source;
         return (B) this;
@@ -480,9 +480,9 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHvalue(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHvalue(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHvalue = true;
         this.obsrvHvalue = source;
         return (B) this;
@@ -495,9 +495,9 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPannable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindPannable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPannable = true;
         this.obsrvPannable = source;
         return (B) this;
@@ -510,9 +510,9 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPrefViewportHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefViewportHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPrefViewportHeight = true;
         this.obsrvPrefViewportHeight = source;
         return (B) this;
@@ -525,9 +525,9 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPrefViewportWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefViewportWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPrefViewportWidth = true;
         this.obsrvPrefViewportWidth = source;
         return (B) this;
@@ -540,9 +540,9 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindVbarPolicy(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ScrollPane.ScrollBarPolicy> source)
+    public final B bindVbarPolicy(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ScrollPane.ScrollBarPolicy> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundVbarPolicy = true;
         this.obsrvVbarPolicy = source;
         return (B) this;
@@ -555,9 +555,9 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindViewportBounds(javafx.beans.value.ObservableValue<? extends javafx.geometry.Bounds> source)
+    public final B bindViewportBounds(javafx.beans.value.ObservableValue<? extends javafx.geometry.Bounds> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundViewportBounds = true;
         this.obsrvViewportBounds = source;
         return (B) this;
@@ -570,9 +570,9 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindVmax(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindVmax(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundVmax = true;
         this.obsrvVmax = source;
         return (B) this;
@@ -585,9 +585,9 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindVmin(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindVmin(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundVmin = true;
         this.obsrvVmin = source;
         return (B) this;
@@ -600,9 +600,9 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindVvalue(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindVvalue(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundVvalue = true;
         this.obsrvVvalue = source;
         return (B) this;

@@ -78,9 +78,9 @@ public class PerspectiveCameraBuilder<Z extends PerspectiveCamera, B extends Per
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFieldOfView(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindFieldOfView(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFieldOfView = true;
         this.obsrvFieldOfView = source;
         return (B) this;
@@ -93,9 +93,9 @@ public class PerspectiveCameraBuilder<Z extends PerspectiveCamera, B extends Per
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindVerticalFieldOfView(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindVerticalFieldOfView(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundVerticalFieldOfView = true;
         this.obsrvVerticalFieldOfView = source;
         return (B) this;

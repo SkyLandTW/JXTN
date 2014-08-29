@@ -54,9 +54,9 @@ public class LineChartBuilder<X extends java.lang.Object, Y extends java.lang.Ob
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCreateSymbols(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindCreateSymbols(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCreateSymbols = true;
         this.obsrvCreateSymbols = source;
         return (B) this;

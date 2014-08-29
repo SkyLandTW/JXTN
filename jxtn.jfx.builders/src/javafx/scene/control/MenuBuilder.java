@@ -75,7 +75,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B items(java.util.Collection<javafx.scene.control.MenuItem> value)
+    public final B items(java.util.Collection<javafx.scene.control.MenuItem> value)
     {
         this.hasItems = true;
         this.valItems = value;
@@ -160,9 +160,9 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnHidden(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
+    public final B bindOnHidden(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnHidden = true;
         this.obsrvOnHidden = source;
         return (B) this;
@@ -175,9 +175,9 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnHiding(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
+    public final B bindOnHiding(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnHiding = true;
         this.obsrvOnHiding = source;
         return (B) this;
@@ -190,9 +190,9 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnShowing(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
+    public final B bindOnShowing(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnShowing = true;
         this.obsrvOnShowing = source;
         return (B) this;
@@ -205,9 +205,9 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnShown(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
+    public final B bindOnShown(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnShown = true;
         this.obsrvOnShown = source;
         return (B) this;

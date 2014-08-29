@@ -54,9 +54,9 @@ public class LightBuilder<Z extends Light, B extends LightBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindColor(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> source)
+    public final B bindColor(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundColor = true;
         this.obsrvColor = source;
         return (B) this;

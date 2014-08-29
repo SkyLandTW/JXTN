@@ -54,7 +54,7 @@ public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B tracks(java.util.Collection<javafx.scene.media.Track> value)
+    public final B tracks(java.util.Collection<javafx.scene.media.Track> value)
     {
         this.hasTracks = true;
         this.valTracks = value;

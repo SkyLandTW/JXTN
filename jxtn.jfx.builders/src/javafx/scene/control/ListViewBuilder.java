@@ -313,9 +313,9 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.ListView<T>, javafx.scene.control.ListCell<T>>> source)
+    public final B bindCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.ListView<T>, javafx.scene.control.ListCell<T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCellFactory = true;
         this.obsrvCellFactory = source;
         return (B) this;
@@ -328,9 +328,9 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundEditable = true;
         this.obsrvEditable = source;
         return (B) this;
@@ -343,9 +343,9 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFixedCellSize(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindFixedCellSize(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFixedCellSize = true;
         this.obsrvFixedCellSize = source;
         return (B) this;
@@ -358,9 +358,9 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFocusModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.FocusModel<T>> source)
+    public final B bindFocusModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.FocusModel<T>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFocusModel = true;
         this.obsrvFocusModel = source;
         return (B) this;
@@ -373,9 +373,9 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindItems(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<T>> source)
+    public final B bindItems(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<T>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundItems = true;
         this.obsrvItems = source;
         return (B) this;
@@ -388,9 +388,9 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnEditCancel(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> source)
+    public final B bindOnEditCancel(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnEditCancel = true;
         this.obsrvOnEditCancel = source;
         return (B) this;
@@ -403,9 +403,9 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnEditCommit(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> source)
+    public final B bindOnEditCommit(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnEditCommit = true;
         this.obsrvOnEditCommit = source;
         return (B) this;
@@ -418,9 +418,9 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnEditStart(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> source)
+    public final B bindOnEditStart(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnEditStart = true;
         this.obsrvOnEditStart = source;
         return (B) this;
@@ -433,9 +433,9 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
+    public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOrientation = true;
         this.obsrvOrientation = source;
         return (B) this;
@@ -448,9 +448,9 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPlaceholder(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindPlaceholder(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPlaceholder = true;
         this.obsrvPlaceholder = source;
         return (B) this;
@@ -463,9 +463,9 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> source)
+    public final B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSelectionModel = true;
         this.obsrvSelectionModel = source;
         return (B) this;

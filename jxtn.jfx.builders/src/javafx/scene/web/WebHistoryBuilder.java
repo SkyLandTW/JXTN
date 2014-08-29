@@ -40,7 +40,7 @@ public class WebHistoryBuilder<Z extends WebHistory, B extends WebHistoryBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B entries(java.util.Collection<javafx.scene.web.WebHistory.Entry> value)
+    public final B entries(java.util.Collection<javafx.scene.web.WebHistory.Entry> value)
     {
         this.hasEntries = true;
         this.valEntries = value;

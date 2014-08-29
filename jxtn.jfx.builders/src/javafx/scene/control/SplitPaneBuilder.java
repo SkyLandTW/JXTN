@@ -69,7 +69,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B dividers(java.util.Collection<javafx.scene.control.SplitPane.Divider> value)
+    public final B dividers(java.util.Collection<javafx.scene.control.SplitPane.Divider> value)
     {
         this.hasDividers = true;
         this.valDividers = value;
@@ -98,7 +98,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B items(java.util.Collection<javafx.scene.Node> value)
+    public final B items(java.util.Collection<javafx.scene.Node> value)
     {
         this.hasItems = true;
         this.valItems = value;
@@ -141,9 +141,9 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
+    public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOrientation = true;
         this.obsrvOrientation = source;
         return (B) this;

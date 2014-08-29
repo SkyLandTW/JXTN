@@ -289,9 +289,9 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeView<T>, javafx.scene.control.TreeCell<T>>> source)
+    public final B bindCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeView<T>, javafx.scene.control.TreeCell<T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCellFactory = true;
         this.obsrvCellFactory = source;
         return (B) this;
@@ -304,9 +304,9 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundEditable = true;
         this.obsrvEditable = source;
         return (B) this;
@@ -319,9 +319,9 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFixedCellSize(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindFixedCellSize(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFixedCellSize = true;
         this.obsrvFixedCellSize = source;
         return (B) this;
@@ -334,9 +334,9 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFocusModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.FocusModel<javafx.scene.control.TreeItem<T>>> source)
+    public final B bindFocusModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.FocusModel<javafx.scene.control.TreeItem<T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFocusModel = true;
         this.obsrvFocusModel = source;
         return (B) this;
@@ -349,9 +349,9 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnEditCancel(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TreeView.EditEvent<T>>> source)
+    public final B bindOnEditCancel(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TreeView.EditEvent<T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnEditCancel = true;
         this.obsrvOnEditCancel = source;
         return (B) this;
@@ -364,9 +364,9 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnEditCommit(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TreeView.EditEvent<T>>> source)
+    public final B bindOnEditCommit(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TreeView.EditEvent<T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnEditCommit = true;
         this.obsrvOnEditCommit = source;
         return (B) this;
@@ -379,9 +379,9 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnEditStart(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TreeView.EditEvent<T>>> source)
+    public final B bindOnEditStart(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TreeView.EditEvent<T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnEditStart = true;
         this.obsrvOnEditStart = source;
         return (B) this;
@@ -394,9 +394,9 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRoot(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeItem<T>> source)
+    public final B bindRoot(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeItem<T>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRoot = true;
         this.obsrvRoot = source;
         return (B) this;
@@ -409,9 +409,9 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>>> source)
+    public final B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSelectionModel = true;
         this.obsrvSelectionModel = source;
         return (B) this;
@@ -424,9 +424,9 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindShowRoot(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindShowRoot(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundShowRoot = true;
         this.obsrvShowRoot = source;
         return (B) this;

@@ -274,9 +274,9 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindEventDispatcher(javafx.beans.value.ObservableValue<? extends javafx.event.EventDispatcher> source)
+    public final B bindEventDispatcher(javafx.beans.value.ObservableValue<? extends javafx.event.EventDispatcher> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundEventDispatcher = true;
         this.obsrvEventDispatcher = source;
         return (B) this;
@@ -289,9 +289,9 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnCloseRequest(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
+    public final B bindOnCloseRequest(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnCloseRequest = true;
         this.obsrvOnCloseRequest = source;
         return (B) this;
@@ -304,9 +304,9 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnHidden(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
+    public final B bindOnHidden(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnHidden = true;
         this.obsrvOnHidden = source;
         return (B) this;
@@ -319,9 +319,9 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnHiding(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
+    public final B bindOnHiding(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnHiding = true;
         this.obsrvOnHiding = source;
         return (B) this;
@@ -334,9 +334,9 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnShowing(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
+    public final B bindOnShowing(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnShowing = true;
         this.obsrvOnShowing = source;
         return (B) this;
@@ -349,9 +349,9 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnShown(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
+    public final B bindOnShown(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnShown = true;
         this.obsrvOnShown = source;
         return (B) this;
@@ -364,9 +364,9 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOpacity(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindOpacity(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOpacity = true;
         this.obsrvOpacity = source;
         return (B) this;

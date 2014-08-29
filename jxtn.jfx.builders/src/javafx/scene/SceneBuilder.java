@@ -1125,7 +1125,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B stylesheets(java.util.Collection<java.lang.String> value)
+    public final B stylesheets(java.util.Collection<java.lang.String> value)
     {
         this.hasStylesheets = true;
         this.valStylesheets = value;
@@ -1168,9 +1168,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCamera(javafx.beans.value.ObservableValue<? extends javafx.scene.Camera> source)
+    public final B bindCamera(javafx.beans.value.ObservableValue<? extends javafx.scene.Camera> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCamera = true;
         this.obsrvCamera = source;
         return (B) this;
@@ -1183,9 +1183,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCursor(javafx.beans.value.ObservableValue<? extends javafx.scene.Cursor> source)
+    public final B bindCursor(javafx.beans.value.ObservableValue<? extends javafx.scene.Cursor> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCursor = true;
         this.obsrvCursor = source;
         return (B) this;
@@ -1198,9 +1198,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindEventDispatcher(javafx.beans.value.ObservableValue<? extends javafx.event.EventDispatcher> source)
+    public final B bindEventDispatcher(javafx.beans.value.ObservableValue<? extends javafx.event.EventDispatcher> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundEventDispatcher = true;
         this.obsrvEventDispatcher = source;
         return (B) this;
@@ -1213,9 +1213,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
+    public final B bindFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFill = true;
         this.obsrvFill = source;
         return (B) this;
@@ -1228,9 +1228,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindNodeOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.NodeOrientation> source)
+    public final B bindNodeOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.NodeOrientation> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundNodeOrientation = true;
         this.obsrvNodeOrientation = source;
         return (B) this;
@@ -1243,9 +1243,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnContextMenuRequested(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ContextMenuEvent>> source)
+    public final B bindOnContextMenuRequested(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ContextMenuEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnContextMenuRequested = true;
         this.obsrvOnContextMenuRequested = source;
         return (B) this;
@@ -1258,9 +1258,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnDragDetected(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
+    public final B bindOnDragDetected(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnDragDetected = true;
         this.obsrvOnDragDetected = source;
         return (B) this;
@@ -1273,9 +1273,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnDragDone(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
+    public final B bindOnDragDone(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnDragDone = true;
         this.obsrvOnDragDone = source;
         return (B) this;
@@ -1288,9 +1288,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnDragDropped(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
+    public final B bindOnDragDropped(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnDragDropped = true;
         this.obsrvOnDragDropped = source;
         return (B) this;
@@ -1303,9 +1303,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnDragEntered(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
+    public final B bindOnDragEntered(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnDragEntered = true;
         this.obsrvOnDragEntered = source;
         return (B) this;
@@ -1318,9 +1318,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnDragExited(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
+    public final B bindOnDragExited(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnDragExited = true;
         this.obsrvOnDragExited = source;
         return (B) this;
@@ -1333,9 +1333,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnDragOver(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
+    public final B bindOnDragOver(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnDragOver = true;
         this.obsrvOnDragOver = source;
         return (B) this;
@@ -1348,9 +1348,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnInputMethodTextChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.InputMethodEvent>> source)
+    public final B bindOnInputMethodTextChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.InputMethodEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnInputMethodTextChanged = true;
         this.obsrvOnInputMethodTextChanged = source;
         return (B) this;
@@ -1363,9 +1363,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnKeyPressed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> source)
+    public final B bindOnKeyPressed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnKeyPressed = true;
         this.obsrvOnKeyPressed = source;
         return (B) this;
@@ -1378,9 +1378,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnKeyReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> source)
+    public final B bindOnKeyReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnKeyReleased = true;
         this.obsrvOnKeyReleased = source;
         return (B) this;
@@ -1393,9 +1393,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnKeyTyped(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> source)
+    public final B bindOnKeyTyped(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnKeyTyped = true;
         this.obsrvOnKeyTyped = source;
         return (B) this;
@@ -1408,9 +1408,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnMouseClicked(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
+    public final B bindOnMouseClicked(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnMouseClicked = true;
         this.obsrvOnMouseClicked = source;
         return (B) this;
@@ -1423,9 +1423,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnMouseDragEntered(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
+    public final B bindOnMouseDragEntered(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnMouseDragEntered = true;
         this.obsrvOnMouseDragEntered = source;
         return (B) this;
@@ -1438,9 +1438,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnMouseDragExited(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
+    public final B bindOnMouseDragExited(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnMouseDragExited = true;
         this.obsrvOnMouseDragExited = source;
         return (B) this;
@@ -1453,9 +1453,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnMouseDragOver(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
+    public final B bindOnMouseDragOver(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnMouseDragOver = true;
         this.obsrvOnMouseDragOver = source;
         return (B) this;
@@ -1468,9 +1468,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnMouseDragReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
+    public final B bindOnMouseDragReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnMouseDragReleased = true;
         this.obsrvOnMouseDragReleased = source;
         return (B) this;
@@ -1483,9 +1483,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnMouseDragged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
+    public final B bindOnMouseDragged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnMouseDragged = true;
         this.obsrvOnMouseDragged = source;
         return (B) this;
@@ -1498,9 +1498,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnMouseEntered(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
+    public final B bindOnMouseEntered(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnMouseEntered = true;
         this.obsrvOnMouseEntered = source;
         return (B) this;
@@ -1513,9 +1513,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnMouseExited(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
+    public final B bindOnMouseExited(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnMouseExited = true;
         this.obsrvOnMouseExited = source;
         return (B) this;
@@ -1528,9 +1528,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnMouseMoved(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
+    public final B bindOnMouseMoved(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnMouseMoved = true;
         this.obsrvOnMouseMoved = source;
         return (B) this;
@@ -1543,9 +1543,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnMousePressed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
+    public final B bindOnMousePressed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnMousePressed = true;
         this.obsrvOnMousePressed = source;
         return (B) this;
@@ -1558,9 +1558,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnMouseReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
+    public final B bindOnMouseReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnMouseReleased = true;
         this.obsrvOnMouseReleased = source;
         return (B) this;
@@ -1573,9 +1573,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnRotate(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> source)
+    public final B bindOnRotate(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnRotate = true;
         this.obsrvOnRotate = source;
         return (B) this;
@@ -1588,9 +1588,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnRotationFinished(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> source)
+    public final B bindOnRotationFinished(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnRotationFinished = true;
         this.obsrvOnRotationFinished = source;
         return (B) this;
@@ -1603,9 +1603,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnRotationStarted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> source)
+    public final B bindOnRotationStarted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnRotationStarted = true;
         this.obsrvOnRotationStarted = source;
         return (B) this;
@@ -1618,9 +1618,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnScrollFinished(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> source)
+    public final B bindOnScrollFinished(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnScrollFinished = true;
         this.obsrvOnScrollFinished = source;
         return (B) this;
@@ -1633,9 +1633,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnScroll(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> source)
+    public final B bindOnScroll(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnScroll = true;
         this.obsrvOnScroll = source;
         return (B) this;
@@ -1648,9 +1648,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnScrollStarted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> source)
+    public final B bindOnScrollStarted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnScrollStarted = true;
         this.obsrvOnScrollStarted = source;
         return (B) this;
@@ -1663,9 +1663,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnSwipeDown(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
+    public final B bindOnSwipeDown(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnSwipeDown = true;
         this.obsrvOnSwipeDown = source;
         return (B) this;
@@ -1678,9 +1678,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnSwipeLeft(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
+    public final B bindOnSwipeLeft(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnSwipeLeft = true;
         this.obsrvOnSwipeLeft = source;
         return (B) this;
@@ -1693,9 +1693,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnSwipeRight(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
+    public final B bindOnSwipeRight(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnSwipeRight = true;
         this.obsrvOnSwipeRight = source;
         return (B) this;
@@ -1708,9 +1708,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnSwipeUp(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
+    public final B bindOnSwipeUp(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnSwipeUp = true;
         this.obsrvOnSwipeUp = source;
         return (B) this;
@@ -1723,9 +1723,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnTouchMoved(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
+    public final B bindOnTouchMoved(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnTouchMoved = true;
         this.obsrvOnTouchMoved = source;
         return (B) this;
@@ -1738,9 +1738,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnTouchPressed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
+    public final B bindOnTouchPressed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnTouchPressed = true;
         this.obsrvOnTouchPressed = source;
         return (B) this;
@@ -1753,9 +1753,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnTouchReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
+    public final B bindOnTouchReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnTouchReleased = true;
         this.obsrvOnTouchReleased = source;
         return (B) this;
@@ -1768,9 +1768,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnTouchStationary(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
+    public final B bindOnTouchStationary(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnTouchStationary = true;
         this.obsrvOnTouchStationary = source;
         return (B) this;
@@ -1783,9 +1783,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnZoomFinished(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> source)
+    public final B bindOnZoomFinished(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnZoomFinished = true;
         this.obsrvOnZoomFinished = source;
         return (B) this;
@@ -1798,9 +1798,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnZoom(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> source)
+    public final B bindOnZoom(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnZoom = true;
         this.obsrvOnZoom = source;
         return (B) this;
@@ -1813,9 +1813,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnZoomStarted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> source)
+    public final B bindOnZoomStarted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnZoomStarted = true;
         this.obsrvOnZoomStarted = source;
         return (B) this;
@@ -1828,9 +1828,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRoot(javafx.beans.value.ObservableValue<? extends javafx.scene.Parent> source)
+    public final B bindRoot(javafx.beans.value.ObservableValue<? extends javafx.scene.Parent> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRoot = true;
         this.obsrvRoot = source;
         return (B) this;
@@ -1843,9 +1843,9 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindUserAgentStylesheet(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
+    public final B bindUserAgentStylesheet(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundUserAgentStylesheet = true;
         this.obsrvUserAgentStylesheet = source;
         return (B) this;

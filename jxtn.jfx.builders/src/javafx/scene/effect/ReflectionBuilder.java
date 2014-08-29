@@ -150,9 +150,9 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindBottomOpacity(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindBottomOpacity(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundBottomOpacity = true;
         this.obsrvBottomOpacity = source;
         return (B) this;
@@ -165,9 +165,9 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFraction(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindFraction(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFraction = true;
         this.obsrvFraction = source;
         return (B) this;
@@ -180,9 +180,9 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
+    public final B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundInput = true;
         this.obsrvInput = source;
         return (B) this;
@@ -195,9 +195,9 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTopOffset(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTopOffset(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTopOffset = true;
         this.obsrvTopOffset = source;
         return (B) this;
@@ -210,9 +210,9 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTopOpacity(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTopOpacity(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTopOpacity = true;
         this.obsrvTopOpacity = source;
         return (B) this;

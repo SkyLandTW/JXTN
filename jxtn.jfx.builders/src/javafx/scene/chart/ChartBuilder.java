@@ -150,9 +150,9 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAnimated(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindAnimated(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAnimated = true;
         this.obsrvAnimated = source;
         return (B) this;
@@ -165,9 +165,9 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLegendSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
+    public final B bindLegendSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLegendSide = true;
         this.obsrvLegendSide = source;
         return (B) this;
@@ -180,9 +180,9 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLegendVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindLegendVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLegendVisible = true;
         this.obsrvLegendVisible = source;
         return (B) this;
@@ -195,9 +195,9 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTitle(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindTitle(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTitle = true;
         this.obsrvTitle = source;
         return (B) this;
@@ -210,9 +210,9 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTitleSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
+    public final B bindTitleSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTitleSide = true;
         this.obsrvTitleSide = source;
         return (B) this;

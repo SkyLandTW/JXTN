@@ -45,7 +45,7 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B elements(java.util.Collection<javafx.scene.shape.PathElement> value)
+    public final B elements(java.util.Collection<javafx.scene.shape.PathElement> value)
     {
         this.hasElements = true;
         this.valElements = value;
@@ -88,9 +88,9 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFillRule(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.FillRule> source)
+    public final B bindFillRule(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.FillRule> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFillRule = true;
         this.obsrvFillRule = source;
         return (B) this;

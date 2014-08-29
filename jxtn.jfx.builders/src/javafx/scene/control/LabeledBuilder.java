@@ -366,9 +366,9 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
+    public final B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAlignment = true;
         this.obsrvAlignment = source;
         return (B) this;
@@ -381,9 +381,9 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindContentDisplay(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContentDisplay> source)
+    public final B bindContentDisplay(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContentDisplay> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundContentDisplay = true;
         this.obsrvContentDisplay = source;
         return (B) this;
@@ -396,9 +396,9 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindEllipsisString(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindEllipsisString(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundEllipsisString = true;
         this.obsrvEllipsisString = source;
         return (B) this;
@@ -411,9 +411,9 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFont(javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> source)
+    public final B bindFont(javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFont = true;
         this.obsrvFont = source;
         return (B) this;
@@ -426,9 +426,9 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundGraphic = true;
         this.obsrvGraphic = source;
         return (B) this;
@@ -441,9 +441,9 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindGraphicTextGap(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindGraphicTextGap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundGraphicTextGap = true;
         this.obsrvGraphicTextGap = source;
         return (B) this;
@@ -456,9 +456,9 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLineSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindLineSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLineSpacing = true;
         this.obsrvLineSpacing = source;
         return (B) this;
@@ -471,9 +471,9 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMnemonicParsing(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindMnemonicParsing(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMnemonicParsing = true;
         this.obsrvMnemonicParsing = source;
         return (B) this;
@@ -486,9 +486,9 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTextAlignment(javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextAlignment> source)
+    public final B bindTextAlignment(javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextAlignment> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTextAlignment = true;
         this.obsrvTextAlignment = source;
         return (B) this;
@@ -501,9 +501,9 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTextFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
+    public final B bindTextFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTextFill = true;
         this.obsrvTextFill = source;
         return (B) this;
@@ -516,9 +516,9 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTextOverrun(javafx.beans.value.ObservableValue<? extends javafx.scene.control.OverrunStyle> source)
+    public final B bindTextOverrun(javafx.beans.value.ObservableValue<? extends javafx.scene.control.OverrunStyle> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTextOverrun = true;
         this.obsrvTextOverrun = source;
         return (B) this;
@@ -531,9 +531,9 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindText(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundText = true;
         this.obsrvText = source;
         return (B) this;
@@ -546,9 +546,9 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindUnderline(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindUnderline(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundUnderline = true;
         this.obsrvUnderline = source;
         return (B) this;
@@ -561,9 +561,9 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindWrapText(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindWrapText(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundWrapText = true;
         this.obsrvWrapText = source;
         return (B) this;

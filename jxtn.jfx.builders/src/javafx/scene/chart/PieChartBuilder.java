@@ -150,9 +150,9 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindClockwise(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindClockwise(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundClockwise = true;
         this.obsrvClockwise = source;
         return (B) this;
@@ -165,9 +165,9 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindData(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<javafx.scene.chart.PieChart.Data>> source)
+    public final B bindData(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<javafx.scene.chart.PieChart.Data>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundData = true;
         this.obsrvData = source;
         return (B) this;
@@ -180,9 +180,9 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLabelLineLength(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindLabelLineLength(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLabelLineLength = true;
         this.obsrvLabelLineLength = source;
         return (B) this;
@@ -195,9 +195,9 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLabelsVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindLabelsVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLabelsVisible = true;
         this.obsrvLabelsVisible = source;
         return (B) this;
@@ -210,9 +210,9 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindStartAngle(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindStartAngle(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundStartAngle = true;
         this.obsrvStartAngle = source;
         return (B) this;

@@ -167,7 +167,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B strokeDashArray(java.util.Collection<java.lang.Double> value)
+    public final B strokeDashArray(java.util.Collection<java.lang.Double> value)
     {
         this.hasStrokeDashArray = true;
         this.valStrokeDashArray = value;
@@ -280,9 +280,9 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
+    public final B bindFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFill = true;
         this.obsrvFill = source;
         return (B) this;
@@ -295,9 +295,9 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSmooth(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindSmooth(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSmooth = true;
         this.obsrvSmooth = source;
         return (B) this;
@@ -310,9 +310,9 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindStrokeDashOffset(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindStrokeDashOffset(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundStrokeDashOffset = true;
         this.obsrvStrokeDashOffset = source;
         return (B) this;
@@ -325,9 +325,9 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindStrokeLineCap(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.StrokeLineCap> source)
+    public final B bindStrokeLineCap(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.StrokeLineCap> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundStrokeLineCap = true;
         this.obsrvStrokeLineCap = source;
         return (B) this;
@@ -340,9 +340,9 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindStrokeLineJoin(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.StrokeLineJoin> source)
+    public final B bindStrokeLineJoin(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.StrokeLineJoin> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundStrokeLineJoin = true;
         this.obsrvStrokeLineJoin = source;
         return (B) this;
@@ -355,9 +355,9 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindStrokeMiterLimit(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindStrokeMiterLimit(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundStrokeMiterLimit = true;
         this.obsrvStrokeMiterLimit = source;
         return (B) this;
@@ -370,9 +370,9 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindStroke(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
+    public final B bindStroke(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundStroke = true;
         this.obsrvStroke = source;
         return (B) this;
@@ -385,9 +385,9 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindStrokeType(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.StrokeType> source)
+    public final B bindStrokeType(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.StrokeType> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundStrokeType = true;
         this.obsrvStrokeType = source;
         return (B) this;
@@ -400,9 +400,9 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindStrokeWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindStrokeWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundStrokeWidth = true;
         this.obsrvStrokeWidth = source;
         return (B) this;

@@ -73,9 +73,9 @@ public class AutoCompletionBindingBuilder<T extends java.lang.Object, Z extends 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnAutoCompleted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.textfield.AutoCompletionBinding.AutoCompletionEvent<T>>> source)
+    public final B bindOnAutoCompleted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.textfield.AutoCompletionBinding.AutoCompletionEvent<T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnAutoCompleted = true;
         this.obsrvOnAutoCompleted = source;
         return (B) this;

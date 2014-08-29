@@ -198,9 +198,9 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindBumpInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
+    public final B bindBumpInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundBumpInput = true;
         this.obsrvBumpInput = source;
         return (B) this;
@@ -213,9 +213,9 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindContentInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
+    public final B bindContentInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundContentInput = true;
         this.obsrvContentInput = source;
         return (B) this;
@@ -228,9 +228,9 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindDiffuseConstant(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindDiffuseConstant(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundDiffuseConstant = true;
         this.obsrvDiffuseConstant = source;
         return (B) this;
@@ -243,9 +243,9 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLight(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Light> source)
+    public final B bindLight(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Light> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLight = true;
         this.obsrvLight = source;
         return (B) this;
@@ -258,9 +258,9 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSpecularConstant(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindSpecularConstant(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSpecularConstant = true;
         this.obsrvSpecularConstant = source;
         return (B) this;
@@ -273,9 +273,9 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSpecularExponent(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindSpecularExponent(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSpecularExponent = true;
         this.obsrvSpecularExponent = source;
         return (B) this;
@@ -288,9 +288,9 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSurfaceScale(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindSurfaceScale(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSurfaceScale = true;
         this.obsrvSurfaceScale = source;
         return (B) this;

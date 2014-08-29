@@ -212,9 +212,9 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
+    public final B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnAction = true;
         this.obsrvOnAction = source;
         return (B) this;
@@ -227,9 +227,9 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnHidden(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
+    public final B bindOnHidden(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnHidden = true;
         this.obsrvOnHidden = source;
         return (B) this;
@@ -242,9 +242,9 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnHiding(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
+    public final B bindOnHiding(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnHiding = true;
         this.obsrvOnHiding = source;
         return (B) this;
@@ -257,9 +257,9 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnShowing(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
+    public final B bindOnShowing(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnShowing = true;
         this.obsrvOnShowing = source;
         return (B) this;
@@ -272,9 +272,9 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnShown(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
+    public final B bindOnShown(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnShown = true;
         this.obsrvOnShown = source;
         return (B) this;
@@ -287,9 +287,9 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPromptText(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindPromptText(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPromptText = true;
         this.obsrvPromptText = source;
         return (B) this;

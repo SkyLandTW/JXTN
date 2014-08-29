@@ -28,6 +28,7 @@
 package jxtn.core.axi.collections;
 
 import java.util.Iterator;
+import java.util.Objects;
 import java.util.Stack;
 import java.util.function.Function;
 
@@ -66,11 +67,12 @@ public class LinkTreeIterator<T> extends AbstractIterator<T>
      * {@link LinkTreeIterator}會依照{@code getNext}取得目前項目的下一個項目
      * </p>
      *
-     * @param initial 初始項目
+     * @param initial 初始項目，可為null(空列舉)
      * @param getChildren 取得每個項目的子項目集合，傳回null表示結束
      */
     public LinkTreeIterator(T initial, Function<? super T, ? extends Iterator<? extends T>> getChildren)
     {
+        Objects.requireNonNull(getChildren);
         this.initial = initial;
         this.getChildren = getChildren;
     }

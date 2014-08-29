@@ -246,9 +246,9 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindBlurType(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.BlurType> source)
+    public final B bindBlurType(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.BlurType> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundBlurType = true;
         this.obsrvBlurType = source;
         return (B) this;
@@ -261,9 +261,9 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindChoke(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindChoke(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundChoke = true;
         this.obsrvChoke = source;
         return (B) this;
@@ -276,9 +276,9 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindColor(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> source)
+    public final B bindColor(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundColor = true;
         this.obsrvColor = source;
         return (B) this;
@@ -291,9 +291,9 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHeight = true;
         this.obsrvHeight = source;
         return (B) this;
@@ -306,9 +306,9 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
+    public final B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundInput = true;
         this.obsrvInput = source;
         return (B) this;
@@ -321,9 +321,9 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOffsetX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindOffsetX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOffsetX = true;
         this.obsrvOffsetX = source;
         return (B) this;
@@ -336,9 +336,9 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOffsetY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindOffsetY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOffsetY = true;
         this.obsrvOffsetY = source;
         return (B) this;
@@ -351,9 +351,9 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRadius = true;
         this.obsrvRadius = source;
         return (B) this;
@@ -366,9 +366,9 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundWidth = true;
         this.obsrvWidth = source;
         return (B) this;

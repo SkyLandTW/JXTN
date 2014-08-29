@@ -126,9 +126,9 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAutoNavigationEnabled(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindAutoNavigationEnabled(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAutoNavigationEnabled = true;
         this.obsrvAutoNavigationEnabled = source;
         return (B) this;
@@ -141,9 +141,9 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCrumbFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeItem<T>, javafx.scene.control.Button>> source)
+    public final B bindCrumbFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeItem<T>, javafx.scene.control.Button>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCrumbFactory = true;
         this.obsrvCrumbFactory = source;
         return (B) this;
@@ -156,9 +156,9 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnCrumbAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.BreadCrumbBar.BreadCrumbActionEvent<T>>> source)
+    public final B bindOnCrumbAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.BreadCrumbBar.BreadCrumbActionEvent<T>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnCrumbAction = true;
         this.obsrvOnCrumbAction = source;
         return (B) this;
@@ -171,9 +171,9 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSelectedCrumb(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeItem<T>> source)
+    public final B bindSelectedCrumb(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeItem<T>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSelectedCrumb = true;
         this.obsrvSelectedCrumb = source;
         return (B) this;

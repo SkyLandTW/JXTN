@@ -174,9 +174,9 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLowerBound(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindLowerBound(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLowerBound = true;
         this.obsrvLowerBound = source;
         return (B) this;
@@ -189,9 +189,9 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMinorTickCount(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindMinorTickCount(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMinorTickCount = true;
         this.obsrvMinorTickCount = source;
         return (B) this;
@@ -204,9 +204,9 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMinorTickLength(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinorTickLength(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMinorTickLength = true;
         this.obsrvMinorTickLength = source;
         return (B) this;
@@ -219,9 +219,9 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMinorTickVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindMinorTickVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMinorTickVisible = true;
         this.obsrvMinorTickVisible = source;
         return (B) this;
@@ -234,9 +234,9 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTickLabelFormatter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
+    public final B bindTickLabelFormatter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTickLabelFormatter = true;
         this.obsrvTickLabelFormatter = source;
         return (B) this;
@@ -249,9 +249,9 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindUpperBound(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindUpperBound(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundUpperBound = true;
         this.obsrvUpperBound = source;
         return (B) this;

@@ -150,9 +150,9 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMax(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindMax(javafx.beans.value.ObservableValue<? extends Integer> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMax = true;
         this.obsrvMax = source;
         return (B) this;
@@ -165,9 +165,9 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
+    public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOrientation = true;
         this.obsrvOrientation = source;
         return (B) this;
@@ -180,9 +180,9 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPartialRating(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindPartialRating(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPartialRating = true;
         this.obsrvPartialRating = source;
         return (B) this;
@@ -195,9 +195,9 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRating(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRating(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRating = true;
         this.obsrvRating = source;
         return (B) this;
@@ -210,9 +210,9 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindUpdateOnHover(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindUpdateOnHover(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundUpdateOnHover = true;
         this.obsrvUpdateOnHover = source;
         return (B) this;

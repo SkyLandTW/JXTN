@@ -198,9 +198,9 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindBottom(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindBottom(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundBottom = true;
         this.obsrvBottom = source;
         return (B) this;
@@ -213,9 +213,9 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundContent = true;
         this.obsrvContent = source;
         return (B) this;
@@ -228,9 +228,9 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLeft(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindLeft(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLeft = true;
         this.obsrvLeft = source;
         return (B) this;
@@ -243,9 +243,9 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPinnedSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
+    public final B bindPinnedSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPinnedSide = true;
         this.obsrvPinnedSide = source;
         return (B) this;
@@ -258,9 +258,9 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRight(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindRight(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRight = true;
         this.obsrvRight = source;
         return (B) this;
@@ -273,9 +273,9 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTop(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindTop(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTop = true;
         this.obsrvTop = source;
         return (B) this;
@@ -288,9 +288,9 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTriggerDistance(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTriggerDistance(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTriggerDistance = true;
         this.obsrvTriggerDistance = source;
         return (B) this;

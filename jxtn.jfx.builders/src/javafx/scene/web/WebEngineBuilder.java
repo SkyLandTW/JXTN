@@ -318,9 +318,9 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindConfirmHandler(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<java.lang.String, java.lang.Boolean>> source)
+    public final B bindConfirmHandler(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<java.lang.String, java.lang.Boolean>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundConfirmHandler = true;
         this.obsrvConfirmHandler = source;
         return (B) this;
@@ -333,9 +333,9 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCreatePopupHandler(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.web.PopupFeatures, javafx.scene.web.WebEngine>> source)
+    public final B bindCreatePopupHandler(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.web.PopupFeatures, javafx.scene.web.WebEngine>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCreatePopupHandler = true;
         this.obsrvCreatePopupHandler = source;
         return (B) this;
@@ -348,9 +348,9 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindJavaScriptEnabled(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindJavaScriptEnabled(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundJavaScriptEnabled = true;
         this.obsrvJavaScriptEnabled = source;
         return (B) this;
@@ -363,9 +363,9 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnAlert(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.web.WebEvent<java.lang.String>>> source)
+    public final B bindOnAlert(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.web.WebEvent<java.lang.String>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnAlert = true;
         this.obsrvOnAlert = source;
         return (B) this;
@@ -378,9 +378,9 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnError(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.web.WebErrorEvent>> source)
+    public final B bindOnError(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.web.WebErrorEvent>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnError = true;
         this.obsrvOnError = source;
         return (B) this;
@@ -393,9 +393,9 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnResized(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.web.WebEvent<javafx.geometry.Rectangle2D>>> source)
+    public final B bindOnResized(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.web.WebEvent<javafx.geometry.Rectangle2D>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnResized = true;
         this.obsrvOnResized = source;
         return (B) this;
@@ -408,9 +408,9 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnStatusChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.web.WebEvent<java.lang.String>>> source)
+    public final B bindOnStatusChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.web.WebEvent<java.lang.String>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnStatusChanged = true;
         this.obsrvOnStatusChanged = source;
         return (B) this;
@@ -423,9 +423,9 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOnVisibilityChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.web.WebEvent<java.lang.Boolean>>> source)
+    public final B bindOnVisibilityChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.web.WebEvent<java.lang.Boolean>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOnVisibilityChanged = true;
         this.obsrvOnVisibilityChanged = source;
         return (B) this;
@@ -438,9 +438,9 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPromptHandler(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.web.PromptData, java.lang.String>> source)
+    public final B bindPromptHandler(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.web.PromptData, java.lang.String>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPromptHandler = true;
         this.obsrvPromptHandler = source;
         return (B) this;
@@ -453,9 +453,9 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindUserAgent(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindUserAgent(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundUserAgent = true;
         this.obsrvUserAgent = source;
         return (B) this;
@@ -468,9 +468,9 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindUserDataDirectory(javafx.beans.value.ObservableValue<? extends java.io.File> source)
+    public final B bindUserDataDirectory(javafx.beans.value.ObservableValue<? extends java.io.File> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundUserDataDirectory = true;
         this.obsrvUserDataDirectory = source;
         return (B) this;
@@ -483,9 +483,9 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindUserStyleSheetLocation(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindUserStyleSheetLocation(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundUserStyleSheetLocation = true;
         this.obsrvUserStyleSheetLocation = source;
         return (B) this;

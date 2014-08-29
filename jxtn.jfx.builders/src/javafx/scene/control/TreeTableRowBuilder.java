@@ -54,9 +54,9 @@ public class TreeTableRowBuilder<T extends java.lang.Object, Z extends TreeTable
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindDisclosureNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindDisclosureNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundDisclosureNode = true;
         this.obsrvDisclosureNode = source;
         return (B) this;

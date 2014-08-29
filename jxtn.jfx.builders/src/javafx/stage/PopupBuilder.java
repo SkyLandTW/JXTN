@@ -35,7 +35,7 @@ public class PopupBuilder<Z extends Popup, B extends PopupBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B content(java.util.Collection<javafx.scene.Node> value)
+    public final B content(java.util.Collection<javafx.scene.Node> value)
     {
         this.hasContent = true;
         this.valContent = value;

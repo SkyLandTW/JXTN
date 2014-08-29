@@ -102,9 +102,9 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCenterX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindCenterX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCenterX = true;
         this.obsrvCenterX = source;
         return (B) this;
@@ -117,9 +117,9 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCenterY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindCenterY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCenterY = true;
         this.obsrvCenterY = source;
         return (B) this;
@@ -132,9 +132,9 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRadius = true;
         this.obsrvRadius = source;
         return (B) this;

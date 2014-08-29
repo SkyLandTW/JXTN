@@ -102,9 +102,9 @@ public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
+    public final B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAlignment = true;
         this.obsrvAlignment = source;
         return (B) this;
@@ -117,9 +117,9 @@ public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFillWidth(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindFillWidth(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFillWidth = true;
         this.obsrvFillWidth = source;
         return (B) this;
@@ -132,9 +132,9 @@ public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSpacing = true;
         this.obsrvSpacing = source;
         return (B) this;

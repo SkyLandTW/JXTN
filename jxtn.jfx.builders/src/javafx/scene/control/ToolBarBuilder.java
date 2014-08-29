@@ -45,7 +45,7 @@ public class ToolBarBuilder<Z extends ToolBar, B extends ToolBarBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B items(java.util.Collection<javafx.scene.Node> value)
+    public final B items(java.util.Collection<javafx.scene.Node> value)
     {
         this.hasItems = true;
         this.valItems = value;
@@ -88,9 +88,9 @@ public class ToolBarBuilder<Z extends ToolBar, B extends ToolBarBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
+    public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOrientation = true;
         this.obsrvOrientation = source;
         return (B) this;

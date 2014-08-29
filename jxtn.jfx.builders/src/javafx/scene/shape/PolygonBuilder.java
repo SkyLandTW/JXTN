@@ -35,7 +35,7 @@ public class PolygonBuilder<Z extends Polygon, B extends PolygonBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B points(java.util.Collection<java.lang.Double> value)
+    public final B points(java.util.Collection<java.lang.Double> value)
     {
         this.hasPoints = true;
         this.valPoints = value;

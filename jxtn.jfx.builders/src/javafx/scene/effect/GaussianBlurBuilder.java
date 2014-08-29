@@ -78,9 +78,9 @@ public class GaussianBlurBuilder<Z extends GaussianBlur, B extends GaussianBlurB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
+    public final B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundInput = true;
         this.obsrvInput = source;
         return (B) this;
@@ -93,9 +93,9 @@ public class GaussianBlurBuilder<Z extends GaussianBlur, B extends GaussianBlurB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRadius = true;
         this.obsrvRadius = source;
         return (B) this;

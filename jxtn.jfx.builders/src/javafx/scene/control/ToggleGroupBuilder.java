@@ -35,7 +35,7 @@ public class ToggleGroupBuilder<Z extends ToggleGroup, B extends ToggleGroupBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B toggles(java.util.Collection<javafx.scene.control.Toggle> value)
+    public final B toggles(java.util.Collection<javafx.scene.control.Toggle> value)
     {
         this.hasToggles = true;
         this.valToggles = value;

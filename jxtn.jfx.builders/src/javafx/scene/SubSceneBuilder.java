@@ -174,9 +174,9 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCamera(javafx.beans.value.ObservableValue<? extends javafx.scene.Camera> source)
+    public final B bindCamera(javafx.beans.value.ObservableValue<? extends javafx.scene.Camera> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCamera = true;
         this.obsrvCamera = source;
         return (B) this;
@@ -189,9 +189,9 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
+    public final B bindFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFill = true;
         this.obsrvFill = source;
         return (B) this;
@@ -204,9 +204,9 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHeight = true;
         this.obsrvHeight = source;
         return (B) this;
@@ -219,9 +219,9 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRoot(javafx.beans.value.ObservableValue<? extends javafx.scene.Parent> source)
+    public final B bindRoot(javafx.beans.value.ObservableValue<? extends javafx.scene.Parent> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRoot = true;
         this.obsrvRoot = source;
         return (B) this;
@@ -234,9 +234,9 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindUserAgentStylesheet(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
+    public final B bindUserAgentStylesheet(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundUserAgentStylesheet = true;
         this.obsrvUserAgentStylesheet = source;
         return (B) this;
@@ -249,9 +249,9 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundWidth = true;
         this.obsrvWidth = source;
         return (B) this;

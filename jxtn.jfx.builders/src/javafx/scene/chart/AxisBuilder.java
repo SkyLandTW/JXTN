@@ -299,7 +299,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B tickMarks(java.util.Collection<javafx.scene.chart.Axis.TickMark<T>> value)
+    public final B tickMarks(java.util.Collection<javafx.scene.chart.Axis.TickMark<T>> value)
     {
         this.hasTickMarks = true;
         this.valTickMarks = value;
@@ -328,9 +328,9 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAnimated(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindAnimated(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAnimated = true;
         this.obsrvAnimated = source;
         return (B) this;
@@ -343,9 +343,9 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAutoRanging(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindAutoRanging(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAutoRanging = true;
         this.obsrvAutoRanging = source;
         return (B) this;
@@ -358,9 +358,9 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindLabel(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
+    public final B bindLabel(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundLabel = true;
         this.obsrvLabel = source;
         return (B) this;
@@ -373,9 +373,9 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
+    public final B bindSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSide = true;
         this.obsrvSide = source;
         return (B) this;
@@ -388,9 +388,9 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTickLabelFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
+    public final B bindTickLabelFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTickLabelFill = true;
         this.obsrvTickLabelFill = source;
         return (B) this;
@@ -403,9 +403,9 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTickLabelFont(javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> source)
+    public final B bindTickLabelFont(javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTickLabelFont = true;
         this.obsrvTickLabelFont = source;
         return (B) this;
@@ -418,9 +418,9 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTickLabelGap(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTickLabelGap(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTickLabelGap = true;
         this.obsrvTickLabelGap = source;
         return (B) this;
@@ -433,9 +433,9 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTickLabelRotation(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTickLabelRotation(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTickLabelRotation = true;
         this.obsrvTickLabelRotation = source;
         return (B) this;
@@ -448,9 +448,9 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTickLabelsVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindTickLabelsVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTickLabelsVisible = true;
         this.obsrvTickLabelsVisible = source;
         return (B) this;
@@ -463,9 +463,9 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTickLength(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTickLength(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTickLength = true;
         this.obsrvTickLength = source;
         return (B) this;
@@ -478,9 +478,9 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTickMarkVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindTickMarkVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTickMarkVisible = true;
         this.obsrvTickMarkVisible = source;
         return (B) this;

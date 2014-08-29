@@ -54,9 +54,9 @@ public class ProgressIndicatorBuilder<Z extends ProgressIndicator, B extends Pro
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindProgress(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindProgress(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundProgress = true;
         this.obsrvProgress = source;
         return (B) this;

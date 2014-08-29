@@ -251,7 +251,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B styleClass(java.util.Collection<java.lang.String> value)
+    public final B styleClass(java.util.Collection<java.lang.String> value)
     {
         this.hasStyleClass = true;
         this.valStyleClass = value;
@@ -280,9 +280,9 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindId(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindId(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundId = true;
         this.obsrvId = source;
         return (B) this;
@@ -295,9 +295,9 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMaxHeight = true;
         this.obsrvMaxHeight = source;
         return (B) this;
@@ -310,9 +310,9 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMaxWidth = true;
         this.obsrvMaxWidth = source;
         return (B) this;
@@ -325,9 +325,9 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMinHeight = true;
         this.obsrvMinHeight = source;
         return (B) this;
@@ -340,9 +340,9 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMinWidth = true;
         this.obsrvMinWidth = source;
         return (B) this;
@@ -355,9 +355,9 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPrefHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefHeight(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPrefHeight = true;
         this.obsrvPrefHeight = source;
         return (B) this;
@@ -370,9 +370,9 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPrefWidth = true;
         this.obsrvPrefWidth = source;
         return (B) this;
@@ -385,9 +385,9 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSkin(javafx.beans.value.ObservableValue<? extends javafx.scene.control.Skin<?>> source)
+    public final B bindSkin(javafx.beans.value.ObservableValue<? extends javafx.scene.control.Skin<?>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSkin = true;
         this.obsrvSkin = source;
         return (B) this;
@@ -400,9 +400,9 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindStyle(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindStyle(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundStyle = true;
         this.obsrvStyle = source;
         return (B) this;

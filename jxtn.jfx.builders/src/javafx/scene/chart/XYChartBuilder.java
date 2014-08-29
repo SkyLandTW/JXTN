@@ -198,9 +198,9 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAlternativeColumnFillVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindAlternativeColumnFillVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAlternativeColumnFillVisible = true;
         this.obsrvAlternativeColumnFillVisible = source;
         return (B) this;
@@ -213,9 +213,9 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAlternativeRowFillVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindAlternativeRowFillVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAlternativeRowFillVisible = true;
         this.obsrvAlternativeRowFillVisible = source;
         return (B) this;
@@ -228,9 +228,9 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindData(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<javafx.scene.chart.XYChart.Series<X, Y>>> source)
+    public final B bindData(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<javafx.scene.chart.XYChart.Series<X, Y>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundData = true;
         this.obsrvData = source;
         return (B) this;
@@ -243,9 +243,9 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHorizontalGridLinesVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindHorizontalGridLinesVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHorizontalGridLinesVisible = true;
         this.obsrvHorizontalGridLinesVisible = source;
         return (B) this;
@@ -258,9 +258,9 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindHorizontalZeroLineVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindHorizontalZeroLineVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundHorizontalZeroLineVisible = true;
         this.obsrvHorizontalZeroLineVisible = source;
         return (B) this;
@@ -273,9 +273,9 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindVerticalGridLinesVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindVerticalGridLinesVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundVerticalGridLinesVisible = true;
         this.obsrvVerticalGridLinesVisible = source;
         return (B) this;
@@ -288,9 +288,9 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindVerticalZeroLineVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindVerticalZeroLineVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundVerticalZeroLineVisible = true;
         this.obsrvVerticalZeroLineVisible = source;
         return (B) this;

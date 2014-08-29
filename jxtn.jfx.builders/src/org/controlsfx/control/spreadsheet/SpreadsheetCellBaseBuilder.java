@@ -202,9 +202,9 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindCommented(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindCommented(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundCommented = true;
         this.obsrvCommented = source;
         return (B) this;
@@ -217,9 +217,9 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundEditable = true;
         this.obsrvEditable = source;
         return (B) this;
@@ -232,9 +232,9 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFormat(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindFormat(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFormat = true;
         this.obsrvFormat = source;
         return (B) this;
@@ -247,9 +247,9 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindItem(javafx.beans.value.ObservableValue<? extends java.lang.Object> source)
+    public final B bindItem(javafx.beans.value.ObservableValue<? extends java.lang.Object> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundItem = true;
         this.obsrvItem = source;
         return (B) this;

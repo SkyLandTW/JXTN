@@ -102,9 +102,9 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindAllowIndeterminate(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindAllowIndeterminate(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundAllowIndeterminate = true;
         this.obsrvAllowIndeterminate = source;
         return (B) this;
@@ -117,9 +117,9 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindIndeterminate(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindIndeterminate(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundIndeterminate = true;
         this.obsrvIndeterminate = source;
         return (B) this;
@@ -132,9 +132,9 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSelected(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindSelected(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSelected = true;
         this.obsrvSelected = source;
         return (B) this;

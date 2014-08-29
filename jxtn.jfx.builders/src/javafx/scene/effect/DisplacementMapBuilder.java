@@ -198,9 +198,9 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
+    public final B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundInput = true;
         this.obsrvInput = source;
         return (B) this;
@@ -213,9 +213,9 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMapData(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.FloatMap> source)
+    public final B bindMapData(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.FloatMap> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMapData = true;
         this.obsrvMapData = source;
         return (B) this;
@@ -228,9 +228,9 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOffsetX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindOffsetX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOffsetX = true;
         this.obsrvOffsetX = source;
         return (B) this;
@@ -243,9 +243,9 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOffsetY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindOffsetY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOffsetY = true;
         this.obsrvOffsetY = source;
         return (B) this;
@@ -258,9 +258,9 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindScaleX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindScaleX(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundScaleX = true;
         this.obsrvScaleX = source;
         return (B) this;
@@ -273,9 +273,9 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindScaleY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindScaleY(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundScaleY = true;
         this.obsrvScaleY = source;
         return (B) this;
@@ -288,9 +288,9 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindWrap(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindWrap(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundWrap = true;
         this.obsrvWrap = source;
         return (B) this;

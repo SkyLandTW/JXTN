@@ -78,9 +78,9 @@ public class SVGPathBuilder<Z extends SVGPath, B extends SVGPathBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindContent(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindContent(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundContent = true;
         this.obsrvContent = source;
         return (B) this;
@@ -93,9 +93,9 @@ public class SVGPathBuilder<Z extends SVGPath, B extends SVGPathBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFillRule(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.FillRule> source)
+    public final B bindFillRule(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.FillRule> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFillRule = true;
         this.obsrvFillRule = source;
         return (B) this;

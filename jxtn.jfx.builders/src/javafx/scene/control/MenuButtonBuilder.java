@@ -45,7 +45,7 @@ public class MenuButtonBuilder<Z extends MenuButton, B extends MenuButtonBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B items(java.util.Collection<javafx.scene.control.MenuItem> value)
+    public final B items(java.util.Collection<javafx.scene.control.MenuItem> value)
     {
         this.hasItems = true;
         this.valItems = value;
@@ -88,9 +88,9 @@ public class MenuButtonBuilder<Z extends MenuButton, B extends MenuButtonBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPopupSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
+    public final B bindPopupSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPopupSide = true;
         this.obsrvPopupSide = source;
         return (B) this;

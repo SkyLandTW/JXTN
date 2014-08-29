@@ -126,9 +126,9 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindBottomInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
+    public final B bindBottomInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundBottomInput = true;
         this.obsrvBottomInput = source;
         return (B) this;
@@ -141,9 +141,9 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindMode(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.BlendMode> source)
+    public final B bindMode(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.BlendMode> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundMode = true;
         this.obsrvMode = source;
         return (B) this;
@@ -156,9 +156,9 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindOpacity(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindOpacity(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundOpacity = true;
         this.obsrvOpacity = source;
         return (B) this;
@@ -171,9 +171,9 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTopInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
+    public final B bindTopInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTopInput = true;
         this.obsrvTopInput = source;
         return (B) this;

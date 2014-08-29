@@ -55,7 +55,7 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B columnHeaders(java.util.Collection<java.lang.String> value)
+    public final B columnHeaders(java.util.Collection<java.lang.String> value)
     {
         this.hasColumnHeaders = true;
         this.valColumnHeaders = value;
@@ -98,7 +98,7 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B rowHeaders(java.util.Collection<java.lang.String> value)
+    public final B rowHeaders(java.util.Collection<java.lang.String> value)
     {
         this.hasRowHeaders = true;
         this.valRowHeaders = value;

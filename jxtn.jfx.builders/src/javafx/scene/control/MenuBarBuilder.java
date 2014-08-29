@@ -45,7 +45,7 @@ public class MenuBarBuilder<Z extends MenuBar, B extends MenuBarBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B menus(java.util.Collection<javafx.scene.control.Menu> value)
+    public final B menus(java.util.Collection<javafx.scene.control.Menu> value)
     {
         this.hasMenus = true;
         this.valMenus = value;
@@ -88,9 +88,9 @@ public class MenuBarBuilder<Z extends MenuBar, B extends MenuBarBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindUseSystemMenuBar(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindUseSystemMenuBar(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundUseSystemMenuBar = true;
         this.obsrvUseSystemMenuBar = source;
         return (B) this;

@@ -149,9 +149,9 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundNode = true;
         this.obsrvNode = source;
         return (B) this;

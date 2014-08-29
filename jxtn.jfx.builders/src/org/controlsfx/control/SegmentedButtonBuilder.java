@@ -35,7 +35,7 @@ public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends Segment
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B buttons(java.util.Collection<javafx.scene.control.ToggleButton> value)
+    public final B buttons(java.util.Collection<javafx.scene.control.ToggleButton> value)
     {
         this.hasButtons = true;
         this.valButtons = value;

@@ -204,7 +204,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B columns(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
+    public final B columns(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
     {
         this.hasColumns = true;
         this.valColumns = value;
@@ -401,7 +401,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B sortOrder(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
+    public final B sortOrder(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
     {
         this.hasSortOrder = true;
         this.valSortOrder = value;
@@ -472,7 +472,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B visibleLeafColumns(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
+    public final B visibleLeafColumns(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
     {
         this.hasVisibleLeafColumns = true;
         this.valVisibleLeafColumns = value;
@@ -501,9 +501,9 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindColumnResizePolicy(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableView.ResizeFeatures, java.lang.Boolean>> source)
+    public final B bindColumnResizePolicy(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableView.ResizeFeatures, java.lang.Boolean>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundColumnResizePolicy = true;
         this.obsrvColumnResizePolicy = source;
         return (B) this;
@@ -516,9 +516,9 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundEditable = true;
         this.obsrvEditable = source;
         return (B) this;
@@ -531,9 +531,9 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFixedCellSize(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindFixedCellSize(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFixedCellSize = true;
         this.obsrvFixedCellSize = source;
         return (B) this;
@@ -546,9 +546,9 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindFocusModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableView.TreeTableViewFocusModel<S>> source)
+    public final B bindFocusModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableView.TreeTableViewFocusModel<S>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundFocusModel = true;
         this.obsrvFocusModel = source;
         return (B) this;
@@ -561,9 +561,9 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindPlaceholder(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    public final B bindPlaceholder(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundPlaceholder = true;
         this.obsrvPlaceholder = source;
         return (B) this;
@@ -576,9 +576,9 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRoot(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeItem<S>> source)
+    public final B bindRoot(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeItem<S>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRoot = true;
         this.obsrvRoot = source;
         return (B) this;
@@ -591,9 +591,9 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRowFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableView<S>, javafx.scene.control.TreeTableRow<S>>> source)
+    public final B bindRowFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableView<S>, javafx.scene.control.TreeTableRow<S>>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRowFactory = true;
         this.obsrvRowFactory = source;
         return (B) this;
@@ -606,9 +606,9 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableView.TreeTableViewSelectionModel<S>> source)
+    public final B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableView.TreeTableViewSelectionModel<S>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSelectionModel = true;
         this.obsrvSelectionModel = source;
         return (B) this;
@@ -621,9 +621,9 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindShowRoot(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindShowRoot(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundShowRoot = true;
         this.obsrvShowRoot = source;
         return (B) this;
@@ -636,9 +636,9 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSortMode(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeSortMode> source)
+    public final B bindSortMode(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeSortMode> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSortMode = true;
         this.obsrvSortMode = source;
         return (B) this;
@@ -651,9 +651,9 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSortPolicy(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableView<S>, java.lang.Boolean>> source)
+    public final B bindSortPolicy(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableView<S>, java.lang.Boolean>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSortPolicy = true;
         this.obsrvSortPolicy = source;
         return (B) this;
@@ -666,9 +666,9 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTableMenuButtonVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindTableMenuButtonVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTableMenuButtonVisible = true;
         this.obsrvTableMenuButtonVisible = source;
         return (B) this;
@@ -681,9 +681,9 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTreeColumn(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableColumn<S, ?>> source)
+    public final B bindTreeColumn(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableColumn<S, ?>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTreeColumn = true;
         this.obsrvTreeColumn = source;
         return (B) this;

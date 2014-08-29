@@ -75,7 +75,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B extensionFilters(java.util.Collection<javafx.stage.FileChooser.ExtensionFilter> value)
+    public final B extensionFilters(java.util.Collection<javafx.stage.FileChooser.ExtensionFilter> value)
     {
         this.hasExtensionFilters = true;
         this.valExtensionFilters = value;
@@ -160,9 +160,9 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindInitialDirectory(javafx.beans.value.ObservableValue<? extends java.io.File> source)
+    public final B bindInitialDirectory(javafx.beans.value.ObservableValue<? extends java.io.File> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundInitialDirectory = true;
         this.obsrvInitialDirectory = source;
         return (B) this;
@@ -175,9 +175,9 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindInitialFileName(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
+    public final B bindInitialFileName(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundInitialFileName = true;
         this.obsrvInitialFileName = source;
         return (B) this;
@@ -190,9 +190,9 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindSelectedExtensionFilter(javafx.beans.value.ObservableValue<? extends javafx.stage.FileChooser.ExtensionFilter> source)
+    public final B bindSelectedExtensionFilter(javafx.beans.value.ObservableValue<? extends javafx.stage.FileChooser.ExtensionFilter> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundSelectedExtensionFilter = true;
         this.obsrvSelectedExtensionFilter = source;
         return (B) this;
@@ -205,9 +205,9 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindTitle(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindTitle(javafx.beans.value.ObservableValue<? extends String> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundTitle = true;
         this.obsrvTitle = source;
         return (B) this;

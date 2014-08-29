@@ -54,9 +54,9 @@ public class TextFieldTreeTableCellBuilder<S extends java.lang.Object, T extends
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
+    public final B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundConverter = true;
         this.obsrvConverter = source;
         return (B) this;

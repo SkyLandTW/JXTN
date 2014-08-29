@@ -54,9 +54,9 @@ public class SphereBuilder<Z extends Sphere, B extends SphereBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
     {
-        assert (source != null);
+        java.util.Objects.requireNonNull(source);
         this.boundRadius = true;
         this.obsrvRadius = source;
         return (B) this;

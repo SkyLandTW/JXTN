@@ -11,7 +11,7 @@ Bug report: https://bugs.eclipse.org/bugs/show_bug.cgi?id=442956
 Modify *org.eclipse.jdt.core*
 -----------------------------
 
-###### org.eclipse.jdt.internal.compiler.lookup.UnresolvedReferenceBinding
+##### org.eclipse.jdt.internal.compiler.lookup.UnresolvedReferenceBinding
 
 Under method *resolve()*, change:
 

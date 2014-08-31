@@ -8,11 +8,12 @@ Bug report: https://bugs.eclipse.org/bugs/show_bug.cgi?id=442956
 
 ------------------------------------------------------------------------------
 
-**Modify org.eclipse.jdt.core**
+Modify *org.eclipse.jdt.core*
+-----------------------------
 
-org.eclipse.jdt.internal.compiler.lookup.UnresolvedReferenceBinding
--------------------------------------------------------------------
-Under method *resolve*, change:
+###### org.eclipse.jdt.internal.compiler.lookup.UnresolvedReferenceBinding
+
+Under method *resolve()*, change:
 
 ```java
 if (targetType == null || targetType == this) { // could not resolve any better, error was already reported against it //$IDENTITY-COMPARISON$

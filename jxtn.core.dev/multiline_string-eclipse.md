@@ -15,10 +15,11 @@ Supports multi-line string literals in Eclipse JDT
 
 ------------------------------------------------------------------------------
 
-**Modify org.eclipse.jdt.core**
+Modify *org.eclipse.jdt.core*
+-----------------------------
 
-org.eclipse.jdt.internal.codeassist.complete.CompletionScanner
---------------------------------------------------------------
+###### org.eclipse.jdt.internal.codeassist.complete.CompletionScanner
+
 Remove the following lines:
 
 ```java
@@ -29,8 +30,8 @@ if ((this.currentCharacter == '\n') || (this.currentCharacter == '\r')) {
 }
 ```
 
-org.eclipse.jdt.internal.compiler.parser.Scanner
-------------------------------------------------
+###### org.eclipse.jdt.internal.compiler.parser.Scanner
+
 Remove the following lines:
 
 ```java

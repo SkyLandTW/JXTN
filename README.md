@@ -10,6 +10,7 @@ Java 8 API Extensions and Utilities
 
 #### Projects:
  - **jxtn.core.axi:** Extensions to Java 8 API, to be put into *endorsed* dir.
+ - **jxtn.core.dev:** Patches to compilers and IDEs
  - **jxtn.core.fmpp:** FMPP/FreeMarker data loaders for code generation.
  - **jxtn.jfx.builders:** Replacement of deprecated JavaFX builders API.
 
@@ -52,6 +53,16 @@ bearable.
  - No extension to Array classes for now because I don't know how to do it.
  - No test suite available. Some code may be broken since I never test them.
  - AXI should only be used with the latest released version of Oracle JDK/JRE.
+
+------------------------------------------------------------------------------
+
+jxtn.core.dev
+-------------
+Provides patches to compilers and IDEs for bugfixes and new features.
+
+##### Patches:
+ - [Eclipse JDT; Fix resolve error triggered by *jxtn.core.axi*](jxtn.core.dev/fix_inner_type-eclipse.md)
+ - [Eclipse JDT; Multi-line Strings in Java](jxtn.core.dev/multiline_string-eclipse.md)
 
 ------------------------------------------------------------------------------
 

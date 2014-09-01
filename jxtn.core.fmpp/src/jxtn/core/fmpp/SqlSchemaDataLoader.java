@@ -125,7 +125,6 @@ select *
 select *
   from INFORMATION_SCHEMA.TABLE_CONSTRAINTS
  where CONSTRAINT_TYPE in ('PRIMARY KEY', 'UNIQUE')
-   and TABLE_NAME <> 'sysdiagrams'
  order by TABLE_SCHEMA, TABLE_NAME, CONSTRAINT_TYPE, CONSTRAINT_NAME
 "
                     ))

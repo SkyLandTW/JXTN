@@ -31,8 +31,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -62,126 +66,14 @@ public class SqlSchemaDataLoader extends XmlDataLoader
         Document schemaDoc = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
         Element schemaRoot = schemaDoc.createElement("schema");
         schemaDoc.appendChild(schemaRoot);
-        // 載入表格
         try (Connection connection = DriverManager.getConnection(jdbcUrl))
         {
-            try (PreparedStatement stmt = connection.prepareStatement("
-select *,
-       (
-        select pa.rows
-          from sys.tables ta
-         inner join sys.partitions pa
-                 on pa.object_id = ta.object_id
-         inner join sys.schemas sc
-                 on ta.schema_id = sc.schema_id
-         where pa.index_id IN (1,0)
-           and sc.name = TABLE_SCHEMA
-           and ta.name = TABLE_NAME
-       ) as TABLE_ROWS
-  from INFORMATION_SCHEMA.TABLES
- order by TABLE_NAME
-"
-                    ))
-            {
-                try (ResultSet rs = stmt.executeQuery())
-                {
-                    while (rs.next())
-                    {
-                        String tableName = rs.getString("TABLE_NAME");
-                        Element tableElem = schemaDoc.createElement("table");
-                        tableElem.setAttribute("name", tableName);
-                        tableElem.setAttribute("rows", Integer.toString(rs.getInt("TABLE_ROWS")));
-                        schemaRoot.appendChild(tableElem);
-                    }
-                }
-            }
-            // 載入欄位
-            try (PreparedStatement stmt = connection.prepareStatement("
-select *
-  from INFORMATION_SCHEMA.COLUMNS
- order by TABLE_NAME, ORDINAL_POSITION
-"
-                    ))
-            {
-                try (ResultSet rs = stmt.executeQuery())
-                {
-                    while (rs.next())
-                    {
-                        String tableName = rs.getString("TABLE_NAME");
-                        Element tableElem = schemaRoot.getChildNodes().iterable()
-                                .ofType(Element.class)
-                                .filter(elem -> elem.getAttribute("name").equals(tableName))
-                                .first();
-                        Element columnElem = schemaDoc.createElement("column");
-                        columnElem.setAttribute("name", rs.getString("COLUMN_NAME"));
-                        columnElem.setAttribute("type", rs.getString("DATA_TYPE"));
-                        columnElem.setAttribute("nullable", rs.getString("IS_NULLABLE"));
-                        tableElem.appendChild(columnElem);
-                    }
-                }
-            }
-            // 載入索引
-            try (PreparedStatement stmt = connection.prepareStatement("
-select *
-  from INFORMATION_SCHEMA.TABLE_CONSTRAINTS
- where CONSTRAINT_TYPE in ('PRIMARY KEY', 'UNIQUE')
- order by TABLE_SCHEMA, TABLE_NAME, CONSTRAINT_TYPE, CONSTRAINT_NAME
-"
-                    ))
-            {
-                try (ResultSet rs = stmt.executeQuery())
-                {
-                    while (rs.next())
-                    {
-                        String tableName = rs.getString("TABLE_NAME");
-                        Element tableElem = schemaRoot.getChildNodes().iterable()
-                                .ofType(Element.class)
-                                .filter(elem -> elem.getNodeName().equals("table") && elem.getAttribute("name").equals(tableName))
-                                .first();
-                        Element keyElem = schemaDoc.createElement("key");
-                        keyElem.setAttribute("name", rs.getString("CONSTRAINT_NAME"));
-                        keyElem.setAttribute("type", rs.getString("CONSTRAINT_TYPE"));
-                        tableElem.appendChild(keyElem);
-                    }
-                }
-            }
-            // 載入索引欄位
-            try (PreparedStatement stmt = connection.prepareStatement("
-select *
-  from INFORMATION_SCHEMA.KEY_COLUMN_USAGE
- order by TABLE_SCHEMA, TABLE_NAME, CONSTRAINT_NAME, ORDINAL_POSITION
-"
-                    ))
-            {
-                try (ResultSet rs = stmt.executeQuery())
-                {
-                    while (rs.next())
-                    {
-                        String tableName = rs.getString("TABLE_NAME");
-                        Element tableElem = schemaRoot.getChildNodes().iterable()
-                                .ofType(Element.class)
-                                .filter(elem -> elem.getNodeName().equals("table") && elem.getAttribute("name").equals(tableName))
-                                .first();
-                        String keyName = rs.getString("CONSTRAINT_NAME");
-                        Element keyElem = tableElem.getChildNodes().iterable()
-                                .ofType(Element.class)
-                                .filter(elem -> elem.getNodeName().equals("key") && elem.getAttribute("name").equals(keyName))
-                                .firstOrNull();
-                        if (keyElem != null)
-                        {
-                            String colName = rs.getString("COLUMN_NAME");
-                            Element colElem = tableElem.getChildNodes().iterable()
-                                    .ofType(Element.class)
-                                    .filter(elem -> elem.getNodeName().equals("column") && elem.getAttribute("name").equals(colName))
-                                    .first();
-                            Element colRefElem = schemaDoc.createElement("colRef");
-                            colRefElem.setAttribute("name", colName);
-                            colRefElem.setAttribute("type", colElem.getAttribute("type"));
-                            keyElem.appendChild(colRefElem);
-                        }
-                    }
-                }
-            }
+            Map<String, Element> globalKeys = new HashMap<>();
+            this.doLoadTables(connection, schemaDoc);
+            this.doLoadColumns(connection, schemaDoc);
+            this.doLoadConstraints(connection, schemaDoc, globalKeys);
+            this.doLoadConstraintColumns(connection, schemaDoc, globalKeys);
+            this.doLoadConstraintTargets(connection, schemaDoc, globalKeys);
         }
         // 排除輔助欄位
         for (Node tableNode : schemaRoot.getElementsByTagName("table").iterable())
@@ -205,5 +97,180 @@ select *
         }
         System.out.println(schemaRoot.toText());
         return this.load(engine, args, schemaDoc);
+    }
+
+    protected void doLoadTables(Connection connection, Document schemaDoc) throws SQLException
+    {
+        Objects.requireNonNull(connection);
+        Objects.requireNonNull(schemaDoc);
+        try (PreparedStatement stmt = connection.prepareStatement("
+select *,
+   (
+    select pa.rows
+      from sys.tables ta
+     inner join sys.partitions pa
+             on pa.object_id = ta.object_id
+     inner join sys.schemas sc
+             on ta.schema_id = sc.schema_id
+     where pa.index_id IN (1,0)
+       and sc.name = TABLE_SCHEMA
+       and ta.name = TABLE_NAME
+   ) as TABLE_ROWS
+from INFORMATION_SCHEMA.TABLES
+order by TABLE_NAME
+"
+                ))
+        {
+            try (ResultSet rs = stmt.executeQuery())
+            {
+                while (rs.next())
+                {
+                    String tableName = rs.getString("TABLE_NAME");
+                    Element tableElem = schemaDoc.createElement("table");
+                    tableElem.setAttribute("name", tableName);
+                    tableElem.setAttribute("rows", Integer.toString(rs.getInt("TABLE_ROWS")));
+                    schemaDoc.getFirstChild().appendChild(tableElem);
+                }
+            }
+        }
+    }
+
+    protected void doLoadColumns(Connection connection, Document schemaDoc) throws SQLException
+    {
+        Objects.requireNonNull(connection);
+        Objects.requireNonNull(schemaDoc);
+        try (PreparedStatement stmt = connection.prepareStatement("
+select *
+from INFORMATION_SCHEMA.COLUMNS
+order by TABLE_NAME, ORDINAL_POSITION
+"
+                ))
+        {
+            try (ResultSet rs = stmt.executeQuery())
+            {
+                while (rs.next())
+                {
+                    String tableName = rs.getString("TABLE_NAME");
+                    Element tableElem = schemaDoc.getFirstChild().getChildNodes().iterable()
+                            .ofType(Element.class)
+                            .filter(elem -> elem.getAttribute("name").equals(tableName))
+                            .first();
+                    Element columnElem = schemaDoc.createElement("column");
+                    columnElem.setAttribute("name", rs.getString("COLUMN_NAME"));
+                    columnElem.setAttribute("type", rs.getString("DATA_TYPE"));
+                    columnElem.setAttribute("nullable", rs.getString("IS_NULLABLE"));
+                    tableElem.appendChild(columnElem);
+                }
+            }
+        }
+    }
+
+    protected void doLoadConstraints(Connection connection, Document schemaDoc, Map<String, Element> globalKeys)
+            throws SQLException
+    {
+        Objects.requireNonNull(connection);
+        Objects.requireNonNull(schemaDoc);
+        Objects.requireNonNull(globalKeys);
+        try (PreparedStatement stmt = connection.prepareStatement("
+select *
+from INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+where CONSTRAINT_TYPE in ('PRIMARY KEY', 'UNIQUE', 'FOREIGN KEY')
+order by TABLE_SCHEMA, TABLE_NAME, CONSTRAINT_TYPE, CONSTRAINT_NAME
+"
+                ))
+        {
+            try (ResultSet rs = stmt.executeQuery())
+            {
+                while (rs.next())
+                {
+                    String tableName = rs.getString("TABLE_NAME");
+                    Element tableElem = schemaDoc.getFirstChild().getChildNodes().iterable()
+                            .ofType(Element.class)
+                            .filter(elem -> elem.getAttribute("name").equals(tableName))
+                            .first();
+                    String constraintName = rs.getString("CONSTRAINT_NAME");
+                    String constraintType = rs.getString("CONSTRAINT_TYPE");
+                    Element constraintElem = constraintType.equals("FOREIGN KEY")
+                            ? schemaDoc.createElement("reference")
+                            : schemaDoc.createElement("key");
+                    constraintElem.setAttribute("name", constraintName);
+                    constraintElem.setAttribute("type", constraintType.split(" ")[0].toLowerCase());
+                    tableElem.appendChild(constraintElem);
+                    globalKeys.put(constraintName, constraintElem);
+                }
+            }
+        }
+    }
+
+    protected void doLoadConstraintColumns(Connection connection, Document schemaDoc, Map<String, Element> globalKeys)
+            throws SQLException
+    {
+        Objects.requireNonNull(connection);
+        Objects.requireNonNull(schemaDoc);
+        Objects.requireNonNull(globalKeys);
+        try (PreparedStatement stmt = connection.prepareStatement("
+select *
+from INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+order by TABLE_SCHEMA, TABLE_NAME, CONSTRAINT_NAME, ORDINAL_POSITION
+"
+                ))
+        {
+            try (ResultSet rs = stmt.executeQuery())
+            {
+                while (rs.next())
+                {
+                    String tableName = rs.getString("TABLE_NAME");
+                    Element tableElem = schemaDoc.getFirstChild().getChildNodes().iterable()
+                            .ofType(Element.class)
+                            .filter(elem -> elem.getAttribute("name").equals(tableName))
+                            .first();
+                    String constraintName = rs.getString("CONSTRAINT_NAME");
+                    Element constraintElem = globalKeys.get(constraintName);
+                    if (constraintElem == null)
+                        continue;
+                    String columnName = rs.getString("COLUMN_NAME");
+                    Element columnElem = tableElem.getChildNodes().iterable()
+                            .ofType(Element.class)
+                            .filter(elem -> elem.getNodeName().equals("column") && elem.getAttribute("name").equals(columnName))
+                            .first();
+                    Element colRefElem = schemaDoc.createElement("colRef");
+                    colRefElem.setAttribute("name", columnName);
+                    colRefElem.setAttribute("type", columnElem.getAttribute("type"));
+                    constraintElem.appendChild(colRefElem);
+                }
+            }
+        }
+    }
+
+    protected void doLoadConstraintTargets(Connection connection, Document schemaDoc, Map<String, Element> globalKeys)
+            throws SQLException
+    {
+        Objects.requireNonNull(connection);
+        Objects.requireNonNull(schemaDoc);
+        Objects.requireNonNull(globalKeys);
+        try (PreparedStatement stmt = connection.prepareStatement("
+select *
+from INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS
+order by CONSTRAINT_NAME
+"
+                ))
+        {
+            try (ResultSet rs = stmt.executeQuery())
+            {
+                while (rs.next())
+                {
+                    String dependentRefName = rs.getString("CONSTRAINT_NAME");
+                    Element dependentRefElem = globalKeys.get(dependentRefName);
+                    if (dependentRefElem == null)
+                        continue;
+                    String principalKeyName = rs.getString("UNIQUE_CONSTRAINT_NAME");
+                    Element principalKeyElem = globalKeys.get(principalKeyName);
+                    assert (principalKeyElem != null);
+                    Element principalTableElem = (Element) principalKeyElem.getParentNode();
+                    dependentRefElem.setAttribute("parentTable", principalTableElem.getAttribute("name"));
+                    dependentRefElem.setAttribute("parentKey", principalKeyName);
+                }
+            }
+        }
     }
 }

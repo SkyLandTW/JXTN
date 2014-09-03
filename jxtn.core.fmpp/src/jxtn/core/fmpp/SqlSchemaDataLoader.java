@@ -117,7 +117,7 @@ select *,
        and ta.name = TABLE_NAME
    ) as TABLE_ROWS
 from INFORMATION_SCHEMA.TABLES
-order by TABLE_NAME
+order by TABLE_SCHEMA, TABLE_NAME
 "
                 ))
         {
@@ -142,7 +142,7 @@ order by TABLE_NAME
         try (PreparedStatement stmt = connection.prepareStatement("
 select *
 from INFORMATION_SCHEMA.COLUMNS
-order by TABLE_NAME, ORDINAL_POSITION
+order by TABLE_SCHEMA, TABLE_NAME, ORDINAL_POSITION
 "
                 ))
         {
@@ -251,7 +251,7 @@ order by TABLE_SCHEMA, TABLE_NAME, CONSTRAINT_NAME, ORDINAL_POSITION
         try (PreparedStatement stmt = connection.prepareStatement("
 select *
 from INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS
-order by CONSTRAINT_NAME
+order by CONSTRAINT_SCHEMA, CONSTRAINT_NAME
 "
                 ))
         {

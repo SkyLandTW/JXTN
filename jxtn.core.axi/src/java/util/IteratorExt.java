@@ -34,7 +34,9 @@ import java.util.function.ToDoubleFunction;
 import java.util.function.ToIntFunction;
 import java.util.function.ToLongFunction;
 
+import jxtn.core.axi.MemberComparators;
 import jxtn.core.axi.collections.ConcatedIterator;
+import jxtn.core.axi.collections.ExpandedIterator;
 import jxtn.core.axi.collections.FilteredIterator;
 import jxtn.core.axi.collections.LinkLineIterator;
 import jxtn.core.axi.collections.LinkTreeIterator;
@@ -178,6 +180,19 @@ public interface IteratorExt<E>
     default <V> Iterator<V> as()
     {
         return (Iterator<V>) this;
+    }
+
+    /**
+     * 依照展開函數建立展開列舉
+     *
+     * @param <R> 展開項目型態
+     * @param expander 展開項目的函數
+     * @return 展開列舉，依賴原有的列舉
+     */
+    default <R> Iterator<R> expand(Function<? super E, Iterator<R>> expander)
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        return new ExpandedIterator<>(thiz, expander);
     }
 
     /**
@@ -548,23 +563,12 @@ public interface IteratorExt<E>
      * @param getKey 計算每個項目的鍵值
      * @return {@link ArrayList}，已排序
      */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @SuppressWarnings({ "rawtypes" })
     default <V extends Comparable> ArrayList<E> toArrayListSorted(Function<E, V> getKey)
     {
         Iterator<E> thiz = (Iterator<E>) this;
         ArrayList<E> sorted = thiz.toArrayList();
-        sorted.sort((c1, c2) ->
-            {
-                V v1 = getKey.apply(c1);
-                V v2 = getKey.apply(c2);
-                if (v1 == null && v2 == null)
-                    return 0;
-                if (v1 == null)
-                    return -1;
-                if (v2 == null)
-                    return 1;
-                return v1.compareTo(v2);
-            });
+        sorted.sort(MemberComparators.byComparable(getKey));
         return sorted;
     }
 

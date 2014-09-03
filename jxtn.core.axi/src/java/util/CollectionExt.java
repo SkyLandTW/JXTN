@@ -27,6 +27,11 @@
 
 package java.util;
 
+import java.lang.reflect.Array;
+import java.util.function.Function;
+
+import jxtn.core.axi.MemberComparators;
+
 /**
  * {@link Collection}的延伸功能
  *
@@ -45,4 +50,128 @@ public interface CollectionExt<E> extends IterableExt<E>
         Collection<E> thiz = (Collection<E>) this;
         return thiz;
     }
+
+    /************************************************************************
+     * 項目統整
+     ************************************************************************/
+    /**
+     * 建立陣列
+     *
+     * @param type 陣列項目型態
+     * @return 陣列
+     */
+    @Override
+    @SuppressWarnings("unchecked")
+    default E[] toArray(Class<E> type)
+    {
+        Collection<E> thiz = (Collection<E>) this;
+        ArrayList<E> list = thiz.toArrayList();
+        E[] array = (E[]) Array.newInstance(type, list.size());
+        return list.toArray(array);
+    }
+
+    /**
+     * 建立{@link ArrayList}
+     *
+     * @return {@link ArrayList}
+     */
+    @Override
+    default ArrayList<E> toArrayList()
+    {
+        Collection<E> thiz = (Collection<E>) this;
+        ArrayList<E> coll = new ArrayList<>(thiz);
+        return coll;
+    }
+
+    /**
+     * 建立{@link ArrayList}，依照鍵值做排序
+     *
+     * @param <V> 鍵值型態
+     * @param getKey 計算每個項目的鍵值
+     * @return {@link ArrayList}，已排序
+     */
+    @Override
+    @SuppressWarnings({ "rawtypes" })
+    default <V extends Comparable> ArrayList<E> toArrayListSorted(Function<E, V> getKey)
+    {
+        Collection<E> thiz = (Collection<E>) this;
+        ArrayList<E> sorted = thiz.toArrayList();
+        sorted.sort(MemberComparators.byComparable(getKey));
+        return sorted;
+    }
+
+    /**
+     * 建立{@link ArrayList}，依照比較器做排序
+     *
+     * @param comparator 項目的比較器
+     * @return {@link ArrayList}，已排序
+     */
+    @Override
+    default ArrayList<E> toArrayListSorted(Comparator<E> comparator)
+    {
+        Collection<E> thiz = (Collection<E>) this;
+        ArrayList<E> sorted = thiz.toArrayList();
+        sorted.sort(comparator);
+        return sorted;
+    }
+
+    /**
+     * 建立{@link HashMap}
+     *
+     * @param <K> {@link HashMap}鍵值型態
+     * @param getKey 計算項目於新{@link HashMap}內的鍵值
+     * @return {@link HashMap}
+     */
+    @Override
+    default <K> HashMap<K, E> toHashMap(Function<? super E, K> getKey)
+    {
+        Collection<E> thiz = (Collection<E>) this;
+        HashMap<K, E> coll = new HashMap<>(thiz.size());
+        for (E item : thiz)
+        {
+            K k = getKey.apply(item);
+            coll.put(k, item);
+        }
+        return coll;
+    }
+
+    /**
+     * 建立{@link HashMap}
+     *
+     * @param <K> {@link HashMap}鍵值型態
+     * @param <V> {@link HashMap}項目值型態
+     * @param getKey 計算項目於新{@link HashMap}內的鍵值
+     * @param getValue 計算項目於新{@link HashMap}內的項目值
+     * @return {@link HashMap}
+     */
+    @Override
+    default <K, V> HashMap<K, V> toHashMap(Function<? super E, K> getKey, Function<? super E, V> getValue)
+    {
+        Collection<E> thiz = (Collection<E>) this;
+        HashMap<K, V> coll = new HashMap<>(thiz.size());
+        for (E item : thiz)
+        {
+            K k = getKey.apply(item);
+            V v = getValue.apply(item);
+            coll.put(k, v);
+        }
+        return coll;
+    }
+
+    /**
+     * 建立{@link HashSet}
+     * <p>
+     * 重複值會被重疊覆蓋
+     * </p>
+     *
+     * @return {@link HashSet}
+     */
+    @Override
+    default HashSet<E> toHashSet()
+    {
+        Collection<E> thiz = (Collection<E>) this;
+        HashSet<E> coll = new HashSet<>(thiz);
+        return coll;
+    }
+
 }

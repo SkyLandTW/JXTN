@@ -42,6 +42,7 @@ import java.util.function.ToIntFunction;
 import java.util.function.ToLongFunction;
 
 import jxtn.core.axi.collections.ConcatedIterator;
+import jxtn.core.axi.collections.ExpandedIterator;
 import jxtn.core.axi.collections.FilteredIterator;
 import jxtn.core.axi.collections.LinkLineIterator;
 import jxtn.core.axi.collections.LinkTreeIterator;
@@ -183,6 +184,19 @@ public interface IterableExt<T>
         for (Iterable<T> other : iterables)
             list.add(other);
         return () -> new ConcatedIterator<>(list.iterator().map(Iterable::iterator));
+    }
+
+    /**
+     * 依照展開函數建立展開列舉
+     *
+     * @param <R> 展開項目型態
+     * @param expander 展開項目的函數
+     * @return 展開列舉，依賴原有的列舉
+     */
+    default <R> Iterable<R> expand(Function<? super T, Iterable<R>> expander)
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return () -> new ExpandedIterator<>(thiz.iterator(), t -> expander.apply(t).iterator());
     }
 
     /**

@@ -193,7 +193,11 @@ order by TABLE_SCHEMA, TABLE_NAME, CONSTRAINT_TYPE, CONSTRAINT_NAME
                     Element constraintElem = constraintType.equals("FOREIGN KEY")
                             ? schemaDoc.createElement("reference")
                             : schemaDoc.createElement("key");
+                    String shortName = constraintName;
+                    if (shortName.substring(3).startsWith(tableName + "_"))
+                        shortName = shortName.substring(3 + tableName.length() + 1);
                     constraintElem.setAttribute("name", constraintName);
+                    constraintElem.setAttribute("shortName", shortName);
                     constraintElem.setAttribute("type", constraintType.split(" ")[0].toLowerCase());
                     tableElem.appendChild(constraintElem);
                     globalKeys.put(constraintName, constraintElem);

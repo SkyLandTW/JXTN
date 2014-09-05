@@ -48,6 +48,10 @@ public interface ListExt<E> extends CollectionExt<E>
         return thiz;
     }
 
+    //////////////////////////////////////////////////////////////////////////
+    // 項目挑選
+    //
+
     /**
      * 取得第一筆項目
      *
@@ -97,6 +101,37 @@ public interface ListExt<E> extends CollectionExt<E>
             }
         }
         return -1;
+    }
+
+    /**
+     * 取得第N筆項目
+     *
+     * @param position 位置
+     * @return 第N筆項目
+     * @throws NoSuchElementException 沒有第N筆項目
+     */
+    @Override
+    default E getNth(int position)
+    {
+        List<E> thiz = (List<E>) this;
+        if (position >= thiz.size())
+            throw new NoSuchElementException(Integer.toString(position));
+        return thiz.get(position);
+    }
+
+    /**
+     * 取得第N筆項目
+     *
+     * @param position 位置
+     * @return 第N筆項目，或null表示沒有第N筆項目
+     */
+    @Override
+    default E getNthOrNull(int position)
+    {
+        List<E> thiz = (List<E>) this;
+        if (position >= thiz.size())
+            return null;
+        return thiz.get(position);
     }
 
     /**

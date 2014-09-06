@@ -177,7 +177,8 @@ public interface Collection<E> extends Iterable<E>, CollectionExt<E> {
      *         collection does not permit null elements
      *         (<a href="#optional-restrictions">optional</a>)
      */
-    boolean contains(E o);
+    @Deprecated
+    boolean contains(Object o);
 
     /**
      * Returns an iterator over the elements in this collection.  There are no
@@ -310,7 +311,8 @@ public interface Collection<E> extends Iterable<E>, CollectionExt<E> {
      * @throws UnsupportedOperationException if the <tt>remove</tt> operation
      *         is not supported by this collection
      */
-    boolean remove(E o);
+    @Deprecated
+    boolean remove(Object o);
 
 
     // Bulk Operations
@@ -333,7 +335,8 @@ public interface Collection<E> extends Iterable<E>, CollectionExt<E> {
      *         or if the specified collection is null.
      * @see    #contains(Object)
      */
-    boolean containsAll(Collection<? extends E> c);
+    @Deprecated
+    boolean containsAll(Collection<?> c);
 
     /**
      * Adds all of the elements in the specified collection to this collection
@@ -384,7 +387,8 @@ public interface Collection<E> extends Iterable<E>, CollectionExt<E> {
      * @see #remove(Object)
      * @see #contains(Object)
      */
-    boolean removeAll(Collection<? extends E> c);
+    @Deprecated
+    boolean removeAll(Collection<?> c);
 
     /**
      * Removes all of the elements of this collection that satisfy the given
@@ -411,7 +415,7 @@ public interface Collection<E> extends Iterable<E>, CollectionExt<E> {
     default boolean removeIf(Predicate<? super E> filter) {
         Objects.requireNonNull(filter);
         boolean removed = false;
-        final Iterator<E> each = this.iterator();
+        final Iterator<E> each = iterator();
         while (each.hasNext()) {
             if (filter.test(each.next())) {
                 each.remove();
@@ -443,7 +447,8 @@ public interface Collection<E> extends Iterable<E>, CollectionExt<E> {
      * @see #remove(Object)
      * @see #contains(Object)
      */
-    boolean retainAll(Collection<? extends E> c);
+    @Deprecated
+    boolean retainAll(Collection<?> c);
 
     /**
      * Removes all of the elements from this collection (optional operation).
@@ -582,7 +587,7 @@ public interface Collection<E> extends Iterable<E>, CollectionExt<E> {
      * @since 1.8
      */
     default Stream<E> stream() {
-        return StreamSupport.stream(this.spliterator(), false);
+        return StreamSupport.stream(spliterator(), false);
     }
 
     /**
@@ -603,6 +608,6 @@ public interface Collection<E> extends Iterable<E>, CollectionExt<E> {
      * @since 1.8
      */
     default Stream<E> parallelStream() {
-        return StreamSupport.stream(this.spliterator(), true);
+        return StreamSupport.stream(spliterator(), true);
     }
 }

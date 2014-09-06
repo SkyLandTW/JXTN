@@ -28,7 +28,10 @@ bearable.
  - Iterable: all/any/concat/filter/map/first/groupBy/avg/max/...
  - Iterator: *same as Iterable*
  - dom/NodeList: asList
- - correct generic functions such as Collection.remove(E) and Map.get(K)
+ - generic replacements of badly-designed collection API, such as:
+   * Collection.remove2(E): replaces *Collection.remove(Object)*
+   * Map.get2(K): replaces *Map.get(Object)*
+   * ......
 
 ##### Dependencies
  - OpenJDK (as source): the standard classes such as *Iterable*. Note those

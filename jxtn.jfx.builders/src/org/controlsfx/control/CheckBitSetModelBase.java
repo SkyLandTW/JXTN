@@ -94,11 +94,11 @@ abstract class CheckBitSetModelBase<T> extends MultipleSelectionModel<T>
 
                 @Override
                 @SuppressWarnings("cast")
-                public boolean contains(Integer o)
+                public boolean contains(Object o)
                 {
                     if (o instanceof Number)
                     {
-                        Number n = o;
+                        Number n = (Number) o;
                         int index = n.intValue();
 
                         return index >= 0 && index < CheckBitSetModelBase.this.selectedIndices.length() &&

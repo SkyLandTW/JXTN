@@ -119,8 +119,9 @@ public interface Set<E> extends Collection<E>, SetExt<E> {
      *         set does not permit null elements
      * (<a href="Collection.html#optional-restrictions">optional</a>)
      */
+    @Deprecated
     @Override
-    boolean contains(E o);
+    boolean contains(Object o);
 
     /**
      * Returns an iterator over the elements in this set.  The elements are
@@ -254,8 +255,9 @@ public interface Set<E> extends Collection<E>, SetExt<E> {
      * @throws UnsupportedOperationException if the <tt>remove</tt> operation
      *         is not supported by this set
      */
+    @Deprecated
     @Override
-    boolean remove(E o);
+    boolean remove(Object o);
 
 
     // Bulk Operations
@@ -279,8 +281,9 @@ public interface Set<E> extends Collection<E>, SetExt<E> {
      *         or if the specified collection is null
      * @see    #contains(Object)
      */
+    @Deprecated
     @Override
-    boolean containsAll(Collection<? extends E> c);
+    boolean containsAll(Collection<?> c);
 
     /**
      * Adds all of the elements in the specified collection to this set if
@@ -328,8 +331,9 @@ public interface Set<E> extends Collection<E>, SetExt<E> {
      *         or if the specified collection is null
      * @see #remove(Object)
      */
+    @Deprecated
     @Override
-    boolean retainAll(Collection<? extends E> c);
+    boolean retainAll(Collection<?> c);
 
     /**
      * Removes from this set all of its elements that are contained in the
@@ -352,8 +356,9 @@ public interface Set<E> extends Collection<E>, SetExt<E> {
      * @see #remove(Object)
      * @see #contains(Object)
      */
+    @Deprecated
     @Override
-    boolean removeAll(Collection<? extends E> c);
+    boolean removeAll(Collection<?> c);
 
     /**
      * Removes all of the elements from this set (optional operation).

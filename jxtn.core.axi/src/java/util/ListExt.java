@@ -49,6 +49,36 @@ public interface ListExt<E> extends CollectionExt<E>
     }
 
     //////////////////////////////////////////////////////////////////////////
+    // 泛型方法
+    //
+
+    /**
+     * 泛型版本的{@link List#indexOf}
+     *
+     * @param e 要檢查索引的項目
+     * @return 第一個值等於{@code e}的項目索引，或是-1表示找不到
+     */
+    @SuppressWarnings("deprecation")
+    default int indexOf2(E e)
+    {
+        List<E> thiz = (List<E>) this;
+        return thiz.indexOf(e);
+    }
+
+    /**
+     * 泛型版本的{@link List#lastIndexOf}
+     *
+     * @param e 要檢查索引的項目
+     * @return 最後一個值等於{@code e}的項目索引，或是-1表示找不到
+     */
+    @SuppressWarnings("deprecation")
+    default int lastIndexOf2(E e)
+    {
+        List<E> thiz = (List<E>) this;
+        return thiz.lastIndexOf(e);
+    }
+
+    //////////////////////////////////////////////////////////////////////////
     // 項目挑選
     //
 

@@ -88,7 +88,7 @@ public class SqlSchemaDataLoader extends XmlDataLoader
                 String columnName = columnElem.getAttribute("name");
                 if (columnName.endsWith("WKB") || columnName.endsWith("WKT"))
                 {
-                    if (columnNameSet.contains(columnName.substring(0, columnName.length() - 3)))
+                    if (columnNameSet.contains2(columnName.substring(0, columnName.length() - 3)))
                     {
                         tableElem.removeChild(columnElem);
                     }
@@ -229,7 +229,7 @@ order by TABLE_SCHEMA, TABLE_NAME, CONSTRAINT_NAME, ORDINAL_POSITION
                             .filter(elem -> elem.getAttribute("name").equals(tableName))
                             .first();
                     String constraintName = rs.getString("CONSTRAINT_NAME");
-                    Element constraintElem = globalKeys.get(constraintName);
+                    Element constraintElem = globalKeys.get2(constraintName);
                     if (constraintElem == null)
                         continue;
                     String columnName = rs.getString("COLUMN_NAME");
@@ -264,11 +264,11 @@ order by CONSTRAINT_SCHEMA, CONSTRAINT_NAME
                 while (rs.next())
                 {
                     String dependentRefName = rs.getString("CONSTRAINT_NAME");
-                    Element dependentRefElem = globalKeys.get(dependentRefName);
+                    Element dependentRefElem = globalKeys.get2(dependentRefName);
                     if (dependentRefElem == null)
                         continue;
                     String principalKeyName = rs.getString("UNIQUE_CONSTRAINT_NAME");
-                    Element principalKeyElem = globalKeys.get(principalKeyName);
+                    Element principalKeyElem = globalKeys.get2(principalKeyName);
                     assert (principalKeyElem != null);
                     Element principalTableElem = (Element) principalKeyElem.getParentNode();
                     dependentRefElem.setAttribute("parentTable", principalTableElem.getAttribute("name"));

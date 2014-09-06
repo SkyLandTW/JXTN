@@ -164,7 +164,8 @@ public interface Map<K,V> extends MapExt<K,V> {
      *         does not permit null keys
      * (<a href="{@docRoot}/java/util/Collection.html#optional-restrictions">optional</a>)
      */
-    boolean containsKey(K key);
+    @Deprecated
+    boolean containsKey(Object key);
 
     /**
      * Returns <tt>true</tt> if this map maps one or more keys to the
@@ -184,7 +185,8 @@ public interface Map<K,V> extends MapExt<K,V> {
      *         map does not permit null values
      * (<a href="{@docRoot}/java/util/Collection.html#optional-restrictions">optional</a>)
      */
-    boolean containsValue(V value);
+    @Deprecated
+    boolean containsValue(Object value);
 
     /**
      * Returns the value to which the specified key is mapped,
@@ -211,7 +213,8 @@ public interface Map<K,V> extends MapExt<K,V> {
      *         does not permit null keys
      * (<a href="{@docRoot}/java/util/Collection.html#optional-restrictions">optional</a>)
      */
-    V get(K key);
+    @Deprecated
+    V get(Object key);
 
     // Modification Operations
 
@@ -271,7 +274,8 @@ public interface Map<K,V> extends MapExt<K,V> {
      *         map does not permit null keys
      * (<a href="{@docRoot}/java/util/Collection.html#optional-restrictions">optional</a>)
      */
-    V remove(K key);
+    @Deprecated
+    V remove(Object key);
 
 
     // Bulk Operations
@@ -589,9 +593,10 @@ public interface Map<K,V> extends MapExt<K,V> {
      * (<a href="{@docRoot}/java/util/Collection.html#optional-restrictions">optional</a>)
      * @since 1.8
      */
-    default V getOrDefault(K key, V defaultValue) {
+    @Deprecated
+    default V getOrDefault(Object key, V defaultValue) {
         V v;
-        return (((v = this.get(key)) != null) || this.containsKey(key))
+        return (((v = get(key)) != null) || containsKey(key))
             ? v
             : defaultValue;
     }
@@ -623,7 +628,7 @@ public interface Map<K,V> extends MapExt<K,V> {
      */
     default void forEach(BiConsumer<? super K, ? super V> action) {
         Objects.requireNonNull(action);
-        for (Map.Entry<K, V> entry : this.entrySet()) {
+        for (Map.Entry<K, V> entry : entrySet()) {
             K k;
             V v;
             try {
@@ -678,7 +683,7 @@ public interface Map<K,V> extends MapExt<K,V> {
      */
     default void replaceAll(BiFunction<? super K, ? super V, ? extends V> function) {
         Objects.requireNonNull(function);
-        for (Map.Entry<K, V> entry : this.entrySet()) {
+        for (Map.Entry<K, V> entry : entrySet()) {
             K k;
             V v;
             try {
@@ -745,9 +750,9 @@ public interface Map<K,V> extends MapExt<K,V> {
      * @since 1.8
      */
     default V putIfAbsent(K key, V value) {
-        V v = this.get(key);
+        V v = get(key);
         if (v == null) {
-            v = this.put(key, value);
+            v = put(key, value);
         }
 
         return v;
@@ -787,13 +792,14 @@ public interface Map<K,V> extends MapExt<K,V> {
      *         (<a href="{@docRoot}/java/util/Collection.html#optional-restrictions">optional</a>)
      * @since 1.8
      */
-    default boolean remove(K key, V value) {
-        Object curValue = this.get(key);
+    @Deprecated
+    default boolean remove(Object key, Object value) {
+        Object curValue = get(key);
         if (!Objects.equals(curValue, value) ||
-            (curValue == null && !this.containsKey(key))) {
+            (curValue == null && !containsKey(key))) {
             return false;
         }
-        this.remove(key);
+        remove(key);
         return true;
     }
 
@@ -840,12 +846,12 @@ public interface Map<K,V> extends MapExt<K,V> {
      * @since 1.8
      */
     default boolean replace(K key, V oldValue, V newValue) {
-        V curValue = this.get(key);
+        Object curValue = get(key);
         if (!Objects.equals(curValue, oldValue) ||
-            (curValue == null && !this.containsKey(key))) {
+            (curValue == null && !containsKey(key))) {
             return false;
         }
-        this.put(key, newValue);
+        put(key, newValue);
         return true;
     }
 
@@ -889,8 +895,8 @@ public interface Map<K,V> extends MapExt<K,V> {
      */
     default V replace(K key, V value) {
         V curValue;
-        if (((curValue = this.get(key)) != null) || this.containsKey(key)) {
-            curValue = this.put(key, value);
+        if (((curValue = get(key)) != null) || containsKey(key)) {
+            curValue = put(key, value);
         }
         return curValue;
     }
@@ -958,10 +964,10 @@ public interface Map<K,V> extends MapExt<K,V> {
             Function<? super K, ? extends V> mappingFunction) {
         Objects.requireNonNull(mappingFunction);
         V v;
-        if ((v = this.get(key)) == null) {
+        if ((v = get(key)) == null) {
             V newValue;
             if ((newValue = mappingFunction.apply(key)) != null) {
-                this.put(key, newValue);
+                put(key, newValue);
                 return newValue;
             }
         }
@@ -1019,13 +1025,13 @@ public interface Map<K,V> extends MapExt<K,V> {
             BiFunction<? super K, ? super V, ? extends V> remappingFunction) {
         Objects.requireNonNull(remappingFunction);
         V oldValue;
-        if ((oldValue = this.get(key)) != null) {
+        if ((oldValue = get(key)) != null) {
             V newValue = remappingFunction.apply(key, oldValue);
             if (newValue != null) {
-                this.put(key, newValue);
+                put(key, newValue);
                 return newValue;
             } else {
-                this.remove(key);
+                remove(key);
                 return null;
             }
         } else {
@@ -1094,14 +1100,14 @@ public interface Map<K,V> extends MapExt<K,V> {
     default V compute(K key,
             BiFunction<? super K, ? super V, ? extends V> remappingFunction) {
         Objects.requireNonNull(remappingFunction);
-        V oldValue = this.get(key);
+        V oldValue = get(key);
 
         V newValue = remappingFunction.apply(key, oldValue);
         if (newValue == null) {
             // delete mapping
-            if (oldValue != null || this.containsKey(key)) {
+            if (oldValue != null || containsKey(key)) {
                 // something to remove
-                this.remove(key);
+                remove(key);
                 return null;
             } else {
                 // nothing to do. Leave things as they were.
@@ -1109,7 +1115,7 @@ public interface Map<K,V> extends MapExt<K,V> {
             }
         } else {
             // add or replace old mapping
-            this.put(key, newValue);
+            put(key, newValue);
             return newValue;
         }
     }
@@ -1176,13 +1182,13 @@ public interface Map<K,V> extends MapExt<K,V> {
             BiFunction<? super V, ? super V, ? extends V> remappingFunction) {
         Objects.requireNonNull(remappingFunction);
         Objects.requireNonNull(value);
-        V oldValue = this.get(key);
+        V oldValue = get(key);
         V newValue = (oldValue == null) ? value :
                    remappingFunction.apply(oldValue, value);
         if(newValue == null) {
-            this.remove(key);
+            remove(key);
         } else {
-            this.put(key, newValue);
+            put(key, newValue);
         }
         return newValue;
     }

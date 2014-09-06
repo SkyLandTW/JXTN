@@ -52,6 +52,75 @@ public interface CollectionExt<E> extends IterableExt<E>
     }
 
     //////////////////////////////////////////////////////////////////////////
+    // 泛型方法
+    //
+
+    /**
+     * 泛型版本的{@link Collection#contains}
+     *
+     * @param e 要檢查是否包含的項目
+     * @return true表示項目{@code e}在目前的集合內
+     */
+    @SuppressWarnings("deprecation")
+    default boolean contains2(E e)
+    {
+        Collection<E> thiz = (Collection<E>) this;
+        return thiz.contains(e);
+    }
+
+    /**
+     * 泛型版本的{@link Collection#containsAll}
+     *
+     * @param c 要檢查是否包含的項目之集合
+     * @return true表示所有{@code c}內的項目皆包含在目前的集合內
+     */
+    @SuppressWarnings("deprecation")
+    default boolean containsAll2(Collection<? extends E> c)
+    {
+        Collection<E> thiz = (Collection<E>) this;
+        return thiz.containsAll(c);
+    }
+
+    /**
+     * 泛型版本的{@link Collection#remove}
+     *
+     * @param e 要移除的項目
+     * @return true表示項目{@code e}移除成功，false表示集合並未包含{@code e}
+     */
+    @SuppressWarnings("deprecation")
+    default boolean remove2(E e)
+    {
+        Collection<E> thiz = (Collection<E>) this;
+        return thiz.remove(e);
+    }
+
+    /**
+     * 泛型版本的{@link Collection#removeAll}
+     *
+     * @param c 要移除的項目之集合
+     * @return true表示集合已變更
+     */
+    @SuppressWarnings("deprecation")
+    default boolean removeAll2(Collection<? extends E> c)
+    {
+        Collection<E> thiz = (Collection<E>) this;
+        return thiz.removeAll(c);
+    }
+
+    /**
+     * 泛型版本的{@link Collection#retainAll}
+     *
+     * @param c 要保留的項目之集合
+     * @return true表示集合已變更
+     */
+    @SuppressWarnings("deprecation")
+    default boolean retainAll2(Collection<? extends E> c)
+    {
+        Collection<E> thiz = (Collection<E>) this;
+        return thiz.retainAll(c);
+    }
+
+    //////////////////////////////////////////////////////////////////////////
     // 項目統整
     //
 

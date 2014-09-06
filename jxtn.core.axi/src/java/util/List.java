@@ -145,8 +145,9 @@ public interface List<E> extends Collection<E>, ListExt<E> {
      *         list does not permit null elements
      * (<a href="Collection.html#optional-restrictions">optional</a>)
      */
+    @Deprecated
     @Override
-    boolean contains(E o);
+    boolean contains(Object o);
 
     /**
      * Returns an iterator over the elements in this list in proper sequence.
@@ -266,8 +267,9 @@ public interface List<E> extends Collection<E>, ListExt<E> {
      * @throws UnsupportedOperationException if the <tt>remove</tt> operation
      *         is not supported by this list
      */
+    @Deprecated
     @Override
-    boolean remove(E o);
+    boolean remove(Object o);
 
 
     // Bulk Modification Operations
@@ -290,8 +292,9 @@ public interface List<E> extends Collection<E>, ListExt<E> {
      *         or if the specified collection is null
      * @see #contains(Object)
      */
+    @Deprecated
     @Override
-    boolean containsAll(Collection<? extends E> c);
+    boolean containsAll(Collection<?> c);
 
     /**
      * Appends all of the elements in the specified collection to the end of
@@ -364,8 +367,9 @@ public interface List<E> extends Collection<E>, ListExt<E> {
      * @see #remove(Object)
      * @see #contains(Object)
      */
+    @Deprecated
     @Override
-    boolean removeAll(Collection<? extends E> c);
+    boolean removeAll(Collection<?> c);
 
     /**
      * Retains only the elements in this list that are contained in the
@@ -387,8 +391,9 @@ public interface List<E> extends Collection<E>, ListExt<E> {
      * @see #remove(Object)
      * @see #contains(Object)
      */
+    @Deprecated
     @Override
-    boolean retainAll(Collection<? extends E> c);
+    boolean retainAll(Collection<?> c);
 
     /**
      * Replaces each element of this list with the result of applying the
@@ -635,7 +640,8 @@ public interface List<E> extends Collection<E>, ListExt<E> {
      *         list does not permit null elements
      *         (<a href="Collection.html#optional-restrictions">optional</a>)
      */
-    int indexOf(E o);
+    @Deprecated
+    int indexOf(Object o);
 
     /**
      * Returns the index of the last occurrence of the specified element
@@ -654,7 +660,8 @@ public interface List<E> extends Collection<E>, ListExt<E> {
      *         list does not permit null elements
      *         (<a href="Collection.html#optional-restrictions">optional</a>)
      */
-    int lastIndexOf(E o);
+    @Deprecated
+    int lastIndexOf(Object o);
 
 
     // List Iterators

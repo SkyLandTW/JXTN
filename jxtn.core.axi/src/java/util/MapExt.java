@@ -39,6 +39,94 @@ import java.util.function.Function;
  */
 public interface MapExt<K, V>
 {
+    //////////////////////////////////////////////////////////////////////////
+    // 泛型方法
+    //
+
+    /**
+     * 泛型版本的{@link Map#containsKey}
+     *
+     * @param key 要檢查是否包含的索引鍵
+     * @return true表示索引鍵{@code key}在目前的集合內
+     */
+    @SuppressWarnings("deprecation")
+    default boolean containsKey2(K key)
+    {
+        Map<K, V> thiz = (Map<K, V>) this;
+        return thiz.containsKey(key);
+    }
+
+    /**
+     * 泛型版本的{@link Map#containsValue}
+     *
+     * @param value 要檢查是否包含的項目值
+     * @return true表示項目值{@code value}在目前的集合內
+     */
+    @SuppressWarnings("deprecation")
+    default boolean containsValue2(V value)
+    {
+        Map<K, V> thiz = (Map<K, V>) this;
+        return thiz.containsValue(value);
+    }
+
+    /**
+     * 泛型版本的{@link Map#get}
+     *
+     * @param key 要取得項目值的索引鍵
+     * @return 索引鍵{@code key}對照的項目值
+     */
+    @SuppressWarnings("deprecation")
+    default V get2(K key)
+    {
+        Map<K, V> thiz = (Map<K, V>) this;
+        return thiz.get(key);
+    }
+
+    /**
+     * 泛型版本的{@link Map#remove(Object)}
+     *
+     * @param key 要移除的索引鍵
+     * @return 索引鍵{@code key}對照的項目值
+     */
+    @SuppressWarnings({ "deprecation", "javadoc" })
+    default V remove2(K key)
+    {
+        Map<K, V> thiz = (Map<K, V>) this;
+        return thiz.remove(key);
+    }
+
+    /**
+     * 泛型版本的{@link Map#remove(Object,Object)}
+     *
+     * @param key 要移除的索引鍵
+     * @param value 要移除的項目值
+     * @return true表示移除成功
+     */
+    @SuppressWarnings({ "deprecation", "javadoc" })
+    default boolean remove2(K key, V value)
+    {
+        Map<K, V> thiz = (Map<K, V>) this;
+        return thiz.remove(key, value);
+    }
+
+    /**
+     * 泛型版本的{@link Map#getOrDefault}
+     *
+     * @param key 要取得項目值的索引鍵
+     * @param defaultValue 預設項目值
+     * @return 索引鍵{@code key}對照的項目值，或{@code defaultValue}
+     */
+    @SuppressWarnings("deprecation")
+    default V getOrDefault2(K key, V defaultValue)
+    {
+        Map<K, V> thiz = (Map<K, V>) this;
+        return thiz.getOrDefault(key, defaultValue);
+    }
+
+    //////////////////////////////////////////////////////////////////////////
+    // 項目統整
+    //
+
     /**
      * 對照目前的項目值以產生新的{@link HashMap}
      *
@@ -46,7 +134,7 @@ public interface MapExt<K, V>
      * @param mapper 對照項目值的函數
      * @return 對照後的新{@link HashMap}(不依賴原有的)
      */
-    default <V2> HashMap<K, V2> mapValues(Function<? super V, V2> mapper)
+    default <V2> HashMap<K, V2> toHashMapMapped(Function<? super V, V2> mapper)
     {
         Map<K, V> thiz = (Map<K, V>) this;
         HashMap<K, V2> result = new HashMap<>(thiz.size());
@@ -61,7 +149,7 @@ public interface MapExt<K, V>
      * @param mapper 對照項目值的函數
      * @return 對照後的新{@link HashMap}(不依賴原有的)
      */
-    default <V2> HashMap<K, V2> mapValues(BiFunction<? super K, ? super V, V2> mapper)
+    default <V2> HashMap<K, V2> toHashMapMapped(BiFunction<? super K, ? super V, V2> mapper)
     {
         Map<K, V> thiz = (Map<K, V>) this;
         HashMap<K, V2> result = new HashMap<>(thiz.size());

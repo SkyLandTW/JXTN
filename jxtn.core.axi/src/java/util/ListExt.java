@@ -27,7 +27,10 @@
 
 package java.util;
 
+import java.util.function.Function;
 import java.util.function.Predicate;
+
+import jxtn.core.axi.MemberComparators;
 
 /**
  * {@link List}的延伸功能
@@ -46,6 +49,18 @@ public interface ListExt<E> extends CollectionExt<E>
     {
         List<E> thiz = (List<E>) this;
         return thiz;
+    }
+
+    /**
+     * 依照鍵值排序目前的清單
+     *
+     * @param getKey 用作排序的鍵值計算函數
+     */
+    @SuppressWarnings("rawtypes")
+    default <V extends Comparable> void sort(Function<? super E, V> getKey)
+    {
+        List<E> thiz = (List<E>) this;
+        thiz.sort(new MemberComparators.MemberComparableComparator<>(getKey));
     }
 
     //////////////////////////////////////////////////////////////////////////

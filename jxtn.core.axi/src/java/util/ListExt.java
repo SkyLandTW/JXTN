@@ -54,6 +54,7 @@ public interface ListExt<E> extends CollectionExt<E>
     /**
      * 依照鍵值排序目前的清單
      *
+     * @param <V> 排序用的鍵值型態
      * @param getKey 用作排序的鍵值計算函數
      */
     @SuppressWarnings("rawtypes")

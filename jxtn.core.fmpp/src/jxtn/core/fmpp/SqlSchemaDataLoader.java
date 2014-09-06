@@ -49,7 +49,10 @@ import fmpp.Engine;
 import fmpp.dataloaders.XmlDataLoader;
 
 /**
- * 資料庫來源為SQL-Server schema的載入器
+ * 以資料庫schema做為資料來源的載入器
+ * <p>
+ * 目前僅支援SQL Server
+ * </p>
  *
  * @author AqD
  */

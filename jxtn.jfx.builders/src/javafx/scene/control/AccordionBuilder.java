@@ -25,8 +25,10 @@ public class AccordionBuilder<Z extends Accordion, B extends AccordionBuilder<Z,
     private boolean hasPanes;
     private java.util.Collection<javafx.scene.control.TitledPane> valPanes;
 
-    private boolean boundExpandedPane;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TitledPane> obsrvExpandedPane;
+    private boolean bound1ExpandedPane;
+    private boolean bound2ExpandedPane;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TitledPane> obsrv1ExpandedPane;
+    private javafx.beans.property.Property<javafx.scene.control.TitledPane> obsrv2ExpandedPane;
 
     @Override
     public void applyTo(Z instance)
@@ -36,8 +38,10 @@ public class AccordionBuilder<Z extends Accordion, B extends AccordionBuilder<Z,
             instance.setExpandedPane(this.valExpandedPane);
         if (this.hasPanes)
             instance.getPanes().setAll(this.valPanes);
-        if (this.boundExpandedPane)
-            instance.expandedPaneProperty().bind(this.obsrvExpandedPane);
+        if (this.bound1ExpandedPane)
+            instance.expandedPaneProperty().bind(this.obsrv1ExpandedPane);
+        if (this.bound2ExpandedPane)
+            instance.expandedPaneProperty().bindBidirectional(this.obsrv2ExpandedPane);
     }
 
     /**
@@ -93,8 +97,27 @@ public class AccordionBuilder<Z extends Accordion, B extends AccordionBuilder<Z,
     public final B bindExpandedPane(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TitledPane> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundExpandedPane = true;
-        this.obsrvExpandedPane = source;
+        this.bound1ExpandedPane = true;
+        this.obsrv1ExpandedPane = source;
+        this.bound2ExpandedPane = false;
+        this.obsrv2ExpandedPane = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Accordion#expandedPaneProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalExpandedPane(javafx.beans.property.Property<javafx.scene.control.TitledPane> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ExpandedPane = false;
+        this.obsrv1ExpandedPane = null;
+        this.bound2ExpandedPane = true;
+        this.obsrv2ExpandedPane = source;
         return (B) this;
     }
 

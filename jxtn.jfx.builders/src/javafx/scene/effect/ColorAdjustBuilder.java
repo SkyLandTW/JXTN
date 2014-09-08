@@ -34,20 +34,30 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     private boolean hasSaturation;
     private double valSaturation;
 
-    private boolean boundBrightness;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvBrightness;
+    private boolean bound1Brightness;
+    private boolean bound2Brightness;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Brightness;
+    private javafx.beans.property.Property<Number> obsrv2Brightness;
 
-    private boolean boundContrast;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvContrast;
+    private boolean bound1Contrast;
+    private boolean bound2Contrast;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Contrast;
+    private javafx.beans.property.Property<Number> obsrv2Contrast;
 
-    private boolean boundHue;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvHue;
+    private boolean bound1Hue;
+    private boolean bound2Hue;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Hue;
+    private javafx.beans.property.Property<Number> obsrv2Hue;
 
-    private boolean boundInput;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrvInput;
+    private boolean bound1Input;
+    private boolean bound2Input;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrv1Input;
+    private javafx.beans.property.Property<javafx.scene.effect.Effect> obsrv2Input;
 
-    private boolean boundSaturation;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvSaturation;
+    private boolean bound1Saturation;
+    private boolean bound2Saturation;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Saturation;
+    private javafx.beans.property.Property<Number> obsrv2Saturation;
 
     @Override
     public void applyTo(Z instance)
@@ -63,16 +73,26 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
             instance.setInput(this.valInput);
         if (this.hasSaturation)
             instance.setSaturation(this.valSaturation);
-        if (this.boundBrightness)
-            instance.brightnessProperty().bind(this.obsrvBrightness);
-        if (this.boundContrast)
-            instance.contrastProperty().bind(this.obsrvContrast);
-        if (this.boundHue)
-            instance.hueProperty().bind(this.obsrvHue);
-        if (this.boundInput)
-            instance.inputProperty().bind(this.obsrvInput);
-        if (this.boundSaturation)
-            instance.saturationProperty().bind(this.obsrvSaturation);
+        if (this.bound1Brightness)
+            instance.brightnessProperty().bind(this.obsrv1Brightness);
+        if (this.bound2Brightness)
+            instance.brightnessProperty().bindBidirectional(this.obsrv2Brightness);
+        if (this.bound1Contrast)
+            instance.contrastProperty().bind(this.obsrv1Contrast);
+        if (this.bound2Contrast)
+            instance.contrastProperty().bindBidirectional(this.obsrv2Contrast);
+        if (this.bound1Hue)
+            instance.hueProperty().bind(this.obsrv1Hue);
+        if (this.bound2Hue)
+            instance.hueProperty().bindBidirectional(this.obsrv2Hue);
+        if (this.bound1Input)
+            instance.inputProperty().bind(this.obsrv1Input);
+        if (this.bound2Input)
+            instance.inputProperty().bindBidirectional(this.obsrv2Input);
+        if (this.bound1Saturation)
+            instance.saturationProperty().bind(this.obsrv1Saturation);
+        if (this.bound2Saturation)
+            instance.saturationProperty().bindBidirectional(this.obsrv2Saturation);
     }
 
     /**
@@ -152,11 +172,30 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindBrightness(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindBrightness(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundBrightness = true;
-        this.obsrvBrightness = source;
+        this.bound1Brightness = true;
+        this.obsrv1Brightness = source;
+        this.bound2Brightness = false;
+        this.obsrv2Brightness = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ColorAdjust#brightnessProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalBrightness(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Brightness = false;
+        this.obsrv1Brightness = null;
+        this.bound2Brightness = true;
+        this.obsrv2Brightness = source;
         return (B) this;
     }
 
@@ -167,11 +206,30 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindContrast(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindContrast(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundContrast = true;
-        this.obsrvContrast = source;
+        this.bound1Contrast = true;
+        this.obsrv1Contrast = source;
+        this.bound2Contrast = false;
+        this.obsrv2Contrast = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ColorAdjust#contrastProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalContrast(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Contrast = false;
+        this.obsrv1Contrast = null;
+        this.bound2Contrast = true;
+        this.obsrv2Contrast = source;
         return (B) this;
     }
 
@@ -182,11 +240,30 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindHue(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHue(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundHue = true;
-        this.obsrvHue = source;
+        this.bound1Hue = true;
+        this.obsrv1Hue = source;
+        this.bound2Hue = false;
+        this.obsrv2Hue = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ColorAdjust#hueProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHue(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Hue = false;
+        this.obsrv1Hue = null;
+        this.bound2Hue = true;
+        this.obsrv2Hue = source;
         return (B) this;
     }
 
@@ -200,8 +277,27 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     public final B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundInput = true;
-        this.obsrvInput = source;
+        this.bound1Input = true;
+        this.obsrv1Input = source;
+        this.bound2Input = false;
+        this.obsrv2Input = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ColorAdjust#inputProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalInput(javafx.beans.property.Property<javafx.scene.effect.Effect> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Input = false;
+        this.obsrv1Input = null;
+        this.bound2Input = true;
+        this.obsrv2Input = source;
         return (B) this;
     }
 
@@ -212,11 +308,30 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindSaturation(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindSaturation(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSaturation = true;
-        this.obsrvSaturation = source;
+        this.bound1Saturation = true;
+        this.obsrv1Saturation = source;
+        this.bound2Saturation = false;
+        this.obsrv2Saturation = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ColorAdjust#saturationProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSaturation(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Saturation = false;
+        this.obsrv1Saturation = null;
+        this.bound2Saturation = true;
+        this.obsrv2Saturation = source;
         return (B) this;
     }
 

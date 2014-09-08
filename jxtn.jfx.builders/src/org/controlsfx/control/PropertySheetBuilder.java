@@ -37,14 +37,20 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     private boolean hasTitleFilter;
     private java.lang.String valTitleFilter;
 
-    private boolean boundMode;
-    private javafx.beans.value.ObservableValue<? extends org.controlsfx.control.PropertySheet.Mode> obsrvMode;
+    private boolean bound1Mode;
+    private boolean bound2Mode;
+    private javafx.beans.value.ObservableValue<? extends org.controlsfx.control.PropertySheet.Mode> obsrv1Mode;
+    private javafx.beans.property.Property<org.controlsfx.control.PropertySheet.Mode> obsrv2Mode;
 
-    private boolean boundModeSwitcherVisible;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvModeSwitcherVisible;
+    private boolean bound1ModeSwitcherVisible;
+    private boolean bound2ModeSwitcherVisible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ModeSwitcherVisible;
+    private javafx.beans.property.Property<Boolean> obsrv2ModeSwitcherVisible;
 
-    private boolean boundSearchBoxVisible;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvSearchBoxVisible;
+    private boolean bound1SearchBoxVisible;
+    private boolean bound2SearchBoxVisible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1SearchBoxVisible;
+    private javafx.beans.property.Property<Boolean> obsrv2SearchBoxVisible;
 
     @Override
     public void applyTo(Z instance)
@@ -62,12 +68,18 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
             instance.setSearchBoxVisible(this.valSearchBoxVisible);
         if (this.hasTitleFilter)
             instance.setTitleFilter(this.valTitleFilter);
-        if (this.boundMode)
-            instance.modeProperty().bind(this.obsrvMode);
-        if (this.boundModeSwitcherVisible)
-            instance.modeSwitcherVisibleProperty().bind(this.obsrvModeSwitcherVisible);
-        if (this.boundSearchBoxVisible)
-            instance.searchBoxVisibleProperty().bind(this.obsrvSearchBoxVisible);
+        if (this.bound1Mode)
+            instance.modeProperty().bind(this.obsrv1Mode);
+        if (this.bound2Mode)
+            instance.modeProperty().bindBidirectional(this.obsrv2Mode);
+        if (this.bound1ModeSwitcherVisible)
+            instance.modeSwitcherVisibleProperty().bind(this.obsrv1ModeSwitcherVisible);
+        if (this.bound2ModeSwitcherVisible)
+            instance.modeSwitcherVisibleProperty().bindBidirectional(this.obsrv2ModeSwitcherVisible);
+        if (this.bound1SearchBoxVisible)
+            instance.searchBoxVisibleProperty().bind(this.obsrv1SearchBoxVisible);
+        if (this.bound2SearchBoxVisible)
+            instance.searchBoxVisibleProperty().bindBidirectional(this.obsrv2SearchBoxVisible);
     }
 
     /**
@@ -179,8 +191,27 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     public final B bindMode(javafx.beans.value.ObservableValue<? extends org.controlsfx.control.PropertySheet.Mode> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMode = true;
-        this.obsrvMode = source;
+        this.bound1Mode = true;
+        this.obsrv1Mode = source;
+        this.bound2Mode = false;
+        this.obsrv2Mode = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PropertySheet#modeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMode(javafx.beans.property.Property<org.controlsfx.control.PropertySheet.Mode> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Mode = false;
+        this.obsrv1Mode = null;
+        this.bound2Mode = true;
+        this.obsrv2Mode = source;
         return (B) this;
     }
 
@@ -194,8 +225,27 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     public final B bindModeSwitcherVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundModeSwitcherVisible = true;
-        this.obsrvModeSwitcherVisible = source;
+        this.bound1ModeSwitcherVisible = true;
+        this.obsrv1ModeSwitcherVisible = source;
+        this.bound2ModeSwitcherVisible = false;
+        this.obsrv2ModeSwitcherVisible = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PropertySheet#modeSwitcherVisibleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalModeSwitcherVisible(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ModeSwitcherVisible = false;
+        this.obsrv1ModeSwitcherVisible = null;
+        this.bound2ModeSwitcherVisible = true;
+        this.obsrv2ModeSwitcherVisible = source;
         return (B) this;
     }
 
@@ -209,8 +259,27 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     public final B bindSearchBoxVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSearchBoxVisible = true;
-        this.obsrvSearchBoxVisible = source;
+        this.bound1SearchBoxVisible = true;
+        this.obsrv1SearchBoxVisible = source;
+        this.bound2SearchBoxVisible = false;
+        this.obsrv2SearchBoxVisible = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PropertySheet#searchBoxVisibleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSearchBoxVisible(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SearchBoxVisible = false;
+        this.obsrv1SearchBoxVisible = null;
+        this.bound2SearchBoxVisible = true;
+        this.obsrv2SearchBoxVisible = source;
         return (B) this;
     }
 

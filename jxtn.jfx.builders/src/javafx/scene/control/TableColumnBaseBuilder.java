@@ -67,47 +67,75 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     private boolean hasVisible;
     private boolean valVisible;
 
-    private boolean boundComparator;
-    private javafx.beans.value.ObservableValue<? extends java.util.Comparator<T>> obsrvComparator;
+    private boolean bound1Comparator;
+    private boolean bound2Comparator;
+    private javafx.beans.value.ObservableValue<? extends java.util.Comparator<T>> obsrv1Comparator;
+    private javafx.beans.property.Property<java.util.Comparator<T>> obsrv2Comparator;
 
-    private boolean boundContextMenu;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContextMenu> obsrvContextMenu;
+    private boolean bound1ContextMenu;
+    private boolean bound2ContextMenu;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContextMenu> obsrv1ContextMenu;
+    private javafx.beans.property.Property<javafx.scene.control.ContextMenu> obsrv2ContextMenu;
 
-    private boolean boundEditable;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvEditable;
+    private boolean bound1Editable;
+    private boolean bound2Editable;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Editable;
+    private javafx.beans.property.Property<Boolean> obsrv2Editable;
 
-    private boolean boundGraphic;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvGraphic;
+    private boolean bound1Graphic;
+    private boolean bound2Graphic;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Graphic;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Graphic;
 
-    private boolean boundId;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvId;
+    private boolean bound1Id;
+    private boolean bound2Id;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Id;
+    private javafx.beans.property.Property<String> obsrv2Id;
 
-    private boolean boundMaxWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMaxWidth;
+    private boolean bound1MaxWidth;
+    private boolean bound2MaxWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MaxWidth;
+    private javafx.beans.property.Property<Number> obsrv2MaxWidth;
 
-    private boolean boundMinWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMinWidth;
+    private boolean bound1MinWidth;
+    private boolean bound2MinWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MinWidth;
+    private javafx.beans.property.Property<Number> obsrv2MinWidth;
 
-    private boolean boundPrefWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvPrefWidth;
+    private boolean bound1PrefWidth;
+    private boolean bound2PrefWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PrefWidth;
+    private javafx.beans.property.Property<Number> obsrv2PrefWidth;
 
-    private boolean boundResizable;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvResizable;
+    private boolean bound1Resizable;
+    private boolean bound2Resizable;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Resizable;
+    private javafx.beans.property.Property<Boolean> obsrv2Resizable;
 
-    private boolean boundSortNode;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvSortNode;
+    private boolean bound1SortNode;
+    private boolean bound2SortNode;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1SortNode;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2SortNode;
 
-    private boolean boundSortable;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvSortable;
+    private boolean bound1Sortable;
+    private boolean bound2Sortable;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Sortable;
+    private javafx.beans.property.Property<Boolean> obsrv2Sortable;
 
-    private boolean boundStyle;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvStyle;
+    private boolean bound1Style;
+    private boolean bound2Style;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Style;
+    private javafx.beans.property.Property<String> obsrv2Style;
 
-    private boolean boundText;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvText;
+    private boolean bound1Text;
+    private boolean bound2Text;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Text;
+    private javafx.beans.property.Property<String> obsrv2Text;
 
-    private boolean boundVisible;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvVisible;
+    private boolean bound1Visible;
+    private boolean bound2Visible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Visible;
+    private javafx.beans.property.Property<Boolean> obsrv2Visible;
 
     @Override
     public void applyTo(Z instance)
@@ -145,34 +173,62 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
             instance.setUserData(this.valUserData);
         if (this.hasVisible)
             instance.setVisible(this.valVisible);
-        if (this.boundComparator)
-            instance.comparatorProperty().bind(this.obsrvComparator);
-        if (this.boundContextMenu)
-            instance.contextMenuProperty().bind(this.obsrvContextMenu);
-        if (this.boundEditable)
-            instance.editableProperty().bind(this.obsrvEditable);
-        if (this.boundGraphic)
-            instance.graphicProperty().bind(this.obsrvGraphic);
-        if (this.boundId)
-            instance.idProperty().bind(this.obsrvId);
-        if (this.boundMaxWidth)
-            instance.maxWidthProperty().bind(this.obsrvMaxWidth);
-        if (this.boundMinWidth)
-            instance.minWidthProperty().bind(this.obsrvMinWidth);
-        if (this.boundPrefWidth)
-            instance.prefWidthProperty().bind(this.obsrvPrefWidth);
-        if (this.boundResizable)
-            instance.resizableProperty().bind(this.obsrvResizable);
-        if (this.boundSortNode)
-            instance.sortNodeProperty().bind(this.obsrvSortNode);
-        if (this.boundSortable)
-            instance.sortableProperty().bind(this.obsrvSortable);
-        if (this.boundStyle)
-            instance.styleProperty().bind(this.obsrvStyle);
-        if (this.boundText)
-            instance.textProperty().bind(this.obsrvText);
-        if (this.boundVisible)
-            instance.visibleProperty().bind(this.obsrvVisible);
+        if (this.bound1Comparator)
+            instance.comparatorProperty().bind(this.obsrv1Comparator);
+        if (this.bound2Comparator)
+            instance.comparatorProperty().bindBidirectional(this.obsrv2Comparator);
+        if (this.bound1ContextMenu)
+            instance.contextMenuProperty().bind(this.obsrv1ContextMenu);
+        if (this.bound2ContextMenu)
+            instance.contextMenuProperty().bindBidirectional(this.obsrv2ContextMenu);
+        if (this.bound1Editable)
+            instance.editableProperty().bind(this.obsrv1Editable);
+        if (this.bound2Editable)
+            instance.editableProperty().bindBidirectional(this.obsrv2Editable);
+        if (this.bound1Graphic)
+            instance.graphicProperty().bind(this.obsrv1Graphic);
+        if (this.bound2Graphic)
+            instance.graphicProperty().bindBidirectional(this.obsrv2Graphic);
+        if (this.bound1Id)
+            instance.idProperty().bind(this.obsrv1Id);
+        if (this.bound2Id)
+            instance.idProperty().bindBidirectional(this.obsrv2Id);
+        if (this.bound1MaxWidth)
+            instance.maxWidthProperty().bind(this.obsrv1MaxWidth);
+        if (this.bound2MaxWidth)
+            instance.maxWidthProperty().bindBidirectional(this.obsrv2MaxWidth);
+        if (this.bound1MinWidth)
+            instance.minWidthProperty().bind(this.obsrv1MinWidth);
+        if (this.bound2MinWidth)
+            instance.minWidthProperty().bindBidirectional(this.obsrv2MinWidth);
+        if (this.bound1PrefWidth)
+            instance.prefWidthProperty().bind(this.obsrv1PrefWidth);
+        if (this.bound2PrefWidth)
+            instance.prefWidthProperty().bindBidirectional(this.obsrv2PrefWidth);
+        if (this.bound1Resizable)
+            instance.resizableProperty().bind(this.obsrv1Resizable);
+        if (this.bound2Resizable)
+            instance.resizableProperty().bindBidirectional(this.obsrv2Resizable);
+        if (this.bound1SortNode)
+            instance.sortNodeProperty().bind(this.obsrv1SortNode);
+        if (this.bound2SortNode)
+            instance.sortNodeProperty().bindBidirectional(this.obsrv2SortNode);
+        if (this.bound1Sortable)
+            instance.sortableProperty().bind(this.obsrv1Sortable);
+        if (this.bound2Sortable)
+            instance.sortableProperty().bindBidirectional(this.obsrv2Sortable);
+        if (this.bound1Style)
+            instance.styleProperty().bind(this.obsrv1Style);
+        if (this.bound2Style)
+            instance.styleProperty().bindBidirectional(this.obsrv2Style);
+        if (this.bound1Text)
+            instance.textProperty().bind(this.obsrv1Text);
+        if (this.bound2Text)
+            instance.textProperty().bindBidirectional(this.obsrv2Text);
+        if (this.bound1Visible)
+            instance.visibleProperty().bind(this.obsrv1Visible);
+        if (this.bound2Visible)
+            instance.visibleProperty().bindBidirectional(this.obsrv2Visible);
     }
 
     /**
@@ -424,8 +480,27 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     public final B bindComparator(javafx.beans.value.ObservableValue<? extends java.util.Comparator<T>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundComparator = true;
-        this.obsrvComparator = source;
+        this.bound1Comparator = true;
+        this.obsrv1Comparator = source;
+        this.bound2Comparator = false;
+        this.obsrv2Comparator = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumnBase#comparatorProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalComparator(javafx.beans.property.Property<java.util.Comparator<T>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Comparator = false;
+        this.obsrv1Comparator = null;
+        this.bound2Comparator = true;
+        this.obsrv2Comparator = source;
         return (B) this;
     }
 
@@ -439,8 +514,27 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     public final B bindContextMenu(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContextMenu> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundContextMenu = true;
-        this.obsrvContextMenu = source;
+        this.bound1ContextMenu = true;
+        this.obsrv1ContextMenu = source;
+        this.bound2ContextMenu = false;
+        this.obsrv2ContextMenu = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumnBase#contextMenuProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalContextMenu(javafx.beans.property.Property<javafx.scene.control.ContextMenu> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ContextMenu = false;
+        this.obsrv1ContextMenu = null;
+        this.bound2ContextMenu = true;
+        this.obsrv2ContextMenu = source;
         return (B) this;
     }
 
@@ -454,8 +548,27 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     public final B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundEditable = true;
-        this.obsrvEditable = source;
+        this.bound1Editable = true;
+        this.obsrv1Editable = source;
+        this.bound2Editable = false;
+        this.obsrv2Editable = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumnBase#editableProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalEditable(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Editable = false;
+        this.obsrv1Editable = null;
+        this.bound2Editable = true;
+        this.obsrv2Editable = source;
         return (B) this;
     }
 
@@ -469,8 +582,27 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     public final B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundGraphic = true;
-        this.obsrvGraphic = source;
+        this.bound1Graphic = true;
+        this.obsrv1Graphic = source;
+        this.bound2Graphic = false;
+        this.obsrv2Graphic = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumnBase#graphicProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalGraphic(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Graphic = false;
+        this.obsrv1Graphic = null;
+        this.bound2Graphic = true;
+        this.obsrv2Graphic = source;
         return (B) this;
     }
 
@@ -484,8 +616,27 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     public final B bindId(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundId = true;
-        this.obsrvId = source;
+        this.bound1Id = true;
+        this.obsrv1Id = source;
+        this.bound2Id = false;
+        this.obsrv2Id = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumnBase#idProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalId(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Id = false;
+        this.obsrv1Id = null;
+        this.bound2Id = true;
+        this.obsrv2Id = source;
         return (B) this;
     }
 
@@ -496,11 +647,30 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMaxWidth = true;
-        this.obsrvMaxWidth = source;
+        this.bound1MaxWidth = true;
+        this.obsrv1MaxWidth = source;
+        this.bound2MaxWidth = false;
+        this.obsrv2MaxWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumnBase#maxWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMaxWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MaxWidth = false;
+        this.obsrv1MaxWidth = null;
+        this.bound2MaxWidth = true;
+        this.obsrv2MaxWidth = source;
         return (B) this;
     }
 
@@ -511,11 +681,30 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMinWidth = true;
-        this.obsrvMinWidth = source;
+        this.bound1MinWidth = true;
+        this.obsrv1MinWidth = source;
+        this.bound2MinWidth = false;
+        this.obsrv2MinWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumnBase#minWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMinWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinWidth = false;
+        this.obsrv1MinWidth = null;
+        this.bound2MinWidth = true;
+        this.obsrv2MinWidth = source;
         return (B) this;
     }
 
@@ -526,11 +715,30 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPrefWidth = true;
-        this.obsrvPrefWidth = source;
+        this.bound1PrefWidth = true;
+        this.obsrv1PrefWidth = source;
+        this.bound2PrefWidth = false;
+        this.obsrv2PrefWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumnBase#prefWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPrefWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PrefWidth = false;
+        this.obsrv1PrefWidth = null;
+        this.bound2PrefWidth = true;
+        this.obsrv2PrefWidth = source;
         return (B) this;
     }
 
@@ -544,8 +752,27 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     public final B bindResizable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundResizable = true;
-        this.obsrvResizable = source;
+        this.bound1Resizable = true;
+        this.obsrv1Resizable = source;
+        this.bound2Resizable = false;
+        this.obsrv2Resizable = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumnBase#resizableProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalResizable(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Resizable = false;
+        this.obsrv1Resizable = null;
+        this.bound2Resizable = true;
+        this.obsrv2Resizable = source;
         return (B) this;
     }
 
@@ -559,8 +786,27 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     public final B bindSortNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSortNode = true;
-        this.obsrvSortNode = source;
+        this.bound1SortNode = true;
+        this.obsrv1SortNode = source;
+        this.bound2SortNode = false;
+        this.obsrv2SortNode = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumnBase#sortNodeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSortNode(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SortNode = false;
+        this.obsrv1SortNode = null;
+        this.bound2SortNode = true;
+        this.obsrv2SortNode = source;
         return (B) this;
     }
 
@@ -574,8 +820,27 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     public final B bindSortable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSortable = true;
-        this.obsrvSortable = source;
+        this.bound1Sortable = true;
+        this.obsrv1Sortable = source;
+        this.bound2Sortable = false;
+        this.obsrv2Sortable = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumnBase#sortableProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSortable(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Sortable = false;
+        this.obsrv1Sortable = null;
+        this.bound2Sortable = true;
+        this.obsrv2Sortable = source;
         return (B) this;
     }
 
@@ -589,8 +854,27 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     public final B bindStyle(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundStyle = true;
-        this.obsrvStyle = source;
+        this.bound1Style = true;
+        this.obsrv1Style = source;
+        this.bound2Style = false;
+        this.obsrv2Style = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumnBase#styleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStyle(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Style = false;
+        this.obsrv1Style = null;
+        this.bound2Style = true;
+        this.obsrv2Style = source;
         return (B) this;
     }
 
@@ -604,8 +888,27 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     public final B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundText = true;
-        this.obsrvText = source;
+        this.bound1Text = true;
+        this.obsrv1Text = source;
+        this.bound2Text = false;
+        this.obsrv2Text = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumnBase#textProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalText(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Text = false;
+        this.obsrv1Text = null;
+        this.bound2Text = true;
+        this.obsrv2Text = source;
         return (B) this;
     }
 
@@ -619,8 +922,27 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     public final B bindVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundVisible = true;
-        this.obsrvVisible = source;
+        this.bound1Visible = true;
+        this.obsrv1Visible = source;
+        this.bound2Visible = false;
+        this.obsrv2Visible = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumnBase#visibleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalVisible(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Visible = false;
+        this.obsrv1Visible = null;
+        this.bound2Visible = true;
+        this.obsrv2Visible = source;
         return (B) this;
     }
 }

@@ -25,11 +25,15 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
     private boolean hasOrientation;
     private javafx.geometry.Orientation valOrientation;
 
-    private boolean boundOnValueChanged;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.PlusMinusSlider.PlusMinusEvent>> obsrvOnValueChanged;
+    private boolean bound1OnValueChanged;
+    private boolean bound2OnValueChanged;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.PlusMinusSlider.PlusMinusEvent>> obsrv1OnValueChanged;
+    private javafx.beans.property.Property<javafx.event.EventHandler<org.controlsfx.control.PlusMinusSlider.PlusMinusEvent>> obsrv2OnValueChanged;
 
-    private boolean boundOrientation;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrvOrientation;
+    private boolean bound1Orientation;
+    private boolean bound2Orientation;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrv1Orientation;
+    private javafx.beans.property.Property<javafx.geometry.Orientation> obsrv2Orientation;
 
     @Override
     public void applyTo(Z instance)
@@ -39,10 +43,14 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
             instance.setOnValueChanged(this.valOnValueChanged);
         if (this.hasOrientation)
             instance.setOrientation(this.valOrientation);
-        if (this.boundOnValueChanged)
-            instance.onValueChangedProperty().bind(this.obsrvOnValueChanged);
-        if (this.boundOrientation)
-            instance.orientationProperty().bind(this.obsrvOrientation);
+        if (this.bound1OnValueChanged)
+            instance.onValueChangedProperty().bind(this.obsrv1OnValueChanged);
+        if (this.bound2OnValueChanged)
+            instance.onValueChangedProperty().bindBidirectional(this.obsrv2OnValueChanged);
+        if (this.bound1Orientation)
+            instance.orientationProperty().bind(this.obsrv1Orientation);
+        if (this.bound2Orientation)
+            instance.orientationProperty().bindBidirectional(this.obsrv2Orientation);
     }
 
     /**
@@ -83,8 +91,27 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
     public final B bindOnValueChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.PlusMinusSlider.PlusMinusEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnValueChanged = true;
-        this.obsrvOnValueChanged = source;
+        this.bound1OnValueChanged = true;
+        this.obsrv1OnValueChanged = source;
+        this.bound2OnValueChanged = false;
+        this.obsrv2OnValueChanged = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PlusMinusSlider#onValueChangedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnValueChanged(javafx.beans.property.Property<javafx.event.EventHandler<org.controlsfx.control.PlusMinusSlider.PlusMinusEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnValueChanged = false;
+        this.obsrv1OnValueChanged = null;
+        this.bound2OnValueChanged = true;
+        this.obsrv2OnValueChanged = source;
         return (B) this;
     }
 
@@ -98,8 +125,27 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
     public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOrientation = true;
-        this.obsrvOrientation = source;
+        this.bound1Orientation = true;
+        this.obsrv1Orientation = source;
+        this.bound2Orientation = false;
+        this.obsrv2Orientation = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PlusMinusSlider#orientationProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOrientation(javafx.beans.property.Property<javafx.geometry.Orientation> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Orientation = false;
+        this.obsrv1Orientation = null;
+        this.bound2Orientation = true;
+        this.obsrv2Orientation = source;
         return (B) this;
     }
 

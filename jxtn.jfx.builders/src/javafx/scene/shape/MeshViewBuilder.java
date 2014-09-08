@@ -22,8 +22,10 @@ public class MeshViewBuilder<Z extends MeshView, B extends MeshViewBuilder<Z, B>
     private boolean hasMesh;
     private javafx.scene.shape.Mesh valMesh;
 
-    private boolean boundMesh;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.Mesh> obsrvMesh;
+    private boolean bound1Mesh;
+    private boolean bound2Mesh;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.Mesh> obsrv1Mesh;
+    private javafx.beans.property.Property<javafx.scene.shape.Mesh> obsrv2Mesh;
 
     @Override
     public void applyTo(Z instance)
@@ -31,8 +33,10 @@ public class MeshViewBuilder<Z extends MeshView, B extends MeshViewBuilder<Z, B>
         super.applyTo(instance);
         if (this.hasMesh)
             instance.setMesh(this.valMesh);
-        if (this.boundMesh)
-            instance.meshProperty().bind(this.obsrvMesh);
+        if (this.bound1Mesh)
+            instance.meshProperty().bind(this.obsrv1Mesh);
+        if (this.bound2Mesh)
+            instance.meshProperty().bindBidirectional(this.obsrv2Mesh);
     }
 
     /**
@@ -59,8 +63,27 @@ public class MeshViewBuilder<Z extends MeshView, B extends MeshViewBuilder<Z, B>
     public final B bindMesh(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.Mesh> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMesh = true;
-        this.obsrvMesh = source;
+        this.bound1Mesh = true;
+        this.obsrv1Mesh = source;
+        this.bound2Mesh = false;
+        this.obsrv2Mesh = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MeshView#meshProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMesh(javafx.beans.property.Property<javafx.scene.shape.Mesh> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Mesh = false;
+        this.obsrv1Mesh = null;
+        this.bound2Mesh = true;
+        this.obsrv2Mesh = source;
         return (B) this;
     }
 

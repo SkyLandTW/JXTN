@@ -28,14 +28,20 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
     private boolean hasText;
     private java.lang.String valText;
 
-    private boolean boundContent;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvContent;
+    private boolean bound1Content;
+    private boolean bound2Content;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Content;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Content;
 
-    private boolean boundShowOnHover;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvShowOnHover;
+    private boolean bound1ShowOnHover;
+    private boolean bound2ShowOnHover;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ShowOnHover;
+    private javafx.beans.property.Property<Boolean> obsrv2ShowOnHover;
 
-    private boolean boundText;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvText;
+    private boolean bound1Text;
+    private boolean bound2Text;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Text;
+    private javafx.beans.property.Property<String> obsrv2Text;
 
     @Override
     public void applyTo(Z instance)
@@ -47,12 +53,18 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
             instance.setShowOnHover(this.valShowOnHover);
         if (this.hasText)
             instance.setText(this.valText);
-        if (this.boundContent)
-            instance.contentProperty().bind(this.obsrvContent);
-        if (this.boundShowOnHover)
-            instance.showOnHoverProperty().bind(this.obsrvShowOnHover);
-        if (this.boundText)
-            instance.textProperty().bind(this.obsrvText);
+        if (this.bound1Content)
+            instance.contentProperty().bind(this.obsrv1Content);
+        if (this.bound2Content)
+            instance.contentProperty().bindBidirectional(this.obsrv2Content);
+        if (this.bound1ShowOnHover)
+            instance.showOnHoverProperty().bind(this.obsrv1ShowOnHover);
+        if (this.bound2ShowOnHover)
+            instance.showOnHoverProperty().bindBidirectional(this.obsrv2ShowOnHover);
+        if (this.bound1Text)
+            instance.textProperty().bind(this.obsrv1Text);
+        if (this.bound2Text)
+            instance.textProperty().bindBidirectional(this.obsrv2Text);
     }
 
     /**
@@ -107,8 +119,27 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
     public final B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundContent = true;
-        this.obsrvContent = source;
+        this.bound1Content = true;
+        this.obsrv1Content = source;
+        this.bound2Content = false;
+        this.obsrv2Content = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link InfoOverlay#contentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalContent(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Content = false;
+        this.obsrv1Content = null;
+        this.bound2Content = true;
+        this.obsrv2Content = source;
         return (B) this;
     }
 
@@ -122,8 +153,27 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
     public final B bindShowOnHover(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundShowOnHover = true;
-        this.obsrvShowOnHover = source;
+        this.bound1ShowOnHover = true;
+        this.obsrv1ShowOnHover = source;
+        this.bound2ShowOnHover = false;
+        this.obsrv2ShowOnHover = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link InfoOverlay#showOnHoverProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalShowOnHover(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ShowOnHover = false;
+        this.obsrv1ShowOnHover = null;
+        this.bound2ShowOnHover = true;
+        this.obsrv2ShowOnHover = source;
         return (B) this;
     }
 
@@ -137,8 +187,27 @@ public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuil
     public final B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundText = true;
-        this.obsrvText = source;
+        this.bound1Text = true;
+        this.obsrv1Text = source;
+        this.bound2Text = false;
+        this.obsrv2Text = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link InfoOverlay#textProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalText(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Text = false;
+        this.obsrv1Text = null;
+        this.bound2Text = true;
+        this.obsrv2Text = source;
         return (B) this;
     }
 

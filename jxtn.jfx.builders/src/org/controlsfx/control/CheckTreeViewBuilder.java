@@ -22,8 +22,10 @@ public class CheckTreeViewBuilder<T extends java.lang.Object, Z extends CheckTre
     private boolean hasCheckModel;
     private javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>> valCheckModel;
 
-    private boolean boundCheckModel;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>>> obsrvCheckModel;
+    private boolean bound1CheckModel;
+    private boolean bound2CheckModel;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>>> obsrv1CheckModel;
+    private javafx.beans.property.Property<javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>>> obsrv2CheckModel;
 
     @Override
     public void applyTo(Z instance)
@@ -31,8 +33,10 @@ public class CheckTreeViewBuilder<T extends java.lang.Object, Z extends CheckTre
         super.applyTo(instance);
         if (this.hasCheckModel)
             instance.setCheckModel(this.valCheckModel);
-        if (this.boundCheckModel)
-            instance.checkModelProperty().bind(this.obsrvCheckModel);
+        if (this.bound1CheckModel)
+            instance.checkModelProperty().bind(this.obsrv1CheckModel);
+        if (this.bound2CheckModel)
+            instance.checkModelProperty().bindBidirectional(this.obsrv2CheckModel);
     }
 
     /**
@@ -59,8 +63,27 @@ public class CheckTreeViewBuilder<T extends java.lang.Object, Z extends CheckTre
     public final B bindCheckModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCheckModel = true;
-        this.obsrvCheckModel = source;
+        this.bound1CheckModel = true;
+        this.obsrv1CheckModel = source;
+        this.bound2CheckModel = false;
+        this.obsrv2CheckModel = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CheckTreeView#checkModelProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCheckModel(javafx.beans.property.Property<javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CheckModel = false;
+        this.obsrv1CheckModel = null;
+        this.bound2CheckModel = true;
+        this.obsrv2CheckModel = source;
         return (B) this;
     }
 

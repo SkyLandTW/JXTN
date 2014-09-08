@@ -45,7 +45,15 @@
     <#if inner?starts_with("Simple")>
       <#assign inner = inner?substring(6, inner?length)>
     </#if>
-    <#return inner>
+    <#switch inner>
+        <#case "Double">
+        <#case "Float">
+        <#case "Integer">
+        <#case "Long">
+            <#return "Number">
+        <#default>
+            <#return inner>
+    </#switch>
   </#if>
 </#function>
 <#-- 開始 -->
@@ -144,8 +152,10 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
    <#if isFXProp(method)>
     <#assign fxPropName = method.@name?substring(0, method.@name?length - 8)>
 
-    private boolean bound${fxPropName?cap_first};
-    private javafx.beans.value.ObservableValue<? extends ${getFXType(method.@returnType)}> obsrv${fxPropName?cap_first};
+    private boolean bound1${fxPropName?cap_first};
+    private boolean bound2${fxPropName?cap_first};
+    private javafx.beans.value.ObservableValue<? extends ${getFXType(method.@returnType)}> obsrv1${fxPropName?cap_first};
+    private javafx.beans.property.Property<${getFXType(method.@returnType)}> obsrv2${fxPropName?cap_first};
    </#if>
   </#list>
  <#-- 結束屬性欄位 -->
@@ -175,8 +185,10 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
       <#list class.method as method>
        <#if isFXProp(method)>
         <#assign fxPropName = method.@name?substring(0, method.@name?length - 8)>
-        if (this.bound${fxPropName?cap_first})
-            instance.${fxPropName}Property().bind(this.obsrv${fxPropName?cap_first});
+        if (this.bound1${fxPropName?cap_first})
+            instance.${fxPropName}Property().bind(this.obsrv1${fxPropName?cap_first});
+        if (this.bound2${fxPropName?cap_first})
+            instance.${fxPropName}Property().bindBidirectional(this.obsrv2${fxPropName?cap_first});
        </#if>
       </#list>
       <#-- 套用結束 -->
@@ -265,8 +277,27 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
     public final B bind${fxPropName?cap_first}(javafx.beans.value.ObservableValue<? extends ${getFXType(method.@returnType)}> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.bound${fxPropName?cap_first} = true;
-        this.obsrv${fxPropName?cap_first} = source;
+        this.bound1${fxPropName?cap_first} = true;
+        this.obsrv1${fxPropName?cap_first} = source;
+        this.bound2${fxPropName?cap_first} = false;
+        this.obsrv2${fxPropName?cap_first} = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ${class.@name}#${fxPropName}Property}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectional${fxPropName?cap_first}(javafx.beans.property.Property<${getFXType(method.@returnType)}> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1${fxPropName?cap_first} = false;
+        this.obsrv1${fxPropName?cap_first} = null;
+        this.bound2${fxPropName?cap_first} = true;
+        this.obsrv2${fxPropName?cap_first} = source;
         return (B) this;
     }
    </#if>

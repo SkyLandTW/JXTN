@@ -25,11 +25,15 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
     private boolean hasItem;
     private T valItem;
 
-    private boolean boundEditable;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvEditable;
+    private boolean bound1Editable;
+    private boolean bound2Editable;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Editable;
+    private javafx.beans.property.Property<Boolean> obsrv2Editable;
 
-    private boolean boundItem;
-    private javafx.beans.value.ObservableValue<? extends T> obsrvItem;
+    private boolean bound1Item;
+    private boolean bound2Item;
+    private javafx.beans.value.ObservableValue<? extends T> obsrv1Item;
+    private javafx.beans.property.Property<T> obsrv2Item;
 
     @Override
     public void applyTo(Z instance)
@@ -39,10 +43,14 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
             instance.setEditable(this.valEditable);
         if (this.hasItem)
             instance.setItem(this.valItem);
-        if (this.boundEditable)
-            instance.editableProperty().bind(this.obsrvEditable);
-        if (this.boundItem)
-            instance.itemProperty().bind(this.obsrvItem);
+        if (this.bound1Editable)
+            instance.editableProperty().bind(this.obsrv1Editable);
+        if (this.bound2Editable)
+            instance.editableProperty().bindBidirectional(this.obsrv2Editable);
+        if (this.bound1Item)
+            instance.itemProperty().bind(this.obsrv1Item);
+        if (this.bound2Item)
+            instance.itemProperty().bindBidirectional(this.obsrv2Item);
     }
 
     /**
@@ -83,8 +91,27 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
     public final B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundEditable = true;
-        this.obsrvEditable = source;
+        this.bound1Editable = true;
+        this.obsrv1Editable = source;
+        this.bound2Editable = false;
+        this.obsrv2Editable = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Cell#editableProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalEditable(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Editable = false;
+        this.obsrv1Editable = null;
+        this.bound2Editable = true;
+        this.obsrv2Editable = source;
         return (B) this;
     }
 
@@ -98,8 +125,27 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
     public final B bindItem(javafx.beans.value.ObservableValue<? extends T> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundItem = true;
-        this.obsrvItem = source;
+        this.bound1Item = true;
+        this.obsrv1Item = source;
+        this.bound2Item = false;
+        this.obsrv2Item = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Cell#itemProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalItem(javafx.beans.property.Property<T> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Item = false;
+        this.obsrv1Item = null;
+        this.bound2Item = true;
+        this.obsrv2Item = source;
         return (B) this;
     }
 

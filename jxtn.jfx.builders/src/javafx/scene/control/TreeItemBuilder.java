@@ -31,14 +31,20 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     private boolean hasValue;
     private T valValue;
 
-    private boolean boundExpanded;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvExpanded;
+    private boolean bound1Expanded;
+    private boolean bound2Expanded;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Expanded;
+    private javafx.beans.property.Property<Boolean> obsrv2Expanded;
 
-    private boolean boundGraphic;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvGraphic;
+    private boolean bound1Graphic;
+    private boolean bound2Graphic;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Graphic;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Graphic;
 
-    private boolean boundValue;
-    private javafx.beans.value.ObservableValue<? extends T> obsrvValue;
+    private boolean bound1Value;
+    private boolean bound2Value;
+    private javafx.beans.value.ObservableValue<? extends T> obsrv1Value;
+    private javafx.beans.property.Property<T> obsrv2Value;
 
     @Override
     public void applyTo(Z instance)
@@ -52,12 +58,18 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
             instance.setGraphic(this.valGraphic);
         if (this.hasValue)
             instance.setValue(this.valValue);
-        if (this.boundExpanded)
-            instance.expandedProperty().bind(this.obsrvExpanded);
-        if (this.boundGraphic)
-            instance.graphicProperty().bind(this.obsrvGraphic);
-        if (this.boundValue)
-            instance.valueProperty().bind(this.obsrvValue);
+        if (this.bound1Expanded)
+            instance.expandedProperty().bind(this.obsrv1Expanded);
+        if (this.bound2Expanded)
+            instance.expandedProperty().bindBidirectional(this.obsrv2Expanded);
+        if (this.bound1Graphic)
+            instance.graphicProperty().bind(this.obsrv1Graphic);
+        if (this.bound2Graphic)
+            instance.graphicProperty().bindBidirectional(this.obsrv2Graphic);
+        if (this.bound1Value)
+            instance.valueProperty().bind(this.obsrv1Value);
+        if (this.bound2Value)
+            instance.valueProperty().bindBidirectional(this.obsrv2Value);
     }
 
     /**
@@ -141,8 +153,27 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     public final B bindExpanded(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundExpanded = true;
-        this.obsrvExpanded = source;
+        this.bound1Expanded = true;
+        this.obsrv1Expanded = source;
+        this.bound2Expanded = false;
+        this.obsrv2Expanded = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeItem#expandedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalExpanded(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Expanded = false;
+        this.obsrv1Expanded = null;
+        this.bound2Expanded = true;
+        this.obsrv2Expanded = source;
         return (B) this;
     }
 
@@ -156,8 +187,27 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     public final B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundGraphic = true;
-        this.obsrvGraphic = source;
+        this.bound1Graphic = true;
+        this.obsrv1Graphic = source;
+        this.bound2Graphic = false;
+        this.obsrv2Graphic = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeItem#graphicProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalGraphic(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Graphic = false;
+        this.obsrv1Graphic = null;
+        this.bound2Graphic = true;
+        this.obsrv2Graphic = source;
         return (B) this;
     }
 
@@ -171,8 +221,27 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     public final B bindValue(javafx.beans.value.ObservableValue<? extends T> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundValue = true;
-        this.obsrvValue = source;
+        this.bound1Value = true;
+        this.obsrv1Value = source;
+        this.bound2Value = false;
+        this.obsrv2Value = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeItem#valueProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalValue(javafx.beans.property.Property<T> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Value = false;
+        this.obsrv1Value = null;
+        this.bound2Value = true;
+        this.obsrv2Value = source;
         return (B) this;
     }
 

@@ -49,32 +49,50 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     private boolean hasStrokeWidth;
     private double valStrokeWidth;
 
-    private boolean boundFill;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> obsrvFill;
+    private boolean bound1Fill;
+    private boolean bound2Fill;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> obsrv1Fill;
+    private javafx.beans.property.Property<javafx.scene.paint.Paint> obsrv2Fill;
 
-    private boolean boundSmooth;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvSmooth;
+    private boolean bound1Smooth;
+    private boolean bound2Smooth;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Smooth;
+    private javafx.beans.property.Property<Boolean> obsrv2Smooth;
 
-    private boolean boundStrokeDashOffset;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvStrokeDashOffset;
+    private boolean bound1StrokeDashOffset;
+    private boolean bound2StrokeDashOffset;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1StrokeDashOffset;
+    private javafx.beans.property.Property<Number> obsrv2StrokeDashOffset;
 
-    private boolean boundStrokeLineCap;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.StrokeLineCap> obsrvStrokeLineCap;
+    private boolean bound1StrokeLineCap;
+    private boolean bound2StrokeLineCap;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.StrokeLineCap> obsrv1StrokeLineCap;
+    private javafx.beans.property.Property<javafx.scene.shape.StrokeLineCap> obsrv2StrokeLineCap;
 
-    private boolean boundStrokeLineJoin;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.StrokeLineJoin> obsrvStrokeLineJoin;
+    private boolean bound1StrokeLineJoin;
+    private boolean bound2StrokeLineJoin;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.StrokeLineJoin> obsrv1StrokeLineJoin;
+    private javafx.beans.property.Property<javafx.scene.shape.StrokeLineJoin> obsrv2StrokeLineJoin;
 
-    private boolean boundStrokeMiterLimit;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvStrokeMiterLimit;
+    private boolean bound1StrokeMiterLimit;
+    private boolean bound2StrokeMiterLimit;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1StrokeMiterLimit;
+    private javafx.beans.property.Property<Number> obsrv2StrokeMiterLimit;
 
-    private boolean boundStroke;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> obsrvStroke;
+    private boolean bound1Stroke;
+    private boolean bound2Stroke;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> obsrv1Stroke;
+    private javafx.beans.property.Property<javafx.scene.paint.Paint> obsrv2Stroke;
 
-    private boolean boundStrokeType;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.StrokeType> obsrvStrokeType;
+    private boolean bound1StrokeType;
+    private boolean bound2StrokeType;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.StrokeType> obsrv1StrokeType;
+    private javafx.beans.property.Property<javafx.scene.shape.StrokeType> obsrv2StrokeType;
 
-    private boolean boundStrokeWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvStrokeWidth;
+    private boolean bound1StrokeWidth;
+    private boolean bound2StrokeWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1StrokeWidth;
+    private javafx.beans.property.Property<Number> obsrv2StrokeWidth;
 
     @Override
     public void applyTo(Z instance)
@@ -100,24 +118,42 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
             instance.setStrokeType(this.valStrokeType);
         if (this.hasStrokeWidth)
             instance.setStrokeWidth(this.valStrokeWidth);
-        if (this.boundFill)
-            instance.fillProperty().bind(this.obsrvFill);
-        if (this.boundSmooth)
-            instance.smoothProperty().bind(this.obsrvSmooth);
-        if (this.boundStrokeDashOffset)
-            instance.strokeDashOffsetProperty().bind(this.obsrvStrokeDashOffset);
-        if (this.boundStrokeLineCap)
-            instance.strokeLineCapProperty().bind(this.obsrvStrokeLineCap);
-        if (this.boundStrokeLineJoin)
-            instance.strokeLineJoinProperty().bind(this.obsrvStrokeLineJoin);
-        if (this.boundStrokeMiterLimit)
-            instance.strokeMiterLimitProperty().bind(this.obsrvStrokeMiterLimit);
-        if (this.boundStroke)
-            instance.strokeProperty().bind(this.obsrvStroke);
-        if (this.boundStrokeType)
-            instance.strokeTypeProperty().bind(this.obsrvStrokeType);
-        if (this.boundStrokeWidth)
-            instance.strokeWidthProperty().bind(this.obsrvStrokeWidth);
+        if (this.bound1Fill)
+            instance.fillProperty().bind(this.obsrv1Fill);
+        if (this.bound2Fill)
+            instance.fillProperty().bindBidirectional(this.obsrv2Fill);
+        if (this.bound1Smooth)
+            instance.smoothProperty().bind(this.obsrv1Smooth);
+        if (this.bound2Smooth)
+            instance.smoothProperty().bindBidirectional(this.obsrv2Smooth);
+        if (this.bound1StrokeDashOffset)
+            instance.strokeDashOffsetProperty().bind(this.obsrv1StrokeDashOffset);
+        if (this.bound2StrokeDashOffset)
+            instance.strokeDashOffsetProperty().bindBidirectional(this.obsrv2StrokeDashOffset);
+        if (this.bound1StrokeLineCap)
+            instance.strokeLineCapProperty().bind(this.obsrv1StrokeLineCap);
+        if (this.bound2StrokeLineCap)
+            instance.strokeLineCapProperty().bindBidirectional(this.obsrv2StrokeLineCap);
+        if (this.bound1StrokeLineJoin)
+            instance.strokeLineJoinProperty().bind(this.obsrv1StrokeLineJoin);
+        if (this.bound2StrokeLineJoin)
+            instance.strokeLineJoinProperty().bindBidirectional(this.obsrv2StrokeLineJoin);
+        if (this.bound1StrokeMiterLimit)
+            instance.strokeMiterLimitProperty().bind(this.obsrv1StrokeMiterLimit);
+        if (this.bound2StrokeMiterLimit)
+            instance.strokeMiterLimitProperty().bindBidirectional(this.obsrv2StrokeMiterLimit);
+        if (this.bound1Stroke)
+            instance.strokeProperty().bind(this.obsrv1Stroke);
+        if (this.bound2Stroke)
+            instance.strokeProperty().bindBidirectional(this.obsrv2Stroke);
+        if (this.bound1StrokeType)
+            instance.strokeTypeProperty().bind(this.obsrv1StrokeType);
+        if (this.bound2StrokeType)
+            instance.strokeTypeProperty().bindBidirectional(this.obsrv2StrokeType);
+        if (this.bound1StrokeWidth)
+            instance.strokeWidthProperty().bind(this.obsrv1StrokeWidth);
+        if (this.bound2StrokeWidth)
+            instance.strokeWidthProperty().bindBidirectional(this.obsrv2StrokeWidth);
     }
 
     /**
@@ -285,8 +321,27 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     public final B bindFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFill = true;
-        this.obsrvFill = source;
+        this.bound1Fill = true;
+        this.obsrv1Fill = source;
+        this.bound2Fill = false;
+        this.obsrv2Fill = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Shape#fillProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFill(javafx.beans.property.Property<javafx.scene.paint.Paint> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Fill = false;
+        this.obsrv1Fill = null;
+        this.bound2Fill = true;
+        this.obsrv2Fill = source;
         return (B) this;
     }
 
@@ -300,8 +355,27 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     public final B bindSmooth(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSmooth = true;
-        this.obsrvSmooth = source;
+        this.bound1Smooth = true;
+        this.obsrv1Smooth = source;
+        this.bound2Smooth = false;
+        this.obsrv2Smooth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Shape#smoothProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSmooth(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Smooth = false;
+        this.obsrv1Smooth = null;
+        this.bound2Smooth = true;
+        this.obsrv2Smooth = source;
         return (B) this;
     }
 
@@ -312,11 +386,30 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindStrokeDashOffset(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindStrokeDashOffset(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundStrokeDashOffset = true;
-        this.obsrvStrokeDashOffset = source;
+        this.bound1StrokeDashOffset = true;
+        this.obsrv1StrokeDashOffset = source;
+        this.bound2StrokeDashOffset = false;
+        this.obsrv2StrokeDashOffset = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Shape#strokeDashOffsetProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStrokeDashOffset(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1StrokeDashOffset = false;
+        this.obsrv1StrokeDashOffset = null;
+        this.bound2StrokeDashOffset = true;
+        this.obsrv2StrokeDashOffset = source;
         return (B) this;
     }
 
@@ -330,8 +423,27 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     public final B bindStrokeLineCap(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.StrokeLineCap> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundStrokeLineCap = true;
-        this.obsrvStrokeLineCap = source;
+        this.bound1StrokeLineCap = true;
+        this.obsrv1StrokeLineCap = source;
+        this.bound2StrokeLineCap = false;
+        this.obsrv2StrokeLineCap = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Shape#strokeLineCapProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStrokeLineCap(javafx.beans.property.Property<javafx.scene.shape.StrokeLineCap> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1StrokeLineCap = false;
+        this.obsrv1StrokeLineCap = null;
+        this.bound2StrokeLineCap = true;
+        this.obsrv2StrokeLineCap = source;
         return (B) this;
     }
 
@@ -345,8 +457,27 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     public final B bindStrokeLineJoin(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.StrokeLineJoin> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundStrokeLineJoin = true;
-        this.obsrvStrokeLineJoin = source;
+        this.bound1StrokeLineJoin = true;
+        this.obsrv1StrokeLineJoin = source;
+        this.bound2StrokeLineJoin = false;
+        this.obsrv2StrokeLineJoin = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Shape#strokeLineJoinProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStrokeLineJoin(javafx.beans.property.Property<javafx.scene.shape.StrokeLineJoin> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1StrokeLineJoin = false;
+        this.obsrv1StrokeLineJoin = null;
+        this.bound2StrokeLineJoin = true;
+        this.obsrv2StrokeLineJoin = source;
         return (B) this;
     }
 
@@ -357,11 +488,30 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindStrokeMiterLimit(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindStrokeMiterLimit(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundStrokeMiterLimit = true;
-        this.obsrvStrokeMiterLimit = source;
+        this.bound1StrokeMiterLimit = true;
+        this.obsrv1StrokeMiterLimit = source;
+        this.bound2StrokeMiterLimit = false;
+        this.obsrv2StrokeMiterLimit = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Shape#strokeMiterLimitProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStrokeMiterLimit(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1StrokeMiterLimit = false;
+        this.obsrv1StrokeMiterLimit = null;
+        this.bound2StrokeMiterLimit = true;
+        this.obsrv2StrokeMiterLimit = source;
         return (B) this;
     }
 
@@ -375,8 +525,27 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     public final B bindStroke(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundStroke = true;
-        this.obsrvStroke = source;
+        this.bound1Stroke = true;
+        this.obsrv1Stroke = source;
+        this.bound2Stroke = false;
+        this.obsrv2Stroke = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Shape#strokeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStroke(javafx.beans.property.Property<javafx.scene.paint.Paint> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Stroke = false;
+        this.obsrv1Stroke = null;
+        this.bound2Stroke = true;
+        this.obsrv2Stroke = source;
         return (B) this;
     }
 
@@ -390,8 +559,27 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     public final B bindStrokeType(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.StrokeType> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundStrokeType = true;
-        this.obsrvStrokeType = source;
+        this.bound1StrokeType = true;
+        this.obsrv1StrokeType = source;
+        this.bound2StrokeType = false;
+        this.obsrv2StrokeType = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Shape#strokeTypeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStrokeType(javafx.beans.property.Property<javafx.scene.shape.StrokeType> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1StrokeType = false;
+        this.obsrv1StrokeType = null;
+        this.bound2StrokeType = true;
+        this.obsrv2StrokeType = source;
         return (B) this;
     }
 
@@ -402,11 +590,30 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindStrokeWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindStrokeWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundStrokeWidth = true;
-        this.obsrvStrokeWidth = source;
+        this.bound1StrokeWidth = true;
+        this.obsrv1StrokeWidth = source;
+        this.bound2StrokeWidth = false;
+        this.obsrv2StrokeWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Shape#strokeWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStrokeWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1StrokeWidth = false;
+        this.obsrv1StrokeWidth = null;
+        this.bound2StrokeWidth = true;
+        this.obsrv2StrokeWidth = source;
         return (B) this;
     }
 }

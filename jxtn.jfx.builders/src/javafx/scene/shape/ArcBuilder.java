@@ -40,26 +40,40 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     private boolean hasType;
     private javafx.scene.shape.ArcType valType;
 
-    private boolean boundCenterX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvCenterX;
+    private boolean bound1CenterX;
+    private boolean bound2CenterX;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1CenterX;
+    private javafx.beans.property.Property<Number> obsrv2CenterX;
 
-    private boolean boundCenterY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvCenterY;
+    private boolean bound1CenterY;
+    private boolean bound2CenterY;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1CenterY;
+    private javafx.beans.property.Property<Number> obsrv2CenterY;
 
-    private boolean boundLength;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvLength;
+    private boolean bound1Length;
+    private boolean bound2Length;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Length;
+    private javafx.beans.property.Property<Number> obsrv2Length;
 
-    private boolean boundRadiusX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvRadiusX;
+    private boolean bound1RadiusX;
+    private boolean bound2RadiusX;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1RadiusX;
+    private javafx.beans.property.Property<Number> obsrv2RadiusX;
 
-    private boolean boundRadiusY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvRadiusY;
+    private boolean bound1RadiusY;
+    private boolean bound2RadiusY;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1RadiusY;
+    private javafx.beans.property.Property<Number> obsrv2RadiusY;
 
-    private boolean boundStartAngle;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvStartAngle;
+    private boolean bound1StartAngle;
+    private boolean bound2StartAngle;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1StartAngle;
+    private javafx.beans.property.Property<Number> obsrv2StartAngle;
 
-    private boolean boundType;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.ArcType> obsrvType;
+    private boolean bound1Type;
+    private boolean bound2Type;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.ArcType> obsrv1Type;
+    private javafx.beans.property.Property<javafx.scene.shape.ArcType> obsrv2Type;
 
     @Override
     public void applyTo(Z instance)
@@ -79,20 +93,34 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
             instance.setStartAngle(this.valStartAngle);
         if (this.hasType)
             instance.setType(this.valType);
-        if (this.boundCenterX)
-            instance.centerXProperty().bind(this.obsrvCenterX);
-        if (this.boundCenterY)
-            instance.centerYProperty().bind(this.obsrvCenterY);
-        if (this.boundLength)
-            instance.lengthProperty().bind(this.obsrvLength);
-        if (this.boundRadiusX)
-            instance.radiusXProperty().bind(this.obsrvRadiusX);
-        if (this.boundRadiusY)
-            instance.radiusYProperty().bind(this.obsrvRadiusY);
-        if (this.boundStartAngle)
-            instance.startAngleProperty().bind(this.obsrvStartAngle);
-        if (this.boundType)
-            instance.typeProperty().bind(this.obsrvType);
+        if (this.bound1CenterX)
+            instance.centerXProperty().bind(this.obsrv1CenterX);
+        if (this.bound2CenterX)
+            instance.centerXProperty().bindBidirectional(this.obsrv2CenterX);
+        if (this.bound1CenterY)
+            instance.centerYProperty().bind(this.obsrv1CenterY);
+        if (this.bound2CenterY)
+            instance.centerYProperty().bindBidirectional(this.obsrv2CenterY);
+        if (this.bound1Length)
+            instance.lengthProperty().bind(this.obsrv1Length);
+        if (this.bound2Length)
+            instance.lengthProperty().bindBidirectional(this.obsrv2Length);
+        if (this.bound1RadiusX)
+            instance.radiusXProperty().bind(this.obsrv1RadiusX);
+        if (this.bound2RadiusX)
+            instance.radiusXProperty().bindBidirectional(this.obsrv2RadiusX);
+        if (this.bound1RadiusY)
+            instance.radiusYProperty().bind(this.obsrv1RadiusY);
+        if (this.bound2RadiusY)
+            instance.radiusYProperty().bindBidirectional(this.obsrv2RadiusY);
+        if (this.bound1StartAngle)
+            instance.startAngleProperty().bind(this.obsrv1StartAngle);
+        if (this.bound2StartAngle)
+            instance.startAngleProperty().bindBidirectional(this.obsrv2StartAngle);
+        if (this.bound1Type)
+            instance.typeProperty().bind(this.obsrv1Type);
+        if (this.bound2Type)
+            instance.typeProperty().bindBidirectional(this.obsrv2Type);
     }
 
     /**
@@ -200,11 +228,30 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindCenterX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindCenterX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCenterX = true;
-        this.obsrvCenterX = source;
+        this.bound1CenterX = true;
+        this.obsrv1CenterX = source;
+        this.bound2CenterX = false;
+        this.obsrv2CenterX = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Arc#centerXProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCenterX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CenterX = false;
+        this.obsrv1CenterX = null;
+        this.bound2CenterX = true;
+        this.obsrv2CenterX = source;
         return (B) this;
     }
 
@@ -215,11 +262,30 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindCenterY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindCenterY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCenterY = true;
-        this.obsrvCenterY = source;
+        this.bound1CenterY = true;
+        this.obsrv1CenterY = source;
+        this.bound2CenterY = false;
+        this.obsrv2CenterY = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Arc#centerYProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCenterY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CenterY = false;
+        this.obsrv1CenterY = null;
+        this.bound2CenterY = true;
+        this.obsrv2CenterY = source;
         return (B) this;
     }
 
@@ -230,11 +296,30 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindLength(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindLength(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundLength = true;
-        this.obsrvLength = source;
+        this.bound1Length = true;
+        this.obsrv1Length = source;
+        this.bound2Length = false;
+        this.obsrv2Length = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Arc#lengthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLength(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Length = false;
+        this.obsrv1Length = null;
+        this.bound2Length = true;
+        this.obsrv2Length = source;
         return (B) this;
     }
 
@@ -245,11 +330,30 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindRadiusX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRadiusX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundRadiusX = true;
-        this.obsrvRadiusX = source;
+        this.bound1RadiusX = true;
+        this.obsrv1RadiusX = source;
+        this.bound2RadiusX = false;
+        this.obsrv2RadiusX = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Arc#radiusXProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRadiusX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1RadiusX = false;
+        this.obsrv1RadiusX = null;
+        this.bound2RadiusX = true;
+        this.obsrv2RadiusX = source;
         return (B) this;
     }
 
@@ -260,11 +364,30 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindRadiusY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRadiusY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundRadiusY = true;
-        this.obsrvRadiusY = source;
+        this.bound1RadiusY = true;
+        this.obsrv1RadiusY = source;
+        this.bound2RadiusY = false;
+        this.obsrv2RadiusY = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Arc#radiusYProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRadiusY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1RadiusY = false;
+        this.obsrv1RadiusY = null;
+        this.bound2RadiusY = true;
+        this.obsrv2RadiusY = source;
         return (B) this;
     }
 
@@ -275,11 +398,30 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindStartAngle(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindStartAngle(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundStartAngle = true;
-        this.obsrvStartAngle = source;
+        this.bound1StartAngle = true;
+        this.obsrv1StartAngle = source;
+        this.bound2StartAngle = false;
+        this.obsrv2StartAngle = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Arc#startAngleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStartAngle(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1StartAngle = false;
+        this.obsrv1StartAngle = null;
+        this.bound2StartAngle = true;
+        this.obsrv2StartAngle = source;
         return (B) this;
     }
 
@@ -293,8 +435,27 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     public final B bindType(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.ArcType> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundType = true;
-        this.obsrvType = source;
+        this.bound1Type = true;
+        this.obsrv1Type = source;
+        this.bound2Type = false;
+        this.obsrv2Type = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Arc#typeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalType(javafx.beans.property.Property<javafx.scene.shape.ArcType> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Type = false;
+        this.obsrv1Type = null;
+        this.bound2Type = true;
+        this.obsrv2Type = source;
         return (B) this;
     }
 

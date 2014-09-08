@@ -28,14 +28,20 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
     private boolean hasRadius;
     private double valRadius;
 
-    private boolean boundCenterX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvCenterX;
+    private boolean bound1CenterX;
+    private boolean bound2CenterX;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1CenterX;
+    private javafx.beans.property.Property<Number> obsrv2CenterX;
 
-    private boolean boundCenterY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvCenterY;
+    private boolean bound1CenterY;
+    private boolean bound2CenterY;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1CenterY;
+    private javafx.beans.property.Property<Number> obsrv2CenterY;
 
-    private boolean boundRadius;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvRadius;
+    private boolean bound1Radius;
+    private boolean bound2Radius;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Radius;
+    private javafx.beans.property.Property<Number> obsrv2Radius;
 
     @Override
     public void applyTo(Z instance)
@@ -47,12 +53,18 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
             instance.setCenterY(this.valCenterY);
         if (this.hasRadius)
             instance.setRadius(this.valRadius);
-        if (this.boundCenterX)
-            instance.centerXProperty().bind(this.obsrvCenterX);
-        if (this.boundCenterY)
-            instance.centerYProperty().bind(this.obsrvCenterY);
-        if (this.boundRadius)
-            instance.radiusProperty().bind(this.obsrvRadius);
+        if (this.bound1CenterX)
+            instance.centerXProperty().bind(this.obsrv1CenterX);
+        if (this.bound2CenterX)
+            instance.centerXProperty().bindBidirectional(this.obsrv2CenterX);
+        if (this.bound1CenterY)
+            instance.centerYProperty().bind(this.obsrv1CenterY);
+        if (this.bound2CenterY)
+            instance.centerYProperty().bindBidirectional(this.obsrv2CenterY);
+        if (this.bound1Radius)
+            instance.radiusProperty().bind(this.obsrv1Radius);
+        if (this.bound2Radius)
+            instance.radiusProperty().bindBidirectional(this.obsrv2Radius);
     }
 
     /**
@@ -104,11 +116,30 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindCenterX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindCenterX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCenterX = true;
-        this.obsrvCenterX = source;
+        this.bound1CenterX = true;
+        this.obsrv1CenterX = source;
+        this.bound2CenterX = false;
+        this.obsrv2CenterX = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Circle#centerXProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCenterX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CenterX = false;
+        this.obsrv1CenterX = null;
+        this.bound2CenterX = true;
+        this.obsrv2CenterX = source;
         return (B) this;
     }
 
@@ -119,11 +150,30 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindCenterY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindCenterY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCenterY = true;
-        this.obsrvCenterY = source;
+        this.bound1CenterY = true;
+        this.obsrv1CenterY = source;
+        this.bound2CenterY = false;
+        this.obsrv2CenterY = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Circle#centerYProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCenterY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CenterY = false;
+        this.obsrv1CenterY = null;
+        this.bound2CenterY = true;
+        this.obsrv2CenterY = source;
         return (B) this;
     }
 
@@ -134,11 +184,30 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRadius(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundRadius = true;
-        this.obsrvRadius = source;
+        this.bound1Radius = true;
+        this.obsrv1Radius = source;
+        this.bound2Radius = false;
+        this.obsrv2Radius = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Circle#radiusProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRadius(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Radius = false;
+        this.obsrv1Radius = null;
+        this.bound2Radius = true;
+        this.obsrv2Radius = source;
         return (B) this;
     }
 

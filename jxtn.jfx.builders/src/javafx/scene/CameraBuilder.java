@@ -25,11 +25,15 @@ public class CameraBuilder<Z extends Camera, B extends CameraBuilder<Z, B>>
     private boolean hasNearClip;
     private double valNearClip;
 
-    private boolean boundFarClip;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvFarClip;
+    private boolean bound1FarClip;
+    private boolean bound2FarClip;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1FarClip;
+    private javafx.beans.property.Property<Number> obsrv2FarClip;
 
-    private boolean boundNearClip;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvNearClip;
+    private boolean bound1NearClip;
+    private boolean bound2NearClip;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1NearClip;
+    private javafx.beans.property.Property<Number> obsrv2NearClip;
 
     @Override
     public void applyTo(Z instance)
@@ -39,10 +43,14 @@ public class CameraBuilder<Z extends Camera, B extends CameraBuilder<Z, B>>
             instance.setFarClip(this.valFarClip);
         if (this.hasNearClip)
             instance.setNearClip(this.valNearClip);
-        if (this.boundFarClip)
-            instance.farClipProperty().bind(this.obsrvFarClip);
-        if (this.boundNearClip)
-            instance.nearClipProperty().bind(this.obsrvNearClip);
+        if (this.bound1FarClip)
+            instance.farClipProperty().bind(this.obsrv1FarClip);
+        if (this.bound2FarClip)
+            instance.farClipProperty().bindBidirectional(this.obsrv2FarClip);
+        if (this.bound1NearClip)
+            instance.nearClipProperty().bind(this.obsrv1NearClip);
+        if (this.bound2NearClip)
+            instance.nearClipProperty().bindBidirectional(this.obsrv2NearClip);
     }
 
     /**
@@ -80,11 +88,30 @@ public class CameraBuilder<Z extends Camera, B extends CameraBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindFarClip(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindFarClip(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFarClip = true;
-        this.obsrvFarClip = source;
+        this.bound1FarClip = true;
+        this.obsrv1FarClip = source;
+        this.bound2FarClip = false;
+        this.obsrv2FarClip = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Camera#farClipProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFarClip(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FarClip = false;
+        this.obsrv1FarClip = null;
+        this.bound2FarClip = true;
+        this.obsrv2FarClip = source;
         return (B) this;
     }
 
@@ -95,11 +122,30 @@ public class CameraBuilder<Z extends Camera, B extends CameraBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindNearClip(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindNearClip(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundNearClip = true;
-        this.obsrvNearClip = source;
+        this.bound1NearClip = true;
+        this.obsrv1NearClip = source;
+        this.bound2NearClip = false;
+        this.obsrv2NearClip = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Camera#nearClipProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalNearClip(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1NearClip = false;
+        this.obsrv1NearClip = null;
+        this.bound2NearClip = true;
+        this.obsrv2NearClip = source;
         return (B) this;
     }
 }

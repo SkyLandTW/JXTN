@@ -44,9 +44,12 @@ import java.util.function.ToLongFunction;
 import jxtn.core.axi.collections.ConcatedIterator;
 import jxtn.core.axi.collections.ExpandedIterator;
 import jxtn.core.axi.collections.FilteredIterator;
+import jxtn.core.axi.collections.IndexedItem;
+import jxtn.core.axi.collections.IndexedIterator;
 import jxtn.core.axi.collections.LinkLineIterator;
 import jxtn.core.axi.collections.LinkTreeIterator;
 import jxtn.core.axi.collections.MappedIterator;
+import jxtn.core.axi.collections.SkippedIterator;
 
 /**
  * {@link Iterable}的延伸功能
@@ -212,6 +215,17 @@ public interface IterableExt<T>
     }
 
     /**
+     * 建立加上索引的列舉
+     *
+     * @return 加上索引的列舉，依賴原有的列舉
+     */
+    default Iterable<IndexedItem<T>> indexed()
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return () -> new IndexedIterator<>(thiz.iterator());
+    }
+
+    /**
      * 依照對照函數建立對照列舉
      *
      * @param <R> 對照項目型態
@@ -225,16 +239,28 @@ public interface IterableExt<T>
     }
 
     /**
-     * 取得指定型態的項目列舉
+     * 建立只包含指定型態項目的列舉
      *
-     * @param <R> 要取得的項目型態
+     * @param <R> 要取得項目的型態
      * @param type 要取得項目的型態
-     * @return 包含{@code type}型態項目的列舉
+     * @return 只包含{@code type}型態項目的列舉
      */
     @SuppressWarnings("unchecked")
     default <R extends T> Iterable<R> ofType(Class<R> type)
     {
         return this.filter(type::isInstance).map(t -> (R) t);
+    }
+
+    /**
+     * 建立跳過指定項目數量的列舉
+     *
+     * @param count 要跳過的項目數量
+     * @return 跳過指定數量的列舉，依賴原有的列舉
+     */
+    default Iterable<T> skip(int count)
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return () -> new SkippedIterator<>(thiz.iterator(), count);
     }
 
     //////////////////////////////////////////////////////////////////////////

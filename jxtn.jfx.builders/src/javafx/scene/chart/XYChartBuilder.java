@@ -40,26 +40,40 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     private boolean hasVerticalZeroLineVisible;
     private boolean valVerticalZeroLineVisible;
 
-    private boolean boundAlternativeColumnFillVisible;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvAlternativeColumnFillVisible;
+    private boolean bound1AlternativeColumnFillVisible;
+    private boolean bound2AlternativeColumnFillVisible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1AlternativeColumnFillVisible;
+    private javafx.beans.property.Property<Boolean> obsrv2AlternativeColumnFillVisible;
 
-    private boolean boundAlternativeRowFillVisible;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvAlternativeRowFillVisible;
+    private boolean bound1AlternativeRowFillVisible;
+    private boolean bound2AlternativeRowFillVisible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1AlternativeRowFillVisible;
+    private javafx.beans.property.Property<Boolean> obsrv2AlternativeRowFillVisible;
 
-    private boolean boundData;
-    private javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<javafx.scene.chart.XYChart.Series<X, Y>>> obsrvData;
+    private boolean bound1Data;
+    private boolean bound2Data;
+    private javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<javafx.scene.chart.XYChart.Series<X, Y>>> obsrv1Data;
+    private javafx.beans.property.Property<javafx.collections.ObservableList<javafx.scene.chart.XYChart.Series<X, Y>>> obsrv2Data;
 
-    private boolean boundHorizontalGridLinesVisible;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvHorizontalGridLinesVisible;
+    private boolean bound1HorizontalGridLinesVisible;
+    private boolean bound2HorizontalGridLinesVisible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1HorizontalGridLinesVisible;
+    private javafx.beans.property.Property<Boolean> obsrv2HorizontalGridLinesVisible;
 
-    private boolean boundHorizontalZeroLineVisible;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvHorizontalZeroLineVisible;
+    private boolean bound1HorizontalZeroLineVisible;
+    private boolean bound2HorizontalZeroLineVisible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1HorizontalZeroLineVisible;
+    private javafx.beans.property.Property<Boolean> obsrv2HorizontalZeroLineVisible;
 
-    private boolean boundVerticalGridLinesVisible;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvVerticalGridLinesVisible;
+    private boolean bound1VerticalGridLinesVisible;
+    private boolean bound2VerticalGridLinesVisible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1VerticalGridLinesVisible;
+    private javafx.beans.property.Property<Boolean> obsrv2VerticalGridLinesVisible;
 
-    private boolean boundVerticalZeroLineVisible;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvVerticalZeroLineVisible;
+    private boolean bound1VerticalZeroLineVisible;
+    private boolean bound2VerticalZeroLineVisible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1VerticalZeroLineVisible;
+    private javafx.beans.property.Property<Boolean> obsrv2VerticalZeroLineVisible;
 
     @Override
     public void applyTo(Z instance)
@@ -79,20 +93,34 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
             instance.setVerticalGridLinesVisible(this.valVerticalGridLinesVisible);
         if (this.hasVerticalZeroLineVisible)
             instance.setVerticalZeroLineVisible(this.valVerticalZeroLineVisible);
-        if (this.boundAlternativeColumnFillVisible)
-            instance.alternativeColumnFillVisibleProperty().bind(this.obsrvAlternativeColumnFillVisible);
-        if (this.boundAlternativeRowFillVisible)
-            instance.alternativeRowFillVisibleProperty().bind(this.obsrvAlternativeRowFillVisible);
-        if (this.boundData)
-            instance.dataProperty().bind(this.obsrvData);
-        if (this.boundHorizontalGridLinesVisible)
-            instance.horizontalGridLinesVisibleProperty().bind(this.obsrvHorizontalGridLinesVisible);
-        if (this.boundHorizontalZeroLineVisible)
-            instance.horizontalZeroLineVisibleProperty().bind(this.obsrvHorizontalZeroLineVisible);
-        if (this.boundVerticalGridLinesVisible)
-            instance.verticalGridLinesVisibleProperty().bind(this.obsrvVerticalGridLinesVisible);
-        if (this.boundVerticalZeroLineVisible)
-            instance.verticalZeroLineVisibleProperty().bind(this.obsrvVerticalZeroLineVisible);
+        if (this.bound1AlternativeColumnFillVisible)
+            instance.alternativeColumnFillVisibleProperty().bind(this.obsrv1AlternativeColumnFillVisible);
+        if (this.bound2AlternativeColumnFillVisible)
+            instance.alternativeColumnFillVisibleProperty().bindBidirectional(this.obsrv2AlternativeColumnFillVisible);
+        if (this.bound1AlternativeRowFillVisible)
+            instance.alternativeRowFillVisibleProperty().bind(this.obsrv1AlternativeRowFillVisible);
+        if (this.bound2AlternativeRowFillVisible)
+            instance.alternativeRowFillVisibleProperty().bindBidirectional(this.obsrv2AlternativeRowFillVisible);
+        if (this.bound1Data)
+            instance.dataProperty().bind(this.obsrv1Data);
+        if (this.bound2Data)
+            instance.dataProperty().bindBidirectional(this.obsrv2Data);
+        if (this.bound1HorizontalGridLinesVisible)
+            instance.horizontalGridLinesVisibleProperty().bind(this.obsrv1HorizontalGridLinesVisible);
+        if (this.bound2HorizontalGridLinesVisible)
+            instance.horizontalGridLinesVisibleProperty().bindBidirectional(this.obsrv2HorizontalGridLinesVisible);
+        if (this.bound1HorizontalZeroLineVisible)
+            instance.horizontalZeroLineVisibleProperty().bind(this.obsrv1HorizontalZeroLineVisible);
+        if (this.bound2HorizontalZeroLineVisible)
+            instance.horizontalZeroLineVisibleProperty().bindBidirectional(this.obsrv2HorizontalZeroLineVisible);
+        if (this.bound1VerticalGridLinesVisible)
+            instance.verticalGridLinesVisibleProperty().bind(this.obsrv1VerticalGridLinesVisible);
+        if (this.bound2VerticalGridLinesVisible)
+            instance.verticalGridLinesVisibleProperty().bindBidirectional(this.obsrv2VerticalGridLinesVisible);
+        if (this.bound1VerticalZeroLineVisible)
+            instance.verticalZeroLineVisibleProperty().bind(this.obsrv1VerticalZeroLineVisible);
+        if (this.bound2VerticalZeroLineVisible)
+            instance.verticalZeroLineVisibleProperty().bindBidirectional(this.obsrv2VerticalZeroLineVisible);
     }
 
     /**
@@ -203,8 +231,27 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     public final B bindAlternativeColumnFillVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAlternativeColumnFillVisible = true;
-        this.obsrvAlternativeColumnFillVisible = source;
+        this.bound1AlternativeColumnFillVisible = true;
+        this.obsrv1AlternativeColumnFillVisible = source;
+        this.bound2AlternativeColumnFillVisible = false;
+        this.obsrv2AlternativeColumnFillVisible = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link XYChart#alternativeColumnFillVisibleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAlternativeColumnFillVisible(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AlternativeColumnFillVisible = false;
+        this.obsrv1AlternativeColumnFillVisible = null;
+        this.bound2AlternativeColumnFillVisible = true;
+        this.obsrv2AlternativeColumnFillVisible = source;
         return (B) this;
     }
 
@@ -218,8 +265,27 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     public final B bindAlternativeRowFillVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAlternativeRowFillVisible = true;
-        this.obsrvAlternativeRowFillVisible = source;
+        this.bound1AlternativeRowFillVisible = true;
+        this.obsrv1AlternativeRowFillVisible = source;
+        this.bound2AlternativeRowFillVisible = false;
+        this.obsrv2AlternativeRowFillVisible = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link XYChart#alternativeRowFillVisibleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAlternativeRowFillVisible(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AlternativeRowFillVisible = false;
+        this.obsrv1AlternativeRowFillVisible = null;
+        this.bound2AlternativeRowFillVisible = true;
+        this.obsrv2AlternativeRowFillVisible = source;
         return (B) this;
     }
 
@@ -233,8 +299,27 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     public final B bindData(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<javafx.scene.chart.XYChart.Series<X, Y>>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundData = true;
-        this.obsrvData = source;
+        this.bound1Data = true;
+        this.obsrv1Data = source;
+        this.bound2Data = false;
+        this.obsrv2Data = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link XYChart#dataProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalData(javafx.beans.property.Property<javafx.collections.ObservableList<javafx.scene.chart.XYChart.Series<X, Y>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Data = false;
+        this.obsrv1Data = null;
+        this.bound2Data = true;
+        this.obsrv2Data = source;
         return (B) this;
     }
 
@@ -248,8 +333,27 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     public final B bindHorizontalGridLinesVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundHorizontalGridLinesVisible = true;
-        this.obsrvHorizontalGridLinesVisible = source;
+        this.bound1HorizontalGridLinesVisible = true;
+        this.obsrv1HorizontalGridLinesVisible = source;
+        this.bound2HorizontalGridLinesVisible = false;
+        this.obsrv2HorizontalGridLinesVisible = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link XYChart#horizontalGridLinesVisibleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHorizontalGridLinesVisible(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1HorizontalGridLinesVisible = false;
+        this.obsrv1HorizontalGridLinesVisible = null;
+        this.bound2HorizontalGridLinesVisible = true;
+        this.obsrv2HorizontalGridLinesVisible = source;
         return (B) this;
     }
 
@@ -263,8 +367,27 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     public final B bindHorizontalZeroLineVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundHorizontalZeroLineVisible = true;
-        this.obsrvHorizontalZeroLineVisible = source;
+        this.bound1HorizontalZeroLineVisible = true;
+        this.obsrv1HorizontalZeroLineVisible = source;
+        this.bound2HorizontalZeroLineVisible = false;
+        this.obsrv2HorizontalZeroLineVisible = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link XYChart#horizontalZeroLineVisibleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHorizontalZeroLineVisible(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1HorizontalZeroLineVisible = false;
+        this.obsrv1HorizontalZeroLineVisible = null;
+        this.bound2HorizontalZeroLineVisible = true;
+        this.obsrv2HorizontalZeroLineVisible = source;
         return (B) this;
     }
 
@@ -278,8 +401,27 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     public final B bindVerticalGridLinesVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundVerticalGridLinesVisible = true;
-        this.obsrvVerticalGridLinesVisible = source;
+        this.bound1VerticalGridLinesVisible = true;
+        this.obsrv1VerticalGridLinesVisible = source;
+        this.bound2VerticalGridLinesVisible = false;
+        this.obsrv2VerticalGridLinesVisible = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link XYChart#verticalGridLinesVisibleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalVerticalGridLinesVisible(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1VerticalGridLinesVisible = false;
+        this.obsrv1VerticalGridLinesVisible = null;
+        this.bound2VerticalGridLinesVisible = true;
+        this.obsrv2VerticalGridLinesVisible = source;
         return (B) this;
     }
 
@@ -293,8 +435,27 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     public final B bindVerticalZeroLineVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundVerticalZeroLineVisible = true;
-        this.obsrvVerticalZeroLineVisible = source;
+        this.bound1VerticalZeroLineVisible = true;
+        this.obsrv1VerticalZeroLineVisible = source;
+        this.bound2VerticalZeroLineVisible = false;
+        this.obsrv2VerticalZeroLineVisible = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link XYChart#verticalZeroLineVisibleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalVerticalZeroLineVisible(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1VerticalZeroLineVisible = false;
+        this.obsrv1VerticalZeroLineVisible = null;
+        this.bound2VerticalZeroLineVisible = true;
+        this.obsrv2VerticalZeroLineVisible = source;
         return (B) this;
     }
 }

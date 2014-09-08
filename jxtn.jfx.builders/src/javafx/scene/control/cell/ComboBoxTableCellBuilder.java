@@ -28,11 +28,15 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
     private boolean hasItems;
     private java.util.Collection<T> valItems;
 
-    private boolean boundComboBoxEditable;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvComboBoxEditable;
+    private boolean bound1ComboBoxEditable;
+    private boolean bound2ComboBoxEditable;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ComboBoxEditable;
+    private javafx.beans.property.Property<Boolean> obsrv2ComboBoxEditable;
 
-    private boolean boundConverter;
-    private javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> obsrvConverter;
+    private boolean bound1Converter;
+    private boolean bound2Converter;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> obsrv1Converter;
+    private javafx.beans.property.Property<javafx.util.StringConverter<T>> obsrv2Converter;
 
     @Override
     public void applyTo(Z instance)
@@ -44,10 +48,14 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
             instance.setConverter(this.valConverter);
         if (this.hasItems)
             instance.getItems().setAll(this.valItems);
-        if (this.boundComboBoxEditable)
-            instance.comboBoxEditableProperty().bind(this.obsrvComboBoxEditable);
-        if (this.boundConverter)
-            instance.converterProperty().bind(this.obsrvConverter);
+        if (this.bound1ComboBoxEditable)
+            instance.comboBoxEditableProperty().bind(this.obsrv1ComboBoxEditable);
+        if (this.bound2ComboBoxEditable)
+            instance.comboBoxEditableProperty().bindBidirectional(this.obsrv2ComboBoxEditable);
+        if (this.bound1Converter)
+            instance.converterProperty().bind(this.obsrv1Converter);
+        if (this.bound2Converter)
+            instance.converterProperty().bindBidirectional(this.obsrv2Converter);
     }
 
     /**
@@ -117,8 +125,27 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
     public final B bindComboBoxEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundComboBoxEditable = true;
-        this.obsrvComboBoxEditable = source;
+        this.bound1ComboBoxEditable = true;
+        this.obsrv1ComboBoxEditable = source;
+        this.bound2ComboBoxEditable = false;
+        this.obsrv2ComboBoxEditable = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ComboBoxTableCell#comboBoxEditableProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalComboBoxEditable(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ComboBoxEditable = false;
+        this.obsrv1ComboBoxEditable = null;
+        this.bound2ComboBoxEditable = true;
+        this.obsrv2ComboBoxEditable = source;
         return (B) this;
     }
 
@@ -132,8 +159,27 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
     public final B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundConverter = true;
-        this.obsrvConverter = source;
+        this.bound1Converter = true;
+        this.obsrv1Converter = source;
+        this.bound2Converter = false;
+        this.obsrv2Converter = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ComboBoxTableCell#converterProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalConverter(javafx.beans.property.Property<javafx.util.StringConverter<T>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Converter = false;
+        this.obsrv1Converter = null;
+        this.bound2Converter = true;
+        this.obsrv2Converter = source;
         return (B) this;
     }
 

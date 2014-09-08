@@ -28,14 +28,20 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
     private boolean hasValignment;
     private javafx.geometry.VPos valValignment;
 
-    private boolean boundHalignment;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.HPos> obsrvHalignment;
+    private boolean bound1Halignment;
+    private boolean bound2Halignment;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.HPos> obsrv1Halignment;
+    private javafx.beans.property.Property<javafx.geometry.HPos> obsrv2Halignment;
 
-    private boolean boundOrientation;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrvOrientation;
+    private boolean bound1Orientation;
+    private boolean bound2Orientation;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrv1Orientation;
+    private javafx.beans.property.Property<javafx.geometry.Orientation> obsrv2Orientation;
 
-    private boolean boundValignment;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> obsrvValignment;
+    private boolean bound1Valignment;
+    private boolean bound2Valignment;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> obsrv1Valignment;
+    private javafx.beans.property.Property<javafx.geometry.VPos> obsrv2Valignment;
 
     @Override
     public void applyTo(Z instance)
@@ -47,12 +53,18 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
             instance.setOrientation(this.valOrientation);
         if (this.hasValignment)
             instance.setValignment(this.valValignment);
-        if (this.boundHalignment)
-            instance.halignmentProperty().bind(this.obsrvHalignment);
-        if (this.boundOrientation)
-            instance.orientationProperty().bind(this.obsrvOrientation);
-        if (this.boundValignment)
-            instance.valignmentProperty().bind(this.obsrvValignment);
+        if (this.bound1Halignment)
+            instance.halignmentProperty().bind(this.obsrv1Halignment);
+        if (this.bound2Halignment)
+            instance.halignmentProperty().bindBidirectional(this.obsrv2Halignment);
+        if (this.bound1Orientation)
+            instance.orientationProperty().bind(this.obsrv1Orientation);
+        if (this.bound2Orientation)
+            instance.orientationProperty().bindBidirectional(this.obsrv2Orientation);
+        if (this.bound1Valignment)
+            instance.valignmentProperty().bind(this.obsrv1Valignment);
+        if (this.bound2Valignment)
+            instance.valignmentProperty().bindBidirectional(this.obsrv2Valignment);
     }
 
     /**
@@ -107,8 +119,27 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
     public final B bindHalignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.HPos> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundHalignment = true;
-        this.obsrvHalignment = source;
+        this.bound1Halignment = true;
+        this.obsrv1Halignment = source;
+        this.bound2Halignment = false;
+        this.obsrv2Halignment = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Separator#halignmentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHalignment(javafx.beans.property.Property<javafx.geometry.HPos> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Halignment = false;
+        this.obsrv1Halignment = null;
+        this.bound2Halignment = true;
+        this.obsrv2Halignment = source;
         return (B) this;
     }
 
@@ -122,8 +153,27 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
     public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOrientation = true;
-        this.obsrvOrientation = source;
+        this.bound1Orientation = true;
+        this.obsrv1Orientation = source;
+        this.bound2Orientation = false;
+        this.obsrv2Orientation = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Separator#orientationProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOrientation(javafx.beans.property.Property<javafx.geometry.Orientation> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Orientation = false;
+        this.obsrv1Orientation = null;
+        this.bound2Orientation = true;
+        this.obsrv2Orientation = source;
         return (B) this;
     }
 
@@ -137,8 +187,27 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
     public final B bindValignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundValignment = true;
-        this.obsrvValignment = source;
+        this.bound1Valignment = true;
+        this.obsrv1Valignment = source;
+        this.bound2Valignment = false;
+        this.obsrv2Valignment = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Separator#valignmentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalValignment(javafx.beans.property.Property<javafx.geometry.VPos> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Valignment = false;
+        this.obsrv1Valignment = null;
+        this.bound2Valignment = true;
+        this.obsrv2Valignment = source;
         return (B) this;
     }
 

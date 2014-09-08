@@ -49,14 +49,20 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     private boolean hasZoom;
     private double valZoom;
 
-    private boolean boundContextMenuEnabled;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvContextMenuEnabled;
+    private boolean bound1ContextMenuEnabled;
+    private boolean bound2ContextMenuEnabled;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ContextMenuEnabled;
+    private javafx.beans.property.Property<Boolean> obsrv2ContextMenuEnabled;
 
-    private boolean boundFontSmoothingType;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.text.FontSmoothingType> obsrvFontSmoothingType;
+    private boolean bound1FontSmoothingType;
+    private boolean bound2FontSmoothingType;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.text.FontSmoothingType> obsrv1FontSmoothingType;
+    private javafx.beans.property.Property<javafx.scene.text.FontSmoothingType> obsrv2FontSmoothingType;
 
-    private boolean boundZoom;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvZoom;
+    private boolean bound1Zoom;
+    private boolean bound2Zoom;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Zoom;
+    private javafx.beans.property.Property<Number> obsrv2Zoom;
 
     @Override
     public void applyTo(Z instance)
@@ -82,12 +88,18 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
             instance.setPrefWidth(this.valPrefWidth);
         if (this.hasZoom)
             instance.setZoom(this.valZoom);
-        if (this.boundContextMenuEnabled)
-            instance.contextMenuEnabledProperty().bind(this.obsrvContextMenuEnabled);
-        if (this.boundFontSmoothingType)
-            instance.fontSmoothingTypeProperty().bind(this.obsrvFontSmoothingType);
-        if (this.boundZoom)
-            instance.zoomProperty().bind(this.obsrvZoom);
+        if (this.bound1ContextMenuEnabled)
+            instance.contextMenuEnabledProperty().bind(this.obsrv1ContextMenuEnabled);
+        if (this.bound2ContextMenuEnabled)
+            instance.contextMenuEnabledProperty().bindBidirectional(this.obsrv2ContextMenuEnabled);
+        if (this.bound1FontSmoothingType)
+            instance.fontSmoothingTypeProperty().bind(this.obsrv1FontSmoothingType);
+        if (this.bound2FontSmoothingType)
+            instance.fontSmoothingTypeProperty().bindBidirectional(this.obsrv2FontSmoothingType);
+        if (this.bound1Zoom)
+            instance.zoomProperty().bind(this.obsrv1Zoom);
+        if (this.bound2Zoom)
+            instance.zoomProperty().bindBidirectional(this.obsrv2Zoom);
     }
 
     /**
@@ -240,8 +252,27 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     public final B bindContextMenuEnabled(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundContextMenuEnabled = true;
-        this.obsrvContextMenuEnabled = source;
+        this.bound1ContextMenuEnabled = true;
+        this.obsrv1ContextMenuEnabled = source;
+        this.bound2ContextMenuEnabled = false;
+        this.obsrv2ContextMenuEnabled = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link WebView#contextMenuEnabledProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalContextMenuEnabled(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ContextMenuEnabled = false;
+        this.obsrv1ContextMenuEnabled = null;
+        this.bound2ContextMenuEnabled = true;
+        this.obsrv2ContextMenuEnabled = source;
         return (B) this;
     }
 
@@ -255,8 +286,27 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     public final B bindFontSmoothingType(javafx.beans.value.ObservableValue<? extends javafx.scene.text.FontSmoothingType> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFontSmoothingType = true;
-        this.obsrvFontSmoothingType = source;
+        this.bound1FontSmoothingType = true;
+        this.obsrv1FontSmoothingType = source;
+        this.bound2FontSmoothingType = false;
+        this.obsrv2FontSmoothingType = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link WebView#fontSmoothingTypeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFontSmoothingType(javafx.beans.property.Property<javafx.scene.text.FontSmoothingType> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FontSmoothingType = false;
+        this.obsrv1FontSmoothingType = null;
+        this.bound2FontSmoothingType = true;
+        this.obsrv2FontSmoothingType = source;
         return (B) this;
     }
 
@@ -267,11 +317,30 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindZoom(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindZoom(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundZoom = true;
-        this.obsrvZoom = source;
+        this.bound1Zoom = true;
+        this.obsrv1Zoom = source;
+        this.bound2Zoom = false;
+        this.obsrv2Zoom = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link WebView#zoomProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalZoom(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Zoom = false;
+        this.obsrv1Zoom = null;
+        this.bound2Zoom = true;
+        this.obsrv2Zoom = source;
         return (B) this;
     }
 

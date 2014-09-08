@@ -25,8 +25,10 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
     private boolean hasFillRule;
     private javafx.scene.shape.FillRule valFillRule;
 
-    private boolean boundFillRule;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.FillRule> obsrvFillRule;
+    private boolean bound1FillRule;
+    private boolean bound2FillRule;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.FillRule> obsrv1FillRule;
+    private javafx.beans.property.Property<javafx.scene.shape.FillRule> obsrv2FillRule;
 
     @Override
     public void applyTo(Z instance)
@@ -36,8 +38,10 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
             instance.getElements().setAll(this.valElements);
         if (this.hasFillRule)
             instance.setFillRule(this.valFillRule);
-        if (this.boundFillRule)
-            instance.fillRuleProperty().bind(this.obsrvFillRule);
+        if (this.bound1FillRule)
+            instance.fillRuleProperty().bind(this.obsrv1FillRule);
+        if (this.bound2FillRule)
+            instance.fillRuleProperty().bindBidirectional(this.obsrv2FillRule);
     }
 
     /**
@@ -93,8 +97,27 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
     public final B bindFillRule(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.FillRule> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFillRule = true;
-        this.obsrvFillRule = source;
+        this.bound1FillRule = true;
+        this.obsrv1FillRule = source;
+        this.bound2FillRule = false;
+        this.obsrv2FillRule = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Path#fillRuleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFillRule(javafx.beans.property.Property<javafx.scene.shape.FillRule> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FillRule = false;
+        this.obsrv1FillRule = null;
+        this.bound2FillRule = true;
+        this.obsrv2FillRule = source;
         return (B) this;
     }
 

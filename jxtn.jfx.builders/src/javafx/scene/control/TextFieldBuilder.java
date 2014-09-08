@@ -28,14 +28,20 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
     private boolean hasPrefColumnCount;
     private int valPrefColumnCount;
 
-    private boolean boundAlignment;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> obsrvAlignment;
+    private boolean bound1Alignment;
+    private boolean bound2Alignment;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> obsrv1Alignment;
+    private javafx.beans.property.Property<javafx.geometry.Pos> obsrv2Alignment;
 
-    private boolean boundOnAction;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> obsrvOnAction;
+    private boolean bound1OnAction;
+    private boolean bound2OnAction;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> obsrv1OnAction;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.ActionEvent>> obsrv2OnAction;
 
-    private boolean boundPrefColumnCount;
-    private javafx.beans.value.ObservableValue<? extends Integer> obsrvPrefColumnCount;
+    private boolean bound1PrefColumnCount;
+    private boolean bound2PrefColumnCount;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PrefColumnCount;
+    private javafx.beans.property.Property<Number> obsrv2PrefColumnCount;
 
     @Override
     public void applyTo(Z instance)
@@ -47,12 +53,18 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
             instance.setOnAction(this.valOnAction);
         if (this.hasPrefColumnCount)
             instance.setPrefColumnCount(this.valPrefColumnCount);
-        if (this.boundAlignment)
-            instance.alignmentProperty().bind(this.obsrvAlignment);
-        if (this.boundOnAction)
-            instance.onActionProperty().bind(this.obsrvOnAction);
-        if (this.boundPrefColumnCount)
-            instance.prefColumnCountProperty().bind(this.obsrvPrefColumnCount);
+        if (this.bound1Alignment)
+            instance.alignmentProperty().bind(this.obsrv1Alignment);
+        if (this.bound2Alignment)
+            instance.alignmentProperty().bindBidirectional(this.obsrv2Alignment);
+        if (this.bound1OnAction)
+            instance.onActionProperty().bind(this.obsrv1OnAction);
+        if (this.bound2OnAction)
+            instance.onActionProperty().bindBidirectional(this.obsrv2OnAction);
+        if (this.bound1PrefColumnCount)
+            instance.prefColumnCountProperty().bind(this.obsrv1PrefColumnCount);
+        if (this.bound2PrefColumnCount)
+            instance.prefColumnCountProperty().bindBidirectional(this.obsrv2PrefColumnCount);
     }
 
     /**
@@ -107,8 +119,27 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
     public final B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAlignment = true;
-        this.obsrvAlignment = source;
+        this.bound1Alignment = true;
+        this.obsrv1Alignment = source;
+        this.bound2Alignment = false;
+        this.obsrv2Alignment = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TextField#alignmentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAlignment(javafx.beans.property.Property<javafx.geometry.Pos> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Alignment = false;
+        this.obsrv1Alignment = null;
+        this.bound2Alignment = true;
+        this.obsrv2Alignment = source;
         return (B) this;
     }
 
@@ -122,8 +153,27 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
     public final B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnAction = true;
-        this.obsrvOnAction = source;
+        this.bound1OnAction = true;
+        this.obsrv1OnAction = source;
+        this.bound2OnAction = false;
+        this.obsrv2OnAction = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TextField#onActionProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnAction(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.ActionEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnAction = false;
+        this.obsrv1OnAction = null;
+        this.bound2OnAction = true;
+        this.obsrv2OnAction = source;
         return (B) this;
     }
 
@@ -134,11 +184,30 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPrefColumnCount(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindPrefColumnCount(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPrefColumnCount = true;
-        this.obsrvPrefColumnCount = source;
+        this.bound1PrefColumnCount = true;
+        this.obsrv1PrefColumnCount = source;
+        this.bound2PrefColumnCount = false;
+        this.obsrv2PrefColumnCount = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TextField#prefColumnCountProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPrefColumnCount(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PrefColumnCount = false;
+        this.obsrv1PrefColumnCount = null;
+        this.bound2PrefColumnCount = true;
+        this.obsrv2PrefColumnCount = source;
         return (B) this;
     }
 

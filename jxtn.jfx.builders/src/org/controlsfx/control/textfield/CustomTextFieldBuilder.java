@@ -25,11 +25,15 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
     private boolean hasRight;
     private javafx.scene.Node valRight;
 
-    private boolean boundLeft;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvLeft;
+    private boolean bound1Left;
+    private boolean bound2Left;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Left;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Left;
 
-    private boolean boundRight;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvRight;
+    private boolean bound1Right;
+    private boolean bound2Right;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Right;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Right;
 
     @Override
     public void applyTo(Z instance)
@@ -39,10 +43,14 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
             instance.setLeft(this.valLeft);
         if (this.hasRight)
             instance.setRight(this.valRight);
-        if (this.boundLeft)
-            instance.leftProperty().bind(this.obsrvLeft);
-        if (this.boundRight)
-            instance.rightProperty().bind(this.obsrvRight);
+        if (this.bound1Left)
+            instance.leftProperty().bind(this.obsrv1Left);
+        if (this.bound2Left)
+            instance.leftProperty().bindBidirectional(this.obsrv2Left);
+        if (this.bound1Right)
+            instance.rightProperty().bind(this.obsrv1Right);
+        if (this.bound2Right)
+            instance.rightProperty().bindBidirectional(this.obsrv2Right);
     }
 
     /**
@@ -83,8 +91,27 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
     public final B bindLeft(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundLeft = true;
-        this.obsrvLeft = source;
+        this.bound1Left = true;
+        this.obsrv1Left = source;
+        this.bound2Left = false;
+        this.obsrv2Left = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CustomTextField#leftProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLeft(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Left = false;
+        this.obsrv1Left = null;
+        this.bound2Left = true;
+        this.obsrv2Left = source;
         return (B) this;
     }
 
@@ -98,8 +125,27 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
     public final B bindRight(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundRight = true;
-        this.obsrvRight = source;
+        this.bound1Right = true;
+        this.obsrv1Right = source;
+        this.bound2Right = false;
+        this.obsrv2Right = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CustomTextField#rightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRight(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Right = false;
+        this.obsrv1Right = null;
+        this.bound2Right = true;
+        this.obsrv2Right = source;
         return (B) this;
     }
 

@@ -25,8 +25,10 @@ public class MenuBarBuilder<Z extends MenuBar, B extends MenuBarBuilder<Z, B>>
     private boolean hasUseSystemMenuBar;
     private boolean valUseSystemMenuBar;
 
-    private boolean boundUseSystemMenuBar;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvUseSystemMenuBar;
+    private boolean bound1UseSystemMenuBar;
+    private boolean bound2UseSystemMenuBar;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1UseSystemMenuBar;
+    private javafx.beans.property.Property<Boolean> obsrv2UseSystemMenuBar;
 
     @Override
     public void applyTo(Z instance)
@@ -36,8 +38,10 @@ public class MenuBarBuilder<Z extends MenuBar, B extends MenuBarBuilder<Z, B>>
             instance.getMenus().setAll(this.valMenus);
         if (this.hasUseSystemMenuBar)
             instance.setUseSystemMenuBar(this.valUseSystemMenuBar);
-        if (this.boundUseSystemMenuBar)
-            instance.useSystemMenuBarProperty().bind(this.obsrvUseSystemMenuBar);
+        if (this.bound1UseSystemMenuBar)
+            instance.useSystemMenuBarProperty().bind(this.obsrv1UseSystemMenuBar);
+        if (this.bound2UseSystemMenuBar)
+            instance.useSystemMenuBarProperty().bindBidirectional(this.obsrv2UseSystemMenuBar);
     }
 
     /**
@@ -93,8 +97,27 @@ public class MenuBarBuilder<Z extends MenuBar, B extends MenuBarBuilder<Z, B>>
     public final B bindUseSystemMenuBar(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundUseSystemMenuBar = true;
-        this.obsrvUseSystemMenuBar = source;
+        this.bound1UseSystemMenuBar = true;
+        this.obsrv1UseSystemMenuBar = source;
+        this.bound2UseSystemMenuBar = false;
+        this.obsrv2UseSystemMenuBar = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MenuBar#useSystemMenuBarProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalUseSystemMenuBar(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1UseSystemMenuBar = false;
+        this.obsrv1UseSystemMenuBar = null;
+        this.bound2UseSystemMenuBar = true;
+        this.obsrv2UseSystemMenuBar = source;
         return (B) this;
     }
 

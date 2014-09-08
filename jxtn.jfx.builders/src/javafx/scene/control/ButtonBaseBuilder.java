@@ -22,8 +22,10 @@ public class ButtonBaseBuilder<Z extends ButtonBase, B extends ButtonBaseBuilder
     private boolean hasOnAction;
     private javafx.event.EventHandler<javafx.event.ActionEvent> valOnAction;
 
-    private boolean boundOnAction;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> obsrvOnAction;
+    private boolean bound1OnAction;
+    private boolean bound2OnAction;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> obsrv1OnAction;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.ActionEvent>> obsrv2OnAction;
 
     @Override
     public void applyTo(Z instance)
@@ -31,8 +33,10 @@ public class ButtonBaseBuilder<Z extends ButtonBase, B extends ButtonBaseBuilder
         super.applyTo(instance);
         if (this.hasOnAction)
             instance.setOnAction(this.valOnAction);
-        if (this.boundOnAction)
-            instance.onActionProperty().bind(this.obsrvOnAction);
+        if (this.bound1OnAction)
+            instance.onActionProperty().bind(this.obsrv1OnAction);
+        if (this.bound2OnAction)
+            instance.onActionProperty().bindBidirectional(this.obsrv2OnAction);
     }
 
     /**
@@ -59,8 +63,27 @@ public class ButtonBaseBuilder<Z extends ButtonBase, B extends ButtonBaseBuilder
     public final B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnAction = true;
-        this.obsrvOnAction = source;
+        this.bound1OnAction = true;
+        this.obsrv1OnAction = source;
+        this.bound2OnAction = false;
+        this.obsrv2OnAction = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ButtonBase#onActionProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnAction(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.ActionEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnAction = false;
+        this.obsrv1OnAction = null;
+        this.bound2OnAction = true;
+        this.obsrv2OnAction = source;
         return (B) this;
     }
 }

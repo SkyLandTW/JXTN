@@ -34,20 +34,30 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     private boolean hasPivotZ;
     private double valPivotZ;
 
-    private boolean boundAngle;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvAngle;
+    private boolean bound1Angle;
+    private boolean bound2Angle;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Angle;
+    private javafx.beans.property.Property<Number> obsrv2Angle;
 
-    private boolean boundAxis;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Point3D> obsrvAxis;
+    private boolean bound1Axis;
+    private boolean bound2Axis;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Point3D> obsrv1Axis;
+    private javafx.beans.property.Property<javafx.geometry.Point3D> obsrv2Axis;
 
-    private boolean boundPivotX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvPivotX;
+    private boolean bound1PivotX;
+    private boolean bound2PivotX;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PivotX;
+    private javafx.beans.property.Property<Number> obsrv2PivotX;
 
-    private boolean boundPivotY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvPivotY;
+    private boolean bound1PivotY;
+    private boolean bound2PivotY;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PivotY;
+    private javafx.beans.property.Property<Number> obsrv2PivotY;
 
-    private boolean boundPivotZ;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvPivotZ;
+    private boolean bound1PivotZ;
+    private boolean bound2PivotZ;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PivotZ;
+    private javafx.beans.property.Property<Number> obsrv2PivotZ;
 
     @Override
     public void applyTo(Z instance)
@@ -63,16 +73,26 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
             instance.setPivotY(this.valPivotY);
         if (this.hasPivotZ)
             instance.setPivotZ(this.valPivotZ);
-        if (this.boundAngle)
-            instance.angleProperty().bind(this.obsrvAngle);
-        if (this.boundAxis)
-            instance.axisProperty().bind(this.obsrvAxis);
-        if (this.boundPivotX)
-            instance.pivotXProperty().bind(this.obsrvPivotX);
-        if (this.boundPivotY)
-            instance.pivotYProperty().bind(this.obsrvPivotY);
-        if (this.boundPivotZ)
-            instance.pivotZProperty().bind(this.obsrvPivotZ);
+        if (this.bound1Angle)
+            instance.angleProperty().bind(this.obsrv1Angle);
+        if (this.bound2Angle)
+            instance.angleProperty().bindBidirectional(this.obsrv2Angle);
+        if (this.bound1Axis)
+            instance.axisProperty().bind(this.obsrv1Axis);
+        if (this.bound2Axis)
+            instance.axisProperty().bindBidirectional(this.obsrv2Axis);
+        if (this.bound1PivotX)
+            instance.pivotXProperty().bind(this.obsrv1PivotX);
+        if (this.bound2PivotX)
+            instance.pivotXProperty().bindBidirectional(this.obsrv2PivotX);
+        if (this.bound1PivotY)
+            instance.pivotYProperty().bind(this.obsrv1PivotY);
+        if (this.bound2PivotY)
+            instance.pivotYProperty().bindBidirectional(this.obsrv2PivotY);
+        if (this.bound1PivotZ)
+            instance.pivotZProperty().bind(this.obsrv1PivotZ);
+        if (this.bound2PivotZ)
+            instance.pivotZProperty().bindBidirectional(this.obsrv2PivotZ);
     }
 
     /**
@@ -152,11 +172,30 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindAngle(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindAngle(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAngle = true;
-        this.obsrvAngle = source;
+        this.bound1Angle = true;
+        this.obsrv1Angle = source;
+        this.bound2Angle = false;
+        this.obsrv2Angle = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Rotate#angleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAngle(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Angle = false;
+        this.obsrv1Angle = null;
+        this.bound2Angle = true;
+        this.obsrv2Angle = source;
         return (B) this;
     }
 
@@ -170,8 +209,27 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     public final B bindAxis(javafx.beans.value.ObservableValue<? extends javafx.geometry.Point3D> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAxis = true;
-        this.obsrvAxis = source;
+        this.bound1Axis = true;
+        this.obsrv1Axis = source;
+        this.bound2Axis = false;
+        this.obsrv2Axis = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Rotate#axisProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAxis(javafx.beans.property.Property<javafx.geometry.Point3D> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Axis = false;
+        this.obsrv1Axis = null;
+        this.bound2Axis = true;
+        this.obsrv2Axis = source;
         return (B) this;
     }
 
@@ -182,11 +240,30 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPivotX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPivotX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPivotX = true;
-        this.obsrvPivotX = source;
+        this.bound1PivotX = true;
+        this.obsrv1PivotX = source;
+        this.bound2PivotX = false;
+        this.obsrv2PivotX = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Rotate#pivotXProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPivotX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PivotX = false;
+        this.obsrv1PivotX = null;
+        this.bound2PivotX = true;
+        this.obsrv2PivotX = source;
         return (B) this;
     }
 
@@ -197,11 +274,30 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPivotY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPivotY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPivotY = true;
-        this.obsrvPivotY = source;
+        this.bound1PivotY = true;
+        this.obsrv1PivotY = source;
+        this.bound2PivotY = false;
+        this.obsrv2PivotY = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Rotate#pivotYProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPivotY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PivotY = false;
+        this.obsrv1PivotY = null;
+        this.bound2PivotY = true;
+        this.obsrv2PivotY = source;
         return (B) this;
     }
 
@@ -212,11 +308,30 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPivotZ(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPivotZ(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPivotZ = true;
-        this.obsrvPivotZ = source;
+        this.bound1PivotZ = true;
+        this.obsrv1PivotZ = source;
+        this.bound2PivotZ = false;
+        this.obsrv2PivotZ = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Rotate#pivotZProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPivotZ(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PivotZ = false;
+        this.obsrv1PivotZ = null;
+        this.bound2PivotZ = true;
+        this.obsrv2PivotZ = source;
         return (B) this;
     }
 

@@ -34,20 +34,30 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     private boolean hasTitleSide;
     private javafx.geometry.Side valTitleSide;
 
-    private boolean boundAnimated;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvAnimated;
+    private boolean bound1Animated;
+    private boolean bound2Animated;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Animated;
+    private javafx.beans.property.Property<Boolean> obsrv2Animated;
 
-    private boolean boundLegendSide;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> obsrvLegendSide;
+    private boolean bound1LegendSide;
+    private boolean bound2LegendSide;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> obsrv1LegendSide;
+    private javafx.beans.property.Property<javafx.geometry.Side> obsrv2LegendSide;
 
-    private boolean boundLegendVisible;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvLegendVisible;
+    private boolean bound1LegendVisible;
+    private boolean bound2LegendVisible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1LegendVisible;
+    private javafx.beans.property.Property<Boolean> obsrv2LegendVisible;
 
-    private boolean boundTitle;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvTitle;
+    private boolean bound1Title;
+    private boolean bound2Title;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Title;
+    private javafx.beans.property.Property<String> obsrv2Title;
 
-    private boolean boundTitleSide;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> obsrvTitleSide;
+    private boolean bound1TitleSide;
+    private boolean bound2TitleSide;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> obsrv1TitleSide;
+    private javafx.beans.property.Property<javafx.geometry.Side> obsrv2TitleSide;
 
     @Override
     public void applyTo(Z instance)
@@ -63,16 +73,26 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
             instance.setTitle(this.valTitle);
         if (this.hasTitleSide)
             instance.setTitleSide(this.valTitleSide);
-        if (this.boundAnimated)
-            instance.animatedProperty().bind(this.obsrvAnimated);
-        if (this.boundLegendSide)
-            instance.legendSideProperty().bind(this.obsrvLegendSide);
-        if (this.boundLegendVisible)
-            instance.legendVisibleProperty().bind(this.obsrvLegendVisible);
-        if (this.boundTitle)
-            instance.titleProperty().bind(this.obsrvTitle);
-        if (this.boundTitleSide)
-            instance.titleSideProperty().bind(this.obsrvTitleSide);
+        if (this.bound1Animated)
+            instance.animatedProperty().bind(this.obsrv1Animated);
+        if (this.bound2Animated)
+            instance.animatedProperty().bindBidirectional(this.obsrv2Animated);
+        if (this.bound1LegendSide)
+            instance.legendSideProperty().bind(this.obsrv1LegendSide);
+        if (this.bound2LegendSide)
+            instance.legendSideProperty().bindBidirectional(this.obsrv2LegendSide);
+        if (this.bound1LegendVisible)
+            instance.legendVisibleProperty().bind(this.obsrv1LegendVisible);
+        if (this.bound2LegendVisible)
+            instance.legendVisibleProperty().bindBidirectional(this.obsrv2LegendVisible);
+        if (this.bound1Title)
+            instance.titleProperty().bind(this.obsrv1Title);
+        if (this.bound2Title)
+            instance.titleProperty().bindBidirectional(this.obsrv2Title);
+        if (this.bound1TitleSide)
+            instance.titleSideProperty().bind(this.obsrv1TitleSide);
+        if (this.bound2TitleSide)
+            instance.titleSideProperty().bindBidirectional(this.obsrv2TitleSide);
     }
 
     /**
@@ -155,8 +175,27 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     public final B bindAnimated(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAnimated = true;
-        this.obsrvAnimated = source;
+        this.bound1Animated = true;
+        this.obsrv1Animated = source;
+        this.bound2Animated = false;
+        this.obsrv2Animated = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Chart#animatedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAnimated(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Animated = false;
+        this.obsrv1Animated = null;
+        this.bound2Animated = true;
+        this.obsrv2Animated = source;
         return (B) this;
     }
 
@@ -170,8 +209,27 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     public final B bindLegendSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundLegendSide = true;
-        this.obsrvLegendSide = source;
+        this.bound1LegendSide = true;
+        this.obsrv1LegendSide = source;
+        this.bound2LegendSide = false;
+        this.obsrv2LegendSide = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Chart#legendSideProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLegendSide(javafx.beans.property.Property<javafx.geometry.Side> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1LegendSide = false;
+        this.obsrv1LegendSide = null;
+        this.bound2LegendSide = true;
+        this.obsrv2LegendSide = source;
         return (B) this;
     }
 
@@ -185,8 +243,27 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     public final B bindLegendVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundLegendVisible = true;
-        this.obsrvLegendVisible = source;
+        this.bound1LegendVisible = true;
+        this.obsrv1LegendVisible = source;
+        this.bound2LegendVisible = false;
+        this.obsrv2LegendVisible = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Chart#legendVisibleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLegendVisible(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1LegendVisible = false;
+        this.obsrv1LegendVisible = null;
+        this.bound2LegendVisible = true;
+        this.obsrv2LegendVisible = source;
         return (B) this;
     }
 
@@ -200,8 +277,27 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     public final B bindTitle(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTitle = true;
-        this.obsrvTitle = source;
+        this.bound1Title = true;
+        this.obsrv1Title = source;
+        this.bound2Title = false;
+        this.obsrv2Title = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Chart#titleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTitle(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Title = false;
+        this.obsrv1Title = null;
+        this.bound2Title = true;
+        this.obsrv2Title = source;
         return (B) this;
     }
 
@@ -215,8 +311,27 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     public final B bindTitleSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTitleSide = true;
-        this.obsrvTitleSide = source;
+        this.bound1TitleSide = true;
+        this.obsrv1TitleSide = source;
+        this.bound2TitleSide = false;
+        this.obsrv2TitleSide = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Chart#titleSideProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTitleSide(javafx.beans.property.Property<javafx.geometry.Side> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TitleSide = false;
+        this.obsrv1TitleSide = null;
+        this.bound2TitleSide = true;
+        this.obsrv2TitleSide = source;
         return (B) this;
     }
 }

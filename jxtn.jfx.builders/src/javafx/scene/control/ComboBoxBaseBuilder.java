@@ -43,23 +43,35 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     private boolean hasValue;
     private T valValue;
 
-    private boolean boundOnAction;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> obsrvOnAction;
+    private boolean bound1OnAction;
+    private boolean bound2OnAction;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> obsrv1OnAction;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.ActionEvent>> obsrv2OnAction;
 
-    private boolean boundOnHidden;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrvOnHidden;
+    private boolean bound1OnHidden;
+    private boolean bound2OnHidden;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrv1OnHidden;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> obsrv2OnHidden;
 
-    private boolean boundOnHiding;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrvOnHiding;
+    private boolean bound1OnHiding;
+    private boolean bound2OnHiding;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrv1OnHiding;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> obsrv2OnHiding;
 
-    private boolean boundOnShowing;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrvOnShowing;
+    private boolean bound1OnShowing;
+    private boolean bound2OnShowing;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrv1OnShowing;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> obsrv2OnShowing;
 
-    private boolean boundOnShown;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrvOnShown;
+    private boolean bound1OnShown;
+    private boolean bound2OnShown;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrv1OnShown;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> obsrv2OnShown;
 
-    private boolean boundPromptText;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvPromptText;
+    private boolean bound1PromptText;
+    private boolean bound2PromptText;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1PromptText;
+    private javafx.beans.property.Property<String> obsrv2PromptText;
 
     @Override
     public void applyTo(Z instance)
@@ -81,18 +93,30 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
             instance.setPromptText(this.valPromptText);
         if (this.hasValue)
             instance.setValue(this.valValue);
-        if (this.boundOnAction)
-            instance.onActionProperty().bind(this.obsrvOnAction);
-        if (this.boundOnHidden)
-            instance.onHiddenProperty().bind(this.obsrvOnHidden);
-        if (this.boundOnHiding)
-            instance.onHidingProperty().bind(this.obsrvOnHiding);
-        if (this.boundOnShowing)
-            instance.onShowingProperty().bind(this.obsrvOnShowing);
-        if (this.boundOnShown)
-            instance.onShownProperty().bind(this.obsrvOnShown);
-        if (this.boundPromptText)
-            instance.promptTextProperty().bind(this.obsrvPromptText);
+        if (this.bound1OnAction)
+            instance.onActionProperty().bind(this.obsrv1OnAction);
+        if (this.bound2OnAction)
+            instance.onActionProperty().bindBidirectional(this.obsrv2OnAction);
+        if (this.bound1OnHidden)
+            instance.onHiddenProperty().bind(this.obsrv1OnHidden);
+        if (this.bound2OnHidden)
+            instance.onHiddenProperty().bindBidirectional(this.obsrv2OnHidden);
+        if (this.bound1OnHiding)
+            instance.onHidingProperty().bind(this.obsrv1OnHiding);
+        if (this.bound2OnHiding)
+            instance.onHidingProperty().bindBidirectional(this.obsrv2OnHiding);
+        if (this.bound1OnShowing)
+            instance.onShowingProperty().bind(this.obsrv1OnShowing);
+        if (this.bound2OnShowing)
+            instance.onShowingProperty().bindBidirectional(this.obsrv2OnShowing);
+        if (this.bound1OnShown)
+            instance.onShownProperty().bind(this.obsrv1OnShown);
+        if (this.bound2OnShown)
+            instance.onShownProperty().bindBidirectional(this.obsrv2OnShown);
+        if (this.bound1PromptText)
+            instance.promptTextProperty().bind(this.obsrv1PromptText);
+        if (this.bound2PromptText)
+            instance.promptTextProperty().bindBidirectional(this.obsrv2PromptText);
     }
 
     /**
@@ -217,8 +241,27 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     public final B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnAction = true;
-        this.obsrvOnAction = source;
+        this.bound1OnAction = true;
+        this.obsrv1OnAction = source;
+        this.bound2OnAction = false;
+        this.obsrv2OnAction = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ComboBoxBase#onActionProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnAction(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.ActionEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnAction = false;
+        this.obsrv1OnAction = null;
+        this.bound2OnAction = true;
+        this.obsrv2OnAction = source;
         return (B) this;
     }
 
@@ -232,8 +275,27 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     public final B bindOnHidden(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnHidden = true;
-        this.obsrvOnHidden = source;
+        this.bound1OnHidden = true;
+        this.obsrv1OnHidden = source;
+        this.bound2OnHidden = false;
+        this.obsrv2OnHidden = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ComboBoxBase#onHiddenProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnHidden(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnHidden = false;
+        this.obsrv1OnHidden = null;
+        this.bound2OnHidden = true;
+        this.obsrv2OnHidden = source;
         return (B) this;
     }
 
@@ -247,8 +309,27 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     public final B bindOnHiding(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnHiding = true;
-        this.obsrvOnHiding = source;
+        this.bound1OnHiding = true;
+        this.obsrv1OnHiding = source;
+        this.bound2OnHiding = false;
+        this.obsrv2OnHiding = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ComboBoxBase#onHidingProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnHiding(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnHiding = false;
+        this.obsrv1OnHiding = null;
+        this.bound2OnHiding = true;
+        this.obsrv2OnHiding = source;
         return (B) this;
     }
 
@@ -262,8 +343,27 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     public final B bindOnShowing(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnShowing = true;
-        this.obsrvOnShowing = source;
+        this.bound1OnShowing = true;
+        this.obsrv1OnShowing = source;
+        this.bound2OnShowing = false;
+        this.obsrv2OnShowing = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ComboBoxBase#onShowingProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnShowing(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnShowing = false;
+        this.obsrv1OnShowing = null;
+        this.bound2OnShowing = true;
+        this.obsrv2OnShowing = source;
         return (B) this;
     }
 
@@ -277,8 +377,27 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     public final B bindOnShown(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnShown = true;
-        this.obsrvOnShown = source;
+        this.bound1OnShown = true;
+        this.obsrv1OnShown = source;
+        this.bound2OnShown = false;
+        this.obsrv2OnShown = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ComboBoxBase#onShownProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnShown(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnShown = false;
+        this.obsrv1OnShown = null;
+        this.bound2OnShown = true;
+        this.obsrv2OnShown = source;
         return (B) this;
     }
 
@@ -292,8 +411,27 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     public final B bindPromptText(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPromptText = true;
-        this.obsrvPromptText = source;
+        this.bound1PromptText = true;
+        this.obsrv1PromptText = source;
+        this.bound2PromptText = false;
+        this.obsrv2PromptText = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ComboBoxBase#promptTextProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPromptText(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PromptText = false;
+        this.obsrv1PromptText = null;
+        this.bound2PromptText = true;
+        this.obsrv2PromptText = source;
         return (B) this;
     }
 }

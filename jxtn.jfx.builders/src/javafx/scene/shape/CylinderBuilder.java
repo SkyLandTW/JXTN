@@ -25,11 +25,15 @@ public class CylinderBuilder<Z extends Cylinder, B extends CylinderBuilder<Z, B>
     private boolean hasRadius;
     private double valRadius;
 
-    private boolean boundHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvHeight;
+    private boolean bound1Height;
+    private boolean bound2Height;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Height;
+    private javafx.beans.property.Property<Number> obsrv2Height;
 
-    private boolean boundRadius;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvRadius;
+    private boolean bound1Radius;
+    private boolean bound2Radius;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Radius;
+    private javafx.beans.property.Property<Number> obsrv2Radius;
 
     @Override
     public void applyTo(Z instance)
@@ -39,10 +43,14 @@ public class CylinderBuilder<Z extends Cylinder, B extends CylinderBuilder<Z, B>
             instance.setHeight(this.valHeight);
         if (this.hasRadius)
             instance.setRadius(this.valRadius);
-        if (this.boundHeight)
-            instance.heightProperty().bind(this.obsrvHeight);
-        if (this.boundRadius)
-            instance.radiusProperty().bind(this.obsrvRadius);
+        if (this.bound1Height)
+            instance.heightProperty().bind(this.obsrv1Height);
+        if (this.bound2Height)
+            instance.heightProperty().bindBidirectional(this.obsrv2Height);
+        if (this.bound1Radius)
+            instance.radiusProperty().bind(this.obsrv1Radius);
+        if (this.bound2Radius)
+            instance.radiusProperty().bindBidirectional(this.obsrv2Radius);
     }
 
     /**
@@ -80,11 +88,30 @@ public class CylinderBuilder<Z extends Cylinder, B extends CylinderBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundHeight = true;
-        this.obsrvHeight = source;
+        this.bound1Height = true;
+        this.obsrv1Height = source;
+        this.bound2Height = false;
+        this.obsrv2Height = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Cylinder#heightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Height = false;
+        this.obsrv1Height = null;
+        this.bound2Height = true;
+        this.obsrv2Height = source;
         return (B) this;
     }
 
@@ -95,11 +122,30 @@ public class CylinderBuilder<Z extends Cylinder, B extends CylinderBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRadius(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundRadius = true;
-        this.obsrvRadius = source;
+        this.bound1Radius = true;
+        this.obsrv1Radius = source;
+        this.bound2Radius = false;
+        this.obsrv2Radius = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Cylinder#radiusProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRadius(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Radius = false;
+        this.obsrv1Radius = null;
+        this.bound2Radius = true;
+        this.obsrv2Radius = source;
         return (B) this;
     }
 

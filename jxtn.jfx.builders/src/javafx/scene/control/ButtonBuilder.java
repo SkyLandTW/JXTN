@@ -25,11 +25,15 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
     private boolean hasDefaultButton;
     private boolean valDefaultButton;
 
-    private boolean boundCancelButton;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvCancelButton;
+    private boolean bound1CancelButton;
+    private boolean bound2CancelButton;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1CancelButton;
+    private javafx.beans.property.Property<Boolean> obsrv2CancelButton;
 
-    private boolean boundDefaultButton;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvDefaultButton;
+    private boolean bound1DefaultButton;
+    private boolean bound2DefaultButton;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1DefaultButton;
+    private javafx.beans.property.Property<Boolean> obsrv2DefaultButton;
 
     @Override
     public void applyTo(Z instance)
@@ -39,10 +43,14 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
             instance.setCancelButton(this.valCancelButton);
         if (this.hasDefaultButton)
             instance.setDefaultButton(this.valDefaultButton);
-        if (this.boundCancelButton)
-            instance.cancelButtonProperty().bind(this.obsrvCancelButton);
-        if (this.boundDefaultButton)
-            instance.defaultButtonProperty().bind(this.obsrvDefaultButton);
+        if (this.bound1CancelButton)
+            instance.cancelButtonProperty().bind(this.obsrv1CancelButton);
+        if (this.bound2CancelButton)
+            instance.cancelButtonProperty().bindBidirectional(this.obsrv2CancelButton);
+        if (this.bound1DefaultButton)
+            instance.defaultButtonProperty().bind(this.obsrv1DefaultButton);
+        if (this.bound2DefaultButton)
+            instance.defaultButtonProperty().bindBidirectional(this.obsrv2DefaultButton);
     }
 
     /**
@@ -83,8 +91,27 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
     public final B bindCancelButton(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCancelButton = true;
-        this.obsrvCancelButton = source;
+        this.bound1CancelButton = true;
+        this.obsrv1CancelButton = source;
+        this.bound2CancelButton = false;
+        this.obsrv2CancelButton = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Button#cancelButtonProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCancelButton(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CancelButton = false;
+        this.obsrv1CancelButton = null;
+        this.bound2CancelButton = true;
+        this.obsrv2CancelButton = source;
         return (B) this;
     }
 
@@ -98,8 +125,27 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
     public final B bindDefaultButton(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundDefaultButton = true;
-        this.obsrvDefaultButton = source;
+        this.bound1DefaultButton = true;
+        this.obsrv1DefaultButton = source;
+        this.bound2DefaultButton = false;
+        this.obsrv2DefaultButton = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Button#defaultButtonProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalDefaultButton(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1DefaultButton = false;
+        this.obsrv1DefaultButton = null;
+        this.bound2DefaultButton = true;
+        this.obsrv2DefaultButton = source;
         return (B) this;
     }
 

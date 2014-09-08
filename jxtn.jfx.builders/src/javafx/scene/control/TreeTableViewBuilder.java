@@ -76,44 +76,70 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     private boolean hasVisibleLeafColumns;
     private java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> valVisibleLeafColumns;
 
-    private boolean boundColumnResizePolicy;
-    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableView.ResizeFeatures, java.lang.Boolean>> obsrvColumnResizePolicy;
+    private boolean bound1ColumnResizePolicy;
+    private boolean bound2ColumnResizePolicy;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableView.ResizeFeatures, java.lang.Boolean>> obsrv1ColumnResizePolicy;
+    private javafx.beans.property.Property<javafx.util.Callback<javafx.scene.control.TreeTableView.ResizeFeatures, java.lang.Boolean>> obsrv2ColumnResizePolicy;
 
-    private boolean boundEditable;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvEditable;
+    private boolean bound1Editable;
+    private boolean bound2Editable;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Editable;
+    private javafx.beans.property.Property<Boolean> obsrv2Editable;
 
-    private boolean boundFixedCellSize;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvFixedCellSize;
+    private boolean bound1FixedCellSize;
+    private boolean bound2FixedCellSize;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1FixedCellSize;
+    private javafx.beans.property.Property<Number> obsrv2FixedCellSize;
 
-    private boolean boundFocusModel;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableView.TreeTableViewFocusModel<S>> obsrvFocusModel;
+    private boolean bound1FocusModel;
+    private boolean bound2FocusModel;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableView.TreeTableViewFocusModel<S>> obsrv1FocusModel;
+    private javafx.beans.property.Property<javafx.scene.control.TreeTableView.TreeTableViewFocusModel<S>> obsrv2FocusModel;
 
-    private boolean boundPlaceholder;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvPlaceholder;
+    private boolean bound1Placeholder;
+    private boolean bound2Placeholder;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Placeholder;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Placeholder;
 
-    private boolean boundRoot;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeItem<S>> obsrvRoot;
+    private boolean bound1Root;
+    private boolean bound2Root;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeItem<S>> obsrv1Root;
+    private javafx.beans.property.Property<javafx.scene.control.TreeItem<S>> obsrv2Root;
 
-    private boolean boundRowFactory;
-    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableView<S>, javafx.scene.control.TreeTableRow<S>>> obsrvRowFactory;
+    private boolean bound1RowFactory;
+    private boolean bound2RowFactory;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableView<S>, javafx.scene.control.TreeTableRow<S>>> obsrv1RowFactory;
+    private javafx.beans.property.Property<javafx.util.Callback<javafx.scene.control.TreeTableView<S>, javafx.scene.control.TreeTableRow<S>>> obsrv2RowFactory;
 
-    private boolean boundSelectionModel;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableView.TreeTableViewSelectionModel<S>> obsrvSelectionModel;
+    private boolean bound1SelectionModel;
+    private boolean bound2SelectionModel;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableView.TreeTableViewSelectionModel<S>> obsrv1SelectionModel;
+    private javafx.beans.property.Property<javafx.scene.control.TreeTableView.TreeTableViewSelectionModel<S>> obsrv2SelectionModel;
 
-    private boolean boundShowRoot;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvShowRoot;
+    private boolean bound1ShowRoot;
+    private boolean bound2ShowRoot;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ShowRoot;
+    private javafx.beans.property.Property<Boolean> obsrv2ShowRoot;
 
-    private boolean boundSortMode;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeSortMode> obsrvSortMode;
+    private boolean bound1SortMode;
+    private boolean bound2SortMode;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeSortMode> obsrv1SortMode;
+    private javafx.beans.property.Property<javafx.scene.control.TreeSortMode> obsrv2SortMode;
 
-    private boolean boundSortPolicy;
-    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableView<S>, java.lang.Boolean>> obsrvSortPolicy;
+    private boolean bound1SortPolicy;
+    private boolean bound2SortPolicy;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableView<S>, java.lang.Boolean>> obsrv1SortPolicy;
+    private javafx.beans.property.Property<javafx.util.Callback<javafx.scene.control.TreeTableView<S>, java.lang.Boolean>> obsrv2SortPolicy;
 
-    private boolean boundTableMenuButtonVisible;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvTableMenuButtonVisible;
+    private boolean bound1TableMenuButtonVisible;
+    private boolean bound2TableMenuButtonVisible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1TableMenuButtonVisible;
+    private javafx.beans.property.Property<Boolean> obsrv2TableMenuButtonVisible;
 
-    private boolean boundTreeColumn;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableColumn<S, ?>> obsrvTreeColumn;
+    private boolean bound1TreeColumn;
+    private boolean bound2TreeColumn;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableColumn<S, ?>> obsrv1TreeColumn;
+    private javafx.beans.property.Property<javafx.scene.control.TreeTableColumn<S, ?>> obsrv2TreeColumn;
 
     @Override
     public void applyTo(Z instance)
@@ -157,32 +183,58 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
             instance.setTreeColumn(this.valTreeColumn);
         if (this.hasVisibleLeafColumns)
             instance.getVisibleLeafColumns().setAll(this.valVisibleLeafColumns);
-        if (this.boundColumnResizePolicy)
-            instance.columnResizePolicyProperty().bind(this.obsrvColumnResizePolicy);
-        if (this.boundEditable)
-            instance.editableProperty().bind(this.obsrvEditable);
-        if (this.boundFixedCellSize)
-            instance.fixedCellSizeProperty().bind(this.obsrvFixedCellSize);
-        if (this.boundFocusModel)
-            instance.focusModelProperty().bind(this.obsrvFocusModel);
-        if (this.boundPlaceholder)
-            instance.placeholderProperty().bind(this.obsrvPlaceholder);
-        if (this.boundRoot)
-            instance.rootProperty().bind(this.obsrvRoot);
-        if (this.boundRowFactory)
-            instance.rowFactoryProperty().bind(this.obsrvRowFactory);
-        if (this.boundSelectionModel)
-            instance.selectionModelProperty().bind(this.obsrvSelectionModel);
-        if (this.boundShowRoot)
-            instance.showRootProperty().bind(this.obsrvShowRoot);
-        if (this.boundSortMode)
-            instance.sortModeProperty().bind(this.obsrvSortMode);
-        if (this.boundSortPolicy)
-            instance.sortPolicyProperty().bind(this.obsrvSortPolicy);
-        if (this.boundTableMenuButtonVisible)
-            instance.tableMenuButtonVisibleProperty().bind(this.obsrvTableMenuButtonVisible);
-        if (this.boundTreeColumn)
-            instance.treeColumnProperty().bind(this.obsrvTreeColumn);
+        if (this.bound1ColumnResizePolicy)
+            instance.columnResizePolicyProperty().bind(this.obsrv1ColumnResizePolicy);
+        if (this.bound2ColumnResizePolicy)
+            instance.columnResizePolicyProperty().bindBidirectional(this.obsrv2ColumnResizePolicy);
+        if (this.bound1Editable)
+            instance.editableProperty().bind(this.obsrv1Editable);
+        if (this.bound2Editable)
+            instance.editableProperty().bindBidirectional(this.obsrv2Editable);
+        if (this.bound1FixedCellSize)
+            instance.fixedCellSizeProperty().bind(this.obsrv1FixedCellSize);
+        if (this.bound2FixedCellSize)
+            instance.fixedCellSizeProperty().bindBidirectional(this.obsrv2FixedCellSize);
+        if (this.bound1FocusModel)
+            instance.focusModelProperty().bind(this.obsrv1FocusModel);
+        if (this.bound2FocusModel)
+            instance.focusModelProperty().bindBidirectional(this.obsrv2FocusModel);
+        if (this.bound1Placeholder)
+            instance.placeholderProperty().bind(this.obsrv1Placeholder);
+        if (this.bound2Placeholder)
+            instance.placeholderProperty().bindBidirectional(this.obsrv2Placeholder);
+        if (this.bound1Root)
+            instance.rootProperty().bind(this.obsrv1Root);
+        if (this.bound2Root)
+            instance.rootProperty().bindBidirectional(this.obsrv2Root);
+        if (this.bound1RowFactory)
+            instance.rowFactoryProperty().bind(this.obsrv1RowFactory);
+        if (this.bound2RowFactory)
+            instance.rowFactoryProperty().bindBidirectional(this.obsrv2RowFactory);
+        if (this.bound1SelectionModel)
+            instance.selectionModelProperty().bind(this.obsrv1SelectionModel);
+        if (this.bound2SelectionModel)
+            instance.selectionModelProperty().bindBidirectional(this.obsrv2SelectionModel);
+        if (this.bound1ShowRoot)
+            instance.showRootProperty().bind(this.obsrv1ShowRoot);
+        if (this.bound2ShowRoot)
+            instance.showRootProperty().bindBidirectional(this.obsrv2ShowRoot);
+        if (this.bound1SortMode)
+            instance.sortModeProperty().bind(this.obsrv1SortMode);
+        if (this.bound2SortMode)
+            instance.sortModeProperty().bindBidirectional(this.obsrv2SortMode);
+        if (this.bound1SortPolicy)
+            instance.sortPolicyProperty().bind(this.obsrv1SortPolicy);
+        if (this.bound2SortPolicy)
+            instance.sortPolicyProperty().bindBidirectional(this.obsrv2SortPolicy);
+        if (this.bound1TableMenuButtonVisible)
+            instance.tableMenuButtonVisibleProperty().bind(this.obsrv1TableMenuButtonVisible);
+        if (this.bound2TableMenuButtonVisible)
+            instance.tableMenuButtonVisibleProperty().bindBidirectional(this.obsrv2TableMenuButtonVisible);
+        if (this.bound1TreeColumn)
+            instance.treeColumnProperty().bind(this.obsrv1TreeColumn);
+        if (this.bound2TreeColumn)
+            instance.treeColumnProperty().bindBidirectional(this.obsrv2TreeColumn);
     }
 
     /**
@@ -506,8 +558,27 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     public final B bindColumnResizePolicy(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableView.ResizeFeatures, java.lang.Boolean>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundColumnResizePolicy = true;
-        this.obsrvColumnResizePolicy = source;
+        this.bound1ColumnResizePolicy = true;
+        this.obsrv1ColumnResizePolicy = source;
+        this.bound2ColumnResizePolicy = false;
+        this.obsrv2ColumnResizePolicy = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#columnResizePolicyProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalColumnResizePolicy(javafx.beans.property.Property<javafx.util.Callback<javafx.scene.control.TreeTableView.ResizeFeatures, java.lang.Boolean>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ColumnResizePolicy = false;
+        this.obsrv1ColumnResizePolicy = null;
+        this.bound2ColumnResizePolicy = true;
+        this.obsrv2ColumnResizePolicy = source;
         return (B) this;
     }
 
@@ -521,8 +592,27 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     public final B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundEditable = true;
-        this.obsrvEditable = source;
+        this.bound1Editable = true;
+        this.obsrv1Editable = source;
+        this.bound2Editable = false;
+        this.obsrv2Editable = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#editableProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalEditable(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Editable = false;
+        this.obsrv1Editable = null;
+        this.bound2Editable = true;
+        this.obsrv2Editable = source;
         return (B) this;
     }
 
@@ -533,11 +623,30 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindFixedCellSize(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindFixedCellSize(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFixedCellSize = true;
-        this.obsrvFixedCellSize = source;
+        this.bound1FixedCellSize = true;
+        this.obsrv1FixedCellSize = source;
+        this.bound2FixedCellSize = false;
+        this.obsrv2FixedCellSize = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#fixedCellSizeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFixedCellSize(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FixedCellSize = false;
+        this.obsrv1FixedCellSize = null;
+        this.bound2FixedCellSize = true;
+        this.obsrv2FixedCellSize = source;
         return (B) this;
     }
 
@@ -551,8 +660,27 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     public final B bindFocusModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableView.TreeTableViewFocusModel<S>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFocusModel = true;
-        this.obsrvFocusModel = source;
+        this.bound1FocusModel = true;
+        this.obsrv1FocusModel = source;
+        this.bound2FocusModel = false;
+        this.obsrv2FocusModel = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#focusModelProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFocusModel(javafx.beans.property.Property<javafx.scene.control.TreeTableView.TreeTableViewFocusModel<S>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FocusModel = false;
+        this.obsrv1FocusModel = null;
+        this.bound2FocusModel = true;
+        this.obsrv2FocusModel = source;
         return (B) this;
     }
 
@@ -566,8 +694,27 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     public final B bindPlaceholder(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPlaceholder = true;
-        this.obsrvPlaceholder = source;
+        this.bound1Placeholder = true;
+        this.obsrv1Placeholder = source;
+        this.bound2Placeholder = false;
+        this.obsrv2Placeholder = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#placeholderProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPlaceholder(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Placeholder = false;
+        this.obsrv1Placeholder = null;
+        this.bound2Placeholder = true;
+        this.obsrv2Placeholder = source;
         return (B) this;
     }
 
@@ -581,8 +728,27 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     public final B bindRoot(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeItem<S>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundRoot = true;
-        this.obsrvRoot = source;
+        this.bound1Root = true;
+        this.obsrv1Root = source;
+        this.bound2Root = false;
+        this.obsrv2Root = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#rootProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRoot(javafx.beans.property.Property<javafx.scene.control.TreeItem<S>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Root = false;
+        this.obsrv1Root = null;
+        this.bound2Root = true;
+        this.obsrv2Root = source;
         return (B) this;
     }
 
@@ -596,8 +762,27 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     public final B bindRowFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableView<S>, javafx.scene.control.TreeTableRow<S>>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundRowFactory = true;
-        this.obsrvRowFactory = source;
+        this.bound1RowFactory = true;
+        this.obsrv1RowFactory = source;
+        this.bound2RowFactory = false;
+        this.obsrv2RowFactory = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#rowFactoryProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRowFactory(javafx.beans.property.Property<javafx.util.Callback<javafx.scene.control.TreeTableView<S>, javafx.scene.control.TreeTableRow<S>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1RowFactory = false;
+        this.obsrv1RowFactory = null;
+        this.bound2RowFactory = true;
+        this.obsrv2RowFactory = source;
         return (B) this;
     }
 
@@ -611,8 +796,27 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     public final B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableView.TreeTableViewSelectionModel<S>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSelectionModel = true;
-        this.obsrvSelectionModel = source;
+        this.bound1SelectionModel = true;
+        this.obsrv1SelectionModel = source;
+        this.bound2SelectionModel = false;
+        this.obsrv2SelectionModel = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#selectionModelProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSelectionModel(javafx.beans.property.Property<javafx.scene.control.TreeTableView.TreeTableViewSelectionModel<S>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SelectionModel = false;
+        this.obsrv1SelectionModel = null;
+        this.bound2SelectionModel = true;
+        this.obsrv2SelectionModel = source;
         return (B) this;
     }
 
@@ -626,8 +830,27 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     public final B bindShowRoot(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundShowRoot = true;
-        this.obsrvShowRoot = source;
+        this.bound1ShowRoot = true;
+        this.obsrv1ShowRoot = source;
+        this.bound2ShowRoot = false;
+        this.obsrv2ShowRoot = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#showRootProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalShowRoot(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ShowRoot = false;
+        this.obsrv1ShowRoot = null;
+        this.bound2ShowRoot = true;
+        this.obsrv2ShowRoot = source;
         return (B) this;
     }
 
@@ -641,8 +864,27 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     public final B bindSortMode(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeSortMode> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSortMode = true;
-        this.obsrvSortMode = source;
+        this.bound1SortMode = true;
+        this.obsrv1SortMode = source;
+        this.bound2SortMode = false;
+        this.obsrv2SortMode = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#sortModeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSortMode(javafx.beans.property.Property<javafx.scene.control.TreeSortMode> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SortMode = false;
+        this.obsrv1SortMode = null;
+        this.bound2SortMode = true;
+        this.obsrv2SortMode = source;
         return (B) this;
     }
 
@@ -656,8 +898,27 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     public final B bindSortPolicy(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeTableView<S>, java.lang.Boolean>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSortPolicy = true;
-        this.obsrvSortPolicy = source;
+        this.bound1SortPolicy = true;
+        this.obsrv1SortPolicy = source;
+        this.bound2SortPolicy = false;
+        this.obsrv2SortPolicy = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#sortPolicyProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSortPolicy(javafx.beans.property.Property<javafx.util.Callback<javafx.scene.control.TreeTableView<S>, java.lang.Boolean>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SortPolicy = false;
+        this.obsrv1SortPolicy = null;
+        this.bound2SortPolicy = true;
+        this.obsrv2SortPolicy = source;
         return (B) this;
     }
 
@@ -671,8 +932,27 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     public final B bindTableMenuButtonVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTableMenuButtonVisible = true;
-        this.obsrvTableMenuButtonVisible = source;
+        this.bound1TableMenuButtonVisible = true;
+        this.obsrv1TableMenuButtonVisible = source;
+        this.bound2TableMenuButtonVisible = false;
+        this.obsrv2TableMenuButtonVisible = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#tableMenuButtonVisibleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTableMenuButtonVisible(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TableMenuButtonVisible = false;
+        this.obsrv1TableMenuButtonVisible = null;
+        this.bound2TableMenuButtonVisible = true;
+        this.obsrv2TableMenuButtonVisible = source;
         return (B) this;
     }
 
@@ -686,8 +966,27 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     public final B bindTreeColumn(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableColumn<S, ?>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTreeColumn = true;
-        this.obsrvTreeColumn = source;
+        this.bound1TreeColumn = true;
+        this.obsrv1TreeColumn = source;
+        this.bound2TreeColumn = false;
+        this.obsrv2TreeColumn = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#treeColumnProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTreeColumn(javafx.beans.property.Property<javafx.scene.control.TreeTableColumn<S, ?>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TreeColumn = false;
+        this.obsrv1TreeColumn = null;
+        this.bound2TreeColumn = true;
+        this.obsrv2TreeColumn = source;
         return (B) this;
     }
 

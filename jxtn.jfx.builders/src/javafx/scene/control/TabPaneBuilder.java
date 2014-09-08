@@ -46,29 +46,45 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     private boolean hasTabs;
     private java.util.Collection<javafx.scene.control.Tab> valTabs;
 
-    private boolean boundRotateGraphic;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvRotateGraphic;
+    private boolean bound1RotateGraphic;
+    private boolean bound2RotateGraphic;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1RotateGraphic;
+    private javafx.beans.property.Property<Boolean> obsrv2RotateGraphic;
 
-    private boolean boundSelectionModel;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.SingleSelectionModel<javafx.scene.control.Tab>> obsrvSelectionModel;
+    private boolean bound1SelectionModel;
+    private boolean bound2SelectionModel;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.SingleSelectionModel<javafx.scene.control.Tab>> obsrv1SelectionModel;
+    private javafx.beans.property.Property<javafx.scene.control.SingleSelectionModel<javafx.scene.control.Tab>> obsrv2SelectionModel;
 
-    private boolean boundSide;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> obsrvSide;
+    private boolean bound1Side;
+    private boolean bound2Side;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> obsrv1Side;
+    private javafx.beans.property.Property<javafx.geometry.Side> obsrv2Side;
 
-    private boolean boundTabClosingPolicy;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TabPane.TabClosingPolicy> obsrvTabClosingPolicy;
+    private boolean bound1TabClosingPolicy;
+    private boolean bound2TabClosingPolicy;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TabPane.TabClosingPolicy> obsrv1TabClosingPolicy;
+    private javafx.beans.property.Property<javafx.scene.control.TabPane.TabClosingPolicy> obsrv2TabClosingPolicy;
 
-    private boolean boundTabMaxHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvTabMaxHeight;
+    private boolean bound1TabMaxHeight;
+    private boolean bound2TabMaxHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1TabMaxHeight;
+    private javafx.beans.property.Property<Number> obsrv2TabMaxHeight;
 
-    private boolean boundTabMaxWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvTabMaxWidth;
+    private boolean bound1TabMaxWidth;
+    private boolean bound2TabMaxWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1TabMaxWidth;
+    private javafx.beans.property.Property<Number> obsrv2TabMaxWidth;
 
-    private boolean boundTabMinHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvTabMinHeight;
+    private boolean bound1TabMinHeight;
+    private boolean bound2TabMinHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1TabMinHeight;
+    private javafx.beans.property.Property<Number> obsrv2TabMinHeight;
 
-    private boolean boundTabMinWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvTabMinWidth;
+    private boolean bound1TabMinWidth;
+    private boolean bound2TabMinWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1TabMinWidth;
+    private javafx.beans.property.Property<Number> obsrv2TabMinWidth;
 
     @Override
     public void applyTo(Z instance)
@@ -92,22 +108,38 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
             instance.setTabMinWidth(this.valTabMinWidth);
         if (this.hasTabs)
             instance.getTabs().setAll(this.valTabs);
-        if (this.boundRotateGraphic)
-            instance.rotateGraphicProperty().bind(this.obsrvRotateGraphic);
-        if (this.boundSelectionModel)
-            instance.selectionModelProperty().bind(this.obsrvSelectionModel);
-        if (this.boundSide)
-            instance.sideProperty().bind(this.obsrvSide);
-        if (this.boundTabClosingPolicy)
-            instance.tabClosingPolicyProperty().bind(this.obsrvTabClosingPolicy);
-        if (this.boundTabMaxHeight)
-            instance.tabMaxHeightProperty().bind(this.obsrvTabMaxHeight);
-        if (this.boundTabMaxWidth)
-            instance.tabMaxWidthProperty().bind(this.obsrvTabMaxWidth);
-        if (this.boundTabMinHeight)
-            instance.tabMinHeightProperty().bind(this.obsrvTabMinHeight);
-        if (this.boundTabMinWidth)
-            instance.tabMinWidthProperty().bind(this.obsrvTabMinWidth);
+        if (this.bound1RotateGraphic)
+            instance.rotateGraphicProperty().bind(this.obsrv1RotateGraphic);
+        if (this.bound2RotateGraphic)
+            instance.rotateGraphicProperty().bindBidirectional(this.obsrv2RotateGraphic);
+        if (this.bound1SelectionModel)
+            instance.selectionModelProperty().bind(this.obsrv1SelectionModel);
+        if (this.bound2SelectionModel)
+            instance.selectionModelProperty().bindBidirectional(this.obsrv2SelectionModel);
+        if (this.bound1Side)
+            instance.sideProperty().bind(this.obsrv1Side);
+        if (this.bound2Side)
+            instance.sideProperty().bindBidirectional(this.obsrv2Side);
+        if (this.bound1TabClosingPolicy)
+            instance.tabClosingPolicyProperty().bind(this.obsrv1TabClosingPolicy);
+        if (this.bound2TabClosingPolicy)
+            instance.tabClosingPolicyProperty().bindBidirectional(this.obsrv2TabClosingPolicy);
+        if (this.bound1TabMaxHeight)
+            instance.tabMaxHeightProperty().bind(this.obsrv1TabMaxHeight);
+        if (this.bound2TabMaxHeight)
+            instance.tabMaxHeightProperty().bindBidirectional(this.obsrv2TabMaxHeight);
+        if (this.bound1TabMaxWidth)
+            instance.tabMaxWidthProperty().bind(this.obsrv1TabMaxWidth);
+        if (this.bound2TabMaxWidth)
+            instance.tabMaxWidthProperty().bindBidirectional(this.obsrv2TabMaxWidth);
+        if (this.bound1TabMinHeight)
+            instance.tabMinHeightProperty().bind(this.obsrv1TabMinHeight);
+        if (this.bound2TabMinHeight)
+            instance.tabMinHeightProperty().bindBidirectional(this.obsrv2TabMinHeight);
+        if (this.bound1TabMinWidth)
+            instance.tabMinWidthProperty().bind(this.obsrv1TabMinWidth);
+        if (this.bound2TabMinWidth)
+            instance.tabMinWidthProperty().bindBidirectional(this.obsrv2TabMinWidth);
     }
 
     /**
@@ -261,8 +293,27 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     public final B bindRotateGraphic(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundRotateGraphic = true;
-        this.obsrvRotateGraphic = source;
+        this.bound1RotateGraphic = true;
+        this.obsrv1RotateGraphic = source;
+        this.bound2RotateGraphic = false;
+        this.obsrv2RotateGraphic = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TabPane#rotateGraphicProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRotateGraphic(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1RotateGraphic = false;
+        this.obsrv1RotateGraphic = null;
+        this.bound2RotateGraphic = true;
+        this.obsrv2RotateGraphic = source;
         return (B) this;
     }
 
@@ -276,8 +327,27 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     public final B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.SingleSelectionModel<javafx.scene.control.Tab>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSelectionModel = true;
-        this.obsrvSelectionModel = source;
+        this.bound1SelectionModel = true;
+        this.obsrv1SelectionModel = source;
+        this.bound2SelectionModel = false;
+        this.obsrv2SelectionModel = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TabPane#selectionModelProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSelectionModel(javafx.beans.property.Property<javafx.scene.control.SingleSelectionModel<javafx.scene.control.Tab>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SelectionModel = false;
+        this.obsrv1SelectionModel = null;
+        this.bound2SelectionModel = true;
+        this.obsrv2SelectionModel = source;
         return (B) this;
     }
 
@@ -291,8 +361,27 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     public final B bindSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSide = true;
-        this.obsrvSide = source;
+        this.bound1Side = true;
+        this.obsrv1Side = source;
+        this.bound2Side = false;
+        this.obsrv2Side = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TabPane#sideProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSide(javafx.beans.property.Property<javafx.geometry.Side> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Side = false;
+        this.obsrv1Side = null;
+        this.bound2Side = true;
+        this.obsrv2Side = source;
         return (B) this;
     }
 
@@ -306,8 +395,27 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     public final B bindTabClosingPolicy(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TabPane.TabClosingPolicy> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTabClosingPolicy = true;
-        this.obsrvTabClosingPolicy = source;
+        this.bound1TabClosingPolicy = true;
+        this.obsrv1TabClosingPolicy = source;
+        this.bound2TabClosingPolicy = false;
+        this.obsrv2TabClosingPolicy = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TabPane#tabClosingPolicyProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTabClosingPolicy(javafx.beans.property.Property<javafx.scene.control.TabPane.TabClosingPolicy> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TabClosingPolicy = false;
+        this.obsrv1TabClosingPolicy = null;
+        this.bound2TabClosingPolicy = true;
+        this.obsrv2TabClosingPolicy = source;
         return (B) this;
     }
 
@@ -318,11 +426,30 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindTabMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTabMaxHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTabMaxHeight = true;
-        this.obsrvTabMaxHeight = source;
+        this.bound1TabMaxHeight = true;
+        this.obsrv1TabMaxHeight = source;
+        this.bound2TabMaxHeight = false;
+        this.obsrv2TabMaxHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TabPane#tabMaxHeightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTabMaxHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TabMaxHeight = false;
+        this.obsrv1TabMaxHeight = null;
+        this.bound2TabMaxHeight = true;
+        this.obsrv2TabMaxHeight = source;
         return (B) this;
     }
 
@@ -333,11 +460,30 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindTabMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTabMaxWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTabMaxWidth = true;
-        this.obsrvTabMaxWidth = source;
+        this.bound1TabMaxWidth = true;
+        this.obsrv1TabMaxWidth = source;
+        this.bound2TabMaxWidth = false;
+        this.obsrv2TabMaxWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TabPane#tabMaxWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTabMaxWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TabMaxWidth = false;
+        this.obsrv1TabMaxWidth = null;
+        this.bound2TabMaxWidth = true;
+        this.obsrv2TabMaxWidth = source;
         return (B) this;
     }
 
@@ -348,11 +494,30 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindTabMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTabMinHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTabMinHeight = true;
-        this.obsrvTabMinHeight = source;
+        this.bound1TabMinHeight = true;
+        this.obsrv1TabMinHeight = source;
+        this.bound2TabMinHeight = false;
+        this.obsrv2TabMinHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TabPane#tabMinHeightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTabMinHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TabMinHeight = false;
+        this.obsrv1TabMinHeight = null;
+        this.bound2TabMinHeight = true;
+        this.obsrv2TabMinHeight = source;
         return (B) this;
     }
 
@@ -363,11 +528,30 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindTabMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTabMinWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTabMinWidth = true;
-        this.obsrvTabMinWidth = source;
+        this.bound1TabMinWidth = true;
+        this.obsrv1TabMinWidth = source;
+        this.bound2TabMinWidth = false;
+        this.obsrv2TabMinWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TabPane#tabMinWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTabMinWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TabMinWidth = false;
+        this.obsrv1TabMinWidth = null;
+        this.bound2TabMinWidth = true;
+        this.obsrv2TabMinWidth = source;
         return (B) this;
     }
 

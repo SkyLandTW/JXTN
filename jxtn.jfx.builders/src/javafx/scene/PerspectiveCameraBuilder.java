@@ -25,11 +25,15 @@ public class PerspectiveCameraBuilder<Z extends PerspectiveCamera, B extends Per
     private boolean hasVerticalFieldOfView;
     private boolean valVerticalFieldOfView;
 
-    private boolean boundFieldOfView;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvFieldOfView;
+    private boolean bound1FieldOfView;
+    private boolean bound2FieldOfView;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1FieldOfView;
+    private javafx.beans.property.Property<Number> obsrv2FieldOfView;
 
-    private boolean boundVerticalFieldOfView;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvVerticalFieldOfView;
+    private boolean bound1VerticalFieldOfView;
+    private boolean bound2VerticalFieldOfView;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1VerticalFieldOfView;
+    private javafx.beans.property.Property<Boolean> obsrv2VerticalFieldOfView;
 
     @Override
     public void applyTo(Z instance)
@@ -39,10 +43,14 @@ public class PerspectiveCameraBuilder<Z extends PerspectiveCamera, B extends Per
             instance.setFieldOfView(this.valFieldOfView);
         if (this.hasVerticalFieldOfView)
             instance.setVerticalFieldOfView(this.valVerticalFieldOfView);
-        if (this.boundFieldOfView)
-            instance.fieldOfViewProperty().bind(this.obsrvFieldOfView);
-        if (this.boundVerticalFieldOfView)
-            instance.verticalFieldOfViewProperty().bind(this.obsrvVerticalFieldOfView);
+        if (this.bound1FieldOfView)
+            instance.fieldOfViewProperty().bind(this.obsrv1FieldOfView);
+        if (this.bound2FieldOfView)
+            instance.fieldOfViewProperty().bindBidirectional(this.obsrv2FieldOfView);
+        if (this.bound1VerticalFieldOfView)
+            instance.verticalFieldOfViewProperty().bind(this.obsrv1VerticalFieldOfView);
+        if (this.bound2VerticalFieldOfView)
+            instance.verticalFieldOfViewProperty().bindBidirectional(this.obsrv2VerticalFieldOfView);
     }
 
     /**
@@ -80,11 +88,30 @@ public class PerspectiveCameraBuilder<Z extends PerspectiveCamera, B extends Per
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindFieldOfView(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindFieldOfView(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFieldOfView = true;
-        this.obsrvFieldOfView = source;
+        this.bound1FieldOfView = true;
+        this.obsrv1FieldOfView = source;
+        this.bound2FieldOfView = false;
+        this.obsrv2FieldOfView = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PerspectiveCamera#fieldOfViewProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFieldOfView(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FieldOfView = false;
+        this.obsrv1FieldOfView = null;
+        this.bound2FieldOfView = true;
+        this.obsrv2FieldOfView = source;
         return (B) this;
     }
 
@@ -98,8 +125,27 @@ public class PerspectiveCameraBuilder<Z extends PerspectiveCamera, B extends Per
     public final B bindVerticalFieldOfView(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundVerticalFieldOfView = true;
-        this.obsrvVerticalFieldOfView = source;
+        this.bound1VerticalFieldOfView = true;
+        this.obsrv1VerticalFieldOfView = source;
+        this.bound2VerticalFieldOfView = false;
+        this.obsrv2VerticalFieldOfView = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PerspectiveCamera#verticalFieldOfViewProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalVerticalFieldOfView(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1VerticalFieldOfView = false;
+        this.obsrv1VerticalFieldOfView = null;
+        this.bound2VerticalFieldOfView = true;
+        this.obsrv2VerticalFieldOfView = source;
         return (B) this;
     }
 

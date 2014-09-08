@@ -25,11 +25,15 @@ public class SVGPathBuilder<Z extends SVGPath, B extends SVGPathBuilder<Z, B>>
     private boolean hasFillRule;
     private javafx.scene.shape.FillRule valFillRule;
 
-    private boolean boundContent;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvContent;
+    private boolean bound1Content;
+    private boolean bound2Content;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Content;
+    private javafx.beans.property.Property<String> obsrv2Content;
 
-    private boolean boundFillRule;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.FillRule> obsrvFillRule;
+    private boolean bound1FillRule;
+    private boolean bound2FillRule;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.FillRule> obsrv1FillRule;
+    private javafx.beans.property.Property<javafx.scene.shape.FillRule> obsrv2FillRule;
 
     @Override
     public void applyTo(Z instance)
@@ -39,10 +43,14 @@ public class SVGPathBuilder<Z extends SVGPath, B extends SVGPathBuilder<Z, B>>
             instance.setContent(this.valContent);
         if (this.hasFillRule)
             instance.setFillRule(this.valFillRule);
-        if (this.boundContent)
-            instance.contentProperty().bind(this.obsrvContent);
-        if (this.boundFillRule)
-            instance.fillRuleProperty().bind(this.obsrvFillRule);
+        if (this.bound1Content)
+            instance.contentProperty().bind(this.obsrv1Content);
+        if (this.bound2Content)
+            instance.contentProperty().bindBidirectional(this.obsrv2Content);
+        if (this.bound1FillRule)
+            instance.fillRuleProperty().bind(this.obsrv1FillRule);
+        if (this.bound2FillRule)
+            instance.fillRuleProperty().bindBidirectional(this.obsrv2FillRule);
     }
 
     /**
@@ -83,8 +91,27 @@ public class SVGPathBuilder<Z extends SVGPath, B extends SVGPathBuilder<Z, B>>
     public final B bindContent(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundContent = true;
-        this.obsrvContent = source;
+        this.bound1Content = true;
+        this.obsrv1Content = source;
+        this.bound2Content = false;
+        this.obsrv2Content = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SVGPath#contentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalContent(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Content = false;
+        this.obsrv1Content = null;
+        this.bound2Content = true;
+        this.obsrv2Content = source;
         return (B) this;
     }
 
@@ -98,8 +125,27 @@ public class SVGPathBuilder<Z extends SVGPath, B extends SVGPathBuilder<Z, B>>
     public final B bindFillRule(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.FillRule> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFillRule = true;
-        this.obsrvFillRule = source;
+        this.bound1FillRule = true;
+        this.obsrv1FillRule = source;
+        this.bound2FillRule = false;
+        this.obsrv2FillRule = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SVGPath#fillRuleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFillRule(javafx.beans.property.Property<javafx.scene.shape.FillRule> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FillRule = false;
+        this.obsrv1FillRule = null;
+        this.bound2FillRule = true;
+        this.obsrv2FillRule = source;
         return (B) this;
     }
 

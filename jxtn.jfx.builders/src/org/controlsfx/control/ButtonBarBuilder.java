@@ -31,14 +31,20 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
     private boolean hasButtons;
     private java.util.Collection<javafx.scene.control.ButtonBase> valButtons;
 
-    private boolean boundButtonMinWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvButtonMinWidth;
+    private boolean bound1ButtonMinWidth;
+    private boolean bound2ButtonMinWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1ButtonMinWidth;
+    private javafx.beans.property.Property<Number> obsrv2ButtonMinWidth;
 
-    private boolean boundButtonOrder;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvButtonOrder;
+    private boolean bound1ButtonOrder;
+    private boolean bound2ButtonOrder;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1ButtonOrder;
+    private javafx.beans.property.Property<String> obsrv2ButtonOrder;
 
-    private boolean boundButtonUniformSize;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvButtonUniformSize;
+    private boolean bound1ButtonUniformSize;
+    private boolean bound2ButtonUniformSize;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ButtonUniformSize;
+    private javafx.beans.property.Property<Boolean> obsrv2ButtonUniformSize;
 
     @Override
     public void applyTo(Z instance)
@@ -52,12 +58,18 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
             instance.setButtonUniformSize(this.valButtonUniformSize);
         if (this.hasButtons)
             instance.getButtons().setAll(this.valButtons);
-        if (this.boundButtonMinWidth)
-            instance.buttonMinWidthProperty().bind(this.obsrvButtonMinWidth);
-        if (this.boundButtonOrder)
-            instance.buttonOrderProperty().bind(this.obsrvButtonOrder);
-        if (this.boundButtonUniformSize)
-            instance.buttonUniformSizeProperty().bind(this.obsrvButtonUniformSize);
+        if (this.bound1ButtonMinWidth)
+            instance.buttonMinWidthProperty().bind(this.obsrv1ButtonMinWidth);
+        if (this.bound2ButtonMinWidth)
+            instance.buttonMinWidthProperty().bindBidirectional(this.obsrv2ButtonMinWidth);
+        if (this.bound1ButtonOrder)
+            instance.buttonOrderProperty().bind(this.obsrv1ButtonOrder);
+        if (this.bound2ButtonOrder)
+            instance.buttonOrderProperty().bindBidirectional(this.obsrv2ButtonOrder);
+        if (this.bound1ButtonUniformSize)
+            instance.buttonUniformSizeProperty().bind(this.obsrv1ButtonUniformSize);
+        if (this.bound2ButtonUniformSize)
+            instance.buttonUniformSizeProperty().bindBidirectional(this.obsrv2ButtonUniformSize);
     }
 
     /**
@@ -138,11 +150,30 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindButtonMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindButtonMinWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundButtonMinWidth = true;
-        this.obsrvButtonMinWidth = source;
+        this.bound1ButtonMinWidth = true;
+        this.obsrv1ButtonMinWidth = source;
+        this.bound2ButtonMinWidth = false;
+        this.obsrv2ButtonMinWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ButtonBar#buttonMinWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalButtonMinWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ButtonMinWidth = false;
+        this.obsrv1ButtonMinWidth = null;
+        this.bound2ButtonMinWidth = true;
+        this.obsrv2ButtonMinWidth = source;
         return (B) this;
     }
 
@@ -156,8 +187,27 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
     public final B bindButtonOrder(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundButtonOrder = true;
-        this.obsrvButtonOrder = source;
+        this.bound1ButtonOrder = true;
+        this.obsrv1ButtonOrder = source;
+        this.bound2ButtonOrder = false;
+        this.obsrv2ButtonOrder = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ButtonBar#buttonOrderProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalButtonOrder(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ButtonOrder = false;
+        this.obsrv1ButtonOrder = null;
+        this.bound2ButtonOrder = true;
+        this.obsrv2ButtonOrder = source;
         return (B) this;
     }
 
@@ -171,8 +221,27 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
     public final B bindButtonUniformSize(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundButtonUniformSize = true;
-        this.obsrvButtonUniformSize = source;
+        this.bound1ButtonUniformSize = true;
+        this.obsrv1ButtonUniformSize = source;
+        this.bound2ButtonUniformSize = false;
+        this.obsrv2ButtonUniformSize = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ButtonBar#buttonUniformSizeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalButtonUniformSize(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ButtonUniformSize = false;
+        this.obsrv1ButtonUniformSize = null;
+        this.bound2ButtonUniformSize = true;
+        this.obsrv2ButtonUniformSize = source;
         return (B) this;
     }
 

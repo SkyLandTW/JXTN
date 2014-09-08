@@ -31,17 +31,25 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     private boolean hasSelectedCrumb;
     private javafx.scene.control.TreeItem<T> valSelectedCrumb;
 
-    private boolean boundAutoNavigationEnabled;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvAutoNavigationEnabled;
+    private boolean bound1AutoNavigationEnabled;
+    private boolean bound2AutoNavigationEnabled;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1AutoNavigationEnabled;
+    private javafx.beans.property.Property<Boolean> obsrv2AutoNavigationEnabled;
 
-    private boolean boundCrumbFactory;
-    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeItem<T>, javafx.scene.control.Button>> obsrvCrumbFactory;
+    private boolean bound1CrumbFactory;
+    private boolean bound2CrumbFactory;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeItem<T>, javafx.scene.control.Button>> obsrv1CrumbFactory;
+    private javafx.beans.property.Property<javafx.util.Callback<javafx.scene.control.TreeItem<T>, javafx.scene.control.Button>> obsrv2CrumbFactory;
 
-    private boolean boundOnCrumbAction;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.BreadCrumbBar.BreadCrumbActionEvent<T>>> obsrvOnCrumbAction;
+    private boolean bound1OnCrumbAction;
+    private boolean bound2OnCrumbAction;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.BreadCrumbBar.BreadCrumbActionEvent<T>>> obsrv1OnCrumbAction;
+    private javafx.beans.property.Property<javafx.event.EventHandler<org.controlsfx.control.BreadCrumbBar.BreadCrumbActionEvent<T>>> obsrv2OnCrumbAction;
 
-    private boolean boundSelectedCrumb;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeItem<T>> obsrvSelectedCrumb;
+    private boolean bound1SelectedCrumb;
+    private boolean bound2SelectedCrumb;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeItem<T>> obsrv1SelectedCrumb;
+    private javafx.beans.property.Property<javafx.scene.control.TreeItem<T>> obsrv2SelectedCrumb;
 
     @Override
     public void applyTo(Z instance)
@@ -55,14 +63,22 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
             instance.setOnCrumbAction(this.valOnCrumbAction);
         if (this.hasSelectedCrumb)
             instance.setSelectedCrumb(this.valSelectedCrumb);
-        if (this.boundAutoNavigationEnabled)
-            instance.autoNavigationEnabledProperty().bind(this.obsrvAutoNavigationEnabled);
-        if (this.boundCrumbFactory)
-            instance.crumbFactoryProperty().bind(this.obsrvCrumbFactory);
-        if (this.boundOnCrumbAction)
-            instance.onCrumbActionProperty().bind(this.obsrvOnCrumbAction);
-        if (this.boundSelectedCrumb)
-            instance.selectedCrumbProperty().bind(this.obsrvSelectedCrumb);
+        if (this.bound1AutoNavigationEnabled)
+            instance.autoNavigationEnabledProperty().bind(this.obsrv1AutoNavigationEnabled);
+        if (this.bound2AutoNavigationEnabled)
+            instance.autoNavigationEnabledProperty().bindBidirectional(this.obsrv2AutoNavigationEnabled);
+        if (this.bound1CrumbFactory)
+            instance.crumbFactoryProperty().bind(this.obsrv1CrumbFactory);
+        if (this.bound2CrumbFactory)
+            instance.crumbFactoryProperty().bindBidirectional(this.obsrv2CrumbFactory);
+        if (this.bound1OnCrumbAction)
+            instance.onCrumbActionProperty().bind(this.obsrv1OnCrumbAction);
+        if (this.bound2OnCrumbAction)
+            instance.onCrumbActionProperty().bindBidirectional(this.obsrv2OnCrumbAction);
+        if (this.bound1SelectedCrumb)
+            instance.selectedCrumbProperty().bind(this.obsrv1SelectedCrumb);
+        if (this.bound2SelectedCrumb)
+            instance.selectedCrumbProperty().bindBidirectional(this.obsrv2SelectedCrumb);
     }
 
     /**
@@ -131,8 +147,27 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     public final B bindAutoNavigationEnabled(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAutoNavigationEnabled = true;
-        this.obsrvAutoNavigationEnabled = source;
+        this.bound1AutoNavigationEnabled = true;
+        this.obsrv1AutoNavigationEnabled = source;
+        this.bound2AutoNavigationEnabled = false;
+        this.obsrv2AutoNavigationEnabled = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link BreadCrumbBar#autoNavigationEnabledProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAutoNavigationEnabled(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AutoNavigationEnabled = false;
+        this.obsrv1AutoNavigationEnabled = null;
+        this.bound2AutoNavigationEnabled = true;
+        this.obsrv2AutoNavigationEnabled = source;
         return (B) this;
     }
 
@@ -146,8 +181,27 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     public final B bindCrumbFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TreeItem<T>, javafx.scene.control.Button>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCrumbFactory = true;
-        this.obsrvCrumbFactory = source;
+        this.bound1CrumbFactory = true;
+        this.obsrv1CrumbFactory = source;
+        this.bound2CrumbFactory = false;
+        this.obsrv2CrumbFactory = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link BreadCrumbBar#crumbFactoryProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCrumbFactory(javafx.beans.property.Property<javafx.util.Callback<javafx.scene.control.TreeItem<T>, javafx.scene.control.Button>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CrumbFactory = false;
+        this.obsrv1CrumbFactory = null;
+        this.bound2CrumbFactory = true;
+        this.obsrv2CrumbFactory = source;
         return (B) this;
     }
 
@@ -161,8 +215,27 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     public final B bindOnCrumbAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.BreadCrumbBar.BreadCrumbActionEvent<T>>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnCrumbAction = true;
-        this.obsrvOnCrumbAction = source;
+        this.bound1OnCrumbAction = true;
+        this.obsrv1OnCrumbAction = source;
+        this.bound2OnCrumbAction = false;
+        this.obsrv2OnCrumbAction = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link BreadCrumbBar#onCrumbActionProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnCrumbAction(javafx.beans.property.Property<javafx.event.EventHandler<org.controlsfx.control.BreadCrumbBar.BreadCrumbActionEvent<T>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnCrumbAction = false;
+        this.obsrv1OnCrumbAction = null;
+        this.bound2OnCrumbAction = true;
+        this.obsrv2OnCrumbAction = source;
         return (B) this;
     }
 
@@ -176,8 +249,27 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     public final B bindSelectedCrumb(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeItem<T>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSelectedCrumb = true;
-        this.obsrvSelectedCrumb = source;
+        this.bound1SelectedCrumb = true;
+        this.obsrv1SelectedCrumb = source;
+        this.bound2SelectedCrumb = false;
+        this.obsrv2SelectedCrumb = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link BreadCrumbBar#selectedCrumbProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSelectedCrumb(javafx.beans.property.Property<javafx.scene.control.TreeItem<T>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SelectedCrumb = false;
+        this.obsrv1SelectedCrumb = null;
+        this.bound2SelectedCrumb = true;
+        this.obsrv2SelectedCrumb = source;
         return (B) this;
     }
 

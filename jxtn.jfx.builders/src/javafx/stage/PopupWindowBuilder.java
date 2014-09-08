@@ -43,23 +43,35 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     private boolean hasOnAutoHide;
     private javafx.event.EventHandler<javafx.event.Event> valOnAutoHide;
 
-    private boolean boundAnchorLocation;
-    private javafx.beans.value.ObservableValue<? extends javafx.stage.PopupWindow.AnchorLocation> obsrvAnchorLocation;
+    private boolean bound1AnchorLocation;
+    private boolean bound2AnchorLocation;
+    private javafx.beans.value.ObservableValue<? extends javafx.stage.PopupWindow.AnchorLocation> obsrv1AnchorLocation;
+    private javafx.beans.property.Property<javafx.stage.PopupWindow.AnchorLocation> obsrv2AnchorLocation;
 
-    private boolean boundAutoFix;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvAutoFix;
+    private boolean bound1AutoFix;
+    private boolean bound2AutoFix;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1AutoFix;
+    private javafx.beans.property.Property<Boolean> obsrv2AutoFix;
 
-    private boolean boundAutoHide;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvAutoHide;
+    private boolean bound1AutoHide;
+    private boolean bound2AutoHide;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1AutoHide;
+    private javafx.beans.property.Property<Boolean> obsrv2AutoHide;
 
-    private boolean boundConsumeAutoHidingEvents;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvConsumeAutoHidingEvents;
+    private boolean bound1ConsumeAutoHidingEvents;
+    private boolean bound2ConsumeAutoHidingEvents;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ConsumeAutoHidingEvents;
+    private javafx.beans.property.Property<Boolean> obsrv2ConsumeAutoHidingEvents;
 
-    private boolean boundHideOnEscape;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvHideOnEscape;
+    private boolean bound1HideOnEscape;
+    private boolean bound2HideOnEscape;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1HideOnEscape;
+    private javafx.beans.property.Property<Boolean> obsrv2HideOnEscape;
 
-    private boolean boundOnAutoHide;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrvOnAutoHide;
+    private boolean bound1OnAutoHide;
+    private boolean bound2OnAutoHide;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrv1OnAutoHide;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> obsrv2OnAutoHide;
 
     @Override
     public void applyTo(Z instance)
@@ -81,18 +93,30 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
             instance.setHideOnEscape(this.valHideOnEscape);
         if (this.hasOnAutoHide)
             instance.setOnAutoHide(this.valOnAutoHide);
-        if (this.boundAnchorLocation)
-            instance.anchorLocationProperty().bind(this.obsrvAnchorLocation);
-        if (this.boundAutoFix)
-            instance.autoFixProperty().bind(this.obsrvAutoFix);
-        if (this.boundAutoHide)
-            instance.autoHideProperty().bind(this.obsrvAutoHide);
-        if (this.boundConsumeAutoHidingEvents)
-            instance.consumeAutoHidingEventsProperty().bind(this.obsrvConsumeAutoHidingEvents);
-        if (this.boundHideOnEscape)
-            instance.hideOnEscapeProperty().bind(this.obsrvHideOnEscape);
-        if (this.boundOnAutoHide)
-            instance.onAutoHideProperty().bind(this.obsrvOnAutoHide);
+        if (this.bound1AnchorLocation)
+            instance.anchorLocationProperty().bind(this.obsrv1AnchorLocation);
+        if (this.bound2AnchorLocation)
+            instance.anchorLocationProperty().bindBidirectional(this.obsrv2AnchorLocation);
+        if (this.bound1AutoFix)
+            instance.autoFixProperty().bind(this.obsrv1AutoFix);
+        if (this.bound2AutoFix)
+            instance.autoFixProperty().bindBidirectional(this.obsrv2AutoFix);
+        if (this.bound1AutoHide)
+            instance.autoHideProperty().bind(this.obsrv1AutoHide);
+        if (this.bound2AutoHide)
+            instance.autoHideProperty().bindBidirectional(this.obsrv2AutoHide);
+        if (this.bound1ConsumeAutoHidingEvents)
+            instance.consumeAutoHidingEventsProperty().bind(this.obsrv1ConsumeAutoHidingEvents);
+        if (this.bound2ConsumeAutoHidingEvents)
+            instance.consumeAutoHidingEventsProperty().bindBidirectional(this.obsrv2ConsumeAutoHidingEvents);
+        if (this.bound1HideOnEscape)
+            instance.hideOnEscapeProperty().bind(this.obsrv1HideOnEscape);
+        if (this.bound2HideOnEscape)
+            instance.hideOnEscapeProperty().bindBidirectional(this.obsrv2HideOnEscape);
+        if (this.bound1OnAutoHide)
+            instance.onAutoHideProperty().bind(this.obsrv1OnAutoHide);
+        if (this.bound2OnAutoHide)
+            instance.onAutoHideProperty().bindBidirectional(this.obsrv2OnAutoHide);
     }
 
     /**
@@ -217,8 +241,27 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     public final B bindAnchorLocation(javafx.beans.value.ObservableValue<? extends javafx.stage.PopupWindow.AnchorLocation> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAnchorLocation = true;
-        this.obsrvAnchorLocation = source;
+        this.bound1AnchorLocation = true;
+        this.obsrv1AnchorLocation = source;
+        this.bound2AnchorLocation = false;
+        this.obsrv2AnchorLocation = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopupWindow#anchorLocationProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAnchorLocation(javafx.beans.property.Property<javafx.stage.PopupWindow.AnchorLocation> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AnchorLocation = false;
+        this.obsrv1AnchorLocation = null;
+        this.bound2AnchorLocation = true;
+        this.obsrv2AnchorLocation = source;
         return (B) this;
     }
 
@@ -232,8 +275,27 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     public final B bindAutoFix(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAutoFix = true;
-        this.obsrvAutoFix = source;
+        this.bound1AutoFix = true;
+        this.obsrv1AutoFix = source;
+        this.bound2AutoFix = false;
+        this.obsrv2AutoFix = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopupWindow#autoFixProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAutoFix(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AutoFix = false;
+        this.obsrv1AutoFix = null;
+        this.bound2AutoFix = true;
+        this.obsrv2AutoFix = source;
         return (B) this;
     }
 
@@ -247,8 +309,27 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     public final B bindAutoHide(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAutoHide = true;
-        this.obsrvAutoHide = source;
+        this.bound1AutoHide = true;
+        this.obsrv1AutoHide = source;
+        this.bound2AutoHide = false;
+        this.obsrv2AutoHide = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopupWindow#autoHideProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAutoHide(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AutoHide = false;
+        this.obsrv1AutoHide = null;
+        this.bound2AutoHide = true;
+        this.obsrv2AutoHide = source;
         return (B) this;
     }
 
@@ -262,8 +343,27 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     public final B bindConsumeAutoHidingEvents(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundConsumeAutoHidingEvents = true;
-        this.obsrvConsumeAutoHidingEvents = source;
+        this.bound1ConsumeAutoHidingEvents = true;
+        this.obsrv1ConsumeAutoHidingEvents = source;
+        this.bound2ConsumeAutoHidingEvents = false;
+        this.obsrv2ConsumeAutoHidingEvents = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopupWindow#consumeAutoHidingEventsProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalConsumeAutoHidingEvents(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ConsumeAutoHidingEvents = false;
+        this.obsrv1ConsumeAutoHidingEvents = null;
+        this.bound2ConsumeAutoHidingEvents = true;
+        this.obsrv2ConsumeAutoHidingEvents = source;
         return (B) this;
     }
 
@@ -277,8 +377,27 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     public final B bindHideOnEscape(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundHideOnEscape = true;
-        this.obsrvHideOnEscape = source;
+        this.bound1HideOnEscape = true;
+        this.obsrv1HideOnEscape = source;
+        this.bound2HideOnEscape = false;
+        this.obsrv2HideOnEscape = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopupWindow#hideOnEscapeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHideOnEscape(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1HideOnEscape = false;
+        this.obsrv1HideOnEscape = null;
+        this.bound2HideOnEscape = true;
+        this.obsrv2HideOnEscape = source;
         return (B) this;
     }
 
@@ -292,8 +411,27 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     public final B bindOnAutoHide(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnAutoHide = true;
-        this.obsrvOnAutoHide = source;
+        this.bound1OnAutoHide = true;
+        this.obsrv1OnAutoHide = source;
+        this.bound2OnAutoHide = false;
+        this.obsrv2OnAutoHide = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopupWindow#onAutoHideProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnAutoHide(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnAutoHide = false;
+        this.obsrv1OnAutoHide = null;
+        this.bound2OnAutoHide = true;
+        this.obsrv2OnAutoHide = source;
         return (B) this;
     }
 }

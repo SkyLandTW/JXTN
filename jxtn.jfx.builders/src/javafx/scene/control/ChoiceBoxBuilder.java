@@ -31,11 +31,15 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
     private boolean hasValue;
     private T valValue;
 
-    private boolean boundItems;
-    private javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<T>> obsrvItems;
+    private boolean bound1Items;
+    private boolean bound2Items;
+    private javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<T>> obsrv1Items;
+    private javafx.beans.property.Property<javafx.collections.ObservableList<T>> obsrv2Items;
 
-    private boolean boundSelectionModel;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.SingleSelectionModel<T>> obsrvSelectionModel;
+    private boolean bound1SelectionModel;
+    private boolean bound2SelectionModel;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.SingleSelectionModel<T>> obsrv1SelectionModel;
+    private javafx.beans.property.Property<javafx.scene.control.SingleSelectionModel<T>> obsrv2SelectionModel;
 
     @Override
     public void applyTo(Z instance)
@@ -49,10 +53,14 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
             instance.setSelectionModel(this.valSelectionModel);
         if (this.hasValue)
             instance.setValue(this.valValue);
-        if (this.boundItems)
-            instance.itemsProperty().bind(this.obsrvItems);
-        if (this.boundSelectionModel)
-            instance.selectionModelProperty().bind(this.obsrvSelectionModel);
+        if (this.bound1Items)
+            instance.itemsProperty().bind(this.obsrv1Items);
+        if (this.bound2Items)
+            instance.itemsProperty().bindBidirectional(this.obsrv2Items);
+        if (this.bound1SelectionModel)
+            instance.selectionModelProperty().bind(this.obsrv1SelectionModel);
+        if (this.bound2SelectionModel)
+            instance.selectionModelProperty().bindBidirectional(this.obsrv2SelectionModel);
     }
 
     /**
@@ -121,8 +129,27 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
     public final B bindItems(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<T>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundItems = true;
-        this.obsrvItems = source;
+        this.bound1Items = true;
+        this.obsrv1Items = source;
+        this.bound2Items = false;
+        this.obsrv2Items = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ChoiceBox#itemsProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalItems(javafx.beans.property.Property<javafx.collections.ObservableList<T>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Items = false;
+        this.obsrv1Items = null;
+        this.bound2Items = true;
+        this.obsrv2Items = source;
         return (B) this;
     }
 
@@ -136,8 +163,27 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
     public final B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.SingleSelectionModel<T>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSelectionModel = true;
-        this.obsrvSelectionModel = source;
+        this.bound1SelectionModel = true;
+        this.obsrv1SelectionModel = source;
+        this.bound2SelectionModel = false;
+        this.obsrv2SelectionModel = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ChoiceBox#selectionModelProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSelectionModel(javafx.beans.property.Property<javafx.scene.control.SingleSelectionModel<T>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SelectionModel = false;
+        this.obsrv1SelectionModel = null;
+        this.bound2SelectionModel = true;
+        this.obsrv2SelectionModel = source;
         return (B) this;
     }
 

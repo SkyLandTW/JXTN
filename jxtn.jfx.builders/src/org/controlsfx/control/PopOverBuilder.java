@@ -43,29 +43,45 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     private boolean hasDetachedTitle;
     private java.lang.String valDetachedTitle;
 
-    private boolean boundArrowIndent;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvArrowIndent;
+    private boolean bound1ArrowIndent;
+    private boolean bound2ArrowIndent;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1ArrowIndent;
+    private javafx.beans.property.Property<Number> obsrv2ArrowIndent;
 
-    private boolean boundArrowLocation;
-    private javafx.beans.value.ObservableValue<? extends org.controlsfx.control.PopOver.ArrowLocation> obsrvArrowLocation;
+    private boolean bound1ArrowLocation;
+    private boolean bound2ArrowLocation;
+    private javafx.beans.value.ObservableValue<? extends org.controlsfx.control.PopOver.ArrowLocation> obsrv1ArrowLocation;
+    private javafx.beans.property.Property<org.controlsfx.control.PopOver.ArrowLocation> obsrv2ArrowLocation;
 
-    private boolean boundArrowSize;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvArrowSize;
+    private boolean bound1ArrowSize;
+    private boolean bound2ArrowSize;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1ArrowSize;
+    private javafx.beans.property.Property<Number> obsrv2ArrowSize;
 
-    private boolean boundContentNode;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvContentNode;
+    private boolean bound1ContentNode;
+    private boolean bound2ContentNode;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1ContentNode;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2ContentNode;
 
-    private boolean boundCornerRadius;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvCornerRadius;
+    private boolean bound1CornerRadius;
+    private boolean bound2CornerRadius;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1CornerRadius;
+    private javafx.beans.property.Property<Number> obsrv2CornerRadius;
 
-    private boolean boundDetachable;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvDetachable;
+    private boolean bound1Detachable;
+    private boolean bound2Detachable;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Detachable;
+    private javafx.beans.property.Property<Boolean> obsrv2Detachable;
 
-    private boolean boundDetached;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvDetached;
+    private boolean bound1Detached;
+    private boolean bound2Detached;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Detached;
+    private javafx.beans.property.Property<Boolean> obsrv2Detached;
 
-    private boolean boundDetachedTitle;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvDetachedTitle;
+    private boolean bound1DetachedTitle;
+    private boolean bound2DetachedTitle;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1DetachedTitle;
+    private javafx.beans.property.Property<String> obsrv2DetachedTitle;
 
     @Override
     public void applyTo(Z instance)
@@ -87,22 +103,38 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
             instance.setDetached(this.valDetached);
         if (this.hasDetachedTitle)
             instance.setDetachedTitle(this.valDetachedTitle);
-        if (this.boundArrowIndent)
-            instance.arrowIndentProperty().bind(this.obsrvArrowIndent);
-        if (this.boundArrowLocation)
-            instance.arrowLocationProperty().bind(this.obsrvArrowLocation);
-        if (this.boundArrowSize)
-            instance.arrowSizeProperty().bind(this.obsrvArrowSize);
-        if (this.boundContentNode)
-            instance.contentNodeProperty().bind(this.obsrvContentNode);
-        if (this.boundCornerRadius)
-            instance.cornerRadiusProperty().bind(this.obsrvCornerRadius);
-        if (this.boundDetachable)
-            instance.detachableProperty().bind(this.obsrvDetachable);
-        if (this.boundDetached)
-            instance.detachedProperty().bind(this.obsrvDetached);
-        if (this.boundDetachedTitle)
-            instance.detachedTitleProperty().bind(this.obsrvDetachedTitle);
+        if (this.bound1ArrowIndent)
+            instance.arrowIndentProperty().bind(this.obsrv1ArrowIndent);
+        if (this.bound2ArrowIndent)
+            instance.arrowIndentProperty().bindBidirectional(this.obsrv2ArrowIndent);
+        if (this.bound1ArrowLocation)
+            instance.arrowLocationProperty().bind(this.obsrv1ArrowLocation);
+        if (this.bound2ArrowLocation)
+            instance.arrowLocationProperty().bindBidirectional(this.obsrv2ArrowLocation);
+        if (this.bound1ArrowSize)
+            instance.arrowSizeProperty().bind(this.obsrv1ArrowSize);
+        if (this.bound2ArrowSize)
+            instance.arrowSizeProperty().bindBidirectional(this.obsrv2ArrowSize);
+        if (this.bound1ContentNode)
+            instance.contentNodeProperty().bind(this.obsrv1ContentNode);
+        if (this.bound2ContentNode)
+            instance.contentNodeProperty().bindBidirectional(this.obsrv2ContentNode);
+        if (this.bound1CornerRadius)
+            instance.cornerRadiusProperty().bind(this.obsrv1CornerRadius);
+        if (this.bound2CornerRadius)
+            instance.cornerRadiusProperty().bindBidirectional(this.obsrv2CornerRadius);
+        if (this.bound1Detachable)
+            instance.detachableProperty().bind(this.obsrv1Detachable);
+        if (this.bound2Detachable)
+            instance.detachableProperty().bindBidirectional(this.obsrv2Detachable);
+        if (this.bound1Detached)
+            instance.detachedProperty().bind(this.obsrv1Detached);
+        if (this.bound2Detached)
+            instance.detachedProperty().bindBidirectional(this.obsrv2Detached);
+        if (this.bound1DetachedTitle)
+            instance.detachedTitleProperty().bind(this.obsrv1DetachedTitle);
+        if (this.bound2DetachedTitle)
+            instance.detachedTitleProperty().bindBidirectional(this.obsrv2DetachedTitle);
     }
 
     /**
@@ -224,11 +256,30 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindArrowIndent(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindArrowIndent(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundArrowIndent = true;
-        this.obsrvArrowIndent = source;
+        this.bound1ArrowIndent = true;
+        this.obsrv1ArrowIndent = source;
+        this.bound2ArrowIndent = false;
+        this.obsrv2ArrowIndent = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#arrowIndentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalArrowIndent(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ArrowIndent = false;
+        this.obsrv1ArrowIndent = null;
+        this.bound2ArrowIndent = true;
+        this.obsrv2ArrowIndent = source;
         return (B) this;
     }
 
@@ -242,8 +293,27 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     public final B bindArrowLocation(javafx.beans.value.ObservableValue<? extends org.controlsfx.control.PopOver.ArrowLocation> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundArrowLocation = true;
-        this.obsrvArrowLocation = source;
+        this.bound1ArrowLocation = true;
+        this.obsrv1ArrowLocation = source;
+        this.bound2ArrowLocation = false;
+        this.obsrv2ArrowLocation = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#arrowLocationProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalArrowLocation(javafx.beans.property.Property<org.controlsfx.control.PopOver.ArrowLocation> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ArrowLocation = false;
+        this.obsrv1ArrowLocation = null;
+        this.bound2ArrowLocation = true;
+        this.obsrv2ArrowLocation = source;
         return (B) this;
     }
 
@@ -254,11 +324,30 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindArrowSize(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindArrowSize(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundArrowSize = true;
-        this.obsrvArrowSize = source;
+        this.bound1ArrowSize = true;
+        this.obsrv1ArrowSize = source;
+        this.bound2ArrowSize = false;
+        this.obsrv2ArrowSize = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#arrowSizeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalArrowSize(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ArrowSize = false;
+        this.obsrv1ArrowSize = null;
+        this.bound2ArrowSize = true;
+        this.obsrv2ArrowSize = source;
         return (B) this;
     }
 
@@ -272,8 +361,27 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     public final B bindContentNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundContentNode = true;
-        this.obsrvContentNode = source;
+        this.bound1ContentNode = true;
+        this.obsrv1ContentNode = source;
+        this.bound2ContentNode = false;
+        this.obsrv2ContentNode = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#contentNodeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalContentNode(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ContentNode = false;
+        this.obsrv1ContentNode = null;
+        this.bound2ContentNode = true;
+        this.obsrv2ContentNode = source;
         return (B) this;
     }
 
@@ -284,11 +392,30 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindCornerRadius(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindCornerRadius(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCornerRadius = true;
-        this.obsrvCornerRadius = source;
+        this.bound1CornerRadius = true;
+        this.obsrv1CornerRadius = source;
+        this.bound2CornerRadius = false;
+        this.obsrv2CornerRadius = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#cornerRadiusProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCornerRadius(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CornerRadius = false;
+        this.obsrv1CornerRadius = null;
+        this.bound2CornerRadius = true;
+        this.obsrv2CornerRadius = source;
         return (B) this;
     }
 
@@ -302,8 +429,27 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     public final B bindDetachable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundDetachable = true;
-        this.obsrvDetachable = source;
+        this.bound1Detachable = true;
+        this.obsrv1Detachable = source;
+        this.bound2Detachable = false;
+        this.obsrv2Detachable = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#detachableProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalDetachable(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Detachable = false;
+        this.obsrv1Detachable = null;
+        this.bound2Detachable = true;
+        this.obsrv2Detachable = source;
         return (B) this;
     }
 
@@ -317,8 +463,27 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     public final B bindDetached(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundDetached = true;
-        this.obsrvDetached = source;
+        this.bound1Detached = true;
+        this.obsrv1Detached = source;
+        this.bound2Detached = false;
+        this.obsrv2Detached = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#detachedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalDetached(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Detached = false;
+        this.obsrv1Detached = null;
+        this.bound2Detached = true;
+        this.obsrv2Detached = source;
         return (B) this;
     }
 
@@ -332,8 +497,27 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     public final B bindDetachedTitle(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundDetachedTitle = true;
-        this.obsrvDetachedTitle = source;
+        this.bound1DetachedTitle = true;
+        this.obsrv1DetachedTitle = source;
+        this.bound2DetachedTitle = false;
+        this.obsrv2DetachedTitle = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#detachedTitleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalDetachedTitle(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1DetachedTitle = false;
+        this.obsrv1DetachedTitle = null;
+        this.bound2DetachedTitle = true;
+        this.obsrv2DetachedTitle = source;
         return (B) this;
     }
 

@@ -40,26 +40,40 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     private boolean hasVisibleAmount;
     private double valVisibleAmount;
 
-    private boolean boundBlockIncrement;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvBlockIncrement;
+    private boolean bound1BlockIncrement;
+    private boolean bound2BlockIncrement;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1BlockIncrement;
+    private javafx.beans.property.Property<Number> obsrv2BlockIncrement;
 
-    private boolean boundMax;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMax;
+    private boolean bound1Max;
+    private boolean bound2Max;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Max;
+    private javafx.beans.property.Property<Number> obsrv2Max;
 
-    private boolean boundMin;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMin;
+    private boolean bound1Min;
+    private boolean bound2Min;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Min;
+    private javafx.beans.property.Property<Number> obsrv2Min;
 
-    private boolean boundOrientation;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrvOrientation;
+    private boolean bound1Orientation;
+    private boolean bound2Orientation;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrv1Orientation;
+    private javafx.beans.property.Property<javafx.geometry.Orientation> obsrv2Orientation;
 
-    private boolean boundUnitIncrement;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvUnitIncrement;
+    private boolean bound1UnitIncrement;
+    private boolean bound2UnitIncrement;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1UnitIncrement;
+    private javafx.beans.property.Property<Number> obsrv2UnitIncrement;
 
-    private boolean boundValue;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvValue;
+    private boolean bound1Value;
+    private boolean bound2Value;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Value;
+    private javafx.beans.property.Property<Number> obsrv2Value;
 
-    private boolean boundVisibleAmount;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvVisibleAmount;
+    private boolean bound1VisibleAmount;
+    private boolean bound2VisibleAmount;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1VisibleAmount;
+    private javafx.beans.property.Property<Number> obsrv2VisibleAmount;
 
     @Override
     public void applyTo(Z instance)
@@ -79,20 +93,34 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
             instance.setValue(this.valValue);
         if (this.hasVisibleAmount)
             instance.setVisibleAmount(this.valVisibleAmount);
-        if (this.boundBlockIncrement)
-            instance.blockIncrementProperty().bind(this.obsrvBlockIncrement);
-        if (this.boundMax)
-            instance.maxProperty().bind(this.obsrvMax);
-        if (this.boundMin)
-            instance.minProperty().bind(this.obsrvMin);
-        if (this.boundOrientation)
-            instance.orientationProperty().bind(this.obsrvOrientation);
-        if (this.boundUnitIncrement)
-            instance.unitIncrementProperty().bind(this.obsrvUnitIncrement);
-        if (this.boundValue)
-            instance.valueProperty().bind(this.obsrvValue);
-        if (this.boundVisibleAmount)
-            instance.visibleAmountProperty().bind(this.obsrvVisibleAmount);
+        if (this.bound1BlockIncrement)
+            instance.blockIncrementProperty().bind(this.obsrv1BlockIncrement);
+        if (this.bound2BlockIncrement)
+            instance.blockIncrementProperty().bindBidirectional(this.obsrv2BlockIncrement);
+        if (this.bound1Max)
+            instance.maxProperty().bind(this.obsrv1Max);
+        if (this.bound2Max)
+            instance.maxProperty().bindBidirectional(this.obsrv2Max);
+        if (this.bound1Min)
+            instance.minProperty().bind(this.obsrv1Min);
+        if (this.bound2Min)
+            instance.minProperty().bindBidirectional(this.obsrv2Min);
+        if (this.bound1Orientation)
+            instance.orientationProperty().bind(this.obsrv1Orientation);
+        if (this.bound2Orientation)
+            instance.orientationProperty().bindBidirectional(this.obsrv2Orientation);
+        if (this.bound1UnitIncrement)
+            instance.unitIncrementProperty().bind(this.obsrv1UnitIncrement);
+        if (this.bound2UnitIncrement)
+            instance.unitIncrementProperty().bindBidirectional(this.obsrv2UnitIncrement);
+        if (this.bound1Value)
+            instance.valueProperty().bind(this.obsrv1Value);
+        if (this.bound2Value)
+            instance.valueProperty().bindBidirectional(this.obsrv2Value);
+        if (this.bound1VisibleAmount)
+            instance.visibleAmountProperty().bind(this.obsrv1VisibleAmount);
+        if (this.bound2VisibleAmount)
+            instance.visibleAmountProperty().bindBidirectional(this.obsrv2VisibleAmount);
     }
 
     /**
@@ -200,11 +228,30 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindBlockIncrement(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindBlockIncrement(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundBlockIncrement = true;
-        this.obsrvBlockIncrement = source;
+        this.bound1BlockIncrement = true;
+        this.obsrv1BlockIncrement = source;
+        this.bound2BlockIncrement = false;
+        this.obsrv2BlockIncrement = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollBar#blockIncrementProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalBlockIncrement(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1BlockIncrement = false;
+        this.obsrv1BlockIncrement = null;
+        this.bound2BlockIncrement = true;
+        this.obsrv2BlockIncrement = source;
         return (B) this;
     }
 
@@ -215,11 +262,30 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMax(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMax(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMax = true;
-        this.obsrvMax = source;
+        this.bound1Max = true;
+        this.obsrv1Max = source;
+        this.bound2Max = false;
+        this.obsrv2Max = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollBar#maxProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMax(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Max = false;
+        this.obsrv1Max = null;
+        this.bound2Max = true;
+        this.obsrv2Max = source;
         return (B) this;
     }
 
@@ -230,11 +296,30 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMin(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMin(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMin = true;
-        this.obsrvMin = source;
+        this.bound1Min = true;
+        this.obsrv1Min = source;
+        this.bound2Min = false;
+        this.obsrv2Min = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollBar#minProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMin(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Min = false;
+        this.obsrv1Min = null;
+        this.bound2Min = true;
+        this.obsrv2Min = source;
         return (B) this;
     }
 
@@ -248,8 +333,27 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOrientation = true;
-        this.obsrvOrientation = source;
+        this.bound1Orientation = true;
+        this.obsrv1Orientation = source;
+        this.bound2Orientation = false;
+        this.obsrv2Orientation = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollBar#orientationProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOrientation(javafx.beans.property.Property<javafx.geometry.Orientation> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Orientation = false;
+        this.obsrv1Orientation = null;
+        this.bound2Orientation = true;
+        this.obsrv2Orientation = source;
         return (B) this;
     }
 
@@ -260,11 +364,30 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindUnitIncrement(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindUnitIncrement(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundUnitIncrement = true;
-        this.obsrvUnitIncrement = source;
+        this.bound1UnitIncrement = true;
+        this.obsrv1UnitIncrement = source;
+        this.bound2UnitIncrement = false;
+        this.obsrv2UnitIncrement = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollBar#unitIncrementProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalUnitIncrement(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1UnitIncrement = false;
+        this.obsrv1UnitIncrement = null;
+        this.bound2UnitIncrement = true;
+        this.obsrv2UnitIncrement = source;
         return (B) this;
     }
 
@@ -275,11 +398,30 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindValue(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindValue(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundValue = true;
-        this.obsrvValue = source;
+        this.bound1Value = true;
+        this.obsrv1Value = source;
+        this.bound2Value = false;
+        this.obsrv2Value = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollBar#valueProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalValue(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Value = false;
+        this.obsrv1Value = null;
+        this.bound2Value = true;
+        this.obsrv2Value = source;
         return (B) this;
     }
 
@@ -290,11 +432,30 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindVisibleAmount(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindVisibleAmount(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundVisibleAmount = true;
-        this.obsrvVisibleAmount = source;
+        this.bound1VisibleAmount = true;
+        this.obsrv1VisibleAmount = source;
+        this.bound2VisibleAmount = false;
+        this.obsrv2VisibleAmount = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollBar#visibleAmountProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalVisibleAmount(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1VisibleAmount = false;
+        this.obsrv1VisibleAmount = null;
+        this.bound2VisibleAmount = true;
+        this.obsrv2VisibleAmount = source;
         return (B) this;
     }
 

@@ -22,8 +22,10 @@ public class StackedAreaChartBuilder<X extends java.lang.Object, Y extends java.
     private boolean hasCreateSymbols;
     private boolean valCreateSymbols;
 
-    private boolean boundCreateSymbols;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvCreateSymbols;
+    private boolean bound1CreateSymbols;
+    private boolean bound2CreateSymbols;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1CreateSymbols;
+    private javafx.beans.property.Property<Boolean> obsrv2CreateSymbols;
 
     @Override
     public void applyTo(Z instance)
@@ -31,8 +33,10 @@ public class StackedAreaChartBuilder<X extends java.lang.Object, Y extends java.
         super.applyTo(instance);
         if (this.hasCreateSymbols)
             instance.setCreateSymbols(this.valCreateSymbols);
-        if (this.boundCreateSymbols)
-            instance.createSymbolsProperty().bind(this.obsrvCreateSymbols);
+        if (this.bound1CreateSymbols)
+            instance.createSymbolsProperty().bind(this.obsrv1CreateSymbols);
+        if (this.bound2CreateSymbols)
+            instance.createSymbolsProperty().bindBidirectional(this.obsrv2CreateSymbols);
     }
 
     /**
@@ -59,8 +63,27 @@ public class StackedAreaChartBuilder<X extends java.lang.Object, Y extends java.
     public final B bindCreateSymbols(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCreateSymbols = true;
-        this.obsrvCreateSymbols = source;
+        this.bound1CreateSymbols = true;
+        this.obsrv1CreateSymbols = source;
+        this.bound2CreateSymbols = false;
+        this.obsrv2CreateSymbols = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link StackedAreaChart#createSymbolsProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCreateSymbols(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CreateSymbols = false;
+        this.obsrv1CreateSymbols = null;
+        this.bound2CreateSymbols = true;
+        this.obsrv2CreateSymbols = source;
         return (B) this;
     }
 

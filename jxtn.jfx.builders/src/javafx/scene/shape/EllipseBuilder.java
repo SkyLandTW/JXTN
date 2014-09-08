@@ -31,17 +31,25 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
     private boolean hasRadiusY;
     private double valRadiusY;
 
-    private boolean boundCenterX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvCenterX;
+    private boolean bound1CenterX;
+    private boolean bound2CenterX;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1CenterX;
+    private javafx.beans.property.Property<Number> obsrv2CenterX;
 
-    private boolean boundCenterY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvCenterY;
+    private boolean bound1CenterY;
+    private boolean bound2CenterY;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1CenterY;
+    private javafx.beans.property.Property<Number> obsrv2CenterY;
 
-    private boolean boundRadiusX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvRadiusX;
+    private boolean bound1RadiusX;
+    private boolean bound2RadiusX;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1RadiusX;
+    private javafx.beans.property.Property<Number> obsrv2RadiusX;
 
-    private boolean boundRadiusY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvRadiusY;
+    private boolean bound1RadiusY;
+    private boolean bound2RadiusY;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1RadiusY;
+    private javafx.beans.property.Property<Number> obsrv2RadiusY;
 
     @Override
     public void applyTo(Z instance)
@@ -55,14 +63,22 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
             instance.setRadiusX(this.valRadiusX);
         if (this.hasRadiusY)
             instance.setRadiusY(this.valRadiusY);
-        if (this.boundCenterX)
-            instance.centerXProperty().bind(this.obsrvCenterX);
-        if (this.boundCenterY)
-            instance.centerYProperty().bind(this.obsrvCenterY);
-        if (this.boundRadiusX)
-            instance.radiusXProperty().bind(this.obsrvRadiusX);
-        if (this.boundRadiusY)
-            instance.radiusYProperty().bind(this.obsrvRadiusY);
+        if (this.bound1CenterX)
+            instance.centerXProperty().bind(this.obsrv1CenterX);
+        if (this.bound2CenterX)
+            instance.centerXProperty().bindBidirectional(this.obsrv2CenterX);
+        if (this.bound1CenterY)
+            instance.centerYProperty().bind(this.obsrv1CenterY);
+        if (this.bound2CenterY)
+            instance.centerYProperty().bindBidirectional(this.obsrv2CenterY);
+        if (this.bound1RadiusX)
+            instance.radiusXProperty().bind(this.obsrv1RadiusX);
+        if (this.bound2RadiusX)
+            instance.radiusXProperty().bindBidirectional(this.obsrv2RadiusX);
+        if (this.bound1RadiusY)
+            instance.radiusYProperty().bind(this.obsrv1RadiusY);
+        if (this.bound2RadiusY)
+            instance.radiusYProperty().bindBidirectional(this.obsrv2RadiusY);
     }
 
     /**
@@ -128,11 +144,30 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindCenterX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindCenterX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCenterX = true;
-        this.obsrvCenterX = source;
+        this.bound1CenterX = true;
+        this.obsrv1CenterX = source;
+        this.bound2CenterX = false;
+        this.obsrv2CenterX = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Ellipse#centerXProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCenterX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CenterX = false;
+        this.obsrv1CenterX = null;
+        this.bound2CenterX = true;
+        this.obsrv2CenterX = source;
         return (B) this;
     }
 
@@ -143,11 +178,30 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindCenterY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindCenterY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCenterY = true;
-        this.obsrvCenterY = source;
+        this.bound1CenterY = true;
+        this.obsrv1CenterY = source;
+        this.bound2CenterY = false;
+        this.obsrv2CenterY = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Ellipse#centerYProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCenterY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CenterY = false;
+        this.obsrv1CenterY = null;
+        this.bound2CenterY = true;
+        this.obsrv2CenterY = source;
         return (B) this;
     }
 
@@ -158,11 +212,30 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindRadiusX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRadiusX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundRadiusX = true;
-        this.obsrvRadiusX = source;
+        this.bound1RadiusX = true;
+        this.obsrv1RadiusX = source;
+        this.bound2RadiusX = false;
+        this.obsrv2RadiusX = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Ellipse#radiusXProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRadiusX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1RadiusX = false;
+        this.obsrv1RadiusX = null;
+        this.bound2RadiusX = true;
+        this.obsrv2RadiusX = source;
         return (B) this;
     }
 
@@ -173,11 +246,30 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindRadiusY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRadiusY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundRadiusY = true;
-        this.obsrvRadiusY = source;
+        this.bound1RadiusY = true;
+        this.obsrv1RadiusY = source;
+        this.bound2RadiusY = false;
+        this.obsrv2RadiusY = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Ellipse#radiusYProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRadiusY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1RadiusY = false;
+        this.obsrv1RadiusY = null;
+        this.bound2RadiusY = true;
+        this.obsrv2RadiusY = source;
         return (B) this;
     }
 

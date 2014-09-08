@@ -34,20 +34,30 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     private boolean hasY;
     private double valY;
 
-    private boolean boundHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvHeight;
+    private boolean bound1Height;
+    private boolean bound2Height;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Height;
+    private javafx.beans.property.Property<Number> obsrv2Height;
 
-    private boolean boundPaint;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> obsrvPaint;
+    private boolean bound1Paint;
+    private boolean bound2Paint;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> obsrv1Paint;
+    private javafx.beans.property.Property<javafx.scene.paint.Paint> obsrv2Paint;
 
-    private boolean boundWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvWidth;
+    private boolean bound1Width;
+    private boolean bound2Width;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Width;
+    private javafx.beans.property.Property<Number> obsrv2Width;
 
-    private boolean boundX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvX;
+    private boolean bound1X;
+    private boolean bound2X;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1X;
+    private javafx.beans.property.Property<Number> obsrv2X;
 
-    private boolean boundY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvY;
+    private boolean bound1Y;
+    private boolean bound2Y;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Y;
+    private javafx.beans.property.Property<Number> obsrv2Y;
 
     @Override
     public void applyTo(Z instance)
@@ -63,16 +73,26 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
             instance.setX(this.valX);
         if (this.hasY)
             instance.setY(this.valY);
-        if (this.boundHeight)
-            instance.heightProperty().bind(this.obsrvHeight);
-        if (this.boundPaint)
-            instance.paintProperty().bind(this.obsrvPaint);
-        if (this.boundWidth)
-            instance.widthProperty().bind(this.obsrvWidth);
-        if (this.boundX)
-            instance.xProperty().bind(this.obsrvX);
-        if (this.boundY)
-            instance.yProperty().bind(this.obsrvY);
+        if (this.bound1Height)
+            instance.heightProperty().bind(this.obsrv1Height);
+        if (this.bound2Height)
+            instance.heightProperty().bindBidirectional(this.obsrv2Height);
+        if (this.bound1Paint)
+            instance.paintProperty().bind(this.obsrv1Paint);
+        if (this.bound2Paint)
+            instance.paintProperty().bindBidirectional(this.obsrv2Paint);
+        if (this.bound1Width)
+            instance.widthProperty().bind(this.obsrv1Width);
+        if (this.bound2Width)
+            instance.widthProperty().bindBidirectional(this.obsrv2Width);
+        if (this.bound1X)
+            instance.xProperty().bind(this.obsrv1X);
+        if (this.bound2X)
+            instance.xProperty().bindBidirectional(this.obsrv2X);
+        if (this.bound1Y)
+            instance.yProperty().bind(this.obsrv1Y);
+        if (this.bound2Y)
+            instance.yProperty().bindBidirectional(this.obsrv2Y);
     }
 
     /**
@@ -152,11 +172,30 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundHeight = true;
-        this.obsrvHeight = source;
+        this.bound1Height = true;
+        this.obsrv1Height = source;
+        this.bound2Height = false;
+        this.obsrv2Height = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ColorInput#heightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Height = false;
+        this.obsrv1Height = null;
+        this.bound2Height = true;
+        this.obsrv2Height = source;
         return (B) this;
     }
 
@@ -170,8 +209,27 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     public final B bindPaint(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPaint = true;
-        this.obsrvPaint = source;
+        this.bound1Paint = true;
+        this.obsrv1Paint = source;
+        this.bound2Paint = false;
+        this.obsrv2Paint = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ColorInput#paintProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPaint(javafx.beans.property.Property<javafx.scene.paint.Paint> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Paint = false;
+        this.obsrv1Paint = null;
+        this.bound2Paint = true;
+        this.obsrv2Paint = source;
         return (B) this;
     }
 
@@ -182,11 +240,30 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundWidth = true;
-        this.obsrvWidth = source;
+        this.bound1Width = true;
+        this.obsrv1Width = source;
+        this.bound2Width = false;
+        this.obsrv2Width = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ColorInput#widthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Width = false;
+        this.obsrv1Width = null;
+        this.bound2Width = true;
+        this.obsrv2Width = source;
         return (B) this;
     }
 
@@ -197,11 +274,30 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundX = true;
-        this.obsrvX = source;
+        this.bound1X = true;
+        this.obsrv1X = source;
+        this.bound2X = false;
+        this.obsrv2X = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ColorInput#xProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1X = false;
+        this.obsrv1X = null;
+        this.bound2X = true;
+        this.obsrv2X = source;
         return (B) this;
     }
 
@@ -212,11 +308,30 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundY = true;
-        this.obsrvY = source;
+        this.bound1Y = true;
+        this.obsrv1Y = source;
+        this.bound2Y = false;
+        this.obsrv2Y = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ColorInput#yProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Y = false;
+        this.obsrv1Y = null;
+        this.bound2Y = true;
+        this.obsrv2Y = source;
         return (B) this;
     }
 

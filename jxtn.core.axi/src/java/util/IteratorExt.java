@@ -38,9 +38,12 @@ import jxtn.core.axi.MemberComparators;
 import jxtn.core.axi.collections.ConcatedIterator;
 import jxtn.core.axi.collections.ExpandedIterator;
 import jxtn.core.axi.collections.FilteredIterator;
+import jxtn.core.axi.collections.IndexedItem;
+import jxtn.core.axi.collections.IndexedIterator;
 import jxtn.core.axi.collections.LinkLineIterator;
 import jxtn.core.axi.collections.LinkTreeIterator;
 import jxtn.core.axi.collections.MappedIterator;
+import jxtn.core.axi.collections.SkippedIterator;
 
 /**
  * {@link Iterator}的延伸功能
@@ -171,10 +174,10 @@ public interface IteratorExt<E>
     //
 
     /**
-     * 將目前列舉作為指定項目型態的列舉傳回
+     * 將目前列舉器作為指定項目型態的列舉器傳回
      *
      * @param <V> 傳回項目型態
-     * @return 指定項目型態的列舉(物件仍為目前列舉)
+     * @return 指定項目型態的列舉器(物件仍為目前列舉器)
      */
     @SuppressWarnings("unchecked")
     default <V> Iterator<V> as()
@@ -183,11 +186,11 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 依照展開函數建立展開列舉
+     * 依照展開函數建立展開列舉器
      *
      * @param <R> 展開項目型態
      * @param expander 展開項目的函數
-     * @return 展開列舉，依賴原有的列舉
+     * @return 展開列舉器，依賴原有的列舉器
      */
     default <R> Iterator<R> expand(Function<? super E, Iterator<R>> expander)
     {
@@ -196,10 +199,10 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 依照條件建立過濾列舉
+     * 依照條件建立過濾列舉器
      *
      * @param filter 過濾條件
-     * @return 過濾列舉，依賴原有的列舉
+     * @return 過濾列舉器，依賴原有的列舉器
      */
     default Iterator<E> filter(Predicate<? super E> filter)
     {
@@ -208,11 +211,22 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 依照對照函數建立對照列舉
+     * 建立加上索引的列舉器
+     *
+     * @return 加上索引的列舉器，依賴原有的列舉器
+     */
+    default Iterator<IndexedItem<E>> indexed()
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        return new IndexedIterator<>(thiz);
+    }
+
+    /**
+     * 依照對照函數建立對照列舉器
      *
      * @param <R> 對照項目型態
      * @param mapper 對照項目的函數
-     * @return 對照列舉，依賴原有的列舉
+     * @return 對照列舉器，依賴原有的列舉器
      */
     default <R> Iterator<R> map(Function<? super E, R> mapper)
     {
@@ -221,17 +235,29 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 取得指定型態的項目列舉
+     * 建立只包含指定型態項目的列舉器
      *
-     * @param <R> 要取得的項目型態
+     * @param <R> 要取得項目的型態
      * @param type 要取得項目的型態
-     * @return 包含{@code type}型態項目的列舉
+     * @return 只包含{@code type}型態項目的列舉
      */
     @SuppressWarnings("unchecked")
     default <R extends E> Iterator<R> ofType(Class<R> type)
     {
         Iterator<E> thiz = (Iterator<E>) this;
         return thiz.filter(type::isInstance).map(e -> (R) e);
+    }
+
+    /**
+     * 建立跳過指定項目數量的列舉器
+     *
+     * @param count 要跳過的項目數量
+     * @return 跳過指定數量的列舉器，依賴原有的列舉器
+     */
+    default Iterator<E> skip(int count)
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        return new SkippedIterator<>(thiz, count);
     }
 
     //////////////////////////////////////////////////////////////////////////

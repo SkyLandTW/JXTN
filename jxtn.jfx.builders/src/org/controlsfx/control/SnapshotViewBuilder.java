@@ -37,8 +37,10 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
     private boolean hasSelectionRatioFixed;
     private boolean valSelectionRatioFixed;
 
-    private boolean boundNode;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvNode;
+    private boolean bound1Node;
+    private boolean bound2Node;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Node;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Node;
 
     @Override
     public void applyTo(Z instance)
@@ -56,8 +58,10 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
             instance.setSelectionActivityExplicitlyManaged(this.valSelectionActivityExplicitlyManaged);
         if (this.hasSelectionRatioFixed)
             instance.setSelectionRatioFixed(this.valSelectionRatioFixed);
-        if (this.boundNode)
-            instance.nodeProperty().bind(this.obsrvNode);
+        if (this.bound1Node)
+            instance.nodeProperty().bind(this.obsrv1Node);
+        if (this.bound2Node)
+            instance.nodeProperty().bindBidirectional(this.obsrv2Node);
     }
 
     /**
@@ -154,8 +158,27 @@ public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewB
     public final B bindNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundNode = true;
-        this.obsrvNode = source;
+        this.bound1Node = true;
+        this.obsrv1Node = source;
+        this.bound2Node = false;
+        this.obsrv2Node = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#nodeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalNode(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Node = false;
+        this.obsrv1Node = null;
+        this.bound2Node = true;
+        this.obsrv2Node = source;
         return (B) this;
     }
 

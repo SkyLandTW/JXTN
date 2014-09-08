@@ -37,23 +37,35 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     private boolean hasY;
     private double valY;
 
-    private boolean boundControlX1;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvControlX1;
+    private boolean bound1ControlX1;
+    private boolean bound2ControlX1;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1ControlX1;
+    private javafx.beans.property.Property<Number> obsrv2ControlX1;
 
-    private boolean boundControlX2;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvControlX2;
+    private boolean bound1ControlX2;
+    private boolean bound2ControlX2;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1ControlX2;
+    private javafx.beans.property.Property<Number> obsrv2ControlX2;
 
-    private boolean boundControlY1;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvControlY1;
+    private boolean bound1ControlY1;
+    private boolean bound2ControlY1;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1ControlY1;
+    private javafx.beans.property.Property<Number> obsrv2ControlY1;
 
-    private boolean boundControlY2;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvControlY2;
+    private boolean bound1ControlY2;
+    private boolean bound2ControlY2;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1ControlY2;
+    private javafx.beans.property.Property<Number> obsrv2ControlY2;
 
-    private boolean boundX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvX;
+    private boolean bound1X;
+    private boolean bound2X;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1X;
+    private javafx.beans.property.Property<Number> obsrv2X;
 
-    private boolean boundY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvY;
+    private boolean bound1Y;
+    private boolean bound2Y;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Y;
+    private javafx.beans.property.Property<Number> obsrv2Y;
 
     @Override
     public void applyTo(Z instance)
@@ -71,18 +83,30 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
             instance.setX(this.valX);
         if (this.hasY)
             instance.setY(this.valY);
-        if (this.boundControlX1)
-            instance.controlX1Property().bind(this.obsrvControlX1);
-        if (this.boundControlX2)
-            instance.controlX2Property().bind(this.obsrvControlX2);
-        if (this.boundControlY1)
-            instance.controlY1Property().bind(this.obsrvControlY1);
-        if (this.boundControlY2)
-            instance.controlY2Property().bind(this.obsrvControlY2);
-        if (this.boundX)
-            instance.xProperty().bind(this.obsrvX);
-        if (this.boundY)
-            instance.yProperty().bind(this.obsrvY);
+        if (this.bound1ControlX1)
+            instance.controlX1Property().bind(this.obsrv1ControlX1);
+        if (this.bound2ControlX1)
+            instance.controlX1Property().bindBidirectional(this.obsrv2ControlX1);
+        if (this.bound1ControlX2)
+            instance.controlX2Property().bind(this.obsrv1ControlX2);
+        if (this.bound2ControlX2)
+            instance.controlX2Property().bindBidirectional(this.obsrv2ControlX2);
+        if (this.bound1ControlY1)
+            instance.controlY1Property().bind(this.obsrv1ControlY1);
+        if (this.bound2ControlY1)
+            instance.controlY1Property().bindBidirectional(this.obsrv2ControlY1);
+        if (this.bound1ControlY2)
+            instance.controlY2Property().bind(this.obsrv1ControlY2);
+        if (this.bound2ControlY2)
+            instance.controlY2Property().bindBidirectional(this.obsrv2ControlY2);
+        if (this.bound1X)
+            instance.xProperty().bind(this.obsrv1X);
+        if (this.bound2X)
+            instance.xProperty().bindBidirectional(this.obsrv2X);
+        if (this.bound1Y)
+            instance.yProperty().bind(this.obsrv1Y);
+        if (this.bound2Y)
+            instance.yProperty().bindBidirectional(this.obsrv2Y);
     }
 
     /**
@@ -176,11 +200,30 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindControlX1(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindControlX1(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundControlX1 = true;
-        this.obsrvControlX1 = source;
+        this.bound1ControlX1 = true;
+        this.obsrv1ControlX1 = source;
+        this.bound2ControlX1 = false;
+        this.obsrv2ControlX1 = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CubicCurveTo#controlX1Property}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalControlX1(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ControlX1 = false;
+        this.obsrv1ControlX1 = null;
+        this.bound2ControlX1 = true;
+        this.obsrv2ControlX1 = source;
         return (B) this;
     }
 
@@ -191,11 +234,30 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindControlX2(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindControlX2(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundControlX2 = true;
-        this.obsrvControlX2 = source;
+        this.bound1ControlX2 = true;
+        this.obsrv1ControlX2 = source;
+        this.bound2ControlX2 = false;
+        this.obsrv2ControlX2 = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CubicCurveTo#controlX2Property}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalControlX2(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ControlX2 = false;
+        this.obsrv1ControlX2 = null;
+        this.bound2ControlX2 = true;
+        this.obsrv2ControlX2 = source;
         return (B) this;
     }
 
@@ -206,11 +268,30 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindControlY1(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindControlY1(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundControlY1 = true;
-        this.obsrvControlY1 = source;
+        this.bound1ControlY1 = true;
+        this.obsrv1ControlY1 = source;
+        this.bound2ControlY1 = false;
+        this.obsrv2ControlY1 = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CubicCurveTo#controlY1Property}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalControlY1(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ControlY1 = false;
+        this.obsrv1ControlY1 = null;
+        this.bound2ControlY1 = true;
+        this.obsrv2ControlY1 = source;
         return (B) this;
     }
 
@@ -221,11 +302,30 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindControlY2(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindControlY2(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundControlY2 = true;
-        this.obsrvControlY2 = source;
+        this.bound1ControlY2 = true;
+        this.obsrv1ControlY2 = source;
+        this.bound2ControlY2 = false;
+        this.obsrv2ControlY2 = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CubicCurveTo#controlY2Property}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalControlY2(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ControlY2 = false;
+        this.obsrv1ControlY2 = null;
+        this.bound2ControlY2 = true;
+        this.obsrv2ControlY2 = source;
         return (B) this;
     }
 
@@ -236,11 +336,30 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundX = true;
-        this.obsrvX = source;
+        this.bound1X = true;
+        this.obsrv1X = source;
+        this.bound2X = false;
+        this.obsrv2X = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CubicCurveTo#xProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1X = false;
+        this.obsrv1X = null;
+        this.bound2X = true;
+        this.obsrv2X = source;
         return (B) this;
     }
 
@@ -251,11 +370,30 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundY = true;
-        this.obsrvY = source;
+        this.bound1Y = true;
+        this.obsrv1Y = source;
+        this.bound2Y = false;
+        this.obsrv2Y = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CubicCurveTo#yProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Y = false;
+        this.obsrv1Y = null;
+        this.bound2Y = true;
+        this.obsrv2Y = source;
         return (B) this;
     }
 

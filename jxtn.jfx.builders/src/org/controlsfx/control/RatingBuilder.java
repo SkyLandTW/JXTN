@@ -34,20 +34,30 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     private boolean hasUpdateOnHover;
     private boolean valUpdateOnHover;
 
-    private boolean boundMax;
-    private javafx.beans.value.ObservableValue<? extends Integer> obsrvMax;
+    private boolean bound1Max;
+    private boolean bound2Max;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Max;
+    private javafx.beans.property.Property<Number> obsrv2Max;
 
-    private boolean boundOrientation;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrvOrientation;
+    private boolean bound1Orientation;
+    private boolean bound2Orientation;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrv1Orientation;
+    private javafx.beans.property.Property<javafx.geometry.Orientation> obsrv2Orientation;
 
-    private boolean boundPartialRating;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvPartialRating;
+    private boolean bound1PartialRating;
+    private boolean bound2PartialRating;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1PartialRating;
+    private javafx.beans.property.Property<Boolean> obsrv2PartialRating;
 
-    private boolean boundRating;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvRating;
+    private boolean bound1Rating;
+    private boolean bound2Rating;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Rating;
+    private javafx.beans.property.Property<Number> obsrv2Rating;
 
-    private boolean boundUpdateOnHover;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvUpdateOnHover;
+    private boolean bound1UpdateOnHover;
+    private boolean bound2UpdateOnHover;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1UpdateOnHover;
+    private javafx.beans.property.Property<Boolean> obsrv2UpdateOnHover;
 
     @Override
     public void applyTo(Z instance)
@@ -63,16 +73,26 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
             instance.setRating(this.valRating);
         if (this.hasUpdateOnHover)
             instance.setUpdateOnHover(this.valUpdateOnHover);
-        if (this.boundMax)
-            instance.maxProperty().bind(this.obsrvMax);
-        if (this.boundOrientation)
-            instance.orientationProperty().bind(this.obsrvOrientation);
-        if (this.boundPartialRating)
-            instance.partialRatingProperty().bind(this.obsrvPartialRating);
-        if (this.boundRating)
-            instance.ratingProperty().bind(this.obsrvRating);
-        if (this.boundUpdateOnHover)
-            instance.updateOnHoverProperty().bind(this.obsrvUpdateOnHover);
+        if (this.bound1Max)
+            instance.maxProperty().bind(this.obsrv1Max);
+        if (this.bound2Max)
+            instance.maxProperty().bindBidirectional(this.obsrv2Max);
+        if (this.bound1Orientation)
+            instance.orientationProperty().bind(this.obsrv1Orientation);
+        if (this.bound2Orientation)
+            instance.orientationProperty().bindBidirectional(this.obsrv2Orientation);
+        if (this.bound1PartialRating)
+            instance.partialRatingProperty().bind(this.obsrv1PartialRating);
+        if (this.bound2PartialRating)
+            instance.partialRatingProperty().bindBidirectional(this.obsrv2PartialRating);
+        if (this.bound1Rating)
+            instance.ratingProperty().bind(this.obsrv1Rating);
+        if (this.bound2Rating)
+            instance.ratingProperty().bindBidirectional(this.obsrv2Rating);
+        if (this.bound1UpdateOnHover)
+            instance.updateOnHoverProperty().bind(this.obsrv1UpdateOnHover);
+        if (this.bound2UpdateOnHover)
+            instance.updateOnHoverProperty().bindBidirectional(this.obsrv2UpdateOnHover);
     }
 
     /**
@@ -152,11 +172,30 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMax(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindMax(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMax = true;
-        this.obsrvMax = source;
+        this.bound1Max = true;
+        this.obsrv1Max = source;
+        this.bound2Max = false;
+        this.obsrv2Max = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Rating#maxProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMax(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Max = false;
+        this.obsrv1Max = null;
+        this.bound2Max = true;
+        this.obsrv2Max = source;
         return (B) this;
     }
 
@@ -170,8 +209,27 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOrientation = true;
-        this.obsrvOrientation = source;
+        this.bound1Orientation = true;
+        this.obsrv1Orientation = source;
+        this.bound2Orientation = false;
+        this.obsrv2Orientation = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Rating#orientationProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOrientation(javafx.beans.property.Property<javafx.geometry.Orientation> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Orientation = false;
+        this.obsrv1Orientation = null;
+        this.bound2Orientation = true;
+        this.obsrv2Orientation = source;
         return (B) this;
     }
 
@@ -185,8 +243,27 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     public final B bindPartialRating(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPartialRating = true;
-        this.obsrvPartialRating = source;
+        this.bound1PartialRating = true;
+        this.obsrv1PartialRating = source;
+        this.bound2PartialRating = false;
+        this.obsrv2PartialRating = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Rating#partialRatingProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPartialRating(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PartialRating = false;
+        this.obsrv1PartialRating = null;
+        this.bound2PartialRating = true;
+        this.obsrv2PartialRating = source;
         return (B) this;
     }
 
@@ -197,11 +274,30 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindRating(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRating(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundRating = true;
-        this.obsrvRating = source;
+        this.bound1Rating = true;
+        this.obsrv1Rating = source;
+        this.bound2Rating = false;
+        this.obsrv2Rating = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Rating#ratingProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRating(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Rating = false;
+        this.obsrv1Rating = null;
+        this.bound2Rating = true;
+        this.obsrv2Rating = source;
         return (B) this;
     }
 
@@ -215,8 +311,27 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     public final B bindUpdateOnHover(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundUpdateOnHover = true;
-        this.obsrvUpdateOnHover = source;
+        this.bound1UpdateOnHover = true;
+        this.obsrv1UpdateOnHover = source;
+        this.bound2UpdateOnHover = false;
+        this.obsrv2UpdateOnHover = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Rating#updateOnHoverProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalUpdateOnHover(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1UpdateOnHover = false;
+        this.obsrv1UpdateOnHover = null;
+        this.bound2UpdateOnHover = true;
+        this.obsrv2UpdateOnHover = source;
         return (B) this;
     }
 

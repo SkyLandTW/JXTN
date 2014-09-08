@@ -58,14 +58,20 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     private boolean hasShowRowHeader;
     private boolean valShowRowHeader;
 
-    private boolean boundEditable;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvEditable;
+    private boolean bound1Editable;
+    private boolean bound2Editable;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Editable;
+    private javafx.beans.property.Property<Boolean> obsrv2Editable;
 
-    private boolean boundShowColumnHeader;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvShowColumnHeader;
+    private boolean bound1ShowColumnHeader;
+    private boolean bound2ShowColumnHeader;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ShowColumnHeader;
+    private javafx.beans.property.Property<Boolean> obsrv2ShowColumnHeader;
 
-    private boolean boundShowRowHeader;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvShowRowHeader;
+    private boolean bound1ShowRowHeader;
+    private boolean bound2ShowRowHeader;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ShowRowHeader;
+    private javafx.beans.property.Property<Boolean> obsrv2ShowRowHeader;
 
     @Override
     public void applyTo(Z instance)
@@ -97,12 +103,18 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
             instance.setShowColumnHeader(this.valShowColumnHeader);
         if (this.hasShowRowHeader)
             instance.setShowRowHeader(this.valShowRowHeader);
-        if (this.boundEditable)
-            instance.editableProperty().bind(this.obsrvEditable);
-        if (this.boundShowColumnHeader)
-            instance.showColumnHeaderProperty().bind(this.obsrvShowColumnHeader);
-        if (this.boundShowRowHeader)
-            instance.showRowHeaderProperty().bind(this.obsrvShowRowHeader);
+        if (this.bound1Editable)
+            instance.editableProperty().bind(this.obsrv1Editable);
+        if (this.bound2Editable)
+            instance.editableProperty().bindBidirectional(this.obsrv2Editable);
+        if (this.bound1ShowColumnHeader)
+            instance.showColumnHeaderProperty().bind(this.obsrv1ShowColumnHeader);
+        if (this.bound2ShowColumnHeader)
+            instance.showColumnHeaderProperty().bindBidirectional(this.obsrv2ShowColumnHeader);
+        if (this.bound1ShowRowHeader)
+            instance.showRowHeaderProperty().bind(this.obsrv1ShowRowHeader);
+        if (this.bound2ShowRowHeader)
+            instance.showRowHeaderProperty().bindBidirectional(this.obsrv2ShowRowHeader);
     }
 
     /**
@@ -372,8 +384,27 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     public final B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundEditable = true;
-        this.obsrvEditable = source;
+        this.bound1Editable = true;
+        this.obsrv1Editable = source;
+        this.bound2Editable = false;
+        this.obsrv2Editable = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetView#editableProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalEditable(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Editable = false;
+        this.obsrv1Editable = null;
+        this.bound2Editable = true;
+        this.obsrv2Editable = source;
         return (B) this;
     }
 
@@ -387,8 +418,27 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     public final B bindShowColumnHeader(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundShowColumnHeader = true;
-        this.obsrvShowColumnHeader = source;
+        this.bound1ShowColumnHeader = true;
+        this.obsrv1ShowColumnHeader = source;
+        this.bound2ShowColumnHeader = false;
+        this.obsrv2ShowColumnHeader = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetView#showColumnHeaderProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalShowColumnHeader(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ShowColumnHeader = false;
+        this.obsrv1ShowColumnHeader = null;
+        this.bound2ShowColumnHeader = true;
+        this.obsrv2ShowColumnHeader = source;
         return (B) this;
     }
 
@@ -402,8 +452,27 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     public final B bindShowRowHeader(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundShowRowHeader = true;
-        this.obsrvShowRowHeader = source;
+        this.bound1ShowRowHeader = true;
+        this.obsrv1ShowRowHeader = source;
+        this.bound2ShowRowHeader = false;
+        this.obsrv2ShowRowHeader = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetView#showRowHeaderProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalShowRowHeader(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ShowRowHeader = false;
+        this.obsrv1ShowRowHeader = null;
+        this.bound2ShowRowHeader = true;
+        this.obsrv2ShowRowHeader = source;
         return (B) this;
     }
 

@@ -55,38 +55,60 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     private boolean hasSelectionModel;
     private javafx.scene.control.MultipleSelectionModel<T> valSelectionModel;
 
-    private boolean boundCellFactory;
-    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.ListView<T>, javafx.scene.control.ListCell<T>>> obsrvCellFactory;
+    private boolean bound1CellFactory;
+    private boolean bound2CellFactory;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.ListView<T>, javafx.scene.control.ListCell<T>>> obsrv1CellFactory;
+    private javafx.beans.property.Property<javafx.util.Callback<javafx.scene.control.ListView<T>, javafx.scene.control.ListCell<T>>> obsrv2CellFactory;
 
-    private boolean boundEditable;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvEditable;
+    private boolean bound1Editable;
+    private boolean bound2Editable;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Editable;
+    private javafx.beans.property.Property<Boolean> obsrv2Editable;
 
-    private boolean boundFixedCellSize;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvFixedCellSize;
+    private boolean bound1FixedCellSize;
+    private boolean bound2FixedCellSize;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1FixedCellSize;
+    private javafx.beans.property.Property<Number> obsrv2FixedCellSize;
 
-    private boolean boundFocusModel;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.FocusModel<T>> obsrvFocusModel;
+    private boolean bound1FocusModel;
+    private boolean bound2FocusModel;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.FocusModel<T>> obsrv1FocusModel;
+    private javafx.beans.property.Property<javafx.scene.control.FocusModel<T>> obsrv2FocusModel;
 
-    private boolean boundItems;
-    private javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<T>> obsrvItems;
+    private boolean bound1Items;
+    private boolean bound2Items;
+    private javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<T>> obsrv1Items;
+    private javafx.beans.property.Property<javafx.collections.ObservableList<T>> obsrv2Items;
 
-    private boolean boundOnEditCancel;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> obsrvOnEditCancel;
+    private boolean bound1OnEditCancel;
+    private boolean bound2OnEditCancel;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> obsrv1OnEditCancel;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> obsrv2OnEditCancel;
 
-    private boolean boundOnEditCommit;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> obsrvOnEditCommit;
+    private boolean bound1OnEditCommit;
+    private boolean bound2OnEditCommit;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> obsrv1OnEditCommit;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> obsrv2OnEditCommit;
 
-    private boolean boundOnEditStart;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> obsrvOnEditStart;
+    private boolean bound1OnEditStart;
+    private boolean bound2OnEditStart;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> obsrv1OnEditStart;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> obsrv2OnEditStart;
 
-    private boolean boundOrientation;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrvOrientation;
+    private boolean bound1Orientation;
+    private boolean bound2Orientation;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrv1Orientation;
+    private javafx.beans.property.Property<javafx.geometry.Orientation> obsrv2Orientation;
 
-    private boolean boundPlaceholder;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvPlaceholder;
+    private boolean bound1Placeholder;
+    private boolean bound2Placeholder;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Placeholder;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Placeholder;
 
-    private boolean boundSelectionModel;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> obsrvSelectionModel;
+    private boolean bound1SelectionModel;
+    private boolean bound2SelectionModel;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> obsrv1SelectionModel;
+    private javafx.beans.property.Property<javafx.scene.control.MultipleSelectionModel<T>> obsrv2SelectionModel;
 
     @Override
     public void applyTo(Z instance)
@@ -116,28 +138,50 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
             instance.setPlaceholder(this.valPlaceholder);
         if (this.hasSelectionModel)
             instance.setSelectionModel(this.valSelectionModel);
-        if (this.boundCellFactory)
-            instance.cellFactoryProperty().bind(this.obsrvCellFactory);
-        if (this.boundEditable)
-            instance.editableProperty().bind(this.obsrvEditable);
-        if (this.boundFixedCellSize)
-            instance.fixedCellSizeProperty().bind(this.obsrvFixedCellSize);
-        if (this.boundFocusModel)
-            instance.focusModelProperty().bind(this.obsrvFocusModel);
-        if (this.boundItems)
-            instance.itemsProperty().bind(this.obsrvItems);
-        if (this.boundOnEditCancel)
-            instance.onEditCancelProperty().bind(this.obsrvOnEditCancel);
-        if (this.boundOnEditCommit)
-            instance.onEditCommitProperty().bind(this.obsrvOnEditCommit);
-        if (this.boundOnEditStart)
-            instance.onEditStartProperty().bind(this.obsrvOnEditStart);
-        if (this.boundOrientation)
-            instance.orientationProperty().bind(this.obsrvOrientation);
-        if (this.boundPlaceholder)
-            instance.placeholderProperty().bind(this.obsrvPlaceholder);
-        if (this.boundSelectionModel)
-            instance.selectionModelProperty().bind(this.obsrvSelectionModel);
+        if (this.bound1CellFactory)
+            instance.cellFactoryProperty().bind(this.obsrv1CellFactory);
+        if (this.bound2CellFactory)
+            instance.cellFactoryProperty().bindBidirectional(this.obsrv2CellFactory);
+        if (this.bound1Editable)
+            instance.editableProperty().bind(this.obsrv1Editable);
+        if (this.bound2Editable)
+            instance.editableProperty().bindBidirectional(this.obsrv2Editable);
+        if (this.bound1FixedCellSize)
+            instance.fixedCellSizeProperty().bind(this.obsrv1FixedCellSize);
+        if (this.bound2FixedCellSize)
+            instance.fixedCellSizeProperty().bindBidirectional(this.obsrv2FixedCellSize);
+        if (this.bound1FocusModel)
+            instance.focusModelProperty().bind(this.obsrv1FocusModel);
+        if (this.bound2FocusModel)
+            instance.focusModelProperty().bindBidirectional(this.obsrv2FocusModel);
+        if (this.bound1Items)
+            instance.itemsProperty().bind(this.obsrv1Items);
+        if (this.bound2Items)
+            instance.itemsProperty().bindBidirectional(this.obsrv2Items);
+        if (this.bound1OnEditCancel)
+            instance.onEditCancelProperty().bind(this.obsrv1OnEditCancel);
+        if (this.bound2OnEditCancel)
+            instance.onEditCancelProperty().bindBidirectional(this.obsrv2OnEditCancel);
+        if (this.bound1OnEditCommit)
+            instance.onEditCommitProperty().bind(this.obsrv1OnEditCommit);
+        if (this.bound2OnEditCommit)
+            instance.onEditCommitProperty().bindBidirectional(this.obsrv2OnEditCommit);
+        if (this.bound1OnEditStart)
+            instance.onEditStartProperty().bind(this.obsrv1OnEditStart);
+        if (this.bound2OnEditStart)
+            instance.onEditStartProperty().bindBidirectional(this.obsrv2OnEditStart);
+        if (this.bound1Orientation)
+            instance.orientationProperty().bind(this.obsrv1Orientation);
+        if (this.bound2Orientation)
+            instance.orientationProperty().bindBidirectional(this.obsrv2Orientation);
+        if (this.bound1Placeholder)
+            instance.placeholderProperty().bind(this.obsrv1Placeholder);
+        if (this.bound2Placeholder)
+            instance.placeholderProperty().bindBidirectional(this.obsrv2Placeholder);
+        if (this.bound1SelectionModel)
+            instance.selectionModelProperty().bind(this.obsrv1SelectionModel);
+        if (this.bound2SelectionModel)
+            instance.selectionModelProperty().bindBidirectional(this.obsrv2SelectionModel);
     }
 
     /**
@@ -318,8 +362,27 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     public final B bindCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.ListView<T>, javafx.scene.control.ListCell<T>>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCellFactory = true;
-        this.obsrvCellFactory = source;
+        this.bound1CellFactory = true;
+        this.obsrv1CellFactory = source;
+        this.bound2CellFactory = false;
+        this.obsrv2CellFactory = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ListView#cellFactoryProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCellFactory(javafx.beans.property.Property<javafx.util.Callback<javafx.scene.control.ListView<T>, javafx.scene.control.ListCell<T>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CellFactory = false;
+        this.obsrv1CellFactory = null;
+        this.bound2CellFactory = true;
+        this.obsrv2CellFactory = source;
         return (B) this;
     }
 
@@ -333,8 +396,27 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     public final B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundEditable = true;
-        this.obsrvEditable = source;
+        this.bound1Editable = true;
+        this.obsrv1Editable = source;
+        this.bound2Editable = false;
+        this.obsrv2Editable = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ListView#editableProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalEditable(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Editable = false;
+        this.obsrv1Editable = null;
+        this.bound2Editable = true;
+        this.obsrv2Editable = source;
         return (B) this;
     }
 
@@ -345,11 +427,30 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindFixedCellSize(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindFixedCellSize(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFixedCellSize = true;
-        this.obsrvFixedCellSize = source;
+        this.bound1FixedCellSize = true;
+        this.obsrv1FixedCellSize = source;
+        this.bound2FixedCellSize = false;
+        this.obsrv2FixedCellSize = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ListView#fixedCellSizeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFixedCellSize(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FixedCellSize = false;
+        this.obsrv1FixedCellSize = null;
+        this.bound2FixedCellSize = true;
+        this.obsrv2FixedCellSize = source;
         return (B) this;
     }
 
@@ -363,8 +464,27 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     public final B bindFocusModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.FocusModel<T>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFocusModel = true;
-        this.obsrvFocusModel = source;
+        this.bound1FocusModel = true;
+        this.obsrv1FocusModel = source;
+        this.bound2FocusModel = false;
+        this.obsrv2FocusModel = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ListView#focusModelProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFocusModel(javafx.beans.property.Property<javafx.scene.control.FocusModel<T>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FocusModel = false;
+        this.obsrv1FocusModel = null;
+        this.bound2FocusModel = true;
+        this.obsrv2FocusModel = source;
         return (B) this;
     }
 
@@ -378,8 +498,27 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     public final B bindItems(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<T>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundItems = true;
-        this.obsrvItems = source;
+        this.bound1Items = true;
+        this.obsrv1Items = source;
+        this.bound2Items = false;
+        this.obsrv2Items = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ListView#itemsProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalItems(javafx.beans.property.Property<javafx.collections.ObservableList<T>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Items = false;
+        this.obsrv1Items = null;
+        this.bound2Items = true;
+        this.obsrv2Items = source;
         return (B) this;
     }
 
@@ -393,8 +532,27 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     public final B bindOnEditCancel(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnEditCancel = true;
-        this.obsrvOnEditCancel = source;
+        this.bound1OnEditCancel = true;
+        this.obsrv1OnEditCancel = source;
+        this.bound2OnEditCancel = false;
+        this.obsrv2OnEditCancel = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ListView#onEditCancelProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnEditCancel(javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnEditCancel = false;
+        this.obsrv1OnEditCancel = null;
+        this.bound2OnEditCancel = true;
+        this.obsrv2OnEditCancel = source;
         return (B) this;
     }
 
@@ -408,8 +566,27 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     public final B bindOnEditCommit(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnEditCommit = true;
-        this.obsrvOnEditCommit = source;
+        this.bound1OnEditCommit = true;
+        this.obsrv1OnEditCommit = source;
+        this.bound2OnEditCommit = false;
+        this.obsrv2OnEditCommit = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ListView#onEditCommitProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnEditCommit(javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnEditCommit = false;
+        this.obsrv1OnEditCommit = null;
+        this.bound2OnEditCommit = true;
+        this.obsrv2OnEditCommit = source;
         return (B) this;
     }
 
@@ -423,8 +600,27 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     public final B bindOnEditStart(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnEditStart = true;
-        this.obsrvOnEditStart = source;
+        this.bound1OnEditStart = true;
+        this.obsrv1OnEditStart = source;
+        this.bound2OnEditStart = false;
+        this.obsrv2OnEditStart = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ListView#onEditStartProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnEditStart(javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnEditStart = false;
+        this.obsrv1OnEditStart = null;
+        this.bound2OnEditStart = true;
+        this.obsrv2OnEditStart = source;
         return (B) this;
     }
 
@@ -438,8 +634,27 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOrientation = true;
-        this.obsrvOrientation = source;
+        this.bound1Orientation = true;
+        this.obsrv1Orientation = source;
+        this.bound2Orientation = false;
+        this.obsrv2Orientation = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ListView#orientationProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOrientation(javafx.beans.property.Property<javafx.geometry.Orientation> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Orientation = false;
+        this.obsrv1Orientation = null;
+        this.bound2Orientation = true;
+        this.obsrv2Orientation = source;
         return (B) this;
     }
 
@@ -453,8 +668,27 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     public final B bindPlaceholder(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPlaceholder = true;
-        this.obsrvPlaceholder = source;
+        this.bound1Placeholder = true;
+        this.obsrv1Placeholder = source;
+        this.bound2Placeholder = false;
+        this.obsrv2Placeholder = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ListView#placeholderProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPlaceholder(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Placeholder = false;
+        this.obsrv1Placeholder = null;
+        this.bound2Placeholder = true;
+        this.obsrv2Placeholder = source;
         return (B) this;
     }
 
@@ -468,8 +702,27 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     public final B bindSelectionModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSelectionModel = true;
-        this.obsrvSelectionModel = source;
+        this.bound1SelectionModel = true;
+        this.obsrv1SelectionModel = source;
+        this.bound2SelectionModel = false;
+        this.obsrv2SelectionModel = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ListView#selectionModelProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSelectionModel(javafx.beans.property.Property<javafx.scene.control.MultipleSelectionModel<T>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SelectionModel = false;
+        this.obsrv1SelectionModel = null;
+        this.bound2SelectionModel = true;
+        this.obsrv2SelectionModel = source;
         return (B) this;
     }
 

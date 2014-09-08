@@ -31,14 +31,20 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
     private boolean hasStartMargin;
     private double valStartMargin;
 
-    private boolean boundEndMargin;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvEndMargin;
+    private boolean bound1EndMargin;
+    private boolean bound2EndMargin;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1EndMargin;
+    private javafx.beans.property.Property<Number> obsrv2EndMargin;
 
-    private boolean boundGapStartAndEnd;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvGapStartAndEnd;
+    private boolean bound1GapStartAndEnd;
+    private boolean bound2GapStartAndEnd;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1GapStartAndEnd;
+    private javafx.beans.property.Property<Boolean> obsrv2GapStartAndEnd;
 
-    private boolean boundStartMargin;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvStartMargin;
+    private boolean bound1StartMargin;
+    private boolean bound2StartMargin;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1StartMargin;
+    private javafx.beans.property.Property<Number> obsrv2StartMargin;
 
     @Override
     public void applyTo(Z instance)
@@ -52,12 +58,18 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
             instance.setGapStartAndEnd(this.valGapStartAndEnd);
         if (this.hasStartMargin)
             instance.setStartMargin(this.valStartMargin);
-        if (this.boundEndMargin)
-            instance.endMarginProperty().bind(this.obsrvEndMargin);
-        if (this.boundGapStartAndEnd)
-            instance.gapStartAndEndProperty().bind(this.obsrvGapStartAndEnd);
-        if (this.boundStartMargin)
-            instance.startMarginProperty().bind(this.obsrvStartMargin);
+        if (this.bound1EndMargin)
+            instance.endMarginProperty().bind(this.obsrv1EndMargin);
+        if (this.bound2EndMargin)
+            instance.endMarginProperty().bindBidirectional(this.obsrv2EndMargin);
+        if (this.bound1GapStartAndEnd)
+            instance.gapStartAndEndProperty().bind(this.obsrv1GapStartAndEnd);
+        if (this.bound2GapStartAndEnd)
+            instance.gapStartAndEndProperty().bindBidirectional(this.obsrv2GapStartAndEnd);
+        if (this.bound1StartMargin)
+            instance.startMarginProperty().bind(this.obsrv1StartMargin);
+        if (this.bound2StartMargin)
+            instance.startMarginProperty().bindBidirectional(this.obsrv2StartMargin);
     }
 
     /**
@@ -123,11 +135,30 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindEndMargin(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindEndMargin(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundEndMargin = true;
-        this.obsrvEndMargin = source;
+        this.bound1EndMargin = true;
+        this.obsrv1EndMargin = source;
+        this.bound2EndMargin = false;
+        this.obsrv2EndMargin = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CategoryAxis#endMarginProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalEndMargin(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1EndMargin = false;
+        this.obsrv1EndMargin = null;
+        this.bound2EndMargin = true;
+        this.obsrv2EndMargin = source;
         return (B) this;
     }
 
@@ -141,8 +172,27 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
     public final B bindGapStartAndEnd(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundGapStartAndEnd = true;
-        this.obsrvGapStartAndEnd = source;
+        this.bound1GapStartAndEnd = true;
+        this.obsrv1GapStartAndEnd = source;
+        this.bound2GapStartAndEnd = false;
+        this.obsrv2GapStartAndEnd = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CategoryAxis#gapStartAndEndProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalGapStartAndEnd(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1GapStartAndEnd = false;
+        this.obsrv1GapStartAndEnd = null;
+        this.bound2GapStartAndEnd = true;
+        this.obsrv2GapStartAndEnd = source;
         return (B) this;
     }
 
@@ -153,11 +203,30 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindStartMargin(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindStartMargin(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundStartMargin = true;
-        this.obsrvStartMargin = source;
+        this.bound1StartMargin = true;
+        this.obsrv1StartMargin = source;
+        this.bound2StartMargin = false;
+        this.obsrv2StartMargin = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CategoryAxis#startMarginProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStartMargin(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1StartMargin = false;
+        this.obsrv1StartMargin = null;
+        this.bound2StartMargin = true;
+        this.obsrv2StartMargin = source;
         return (B) this;
     }
 

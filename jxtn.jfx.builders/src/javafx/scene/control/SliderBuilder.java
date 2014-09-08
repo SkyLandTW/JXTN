@@ -55,41 +55,65 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     private boolean hasValueChanging;
     private boolean valValueChanging;
 
-    private boolean boundBlockIncrement;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvBlockIncrement;
+    private boolean bound1BlockIncrement;
+    private boolean bound2BlockIncrement;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1BlockIncrement;
+    private javafx.beans.property.Property<Number> obsrv2BlockIncrement;
 
-    private boolean boundLabelFormatter;
-    private javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<java.lang.Double>> obsrvLabelFormatter;
+    private boolean bound1LabelFormatter;
+    private boolean bound2LabelFormatter;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<java.lang.Double>> obsrv1LabelFormatter;
+    private javafx.beans.property.Property<javafx.util.StringConverter<java.lang.Double>> obsrv2LabelFormatter;
 
-    private boolean boundMajorTickUnit;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMajorTickUnit;
+    private boolean bound1MajorTickUnit;
+    private boolean bound2MajorTickUnit;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MajorTickUnit;
+    private javafx.beans.property.Property<Number> obsrv2MajorTickUnit;
 
-    private boolean boundMax;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMax;
+    private boolean bound1Max;
+    private boolean bound2Max;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Max;
+    private javafx.beans.property.Property<Number> obsrv2Max;
 
-    private boolean boundMin;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMin;
+    private boolean bound1Min;
+    private boolean bound2Min;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Min;
+    private javafx.beans.property.Property<Number> obsrv2Min;
 
-    private boolean boundMinorTickCount;
-    private javafx.beans.value.ObservableValue<? extends Integer> obsrvMinorTickCount;
+    private boolean bound1MinorTickCount;
+    private boolean bound2MinorTickCount;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MinorTickCount;
+    private javafx.beans.property.Property<Number> obsrv2MinorTickCount;
 
-    private boolean boundOrientation;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrvOrientation;
+    private boolean bound1Orientation;
+    private boolean bound2Orientation;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrv1Orientation;
+    private javafx.beans.property.Property<javafx.geometry.Orientation> obsrv2Orientation;
 
-    private boolean boundShowTickLabels;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvShowTickLabels;
+    private boolean bound1ShowTickLabels;
+    private boolean bound2ShowTickLabels;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ShowTickLabels;
+    private javafx.beans.property.Property<Boolean> obsrv2ShowTickLabels;
 
-    private boolean boundShowTickMarks;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvShowTickMarks;
+    private boolean bound1ShowTickMarks;
+    private boolean bound2ShowTickMarks;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ShowTickMarks;
+    private javafx.beans.property.Property<Boolean> obsrv2ShowTickMarks;
 
-    private boolean boundSnapToTicks;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvSnapToTicks;
+    private boolean bound1SnapToTicks;
+    private boolean bound2SnapToTicks;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1SnapToTicks;
+    private javafx.beans.property.Property<Boolean> obsrv2SnapToTicks;
 
-    private boolean boundValueChanging;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvValueChanging;
+    private boolean bound1ValueChanging;
+    private boolean bound2ValueChanging;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ValueChanging;
+    private javafx.beans.property.Property<Boolean> obsrv2ValueChanging;
 
-    private boolean boundValue;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvValue;
+    private boolean bound1Value;
+    private boolean bound2Value;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Value;
+    private javafx.beans.property.Property<Number> obsrv2Value;
 
     @Override
     public void applyTo(Z instance)
@@ -119,30 +143,54 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
             instance.setValue(this.valValue);
         if (this.hasValueChanging)
             instance.setValueChanging(this.valValueChanging);
-        if (this.boundBlockIncrement)
-            instance.blockIncrementProperty().bind(this.obsrvBlockIncrement);
-        if (this.boundLabelFormatter)
-            instance.labelFormatterProperty().bind(this.obsrvLabelFormatter);
-        if (this.boundMajorTickUnit)
-            instance.majorTickUnitProperty().bind(this.obsrvMajorTickUnit);
-        if (this.boundMax)
-            instance.maxProperty().bind(this.obsrvMax);
-        if (this.boundMin)
-            instance.minProperty().bind(this.obsrvMin);
-        if (this.boundMinorTickCount)
-            instance.minorTickCountProperty().bind(this.obsrvMinorTickCount);
-        if (this.boundOrientation)
-            instance.orientationProperty().bind(this.obsrvOrientation);
-        if (this.boundShowTickLabels)
-            instance.showTickLabelsProperty().bind(this.obsrvShowTickLabels);
-        if (this.boundShowTickMarks)
-            instance.showTickMarksProperty().bind(this.obsrvShowTickMarks);
-        if (this.boundSnapToTicks)
-            instance.snapToTicksProperty().bind(this.obsrvSnapToTicks);
-        if (this.boundValueChanging)
-            instance.valueChangingProperty().bind(this.obsrvValueChanging);
-        if (this.boundValue)
-            instance.valueProperty().bind(this.obsrvValue);
+        if (this.bound1BlockIncrement)
+            instance.blockIncrementProperty().bind(this.obsrv1BlockIncrement);
+        if (this.bound2BlockIncrement)
+            instance.blockIncrementProperty().bindBidirectional(this.obsrv2BlockIncrement);
+        if (this.bound1LabelFormatter)
+            instance.labelFormatterProperty().bind(this.obsrv1LabelFormatter);
+        if (this.bound2LabelFormatter)
+            instance.labelFormatterProperty().bindBidirectional(this.obsrv2LabelFormatter);
+        if (this.bound1MajorTickUnit)
+            instance.majorTickUnitProperty().bind(this.obsrv1MajorTickUnit);
+        if (this.bound2MajorTickUnit)
+            instance.majorTickUnitProperty().bindBidirectional(this.obsrv2MajorTickUnit);
+        if (this.bound1Max)
+            instance.maxProperty().bind(this.obsrv1Max);
+        if (this.bound2Max)
+            instance.maxProperty().bindBidirectional(this.obsrv2Max);
+        if (this.bound1Min)
+            instance.minProperty().bind(this.obsrv1Min);
+        if (this.bound2Min)
+            instance.minProperty().bindBidirectional(this.obsrv2Min);
+        if (this.bound1MinorTickCount)
+            instance.minorTickCountProperty().bind(this.obsrv1MinorTickCount);
+        if (this.bound2MinorTickCount)
+            instance.minorTickCountProperty().bindBidirectional(this.obsrv2MinorTickCount);
+        if (this.bound1Orientation)
+            instance.orientationProperty().bind(this.obsrv1Orientation);
+        if (this.bound2Orientation)
+            instance.orientationProperty().bindBidirectional(this.obsrv2Orientation);
+        if (this.bound1ShowTickLabels)
+            instance.showTickLabelsProperty().bind(this.obsrv1ShowTickLabels);
+        if (this.bound2ShowTickLabels)
+            instance.showTickLabelsProperty().bindBidirectional(this.obsrv2ShowTickLabels);
+        if (this.bound1ShowTickMarks)
+            instance.showTickMarksProperty().bind(this.obsrv1ShowTickMarks);
+        if (this.bound2ShowTickMarks)
+            instance.showTickMarksProperty().bindBidirectional(this.obsrv2ShowTickMarks);
+        if (this.bound1SnapToTicks)
+            instance.snapToTicksProperty().bind(this.obsrv1SnapToTicks);
+        if (this.bound2SnapToTicks)
+            instance.snapToTicksProperty().bindBidirectional(this.obsrv2SnapToTicks);
+        if (this.bound1ValueChanging)
+            instance.valueChangingProperty().bind(this.obsrv1ValueChanging);
+        if (this.bound2ValueChanging)
+            instance.valueChangingProperty().bindBidirectional(this.obsrv2ValueChanging);
+        if (this.bound1Value)
+            instance.valueProperty().bind(this.obsrv1Value);
+        if (this.bound2Value)
+            instance.valueProperty().bindBidirectional(this.obsrv2Value);
     }
 
     /**
@@ -320,11 +368,30 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindBlockIncrement(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindBlockIncrement(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundBlockIncrement = true;
-        this.obsrvBlockIncrement = source;
+        this.bound1BlockIncrement = true;
+        this.obsrv1BlockIncrement = source;
+        this.bound2BlockIncrement = false;
+        this.obsrv2BlockIncrement = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Slider#blockIncrementProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalBlockIncrement(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1BlockIncrement = false;
+        this.obsrv1BlockIncrement = null;
+        this.bound2BlockIncrement = true;
+        this.obsrv2BlockIncrement = source;
         return (B) this;
     }
 
@@ -338,8 +405,27 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     public final B bindLabelFormatter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<java.lang.Double>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundLabelFormatter = true;
-        this.obsrvLabelFormatter = source;
+        this.bound1LabelFormatter = true;
+        this.obsrv1LabelFormatter = source;
+        this.bound2LabelFormatter = false;
+        this.obsrv2LabelFormatter = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Slider#labelFormatterProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLabelFormatter(javafx.beans.property.Property<javafx.util.StringConverter<java.lang.Double>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1LabelFormatter = false;
+        this.obsrv1LabelFormatter = null;
+        this.bound2LabelFormatter = true;
+        this.obsrv2LabelFormatter = source;
         return (B) this;
     }
 
@@ -350,11 +436,30 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMajorTickUnit(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMajorTickUnit(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMajorTickUnit = true;
-        this.obsrvMajorTickUnit = source;
+        this.bound1MajorTickUnit = true;
+        this.obsrv1MajorTickUnit = source;
+        this.bound2MajorTickUnit = false;
+        this.obsrv2MajorTickUnit = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Slider#majorTickUnitProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMajorTickUnit(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MajorTickUnit = false;
+        this.obsrv1MajorTickUnit = null;
+        this.bound2MajorTickUnit = true;
+        this.obsrv2MajorTickUnit = source;
         return (B) this;
     }
 
@@ -365,11 +470,30 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMax(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMax(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMax = true;
-        this.obsrvMax = source;
+        this.bound1Max = true;
+        this.obsrv1Max = source;
+        this.bound2Max = false;
+        this.obsrv2Max = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Slider#maxProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMax(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Max = false;
+        this.obsrv1Max = null;
+        this.bound2Max = true;
+        this.obsrv2Max = source;
         return (B) this;
     }
 
@@ -380,11 +504,30 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMin(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMin(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMin = true;
-        this.obsrvMin = source;
+        this.bound1Min = true;
+        this.obsrv1Min = source;
+        this.bound2Min = false;
+        this.obsrv2Min = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Slider#minProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMin(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Min = false;
+        this.obsrv1Min = null;
+        this.bound2Min = true;
+        this.obsrv2Min = source;
         return (B) this;
     }
 
@@ -395,11 +538,30 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMinorTickCount(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindMinorTickCount(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMinorTickCount = true;
-        this.obsrvMinorTickCount = source;
+        this.bound1MinorTickCount = true;
+        this.obsrv1MinorTickCount = source;
+        this.bound2MinorTickCount = false;
+        this.obsrv2MinorTickCount = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Slider#minorTickCountProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMinorTickCount(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinorTickCount = false;
+        this.obsrv1MinorTickCount = null;
+        this.bound2MinorTickCount = true;
+        this.obsrv2MinorTickCount = source;
         return (B) this;
     }
 
@@ -413,8 +575,27 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOrientation = true;
-        this.obsrvOrientation = source;
+        this.bound1Orientation = true;
+        this.obsrv1Orientation = source;
+        this.bound2Orientation = false;
+        this.obsrv2Orientation = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Slider#orientationProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOrientation(javafx.beans.property.Property<javafx.geometry.Orientation> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Orientation = false;
+        this.obsrv1Orientation = null;
+        this.bound2Orientation = true;
+        this.obsrv2Orientation = source;
         return (B) this;
     }
 
@@ -428,8 +609,27 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     public final B bindShowTickLabels(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundShowTickLabels = true;
-        this.obsrvShowTickLabels = source;
+        this.bound1ShowTickLabels = true;
+        this.obsrv1ShowTickLabels = source;
+        this.bound2ShowTickLabels = false;
+        this.obsrv2ShowTickLabels = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Slider#showTickLabelsProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalShowTickLabels(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ShowTickLabels = false;
+        this.obsrv1ShowTickLabels = null;
+        this.bound2ShowTickLabels = true;
+        this.obsrv2ShowTickLabels = source;
         return (B) this;
     }
 
@@ -443,8 +643,27 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     public final B bindShowTickMarks(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundShowTickMarks = true;
-        this.obsrvShowTickMarks = source;
+        this.bound1ShowTickMarks = true;
+        this.obsrv1ShowTickMarks = source;
+        this.bound2ShowTickMarks = false;
+        this.obsrv2ShowTickMarks = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Slider#showTickMarksProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalShowTickMarks(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ShowTickMarks = false;
+        this.obsrv1ShowTickMarks = null;
+        this.bound2ShowTickMarks = true;
+        this.obsrv2ShowTickMarks = source;
         return (B) this;
     }
 
@@ -458,8 +677,27 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     public final B bindSnapToTicks(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSnapToTicks = true;
-        this.obsrvSnapToTicks = source;
+        this.bound1SnapToTicks = true;
+        this.obsrv1SnapToTicks = source;
+        this.bound2SnapToTicks = false;
+        this.obsrv2SnapToTicks = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Slider#snapToTicksProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSnapToTicks(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SnapToTicks = false;
+        this.obsrv1SnapToTicks = null;
+        this.bound2SnapToTicks = true;
+        this.obsrv2SnapToTicks = source;
         return (B) this;
     }
 
@@ -473,8 +711,27 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     public final B bindValueChanging(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundValueChanging = true;
-        this.obsrvValueChanging = source;
+        this.bound1ValueChanging = true;
+        this.obsrv1ValueChanging = source;
+        this.bound2ValueChanging = false;
+        this.obsrv2ValueChanging = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Slider#valueChangingProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalValueChanging(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ValueChanging = false;
+        this.obsrv1ValueChanging = null;
+        this.bound2ValueChanging = true;
+        this.obsrv2ValueChanging = source;
         return (B) this;
     }
 
@@ -485,11 +742,30 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindValue(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindValue(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundValue = true;
-        this.obsrvValue = source;
+        this.bound1Value = true;
+        this.obsrv1Value = source;
+        this.bound2Value = false;
+        this.obsrv2Value = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Slider#valueProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalValue(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Value = false;
+        this.obsrv1Value = null;
+        this.bound2Value = true;
+        this.obsrv2Value = source;
         return (B) this;
     }
 

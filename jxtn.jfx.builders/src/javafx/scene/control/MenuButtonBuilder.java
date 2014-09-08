@@ -25,8 +25,10 @@ public class MenuButtonBuilder<Z extends MenuButton, B extends MenuButtonBuilder
     private boolean hasPopupSide;
     private javafx.geometry.Side valPopupSide;
 
-    private boolean boundPopupSide;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> obsrvPopupSide;
+    private boolean bound1PopupSide;
+    private boolean bound2PopupSide;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> obsrv1PopupSide;
+    private javafx.beans.property.Property<javafx.geometry.Side> obsrv2PopupSide;
 
     @Override
     public void applyTo(Z instance)
@@ -36,8 +38,10 @@ public class MenuButtonBuilder<Z extends MenuButton, B extends MenuButtonBuilder
             instance.getItems().setAll(this.valItems);
         if (this.hasPopupSide)
             instance.setPopupSide(this.valPopupSide);
-        if (this.boundPopupSide)
-            instance.popupSideProperty().bind(this.obsrvPopupSide);
+        if (this.bound1PopupSide)
+            instance.popupSideProperty().bind(this.obsrv1PopupSide);
+        if (this.bound2PopupSide)
+            instance.popupSideProperty().bindBidirectional(this.obsrv2PopupSide);
     }
 
     /**
@@ -93,8 +97,27 @@ public class MenuButtonBuilder<Z extends MenuButton, B extends MenuButtonBuilder
     public final B bindPopupSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPopupSide = true;
-        this.obsrvPopupSide = source;
+        this.bound1PopupSide = true;
+        this.obsrv1PopupSide = source;
+        this.bound2PopupSide = false;
+        this.obsrv2PopupSide = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MenuButton#popupSideProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPopupSide(javafx.beans.property.Property<javafx.geometry.Side> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PopupSide = false;
+        this.obsrv1PopupSide = null;
+        this.bound2PopupSide = true;
+        this.obsrv2PopupSide = source;
         return (B) this;
     }
 

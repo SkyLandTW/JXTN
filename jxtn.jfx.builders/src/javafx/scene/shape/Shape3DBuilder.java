@@ -28,14 +28,20 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
     private boolean hasMaterial;
     private javafx.scene.paint.Material valMaterial;
 
-    private boolean boundCullFace;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.CullFace> obsrvCullFace;
+    private boolean bound1CullFace;
+    private boolean bound2CullFace;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.CullFace> obsrv1CullFace;
+    private javafx.beans.property.Property<javafx.scene.shape.CullFace> obsrv2CullFace;
 
-    private boolean boundDrawMode;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.DrawMode> obsrvDrawMode;
+    private boolean bound1DrawMode;
+    private boolean bound2DrawMode;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.DrawMode> obsrv1DrawMode;
+    private javafx.beans.property.Property<javafx.scene.shape.DrawMode> obsrv2DrawMode;
 
-    private boolean boundMaterial;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Material> obsrvMaterial;
+    private boolean bound1Material;
+    private boolean bound2Material;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Material> obsrv1Material;
+    private javafx.beans.property.Property<javafx.scene.paint.Material> obsrv2Material;
 
     @Override
     public void applyTo(Z instance)
@@ -47,12 +53,18 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
             instance.setDrawMode(this.valDrawMode);
         if (this.hasMaterial)
             instance.setMaterial(this.valMaterial);
-        if (this.boundCullFace)
-            instance.cullFaceProperty().bind(this.obsrvCullFace);
-        if (this.boundDrawMode)
-            instance.drawModeProperty().bind(this.obsrvDrawMode);
-        if (this.boundMaterial)
-            instance.materialProperty().bind(this.obsrvMaterial);
+        if (this.bound1CullFace)
+            instance.cullFaceProperty().bind(this.obsrv1CullFace);
+        if (this.bound2CullFace)
+            instance.cullFaceProperty().bindBidirectional(this.obsrv2CullFace);
+        if (this.bound1DrawMode)
+            instance.drawModeProperty().bind(this.obsrv1DrawMode);
+        if (this.bound2DrawMode)
+            instance.drawModeProperty().bindBidirectional(this.obsrv2DrawMode);
+        if (this.bound1Material)
+            instance.materialProperty().bind(this.obsrv1Material);
+        if (this.bound2Material)
+            instance.materialProperty().bindBidirectional(this.obsrv2Material);
     }
 
     /**
@@ -107,8 +119,27 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
     public final B bindCullFace(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.CullFace> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCullFace = true;
-        this.obsrvCullFace = source;
+        this.bound1CullFace = true;
+        this.obsrv1CullFace = source;
+        this.bound2CullFace = false;
+        this.obsrv2CullFace = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Shape3D#cullFaceProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCullFace(javafx.beans.property.Property<javafx.scene.shape.CullFace> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CullFace = false;
+        this.obsrv1CullFace = null;
+        this.bound2CullFace = true;
+        this.obsrv2CullFace = source;
         return (B) this;
     }
 
@@ -122,8 +153,27 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
     public final B bindDrawMode(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.DrawMode> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundDrawMode = true;
-        this.obsrvDrawMode = source;
+        this.bound1DrawMode = true;
+        this.obsrv1DrawMode = source;
+        this.bound2DrawMode = false;
+        this.obsrv2DrawMode = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Shape3D#drawModeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalDrawMode(javafx.beans.property.Property<javafx.scene.shape.DrawMode> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1DrawMode = false;
+        this.obsrv1DrawMode = null;
+        this.bound2DrawMode = true;
+        this.obsrv2DrawMode = source;
         return (B) this;
     }
 
@@ -137,8 +187,27 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
     public final B bindMaterial(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Material> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMaterial = true;
-        this.obsrvMaterial = source;
+        this.bound1Material = true;
+        this.obsrv1Material = source;
+        this.bound2Material = false;
+        this.obsrv2Material = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Shape3D#materialProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMaterial(javafx.beans.property.Property<javafx.scene.paint.Material> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Material = false;
+        this.obsrv1Material = null;
+        this.bound2Material = true;
+        this.obsrv2Material = source;
         return (B) this;
     }
 }

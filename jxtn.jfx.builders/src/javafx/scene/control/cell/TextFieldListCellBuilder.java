@@ -22,8 +22,10 @@ public class TextFieldListCellBuilder<T extends java.lang.Object, Z extends Text
     private boolean hasConverter;
     private javafx.util.StringConverter<T> valConverter;
 
-    private boolean boundConverter;
-    private javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> obsrvConverter;
+    private boolean bound1Converter;
+    private boolean bound2Converter;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> obsrv1Converter;
+    private javafx.beans.property.Property<javafx.util.StringConverter<T>> obsrv2Converter;
 
     @Override
     public void applyTo(Z instance)
@@ -31,8 +33,10 @@ public class TextFieldListCellBuilder<T extends java.lang.Object, Z extends Text
         super.applyTo(instance);
         if (this.hasConverter)
             instance.setConverter(this.valConverter);
-        if (this.boundConverter)
-            instance.converterProperty().bind(this.obsrvConverter);
+        if (this.bound1Converter)
+            instance.converterProperty().bind(this.obsrv1Converter);
+        if (this.bound2Converter)
+            instance.converterProperty().bindBidirectional(this.obsrv2Converter);
     }
 
     /**
@@ -59,8 +63,27 @@ public class TextFieldListCellBuilder<T extends java.lang.Object, Z extends Text
     public final B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundConverter = true;
-        this.obsrvConverter = source;
+        this.bound1Converter = true;
+        this.obsrv1Converter = source;
+        this.bound2Converter = false;
+        this.obsrv2Converter = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TextFieldListCell#converterProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalConverter(javafx.beans.property.Property<javafx.util.StringConverter<T>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Converter = false;
+        this.obsrv1Converter = null;
+        this.bound2Converter = true;
+        this.obsrv2Converter = source;
         return (B) this;
     }
 

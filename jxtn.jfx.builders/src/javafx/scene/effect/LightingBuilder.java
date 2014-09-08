@@ -40,26 +40,40 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     private boolean hasSurfaceScale;
     private double valSurfaceScale;
 
-    private boolean boundBumpInput;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrvBumpInput;
+    private boolean bound1BumpInput;
+    private boolean bound2BumpInput;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrv1BumpInput;
+    private javafx.beans.property.Property<javafx.scene.effect.Effect> obsrv2BumpInput;
 
-    private boolean boundContentInput;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrvContentInput;
+    private boolean bound1ContentInput;
+    private boolean bound2ContentInput;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrv1ContentInput;
+    private javafx.beans.property.Property<javafx.scene.effect.Effect> obsrv2ContentInput;
 
-    private boolean boundDiffuseConstant;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvDiffuseConstant;
+    private boolean bound1DiffuseConstant;
+    private boolean bound2DiffuseConstant;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1DiffuseConstant;
+    private javafx.beans.property.Property<Number> obsrv2DiffuseConstant;
 
-    private boolean boundLight;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Light> obsrvLight;
+    private boolean bound1Light;
+    private boolean bound2Light;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Light> obsrv1Light;
+    private javafx.beans.property.Property<javafx.scene.effect.Light> obsrv2Light;
 
-    private boolean boundSpecularConstant;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvSpecularConstant;
+    private boolean bound1SpecularConstant;
+    private boolean bound2SpecularConstant;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1SpecularConstant;
+    private javafx.beans.property.Property<Number> obsrv2SpecularConstant;
 
-    private boolean boundSpecularExponent;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvSpecularExponent;
+    private boolean bound1SpecularExponent;
+    private boolean bound2SpecularExponent;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1SpecularExponent;
+    private javafx.beans.property.Property<Number> obsrv2SpecularExponent;
 
-    private boolean boundSurfaceScale;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvSurfaceScale;
+    private boolean bound1SurfaceScale;
+    private boolean bound2SurfaceScale;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1SurfaceScale;
+    private javafx.beans.property.Property<Number> obsrv2SurfaceScale;
 
     @Override
     public void applyTo(Z instance)
@@ -79,20 +93,34 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
             instance.setSpecularExponent(this.valSpecularExponent);
         if (this.hasSurfaceScale)
             instance.setSurfaceScale(this.valSurfaceScale);
-        if (this.boundBumpInput)
-            instance.bumpInputProperty().bind(this.obsrvBumpInput);
-        if (this.boundContentInput)
-            instance.contentInputProperty().bind(this.obsrvContentInput);
-        if (this.boundDiffuseConstant)
-            instance.diffuseConstantProperty().bind(this.obsrvDiffuseConstant);
-        if (this.boundLight)
-            instance.lightProperty().bind(this.obsrvLight);
-        if (this.boundSpecularConstant)
-            instance.specularConstantProperty().bind(this.obsrvSpecularConstant);
-        if (this.boundSpecularExponent)
-            instance.specularExponentProperty().bind(this.obsrvSpecularExponent);
-        if (this.boundSurfaceScale)
-            instance.surfaceScaleProperty().bind(this.obsrvSurfaceScale);
+        if (this.bound1BumpInput)
+            instance.bumpInputProperty().bind(this.obsrv1BumpInput);
+        if (this.bound2BumpInput)
+            instance.bumpInputProperty().bindBidirectional(this.obsrv2BumpInput);
+        if (this.bound1ContentInput)
+            instance.contentInputProperty().bind(this.obsrv1ContentInput);
+        if (this.bound2ContentInput)
+            instance.contentInputProperty().bindBidirectional(this.obsrv2ContentInput);
+        if (this.bound1DiffuseConstant)
+            instance.diffuseConstantProperty().bind(this.obsrv1DiffuseConstant);
+        if (this.bound2DiffuseConstant)
+            instance.diffuseConstantProperty().bindBidirectional(this.obsrv2DiffuseConstant);
+        if (this.bound1Light)
+            instance.lightProperty().bind(this.obsrv1Light);
+        if (this.bound2Light)
+            instance.lightProperty().bindBidirectional(this.obsrv2Light);
+        if (this.bound1SpecularConstant)
+            instance.specularConstantProperty().bind(this.obsrv1SpecularConstant);
+        if (this.bound2SpecularConstant)
+            instance.specularConstantProperty().bindBidirectional(this.obsrv2SpecularConstant);
+        if (this.bound1SpecularExponent)
+            instance.specularExponentProperty().bind(this.obsrv1SpecularExponent);
+        if (this.bound2SpecularExponent)
+            instance.specularExponentProperty().bindBidirectional(this.obsrv2SpecularExponent);
+        if (this.bound1SurfaceScale)
+            instance.surfaceScaleProperty().bind(this.obsrv1SurfaceScale);
+        if (this.bound2SurfaceScale)
+            instance.surfaceScaleProperty().bindBidirectional(this.obsrv2SurfaceScale);
     }
 
     /**
@@ -203,8 +231,27 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     public final B bindBumpInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundBumpInput = true;
-        this.obsrvBumpInput = source;
+        this.bound1BumpInput = true;
+        this.obsrv1BumpInput = source;
+        this.bound2BumpInput = false;
+        this.obsrv2BumpInput = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Lighting#bumpInputProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalBumpInput(javafx.beans.property.Property<javafx.scene.effect.Effect> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1BumpInput = false;
+        this.obsrv1BumpInput = null;
+        this.bound2BumpInput = true;
+        this.obsrv2BumpInput = source;
         return (B) this;
     }
 
@@ -218,8 +265,27 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     public final B bindContentInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundContentInput = true;
-        this.obsrvContentInput = source;
+        this.bound1ContentInput = true;
+        this.obsrv1ContentInput = source;
+        this.bound2ContentInput = false;
+        this.obsrv2ContentInput = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Lighting#contentInputProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalContentInput(javafx.beans.property.Property<javafx.scene.effect.Effect> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ContentInput = false;
+        this.obsrv1ContentInput = null;
+        this.bound2ContentInput = true;
+        this.obsrv2ContentInput = source;
         return (B) this;
     }
 
@@ -230,11 +296,30 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindDiffuseConstant(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindDiffuseConstant(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundDiffuseConstant = true;
-        this.obsrvDiffuseConstant = source;
+        this.bound1DiffuseConstant = true;
+        this.obsrv1DiffuseConstant = source;
+        this.bound2DiffuseConstant = false;
+        this.obsrv2DiffuseConstant = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Lighting#diffuseConstantProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalDiffuseConstant(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1DiffuseConstant = false;
+        this.obsrv1DiffuseConstant = null;
+        this.bound2DiffuseConstant = true;
+        this.obsrv2DiffuseConstant = source;
         return (B) this;
     }
 
@@ -248,8 +333,27 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     public final B bindLight(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Light> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundLight = true;
-        this.obsrvLight = source;
+        this.bound1Light = true;
+        this.obsrv1Light = source;
+        this.bound2Light = false;
+        this.obsrv2Light = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Lighting#lightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLight(javafx.beans.property.Property<javafx.scene.effect.Light> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Light = false;
+        this.obsrv1Light = null;
+        this.bound2Light = true;
+        this.obsrv2Light = source;
         return (B) this;
     }
 
@@ -260,11 +364,30 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindSpecularConstant(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindSpecularConstant(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSpecularConstant = true;
-        this.obsrvSpecularConstant = source;
+        this.bound1SpecularConstant = true;
+        this.obsrv1SpecularConstant = source;
+        this.bound2SpecularConstant = false;
+        this.obsrv2SpecularConstant = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Lighting#specularConstantProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSpecularConstant(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SpecularConstant = false;
+        this.obsrv1SpecularConstant = null;
+        this.bound2SpecularConstant = true;
+        this.obsrv2SpecularConstant = source;
         return (B) this;
     }
 
@@ -275,11 +398,30 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindSpecularExponent(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindSpecularExponent(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSpecularExponent = true;
-        this.obsrvSpecularExponent = source;
+        this.bound1SpecularExponent = true;
+        this.obsrv1SpecularExponent = source;
+        this.bound2SpecularExponent = false;
+        this.obsrv2SpecularExponent = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Lighting#specularExponentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSpecularExponent(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SpecularExponent = false;
+        this.obsrv1SpecularExponent = null;
+        this.bound2SpecularExponent = true;
+        this.obsrv2SpecularExponent = source;
         return (B) this;
     }
 
@@ -290,11 +432,30 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindSurfaceScale(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindSurfaceScale(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSurfaceScale = true;
-        this.obsrvSurfaceScale = source;
+        this.bound1SurfaceScale = true;
+        this.obsrv1SurfaceScale = source;
+        this.bound2SurfaceScale = false;
+        this.obsrv2SurfaceScale = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Lighting#surfaceScaleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSurfaceScale(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SurfaceScale = false;
+        this.obsrv1SurfaceScale = null;
+        this.bound2SurfaceScale = true;
+        this.obsrv2SurfaceScale = source;
         return (B) this;
     }
 

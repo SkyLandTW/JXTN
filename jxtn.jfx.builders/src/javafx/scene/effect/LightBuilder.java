@@ -22,8 +22,10 @@ public class LightBuilder<Z extends Light, B extends LightBuilder<Z, B>>
     private boolean hasColor;
     private javafx.scene.paint.Color valColor;
 
-    private boolean boundColor;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> obsrvColor;
+    private boolean bound1Color;
+    private boolean bound2Color;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> obsrv1Color;
+    private javafx.beans.property.Property<javafx.scene.paint.Color> obsrv2Color;
 
     @Override
     public void applyTo(Z instance)
@@ -31,8 +33,10 @@ public class LightBuilder<Z extends Light, B extends LightBuilder<Z, B>>
         super.applyTo(instance);
         if (this.hasColor)
             instance.setColor(this.valColor);
-        if (this.boundColor)
-            instance.colorProperty().bind(this.obsrvColor);
+        if (this.bound1Color)
+            instance.colorProperty().bind(this.obsrv1Color);
+        if (this.bound2Color)
+            instance.colorProperty().bindBidirectional(this.obsrv2Color);
     }
 
     /**
@@ -59,8 +63,27 @@ public class LightBuilder<Z extends Light, B extends LightBuilder<Z, B>>
     public final B bindColor(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundColor = true;
-        this.obsrvColor = source;
+        this.bound1Color = true;
+        this.obsrv1Color = source;
+        this.bound2Color = false;
+        this.obsrv2Color = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Light#colorProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalColor(javafx.beans.property.Property<javafx.scene.paint.Color> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Color = false;
+        this.obsrv1Color = null;
+        this.bound2Color = true;
+        this.obsrv2Color = source;
         return (B) this;
     }
 }

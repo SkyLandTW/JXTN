@@ -31,17 +31,25 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     private boolean hasTopInput;
     private javafx.scene.effect.Effect valTopInput;
 
-    private boolean boundBottomInput;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrvBottomInput;
+    private boolean bound1BottomInput;
+    private boolean bound2BottomInput;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrv1BottomInput;
+    private javafx.beans.property.Property<javafx.scene.effect.Effect> obsrv2BottomInput;
 
-    private boolean boundMode;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.BlendMode> obsrvMode;
+    private boolean bound1Mode;
+    private boolean bound2Mode;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.BlendMode> obsrv1Mode;
+    private javafx.beans.property.Property<javafx.scene.effect.BlendMode> obsrv2Mode;
 
-    private boolean boundOpacity;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvOpacity;
+    private boolean bound1Opacity;
+    private boolean bound2Opacity;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Opacity;
+    private javafx.beans.property.Property<Number> obsrv2Opacity;
 
-    private boolean boundTopInput;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrvTopInput;
+    private boolean bound1TopInput;
+    private boolean bound2TopInput;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrv1TopInput;
+    private javafx.beans.property.Property<javafx.scene.effect.Effect> obsrv2TopInput;
 
     @Override
     public void applyTo(Z instance)
@@ -55,14 +63,22 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
             instance.setOpacity(this.valOpacity);
         if (this.hasTopInput)
             instance.setTopInput(this.valTopInput);
-        if (this.boundBottomInput)
-            instance.bottomInputProperty().bind(this.obsrvBottomInput);
-        if (this.boundMode)
-            instance.modeProperty().bind(this.obsrvMode);
-        if (this.boundOpacity)
-            instance.opacityProperty().bind(this.obsrvOpacity);
-        if (this.boundTopInput)
-            instance.topInputProperty().bind(this.obsrvTopInput);
+        if (this.bound1BottomInput)
+            instance.bottomInputProperty().bind(this.obsrv1BottomInput);
+        if (this.bound2BottomInput)
+            instance.bottomInputProperty().bindBidirectional(this.obsrv2BottomInput);
+        if (this.bound1Mode)
+            instance.modeProperty().bind(this.obsrv1Mode);
+        if (this.bound2Mode)
+            instance.modeProperty().bindBidirectional(this.obsrv2Mode);
+        if (this.bound1Opacity)
+            instance.opacityProperty().bind(this.obsrv1Opacity);
+        if (this.bound2Opacity)
+            instance.opacityProperty().bindBidirectional(this.obsrv2Opacity);
+        if (this.bound1TopInput)
+            instance.topInputProperty().bind(this.obsrv1TopInput);
+        if (this.bound2TopInput)
+            instance.topInputProperty().bindBidirectional(this.obsrv2TopInput);
     }
 
     /**
@@ -131,8 +147,27 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     public final B bindBottomInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundBottomInput = true;
-        this.obsrvBottomInput = source;
+        this.bound1BottomInput = true;
+        this.obsrv1BottomInput = source;
+        this.bound2BottomInput = false;
+        this.obsrv2BottomInput = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Blend#bottomInputProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalBottomInput(javafx.beans.property.Property<javafx.scene.effect.Effect> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1BottomInput = false;
+        this.obsrv1BottomInput = null;
+        this.bound2BottomInput = true;
+        this.obsrv2BottomInput = source;
         return (B) this;
     }
 
@@ -146,8 +181,27 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     public final B bindMode(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.BlendMode> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMode = true;
-        this.obsrvMode = source;
+        this.bound1Mode = true;
+        this.obsrv1Mode = source;
+        this.bound2Mode = false;
+        this.obsrv2Mode = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Blend#modeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMode(javafx.beans.property.Property<javafx.scene.effect.BlendMode> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Mode = false;
+        this.obsrv1Mode = null;
+        this.bound2Mode = true;
+        this.obsrv2Mode = source;
         return (B) this;
     }
 
@@ -158,11 +212,30 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindOpacity(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindOpacity(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOpacity = true;
-        this.obsrvOpacity = source;
+        this.bound1Opacity = true;
+        this.obsrv1Opacity = source;
+        this.bound2Opacity = false;
+        this.obsrv2Opacity = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Blend#opacityProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOpacity(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Opacity = false;
+        this.obsrv1Opacity = null;
+        this.bound2Opacity = true;
+        this.obsrv2Opacity = source;
         return (B) this;
     }
 
@@ -176,8 +249,27 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     public final B bindTopInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTopInput = true;
-        this.obsrvTopInput = source;
+        this.bound1TopInput = true;
+        this.obsrv1TopInput = source;
+        this.bound2TopInput = false;
+        this.obsrv2TopInput = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Blend#topInputProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTopInput(javafx.beans.property.Property<javafx.scene.effect.Effect> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TopInput = false;
+        this.obsrv1TopInput = null;
+        this.bound2TopInput = true;
+        this.obsrv2TopInput = source;
         return (B) this;
     }
 

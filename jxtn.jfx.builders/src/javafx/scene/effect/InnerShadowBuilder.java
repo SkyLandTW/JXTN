@@ -46,32 +46,50 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     private boolean hasWidth;
     private double valWidth;
 
-    private boolean boundBlurType;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.BlurType> obsrvBlurType;
+    private boolean bound1BlurType;
+    private boolean bound2BlurType;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.BlurType> obsrv1BlurType;
+    private javafx.beans.property.Property<javafx.scene.effect.BlurType> obsrv2BlurType;
 
-    private boolean boundChoke;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvChoke;
+    private boolean bound1Choke;
+    private boolean bound2Choke;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Choke;
+    private javafx.beans.property.Property<Number> obsrv2Choke;
 
-    private boolean boundColor;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> obsrvColor;
+    private boolean bound1Color;
+    private boolean bound2Color;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> obsrv1Color;
+    private javafx.beans.property.Property<javafx.scene.paint.Color> obsrv2Color;
 
-    private boolean boundHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvHeight;
+    private boolean bound1Height;
+    private boolean bound2Height;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Height;
+    private javafx.beans.property.Property<Number> obsrv2Height;
 
-    private boolean boundInput;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrvInput;
+    private boolean bound1Input;
+    private boolean bound2Input;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrv1Input;
+    private javafx.beans.property.Property<javafx.scene.effect.Effect> obsrv2Input;
 
-    private boolean boundOffsetX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvOffsetX;
+    private boolean bound1OffsetX;
+    private boolean bound2OffsetX;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1OffsetX;
+    private javafx.beans.property.Property<Number> obsrv2OffsetX;
 
-    private boolean boundOffsetY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvOffsetY;
+    private boolean bound1OffsetY;
+    private boolean bound2OffsetY;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1OffsetY;
+    private javafx.beans.property.Property<Number> obsrv2OffsetY;
 
-    private boolean boundRadius;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvRadius;
+    private boolean bound1Radius;
+    private boolean bound2Radius;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Radius;
+    private javafx.beans.property.Property<Number> obsrv2Radius;
 
-    private boolean boundWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvWidth;
+    private boolean bound1Width;
+    private boolean bound2Width;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Width;
+    private javafx.beans.property.Property<Number> obsrv2Width;
 
     @Override
     public void applyTo(Z instance)
@@ -95,24 +113,42 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
             instance.setRadius(this.valRadius);
         if (this.hasWidth)
             instance.setWidth(this.valWidth);
-        if (this.boundBlurType)
-            instance.blurTypeProperty().bind(this.obsrvBlurType);
-        if (this.boundChoke)
-            instance.chokeProperty().bind(this.obsrvChoke);
-        if (this.boundColor)
-            instance.colorProperty().bind(this.obsrvColor);
-        if (this.boundHeight)
-            instance.heightProperty().bind(this.obsrvHeight);
-        if (this.boundInput)
-            instance.inputProperty().bind(this.obsrvInput);
-        if (this.boundOffsetX)
-            instance.offsetXProperty().bind(this.obsrvOffsetX);
-        if (this.boundOffsetY)
-            instance.offsetYProperty().bind(this.obsrvOffsetY);
-        if (this.boundRadius)
-            instance.radiusProperty().bind(this.obsrvRadius);
-        if (this.boundWidth)
-            instance.widthProperty().bind(this.obsrvWidth);
+        if (this.bound1BlurType)
+            instance.blurTypeProperty().bind(this.obsrv1BlurType);
+        if (this.bound2BlurType)
+            instance.blurTypeProperty().bindBidirectional(this.obsrv2BlurType);
+        if (this.bound1Choke)
+            instance.chokeProperty().bind(this.obsrv1Choke);
+        if (this.bound2Choke)
+            instance.chokeProperty().bindBidirectional(this.obsrv2Choke);
+        if (this.bound1Color)
+            instance.colorProperty().bind(this.obsrv1Color);
+        if (this.bound2Color)
+            instance.colorProperty().bindBidirectional(this.obsrv2Color);
+        if (this.bound1Height)
+            instance.heightProperty().bind(this.obsrv1Height);
+        if (this.bound2Height)
+            instance.heightProperty().bindBidirectional(this.obsrv2Height);
+        if (this.bound1Input)
+            instance.inputProperty().bind(this.obsrv1Input);
+        if (this.bound2Input)
+            instance.inputProperty().bindBidirectional(this.obsrv2Input);
+        if (this.bound1OffsetX)
+            instance.offsetXProperty().bind(this.obsrv1OffsetX);
+        if (this.bound2OffsetX)
+            instance.offsetXProperty().bindBidirectional(this.obsrv2OffsetX);
+        if (this.bound1OffsetY)
+            instance.offsetYProperty().bind(this.obsrv1OffsetY);
+        if (this.bound2OffsetY)
+            instance.offsetYProperty().bindBidirectional(this.obsrv2OffsetY);
+        if (this.bound1Radius)
+            instance.radiusProperty().bind(this.obsrv1Radius);
+        if (this.bound2Radius)
+            instance.radiusProperty().bindBidirectional(this.obsrv2Radius);
+        if (this.bound1Width)
+            instance.widthProperty().bind(this.obsrv1Width);
+        if (this.bound2Width)
+            instance.widthProperty().bindBidirectional(this.obsrv2Width);
     }
 
     /**
@@ -251,8 +287,27 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     public final B bindBlurType(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.BlurType> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundBlurType = true;
-        this.obsrvBlurType = source;
+        this.bound1BlurType = true;
+        this.obsrv1BlurType = source;
+        this.bound2BlurType = false;
+        this.obsrv2BlurType = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link InnerShadow#blurTypeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalBlurType(javafx.beans.property.Property<javafx.scene.effect.BlurType> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1BlurType = false;
+        this.obsrv1BlurType = null;
+        this.bound2BlurType = true;
+        this.obsrv2BlurType = source;
         return (B) this;
     }
 
@@ -263,11 +318,30 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindChoke(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindChoke(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundChoke = true;
-        this.obsrvChoke = source;
+        this.bound1Choke = true;
+        this.obsrv1Choke = source;
+        this.bound2Choke = false;
+        this.obsrv2Choke = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link InnerShadow#chokeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalChoke(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Choke = false;
+        this.obsrv1Choke = null;
+        this.bound2Choke = true;
+        this.obsrv2Choke = source;
         return (B) this;
     }
 
@@ -281,8 +355,27 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     public final B bindColor(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Color> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundColor = true;
-        this.obsrvColor = source;
+        this.bound1Color = true;
+        this.obsrv1Color = source;
+        this.bound2Color = false;
+        this.obsrv2Color = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link InnerShadow#colorProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalColor(javafx.beans.property.Property<javafx.scene.paint.Color> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Color = false;
+        this.obsrv1Color = null;
+        this.bound2Color = true;
+        this.obsrv2Color = source;
         return (B) this;
     }
 
@@ -293,11 +386,30 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundHeight = true;
-        this.obsrvHeight = source;
+        this.bound1Height = true;
+        this.obsrv1Height = source;
+        this.bound2Height = false;
+        this.obsrv2Height = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link InnerShadow#heightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Height = false;
+        this.obsrv1Height = null;
+        this.bound2Height = true;
+        this.obsrv2Height = source;
         return (B) this;
     }
 
@@ -311,8 +423,27 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     public final B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundInput = true;
-        this.obsrvInput = source;
+        this.bound1Input = true;
+        this.obsrv1Input = source;
+        this.bound2Input = false;
+        this.obsrv2Input = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link InnerShadow#inputProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalInput(javafx.beans.property.Property<javafx.scene.effect.Effect> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Input = false;
+        this.obsrv1Input = null;
+        this.bound2Input = true;
+        this.obsrv2Input = source;
         return (B) this;
     }
 
@@ -323,11 +454,30 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindOffsetX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindOffsetX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOffsetX = true;
-        this.obsrvOffsetX = source;
+        this.bound1OffsetX = true;
+        this.obsrv1OffsetX = source;
+        this.bound2OffsetX = false;
+        this.obsrv2OffsetX = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link InnerShadow#offsetXProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOffsetX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OffsetX = false;
+        this.obsrv1OffsetX = null;
+        this.bound2OffsetX = true;
+        this.obsrv2OffsetX = source;
         return (B) this;
     }
 
@@ -338,11 +488,30 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindOffsetY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindOffsetY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOffsetY = true;
-        this.obsrvOffsetY = source;
+        this.bound1OffsetY = true;
+        this.obsrv1OffsetY = source;
+        this.bound2OffsetY = false;
+        this.obsrv2OffsetY = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link InnerShadow#offsetYProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOffsetY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OffsetY = false;
+        this.obsrv1OffsetY = null;
+        this.bound2OffsetY = true;
+        this.obsrv2OffsetY = source;
         return (B) this;
     }
 
@@ -353,11 +522,30 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRadius(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundRadius = true;
-        this.obsrvRadius = source;
+        this.bound1Radius = true;
+        this.obsrv1Radius = source;
+        this.bound2Radius = false;
+        this.obsrv2Radius = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link InnerShadow#radiusProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRadius(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Radius = false;
+        this.obsrv1Radius = null;
+        this.bound2Radius = true;
+        this.obsrv2Radius = source;
         return (B) this;
     }
 
@@ -368,11 +556,30 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundWidth = true;
-        this.obsrvWidth = source;
+        this.bound1Width = true;
+        this.obsrv1Width = source;
+        this.bound2Width = false;
+        this.obsrv2Width = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link InnerShadow#widthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Width = false;
+        this.obsrv1Width = null;
+        this.bound2Width = true;
+        this.obsrv2Width = source;
         return (B) this;
     }
 

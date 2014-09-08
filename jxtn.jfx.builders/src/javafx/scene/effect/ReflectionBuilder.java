@@ -34,20 +34,30 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     private boolean hasTopOpacity;
     private double valTopOpacity;
 
-    private boolean boundBottomOpacity;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvBottomOpacity;
+    private boolean bound1BottomOpacity;
+    private boolean bound2BottomOpacity;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1BottomOpacity;
+    private javafx.beans.property.Property<Number> obsrv2BottomOpacity;
 
-    private boolean boundFraction;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvFraction;
+    private boolean bound1Fraction;
+    private boolean bound2Fraction;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Fraction;
+    private javafx.beans.property.Property<Number> obsrv2Fraction;
 
-    private boolean boundInput;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrvInput;
+    private boolean bound1Input;
+    private boolean bound2Input;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrv1Input;
+    private javafx.beans.property.Property<javafx.scene.effect.Effect> obsrv2Input;
 
-    private boolean boundTopOffset;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvTopOffset;
+    private boolean bound1TopOffset;
+    private boolean bound2TopOffset;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1TopOffset;
+    private javafx.beans.property.Property<Number> obsrv2TopOffset;
 
-    private boolean boundTopOpacity;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvTopOpacity;
+    private boolean bound1TopOpacity;
+    private boolean bound2TopOpacity;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1TopOpacity;
+    private javafx.beans.property.Property<Number> obsrv2TopOpacity;
 
     @Override
     public void applyTo(Z instance)
@@ -63,16 +73,26 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
             instance.setTopOffset(this.valTopOffset);
         if (this.hasTopOpacity)
             instance.setTopOpacity(this.valTopOpacity);
-        if (this.boundBottomOpacity)
-            instance.bottomOpacityProperty().bind(this.obsrvBottomOpacity);
-        if (this.boundFraction)
-            instance.fractionProperty().bind(this.obsrvFraction);
-        if (this.boundInput)
-            instance.inputProperty().bind(this.obsrvInput);
-        if (this.boundTopOffset)
-            instance.topOffsetProperty().bind(this.obsrvTopOffset);
-        if (this.boundTopOpacity)
-            instance.topOpacityProperty().bind(this.obsrvTopOpacity);
+        if (this.bound1BottomOpacity)
+            instance.bottomOpacityProperty().bind(this.obsrv1BottomOpacity);
+        if (this.bound2BottomOpacity)
+            instance.bottomOpacityProperty().bindBidirectional(this.obsrv2BottomOpacity);
+        if (this.bound1Fraction)
+            instance.fractionProperty().bind(this.obsrv1Fraction);
+        if (this.bound2Fraction)
+            instance.fractionProperty().bindBidirectional(this.obsrv2Fraction);
+        if (this.bound1Input)
+            instance.inputProperty().bind(this.obsrv1Input);
+        if (this.bound2Input)
+            instance.inputProperty().bindBidirectional(this.obsrv2Input);
+        if (this.bound1TopOffset)
+            instance.topOffsetProperty().bind(this.obsrv1TopOffset);
+        if (this.bound2TopOffset)
+            instance.topOffsetProperty().bindBidirectional(this.obsrv2TopOffset);
+        if (this.bound1TopOpacity)
+            instance.topOpacityProperty().bind(this.obsrv1TopOpacity);
+        if (this.bound2TopOpacity)
+            instance.topOpacityProperty().bindBidirectional(this.obsrv2TopOpacity);
     }
 
     /**
@@ -152,11 +172,30 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindBottomOpacity(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindBottomOpacity(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundBottomOpacity = true;
-        this.obsrvBottomOpacity = source;
+        this.bound1BottomOpacity = true;
+        this.obsrv1BottomOpacity = source;
+        this.bound2BottomOpacity = false;
+        this.obsrv2BottomOpacity = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Reflection#bottomOpacityProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalBottomOpacity(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1BottomOpacity = false;
+        this.obsrv1BottomOpacity = null;
+        this.bound2BottomOpacity = true;
+        this.obsrv2BottomOpacity = source;
         return (B) this;
     }
 
@@ -167,11 +206,30 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindFraction(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindFraction(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFraction = true;
-        this.obsrvFraction = source;
+        this.bound1Fraction = true;
+        this.obsrv1Fraction = source;
+        this.bound2Fraction = false;
+        this.obsrv2Fraction = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Reflection#fractionProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFraction(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Fraction = false;
+        this.obsrv1Fraction = null;
+        this.bound2Fraction = true;
+        this.obsrv2Fraction = source;
         return (B) this;
     }
 
@@ -185,8 +243,27 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     public final B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundInput = true;
-        this.obsrvInput = source;
+        this.bound1Input = true;
+        this.obsrv1Input = source;
+        this.bound2Input = false;
+        this.obsrv2Input = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Reflection#inputProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalInput(javafx.beans.property.Property<javafx.scene.effect.Effect> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Input = false;
+        this.obsrv1Input = null;
+        this.bound2Input = true;
+        this.obsrv2Input = source;
         return (B) this;
     }
 
@@ -197,11 +274,30 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindTopOffset(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTopOffset(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTopOffset = true;
-        this.obsrvTopOffset = source;
+        this.bound1TopOffset = true;
+        this.obsrv1TopOffset = source;
+        this.bound2TopOffset = false;
+        this.obsrv2TopOffset = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Reflection#topOffsetProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTopOffset(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TopOffset = false;
+        this.obsrv1TopOffset = null;
+        this.bound2TopOffset = true;
+        this.obsrv2TopOffset = source;
         return (B) this;
     }
 
@@ -212,11 +308,30 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindTopOpacity(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTopOpacity(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTopOpacity = true;
-        this.obsrvTopOpacity = source;
+        this.bound1TopOpacity = true;
+        this.obsrv1TopOpacity = source;
+        this.bound2TopOpacity = false;
+        this.obsrv2TopOpacity = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Reflection#topOpacityProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTopOpacity(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TopOpacity = false;
+        this.obsrv1TopOpacity = null;
+        this.bound2TopOpacity = true;
+        this.obsrv2TopOpacity = source;
         return (B) this;
     }
 

@@ -40,26 +40,40 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
     private boolean hasVgap;
     private double valVgap;
 
-    private boolean boundAlignment;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> obsrvAlignment;
+    private boolean bound1Alignment;
+    private boolean bound2Alignment;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> obsrv1Alignment;
+    private javafx.beans.property.Property<javafx.geometry.Pos> obsrv2Alignment;
 
-    private boolean boundColumnHalignment;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.HPos> obsrvColumnHalignment;
+    private boolean bound1ColumnHalignment;
+    private boolean bound2ColumnHalignment;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.HPos> obsrv1ColumnHalignment;
+    private javafx.beans.property.Property<javafx.geometry.HPos> obsrv2ColumnHalignment;
 
-    private boolean boundHgap;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvHgap;
+    private boolean bound1Hgap;
+    private boolean bound2Hgap;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Hgap;
+    private javafx.beans.property.Property<Number> obsrv2Hgap;
 
-    private boolean boundOrientation;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrvOrientation;
+    private boolean bound1Orientation;
+    private boolean bound2Orientation;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrv1Orientation;
+    private javafx.beans.property.Property<javafx.geometry.Orientation> obsrv2Orientation;
 
-    private boolean boundPrefWrapLength;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvPrefWrapLength;
+    private boolean bound1PrefWrapLength;
+    private boolean bound2PrefWrapLength;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PrefWrapLength;
+    private javafx.beans.property.Property<Number> obsrv2PrefWrapLength;
 
-    private boolean boundRowValignment;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> obsrvRowValignment;
+    private boolean bound1RowValignment;
+    private boolean bound2RowValignment;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> obsrv1RowValignment;
+    private javafx.beans.property.Property<javafx.geometry.VPos> obsrv2RowValignment;
 
-    private boolean boundVgap;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvVgap;
+    private boolean bound1Vgap;
+    private boolean bound2Vgap;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Vgap;
+    private javafx.beans.property.Property<Number> obsrv2Vgap;
 
     @Override
     public void applyTo(Z instance)
@@ -79,20 +93,34 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
             instance.setRowValignment(this.valRowValignment);
         if (this.hasVgap)
             instance.setVgap(this.valVgap);
-        if (this.boundAlignment)
-            instance.alignmentProperty().bind(this.obsrvAlignment);
-        if (this.boundColumnHalignment)
-            instance.columnHalignmentProperty().bind(this.obsrvColumnHalignment);
-        if (this.boundHgap)
-            instance.hgapProperty().bind(this.obsrvHgap);
-        if (this.boundOrientation)
-            instance.orientationProperty().bind(this.obsrvOrientation);
-        if (this.boundPrefWrapLength)
-            instance.prefWrapLengthProperty().bind(this.obsrvPrefWrapLength);
-        if (this.boundRowValignment)
-            instance.rowValignmentProperty().bind(this.obsrvRowValignment);
-        if (this.boundVgap)
-            instance.vgapProperty().bind(this.obsrvVgap);
+        if (this.bound1Alignment)
+            instance.alignmentProperty().bind(this.obsrv1Alignment);
+        if (this.bound2Alignment)
+            instance.alignmentProperty().bindBidirectional(this.obsrv2Alignment);
+        if (this.bound1ColumnHalignment)
+            instance.columnHalignmentProperty().bind(this.obsrv1ColumnHalignment);
+        if (this.bound2ColumnHalignment)
+            instance.columnHalignmentProperty().bindBidirectional(this.obsrv2ColumnHalignment);
+        if (this.bound1Hgap)
+            instance.hgapProperty().bind(this.obsrv1Hgap);
+        if (this.bound2Hgap)
+            instance.hgapProperty().bindBidirectional(this.obsrv2Hgap);
+        if (this.bound1Orientation)
+            instance.orientationProperty().bind(this.obsrv1Orientation);
+        if (this.bound2Orientation)
+            instance.orientationProperty().bindBidirectional(this.obsrv2Orientation);
+        if (this.bound1PrefWrapLength)
+            instance.prefWrapLengthProperty().bind(this.obsrv1PrefWrapLength);
+        if (this.bound2PrefWrapLength)
+            instance.prefWrapLengthProperty().bindBidirectional(this.obsrv2PrefWrapLength);
+        if (this.bound1RowValignment)
+            instance.rowValignmentProperty().bind(this.obsrv1RowValignment);
+        if (this.bound2RowValignment)
+            instance.rowValignmentProperty().bindBidirectional(this.obsrv2RowValignment);
+        if (this.bound1Vgap)
+            instance.vgapProperty().bind(this.obsrv1Vgap);
+        if (this.bound2Vgap)
+            instance.vgapProperty().bindBidirectional(this.obsrv2Vgap);
     }
 
     /**
@@ -203,8 +231,27 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
     public final B bindAlignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.Pos> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAlignment = true;
-        this.obsrvAlignment = source;
+        this.bound1Alignment = true;
+        this.obsrv1Alignment = source;
+        this.bound2Alignment = false;
+        this.obsrv2Alignment = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link FlowPane#alignmentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAlignment(javafx.beans.property.Property<javafx.geometry.Pos> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Alignment = false;
+        this.obsrv1Alignment = null;
+        this.bound2Alignment = true;
+        this.obsrv2Alignment = source;
         return (B) this;
     }
 
@@ -218,8 +265,27 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
     public final B bindColumnHalignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.HPos> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundColumnHalignment = true;
-        this.obsrvColumnHalignment = source;
+        this.bound1ColumnHalignment = true;
+        this.obsrv1ColumnHalignment = source;
+        this.bound2ColumnHalignment = false;
+        this.obsrv2ColumnHalignment = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link FlowPane#columnHalignmentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalColumnHalignment(javafx.beans.property.Property<javafx.geometry.HPos> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ColumnHalignment = false;
+        this.obsrv1ColumnHalignment = null;
+        this.bound2ColumnHalignment = true;
+        this.obsrv2ColumnHalignment = source;
         return (B) this;
     }
 
@@ -230,11 +296,30 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindHgap(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHgap(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundHgap = true;
-        this.obsrvHgap = source;
+        this.bound1Hgap = true;
+        this.obsrv1Hgap = source;
+        this.bound2Hgap = false;
+        this.obsrv2Hgap = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link FlowPane#hgapProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHgap(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Hgap = false;
+        this.obsrv1Hgap = null;
+        this.bound2Hgap = true;
+        this.obsrv2Hgap = source;
         return (B) this;
     }
 
@@ -248,8 +333,27 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
     public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOrientation = true;
-        this.obsrvOrientation = source;
+        this.bound1Orientation = true;
+        this.obsrv1Orientation = source;
+        this.bound2Orientation = false;
+        this.obsrv2Orientation = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link FlowPane#orientationProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOrientation(javafx.beans.property.Property<javafx.geometry.Orientation> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Orientation = false;
+        this.obsrv1Orientation = null;
+        this.bound2Orientation = true;
+        this.obsrv2Orientation = source;
         return (B) this;
     }
 
@@ -260,11 +364,30 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPrefWrapLength(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefWrapLength(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPrefWrapLength = true;
-        this.obsrvPrefWrapLength = source;
+        this.bound1PrefWrapLength = true;
+        this.obsrv1PrefWrapLength = source;
+        this.bound2PrefWrapLength = false;
+        this.obsrv2PrefWrapLength = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link FlowPane#prefWrapLengthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPrefWrapLength(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PrefWrapLength = false;
+        this.obsrv1PrefWrapLength = null;
+        this.bound2PrefWrapLength = true;
+        this.obsrv2PrefWrapLength = source;
         return (B) this;
     }
 
@@ -278,8 +401,27 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
     public final B bindRowValignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundRowValignment = true;
-        this.obsrvRowValignment = source;
+        this.bound1RowValignment = true;
+        this.obsrv1RowValignment = source;
+        this.bound2RowValignment = false;
+        this.obsrv2RowValignment = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link FlowPane#rowValignmentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRowValignment(javafx.beans.property.Property<javafx.geometry.VPos> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1RowValignment = false;
+        this.obsrv1RowValignment = null;
+        this.bound2RowValignment = true;
+        this.obsrv2RowValignment = source;
         return (B) this;
     }
 
@@ -290,11 +432,30 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindVgap(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindVgap(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundVgap = true;
-        this.obsrvVgap = source;
+        this.bound1Vgap = true;
+        this.obsrv1Vgap = source;
+        this.bound2Vgap = false;
+        this.obsrv2Vgap = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link FlowPane#vgapProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalVgap(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Vgap = false;
+        this.obsrv1Vgap = null;
+        this.bound2Vgap = true;
+        this.obsrv2Vgap = source;
         return (B) this;
     }
 

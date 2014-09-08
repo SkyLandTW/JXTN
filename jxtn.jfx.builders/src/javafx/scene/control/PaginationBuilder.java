@@ -31,17 +31,25 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
     private boolean hasPageFactory;
     private javafx.util.Callback<java.lang.Integer, javafx.scene.Node> valPageFactory;
 
-    private boolean boundCurrentPageIndex;
-    private javafx.beans.value.ObservableValue<? extends Integer> obsrvCurrentPageIndex;
+    private boolean bound1CurrentPageIndex;
+    private boolean bound2CurrentPageIndex;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1CurrentPageIndex;
+    private javafx.beans.property.Property<Number> obsrv2CurrentPageIndex;
 
-    private boolean boundMaxPageIndicatorCount;
-    private javafx.beans.value.ObservableValue<? extends Integer> obsrvMaxPageIndicatorCount;
+    private boolean bound1MaxPageIndicatorCount;
+    private boolean bound2MaxPageIndicatorCount;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MaxPageIndicatorCount;
+    private javafx.beans.property.Property<Number> obsrv2MaxPageIndicatorCount;
 
-    private boolean boundPageCount;
-    private javafx.beans.value.ObservableValue<? extends Integer> obsrvPageCount;
+    private boolean bound1PageCount;
+    private boolean bound2PageCount;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PageCount;
+    private javafx.beans.property.Property<Number> obsrv2PageCount;
 
-    private boolean boundPageFactory;
-    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<java.lang.Integer, javafx.scene.Node>> obsrvPageFactory;
+    private boolean bound1PageFactory;
+    private boolean bound2PageFactory;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<java.lang.Integer, javafx.scene.Node>> obsrv1PageFactory;
+    private javafx.beans.property.Property<javafx.util.Callback<java.lang.Integer, javafx.scene.Node>> obsrv2PageFactory;
 
     @Override
     public void applyTo(Z instance)
@@ -55,14 +63,22 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
             instance.setPageCount(this.valPageCount);
         if (this.hasPageFactory)
             instance.setPageFactory(this.valPageFactory);
-        if (this.boundCurrentPageIndex)
-            instance.currentPageIndexProperty().bind(this.obsrvCurrentPageIndex);
-        if (this.boundMaxPageIndicatorCount)
-            instance.maxPageIndicatorCountProperty().bind(this.obsrvMaxPageIndicatorCount);
-        if (this.boundPageCount)
-            instance.pageCountProperty().bind(this.obsrvPageCount);
-        if (this.boundPageFactory)
-            instance.pageFactoryProperty().bind(this.obsrvPageFactory);
+        if (this.bound1CurrentPageIndex)
+            instance.currentPageIndexProperty().bind(this.obsrv1CurrentPageIndex);
+        if (this.bound2CurrentPageIndex)
+            instance.currentPageIndexProperty().bindBidirectional(this.obsrv2CurrentPageIndex);
+        if (this.bound1MaxPageIndicatorCount)
+            instance.maxPageIndicatorCountProperty().bind(this.obsrv1MaxPageIndicatorCount);
+        if (this.bound2MaxPageIndicatorCount)
+            instance.maxPageIndicatorCountProperty().bindBidirectional(this.obsrv2MaxPageIndicatorCount);
+        if (this.bound1PageCount)
+            instance.pageCountProperty().bind(this.obsrv1PageCount);
+        if (this.bound2PageCount)
+            instance.pageCountProperty().bindBidirectional(this.obsrv2PageCount);
+        if (this.bound1PageFactory)
+            instance.pageFactoryProperty().bind(this.obsrv1PageFactory);
+        if (this.bound2PageFactory)
+            instance.pageFactoryProperty().bindBidirectional(this.obsrv2PageFactory);
     }
 
     /**
@@ -128,11 +144,30 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindCurrentPageIndex(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindCurrentPageIndex(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCurrentPageIndex = true;
-        this.obsrvCurrentPageIndex = source;
+        this.bound1CurrentPageIndex = true;
+        this.obsrv1CurrentPageIndex = source;
+        this.bound2CurrentPageIndex = false;
+        this.obsrv2CurrentPageIndex = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Pagination#currentPageIndexProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCurrentPageIndex(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CurrentPageIndex = false;
+        this.obsrv1CurrentPageIndex = null;
+        this.bound2CurrentPageIndex = true;
+        this.obsrv2CurrentPageIndex = source;
         return (B) this;
     }
 
@@ -143,11 +178,30 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMaxPageIndicatorCount(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindMaxPageIndicatorCount(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMaxPageIndicatorCount = true;
-        this.obsrvMaxPageIndicatorCount = source;
+        this.bound1MaxPageIndicatorCount = true;
+        this.obsrv1MaxPageIndicatorCount = source;
+        this.bound2MaxPageIndicatorCount = false;
+        this.obsrv2MaxPageIndicatorCount = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Pagination#maxPageIndicatorCountProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMaxPageIndicatorCount(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MaxPageIndicatorCount = false;
+        this.obsrv1MaxPageIndicatorCount = null;
+        this.bound2MaxPageIndicatorCount = true;
+        this.obsrv2MaxPageIndicatorCount = source;
         return (B) this;
     }
 
@@ -158,11 +212,30 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPageCount(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindPageCount(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPageCount = true;
-        this.obsrvPageCount = source;
+        this.bound1PageCount = true;
+        this.obsrv1PageCount = source;
+        this.bound2PageCount = false;
+        this.obsrv2PageCount = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Pagination#pageCountProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPageCount(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PageCount = false;
+        this.obsrv1PageCount = null;
+        this.bound2PageCount = true;
+        this.obsrv2PageCount = source;
         return (B) this;
     }
 
@@ -176,8 +249,27 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
     public final B bindPageFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<java.lang.Integer, javafx.scene.Node>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPageFactory = true;
-        this.obsrvPageFactory = source;
+        this.bound1PageFactory = true;
+        this.obsrv1PageFactory = source;
+        this.bound2PageFactory = false;
+        this.obsrv2PageFactory = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Pagination#pageFactoryProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPageFactory(javafx.beans.property.Property<javafx.util.Callback<java.lang.Integer, javafx.scene.Node>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PageFactory = false;
+        this.obsrv1PageFactory = null;
+        this.bound2PageFactory = true;
+        this.obsrv2PageFactory = source;
         return (B) this;
     }
 

@@ -40,23 +40,35 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
     private boolean hasSortType;
     private javafx.scene.control.TableColumn.SortType valSortType;
 
-    private boolean boundCellFactory;
-    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableColumn<S, T>, javafx.scene.control.TableCell<S, T>>> obsrvCellFactory;
+    private boolean bound1CellFactory;
+    private boolean bound2CellFactory;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableColumn<S, T>, javafx.scene.control.TableCell<S, T>>> obsrv1CellFactory;
+    private javafx.beans.property.Property<javafx.util.Callback<javafx.scene.control.TableColumn<S, T>, javafx.scene.control.TableCell<S, T>>> obsrv2CellFactory;
 
-    private boolean boundCellValueFactory;
-    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableColumn.CellDataFeatures<S, T>, javafx.beans.value.ObservableValue<T>>> obsrvCellValueFactory;
+    private boolean bound1CellValueFactory;
+    private boolean bound2CellValueFactory;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableColumn.CellDataFeatures<S, T>, javafx.beans.value.ObservableValue<T>>> obsrv1CellValueFactory;
+    private javafx.beans.property.Property<javafx.util.Callback<javafx.scene.control.TableColumn.CellDataFeatures<S, T>, javafx.beans.value.ObservableValue<T>>> obsrv2CellValueFactory;
 
-    private boolean boundOnEditCancel;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> obsrvOnEditCancel;
+    private boolean bound1OnEditCancel;
+    private boolean bound2OnEditCancel;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> obsrv1OnEditCancel;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> obsrv2OnEditCancel;
 
-    private boolean boundOnEditCommit;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> obsrvOnEditCommit;
+    private boolean bound1OnEditCommit;
+    private boolean bound2OnEditCommit;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> obsrv1OnEditCommit;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> obsrv2OnEditCommit;
 
-    private boolean boundOnEditStart;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> obsrvOnEditStart;
+    private boolean bound1OnEditStart;
+    private boolean bound2OnEditStart;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> obsrv1OnEditStart;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> obsrv2OnEditStart;
 
-    private boolean boundSortType;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TableColumn.SortType> obsrvSortType;
+    private boolean bound1SortType;
+    private boolean bound2SortType;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TableColumn.SortType> obsrv1SortType;
+    private javafx.beans.property.Property<javafx.scene.control.TableColumn.SortType> obsrv2SortType;
 
     @Override
     public void applyTo(Z instance)
@@ -76,18 +88,30 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
             instance.setOnEditStart(this.valOnEditStart);
         if (this.hasSortType)
             instance.setSortType(this.valSortType);
-        if (this.boundCellFactory)
-            instance.cellFactoryProperty().bind(this.obsrvCellFactory);
-        if (this.boundCellValueFactory)
-            instance.cellValueFactoryProperty().bind(this.obsrvCellValueFactory);
-        if (this.boundOnEditCancel)
-            instance.onEditCancelProperty().bind(this.obsrvOnEditCancel);
-        if (this.boundOnEditCommit)
-            instance.onEditCommitProperty().bind(this.obsrvOnEditCommit);
-        if (this.boundOnEditStart)
-            instance.onEditStartProperty().bind(this.obsrvOnEditStart);
-        if (this.boundSortType)
-            instance.sortTypeProperty().bind(this.obsrvSortType);
+        if (this.bound1CellFactory)
+            instance.cellFactoryProperty().bind(this.obsrv1CellFactory);
+        if (this.bound2CellFactory)
+            instance.cellFactoryProperty().bindBidirectional(this.obsrv2CellFactory);
+        if (this.bound1CellValueFactory)
+            instance.cellValueFactoryProperty().bind(this.obsrv1CellValueFactory);
+        if (this.bound2CellValueFactory)
+            instance.cellValueFactoryProperty().bindBidirectional(this.obsrv2CellValueFactory);
+        if (this.bound1OnEditCancel)
+            instance.onEditCancelProperty().bind(this.obsrv1OnEditCancel);
+        if (this.bound2OnEditCancel)
+            instance.onEditCancelProperty().bindBidirectional(this.obsrv2OnEditCancel);
+        if (this.bound1OnEditCommit)
+            instance.onEditCommitProperty().bind(this.obsrv1OnEditCommit);
+        if (this.bound2OnEditCommit)
+            instance.onEditCommitProperty().bindBidirectional(this.obsrv2OnEditCommit);
+        if (this.bound1OnEditStart)
+            instance.onEditStartProperty().bind(this.obsrv1OnEditStart);
+        if (this.bound2OnEditStart)
+            instance.onEditStartProperty().bindBidirectional(this.obsrv2OnEditStart);
+        if (this.bound1SortType)
+            instance.sortTypeProperty().bind(this.obsrv1SortType);
+        if (this.bound2SortType)
+            instance.sortTypeProperty().bindBidirectional(this.obsrv2SortType);
     }
 
     /**
@@ -213,8 +237,27 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
     public final B bindCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableColumn<S, T>, javafx.scene.control.TableCell<S, T>>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCellFactory = true;
-        this.obsrvCellFactory = source;
+        this.bound1CellFactory = true;
+        this.obsrv1CellFactory = source;
+        this.bound2CellFactory = false;
+        this.obsrv2CellFactory = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumn#cellFactoryProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCellFactory(javafx.beans.property.Property<javafx.util.Callback<javafx.scene.control.TableColumn<S, T>, javafx.scene.control.TableCell<S, T>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CellFactory = false;
+        this.obsrv1CellFactory = null;
+        this.bound2CellFactory = true;
+        this.obsrv2CellFactory = source;
         return (B) this;
     }
 
@@ -228,8 +271,27 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
     public final B bindCellValueFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.TableColumn.CellDataFeatures<S, T>, javafx.beans.value.ObservableValue<T>>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCellValueFactory = true;
-        this.obsrvCellValueFactory = source;
+        this.bound1CellValueFactory = true;
+        this.obsrv1CellValueFactory = source;
+        this.bound2CellValueFactory = false;
+        this.obsrv2CellValueFactory = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumn#cellValueFactoryProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCellValueFactory(javafx.beans.property.Property<javafx.util.Callback<javafx.scene.control.TableColumn.CellDataFeatures<S, T>, javafx.beans.value.ObservableValue<T>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CellValueFactory = false;
+        this.obsrv1CellValueFactory = null;
+        this.bound2CellValueFactory = true;
+        this.obsrv2CellValueFactory = source;
         return (B) this;
     }
 
@@ -243,8 +305,27 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
     public final B bindOnEditCancel(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnEditCancel = true;
-        this.obsrvOnEditCancel = source;
+        this.bound1OnEditCancel = true;
+        this.obsrv1OnEditCancel = source;
+        this.bound2OnEditCancel = false;
+        this.obsrv2OnEditCancel = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumn#onEditCancelProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnEditCancel(javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnEditCancel = false;
+        this.obsrv1OnEditCancel = null;
+        this.bound2OnEditCancel = true;
+        this.obsrv2OnEditCancel = source;
         return (B) this;
     }
 
@@ -258,8 +339,27 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
     public final B bindOnEditCommit(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnEditCommit = true;
-        this.obsrvOnEditCommit = source;
+        this.bound1OnEditCommit = true;
+        this.obsrv1OnEditCommit = source;
+        this.bound2OnEditCommit = false;
+        this.obsrv2OnEditCommit = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumn#onEditCommitProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnEditCommit(javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnEditCommit = false;
+        this.obsrv1OnEditCommit = null;
+        this.bound2OnEditCommit = true;
+        this.obsrv2OnEditCommit = source;
         return (B) this;
     }
 
@@ -273,8 +373,27 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
     public final B bindOnEditStart(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnEditStart = true;
-        this.obsrvOnEditStart = source;
+        this.bound1OnEditStart = true;
+        this.obsrv1OnEditStart = source;
+        this.bound2OnEditStart = false;
+        this.obsrv2OnEditStart = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumn#onEditStartProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnEditStart(javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.TableColumn.CellEditEvent<S, T>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnEditStart = false;
+        this.obsrv1OnEditStart = null;
+        this.bound2OnEditStart = true;
+        this.obsrv2OnEditStart = source;
         return (B) this;
     }
 
@@ -288,8 +407,27 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
     public final B bindSortType(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TableColumn.SortType> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSortType = true;
-        this.obsrvSortType = source;
+        this.bound1SortType = true;
+        this.obsrv1SortType = source;
+        this.bound2SortType = false;
+        this.obsrv2SortType = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableColumn#sortTypeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSortType(javafx.beans.property.Property<javafx.scene.control.TableColumn.SortType> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SortType = false;
+        this.obsrv1SortType = null;
+        this.bound2SortType = true;
+        this.obsrv2SortType = source;
         return (B) this;
     }
 

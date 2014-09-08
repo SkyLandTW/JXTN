@@ -28,14 +28,20 @@ public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder
     private boolean hasRadius;
     private double valRadius;
 
-    private boolean boundAngle;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvAngle;
+    private boolean bound1Angle;
+    private boolean bound2Angle;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Angle;
+    private javafx.beans.property.Property<Number> obsrv2Angle;
 
-    private boolean boundInput;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrvInput;
+    private boolean bound1Input;
+    private boolean bound2Input;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrv1Input;
+    private javafx.beans.property.Property<javafx.scene.effect.Effect> obsrv2Input;
 
-    private boolean boundRadius;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvRadius;
+    private boolean bound1Radius;
+    private boolean bound2Radius;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Radius;
+    private javafx.beans.property.Property<Number> obsrv2Radius;
 
     @Override
     public void applyTo(Z instance)
@@ -47,12 +53,18 @@ public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder
             instance.setInput(this.valInput);
         if (this.hasRadius)
             instance.setRadius(this.valRadius);
-        if (this.boundAngle)
-            instance.angleProperty().bind(this.obsrvAngle);
-        if (this.boundInput)
-            instance.inputProperty().bind(this.obsrvInput);
-        if (this.boundRadius)
-            instance.radiusProperty().bind(this.obsrvRadius);
+        if (this.bound1Angle)
+            instance.angleProperty().bind(this.obsrv1Angle);
+        if (this.bound2Angle)
+            instance.angleProperty().bindBidirectional(this.obsrv2Angle);
+        if (this.bound1Input)
+            instance.inputProperty().bind(this.obsrv1Input);
+        if (this.bound2Input)
+            instance.inputProperty().bindBidirectional(this.obsrv2Input);
+        if (this.bound1Radius)
+            instance.radiusProperty().bind(this.obsrv1Radius);
+        if (this.bound2Radius)
+            instance.radiusProperty().bindBidirectional(this.obsrv2Radius);
     }
 
     /**
@@ -104,11 +116,30 @@ public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindAngle(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindAngle(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAngle = true;
-        this.obsrvAngle = source;
+        this.bound1Angle = true;
+        this.obsrv1Angle = source;
+        this.bound2Angle = false;
+        this.obsrv2Angle = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MotionBlur#angleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAngle(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Angle = false;
+        this.obsrv1Angle = null;
+        this.bound2Angle = true;
+        this.obsrv2Angle = source;
         return (B) this;
     }
 
@@ -122,8 +153,27 @@ public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder
     public final B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundInput = true;
-        this.obsrvInput = source;
+        this.bound1Input = true;
+        this.obsrv1Input = source;
+        this.bound2Input = false;
+        this.obsrv2Input = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MotionBlur#inputProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalInput(javafx.beans.property.Property<javafx.scene.effect.Effect> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Input = false;
+        this.obsrv1Input = null;
+        this.bound2Input = true;
+        this.obsrv2Input = source;
         return (B) this;
     }
 
@@ -134,11 +184,30 @@ public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindRadius(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindRadius(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundRadius = true;
-        this.obsrvRadius = source;
+        this.bound1Radius = true;
+        this.obsrv1Radius = source;
+        this.bound2Radius = false;
+        this.obsrv2Radius = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MotionBlur#radiusProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRadius(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Radius = false;
+        this.obsrv1Radius = null;
+        this.bound2Radius = true;
+        this.obsrv2Radius = source;
         return (B) this;
     }
 

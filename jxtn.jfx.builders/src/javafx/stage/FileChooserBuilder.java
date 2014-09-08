@@ -34,17 +34,25 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     private boolean hasTitle;
     private java.lang.String valTitle;
 
-    private boolean boundInitialDirectory;
-    private javafx.beans.value.ObservableValue<? extends java.io.File> obsrvInitialDirectory;
+    private boolean bound1InitialDirectory;
+    private boolean bound2InitialDirectory;
+    private javafx.beans.value.ObservableValue<? extends java.io.File> obsrv1InitialDirectory;
+    private javafx.beans.property.Property<java.io.File> obsrv2InitialDirectory;
 
-    private boolean boundInitialFileName;
-    private javafx.beans.value.ObservableValue<? extends java.lang.String> obsrvInitialFileName;
+    private boolean bound1InitialFileName;
+    private boolean bound2InitialFileName;
+    private javafx.beans.value.ObservableValue<? extends java.lang.String> obsrv1InitialFileName;
+    private javafx.beans.property.Property<java.lang.String> obsrv2InitialFileName;
 
-    private boolean boundSelectedExtensionFilter;
-    private javafx.beans.value.ObservableValue<? extends javafx.stage.FileChooser.ExtensionFilter> obsrvSelectedExtensionFilter;
+    private boolean bound1SelectedExtensionFilter;
+    private boolean bound2SelectedExtensionFilter;
+    private javafx.beans.value.ObservableValue<? extends javafx.stage.FileChooser.ExtensionFilter> obsrv1SelectedExtensionFilter;
+    private javafx.beans.property.Property<javafx.stage.FileChooser.ExtensionFilter> obsrv2SelectedExtensionFilter;
 
-    private boolean boundTitle;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvTitle;
+    private boolean bound1Title;
+    private boolean bound2Title;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Title;
+    private javafx.beans.property.Property<String> obsrv2Title;
 
     @Override
     public void applyTo(Z instance)
@@ -60,14 +68,22 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
             instance.setSelectedExtensionFilter(this.valSelectedExtensionFilter);
         if (this.hasTitle)
             instance.setTitle(this.valTitle);
-        if (this.boundInitialDirectory)
-            instance.initialDirectoryProperty().bind(this.obsrvInitialDirectory);
-        if (this.boundInitialFileName)
-            instance.initialFileNameProperty().bind(this.obsrvInitialFileName);
-        if (this.boundSelectedExtensionFilter)
-            instance.selectedExtensionFilterProperty().bind(this.obsrvSelectedExtensionFilter);
-        if (this.boundTitle)
-            instance.titleProperty().bind(this.obsrvTitle);
+        if (this.bound1InitialDirectory)
+            instance.initialDirectoryProperty().bind(this.obsrv1InitialDirectory);
+        if (this.bound2InitialDirectory)
+            instance.initialDirectoryProperty().bindBidirectional(this.obsrv2InitialDirectory);
+        if (this.bound1InitialFileName)
+            instance.initialFileNameProperty().bind(this.obsrv1InitialFileName);
+        if (this.bound2InitialFileName)
+            instance.initialFileNameProperty().bindBidirectional(this.obsrv2InitialFileName);
+        if (this.bound1SelectedExtensionFilter)
+            instance.selectedExtensionFilterProperty().bind(this.obsrv1SelectedExtensionFilter);
+        if (this.bound2SelectedExtensionFilter)
+            instance.selectedExtensionFilterProperty().bindBidirectional(this.obsrv2SelectedExtensionFilter);
+        if (this.bound1Title)
+            instance.titleProperty().bind(this.obsrv1Title);
+        if (this.bound2Title)
+            instance.titleProperty().bindBidirectional(this.obsrv2Title);
     }
 
     /**
@@ -165,8 +181,27 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     public final B bindInitialDirectory(javafx.beans.value.ObservableValue<? extends java.io.File> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundInitialDirectory = true;
-        this.obsrvInitialDirectory = source;
+        this.bound1InitialDirectory = true;
+        this.obsrv1InitialDirectory = source;
+        this.bound2InitialDirectory = false;
+        this.obsrv2InitialDirectory = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link FileChooser#initialDirectoryProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalInitialDirectory(javafx.beans.property.Property<java.io.File> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1InitialDirectory = false;
+        this.obsrv1InitialDirectory = null;
+        this.bound2InitialDirectory = true;
+        this.obsrv2InitialDirectory = source;
         return (B) this;
     }
 
@@ -180,8 +215,27 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     public final B bindInitialFileName(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundInitialFileName = true;
-        this.obsrvInitialFileName = source;
+        this.bound1InitialFileName = true;
+        this.obsrv1InitialFileName = source;
+        this.bound2InitialFileName = false;
+        this.obsrv2InitialFileName = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link FileChooser#initialFileNameProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalInitialFileName(javafx.beans.property.Property<java.lang.String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1InitialFileName = false;
+        this.obsrv1InitialFileName = null;
+        this.bound2InitialFileName = true;
+        this.obsrv2InitialFileName = source;
         return (B) this;
     }
 
@@ -195,8 +249,27 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     public final B bindSelectedExtensionFilter(javafx.beans.value.ObservableValue<? extends javafx.stage.FileChooser.ExtensionFilter> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSelectedExtensionFilter = true;
-        this.obsrvSelectedExtensionFilter = source;
+        this.bound1SelectedExtensionFilter = true;
+        this.obsrv1SelectedExtensionFilter = source;
+        this.bound2SelectedExtensionFilter = false;
+        this.obsrv2SelectedExtensionFilter = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link FileChooser#selectedExtensionFilterProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSelectedExtensionFilter(javafx.beans.property.Property<javafx.stage.FileChooser.ExtensionFilter> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SelectedExtensionFilter = false;
+        this.obsrv1SelectedExtensionFilter = null;
+        this.bound2SelectedExtensionFilter = true;
+        this.obsrv2SelectedExtensionFilter = source;
         return (B) this;
     }
 
@@ -210,8 +283,27 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     public final B bindTitle(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTitle = true;
-        this.obsrvTitle = source;
+        this.bound1Title = true;
+        this.obsrv1Title = source;
+        this.bound2Title = false;
+        this.obsrv2Title = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link FileChooser#titleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTitle(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Title = false;
+        this.obsrv1Title = null;
+        this.bound2Title = true;
+        this.obsrv2Title = source;
         return (B) this;
     }
 

@@ -31,17 +31,25 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     private boolean hasText;
     private java.lang.String valText;
 
-    private boolean boundEditable;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvEditable;
+    private boolean bound1Editable;
+    private boolean bound2Editable;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Editable;
+    private javafx.beans.property.Property<Boolean> obsrv2Editable;
 
-    private boolean boundFont;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> obsrvFont;
+    private boolean bound1Font;
+    private boolean bound2Font;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> obsrv1Font;
+    private javafx.beans.property.Property<javafx.scene.text.Font> obsrv2Font;
 
-    private boolean boundPromptText;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvPromptText;
+    private boolean bound1PromptText;
+    private boolean bound2PromptText;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1PromptText;
+    private javafx.beans.property.Property<String> obsrv2PromptText;
 
-    private boolean boundText;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvText;
+    private boolean bound1Text;
+    private boolean bound2Text;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Text;
+    private javafx.beans.property.Property<String> obsrv2Text;
 
     @Override
     public void applyTo(Z instance)
@@ -55,14 +63,22 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
             instance.setPromptText(this.valPromptText);
         if (this.hasText)
             instance.setText(this.valText);
-        if (this.boundEditable)
-            instance.editableProperty().bind(this.obsrvEditable);
-        if (this.boundFont)
-            instance.fontProperty().bind(this.obsrvFont);
-        if (this.boundPromptText)
-            instance.promptTextProperty().bind(this.obsrvPromptText);
-        if (this.boundText)
-            instance.textProperty().bind(this.obsrvText);
+        if (this.bound1Editable)
+            instance.editableProperty().bind(this.obsrv1Editable);
+        if (this.bound2Editable)
+            instance.editableProperty().bindBidirectional(this.obsrv2Editable);
+        if (this.bound1Font)
+            instance.fontProperty().bind(this.obsrv1Font);
+        if (this.bound2Font)
+            instance.fontProperty().bindBidirectional(this.obsrv2Font);
+        if (this.bound1PromptText)
+            instance.promptTextProperty().bind(this.obsrv1PromptText);
+        if (this.bound2PromptText)
+            instance.promptTextProperty().bindBidirectional(this.obsrv2PromptText);
+        if (this.bound1Text)
+            instance.textProperty().bind(this.obsrv1Text);
+        if (this.bound2Text)
+            instance.textProperty().bindBidirectional(this.obsrv2Text);
     }
 
     /**
@@ -131,8 +147,27 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     public final B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundEditable = true;
-        this.obsrvEditable = source;
+        this.bound1Editable = true;
+        this.obsrv1Editable = source;
+        this.bound2Editable = false;
+        this.obsrv2Editable = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TextInputControl#editableProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalEditable(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Editable = false;
+        this.obsrv1Editable = null;
+        this.bound2Editable = true;
+        this.obsrv2Editable = source;
         return (B) this;
     }
 
@@ -146,8 +181,27 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     public final B bindFont(javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFont = true;
-        this.obsrvFont = source;
+        this.bound1Font = true;
+        this.obsrv1Font = source;
+        this.bound2Font = false;
+        this.obsrv2Font = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TextInputControl#fontProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFont(javafx.beans.property.Property<javafx.scene.text.Font> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Font = false;
+        this.obsrv1Font = null;
+        this.bound2Font = true;
+        this.obsrv2Font = source;
         return (B) this;
     }
 
@@ -161,8 +215,27 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     public final B bindPromptText(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPromptText = true;
-        this.obsrvPromptText = source;
+        this.bound1PromptText = true;
+        this.obsrv1PromptText = source;
+        this.bound2PromptText = false;
+        this.obsrv2PromptText = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TextInputControl#promptTextProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPromptText(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PromptText = false;
+        this.obsrv1PromptText = null;
+        this.bound2PromptText = true;
+        this.obsrv2PromptText = source;
         return (B) this;
     }
 
@@ -176,8 +249,27 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     public final B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundText = true;
-        this.obsrvText = source;
+        this.bound1Text = true;
+        this.obsrv1Text = source;
+        this.bound2Text = false;
+        this.obsrv2Text = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TextInputControl#textProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalText(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Text = false;
+        this.obsrv1Text = null;
+        this.bound2Text = true;
+        this.obsrv2Text = source;
         return (B) this;
     }
 }

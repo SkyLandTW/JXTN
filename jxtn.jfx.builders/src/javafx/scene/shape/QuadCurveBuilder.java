@@ -37,23 +37,35 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     private boolean hasStartY;
     private double valStartY;
 
-    private boolean boundControlX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvControlX;
+    private boolean bound1ControlX;
+    private boolean bound2ControlX;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1ControlX;
+    private javafx.beans.property.Property<Number> obsrv2ControlX;
 
-    private boolean boundControlY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvControlY;
+    private boolean bound1ControlY;
+    private boolean bound2ControlY;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1ControlY;
+    private javafx.beans.property.Property<Number> obsrv2ControlY;
 
-    private boolean boundEndX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvEndX;
+    private boolean bound1EndX;
+    private boolean bound2EndX;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1EndX;
+    private javafx.beans.property.Property<Number> obsrv2EndX;
 
-    private boolean boundEndY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvEndY;
+    private boolean bound1EndY;
+    private boolean bound2EndY;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1EndY;
+    private javafx.beans.property.Property<Number> obsrv2EndY;
 
-    private boolean boundStartX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvStartX;
+    private boolean bound1StartX;
+    private boolean bound2StartX;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1StartX;
+    private javafx.beans.property.Property<Number> obsrv2StartX;
 
-    private boolean boundStartY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvStartY;
+    private boolean bound1StartY;
+    private boolean bound2StartY;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1StartY;
+    private javafx.beans.property.Property<Number> obsrv2StartY;
 
     @Override
     public void applyTo(Z instance)
@@ -71,18 +83,30 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
             instance.setStartX(this.valStartX);
         if (this.hasStartY)
             instance.setStartY(this.valStartY);
-        if (this.boundControlX)
-            instance.controlXProperty().bind(this.obsrvControlX);
-        if (this.boundControlY)
-            instance.controlYProperty().bind(this.obsrvControlY);
-        if (this.boundEndX)
-            instance.endXProperty().bind(this.obsrvEndX);
-        if (this.boundEndY)
-            instance.endYProperty().bind(this.obsrvEndY);
-        if (this.boundStartX)
-            instance.startXProperty().bind(this.obsrvStartX);
-        if (this.boundStartY)
-            instance.startYProperty().bind(this.obsrvStartY);
+        if (this.bound1ControlX)
+            instance.controlXProperty().bind(this.obsrv1ControlX);
+        if (this.bound2ControlX)
+            instance.controlXProperty().bindBidirectional(this.obsrv2ControlX);
+        if (this.bound1ControlY)
+            instance.controlYProperty().bind(this.obsrv1ControlY);
+        if (this.bound2ControlY)
+            instance.controlYProperty().bindBidirectional(this.obsrv2ControlY);
+        if (this.bound1EndX)
+            instance.endXProperty().bind(this.obsrv1EndX);
+        if (this.bound2EndX)
+            instance.endXProperty().bindBidirectional(this.obsrv2EndX);
+        if (this.bound1EndY)
+            instance.endYProperty().bind(this.obsrv1EndY);
+        if (this.bound2EndY)
+            instance.endYProperty().bindBidirectional(this.obsrv2EndY);
+        if (this.bound1StartX)
+            instance.startXProperty().bind(this.obsrv1StartX);
+        if (this.bound2StartX)
+            instance.startXProperty().bindBidirectional(this.obsrv2StartX);
+        if (this.bound1StartY)
+            instance.startYProperty().bind(this.obsrv1StartY);
+        if (this.bound2StartY)
+            instance.startYProperty().bindBidirectional(this.obsrv2StartY);
     }
 
     /**
@@ -176,11 +200,30 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindControlX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindControlX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundControlX = true;
-        this.obsrvControlX = source;
+        this.bound1ControlX = true;
+        this.obsrv1ControlX = source;
+        this.bound2ControlX = false;
+        this.obsrv2ControlX = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link QuadCurve#controlXProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalControlX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ControlX = false;
+        this.obsrv1ControlX = null;
+        this.bound2ControlX = true;
+        this.obsrv2ControlX = source;
         return (B) this;
     }
 
@@ -191,11 +234,30 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindControlY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindControlY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundControlY = true;
-        this.obsrvControlY = source;
+        this.bound1ControlY = true;
+        this.obsrv1ControlY = source;
+        this.bound2ControlY = false;
+        this.obsrv2ControlY = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link QuadCurve#controlYProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalControlY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ControlY = false;
+        this.obsrv1ControlY = null;
+        this.bound2ControlY = true;
+        this.obsrv2ControlY = source;
         return (B) this;
     }
 
@@ -206,11 +268,30 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindEndX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindEndX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundEndX = true;
-        this.obsrvEndX = source;
+        this.bound1EndX = true;
+        this.obsrv1EndX = source;
+        this.bound2EndX = false;
+        this.obsrv2EndX = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link QuadCurve#endXProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalEndX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1EndX = false;
+        this.obsrv1EndX = null;
+        this.bound2EndX = true;
+        this.obsrv2EndX = source;
         return (B) this;
     }
 
@@ -221,11 +302,30 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindEndY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindEndY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundEndY = true;
-        this.obsrvEndY = source;
+        this.bound1EndY = true;
+        this.obsrv1EndY = source;
+        this.bound2EndY = false;
+        this.obsrv2EndY = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link QuadCurve#endYProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalEndY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1EndY = false;
+        this.obsrv1EndY = null;
+        this.bound2EndY = true;
+        this.obsrv2EndY = source;
         return (B) this;
     }
 
@@ -236,11 +336,30 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindStartX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindStartX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundStartX = true;
-        this.obsrvStartX = source;
+        this.bound1StartX = true;
+        this.obsrv1StartX = source;
+        this.bound2StartX = false;
+        this.obsrv2StartX = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link QuadCurve#startXProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStartX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1StartX = false;
+        this.obsrv1StartX = null;
+        this.bound2StartX = true;
+        this.obsrv2StartX = source;
         return (B) this;
     }
 
@@ -251,11 +370,30 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindStartY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindStartY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundStartY = true;
-        this.obsrvStartY = source;
+        this.bound1StartY = true;
+        this.obsrv1StartY = source;
+        this.bound2StartY = false;
+        this.obsrv2StartY = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link QuadCurve#startYProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStartY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1StartY = false;
+        this.obsrv1StartY = null;
+        this.bound2StartY = true;
+        this.obsrv2StartY = source;
         return (B) this;
     }
 

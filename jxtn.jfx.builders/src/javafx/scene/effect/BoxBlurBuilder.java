@@ -31,17 +31,25 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
     private boolean hasWidth;
     private double valWidth;
 
-    private boolean boundHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvHeight;
+    private boolean bound1Height;
+    private boolean bound2Height;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Height;
+    private javafx.beans.property.Property<Number> obsrv2Height;
 
-    private boolean boundInput;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrvInput;
+    private boolean bound1Input;
+    private boolean bound2Input;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrv1Input;
+    private javafx.beans.property.Property<javafx.scene.effect.Effect> obsrv2Input;
 
-    private boolean boundIterations;
-    private javafx.beans.value.ObservableValue<? extends Integer> obsrvIterations;
+    private boolean bound1Iterations;
+    private boolean bound2Iterations;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Iterations;
+    private javafx.beans.property.Property<Number> obsrv2Iterations;
 
-    private boolean boundWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvWidth;
+    private boolean bound1Width;
+    private boolean bound2Width;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Width;
+    private javafx.beans.property.Property<Number> obsrv2Width;
 
     @Override
     public void applyTo(Z instance)
@@ -55,14 +63,22 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
             instance.setIterations(this.valIterations);
         if (this.hasWidth)
             instance.setWidth(this.valWidth);
-        if (this.boundHeight)
-            instance.heightProperty().bind(this.obsrvHeight);
-        if (this.boundInput)
-            instance.inputProperty().bind(this.obsrvInput);
-        if (this.boundIterations)
-            instance.iterationsProperty().bind(this.obsrvIterations);
-        if (this.boundWidth)
-            instance.widthProperty().bind(this.obsrvWidth);
+        if (this.bound1Height)
+            instance.heightProperty().bind(this.obsrv1Height);
+        if (this.bound2Height)
+            instance.heightProperty().bindBidirectional(this.obsrv2Height);
+        if (this.bound1Input)
+            instance.inputProperty().bind(this.obsrv1Input);
+        if (this.bound2Input)
+            instance.inputProperty().bindBidirectional(this.obsrv2Input);
+        if (this.bound1Iterations)
+            instance.iterationsProperty().bind(this.obsrv1Iterations);
+        if (this.bound2Iterations)
+            instance.iterationsProperty().bindBidirectional(this.obsrv2Iterations);
+        if (this.bound1Width)
+            instance.widthProperty().bind(this.obsrv1Width);
+        if (this.bound2Width)
+            instance.widthProperty().bindBidirectional(this.obsrv2Width);
     }
 
     /**
@@ -128,11 +144,30 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundHeight = true;
-        this.obsrvHeight = source;
+        this.bound1Height = true;
+        this.obsrv1Height = source;
+        this.bound2Height = false;
+        this.obsrv2Height = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link BoxBlur#heightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Height = false;
+        this.obsrv1Height = null;
+        this.bound2Height = true;
+        this.obsrv2Height = source;
         return (B) this;
     }
 
@@ -146,8 +181,27 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
     public final B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundInput = true;
-        this.obsrvInput = source;
+        this.bound1Input = true;
+        this.obsrv1Input = source;
+        this.bound2Input = false;
+        this.obsrv2Input = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link BoxBlur#inputProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalInput(javafx.beans.property.Property<javafx.scene.effect.Effect> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Input = false;
+        this.obsrv1Input = null;
+        this.bound2Input = true;
+        this.obsrv2Input = source;
         return (B) this;
     }
 
@@ -158,11 +212,30 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindIterations(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindIterations(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundIterations = true;
-        this.obsrvIterations = source;
+        this.bound1Iterations = true;
+        this.obsrv1Iterations = source;
+        this.bound2Iterations = false;
+        this.obsrv2Iterations = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link BoxBlur#iterationsProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalIterations(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Iterations = false;
+        this.obsrv1Iterations = null;
+        this.bound2Iterations = true;
+        this.obsrv2Iterations = source;
         return (B) this;
     }
 
@@ -173,11 +246,30 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundWidth = true;
-        this.obsrvWidth = source;
+        this.bound1Width = true;
+        this.obsrv1Width = source;
+        this.bound2Width = false;
+        this.obsrv2Width = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link BoxBlur#widthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Width = false;
+        this.obsrv1Width = null;
+        this.bound2Width = true;
+        this.obsrv2Width = source;
         return (B) this;
     }
 

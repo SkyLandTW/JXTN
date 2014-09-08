@@ -31,8 +31,10 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     private boolean hasOrientation;
     private javafx.geometry.Orientation valOrientation;
 
-    private boolean boundOrientation;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrvOrientation;
+    private boolean bound1Orientation;
+    private boolean bound2Orientation;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrv1Orientation;
+    private javafx.beans.property.Property<javafx.geometry.Orientation> obsrv2Orientation;
 
     @Override
     public void applyTo(Z instance)
@@ -46,8 +48,10 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
             instance.getItems().setAll(this.valItems);
         if (this.hasOrientation)
             instance.setOrientation(this.valOrientation);
-        if (this.boundOrientation)
-            instance.orientationProperty().bind(this.obsrvOrientation);
+        if (this.bound1Orientation)
+            instance.orientationProperty().bind(this.obsrv1Orientation);
+        if (this.bound2Orientation)
+            instance.orientationProperty().bindBidirectional(this.obsrv2Orientation);
     }
 
     /**
@@ -146,8 +150,27 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOrientation = true;
-        this.obsrvOrientation = source;
+        this.bound1Orientation = true;
+        this.obsrv1Orientation = source;
+        this.bound2Orientation = false;
+        this.obsrv2Orientation = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SplitPane#orientationProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOrientation(javafx.beans.property.Property<javafx.geometry.Orientation> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Orientation = false;
+        this.obsrv1Orientation = null;
+        this.bound2Orientation = true;
+        this.obsrv2Orientation = source;
         return (B) this;
     }
 

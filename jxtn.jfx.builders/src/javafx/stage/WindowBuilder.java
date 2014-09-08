@@ -52,26 +52,40 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     private boolean hasY;
     private double valY;
 
-    private boolean boundEventDispatcher;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventDispatcher> obsrvEventDispatcher;
+    private boolean bound1EventDispatcher;
+    private boolean bound2EventDispatcher;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventDispatcher> obsrv1EventDispatcher;
+    private javafx.beans.property.Property<javafx.event.EventDispatcher> obsrv2EventDispatcher;
 
-    private boolean boundOnCloseRequest;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> obsrvOnCloseRequest;
+    private boolean bound1OnCloseRequest;
+    private boolean bound2OnCloseRequest;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> obsrv1OnCloseRequest;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.stage.WindowEvent>> obsrv2OnCloseRequest;
 
-    private boolean boundOnHidden;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> obsrvOnHidden;
+    private boolean bound1OnHidden;
+    private boolean bound2OnHidden;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> obsrv1OnHidden;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.stage.WindowEvent>> obsrv2OnHidden;
 
-    private boolean boundOnHiding;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> obsrvOnHiding;
+    private boolean bound1OnHiding;
+    private boolean bound2OnHiding;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> obsrv1OnHiding;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.stage.WindowEvent>> obsrv2OnHiding;
 
-    private boolean boundOnShowing;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> obsrvOnShowing;
+    private boolean bound1OnShowing;
+    private boolean bound2OnShowing;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> obsrv1OnShowing;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.stage.WindowEvent>> obsrv2OnShowing;
 
-    private boolean boundOnShown;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> obsrvOnShown;
+    private boolean bound1OnShown;
+    private boolean bound2OnShown;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> obsrv1OnShown;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.stage.WindowEvent>> obsrv2OnShown;
 
-    private boolean boundOpacity;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvOpacity;
+    private boolean bound1Opacity;
+    private boolean bound2Opacity;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Opacity;
+    private javafx.beans.property.Property<Number> obsrv2Opacity;
 
     @Override
     public void applyTo(Z instance)
@@ -99,20 +113,34 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
             instance.setX(this.valX);
         if (this.hasY)
             instance.setY(this.valY);
-        if (this.boundEventDispatcher)
-            instance.eventDispatcherProperty().bind(this.obsrvEventDispatcher);
-        if (this.boundOnCloseRequest)
-            instance.onCloseRequestProperty().bind(this.obsrvOnCloseRequest);
-        if (this.boundOnHidden)
-            instance.onHiddenProperty().bind(this.obsrvOnHidden);
-        if (this.boundOnHiding)
-            instance.onHidingProperty().bind(this.obsrvOnHiding);
-        if (this.boundOnShowing)
-            instance.onShowingProperty().bind(this.obsrvOnShowing);
-        if (this.boundOnShown)
-            instance.onShownProperty().bind(this.obsrvOnShown);
-        if (this.boundOpacity)
-            instance.opacityProperty().bind(this.obsrvOpacity);
+        if (this.bound1EventDispatcher)
+            instance.eventDispatcherProperty().bind(this.obsrv1EventDispatcher);
+        if (this.bound2EventDispatcher)
+            instance.eventDispatcherProperty().bindBidirectional(this.obsrv2EventDispatcher);
+        if (this.bound1OnCloseRequest)
+            instance.onCloseRequestProperty().bind(this.obsrv1OnCloseRequest);
+        if (this.bound2OnCloseRequest)
+            instance.onCloseRequestProperty().bindBidirectional(this.obsrv2OnCloseRequest);
+        if (this.bound1OnHidden)
+            instance.onHiddenProperty().bind(this.obsrv1OnHidden);
+        if (this.bound2OnHidden)
+            instance.onHiddenProperty().bindBidirectional(this.obsrv2OnHidden);
+        if (this.bound1OnHiding)
+            instance.onHidingProperty().bind(this.obsrv1OnHiding);
+        if (this.bound2OnHiding)
+            instance.onHidingProperty().bindBidirectional(this.obsrv2OnHiding);
+        if (this.bound1OnShowing)
+            instance.onShowingProperty().bind(this.obsrv1OnShowing);
+        if (this.bound2OnShowing)
+            instance.onShowingProperty().bindBidirectional(this.obsrv2OnShowing);
+        if (this.bound1OnShown)
+            instance.onShownProperty().bind(this.obsrv1OnShown);
+        if (this.bound2OnShown)
+            instance.onShownProperty().bindBidirectional(this.obsrv2OnShown);
+        if (this.bound1Opacity)
+            instance.opacityProperty().bind(this.obsrv1Opacity);
+        if (this.bound2Opacity)
+            instance.opacityProperty().bindBidirectional(this.obsrv2Opacity);
     }
 
     /**
@@ -279,8 +307,27 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     public final B bindEventDispatcher(javafx.beans.value.ObservableValue<? extends javafx.event.EventDispatcher> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundEventDispatcher = true;
-        this.obsrvEventDispatcher = source;
+        this.bound1EventDispatcher = true;
+        this.obsrv1EventDispatcher = source;
+        this.bound2EventDispatcher = false;
+        this.obsrv2EventDispatcher = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Window#eventDispatcherProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalEventDispatcher(javafx.beans.property.Property<javafx.event.EventDispatcher> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1EventDispatcher = false;
+        this.obsrv1EventDispatcher = null;
+        this.bound2EventDispatcher = true;
+        this.obsrv2EventDispatcher = source;
         return (B) this;
     }
 
@@ -294,8 +341,27 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     public final B bindOnCloseRequest(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnCloseRequest = true;
-        this.obsrvOnCloseRequest = source;
+        this.bound1OnCloseRequest = true;
+        this.obsrv1OnCloseRequest = source;
+        this.bound2OnCloseRequest = false;
+        this.obsrv2OnCloseRequest = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Window#onCloseRequestProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnCloseRequest(javafx.beans.property.Property<javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnCloseRequest = false;
+        this.obsrv1OnCloseRequest = null;
+        this.bound2OnCloseRequest = true;
+        this.obsrv2OnCloseRequest = source;
         return (B) this;
     }
 
@@ -309,8 +375,27 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     public final B bindOnHidden(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnHidden = true;
-        this.obsrvOnHidden = source;
+        this.bound1OnHidden = true;
+        this.obsrv1OnHidden = source;
+        this.bound2OnHidden = false;
+        this.obsrv2OnHidden = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Window#onHiddenProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnHidden(javafx.beans.property.Property<javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnHidden = false;
+        this.obsrv1OnHidden = null;
+        this.bound2OnHidden = true;
+        this.obsrv2OnHidden = source;
         return (B) this;
     }
 
@@ -324,8 +409,27 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     public final B bindOnHiding(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnHiding = true;
-        this.obsrvOnHiding = source;
+        this.bound1OnHiding = true;
+        this.obsrv1OnHiding = source;
+        this.bound2OnHiding = false;
+        this.obsrv2OnHiding = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Window#onHidingProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnHiding(javafx.beans.property.Property<javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnHiding = false;
+        this.obsrv1OnHiding = null;
+        this.bound2OnHiding = true;
+        this.obsrv2OnHiding = source;
         return (B) this;
     }
 
@@ -339,8 +443,27 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     public final B bindOnShowing(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnShowing = true;
-        this.obsrvOnShowing = source;
+        this.bound1OnShowing = true;
+        this.obsrv1OnShowing = source;
+        this.bound2OnShowing = false;
+        this.obsrv2OnShowing = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Window#onShowingProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnShowing(javafx.beans.property.Property<javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnShowing = false;
+        this.obsrv1OnShowing = null;
+        this.bound2OnShowing = true;
+        this.obsrv2OnShowing = source;
         return (B) this;
     }
 
@@ -354,8 +477,27 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     public final B bindOnShown(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnShown = true;
-        this.obsrvOnShown = source;
+        this.bound1OnShown = true;
+        this.obsrv1OnShown = source;
+        this.bound2OnShown = false;
+        this.obsrv2OnShown = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Window#onShownProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnShown(javafx.beans.property.Property<javafx.event.EventHandler<javafx.stage.WindowEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnShown = false;
+        this.obsrv1OnShown = null;
+        this.bound2OnShown = true;
+        this.obsrv2OnShown = source;
         return (B) this;
     }
 
@@ -366,11 +508,30 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindOpacity(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindOpacity(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOpacity = true;
-        this.obsrvOpacity = source;
+        this.bound1Opacity = true;
+        this.obsrv1Opacity = source;
+        this.bound2Opacity = false;
+        this.obsrv2Opacity = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Window#opacityProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOpacity(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Opacity = false;
+        this.obsrv1Opacity = null;
+        this.bound2Opacity = true;
+        this.obsrv2Opacity = source;
         return (B) this;
     }
 }

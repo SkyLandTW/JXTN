@@ -58,41 +58,65 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     private boolean hasTz;
     private double valTz;
 
-    private boolean boundMxx;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMxx;
+    private boolean bound1Mxx;
+    private boolean bound2Mxx;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Mxx;
+    private javafx.beans.property.Property<Number> obsrv2Mxx;
 
-    private boolean boundMxy;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMxy;
+    private boolean bound1Mxy;
+    private boolean bound2Mxy;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Mxy;
+    private javafx.beans.property.Property<Number> obsrv2Mxy;
 
-    private boolean boundMxz;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMxz;
+    private boolean bound1Mxz;
+    private boolean bound2Mxz;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Mxz;
+    private javafx.beans.property.Property<Number> obsrv2Mxz;
 
-    private boolean boundMyx;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMyx;
+    private boolean bound1Myx;
+    private boolean bound2Myx;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Myx;
+    private javafx.beans.property.Property<Number> obsrv2Myx;
 
-    private boolean boundMyy;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMyy;
+    private boolean bound1Myy;
+    private boolean bound2Myy;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Myy;
+    private javafx.beans.property.Property<Number> obsrv2Myy;
 
-    private boolean boundMyz;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMyz;
+    private boolean bound1Myz;
+    private boolean bound2Myz;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Myz;
+    private javafx.beans.property.Property<Number> obsrv2Myz;
 
-    private boolean boundMzx;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMzx;
+    private boolean bound1Mzx;
+    private boolean bound2Mzx;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Mzx;
+    private javafx.beans.property.Property<Number> obsrv2Mzx;
 
-    private boolean boundMzy;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMzy;
+    private boolean bound1Mzy;
+    private boolean bound2Mzy;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Mzy;
+    private javafx.beans.property.Property<Number> obsrv2Mzy;
 
-    private boolean boundMzz;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMzz;
+    private boolean bound1Mzz;
+    private boolean bound2Mzz;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Mzz;
+    private javafx.beans.property.Property<Number> obsrv2Mzz;
 
-    private boolean boundTx;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvTx;
+    private boolean bound1Tx;
+    private boolean bound2Tx;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Tx;
+    private javafx.beans.property.Property<Number> obsrv2Tx;
 
-    private boolean boundTy;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvTy;
+    private boolean bound1Ty;
+    private boolean bound2Ty;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Ty;
+    private javafx.beans.property.Property<Number> obsrv2Ty;
 
-    private boolean boundTz;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvTz;
+    private boolean bound1Tz;
+    private boolean bound2Tz;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Tz;
+    private javafx.beans.property.Property<Number> obsrv2Tz;
 
     @Override
     public void applyTo(Z instance)
@@ -124,30 +148,54 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
             instance.setTy(this.valTy);
         if (this.hasTz)
             instance.setTz(this.valTz);
-        if (this.boundMxx)
-            instance.mxxProperty().bind(this.obsrvMxx);
-        if (this.boundMxy)
-            instance.mxyProperty().bind(this.obsrvMxy);
-        if (this.boundMxz)
-            instance.mxzProperty().bind(this.obsrvMxz);
-        if (this.boundMyx)
-            instance.myxProperty().bind(this.obsrvMyx);
-        if (this.boundMyy)
-            instance.myyProperty().bind(this.obsrvMyy);
-        if (this.boundMyz)
-            instance.myzProperty().bind(this.obsrvMyz);
-        if (this.boundMzx)
-            instance.mzxProperty().bind(this.obsrvMzx);
-        if (this.boundMzy)
-            instance.mzyProperty().bind(this.obsrvMzy);
-        if (this.boundMzz)
-            instance.mzzProperty().bind(this.obsrvMzz);
-        if (this.boundTx)
-            instance.txProperty().bind(this.obsrvTx);
-        if (this.boundTy)
-            instance.tyProperty().bind(this.obsrvTy);
-        if (this.boundTz)
-            instance.tzProperty().bind(this.obsrvTz);
+        if (this.bound1Mxx)
+            instance.mxxProperty().bind(this.obsrv1Mxx);
+        if (this.bound2Mxx)
+            instance.mxxProperty().bindBidirectional(this.obsrv2Mxx);
+        if (this.bound1Mxy)
+            instance.mxyProperty().bind(this.obsrv1Mxy);
+        if (this.bound2Mxy)
+            instance.mxyProperty().bindBidirectional(this.obsrv2Mxy);
+        if (this.bound1Mxz)
+            instance.mxzProperty().bind(this.obsrv1Mxz);
+        if (this.bound2Mxz)
+            instance.mxzProperty().bindBidirectional(this.obsrv2Mxz);
+        if (this.bound1Myx)
+            instance.myxProperty().bind(this.obsrv1Myx);
+        if (this.bound2Myx)
+            instance.myxProperty().bindBidirectional(this.obsrv2Myx);
+        if (this.bound1Myy)
+            instance.myyProperty().bind(this.obsrv1Myy);
+        if (this.bound2Myy)
+            instance.myyProperty().bindBidirectional(this.obsrv2Myy);
+        if (this.bound1Myz)
+            instance.myzProperty().bind(this.obsrv1Myz);
+        if (this.bound2Myz)
+            instance.myzProperty().bindBidirectional(this.obsrv2Myz);
+        if (this.bound1Mzx)
+            instance.mzxProperty().bind(this.obsrv1Mzx);
+        if (this.bound2Mzx)
+            instance.mzxProperty().bindBidirectional(this.obsrv2Mzx);
+        if (this.bound1Mzy)
+            instance.mzyProperty().bind(this.obsrv1Mzy);
+        if (this.bound2Mzy)
+            instance.mzyProperty().bindBidirectional(this.obsrv2Mzy);
+        if (this.bound1Mzz)
+            instance.mzzProperty().bind(this.obsrv1Mzz);
+        if (this.bound2Mzz)
+            instance.mzzProperty().bindBidirectional(this.obsrv2Mzz);
+        if (this.bound1Tx)
+            instance.txProperty().bind(this.obsrv1Tx);
+        if (this.bound2Tx)
+            instance.txProperty().bindBidirectional(this.obsrv2Tx);
+        if (this.bound1Ty)
+            instance.tyProperty().bind(this.obsrv1Ty);
+        if (this.bound2Ty)
+            instance.tyProperty().bindBidirectional(this.obsrv2Ty);
+        if (this.bound1Tz)
+            instance.tzProperty().bind(this.obsrv1Tz);
+        if (this.bound2Tz)
+            instance.tzProperty().bindBidirectional(this.obsrv2Tz);
     }
 
     /**
@@ -339,11 +387,30 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMxx(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMxx(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMxx = true;
-        this.obsrvMxx = source;
+        this.bound1Mxx = true;
+        this.obsrv1Mxx = source;
+        this.bound2Mxx = false;
+        this.obsrv2Mxx = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Affine#mxxProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMxx(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Mxx = false;
+        this.obsrv1Mxx = null;
+        this.bound2Mxx = true;
+        this.obsrv2Mxx = source;
         return (B) this;
     }
 
@@ -354,11 +421,30 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMxy(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMxy(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMxy = true;
-        this.obsrvMxy = source;
+        this.bound1Mxy = true;
+        this.obsrv1Mxy = source;
+        this.bound2Mxy = false;
+        this.obsrv2Mxy = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Affine#mxyProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMxy(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Mxy = false;
+        this.obsrv1Mxy = null;
+        this.bound2Mxy = true;
+        this.obsrv2Mxy = source;
         return (B) this;
     }
 
@@ -369,11 +455,30 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMxz(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMxz(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMxz = true;
-        this.obsrvMxz = source;
+        this.bound1Mxz = true;
+        this.obsrv1Mxz = source;
+        this.bound2Mxz = false;
+        this.obsrv2Mxz = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Affine#mxzProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMxz(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Mxz = false;
+        this.obsrv1Mxz = null;
+        this.bound2Mxz = true;
+        this.obsrv2Mxz = source;
         return (B) this;
     }
 
@@ -384,11 +489,30 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMyx(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMyx(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMyx = true;
-        this.obsrvMyx = source;
+        this.bound1Myx = true;
+        this.obsrv1Myx = source;
+        this.bound2Myx = false;
+        this.obsrv2Myx = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Affine#myxProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMyx(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Myx = false;
+        this.obsrv1Myx = null;
+        this.bound2Myx = true;
+        this.obsrv2Myx = source;
         return (B) this;
     }
 
@@ -399,11 +523,30 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMyy(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMyy(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMyy = true;
-        this.obsrvMyy = source;
+        this.bound1Myy = true;
+        this.obsrv1Myy = source;
+        this.bound2Myy = false;
+        this.obsrv2Myy = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Affine#myyProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMyy(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Myy = false;
+        this.obsrv1Myy = null;
+        this.bound2Myy = true;
+        this.obsrv2Myy = source;
         return (B) this;
     }
 
@@ -414,11 +557,30 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMyz(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMyz(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMyz = true;
-        this.obsrvMyz = source;
+        this.bound1Myz = true;
+        this.obsrv1Myz = source;
+        this.bound2Myz = false;
+        this.obsrv2Myz = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Affine#myzProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMyz(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Myz = false;
+        this.obsrv1Myz = null;
+        this.bound2Myz = true;
+        this.obsrv2Myz = source;
         return (B) this;
     }
 
@@ -429,11 +591,30 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMzx(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMzx(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMzx = true;
-        this.obsrvMzx = source;
+        this.bound1Mzx = true;
+        this.obsrv1Mzx = source;
+        this.bound2Mzx = false;
+        this.obsrv2Mzx = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Affine#mzxProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMzx(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Mzx = false;
+        this.obsrv1Mzx = null;
+        this.bound2Mzx = true;
+        this.obsrv2Mzx = source;
         return (B) this;
     }
 
@@ -444,11 +625,30 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMzy(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMzy(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMzy = true;
-        this.obsrvMzy = source;
+        this.bound1Mzy = true;
+        this.obsrv1Mzy = source;
+        this.bound2Mzy = false;
+        this.obsrv2Mzy = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Affine#mzyProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMzy(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Mzy = false;
+        this.obsrv1Mzy = null;
+        this.bound2Mzy = true;
+        this.obsrv2Mzy = source;
         return (B) this;
     }
 
@@ -459,11 +659,30 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMzz(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMzz(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMzz = true;
-        this.obsrvMzz = source;
+        this.bound1Mzz = true;
+        this.obsrv1Mzz = source;
+        this.bound2Mzz = false;
+        this.obsrv2Mzz = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Affine#mzzProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMzz(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Mzz = false;
+        this.obsrv1Mzz = null;
+        this.bound2Mzz = true;
+        this.obsrv2Mzz = source;
         return (B) this;
     }
 
@@ -474,11 +693,30 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindTx(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTx(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTx = true;
-        this.obsrvTx = source;
+        this.bound1Tx = true;
+        this.obsrv1Tx = source;
+        this.bound2Tx = false;
+        this.obsrv2Tx = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Affine#txProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTx(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Tx = false;
+        this.obsrv1Tx = null;
+        this.bound2Tx = true;
+        this.obsrv2Tx = source;
         return (B) this;
     }
 
@@ -489,11 +727,30 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindTy(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTy(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTy = true;
-        this.obsrvTy = source;
+        this.bound1Ty = true;
+        this.obsrv1Ty = source;
+        this.bound2Ty = false;
+        this.obsrv2Ty = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Affine#tyProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTy(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Ty = false;
+        this.obsrv1Ty = null;
+        this.bound2Ty = true;
+        this.obsrv2Ty = source;
         return (B) this;
     }
 
@@ -504,11 +761,30 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindTz(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTz(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTz = true;
-        this.obsrvTz = source;
+        this.bound1Tz = true;
+        this.obsrv1Tz = source;
+        this.bound2Tz = false;
+        this.obsrv2Tz = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Affine#tzProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTz(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Tz = false;
+        this.obsrv1Tz = null;
+        this.bound2Tz = true;
+        this.obsrv2Tz = source;
         return (B) this;
     }
 

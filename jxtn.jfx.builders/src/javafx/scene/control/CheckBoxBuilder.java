@@ -28,14 +28,20 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
     private boolean hasSelected;
     private boolean valSelected;
 
-    private boolean boundAllowIndeterminate;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvAllowIndeterminate;
+    private boolean bound1AllowIndeterminate;
+    private boolean bound2AllowIndeterminate;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1AllowIndeterminate;
+    private javafx.beans.property.Property<Boolean> obsrv2AllowIndeterminate;
 
-    private boolean boundIndeterminate;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvIndeterminate;
+    private boolean bound1Indeterminate;
+    private boolean bound2Indeterminate;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Indeterminate;
+    private javafx.beans.property.Property<Boolean> obsrv2Indeterminate;
 
-    private boolean boundSelected;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvSelected;
+    private boolean bound1Selected;
+    private boolean bound2Selected;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Selected;
+    private javafx.beans.property.Property<Boolean> obsrv2Selected;
 
     @Override
     public void applyTo(Z instance)
@@ -47,12 +53,18 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
             instance.setIndeterminate(this.valIndeterminate);
         if (this.hasSelected)
             instance.setSelected(this.valSelected);
-        if (this.boundAllowIndeterminate)
-            instance.allowIndeterminateProperty().bind(this.obsrvAllowIndeterminate);
-        if (this.boundIndeterminate)
-            instance.indeterminateProperty().bind(this.obsrvIndeterminate);
-        if (this.boundSelected)
-            instance.selectedProperty().bind(this.obsrvSelected);
+        if (this.bound1AllowIndeterminate)
+            instance.allowIndeterminateProperty().bind(this.obsrv1AllowIndeterminate);
+        if (this.bound2AllowIndeterminate)
+            instance.allowIndeterminateProperty().bindBidirectional(this.obsrv2AllowIndeterminate);
+        if (this.bound1Indeterminate)
+            instance.indeterminateProperty().bind(this.obsrv1Indeterminate);
+        if (this.bound2Indeterminate)
+            instance.indeterminateProperty().bindBidirectional(this.obsrv2Indeterminate);
+        if (this.bound1Selected)
+            instance.selectedProperty().bind(this.obsrv1Selected);
+        if (this.bound2Selected)
+            instance.selectedProperty().bindBidirectional(this.obsrv2Selected);
     }
 
     /**
@@ -107,8 +119,27 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
     public final B bindAllowIndeterminate(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAllowIndeterminate = true;
-        this.obsrvAllowIndeterminate = source;
+        this.bound1AllowIndeterminate = true;
+        this.obsrv1AllowIndeterminate = source;
+        this.bound2AllowIndeterminate = false;
+        this.obsrv2AllowIndeterminate = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CheckBox#allowIndeterminateProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAllowIndeterminate(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AllowIndeterminate = false;
+        this.obsrv1AllowIndeterminate = null;
+        this.bound2AllowIndeterminate = true;
+        this.obsrv2AllowIndeterminate = source;
         return (B) this;
     }
 
@@ -122,8 +153,27 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
     public final B bindIndeterminate(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundIndeterminate = true;
-        this.obsrvIndeterminate = source;
+        this.bound1Indeterminate = true;
+        this.obsrv1Indeterminate = source;
+        this.bound2Indeterminate = false;
+        this.obsrv2Indeterminate = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CheckBox#indeterminateProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalIndeterminate(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Indeterminate = false;
+        this.obsrv1Indeterminate = null;
+        this.bound2Indeterminate = true;
+        this.obsrv2Indeterminate = source;
         return (B) this;
     }
 
@@ -137,8 +187,27 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
     public final B bindSelected(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSelected = true;
-        this.obsrvSelected = source;
+        this.bound1Selected = true;
+        this.obsrv1Selected = source;
+        this.bound2Selected = false;
+        this.obsrv2Selected = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CheckBox#selectedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSelected(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Selected = false;
+        this.obsrv1Selected = null;
+        this.bound2Selected = true;
+        this.obsrv2Selected = source;
         return (B) this;
     }
 

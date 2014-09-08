@@ -25,8 +25,10 @@ public class GroupBuilder<Z extends Group, B extends GroupBuilder<Z, B>>
     private boolean hasChildren;
     private java.util.Collection<javafx.scene.Node> valChildren;
 
-    private boolean boundAutoSizeChildren;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvAutoSizeChildren;
+    private boolean bound1AutoSizeChildren;
+    private boolean bound2AutoSizeChildren;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1AutoSizeChildren;
+    private javafx.beans.property.Property<Boolean> obsrv2AutoSizeChildren;
 
     @Override
     public void applyTo(Z instance)
@@ -36,8 +38,10 @@ public class GroupBuilder<Z extends Group, B extends GroupBuilder<Z, B>>
             instance.setAutoSizeChildren(this.valAutoSizeChildren);
         if (this.hasChildren)
             instance.getChildren().setAll(this.valChildren);
-        if (this.boundAutoSizeChildren)
-            instance.autoSizeChildrenProperty().bind(this.obsrvAutoSizeChildren);
+        if (this.bound1AutoSizeChildren)
+            instance.autoSizeChildrenProperty().bind(this.obsrv1AutoSizeChildren);
+        if (this.bound2AutoSizeChildren)
+            instance.autoSizeChildrenProperty().bindBidirectional(this.obsrv2AutoSizeChildren);
     }
 
     /**
@@ -93,8 +97,27 @@ public class GroupBuilder<Z extends Group, B extends GroupBuilder<Z, B>>
     public final B bindAutoSizeChildren(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAutoSizeChildren = true;
-        this.obsrvAutoSizeChildren = source;
+        this.bound1AutoSizeChildren = true;
+        this.obsrv1AutoSizeChildren = source;
+        this.bound2AutoSizeChildren = false;
+        this.obsrv2AutoSizeChildren = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Group#autoSizeChildrenProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAutoSizeChildren(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AutoSizeChildren = false;
+        this.obsrv1AutoSizeChildren = null;
+        this.bound2AutoSizeChildren = true;
+        this.obsrv2AutoSizeChildren = source;
         return (B) this;
     }
 

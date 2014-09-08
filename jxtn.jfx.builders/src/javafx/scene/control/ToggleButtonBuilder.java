@@ -25,11 +25,15 @@ public class ToggleButtonBuilder<Z extends ToggleButton, B extends ToggleButtonB
     private boolean hasToggleGroup;
     private javafx.scene.control.ToggleGroup valToggleGroup;
 
-    private boolean boundSelected;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvSelected;
+    private boolean bound1Selected;
+    private boolean bound2Selected;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Selected;
+    private javafx.beans.property.Property<Boolean> obsrv2Selected;
 
-    private boolean boundToggleGroup;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.ToggleGroup> obsrvToggleGroup;
+    private boolean bound1ToggleGroup;
+    private boolean bound2ToggleGroup;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.ToggleGroup> obsrv1ToggleGroup;
+    private javafx.beans.property.Property<javafx.scene.control.ToggleGroup> obsrv2ToggleGroup;
 
     @Override
     public void applyTo(Z instance)
@@ -39,10 +43,14 @@ public class ToggleButtonBuilder<Z extends ToggleButton, B extends ToggleButtonB
             instance.setSelected(this.valSelected);
         if (this.hasToggleGroup)
             instance.setToggleGroup(this.valToggleGroup);
-        if (this.boundSelected)
-            instance.selectedProperty().bind(this.obsrvSelected);
-        if (this.boundToggleGroup)
-            instance.toggleGroupProperty().bind(this.obsrvToggleGroup);
+        if (this.bound1Selected)
+            instance.selectedProperty().bind(this.obsrv1Selected);
+        if (this.bound2Selected)
+            instance.selectedProperty().bindBidirectional(this.obsrv2Selected);
+        if (this.bound1ToggleGroup)
+            instance.toggleGroupProperty().bind(this.obsrv1ToggleGroup);
+        if (this.bound2ToggleGroup)
+            instance.toggleGroupProperty().bindBidirectional(this.obsrv2ToggleGroup);
     }
 
     /**
@@ -83,8 +91,27 @@ public class ToggleButtonBuilder<Z extends ToggleButton, B extends ToggleButtonB
     public final B bindSelected(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSelected = true;
-        this.obsrvSelected = source;
+        this.bound1Selected = true;
+        this.obsrv1Selected = source;
+        this.bound2Selected = false;
+        this.obsrv2Selected = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ToggleButton#selectedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSelected(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Selected = false;
+        this.obsrv1Selected = null;
+        this.bound2Selected = true;
+        this.obsrv2Selected = source;
         return (B) this;
     }
 
@@ -98,8 +125,27 @@ public class ToggleButtonBuilder<Z extends ToggleButton, B extends ToggleButtonB
     public final B bindToggleGroup(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ToggleGroup> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundToggleGroup = true;
-        this.obsrvToggleGroup = source;
+        this.bound1ToggleGroup = true;
+        this.obsrv1ToggleGroup = source;
+        this.bound2ToggleGroup = false;
+        this.obsrv2ToggleGroup = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ToggleButton#toggleGroupProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalToggleGroup(javafx.beans.property.Property<javafx.scene.control.ToggleGroup> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ToggleGroup = false;
+        this.obsrv1ToggleGroup = null;
+        this.bound2ToggleGroup = true;
+        this.obsrv2ToggleGroup = source;
         return (B) this;
     }
 

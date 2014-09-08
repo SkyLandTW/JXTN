@@ -25,11 +25,15 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
     private boolean hasTitle;
     private java.lang.String valTitle;
 
-    private boolean boundInitialDirectory;
-    private javafx.beans.value.ObservableValue<? extends java.io.File> obsrvInitialDirectory;
+    private boolean bound1InitialDirectory;
+    private boolean bound2InitialDirectory;
+    private javafx.beans.value.ObservableValue<? extends java.io.File> obsrv1InitialDirectory;
+    private javafx.beans.property.Property<java.io.File> obsrv2InitialDirectory;
 
-    private boolean boundTitle;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvTitle;
+    private boolean bound1Title;
+    private boolean bound2Title;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Title;
+    private javafx.beans.property.Property<String> obsrv2Title;
 
     @Override
     public void applyTo(Z instance)
@@ -39,10 +43,14 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
             instance.setInitialDirectory(this.valInitialDirectory);
         if (this.hasTitle)
             instance.setTitle(this.valTitle);
-        if (this.boundInitialDirectory)
-            instance.initialDirectoryProperty().bind(this.obsrvInitialDirectory);
-        if (this.boundTitle)
-            instance.titleProperty().bind(this.obsrvTitle);
+        if (this.bound1InitialDirectory)
+            instance.initialDirectoryProperty().bind(this.obsrv1InitialDirectory);
+        if (this.bound2InitialDirectory)
+            instance.initialDirectoryProperty().bindBidirectional(this.obsrv2InitialDirectory);
+        if (this.bound1Title)
+            instance.titleProperty().bind(this.obsrv1Title);
+        if (this.bound2Title)
+            instance.titleProperty().bindBidirectional(this.obsrv2Title);
     }
 
     /**
@@ -83,8 +91,27 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
     public final B bindInitialDirectory(javafx.beans.value.ObservableValue<? extends java.io.File> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundInitialDirectory = true;
-        this.obsrvInitialDirectory = source;
+        this.bound1InitialDirectory = true;
+        this.obsrv1InitialDirectory = source;
+        this.bound2InitialDirectory = false;
+        this.obsrv2InitialDirectory = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link DirectoryChooser#initialDirectoryProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalInitialDirectory(javafx.beans.property.Property<java.io.File> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1InitialDirectory = false;
+        this.obsrv1InitialDirectory = null;
+        this.bound2InitialDirectory = true;
+        this.obsrv2InitialDirectory = source;
         return (B) this;
     }
 
@@ -98,8 +125,27 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
     public final B bindTitle(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTitle = true;
-        this.obsrvTitle = source;
+        this.bound1Title = true;
+        this.obsrv1Title = source;
+        this.bound2Title = false;
+        this.obsrv2Title = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link DirectoryChooser#titleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTitle(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Title = false;
+        this.obsrv1Title = null;
+        this.bound2Title = true;
+        this.obsrv2Title = source;
         return (B) this;
     }
 

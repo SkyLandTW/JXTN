@@ -55,35 +55,55 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     private boolean hasVisible;
     private boolean valVisible;
 
-    private boolean boundAccelerator;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.input.KeyCombination> obsrvAccelerator;
+    private boolean bound1Accelerator;
+    private boolean bound2Accelerator;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.input.KeyCombination> obsrv1Accelerator;
+    private javafx.beans.property.Property<javafx.scene.input.KeyCombination> obsrv2Accelerator;
 
-    private boolean boundDisable;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvDisable;
+    private boolean bound1Disable;
+    private boolean bound2Disable;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Disable;
+    private javafx.beans.property.Property<Boolean> obsrv2Disable;
 
-    private boolean boundGraphic;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvGraphic;
+    private boolean bound1Graphic;
+    private boolean bound2Graphic;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Graphic;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Graphic;
 
-    private boolean boundId;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvId;
+    private boolean bound1Id;
+    private boolean bound2Id;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Id;
+    private javafx.beans.property.Property<String> obsrv2Id;
 
-    private boolean boundMnemonicParsing;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvMnemonicParsing;
+    private boolean bound1MnemonicParsing;
+    private boolean bound2MnemonicParsing;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1MnemonicParsing;
+    private javafx.beans.property.Property<Boolean> obsrv2MnemonicParsing;
 
-    private boolean boundOnAction;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> obsrvOnAction;
+    private boolean bound1OnAction;
+    private boolean bound2OnAction;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> obsrv1OnAction;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.ActionEvent>> obsrv2OnAction;
 
-    private boolean boundOnMenuValidation;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrvOnMenuValidation;
+    private boolean bound1OnMenuValidation;
+    private boolean bound2OnMenuValidation;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrv1OnMenuValidation;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> obsrv2OnMenuValidation;
 
-    private boolean boundStyle;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvStyle;
+    private boolean bound1Style;
+    private boolean bound2Style;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Style;
+    private javafx.beans.property.Property<String> obsrv2Style;
 
-    private boolean boundText;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvText;
+    private boolean bound1Text;
+    private boolean bound2Text;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Text;
+    private javafx.beans.property.Property<String> obsrv2Text;
 
-    private boolean boundVisible;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvVisible;
+    private boolean bound1Visible;
+    private boolean bound2Visible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Visible;
+    private javafx.beans.property.Property<Boolean> obsrv2Visible;
 
     @Override
     public void applyTo(Z instance)
@@ -113,26 +133,46 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
             instance.setUserData(this.valUserData);
         if (this.hasVisible)
             instance.setVisible(this.valVisible);
-        if (this.boundAccelerator)
-            instance.acceleratorProperty().bind(this.obsrvAccelerator);
-        if (this.boundDisable)
-            instance.disableProperty().bind(this.obsrvDisable);
-        if (this.boundGraphic)
-            instance.graphicProperty().bind(this.obsrvGraphic);
-        if (this.boundId)
-            instance.idProperty().bind(this.obsrvId);
-        if (this.boundMnemonicParsing)
-            instance.mnemonicParsingProperty().bind(this.obsrvMnemonicParsing);
-        if (this.boundOnAction)
-            instance.onActionProperty().bind(this.obsrvOnAction);
-        if (this.boundOnMenuValidation)
-            instance.onMenuValidationProperty().bind(this.obsrvOnMenuValidation);
-        if (this.boundStyle)
-            instance.styleProperty().bind(this.obsrvStyle);
-        if (this.boundText)
-            instance.textProperty().bind(this.obsrvText);
-        if (this.boundVisible)
-            instance.visibleProperty().bind(this.obsrvVisible);
+        if (this.bound1Accelerator)
+            instance.acceleratorProperty().bind(this.obsrv1Accelerator);
+        if (this.bound2Accelerator)
+            instance.acceleratorProperty().bindBidirectional(this.obsrv2Accelerator);
+        if (this.bound1Disable)
+            instance.disableProperty().bind(this.obsrv1Disable);
+        if (this.bound2Disable)
+            instance.disableProperty().bindBidirectional(this.obsrv2Disable);
+        if (this.bound1Graphic)
+            instance.graphicProperty().bind(this.obsrv1Graphic);
+        if (this.bound2Graphic)
+            instance.graphicProperty().bindBidirectional(this.obsrv2Graphic);
+        if (this.bound1Id)
+            instance.idProperty().bind(this.obsrv1Id);
+        if (this.bound2Id)
+            instance.idProperty().bindBidirectional(this.obsrv2Id);
+        if (this.bound1MnemonicParsing)
+            instance.mnemonicParsingProperty().bind(this.obsrv1MnemonicParsing);
+        if (this.bound2MnemonicParsing)
+            instance.mnemonicParsingProperty().bindBidirectional(this.obsrv2MnemonicParsing);
+        if (this.bound1OnAction)
+            instance.onActionProperty().bind(this.obsrv1OnAction);
+        if (this.bound2OnAction)
+            instance.onActionProperty().bindBidirectional(this.obsrv2OnAction);
+        if (this.bound1OnMenuValidation)
+            instance.onMenuValidationProperty().bind(this.obsrv1OnMenuValidation);
+        if (this.bound2OnMenuValidation)
+            instance.onMenuValidationProperty().bindBidirectional(this.obsrv2OnMenuValidation);
+        if (this.bound1Style)
+            instance.styleProperty().bind(this.obsrv1Style);
+        if (this.bound2Style)
+            instance.styleProperty().bindBidirectional(this.obsrv2Style);
+        if (this.bound1Text)
+            instance.textProperty().bind(this.obsrv1Text);
+        if (this.bound2Text)
+            instance.textProperty().bindBidirectional(this.obsrv2Text);
+        if (this.bound1Visible)
+            instance.visibleProperty().bind(this.obsrv1Visible);
+        if (this.bound2Visible)
+            instance.visibleProperty().bindBidirectional(this.obsrv2Visible);
     }
 
     /**
@@ -328,8 +368,27 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     public final B bindAccelerator(javafx.beans.value.ObservableValue<? extends javafx.scene.input.KeyCombination> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAccelerator = true;
-        this.obsrvAccelerator = source;
+        this.bound1Accelerator = true;
+        this.obsrv1Accelerator = source;
+        this.bound2Accelerator = false;
+        this.obsrv2Accelerator = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MenuItem#acceleratorProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAccelerator(javafx.beans.property.Property<javafx.scene.input.KeyCombination> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Accelerator = false;
+        this.obsrv1Accelerator = null;
+        this.bound2Accelerator = true;
+        this.obsrv2Accelerator = source;
         return (B) this;
     }
 
@@ -343,8 +402,27 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     public final B bindDisable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundDisable = true;
-        this.obsrvDisable = source;
+        this.bound1Disable = true;
+        this.obsrv1Disable = source;
+        this.bound2Disable = false;
+        this.obsrv2Disable = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MenuItem#disableProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalDisable(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Disable = false;
+        this.obsrv1Disable = null;
+        this.bound2Disable = true;
+        this.obsrv2Disable = source;
         return (B) this;
     }
 
@@ -358,8 +436,27 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     public final B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundGraphic = true;
-        this.obsrvGraphic = source;
+        this.bound1Graphic = true;
+        this.obsrv1Graphic = source;
+        this.bound2Graphic = false;
+        this.obsrv2Graphic = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MenuItem#graphicProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalGraphic(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Graphic = false;
+        this.obsrv1Graphic = null;
+        this.bound2Graphic = true;
+        this.obsrv2Graphic = source;
         return (B) this;
     }
 
@@ -373,8 +470,27 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     public final B bindId(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundId = true;
-        this.obsrvId = source;
+        this.bound1Id = true;
+        this.obsrv1Id = source;
+        this.bound2Id = false;
+        this.obsrv2Id = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MenuItem#idProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalId(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Id = false;
+        this.obsrv1Id = null;
+        this.bound2Id = true;
+        this.obsrv2Id = source;
         return (B) this;
     }
 
@@ -388,8 +504,27 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     public final B bindMnemonicParsing(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMnemonicParsing = true;
-        this.obsrvMnemonicParsing = source;
+        this.bound1MnemonicParsing = true;
+        this.obsrv1MnemonicParsing = source;
+        this.bound2MnemonicParsing = false;
+        this.obsrv2MnemonicParsing = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MenuItem#mnemonicParsingProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMnemonicParsing(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MnemonicParsing = false;
+        this.obsrv1MnemonicParsing = null;
+        this.bound2MnemonicParsing = true;
+        this.obsrv2MnemonicParsing = source;
         return (B) this;
     }
 
@@ -403,8 +538,27 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     public final B bindOnAction(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnAction = true;
-        this.obsrvOnAction = source;
+        this.bound1OnAction = true;
+        this.obsrv1OnAction = source;
+        this.bound2OnAction = false;
+        this.obsrv2OnAction = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MenuItem#onActionProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnAction(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.ActionEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnAction = false;
+        this.obsrv1OnAction = null;
+        this.bound2OnAction = true;
+        this.obsrv2OnAction = source;
         return (B) this;
     }
 
@@ -418,8 +572,27 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     public final B bindOnMenuValidation(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnMenuValidation = true;
-        this.obsrvOnMenuValidation = source;
+        this.bound1OnMenuValidation = true;
+        this.obsrv1OnMenuValidation = source;
+        this.bound2OnMenuValidation = false;
+        this.obsrv2OnMenuValidation = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MenuItem#onMenuValidationProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnMenuValidation(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnMenuValidation = false;
+        this.obsrv1OnMenuValidation = null;
+        this.bound2OnMenuValidation = true;
+        this.obsrv2OnMenuValidation = source;
         return (B) this;
     }
 
@@ -433,8 +606,27 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     public final B bindStyle(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundStyle = true;
-        this.obsrvStyle = source;
+        this.bound1Style = true;
+        this.obsrv1Style = source;
+        this.bound2Style = false;
+        this.obsrv2Style = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MenuItem#styleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStyle(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Style = false;
+        this.obsrv1Style = null;
+        this.bound2Style = true;
+        this.obsrv2Style = source;
         return (B) this;
     }
 
@@ -448,8 +640,27 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     public final B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundText = true;
-        this.obsrvText = source;
+        this.bound1Text = true;
+        this.obsrv1Text = source;
+        this.bound2Text = false;
+        this.obsrv2Text = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MenuItem#textProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalText(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Text = false;
+        this.obsrv1Text = null;
+        this.bound2Text = true;
+        this.obsrv2Text = source;
         return (B) this;
     }
 
@@ -463,8 +674,27 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     public final B bindVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundVisible = true;
-        this.obsrvVisible = source;
+        this.bound1Visible = true;
+        this.obsrv1Visible = source;
+        this.bound2Visible = false;
+        this.obsrv2Visible = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MenuItem#visibleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalVisible(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Visible = false;
+        this.obsrv1Visible = null;
+        this.bound2Visible = true;
+        this.obsrv2Visible = source;
         return (B) this;
     }
 

@@ -28,14 +28,20 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     private boolean hasSelected;
     private boolean valSelected;
 
-    private boolean boundIndependent;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvIndependent;
+    private boolean bound1Independent;
+    private boolean bound2Independent;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Independent;
+    private javafx.beans.property.Property<Boolean> obsrv2Independent;
 
-    private boolean boundIndeterminate;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvIndeterminate;
+    private boolean bound1Indeterminate;
+    private boolean bound2Indeterminate;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Indeterminate;
+    private javafx.beans.property.Property<Boolean> obsrv2Indeterminate;
 
-    private boolean boundSelected;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvSelected;
+    private boolean bound1Selected;
+    private boolean bound2Selected;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Selected;
+    private javafx.beans.property.Property<Boolean> obsrv2Selected;
 
     @Override
     public void applyTo(Z instance)
@@ -47,12 +53,18 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
             instance.setIndeterminate(this.valIndeterminate);
         if (this.hasSelected)
             instance.setSelected(this.valSelected);
-        if (this.boundIndependent)
-            instance.independentProperty().bind(this.obsrvIndependent);
-        if (this.boundIndeterminate)
-            instance.indeterminateProperty().bind(this.obsrvIndeterminate);
-        if (this.boundSelected)
-            instance.selectedProperty().bind(this.obsrvSelected);
+        if (this.bound1Independent)
+            instance.independentProperty().bind(this.obsrv1Independent);
+        if (this.bound2Independent)
+            instance.independentProperty().bindBidirectional(this.obsrv2Independent);
+        if (this.bound1Indeterminate)
+            instance.indeterminateProperty().bind(this.obsrv1Indeterminate);
+        if (this.bound2Indeterminate)
+            instance.indeterminateProperty().bindBidirectional(this.obsrv2Indeterminate);
+        if (this.bound1Selected)
+            instance.selectedProperty().bind(this.obsrv1Selected);
+        if (this.bound2Selected)
+            instance.selectedProperty().bindBidirectional(this.obsrv2Selected);
     }
 
     /**
@@ -107,8 +119,27 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     public final B bindIndependent(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundIndependent = true;
-        this.obsrvIndependent = source;
+        this.bound1Independent = true;
+        this.obsrv1Independent = source;
+        this.bound2Independent = false;
+        this.obsrv2Independent = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CheckBoxTreeItem#independentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalIndependent(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Independent = false;
+        this.obsrv1Independent = null;
+        this.bound2Independent = true;
+        this.obsrv2Independent = source;
         return (B) this;
     }
 
@@ -122,8 +153,27 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     public final B bindIndeterminate(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundIndeterminate = true;
-        this.obsrvIndeterminate = source;
+        this.bound1Indeterminate = true;
+        this.obsrv1Indeterminate = source;
+        this.bound2Indeterminate = false;
+        this.obsrv2Indeterminate = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CheckBoxTreeItem#indeterminateProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalIndeterminate(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Indeterminate = false;
+        this.obsrv1Indeterminate = null;
+        this.bound2Indeterminate = true;
+        this.obsrv2Indeterminate = source;
         return (B) this;
     }
 
@@ -137,8 +187,27 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     public final B bindSelected(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSelected = true;
-        this.obsrvSelected = source;
+        this.bound1Selected = true;
+        this.obsrv1Selected = source;
+        this.bound2Selected = false;
+        this.obsrv2Selected = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CheckBoxTreeItem#selectedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSelected(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Selected = false;
+        this.obsrv1Selected = null;
+        this.bound2Selected = true;
+        this.obsrv2Selected = source;
         return (B) this;
     }
 

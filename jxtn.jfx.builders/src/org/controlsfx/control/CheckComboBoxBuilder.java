@@ -25,8 +25,10 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
     private boolean hasItems;
     private java.util.Collection<T> valItems;
 
-    private boolean boundCheckModel;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> obsrvCheckModel;
+    private boolean bound1CheckModel;
+    private boolean bound2CheckModel;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> obsrv1CheckModel;
+    private javafx.beans.property.Property<javafx.scene.control.MultipleSelectionModel<T>> obsrv2CheckModel;
 
     @Override
     public void applyTo(Z instance)
@@ -36,8 +38,10 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
             instance.setCheckModel(this.valCheckModel);
         if (this.hasItems)
             instance.getItems().setAll(this.valItems);
-        if (this.boundCheckModel)
-            instance.checkModelProperty().bind(this.obsrvCheckModel);
+        if (this.bound1CheckModel)
+            instance.checkModelProperty().bind(this.obsrv1CheckModel);
+        if (this.bound2CheckModel)
+            instance.checkModelProperty().bindBidirectional(this.obsrv2CheckModel);
     }
 
     /**
@@ -93,8 +97,27 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
     public final B bindCheckModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCheckModel = true;
-        this.obsrvCheckModel = source;
+        this.bound1CheckModel = true;
+        this.obsrv1CheckModel = source;
+        this.bound2CheckModel = false;
+        this.obsrv2CheckModel = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CheckComboBox#checkModelProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCheckModel(javafx.beans.property.Property<javafx.scene.control.MultipleSelectionModel<T>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CheckModel = false;
+        this.obsrv1CheckModel = null;
+        this.bound2CheckModel = true;
+        this.obsrv2CheckModel = source;
         return (B) this;
     }
 

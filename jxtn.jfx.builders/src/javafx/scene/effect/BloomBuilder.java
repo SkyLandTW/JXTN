@@ -25,11 +25,15 @@ public class BloomBuilder<Z extends Bloom, B extends BloomBuilder<Z, B>>
     private boolean hasThreshold;
     private double valThreshold;
 
-    private boolean boundInput;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrvInput;
+    private boolean bound1Input;
+    private boolean bound2Input;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrv1Input;
+    private javafx.beans.property.Property<javafx.scene.effect.Effect> obsrv2Input;
 
-    private boolean boundThreshold;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvThreshold;
+    private boolean bound1Threshold;
+    private boolean bound2Threshold;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Threshold;
+    private javafx.beans.property.Property<Number> obsrv2Threshold;
 
     @Override
     public void applyTo(Z instance)
@@ -39,10 +43,14 @@ public class BloomBuilder<Z extends Bloom, B extends BloomBuilder<Z, B>>
             instance.setInput(this.valInput);
         if (this.hasThreshold)
             instance.setThreshold(this.valThreshold);
-        if (this.boundInput)
-            instance.inputProperty().bind(this.obsrvInput);
-        if (this.boundThreshold)
-            instance.thresholdProperty().bind(this.obsrvThreshold);
+        if (this.bound1Input)
+            instance.inputProperty().bind(this.obsrv1Input);
+        if (this.bound2Input)
+            instance.inputProperty().bindBidirectional(this.obsrv2Input);
+        if (this.bound1Threshold)
+            instance.thresholdProperty().bind(this.obsrv1Threshold);
+        if (this.bound2Threshold)
+            instance.thresholdProperty().bindBidirectional(this.obsrv2Threshold);
     }
 
     /**
@@ -83,8 +91,27 @@ public class BloomBuilder<Z extends Bloom, B extends BloomBuilder<Z, B>>
     public final B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundInput = true;
-        this.obsrvInput = source;
+        this.bound1Input = true;
+        this.obsrv1Input = source;
+        this.bound2Input = false;
+        this.obsrv2Input = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Bloom#inputProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalInput(javafx.beans.property.Property<javafx.scene.effect.Effect> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Input = false;
+        this.obsrv1Input = null;
+        this.bound2Input = true;
+        this.obsrv2Input = source;
         return (B) this;
     }
 
@@ -95,11 +122,30 @@ public class BloomBuilder<Z extends Bloom, B extends BloomBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindThreshold(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindThreshold(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundThreshold = true;
-        this.obsrvThreshold = source;
+        this.bound1Threshold = true;
+        this.obsrv1Threshold = source;
+        this.bound2Threshold = false;
+        this.obsrv2Threshold = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Bloom#thresholdProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalThreshold(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Threshold = false;
+        this.obsrv1Threshold = null;
+        this.bound2Threshold = true;
+        this.obsrv2Threshold = source;
         return (B) this;
     }
 

@@ -49,32 +49,50 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     private boolean hasStyleClass;
     private java.util.Collection<java.lang.String> valStyleClass;
 
-    private boolean boundId;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvId;
+    private boolean bound1Id;
+    private boolean bound2Id;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Id;
+    private javafx.beans.property.Property<String> obsrv2Id;
 
-    private boolean boundMaxHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMaxHeight;
+    private boolean bound1MaxHeight;
+    private boolean bound2MaxHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MaxHeight;
+    private javafx.beans.property.Property<Number> obsrv2MaxHeight;
 
-    private boolean boundMaxWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMaxWidth;
+    private boolean bound1MaxWidth;
+    private boolean bound2MaxWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MaxWidth;
+    private javafx.beans.property.Property<Number> obsrv2MaxWidth;
 
-    private boolean boundMinHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMinHeight;
+    private boolean bound1MinHeight;
+    private boolean bound2MinHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MinHeight;
+    private javafx.beans.property.Property<Number> obsrv2MinHeight;
 
-    private boolean boundMinWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMinWidth;
+    private boolean bound1MinWidth;
+    private boolean bound2MinWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MinWidth;
+    private javafx.beans.property.Property<Number> obsrv2MinWidth;
 
-    private boolean boundPrefHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvPrefHeight;
+    private boolean bound1PrefHeight;
+    private boolean bound2PrefHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PrefHeight;
+    private javafx.beans.property.Property<Number> obsrv2PrefHeight;
 
-    private boolean boundPrefWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvPrefWidth;
+    private boolean bound1PrefWidth;
+    private boolean bound2PrefWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PrefWidth;
+    private javafx.beans.property.Property<Number> obsrv2PrefWidth;
 
-    private boolean boundSkin;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.Skin<?>> obsrvSkin;
+    private boolean bound1Skin;
+    private boolean bound2Skin;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.Skin<?>> obsrv1Skin;
+    private javafx.beans.property.Property<javafx.scene.control.Skin<?>> obsrv2Skin;
 
-    private boolean boundStyle;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvStyle;
+    private boolean bound1Style;
+    private boolean bound2Style;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Style;
+    private javafx.beans.property.Property<String> obsrv2Style;
 
     @Override
     public void applyTo(Z instance)
@@ -100,24 +118,42 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
             instance.setStyle(this.valStyle);
         if (this.hasStyleClass)
             instance.getStyleClass().setAll(this.valStyleClass);
-        if (this.boundId)
-            instance.idProperty().bind(this.obsrvId);
-        if (this.boundMaxHeight)
-            instance.maxHeightProperty().bind(this.obsrvMaxHeight);
-        if (this.boundMaxWidth)
-            instance.maxWidthProperty().bind(this.obsrvMaxWidth);
-        if (this.boundMinHeight)
-            instance.minHeightProperty().bind(this.obsrvMinHeight);
-        if (this.boundMinWidth)
-            instance.minWidthProperty().bind(this.obsrvMinWidth);
-        if (this.boundPrefHeight)
-            instance.prefHeightProperty().bind(this.obsrvPrefHeight);
-        if (this.boundPrefWidth)
-            instance.prefWidthProperty().bind(this.obsrvPrefWidth);
-        if (this.boundSkin)
-            instance.skinProperty().bind(this.obsrvSkin);
-        if (this.boundStyle)
-            instance.styleProperty().bind(this.obsrvStyle);
+        if (this.bound1Id)
+            instance.idProperty().bind(this.obsrv1Id);
+        if (this.bound2Id)
+            instance.idProperty().bindBidirectional(this.obsrv2Id);
+        if (this.bound1MaxHeight)
+            instance.maxHeightProperty().bind(this.obsrv1MaxHeight);
+        if (this.bound2MaxHeight)
+            instance.maxHeightProperty().bindBidirectional(this.obsrv2MaxHeight);
+        if (this.bound1MaxWidth)
+            instance.maxWidthProperty().bind(this.obsrv1MaxWidth);
+        if (this.bound2MaxWidth)
+            instance.maxWidthProperty().bindBidirectional(this.obsrv2MaxWidth);
+        if (this.bound1MinHeight)
+            instance.minHeightProperty().bind(this.obsrv1MinHeight);
+        if (this.bound2MinHeight)
+            instance.minHeightProperty().bindBidirectional(this.obsrv2MinHeight);
+        if (this.bound1MinWidth)
+            instance.minWidthProperty().bind(this.obsrv1MinWidth);
+        if (this.bound2MinWidth)
+            instance.minWidthProperty().bindBidirectional(this.obsrv2MinWidth);
+        if (this.bound1PrefHeight)
+            instance.prefHeightProperty().bind(this.obsrv1PrefHeight);
+        if (this.bound2PrefHeight)
+            instance.prefHeightProperty().bindBidirectional(this.obsrv2PrefHeight);
+        if (this.bound1PrefWidth)
+            instance.prefWidthProperty().bind(this.obsrv1PrefWidth);
+        if (this.bound2PrefWidth)
+            instance.prefWidthProperty().bindBidirectional(this.obsrv2PrefWidth);
+        if (this.bound1Skin)
+            instance.skinProperty().bind(this.obsrv1Skin);
+        if (this.bound2Skin)
+            instance.skinProperty().bindBidirectional(this.obsrv2Skin);
+        if (this.bound1Style)
+            instance.styleProperty().bind(this.obsrv1Style);
+        if (this.bound2Style)
+            instance.styleProperty().bindBidirectional(this.obsrv2Style);
     }
 
     /**
@@ -285,8 +321,27 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     public final B bindId(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundId = true;
-        this.obsrvId = source;
+        this.bound1Id = true;
+        this.obsrv1Id = source;
+        this.bound2Id = false;
+        this.obsrv2Id = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopupControl#idProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalId(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Id = false;
+        this.obsrv1Id = null;
+        this.bound2Id = true;
+        this.obsrv2Id = source;
         return (B) this;
     }
 
@@ -297,11 +352,30 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMaxHeight = true;
-        this.obsrvMaxHeight = source;
+        this.bound1MaxHeight = true;
+        this.obsrv1MaxHeight = source;
+        this.bound2MaxHeight = false;
+        this.obsrv2MaxHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopupControl#maxHeightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMaxHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MaxHeight = false;
+        this.obsrv1MaxHeight = null;
+        this.bound2MaxHeight = true;
+        this.obsrv2MaxHeight = source;
         return (B) this;
     }
 
@@ -312,11 +386,30 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMaxWidth = true;
-        this.obsrvMaxWidth = source;
+        this.bound1MaxWidth = true;
+        this.obsrv1MaxWidth = source;
+        this.bound2MaxWidth = false;
+        this.obsrv2MaxWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopupControl#maxWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMaxWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MaxWidth = false;
+        this.obsrv1MaxWidth = null;
+        this.bound2MaxWidth = true;
+        this.obsrv2MaxWidth = source;
         return (B) this;
     }
 
@@ -327,11 +420,30 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMinHeight = true;
-        this.obsrvMinHeight = source;
+        this.bound1MinHeight = true;
+        this.obsrv1MinHeight = source;
+        this.bound2MinHeight = false;
+        this.obsrv2MinHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopupControl#minHeightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMinHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinHeight = false;
+        this.obsrv1MinHeight = null;
+        this.bound2MinHeight = true;
+        this.obsrv2MinHeight = source;
         return (B) this;
     }
 
@@ -342,11 +454,30 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMinWidth = true;
-        this.obsrvMinWidth = source;
+        this.bound1MinWidth = true;
+        this.obsrv1MinWidth = source;
+        this.bound2MinWidth = false;
+        this.obsrv2MinWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopupControl#minWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMinWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinWidth = false;
+        this.obsrv1MinWidth = null;
+        this.bound2MinWidth = true;
+        this.obsrv2MinWidth = source;
         return (B) this;
     }
 
@@ -357,11 +488,30 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPrefHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPrefHeight = true;
-        this.obsrvPrefHeight = source;
+        this.bound1PrefHeight = true;
+        this.obsrv1PrefHeight = source;
+        this.bound2PrefHeight = false;
+        this.obsrv2PrefHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopupControl#prefHeightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPrefHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PrefHeight = false;
+        this.obsrv1PrefHeight = null;
+        this.bound2PrefHeight = true;
+        this.obsrv2PrefHeight = source;
         return (B) this;
     }
 
@@ -372,11 +522,30 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPrefWidth = true;
-        this.obsrvPrefWidth = source;
+        this.bound1PrefWidth = true;
+        this.obsrv1PrefWidth = source;
+        this.bound2PrefWidth = false;
+        this.obsrv2PrefWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopupControl#prefWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPrefWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PrefWidth = false;
+        this.obsrv1PrefWidth = null;
+        this.bound2PrefWidth = true;
+        this.obsrv2PrefWidth = source;
         return (B) this;
     }
 
@@ -390,8 +559,27 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     public final B bindSkin(javafx.beans.value.ObservableValue<? extends javafx.scene.control.Skin<?>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSkin = true;
-        this.obsrvSkin = source;
+        this.bound1Skin = true;
+        this.obsrv1Skin = source;
+        this.bound2Skin = false;
+        this.obsrv2Skin = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopupControl#skinProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSkin(javafx.beans.property.Property<javafx.scene.control.Skin<?>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Skin = false;
+        this.obsrv1Skin = null;
+        this.bound2Skin = true;
+        this.obsrv2Skin = source;
         return (B) this;
     }
 
@@ -405,8 +593,27 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     public final B bindStyle(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundStyle = true;
-        this.obsrvStyle = source;
+        this.bound1Style = true;
+        this.obsrv1Style = source;
+        this.bound2Style = false;
+        this.obsrv2Style = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopupControl#styleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStyle(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Style = false;
+        this.obsrv1Style = null;
+        this.bound2Style = true;
+        this.obsrv2Style = source;
         return (B) this;
     }
 

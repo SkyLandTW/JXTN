@@ -55,38 +55,60 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     private boolean hasTickMarks;
     private java.util.Collection<javafx.scene.chart.Axis.TickMark<T>> valTickMarks;
 
-    private boolean boundAnimated;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvAnimated;
+    private boolean bound1Animated;
+    private boolean bound2Animated;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Animated;
+    private javafx.beans.property.Property<Boolean> obsrv2Animated;
 
-    private boolean boundAutoRanging;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvAutoRanging;
+    private boolean bound1AutoRanging;
+    private boolean bound2AutoRanging;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1AutoRanging;
+    private javafx.beans.property.Property<Boolean> obsrv2AutoRanging;
 
-    private boolean boundLabel;
-    private javafx.beans.value.ObservableValue<? extends java.lang.String> obsrvLabel;
+    private boolean bound1Label;
+    private boolean bound2Label;
+    private javafx.beans.value.ObservableValue<? extends java.lang.String> obsrv1Label;
+    private javafx.beans.property.Property<java.lang.String> obsrv2Label;
 
-    private boolean boundSide;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> obsrvSide;
+    private boolean bound1Side;
+    private boolean bound2Side;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> obsrv1Side;
+    private javafx.beans.property.Property<javafx.geometry.Side> obsrv2Side;
 
-    private boolean boundTickLabelFill;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> obsrvTickLabelFill;
+    private boolean bound1TickLabelFill;
+    private boolean bound2TickLabelFill;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> obsrv1TickLabelFill;
+    private javafx.beans.property.Property<javafx.scene.paint.Paint> obsrv2TickLabelFill;
 
-    private boolean boundTickLabelFont;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> obsrvTickLabelFont;
+    private boolean bound1TickLabelFont;
+    private boolean bound2TickLabelFont;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> obsrv1TickLabelFont;
+    private javafx.beans.property.Property<javafx.scene.text.Font> obsrv2TickLabelFont;
 
-    private boolean boundTickLabelGap;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvTickLabelGap;
+    private boolean bound1TickLabelGap;
+    private boolean bound2TickLabelGap;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1TickLabelGap;
+    private javafx.beans.property.Property<Number> obsrv2TickLabelGap;
 
-    private boolean boundTickLabelRotation;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvTickLabelRotation;
+    private boolean bound1TickLabelRotation;
+    private boolean bound2TickLabelRotation;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1TickLabelRotation;
+    private javafx.beans.property.Property<Number> obsrv2TickLabelRotation;
 
-    private boolean boundTickLabelsVisible;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvTickLabelsVisible;
+    private boolean bound1TickLabelsVisible;
+    private boolean bound2TickLabelsVisible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1TickLabelsVisible;
+    private javafx.beans.property.Property<Boolean> obsrv2TickLabelsVisible;
 
-    private boolean boundTickLength;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvTickLength;
+    private boolean bound1TickLength;
+    private boolean bound2TickLength;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1TickLength;
+    private javafx.beans.property.Property<Number> obsrv2TickLength;
 
-    private boolean boundTickMarkVisible;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvTickMarkVisible;
+    private boolean bound1TickMarkVisible;
+    private boolean bound2TickMarkVisible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1TickMarkVisible;
+    private javafx.beans.property.Property<Boolean> obsrv2TickMarkVisible;
 
     @Override
     public void applyTo(Z instance)
@@ -116,28 +138,50 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
             instance.setTickMarkVisible(this.valTickMarkVisible);
         if (this.hasTickMarks)
             instance.getTickMarks().setAll(this.valTickMarks);
-        if (this.boundAnimated)
-            instance.animatedProperty().bind(this.obsrvAnimated);
-        if (this.boundAutoRanging)
-            instance.autoRangingProperty().bind(this.obsrvAutoRanging);
-        if (this.boundLabel)
-            instance.labelProperty().bind(this.obsrvLabel);
-        if (this.boundSide)
-            instance.sideProperty().bind(this.obsrvSide);
-        if (this.boundTickLabelFill)
-            instance.tickLabelFillProperty().bind(this.obsrvTickLabelFill);
-        if (this.boundTickLabelFont)
-            instance.tickLabelFontProperty().bind(this.obsrvTickLabelFont);
-        if (this.boundTickLabelGap)
-            instance.tickLabelGapProperty().bind(this.obsrvTickLabelGap);
-        if (this.boundTickLabelRotation)
-            instance.tickLabelRotationProperty().bind(this.obsrvTickLabelRotation);
-        if (this.boundTickLabelsVisible)
-            instance.tickLabelsVisibleProperty().bind(this.obsrvTickLabelsVisible);
-        if (this.boundTickLength)
-            instance.tickLengthProperty().bind(this.obsrvTickLength);
-        if (this.boundTickMarkVisible)
-            instance.tickMarkVisibleProperty().bind(this.obsrvTickMarkVisible);
+        if (this.bound1Animated)
+            instance.animatedProperty().bind(this.obsrv1Animated);
+        if (this.bound2Animated)
+            instance.animatedProperty().bindBidirectional(this.obsrv2Animated);
+        if (this.bound1AutoRanging)
+            instance.autoRangingProperty().bind(this.obsrv1AutoRanging);
+        if (this.bound2AutoRanging)
+            instance.autoRangingProperty().bindBidirectional(this.obsrv2AutoRanging);
+        if (this.bound1Label)
+            instance.labelProperty().bind(this.obsrv1Label);
+        if (this.bound2Label)
+            instance.labelProperty().bindBidirectional(this.obsrv2Label);
+        if (this.bound1Side)
+            instance.sideProperty().bind(this.obsrv1Side);
+        if (this.bound2Side)
+            instance.sideProperty().bindBidirectional(this.obsrv2Side);
+        if (this.bound1TickLabelFill)
+            instance.tickLabelFillProperty().bind(this.obsrv1TickLabelFill);
+        if (this.bound2TickLabelFill)
+            instance.tickLabelFillProperty().bindBidirectional(this.obsrv2TickLabelFill);
+        if (this.bound1TickLabelFont)
+            instance.tickLabelFontProperty().bind(this.obsrv1TickLabelFont);
+        if (this.bound2TickLabelFont)
+            instance.tickLabelFontProperty().bindBidirectional(this.obsrv2TickLabelFont);
+        if (this.bound1TickLabelGap)
+            instance.tickLabelGapProperty().bind(this.obsrv1TickLabelGap);
+        if (this.bound2TickLabelGap)
+            instance.tickLabelGapProperty().bindBidirectional(this.obsrv2TickLabelGap);
+        if (this.bound1TickLabelRotation)
+            instance.tickLabelRotationProperty().bind(this.obsrv1TickLabelRotation);
+        if (this.bound2TickLabelRotation)
+            instance.tickLabelRotationProperty().bindBidirectional(this.obsrv2TickLabelRotation);
+        if (this.bound1TickLabelsVisible)
+            instance.tickLabelsVisibleProperty().bind(this.obsrv1TickLabelsVisible);
+        if (this.bound2TickLabelsVisible)
+            instance.tickLabelsVisibleProperty().bindBidirectional(this.obsrv2TickLabelsVisible);
+        if (this.bound1TickLength)
+            instance.tickLengthProperty().bind(this.obsrv1TickLength);
+        if (this.bound2TickLength)
+            instance.tickLengthProperty().bindBidirectional(this.obsrv2TickLength);
+        if (this.bound1TickMarkVisible)
+            instance.tickMarkVisibleProperty().bind(this.obsrv1TickMarkVisible);
+        if (this.bound2TickMarkVisible)
+            instance.tickMarkVisibleProperty().bindBidirectional(this.obsrv2TickMarkVisible);
     }
 
     /**
@@ -333,8 +377,27 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     public final B bindAnimated(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAnimated = true;
-        this.obsrvAnimated = source;
+        this.bound1Animated = true;
+        this.obsrv1Animated = source;
+        this.bound2Animated = false;
+        this.obsrv2Animated = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Axis#animatedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAnimated(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Animated = false;
+        this.obsrv1Animated = null;
+        this.bound2Animated = true;
+        this.obsrv2Animated = source;
         return (B) this;
     }
 
@@ -348,8 +411,27 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     public final B bindAutoRanging(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAutoRanging = true;
-        this.obsrvAutoRanging = source;
+        this.bound1AutoRanging = true;
+        this.obsrv1AutoRanging = source;
+        this.bound2AutoRanging = false;
+        this.obsrv2AutoRanging = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Axis#autoRangingProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAutoRanging(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AutoRanging = false;
+        this.obsrv1AutoRanging = null;
+        this.bound2AutoRanging = true;
+        this.obsrv2AutoRanging = source;
         return (B) this;
     }
 
@@ -363,8 +445,27 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     public final B bindLabel(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundLabel = true;
-        this.obsrvLabel = source;
+        this.bound1Label = true;
+        this.obsrv1Label = source;
+        this.bound2Label = false;
+        this.obsrv2Label = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Axis#labelProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLabel(javafx.beans.property.Property<java.lang.String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Label = false;
+        this.obsrv1Label = null;
+        this.bound2Label = true;
+        this.obsrv2Label = source;
         return (B) this;
     }
 
@@ -378,8 +479,27 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     public final B bindSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSide = true;
-        this.obsrvSide = source;
+        this.bound1Side = true;
+        this.obsrv1Side = source;
+        this.bound2Side = false;
+        this.obsrv2Side = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Axis#sideProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSide(javafx.beans.property.Property<javafx.geometry.Side> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Side = false;
+        this.obsrv1Side = null;
+        this.bound2Side = true;
+        this.obsrv2Side = source;
         return (B) this;
     }
 
@@ -393,8 +513,27 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     public final B bindTickLabelFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTickLabelFill = true;
-        this.obsrvTickLabelFill = source;
+        this.bound1TickLabelFill = true;
+        this.obsrv1TickLabelFill = source;
+        this.bound2TickLabelFill = false;
+        this.obsrv2TickLabelFill = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Axis#tickLabelFillProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTickLabelFill(javafx.beans.property.Property<javafx.scene.paint.Paint> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TickLabelFill = false;
+        this.obsrv1TickLabelFill = null;
+        this.bound2TickLabelFill = true;
+        this.obsrv2TickLabelFill = source;
         return (B) this;
     }
 
@@ -408,8 +547,27 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     public final B bindTickLabelFont(javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTickLabelFont = true;
-        this.obsrvTickLabelFont = source;
+        this.bound1TickLabelFont = true;
+        this.obsrv1TickLabelFont = source;
+        this.bound2TickLabelFont = false;
+        this.obsrv2TickLabelFont = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Axis#tickLabelFontProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTickLabelFont(javafx.beans.property.Property<javafx.scene.text.Font> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TickLabelFont = false;
+        this.obsrv1TickLabelFont = null;
+        this.bound2TickLabelFont = true;
+        this.obsrv2TickLabelFont = source;
         return (B) this;
     }
 
@@ -420,11 +578,30 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindTickLabelGap(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTickLabelGap(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTickLabelGap = true;
-        this.obsrvTickLabelGap = source;
+        this.bound1TickLabelGap = true;
+        this.obsrv1TickLabelGap = source;
+        this.bound2TickLabelGap = false;
+        this.obsrv2TickLabelGap = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Axis#tickLabelGapProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTickLabelGap(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TickLabelGap = false;
+        this.obsrv1TickLabelGap = null;
+        this.bound2TickLabelGap = true;
+        this.obsrv2TickLabelGap = source;
         return (B) this;
     }
 
@@ -435,11 +612,30 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindTickLabelRotation(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTickLabelRotation(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTickLabelRotation = true;
-        this.obsrvTickLabelRotation = source;
+        this.bound1TickLabelRotation = true;
+        this.obsrv1TickLabelRotation = source;
+        this.bound2TickLabelRotation = false;
+        this.obsrv2TickLabelRotation = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Axis#tickLabelRotationProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTickLabelRotation(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TickLabelRotation = false;
+        this.obsrv1TickLabelRotation = null;
+        this.bound2TickLabelRotation = true;
+        this.obsrv2TickLabelRotation = source;
         return (B) this;
     }
 
@@ -453,8 +649,27 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     public final B bindTickLabelsVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTickLabelsVisible = true;
-        this.obsrvTickLabelsVisible = source;
+        this.bound1TickLabelsVisible = true;
+        this.obsrv1TickLabelsVisible = source;
+        this.bound2TickLabelsVisible = false;
+        this.obsrv2TickLabelsVisible = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Axis#tickLabelsVisibleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTickLabelsVisible(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TickLabelsVisible = false;
+        this.obsrv1TickLabelsVisible = null;
+        this.bound2TickLabelsVisible = true;
+        this.obsrv2TickLabelsVisible = source;
         return (B) this;
     }
 
@@ -465,11 +680,30 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindTickLength(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTickLength(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTickLength = true;
-        this.obsrvTickLength = source;
+        this.bound1TickLength = true;
+        this.obsrv1TickLength = source;
+        this.bound2TickLength = false;
+        this.obsrv2TickLength = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Axis#tickLengthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTickLength(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TickLength = false;
+        this.obsrv1TickLength = null;
+        this.bound2TickLength = true;
+        this.obsrv2TickLength = source;
         return (B) this;
     }
 
@@ -483,8 +717,27 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     public final B bindTickMarkVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTickMarkVisible = true;
-        this.obsrvTickMarkVisible = source;
+        this.bound1TickMarkVisible = true;
+        this.obsrv1TickMarkVisible = source;
+        this.bound2TickMarkVisible = false;
+        this.obsrv2TickMarkVisible = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Axis#tickMarkVisibleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTickMarkVisible(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TickMarkVisible = false;
+        this.obsrv1TickMarkVisible = null;
+        this.bound2TickMarkVisible = true;
+        this.obsrv2TickMarkVisible = source;
         return (B) this;
     }
 }

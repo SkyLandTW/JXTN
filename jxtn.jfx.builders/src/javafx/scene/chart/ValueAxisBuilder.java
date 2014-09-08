@@ -37,23 +37,35 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     private boolean hasUpperBound;
     private double valUpperBound;
 
-    private boolean boundLowerBound;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvLowerBound;
+    private boolean bound1LowerBound;
+    private boolean bound2LowerBound;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1LowerBound;
+    private javafx.beans.property.Property<Number> obsrv2LowerBound;
 
-    private boolean boundMinorTickCount;
-    private javafx.beans.value.ObservableValue<? extends Integer> obsrvMinorTickCount;
+    private boolean bound1MinorTickCount;
+    private boolean bound2MinorTickCount;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MinorTickCount;
+    private javafx.beans.property.Property<Number> obsrv2MinorTickCount;
 
-    private boolean boundMinorTickLength;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMinorTickLength;
+    private boolean bound1MinorTickLength;
+    private boolean bound2MinorTickLength;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MinorTickLength;
+    private javafx.beans.property.Property<Number> obsrv2MinorTickLength;
 
-    private boolean boundMinorTickVisible;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvMinorTickVisible;
+    private boolean bound1MinorTickVisible;
+    private boolean bound2MinorTickVisible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1MinorTickVisible;
+    private javafx.beans.property.Property<Boolean> obsrv2MinorTickVisible;
 
-    private boolean boundTickLabelFormatter;
-    private javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> obsrvTickLabelFormatter;
+    private boolean bound1TickLabelFormatter;
+    private boolean bound2TickLabelFormatter;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> obsrv1TickLabelFormatter;
+    private javafx.beans.property.Property<javafx.util.StringConverter<T>> obsrv2TickLabelFormatter;
 
-    private boolean boundUpperBound;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvUpperBound;
+    private boolean bound1UpperBound;
+    private boolean bound2UpperBound;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1UpperBound;
+    private javafx.beans.property.Property<Number> obsrv2UpperBound;
 
     @Override
     public void applyTo(Z instance)
@@ -71,18 +83,30 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
             instance.setTickLabelFormatter(this.valTickLabelFormatter);
         if (this.hasUpperBound)
             instance.setUpperBound(this.valUpperBound);
-        if (this.boundLowerBound)
-            instance.lowerBoundProperty().bind(this.obsrvLowerBound);
-        if (this.boundMinorTickCount)
-            instance.minorTickCountProperty().bind(this.obsrvMinorTickCount);
-        if (this.boundMinorTickLength)
-            instance.minorTickLengthProperty().bind(this.obsrvMinorTickLength);
-        if (this.boundMinorTickVisible)
-            instance.minorTickVisibleProperty().bind(this.obsrvMinorTickVisible);
-        if (this.boundTickLabelFormatter)
-            instance.tickLabelFormatterProperty().bind(this.obsrvTickLabelFormatter);
-        if (this.boundUpperBound)
-            instance.upperBoundProperty().bind(this.obsrvUpperBound);
+        if (this.bound1LowerBound)
+            instance.lowerBoundProperty().bind(this.obsrv1LowerBound);
+        if (this.bound2LowerBound)
+            instance.lowerBoundProperty().bindBidirectional(this.obsrv2LowerBound);
+        if (this.bound1MinorTickCount)
+            instance.minorTickCountProperty().bind(this.obsrv1MinorTickCount);
+        if (this.bound2MinorTickCount)
+            instance.minorTickCountProperty().bindBidirectional(this.obsrv2MinorTickCount);
+        if (this.bound1MinorTickLength)
+            instance.minorTickLengthProperty().bind(this.obsrv1MinorTickLength);
+        if (this.bound2MinorTickLength)
+            instance.minorTickLengthProperty().bindBidirectional(this.obsrv2MinorTickLength);
+        if (this.bound1MinorTickVisible)
+            instance.minorTickVisibleProperty().bind(this.obsrv1MinorTickVisible);
+        if (this.bound2MinorTickVisible)
+            instance.minorTickVisibleProperty().bindBidirectional(this.obsrv2MinorTickVisible);
+        if (this.bound1TickLabelFormatter)
+            instance.tickLabelFormatterProperty().bind(this.obsrv1TickLabelFormatter);
+        if (this.bound2TickLabelFormatter)
+            instance.tickLabelFormatterProperty().bindBidirectional(this.obsrv2TickLabelFormatter);
+        if (this.bound1UpperBound)
+            instance.upperBoundProperty().bind(this.obsrv1UpperBound);
+        if (this.bound2UpperBound)
+            instance.upperBoundProperty().bindBidirectional(this.obsrv2UpperBound);
     }
 
     /**
@@ -176,11 +200,30 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindLowerBound(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindLowerBound(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundLowerBound = true;
-        this.obsrvLowerBound = source;
+        this.bound1LowerBound = true;
+        this.obsrv1LowerBound = source;
+        this.bound2LowerBound = false;
+        this.obsrv2LowerBound = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ValueAxis#lowerBoundProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLowerBound(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1LowerBound = false;
+        this.obsrv1LowerBound = null;
+        this.bound2LowerBound = true;
+        this.obsrv2LowerBound = source;
         return (B) this;
     }
 
@@ -191,11 +234,30 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMinorTickCount(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindMinorTickCount(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMinorTickCount = true;
-        this.obsrvMinorTickCount = source;
+        this.bound1MinorTickCount = true;
+        this.obsrv1MinorTickCount = source;
+        this.bound2MinorTickCount = false;
+        this.obsrv2MinorTickCount = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ValueAxis#minorTickCountProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMinorTickCount(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinorTickCount = false;
+        this.obsrv1MinorTickCount = null;
+        this.bound2MinorTickCount = true;
+        this.obsrv2MinorTickCount = source;
         return (B) this;
     }
 
@@ -206,11 +268,30 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMinorTickLength(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinorTickLength(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMinorTickLength = true;
-        this.obsrvMinorTickLength = source;
+        this.bound1MinorTickLength = true;
+        this.obsrv1MinorTickLength = source;
+        this.bound2MinorTickLength = false;
+        this.obsrv2MinorTickLength = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ValueAxis#minorTickLengthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMinorTickLength(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinorTickLength = false;
+        this.obsrv1MinorTickLength = null;
+        this.bound2MinorTickLength = true;
+        this.obsrv2MinorTickLength = source;
         return (B) this;
     }
 
@@ -224,8 +305,27 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     public final B bindMinorTickVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMinorTickVisible = true;
-        this.obsrvMinorTickVisible = source;
+        this.bound1MinorTickVisible = true;
+        this.obsrv1MinorTickVisible = source;
+        this.bound2MinorTickVisible = false;
+        this.obsrv2MinorTickVisible = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ValueAxis#minorTickVisibleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMinorTickVisible(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinorTickVisible = false;
+        this.obsrv1MinorTickVisible = null;
+        this.bound2MinorTickVisible = true;
+        this.obsrv2MinorTickVisible = source;
         return (B) this;
     }
 
@@ -239,8 +339,27 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     public final B bindTickLabelFormatter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTickLabelFormatter = true;
-        this.obsrvTickLabelFormatter = source;
+        this.bound1TickLabelFormatter = true;
+        this.obsrv1TickLabelFormatter = source;
+        this.bound2TickLabelFormatter = false;
+        this.obsrv2TickLabelFormatter = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ValueAxis#tickLabelFormatterProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTickLabelFormatter(javafx.beans.property.Property<javafx.util.StringConverter<T>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TickLabelFormatter = false;
+        this.obsrv1TickLabelFormatter = null;
+        this.bound2TickLabelFormatter = true;
+        this.obsrv2TickLabelFormatter = source;
         return (B) this;
     }
 
@@ -251,11 +370,30 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindUpperBound(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindUpperBound(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundUpperBound = true;
-        this.obsrvUpperBound = source;
+        this.bound1UpperBound = true;
+        this.obsrv1UpperBound = source;
+        this.bound2UpperBound = false;
+        this.obsrv2UpperBound = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ValueAxis#upperBoundProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalUpperBound(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1UpperBound = false;
+        this.obsrv1UpperBound = null;
+        this.bound2UpperBound = true;
+        this.obsrv2UpperBound = source;
         return (B) this;
     }
 }

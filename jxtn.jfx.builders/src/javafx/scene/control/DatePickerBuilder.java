@@ -31,17 +31,25 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     private boolean hasShowWeekNumbers;
     private boolean valShowWeekNumbers;
 
-    private boolean boundChronology;
-    private javafx.beans.value.ObservableValue<? extends java.time.chrono.Chronology> obsrvChronology;
+    private boolean bound1Chronology;
+    private boolean bound2Chronology;
+    private javafx.beans.value.ObservableValue<? extends java.time.chrono.Chronology> obsrv1Chronology;
+    private javafx.beans.property.Property<java.time.chrono.Chronology> obsrv2Chronology;
 
-    private boolean boundConverter;
-    private javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<java.time.LocalDate>> obsrvConverter;
+    private boolean bound1Converter;
+    private boolean bound2Converter;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<java.time.LocalDate>> obsrv1Converter;
+    private javafx.beans.property.Property<javafx.util.StringConverter<java.time.LocalDate>> obsrv2Converter;
 
-    private boolean boundDayCellFactory;
-    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.DatePicker, javafx.scene.control.DateCell>> obsrvDayCellFactory;
+    private boolean bound1DayCellFactory;
+    private boolean bound2DayCellFactory;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.DatePicker, javafx.scene.control.DateCell>> obsrv1DayCellFactory;
+    private javafx.beans.property.Property<javafx.util.Callback<javafx.scene.control.DatePicker, javafx.scene.control.DateCell>> obsrv2DayCellFactory;
 
-    private boolean boundShowWeekNumbers;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvShowWeekNumbers;
+    private boolean bound1ShowWeekNumbers;
+    private boolean bound2ShowWeekNumbers;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ShowWeekNumbers;
+    private javafx.beans.property.Property<Boolean> obsrv2ShowWeekNumbers;
 
     @Override
     public void applyTo(Z instance)
@@ -55,14 +63,22 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
             instance.setDayCellFactory(this.valDayCellFactory);
         if (this.hasShowWeekNumbers)
             instance.setShowWeekNumbers(this.valShowWeekNumbers);
-        if (this.boundChronology)
-            instance.chronologyProperty().bind(this.obsrvChronology);
-        if (this.boundConverter)
-            instance.converterProperty().bind(this.obsrvConverter);
-        if (this.boundDayCellFactory)
-            instance.dayCellFactoryProperty().bind(this.obsrvDayCellFactory);
-        if (this.boundShowWeekNumbers)
-            instance.showWeekNumbersProperty().bind(this.obsrvShowWeekNumbers);
+        if (this.bound1Chronology)
+            instance.chronologyProperty().bind(this.obsrv1Chronology);
+        if (this.bound2Chronology)
+            instance.chronologyProperty().bindBidirectional(this.obsrv2Chronology);
+        if (this.bound1Converter)
+            instance.converterProperty().bind(this.obsrv1Converter);
+        if (this.bound2Converter)
+            instance.converterProperty().bindBidirectional(this.obsrv2Converter);
+        if (this.bound1DayCellFactory)
+            instance.dayCellFactoryProperty().bind(this.obsrv1DayCellFactory);
+        if (this.bound2DayCellFactory)
+            instance.dayCellFactoryProperty().bindBidirectional(this.obsrv2DayCellFactory);
+        if (this.bound1ShowWeekNumbers)
+            instance.showWeekNumbersProperty().bind(this.obsrv1ShowWeekNumbers);
+        if (this.bound2ShowWeekNumbers)
+            instance.showWeekNumbersProperty().bindBidirectional(this.obsrv2ShowWeekNumbers);
     }
 
     /**
@@ -131,8 +147,27 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     public final B bindChronology(javafx.beans.value.ObservableValue<? extends java.time.chrono.Chronology> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundChronology = true;
-        this.obsrvChronology = source;
+        this.bound1Chronology = true;
+        this.obsrv1Chronology = source;
+        this.bound2Chronology = false;
+        this.obsrv2Chronology = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link DatePicker#chronologyProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalChronology(javafx.beans.property.Property<java.time.chrono.Chronology> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Chronology = false;
+        this.obsrv1Chronology = null;
+        this.bound2Chronology = true;
+        this.obsrv2Chronology = source;
         return (B) this;
     }
 
@@ -146,8 +181,27 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     public final B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<java.time.LocalDate>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundConverter = true;
-        this.obsrvConverter = source;
+        this.bound1Converter = true;
+        this.obsrv1Converter = source;
+        this.bound2Converter = false;
+        this.obsrv2Converter = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link DatePicker#converterProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalConverter(javafx.beans.property.Property<javafx.util.StringConverter<java.time.LocalDate>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Converter = false;
+        this.obsrv1Converter = null;
+        this.bound2Converter = true;
+        this.obsrv2Converter = source;
         return (B) this;
     }
 
@@ -161,8 +215,27 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     public final B bindDayCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.DatePicker, javafx.scene.control.DateCell>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundDayCellFactory = true;
-        this.obsrvDayCellFactory = source;
+        this.bound1DayCellFactory = true;
+        this.obsrv1DayCellFactory = source;
+        this.bound2DayCellFactory = false;
+        this.obsrv2DayCellFactory = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link DatePicker#dayCellFactoryProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalDayCellFactory(javafx.beans.property.Property<javafx.util.Callback<javafx.scene.control.DatePicker, javafx.scene.control.DateCell>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1DayCellFactory = false;
+        this.obsrv1DayCellFactory = null;
+        this.bound2DayCellFactory = true;
+        this.obsrv2DayCellFactory = source;
         return (B) this;
     }
 
@@ -176,8 +249,27 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     public final B bindShowWeekNumbers(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundShowWeekNumbers = true;
-        this.obsrvShowWeekNumbers = source;
+        this.bound1ShowWeekNumbers = true;
+        this.obsrv1ShowWeekNumbers = source;
+        this.bound2ShowWeekNumbers = false;
+        this.obsrv2ShowWeekNumbers = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link DatePicker#showWeekNumbersProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalShowWeekNumbers(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ShowWeekNumbers = false;
+        this.obsrv1ShowWeekNumbers = null;
+        this.bound2ShowWeekNumbers = true;
+        this.obsrv2ShowWeekNumbers = source;
         return (B) this;
     }
 

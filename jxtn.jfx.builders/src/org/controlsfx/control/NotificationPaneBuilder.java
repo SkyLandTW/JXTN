@@ -46,29 +46,45 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     private boolean hasText;
     private java.lang.String valText;
 
-    private boolean boundContent;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvContent;
+    private boolean bound1Content;
+    private boolean bound2Content;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Content;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Content;
 
-    private boolean boundGraphic;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvGraphic;
+    private boolean bound1Graphic;
+    private boolean bound2Graphic;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Graphic;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Graphic;
 
-    private boolean boundOnHidden;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrvOnHidden;
+    private boolean bound1OnHidden;
+    private boolean bound2OnHidden;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrv1OnHidden;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> obsrv2OnHidden;
 
-    private boolean boundOnHiding;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrvOnHiding;
+    private boolean bound1OnHiding;
+    private boolean bound2OnHiding;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrv1OnHiding;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> obsrv2OnHiding;
 
-    private boolean boundOnShowing;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrvOnShowing;
+    private boolean bound1OnShowing;
+    private boolean bound2OnShowing;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrv1OnShowing;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> obsrv2OnShowing;
 
-    private boolean boundOnShown;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrvOnShown;
+    private boolean bound1OnShown;
+    private boolean bound2OnShown;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrv1OnShown;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> obsrv2OnShown;
 
-    private boolean boundShowFromTop;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvShowFromTop;
+    private boolean bound1ShowFromTop;
+    private boolean bound2ShowFromTop;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ShowFromTop;
+    private javafx.beans.property.Property<Boolean> obsrv2ShowFromTop;
 
-    private boolean boundText;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvText;
+    private boolean bound1Text;
+    private boolean bound2Text;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Text;
+    private javafx.beans.property.Property<String> obsrv2Text;
 
     @Override
     public void applyTo(Z instance)
@@ -92,22 +108,38 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
             instance.setShowFromTop(this.valShowFromTop);
         if (this.hasText)
             instance.setText(this.valText);
-        if (this.boundContent)
-            instance.contentProperty().bind(this.obsrvContent);
-        if (this.boundGraphic)
-            instance.graphicProperty().bind(this.obsrvGraphic);
-        if (this.boundOnHidden)
-            instance.onHiddenProperty().bind(this.obsrvOnHidden);
-        if (this.boundOnHiding)
-            instance.onHidingProperty().bind(this.obsrvOnHiding);
-        if (this.boundOnShowing)
-            instance.onShowingProperty().bind(this.obsrvOnShowing);
-        if (this.boundOnShown)
-            instance.onShownProperty().bind(this.obsrvOnShown);
-        if (this.boundShowFromTop)
-            instance.showFromTopProperty().bind(this.obsrvShowFromTop);
-        if (this.boundText)
-            instance.textProperty().bind(this.obsrvText);
+        if (this.bound1Content)
+            instance.contentProperty().bind(this.obsrv1Content);
+        if (this.bound2Content)
+            instance.contentProperty().bindBidirectional(this.obsrv2Content);
+        if (this.bound1Graphic)
+            instance.graphicProperty().bind(this.obsrv1Graphic);
+        if (this.bound2Graphic)
+            instance.graphicProperty().bindBidirectional(this.obsrv2Graphic);
+        if (this.bound1OnHidden)
+            instance.onHiddenProperty().bind(this.obsrv1OnHidden);
+        if (this.bound2OnHidden)
+            instance.onHiddenProperty().bindBidirectional(this.obsrv2OnHidden);
+        if (this.bound1OnHiding)
+            instance.onHidingProperty().bind(this.obsrv1OnHiding);
+        if (this.bound2OnHiding)
+            instance.onHidingProperty().bindBidirectional(this.obsrv2OnHiding);
+        if (this.bound1OnShowing)
+            instance.onShowingProperty().bind(this.obsrv1OnShowing);
+        if (this.bound2OnShowing)
+            instance.onShowingProperty().bindBidirectional(this.obsrv2OnShowing);
+        if (this.bound1OnShown)
+            instance.onShownProperty().bind(this.obsrv1OnShown);
+        if (this.bound2OnShown)
+            instance.onShownProperty().bindBidirectional(this.obsrv2OnShown);
+        if (this.bound1ShowFromTop)
+            instance.showFromTopProperty().bind(this.obsrv1ShowFromTop);
+        if (this.bound2ShowFromTop)
+            instance.showFromTopProperty().bindBidirectional(this.obsrv2ShowFromTop);
+        if (this.bound1Text)
+            instance.textProperty().bind(this.obsrv1Text);
+        if (this.bound2Text)
+            instance.textProperty().bindBidirectional(this.obsrv2Text);
     }
 
     /**
@@ -261,8 +293,27 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     public final B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundContent = true;
-        this.obsrvContent = source;
+        this.bound1Content = true;
+        this.obsrv1Content = source;
+        this.bound2Content = false;
+        this.obsrv2Content = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link NotificationPane#contentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalContent(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Content = false;
+        this.obsrv1Content = null;
+        this.bound2Content = true;
+        this.obsrv2Content = source;
         return (B) this;
     }
 
@@ -276,8 +327,27 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     public final B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundGraphic = true;
-        this.obsrvGraphic = source;
+        this.bound1Graphic = true;
+        this.obsrv1Graphic = source;
+        this.bound2Graphic = false;
+        this.obsrv2Graphic = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link NotificationPane#graphicProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalGraphic(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Graphic = false;
+        this.obsrv1Graphic = null;
+        this.bound2Graphic = true;
+        this.obsrv2Graphic = source;
         return (B) this;
     }
 
@@ -291,8 +361,27 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     public final B bindOnHidden(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnHidden = true;
-        this.obsrvOnHidden = source;
+        this.bound1OnHidden = true;
+        this.obsrv1OnHidden = source;
+        this.bound2OnHidden = false;
+        this.obsrv2OnHidden = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link NotificationPane#onHiddenProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnHidden(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnHidden = false;
+        this.obsrv1OnHidden = null;
+        this.bound2OnHidden = true;
+        this.obsrv2OnHidden = source;
         return (B) this;
     }
 
@@ -306,8 +395,27 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     public final B bindOnHiding(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnHiding = true;
-        this.obsrvOnHiding = source;
+        this.bound1OnHiding = true;
+        this.obsrv1OnHiding = source;
+        this.bound2OnHiding = false;
+        this.obsrv2OnHiding = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link NotificationPane#onHidingProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnHiding(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnHiding = false;
+        this.obsrv1OnHiding = null;
+        this.bound2OnHiding = true;
+        this.obsrv2OnHiding = source;
         return (B) this;
     }
 
@@ -321,8 +429,27 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     public final B bindOnShowing(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnShowing = true;
-        this.obsrvOnShowing = source;
+        this.bound1OnShowing = true;
+        this.obsrv1OnShowing = source;
+        this.bound2OnShowing = false;
+        this.obsrv2OnShowing = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link NotificationPane#onShowingProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnShowing(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnShowing = false;
+        this.obsrv1OnShowing = null;
+        this.bound2OnShowing = true;
+        this.obsrv2OnShowing = source;
         return (B) this;
     }
 
@@ -336,8 +463,27 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     public final B bindOnShown(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnShown = true;
-        this.obsrvOnShown = source;
+        this.bound1OnShown = true;
+        this.obsrv1OnShown = source;
+        this.bound2OnShown = false;
+        this.obsrv2OnShown = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link NotificationPane#onShownProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnShown(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnShown = false;
+        this.obsrv1OnShown = null;
+        this.bound2OnShown = true;
+        this.obsrv2OnShown = source;
         return (B) this;
     }
 
@@ -351,8 +497,27 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     public final B bindShowFromTop(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundShowFromTop = true;
-        this.obsrvShowFromTop = source;
+        this.bound1ShowFromTop = true;
+        this.obsrv1ShowFromTop = source;
+        this.bound2ShowFromTop = false;
+        this.obsrv2ShowFromTop = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link NotificationPane#showFromTopProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalShowFromTop(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ShowFromTop = false;
+        this.obsrv1ShowFromTop = null;
+        this.bound2ShowFromTop = true;
+        this.obsrv2ShowFromTop = source;
         return (B) this;
     }
 
@@ -366,8 +531,27 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     public final B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundText = true;
-        this.obsrvText = source;
+        this.bound1Text = true;
+        this.obsrv1Text = source;
+        this.bound2Text = false;
+        this.obsrv2Text = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link NotificationPane#textProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalText(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Text = false;
+        this.obsrv1Text = null;
+        this.bound2Text = true;
+        this.obsrv2Text = source;
         return (B) this;
     }
 

@@ -31,17 +31,25 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     private boolean hasExpanded;
     private boolean valExpanded;
 
-    private boolean boundAnimated;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvAnimated;
+    private boolean bound1Animated;
+    private boolean bound2Animated;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Animated;
+    private javafx.beans.property.Property<Boolean> obsrv2Animated;
 
-    private boolean boundCollapsible;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvCollapsible;
+    private boolean bound1Collapsible;
+    private boolean bound2Collapsible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Collapsible;
+    private javafx.beans.property.Property<Boolean> obsrv2Collapsible;
 
-    private boolean boundContent;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvContent;
+    private boolean bound1Content;
+    private boolean bound2Content;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Content;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Content;
 
-    private boolean boundExpanded;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvExpanded;
+    private boolean bound1Expanded;
+    private boolean bound2Expanded;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Expanded;
+    private javafx.beans.property.Property<Boolean> obsrv2Expanded;
 
     @Override
     public void applyTo(Z instance)
@@ -55,14 +63,22 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
             instance.setContent(this.valContent);
         if (this.hasExpanded)
             instance.setExpanded(this.valExpanded);
-        if (this.boundAnimated)
-            instance.animatedProperty().bind(this.obsrvAnimated);
-        if (this.boundCollapsible)
-            instance.collapsibleProperty().bind(this.obsrvCollapsible);
-        if (this.boundContent)
-            instance.contentProperty().bind(this.obsrvContent);
-        if (this.boundExpanded)
-            instance.expandedProperty().bind(this.obsrvExpanded);
+        if (this.bound1Animated)
+            instance.animatedProperty().bind(this.obsrv1Animated);
+        if (this.bound2Animated)
+            instance.animatedProperty().bindBidirectional(this.obsrv2Animated);
+        if (this.bound1Collapsible)
+            instance.collapsibleProperty().bind(this.obsrv1Collapsible);
+        if (this.bound2Collapsible)
+            instance.collapsibleProperty().bindBidirectional(this.obsrv2Collapsible);
+        if (this.bound1Content)
+            instance.contentProperty().bind(this.obsrv1Content);
+        if (this.bound2Content)
+            instance.contentProperty().bindBidirectional(this.obsrv2Content);
+        if (this.bound1Expanded)
+            instance.expandedProperty().bind(this.obsrv1Expanded);
+        if (this.bound2Expanded)
+            instance.expandedProperty().bindBidirectional(this.obsrv2Expanded);
     }
 
     /**
@@ -131,8 +147,27 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     public final B bindAnimated(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAnimated = true;
-        this.obsrvAnimated = source;
+        this.bound1Animated = true;
+        this.obsrv1Animated = source;
+        this.bound2Animated = false;
+        this.obsrv2Animated = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TitledPane#animatedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAnimated(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Animated = false;
+        this.obsrv1Animated = null;
+        this.bound2Animated = true;
+        this.obsrv2Animated = source;
         return (B) this;
     }
 
@@ -146,8 +181,27 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     public final B bindCollapsible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCollapsible = true;
-        this.obsrvCollapsible = source;
+        this.bound1Collapsible = true;
+        this.obsrv1Collapsible = source;
+        this.bound2Collapsible = false;
+        this.obsrv2Collapsible = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TitledPane#collapsibleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCollapsible(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Collapsible = false;
+        this.obsrv1Collapsible = null;
+        this.bound2Collapsible = true;
+        this.obsrv2Collapsible = source;
         return (B) this;
     }
 
@@ -161,8 +215,27 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     public final B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundContent = true;
-        this.obsrvContent = source;
+        this.bound1Content = true;
+        this.obsrv1Content = source;
+        this.bound2Content = false;
+        this.obsrv2Content = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TitledPane#contentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalContent(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Content = false;
+        this.obsrv1Content = null;
+        this.bound2Content = true;
+        this.obsrv2Content = source;
         return (B) this;
     }
 
@@ -176,8 +249,27 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     public final B bindExpanded(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundExpanded = true;
-        this.obsrvExpanded = source;
+        this.bound1Expanded = true;
+        this.obsrv1Expanded = source;
+        this.bound2Expanded = false;
+        this.obsrv2Expanded = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TitledPane#expandedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalExpanded(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Expanded = false;
+        this.obsrv1Expanded = null;
+        this.bound2Expanded = true;
+        this.obsrv2Expanded = source;
         return (B) this;
     }
 

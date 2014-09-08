@@ -37,23 +37,35 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     private boolean hasWidth;
     private double valWidth;
 
-    private boolean boundCamera;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Camera> obsrvCamera;
+    private boolean bound1Camera;
+    private boolean bound2Camera;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Camera> obsrv1Camera;
+    private javafx.beans.property.Property<javafx.scene.Camera> obsrv2Camera;
 
-    private boolean boundFill;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> obsrvFill;
+    private boolean bound1Fill;
+    private boolean bound2Fill;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> obsrv1Fill;
+    private javafx.beans.property.Property<javafx.scene.paint.Paint> obsrv2Fill;
 
-    private boolean boundHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvHeight;
+    private boolean bound1Height;
+    private boolean bound2Height;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Height;
+    private javafx.beans.property.Property<Number> obsrv2Height;
 
-    private boolean boundRoot;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Parent> obsrvRoot;
+    private boolean bound1Root;
+    private boolean bound2Root;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Parent> obsrv1Root;
+    private javafx.beans.property.Property<javafx.scene.Parent> obsrv2Root;
 
-    private boolean boundUserAgentStylesheet;
-    private javafx.beans.value.ObservableValue<? extends java.lang.String> obsrvUserAgentStylesheet;
+    private boolean bound1UserAgentStylesheet;
+    private boolean bound2UserAgentStylesheet;
+    private javafx.beans.value.ObservableValue<? extends java.lang.String> obsrv1UserAgentStylesheet;
+    private javafx.beans.property.Property<java.lang.String> obsrv2UserAgentStylesheet;
 
-    private boolean boundWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvWidth;
+    private boolean bound1Width;
+    private boolean bound2Width;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Width;
+    private javafx.beans.property.Property<Number> obsrv2Width;
 
     @Override
     public void applyTo(Z instance)
@@ -71,18 +83,30 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
             instance.setUserAgentStylesheet(this.valUserAgentStylesheet);
         if (this.hasWidth)
             instance.setWidth(this.valWidth);
-        if (this.boundCamera)
-            instance.cameraProperty().bind(this.obsrvCamera);
-        if (this.boundFill)
-            instance.fillProperty().bind(this.obsrvFill);
-        if (this.boundHeight)
-            instance.heightProperty().bind(this.obsrvHeight);
-        if (this.boundRoot)
-            instance.rootProperty().bind(this.obsrvRoot);
-        if (this.boundUserAgentStylesheet)
-            instance.userAgentStylesheetProperty().bind(this.obsrvUserAgentStylesheet);
-        if (this.boundWidth)
-            instance.widthProperty().bind(this.obsrvWidth);
+        if (this.bound1Camera)
+            instance.cameraProperty().bind(this.obsrv1Camera);
+        if (this.bound2Camera)
+            instance.cameraProperty().bindBidirectional(this.obsrv2Camera);
+        if (this.bound1Fill)
+            instance.fillProperty().bind(this.obsrv1Fill);
+        if (this.bound2Fill)
+            instance.fillProperty().bindBidirectional(this.obsrv2Fill);
+        if (this.bound1Height)
+            instance.heightProperty().bind(this.obsrv1Height);
+        if (this.bound2Height)
+            instance.heightProperty().bindBidirectional(this.obsrv2Height);
+        if (this.bound1Root)
+            instance.rootProperty().bind(this.obsrv1Root);
+        if (this.bound2Root)
+            instance.rootProperty().bindBidirectional(this.obsrv2Root);
+        if (this.bound1UserAgentStylesheet)
+            instance.userAgentStylesheetProperty().bind(this.obsrv1UserAgentStylesheet);
+        if (this.bound2UserAgentStylesheet)
+            instance.userAgentStylesheetProperty().bindBidirectional(this.obsrv2UserAgentStylesheet);
+        if (this.bound1Width)
+            instance.widthProperty().bind(this.obsrv1Width);
+        if (this.bound2Width)
+            instance.widthProperty().bindBidirectional(this.obsrv2Width);
     }
 
     /**
@@ -179,8 +203,27 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     public final B bindCamera(javafx.beans.value.ObservableValue<? extends javafx.scene.Camera> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCamera = true;
-        this.obsrvCamera = source;
+        this.bound1Camera = true;
+        this.obsrv1Camera = source;
+        this.bound2Camera = false;
+        this.obsrv2Camera = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SubScene#cameraProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCamera(javafx.beans.property.Property<javafx.scene.Camera> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Camera = false;
+        this.obsrv1Camera = null;
+        this.bound2Camera = true;
+        this.obsrv2Camera = source;
         return (B) this;
     }
 
@@ -194,8 +237,27 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     public final B bindFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFill = true;
-        this.obsrvFill = source;
+        this.bound1Fill = true;
+        this.obsrv1Fill = source;
+        this.bound2Fill = false;
+        this.obsrv2Fill = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SubScene#fillProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFill(javafx.beans.property.Property<javafx.scene.paint.Paint> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Fill = false;
+        this.obsrv1Fill = null;
+        this.bound2Fill = true;
+        this.obsrv2Fill = source;
         return (B) this;
     }
 
@@ -206,11 +268,30 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundHeight = true;
-        this.obsrvHeight = source;
+        this.bound1Height = true;
+        this.obsrv1Height = source;
+        this.bound2Height = false;
+        this.obsrv2Height = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SubScene#heightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Height = false;
+        this.obsrv1Height = null;
+        this.bound2Height = true;
+        this.obsrv2Height = source;
         return (B) this;
     }
 
@@ -224,8 +305,27 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     public final B bindRoot(javafx.beans.value.ObservableValue<? extends javafx.scene.Parent> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundRoot = true;
-        this.obsrvRoot = source;
+        this.bound1Root = true;
+        this.obsrv1Root = source;
+        this.bound2Root = false;
+        this.obsrv2Root = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SubScene#rootProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRoot(javafx.beans.property.Property<javafx.scene.Parent> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Root = false;
+        this.obsrv1Root = null;
+        this.bound2Root = true;
+        this.obsrv2Root = source;
         return (B) this;
     }
 
@@ -239,8 +339,27 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     public final B bindUserAgentStylesheet(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundUserAgentStylesheet = true;
-        this.obsrvUserAgentStylesheet = source;
+        this.bound1UserAgentStylesheet = true;
+        this.obsrv1UserAgentStylesheet = source;
+        this.bound2UserAgentStylesheet = false;
+        this.obsrv2UserAgentStylesheet = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SubScene#userAgentStylesheetProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalUserAgentStylesheet(javafx.beans.property.Property<java.lang.String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1UserAgentStylesheet = false;
+        this.obsrv1UserAgentStylesheet = null;
+        this.bound2UserAgentStylesheet = true;
+        this.obsrv2UserAgentStylesheet = source;
         return (B) this;
     }
 
@@ -251,11 +370,30 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundWidth = true;
-        this.obsrvWidth = source;
+        this.bound1Width = true;
+        this.obsrv1Width = source;
+        this.bound2Width = false;
+        this.obsrv2Width = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SubScene#widthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Width = false;
+        this.obsrv1Width = null;
+        this.bound2Width = true;
+        this.obsrv2Width = source;
         return (B) this;
     }
 

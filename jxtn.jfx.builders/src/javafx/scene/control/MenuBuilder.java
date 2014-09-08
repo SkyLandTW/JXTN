@@ -34,17 +34,25 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     private boolean hasOnShown;
     private javafx.event.EventHandler<javafx.event.Event> valOnShown;
 
-    private boolean boundOnHidden;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrvOnHidden;
+    private boolean bound1OnHidden;
+    private boolean bound2OnHidden;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrv1OnHidden;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> obsrv2OnHidden;
 
-    private boolean boundOnHiding;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrvOnHiding;
+    private boolean bound1OnHiding;
+    private boolean bound2OnHiding;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrv1OnHiding;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> obsrv2OnHiding;
 
-    private boolean boundOnShowing;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrvOnShowing;
+    private boolean bound1OnShowing;
+    private boolean bound2OnShowing;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrv1OnShowing;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> obsrv2OnShowing;
 
-    private boolean boundOnShown;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrvOnShown;
+    private boolean bound1OnShown;
+    private boolean bound2OnShown;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrv1OnShown;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> obsrv2OnShown;
 
     @Override
     public void applyTo(Z instance)
@@ -60,14 +68,22 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
             instance.setOnShowing(this.valOnShowing);
         if (this.hasOnShown)
             instance.setOnShown(this.valOnShown);
-        if (this.boundOnHidden)
-            instance.onHiddenProperty().bind(this.obsrvOnHidden);
-        if (this.boundOnHiding)
-            instance.onHidingProperty().bind(this.obsrvOnHiding);
-        if (this.boundOnShowing)
-            instance.onShowingProperty().bind(this.obsrvOnShowing);
-        if (this.boundOnShown)
-            instance.onShownProperty().bind(this.obsrvOnShown);
+        if (this.bound1OnHidden)
+            instance.onHiddenProperty().bind(this.obsrv1OnHidden);
+        if (this.bound2OnHidden)
+            instance.onHiddenProperty().bindBidirectional(this.obsrv2OnHidden);
+        if (this.bound1OnHiding)
+            instance.onHidingProperty().bind(this.obsrv1OnHiding);
+        if (this.bound2OnHiding)
+            instance.onHidingProperty().bindBidirectional(this.obsrv2OnHiding);
+        if (this.bound1OnShowing)
+            instance.onShowingProperty().bind(this.obsrv1OnShowing);
+        if (this.bound2OnShowing)
+            instance.onShowingProperty().bindBidirectional(this.obsrv2OnShowing);
+        if (this.bound1OnShown)
+            instance.onShownProperty().bind(this.obsrv1OnShown);
+        if (this.bound2OnShown)
+            instance.onShownProperty().bindBidirectional(this.obsrv2OnShown);
     }
 
     /**
@@ -165,8 +181,27 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     public final B bindOnHidden(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnHidden = true;
-        this.obsrvOnHidden = source;
+        this.bound1OnHidden = true;
+        this.obsrv1OnHidden = source;
+        this.bound2OnHidden = false;
+        this.obsrv2OnHidden = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Menu#onHiddenProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnHidden(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnHidden = false;
+        this.obsrv1OnHidden = null;
+        this.bound2OnHidden = true;
+        this.obsrv2OnHidden = source;
         return (B) this;
     }
 
@@ -180,8 +215,27 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     public final B bindOnHiding(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnHiding = true;
-        this.obsrvOnHiding = source;
+        this.bound1OnHiding = true;
+        this.obsrv1OnHiding = source;
+        this.bound2OnHiding = false;
+        this.obsrv2OnHiding = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Menu#onHidingProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnHiding(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnHiding = false;
+        this.obsrv1OnHiding = null;
+        this.bound2OnHiding = true;
+        this.obsrv2OnHiding = source;
         return (B) this;
     }
 
@@ -195,8 +249,27 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     public final B bindOnShowing(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnShowing = true;
-        this.obsrvOnShowing = source;
+        this.bound1OnShowing = true;
+        this.obsrv1OnShowing = source;
+        this.bound2OnShowing = false;
+        this.obsrv2OnShowing = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Menu#onShowingProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnShowing(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnShowing = false;
+        this.obsrv1OnShowing = null;
+        this.bound2OnShowing = true;
+        this.obsrv2OnShowing = source;
         return (B) this;
     }
 
@@ -210,8 +283,27 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     public final B bindOnShown(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnShown = true;
-        this.obsrvOnShown = source;
+        this.bound1OnShown = true;
+        this.obsrv1OnShown = source;
+        this.bound2OnShown = false;
+        this.obsrv2OnShown = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Menu#onShownProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnShown(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnShown = false;
+        this.obsrv1OnShown = null;
+        this.bound2OnShown = true;
+        this.obsrv2OnShown = source;
         return (B) this;
     }
 

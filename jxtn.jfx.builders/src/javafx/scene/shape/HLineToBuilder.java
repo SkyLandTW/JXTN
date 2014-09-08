@@ -22,8 +22,10 @@ public class HLineToBuilder<Z extends HLineTo, B extends HLineToBuilder<Z, B>>
     private boolean hasX;
     private double valX;
 
-    private boolean boundX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvX;
+    private boolean bound1X;
+    private boolean bound2X;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1X;
+    private javafx.beans.property.Property<Number> obsrv2X;
 
     @Override
     public void applyTo(Z instance)
@@ -31,8 +33,10 @@ public class HLineToBuilder<Z extends HLineTo, B extends HLineToBuilder<Z, B>>
         super.applyTo(instance);
         if (this.hasX)
             instance.setX(this.valX);
-        if (this.boundX)
-            instance.xProperty().bind(this.obsrvX);
+        if (this.bound1X)
+            instance.xProperty().bind(this.obsrv1X);
+        if (this.bound2X)
+            instance.xProperty().bindBidirectional(this.obsrv2X);
     }
 
     /**
@@ -56,11 +60,30 @@ public class HLineToBuilder<Z extends HLineTo, B extends HLineToBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundX = true;
-        this.obsrvX = source;
+        this.bound1X = true;
+        this.obsrv1X = source;
+        this.bound2X = false;
+        this.obsrv2X = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link HLineTo#xProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1X = false;
+        this.obsrv1X = null;
+        this.bound2X = true;
+        this.obsrv2X = source;
         return (B) this;
     }
 

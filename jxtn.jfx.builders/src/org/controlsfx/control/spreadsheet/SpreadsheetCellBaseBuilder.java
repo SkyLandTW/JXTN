@@ -43,17 +43,25 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     private boolean hasTooltip;
     private java.lang.String valTooltip;
 
-    private boolean boundCommented;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvCommented;
+    private boolean bound1Commented;
+    private boolean bound2Commented;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Commented;
+    private javafx.beans.property.Property<Boolean> obsrv2Commented;
 
-    private boolean boundEditable;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvEditable;
+    private boolean bound1Editable;
+    private boolean bound2Editable;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Editable;
+    private javafx.beans.property.Property<Boolean> obsrv2Editable;
 
-    private boolean boundFormat;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvFormat;
+    private boolean bound1Format;
+    private boolean bound2Format;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Format;
+    private javafx.beans.property.Property<String> obsrv2Format;
 
-    private boolean boundItem;
-    private javafx.beans.value.ObservableValue<? extends java.lang.Object> obsrvItem;
+    private boolean bound1Item;
+    private boolean bound2Item;
+    private javafx.beans.value.ObservableValue<? extends java.lang.Object> obsrv1Item;
+    private javafx.beans.property.Property<java.lang.Object> obsrv2Item;
 
     @Override
     public void applyTo(Z instance)
@@ -75,14 +83,22 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
             instance.setRowSpan(this.valRowSpan);
         if (this.hasTooltip)
             instance.setTooltip(this.valTooltip);
-        if (this.boundCommented)
-            instance.commentedProperty().bind(this.obsrvCommented);
-        if (this.boundEditable)
-            instance.editableProperty().bind(this.obsrvEditable);
-        if (this.boundFormat)
-            instance.formatProperty().bind(this.obsrvFormat);
-        if (this.boundItem)
-            instance.itemProperty().bind(this.obsrvItem);
+        if (this.bound1Commented)
+            instance.commentedProperty().bind(this.obsrv1Commented);
+        if (this.bound2Commented)
+            instance.commentedProperty().bindBidirectional(this.obsrv2Commented);
+        if (this.bound1Editable)
+            instance.editableProperty().bind(this.obsrv1Editable);
+        if (this.bound2Editable)
+            instance.editableProperty().bindBidirectional(this.obsrv2Editable);
+        if (this.bound1Format)
+            instance.formatProperty().bind(this.obsrv1Format);
+        if (this.bound2Format)
+            instance.formatProperty().bindBidirectional(this.obsrv2Format);
+        if (this.bound1Item)
+            instance.itemProperty().bind(this.obsrv1Item);
+        if (this.bound2Item)
+            instance.itemProperty().bindBidirectional(this.obsrv2Item);
     }
 
     /**
@@ -207,8 +223,27 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     public final B bindCommented(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCommented = true;
-        this.obsrvCommented = source;
+        this.bound1Commented = true;
+        this.obsrv1Commented = source;
+        this.bound2Commented = false;
+        this.obsrv2Commented = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#commentedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCommented(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Commented = false;
+        this.obsrv1Commented = null;
+        this.bound2Commented = true;
+        this.obsrv2Commented = source;
         return (B) this;
     }
 
@@ -222,8 +257,27 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     public final B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundEditable = true;
-        this.obsrvEditable = source;
+        this.bound1Editable = true;
+        this.obsrv1Editable = source;
+        this.bound2Editable = false;
+        this.obsrv2Editable = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#editableProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalEditable(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Editable = false;
+        this.obsrv1Editable = null;
+        this.bound2Editable = true;
+        this.obsrv2Editable = source;
         return (B) this;
     }
 
@@ -237,8 +291,27 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     public final B bindFormat(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFormat = true;
-        this.obsrvFormat = source;
+        this.bound1Format = true;
+        this.obsrv1Format = source;
+        this.bound2Format = false;
+        this.obsrv2Format = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#formatProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFormat(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Format = false;
+        this.obsrv1Format = null;
+        this.bound2Format = true;
+        this.obsrv2Format = source;
         return (B) this;
     }
 
@@ -252,8 +325,27 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     public final B bindItem(javafx.beans.value.ObservableValue<? extends java.lang.Object> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundItem = true;
-        this.obsrvItem = source;
+        this.bound1Item = true;
+        this.obsrv1Item = source;
+        this.bound2Item = false;
+        this.obsrv2Item = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#itemProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalItem(javafx.beans.property.Property<java.lang.Object> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Item = false;
+        this.obsrv1Item = null;
+        this.bound2Item = true;
+        this.obsrv2Item = source;
         return (B) this;
     }
 

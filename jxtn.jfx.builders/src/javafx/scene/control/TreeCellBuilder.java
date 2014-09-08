@@ -22,8 +22,10 @@ public class TreeCellBuilder<T extends java.lang.Object, Z extends TreeCell<T>, 
     private boolean hasDisclosureNode;
     private javafx.scene.Node valDisclosureNode;
 
-    private boolean boundDisclosureNode;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvDisclosureNode;
+    private boolean bound1DisclosureNode;
+    private boolean bound2DisclosureNode;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1DisclosureNode;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2DisclosureNode;
 
     @Override
     public void applyTo(Z instance)
@@ -31,8 +33,10 @@ public class TreeCellBuilder<T extends java.lang.Object, Z extends TreeCell<T>, 
         super.applyTo(instance);
         if (this.hasDisclosureNode)
             instance.setDisclosureNode(this.valDisclosureNode);
-        if (this.boundDisclosureNode)
-            instance.disclosureNodeProperty().bind(this.obsrvDisclosureNode);
+        if (this.bound1DisclosureNode)
+            instance.disclosureNodeProperty().bind(this.obsrv1DisclosureNode);
+        if (this.bound2DisclosureNode)
+            instance.disclosureNodeProperty().bindBidirectional(this.obsrv2DisclosureNode);
     }
 
     /**
@@ -59,8 +63,27 @@ public class TreeCellBuilder<T extends java.lang.Object, Z extends TreeCell<T>, 
     public final B bindDisclosureNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundDisclosureNode = true;
-        this.obsrvDisclosureNode = source;
+        this.bound1DisclosureNode = true;
+        this.obsrv1DisclosureNode = source;
+        this.bound2DisclosureNode = false;
+        this.obsrv2DisclosureNode = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeCell#disclosureNodeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalDisclosureNode(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1DisclosureNode = false;
+        this.obsrv1DisclosureNode = null;
+        this.bound2DisclosureNode = true;
+        this.obsrv2DisclosureNode = source;
         return (B) this;
     }
 

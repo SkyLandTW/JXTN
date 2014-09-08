@@ -22,8 +22,10 @@ public class ProgressIndicatorBuilder<Z extends ProgressIndicator, B extends Pro
     private boolean hasProgress;
     private double valProgress;
 
-    private boolean boundProgress;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvProgress;
+    private boolean bound1Progress;
+    private boolean bound2Progress;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Progress;
+    private javafx.beans.property.Property<Number> obsrv2Progress;
 
     @Override
     public void applyTo(Z instance)
@@ -31,8 +33,10 @@ public class ProgressIndicatorBuilder<Z extends ProgressIndicator, B extends Pro
         super.applyTo(instance);
         if (this.hasProgress)
             instance.setProgress(this.valProgress);
-        if (this.boundProgress)
-            instance.progressProperty().bind(this.obsrvProgress);
+        if (this.bound1Progress)
+            instance.progressProperty().bind(this.obsrv1Progress);
+        if (this.bound2Progress)
+            instance.progressProperty().bindBidirectional(this.obsrv2Progress);
     }
 
     /**
@@ -56,11 +60,30 @@ public class ProgressIndicatorBuilder<Z extends ProgressIndicator, B extends Pro
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindProgress(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindProgress(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundProgress = true;
-        this.obsrvProgress = source;
+        this.bound1Progress = true;
+        this.obsrv1Progress = source;
+        this.bound2Progress = false;
+        this.obsrv2Progress = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ProgressIndicator#progressProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalProgress(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Progress = false;
+        this.obsrv1Progress = null;
+        this.bound2Progress = true;
+        this.obsrv2Progress = source;
         return (B) this;
     }
 

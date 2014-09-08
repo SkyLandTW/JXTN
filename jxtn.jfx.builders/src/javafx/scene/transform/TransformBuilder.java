@@ -22,8 +22,10 @@ public class TransformBuilder<Z extends Transform, B extends TransformBuilder<Z,
     private boolean hasOnTransformChanged;
     private javafx.event.EventHandler<? super javafx.scene.transform.TransformChangedEvent> valOnTransformChanged;
 
-    private boolean boundOnTransformChanged;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.transform.TransformChangedEvent>> obsrvOnTransformChanged;
+    private boolean bound1OnTransformChanged;
+    private boolean bound2OnTransformChanged;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.transform.TransformChangedEvent>> obsrv1OnTransformChanged;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.transform.TransformChangedEvent>> obsrv2OnTransformChanged;
 
     @Override
     public void applyTo(Z instance)
@@ -31,8 +33,10 @@ public class TransformBuilder<Z extends Transform, B extends TransformBuilder<Z,
         super.applyTo(instance);
         if (this.hasOnTransformChanged)
             instance.setOnTransformChanged(this.valOnTransformChanged);
-        if (this.boundOnTransformChanged)
-            instance.onTransformChangedProperty().bind(this.obsrvOnTransformChanged);
+        if (this.bound1OnTransformChanged)
+            instance.onTransformChangedProperty().bind(this.obsrv1OnTransformChanged);
+        if (this.bound2OnTransformChanged)
+            instance.onTransformChangedProperty().bindBidirectional(this.obsrv2OnTransformChanged);
     }
 
     /**
@@ -59,8 +63,27 @@ public class TransformBuilder<Z extends Transform, B extends TransformBuilder<Z,
     public final B bindOnTransformChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.transform.TransformChangedEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnTransformChanged = true;
-        this.obsrvOnTransformChanged = source;
+        this.bound1OnTransformChanged = true;
+        this.obsrv1OnTransformChanged = source;
+        this.bound2OnTransformChanged = false;
+        this.obsrv2OnTransformChanged = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Transform#onTransformChangedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnTransformChanged(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.transform.TransformChangedEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnTransformChanged = false;
+        this.obsrv1OnTransformChanged = null;
+        this.bound2OnTransformChanged = true;
+        this.obsrv2OnTransformChanged = source;
         return (B) this;
     }
 }

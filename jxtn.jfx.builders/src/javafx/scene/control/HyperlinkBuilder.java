@@ -22,8 +22,10 @@ public class HyperlinkBuilder<Z extends Hyperlink, B extends HyperlinkBuilder<Z,
     private boolean hasVisited;
     private boolean valVisited;
 
-    private boolean boundVisited;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvVisited;
+    private boolean bound1Visited;
+    private boolean bound2Visited;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Visited;
+    private javafx.beans.property.Property<Boolean> obsrv2Visited;
 
     @Override
     public void applyTo(Z instance)
@@ -31,8 +33,10 @@ public class HyperlinkBuilder<Z extends Hyperlink, B extends HyperlinkBuilder<Z,
         super.applyTo(instance);
         if (this.hasVisited)
             instance.setVisited(this.valVisited);
-        if (this.boundVisited)
-            instance.visitedProperty().bind(this.obsrvVisited);
+        if (this.bound1Visited)
+            instance.visitedProperty().bind(this.obsrv1Visited);
+        if (this.bound2Visited)
+            instance.visitedProperty().bindBidirectional(this.obsrv2Visited);
     }
 
     /**
@@ -59,8 +63,27 @@ public class HyperlinkBuilder<Z extends Hyperlink, B extends HyperlinkBuilder<Z,
     public final B bindVisited(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundVisited = true;
-        this.obsrvVisited = source;
+        this.bound1Visited = true;
+        this.obsrv1Visited = source;
+        this.bound2Visited = false;
+        this.obsrv2Visited = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Hyperlink#visitedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalVisited(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Visited = false;
+        this.obsrv1Visited = null;
+        this.bound2Visited = true;
+        this.obsrv2Visited = source;
         return (B) this;
     }
 

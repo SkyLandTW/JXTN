@@ -25,8 +25,10 @@ public class AutoCompletionBindingBuilder<T extends java.lang.Object, Z extends 
     private boolean hasUserInput;
     private java.lang.String valUserInput;
 
-    private boolean boundOnAutoCompleted;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.textfield.AutoCompletionBinding.AutoCompletionEvent<T>>> obsrvOnAutoCompleted;
+    private boolean bound1OnAutoCompleted;
+    private boolean bound2OnAutoCompleted;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.textfield.AutoCompletionBinding.AutoCompletionEvent<T>>> obsrv1OnAutoCompleted;
+    private javafx.beans.property.Property<javafx.event.EventHandler<org.controlsfx.control.textfield.AutoCompletionBinding.AutoCompletionEvent<T>>> obsrv2OnAutoCompleted;
 
     @Override
     public void applyTo(Z instance)
@@ -36,8 +38,10 @@ public class AutoCompletionBindingBuilder<T extends java.lang.Object, Z extends 
             instance.setOnAutoCompleted(this.valOnAutoCompleted);
         if (this.hasUserInput)
             instance.setUserInput(this.valUserInput);
-        if (this.boundOnAutoCompleted)
-            instance.onAutoCompletedProperty().bind(this.obsrvOnAutoCompleted);
+        if (this.bound1OnAutoCompleted)
+            instance.onAutoCompletedProperty().bind(this.obsrv1OnAutoCompleted);
+        if (this.bound2OnAutoCompleted)
+            instance.onAutoCompletedProperty().bindBidirectional(this.obsrv2OnAutoCompleted);
     }
 
     /**
@@ -78,8 +82,27 @@ public class AutoCompletionBindingBuilder<T extends java.lang.Object, Z extends 
     public final B bindOnAutoCompleted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.textfield.AutoCompletionBinding.AutoCompletionEvent<T>>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnAutoCompleted = true;
-        this.obsrvOnAutoCompleted = source;
+        this.bound1OnAutoCompleted = true;
+        this.obsrv1OnAutoCompleted = source;
+        this.bound2OnAutoCompleted = false;
+        this.obsrv2OnAutoCompleted = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AutoCompletionBinding#onAutoCompletedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnAutoCompleted(javafx.beans.property.Property<javafx.event.EventHandler<org.controlsfx.control.textfield.AutoCompletionBinding.AutoCompletionEvent<T>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnAutoCompleted = false;
+        this.obsrv1OnAutoCompleted = null;
+        this.bound2OnAutoCompleted = true;
+        this.obsrv2OnAutoCompleted = source;
         return (B) this;
     }
 }

@@ -37,23 +37,35 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     private boolean hasShowDetailNode;
     private boolean valShowDetailNode;
 
-    private boolean boundAnimated;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvAnimated;
+    private boolean bound1Animated;
+    private boolean bound2Animated;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Animated;
+    private javafx.beans.property.Property<Boolean> obsrv2Animated;
 
-    private boolean boundDetailNode;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvDetailNode;
+    private boolean bound1DetailNode;
+    private boolean bound2DetailNode;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1DetailNode;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2DetailNode;
 
-    private boolean boundDetailSide;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> obsrvDetailSide;
+    private boolean bound1DetailSide;
+    private boolean bound2DetailSide;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> obsrv1DetailSide;
+    private javafx.beans.property.Property<javafx.geometry.Side> obsrv2DetailSide;
 
-    private boolean boundDividerPosition;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvDividerPosition;
+    private boolean bound1DividerPosition;
+    private boolean bound2DividerPosition;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1DividerPosition;
+    private javafx.beans.property.Property<Number> obsrv2DividerPosition;
 
-    private boolean boundMasterNode;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvMasterNode;
+    private boolean bound1MasterNode;
+    private boolean bound2MasterNode;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1MasterNode;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2MasterNode;
 
-    private boolean boundShowDetailNode;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvShowDetailNode;
+    private boolean bound1ShowDetailNode;
+    private boolean bound2ShowDetailNode;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ShowDetailNode;
+    private javafx.beans.property.Property<Boolean> obsrv2ShowDetailNode;
 
     @Override
     public void applyTo(Z instance)
@@ -71,18 +83,30 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
             instance.setMasterNode(this.valMasterNode);
         if (this.hasShowDetailNode)
             instance.setShowDetailNode(this.valShowDetailNode);
-        if (this.boundAnimated)
-            instance.animatedProperty().bind(this.obsrvAnimated);
-        if (this.boundDetailNode)
-            instance.detailNodeProperty().bind(this.obsrvDetailNode);
-        if (this.boundDetailSide)
-            instance.detailSideProperty().bind(this.obsrvDetailSide);
-        if (this.boundDividerPosition)
-            instance.dividerPositionProperty().bind(this.obsrvDividerPosition);
-        if (this.boundMasterNode)
-            instance.masterNodeProperty().bind(this.obsrvMasterNode);
-        if (this.boundShowDetailNode)
-            instance.showDetailNodeProperty().bind(this.obsrvShowDetailNode);
+        if (this.bound1Animated)
+            instance.animatedProperty().bind(this.obsrv1Animated);
+        if (this.bound2Animated)
+            instance.animatedProperty().bindBidirectional(this.obsrv2Animated);
+        if (this.bound1DetailNode)
+            instance.detailNodeProperty().bind(this.obsrv1DetailNode);
+        if (this.bound2DetailNode)
+            instance.detailNodeProperty().bindBidirectional(this.obsrv2DetailNode);
+        if (this.bound1DetailSide)
+            instance.detailSideProperty().bind(this.obsrv1DetailSide);
+        if (this.bound2DetailSide)
+            instance.detailSideProperty().bindBidirectional(this.obsrv2DetailSide);
+        if (this.bound1DividerPosition)
+            instance.dividerPositionProperty().bind(this.obsrv1DividerPosition);
+        if (this.bound2DividerPosition)
+            instance.dividerPositionProperty().bindBidirectional(this.obsrv2DividerPosition);
+        if (this.bound1MasterNode)
+            instance.masterNodeProperty().bind(this.obsrv1MasterNode);
+        if (this.bound2MasterNode)
+            instance.masterNodeProperty().bindBidirectional(this.obsrv2MasterNode);
+        if (this.bound1ShowDetailNode)
+            instance.showDetailNodeProperty().bind(this.obsrv1ShowDetailNode);
+        if (this.bound2ShowDetailNode)
+            instance.showDetailNodeProperty().bindBidirectional(this.obsrv2ShowDetailNode);
     }
 
     /**
@@ -179,8 +203,27 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     public final B bindAnimated(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAnimated = true;
-        this.obsrvAnimated = source;
+        this.bound1Animated = true;
+        this.obsrv1Animated = source;
+        this.bound2Animated = false;
+        this.obsrv2Animated = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MasterDetailPane#animatedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAnimated(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Animated = false;
+        this.obsrv1Animated = null;
+        this.bound2Animated = true;
+        this.obsrv2Animated = source;
         return (B) this;
     }
 
@@ -194,8 +237,27 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     public final B bindDetailNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundDetailNode = true;
-        this.obsrvDetailNode = source;
+        this.bound1DetailNode = true;
+        this.obsrv1DetailNode = source;
+        this.bound2DetailNode = false;
+        this.obsrv2DetailNode = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MasterDetailPane#detailNodeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalDetailNode(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1DetailNode = false;
+        this.obsrv1DetailNode = null;
+        this.bound2DetailNode = true;
+        this.obsrv2DetailNode = source;
         return (B) this;
     }
 
@@ -209,8 +271,27 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     public final B bindDetailSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundDetailSide = true;
-        this.obsrvDetailSide = source;
+        this.bound1DetailSide = true;
+        this.obsrv1DetailSide = source;
+        this.bound2DetailSide = false;
+        this.obsrv2DetailSide = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MasterDetailPane#detailSideProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalDetailSide(javafx.beans.property.Property<javafx.geometry.Side> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1DetailSide = false;
+        this.obsrv1DetailSide = null;
+        this.bound2DetailSide = true;
+        this.obsrv2DetailSide = source;
         return (B) this;
     }
 
@@ -221,11 +302,30 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindDividerPosition(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindDividerPosition(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundDividerPosition = true;
-        this.obsrvDividerPosition = source;
+        this.bound1DividerPosition = true;
+        this.obsrv1DividerPosition = source;
+        this.bound2DividerPosition = false;
+        this.obsrv2DividerPosition = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MasterDetailPane#dividerPositionProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalDividerPosition(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1DividerPosition = false;
+        this.obsrv1DividerPosition = null;
+        this.bound2DividerPosition = true;
+        this.obsrv2DividerPosition = source;
         return (B) this;
     }
 
@@ -239,8 +339,27 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     public final B bindMasterNode(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMasterNode = true;
-        this.obsrvMasterNode = source;
+        this.bound1MasterNode = true;
+        this.obsrv1MasterNode = source;
+        this.bound2MasterNode = false;
+        this.obsrv2MasterNode = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MasterDetailPane#masterNodeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMasterNode(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MasterNode = false;
+        this.obsrv1MasterNode = null;
+        this.bound2MasterNode = true;
+        this.obsrv2MasterNode = source;
         return (B) this;
     }
 
@@ -254,8 +373,27 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     public final B bindShowDetailNode(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundShowDetailNode = true;
-        this.obsrvShowDetailNode = source;
+        this.bound1ShowDetailNode = true;
+        this.obsrv1ShowDetailNode = source;
+        this.bound2ShowDetailNode = false;
+        this.obsrv2ShowDetailNode = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MasterDetailPane#showDetailNodeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalShowDetailNode(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ShowDetailNode = false;
+        this.obsrv1ShowDetailNode = null;
+        this.bound2ShowDetailNode = true;
+        this.obsrv2ShowDetailNode = source;
         return (B) this;
     }
 

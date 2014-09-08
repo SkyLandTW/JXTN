@@ -22,8 +22,10 @@ public class PathElementBuilder<Z extends PathElement, B extends PathElementBuil
     private boolean hasAbsolute;
     private boolean valAbsolute;
 
-    private boolean boundAbsolute;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvAbsolute;
+    private boolean bound1Absolute;
+    private boolean bound2Absolute;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Absolute;
+    private javafx.beans.property.Property<Boolean> obsrv2Absolute;
 
     @Override
     public void applyTo(Z instance)
@@ -31,8 +33,10 @@ public class PathElementBuilder<Z extends PathElement, B extends PathElementBuil
         super.applyTo(instance);
         if (this.hasAbsolute)
             instance.setAbsolute(this.valAbsolute);
-        if (this.boundAbsolute)
-            instance.absoluteProperty().bind(this.obsrvAbsolute);
+        if (this.bound1Absolute)
+            instance.absoluteProperty().bind(this.obsrv1Absolute);
+        if (this.bound2Absolute)
+            instance.absoluteProperty().bindBidirectional(this.obsrv2Absolute);
     }
 
     /**
@@ -59,8 +63,27 @@ public class PathElementBuilder<Z extends PathElement, B extends PathElementBuil
     public final B bindAbsolute(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundAbsolute = true;
-        this.obsrvAbsolute = source;
+        this.bound1Absolute = true;
+        this.obsrv1Absolute = source;
+        this.bound2Absolute = false;
+        this.obsrv2Absolute = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PathElement#absoluteProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAbsolute(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Absolute = false;
+        this.obsrv1Absolute = null;
+        this.bound2Absolute = true;
+        this.obsrv2Absolute = source;
         return (B) this;
     }
 }

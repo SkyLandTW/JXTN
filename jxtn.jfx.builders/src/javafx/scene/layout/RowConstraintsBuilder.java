@@ -40,26 +40,40 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     private boolean hasVgrow;
     private javafx.scene.layout.Priority valVgrow;
 
-    private boolean boundFillHeight;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvFillHeight;
+    private boolean bound1FillHeight;
+    private boolean bound2FillHeight;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1FillHeight;
+    private javafx.beans.property.Property<Boolean> obsrv2FillHeight;
 
-    private boolean boundMaxHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMaxHeight;
+    private boolean bound1MaxHeight;
+    private boolean bound2MaxHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MaxHeight;
+    private javafx.beans.property.Property<Number> obsrv2MaxHeight;
 
-    private boolean boundMinHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMinHeight;
+    private boolean bound1MinHeight;
+    private boolean bound2MinHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MinHeight;
+    private javafx.beans.property.Property<Number> obsrv2MinHeight;
 
-    private boolean boundPercentHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvPercentHeight;
+    private boolean bound1PercentHeight;
+    private boolean bound2PercentHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PercentHeight;
+    private javafx.beans.property.Property<Number> obsrv2PercentHeight;
 
-    private boolean boundPrefHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvPrefHeight;
+    private boolean bound1PrefHeight;
+    private boolean bound2PrefHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PrefHeight;
+    private javafx.beans.property.Property<Number> obsrv2PrefHeight;
 
-    private boolean boundValignment;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> obsrvValignment;
+    private boolean bound1Valignment;
+    private boolean bound2Valignment;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> obsrv1Valignment;
+    private javafx.beans.property.Property<javafx.geometry.VPos> obsrv2Valignment;
 
-    private boolean boundVgrow;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Priority> obsrvVgrow;
+    private boolean bound1Vgrow;
+    private boolean bound2Vgrow;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Priority> obsrv1Vgrow;
+    private javafx.beans.property.Property<javafx.scene.layout.Priority> obsrv2Vgrow;
 
     @Override
     public void applyTo(Z instance)
@@ -79,20 +93,34 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
             instance.setValignment(this.valValignment);
         if (this.hasVgrow)
             instance.setVgrow(this.valVgrow);
-        if (this.boundFillHeight)
-            instance.fillHeightProperty().bind(this.obsrvFillHeight);
-        if (this.boundMaxHeight)
-            instance.maxHeightProperty().bind(this.obsrvMaxHeight);
-        if (this.boundMinHeight)
-            instance.minHeightProperty().bind(this.obsrvMinHeight);
-        if (this.boundPercentHeight)
-            instance.percentHeightProperty().bind(this.obsrvPercentHeight);
-        if (this.boundPrefHeight)
-            instance.prefHeightProperty().bind(this.obsrvPrefHeight);
-        if (this.boundValignment)
-            instance.valignmentProperty().bind(this.obsrvValignment);
-        if (this.boundVgrow)
-            instance.vgrowProperty().bind(this.obsrvVgrow);
+        if (this.bound1FillHeight)
+            instance.fillHeightProperty().bind(this.obsrv1FillHeight);
+        if (this.bound2FillHeight)
+            instance.fillHeightProperty().bindBidirectional(this.obsrv2FillHeight);
+        if (this.bound1MaxHeight)
+            instance.maxHeightProperty().bind(this.obsrv1MaxHeight);
+        if (this.bound2MaxHeight)
+            instance.maxHeightProperty().bindBidirectional(this.obsrv2MaxHeight);
+        if (this.bound1MinHeight)
+            instance.minHeightProperty().bind(this.obsrv1MinHeight);
+        if (this.bound2MinHeight)
+            instance.minHeightProperty().bindBidirectional(this.obsrv2MinHeight);
+        if (this.bound1PercentHeight)
+            instance.percentHeightProperty().bind(this.obsrv1PercentHeight);
+        if (this.bound2PercentHeight)
+            instance.percentHeightProperty().bindBidirectional(this.obsrv2PercentHeight);
+        if (this.bound1PrefHeight)
+            instance.prefHeightProperty().bind(this.obsrv1PrefHeight);
+        if (this.bound2PrefHeight)
+            instance.prefHeightProperty().bindBidirectional(this.obsrv2PrefHeight);
+        if (this.bound1Valignment)
+            instance.valignmentProperty().bind(this.obsrv1Valignment);
+        if (this.bound2Valignment)
+            instance.valignmentProperty().bindBidirectional(this.obsrv2Valignment);
+        if (this.bound1Vgrow)
+            instance.vgrowProperty().bind(this.obsrv1Vgrow);
+        if (this.bound2Vgrow)
+            instance.vgrowProperty().bindBidirectional(this.obsrv2Vgrow);
     }
 
     /**
@@ -203,8 +231,27 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     public final B bindFillHeight(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFillHeight = true;
-        this.obsrvFillHeight = source;
+        this.bound1FillHeight = true;
+        this.obsrv1FillHeight = source;
+        this.bound2FillHeight = false;
+        this.obsrv2FillHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link RowConstraints#fillHeightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFillHeight(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FillHeight = false;
+        this.obsrv1FillHeight = null;
+        this.bound2FillHeight = true;
+        this.obsrv2FillHeight = source;
         return (B) this;
     }
 
@@ -215,11 +262,30 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMaxHeight = true;
-        this.obsrvMaxHeight = source;
+        this.bound1MaxHeight = true;
+        this.obsrv1MaxHeight = source;
+        this.bound2MaxHeight = false;
+        this.obsrv2MaxHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link RowConstraints#maxHeightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMaxHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MaxHeight = false;
+        this.obsrv1MaxHeight = null;
+        this.bound2MaxHeight = true;
+        this.obsrv2MaxHeight = source;
         return (B) this;
     }
 
@@ -230,11 +296,30 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMinHeight = true;
-        this.obsrvMinHeight = source;
+        this.bound1MinHeight = true;
+        this.obsrv1MinHeight = source;
+        this.bound2MinHeight = false;
+        this.obsrv2MinHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link RowConstraints#minHeightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMinHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinHeight = false;
+        this.obsrv1MinHeight = null;
+        this.bound2MinHeight = true;
+        this.obsrv2MinHeight = source;
         return (B) this;
     }
 
@@ -245,11 +330,30 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPercentHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPercentHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPercentHeight = true;
-        this.obsrvPercentHeight = source;
+        this.bound1PercentHeight = true;
+        this.obsrv1PercentHeight = source;
+        this.bound2PercentHeight = false;
+        this.obsrv2PercentHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link RowConstraints#percentHeightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPercentHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PercentHeight = false;
+        this.obsrv1PercentHeight = null;
+        this.bound2PercentHeight = true;
+        this.obsrv2PercentHeight = source;
         return (B) this;
     }
 
@@ -260,11 +364,30 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPrefHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPrefHeight = true;
-        this.obsrvPrefHeight = source;
+        this.bound1PrefHeight = true;
+        this.obsrv1PrefHeight = source;
+        this.bound2PrefHeight = false;
+        this.obsrv2PrefHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link RowConstraints#prefHeightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPrefHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PrefHeight = false;
+        this.obsrv1PrefHeight = null;
+        this.bound2PrefHeight = true;
+        this.obsrv2PrefHeight = source;
         return (B) this;
     }
 
@@ -278,8 +401,27 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     public final B bindValignment(javafx.beans.value.ObservableValue<? extends javafx.geometry.VPos> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundValignment = true;
-        this.obsrvValignment = source;
+        this.bound1Valignment = true;
+        this.obsrv1Valignment = source;
+        this.bound2Valignment = false;
+        this.obsrv2Valignment = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link RowConstraints#valignmentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalValignment(javafx.beans.property.Property<javafx.geometry.VPos> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Valignment = false;
+        this.obsrv1Valignment = null;
+        this.bound2Valignment = true;
+        this.obsrv2Valignment = source;
         return (B) this;
     }
 
@@ -293,8 +435,27 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     public final B bindVgrow(javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Priority> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundVgrow = true;
-        this.obsrvVgrow = source;
+        this.bound1Vgrow = true;
+        this.obsrv1Vgrow = source;
+        this.bound2Vgrow = false;
+        this.obsrv2Vgrow = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link RowConstraints#vgrowProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalVgrow(javafx.beans.property.Property<javafx.scene.layout.Priority> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Vgrow = false;
+        this.obsrv1Vgrow = null;
+        this.bound2Vgrow = true;
+        this.obsrv2Vgrow = source;
         return (B) this;
     }
 

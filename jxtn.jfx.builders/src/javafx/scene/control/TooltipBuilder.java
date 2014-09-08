@@ -43,29 +43,45 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     private boolean hasWrapText;
     private boolean valWrapText;
 
-    private boolean boundContentDisplay;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContentDisplay> obsrvContentDisplay;
+    private boolean bound1ContentDisplay;
+    private boolean bound2ContentDisplay;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContentDisplay> obsrv1ContentDisplay;
+    private javafx.beans.property.Property<javafx.scene.control.ContentDisplay> obsrv2ContentDisplay;
 
-    private boolean boundFont;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> obsrvFont;
+    private boolean bound1Font;
+    private boolean bound2Font;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> obsrv1Font;
+    private javafx.beans.property.Property<javafx.scene.text.Font> obsrv2Font;
 
-    private boolean boundGraphic;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvGraphic;
+    private boolean bound1Graphic;
+    private boolean bound2Graphic;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Graphic;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Graphic;
 
-    private boolean boundGraphicTextGap;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvGraphicTextGap;
+    private boolean bound1GraphicTextGap;
+    private boolean bound2GraphicTextGap;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1GraphicTextGap;
+    private javafx.beans.property.Property<Number> obsrv2GraphicTextGap;
 
-    private boolean boundTextAlignment;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextAlignment> obsrvTextAlignment;
+    private boolean bound1TextAlignment;
+    private boolean bound2TextAlignment;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextAlignment> obsrv1TextAlignment;
+    private javafx.beans.property.Property<javafx.scene.text.TextAlignment> obsrv2TextAlignment;
 
-    private boolean boundTextOverrun;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.OverrunStyle> obsrvTextOverrun;
+    private boolean bound1TextOverrun;
+    private boolean bound2TextOverrun;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.OverrunStyle> obsrv1TextOverrun;
+    private javafx.beans.property.Property<javafx.scene.control.OverrunStyle> obsrv2TextOverrun;
 
-    private boolean boundText;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvText;
+    private boolean bound1Text;
+    private boolean bound2Text;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Text;
+    private javafx.beans.property.Property<String> obsrv2Text;
 
-    private boolean boundWrapText;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvWrapText;
+    private boolean bound1WrapText;
+    private boolean bound2WrapText;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1WrapText;
+    private javafx.beans.property.Property<Boolean> obsrv2WrapText;
 
     @Override
     public void applyTo(Z instance)
@@ -87,22 +103,38 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
             instance.setTextOverrun(this.valTextOverrun);
         if (this.hasWrapText)
             instance.setWrapText(this.valWrapText);
-        if (this.boundContentDisplay)
-            instance.contentDisplayProperty().bind(this.obsrvContentDisplay);
-        if (this.boundFont)
-            instance.fontProperty().bind(this.obsrvFont);
-        if (this.boundGraphic)
-            instance.graphicProperty().bind(this.obsrvGraphic);
-        if (this.boundGraphicTextGap)
-            instance.graphicTextGapProperty().bind(this.obsrvGraphicTextGap);
-        if (this.boundTextAlignment)
-            instance.textAlignmentProperty().bind(this.obsrvTextAlignment);
-        if (this.boundTextOverrun)
-            instance.textOverrunProperty().bind(this.obsrvTextOverrun);
-        if (this.boundText)
-            instance.textProperty().bind(this.obsrvText);
-        if (this.boundWrapText)
-            instance.wrapTextProperty().bind(this.obsrvWrapText);
+        if (this.bound1ContentDisplay)
+            instance.contentDisplayProperty().bind(this.obsrv1ContentDisplay);
+        if (this.bound2ContentDisplay)
+            instance.contentDisplayProperty().bindBidirectional(this.obsrv2ContentDisplay);
+        if (this.bound1Font)
+            instance.fontProperty().bind(this.obsrv1Font);
+        if (this.bound2Font)
+            instance.fontProperty().bindBidirectional(this.obsrv2Font);
+        if (this.bound1Graphic)
+            instance.graphicProperty().bind(this.obsrv1Graphic);
+        if (this.bound2Graphic)
+            instance.graphicProperty().bindBidirectional(this.obsrv2Graphic);
+        if (this.bound1GraphicTextGap)
+            instance.graphicTextGapProperty().bind(this.obsrv1GraphicTextGap);
+        if (this.bound2GraphicTextGap)
+            instance.graphicTextGapProperty().bindBidirectional(this.obsrv2GraphicTextGap);
+        if (this.bound1TextAlignment)
+            instance.textAlignmentProperty().bind(this.obsrv1TextAlignment);
+        if (this.bound2TextAlignment)
+            instance.textAlignmentProperty().bindBidirectional(this.obsrv2TextAlignment);
+        if (this.bound1TextOverrun)
+            instance.textOverrunProperty().bind(this.obsrv1TextOverrun);
+        if (this.bound2TextOverrun)
+            instance.textOverrunProperty().bindBidirectional(this.obsrv2TextOverrun);
+        if (this.bound1Text)
+            instance.textProperty().bind(this.obsrv1Text);
+        if (this.bound2Text)
+            instance.textProperty().bindBidirectional(this.obsrv2Text);
+        if (this.bound1WrapText)
+            instance.wrapTextProperty().bind(this.obsrv1WrapText);
+        if (this.bound2WrapText)
+            instance.wrapTextProperty().bindBidirectional(this.obsrv2WrapText);
     }
 
     /**
@@ -227,8 +259,27 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     public final B bindContentDisplay(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContentDisplay> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundContentDisplay = true;
-        this.obsrvContentDisplay = source;
+        this.bound1ContentDisplay = true;
+        this.obsrv1ContentDisplay = source;
+        this.bound2ContentDisplay = false;
+        this.obsrv2ContentDisplay = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tooltip#contentDisplayProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalContentDisplay(javafx.beans.property.Property<javafx.scene.control.ContentDisplay> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ContentDisplay = false;
+        this.obsrv1ContentDisplay = null;
+        this.bound2ContentDisplay = true;
+        this.obsrv2ContentDisplay = source;
         return (B) this;
     }
 
@@ -242,8 +293,27 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     public final B bindFont(javafx.beans.value.ObservableValue<? extends javafx.scene.text.Font> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFont = true;
-        this.obsrvFont = source;
+        this.bound1Font = true;
+        this.obsrv1Font = source;
+        this.bound2Font = false;
+        this.obsrv2Font = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tooltip#fontProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFont(javafx.beans.property.Property<javafx.scene.text.Font> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Font = false;
+        this.obsrv1Font = null;
+        this.bound2Font = true;
+        this.obsrv2Font = source;
         return (B) this;
     }
 
@@ -257,8 +327,27 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     public final B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundGraphic = true;
-        this.obsrvGraphic = source;
+        this.bound1Graphic = true;
+        this.obsrv1Graphic = source;
+        this.bound2Graphic = false;
+        this.obsrv2Graphic = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tooltip#graphicProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalGraphic(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Graphic = false;
+        this.obsrv1Graphic = null;
+        this.bound2Graphic = true;
+        this.obsrv2Graphic = source;
         return (B) this;
     }
 
@@ -269,11 +358,30 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindGraphicTextGap(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindGraphicTextGap(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundGraphicTextGap = true;
-        this.obsrvGraphicTextGap = source;
+        this.bound1GraphicTextGap = true;
+        this.obsrv1GraphicTextGap = source;
+        this.bound2GraphicTextGap = false;
+        this.obsrv2GraphicTextGap = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tooltip#graphicTextGapProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalGraphicTextGap(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1GraphicTextGap = false;
+        this.obsrv1GraphicTextGap = null;
+        this.bound2GraphicTextGap = true;
+        this.obsrv2GraphicTextGap = source;
         return (B) this;
     }
 
@@ -287,8 +395,27 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     public final B bindTextAlignment(javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextAlignment> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTextAlignment = true;
-        this.obsrvTextAlignment = source;
+        this.bound1TextAlignment = true;
+        this.obsrv1TextAlignment = source;
+        this.bound2TextAlignment = false;
+        this.obsrv2TextAlignment = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tooltip#textAlignmentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTextAlignment(javafx.beans.property.Property<javafx.scene.text.TextAlignment> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TextAlignment = false;
+        this.obsrv1TextAlignment = null;
+        this.bound2TextAlignment = true;
+        this.obsrv2TextAlignment = source;
         return (B) this;
     }
 
@@ -302,8 +429,27 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     public final B bindTextOverrun(javafx.beans.value.ObservableValue<? extends javafx.scene.control.OverrunStyle> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTextOverrun = true;
-        this.obsrvTextOverrun = source;
+        this.bound1TextOverrun = true;
+        this.obsrv1TextOverrun = source;
+        this.bound2TextOverrun = false;
+        this.obsrv2TextOverrun = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tooltip#textOverrunProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTextOverrun(javafx.beans.property.Property<javafx.scene.control.OverrunStyle> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TextOverrun = false;
+        this.obsrv1TextOverrun = null;
+        this.bound2TextOverrun = true;
+        this.obsrv2TextOverrun = source;
         return (B) this;
     }
 
@@ -317,8 +463,27 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     public final B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundText = true;
-        this.obsrvText = source;
+        this.bound1Text = true;
+        this.obsrv1Text = source;
+        this.bound2Text = false;
+        this.obsrv2Text = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tooltip#textProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalText(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Text = false;
+        this.obsrv1Text = null;
+        this.bound2Text = true;
+        this.obsrv2Text = source;
         return (B) this;
     }
 
@@ -332,8 +497,27 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     public final B bindWrapText(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundWrapText = true;
-        this.obsrvWrapText = source;
+        this.bound1WrapText = true;
+        this.obsrv1WrapText = source;
+        this.bound2WrapText = false;
+        this.obsrv2WrapText = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tooltip#wrapTextProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalWrapText(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1WrapText = false;
+        this.obsrv1WrapText = null;
+        this.bound2WrapText = true;
+        this.obsrv2WrapText = source;
         return (B) this;
     }
 

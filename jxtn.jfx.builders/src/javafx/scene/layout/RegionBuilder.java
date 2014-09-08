@@ -64,50 +64,80 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     private boolean hasSnapToPixel;
     private boolean valSnapToPixel;
 
-    private boolean boundBackground;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Background> obsrvBackground;
+    private boolean bound1Background;
+    private boolean bound2Background;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Background> obsrv1Background;
+    private javafx.beans.property.Property<javafx.scene.layout.Background> obsrv2Background;
 
-    private boolean boundBorder;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Border> obsrvBorder;
+    private boolean bound1Border;
+    private boolean bound2Border;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Border> obsrv1Border;
+    private javafx.beans.property.Property<javafx.scene.layout.Border> obsrv2Border;
 
-    private boolean boundCacheShape;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvCacheShape;
+    private boolean bound1CacheShape;
+    private boolean bound2CacheShape;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1CacheShape;
+    private javafx.beans.property.Property<Boolean> obsrv2CacheShape;
 
-    private boolean boundCenterShape;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvCenterShape;
+    private boolean bound1CenterShape;
+    private boolean bound2CenterShape;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1CenterShape;
+    private javafx.beans.property.Property<Boolean> obsrv2CenterShape;
 
-    private boolean boundMaxHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMaxHeight;
+    private boolean bound1MaxHeight;
+    private boolean bound2MaxHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MaxHeight;
+    private javafx.beans.property.Property<Number> obsrv2MaxHeight;
 
-    private boolean boundMaxWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMaxWidth;
+    private boolean bound1MaxWidth;
+    private boolean bound2MaxWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MaxWidth;
+    private javafx.beans.property.Property<Number> obsrv2MaxWidth;
 
-    private boolean boundMinHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMinHeight;
+    private boolean bound1MinHeight;
+    private boolean bound2MinHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MinHeight;
+    private javafx.beans.property.Property<Number> obsrv2MinHeight;
 
-    private boolean boundMinWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMinWidth;
+    private boolean bound1MinWidth;
+    private boolean bound2MinWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MinWidth;
+    private javafx.beans.property.Property<Number> obsrv2MinWidth;
 
-    private boolean boundOpaqueInsets;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Insets> obsrvOpaqueInsets;
+    private boolean bound1OpaqueInsets;
+    private boolean bound2OpaqueInsets;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Insets> obsrv1OpaqueInsets;
+    private javafx.beans.property.Property<javafx.geometry.Insets> obsrv2OpaqueInsets;
 
-    private boolean boundPadding;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Insets> obsrvPadding;
+    private boolean bound1Padding;
+    private boolean bound2Padding;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Insets> obsrv1Padding;
+    private javafx.beans.property.Property<javafx.geometry.Insets> obsrv2Padding;
 
-    private boolean boundPrefHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvPrefHeight;
+    private boolean bound1PrefHeight;
+    private boolean bound2PrefHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PrefHeight;
+    private javafx.beans.property.Property<Number> obsrv2PrefHeight;
 
-    private boolean boundPrefWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvPrefWidth;
+    private boolean bound1PrefWidth;
+    private boolean bound2PrefWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PrefWidth;
+    private javafx.beans.property.Property<Number> obsrv2PrefWidth;
 
-    private boolean boundScaleShape;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvScaleShape;
+    private boolean bound1ScaleShape;
+    private boolean bound2ScaleShape;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ScaleShape;
+    private javafx.beans.property.Property<Boolean> obsrv2ScaleShape;
 
-    private boolean boundShape;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.Shape> obsrvShape;
+    private boolean bound1Shape;
+    private boolean bound2Shape;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.Shape> obsrv1Shape;
+    private javafx.beans.property.Property<javafx.scene.shape.Shape> obsrv2Shape;
 
-    private boolean boundSnapToPixel;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvSnapToPixel;
+    private boolean bound1SnapToPixel;
+    private boolean bound2SnapToPixel;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1SnapToPixel;
+    private javafx.beans.property.Property<Boolean> obsrv2SnapToPixel;
 
     @Override
     public void applyTo(Z instance)
@@ -143,36 +173,66 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
             instance.setShape(this.valShape);
         if (this.hasSnapToPixel)
             instance.setSnapToPixel(this.valSnapToPixel);
-        if (this.boundBackground)
-            instance.backgroundProperty().bind(this.obsrvBackground);
-        if (this.boundBorder)
-            instance.borderProperty().bind(this.obsrvBorder);
-        if (this.boundCacheShape)
-            instance.cacheShapeProperty().bind(this.obsrvCacheShape);
-        if (this.boundCenterShape)
-            instance.centerShapeProperty().bind(this.obsrvCenterShape);
-        if (this.boundMaxHeight)
-            instance.maxHeightProperty().bind(this.obsrvMaxHeight);
-        if (this.boundMaxWidth)
-            instance.maxWidthProperty().bind(this.obsrvMaxWidth);
-        if (this.boundMinHeight)
-            instance.minHeightProperty().bind(this.obsrvMinHeight);
-        if (this.boundMinWidth)
-            instance.minWidthProperty().bind(this.obsrvMinWidth);
-        if (this.boundOpaqueInsets)
-            instance.opaqueInsetsProperty().bind(this.obsrvOpaqueInsets);
-        if (this.boundPadding)
-            instance.paddingProperty().bind(this.obsrvPadding);
-        if (this.boundPrefHeight)
-            instance.prefHeightProperty().bind(this.obsrvPrefHeight);
-        if (this.boundPrefWidth)
-            instance.prefWidthProperty().bind(this.obsrvPrefWidth);
-        if (this.boundScaleShape)
-            instance.scaleShapeProperty().bind(this.obsrvScaleShape);
-        if (this.boundShape)
-            instance.shapeProperty().bind(this.obsrvShape);
-        if (this.boundSnapToPixel)
-            instance.snapToPixelProperty().bind(this.obsrvSnapToPixel);
+        if (this.bound1Background)
+            instance.backgroundProperty().bind(this.obsrv1Background);
+        if (this.bound2Background)
+            instance.backgroundProperty().bindBidirectional(this.obsrv2Background);
+        if (this.bound1Border)
+            instance.borderProperty().bind(this.obsrv1Border);
+        if (this.bound2Border)
+            instance.borderProperty().bindBidirectional(this.obsrv2Border);
+        if (this.bound1CacheShape)
+            instance.cacheShapeProperty().bind(this.obsrv1CacheShape);
+        if (this.bound2CacheShape)
+            instance.cacheShapeProperty().bindBidirectional(this.obsrv2CacheShape);
+        if (this.bound1CenterShape)
+            instance.centerShapeProperty().bind(this.obsrv1CenterShape);
+        if (this.bound2CenterShape)
+            instance.centerShapeProperty().bindBidirectional(this.obsrv2CenterShape);
+        if (this.bound1MaxHeight)
+            instance.maxHeightProperty().bind(this.obsrv1MaxHeight);
+        if (this.bound2MaxHeight)
+            instance.maxHeightProperty().bindBidirectional(this.obsrv2MaxHeight);
+        if (this.bound1MaxWidth)
+            instance.maxWidthProperty().bind(this.obsrv1MaxWidth);
+        if (this.bound2MaxWidth)
+            instance.maxWidthProperty().bindBidirectional(this.obsrv2MaxWidth);
+        if (this.bound1MinHeight)
+            instance.minHeightProperty().bind(this.obsrv1MinHeight);
+        if (this.bound2MinHeight)
+            instance.minHeightProperty().bindBidirectional(this.obsrv2MinHeight);
+        if (this.bound1MinWidth)
+            instance.minWidthProperty().bind(this.obsrv1MinWidth);
+        if (this.bound2MinWidth)
+            instance.minWidthProperty().bindBidirectional(this.obsrv2MinWidth);
+        if (this.bound1OpaqueInsets)
+            instance.opaqueInsetsProperty().bind(this.obsrv1OpaqueInsets);
+        if (this.bound2OpaqueInsets)
+            instance.opaqueInsetsProperty().bindBidirectional(this.obsrv2OpaqueInsets);
+        if (this.bound1Padding)
+            instance.paddingProperty().bind(this.obsrv1Padding);
+        if (this.bound2Padding)
+            instance.paddingProperty().bindBidirectional(this.obsrv2Padding);
+        if (this.bound1PrefHeight)
+            instance.prefHeightProperty().bind(this.obsrv1PrefHeight);
+        if (this.bound2PrefHeight)
+            instance.prefHeightProperty().bindBidirectional(this.obsrv2PrefHeight);
+        if (this.bound1PrefWidth)
+            instance.prefWidthProperty().bind(this.obsrv1PrefWidth);
+        if (this.bound2PrefWidth)
+            instance.prefWidthProperty().bindBidirectional(this.obsrv2PrefWidth);
+        if (this.bound1ScaleShape)
+            instance.scaleShapeProperty().bind(this.obsrv1ScaleShape);
+        if (this.bound2ScaleShape)
+            instance.scaleShapeProperty().bindBidirectional(this.obsrv2ScaleShape);
+        if (this.bound1Shape)
+            instance.shapeProperty().bind(this.obsrv1Shape);
+        if (this.bound2Shape)
+            instance.shapeProperty().bindBidirectional(this.obsrv2Shape);
+        if (this.bound1SnapToPixel)
+            instance.snapToPixelProperty().bind(this.obsrv1SnapToPixel);
+        if (this.bound2SnapToPixel)
+            instance.snapToPixelProperty().bindBidirectional(this.obsrv2SnapToPixel);
     }
 
     /**
@@ -395,8 +455,27 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     public final B bindBackground(javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Background> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundBackground = true;
-        this.obsrvBackground = source;
+        this.bound1Background = true;
+        this.obsrv1Background = source;
+        this.bound2Background = false;
+        this.obsrv2Background = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Region#backgroundProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalBackground(javafx.beans.property.Property<javafx.scene.layout.Background> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Background = false;
+        this.obsrv1Background = null;
+        this.bound2Background = true;
+        this.obsrv2Background = source;
         return (B) this;
     }
 
@@ -410,8 +489,27 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     public final B bindBorder(javafx.beans.value.ObservableValue<? extends javafx.scene.layout.Border> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundBorder = true;
-        this.obsrvBorder = source;
+        this.bound1Border = true;
+        this.obsrv1Border = source;
+        this.bound2Border = false;
+        this.obsrv2Border = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Region#borderProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalBorder(javafx.beans.property.Property<javafx.scene.layout.Border> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Border = false;
+        this.obsrv1Border = null;
+        this.bound2Border = true;
+        this.obsrv2Border = source;
         return (B) this;
     }
 
@@ -425,8 +523,27 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     public final B bindCacheShape(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCacheShape = true;
-        this.obsrvCacheShape = source;
+        this.bound1CacheShape = true;
+        this.obsrv1CacheShape = source;
+        this.bound2CacheShape = false;
+        this.obsrv2CacheShape = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Region#cacheShapeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCacheShape(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CacheShape = false;
+        this.obsrv1CacheShape = null;
+        this.bound2CacheShape = true;
+        this.obsrv2CacheShape = source;
         return (B) this;
     }
 
@@ -440,8 +557,27 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     public final B bindCenterShape(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCenterShape = true;
-        this.obsrvCenterShape = source;
+        this.bound1CenterShape = true;
+        this.obsrv1CenterShape = source;
+        this.bound2CenterShape = false;
+        this.obsrv2CenterShape = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Region#centerShapeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCenterShape(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CenterShape = false;
+        this.obsrv1CenterShape = null;
+        this.bound2CenterShape = true;
+        this.obsrv2CenterShape = source;
         return (B) this;
     }
 
@@ -452,11 +588,30 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMaxHeight = true;
-        this.obsrvMaxHeight = source;
+        this.bound1MaxHeight = true;
+        this.obsrv1MaxHeight = source;
+        this.bound2MaxHeight = false;
+        this.obsrv2MaxHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Region#maxHeightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMaxHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MaxHeight = false;
+        this.obsrv1MaxHeight = null;
+        this.bound2MaxHeight = true;
+        this.obsrv2MaxHeight = source;
         return (B) this;
     }
 
@@ -467,11 +622,30 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMaxWidth = true;
-        this.obsrvMaxWidth = source;
+        this.bound1MaxWidth = true;
+        this.obsrv1MaxWidth = source;
+        this.bound2MaxWidth = false;
+        this.obsrv2MaxWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Region#maxWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMaxWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MaxWidth = false;
+        this.obsrv1MaxWidth = null;
+        this.bound2MaxWidth = true;
+        this.obsrv2MaxWidth = source;
         return (B) this;
     }
 
@@ -482,11 +656,30 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMinHeight = true;
-        this.obsrvMinHeight = source;
+        this.bound1MinHeight = true;
+        this.obsrv1MinHeight = source;
+        this.bound2MinHeight = false;
+        this.obsrv2MinHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Region#minHeightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMinHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinHeight = false;
+        this.obsrv1MinHeight = null;
+        this.bound2MinHeight = true;
+        this.obsrv2MinHeight = source;
         return (B) this;
     }
 
@@ -497,11 +690,30 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMinWidth = true;
-        this.obsrvMinWidth = source;
+        this.bound1MinWidth = true;
+        this.obsrv1MinWidth = source;
+        this.bound2MinWidth = false;
+        this.obsrv2MinWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Region#minWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMinWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinWidth = false;
+        this.obsrv1MinWidth = null;
+        this.bound2MinWidth = true;
+        this.obsrv2MinWidth = source;
         return (B) this;
     }
 
@@ -515,8 +727,27 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     public final B bindOpaqueInsets(javafx.beans.value.ObservableValue<? extends javafx.geometry.Insets> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOpaqueInsets = true;
-        this.obsrvOpaqueInsets = source;
+        this.bound1OpaqueInsets = true;
+        this.obsrv1OpaqueInsets = source;
+        this.bound2OpaqueInsets = false;
+        this.obsrv2OpaqueInsets = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Region#opaqueInsetsProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOpaqueInsets(javafx.beans.property.Property<javafx.geometry.Insets> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OpaqueInsets = false;
+        this.obsrv1OpaqueInsets = null;
+        this.bound2OpaqueInsets = true;
+        this.obsrv2OpaqueInsets = source;
         return (B) this;
     }
 
@@ -530,8 +761,27 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     public final B bindPadding(javafx.beans.value.ObservableValue<? extends javafx.geometry.Insets> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPadding = true;
-        this.obsrvPadding = source;
+        this.bound1Padding = true;
+        this.obsrv1Padding = source;
+        this.bound2Padding = false;
+        this.obsrv2Padding = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Region#paddingProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPadding(javafx.beans.property.Property<javafx.geometry.Insets> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Padding = false;
+        this.obsrv1Padding = null;
+        this.bound2Padding = true;
+        this.obsrv2Padding = source;
         return (B) this;
     }
 
@@ -542,11 +792,30 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPrefHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPrefHeight = true;
-        this.obsrvPrefHeight = source;
+        this.bound1PrefHeight = true;
+        this.obsrv1PrefHeight = source;
+        this.bound2PrefHeight = false;
+        this.obsrv2PrefHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Region#prefHeightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPrefHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PrefHeight = false;
+        this.obsrv1PrefHeight = null;
+        this.bound2PrefHeight = true;
+        this.obsrv2PrefHeight = source;
         return (B) this;
     }
 
@@ -557,11 +826,30 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPrefWidth = true;
-        this.obsrvPrefWidth = source;
+        this.bound1PrefWidth = true;
+        this.obsrv1PrefWidth = source;
+        this.bound2PrefWidth = false;
+        this.obsrv2PrefWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Region#prefWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPrefWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PrefWidth = false;
+        this.obsrv1PrefWidth = null;
+        this.bound2PrefWidth = true;
+        this.obsrv2PrefWidth = source;
         return (B) this;
     }
 
@@ -575,8 +863,27 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     public final B bindScaleShape(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundScaleShape = true;
-        this.obsrvScaleShape = source;
+        this.bound1ScaleShape = true;
+        this.obsrv1ScaleShape = source;
+        this.bound2ScaleShape = false;
+        this.obsrv2ScaleShape = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Region#scaleShapeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalScaleShape(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ScaleShape = false;
+        this.obsrv1ScaleShape = null;
+        this.bound2ScaleShape = true;
+        this.obsrv2ScaleShape = source;
         return (B) this;
     }
 
@@ -590,8 +897,27 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     public final B bindShape(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.Shape> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundShape = true;
-        this.obsrvShape = source;
+        this.bound1Shape = true;
+        this.obsrv1Shape = source;
+        this.bound2Shape = false;
+        this.obsrv2Shape = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Region#shapeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalShape(javafx.beans.property.Property<javafx.scene.shape.Shape> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Shape = false;
+        this.obsrv1Shape = null;
+        this.bound2Shape = true;
+        this.obsrv2Shape = source;
         return (B) this;
     }
 
@@ -605,8 +931,27 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     public final B bindSnapToPixel(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSnapToPixel = true;
-        this.obsrvSnapToPixel = source;
+        this.bound1SnapToPixel = true;
+        this.obsrv1SnapToPixel = source;
+        this.bound2SnapToPixel = false;
+        this.obsrv2SnapToPixel = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Region#snapToPixelProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSnapToPixel(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SnapToPixel = false;
+        this.obsrv1SnapToPixel = null;
+        this.bound2SnapToPixel = true;
+        this.obsrv2SnapToPixel = source;
         return (B) this;
     }
 

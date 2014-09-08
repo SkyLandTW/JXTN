@@ -64,50 +64,80 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     private boolean hasVvalue;
     private double valVvalue;
 
-    private boolean boundContent;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvContent;
+    private boolean bound1Content;
+    private boolean bound2Content;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Content;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Content;
 
-    private boolean boundFitToHeight;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvFitToHeight;
+    private boolean bound1FitToHeight;
+    private boolean bound2FitToHeight;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1FitToHeight;
+    private javafx.beans.property.Property<Boolean> obsrv2FitToHeight;
 
-    private boolean boundFitToWidth;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvFitToWidth;
+    private boolean bound1FitToWidth;
+    private boolean bound2FitToWidth;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1FitToWidth;
+    private javafx.beans.property.Property<Boolean> obsrv2FitToWidth;
 
-    private boolean boundHbarPolicy;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.ScrollPane.ScrollBarPolicy> obsrvHbarPolicy;
+    private boolean bound1HbarPolicy;
+    private boolean bound2HbarPolicy;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.ScrollPane.ScrollBarPolicy> obsrv1HbarPolicy;
+    private javafx.beans.property.Property<javafx.scene.control.ScrollPane.ScrollBarPolicy> obsrv2HbarPolicy;
 
-    private boolean boundHmax;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvHmax;
+    private boolean bound1Hmax;
+    private boolean bound2Hmax;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Hmax;
+    private javafx.beans.property.Property<Number> obsrv2Hmax;
 
-    private boolean boundHmin;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvHmin;
+    private boolean bound1Hmin;
+    private boolean bound2Hmin;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Hmin;
+    private javafx.beans.property.Property<Number> obsrv2Hmin;
 
-    private boolean boundHvalue;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvHvalue;
+    private boolean bound1Hvalue;
+    private boolean bound2Hvalue;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Hvalue;
+    private javafx.beans.property.Property<Number> obsrv2Hvalue;
 
-    private boolean boundPannable;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvPannable;
+    private boolean bound1Pannable;
+    private boolean bound2Pannable;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Pannable;
+    private javafx.beans.property.Property<Boolean> obsrv2Pannable;
 
-    private boolean boundPrefViewportHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvPrefViewportHeight;
+    private boolean bound1PrefViewportHeight;
+    private boolean bound2PrefViewportHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PrefViewportHeight;
+    private javafx.beans.property.Property<Number> obsrv2PrefViewportHeight;
 
-    private boolean boundPrefViewportWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvPrefViewportWidth;
+    private boolean bound1PrefViewportWidth;
+    private boolean bound2PrefViewportWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PrefViewportWidth;
+    private javafx.beans.property.Property<Number> obsrv2PrefViewportWidth;
 
-    private boolean boundVbarPolicy;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.ScrollPane.ScrollBarPolicy> obsrvVbarPolicy;
+    private boolean bound1VbarPolicy;
+    private boolean bound2VbarPolicy;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.ScrollPane.ScrollBarPolicy> obsrv1VbarPolicy;
+    private javafx.beans.property.Property<javafx.scene.control.ScrollPane.ScrollBarPolicy> obsrv2VbarPolicy;
 
-    private boolean boundViewportBounds;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Bounds> obsrvViewportBounds;
+    private boolean bound1ViewportBounds;
+    private boolean bound2ViewportBounds;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Bounds> obsrv1ViewportBounds;
+    private javafx.beans.property.Property<javafx.geometry.Bounds> obsrv2ViewportBounds;
 
-    private boolean boundVmax;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvVmax;
+    private boolean bound1Vmax;
+    private boolean bound2Vmax;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Vmax;
+    private javafx.beans.property.Property<Number> obsrv2Vmax;
 
-    private boolean boundVmin;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvVmin;
+    private boolean bound1Vmin;
+    private boolean bound2Vmin;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Vmin;
+    private javafx.beans.property.Property<Number> obsrv2Vmin;
 
-    private boolean boundVvalue;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvVvalue;
+    private boolean bound1Vvalue;
+    private boolean bound2Vvalue;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Vvalue;
+    private javafx.beans.property.Property<Number> obsrv2Vvalue;
 
     @Override
     public void applyTo(Z instance)
@@ -143,36 +173,66 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
             instance.setVmin(this.valVmin);
         if (this.hasVvalue)
             instance.setVvalue(this.valVvalue);
-        if (this.boundContent)
-            instance.contentProperty().bind(this.obsrvContent);
-        if (this.boundFitToHeight)
-            instance.fitToHeightProperty().bind(this.obsrvFitToHeight);
-        if (this.boundFitToWidth)
-            instance.fitToWidthProperty().bind(this.obsrvFitToWidth);
-        if (this.boundHbarPolicy)
-            instance.hbarPolicyProperty().bind(this.obsrvHbarPolicy);
-        if (this.boundHmax)
-            instance.hmaxProperty().bind(this.obsrvHmax);
-        if (this.boundHmin)
-            instance.hminProperty().bind(this.obsrvHmin);
-        if (this.boundHvalue)
-            instance.hvalueProperty().bind(this.obsrvHvalue);
-        if (this.boundPannable)
-            instance.pannableProperty().bind(this.obsrvPannable);
-        if (this.boundPrefViewportHeight)
-            instance.prefViewportHeightProperty().bind(this.obsrvPrefViewportHeight);
-        if (this.boundPrefViewportWidth)
-            instance.prefViewportWidthProperty().bind(this.obsrvPrefViewportWidth);
-        if (this.boundVbarPolicy)
-            instance.vbarPolicyProperty().bind(this.obsrvVbarPolicy);
-        if (this.boundViewportBounds)
-            instance.viewportBoundsProperty().bind(this.obsrvViewportBounds);
-        if (this.boundVmax)
-            instance.vmaxProperty().bind(this.obsrvVmax);
-        if (this.boundVmin)
-            instance.vminProperty().bind(this.obsrvVmin);
-        if (this.boundVvalue)
-            instance.vvalueProperty().bind(this.obsrvVvalue);
+        if (this.bound1Content)
+            instance.contentProperty().bind(this.obsrv1Content);
+        if (this.bound2Content)
+            instance.contentProperty().bindBidirectional(this.obsrv2Content);
+        if (this.bound1FitToHeight)
+            instance.fitToHeightProperty().bind(this.obsrv1FitToHeight);
+        if (this.bound2FitToHeight)
+            instance.fitToHeightProperty().bindBidirectional(this.obsrv2FitToHeight);
+        if (this.bound1FitToWidth)
+            instance.fitToWidthProperty().bind(this.obsrv1FitToWidth);
+        if (this.bound2FitToWidth)
+            instance.fitToWidthProperty().bindBidirectional(this.obsrv2FitToWidth);
+        if (this.bound1HbarPolicy)
+            instance.hbarPolicyProperty().bind(this.obsrv1HbarPolicy);
+        if (this.bound2HbarPolicy)
+            instance.hbarPolicyProperty().bindBidirectional(this.obsrv2HbarPolicy);
+        if (this.bound1Hmax)
+            instance.hmaxProperty().bind(this.obsrv1Hmax);
+        if (this.bound2Hmax)
+            instance.hmaxProperty().bindBidirectional(this.obsrv2Hmax);
+        if (this.bound1Hmin)
+            instance.hminProperty().bind(this.obsrv1Hmin);
+        if (this.bound2Hmin)
+            instance.hminProperty().bindBidirectional(this.obsrv2Hmin);
+        if (this.bound1Hvalue)
+            instance.hvalueProperty().bind(this.obsrv1Hvalue);
+        if (this.bound2Hvalue)
+            instance.hvalueProperty().bindBidirectional(this.obsrv2Hvalue);
+        if (this.bound1Pannable)
+            instance.pannableProperty().bind(this.obsrv1Pannable);
+        if (this.bound2Pannable)
+            instance.pannableProperty().bindBidirectional(this.obsrv2Pannable);
+        if (this.bound1PrefViewportHeight)
+            instance.prefViewportHeightProperty().bind(this.obsrv1PrefViewportHeight);
+        if (this.bound2PrefViewportHeight)
+            instance.prefViewportHeightProperty().bindBidirectional(this.obsrv2PrefViewportHeight);
+        if (this.bound1PrefViewportWidth)
+            instance.prefViewportWidthProperty().bind(this.obsrv1PrefViewportWidth);
+        if (this.bound2PrefViewportWidth)
+            instance.prefViewportWidthProperty().bindBidirectional(this.obsrv2PrefViewportWidth);
+        if (this.bound1VbarPolicy)
+            instance.vbarPolicyProperty().bind(this.obsrv1VbarPolicy);
+        if (this.bound2VbarPolicy)
+            instance.vbarPolicyProperty().bindBidirectional(this.obsrv2VbarPolicy);
+        if (this.bound1ViewportBounds)
+            instance.viewportBoundsProperty().bind(this.obsrv1ViewportBounds);
+        if (this.bound2ViewportBounds)
+            instance.viewportBoundsProperty().bindBidirectional(this.obsrv2ViewportBounds);
+        if (this.bound1Vmax)
+            instance.vmaxProperty().bind(this.obsrv1Vmax);
+        if (this.bound2Vmax)
+            instance.vmaxProperty().bindBidirectional(this.obsrv2Vmax);
+        if (this.bound1Vmin)
+            instance.vminProperty().bind(this.obsrv1Vmin);
+        if (this.bound2Vmin)
+            instance.vminProperty().bindBidirectional(this.obsrv2Vmin);
+        if (this.bound1Vvalue)
+            instance.vvalueProperty().bind(this.obsrv1Vvalue);
+        if (this.bound2Vvalue)
+            instance.vvalueProperty().bindBidirectional(this.obsrv2Vvalue);
     }
 
     /**
@@ -395,8 +455,27 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     public final B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundContent = true;
-        this.obsrvContent = source;
+        this.bound1Content = true;
+        this.obsrv1Content = source;
+        this.bound2Content = false;
+        this.obsrv2Content = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#contentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalContent(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Content = false;
+        this.obsrv1Content = null;
+        this.bound2Content = true;
+        this.obsrv2Content = source;
         return (B) this;
     }
 
@@ -410,8 +489,27 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     public final B bindFitToHeight(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFitToHeight = true;
-        this.obsrvFitToHeight = source;
+        this.bound1FitToHeight = true;
+        this.obsrv1FitToHeight = source;
+        this.bound2FitToHeight = false;
+        this.obsrv2FitToHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#fitToHeightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFitToHeight(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FitToHeight = false;
+        this.obsrv1FitToHeight = null;
+        this.bound2FitToHeight = true;
+        this.obsrv2FitToHeight = source;
         return (B) this;
     }
 
@@ -425,8 +523,27 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     public final B bindFitToWidth(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFitToWidth = true;
-        this.obsrvFitToWidth = source;
+        this.bound1FitToWidth = true;
+        this.obsrv1FitToWidth = source;
+        this.bound2FitToWidth = false;
+        this.obsrv2FitToWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#fitToWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFitToWidth(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FitToWidth = false;
+        this.obsrv1FitToWidth = null;
+        this.bound2FitToWidth = true;
+        this.obsrv2FitToWidth = source;
         return (B) this;
     }
 
@@ -440,8 +557,27 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     public final B bindHbarPolicy(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ScrollPane.ScrollBarPolicy> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundHbarPolicy = true;
-        this.obsrvHbarPolicy = source;
+        this.bound1HbarPolicy = true;
+        this.obsrv1HbarPolicy = source;
+        this.bound2HbarPolicy = false;
+        this.obsrv2HbarPolicy = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#hbarPolicyProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHbarPolicy(javafx.beans.property.Property<javafx.scene.control.ScrollPane.ScrollBarPolicy> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1HbarPolicy = false;
+        this.obsrv1HbarPolicy = null;
+        this.bound2HbarPolicy = true;
+        this.obsrv2HbarPolicy = source;
         return (B) this;
     }
 
@@ -452,11 +588,30 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindHmax(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHmax(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundHmax = true;
-        this.obsrvHmax = source;
+        this.bound1Hmax = true;
+        this.obsrv1Hmax = source;
+        this.bound2Hmax = false;
+        this.obsrv2Hmax = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#hmaxProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHmax(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Hmax = false;
+        this.obsrv1Hmax = null;
+        this.bound2Hmax = true;
+        this.obsrv2Hmax = source;
         return (B) this;
     }
 
@@ -467,11 +622,30 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindHmin(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHmin(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundHmin = true;
-        this.obsrvHmin = source;
+        this.bound1Hmin = true;
+        this.obsrv1Hmin = source;
+        this.bound2Hmin = false;
+        this.obsrv2Hmin = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#hminProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHmin(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Hmin = false;
+        this.obsrv1Hmin = null;
+        this.bound2Hmin = true;
+        this.obsrv2Hmin = source;
         return (B) this;
     }
 
@@ -482,11 +656,30 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindHvalue(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHvalue(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundHvalue = true;
-        this.obsrvHvalue = source;
+        this.bound1Hvalue = true;
+        this.obsrv1Hvalue = source;
+        this.bound2Hvalue = false;
+        this.obsrv2Hvalue = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#hvalueProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHvalue(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Hvalue = false;
+        this.obsrv1Hvalue = null;
+        this.bound2Hvalue = true;
+        this.obsrv2Hvalue = source;
         return (B) this;
     }
 
@@ -500,8 +693,27 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     public final B bindPannable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPannable = true;
-        this.obsrvPannable = source;
+        this.bound1Pannable = true;
+        this.obsrv1Pannable = source;
+        this.bound2Pannable = false;
+        this.obsrv2Pannable = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#pannableProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPannable(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Pannable = false;
+        this.obsrv1Pannable = null;
+        this.bound2Pannable = true;
+        this.obsrv2Pannable = source;
         return (B) this;
     }
 
@@ -512,11 +724,30 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPrefViewportHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefViewportHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPrefViewportHeight = true;
-        this.obsrvPrefViewportHeight = source;
+        this.bound1PrefViewportHeight = true;
+        this.obsrv1PrefViewportHeight = source;
+        this.bound2PrefViewportHeight = false;
+        this.obsrv2PrefViewportHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#prefViewportHeightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPrefViewportHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PrefViewportHeight = false;
+        this.obsrv1PrefViewportHeight = null;
+        this.bound2PrefViewportHeight = true;
+        this.obsrv2PrefViewportHeight = source;
         return (B) this;
     }
 
@@ -527,11 +758,30 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPrefViewportWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPrefViewportWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPrefViewportWidth = true;
-        this.obsrvPrefViewportWidth = source;
+        this.bound1PrefViewportWidth = true;
+        this.obsrv1PrefViewportWidth = source;
+        this.bound2PrefViewportWidth = false;
+        this.obsrv2PrefViewportWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#prefViewportWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPrefViewportWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PrefViewportWidth = false;
+        this.obsrv1PrefViewportWidth = null;
+        this.bound2PrefViewportWidth = true;
+        this.obsrv2PrefViewportWidth = source;
         return (B) this;
     }
 
@@ -545,8 +795,27 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     public final B bindVbarPolicy(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ScrollPane.ScrollBarPolicy> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundVbarPolicy = true;
-        this.obsrvVbarPolicy = source;
+        this.bound1VbarPolicy = true;
+        this.obsrv1VbarPolicy = source;
+        this.bound2VbarPolicy = false;
+        this.obsrv2VbarPolicy = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#vbarPolicyProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalVbarPolicy(javafx.beans.property.Property<javafx.scene.control.ScrollPane.ScrollBarPolicy> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1VbarPolicy = false;
+        this.obsrv1VbarPolicy = null;
+        this.bound2VbarPolicy = true;
+        this.obsrv2VbarPolicy = source;
         return (B) this;
     }
 
@@ -560,8 +829,27 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     public final B bindViewportBounds(javafx.beans.value.ObservableValue<? extends javafx.geometry.Bounds> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundViewportBounds = true;
-        this.obsrvViewportBounds = source;
+        this.bound1ViewportBounds = true;
+        this.obsrv1ViewportBounds = source;
+        this.bound2ViewportBounds = false;
+        this.obsrv2ViewportBounds = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#viewportBoundsProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalViewportBounds(javafx.beans.property.Property<javafx.geometry.Bounds> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ViewportBounds = false;
+        this.obsrv1ViewportBounds = null;
+        this.bound2ViewportBounds = true;
+        this.obsrv2ViewportBounds = source;
         return (B) this;
     }
 
@@ -572,11 +860,30 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindVmax(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindVmax(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundVmax = true;
-        this.obsrvVmax = source;
+        this.bound1Vmax = true;
+        this.obsrv1Vmax = source;
+        this.bound2Vmax = false;
+        this.obsrv2Vmax = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#vmaxProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalVmax(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Vmax = false;
+        this.obsrv1Vmax = null;
+        this.bound2Vmax = true;
+        this.obsrv2Vmax = source;
         return (B) this;
     }
 
@@ -587,11 +894,30 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindVmin(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindVmin(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundVmin = true;
-        this.obsrvVmin = source;
+        this.bound1Vmin = true;
+        this.obsrv1Vmin = source;
+        this.bound2Vmin = false;
+        this.obsrv2Vmin = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#vminProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalVmin(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Vmin = false;
+        this.obsrv1Vmin = null;
+        this.bound2Vmin = true;
+        this.obsrv2Vmin = source;
         return (B) this;
     }
 
@@ -602,11 +928,30 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindVvalue(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindVvalue(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundVvalue = true;
-        this.obsrvVvalue = source;
+        this.bound1Vvalue = true;
+        this.obsrv1Vvalue = source;
+        this.bound2Vvalue = false;
+        this.obsrv2Vvalue = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#vvalueProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalVvalue(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Vvalue = false;
+        this.obsrv1Vvalue = null;
+        this.bound2Vvalue = true;
+        this.obsrv2Vvalue = source;
         return (B) this;
     }
 

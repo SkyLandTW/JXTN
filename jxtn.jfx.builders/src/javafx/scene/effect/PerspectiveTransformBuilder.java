@@ -46,32 +46,50 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     private boolean hasUry;
     private double valUry;
 
-    private boolean boundInput;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrvInput;
+    private boolean bound1Input;
+    private boolean bound2Input;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrv1Input;
+    private javafx.beans.property.Property<javafx.scene.effect.Effect> obsrv2Input;
 
-    private boolean boundLlx;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvLlx;
+    private boolean bound1Llx;
+    private boolean bound2Llx;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Llx;
+    private javafx.beans.property.Property<Number> obsrv2Llx;
 
-    private boolean boundLly;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvLly;
+    private boolean bound1Lly;
+    private boolean bound2Lly;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Lly;
+    private javafx.beans.property.Property<Number> obsrv2Lly;
 
-    private boolean boundLrx;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvLrx;
+    private boolean bound1Lrx;
+    private boolean bound2Lrx;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Lrx;
+    private javafx.beans.property.Property<Number> obsrv2Lrx;
 
-    private boolean boundLry;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvLry;
+    private boolean bound1Lry;
+    private boolean bound2Lry;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Lry;
+    private javafx.beans.property.Property<Number> obsrv2Lry;
 
-    private boolean boundUlx;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvUlx;
+    private boolean bound1Ulx;
+    private boolean bound2Ulx;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Ulx;
+    private javafx.beans.property.Property<Number> obsrv2Ulx;
 
-    private boolean boundUly;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvUly;
+    private boolean bound1Uly;
+    private boolean bound2Uly;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Uly;
+    private javafx.beans.property.Property<Number> obsrv2Uly;
 
-    private boolean boundUrx;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvUrx;
+    private boolean bound1Urx;
+    private boolean bound2Urx;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Urx;
+    private javafx.beans.property.Property<Number> obsrv2Urx;
 
-    private boolean boundUry;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvUry;
+    private boolean bound1Ury;
+    private boolean bound2Ury;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Ury;
+    private javafx.beans.property.Property<Number> obsrv2Ury;
 
     @Override
     public void applyTo(Z instance)
@@ -95,24 +113,42 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
             instance.setUrx(this.valUrx);
         if (this.hasUry)
             instance.setUry(this.valUry);
-        if (this.boundInput)
-            instance.inputProperty().bind(this.obsrvInput);
-        if (this.boundLlx)
-            instance.llxProperty().bind(this.obsrvLlx);
-        if (this.boundLly)
-            instance.llyProperty().bind(this.obsrvLly);
-        if (this.boundLrx)
-            instance.lrxProperty().bind(this.obsrvLrx);
-        if (this.boundLry)
-            instance.lryProperty().bind(this.obsrvLry);
-        if (this.boundUlx)
-            instance.ulxProperty().bind(this.obsrvUlx);
-        if (this.boundUly)
-            instance.ulyProperty().bind(this.obsrvUly);
-        if (this.boundUrx)
-            instance.urxProperty().bind(this.obsrvUrx);
-        if (this.boundUry)
-            instance.uryProperty().bind(this.obsrvUry);
+        if (this.bound1Input)
+            instance.inputProperty().bind(this.obsrv1Input);
+        if (this.bound2Input)
+            instance.inputProperty().bindBidirectional(this.obsrv2Input);
+        if (this.bound1Llx)
+            instance.llxProperty().bind(this.obsrv1Llx);
+        if (this.bound2Llx)
+            instance.llxProperty().bindBidirectional(this.obsrv2Llx);
+        if (this.bound1Lly)
+            instance.llyProperty().bind(this.obsrv1Lly);
+        if (this.bound2Lly)
+            instance.llyProperty().bindBidirectional(this.obsrv2Lly);
+        if (this.bound1Lrx)
+            instance.lrxProperty().bind(this.obsrv1Lrx);
+        if (this.bound2Lrx)
+            instance.lrxProperty().bindBidirectional(this.obsrv2Lrx);
+        if (this.bound1Lry)
+            instance.lryProperty().bind(this.obsrv1Lry);
+        if (this.bound2Lry)
+            instance.lryProperty().bindBidirectional(this.obsrv2Lry);
+        if (this.bound1Ulx)
+            instance.ulxProperty().bind(this.obsrv1Ulx);
+        if (this.bound2Ulx)
+            instance.ulxProperty().bindBidirectional(this.obsrv2Ulx);
+        if (this.bound1Uly)
+            instance.ulyProperty().bind(this.obsrv1Uly);
+        if (this.bound2Uly)
+            instance.ulyProperty().bindBidirectional(this.obsrv2Uly);
+        if (this.bound1Urx)
+            instance.urxProperty().bind(this.obsrv1Urx);
+        if (this.bound2Urx)
+            instance.urxProperty().bindBidirectional(this.obsrv2Urx);
+        if (this.bound1Ury)
+            instance.uryProperty().bind(this.obsrv1Ury);
+        if (this.bound2Ury)
+            instance.uryProperty().bindBidirectional(this.obsrv2Ury);
     }
 
     /**
@@ -251,8 +287,27 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     public final B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundInput = true;
-        this.obsrvInput = source;
+        this.bound1Input = true;
+        this.obsrv1Input = source;
+        this.bound2Input = false;
+        this.obsrv2Input = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PerspectiveTransform#inputProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalInput(javafx.beans.property.Property<javafx.scene.effect.Effect> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Input = false;
+        this.obsrv1Input = null;
+        this.bound2Input = true;
+        this.obsrv2Input = source;
         return (B) this;
     }
 
@@ -263,11 +318,30 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindLlx(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindLlx(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundLlx = true;
-        this.obsrvLlx = source;
+        this.bound1Llx = true;
+        this.obsrv1Llx = source;
+        this.bound2Llx = false;
+        this.obsrv2Llx = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PerspectiveTransform#llxProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLlx(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Llx = false;
+        this.obsrv1Llx = null;
+        this.bound2Llx = true;
+        this.obsrv2Llx = source;
         return (B) this;
     }
 
@@ -278,11 +352,30 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindLly(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindLly(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundLly = true;
-        this.obsrvLly = source;
+        this.bound1Lly = true;
+        this.obsrv1Lly = source;
+        this.bound2Lly = false;
+        this.obsrv2Lly = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PerspectiveTransform#llyProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLly(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Lly = false;
+        this.obsrv1Lly = null;
+        this.bound2Lly = true;
+        this.obsrv2Lly = source;
         return (B) this;
     }
 
@@ -293,11 +386,30 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindLrx(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindLrx(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundLrx = true;
-        this.obsrvLrx = source;
+        this.bound1Lrx = true;
+        this.obsrv1Lrx = source;
+        this.bound2Lrx = false;
+        this.obsrv2Lrx = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PerspectiveTransform#lrxProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLrx(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Lrx = false;
+        this.obsrv1Lrx = null;
+        this.bound2Lrx = true;
+        this.obsrv2Lrx = source;
         return (B) this;
     }
 
@@ -308,11 +420,30 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindLry(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindLry(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundLry = true;
-        this.obsrvLry = source;
+        this.bound1Lry = true;
+        this.obsrv1Lry = source;
+        this.bound2Lry = false;
+        this.obsrv2Lry = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PerspectiveTransform#lryProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLry(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Lry = false;
+        this.obsrv1Lry = null;
+        this.bound2Lry = true;
+        this.obsrv2Lry = source;
         return (B) this;
     }
 
@@ -323,11 +454,30 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindUlx(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindUlx(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundUlx = true;
-        this.obsrvUlx = source;
+        this.bound1Ulx = true;
+        this.obsrv1Ulx = source;
+        this.bound2Ulx = false;
+        this.obsrv2Ulx = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PerspectiveTransform#ulxProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalUlx(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Ulx = false;
+        this.obsrv1Ulx = null;
+        this.bound2Ulx = true;
+        this.obsrv2Ulx = source;
         return (B) this;
     }
 
@@ -338,11 +488,30 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindUly(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindUly(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundUly = true;
-        this.obsrvUly = source;
+        this.bound1Uly = true;
+        this.obsrv1Uly = source;
+        this.bound2Uly = false;
+        this.obsrv2Uly = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PerspectiveTransform#ulyProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalUly(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Uly = false;
+        this.obsrv1Uly = null;
+        this.bound2Uly = true;
+        this.obsrv2Uly = source;
         return (B) this;
     }
 
@@ -353,11 +522,30 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindUrx(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindUrx(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundUrx = true;
-        this.obsrvUrx = source;
+        this.bound1Urx = true;
+        this.obsrv1Urx = source;
+        this.bound2Urx = false;
+        this.obsrv2Urx = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PerspectiveTransform#urxProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalUrx(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Urx = false;
+        this.obsrv1Urx = null;
+        this.bound2Urx = true;
+        this.obsrv2Urx = source;
         return (B) this;
     }
 
@@ -368,11 +556,30 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindUry(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindUry(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundUry = true;
-        this.obsrvUry = source;
+        this.bound1Ury = true;
+        this.obsrv1Ury = source;
+        this.bound2Ury = false;
+        this.obsrv2Ury = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PerspectiveTransform#uryProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalUry(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Ury = false;
+        this.obsrv1Ury = null;
+        this.bound2Ury = true;
+        this.obsrv2Ury = source;
         return (B) this;
     }
 

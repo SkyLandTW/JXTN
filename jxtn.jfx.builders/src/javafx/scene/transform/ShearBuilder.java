@@ -31,17 +31,25 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     private boolean hasY;
     private double valY;
 
-    private boolean boundPivotX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvPivotX;
+    private boolean bound1PivotX;
+    private boolean bound2PivotX;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PivotX;
+    private javafx.beans.property.Property<Number> obsrv2PivotX;
 
-    private boolean boundPivotY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvPivotY;
+    private boolean bound1PivotY;
+    private boolean bound2PivotY;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PivotY;
+    private javafx.beans.property.Property<Number> obsrv2PivotY;
 
-    private boolean boundX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvX;
+    private boolean bound1X;
+    private boolean bound2X;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1X;
+    private javafx.beans.property.Property<Number> obsrv2X;
 
-    private boolean boundY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvY;
+    private boolean bound1Y;
+    private boolean bound2Y;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Y;
+    private javafx.beans.property.Property<Number> obsrv2Y;
 
     @Override
     public void applyTo(Z instance)
@@ -55,14 +63,22 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
             instance.setX(this.valX);
         if (this.hasY)
             instance.setY(this.valY);
-        if (this.boundPivotX)
-            instance.pivotXProperty().bind(this.obsrvPivotX);
-        if (this.boundPivotY)
-            instance.pivotYProperty().bind(this.obsrvPivotY);
-        if (this.boundX)
-            instance.xProperty().bind(this.obsrvX);
-        if (this.boundY)
-            instance.yProperty().bind(this.obsrvY);
+        if (this.bound1PivotX)
+            instance.pivotXProperty().bind(this.obsrv1PivotX);
+        if (this.bound2PivotX)
+            instance.pivotXProperty().bindBidirectional(this.obsrv2PivotX);
+        if (this.bound1PivotY)
+            instance.pivotYProperty().bind(this.obsrv1PivotY);
+        if (this.bound2PivotY)
+            instance.pivotYProperty().bindBidirectional(this.obsrv2PivotY);
+        if (this.bound1X)
+            instance.xProperty().bind(this.obsrv1X);
+        if (this.bound2X)
+            instance.xProperty().bindBidirectional(this.obsrv2X);
+        if (this.bound1Y)
+            instance.yProperty().bind(this.obsrv1Y);
+        if (this.bound2Y)
+            instance.yProperty().bindBidirectional(this.obsrv2Y);
     }
 
     /**
@@ -128,11 +144,30 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPivotX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPivotX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPivotX = true;
-        this.obsrvPivotX = source;
+        this.bound1PivotX = true;
+        this.obsrv1PivotX = source;
+        this.bound2PivotX = false;
+        this.obsrv2PivotX = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Shear#pivotXProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPivotX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PivotX = false;
+        this.obsrv1PivotX = null;
+        this.bound2PivotX = true;
+        this.obsrv2PivotX = source;
         return (B) this;
     }
 
@@ -143,11 +178,30 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPivotY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindPivotY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPivotY = true;
-        this.obsrvPivotY = source;
+        this.bound1PivotY = true;
+        this.obsrv1PivotY = source;
+        this.bound2PivotY = false;
+        this.obsrv2PivotY = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Shear#pivotYProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPivotY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PivotY = false;
+        this.obsrv1PivotY = null;
+        this.bound2PivotY = true;
+        this.obsrv2PivotY = source;
         return (B) this;
     }
 
@@ -158,11 +212,30 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundX = true;
-        this.obsrvX = source;
+        this.bound1X = true;
+        this.obsrv1X = source;
+        this.bound2X = false;
+        this.obsrv2X = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Shear#xProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1X = false;
+        this.obsrv1X = null;
+        this.bound2X = true;
+        this.obsrv2X = source;
         return (B) this;
     }
 
@@ -173,11 +246,30 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundY = true;
-        this.obsrvY = source;
+        this.bound1Y = true;
+        this.obsrv1Y = source;
+        this.bound2Y = false;
+        this.obsrv2Y = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Shear#yProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Y = false;
+        this.obsrv1Y = null;
+        this.bound2Y = true;
+        this.obsrv2Y = source;
         return (B) this;
     }
 

@@ -37,23 +37,35 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     private boolean hasY;
     private double valY;
 
-    private boolean boundArcHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvArcHeight;
+    private boolean bound1ArcHeight;
+    private boolean bound2ArcHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1ArcHeight;
+    private javafx.beans.property.Property<Number> obsrv2ArcHeight;
 
-    private boolean boundArcWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvArcWidth;
+    private boolean bound1ArcWidth;
+    private boolean bound2ArcWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1ArcWidth;
+    private javafx.beans.property.Property<Number> obsrv2ArcWidth;
 
-    private boolean boundHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvHeight;
+    private boolean bound1Height;
+    private boolean bound2Height;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Height;
+    private javafx.beans.property.Property<Number> obsrv2Height;
 
-    private boolean boundWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvWidth;
+    private boolean bound1Width;
+    private boolean bound2Width;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Width;
+    private javafx.beans.property.Property<Number> obsrv2Width;
 
-    private boolean boundX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvX;
+    private boolean bound1X;
+    private boolean bound2X;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1X;
+    private javafx.beans.property.Property<Number> obsrv2X;
 
-    private boolean boundY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvY;
+    private boolean bound1Y;
+    private boolean bound2Y;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Y;
+    private javafx.beans.property.Property<Number> obsrv2Y;
 
     @Override
     public void applyTo(Z instance)
@@ -71,18 +83,30 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
             instance.setX(this.valX);
         if (this.hasY)
             instance.setY(this.valY);
-        if (this.boundArcHeight)
-            instance.arcHeightProperty().bind(this.obsrvArcHeight);
-        if (this.boundArcWidth)
-            instance.arcWidthProperty().bind(this.obsrvArcWidth);
-        if (this.boundHeight)
-            instance.heightProperty().bind(this.obsrvHeight);
-        if (this.boundWidth)
-            instance.widthProperty().bind(this.obsrvWidth);
-        if (this.boundX)
-            instance.xProperty().bind(this.obsrvX);
-        if (this.boundY)
-            instance.yProperty().bind(this.obsrvY);
+        if (this.bound1ArcHeight)
+            instance.arcHeightProperty().bind(this.obsrv1ArcHeight);
+        if (this.bound2ArcHeight)
+            instance.arcHeightProperty().bindBidirectional(this.obsrv2ArcHeight);
+        if (this.bound1ArcWidth)
+            instance.arcWidthProperty().bind(this.obsrv1ArcWidth);
+        if (this.bound2ArcWidth)
+            instance.arcWidthProperty().bindBidirectional(this.obsrv2ArcWidth);
+        if (this.bound1Height)
+            instance.heightProperty().bind(this.obsrv1Height);
+        if (this.bound2Height)
+            instance.heightProperty().bindBidirectional(this.obsrv2Height);
+        if (this.bound1Width)
+            instance.widthProperty().bind(this.obsrv1Width);
+        if (this.bound2Width)
+            instance.widthProperty().bindBidirectional(this.obsrv2Width);
+        if (this.bound1X)
+            instance.xProperty().bind(this.obsrv1X);
+        if (this.bound2X)
+            instance.xProperty().bindBidirectional(this.obsrv2X);
+        if (this.bound1Y)
+            instance.yProperty().bind(this.obsrv1Y);
+        if (this.bound2Y)
+            instance.yProperty().bindBidirectional(this.obsrv2Y);
     }
 
     /**
@@ -176,11 +200,30 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindArcHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindArcHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundArcHeight = true;
-        this.obsrvArcHeight = source;
+        this.bound1ArcHeight = true;
+        this.obsrv1ArcHeight = source;
+        this.bound2ArcHeight = false;
+        this.obsrv2ArcHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Rectangle#arcHeightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalArcHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ArcHeight = false;
+        this.obsrv1ArcHeight = null;
+        this.bound2ArcHeight = true;
+        this.obsrv2ArcHeight = source;
         return (B) this;
     }
 
@@ -191,11 +234,30 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindArcWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindArcWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundArcWidth = true;
-        this.obsrvArcWidth = source;
+        this.bound1ArcWidth = true;
+        this.obsrv1ArcWidth = source;
+        this.bound2ArcWidth = false;
+        this.obsrv2ArcWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Rectangle#arcWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalArcWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ArcWidth = false;
+        this.obsrv1ArcWidth = null;
+        this.bound2ArcWidth = true;
+        this.obsrv2ArcWidth = source;
         return (B) this;
     }
 
@@ -206,11 +268,30 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundHeight = true;
-        this.obsrvHeight = source;
+        this.bound1Height = true;
+        this.obsrv1Height = source;
+        this.bound2Height = false;
+        this.obsrv2Height = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Rectangle#heightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Height = false;
+        this.obsrv1Height = null;
+        this.bound2Height = true;
+        this.obsrv2Height = source;
         return (B) this;
     }
 
@@ -221,11 +302,30 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundWidth = true;
-        this.obsrvWidth = source;
+        this.bound1Width = true;
+        this.obsrv1Width = source;
+        this.bound2Width = false;
+        this.obsrv2Width = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Rectangle#widthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Width = false;
+        this.obsrv1Width = null;
+        this.bound2Width = true;
+        this.obsrv2Width = source;
         return (B) this;
     }
 
@@ -236,11 +336,30 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundX = true;
-        this.obsrvX = source;
+        this.bound1X = true;
+        this.obsrv1X = source;
+        this.bound2X = false;
+        this.obsrv2X = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Rectangle#xProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1X = false;
+        this.obsrv1X = null;
+        this.bound2X = true;
+        this.obsrv2X = source;
         return (B) this;
     }
 
@@ -251,11 +370,30 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundY = true;
-        this.obsrvY = source;
+        this.bound1Y = true;
+        this.obsrv1Y = source;
+        this.bound2Y = false;
+        this.obsrv2Y = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Rectangle#yProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Y = false;
+        this.obsrv1Y = null;
+        this.bound2Y = true;
+        this.obsrv2Y = source;
         return (B) this;
     }
 

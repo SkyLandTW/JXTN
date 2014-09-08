@@ -61,29 +61,45 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     private boolean hasTitle;
     private java.lang.String valTitle;
 
-    private boolean boundFullScreenExitHint;
-    private javafx.beans.value.ObservableValue<? extends java.lang.String> obsrvFullScreenExitHint;
+    private boolean bound1FullScreenExitHint;
+    private boolean bound2FullScreenExitHint;
+    private javafx.beans.value.ObservableValue<? extends java.lang.String> obsrv1FullScreenExitHint;
+    private javafx.beans.property.Property<java.lang.String> obsrv2FullScreenExitHint;
 
-    private boolean boundFullScreenExitKey;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.input.KeyCombination> obsrvFullScreenExitKey;
+    private boolean bound1FullScreenExitKey;
+    private boolean bound2FullScreenExitKey;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.input.KeyCombination> obsrv1FullScreenExitKey;
+    private javafx.beans.property.Property<javafx.scene.input.KeyCombination> obsrv2FullScreenExitKey;
 
-    private boolean boundMaxHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMaxHeight;
+    private boolean bound1MaxHeight;
+    private boolean bound2MaxHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MaxHeight;
+    private javafx.beans.property.Property<Number> obsrv2MaxHeight;
 
-    private boolean boundMaxWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMaxWidth;
+    private boolean bound1MaxWidth;
+    private boolean bound2MaxWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MaxWidth;
+    private javafx.beans.property.Property<Number> obsrv2MaxWidth;
 
-    private boolean boundMinHeight;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMinHeight;
+    private boolean bound1MinHeight;
+    private boolean bound2MinHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MinHeight;
+    private javafx.beans.property.Property<Number> obsrv2MinHeight;
 
-    private boolean boundMinWidth;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvMinWidth;
+    private boolean bound1MinWidth;
+    private boolean bound2MinWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MinWidth;
+    private javafx.beans.property.Property<Number> obsrv2MinWidth;
 
-    private boolean boundResizable;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvResizable;
+    private boolean bound1Resizable;
+    private boolean bound2Resizable;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Resizable;
+    private javafx.beans.property.Property<Boolean> obsrv2Resizable;
 
-    private boolean boundTitle;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvTitle;
+    private boolean bound1Title;
+    private boolean bound2Title;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Title;
+    private javafx.beans.property.Property<String> obsrv2Title;
 
     @Override
     public void applyTo(Z instance)
@@ -117,22 +133,38 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
             instance.setScene(this.valScene);
         if (this.hasTitle)
             instance.setTitle(this.valTitle);
-        if (this.boundFullScreenExitHint)
-            instance.fullScreenExitHintProperty().bind(this.obsrvFullScreenExitHint);
-        if (this.boundFullScreenExitKey)
-            instance.fullScreenExitKeyProperty().bind(this.obsrvFullScreenExitKey);
-        if (this.boundMaxHeight)
-            instance.maxHeightProperty().bind(this.obsrvMaxHeight);
-        if (this.boundMaxWidth)
-            instance.maxWidthProperty().bind(this.obsrvMaxWidth);
-        if (this.boundMinHeight)
-            instance.minHeightProperty().bind(this.obsrvMinHeight);
-        if (this.boundMinWidth)
-            instance.minWidthProperty().bind(this.obsrvMinWidth);
-        if (this.boundResizable)
-            instance.resizableProperty().bind(this.obsrvResizable);
-        if (this.boundTitle)
-            instance.titleProperty().bind(this.obsrvTitle);
+        if (this.bound1FullScreenExitHint)
+            instance.fullScreenExitHintProperty().bind(this.obsrv1FullScreenExitHint);
+        if (this.bound2FullScreenExitHint)
+            instance.fullScreenExitHintProperty().bindBidirectional(this.obsrv2FullScreenExitHint);
+        if (this.bound1FullScreenExitKey)
+            instance.fullScreenExitKeyProperty().bind(this.obsrv1FullScreenExitKey);
+        if (this.bound2FullScreenExitKey)
+            instance.fullScreenExitKeyProperty().bindBidirectional(this.obsrv2FullScreenExitKey);
+        if (this.bound1MaxHeight)
+            instance.maxHeightProperty().bind(this.obsrv1MaxHeight);
+        if (this.bound2MaxHeight)
+            instance.maxHeightProperty().bindBidirectional(this.obsrv2MaxHeight);
+        if (this.bound1MaxWidth)
+            instance.maxWidthProperty().bind(this.obsrv1MaxWidth);
+        if (this.bound2MaxWidth)
+            instance.maxWidthProperty().bindBidirectional(this.obsrv2MaxWidth);
+        if (this.bound1MinHeight)
+            instance.minHeightProperty().bind(this.obsrv1MinHeight);
+        if (this.bound2MinHeight)
+            instance.minHeightProperty().bindBidirectional(this.obsrv2MinHeight);
+        if (this.bound1MinWidth)
+            instance.minWidthProperty().bind(this.obsrv1MinWidth);
+        if (this.bound2MinWidth)
+            instance.minWidthProperty().bindBidirectional(this.obsrv2MinWidth);
+        if (this.bound1Resizable)
+            instance.resizableProperty().bind(this.obsrv1Resizable);
+        if (this.bound2Resizable)
+            instance.resizableProperty().bindBidirectional(this.obsrv2Resizable);
+        if (this.bound1Title)
+            instance.titleProperty().bind(this.obsrv1Title);
+        if (this.bound2Title)
+            instance.titleProperty().bindBidirectional(this.obsrv2Title);
     }
 
     /**
@@ -356,8 +388,27 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     public final B bindFullScreenExitHint(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFullScreenExitHint = true;
-        this.obsrvFullScreenExitHint = source;
+        this.bound1FullScreenExitHint = true;
+        this.obsrv1FullScreenExitHint = source;
+        this.bound2FullScreenExitHint = false;
+        this.obsrv2FullScreenExitHint = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Stage#fullScreenExitHintProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFullScreenExitHint(javafx.beans.property.Property<java.lang.String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FullScreenExitHint = false;
+        this.obsrv1FullScreenExitHint = null;
+        this.bound2FullScreenExitHint = true;
+        this.obsrv2FullScreenExitHint = source;
         return (B) this;
     }
 
@@ -371,8 +422,27 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     public final B bindFullScreenExitKey(javafx.beans.value.ObservableValue<? extends javafx.scene.input.KeyCombination> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFullScreenExitKey = true;
-        this.obsrvFullScreenExitKey = source;
+        this.bound1FullScreenExitKey = true;
+        this.obsrv1FullScreenExitKey = source;
+        this.bound2FullScreenExitKey = false;
+        this.obsrv2FullScreenExitKey = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Stage#fullScreenExitKeyProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFullScreenExitKey(javafx.beans.property.Property<javafx.scene.input.KeyCombination> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FullScreenExitKey = false;
+        this.obsrv1FullScreenExitKey = null;
+        this.bound2FullScreenExitKey = true;
+        this.obsrv2FullScreenExitKey = source;
         return (B) this;
     }
 
@@ -383,11 +453,30 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMaxHeight = true;
-        this.obsrvMaxHeight = source;
+        this.bound1MaxHeight = true;
+        this.obsrv1MaxHeight = source;
+        this.bound2MaxHeight = false;
+        this.obsrv2MaxHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Stage#maxHeightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMaxHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MaxHeight = false;
+        this.obsrv1MaxHeight = null;
+        this.bound2MaxHeight = true;
+        this.obsrv2MaxHeight = source;
         return (B) this;
     }
 
@@ -398,11 +487,30 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMaxWidth = true;
-        this.obsrvMaxWidth = source;
+        this.bound1MaxWidth = true;
+        this.obsrv1MaxWidth = source;
+        this.bound2MaxWidth = false;
+        this.obsrv2MaxWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Stage#maxWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMaxWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MaxWidth = false;
+        this.obsrv1MaxWidth = null;
+        this.bound2MaxWidth = true;
+        this.obsrv2MaxWidth = source;
         return (B) this;
     }
 
@@ -413,11 +521,30 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMinHeight(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinHeight(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMinHeight = true;
-        this.obsrvMinHeight = source;
+        this.bound1MinHeight = true;
+        this.obsrv1MinHeight = source;
+        this.bound2MinHeight = false;
+        this.obsrv2MinHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Stage#minHeightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMinHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinHeight = false;
+        this.obsrv1MinHeight = null;
+        this.bound2MinHeight = true;
+        this.obsrv2MinHeight = source;
         return (B) this;
     }
 
@@ -428,11 +555,30 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindMinWidth(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindMinWidth(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMinWidth = true;
-        this.obsrvMinWidth = source;
+        this.bound1MinWidth = true;
+        this.obsrv1MinWidth = source;
+        this.bound2MinWidth = false;
+        this.obsrv2MinWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Stage#minWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMinWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinWidth = false;
+        this.obsrv1MinWidth = null;
+        this.bound2MinWidth = true;
+        this.obsrv2MinWidth = source;
         return (B) this;
     }
 
@@ -446,8 +592,27 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     public final B bindResizable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundResizable = true;
-        this.obsrvResizable = source;
+        this.bound1Resizable = true;
+        this.obsrv1Resizable = source;
+        this.bound2Resizable = false;
+        this.obsrv2Resizable = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Stage#resizableProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalResizable(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Resizable = false;
+        this.obsrv1Resizable = null;
+        this.bound2Resizable = true;
+        this.obsrv2Resizable = source;
         return (B) this;
     }
 
@@ -461,8 +626,27 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     public final B bindTitle(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTitle = true;
-        this.obsrvTitle = source;
+        this.bound1Title = true;
+        this.obsrv1Title = source;
+        this.bound2Title = false;
+        this.obsrv2Title = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Stage#titleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTitle(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Title = false;
+        this.obsrv1Title = null;
+        this.bound2Title = true;
+        this.obsrv2Title = source;
         return (B) this;
     }
 

@@ -25,11 +25,15 @@ public class TextFlowBuilder<Z extends TextFlow, B extends TextFlowBuilder<Z, B>
     private boolean hasTextAlignment;
     private javafx.scene.text.TextAlignment valTextAlignment;
 
-    private boolean boundLineSpacing;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvLineSpacing;
+    private boolean bound1LineSpacing;
+    private boolean bound2LineSpacing;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1LineSpacing;
+    private javafx.beans.property.Property<Number> obsrv2LineSpacing;
 
-    private boolean boundTextAlignment;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextAlignment> obsrvTextAlignment;
+    private boolean bound1TextAlignment;
+    private boolean bound2TextAlignment;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextAlignment> obsrv1TextAlignment;
+    private javafx.beans.property.Property<javafx.scene.text.TextAlignment> obsrv2TextAlignment;
 
     @Override
     public void applyTo(Z instance)
@@ -39,10 +43,14 @@ public class TextFlowBuilder<Z extends TextFlow, B extends TextFlowBuilder<Z, B>
             instance.setLineSpacing(this.valLineSpacing);
         if (this.hasTextAlignment)
             instance.setTextAlignment(this.valTextAlignment);
-        if (this.boundLineSpacing)
-            instance.lineSpacingProperty().bind(this.obsrvLineSpacing);
-        if (this.boundTextAlignment)
-            instance.textAlignmentProperty().bind(this.obsrvTextAlignment);
+        if (this.bound1LineSpacing)
+            instance.lineSpacingProperty().bind(this.obsrv1LineSpacing);
+        if (this.bound2LineSpacing)
+            instance.lineSpacingProperty().bindBidirectional(this.obsrv2LineSpacing);
+        if (this.bound1TextAlignment)
+            instance.textAlignmentProperty().bind(this.obsrv1TextAlignment);
+        if (this.bound2TextAlignment)
+            instance.textAlignmentProperty().bindBidirectional(this.obsrv2TextAlignment);
     }
 
     /**
@@ -80,11 +88,30 @@ public class TextFlowBuilder<Z extends TextFlow, B extends TextFlowBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindLineSpacing(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindLineSpacing(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundLineSpacing = true;
-        this.obsrvLineSpacing = source;
+        this.bound1LineSpacing = true;
+        this.obsrv1LineSpacing = source;
+        this.bound2LineSpacing = false;
+        this.obsrv2LineSpacing = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TextFlow#lineSpacingProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLineSpacing(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1LineSpacing = false;
+        this.obsrv1LineSpacing = null;
+        this.bound2LineSpacing = true;
+        this.obsrv2LineSpacing = source;
         return (B) this;
     }
 
@@ -98,8 +125,27 @@ public class TextFlowBuilder<Z extends TextFlow, B extends TextFlowBuilder<Z, B>
     public final B bindTextAlignment(javafx.beans.value.ObservableValue<? extends javafx.scene.text.TextAlignment> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTextAlignment = true;
-        this.obsrvTextAlignment = source;
+        this.bound1TextAlignment = true;
+        this.obsrv1TextAlignment = source;
+        this.bound2TextAlignment = false;
+        this.obsrv2TextAlignment = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TextFlow#textAlignmentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTextAlignment(javafx.beans.property.Property<javafx.scene.text.TextAlignment> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TextAlignment = false;
+        this.obsrv1TextAlignment = null;
+        this.bound2TextAlignment = true;
+        this.obsrv2TextAlignment = source;
         return (B) this;
     }
 

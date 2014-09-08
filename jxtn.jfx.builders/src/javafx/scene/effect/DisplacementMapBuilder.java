@@ -40,26 +40,40 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     private boolean hasWrap;
     private boolean valWrap;
 
-    private boolean boundInput;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrvInput;
+    private boolean bound1Input;
+    private boolean bound2Input;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> obsrv1Input;
+    private javafx.beans.property.Property<javafx.scene.effect.Effect> obsrv2Input;
 
-    private boolean boundMapData;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.FloatMap> obsrvMapData;
+    private boolean bound1MapData;
+    private boolean bound2MapData;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.effect.FloatMap> obsrv1MapData;
+    private javafx.beans.property.Property<javafx.scene.effect.FloatMap> obsrv2MapData;
 
-    private boolean boundOffsetX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvOffsetX;
+    private boolean bound1OffsetX;
+    private boolean bound2OffsetX;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1OffsetX;
+    private javafx.beans.property.Property<Number> obsrv2OffsetX;
 
-    private boolean boundOffsetY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvOffsetY;
+    private boolean bound1OffsetY;
+    private boolean bound2OffsetY;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1OffsetY;
+    private javafx.beans.property.Property<Number> obsrv2OffsetY;
 
-    private boolean boundScaleX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvScaleX;
+    private boolean bound1ScaleX;
+    private boolean bound2ScaleX;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1ScaleX;
+    private javafx.beans.property.Property<Number> obsrv2ScaleX;
 
-    private boolean boundScaleY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvScaleY;
+    private boolean bound1ScaleY;
+    private boolean bound2ScaleY;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1ScaleY;
+    private javafx.beans.property.Property<Number> obsrv2ScaleY;
 
-    private boolean boundWrap;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvWrap;
+    private boolean bound1Wrap;
+    private boolean bound2Wrap;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Wrap;
+    private javafx.beans.property.Property<Boolean> obsrv2Wrap;
 
     @Override
     public void applyTo(Z instance)
@@ -79,20 +93,34 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
             instance.setScaleY(this.valScaleY);
         if (this.hasWrap)
             instance.setWrap(this.valWrap);
-        if (this.boundInput)
-            instance.inputProperty().bind(this.obsrvInput);
-        if (this.boundMapData)
-            instance.mapDataProperty().bind(this.obsrvMapData);
-        if (this.boundOffsetX)
-            instance.offsetXProperty().bind(this.obsrvOffsetX);
-        if (this.boundOffsetY)
-            instance.offsetYProperty().bind(this.obsrvOffsetY);
-        if (this.boundScaleX)
-            instance.scaleXProperty().bind(this.obsrvScaleX);
-        if (this.boundScaleY)
-            instance.scaleYProperty().bind(this.obsrvScaleY);
-        if (this.boundWrap)
-            instance.wrapProperty().bind(this.obsrvWrap);
+        if (this.bound1Input)
+            instance.inputProperty().bind(this.obsrv1Input);
+        if (this.bound2Input)
+            instance.inputProperty().bindBidirectional(this.obsrv2Input);
+        if (this.bound1MapData)
+            instance.mapDataProperty().bind(this.obsrv1MapData);
+        if (this.bound2MapData)
+            instance.mapDataProperty().bindBidirectional(this.obsrv2MapData);
+        if (this.bound1OffsetX)
+            instance.offsetXProperty().bind(this.obsrv1OffsetX);
+        if (this.bound2OffsetX)
+            instance.offsetXProperty().bindBidirectional(this.obsrv2OffsetX);
+        if (this.bound1OffsetY)
+            instance.offsetYProperty().bind(this.obsrv1OffsetY);
+        if (this.bound2OffsetY)
+            instance.offsetYProperty().bindBidirectional(this.obsrv2OffsetY);
+        if (this.bound1ScaleX)
+            instance.scaleXProperty().bind(this.obsrv1ScaleX);
+        if (this.bound2ScaleX)
+            instance.scaleXProperty().bindBidirectional(this.obsrv2ScaleX);
+        if (this.bound1ScaleY)
+            instance.scaleYProperty().bind(this.obsrv1ScaleY);
+        if (this.bound2ScaleY)
+            instance.scaleYProperty().bindBidirectional(this.obsrv2ScaleY);
+        if (this.bound1Wrap)
+            instance.wrapProperty().bind(this.obsrv1Wrap);
+        if (this.bound2Wrap)
+            instance.wrapProperty().bindBidirectional(this.obsrv2Wrap);
     }
 
     /**
@@ -203,8 +231,27 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     public final B bindInput(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.Effect> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundInput = true;
-        this.obsrvInput = source;
+        this.bound1Input = true;
+        this.obsrv1Input = source;
+        this.bound2Input = false;
+        this.obsrv2Input = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link DisplacementMap#inputProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalInput(javafx.beans.property.Property<javafx.scene.effect.Effect> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Input = false;
+        this.obsrv1Input = null;
+        this.bound2Input = true;
+        this.obsrv2Input = source;
         return (B) this;
     }
 
@@ -218,8 +265,27 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     public final B bindMapData(javafx.beans.value.ObservableValue<? extends javafx.scene.effect.FloatMap> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundMapData = true;
-        this.obsrvMapData = source;
+        this.bound1MapData = true;
+        this.obsrv1MapData = source;
+        this.bound2MapData = false;
+        this.obsrv2MapData = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link DisplacementMap#mapDataProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMapData(javafx.beans.property.Property<javafx.scene.effect.FloatMap> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MapData = false;
+        this.obsrv1MapData = null;
+        this.bound2MapData = true;
+        this.obsrv2MapData = source;
         return (B) this;
     }
 
@@ -230,11 +296,30 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindOffsetX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindOffsetX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOffsetX = true;
-        this.obsrvOffsetX = source;
+        this.bound1OffsetX = true;
+        this.obsrv1OffsetX = source;
+        this.bound2OffsetX = false;
+        this.obsrv2OffsetX = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link DisplacementMap#offsetXProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOffsetX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OffsetX = false;
+        this.obsrv1OffsetX = null;
+        this.bound2OffsetX = true;
+        this.obsrv2OffsetX = source;
         return (B) this;
     }
 
@@ -245,11 +330,30 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindOffsetY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindOffsetY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOffsetY = true;
-        this.obsrvOffsetY = source;
+        this.bound1OffsetY = true;
+        this.obsrv1OffsetY = source;
+        this.bound2OffsetY = false;
+        this.obsrv2OffsetY = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link DisplacementMap#offsetYProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOffsetY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OffsetY = false;
+        this.obsrv1OffsetY = null;
+        this.bound2OffsetY = true;
+        this.obsrv2OffsetY = source;
         return (B) this;
     }
 
@@ -260,11 +364,30 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindScaleX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindScaleX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundScaleX = true;
-        this.obsrvScaleX = source;
+        this.bound1ScaleX = true;
+        this.obsrv1ScaleX = source;
+        this.bound2ScaleX = false;
+        this.obsrv2ScaleX = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link DisplacementMap#scaleXProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalScaleX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ScaleX = false;
+        this.obsrv1ScaleX = null;
+        this.bound2ScaleX = true;
+        this.obsrv2ScaleX = source;
         return (B) this;
     }
 
@@ -275,11 +398,30 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindScaleY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindScaleY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundScaleY = true;
-        this.obsrvScaleY = source;
+        this.bound1ScaleY = true;
+        this.obsrv1ScaleY = source;
+        this.bound2ScaleY = false;
+        this.obsrv2ScaleY = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link DisplacementMap#scaleYProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalScaleY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ScaleY = false;
+        this.obsrv1ScaleY = null;
+        this.bound2ScaleY = true;
+        this.obsrv2ScaleY = source;
         return (B) this;
     }
 
@@ -293,8 +435,27 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     public final B bindWrap(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundWrap = true;
-        this.obsrvWrap = source;
+        this.bound1Wrap = true;
+        this.obsrv1Wrap = source;
+        this.bound2Wrap = false;
+        this.obsrv2Wrap = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link DisplacementMap#wrapProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalWrap(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Wrap = false;
+        this.obsrv1Wrap = null;
+        this.bound2Wrap = true;
+        this.obsrv2Wrap = source;
         return (B) this;
     }
 

@@ -25,11 +25,15 @@ public class CustomMenuItemBuilder<Z extends CustomMenuItem, B extends CustomMen
     private boolean hasHideOnClick;
     private boolean valHideOnClick;
 
-    private boolean boundContent;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvContent;
+    private boolean bound1Content;
+    private boolean bound2Content;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Content;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Content;
 
-    private boolean boundHideOnClick;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvHideOnClick;
+    private boolean bound1HideOnClick;
+    private boolean bound2HideOnClick;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1HideOnClick;
+    private javafx.beans.property.Property<Boolean> obsrv2HideOnClick;
 
     @Override
     public void applyTo(Z instance)
@@ -39,10 +43,14 @@ public class CustomMenuItemBuilder<Z extends CustomMenuItem, B extends CustomMen
             instance.setContent(this.valContent);
         if (this.hasHideOnClick)
             instance.setHideOnClick(this.valHideOnClick);
-        if (this.boundContent)
-            instance.contentProperty().bind(this.obsrvContent);
-        if (this.boundHideOnClick)
-            instance.hideOnClickProperty().bind(this.obsrvHideOnClick);
+        if (this.bound1Content)
+            instance.contentProperty().bind(this.obsrv1Content);
+        if (this.bound2Content)
+            instance.contentProperty().bindBidirectional(this.obsrv2Content);
+        if (this.bound1HideOnClick)
+            instance.hideOnClickProperty().bind(this.obsrv1HideOnClick);
+        if (this.bound2HideOnClick)
+            instance.hideOnClickProperty().bindBidirectional(this.obsrv2HideOnClick);
     }
 
     /**
@@ -83,8 +91,27 @@ public class CustomMenuItemBuilder<Z extends CustomMenuItem, B extends CustomMen
     public final B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundContent = true;
-        this.obsrvContent = source;
+        this.bound1Content = true;
+        this.obsrv1Content = source;
+        this.bound2Content = false;
+        this.obsrv2Content = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CustomMenuItem#contentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalContent(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Content = false;
+        this.obsrv1Content = null;
+        this.bound2Content = true;
+        this.obsrv2Content = source;
         return (B) this;
     }
 
@@ -98,8 +125,27 @@ public class CustomMenuItemBuilder<Z extends CustomMenuItem, B extends CustomMen
     public final B bindHideOnClick(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundHideOnClick = true;
-        this.obsrvHideOnClick = source;
+        this.bound1HideOnClick = true;
+        this.obsrv1HideOnClick = source;
+        this.bound2HideOnClick = false;
+        this.obsrv2HideOnClick = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CustomMenuItem#hideOnClickProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHideOnClick(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1HideOnClick = false;
+        this.obsrv1HideOnClick = null;
+        this.bound2HideOnClick = true;
+        this.obsrv2HideOnClick = source;
         return (B) this;
     }
 

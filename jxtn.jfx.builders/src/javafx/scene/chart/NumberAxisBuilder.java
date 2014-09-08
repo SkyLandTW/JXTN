@@ -25,11 +25,15 @@ public class NumberAxisBuilder<Z extends NumberAxis, B extends NumberAxisBuilder
     private boolean hasTickUnit;
     private double valTickUnit;
 
-    private boolean boundForceZeroInRange;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvForceZeroInRange;
+    private boolean bound1ForceZeroInRange;
+    private boolean bound2ForceZeroInRange;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ForceZeroInRange;
+    private javafx.beans.property.Property<Boolean> obsrv2ForceZeroInRange;
 
-    private boolean boundTickUnit;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvTickUnit;
+    private boolean bound1TickUnit;
+    private boolean bound2TickUnit;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1TickUnit;
+    private javafx.beans.property.Property<Number> obsrv2TickUnit;
 
     @Override
     public void applyTo(Z instance)
@@ -39,10 +43,14 @@ public class NumberAxisBuilder<Z extends NumberAxis, B extends NumberAxisBuilder
             instance.setForceZeroInRange(this.valForceZeroInRange);
         if (this.hasTickUnit)
             instance.setTickUnit(this.valTickUnit);
-        if (this.boundForceZeroInRange)
-            instance.forceZeroInRangeProperty().bind(this.obsrvForceZeroInRange);
-        if (this.boundTickUnit)
-            instance.tickUnitProperty().bind(this.obsrvTickUnit);
+        if (this.bound1ForceZeroInRange)
+            instance.forceZeroInRangeProperty().bind(this.obsrv1ForceZeroInRange);
+        if (this.bound2ForceZeroInRange)
+            instance.forceZeroInRangeProperty().bindBidirectional(this.obsrv2ForceZeroInRange);
+        if (this.bound1TickUnit)
+            instance.tickUnitProperty().bind(this.obsrv1TickUnit);
+        if (this.bound2TickUnit)
+            instance.tickUnitProperty().bindBidirectional(this.obsrv2TickUnit);
     }
 
     /**
@@ -83,8 +91,27 @@ public class NumberAxisBuilder<Z extends NumberAxis, B extends NumberAxisBuilder
     public final B bindForceZeroInRange(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundForceZeroInRange = true;
-        this.obsrvForceZeroInRange = source;
+        this.bound1ForceZeroInRange = true;
+        this.obsrv1ForceZeroInRange = source;
+        this.bound2ForceZeroInRange = false;
+        this.obsrv2ForceZeroInRange = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link NumberAxis#forceZeroInRangeProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalForceZeroInRange(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ForceZeroInRange = false;
+        this.obsrv1ForceZeroInRange = null;
+        this.bound2ForceZeroInRange = true;
+        this.obsrv2ForceZeroInRange = source;
         return (B) this;
     }
 
@@ -95,11 +122,30 @@ public class NumberAxisBuilder<Z extends NumberAxis, B extends NumberAxisBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindTickUnit(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTickUnit(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTickUnit = true;
-        this.obsrvTickUnit = source;
+        this.bound1TickUnit = true;
+        this.obsrv1TickUnit = source;
+        this.bound2TickUnit = false;
+        this.obsrv2TickUnit = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link NumberAxis#tickUnitProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTickUnit(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TickUnit = false;
+        this.obsrv1TickUnit = null;
+        this.bound2TickUnit = true;
+        this.obsrv2TickUnit = source;
         return (B) this;
     }
 

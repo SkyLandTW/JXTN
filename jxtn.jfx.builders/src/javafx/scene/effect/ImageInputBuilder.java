@@ -28,14 +28,20 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
     private boolean hasY;
     private double valY;
 
-    private boolean boundSource;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> obsrvSource;
+    private boolean bound1Source;
+    private boolean bound2Source;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> obsrv1Source;
+    private javafx.beans.property.Property<javafx.scene.image.Image> obsrv2Source;
 
-    private boolean boundX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvX;
+    private boolean bound1X;
+    private boolean bound2X;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1X;
+    private javafx.beans.property.Property<Number> obsrv2X;
 
-    private boolean boundY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvY;
+    private boolean bound1Y;
+    private boolean bound2Y;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Y;
+    private javafx.beans.property.Property<Number> obsrv2Y;
 
     @Override
     public void applyTo(Z instance)
@@ -47,12 +53,18 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
             instance.setX(this.valX);
         if (this.hasY)
             instance.setY(this.valY);
-        if (this.boundSource)
-            instance.sourceProperty().bind(this.obsrvSource);
-        if (this.boundX)
-            instance.xProperty().bind(this.obsrvX);
-        if (this.boundY)
-            instance.yProperty().bind(this.obsrvY);
+        if (this.bound1Source)
+            instance.sourceProperty().bind(this.obsrv1Source);
+        if (this.bound2Source)
+            instance.sourceProperty().bindBidirectional(this.obsrv2Source);
+        if (this.bound1X)
+            instance.xProperty().bind(this.obsrv1X);
+        if (this.bound2X)
+            instance.xProperty().bindBidirectional(this.obsrv2X);
+        if (this.bound1Y)
+            instance.yProperty().bind(this.obsrv1Y);
+        if (this.bound2Y)
+            instance.yProperty().bindBidirectional(this.obsrv2Y);
     }
 
     /**
@@ -107,8 +119,27 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
     public final B bindSource(javafx.beans.value.ObservableValue<? extends javafx.scene.image.Image> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundSource = true;
-        this.obsrvSource = source;
+        this.bound1Source = true;
+        this.obsrv1Source = source;
+        this.bound2Source = false;
+        this.obsrv2Source = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ImageInput#sourceProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSource(javafx.beans.property.Property<javafx.scene.image.Image> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Source = false;
+        this.obsrv1Source = null;
+        this.bound2Source = true;
+        this.obsrv2Source = source;
         return (B) this;
     }
 
@@ -119,11 +150,30 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundX = true;
-        this.obsrvX = source;
+        this.bound1X = true;
+        this.obsrv1X = source;
+        this.bound2X = false;
+        this.obsrv2X = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ImageInput#xProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1X = false;
+        this.obsrv1X = null;
+        this.bound2X = true;
+        this.obsrv2X = source;
         return (B) this;
     }
 
@@ -134,11 +184,30 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundY = true;
-        this.obsrvY = source;
+        this.bound1Y = true;
+        this.obsrv1Y = source;
+        this.bound2Y = false;
+        this.obsrv2Y = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ImageInput#yProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Y = false;
+        this.obsrv1Y = null;
+        this.bound2Y = true;
+        this.obsrv2Y = source;
         return (B) this;
     }
 

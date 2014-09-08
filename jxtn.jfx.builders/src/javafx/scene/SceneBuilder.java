@@ -160,143 +160,235 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     private boolean hasUserAgentStylesheet;
     private java.lang.String valUserAgentStylesheet;
 
-    private boolean boundCamera;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Camera> obsrvCamera;
+    private boolean bound1Camera;
+    private boolean bound2Camera;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Camera> obsrv1Camera;
+    private javafx.beans.property.Property<javafx.scene.Camera> obsrv2Camera;
 
-    private boolean boundCursor;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Cursor> obsrvCursor;
+    private boolean bound1Cursor;
+    private boolean bound2Cursor;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Cursor> obsrv1Cursor;
+    private javafx.beans.property.Property<javafx.scene.Cursor> obsrv2Cursor;
 
-    private boolean boundEventDispatcher;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventDispatcher> obsrvEventDispatcher;
+    private boolean bound1EventDispatcher;
+    private boolean bound2EventDispatcher;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventDispatcher> obsrv1EventDispatcher;
+    private javafx.beans.property.Property<javafx.event.EventDispatcher> obsrv2EventDispatcher;
 
-    private boolean boundFill;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> obsrvFill;
+    private boolean bound1Fill;
+    private boolean bound2Fill;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> obsrv1Fill;
+    private javafx.beans.property.Property<javafx.scene.paint.Paint> obsrv2Fill;
 
-    private boolean boundNodeOrientation;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.NodeOrientation> obsrvNodeOrientation;
+    private boolean bound1NodeOrientation;
+    private boolean bound2NodeOrientation;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.NodeOrientation> obsrv1NodeOrientation;
+    private javafx.beans.property.Property<javafx.geometry.NodeOrientation> obsrv2NodeOrientation;
 
-    private boolean boundOnContextMenuRequested;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ContextMenuEvent>> obsrvOnContextMenuRequested;
+    private boolean bound1OnContextMenuRequested;
+    private boolean bound2OnContextMenuRequested;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ContextMenuEvent>> obsrv1OnContextMenuRequested;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.ContextMenuEvent>> obsrv2OnContextMenuRequested;
 
-    private boolean boundOnDragDetected;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrvOnDragDetected;
+    private boolean bound1OnDragDetected;
+    private boolean bound2OnDragDetected;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrv1OnDragDetected;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrv2OnDragDetected;
 
-    private boolean boundOnDragDone;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> obsrvOnDragDone;
+    private boolean bound1OnDragDone;
+    private boolean bound2OnDragDone;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> obsrv1OnDragDone;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> obsrv2OnDragDone;
 
-    private boolean boundOnDragDropped;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> obsrvOnDragDropped;
+    private boolean bound1OnDragDropped;
+    private boolean bound2OnDragDropped;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> obsrv1OnDragDropped;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> obsrv2OnDragDropped;
 
-    private boolean boundOnDragEntered;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> obsrvOnDragEntered;
+    private boolean bound1OnDragEntered;
+    private boolean bound2OnDragEntered;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> obsrv1OnDragEntered;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> obsrv2OnDragEntered;
 
-    private boolean boundOnDragExited;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> obsrvOnDragExited;
+    private boolean bound1OnDragExited;
+    private boolean bound2OnDragExited;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> obsrv1OnDragExited;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> obsrv2OnDragExited;
 
-    private boolean boundOnDragOver;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> obsrvOnDragOver;
+    private boolean bound1OnDragOver;
+    private boolean bound2OnDragOver;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> obsrv1OnDragOver;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> obsrv2OnDragOver;
 
-    private boolean boundOnInputMethodTextChanged;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.InputMethodEvent>> obsrvOnInputMethodTextChanged;
+    private boolean bound1OnInputMethodTextChanged;
+    private boolean bound2OnInputMethodTextChanged;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.InputMethodEvent>> obsrv1OnInputMethodTextChanged;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.InputMethodEvent>> obsrv2OnInputMethodTextChanged;
 
-    private boolean boundOnKeyPressed;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> obsrvOnKeyPressed;
+    private boolean bound1OnKeyPressed;
+    private boolean bound2OnKeyPressed;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> obsrv1OnKeyPressed;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> obsrv2OnKeyPressed;
 
-    private boolean boundOnKeyReleased;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> obsrvOnKeyReleased;
+    private boolean bound1OnKeyReleased;
+    private boolean bound2OnKeyReleased;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> obsrv1OnKeyReleased;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> obsrv2OnKeyReleased;
 
-    private boolean boundOnKeyTyped;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> obsrvOnKeyTyped;
+    private boolean bound1OnKeyTyped;
+    private boolean bound2OnKeyTyped;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> obsrv1OnKeyTyped;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> obsrv2OnKeyTyped;
 
-    private boolean boundOnMouseClicked;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrvOnMouseClicked;
+    private boolean bound1OnMouseClicked;
+    private boolean bound2OnMouseClicked;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrv1OnMouseClicked;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrv2OnMouseClicked;
 
-    private boolean boundOnMouseDragEntered;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> obsrvOnMouseDragEntered;
+    private boolean bound1OnMouseDragEntered;
+    private boolean bound2OnMouseDragEntered;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> obsrv1OnMouseDragEntered;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> obsrv2OnMouseDragEntered;
 
-    private boolean boundOnMouseDragExited;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> obsrvOnMouseDragExited;
+    private boolean bound1OnMouseDragExited;
+    private boolean bound2OnMouseDragExited;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> obsrv1OnMouseDragExited;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> obsrv2OnMouseDragExited;
 
-    private boolean boundOnMouseDragOver;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> obsrvOnMouseDragOver;
+    private boolean bound1OnMouseDragOver;
+    private boolean bound2OnMouseDragOver;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> obsrv1OnMouseDragOver;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> obsrv2OnMouseDragOver;
 
-    private boolean boundOnMouseDragReleased;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> obsrvOnMouseDragReleased;
+    private boolean bound1OnMouseDragReleased;
+    private boolean bound2OnMouseDragReleased;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> obsrv1OnMouseDragReleased;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> obsrv2OnMouseDragReleased;
 
-    private boolean boundOnMouseDragged;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrvOnMouseDragged;
+    private boolean bound1OnMouseDragged;
+    private boolean bound2OnMouseDragged;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrv1OnMouseDragged;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrv2OnMouseDragged;
 
-    private boolean boundOnMouseEntered;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrvOnMouseEntered;
+    private boolean bound1OnMouseEntered;
+    private boolean bound2OnMouseEntered;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrv1OnMouseEntered;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrv2OnMouseEntered;
 
-    private boolean boundOnMouseExited;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrvOnMouseExited;
+    private boolean bound1OnMouseExited;
+    private boolean bound2OnMouseExited;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrv1OnMouseExited;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrv2OnMouseExited;
 
-    private boolean boundOnMouseMoved;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrvOnMouseMoved;
+    private boolean bound1OnMouseMoved;
+    private boolean bound2OnMouseMoved;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrv1OnMouseMoved;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrv2OnMouseMoved;
 
-    private boolean boundOnMousePressed;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrvOnMousePressed;
+    private boolean bound1OnMousePressed;
+    private boolean bound2OnMousePressed;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrv1OnMousePressed;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrv2OnMousePressed;
 
-    private boolean boundOnMouseReleased;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrvOnMouseReleased;
+    private boolean bound1OnMouseReleased;
+    private boolean bound2OnMouseReleased;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrv1OnMouseReleased;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> obsrv2OnMouseReleased;
 
-    private boolean boundOnRotate;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> obsrvOnRotate;
+    private boolean bound1OnRotate;
+    private boolean bound2OnRotate;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> obsrv1OnRotate;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> obsrv2OnRotate;
 
-    private boolean boundOnRotationFinished;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> obsrvOnRotationFinished;
+    private boolean bound1OnRotationFinished;
+    private boolean bound2OnRotationFinished;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> obsrv1OnRotationFinished;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> obsrv2OnRotationFinished;
 
-    private boolean boundOnRotationStarted;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> obsrvOnRotationStarted;
+    private boolean bound1OnRotationStarted;
+    private boolean bound2OnRotationStarted;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> obsrv1OnRotationStarted;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> obsrv2OnRotationStarted;
 
-    private boolean boundOnScrollFinished;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> obsrvOnScrollFinished;
+    private boolean bound1OnScrollFinished;
+    private boolean bound2OnScrollFinished;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> obsrv1OnScrollFinished;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> obsrv2OnScrollFinished;
 
-    private boolean boundOnScroll;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> obsrvOnScroll;
+    private boolean bound1OnScroll;
+    private boolean bound2OnScroll;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> obsrv1OnScroll;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> obsrv2OnScroll;
 
-    private boolean boundOnScrollStarted;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> obsrvOnScrollStarted;
+    private boolean bound1OnScrollStarted;
+    private boolean bound2OnScrollStarted;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> obsrv1OnScrollStarted;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> obsrv2OnScrollStarted;
 
-    private boolean boundOnSwipeDown;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> obsrvOnSwipeDown;
+    private boolean bound1OnSwipeDown;
+    private boolean bound2OnSwipeDown;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> obsrv1OnSwipeDown;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> obsrv2OnSwipeDown;
 
-    private boolean boundOnSwipeLeft;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> obsrvOnSwipeLeft;
+    private boolean bound1OnSwipeLeft;
+    private boolean bound2OnSwipeLeft;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> obsrv1OnSwipeLeft;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> obsrv2OnSwipeLeft;
 
-    private boolean boundOnSwipeRight;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> obsrvOnSwipeRight;
+    private boolean bound1OnSwipeRight;
+    private boolean bound2OnSwipeRight;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> obsrv1OnSwipeRight;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> obsrv2OnSwipeRight;
 
-    private boolean boundOnSwipeUp;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> obsrvOnSwipeUp;
+    private boolean bound1OnSwipeUp;
+    private boolean bound2OnSwipeUp;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> obsrv1OnSwipeUp;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> obsrv2OnSwipeUp;
 
-    private boolean boundOnTouchMoved;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> obsrvOnTouchMoved;
+    private boolean bound1OnTouchMoved;
+    private boolean bound2OnTouchMoved;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> obsrv1OnTouchMoved;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> obsrv2OnTouchMoved;
 
-    private boolean boundOnTouchPressed;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> obsrvOnTouchPressed;
+    private boolean bound1OnTouchPressed;
+    private boolean bound2OnTouchPressed;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> obsrv1OnTouchPressed;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> obsrv2OnTouchPressed;
 
-    private boolean boundOnTouchReleased;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> obsrvOnTouchReleased;
+    private boolean bound1OnTouchReleased;
+    private boolean bound2OnTouchReleased;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> obsrv1OnTouchReleased;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> obsrv2OnTouchReleased;
 
-    private boolean boundOnTouchStationary;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> obsrvOnTouchStationary;
+    private boolean bound1OnTouchStationary;
+    private boolean bound2OnTouchStationary;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> obsrv1OnTouchStationary;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> obsrv2OnTouchStationary;
 
-    private boolean boundOnZoomFinished;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> obsrvOnZoomFinished;
+    private boolean bound1OnZoomFinished;
+    private boolean bound2OnZoomFinished;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> obsrv1OnZoomFinished;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> obsrv2OnZoomFinished;
 
-    private boolean boundOnZoom;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> obsrvOnZoom;
+    private boolean bound1OnZoom;
+    private boolean bound2OnZoom;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> obsrv1OnZoom;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> obsrv2OnZoom;
 
-    private boolean boundOnZoomStarted;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> obsrvOnZoomStarted;
+    private boolean bound1OnZoomStarted;
+    private boolean bound2OnZoomStarted;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> obsrv1OnZoomStarted;
+    private javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> obsrv2OnZoomStarted;
 
-    private boolean boundRoot;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Parent> obsrvRoot;
+    private boolean bound1Root;
+    private boolean bound2Root;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Parent> obsrv1Root;
+    private javafx.beans.property.Property<javafx.scene.Parent> obsrv2Root;
 
-    private boolean boundUserAgentStylesheet;
-    private javafx.beans.value.ObservableValue<? extends java.lang.String> obsrvUserAgentStylesheet;
+    private boolean bound1UserAgentStylesheet;
+    private boolean bound2UserAgentStylesheet;
+    private javafx.beans.value.ObservableValue<? extends java.lang.String> obsrv1UserAgentStylesheet;
+    private javafx.beans.property.Property<java.lang.String> obsrv2UserAgentStylesheet;
 
     @Override
     public void applyTo(Z instance)
@@ -396,98 +488,190 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
             instance.getStylesheets().setAll(this.valStylesheets);
         if (this.hasUserAgentStylesheet)
             instance.setUserAgentStylesheet(this.valUserAgentStylesheet);
-        if (this.boundCamera)
-            instance.cameraProperty().bind(this.obsrvCamera);
-        if (this.boundCursor)
-            instance.cursorProperty().bind(this.obsrvCursor);
-        if (this.boundEventDispatcher)
-            instance.eventDispatcherProperty().bind(this.obsrvEventDispatcher);
-        if (this.boundFill)
-            instance.fillProperty().bind(this.obsrvFill);
-        if (this.boundNodeOrientation)
-            instance.nodeOrientationProperty().bind(this.obsrvNodeOrientation);
-        if (this.boundOnContextMenuRequested)
-            instance.onContextMenuRequestedProperty().bind(this.obsrvOnContextMenuRequested);
-        if (this.boundOnDragDetected)
-            instance.onDragDetectedProperty().bind(this.obsrvOnDragDetected);
-        if (this.boundOnDragDone)
-            instance.onDragDoneProperty().bind(this.obsrvOnDragDone);
-        if (this.boundOnDragDropped)
-            instance.onDragDroppedProperty().bind(this.obsrvOnDragDropped);
-        if (this.boundOnDragEntered)
-            instance.onDragEnteredProperty().bind(this.obsrvOnDragEntered);
-        if (this.boundOnDragExited)
-            instance.onDragExitedProperty().bind(this.obsrvOnDragExited);
-        if (this.boundOnDragOver)
-            instance.onDragOverProperty().bind(this.obsrvOnDragOver);
-        if (this.boundOnInputMethodTextChanged)
-            instance.onInputMethodTextChangedProperty().bind(this.obsrvOnInputMethodTextChanged);
-        if (this.boundOnKeyPressed)
-            instance.onKeyPressedProperty().bind(this.obsrvOnKeyPressed);
-        if (this.boundOnKeyReleased)
-            instance.onKeyReleasedProperty().bind(this.obsrvOnKeyReleased);
-        if (this.boundOnKeyTyped)
-            instance.onKeyTypedProperty().bind(this.obsrvOnKeyTyped);
-        if (this.boundOnMouseClicked)
-            instance.onMouseClickedProperty().bind(this.obsrvOnMouseClicked);
-        if (this.boundOnMouseDragEntered)
-            instance.onMouseDragEnteredProperty().bind(this.obsrvOnMouseDragEntered);
-        if (this.boundOnMouseDragExited)
-            instance.onMouseDragExitedProperty().bind(this.obsrvOnMouseDragExited);
-        if (this.boundOnMouseDragOver)
-            instance.onMouseDragOverProperty().bind(this.obsrvOnMouseDragOver);
-        if (this.boundOnMouseDragReleased)
-            instance.onMouseDragReleasedProperty().bind(this.obsrvOnMouseDragReleased);
-        if (this.boundOnMouseDragged)
-            instance.onMouseDraggedProperty().bind(this.obsrvOnMouseDragged);
-        if (this.boundOnMouseEntered)
-            instance.onMouseEnteredProperty().bind(this.obsrvOnMouseEntered);
-        if (this.boundOnMouseExited)
-            instance.onMouseExitedProperty().bind(this.obsrvOnMouseExited);
-        if (this.boundOnMouseMoved)
-            instance.onMouseMovedProperty().bind(this.obsrvOnMouseMoved);
-        if (this.boundOnMousePressed)
-            instance.onMousePressedProperty().bind(this.obsrvOnMousePressed);
-        if (this.boundOnMouseReleased)
-            instance.onMouseReleasedProperty().bind(this.obsrvOnMouseReleased);
-        if (this.boundOnRotate)
-            instance.onRotateProperty().bind(this.obsrvOnRotate);
-        if (this.boundOnRotationFinished)
-            instance.onRotationFinishedProperty().bind(this.obsrvOnRotationFinished);
-        if (this.boundOnRotationStarted)
-            instance.onRotationStartedProperty().bind(this.obsrvOnRotationStarted);
-        if (this.boundOnScrollFinished)
-            instance.onScrollFinishedProperty().bind(this.obsrvOnScrollFinished);
-        if (this.boundOnScroll)
-            instance.onScrollProperty().bind(this.obsrvOnScroll);
-        if (this.boundOnScrollStarted)
-            instance.onScrollStartedProperty().bind(this.obsrvOnScrollStarted);
-        if (this.boundOnSwipeDown)
-            instance.onSwipeDownProperty().bind(this.obsrvOnSwipeDown);
-        if (this.boundOnSwipeLeft)
-            instance.onSwipeLeftProperty().bind(this.obsrvOnSwipeLeft);
-        if (this.boundOnSwipeRight)
-            instance.onSwipeRightProperty().bind(this.obsrvOnSwipeRight);
-        if (this.boundOnSwipeUp)
-            instance.onSwipeUpProperty().bind(this.obsrvOnSwipeUp);
-        if (this.boundOnTouchMoved)
-            instance.onTouchMovedProperty().bind(this.obsrvOnTouchMoved);
-        if (this.boundOnTouchPressed)
-            instance.onTouchPressedProperty().bind(this.obsrvOnTouchPressed);
-        if (this.boundOnTouchReleased)
-            instance.onTouchReleasedProperty().bind(this.obsrvOnTouchReleased);
-        if (this.boundOnTouchStationary)
-            instance.onTouchStationaryProperty().bind(this.obsrvOnTouchStationary);
-        if (this.boundOnZoomFinished)
-            instance.onZoomFinishedProperty().bind(this.obsrvOnZoomFinished);
-        if (this.boundOnZoom)
-            instance.onZoomProperty().bind(this.obsrvOnZoom);
-        if (this.boundOnZoomStarted)
-            instance.onZoomStartedProperty().bind(this.obsrvOnZoomStarted);
-        if (this.boundRoot)
-            instance.rootProperty().bind(this.obsrvRoot);
-        if (this.boundUserAgentStylesheet)
-            instance.userAgentStylesheetProperty().bind(this.obsrvUserAgentStylesheet);
+        if (this.bound1Camera)
+            instance.cameraProperty().bind(this.obsrv1Camera);
+        if (this.bound2Camera)
+            instance.cameraProperty().bindBidirectional(this.obsrv2Camera);
+        if (this.bound1Cursor)
+            instance.cursorProperty().bind(this.obsrv1Cursor);
+        if (this.bound2Cursor)
+            instance.cursorProperty().bindBidirectional(this.obsrv2Cursor);
+        if (this.bound1EventDispatcher)
+            instance.eventDispatcherProperty().bind(this.obsrv1EventDispatcher);
+        if (this.bound2EventDispatcher)
+            instance.eventDispatcherProperty().bindBidirectional(this.obsrv2EventDispatcher);
+        if (this.bound1Fill)
+            instance.fillProperty().bind(this.obsrv1Fill);
+        if (this.bound2Fill)
+            instance.fillProperty().bindBidirectional(this.obsrv2Fill);
+        if (this.bound1NodeOrientation)
+            instance.nodeOrientationProperty().bind(this.obsrv1NodeOrientation);
+        if (this.bound2NodeOrientation)
+            instance.nodeOrientationProperty().bindBidirectional(this.obsrv2NodeOrientation);
+        if (this.bound1OnContextMenuRequested)
+            instance.onContextMenuRequestedProperty().bind(this.obsrv1OnContextMenuRequested);
+        if (this.bound2OnContextMenuRequested)
+            instance.onContextMenuRequestedProperty().bindBidirectional(this.obsrv2OnContextMenuRequested);
+        if (this.bound1OnDragDetected)
+            instance.onDragDetectedProperty().bind(this.obsrv1OnDragDetected);
+        if (this.bound2OnDragDetected)
+            instance.onDragDetectedProperty().bindBidirectional(this.obsrv2OnDragDetected);
+        if (this.bound1OnDragDone)
+            instance.onDragDoneProperty().bind(this.obsrv1OnDragDone);
+        if (this.bound2OnDragDone)
+            instance.onDragDoneProperty().bindBidirectional(this.obsrv2OnDragDone);
+        if (this.bound1OnDragDropped)
+            instance.onDragDroppedProperty().bind(this.obsrv1OnDragDropped);
+        if (this.bound2OnDragDropped)
+            instance.onDragDroppedProperty().bindBidirectional(this.obsrv2OnDragDropped);
+        if (this.bound1OnDragEntered)
+            instance.onDragEnteredProperty().bind(this.obsrv1OnDragEntered);
+        if (this.bound2OnDragEntered)
+            instance.onDragEnteredProperty().bindBidirectional(this.obsrv2OnDragEntered);
+        if (this.bound1OnDragExited)
+            instance.onDragExitedProperty().bind(this.obsrv1OnDragExited);
+        if (this.bound2OnDragExited)
+            instance.onDragExitedProperty().bindBidirectional(this.obsrv2OnDragExited);
+        if (this.bound1OnDragOver)
+            instance.onDragOverProperty().bind(this.obsrv1OnDragOver);
+        if (this.bound2OnDragOver)
+            instance.onDragOverProperty().bindBidirectional(this.obsrv2OnDragOver);
+        if (this.bound1OnInputMethodTextChanged)
+            instance.onInputMethodTextChangedProperty().bind(this.obsrv1OnInputMethodTextChanged);
+        if (this.bound2OnInputMethodTextChanged)
+            instance.onInputMethodTextChangedProperty().bindBidirectional(this.obsrv2OnInputMethodTextChanged);
+        if (this.bound1OnKeyPressed)
+            instance.onKeyPressedProperty().bind(this.obsrv1OnKeyPressed);
+        if (this.bound2OnKeyPressed)
+            instance.onKeyPressedProperty().bindBidirectional(this.obsrv2OnKeyPressed);
+        if (this.bound1OnKeyReleased)
+            instance.onKeyReleasedProperty().bind(this.obsrv1OnKeyReleased);
+        if (this.bound2OnKeyReleased)
+            instance.onKeyReleasedProperty().bindBidirectional(this.obsrv2OnKeyReleased);
+        if (this.bound1OnKeyTyped)
+            instance.onKeyTypedProperty().bind(this.obsrv1OnKeyTyped);
+        if (this.bound2OnKeyTyped)
+            instance.onKeyTypedProperty().bindBidirectional(this.obsrv2OnKeyTyped);
+        if (this.bound1OnMouseClicked)
+            instance.onMouseClickedProperty().bind(this.obsrv1OnMouseClicked);
+        if (this.bound2OnMouseClicked)
+            instance.onMouseClickedProperty().bindBidirectional(this.obsrv2OnMouseClicked);
+        if (this.bound1OnMouseDragEntered)
+            instance.onMouseDragEnteredProperty().bind(this.obsrv1OnMouseDragEntered);
+        if (this.bound2OnMouseDragEntered)
+            instance.onMouseDragEnteredProperty().bindBidirectional(this.obsrv2OnMouseDragEntered);
+        if (this.bound1OnMouseDragExited)
+            instance.onMouseDragExitedProperty().bind(this.obsrv1OnMouseDragExited);
+        if (this.bound2OnMouseDragExited)
+            instance.onMouseDragExitedProperty().bindBidirectional(this.obsrv2OnMouseDragExited);
+        if (this.bound1OnMouseDragOver)
+            instance.onMouseDragOverProperty().bind(this.obsrv1OnMouseDragOver);
+        if (this.bound2OnMouseDragOver)
+            instance.onMouseDragOverProperty().bindBidirectional(this.obsrv2OnMouseDragOver);
+        if (this.bound1OnMouseDragReleased)
+            instance.onMouseDragReleasedProperty().bind(this.obsrv1OnMouseDragReleased);
+        if (this.bound2OnMouseDragReleased)
+            instance.onMouseDragReleasedProperty().bindBidirectional(this.obsrv2OnMouseDragReleased);
+        if (this.bound1OnMouseDragged)
+            instance.onMouseDraggedProperty().bind(this.obsrv1OnMouseDragged);
+        if (this.bound2OnMouseDragged)
+            instance.onMouseDraggedProperty().bindBidirectional(this.obsrv2OnMouseDragged);
+        if (this.bound1OnMouseEntered)
+            instance.onMouseEnteredProperty().bind(this.obsrv1OnMouseEntered);
+        if (this.bound2OnMouseEntered)
+            instance.onMouseEnteredProperty().bindBidirectional(this.obsrv2OnMouseEntered);
+        if (this.bound1OnMouseExited)
+            instance.onMouseExitedProperty().bind(this.obsrv1OnMouseExited);
+        if (this.bound2OnMouseExited)
+            instance.onMouseExitedProperty().bindBidirectional(this.obsrv2OnMouseExited);
+        if (this.bound1OnMouseMoved)
+            instance.onMouseMovedProperty().bind(this.obsrv1OnMouseMoved);
+        if (this.bound2OnMouseMoved)
+            instance.onMouseMovedProperty().bindBidirectional(this.obsrv2OnMouseMoved);
+        if (this.bound1OnMousePressed)
+            instance.onMousePressedProperty().bind(this.obsrv1OnMousePressed);
+        if (this.bound2OnMousePressed)
+            instance.onMousePressedProperty().bindBidirectional(this.obsrv2OnMousePressed);
+        if (this.bound1OnMouseReleased)
+            instance.onMouseReleasedProperty().bind(this.obsrv1OnMouseReleased);
+        if (this.bound2OnMouseReleased)
+            instance.onMouseReleasedProperty().bindBidirectional(this.obsrv2OnMouseReleased);
+        if (this.bound1OnRotate)
+            instance.onRotateProperty().bind(this.obsrv1OnRotate);
+        if (this.bound2OnRotate)
+            instance.onRotateProperty().bindBidirectional(this.obsrv2OnRotate);
+        if (this.bound1OnRotationFinished)
+            instance.onRotationFinishedProperty().bind(this.obsrv1OnRotationFinished);
+        if (this.bound2OnRotationFinished)
+            instance.onRotationFinishedProperty().bindBidirectional(this.obsrv2OnRotationFinished);
+        if (this.bound1OnRotationStarted)
+            instance.onRotationStartedProperty().bind(this.obsrv1OnRotationStarted);
+        if (this.bound2OnRotationStarted)
+            instance.onRotationStartedProperty().bindBidirectional(this.obsrv2OnRotationStarted);
+        if (this.bound1OnScrollFinished)
+            instance.onScrollFinishedProperty().bind(this.obsrv1OnScrollFinished);
+        if (this.bound2OnScrollFinished)
+            instance.onScrollFinishedProperty().bindBidirectional(this.obsrv2OnScrollFinished);
+        if (this.bound1OnScroll)
+            instance.onScrollProperty().bind(this.obsrv1OnScroll);
+        if (this.bound2OnScroll)
+            instance.onScrollProperty().bindBidirectional(this.obsrv2OnScroll);
+        if (this.bound1OnScrollStarted)
+            instance.onScrollStartedProperty().bind(this.obsrv1OnScrollStarted);
+        if (this.bound2OnScrollStarted)
+            instance.onScrollStartedProperty().bindBidirectional(this.obsrv2OnScrollStarted);
+        if (this.bound1OnSwipeDown)
+            instance.onSwipeDownProperty().bind(this.obsrv1OnSwipeDown);
+        if (this.bound2OnSwipeDown)
+            instance.onSwipeDownProperty().bindBidirectional(this.obsrv2OnSwipeDown);
+        if (this.bound1OnSwipeLeft)
+            instance.onSwipeLeftProperty().bind(this.obsrv1OnSwipeLeft);
+        if (this.bound2OnSwipeLeft)
+            instance.onSwipeLeftProperty().bindBidirectional(this.obsrv2OnSwipeLeft);
+        if (this.bound1OnSwipeRight)
+            instance.onSwipeRightProperty().bind(this.obsrv1OnSwipeRight);
+        if (this.bound2OnSwipeRight)
+            instance.onSwipeRightProperty().bindBidirectional(this.obsrv2OnSwipeRight);
+        if (this.bound1OnSwipeUp)
+            instance.onSwipeUpProperty().bind(this.obsrv1OnSwipeUp);
+        if (this.bound2OnSwipeUp)
+            instance.onSwipeUpProperty().bindBidirectional(this.obsrv2OnSwipeUp);
+        if (this.bound1OnTouchMoved)
+            instance.onTouchMovedProperty().bind(this.obsrv1OnTouchMoved);
+        if (this.bound2OnTouchMoved)
+            instance.onTouchMovedProperty().bindBidirectional(this.obsrv2OnTouchMoved);
+        if (this.bound1OnTouchPressed)
+            instance.onTouchPressedProperty().bind(this.obsrv1OnTouchPressed);
+        if (this.bound2OnTouchPressed)
+            instance.onTouchPressedProperty().bindBidirectional(this.obsrv2OnTouchPressed);
+        if (this.bound1OnTouchReleased)
+            instance.onTouchReleasedProperty().bind(this.obsrv1OnTouchReleased);
+        if (this.bound2OnTouchReleased)
+            instance.onTouchReleasedProperty().bindBidirectional(this.obsrv2OnTouchReleased);
+        if (this.bound1OnTouchStationary)
+            instance.onTouchStationaryProperty().bind(this.obsrv1OnTouchStationary);
+        if (this.bound2OnTouchStationary)
+            instance.onTouchStationaryProperty().bindBidirectional(this.obsrv2OnTouchStationary);
+        if (this.bound1OnZoomFinished)
+            instance.onZoomFinishedProperty().bind(this.obsrv1OnZoomFinished);
+        if (this.bound2OnZoomFinished)
+            instance.onZoomFinishedProperty().bindBidirectional(this.obsrv2OnZoomFinished);
+        if (this.bound1OnZoom)
+            instance.onZoomProperty().bind(this.obsrv1OnZoom);
+        if (this.bound2OnZoom)
+            instance.onZoomProperty().bindBidirectional(this.obsrv2OnZoom);
+        if (this.bound1OnZoomStarted)
+            instance.onZoomStartedProperty().bind(this.obsrv1OnZoomStarted);
+        if (this.bound2OnZoomStarted)
+            instance.onZoomStartedProperty().bindBidirectional(this.obsrv2OnZoomStarted);
+        if (this.bound1Root)
+            instance.rootProperty().bind(this.obsrv1Root);
+        if (this.bound2Root)
+            instance.rootProperty().bindBidirectional(this.obsrv2Root);
+        if (this.bound1UserAgentStylesheet)
+            instance.userAgentStylesheetProperty().bind(this.obsrv1UserAgentStylesheet);
+        if (this.bound2UserAgentStylesheet)
+            instance.userAgentStylesheetProperty().bindBidirectional(this.obsrv2UserAgentStylesheet);
     }
 
     /**
@@ -1173,8 +1357,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindCamera(javafx.beans.value.ObservableValue<? extends javafx.scene.Camera> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCamera = true;
-        this.obsrvCamera = source;
+        this.bound1Camera = true;
+        this.obsrv1Camera = source;
+        this.bound2Camera = false;
+        this.obsrv2Camera = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#cameraProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCamera(javafx.beans.property.Property<javafx.scene.Camera> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Camera = false;
+        this.obsrv1Camera = null;
+        this.bound2Camera = true;
+        this.obsrv2Camera = source;
         return (B) this;
     }
 
@@ -1188,8 +1391,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindCursor(javafx.beans.value.ObservableValue<? extends javafx.scene.Cursor> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundCursor = true;
-        this.obsrvCursor = source;
+        this.bound1Cursor = true;
+        this.obsrv1Cursor = source;
+        this.bound2Cursor = false;
+        this.obsrv2Cursor = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#cursorProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCursor(javafx.beans.property.Property<javafx.scene.Cursor> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Cursor = false;
+        this.obsrv1Cursor = null;
+        this.bound2Cursor = true;
+        this.obsrv2Cursor = source;
         return (B) this;
     }
 
@@ -1203,8 +1425,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindEventDispatcher(javafx.beans.value.ObservableValue<? extends javafx.event.EventDispatcher> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundEventDispatcher = true;
-        this.obsrvEventDispatcher = source;
+        this.bound1EventDispatcher = true;
+        this.obsrv1EventDispatcher = source;
+        this.bound2EventDispatcher = false;
+        this.obsrv2EventDispatcher = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#eventDispatcherProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalEventDispatcher(javafx.beans.property.Property<javafx.event.EventDispatcher> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1EventDispatcher = false;
+        this.obsrv1EventDispatcher = null;
+        this.bound2EventDispatcher = true;
+        this.obsrv2EventDispatcher = source;
         return (B) this;
     }
 
@@ -1218,8 +1459,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundFill = true;
-        this.obsrvFill = source;
+        this.bound1Fill = true;
+        this.obsrv1Fill = source;
+        this.bound2Fill = false;
+        this.obsrv2Fill = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#fillProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFill(javafx.beans.property.Property<javafx.scene.paint.Paint> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Fill = false;
+        this.obsrv1Fill = null;
+        this.bound2Fill = true;
+        this.obsrv2Fill = source;
         return (B) this;
     }
 
@@ -1233,8 +1493,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindNodeOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.NodeOrientation> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundNodeOrientation = true;
-        this.obsrvNodeOrientation = source;
+        this.bound1NodeOrientation = true;
+        this.obsrv1NodeOrientation = source;
+        this.bound2NodeOrientation = false;
+        this.obsrv2NodeOrientation = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#nodeOrientationProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalNodeOrientation(javafx.beans.property.Property<javafx.geometry.NodeOrientation> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1NodeOrientation = false;
+        this.obsrv1NodeOrientation = null;
+        this.bound2NodeOrientation = true;
+        this.obsrv2NodeOrientation = source;
         return (B) this;
     }
 
@@ -1248,8 +1527,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnContextMenuRequested(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ContextMenuEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnContextMenuRequested = true;
-        this.obsrvOnContextMenuRequested = source;
+        this.bound1OnContextMenuRequested = true;
+        this.obsrv1OnContextMenuRequested = source;
+        this.bound2OnContextMenuRequested = false;
+        this.obsrv2OnContextMenuRequested = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onContextMenuRequestedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnContextMenuRequested(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.ContextMenuEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnContextMenuRequested = false;
+        this.obsrv1OnContextMenuRequested = null;
+        this.bound2OnContextMenuRequested = true;
+        this.obsrv2OnContextMenuRequested = source;
         return (B) this;
     }
 
@@ -1263,8 +1561,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnDragDetected(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnDragDetected = true;
-        this.obsrvOnDragDetected = source;
+        this.bound1OnDragDetected = true;
+        this.obsrv1OnDragDetected = source;
+        this.bound2OnDragDetected = false;
+        this.obsrv2OnDragDetected = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onDragDetectedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnDragDetected(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnDragDetected = false;
+        this.obsrv1OnDragDetected = null;
+        this.bound2OnDragDetected = true;
+        this.obsrv2OnDragDetected = source;
         return (B) this;
     }
 
@@ -1278,8 +1595,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnDragDone(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnDragDone = true;
-        this.obsrvOnDragDone = source;
+        this.bound1OnDragDone = true;
+        this.obsrv1OnDragDone = source;
+        this.bound2OnDragDone = false;
+        this.obsrv2OnDragDone = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onDragDoneProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnDragDone(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnDragDone = false;
+        this.obsrv1OnDragDone = null;
+        this.bound2OnDragDone = true;
+        this.obsrv2OnDragDone = source;
         return (B) this;
     }
 
@@ -1293,8 +1629,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnDragDropped(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnDragDropped = true;
-        this.obsrvOnDragDropped = source;
+        this.bound1OnDragDropped = true;
+        this.obsrv1OnDragDropped = source;
+        this.bound2OnDragDropped = false;
+        this.obsrv2OnDragDropped = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onDragDroppedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnDragDropped(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnDragDropped = false;
+        this.obsrv1OnDragDropped = null;
+        this.bound2OnDragDropped = true;
+        this.obsrv2OnDragDropped = source;
         return (B) this;
     }
 
@@ -1308,8 +1663,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnDragEntered(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnDragEntered = true;
-        this.obsrvOnDragEntered = source;
+        this.bound1OnDragEntered = true;
+        this.obsrv1OnDragEntered = source;
+        this.bound2OnDragEntered = false;
+        this.obsrv2OnDragEntered = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onDragEnteredProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnDragEntered(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnDragEntered = false;
+        this.obsrv1OnDragEntered = null;
+        this.bound2OnDragEntered = true;
+        this.obsrv2OnDragEntered = source;
         return (B) this;
     }
 
@@ -1323,8 +1697,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnDragExited(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnDragExited = true;
-        this.obsrvOnDragExited = source;
+        this.bound1OnDragExited = true;
+        this.obsrv1OnDragExited = source;
+        this.bound2OnDragExited = false;
+        this.obsrv2OnDragExited = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onDragExitedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnDragExited(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnDragExited = false;
+        this.obsrv1OnDragExited = null;
+        this.bound2OnDragExited = true;
+        this.obsrv2OnDragExited = source;
         return (B) this;
     }
 
@@ -1338,8 +1731,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnDragOver(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnDragOver = true;
-        this.obsrvOnDragOver = source;
+        this.bound1OnDragOver = true;
+        this.obsrv1OnDragOver = source;
+        this.bound2OnDragOver = false;
+        this.obsrv2OnDragOver = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onDragOverProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnDragOver(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.DragEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnDragOver = false;
+        this.obsrv1OnDragOver = null;
+        this.bound2OnDragOver = true;
+        this.obsrv2OnDragOver = source;
         return (B) this;
     }
 
@@ -1353,8 +1765,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnInputMethodTextChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.InputMethodEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnInputMethodTextChanged = true;
-        this.obsrvOnInputMethodTextChanged = source;
+        this.bound1OnInputMethodTextChanged = true;
+        this.obsrv1OnInputMethodTextChanged = source;
+        this.bound2OnInputMethodTextChanged = false;
+        this.obsrv2OnInputMethodTextChanged = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onInputMethodTextChangedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnInputMethodTextChanged(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.InputMethodEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnInputMethodTextChanged = false;
+        this.obsrv1OnInputMethodTextChanged = null;
+        this.bound2OnInputMethodTextChanged = true;
+        this.obsrv2OnInputMethodTextChanged = source;
         return (B) this;
     }
 
@@ -1368,8 +1799,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnKeyPressed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnKeyPressed = true;
-        this.obsrvOnKeyPressed = source;
+        this.bound1OnKeyPressed = true;
+        this.obsrv1OnKeyPressed = source;
+        this.bound2OnKeyPressed = false;
+        this.obsrv2OnKeyPressed = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onKeyPressedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnKeyPressed(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnKeyPressed = false;
+        this.obsrv1OnKeyPressed = null;
+        this.bound2OnKeyPressed = true;
+        this.obsrv2OnKeyPressed = source;
         return (B) this;
     }
 
@@ -1383,8 +1833,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnKeyReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnKeyReleased = true;
-        this.obsrvOnKeyReleased = source;
+        this.bound1OnKeyReleased = true;
+        this.obsrv1OnKeyReleased = source;
+        this.bound2OnKeyReleased = false;
+        this.obsrv2OnKeyReleased = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onKeyReleasedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnKeyReleased(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnKeyReleased = false;
+        this.obsrv1OnKeyReleased = null;
+        this.bound2OnKeyReleased = true;
+        this.obsrv2OnKeyReleased = source;
         return (B) this;
     }
 
@@ -1398,8 +1867,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnKeyTyped(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnKeyTyped = true;
-        this.obsrvOnKeyTyped = source;
+        this.bound1OnKeyTyped = true;
+        this.obsrv1OnKeyTyped = source;
+        this.bound2OnKeyTyped = false;
+        this.obsrv2OnKeyTyped = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onKeyTypedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnKeyTyped(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.KeyEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnKeyTyped = false;
+        this.obsrv1OnKeyTyped = null;
+        this.bound2OnKeyTyped = true;
+        this.obsrv2OnKeyTyped = source;
         return (B) this;
     }
 
@@ -1413,8 +1901,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnMouseClicked(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnMouseClicked = true;
-        this.obsrvOnMouseClicked = source;
+        this.bound1OnMouseClicked = true;
+        this.obsrv1OnMouseClicked = source;
+        this.bound2OnMouseClicked = false;
+        this.obsrv2OnMouseClicked = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onMouseClickedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnMouseClicked(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnMouseClicked = false;
+        this.obsrv1OnMouseClicked = null;
+        this.bound2OnMouseClicked = true;
+        this.obsrv2OnMouseClicked = source;
         return (B) this;
     }
 
@@ -1428,8 +1935,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnMouseDragEntered(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnMouseDragEntered = true;
-        this.obsrvOnMouseDragEntered = source;
+        this.bound1OnMouseDragEntered = true;
+        this.obsrv1OnMouseDragEntered = source;
+        this.bound2OnMouseDragEntered = false;
+        this.obsrv2OnMouseDragEntered = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onMouseDragEnteredProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnMouseDragEntered(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnMouseDragEntered = false;
+        this.obsrv1OnMouseDragEntered = null;
+        this.bound2OnMouseDragEntered = true;
+        this.obsrv2OnMouseDragEntered = source;
         return (B) this;
     }
 
@@ -1443,8 +1969,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnMouseDragExited(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnMouseDragExited = true;
-        this.obsrvOnMouseDragExited = source;
+        this.bound1OnMouseDragExited = true;
+        this.obsrv1OnMouseDragExited = source;
+        this.bound2OnMouseDragExited = false;
+        this.obsrv2OnMouseDragExited = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onMouseDragExitedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnMouseDragExited(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnMouseDragExited = false;
+        this.obsrv1OnMouseDragExited = null;
+        this.bound2OnMouseDragExited = true;
+        this.obsrv2OnMouseDragExited = source;
         return (B) this;
     }
 
@@ -1458,8 +2003,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnMouseDragOver(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnMouseDragOver = true;
-        this.obsrvOnMouseDragOver = source;
+        this.bound1OnMouseDragOver = true;
+        this.obsrv1OnMouseDragOver = source;
+        this.bound2OnMouseDragOver = false;
+        this.obsrv2OnMouseDragOver = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onMouseDragOverProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnMouseDragOver(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnMouseDragOver = false;
+        this.obsrv1OnMouseDragOver = null;
+        this.bound2OnMouseDragOver = true;
+        this.obsrv2OnMouseDragOver = source;
         return (B) this;
     }
 
@@ -1473,8 +2037,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnMouseDragReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnMouseDragReleased = true;
-        this.obsrvOnMouseDragReleased = source;
+        this.bound1OnMouseDragReleased = true;
+        this.obsrv1OnMouseDragReleased = source;
+        this.bound2OnMouseDragReleased = false;
+        this.obsrv2OnMouseDragReleased = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onMouseDragReleasedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnMouseDragReleased(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseDragEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnMouseDragReleased = false;
+        this.obsrv1OnMouseDragReleased = null;
+        this.bound2OnMouseDragReleased = true;
+        this.obsrv2OnMouseDragReleased = source;
         return (B) this;
     }
 
@@ -1488,8 +2071,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnMouseDragged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnMouseDragged = true;
-        this.obsrvOnMouseDragged = source;
+        this.bound1OnMouseDragged = true;
+        this.obsrv1OnMouseDragged = source;
+        this.bound2OnMouseDragged = false;
+        this.obsrv2OnMouseDragged = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onMouseDraggedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnMouseDragged(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnMouseDragged = false;
+        this.obsrv1OnMouseDragged = null;
+        this.bound2OnMouseDragged = true;
+        this.obsrv2OnMouseDragged = source;
         return (B) this;
     }
 
@@ -1503,8 +2105,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnMouseEntered(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnMouseEntered = true;
-        this.obsrvOnMouseEntered = source;
+        this.bound1OnMouseEntered = true;
+        this.obsrv1OnMouseEntered = source;
+        this.bound2OnMouseEntered = false;
+        this.obsrv2OnMouseEntered = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onMouseEnteredProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnMouseEntered(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnMouseEntered = false;
+        this.obsrv1OnMouseEntered = null;
+        this.bound2OnMouseEntered = true;
+        this.obsrv2OnMouseEntered = source;
         return (B) this;
     }
 
@@ -1518,8 +2139,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnMouseExited(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnMouseExited = true;
-        this.obsrvOnMouseExited = source;
+        this.bound1OnMouseExited = true;
+        this.obsrv1OnMouseExited = source;
+        this.bound2OnMouseExited = false;
+        this.obsrv2OnMouseExited = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onMouseExitedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnMouseExited(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnMouseExited = false;
+        this.obsrv1OnMouseExited = null;
+        this.bound2OnMouseExited = true;
+        this.obsrv2OnMouseExited = source;
         return (B) this;
     }
 
@@ -1533,8 +2173,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnMouseMoved(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnMouseMoved = true;
-        this.obsrvOnMouseMoved = source;
+        this.bound1OnMouseMoved = true;
+        this.obsrv1OnMouseMoved = source;
+        this.bound2OnMouseMoved = false;
+        this.obsrv2OnMouseMoved = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onMouseMovedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnMouseMoved(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnMouseMoved = false;
+        this.obsrv1OnMouseMoved = null;
+        this.bound2OnMouseMoved = true;
+        this.obsrv2OnMouseMoved = source;
         return (B) this;
     }
 
@@ -1548,8 +2207,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnMousePressed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnMousePressed = true;
-        this.obsrvOnMousePressed = source;
+        this.bound1OnMousePressed = true;
+        this.obsrv1OnMousePressed = source;
+        this.bound2OnMousePressed = false;
+        this.obsrv2OnMousePressed = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onMousePressedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnMousePressed(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnMousePressed = false;
+        this.obsrv1OnMousePressed = null;
+        this.bound2OnMousePressed = true;
+        this.obsrv2OnMousePressed = source;
         return (B) this;
     }
 
@@ -1563,8 +2241,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnMouseReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnMouseReleased = true;
-        this.obsrvOnMouseReleased = source;
+        this.bound1OnMouseReleased = true;
+        this.obsrv1OnMouseReleased = source;
+        this.bound2OnMouseReleased = false;
+        this.obsrv2OnMouseReleased = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onMouseReleasedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnMouseReleased(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.MouseEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnMouseReleased = false;
+        this.obsrv1OnMouseReleased = null;
+        this.bound2OnMouseReleased = true;
+        this.obsrv2OnMouseReleased = source;
         return (B) this;
     }
 
@@ -1578,8 +2275,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnRotate(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnRotate = true;
-        this.obsrvOnRotate = source;
+        this.bound1OnRotate = true;
+        this.obsrv1OnRotate = source;
+        this.bound2OnRotate = false;
+        this.obsrv2OnRotate = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onRotateProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnRotate(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnRotate = false;
+        this.obsrv1OnRotate = null;
+        this.bound2OnRotate = true;
+        this.obsrv2OnRotate = source;
         return (B) this;
     }
 
@@ -1593,8 +2309,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnRotationFinished(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnRotationFinished = true;
-        this.obsrvOnRotationFinished = source;
+        this.bound1OnRotationFinished = true;
+        this.obsrv1OnRotationFinished = source;
+        this.bound2OnRotationFinished = false;
+        this.obsrv2OnRotationFinished = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onRotationFinishedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnRotationFinished(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnRotationFinished = false;
+        this.obsrv1OnRotationFinished = null;
+        this.bound2OnRotationFinished = true;
+        this.obsrv2OnRotationFinished = source;
         return (B) this;
     }
 
@@ -1608,8 +2343,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnRotationStarted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnRotationStarted = true;
-        this.obsrvOnRotationStarted = source;
+        this.bound1OnRotationStarted = true;
+        this.obsrv1OnRotationStarted = source;
+        this.bound2OnRotationStarted = false;
+        this.obsrv2OnRotationStarted = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onRotationStartedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnRotationStarted(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.RotateEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnRotationStarted = false;
+        this.obsrv1OnRotationStarted = null;
+        this.bound2OnRotationStarted = true;
+        this.obsrv2OnRotationStarted = source;
         return (B) this;
     }
 
@@ -1623,8 +2377,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnScrollFinished(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnScrollFinished = true;
-        this.obsrvOnScrollFinished = source;
+        this.bound1OnScrollFinished = true;
+        this.obsrv1OnScrollFinished = source;
+        this.bound2OnScrollFinished = false;
+        this.obsrv2OnScrollFinished = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onScrollFinishedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnScrollFinished(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnScrollFinished = false;
+        this.obsrv1OnScrollFinished = null;
+        this.bound2OnScrollFinished = true;
+        this.obsrv2OnScrollFinished = source;
         return (B) this;
     }
 
@@ -1638,8 +2411,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnScroll(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnScroll = true;
-        this.obsrvOnScroll = source;
+        this.bound1OnScroll = true;
+        this.obsrv1OnScroll = source;
+        this.bound2OnScroll = false;
+        this.obsrv2OnScroll = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onScrollProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnScroll(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnScroll = false;
+        this.obsrv1OnScroll = null;
+        this.bound2OnScroll = true;
+        this.obsrv2OnScroll = source;
         return (B) this;
     }
 
@@ -1653,8 +2445,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnScrollStarted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnScrollStarted = true;
-        this.obsrvOnScrollStarted = source;
+        this.bound1OnScrollStarted = true;
+        this.obsrv1OnScrollStarted = source;
+        this.bound2OnScrollStarted = false;
+        this.obsrv2OnScrollStarted = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onScrollStartedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnScrollStarted(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.ScrollEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnScrollStarted = false;
+        this.obsrv1OnScrollStarted = null;
+        this.bound2OnScrollStarted = true;
+        this.obsrv2OnScrollStarted = source;
         return (B) this;
     }
 
@@ -1668,8 +2479,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnSwipeDown(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnSwipeDown = true;
-        this.obsrvOnSwipeDown = source;
+        this.bound1OnSwipeDown = true;
+        this.obsrv1OnSwipeDown = source;
+        this.bound2OnSwipeDown = false;
+        this.obsrv2OnSwipeDown = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onSwipeDownProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnSwipeDown(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnSwipeDown = false;
+        this.obsrv1OnSwipeDown = null;
+        this.bound2OnSwipeDown = true;
+        this.obsrv2OnSwipeDown = source;
         return (B) this;
     }
 
@@ -1683,8 +2513,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnSwipeLeft(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnSwipeLeft = true;
-        this.obsrvOnSwipeLeft = source;
+        this.bound1OnSwipeLeft = true;
+        this.obsrv1OnSwipeLeft = source;
+        this.bound2OnSwipeLeft = false;
+        this.obsrv2OnSwipeLeft = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onSwipeLeftProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnSwipeLeft(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnSwipeLeft = false;
+        this.obsrv1OnSwipeLeft = null;
+        this.bound2OnSwipeLeft = true;
+        this.obsrv2OnSwipeLeft = source;
         return (B) this;
     }
 
@@ -1698,8 +2547,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnSwipeRight(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnSwipeRight = true;
-        this.obsrvOnSwipeRight = source;
+        this.bound1OnSwipeRight = true;
+        this.obsrv1OnSwipeRight = source;
+        this.bound2OnSwipeRight = false;
+        this.obsrv2OnSwipeRight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onSwipeRightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnSwipeRight(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnSwipeRight = false;
+        this.obsrv1OnSwipeRight = null;
+        this.bound2OnSwipeRight = true;
+        this.obsrv2OnSwipeRight = source;
         return (B) this;
     }
 
@@ -1713,8 +2581,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnSwipeUp(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnSwipeUp = true;
-        this.obsrvOnSwipeUp = source;
+        this.bound1OnSwipeUp = true;
+        this.obsrv1OnSwipeUp = source;
+        this.bound2OnSwipeUp = false;
+        this.obsrv2OnSwipeUp = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onSwipeUpProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnSwipeUp(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.SwipeEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnSwipeUp = false;
+        this.obsrv1OnSwipeUp = null;
+        this.bound2OnSwipeUp = true;
+        this.obsrv2OnSwipeUp = source;
         return (B) this;
     }
 
@@ -1728,8 +2615,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnTouchMoved(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnTouchMoved = true;
-        this.obsrvOnTouchMoved = source;
+        this.bound1OnTouchMoved = true;
+        this.obsrv1OnTouchMoved = source;
+        this.bound2OnTouchMoved = false;
+        this.obsrv2OnTouchMoved = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onTouchMovedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnTouchMoved(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnTouchMoved = false;
+        this.obsrv1OnTouchMoved = null;
+        this.bound2OnTouchMoved = true;
+        this.obsrv2OnTouchMoved = source;
         return (B) this;
     }
 
@@ -1743,8 +2649,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnTouchPressed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnTouchPressed = true;
-        this.obsrvOnTouchPressed = source;
+        this.bound1OnTouchPressed = true;
+        this.obsrv1OnTouchPressed = source;
+        this.bound2OnTouchPressed = false;
+        this.obsrv2OnTouchPressed = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onTouchPressedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnTouchPressed(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnTouchPressed = false;
+        this.obsrv1OnTouchPressed = null;
+        this.bound2OnTouchPressed = true;
+        this.obsrv2OnTouchPressed = source;
         return (B) this;
     }
 
@@ -1758,8 +2683,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnTouchReleased(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnTouchReleased = true;
-        this.obsrvOnTouchReleased = source;
+        this.bound1OnTouchReleased = true;
+        this.obsrv1OnTouchReleased = source;
+        this.bound2OnTouchReleased = false;
+        this.obsrv2OnTouchReleased = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onTouchReleasedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnTouchReleased(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnTouchReleased = false;
+        this.obsrv1OnTouchReleased = null;
+        this.bound2OnTouchReleased = true;
+        this.obsrv2OnTouchReleased = source;
         return (B) this;
     }
 
@@ -1773,8 +2717,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnTouchStationary(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnTouchStationary = true;
-        this.obsrvOnTouchStationary = source;
+        this.bound1OnTouchStationary = true;
+        this.obsrv1OnTouchStationary = source;
+        this.bound2OnTouchStationary = false;
+        this.obsrv2OnTouchStationary = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onTouchStationaryProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnTouchStationary(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.TouchEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnTouchStationary = false;
+        this.obsrv1OnTouchStationary = null;
+        this.bound2OnTouchStationary = true;
+        this.obsrv2OnTouchStationary = source;
         return (B) this;
     }
 
@@ -1788,8 +2751,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnZoomFinished(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnZoomFinished = true;
-        this.obsrvOnZoomFinished = source;
+        this.bound1OnZoomFinished = true;
+        this.obsrv1OnZoomFinished = source;
+        this.bound2OnZoomFinished = false;
+        this.obsrv2OnZoomFinished = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onZoomFinishedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnZoomFinished(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnZoomFinished = false;
+        this.obsrv1OnZoomFinished = null;
+        this.bound2OnZoomFinished = true;
+        this.obsrv2OnZoomFinished = source;
         return (B) this;
     }
 
@@ -1803,8 +2785,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnZoom(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnZoom = true;
-        this.obsrvOnZoom = source;
+        this.bound1OnZoom = true;
+        this.obsrv1OnZoom = source;
+        this.bound2OnZoom = false;
+        this.obsrv2OnZoom = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onZoomProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnZoom(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnZoom = false;
+        this.obsrv1OnZoom = null;
+        this.bound2OnZoom = true;
+        this.obsrv2OnZoom = source;
         return (B) this;
     }
 
@@ -1818,8 +2819,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindOnZoomStarted(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnZoomStarted = true;
-        this.obsrvOnZoomStarted = source;
+        this.bound1OnZoomStarted = true;
+        this.obsrv1OnZoomStarted = source;
+        this.bound2OnZoomStarted = false;
+        this.obsrv2OnZoomStarted = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#onZoomStartedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnZoomStarted(javafx.beans.property.Property<javafx.event.EventHandler<? super javafx.scene.input.ZoomEvent>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnZoomStarted = false;
+        this.obsrv1OnZoomStarted = null;
+        this.bound2OnZoomStarted = true;
+        this.obsrv2OnZoomStarted = source;
         return (B) this;
     }
 
@@ -1833,8 +2853,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindRoot(javafx.beans.value.ObservableValue<? extends javafx.scene.Parent> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundRoot = true;
-        this.obsrvRoot = source;
+        this.bound1Root = true;
+        this.obsrv1Root = source;
+        this.bound2Root = false;
+        this.obsrv2Root = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#rootProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRoot(javafx.beans.property.Property<javafx.scene.Parent> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Root = false;
+        this.obsrv1Root = null;
+        this.bound2Root = true;
+        this.obsrv2Root = source;
         return (B) this;
     }
 
@@ -1848,8 +2887,27 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public final B bindUserAgentStylesheet(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundUserAgentStylesheet = true;
-        this.obsrvUserAgentStylesheet = source;
+        this.bound1UserAgentStylesheet = true;
+        this.obsrv1UserAgentStylesheet = source;
+        this.bound2UserAgentStylesheet = false;
+        this.obsrv2UserAgentStylesheet = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#userAgentStylesheetProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalUserAgentStylesheet(javafx.beans.property.Property<java.lang.String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1UserAgentStylesheet = false;
+        this.obsrv1UserAgentStylesheet = null;
+        this.bound2UserAgentStylesheet = true;
+        this.obsrv2UserAgentStylesheet = source;
         return (B) this;
     }
 

@@ -34,20 +34,30 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     private boolean hasStartAngle;
     private double valStartAngle;
 
-    private boolean boundClockwise;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvClockwise;
+    private boolean bound1Clockwise;
+    private boolean bound2Clockwise;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Clockwise;
+    private javafx.beans.property.Property<Boolean> obsrv2Clockwise;
 
-    private boolean boundData;
-    private javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<javafx.scene.chart.PieChart.Data>> obsrvData;
+    private boolean bound1Data;
+    private boolean bound2Data;
+    private javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<javafx.scene.chart.PieChart.Data>> obsrv1Data;
+    private javafx.beans.property.Property<javafx.collections.ObservableList<javafx.scene.chart.PieChart.Data>> obsrv2Data;
 
-    private boolean boundLabelLineLength;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvLabelLineLength;
+    private boolean bound1LabelLineLength;
+    private boolean bound2LabelLineLength;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1LabelLineLength;
+    private javafx.beans.property.Property<Number> obsrv2LabelLineLength;
 
-    private boolean boundLabelsVisible;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvLabelsVisible;
+    private boolean bound1LabelsVisible;
+    private boolean bound2LabelsVisible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1LabelsVisible;
+    private javafx.beans.property.Property<Boolean> obsrv2LabelsVisible;
 
-    private boolean boundStartAngle;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvStartAngle;
+    private boolean bound1StartAngle;
+    private boolean bound2StartAngle;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1StartAngle;
+    private javafx.beans.property.Property<Number> obsrv2StartAngle;
 
     @Override
     public void applyTo(Z instance)
@@ -63,16 +73,26 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
             instance.setLabelsVisible(this.valLabelsVisible);
         if (this.hasStartAngle)
             instance.setStartAngle(this.valStartAngle);
-        if (this.boundClockwise)
-            instance.clockwiseProperty().bind(this.obsrvClockwise);
-        if (this.boundData)
-            instance.dataProperty().bind(this.obsrvData);
-        if (this.boundLabelLineLength)
-            instance.labelLineLengthProperty().bind(this.obsrvLabelLineLength);
-        if (this.boundLabelsVisible)
-            instance.labelsVisibleProperty().bind(this.obsrvLabelsVisible);
-        if (this.boundStartAngle)
-            instance.startAngleProperty().bind(this.obsrvStartAngle);
+        if (this.bound1Clockwise)
+            instance.clockwiseProperty().bind(this.obsrv1Clockwise);
+        if (this.bound2Clockwise)
+            instance.clockwiseProperty().bindBidirectional(this.obsrv2Clockwise);
+        if (this.bound1Data)
+            instance.dataProperty().bind(this.obsrv1Data);
+        if (this.bound2Data)
+            instance.dataProperty().bindBidirectional(this.obsrv2Data);
+        if (this.bound1LabelLineLength)
+            instance.labelLineLengthProperty().bind(this.obsrv1LabelLineLength);
+        if (this.bound2LabelLineLength)
+            instance.labelLineLengthProperty().bindBidirectional(this.obsrv2LabelLineLength);
+        if (this.bound1LabelsVisible)
+            instance.labelsVisibleProperty().bind(this.obsrv1LabelsVisible);
+        if (this.bound2LabelsVisible)
+            instance.labelsVisibleProperty().bindBidirectional(this.obsrv2LabelsVisible);
+        if (this.bound1StartAngle)
+            instance.startAngleProperty().bind(this.obsrv1StartAngle);
+        if (this.bound2StartAngle)
+            instance.startAngleProperty().bindBidirectional(this.obsrv2StartAngle);
     }
 
     /**
@@ -155,8 +175,27 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     public final B bindClockwise(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundClockwise = true;
-        this.obsrvClockwise = source;
+        this.bound1Clockwise = true;
+        this.obsrv1Clockwise = source;
+        this.bound2Clockwise = false;
+        this.obsrv2Clockwise = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PieChart#clockwiseProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalClockwise(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Clockwise = false;
+        this.obsrv1Clockwise = null;
+        this.bound2Clockwise = true;
+        this.obsrv2Clockwise = source;
         return (B) this;
     }
 
@@ -170,8 +209,27 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     public final B bindData(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<javafx.scene.chart.PieChart.Data>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundData = true;
-        this.obsrvData = source;
+        this.bound1Data = true;
+        this.obsrv1Data = source;
+        this.bound2Data = false;
+        this.obsrv2Data = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PieChart#dataProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalData(javafx.beans.property.Property<javafx.collections.ObservableList<javafx.scene.chart.PieChart.Data>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Data = false;
+        this.obsrv1Data = null;
+        this.bound2Data = true;
+        this.obsrv2Data = source;
         return (B) this;
     }
 
@@ -182,11 +240,30 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindLabelLineLength(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindLabelLineLength(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundLabelLineLength = true;
-        this.obsrvLabelLineLength = source;
+        this.bound1LabelLineLength = true;
+        this.obsrv1LabelLineLength = source;
+        this.bound2LabelLineLength = false;
+        this.obsrv2LabelLineLength = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PieChart#labelLineLengthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLabelLineLength(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1LabelLineLength = false;
+        this.obsrv1LabelLineLength = null;
+        this.bound2LabelLineLength = true;
+        this.obsrv2LabelLineLength = source;
         return (B) this;
     }
 
@@ -200,8 +277,27 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     public final B bindLabelsVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundLabelsVisible = true;
-        this.obsrvLabelsVisible = source;
+        this.bound1LabelsVisible = true;
+        this.obsrv1LabelsVisible = source;
+        this.bound2LabelsVisible = false;
+        this.obsrv2LabelsVisible = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PieChart#labelsVisibleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLabelsVisible(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1LabelsVisible = false;
+        this.obsrv1LabelsVisible = null;
+        this.bound2LabelsVisible = true;
+        this.obsrv2LabelsVisible = source;
         return (B) this;
     }
 
@@ -212,11 +308,30 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindStartAngle(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindStartAngle(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundStartAngle = true;
-        this.obsrvStartAngle = source;
+        this.bound1StartAngle = true;
+        this.obsrv1StartAngle = source;
+        this.bound2StartAngle = false;
+        this.obsrv2StartAngle = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PieChart#startAngleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStartAngle(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1StartAngle = false;
+        this.obsrv1StartAngle = null;
+        this.bound2StartAngle = true;
+        this.obsrv2StartAngle = source;
         return (B) this;
     }
 

@@ -40,26 +40,40 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     private boolean hasTriggerDistance;
     private double valTriggerDistance;
 
-    private boolean boundBottom;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvBottom;
+    private boolean bound1Bottom;
+    private boolean bound2Bottom;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Bottom;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Bottom;
 
-    private boolean boundContent;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvContent;
+    private boolean bound1Content;
+    private boolean bound2Content;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Content;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Content;
 
-    private boolean boundLeft;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvLeft;
+    private boolean bound1Left;
+    private boolean bound2Left;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Left;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Left;
 
-    private boolean boundPinnedSide;
-    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> obsrvPinnedSide;
+    private boolean bound1PinnedSide;
+    private boolean bound2PinnedSide;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> obsrv1PinnedSide;
+    private javafx.beans.property.Property<javafx.geometry.Side> obsrv2PinnedSide;
 
-    private boolean boundRight;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvRight;
+    private boolean bound1Right;
+    private boolean bound2Right;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Right;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Right;
 
-    private boolean boundTop;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvTop;
+    private boolean bound1Top;
+    private boolean bound2Top;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Top;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Top;
 
-    private boolean boundTriggerDistance;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvTriggerDistance;
+    private boolean bound1TriggerDistance;
+    private boolean bound2TriggerDistance;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1TriggerDistance;
+    private javafx.beans.property.Property<Number> obsrv2TriggerDistance;
 
     @Override
     public void applyTo(Z instance)
@@ -79,20 +93,34 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
             instance.setTop(this.valTop);
         if (this.hasTriggerDistance)
             instance.setTriggerDistance(this.valTriggerDistance);
-        if (this.boundBottom)
-            instance.bottomProperty().bind(this.obsrvBottom);
-        if (this.boundContent)
-            instance.contentProperty().bind(this.obsrvContent);
-        if (this.boundLeft)
-            instance.leftProperty().bind(this.obsrvLeft);
-        if (this.boundPinnedSide)
-            instance.pinnedSideProperty().bind(this.obsrvPinnedSide);
-        if (this.boundRight)
-            instance.rightProperty().bind(this.obsrvRight);
-        if (this.boundTop)
-            instance.topProperty().bind(this.obsrvTop);
-        if (this.boundTriggerDistance)
-            instance.triggerDistanceProperty().bind(this.obsrvTriggerDistance);
+        if (this.bound1Bottom)
+            instance.bottomProperty().bind(this.obsrv1Bottom);
+        if (this.bound2Bottom)
+            instance.bottomProperty().bindBidirectional(this.obsrv2Bottom);
+        if (this.bound1Content)
+            instance.contentProperty().bind(this.obsrv1Content);
+        if (this.bound2Content)
+            instance.contentProperty().bindBidirectional(this.obsrv2Content);
+        if (this.bound1Left)
+            instance.leftProperty().bind(this.obsrv1Left);
+        if (this.bound2Left)
+            instance.leftProperty().bindBidirectional(this.obsrv2Left);
+        if (this.bound1PinnedSide)
+            instance.pinnedSideProperty().bind(this.obsrv1PinnedSide);
+        if (this.bound2PinnedSide)
+            instance.pinnedSideProperty().bindBidirectional(this.obsrv2PinnedSide);
+        if (this.bound1Right)
+            instance.rightProperty().bind(this.obsrv1Right);
+        if (this.bound2Right)
+            instance.rightProperty().bindBidirectional(this.obsrv2Right);
+        if (this.bound1Top)
+            instance.topProperty().bind(this.obsrv1Top);
+        if (this.bound2Top)
+            instance.topProperty().bindBidirectional(this.obsrv2Top);
+        if (this.bound1TriggerDistance)
+            instance.triggerDistanceProperty().bind(this.obsrv1TriggerDistance);
+        if (this.bound2TriggerDistance)
+            instance.triggerDistanceProperty().bindBidirectional(this.obsrv2TriggerDistance);
     }
 
     /**
@@ -203,8 +231,27 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     public final B bindBottom(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundBottom = true;
-        this.obsrvBottom = source;
+        this.bound1Bottom = true;
+        this.obsrv1Bottom = source;
+        this.bound2Bottom = false;
+        this.obsrv2Bottom = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link HiddenSidesPane#bottomProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalBottom(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Bottom = false;
+        this.obsrv1Bottom = null;
+        this.bound2Bottom = true;
+        this.obsrv2Bottom = source;
         return (B) this;
     }
 
@@ -218,8 +265,27 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     public final B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundContent = true;
-        this.obsrvContent = source;
+        this.bound1Content = true;
+        this.obsrv1Content = source;
+        this.bound2Content = false;
+        this.obsrv2Content = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link HiddenSidesPane#contentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalContent(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Content = false;
+        this.obsrv1Content = null;
+        this.bound2Content = true;
+        this.obsrv2Content = source;
         return (B) this;
     }
 
@@ -233,8 +299,27 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     public final B bindLeft(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundLeft = true;
-        this.obsrvLeft = source;
+        this.bound1Left = true;
+        this.obsrv1Left = source;
+        this.bound2Left = false;
+        this.obsrv2Left = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link HiddenSidesPane#leftProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLeft(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Left = false;
+        this.obsrv1Left = null;
+        this.bound2Left = true;
+        this.obsrv2Left = source;
         return (B) this;
     }
 
@@ -248,8 +333,27 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     public final B bindPinnedSide(javafx.beans.value.ObservableValue<? extends javafx.geometry.Side> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPinnedSide = true;
-        this.obsrvPinnedSide = source;
+        this.bound1PinnedSide = true;
+        this.obsrv1PinnedSide = source;
+        this.bound2PinnedSide = false;
+        this.obsrv2PinnedSide = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link HiddenSidesPane#pinnedSideProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPinnedSide(javafx.beans.property.Property<javafx.geometry.Side> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PinnedSide = false;
+        this.obsrv1PinnedSide = null;
+        this.bound2PinnedSide = true;
+        this.obsrv2PinnedSide = source;
         return (B) this;
     }
 
@@ -263,8 +367,27 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     public final B bindRight(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundRight = true;
-        this.obsrvRight = source;
+        this.bound1Right = true;
+        this.obsrv1Right = source;
+        this.bound2Right = false;
+        this.obsrv2Right = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link HiddenSidesPane#rightProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRight(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Right = false;
+        this.obsrv1Right = null;
+        this.bound2Right = true;
+        this.obsrv2Right = source;
         return (B) this;
     }
 
@@ -278,8 +401,27 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     public final B bindTop(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTop = true;
-        this.obsrvTop = source;
+        this.bound1Top = true;
+        this.obsrv1Top = source;
+        this.bound2Top = false;
+        this.obsrv2Top = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link HiddenSidesPane#topProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTop(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Top = false;
+        this.obsrv1Top = null;
+        this.bound2Top = true;
+        this.obsrv2Top = source;
         return (B) this;
     }
 
@@ -290,11 +432,30 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindTriggerDistance(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindTriggerDistance(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTriggerDistance = true;
-        this.obsrvTriggerDistance = source;
+        this.bound1TriggerDistance = true;
+        this.obsrv1TriggerDistance = source;
+        this.bound2TriggerDistance = false;
+        this.obsrv2TriggerDistance = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link HiddenSidesPane#triggerDistanceProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTriggerDistance(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TriggerDistance = false;
+        this.obsrv1TriggerDistance = null;
+        this.bound2TriggerDistance = true;
+        this.obsrv2TriggerDistance = source;
         return (B) this;
     }
 

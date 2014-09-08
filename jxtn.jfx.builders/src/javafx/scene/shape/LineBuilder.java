@@ -31,17 +31,25 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     private boolean hasStartY;
     private double valStartY;
 
-    private boolean boundEndX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvEndX;
+    private boolean bound1EndX;
+    private boolean bound2EndX;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1EndX;
+    private javafx.beans.property.Property<Number> obsrv2EndX;
 
-    private boolean boundEndY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvEndY;
+    private boolean bound1EndY;
+    private boolean bound2EndY;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1EndY;
+    private javafx.beans.property.Property<Number> obsrv2EndY;
 
-    private boolean boundStartX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvStartX;
+    private boolean bound1StartX;
+    private boolean bound2StartX;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1StartX;
+    private javafx.beans.property.Property<Number> obsrv2StartX;
 
-    private boolean boundStartY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvStartY;
+    private boolean bound1StartY;
+    private boolean bound2StartY;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1StartY;
+    private javafx.beans.property.Property<Number> obsrv2StartY;
 
     @Override
     public void applyTo(Z instance)
@@ -55,14 +63,22 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
             instance.setStartX(this.valStartX);
         if (this.hasStartY)
             instance.setStartY(this.valStartY);
-        if (this.boundEndX)
-            instance.endXProperty().bind(this.obsrvEndX);
-        if (this.boundEndY)
-            instance.endYProperty().bind(this.obsrvEndY);
-        if (this.boundStartX)
-            instance.startXProperty().bind(this.obsrvStartX);
-        if (this.boundStartY)
-            instance.startYProperty().bind(this.obsrvStartY);
+        if (this.bound1EndX)
+            instance.endXProperty().bind(this.obsrv1EndX);
+        if (this.bound2EndX)
+            instance.endXProperty().bindBidirectional(this.obsrv2EndX);
+        if (this.bound1EndY)
+            instance.endYProperty().bind(this.obsrv1EndY);
+        if (this.bound2EndY)
+            instance.endYProperty().bindBidirectional(this.obsrv2EndY);
+        if (this.bound1StartX)
+            instance.startXProperty().bind(this.obsrv1StartX);
+        if (this.bound2StartX)
+            instance.startXProperty().bindBidirectional(this.obsrv2StartX);
+        if (this.bound1StartY)
+            instance.startYProperty().bind(this.obsrv1StartY);
+        if (this.bound2StartY)
+            instance.startYProperty().bindBidirectional(this.obsrv2StartY);
     }
 
     /**
@@ -128,11 +144,30 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindEndX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindEndX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundEndX = true;
-        this.obsrvEndX = source;
+        this.bound1EndX = true;
+        this.obsrv1EndX = source;
+        this.bound2EndX = false;
+        this.obsrv2EndX = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Line#endXProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalEndX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1EndX = false;
+        this.obsrv1EndX = null;
+        this.bound2EndX = true;
+        this.obsrv2EndX = source;
         return (B) this;
     }
 
@@ -143,11 +178,30 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindEndY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindEndY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundEndY = true;
-        this.obsrvEndY = source;
+        this.bound1EndY = true;
+        this.obsrv1EndY = source;
+        this.bound2EndY = false;
+        this.obsrv2EndY = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Line#endYProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalEndY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1EndY = false;
+        this.obsrv1EndY = null;
+        this.bound2EndY = true;
+        this.obsrv2EndY = source;
         return (B) this;
     }
 
@@ -158,11 +212,30 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindStartX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindStartX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundStartX = true;
-        this.obsrvStartX = source;
+        this.bound1StartX = true;
+        this.obsrv1StartX = source;
+        this.bound2StartX = false;
+        this.obsrv2StartX = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Line#startXProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStartX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1StartX = false;
+        this.obsrv1StartX = null;
+        this.bound2StartX = true;
+        this.obsrv2StartX = source;
         return (B) this;
     }
 
@@ -173,11 +246,30 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindStartY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindStartY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundStartY = true;
-        this.obsrvStartY = source;
+        this.bound1StartY = true;
+        this.obsrv1StartY = source;
+        this.bound2StartY = false;
+        this.obsrv2StartY = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Line#startYProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStartY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1StartY = false;
+        this.obsrv1StartY = null;
+        this.bound2StartY = true;
+        this.obsrv2StartY = source;
         return (B) this;
     }
 

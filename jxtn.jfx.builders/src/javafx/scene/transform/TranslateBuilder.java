@@ -28,14 +28,20 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
     private boolean hasZ;
     private double valZ;
 
-    private boolean boundX;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvX;
+    private boolean bound1X;
+    private boolean bound2X;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1X;
+    private javafx.beans.property.Property<Number> obsrv2X;
 
-    private boolean boundY;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvY;
+    private boolean bound1Y;
+    private boolean bound2Y;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Y;
+    private javafx.beans.property.Property<Number> obsrv2Y;
 
-    private boolean boundZ;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvZ;
+    private boolean bound1Z;
+    private boolean bound2Z;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Z;
+    private javafx.beans.property.Property<Number> obsrv2Z;
 
     @Override
     public void applyTo(Z instance)
@@ -47,12 +53,18 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
             instance.setY(this.valY);
         if (this.hasZ)
             instance.setZ(this.valZ);
-        if (this.boundX)
-            instance.xProperty().bind(this.obsrvX);
-        if (this.boundY)
-            instance.yProperty().bind(this.obsrvY);
-        if (this.boundZ)
-            instance.zProperty().bind(this.obsrvZ);
+        if (this.bound1X)
+            instance.xProperty().bind(this.obsrv1X);
+        if (this.bound2X)
+            instance.xProperty().bindBidirectional(this.obsrv2X);
+        if (this.bound1Y)
+            instance.yProperty().bind(this.obsrv1Y);
+        if (this.bound2Y)
+            instance.yProperty().bindBidirectional(this.obsrv2Y);
+        if (this.bound1Z)
+            instance.zProperty().bind(this.obsrv1Z);
+        if (this.bound2Z)
+            instance.zProperty().bindBidirectional(this.obsrv2Z);
     }
 
     /**
@@ -104,11 +116,30 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindX(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindX(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundX = true;
-        this.obsrvX = source;
+        this.bound1X = true;
+        this.obsrv1X = source;
+        this.bound2X = false;
+        this.obsrv2X = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Translate#xProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalX(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1X = false;
+        this.obsrv1X = null;
+        this.bound2X = true;
+        this.obsrv2X = source;
         return (B) this;
     }
 
@@ -119,11 +150,30 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindY(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindY(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundY = true;
-        this.obsrvY = source;
+        this.bound1Y = true;
+        this.obsrv1Y = source;
+        this.bound2Y = false;
+        this.obsrv2Y = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Translate#yProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalY(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Y = false;
+        this.obsrv1Y = null;
+        this.bound2Y = true;
+        this.obsrv2Y = source;
         return (B) this;
     }
 
@@ -134,11 +184,30 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindZ(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindZ(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundZ = true;
-        this.obsrvZ = source;
+        this.bound1Z = true;
+        this.obsrv1Z = source;
+        this.bound2Z = false;
+        this.obsrv2Z = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Translate#zProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalZ(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Z = false;
+        this.obsrv1Z = null;
+        this.bound2Z = true;
+        this.obsrv2Z = source;
         return (B) this;
     }
 

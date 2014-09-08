@@ -61,41 +61,65 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     private boolean hasUserData;
     private java.lang.Object valUserData;
 
-    private boolean boundClosable;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvClosable;
+    private boolean bound1Closable;
+    private boolean bound2Closable;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Closable;
+    private javafx.beans.property.Property<Boolean> obsrv2Closable;
 
-    private boolean boundContent;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvContent;
+    private boolean bound1Content;
+    private boolean bound2Content;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Content;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Content;
 
-    private boolean boundContextMenu;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContextMenu> obsrvContextMenu;
+    private boolean bound1ContextMenu;
+    private boolean bound2ContextMenu;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContextMenu> obsrv1ContextMenu;
+    private javafx.beans.property.Property<javafx.scene.control.ContextMenu> obsrv2ContextMenu;
 
-    private boolean boundDisable;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvDisable;
+    private boolean bound1Disable;
+    private boolean bound2Disable;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Disable;
+    private javafx.beans.property.Property<Boolean> obsrv2Disable;
 
-    private boolean boundGraphic;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrvGraphic;
+    private boolean bound1Graphic;
+    private boolean bound2Graphic;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Graphic;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Graphic;
 
-    private boolean boundId;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvId;
+    private boolean bound1Id;
+    private boolean bound2Id;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Id;
+    private javafx.beans.property.Property<String> obsrv2Id;
 
-    private boolean boundOnCloseRequest;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrvOnCloseRequest;
+    private boolean bound1OnCloseRequest;
+    private boolean bound2OnCloseRequest;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrv1OnCloseRequest;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> obsrv2OnCloseRequest;
 
-    private boolean boundOnClosed;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrvOnClosed;
+    private boolean bound1OnClosed;
+    private boolean bound2OnClosed;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrv1OnClosed;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> obsrv2OnClosed;
 
-    private boolean boundOnSelectionChanged;
-    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrvOnSelectionChanged;
+    private boolean bound1OnSelectionChanged;
+    private boolean bound2OnSelectionChanged;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> obsrv1OnSelectionChanged;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> obsrv2OnSelectionChanged;
 
-    private boolean boundStyle;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvStyle;
+    private boolean bound1Style;
+    private boolean bound2Style;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Style;
+    private javafx.beans.property.Property<String> obsrv2Style;
 
-    private boolean boundText;
-    private javafx.beans.value.ObservableValue<? extends String> obsrvText;
+    private boolean bound1Text;
+    private boolean bound2Text;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Text;
+    private javafx.beans.property.Property<String> obsrv2Text;
 
-    private boolean boundTooltip;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.Tooltip> obsrvTooltip;
+    private boolean bound1Tooltip;
+    private boolean bound2Tooltip;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.Tooltip> obsrv1Tooltip;
+    private javafx.beans.property.Property<javafx.scene.control.Tooltip> obsrv2Tooltip;
 
     @Override
     public void applyTo(Z instance)
@@ -129,30 +153,54 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
             instance.setTooltip(this.valTooltip);
         if (this.hasUserData)
             instance.setUserData(this.valUserData);
-        if (this.boundClosable)
-            instance.closableProperty().bind(this.obsrvClosable);
-        if (this.boundContent)
-            instance.contentProperty().bind(this.obsrvContent);
-        if (this.boundContextMenu)
-            instance.contextMenuProperty().bind(this.obsrvContextMenu);
-        if (this.boundDisable)
-            instance.disableProperty().bind(this.obsrvDisable);
-        if (this.boundGraphic)
-            instance.graphicProperty().bind(this.obsrvGraphic);
-        if (this.boundId)
-            instance.idProperty().bind(this.obsrvId);
-        if (this.boundOnCloseRequest)
-            instance.onCloseRequestProperty().bind(this.obsrvOnCloseRequest);
-        if (this.boundOnClosed)
-            instance.onClosedProperty().bind(this.obsrvOnClosed);
-        if (this.boundOnSelectionChanged)
-            instance.onSelectionChangedProperty().bind(this.obsrvOnSelectionChanged);
-        if (this.boundStyle)
-            instance.styleProperty().bind(this.obsrvStyle);
-        if (this.boundText)
-            instance.textProperty().bind(this.obsrvText);
-        if (this.boundTooltip)
-            instance.tooltipProperty().bind(this.obsrvTooltip);
+        if (this.bound1Closable)
+            instance.closableProperty().bind(this.obsrv1Closable);
+        if (this.bound2Closable)
+            instance.closableProperty().bindBidirectional(this.obsrv2Closable);
+        if (this.bound1Content)
+            instance.contentProperty().bind(this.obsrv1Content);
+        if (this.bound2Content)
+            instance.contentProperty().bindBidirectional(this.obsrv2Content);
+        if (this.bound1ContextMenu)
+            instance.contextMenuProperty().bind(this.obsrv1ContextMenu);
+        if (this.bound2ContextMenu)
+            instance.contextMenuProperty().bindBidirectional(this.obsrv2ContextMenu);
+        if (this.bound1Disable)
+            instance.disableProperty().bind(this.obsrv1Disable);
+        if (this.bound2Disable)
+            instance.disableProperty().bindBidirectional(this.obsrv2Disable);
+        if (this.bound1Graphic)
+            instance.graphicProperty().bind(this.obsrv1Graphic);
+        if (this.bound2Graphic)
+            instance.graphicProperty().bindBidirectional(this.obsrv2Graphic);
+        if (this.bound1Id)
+            instance.idProperty().bind(this.obsrv1Id);
+        if (this.bound2Id)
+            instance.idProperty().bindBidirectional(this.obsrv2Id);
+        if (this.bound1OnCloseRequest)
+            instance.onCloseRequestProperty().bind(this.obsrv1OnCloseRequest);
+        if (this.bound2OnCloseRequest)
+            instance.onCloseRequestProperty().bindBidirectional(this.obsrv2OnCloseRequest);
+        if (this.bound1OnClosed)
+            instance.onClosedProperty().bind(this.obsrv1OnClosed);
+        if (this.bound2OnClosed)
+            instance.onClosedProperty().bindBidirectional(this.obsrv2OnClosed);
+        if (this.bound1OnSelectionChanged)
+            instance.onSelectionChangedProperty().bind(this.obsrv1OnSelectionChanged);
+        if (this.bound2OnSelectionChanged)
+            instance.onSelectionChangedProperty().bindBidirectional(this.obsrv2OnSelectionChanged);
+        if (this.bound1Style)
+            instance.styleProperty().bind(this.obsrv1Style);
+        if (this.bound2Style)
+            instance.styleProperty().bindBidirectional(this.obsrv2Style);
+        if (this.bound1Text)
+            instance.textProperty().bind(this.obsrv1Text);
+        if (this.bound2Text)
+            instance.textProperty().bindBidirectional(this.obsrv2Text);
+        if (this.bound1Tooltip)
+            instance.tooltipProperty().bind(this.obsrv1Tooltip);
+        if (this.bound2Tooltip)
+            instance.tooltipProperty().bindBidirectional(this.obsrv2Tooltip);
     }
 
     /**
@@ -376,8 +424,27 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     public final B bindClosable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundClosable = true;
-        this.obsrvClosable = source;
+        this.bound1Closable = true;
+        this.obsrv1Closable = source;
+        this.bound2Closable = false;
+        this.obsrv2Closable = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tab#closableProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalClosable(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Closable = false;
+        this.obsrv1Closable = null;
+        this.bound2Closable = true;
+        this.obsrv2Closable = source;
         return (B) this;
     }
 
@@ -391,8 +458,27 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     public final B bindContent(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundContent = true;
-        this.obsrvContent = source;
+        this.bound1Content = true;
+        this.obsrv1Content = source;
+        this.bound2Content = false;
+        this.obsrv2Content = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tab#contentProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalContent(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Content = false;
+        this.obsrv1Content = null;
+        this.bound2Content = true;
+        this.obsrv2Content = source;
         return (B) this;
     }
 
@@ -406,8 +492,27 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     public final B bindContextMenu(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ContextMenu> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundContextMenu = true;
-        this.obsrvContextMenu = source;
+        this.bound1ContextMenu = true;
+        this.obsrv1ContextMenu = source;
+        this.bound2ContextMenu = false;
+        this.obsrv2ContextMenu = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tab#contextMenuProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalContextMenu(javafx.beans.property.Property<javafx.scene.control.ContextMenu> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ContextMenu = false;
+        this.obsrv1ContextMenu = null;
+        this.bound2ContextMenu = true;
+        this.obsrv2ContextMenu = source;
         return (B) this;
     }
 
@@ -421,8 +526,27 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     public final B bindDisable(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundDisable = true;
-        this.obsrvDisable = source;
+        this.bound1Disable = true;
+        this.obsrv1Disable = source;
+        this.bound2Disable = false;
+        this.obsrv2Disable = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tab#disableProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalDisable(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Disable = false;
+        this.obsrv1Disable = null;
+        this.bound2Disable = true;
+        this.obsrv2Disable = source;
         return (B) this;
     }
 
@@ -436,8 +560,27 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     public final B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundGraphic = true;
-        this.obsrvGraphic = source;
+        this.bound1Graphic = true;
+        this.obsrv1Graphic = source;
+        this.bound2Graphic = false;
+        this.obsrv2Graphic = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tab#graphicProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalGraphic(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Graphic = false;
+        this.obsrv1Graphic = null;
+        this.bound2Graphic = true;
+        this.obsrv2Graphic = source;
         return (B) this;
     }
 
@@ -451,8 +594,27 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     public final B bindId(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundId = true;
-        this.obsrvId = source;
+        this.bound1Id = true;
+        this.obsrv1Id = source;
+        this.bound2Id = false;
+        this.obsrv2Id = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tab#idProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalId(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Id = false;
+        this.obsrv1Id = null;
+        this.bound2Id = true;
+        this.obsrv2Id = source;
         return (B) this;
     }
 
@@ -466,8 +628,27 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     public final B bindOnCloseRequest(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnCloseRequest = true;
-        this.obsrvOnCloseRequest = source;
+        this.bound1OnCloseRequest = true;
+        this.obsrv1OnCloseRequest = source;
+        this.bound2OnCloseRequest = false;
+        this.obsrv2OnCloseRequest = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tab#onCloseRequestProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnCloseRequest(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnCloseRequest = false;
+        this.obsrv1OnCloseRequest = null;
+        this.bound2OnCloseRequest = true;
+        this.obsrv2OnCloseRequest = source;
         return (B) this;
     }
 
@@ -481,8 +662,27 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     public final B bindOnClosed(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnClosed = true;
-        this.obsrvOnClosed = source;
+        this.bound1OnClosed = true;
+        this.obsrv1OnClosed = source;
+        this.bound2OnClosed = false;
+        this.obsrv2OnClosed = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tab#onClosedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnClosed(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnClosed = false;
+        this.obsrv1OnClosed = null;
+        this.bound2OnClosed = true;
+        this.obsrv2OnClosed = source;
         return (B) this;
     }
 
@@ -496,8 +696,27 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     public final B bindOnSelectionChanged(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.Event>> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundOnSelectionChanged = true;
-        this.obsrvOnSelectionChanged = source;
+        this.bound1OnSelectionChanged = true;
+        this.obsrv1OnSelectionChanged = source;
+        this.bound2OnSelectionChanged = false;
+        this.obsrv2OnSelectionChanged = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tab#onSelectionChangedProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnSelectionChanged(javafx.beans.property.Property<javafx.event.EventHandler<javafx.event.Event>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnSelectionChanged = false;
+        this.obsrv1OnSelectionChanged = null;
+        this.bound2OnSelectionChanged = true;
+        this.obsrv2OnSelectionChanged = source;
         return (B) this;
     }
 
@@ -511,8 +730,27 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     public final B bindStyle(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundStyle = true;
-        this.obsrvStyle = source;
+        this.bound1Style = true;
+        this.obsrv1Style = source;
+        this.bound2Style = false;
+        this.obsrv2Style = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tab#styleProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStyle(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Style = false;
+        this.obsrv1Style = null;
+        this.bound2Style = true;
+        this.obsrv2Style = source;
         return (B) this;
     }
 
@@ -526,8 +764,27 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     public final B bindText(javafx.beans.value.ObservableValue<? extends String> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundText = true;
-        this.obsrvText = source;
+        this.bound1Text = true;
+        this.obsrv1Text = source;
+        this.bound2Text = false;
+        this.obsrv2Text = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tab#textProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalText(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Text = false;
+        this.obsrv1Text = null;
+        this.bound2Text = true;
+        this.obsrv2Text = source;
         return (B) this;
     }
 
@@ -541,8 +798,27 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     public final B bindTooltip(javafx.beans.value.ObservableValue<? extends javafx.scene.control.Tooltip> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundTooltip = true;
-        this.obsrvTooltip = source;
+        this.bound1Tooltip = true;
+        this.obsrv1Tooltip = source;
+        this.bound2Tooltip = false;
+        this.obsrv2Tooltip = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Tab#tooltipProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTooltip(javafx.beans.property.Property<javafx.scene.control.Tooltip> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Tooltip = false;
+        this.obsrv1Tooltip = null;
+        this.bound2Tooltip = true;
+        this.obsrv2Tooltip = source;
         return (B) this;
     }
 

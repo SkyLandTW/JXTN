@@ -37,20 +37,30 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     private boolean hasWrapText;
     private boolean valWrapText;
 
-    private boolean boundPrefColumnCount;
-    private javafx.beans.value.ObservableValue<? extends Integer> obsrvPrefColumnCount;
+    private boolean bound1PrefColumnCount;
+    private boolean bound2PrefColumnCount;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PrefColumnCount;
+    private javafx.beans.property.Property<Number> obsrv2PrefColumnCount;
 
-    private boolean boundPrefRowCount;
-    private javafx.beans.value.ObservableValue<? extends Integer> obsrvPrefRowCount;
+    private boolean bound1PrefRowCount;
+    private boolean bound2PrefRowCount;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PrefRowCount;
+    private javafx.beans.property.Property<Number> obsrv2PrefRowCount;
 
-    private boolean boundScrollLeft;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvScrollLeft;
+    private boolean bound1ScrollLeft;
+    private boolean bound2ScrollLeft;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1ScrollLeft;
+    private javafx.beans.property.Property<Number> obsrv2ScrollLeft;
 
-    private boolean boundScrollTop;
-    private javafx.beans.value.ObservableValue<? extends Double> obsrvScrollTop;
+    private boolean bound1ScrollTop;
+    private boolean bound2ScrollTop;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1ScrollTop;
+    private javafx.beans.property.Property<Number> obsrv2ScrollTop;
 
-    private boolean boundWrapText;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrvWrapText;
+    private boolean bound1WrapText;
+    private boolean bound2WrapText;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1WrapText;
+    private javafx.beans.property.Property<Boolean> obsrv2WrapText;
 
     @Override
     public void applyTo(Z instance)
@@ -68,16 +78,26 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
             instance.setScrollTop(this.valScrollTop);
         if (this.hasWrapText)
             instance.setWrapText(this.valWrapText);
-        if (this.boundPrefColumnCount)
-            instance.prefColumnCountProperty().bind(this.obsrvPrefColumnCount);
-        if (this.boundPrefRowCount)
-            instance.prefRowCountProperty().bind(this.obsrvPrefRowCount);
-        if (this.boundScrollLeft)
-            instance.scrollLeftProperty().bind(this.obsrvScrollLeft);
-        if (this.boundScrollTop)
-            instance.scrollTopProperty().bind(this.obsrvScrollTop);
-        if (this.boundWrapText)
-            instance.wrapTextProperty().bind(this.obsrvWrapText);
+        if (this.bound1PrefColumnCount)
+            instance.prefColumnCountProperty().bind(this.obsrv1PrefColumnCount);
+        if (this.bound2PrefColumnCount)
+            instance.prefColumnCountProperty().bindBidirectional(this.obsrv2PrefColumnCount);
+        if (this.bound1PrefRowCount)
+            instance.prefRowCountProperty().bind(this.obsrv1PrefRowCount);
+        if (this.bound2PrefRowCount)
+            instance.prefRowCountProperty().bindBidirectional(this.obsrv2PrefRowCount);
+        if (this.bound1ScrollLeft)
+            instance.scrollLeftProperty().bind(this.obsrv1ScrollLeft);
+        if (this.bound2ScrollLeft)
+            instance.scrollLeftProperty().bindBidirectional(this.obsrv2ScrollLeft);
+        if (this.bound1ScrollTop)
+            instance.scrollTopProperty().bind(this.obsrv1ScrollTop);
+        if (this.bound2ScrollTop)
+            instance.scrollTopProperty().bindBidirectional(this.obsrv2ScrollTop);
+        if (this.bound1WrapText)
+            instance.wrapTextProperty().bind(this.obsrv1WrapText);
+        if (this.bound2WrapText)
+            instance.wrapTextProperty().bindBidirectional(this.obsrv2WrapText);
     }
 
     /**
@@ -186,11 +206,30 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPrefColumnCount(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindPrefColumnCount(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPrefColumnCount = true;
-        this.obsrvPrefColumnCount = source;
+        this.bound1PrefColumnCount = true;
+        this.obsrv1PrefColumnCount = source;
+        this.bound2PrefColumnCount = false;
+        this.obsrv2PrefColumnCount = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TextArea#prefColumnCountProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPrefColumnCount(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PrefColumnCount = false;
+        this.obsrv1PrefColumnCount = null;
+        this.bound2PrefColumnCount = true;
+        this.obsrv2PrefColumnCount = source;
         return (B) this;
     }
 
@@ -201,11 +240,30 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindPrefRowCount(javafx.beans.value.ObservableValue<? extends Integer> source)
+    public final B bindPrefRowCount(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundPrefRowCount = true;
-        this.obsrvPrefRowCount = source;
+        this.bound1PrefRowCount = true;
+        this.obsrv1PrefRowCount = source;
+        this.bound2PrefRowCount = false;
+        this.obsrv2PrefRowCount = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TextArea#prefRowCountProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPrefRowCount(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PrefRowCount = false;
+        this.obsrv1PrefRowCount = null;
+        this.bound2PrefRowCount = true;
+        this.obsrv2PrefRowCount = source;
         return (B) this;
     }
 
@@ -216,11 +274,30 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindScrollLeft(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindScrollLeft(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundScrollLeft = true;
-        this.obsrvScrollLeft = source;
+        this.bound1ScrollLeft = true;
+        this.obsrv1ScrollLeft = source;
+        this.bound2ScrollLeft = false;
+        this.obsrv2ScrollLeft = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TextArea#scrollLeftProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalScrollLeft(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ScrollLeft = false;
+        this.obsrv1ScrollLeft = null;
+        this.bound2ScrollLeft = true;
+        this.obsrv2ScrollLeft = source;
         return (B) this;
     }
 
@@ -231,11 +308,30 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindScrollTop(javafx.beans.value.ObservableValue<? extends Double> source)
+    public final B bindScrollTop(javafx.beans.value.ObservableValue<? extends Number> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundScrollTop = true;
-        this.obsrvScrollTop = source;
+        this.bound1ScrollTop = true;
+        this.obsrv1ScrollTop = source;
+        this.bound2ScrollTop = false;
+        this.obsrv2ScrollTop = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TextArea#scrollTopProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalScrollTop(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ScrollTop = false;
+        this.obsrv1ScrollTop = null;
+        this.bound2ScrollTop = true;
+        this.obsrv2ScrollTop = source;
         return (B) this;
     }
 
@@ -249,8 +345,27 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     public final B bindWrapText(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.boundWrapText = true;
-        this.obsrvWrapText = source;
+        this.bound1WrapText = true;
+        this.obsrv1WrapText = source;
+        this.bound2WrapText = false;
+        this.obsrv2WrapText = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TextArea#wrapTextProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalWrapText(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1WrapText = false;
+        this.obsrv1WrapText = null;
+        this.bound2WrapText = true;
+        this.obsrv2WrapText = source;
         return (B) this;
     }
 

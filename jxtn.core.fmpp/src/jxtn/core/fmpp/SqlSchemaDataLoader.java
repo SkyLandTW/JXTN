@@ -199,6 +199,8 @@ order by TABLE_SCHEMA, TABLE_NAME, CONSTRAINT_TYPE, CONSTRAINT_NAME
                     String shortName = constraintName;
                     if (shortName.substring(3).startsWith(tableName + "_"))
                         shortName = shortName.substring(3 + tableName.length() + 1);
+                    else if (shortName.substring(3).equals(tableName))
+                        shortName = "parent";
                     constraintElem.setAttribute("name", constraintName);
                     constraintElem.setAttribute("shortName", shortName);
                     constraintElem.setAttribute("type", constraintType.split(" ")[0].toLowerCase());
@@ -236,9 +238,12 @@ order by TABLE_SCHEMA, TABLE_NAME, CONSTRAINT_NAME, ORDINAL_POSITION
                     if (constraintElem == null)
                         continue;
                     String columnName = rs.getString("COLUMN_NAME");
-                    Element columnElem = tableElem.getChildNodes().iterable()
+                    Element columnElem = tableElem
+                            .getChildNodes()
+                            .iterable()
                             .ofType(Element.class)
-                            .filter(elem -> elem.getNodeName().equals("column") && elem.getAttribute("name").equals(columnName))
+                            .filter(elem -> elem.getNodeName().equals("column")
+                                    && elem.getAttribute("name").equals(columnName))
                             .first();
                     Element colRefElem = schemaDoc.createElement("colRef");
                     colRefElem.setAttribute("name", columnName);
@@ -270,12 +275,27 @@ order by CONSTRAINT_SCHEMA, CONSTRAINT_NAME
                     Element dependentRefElem = globalKeys.get2(dependentRefName);
                     if (dependentRefElem == null)
                         continue;
+                    Element dependentTableElem = (Element) dependentRefElem.getParentNode();
                     String principalKeyName = rs.getString("UNIQUE_CONSTRAINT_NAME");
                     Element principalKeyElem = globalKeys.get2(principalKeyName);
                     assert (principalKeyElem != null);
                     Element principalTableElem = (Element) principalKeyElem.getParentNode();
+                    //
                     dependentRefElem.setAttribute("parentTable", principalTableElem.getAttribute("name"));
                     dependentRefElem.setAttribute("parentKey", principalKeyName);
+                    //
+                    Element childDescrElem = schemaDoc.createElement("child");
+                    childDescrElem.setAttribute("table", dependentTableElem.getAttribute("name"));
+                    childDescrElem.setAttribute("keyShortName", dependentRefElem.getAttribute("shortName"));
+                    for (Element colRef : dependentRefElem.getChildNodes()
+                            .iterable()
+                            .ofType(Element.class)
+                            .filter(e -> e.getNodeName().equals("colRef")))
+                    {
+                        Element colRefCopy = (Element) colRef.cloneNode(true);
+                        childDescrElem.appendChild(colRefCopy);
+                    }
+                    principalKeyElem.appendChild(childDescrElem);
                 }
             }
         }

@@ -130,6 +130,8 @@ order by TABLE_SCHEMA, TABLE_NAME
                 {
                     String tableName = rs.getString("TABLE_NAME");
                     Element tableElem = schemaDoc.createElement("table");
+                    tableElem.setAttribute("catalog", rs.getString("TABLE_CATALOG"));
+                    tableElem.setAttribute("schema", rs.getString("TABLE_SCHEMA"));
                     tableElem.setAttribute("name", tableName);
                     tableElem.setAttribute("rows", Integer.toString(rs.getInt("TABLE_ROWS")));
                     schemaDoc.getFirstChild().appendChild(tableElem);
@@ -159,9 +161,24 @@ order by TABLE_SCHEMA, TABLE_NAME, ORDINAL_POSITION
                             .filter(elem -> elem.getAttribute("name").equals(tableName))
                             .first();
                     Element columnElem = schemaDoc.createElement("column");
+                    boolean nullable = SqlSchemaDataLoader.trBoolean(rs.getString("IS_NULLABLE"));
+                    Integer precision = getColumnPrecision(rs);
+                    Integer scale = getColumnScale(rs);
+                    Integer length = getColumnLength(rs);
+                    String definition = getColumnDefinition(rs);
+                    if (!nullable)
+                        definition += " not null";
                     columnElem.setAttribute("name", rs.getString("COLUMN_NAME"));
                     columnElem.setAttribute("type", rs.getString("DATA_TYPE"));
-                    columnElem.setAttribute("nullable", rs.getString("IS_NULLABLE"));
+                    columnElem.setAttribute("nullable", Boolean.toString(nullable));
+                    columnElem.setAttribute("precision", precision == null ? "" : precision.toString());
+                    columnElem.setAttribute("scale", scale == null ? "" : scale.toString());
+                    columnElem.setAttribute("length", length == null ? "" : length.toString());
+                    columnElem.setAttribute("definition", definition);
+                    columnElem.setAttribute("inPK", "false");
+                    columnElem.setAttribute("inFK", "false");
+                    columnElem.setAttribute("inUK", "false");
+                    columnElem.setAttribute("isLOB", isLargeColumn(definition) ? "true" : "false");
                     tableElem.appendChild(columnElem);
                 }
             }
@@ -201,6 +218,8 @@ order by TABLE_SCHEMA, TABLE_NAME, CONSTRAINT_TYPE, CONSTRAINT_NAME
                         shortName = shortName.substring(3 + tableName.length() + 1);
                     else if (shortName.substring(3).equals(tableName))
                         shortName = "parent";
+                    constraintElem.setAttribute("catalog", rs.getString("CONSTRAINT_CATALOG"));
+                    constraintElem.setAttribute("schema", rs.getString("CONSTRAINT_SCHEMA"));
                     constraintElem.setAttribute("name", constraintName);
                     constraintElem.setAttribute("shortName", shortName);
                     constraintElem.setAttribute("type", constraintType.split(" ")[0].toLowerCase());
@@ -245,6 +264,20 @@ order by TABLE_SCHEMA, TABLE_NAME, CONSTRAINT_NAME, ORDINAL_POSITION
                             .filter(elem -> elem.getNodeName().equals("column")
                                     && elem.getAttribute("name").equals(columnName))
                             .first();
+                    switch (constraintElem.getAttribute("type"))
+                    {
+                    case "primary":
+                        columnElem.setAttribute("inPK", "true");
+                        break;
+                    case "foreign":
+                        columnElem.setAttribute("inFK", "true");
+                        break;
+                    case "unique":
+                        columnElem.setAttribute("inUK", "true");
+                        break;
+                    }
+                    Element keyRefCopy = (Element) constraintElem.cloneNode(false);
+                    columnElem.appendChild(schemaDoc.renameNode(keyRefCopy, null, "keyRef"));
                     Element colRefElem = schemaDoc.createElement("colRef");
                     colRefElem.setAttribute("name", columnName);
                     colRefElem.setAttribute("type", columnElem.getAttribute("type"));
@@ -292,12 +325,108 @@ order by CONSTRAINT_SCHEMA, CONSTRAINT_NAME
                             .ofType(Element.class)
                             .filter(e -> e.getNodeName().equals("colRef")))
                     {
-                        Element colRefCopy = (Element) colRef.cloneNode(true);
+                        Element colRefCopy = (Element) colRef.cloneNode(false);
                         childDescrElem.appendChild(colRefCopy);
                     }
                     principalKeyElem.appendChild(childDescrElem);
                 }
             }
+        }
+    }
+
+    protected static Integer getColumnPrecision(ResultSet resultSet) throws SQLException
+    {
+        String type = resultSet.getString("DATA_TYPE");
+        switch (type)
+        {
+        case "decimal":
+        case "numeric":
+            return resultSet.getInt("NUMERIC_PRECISION");
+        default:
+            return null;
+        }
+    }
+
+    protected static Integer getColumnScale(ResultSet resultSet) throws SQLException
+    {
+        String type = resultSet.getString("DATA_TYPE");
+        switch (type)
+        {
+        case "decimal":
+        case "numeric":
+            return resultSet.getInt("NUMERIC_SCALE");
+        default:
+            return null;
+        }
+    }
+
+    protected static Integer getColumnLength(ResultSet resultSet) throws SQLException
+    {
+        String type = resultSet.getString("DATA_TYPE");
+        switch (type)
+        {
+        case "char":
+        case "varchar":
+        case "nchar":
+        case "nvarchar":
+        case "binary":
+        case "varbinary":
+            return resultSet.getInt("CHARACTER_MAXIMUM_LENGTH");
+        default:
+            return null;
+        }
+    }
+
+    protected static String getColumnDefinition(ResultSet resultSet) throws SQLException
+    {
+        String type = resultSet.getString("DATA_TYPE");
+        switch (type)
+        {
+        case "decimal":
+        case "numeric":
+            int precision = resultSet.getInt("NUMERIC_PRECISION");
+            int scale = resultSet.getInt("NUMERIC_SCALE");
+            return String.format("%s(%d,%d)", type, precision, scale);
+        case "char":
+        case "varchar":
+        case "nchar":
+        case "nvarchar":
+        case "binary":
+        case "varbinary":
+            int maxLength = resultSet.getInt("CHARACTER_MAXIMUM_LENGTH");
+            if (maxLength == -1)
+                return String.format("%s(max)", type);
+            else
+                return String.format("%s(%d)", type, maxLength);
+        default:
+            return type;
+        }
+    }
+
+    protected static boolean isLargeColumn(String columnTypeDefinition)
+    {
+        switch (columnTypeDefinition)
+        {
+        case "geography":
+        case "geometry":
+        case "image":
+        case "xml":
+            return true;
+        default:
+            return columnTypeDefinition.endsWith("(max)");
+        }
+    }
+
+    protected static boolean trBoolean(String yesOrNo)
+    {
+        switch (yesOrNo)
+        {
+        case "YES":
+            return true;
+        case "NO":
+            return false;
+        default:
+            throw new IllegalArgumentException();
         }
     }
 }

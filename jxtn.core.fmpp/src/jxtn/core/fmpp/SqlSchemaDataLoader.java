@@ -98,7 +98,13 @@ public class SqlSchemaDataLoader extends XmlDataLoader
                 }
             }
         }
-        System.out.println(schemaRoot.toText());
+        /*
+        Element schemaXml = schemaDoc.createElement("xml");
+        CDATASection schemaXmlCDATA = schemaDoc.createCDATASection(schemaRoot.toText());
+        schemaXml.appendChild(schemaXmlCDATA);
+        schemaRoot.appendChild(schemaXml);
+         */
+        // System.out.println(schemaRoot.toText());
         return this.load(engine, args, schemaDoc);
     }
 

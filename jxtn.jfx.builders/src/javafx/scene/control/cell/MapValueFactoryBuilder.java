@@ -17,6 +17,7 @@ package javafx.scene.control.cell;
 @SuppressWarnings("all")
 public class MapValueFactoryBuilder<T extends java.lang.Object, Z extends MapValueFactory<T>, B extends MapValueFactoryBuilder<T, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class BoxBuilder<Z extends Box, B extends BoxBuilder<Z, B>>
         extends javafx.scene.shape.Shape3DBuilder<Z, B>
+        implements BoxBuilderExt<Z, B>
 {
 
     private boolean hasDepth;

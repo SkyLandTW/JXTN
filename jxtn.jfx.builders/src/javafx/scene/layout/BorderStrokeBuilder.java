@@ -17,6 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class BorderStrokeBuilder<Z extends BorderStroke, B extends BorderStrokeBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

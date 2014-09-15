@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class TableRowBuilder<T extends java.lang.Object, Z extends TableRow<T>, B extends TableRowBuilder<T, Z, B>>
         extends javafx.scene.control.IndexedCellBuilder<T, Z, B>
+        implements TableRowBuilderExt<T, Z, B>
 {
 
     @Override

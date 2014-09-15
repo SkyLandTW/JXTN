@@ -17,6 +17,7 @@ package org.controlsfx.control.table.model;
 @SuppressWarnings("all")
 public class TableModelValueFactoryBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends TableModelValueFactory<S, T>, B extends TableModelValueFactoryBuilder<S, T, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

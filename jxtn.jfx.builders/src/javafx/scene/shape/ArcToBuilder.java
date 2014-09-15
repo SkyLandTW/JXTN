@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
         extends javafx.scene.shape.PathElementBuilder<Z, B>
+        implements ArcToBuilderExt<Z, B>
 {
 
     private boolean hasLargeArcFlag;

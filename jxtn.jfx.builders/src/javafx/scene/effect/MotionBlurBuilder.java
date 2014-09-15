@@ -17,6 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
+        implements MotionBlurBuilderExt<Z, B>
 {
 
     private boolean hasAngle;

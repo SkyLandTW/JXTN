@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class SphereBuilder<Z extends Sphere, B extends SphereBuilder<Z, B>>
         extends javafx.scene.shape.Shape3DBuilder<Z, B>
+        implements SphereBuilderExt<Z, B>
 {
 
     private boolean hasRadius;

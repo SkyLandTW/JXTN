@@ -17,6 +17,7 @@ package javafx.scene;
 @SuppressWarnings("all")
 public class CameraBuilder<Z extends Camera, B extends CameraBuilder<Z, B>>
         extends javafx.scene.NodeBuilder<Z, B>
+        implements CameraBuilderExt<Z, B>
 {
 
     private boolean hasFarClip;

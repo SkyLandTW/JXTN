@@ -17,6 +17,7 @@ package org.controlsfx.control.action;
 @SuppressWarnings("all")
 public class ActionUtilsBuilder<Z extends ActionUtils, B extends ActionUtilsBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

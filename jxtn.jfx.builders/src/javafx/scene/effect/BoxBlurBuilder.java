@@ -17,6 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
+        implements BoxBlurBuilderExt<Z, B>
 {
 
     private boolean hasHeight;

@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class CustomMenuItemBuilder<Z extends CustomMenuItem, B extends CustomMenuItemBuilder<Z, B>>
         extends javafx.scene.control.MenuItemBuilder<Z, B>
+        implements CustomMenuItemBuilderExt<Z, B>
 {
 
     private boolean hasContent;

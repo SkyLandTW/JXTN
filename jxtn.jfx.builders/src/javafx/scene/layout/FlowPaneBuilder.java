@@ -17,6 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>>
         extends javafx.scene.layout.PaneBuilder<Z, B>
+        implements FlowPaneBuilderExt<Z, B>
 {
 
     private boolean hasAlignment;

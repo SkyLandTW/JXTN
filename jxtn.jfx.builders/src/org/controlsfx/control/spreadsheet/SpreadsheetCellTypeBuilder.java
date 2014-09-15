@@ -17,6 +17,7 @@ package org.controlsfx.control.spreadsheet;
 @SuppressWarnings("all")
 public class SpreadsheetCellTypeBuilder<T extends java.lang.Object, Z extends SpreadsheetCellType<T>, B extends SpreadsheetCellTypeBuilder<T, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

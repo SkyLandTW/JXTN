@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class TreeTableCellBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends TreeTableCell<S, T>, B extends TreeTableCellBuilder<S, T, Z, B>>
         extends javafx.scene.control.IndexedCellBuilder<T, Z, B>
+        implements TreeTableCellBuilderExt<S, T, Z, B>
 {
 
     @Override

@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
+        implements LineBuilderExt<Z, B>
 {
 
     private boolean hasEndX;

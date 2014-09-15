@@ -17,6 +17,7 @@ package org.controlsfx.control;
 @SuppressWarnings("all")
 public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends MasterDetailPaneBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements MasterDetailPaneBuilderExt<Z, B>
 {
 
     private boolean hasAnimated;

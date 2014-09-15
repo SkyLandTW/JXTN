@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class CylinderBuilder<Z extends Cylinder, B extends CylinderBuilder<Z, B>>
         extends javafx.scene.shape.Shape3DBuilder<Z, B>
+        implements CylinderBuilderExt<Z, B>
 {
 
     private boolean hasHeight;

@@ -17,6 +17,7 @@ package org.controlsfx.control;
 @SuppressWarnings("all")
 public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenSidesPaneBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements HiddenSidesPaneBuilderExt<Z, B>
 {
 
     private boolean hasBottom;

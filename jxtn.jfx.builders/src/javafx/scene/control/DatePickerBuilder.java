@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder<Z, B>>
         extends javafx.scene.control.ComboBoxBaseBuilder<java.time.LocalDate, Z, B>
+        implements DatePickerBuilderExt<Z, B>
 {
 
     private boolean hasChronology;

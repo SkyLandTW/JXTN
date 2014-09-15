@@ -17,6 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
+        implements LightingBuilderExt<Z, B>
 {
 
     private boolean hasBumpInput;

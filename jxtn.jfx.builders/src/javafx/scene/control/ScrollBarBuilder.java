@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements ScrollBarBuilderExt<Z, B>
 {
 
     private boolean hasBlockIncrement;

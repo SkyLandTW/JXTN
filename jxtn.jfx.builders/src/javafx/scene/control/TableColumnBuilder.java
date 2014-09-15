@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends TableColumn<S, T>, B extends TableColumnBuilder<S, T, Z, B>>
         extends javafx.scene.control.TableColumnBaseBuilder<S, T, Z, B>
+        implements TableColumnBuilderExt<S, T, Z, B>
 {
 
     private boolean hasCellFactory;
@@ -79,7 +80,7 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
         if (this.hasCellValueFactory)
             instance.setCellValueFactory(this.valCellValueFactory);
         if (this.hasColumns)
-            instance.getColumns().setAll(this.valColumns);
+            instance.getColumns().addAll(this.valColumns);
         if (this.hasOnEditCancel)
             instance.setOnEditCancel(this.valOnEditCancel);
         if (this.hasOnEditCommit)
@@ -168,6 +169,41 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
     {
         this.hasColumns = true;
         this.valColumns = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TableColumn#getColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B columnsAdd(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumns = true;
+        if (this.valColumns == null)
+            this.valColumns = new java.util.ArrayList<>(value.size());
+        this.valColumns.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TableColumn#getColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B columnsAdd(javafx.scene.control.TableColumn<S, ?>... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumns = true;
+        if (this.valColumns == null)
+            this.valColumns = new java.util.ArrayList<>(value.length);
+        this.valColumns.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

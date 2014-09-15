@@ -17,6 +17,7 @@ package org.controlsfx.control;
 @SuppressWarnings("all")
 public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
         extends javafx.scene.control.PopupControlBuilder<Z, B>
+        implements PopOverBuilderExt<Z, B>
 {
 
     private boolean hasArrowIndent;

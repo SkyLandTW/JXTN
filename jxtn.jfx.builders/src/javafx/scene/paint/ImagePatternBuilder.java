@@ -17,6 +17,7 @@ package javafx.scene.paint;
 @SuppressWarnings("all")
 public class ImagePatternBuilder<Z extends ImagePattern, B extends ImagePatternBuilder<Z, B>>
         extends javafx.scene.paint.PaintBuilder<Z, B>
+        implements ImagePatternBuilderExt<Z, B>
 {
 
     @Override

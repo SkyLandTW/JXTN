@@ -17,6 +17,7 @@ package org.controlsfx.control;
 @SuppressWarnings("all")
 public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCrumbBar<T>, B extends BreadCrumbBarBuilder<T, Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements BreadCrumbBarBuilderExt<T, Z, B>
 {
 
     private boolean hasAutoNavigationEnabled;

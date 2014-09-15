@@ -17,6 +17,7 @@ package javafx.stage;
 @SuppressWarnings("all")
 public class ScreenBuilder<Z extends Screen, B extends ScreenBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

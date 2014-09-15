@@ -17,6 +17,7 @@ package org.controlsfx.property.editor;
 @SuppressWarnings("all")
 public class EditorsBuilder<Z extends Editors, B extends EditorsBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

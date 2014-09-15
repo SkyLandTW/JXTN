@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends CheckBoxTreeItem<T>, B extends CheckBoxTreeItemBuilder<T, Z, B>>
         extends javafx.scene.control.TreeItemBuilder<T, Z, B>
+        implements CheckBoxTreeItemBuilderExt<T, Z, B>
 {
 
     private boolean hasIndependent;

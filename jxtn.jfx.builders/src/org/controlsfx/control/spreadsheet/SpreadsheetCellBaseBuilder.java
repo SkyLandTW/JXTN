@@ -17,6 +17,7 @@ package org.controlsfx.control.spreadsheet;
 @SuppressWarnings("all")
 public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends SpreadsheetCellBaseBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     private boolean hasColumnSpan;

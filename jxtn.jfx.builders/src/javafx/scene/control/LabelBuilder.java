@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class LabelBuilder<Z extends Label, B extends LabelBuilder<Z, B>>
         extends javafx.scene.control.LabeledBuilder<Z, B>
+        implements LabelBuilderExt<Z, B>
 {
 
     private boolean hasLabelFor;

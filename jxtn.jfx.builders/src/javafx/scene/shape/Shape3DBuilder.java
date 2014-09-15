@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
         extends javafx.scene.NodeBuilder<Z, B>
+        implements Shape3DBuilderExt<Z, B>
 {
 
     private boolean hasCullFace;

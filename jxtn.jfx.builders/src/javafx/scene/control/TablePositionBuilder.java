@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class TablePositionBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends TablePosition<S, T>, B extends TablePositionBuilder<S, T, Z, B>>
         extends javafx.scene.control.TablePositionBaseBuilder<javafx.scene.control.TableColumn<S, T>, Z, B>
+        implements TablePositionBuilderExt<S, T, Z, B>
 {
 
     @Override

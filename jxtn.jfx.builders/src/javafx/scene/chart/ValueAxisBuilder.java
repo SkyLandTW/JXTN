@@ -17,6 +17,7 @@ package javafx.scene.chart;
 @SuppressWarnings("all")
 public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>, B extends ValueAxisBuilder<T, Z, B>>
         extends javafx.scene.chart.AxisBuilder<T, Z, B>
+        implements ValueAxisBuilderExt<T, Z, B>
 {
 
     private boolean hasLowerBound;

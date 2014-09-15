@@ -32,7 +32,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 建構器的最上層類別
+ * 基底建構器
  *
  * @author AqD
  * @param <Z> 要建構的物件型態

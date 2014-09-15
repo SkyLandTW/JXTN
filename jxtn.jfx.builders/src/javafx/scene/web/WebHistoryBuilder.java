@@ -17,6 +17,7 @@ package javafx.scene.web;
 @SuppressWarnings("all")
 public class WebHistoryBuilder<Z extends WebHistory, B extends WebHistoryBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     private boolean hasEntries;
@@ -30,7 +31,7 @@ public class WebHistoryBuilder<Z extends WebHistory, B extends WebHistoryBuilder
     {
         super.applyTo(instance);
         if (this.hasEntries)
-            instance.getEntries().setAll(this.valEntries);
+            instance.getEntries().addAll(this.valEntries);
         if (this.hasMaxSize)
             instance.setMaxSize(this.valMaxSize);
     }
@@ -61,6 +62,41 @@ public class WebHistoryBuilder<Z extends WebHistory, B extends WebHistoryBuilder
     {
         this.hasEntries = true;
         this.valEntries = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link WebHistory#getEntries}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B entriesAdd(java.util.Collection<javafx.scene.web.WebHistory.Entry> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasEntries = true;
+        if (this.valEntries == null)
+            this.valEntries = new java.util.ArrayList<>(value.size());
+        this.valEntries.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link WebHistory#getEntries}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B entriesAdd(javafx.scene.web.WebHistory.Entry... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasEntries = true;
+        if (this.valEntries == null)
+            this.valEntries = new java.util.ArrayList<>(value.length);
+        this.valEntries.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

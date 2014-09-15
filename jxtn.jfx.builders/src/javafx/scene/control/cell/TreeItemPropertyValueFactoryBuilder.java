@@ -17,6 +17,7 @@ package javafx.scene.control.cell;
 @SuppressWarnings("all")
 public class TreeItemPropertyValueFactoryBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends TreeItemPropertyValueFactory<S, T>, B extends TreeItemPropertyValueFactoryBuilder<S, T, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

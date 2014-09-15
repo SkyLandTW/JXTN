@@ -17,6 +17,7 @@ package javafx.scene.web;
 @SuppressWarnings("all")
 public class PromptDataBuilder<Z extends PromptData, B extends PromptDataBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

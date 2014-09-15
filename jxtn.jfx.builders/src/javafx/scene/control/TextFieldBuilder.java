@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z, B>>
         extends javafx.scene.control.TextInputControlBuilder<Z, B>
+        implements TextFieldBuilderExt<Z, B>
 {
 
     private boolean hasAlignment;

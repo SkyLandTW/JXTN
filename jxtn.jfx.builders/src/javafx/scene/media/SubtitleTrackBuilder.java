@@ -17,6 +17,7 @@ package javafx.scene.media;
 @SuppressWarnings("all")
 public class SubtitleTrackBuilder<Z extends SubtitleTrack, B extends SubtitleTrackBuilder<Z, B>>
         extends javafx.scene.media.TrackBuilder<Z, B>
+        implements SubtitleTrackBuilderExt<Z, B>
 {
 
     @Override

@@ -17,6 +17,7 @@ package javafx.scene.chart;
 @SuppressWarnings("all")
 public class AreaChartBuilder<X extends java.lang.Object, Y extends java.lang.Object, Z extends AreaChart<X, Y>, B extends AreaChartBuilder<X, Y, Z, B>>
         extends javafx.scene.chart.XYChartBuilder<X, Y, Z, B>
+        implements AreaChartBuilderExt<X, Y, Z, B>
 {
 
     private boolean hasCreateSymbols;

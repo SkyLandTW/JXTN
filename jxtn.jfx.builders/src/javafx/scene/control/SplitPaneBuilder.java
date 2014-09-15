@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements SplitPaneBuilderExt<Z, B>
 {
 
     private boolean hasDividerPositions;
@@ -43,9 +44,9 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
         if (this.hasDividerPositions)
             instance.setDividerPositions(this.valDividerPositions);
         if (this.hasDividers)
-            instance.getDividers().setAll(this.valDividers);
+            instance.getDividers().addAll(this.valDividers);
         if (this.hasItems)
-            instance.getItems().setAll(this.valItems);
+            instance.getItems().addAll(this.valItems);
         if (this.hasOrientation)
             instance.setOrientation(this.valOrientation);
         if (this.bound1Orientation)
@@ -98,6 +99,41 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     }
 
     /**
+     * 增加集合屬性{@link SplitPane#getDividers}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B dividersAdd(java.util.Collection<javafx.scene.control.SplitPane.Divider> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasDividers = true;
+        if (this.valDividers == null)
+            this.valDividers = new java.util.ArrayList<>(value.size());
+        this.valDividers.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SplitPane#getDividers}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B dividersAdd(javafx.scene.control.SplitPane.Divider... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasDividers = true;
+        if (this.valDividers == null)
+            this.valDividers = new java.util.ArrayList<>(value.length);
+        this.valDividers.addAll(java.util.Arrays.asList(value));
+        return (B) this;
+    }
+
+    /**
      * 設定集合屬性{@link SplitPane#getItems}的內容
      *
      * @param value 新的集合內容
@@ -123,6 +159,41 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     {
         this.hasItems = true;
         this.valItems = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SplitPane#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B itemsAdd(java.util.Collection<javafx.scene.Node> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.size());
+        this.valItems.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SplitPane#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B itemsAdd(javafx.scene.Node... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.length);
+        this.valItems.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

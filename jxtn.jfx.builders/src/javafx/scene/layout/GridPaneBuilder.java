@@ -17,6 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>>
         extends javafx.scene.layout.PaneBuilder<Z, B>
+        implements GridPaneBuilderExt<Z, B>
 {
 
     private boolean hasAlignment;
@@ -64,13 +65,13 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
         if (this.hasAlignment)
             instance.setAlignment(this.valAlignment);
         if (this.hasColumnConstraints)
-            instance.getColumnConstraints().setAll(this.valColumnConstraints);
+            instance.getColumnConstraints().addAll(this.valColumnConstraints);
         if (this.hasGridLinesVisible)
             instance.setGridLinesVisible(this.valGridLinesVisible);
         if (this.hasHgap)
             instance.setHgap(this.valHgap);
         if (this.hasRowConstraints)
-            instance.getRowConstraints().setAll(this.valRowConstraints);
+            instance.getRowConstraints().addAll(this.valRowConstraints);
         if (this.hasVgap)
             instance.setVgap(this.valVgap);
         if (this.bound1Alignment)
@@ -135,6 +136,41 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
+     * 增加集合屬性{@link GridPane#getColumnConstraints}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B columnConstraintsAdd(java.util.Collection<javafx.scene.layout.ColumnConstraints> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumnConstraints = true;
+        if (this.valColumnConstraints == null)
+            this.valColumnConstraints = new java.util.ArrayList<>(value.size());
+        this.valColumnConstraints.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link GridPane#getColumnConstraints}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B columnConstraintsAdd(javafx.scene.layout.ColumnConstraints... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumnConstraints = true;
+        if (this.valColumnConstraints == null)
+            this.valColumnConstraints = new java.util.ArrayList<>(value.length);
+        this.valColumnConstraints.addAll(java.util.Arrays.asList(value));
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link GridPane#setGridLinesVisible(boolean)}
      *
      * @param value 新的屬性值
@@ -188,6 +224,41 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     {
         this.hasRowConstraints = true;
         this.valRowConstraints = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link GridPane#getRowConstraints}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B rowConstraintsAdd(java.util.Collection<javafx.scene.layout.RowConstraints> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasRowConstraints = true;
+        if (this.valRowConstraints == null)
+            this.valRowConstraints = new java.util.ArrayList<>(value.size());
+        this.valRowConstraints.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link GridPane#getRowConstraints}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B rowConstraintsAdd(javafx.scene.layout.RowConstraints... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasRowConstraints = true;
+        if (this.valRowConstraints == null)
+            this.valRowConstraints = new java.util.ArrayList<>(value.length);
+        this.valRowConstraints.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

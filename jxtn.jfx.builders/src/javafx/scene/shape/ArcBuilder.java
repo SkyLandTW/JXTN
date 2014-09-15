@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
+        implements ArcBuilderExt<Z, B>
 {
 
     private boolean hasCenterX;

@@ -17,6 +17,7 @@ package org.controlsfx.control;
 @SuppressWarnings("all")
 public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements RatingBuilderExt<Z, B>
 {
 
     private boolean hasMax;

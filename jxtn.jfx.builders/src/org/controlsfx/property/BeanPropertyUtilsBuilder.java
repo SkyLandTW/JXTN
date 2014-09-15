@@ -17,6 +17,7 @@ package org.controlsfx.property;
 @SuppressWarnings("all")
 public class BeanPropertyUtilsBuilder<Z extends BeanPropertyUtils, B extends BeanPropertyUtilsBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

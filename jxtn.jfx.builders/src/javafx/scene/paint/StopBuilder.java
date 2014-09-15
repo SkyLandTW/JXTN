@@ -17,6 +17,7 @@ package javafx.scene.paint;
 @SuppressWarnings("all")
 public class StopBuilder<Z extends Stop, B extends StopBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

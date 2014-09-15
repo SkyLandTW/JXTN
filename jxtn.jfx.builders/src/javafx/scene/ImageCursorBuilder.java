@@ -17,6 +17,7 @@ package javafx.scene;
 @SuppressWarnings("all")
 public class ImageCursorBuilder<Z extends ImageCursor, B extends ImageCursorBuilder<Z, B>>
         extends javafx.scene.CursorBuilder<Z, B>
+        implements ImageCursorBuilderExt<Z, B>
 {
 
     @Override

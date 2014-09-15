@@ -17,6 +17,7 @@ package javafx.scene;
 @SuppressWarnings("all")
 public class AmbientLightBuilder<Z extends AmbientLight, B extends AmbientLightBuilder<Z, B>>
         extends javafx.scene.LightBaseBuilder<Z, B>
+        implements AmbientLightBuilderExt<Z, B>
 {
 
     @Override

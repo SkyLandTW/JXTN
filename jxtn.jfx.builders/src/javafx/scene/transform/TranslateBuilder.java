@@ -17,6 +17,7 @@ package javafx.scene.transform;
 @SuppressWarnings("all")
 public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z, B>>
         extends javafx.scene.transform.TransformBuilder<Z, B>
+        implements TranslateBuilderExt<Z, B>
 {
 
     private boolean hasX;

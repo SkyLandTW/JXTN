@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class TreeTablePositionBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends TreeTablePosition<S, T>, B extends TreeTablePositionBuilder<S, T, Z, B>>
         extends javafx.scene.control.TablePositionBaseBuilder<javafx.scene.control.TreeTableColumn<S, T>, Z, B>
+        implements TreeTablePositionBuilderExt<S, T, Z, B>
 {
 
     @Override

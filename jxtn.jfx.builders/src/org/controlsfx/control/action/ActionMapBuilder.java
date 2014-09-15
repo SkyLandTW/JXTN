@@ -17,6 +17,7 @@ package org.controlsfx.control.action;
 @SuppressWarnings("all")
 public class ActionMapBuilder<Z extends ActionMap, B extends ActionMapBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

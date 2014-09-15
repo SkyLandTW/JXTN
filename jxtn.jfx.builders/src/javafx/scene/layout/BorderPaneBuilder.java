@@ -17,6 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder<Z, B>>
         extends javafx.scene.layout.PaneBuilder<Z, B>
+        implements BorderPaneBuilderExt<Z, B>
 {
 
     private boolean hasBottom;

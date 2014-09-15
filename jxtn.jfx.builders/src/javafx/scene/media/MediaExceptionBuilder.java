@@ -17,6 +17,7 @@ package javafx.scene.media;
 @SuppressWarnings("all")
 public class MediaExceptionBuilder<Z extends MediaException, B extends MediaExceptionBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

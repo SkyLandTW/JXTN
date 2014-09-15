@@ -17,6 +17,7 @@ package org.controlsfx.control.textfield;
 @SuppressWarnings("all")
 public class AutoCompletionBindingBuilder<T extends java.lang.Object, Z extends AutoCompletionBinding<T>, B extends AutoCompletionBindingBuilder<T, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     private boolean hasOnAutoCompleted;

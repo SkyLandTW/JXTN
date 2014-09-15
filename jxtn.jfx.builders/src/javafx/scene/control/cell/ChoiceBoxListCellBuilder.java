@@ -17,6 +17,7 @@ package javafx.scene.control.cell;
 @SuppressWarnings("all")
 public class ChoiceBoxListCellBuilder<T extends java.lang.Object, Z extends ChoiceBoxListCell<T>, B extends ChoiceBoxListCellBuilder<T, Z, B>>
         extends javafx.scene.control.ListCellBuilder<T, Z, B>
+        implements ChoiceBoxListCellBuilderExt<T, Z, B>
 {
 
     private boolean hasConverter;
@@ -37,7 +38,7 @@ public class ChoiceBoxListCellBuilder<T extends java.lang.Object, Z extends Choi
         if (this.hasConverter)
             instance.setConverter(this.valConverter);
         if (this.hasItems)
-            instance.getItems().setAll(this.valItems);
+            instance.getItems().addAll(this.valItems);
         if (this.bound1Converter)
             instance.converterProperty().bind(this.obsrv1Converter);
         if (this.bound2Converter)
@@ -84,6 +85,41 @@ public class ChoiceBoxListCellBuilder<T extends java.lang.Object, Z extends Choi
     {
         this.hasItems = true;
         this.valItems = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ChoiceBoxListCell#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B itemsAdd(java.util.Collection<T> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.size());
+        this.valItems.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ChoiceBoxListCell#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B itemsAdd(T... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.length);
+        this.valItems.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

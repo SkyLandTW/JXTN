@@ -17,6 +17,7 @@ package javafx.scene.input;
 @SuppressWarnings("all")
 public class TouchPointBuilder<Z extends TouchPoint, B extends TouchPointBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

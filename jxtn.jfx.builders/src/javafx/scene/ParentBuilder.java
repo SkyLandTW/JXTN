@@ -17,6 +17,7 @@ package javafx.scene;
 @SuppressWarnings("all")
 public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
         extends javafx.scene.NodeBuilder<Z, B>
+        implements ParentBuilderExt<Z, B>
 {
 
     private boolean hasChildrenUnmodifiable;
@@ -30,9 +31,9 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
     {
         super.applyTo(instance);
         if (this.hasChildrenUnmodifiable)
-            instance.getChildrenUnmodifiable().setAll(this.valChildrenUnmodifiable);
+            instance.getChildrenUnmodifiable().addAll(this.valChildrenUnmodifiable);
         if (this.hasStylesheets)
-            instance.getStylesheets().setAll(this.valStylesheets);
+            instance.getStylesheets().addAll(this.valStylesheets);
     }
 
     /**
@@ -65,6 +66,41 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
     }
 
     /**
+     * 增加集合屬性{@link Parent#getChildrenUnmodifiable}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B childrenUnmodifiableAdd(java.util.Collection<javafx.scene.Node> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasChildrenUnmodifiable = true;
+        if (this.valChildrenUnmodifiable == null)
+            this.valChildrenUnmodifiable = new java.util.ArrayList<>(value.size());
+        this.valChildrenUnmodifiable.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Parent#getChildrenUnmodifiable}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B childrenUnmodifiableAdd(javafx.scene.Node... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasChildrenUnmodifiable = true;
+        if (this.valChildrenUnmodifiable == null)
+            this.valChildrenUnmodifiable = new java.util.ArrayList<>(value.length);
+        this.valChildrenUnmodifiable.addAll(java.util.Arrays.asList(value));
+        return (B) this;
+    }
+
+    /**
      * 設定集合屬性{@link Parent#getStylesheets}的內容
      *
      * @param value 新的集合內容
@@ -90,6 +126,41 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
     {
         this.hasStylesheets = true;
         this.valStylesheets = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Parent#getStylesheets}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B stylesheetsAdd(java.util.Collection<java.lang.String> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStylesheets = true;
+        if (this.valStylesheets == null)
+            this.valStylesheets = new java.util.ArrayList<>(value.size());
+        this.valStylesheets.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Parent#getStylesheets}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B stylesheetsAdd(java.lang.String... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStylesheets = true;
+        if (this.valStylesheets == null)
+            this.valStylesheets = new java.util.ArrayList<>(value.length);
+        this.valStylesheets.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 }

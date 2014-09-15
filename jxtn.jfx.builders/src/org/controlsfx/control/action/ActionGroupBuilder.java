@@ -17,6 +17,7 @@ package org.controlsfx.control.action;
 @SuppressWarnings("all")
 public class ActionGroupBuilder<Z extends ActionGroup, B extends ActionGroupBuilder<Z, B>>
         extends org.controlsfx.control.action.AbstractActionBuilder<Z, B>
+        implements ActionGroupBuilderExt<Z, B>
 {
 
     private boolean hasActions;
@@ -27,7 +28,7 @@ public class ActionGroupBuilder<Z extends ActionGroup, B extends ActionGroupBuil
     {
         super.applyTo(instance);
         if (this.hasActions)
-            instance.getActions().setAll(this.valActions);
+            instance.getActions().addAll(this.valActions);
     }
 
     /**
@@ -56,6 +57,41 @@ public class ActionGroupBuilder<Z extends ActionGroup, B extends ActionGroupBuil
     {
         this.hasActions = true;
         this.valActions = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ActionGroup#getActions}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B actionsAdd(java.util.Collection<org.controlsfx.control.action.Action> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasActions = true;
+        if (this.valActions == null)
+            this.valActions = new java.util.ArrayList<>(value.size());
+        this.valActions.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ActionGroup#getActions}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B actionsAdd(org.controlsfx.control.action.Action... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasActions = true;
+        if (this.valActions == null)
+            this.valActions = new java.util.ArrayList<>(value.length);
+        this.valActions.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

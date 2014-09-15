@@ -17,6 +17,7 @@ package javafx.scene.media;
 @SuppressWarnings("all")
 public class VideoTrackBuilder<Z extends VideoTrack, B extends VideoTrackBuilder<Z, B>>
         extends javafx.scene.media.TrackBuilder<Z, B>
+        implements VideoTrackBuilderExt<Z, B>
 {
 
     @Override

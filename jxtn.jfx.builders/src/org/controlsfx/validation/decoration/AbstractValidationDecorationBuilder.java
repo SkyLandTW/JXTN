@@ -17,6 +17,7 @@ package org.controlsfx.validation.decoration;
 @SuppressWarnings("all")
 public class AbstractValidationDecorationBuilder<Z extends AbstractValidationDecoration, B extends AbstractValidationDecorationBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

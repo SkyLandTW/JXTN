@@ -17,6 +17,7 @@ package javafx.scene.media;
 @SuppressWarnings("all")
 public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqualizerBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     private boolean hasBands;
@@ -30,7 +31,7 @@ public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqua
     {
         super.applyTo(instance);
         if (this.hasBands)
-            instance.getBands().setAll(this.valBands);
+            instance.getBands().addAll(this.valBands);
         if (this.hasEnabled)
             instance.setEnabled(this.valEnabled);
     }
@@ -61,6 +62,41 @@ public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqua
     {
         this.hasBands = true;
         this.valBands = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link AudioEqualizer#getBands}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bandsAdd(java.util.Collection<javafx.scene.media.EqualizerBand> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasBands = true;
+        if (this.valBands == null)
+            this.valBands = new java.util.ArrayList<>(value.size());
+        this.valBands.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link AudioEqualizer#getBands}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B bandsAdd(javafx.scene.media.EqualizerBand... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasBands = true;
+        if (this.valBands == null)
+            this.valBands = new java.util.ArrayList<>(value.length);
+        this.valBands.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

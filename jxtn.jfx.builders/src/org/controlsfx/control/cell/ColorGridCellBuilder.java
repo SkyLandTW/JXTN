@@ -17,6 +17,7 @@ package org.controlsfx.control.cell;
 @SuppressWarnings("all")
 public class ColorGridCellBuilder<Z extends ColorGridCell, B extends ColorGridCellBuilder<Z, B>>
         extends org.controlsfx.control.GridCellBuilder<javafx.scene.paint.Color, Z, B>
+        implements ColorGridCellBuilderExt<Z, B>
 {
 
     @Override

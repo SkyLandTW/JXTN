@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class TreeTableRowBuilder<T extends java.lang.Object, Z extends TreeTableRow<T>, B extends TreeTableRowBuilder<T, Z, B>>
         extends javafx.scene.control.IndexedCellBuilder<T, Z, B>
+        implements TreeTableRowBuilderExt<T, Z, B>
 {
 
     private boolean hasDisclosureNode;

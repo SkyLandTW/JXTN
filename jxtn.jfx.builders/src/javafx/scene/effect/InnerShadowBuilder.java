@@ -17,6 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
+        implements InnerShadowBuilderExt<Z, B>
 {
 
     private boolean hasBlurType;

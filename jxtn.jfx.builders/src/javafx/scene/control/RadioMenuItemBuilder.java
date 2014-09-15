@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class RadioMenuItemBuilder<Z extends RadioMenuItem, B extends RadioMenuItemBuilder<Z, B>>
         extends javafx.scene.control.MenuItemBuilder<Z, B>
+        implements RadioMenuItemBuilderExt<Z, B>
 {
 
     private boolean hasSelected;

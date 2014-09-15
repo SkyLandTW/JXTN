@@ -17,6 +17,7 @@ package javafx.stage;
 @SuppressWarnings("all")
 public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         extends javafx.stage.WindowBuilder<Z, B>
+        implements StageBuilderExt<Z, B>
 {
 
     private boolean hasAlwaysOnTop;
@@ -116,7 +117,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         if (this.hasIconified)
             instance.setIconified(this.valIconified);
         if (this.hasIcons)
-            instance.getIcons().setAll(this.valIcons);
+            instance.getIcons().addAll(this.valIcons);
         if (this.hasMaxHeight)
             instance.setMaxHeight(this.valMaxHeight);
         if (this.hasMaxWidth)
@@ -263,6 +264,41 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     {
         this.hasIcons = true;
         this.valIcons = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Stage#getIcons}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B iconsAdd(java.util.Collection<javafx.scene.image.Image> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasIcons = true;
+        if (this.valIcons == null)
+            this.valIcons = new java.util.ArrayList<>(value.size());
+        this.valIcons.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Stage#getIcons}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B iconsAdd(javafx.scene.image.Image... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasIcons = true;
+        if (this.valIcons == null)
+            this.valIcons = new java.util.ArrayList<>(value.length);
+        this.valIcons.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

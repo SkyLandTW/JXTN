@@ -17,6 +17,7 @@ package javafx.scene.chart;
 @SuppressWarnings("all")
 public class LineChartBuilder<X extends java.lang.Object, Y extends java.lang.Object, Z extends LineChart<X, Y>, B extends LineChartBuilder<X, Y, Z, B>>
         extends javafx.scene.chart.XYChartBuilder<X, Y, Z, B>
+        implements LineChartBuilderExt<X, Y, Z, B>
 {
 
     private boolean hasCreateSymbols;

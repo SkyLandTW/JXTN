@@ -17,6 +17,7 @@ package org.controlsfx.control.spreadsheet;
 @SuppressWarnings("all")
 public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     private boolean hasColumnHeaders;
@@ -39,11 +40,11 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     {
         super.applyTo(instance);
         if (this.hasColumnHeaders)
-            instance.getColumnHeaders().setAll(this.valColumnHeaders);
+            instance.getColumnHeaders().addAll(this.valColumnHeaders);
         if (this.hasLocked)
             instance.setLocked(this.valLocked);
         if (this.hasRowHeaders)
-            instance.getRowHeaders().setAll(this.valRowHeaders);
+            instance.getRowHeaders().addAll(this.valRowHeaders);
         if (this.hasRowHeightCallback)
             instance.setRowHeightCallback(this.valRowHeightCallback);
         if (this.hasRows)
@@ -76,6 +77,41 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     {
         this.hasColumnHeaders = true;
         this.valColumnHeaders = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link GridBase#getColumnHeaders}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B columnHeadersAdd(java.util.Collection<java.lang.String> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumnHeaders = true;
+        if (this.valColumnHeaders == null)
+            this.valColumnHeaders = new java.util.ArrayList<>(value.size());
+        this.valColumnHeaders.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link GridBase#getColumnHeaders}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B columnHeadersAdd(java.lang.String... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumnHeaders = true;
+        if (this.valColumnHeaders == null)
+            this.valColumnHeaders = new java.util.ArrayList<>(value.length);
+        this.valColumnHeaders.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 
@@ -119,6 +155,41 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     {
         this.hasRowHeaders = true;
         this.valRowHeaders = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link GridBase#getRowHeaders}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B rowHeadersAdd(java.util.Collection<java.lang.String> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasRowHeaders = true;
+        if (this.valRowHeaders == null)
+            this.valRowHeaders = new java.util.ArrayList<>(value.size());
+        this.valRowHeaders.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link GridBase#getRowHeaders}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B rowHeadersAdd(java.lang.String... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasRowHeaders = true;
+        if (this.valRowHeaders == null)
+            this.valRowHeaders = new java.util.ArrayList<>(value.length);
+        this.valRowHeaders.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

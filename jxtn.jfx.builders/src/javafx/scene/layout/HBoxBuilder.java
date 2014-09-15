@@ -17,6 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
         extends javafx.scene.layout.PaneBuilder<Z, B>
+        implements HBoxBuilderExt<Z, B>
 {
 
     private boolean hasAlignment;

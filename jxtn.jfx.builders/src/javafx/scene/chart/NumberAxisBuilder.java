@@ -17,6 +17,7 @@ package javafx.scene.chart;
 @SuppressWarnings("all")
 public class NumberAxisBuilder<Z extends NumberAxis, B extends NumberAxisBuilder<Z, B>>
         extends javafx.scene.chart.ValueAxisBuilder<java.lang.Number, Z, B>
+        implements NumberAxisBuilderExt<Z, B>
 {
 
     private boolean hasForceZeroInRange;

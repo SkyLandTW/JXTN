@@ -17,6 +17,7 @@ package org.controlsfx.control.spreadsheet;
 @SuppressWarnings("all")
 public class StringConverterWithFormatBuilder<T extends java.lang.Object, Z extends StringConverterWithFormat<T>, B extends StringConverterWithFormatBuilder<T, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

@@ -17,6 +17,7 @@ package org.controlsfx.control.spreadsheet;
 @SuppressWarnings("all")
 public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends SpreadsheetViewBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements SpreadsheetViewBuilderExt<Z, B>
 {
 
     private boolean hasColumnPickerCallback;
@@ -80,15 +81,15 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         if (this.hasColumnPickerCallback)
             instance.setColumnPickerCallback(this.valColumnPickerCallback);
         if (this.hasColumnPickers)
-            instance.getColumnPickers().setAll(this.valColumnPickers);
+            instance.getColumnPickers().addAll(this.valColumnPickers);
         if (this.hasColumns)
-            instance.getColumns().setAll(this.valColumns);
+            instance.getColumns().addAll(this.valColumns);
         if (this.hasEditable)
             instance.setEditable(this.valEditable);
         if (this.hasFixedColumns)
-            instance.getFixedColumns().setAll(this.valFixedColumns);
+            instance.getFixedColumns().addAll(this.valFixedColumns);
         if (this.hasFixedRows)
-            instance.getFixedRows().setAll(this.valFixedRows);
+            instance.getFixedRows().addAll(this.valFixedRows);
         if (this.hasFixingColumnsAllowed)
             instance.setFixingColumnsAllowed(this.valFixingColumnsAllowed);
         if (this.hasFixingRowsAllowed)
@@ -98,7 +99,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
         if (this.hasRowPickerCallback)
             instance.setRowPickerCallback(this.valRowPickerCallback);
         if (this.hasRowPickers)
-            instance.getRowPickers().setAll(this.valRowPickers);
+            instance.getRowPickers().addAll(this.valRowPickers);
         if (this.hasShowColumnHeader)
             instance.setShowColumnHeader(this.valShowColumnHeader);
         if (this.hasShowRowHeader)
@@ -161,6 +162,41 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
+     * 增加集合屬性{@link SpreadsheetView#getColumnPickers}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B columnPickersAdd(java.util.Collection<java.lang.Integer> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumnPickers = true;
+        if (this.valColumnPickers == null)
+            this.valColumnPickers = new java.util.ArrayList<>(value.size());
+        this.valColumnPickers.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SpreadsheetView#getColumnPickers}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B columnPickersAdd(java.lang.Integer... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumnPickers = true;
+        if (this.valColumnPickers == null)
+            this.valColumnPickers = new java.util.ArrayList<>(value.length);
+        this.valColumnPickers.addAll(java.util.Arrays.asList(value));
+        return (B) this;
+    }
+
+    /**
      * 設定集合屬性{@link SpreadsheetView#getColumns}的內容
      *
      * @param value 新的集合內容
@@ -186,6 +222,41 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     {
         this.hasColumns = true;
         this.valColumns = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SpreadsheetView#getColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B columnsAdd(java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumns = true;
+        if (this.valColumns == null)
+            this.valColumns = new java.util.ArrayList<>(value.size());
+        this.valColumns.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SpreadsheetView#getColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B columnsAdd(org.controlsfx.control.spreadsheet.SpreadsheetColumn... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumns = true;
+        if (this.valColumns == null)
+            this.valColumns = new java.util.ArrayList<>(value.length);
+        this.valColumns.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 
@@ -233,6 +304,41 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
+     * 增加集合屬性{@link SpreadsheetView#getFixedColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B fixedColumnsAdd(java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasFixedColumns = true;
+        if (this.valFixedColumns == null)
+            this.valFixedColumns = new java.util.ArrayList<>(value.size());
+        this.valFixedColumns.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SpreadsheetView#getFixedColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B fixedColumnsAdd(org.controlsfx.control.spreadsheet.SpreadsheetColumn... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasFixedColumns = true;
+        if (this.valFixedColumns == null)
+            this.valFixedColumns = new java.util.ArrayList<>(value.length);
+        this.valFixedColumns.addAll(java.util.Arrays.asList(value));
+        return (B) this;
+    }
+
+    /**
      * 設定集合屬性{@link SpreadsheetView#getFixedRows}的內容
      *
      * @param value 新的集合內容
@@ -258,6 +364,41 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     {
         this.hasFixedRows = true;
         this.valFixedRows = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SpreadsheetView#getFixedRows}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B fixedRowsAdd(java.util.Collection<java.lang.Integer> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasFixedRows = true;
+        if (this.valFixedRows == null)
+            this.valFixedRows = new java.util.ArrayList<>(value.size());
+        this.valFixedRows.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SpreadsheetView#getFixedRows}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B fixedRowsAdd(java.lang.Integer... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasFixedRows = true;
+        if (this.valFixedRows == null)
+            this.valFixedRows = new java.util.ArrayList<>(value.length);
+        this.valFixedRows.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 
@@ -343,6 +484,41 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     {
         this.hasRowPickers = true;
         this.valRowPickers = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SpreadsheetView#getRowPickers}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B rowPickersAdd(java.util.Collection<java.lang.Integer> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasRowPickers = true;
+        if (this.valRowPickers == null)
+            this.valRowPickers = new java.util.ArrayList<>(value.size());
+        this.valRowPickers.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SpreadsheetView#getRowPickers}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B rowPickersAdd(java.lang.Integer... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasRowPickers = true;
+        if (this.valRowPickers == null)
+            this.valRowPickers = new java.util.ArrayList<>(value.length);
+        this.valRowPickers.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

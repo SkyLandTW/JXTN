@@ -17,6 +17,7 @@ package org.controlsfx.control.table.model;
 @SuppressWarnings("all")
 public class TableModelTableViewBuilder<S extends java.lang.Object, Z extends TableModelTableView<S>, B extends TableModelTableViewBuilder<S, Z, B>>
         extends javafx.scene.control.TableViewBuilder<org.controlsfx.control.table.model.TableModelRow<S>, Z, B>
+        implements TableModelTableViewBuilderExt<S, Z, B>
 {
 
     @Override

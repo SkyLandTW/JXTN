@@ -17,6 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstraintsBuilder<Z, B>>
         extends javafx.scene.layout.ConstraintsBaseBuilder<Z, B>
+        implements RowConstraintsBuilderExt<Z, B>
 {
 
     private boolean hasFillHeight;

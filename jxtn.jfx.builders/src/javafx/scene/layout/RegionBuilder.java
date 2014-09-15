@@ -17,6 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
         extends javafx.scene.ParentBuilder<Z, B>
+        implements RegionBuilderExt<Z, B>
 {
 
     private boolean hasBackground;

@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extends CellBuilder<T, Z, B>>
         extends javafx.scene.control.LabeledBuilder<Z, B>
+        implements CellBuilderExt<T, Z, B>
 {
 
     private boolean hasEditable;

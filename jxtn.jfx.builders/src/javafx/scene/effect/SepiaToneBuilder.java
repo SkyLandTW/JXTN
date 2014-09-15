@@ -17,6 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class SepiaToneBuilder<Z extends SepiaTone, B extends SepiaToneBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
+        implements SepiaToneBuilderExt<Z, B>
 {
 
     private boolean hasInput;

@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class TreeCellBuilder<T extends java.lang.Object, Z extends TreeCell<T>, B extends TreeCellBuilder<T, Z, B>>
         extends javafx.scene.control.IndexedCellBuilder<T, Z, B>
+        implements TreeCellBuilderExt<T, Z, B>
 {
 
     private boolean hasDisclosureNode;

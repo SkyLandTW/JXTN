@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
+        implements EllipseBuilderExt<Z, B>
 {
 
     private boolean hasCenterX;

@@ -17,6 +17,7 @@ package org.controlsfx.dialog;
 @SuppressWarnings("all")
 public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     private boolean hasActions;
@@ -66,7 +67,7 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
     {
         super.applyTo(instance);
         if (this.hasActions)
-            instance.getActions().setAll(this.valActions);
+            instance.getActions().addAll(this.valActions);
         if (this.hasBackgroundEffect)
             instance.setBackgroundEffect(this.valBackgroundEffect);
         if (this.hasClosable)
@@ -90,7 +91,7 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
         if (this.hasResult)
             instance.setResult(this.valResult);
         if (this.hasStylesheets)
-            instance.getStylesheets().setAll(this.valStylesheets);
+            instance.getStylesheets().addAll(this.valStylesheets);
         if (this.hasTitle)
             instance.setTitle(this.valTitle);
     }
@@ -121,6 +122,41 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
     {
         this.hasActions = true;
         this.valActions = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Dialog#getActions}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B actionsAdd(java.util.Collection<org.controlsfx.control.action.Action> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasActions = true;
+        if (this.valActions == null)
+            this.valActions = new java.util.ArrayList<>(value.size());
+        this.valActions.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Dialog#getActions}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B actionsAdd(org.controlsfx.control.action.Action... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasActions = true;
+        if (this.valActions == null)
+            this.valActions = new java.util.ArrayList<>(value.length);
+        this.valActions.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 
@@ -304,6 +340,41 @@ public class DialogBuilder<Z extends Dialog, B extends DialogBuilder<Z, B>>
     {
         this.hasStylesheets = true;
         this.valStylesheets = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Dialog#getStylesheets}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B stylesheetsAdd(java.util.Collection<java.lang.String> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStylesheets = true;
+        if (this.valStylesheets == null)
+            this.valStylesheets = new java.util.ArrayList<>(value.size());
+        this.valStylesheets.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Dialog#getStylesheets}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B stylesheetsAdd(java.lang.String... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStylesheets = true;
+        if (this.valStylesheets == null)
+            this.valStylesheets = new java.util.ArrayList<>(value.length);
+        this.valStylesheets.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

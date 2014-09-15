@@ -17,6 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
         extends javafx.scene.layout.PaneBuilder<Z, B>
+        implements VBoxBuilderExt<Z, B>
 {
 
     private boolean hasAlignment;

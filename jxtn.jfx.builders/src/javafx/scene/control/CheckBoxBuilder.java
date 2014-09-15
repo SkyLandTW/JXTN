@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>>
         extends javafx.scene.control.ButtonBaseBuilder<Z, B>
+        implements CheckBoxBuilderExt<Z, B>
 {
 
     private boolean hasAllowIndeterminate;

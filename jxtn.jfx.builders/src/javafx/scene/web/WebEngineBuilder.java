@@ -17,6 +17,7 @@ package javafx.scene.web;
 @SuppressWarnings("all")
 public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     private boolean hasConfirmHandler;

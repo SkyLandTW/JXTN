@@ -17,6 +17,7 @@ package javafx.scene.transform;
 @SuppressWarnings("all")
 public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
         extends javafx.scene.transform.TransformBuilder<Z, B>
+        implements ShearBuilderExt<Z, B>
 {
 
     private boolean hasPivotX;

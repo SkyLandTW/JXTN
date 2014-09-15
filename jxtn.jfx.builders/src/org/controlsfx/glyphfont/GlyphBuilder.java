@@ -17,6 +17,7 @@ package org.controlsfx.glyphfont;
 @SuppressWarnings("all")
 public class GlyphBuilder<Z extends Glyph, B extends GlyphBuilder<Z, B>>
         extends javafx.scene.control.LabelBuilder<Z, B>
+        implements GlyphBuilderExt<Z, B>
 {
 
     @Override

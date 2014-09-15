@@ -17,6 +17,7 @@ package javafx.scene.input;
 @SuppressWarnings("all")
 public class MnemonicBuilder<Z extends Mnemonic, B extends MnemonicBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     private boolean hasKeyCombination;

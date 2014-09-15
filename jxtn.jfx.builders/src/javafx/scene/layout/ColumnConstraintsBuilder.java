@@ -17,6 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends ColumnConstraintsBuilder<Z, B>>
         extends javafx.scene.layout.ConstraintsBaseBuilder<Z, B>
+        implements ColumnConstraintsBuilderExt<Z, B>
 {
 
     private boolean hasFillWidth;

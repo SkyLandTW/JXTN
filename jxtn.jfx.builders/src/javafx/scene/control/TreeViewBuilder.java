@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, B extends TreeViewBuilder<T, Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements TreeViewBuilderExt<T, Z, B>
 {
 
     private boolean hasCellFactory;

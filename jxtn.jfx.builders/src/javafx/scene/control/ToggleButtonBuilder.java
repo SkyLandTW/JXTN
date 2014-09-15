@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class ToggleButtonBuilder<Z extends ToggleButton, B extends ToggleButtonBuilder<Z, B>>
         extends javafx.scene.control.ButtonBaseBuilder<Z, B>
+        implements ToggleButtonBuilderExt<Z, B>
 {
 
     private boolean hasSelected;

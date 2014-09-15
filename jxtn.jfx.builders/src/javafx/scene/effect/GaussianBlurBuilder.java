@@ -17,6 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class GaussianBlurBuilder<Z extends GaussianBlur, B extends GaussianBlurBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
+        implements GaussianBlurBuilderExt<Z, B>
 {
 
     private boolean hasInput;

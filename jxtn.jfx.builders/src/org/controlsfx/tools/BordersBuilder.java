@@ -17,6 +17,7 @@ package org.controlsfx.tools;
 @SuppressWarnings("all")
 public class BordersBuilder<Z extends Borders, B extends BordersBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

@@ -17,6 +17,7 @@ package javafx.scene.paint;
 @SuppressWarnings("all")
 public class ColorBuilder<Z extends Color, B extends ColorBuilder<Z, B>>
         extends javafx.scene.paint.PaintBuilder<Z, B>
+        implements ColorBuilderExt<Z, B>
 {
 
     @Override

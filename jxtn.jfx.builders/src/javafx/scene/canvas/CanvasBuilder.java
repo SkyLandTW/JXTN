@@ -17,6 +17,7 @@ package javafx.scene.canvas;
 @SuppressWarnings("all")
 public class CanvasBuilder<Z extends Canvas, B extends CanvasBuilder<Z, B>>
         extends javafx.scene.NodeBuilder<Z, B>
+        implements CanvasBuilderExt<Z, B>
 {
 
     private boolean hasHeight;

@@ -17,6 +17,7 @@ package javafx.scene.text;
 @SuppressWarnings("all")
 public class FontBuilder<Z extends Font, B extends FontBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, B extends ListViewBuilder<T, Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements ListViewBuilderExt<T, Z, B>
 {
 
     private boolean hasCellFactory;

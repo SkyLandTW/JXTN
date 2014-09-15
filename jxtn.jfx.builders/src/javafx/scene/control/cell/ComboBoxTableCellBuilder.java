@@ -17,6 +17,7 @@ package javafx.scene.control.cell;
 @SuppressWarnings("all")
 public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends ComboBoxTableCell<S, T>, B extends ComboBoxTableCellBuilder<S, T, Z, B>>
         extends javafx.scene.control.TableCellBuilder<S, T, Z, B>
+        implements ComboBoxTableCellBuilderExt<S, T, Z, B>
 {
 
     private boolean hasComboBoxEditable;
@@ -47,7 +48,7 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
         if (this.hasConverter)
             instance.setConverter(this.valConverter);
         if (this.hasItems)
-            instance.getItems().setAll(this.valItems);
+            instance.getItems().addAll(this.valItems);
         if (this.bound1ComboBoxEditable)
             instance.comboBoxEditableProperty().bind(this.obsrv1ComboBoxEditable);
         if (this.bound2ComboBoxEditable)
@@ -112,6 +113,41 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
     {
         this.hasItems = true;
         this.valItems = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ComboBoxTableCell#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B itemsAdd(java.util.Collection<T> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.size());
+        this.valItems.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ComboBoxTableCell#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B itemsAdd(T... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.length);
+        this.valItems.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

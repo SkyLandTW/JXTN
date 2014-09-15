@@ -17,6 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>>
         extends javafx.scene.layout.PaneBuilder<Z, B>
+        implements TilePaneBuilderExt<Z, B>
 {
 
     private boolean hasAlignment;

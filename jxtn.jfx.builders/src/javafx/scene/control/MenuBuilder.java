@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
         extends javafx.scene.control.MenuItemBuilder<Z, B>
+        implements MenuBuilderExt<Z, B>
 {
 
     private boolean hasItems;
@@ -59,7 +60,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     {
         super.applyTo(instance);
         if (this.hasItems)
-            instance.getItems().setAll(this.valItems);
+            instance.getItems().addAll(this.valItems);
         if (this.hasOnHidden)
             instance.setOnHidden(this.valOnHidden);
         if (this.hasOnHiding)
@@ -112,6 +113,41 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     {
         this.hasItems = true;
         this.valItems = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Menu#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B itemsAdd(java.util.Collection<javafx.scene.control.MenuItem> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.size());
+        this.valItems.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Menu#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B itemsAdd(javafx.scene.control.MenuItem... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.length);
+        this.valItems.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

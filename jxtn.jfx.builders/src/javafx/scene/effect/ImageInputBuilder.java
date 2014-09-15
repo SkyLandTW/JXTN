@@ -17,6 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
+        implements ImageInputBuilderExt<Z, B>
 {
 
     private boolean hasSource;

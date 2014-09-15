@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class QuadCurveToBuilder<Z extends QuadCurveTo, B extends QuadCurveToBuilder<Z, B>>
         extends javafx.scene.shape.PathElementBuilder<Z, B>
+        implements QuadCurveToBuilderExt<Z, B>
 {
 
     private boolean hasControlX;

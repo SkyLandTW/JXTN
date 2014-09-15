@@ -17,6 +17,7 @@ package org.controlsfx.control.cell;
 @SuppressWarnings("all")
 public class MediaImageCellBuilder<Z extends MediaImageCell, B extends MediaImageCellBuilder<Z, B>>
         extends org.controlsfx.control.GridCellBuilder<javafx.scene.media.Media, Z, B>
+        implements MediaImageCellBuilderExt<Z, B>
 {
 
     @Override

@@ -17,6 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
+        implements ColorInputBuilderExt<Z, B>
 {
 
     private boolean hasHeight;

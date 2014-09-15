@@ -17,6 +17,7 @@ package javafx.scene.transform;
 @SuppressWarnings("all")
 public class NonInvertibleTransformExceptionBuilder<Z extends NonInvertibleTransformException, B extends NonInvertibleTransformExceptionBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

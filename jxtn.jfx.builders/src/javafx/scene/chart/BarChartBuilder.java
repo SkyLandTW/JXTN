@@ -17,6 +17,7 @@ package javafx.scene.chart;
 @SuppressWarnings("all")
 public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Object, Z extends BarChart<X, Y>, B extends BarChartBuilder<X, Y, Z, B>>
         extends javafx.scene.chart.XYChartBuilder<X, Y, Z, B>
+        implements BarChartBuilderExt<X, Y, Z, B>
 {
 
     private boolean hasBarGap;

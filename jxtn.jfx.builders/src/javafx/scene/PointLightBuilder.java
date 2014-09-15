@@ -17,6 +17,7 @@ package javafx.scene;
 @SuppressWarnings("all")
 public class PointLightBuilder<Z extends PointLight, B extends PointLightBuilder<Z, B>>
         extends javafx.scene.LightBaseBuilder<Z, B>
+        implements PointLightBuilderExt<Z, B>
 {
 
     @Override

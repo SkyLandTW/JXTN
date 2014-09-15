@@ -17,6 +17,7 @@ package org.controlsfx.control;
 @SuppressWarnings("all")
 public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends SegmentedButtonBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements SegmentedButtonBuilderExt<Z, B>
 {
 
     private boolean hasButtons;
@@ -27,7 +28,7 @@ public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends Segment
     {
         super.applyTo(instance);
         if (this.hasButtons)
-            instance.getButtons().setAll(this.valButtons);
+            instance.getButtons().addAll(this.valButtons);
     }
 
     /**
@@ -56,6 +57,41 @@ public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends Segment
     {
         this.hasButtons = true;
         this.valButtons = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SegmentedButton#getButtons}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B buttonsAdd(java.util.Collection<javafx.scene.control.ToggleButton> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasButtons = true;
+        if (this.valButtons == null)
+            this.valButtons = new java.util.ArrayList<>(value.size());
+        this.valButtons.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SegmentedButton#getButtons}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B buttonsAdd(javafx.scene.control.ToggleButton... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasButtons = true;
+        if (this.valButtons == null)
+            this.valButtons = new java.util.ArrayList<>(value.length);
+        this.valButtons.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

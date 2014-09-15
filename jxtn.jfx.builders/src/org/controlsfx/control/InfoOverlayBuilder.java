@@ -17,6 +17,7 @@ package org.controlsfx.control;
 @SuppressWarnings("all")
 public class InfoOverlayBuilder<Z extends InfoOverlay, B extends InfoOverlayBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements InfoOverlayBuilderExt<Z, B>
 {
 
     private boolean hasContent;

@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class VLineToBuilder<Z extends VLineTo, B extends VLineToBuilder<Z, B>>
         extends javafx.scene.shape.PathElementBuilder<Z, B>
+        implements VLineToBuilderExt<Z, B>
 {
 
     private boolean hasY;

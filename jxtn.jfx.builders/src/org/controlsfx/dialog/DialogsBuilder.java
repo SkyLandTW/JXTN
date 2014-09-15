@@ -17,6 +17,7 @@ package org.controlsfx.dialog;
 @SuppressWarnings("all")
 public class DialogsBuilder<Z extends Dialogs, B extends DialogsBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

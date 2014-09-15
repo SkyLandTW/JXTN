@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class MeshViewBuilder<Z extends MeshView, B extends MeshViewBuilder<Z, B>>
         extends javafx.scene.shape.Shape3DBuilder<Z, B>
+        implements MeshViewBuilderExt<Z, B>
 {
 
     private boolean hasMesh;

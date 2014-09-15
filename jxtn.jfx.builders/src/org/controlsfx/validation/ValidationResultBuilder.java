@@ -17,6 +17,7 @@ package org.controlsfx.validation;
 @SuppressWarnings("all")
 public class ValidationResultBuilder<Z extends ValidationResult, B extends ValidationResultBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

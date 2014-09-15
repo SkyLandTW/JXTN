@@ -17,6 +17,7 @@ package org.controlsfx.control.decoration;
 @SuppressWarnings("all")
 public class GraphicDecorationBuilder<Z extends GraphicDecoration, B extends GraphicDecorationBuilder<Z, B>>
         extends org.controlsfx.control.decoration.DecorationBuilder<Z, B>
+        implements GraphicDecorationBuilderExt<Z, B>
 {
 
     @Override

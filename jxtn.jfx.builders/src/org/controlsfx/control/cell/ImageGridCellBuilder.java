@@ -17,6 +17,7 @@ package org.controlsfx.control.cell;
 @SuppressWarnings("all")
 public class ImageGridCellBuilder<Z extends ImageGridCell, B extends ImageGridCellBuilder<Z, B>>
         extends org.controlsfx.control.GridCellBuilder<javafx.scene.image.Image, Z, B>
+        implements ImageGridCellBuilderExt<Z, B>
 {
 
     @Override

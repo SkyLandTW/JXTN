@@ -17,6 +17,7 @@ package javafx.scene.transform;
 @SuppressWarnings("all")
 public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         extends javafx.scene.transform.TransformBuilder<Z, B>
+        implements AffineBuilderExt<Z, B>
 {
 
     private boolean hasMxx;

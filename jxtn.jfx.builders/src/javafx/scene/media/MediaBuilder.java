@@ -17,6 +17,7 @@ package javafx.scene.media;
 @SuppressWarnings("all")
 public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     private boolean hasOnError;
@@ -32,7 +33,7 @@ public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
         if (this.hasOnError)
             instance.setOnError(this.valOnError);
         if (this.hasTracks)
-            instance.getTracks().setAll(this.valTracks);
+            instance.getTracks().addAll(this.valTracks);
     }
 
     /**
@@ -75,6 +76,41 @@ public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
     {
         this.hasTracks = true;
         this.valTracks = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Media#getTracks}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B tracksAdd(java.util.Collection<javafx.scene.media.Track> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasTracks = true;
+        if (this.valTracks == null)
+            this.valTracks = new java.util.ArrayList<>(value.size());
+        this.valTracks.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Media#getTracks}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B tracksAdd(javafx.scene.media.Track... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasTracks = true;
+        if (this.valTracks == null)
+            this.valTracks = new java.util.ArrayList<>(value.length);
+        this.valTracks.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

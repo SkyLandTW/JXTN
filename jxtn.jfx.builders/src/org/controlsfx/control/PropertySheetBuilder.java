@@ -17,6 +17,7 @@ package org.controlsfx.control;
 @SuppressWarnings("all")
 public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertySheetBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements PropertySheetBuilderExt<Z, B>
 {
 
     private boolean hasItems;
@@ -57,7 +58,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     {
         super.applyTo(instance);
         if (this.hasItems)
-            instance.getItems().setAll(this.valItems);
+            instance.getItems().addAll(this.valItems);
         if (this.hasMode)
             instance.setMode(this.valMode);
         if (this.hasModeSwitcherVisible)
@@ -108,6 +109,41 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     {
         this.hasItems = true;
         this.valItems = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link PropertySheet#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B itemsAdd(java.util.Collection<org.controlsfx.control.PropertySheet.Item> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.size());
+        this.valItems.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link PropertySheet#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B itemsAdd(org.controlsfx.control.PropertySheet.Item... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.length);
+        this.valItems.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

@@ -17,6 +17,7 @@ package javafx.scene.chart;
 @SuppressWarnings("all")
 public class StackedBarChartBuilder<X extends java.lang.Object, Y extends java.lang.Object, Z extends StackedBarChart<X, Y>, B extends StackedBarChartBuilder<X, Y, Z, B>>
         extends javafx.scene.chart.XYChartBuilder<X, Y, Z, B>
+        implements StackedBarChartBuilderExt<X, Y, Z, B>
 {
 
     private boolean hasCategoryGap;

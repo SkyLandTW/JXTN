@@ -17,6 +17,7 @@ package org.controlsfx.property.editor;
 @SuppressWarnings("all")
 public class AbstractPropertyEditorBuilder<T extends java.lang.Object, C extends javafx.scene.Node, Z extends AbstractPropertyEditor<T, C>, B extends AbstractPropertyEditorBuilder<T, C, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

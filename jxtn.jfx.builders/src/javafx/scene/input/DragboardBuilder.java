@@ -17,6 +17,7 @@ package javafx.scene.input;
 @SuppressWarnings("all")
 public class DragboardBuilder<Z extends Dragboard, B extends DragboardBuilder<Z, B>>
         extends javafx.scene.input.ClipboardBuilder<Z, B>
+        implements DragboardBuilderExt<Z, B>
 {
 
     private boolean hasDragView;

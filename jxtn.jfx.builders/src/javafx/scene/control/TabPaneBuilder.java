@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements TabPaneBuilderExt<Z, B>
 {
 
     private boolean hasRotateGraphic;
@@ -107,7 +108,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
         if (this.hasTabMinWidth)
             instance.setTabMinWidth(this.valTabMinWidth);
         if (this.hasTabs)
-            instance.getTabs().setAll(this.valTabs);
+            instance.getTabs().addAll(this.valTabs);
         if (this.bound1RotateGraphic)
             instance.rotateGraphicProperty().bind(this.obsrv1RotateGraphic);
         if (this.bound2RotateGraphic)
@@ -280,6 +281,41 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     {
         this.hasTabs = true;
         this.valTabs = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TabPane#getTabs}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B tabsAdd(java.util.Collection<javafx.scene.control.Tab> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasTabs = true;
+        if (this.valTabs == null)
+            this.valTabs = new java.util.ArrayList<>(value.size());
+        this.valTabs.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TabPane#getTabs}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B tabsAdd(javafx.scene.control.Tab... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasTabs = true;
+        if (this.valTabs == null)
+            this.valTabs = new java.util.ArrayList<>(value.length);
+        this.valTabs.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

@@ -17,6 +17,7 @@ package javafx.scene.image;
 @SuppressWarnings("all")
 public class WritableImageBuilder<Z extends WritableImage, B extends WritableImageBuilder<Z, B>>
         extends javafx.scene.image.ImageBuilder<Z, B>
+        implements WritableImageBuilderExt<Z, B>
 {
 
     @Override

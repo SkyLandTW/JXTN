@@ -17,6 +17,7 @@ package org.controlsfx.control;
 @SuppressWarnings("all")
 public class SnapshotViewBuilder<Z extends SnapshotView, B extends SnapshotViewBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements SnapshotViewBuilderExt<Z, B>
 {
 
     private boolean hasFixedSelectionRatio;

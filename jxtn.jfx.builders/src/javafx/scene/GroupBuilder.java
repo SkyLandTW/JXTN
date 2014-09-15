@@ -17,6 +17,7 @@ package javafx.scene;
 @SuppressWarnings("all")
 public class GroupBuilder<Z extends Group, B extends GroupBuilder<Z, B>>
         extends javafx.scene.ParentBuilder<Z, B>
+        implements GroupBuilderExt<Z, B>
 {
 
     private boolean hasAutoSizeChildren;
@@ -37,7 +38,7 @@ public class GroupBuilder<Z extends Group, B extends GroupBuilder<Z, B>>
         if (this.hasAutoSizeChildren)
             instance.setAutoSizeChildren(this.valAutoSizeChildren);
         if (this.hasChildren)
-            instance.getChildren().setAll(this.valChildren);
+            instance.getChildren().addAll(this.valChildren);
         if (this.bound1AutoSizeChildren)
             instance.autoSizeChildrenProperty().bind(this.obsrv1AutoSizeChildren);
         if (this.bound2AutoSizeChildren)
@@ -84,6 +85,41 @@ public class GroupBuilder<Z extends Group, B extends GroupBuilder<Z, B>>
     {
         this.hasChildren = true;
         this.valChildren = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Group#getChildren}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B childrenAdd(java.util.Collection<javafx.scene.Node> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasChildren = true;
+        if (this.valChildren == null)
+            this.valChildren = new java.util.ArrayList<>(value.size());
+        this.valChildren.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Group#getChildren}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B childrenAdd(javafx.scene.Node... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasChildren = true;
+        if (this.valChildren == null)
+            this.valChildren = new java.util.ArrayList<>(value.length);
+        this.valChildren.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

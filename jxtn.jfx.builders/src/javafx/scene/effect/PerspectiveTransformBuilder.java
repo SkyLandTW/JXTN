@@ -17,6 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B extends PerspectiveTransformBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
+        implements PerspectiveTransformBuilderExt<Z, B>
 {
 
     private boolean hasInput;

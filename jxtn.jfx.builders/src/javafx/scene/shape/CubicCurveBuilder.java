@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
+        implements CubicCurveBuilderExt<Z, B>
 {
 
     private boolean hasControlX1;

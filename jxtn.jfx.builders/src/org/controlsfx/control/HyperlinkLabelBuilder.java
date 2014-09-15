@@ -17,6 +17,7 @@ package org.controlsfx.control;
 @SuppressWarnings("all")
 public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends HyperlinkLabelBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements HyperlinkLabelBuilderExt<Z, B>
 {
 
     private boolean hasOnAction;

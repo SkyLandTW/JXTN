@@ -17,6 +17,7 @@ package javafx.scene;
 @SuppressWarnings("all")
 public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>>
         extends javafx.scene.NodeBuilder<Z, B>
+        implements SubSceneBuilderExt<Z, B>
 {
 
     private boolean hasCamera;

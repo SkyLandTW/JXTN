@@ -17,6 +17,7 @@ package org.controlsfx.property;
 @SuppressWarnings("all")
 public class BeanPropertyBuilder<Z extends BeanProperty, B extends BeanPropertyBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     private boolean hasEditable;

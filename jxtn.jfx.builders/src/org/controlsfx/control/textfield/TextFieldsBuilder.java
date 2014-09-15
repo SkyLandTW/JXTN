@@ -17,6 +17,7 @@ package org.controlsfx.control.textfield;
 @SuppressWarnings("all")
 public class TextFieldsBuilder<Z extends TextFields, B extends TextFieldsBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

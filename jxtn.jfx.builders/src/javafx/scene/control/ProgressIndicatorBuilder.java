@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class ProgressIndicatorBuilder<Z extends ProgressIndicator, B extends ProgressIndicatorBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements ProgressIndicatorBuilderExt<Z, B>
 {
 
     private boolean hasProgress;

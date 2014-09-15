@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>>
         extends javafx.scene.control.TextInputControlBuilder<Z, B>
+        implements TextAreaBuilderExt<Z, B>
 {
 
     private boolean hasParagraphs;
@@ -67,7 +68,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     {
         super.applyTo(instance);
         if (this.hasParagraphs)
-            instance.getParagraphs().setAll(this.valParagraphs);
+            instance.getParagraphs().addAll(this.valParagraphs);
         if (this.hasPrefColumnCount)
             instance.setPrefColumnCount(this.valPrefColumnCount);
         if (this.hasPrefRowCount)
@@ -126,6 +127,41 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     {
         this.hasParagraphs = true;
         this.valParagraphs = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TextArea#getParagraphs}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B paragraphsAdd(java.util.Collection<java.lang.CharSequence> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasParagraphs = true;
+        if (this.valParagraphs == null)
+            this.valParagraphs = new java.util.ArrayList<>(value.size());
+        this.valParagraphs.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TextArea#getParagraphs}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B paragraphsAdd(java.lang.CharSequence... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasParagraphs = true;
+        if (this.valParagraphs == null)
+            this.valParagraphs = new java.util.ArrayList<>(value.length);
+        this.valParagraphs.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

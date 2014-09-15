@@ -17,6 +17,7 @@ package javafx.scene.control.cell;
 @SuppressWarnings("all")
 public class CheckBoxTableCellBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends CheckBoxTableCell<S, T>, B extends CheckBoxTableCellBuilder<S, T, Z, B>>
         extends javafx.scene.control.TableCellBuilder<S, T, Z, B>
+        implements CheckBoxTableCellBuilderExt<S, T, Z, B>
 {
 
     private boolean hasConverter;

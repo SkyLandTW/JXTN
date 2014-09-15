@@ -17,6 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class DisplacementMapBuilder<Z extends DisplacementMap, B extends DisplacementMapBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
+        implements DisplacementMapBuilderExt<Z, B>
 {
 
     private boolean hasInput;

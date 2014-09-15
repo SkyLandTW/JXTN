@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class AccordionBuilder<Z extends Accordion, B extends AccordionBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements AccordionBuilderExt<Z, B>
 {
 
     private boolean hasExpandedPane;
@@ -37,7 +38,7 @@ public class AccordionBuilder<Z extends Accordion, B extends AccordionBuilder<Z,
         if (this.hasExpandedPane)
             instance.setExpandedPane(this.valExpandedPane);
         if (this.hasPanes)
-            instance.getPanes().setAll(this.valPanes);
+            instance.getPanes().addAll(this.valPanes);
         if (this.bound1ExpandedPane)
             instance.expandedPaneProperty().bind(this.obsrv1ExpandedPane);
         if (this.bound2ExpandedPane)
@@ -84,6 +85,41 @@ public class AccordionBuilder<Z extends Accordion, B extends AccordionBuilder<Z,
     {
         this.hasPanes = true;
         this.valPanes = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Accordion#getPanes}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B panesAdd(java.util.Collection<javafx.scene.control.TitledPane> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasPanes = true;
+        if (this.valPanes == null)
+            this.valPanes = new java.util.ArrayList<>(value.size());
+        this.valPanes.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Accordion#getPanes}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B panesAdd(javafx.scene.control.TitledPane... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasPanes = true;
+        if (this.valPanes == null)
+            this.valPanes = new java.util.ArrayList<>(value.length);
+        this.valPanes.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class ButtonBaseBuilder<Z extends ButtonBase, B extends ButtonBaseBuilder<Z, B>>
         extends javafx.scene.control.LabeledBuilder<Z, B>
+        implements ButtonBaseBuilderExt<Z, B>
 {
 
     private boolean hasOnAction;

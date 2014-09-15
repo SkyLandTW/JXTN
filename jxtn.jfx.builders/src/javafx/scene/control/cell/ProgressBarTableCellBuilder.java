@@ -17,6 +17,7 @@ package javafx.scene.control.cell;
 @SuppressWarnings("all")
 public class ProgressBarTableCellBuilder<S extends java.lang.Object, Z extends ProgressBarTableCell<S>, B extends ProgressBarTableCellBuilder<S, Z, B>>
         extends javafx.scene.control.TableCellBuilder<S, java.lang.Double, Z, B>
+        implements ProgressBarTableCellBuilderExt<S, Z, B>
 {
 
     @Override

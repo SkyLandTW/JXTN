@@ -17,6 +17,7 @@ package javafx.scene.chart;
 @SuppressWarnings("all")
 public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Object, Z extends XYChart<X, Y>, B extends XYChartBuilder<X, Y, Z, B>>
         extends javafx.scene.chart.ChartBuilder<Z, B>
+        implements XYChartBuilderExt<X, Y, Z, B>
 {
 
     private boolean hasAlternativeColumnFillVisible;

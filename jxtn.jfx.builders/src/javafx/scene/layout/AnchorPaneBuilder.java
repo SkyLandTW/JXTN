@@ -17,6 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class AnchorPaneBuilder<Z extends AnchorPane, B extends AnchorPaneBuilder<Z, B>>
         extends javafx.scene.layout.PaneBuilder<Z, B>
+        implements AnchorPaneBuilderExt<Z, B>
 {
 
     @Override

@@ -17,6 +17,7 @@ package javafx.scene.text;
 @SuppressWarnings("all")
 public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
+        implements TextBuilderExt<Z, B>
 {
 
     private boolean hasBoundsType;

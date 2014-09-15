@@ -17,6 +17,7 @@ package org.controlsfx.control.table;
 @SuppressWarnings("all")
 public class TableMenuButtonAccessorBuilder<Z extends TableMenuButtonAccessor, B extends TableMenuButtonAccessorBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

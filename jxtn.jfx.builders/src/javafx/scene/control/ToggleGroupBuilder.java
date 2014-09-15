@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class ToggleGroupBuilder<Z extends ToggleGroup, B extends ToggleGroupBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     private boolean hasToggles;
@@ -27,7 +28,7 @@ public class ToggleGroupBuilder<Z extends ToggleGroup, B extends ToggleGroupBuil
     {
         super.applyTo(instance);
         if (this.hasToggles)
-            instance.getToggles().setAll(this.valToggles);
+            instance.getToggles().addAll(this.valToggles);
     }
 
     /**
@@ -56,6 +57,41 @@ public class ToggleGroupBuilder<Z extends ToggleGroup, B extends ToggleGroupBuil
     {
         this.hasToggles = true;
         this.valToggles = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ToggleGroup#getToggles}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B togglesAdd(java.util.Collection<javafx.scene.control.Toggle> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasToggles = true;
+        if (this.valToggles == null)
+            this.valToggles = new java.util.ArrayList<>(value.size());
+        this.valToggles.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ToggleGroup#getToggles}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B togglesAdd(javafx.scene.control.Toggle... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasToggles = true;
+        if (this.valToggles == null)
+            this.valToggles = new java.util.ArrayList<>(value.length);
+        this.valToggles.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

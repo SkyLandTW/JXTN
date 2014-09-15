@@ -17,6 +17,7 @@ package javafx.scene.chart;
 @SuppressWarnings("all")
 public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>>
         extends javafx.scene.chart.ChartBuilder<Z, B>
+        implements PieChartBuilderExt<Z, B>
 {
 
     private boolean hasClockwise;

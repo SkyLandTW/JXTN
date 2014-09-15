@@ -17,6 +17,7 @@ package javafx.scene.chart;
 @SuppressWarnings("all")
 public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisBuilder<Z, B>>
         extends javafx.scene.chart.AxisBuilder<java.lang.String, Z, B>
+        implements CategoryAxisBuilderExt<Z, B>
 {
 
     private boolean hasCategories;

@@ -17,6 +17,7 @@ package javafx.scene;
 @SuppressWarnings("all")
 public class PerspectiveCameraBuilder<Z extends PerspectiveCamera, B extends PerspectiveCameraBuilder<Z, B>>
         extends javafx.scene.CameraBuilder<Z, B>
+        implements PerspectiveCameraBuilderExt<Z, B>
 {
 
     private boolean hasFieldOfView;

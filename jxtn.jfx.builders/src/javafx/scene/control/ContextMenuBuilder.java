@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuilder<Z, B>>
         extends javafx.scene.control.PopupControlBuilder<Z, B>
+        implements ContextMenuBuilderExt<Z, B>
 {
 
     private boolean hasImpl_showRelativeToWindow;
@@ -45,7 +46,7 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
         if (this.hasImpl_showRelativeToWindow)
             instance.setImpl_showRelativeToWindow(this.valImpl_showRelativeToWindow);
         if (this.hasItems)
-            instance.getItems().setAll(this.valItems);
+            instance.getItems().addAll(this.valItems);
         if (this.hasOnAction)
             instance.setOnAction(this.valOnAction);
         if (this.bound1Impl_showRelativeToWindow)
@@ -98,6 +99,41 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
     {
         this.hasItems = true;
         this.valItems = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ContextMenu#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B itemsAdd(java.util.Collection<javafx.scene.control.MenuItem> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.size());
+        this.valItems.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ContextMenu#getItems}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B itemsAdd(javafx.scene.control.MenuItem... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.length);
+        this.valItems.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

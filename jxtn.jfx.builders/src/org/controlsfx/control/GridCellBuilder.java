@@ -17,6 +17,7 @@ package org.controlsfx.control;
 @SuppressWarnings("all")
 public class GridCellBuilder<T extends java.lang.Object, Z extends GridCell<T>, B extends GridCellBuilder<T, Z, B>>
         extends javafx.scene.control.IndexedCellBuilder<T, Z, B>
+        implements GridCellBuilderExt<T, Z, B>
 {
 
     @Override

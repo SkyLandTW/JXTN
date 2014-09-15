@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlBuilder<Z, B>>
         extends javafx.stage.PopupWindowBuilder<Z, B>
+        implements PopupControlBuilderExt<Z, B>
 {
 
     private boolean hasId;
@@ -117,7 +118,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
         if (this.hasStyle)
             instance.setStyle(this.valStyle);
         if (this.hasStyleClass)
-            instance.getStyleClass().setAll(this.valStyleClass);
+            instance.getStyleClass().addAll(this.valStyleClass);
         if (this.bound1Id)
             instance.idProperty().bind(this.obsrv1Id);
         if (this.bound2Id)
@@ -308,6 +309,41 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     {
         this.hasStyleClass = true;
         this.valStyleClass = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link PopupControl#getStyleClass}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B styleClassAdd(java.util.Collection<java.lang.String> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStyleClass = true;
+        if (this.valStyleClass == null)
+            this.valStyleClass = new java.util.ArrayList<>(value.size());
+        this.valStyleClass.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link PopupControl#getStyleClass}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B styleClassAdd(java.lang.String... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStyleClass = true;
+        if (this.valStyleClass == null)
+            this.valStyleClass = new java.util.ArrayList<>(value.length);
+        this.valStyleClass.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

@@ -17,6 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class GlowBuilder<Z extends Glow, B extends GlowBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
+        implements GlowBuilderExt<Z, B>
 {
 
     private boolean hasInput;

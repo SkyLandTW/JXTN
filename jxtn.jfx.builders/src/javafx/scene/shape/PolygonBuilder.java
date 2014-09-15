@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class PolygonBuilder<Z extends Polygon, B extends PolygonBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
+        implements PolygonBuilderExt<Z, B>
 {
 
     private boolean hasPoints;
@@ -27,7 +28,7 @@ public class PolygonBuilder<Z extends Polygon, B extends PolygonBuilder<Z, B>>
     {
         super.applyTo(instance);
         if (this.hasPoints)
-            instance.getPoints().setAll(this.valPoints);
+            instance.getPoints().addAll(this.valPoints);
     }
 
     /**
@@ -56,6 +57,41 @@ public class PolygonBuilder<Z extends Polygon, B extends PolygonBuilder<Z, B>>
     {
         this.hasPoints = true;
         this.valPoints = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Polygon#getPoints}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B pointsAdd(java.util.Collection<java.lang.Double> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasPoints = true;
+        if (this.valPoints == null)
+            this.valPoints = new java.util.ArrayList<>(value.size());
+        this.valPoints.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Polygon#getPoints}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B pointsAdd(java.lang.Double... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasPoints = true;
+        if (this.valPoints == null)
+            this.valPoints = new java.util.ArrayList<>(value.length);
+        this.valPoints.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

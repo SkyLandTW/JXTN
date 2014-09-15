@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements SeparatorBuilderExt<Z, B>
 {
 
     private boolean hasHalignment;

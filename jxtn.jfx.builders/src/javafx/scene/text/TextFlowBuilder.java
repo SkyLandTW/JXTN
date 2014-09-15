@@ -17,6 +17,7 @@ package javafx.scene.text;
 @SuppressWarnings("all")
 public class TextFlowBuilder<Z extends TextFlow, B extends TextFlowBuilder<Z, B>>
         extends javafx.scene.layout.PaneBuilder<Z, B>
+        implements TextFlowBuilderExt<Z, B>
 {
 
     private boolean hasLineSpacing;

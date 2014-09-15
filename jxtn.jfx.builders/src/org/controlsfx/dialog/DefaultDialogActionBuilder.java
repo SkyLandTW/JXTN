@@ -17,6 +17,7 @@ package org.controlsfx.dialog;
 @SuppressWarnings("all")
 public class DefaultDialogActionBuilder<Z extends DefaultDialogAction, B extends DefaultDialogActionBuilder<Z, B>>
         extends org.controlsfx.control.action.AbstractActionBuilder<Z, B>
+        implements DefaultDialogActionBuilderExt<Z, B>
 {
 
     @Override

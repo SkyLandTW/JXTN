@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements ScrollPaneBuilderExt<Z, B>
 {
 
     private boolean hasContent;

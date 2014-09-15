@@ -17,6 +17,7 @@ package javafx.scene;
 @SuppressWarnings("all")
 public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     private boolean hasBlendMode;
@@ -786,9 +787,9 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         if (this.hasStyle)
             instance.setStyle(this.valStyle);
         if (this.hasStyleClass)
-            instance.getStyleClass().setAll(this.valStyleClass);
+            instance.getStyleClass().addAll(this.valStyleClass);
         if (this.hasTransforms)
-            instance.getTransforms().setAll(this.valTransforms);
+            instance.getTransforms().addAll(this.valTransforms);
         if (this.hasTranslateX)
             instance.setTranslateX(this.valTranslateX);
         if (this.hasTranslateY)
@@ -2053,6 +2054,41 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
+     * 增加集合屬性{@link Node#getStyleClass}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B styleClassAdd(java.util.Collection<java.lang.String> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStyleClass = true;
+        if (this.valStyleClass == null)
+            this.valStyleClass = new java.util.ArrayList<>(value.size());
+        this.valStyleClass.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Node#getStyleClass}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B styleClassAdd(java.lang.String... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStyleClass = true;
+        if (this.valStyleClass == null)
+            this.valStyleClass = new java.util.ArrayList<>(value.length);
+        this.valStyleClass.addAll(java.util.Arrays.asList(value));
+        return (B) this;
+    }
+
+    /**
      * 設定集合屬性{@link Node#getTransforms}的內容
      *
      * @param value 新的集合內容
@@ -2078,6 +2114,41 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     {
         this.hasTransforms = true;
         this.valTransforms = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Node#getTransforms}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B transformsAdd(java.util.Collection<javafx.scene.transform.Transform> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasTransforms = true;
+        if (this.valTransforms == null)
+            this.valTransforms = new java.util.ArrayList<>(value.size());
+        this.valTransforms.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Node#getTransforms}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B transformsAdd(javafx.scene.transform.Transform... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasTransforms = true;
+        if (this.valTransforms == null)
+            this.valTransforms = new java.util.ArrayList<>(value.length);
+        this.valTransforms.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

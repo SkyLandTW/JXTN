@@ -17,6 +17,7 @@ package javafx.scene.paint;
 @SuppressWarnings("all")
 public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMaterialBuilder<Z, B>>
         extends javafx.scene.paint.MaterialBuilder<Z, B>
+        implements PhongMaterialBuilderExt<Z, B>
 {
 
     private boolean hasBumpMap;

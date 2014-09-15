@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
+        implements RectangleBuilderExt<Z, B>
 {
 
     private boolean hasArcHeight;

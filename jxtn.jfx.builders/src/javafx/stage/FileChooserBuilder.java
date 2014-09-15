@@ -17,6 +17,7 @@ package javafx.stage;
 @SuppressWarnings("all")
 public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     private boolean hasExtensionFilters;
@@ -59,7 +60,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     {
         super.applyTo(instance);
         if (this.hasExtensionFilters)
-            instance.getExtensionFilters().setAll(this.valExtensionFilters);
+            instance.getExtensionFilters().addAll(this.valExtensionFilters);
         if (this.hasInitialDirectory)
             instance.setInitialDirectory(this.valInitialDirectory);
         if (this.hasInitialFileName)
@@ -112,6 +113,41 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     {
         this.hasExtensionFilters = true;
         this.valExtensionFilters = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link FileChooser#getExtensionFilters}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B extensionFiltersAdd(java.util.Collection<javafx.stage.FileChooser.ExtensionFilter> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasExtensionFilters = true;
+        if (this.valExtensionFilters == null)
+            this.valExtensionFilters = new java.util.ArrayList<>(value.size());
+        this.valExtensionFilters.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link FileChooser#getExtensionFilters}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B extensionFiltersAdd(javafx.stage.FileChooser.ExtensionFilter... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasExtensionFilters = true;
+        if (this.valExtensionFilters == null)
+            this.valExtensionFilters = new java.util.ArrayList<>(value.length);
+        this.valExtensionFilters.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

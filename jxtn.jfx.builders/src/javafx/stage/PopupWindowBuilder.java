@@ -17,6 +17,7 @@ package javafx.stage;
 @SuppressWarnings("all")
 public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuilder<Z, B>>
         extends javafx.stage.WindowBuilder<Z, B>
+        implements PopupWindowBuilderExt<Z, B>
 {
 
     private boolean hasAnchorLocation;

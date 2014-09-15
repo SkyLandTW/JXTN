@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class HyperlinkBuilder<Z extends Hyperlink, B extends HyperlinkBuilder<Z, B>>
         extends javafx.scene.control.ButtonBaseBuilder<Z, B>
+        implements HyperlinkBuilderExt<Z, B>
 {
 
     private boolean hasVisited;

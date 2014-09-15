@@ -17,6 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
+        implements DropShadowBuilderExt<Z, B>
 {
 
     private boolean hasBlurType;

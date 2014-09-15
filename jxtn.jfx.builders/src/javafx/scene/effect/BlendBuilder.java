@@ -17,6 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
+        implements BlendBuilderExt<Z, B>
 {
 
     private boolean hasBottomInput;

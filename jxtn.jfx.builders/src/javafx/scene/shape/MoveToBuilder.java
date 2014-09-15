@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class MoveToBuilder<Z extends MoveTo, B extends MoveToBuilder<Z, B>>
         extends javafx.scene.shape.PathElementBuilder<Z, B>
+        implements MoveToBuilderExt<Z, B>
 {
 
     private boolean hasX;

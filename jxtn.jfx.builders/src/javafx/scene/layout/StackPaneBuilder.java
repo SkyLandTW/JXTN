@@ -17,6 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class StackPaneBuilder<Z extends StackPane, B extends StackPaneBuilder<Z, B>>
         extends javafx.scene.layout.PaneBuilder<Z, B>
+        implements StackPaneBuilderExt<Z, B>
 {
 
     private boolean hasAlignment;

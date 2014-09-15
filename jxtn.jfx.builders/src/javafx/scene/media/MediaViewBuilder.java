@@ -17,6 +17,7 @@ package javafx.scene.media;
 @SuppressWarnings("all")
 public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z, B>>
         extends javafx.scene.NodeBuilder<Z, B>
+        implements MediaViewBuilderExt<Z, B>
 {
 
     private boolean hasFitHeight;

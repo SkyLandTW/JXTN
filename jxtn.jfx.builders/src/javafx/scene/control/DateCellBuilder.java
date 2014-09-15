@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class DateCellBuilder<Z extends DateCell, B extends DateCellBuilder<Z, B>>
         extends javafx.scene.control.CellBuilder<java.time.LocalDate, Z, B>
+        implements DateCellBuilderExt<Z, B>
 {
 
     @Override

@@ -17,6 +17,7 @@ package org.controlsfx.control.action;
 @SuppressWarnings("all")
 public class AbstractActionBuilder<Z extends AbstractAction, B extends AbstractActionBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     private boolean hasAccelerator;

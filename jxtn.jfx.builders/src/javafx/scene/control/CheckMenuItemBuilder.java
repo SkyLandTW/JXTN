@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class CheckMenuItemBuilder<Z extends CheckMenuItem, B extends CheckMenuItemBuilder<Z, B>>
         extends javafx.scene.control.MenuItemBuilder<Z, B>
+        implements CheckMenuItemBuilderExt<Z, B>
 {
 
     private boolean hasSelected;

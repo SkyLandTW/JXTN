@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
         extends javafx.scene.control.ButtonBaseBuilder<Z, B>
+        implements ButtonBuilderExt<Z, B>
 {
 
     private boolean hasCancelButton;

@@ -17,6 +17,7 @@ package javafx.scene;
 @SuppressWarnings("all")
 public class CursorBuilder<Z extends Cursor, B extends CursorBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

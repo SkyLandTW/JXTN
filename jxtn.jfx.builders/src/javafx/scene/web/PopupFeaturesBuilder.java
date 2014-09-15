@@ -17,6 +17,7 @@ package javafx.scene.web;
 @SuppressWarnings("all")
 public class PopupFeaturesBuilder<Z extends PopupFeatures, B extends PopupFeaturesBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

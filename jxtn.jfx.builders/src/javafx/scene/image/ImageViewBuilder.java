@@ -17,6 +17,7 @@ package javafx.scene.image;
 @SuppressWarnings("all")
 public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z, B>>
         extends javafx.scene.NodeBuilder<Z, B>
+        implements ImageViewBuilderExt<Z, B>
 {
 
     private boolean hasFitHeight;

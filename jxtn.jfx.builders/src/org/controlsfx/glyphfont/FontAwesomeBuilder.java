@@ -17,6 +17,7 @@ package org.controlsfx.glyphfont;
 @SuppressWarnings("all")
 public class FontAwesomeBuilder<Z extends FontAwesome, B extends FontAwesomeBuilder<Z, B>>
         extends org.controlsfx.glyphfont.GlyphFontBuilder<Z, B>
+        implements FontAwesomeBuilderExt<Z, B>
 {
 
     @Override

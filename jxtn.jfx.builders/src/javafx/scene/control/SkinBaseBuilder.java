@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class SkinBaseBuilder<C extends javafx.scene.control.Control, Z extends SkinBase<C>, B extends SkinBaseBuilder<C, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     private boolean hasChildren;
@@ -27,7 +28,7 @@ public class SkinBaseBuilder<C extends javafx.scene.control.Control, Z extends S
     {
         super.applyTo(instance);
         if (this.hasChildren)
-            instance.getChildren().setAll(this.valChildren);
+            instance.getChildren().addAll(this.valChildren);
     }
 
     /**
@@ -56,6 +57,41 @@ public class SkinBaseBuilder<C extends javafx.scene.control.Control, Z extends S
     {
         this.hasChildren = true;
         this.valChildren = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SkinBase#getChildren}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B childrenAdd(java.util.Collection<javafx.scene.Node> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasChildren = true;
+        if (this.valChildren == null)
+            this.valChildren = new java.util.ArrayList<>(value.size());
+        this.valChildren.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SkinBase#getChildren}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B childrenAdd(javafx.scene.Node... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasChildren = true;
+        if (this.valChildren == null)
+            this.valChildren = new java.util.ArrayList<>(value.length);
+        this.valChildren.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 }

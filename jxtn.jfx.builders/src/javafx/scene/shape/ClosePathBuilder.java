@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class ClosePathBuilder<Z extends ClosePath, B extends ClosePathBuilder<Z, B>>
         extends javafx.scene.shape.PathElementBuilder<Z, B>
+        implements ClosePathBuilderExt<Z, B>
 {
 
     @Override

@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class PasswordFieldBuilder<Z extends PasswordField, B extends PasswordFieldBuilder<Z, B>>
         extends javafx.scene.control.TextFieldBuilder<Z, B>
+        implements PasswordFieldBuilderExt<Z, B>
 {
 
     @Override

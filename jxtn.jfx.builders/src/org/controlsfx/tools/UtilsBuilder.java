@@ -17,6 +17,7 @@ package org.controlsfx.tools;
 @SuppressWarnings("all")
 public class UtilsBuilder<Z extends Utils, B extends UtilsBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

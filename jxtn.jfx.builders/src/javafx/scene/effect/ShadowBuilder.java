@@ -17,6 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
+        implements ShadowBuilderExt<Z, B>
 {
 
     private boolean hasBlurType;

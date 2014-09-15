@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements SliderBuilderExt<Z, B>
 {
 
     private boolean hasBlockIncrement;

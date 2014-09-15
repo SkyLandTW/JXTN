@@ -17,6 +17,7 @@ package javafx.scene.control.cell;
 @SuppressWarnings("all")
 public class TextFieldTreeCellBuilder<T extends java.lang.Object, Z extends TextFieldTreeCell<T>, B extends TextFieldTreeCellBuilder<T, Z, B>>
         extends javafx.scene.control.TreeCellBuilder<T, Z, B>
+        implements TextFieldTreeCellBuilderExt<T, Z, B>
 {
 
     private boolean hasConverter;

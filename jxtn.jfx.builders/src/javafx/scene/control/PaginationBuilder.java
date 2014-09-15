@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements PaginationBuilderExt<Z, B>
 {
 
     private boolean hasCurrentPageIndex;

@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, B extends ComboBoxBuilder<T, Z, B>>
         extends javafx.scene.control.ComboBoxBaseBuilder<T, Z, B>
+        implements ComboBoxBuilderExt<T, Z, B>
 {
 
     private boolean hasButtonCell;

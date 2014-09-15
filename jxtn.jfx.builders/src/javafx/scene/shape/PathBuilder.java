@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
+        implements PathBuilderExt<Z, B>
 {
 
     private boolean hasElements;
@@ -35,7 +36,7 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
     {
         super.applyTo(instance);
         if (this.hasElements)
-            instance.getElements().setAll(this.valElements);
+            instance.getElements().addAll(this.valElements);
         if (this.hasFillRule)
             instance.setFillRule(this.valFillRule);
         if (this.bound1FillRule)
@@ -70,6 +71,41 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
     {
         this.hasElements = true;
         this.valElements = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Path#getElements}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B elementsAdd(java.util.Collection<javafx.scene.shape.PathElement> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasElements = true;
+        if (this.valElements == null)
+            this.valElements = new java.util.ArrayList<>(value.size());
+        this.valElements.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Path#getElements}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B elementsAdd(javafx.scene.shape.PathElement... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasElements = true;
+        if (this.valElements == null)
+            this.valElements = new java.util.ArrayList<>(value.length);
+        this.valElements.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

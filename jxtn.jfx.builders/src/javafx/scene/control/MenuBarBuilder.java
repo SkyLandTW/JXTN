@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class MenuBarBuilder<Z extends MenuBar, B extends MenuBarBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements MenuBarBuilderExt<Z, B>
 {
 
     private boolean hasMenus;
@@ -35,7 +36,7 @@ public class MenuBarBuilder<Z extends MenuBar, B extends MenuBarBuilder<Z, B>>
     {
         super.applyTo(instance);
         if (this.hasMenus)
-            instance.getMenus().setAll(this.valMenus);
+            instance.getMenus().addAll(this.valMenus);
         if (this.hasUseSystemMenuBar)
             instance.setUseSystemMenuBar(this.valUseSystemMenuBar);
         if (this.bound1UseSystemMenuBar)
@@ -70,6 +71,41 @@ public class MenuBarBuilder<Z extends MenuBar, B extends MenuBarBuilder<Z, B>>
     {
         this.hasMenus = true;
         this.valMenus = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link MenuBar#getMenus}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B menusAdd(java.util.Collection<javafx.scene.control.Menu> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasMenus = true;
+        if (this.valMenus == null)
+            this.valMenus = new java.util.ArrayList<>(value.size());
+        this.valMenus.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link MenuBar#getMenus}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B menusAdd(javafx.scene.control.Menu... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasMenus = true;
+        if (this.valMenus == null)
+            this.valMenus = new java.util.ArrayList<>(value.length);
+        this.valMenus.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

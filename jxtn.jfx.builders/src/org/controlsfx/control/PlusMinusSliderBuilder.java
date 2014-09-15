@@ -17,6 +17,7 @@ package org.controlsfx.control;
 @SuppressWarnings("all")
 public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMinusSliderBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements PlusMinusSliderBuilderExt<Z, B>
 {
 
     private boolean hasOnValueChanged;

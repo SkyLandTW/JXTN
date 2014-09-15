@@ -17,6 +17,7 @@ package javafx.scene.image;
 @SuppressWarnings("all")
 public class ImageBuilder<Z extends Image, B extends ImageBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

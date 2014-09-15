@@ -17,6 +17,7 @@ package javafx.scene.web;
 @SuppressWarnings("all")
 public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
         extends javafx.scene.ParentBuilder<Z, B>
+        implements WebViewBuilderExt<Z, B>
 {
 
     private boolean hasContextMenuEnabled;

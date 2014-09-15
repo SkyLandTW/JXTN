@@ -17,6 +17,7 @@ package javafx.scene.chart;
 @SuppressWarnings("all")
 public class BubbleChartBuilder<X extends java.lang.Object, Y extends java.lang.Object, Z extends BubbleChart<X, Y>, B extends BubbleChartBuilder<X, Y, Z, B>>
         extends javafx.scene.chart.XYChartBuilder<X, Y, Z, B>
+        implements BubbleChartBuilderExt<X, Y, Z, B>
 {
 
     @Override

@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class SplitMenuButtonBuilder<Z extends SplitMenuButton, B extends SplitMenuButtonBuilder<Z, B>>
         extends javafx.scene.control.MenuButtonBuilder<Z, B>
+        implements SplitMenuButtonBuilderExt<Z, B>
 {
 
     @Override

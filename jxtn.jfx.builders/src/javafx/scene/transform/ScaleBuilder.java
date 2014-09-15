@@ -17,6 +17,7 @@ package javafx.scene.transform;
 @SuppressWarnings("all")
 public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
         extends javafx.scene.transform.TransformBuilder<Z, B>
+        implements ScaleBuilderExt<Z, B>
 {
 
     private boolean hasPivotX;

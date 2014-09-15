@@ -17,6 +17,7 @@ package org.controlsfx.control.table.model;
 @SuppressWarnings("all")
 public class JavaFXTableModelsBuilder<Z extends JavaFXTableModels, B extends JavaFXTableModelsBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

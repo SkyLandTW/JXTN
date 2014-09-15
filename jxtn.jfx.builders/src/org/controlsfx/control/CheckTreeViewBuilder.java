@@ -17,6 +17,7 @@ package org.controlsfx.control;
 @SuppressWarnings("all")
 public class CheckTreeViewBuilder<T extends java.lang.Object, Z extends CheckTreeView<T>, B extends CheckTreeViewBuilder<T, Z, B>>
         extends javafx.scene.control.TreeViewBuilder<T, Z, B>
+        implements CheckTreeViewBuilderExt<T, Z, B>
 {
 
     private boolean hasCheckModel;

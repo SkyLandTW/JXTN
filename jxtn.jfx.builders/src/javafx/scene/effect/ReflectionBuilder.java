@@ -17,6 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
+        implements ReflectionBuilderExt<Z, B>
 {
 
     private boolean hasBottomOpacity;

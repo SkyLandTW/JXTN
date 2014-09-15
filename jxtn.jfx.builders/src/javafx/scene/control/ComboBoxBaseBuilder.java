@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxBase<T>, B extends ComboBoxBaseBuilder<T, Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements ComboBoxBaseBuilderExt<T, Z, B>
 {
 
     private boolean hasEditable;

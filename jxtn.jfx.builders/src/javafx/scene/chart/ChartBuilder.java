@@ -17,6 +17,7 @@ package javafx.scene.chart;
 @SuppressWarnings("all")
 public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
         extends javafx.scene.layout.RegionBuilder<Z, B>
+        implements ChartBuilderExt<Z, B>
 {
 
     private boolean hasAnimated;

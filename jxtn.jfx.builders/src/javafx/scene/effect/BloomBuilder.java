@@ -17,6 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class BloomBuilder<Z extends Bloom, B extends BloomBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
+        implements BloomBuilderExt<Z, B>
 {
 
     private boolean hasInput;

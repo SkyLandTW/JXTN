@@ -17,6 +17,7 @@ package javafx.scene.paint;
 @SuppressWarnings("all")
 public class RadialGradientBuilder<Z extends RadialGradient, B extends RadialGradientBuilder<Z, B>>
         extends javafx.scene.paint.PaintBuilder<Z, B>
+        implements RadialGradientBuilderExt<Z, B>
 {
 
     @Override

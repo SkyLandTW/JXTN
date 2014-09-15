@@ -17,6 +17,7 @@ package org.controlsfx.control;
 @SuppressWarnings("all")
 public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, B extends GridViewBuilder<T, Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements GridViewBuilderExt<T, Z, B>
 {
 
     private boolean hasCellFactory;

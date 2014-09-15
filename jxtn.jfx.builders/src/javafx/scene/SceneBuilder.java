@@ -17,6 +17,7 @@ package javafx.scene;
 @SuppressWarnings("all")
 public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     private boolean hasCamera;
@@ -485,7 +486,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         if (this.hasRoot)
             instance.setRoot(this.valRoot);
         if (this.hasStylesheets)
-            instance.getStylesheets().setAll(this.valStylesheets);
+            instance.getStylesheets().addAll(this.valStylesheets);
         if (this.hasUserAgentStylesheet)
             instance.setUserAgentStylesheet(this.valUserAgentStylesheet);
         if (this.bound1Camera)
@@ -1330,6 +1331,41 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     {
         this.hasStylesheets = true;
         this.valStylesheets = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Scene#getStylesheets}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B stylesheetsAdd(java.util.Collection<java.lang.String> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStylesheets = true;
+        if (this.valStylesheets == null)
+            this.valStylesheets = new java.util.ArrayList<>(value.size());
+        this.valStylesheets.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Scene#getStylesheets}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B stylesheetsAdd(java.lang.String... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStylesheets = true;
+        if (this.valStylesheets == null)
+            this.valStylesheets = new java.util.ArrayList<>(value.length);
+        this.valStylesheets.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

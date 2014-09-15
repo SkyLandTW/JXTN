@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>, B extends ChoiceBoxBuilder<T, Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements ChoiceBoxBuilderExt<T, Z, B>
 {
 
     private boolean hasConverter;

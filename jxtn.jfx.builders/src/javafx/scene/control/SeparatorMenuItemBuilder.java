@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class SeparatorMenuItemBuilder<Z extends SeparatorMenuItem, B extends SeparatorMenuItemBuilder<Z, B>>
         extends javafx.scene.control.CustomMenuItemBuilder<Z, B>
+        implements SeparatorMenuItemBuilderExt<Z, B>
 {
 
     @Override

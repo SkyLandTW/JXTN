@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class ProgressBarBuilder<Z extends ProgressBar, B extends ProgressBarBuilder<Z, B>>
         extends javafx.scene.control.ProgressIndicatorBuilder<Z, B>
+        implements ProgressBarBuilderExt<Z, B>
 {
 
     @Override

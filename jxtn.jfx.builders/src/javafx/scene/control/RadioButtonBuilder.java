@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class RadioButtonBuilder<Z extends RadioButton, B extends RadioButtonBuilder<Z, B>>
         extends javafx.scene.control.ToggleButtonBuilder<Z, B>
+        implements RadioButtonBuilderExt<Z, B>
 {
 
     @Override

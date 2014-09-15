@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         extends javafx.scene.control.PopupControlBuilder<Z, B>
+        implements TooltipBuilderExt<Z, B>
 {
 
     private boolean hasContentDisplay;

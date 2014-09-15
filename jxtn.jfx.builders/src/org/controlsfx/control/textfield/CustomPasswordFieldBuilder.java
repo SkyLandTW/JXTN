@@ -17,6 +17,7 @@ package org.controlsfx.control.textfield;
 @SuppressWarnings("all")
 public class CustomPasswordFieldBuilder<Z extends CustomPasswordField, B extends CustomPasswordFieldBuilder<Z, B>>
         extends javafx.scene.control.PasswordFieldBuilder<Z, B>
+        implements CustomPasswordFieldBuilderExt<Z, B>
 {
 
     private boolean hasLeft;

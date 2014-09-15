@@ -17,6 +17,7 @@ package org.controlsfx.control.decoration;
 @SuppressWarnings("all")
 public class DecoratorBuilder<Z extends Decorator, B extends DecoratorBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

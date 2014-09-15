@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         extends javafx.scene.NodeBuilder<Z, B>
+        implements ShapeBuilderExt<Z, B>
 {
 
     private boolean hasFill;
@@ -105,7 +106,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
         if (this.hasStroke)
             instance.setStroke(this.valStroke);
         if (this.hasStrokeDashArray)
-            instance.getStrokeDashArray().setAll(this.valStrokeDashArray);
+            instance.getStrokeDashArray().addAll(this.valStrokeDashArray);
         if (this.hasStrokeDashOffset)
             instance.setStrokeDashOffset(this.valStrokeDashOffset);
         if (this.hasStrokeLineCap)
@@ -224,6 +225,41 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     {
         this.hasStrokeDashArray = true;
         this.valStrokeDashArray = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Shape#getStrokeDashArray}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B strokeDashArrayAdd(java.util.Collection<java.lang.Double> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStrokeDashArray = true;
+        if (this.valStrokeDashArray == null)
+            this.valStrokeDashArray = new java.util.ArrayList<>(value.size());
+        this.valStrokeDashArray.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Shape#getStrokeDashArray}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B strokeDashArrayAdd(java.lang.Double... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStrokeDashArray = true;
+        if (this.valStrokeDashArray == null)
+            this.valStrokeDashArray = new java.util.ArrayList<>(value.length);
+        this.valStrokeDashArray.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
         extends javafx.scene.layout.RegionBuilder<Z, B>
+        implements ControlBuilderExt<Z, B>
 {
 
     private boolean hasContextMenu;

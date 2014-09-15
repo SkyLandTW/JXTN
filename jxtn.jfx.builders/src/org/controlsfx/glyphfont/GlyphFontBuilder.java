@@ -17,6 +17,7 @@ package org.controlsfx.glyphfont;
 @SuppressWarnings("all")
 public class GlyphFontBuilder<Z extends GlyphFont, B extends GlyphFontBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

@@ -17,6 +17,7 @@ package org.controlsfx.control;
 @SuppressWarnings("all")
 public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements RangeSliderBuilderExt<Z, B>
 {
 
     private boolean hasBlockIncrement;

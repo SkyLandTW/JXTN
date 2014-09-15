@@ -17,6 +17,7 @@ package javafx.scene.control.cell;
 @SuppressWarnings("all")
 public class TextFieldListCellBuilder<T extends java.lang.Object, Z extends TextFieldListCell<T>, B extends TextFieldListCellBuilder<T, Z, B>>
         extends javafx.scene.control.ListCellBuilder<T, Z, B>
+        implements TextFieldListCellBuilderExt<T, Z, B>
 {
 
     private boolean hasConverter;

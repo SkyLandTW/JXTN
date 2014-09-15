@@ -17,6 +17,7 @@ package org.controlsfx.validation.decoration;
 @SuppressWarnings("all")
 public class StyleClassValidationDecorationBuilder<Z extends StyleClassValidationDecoration, B extends StyleClassValidationDecorationBuilder<Z, B>>
         extends org.controlsfx.validation.decoration.AbstractValidationDecorationBuilder<Z, B>
+        implements StyleClassValidationDecorationBuilderExt<Z, B>
 {
 
     @Override

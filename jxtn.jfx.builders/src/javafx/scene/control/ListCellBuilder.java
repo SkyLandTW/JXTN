@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class ListCellBuilder<T extends java.lang.Object, Z extends ListCell<T>, B extends ListCellBuilder<T, Z, B>>
         extends javafx.scene.control.IndexedCellBuilder<T, Z, B>
+        implements ListCellBuilderExt<T, Z, B>
 {
 
     @Override

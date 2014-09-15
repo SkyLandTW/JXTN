@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class IndexedCellBuilder<T extends java.lang.Object, Z extends IndexedCell<T>, B extends IndexedCellBuilder<T, Z, B>>
         extends javafx.scene.control.CellBuilder<T, Z, B>
+        implements IndexedCellBuilderExt<T, Z, B>
 {
 
     @Override

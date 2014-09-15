@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class SVGPathBuilder<Z extends SVGPath, B extends SVGPathBuilder<Z, B>>
         extends javafx.scene.shape.ShapeBuilder<Z, B>
+        implements SVGPathBuilderExt<Z, B>
 {
 
     private boolean hasContent;

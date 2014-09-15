@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>, B extends TableViewBuilder<S, Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements TableViewBuilderExt<S, Z, B>
 {
 
     private boolean hasColumnResizePolicy;
@@ -124,7 +125,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         if (this.hasColumnResizePolicy)
             instance.setColumnResizePolicy(this.valColumnResizePolicy);
         if (this.hasColumns)
-            instance.getColumns().setAll(this.valColumns);
+            instance.getColumns().addAll(this.valColumns);
         if (this.hasEditable)
             instance.setEditable(this.valEditable);
         if (this.hasFixedCellSize)
@@ -146,13 +147,13 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         if (this.hasSelectionModel)
             instance.setSelectionModel(this.valSelectionModel);
         if (this.hasSortOrder)
-            instance.getSortOrder().setAll(this.valSortOrder);
+            instance.getSortOrder().addAll(this.valSortOrder);
         if (this.hasSortPolicy)
             instance.setSortPolicy(this.valSortPolicy);
         if (this.hasTableMenuButtonVisible)
             instance.setTableMenuButtonVisible(this.valTableMenuButtonVisible);
         if (this.hasVisibleLeafColumns)
-            instance.getVisibleLeafColumns().setAll(this.valVisibleLeafColumns);
+            instance.getVisibleLeafColumns().addAll(this.valVisibleLeafColumns);
         if (this.bound1ColumnResizePolicy)
             instance.columnResizePolicyProperty().bind(this.obsrv1ColumnResizePolicy);
         if (this.bound2ColumnResizePolicy)
@@ -235,6 +236,41 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     {
         this.hasColumns = true;
         this.valColumns = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TableView#getColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B columnsAdd(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumns = true;
+        if (this.valColumns == null)
+            this.valColumns = new java.util.ArrayList<>(value.size());
+        this.valColumns.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TableView#getColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B columnsAdd(javafx.scene.control.TableColumn<S, ?>... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumns = true;
+        if (this.valColumns == null)
+            this.valColumns = new java.util.ArrayList<>(value.length);
+        this.valColumns.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 
@@ -408,6 +444,41 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
+     * 增加集合屬性{@link TableView#getSortOrder}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B sortOrderAdd(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasSortOrder = true;
+        if (this.valSortOrder == null)
+            this.valSortOrder = new java.util.ArrayList<>(value.size());
+        this.valSortOrder.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TableView#getSortOrder}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B sortOrderAdd(javafx.scene.control.TableColumn<S, ?>... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasSortOrder = true;
+        if (this.valSortOrder == null)
+            this.valSortOrder = new java.util.ArrayList<>(value.length);
+        this.valSortOrder.addAll(java.util.Arrays.asList(value));
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link TableView#setSortPolicy(javafx.util.Callback)}
      *
      * @param value 新的屬性值
@@ -461,6 +532,41 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     {
         this.hasVisibleLeafColumns = true;
         this.valVisibleLeafColumns = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TableView#getVisibleLeafColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B visibleLeafColumnsAdd(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasVisibleLeafColumns = true;
+        if (this.valVisibleLeafColumns == null)
+            this.valVisibleLeafColumns = new java.util.ArrayList<>(value.size());
+        this.valVisibleLeafColumns.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TableView#getVisibleLeafColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B visibleLeafColumnsAdd(javafx.scene.control.TableColumn<S, ?>... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasVisibleLeafColumns = true;
+        if (this.valVisibleLeafColumns == null)
+            this.valVisibleLeafColumns = new java.util.ArrayList<>(value.length);
+        this.valVisibleLeafColumns.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

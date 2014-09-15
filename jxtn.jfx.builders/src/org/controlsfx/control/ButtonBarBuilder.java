@@ -17,6 +17,7 @@ package org.controlsfx.control;
 @SuppressWarnings("all")
 public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements ButtonBarBuilderExt<Z, B>
 {
 
     private boolean hasButtonMinWidth;
@@ -57,7 +58,7 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
         if (this.hasButtonUniformSize)
             instance.setButtonUniformSize(this.valButtonUniformSize);
         if (this.hasButtons)
-            instance.getButtons().setAll(this.valButtons);
+            instance.getButtons().addAll(this.valButtons);
         if (this.bound1ButtonMinWidth)
             instance.buttonMinWidthProperty().bind(this.obsrv1ButtonMinWidth);
         if (this.bound2ButtonMinWidth)
@@ -140,6 +141,41 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
     {
         this.hasButtons = true;
         this.valButtons = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ButtonBar#getButtons}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B buttonsAdd(java.util.Collection<javafx.scene.control.ButtonBase> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasButtons = true;
+        if (this.valButtons == null)
+            this.valButtons = new java.util.ArrayList<>(value.size());
+        this.valButtons.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ButtonBar#getButtons}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B buttonsAdd(javafx.scene.control.ButtonBase... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasButtons = true;
+        if (this.valButtons == null)
+            this.valButtons = new java.util.ArrayList<>(value.length);
+        this.valButtons.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

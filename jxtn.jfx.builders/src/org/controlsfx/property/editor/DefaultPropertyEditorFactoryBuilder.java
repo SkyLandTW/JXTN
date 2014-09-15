@@ -17,6 +17,7 @@ package org.controlsfx.property.editor;
 @SuppressWarnings("all")
 public class DefaultPropertyEditorFactoryBuilder<Z extends DefaultPropertyEditorFactory, B extends DefaultPropertyEditorFactoryBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     @Override

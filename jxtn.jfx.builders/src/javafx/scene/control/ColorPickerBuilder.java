@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class ColorPickerBuilder<Z extends ColorPicker, B extends ColorPickerBuilder<Z, B>>
         extends javafx.scene.control.ComboBoxBaseBuilder<javafx.scene.paint.Color, Z, B>
+        implements ColorPickerBuilderExt<Z, B>
 {
 
     private boolean hasCustomColors;
@@ -27,7 +28,7 @@ public class ColorPickerBuilder<Z extends ColorPicker, B extends ColorPickerBuil
     {
         super.applyTo(instance);
         if (this.hasCustomColors)
-            instance.getCustomColors().setAll(this.valCustomColors);
+            instance.getCustomColors().addAll(this.valCustomColors);
     }
 
     /**
@@ -56,6 +57,41 @@ public class ColorPickerBuilder<Z extends ColorPicker, B extends ColorPickerBuil
     {
         this.hasCustomColors = true;
         this.valCustomColors = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ColorPicker#getCustomColors}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B customColorsAdd(java.util.Collection<javafx.scene.paint.Color> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasCustomColors = true;
+        if (this.valCustomColors == null)
+            this.valCustomColors = new java.util.ArrayList<>(value.size());
+        this.valCustomColors.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ColorPicker#getCustomColors}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B customColorsAdd(javafx.scene.paint.Color... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasCustomColors = true;
+        if (this.valCustomColors == null)
+            this.valCustomColors = new java.util.ArrayList<>(value.length);
+        this.valCustomColors.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

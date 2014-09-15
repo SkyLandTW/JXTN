@@ -17,6 +17,7 @@ package javafx.scene.input;
 @SuppressWarnings("all")
 public class KeyCharacterCombinationBuilder<Z extends KeyCharacterCombination, B extends KeyCharacterCombinationBuilder<Z, B>>
         extends javafx.scene.input.KeyCombinationBuilder<Z, B>
+        implements KeyCharacterCombinationBuilderExt<Z, B>
 {
 
     @Override

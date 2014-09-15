@@ -17,6 +17,7 @@ package org.controlsfx.control.textfield;
 @SuppressWarnings("all")
 public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomTextFieldBuilder<Z, B>>
         extends javafx.scene.control.TextFieldBuilder<Z, B>
+        implements CustomTextFieldBuilderExt<Z, B>
 {
 
     private boolean hasLeft;

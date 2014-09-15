@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder<Z, B>>
         extends javafx.scene.control.LabeledBuilder<Z, B>
+        implements TitledPaneBuilderExt<Z, B>
 {
 
     private boolean hasAnimated;

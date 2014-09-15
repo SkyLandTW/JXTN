@@ -17,6 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuilder<Z, B>>
         extends javafx.scene.effect.EffectBuilder<Z, B>
+        implements ColorAdjustBuilderExt<Z, B>
 {
 
     private boolean hasBrightness;

@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTableView<S>, B extends TreeTableViewBuilder<S, Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements TreeTableViewBuilderExt<S, Z, B>
 {
 
     private boolean hasColumnResizePolicy;
@@ -148,7 +149,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         if (this.hasColumnResizePolicy)
             instance.setColumnResizePolicy(this.valColumnResizePolicy);
         if (this.hasColumns)
-            instance.getColumns().setAll(this.valColumns);
+            instance.getColumns().addAll(this.valColumns);
         if (this.hasEditable)
             instance.setEditable(this.valEditable);
         if (this.hasFixedCellSize)
@@ -174,7 +175,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         if (this.hasSortMode)
             instance.setSortMode(this.valSortMode);
         if (this.hasSortOrder)
-            instance.getSortOrder().setAll(this.valSortOrder);
+            instance.getSortOrder().addAll(this.valSortOrder);
         if (this.hasSortPolicy)
             instance.setSortPolicy(this.valSortPolicy);
         if (this.hasTableMenuButtonVisible)
@@ -182,7 +183,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         if (this.hasTreeColumn)
             instance.setTreeColumn(this.valTreeColumn);
         if (this.hasVisibleLeafColumns)
-            instance.getVisibleLeafColumns().setAll(this.valVisibleLeafColumns);
+            instance.getVisibleLeafColumns().addAll(this.valVisibleLeafColumns);
         if (this.bound1ColumnResizePolicy)
             instance.columnResizePolicyProperty().bind(this.obsrv1ColumnResizePolicy);
         if (this.bound2ColumnResizePolicy)
@@ -277,6 +278,41 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     {
         this.hasColumns = true;
         this.valColumns = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TreeTableView#getColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B columnsAdd(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumns = true;
+        if (this.valColumns == null)
+            this.valColumns = new java.util.ArrayList<>(value.size());
+        this.valColumns.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TreeTableView#getColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B columnsAdd(javafx.scene.control.TreeTableColumn<S, ?>... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumns = true;
+        if (this.valColumns == null)
+            this.valColumns = new java.util.ArrayList<>(value.length);
+        this.valColumns.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 
@@ -478,6 +514,41 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
+     * 增加集合屬性{@link TreeTableView#getSortOrder}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B sortOrderAdd(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasSortOrder = true;
+        if (this.valSortOrder == null)
+            this.valSortOrder = new java.util.ArrayList<>(value.size());
+        this.valSortOrder.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TreeTableView#getSortOrder}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B sortOrderAdd(javafx.scene.control.TreeTableColumn<S, ?>... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasSortOrder = true;
+        if (this.valSortOrder == null)
+            this.valSortOrder = new java.util.ArrayList<>(value.length);
+        this.valSortOrder.addAll(java.util.Arrays.asList(value));
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link TreeTableView#setSortPolicy(javafx.util.Callback)}
      *
      * @param value 新的屬性值
@@ -545,6 +616,41 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     {
         this.hasVisibleLeafColumns = true;
         this.valVisibleLeafColumns = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TreeTableView#getVisibleLeafColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B visibleLeafColumnsAdd(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasVisibleLeafColumns = true;
+        if (this.valVisibleLeafColumns == null)
+            this.valVisibleLeafColumns = new java.util.ArrayList<>(value.size());
+        this.valVisibleLeafColumns.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TreeTableView#getVisibleLeafColumns}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B visibleLeafColumnsAdd(javafx.scene.control.TreeTableColumn<S, ?>... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasVisibleLeafColumns = true;
+        if (this.valVisibleLeafColumns == null)
+            this.valVisibleLeafColumns = new java.util.ArrayList<>(value.length);
+        this.valVisibleLeafColumns.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

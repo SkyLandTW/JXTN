@@ -17,6 +17,7 @@ package javafx.scene.chart;
 @SuppressWarnings("all")
 public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extends AxisBuilder<T, Z, B>>
         extends javafx.scene.layout.RegionBuilder<Z, B>
+        implements AxisBuilderExt<T, Z, B>
 {
 
     private boolean hasAnimated;
@@ -137,7 +138,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
         if (this.hasTickMarkVisible)
             instance.setTickMarkVisible(this.valTickMarkVisible);
         if (this.hasTickMarks)
-            instance.getTickMarks().setAll(this.valTickMarks);
+            instance.getTickMarks().addAll(this.valTickMarks);
         if (this.bound1Animated)
             instance.animatedProperty().bind(this.obsrv1Animated);
         if (this.bound2Animated)
@@ -364,6 +365,41 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     {
         this.hasTickMarks = true;
         this.valTickMarks = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Axis#getTickMarks}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B tickMarksAdd(java.util.Collection<javafx.scene.chart.Axis.TickMark<T>> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasTickMarks = true;
+        if (this.valTickMarks == null)
+            this.valTickMarks = new java.util.ArrayList<>(value.size());
+        this.valTickMarks.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Axis#getTickMarks}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B tickMarksAdd(javafx.scene.chart.Axis.TickMark<T>... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasTickMarks = true;
+        if (this.valTickMarks == null)
+            this.valTickMarks = new java.util.ArrayList<>(value.length);
+        this.valTickMarks.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

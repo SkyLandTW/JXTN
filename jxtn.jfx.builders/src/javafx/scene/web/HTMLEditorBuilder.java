@@ -17,6 +17,7 @@ package javafx.scene.web;
 @SuppressWarnings("all")
 public class HTMLEditorBuilder<Z extends HTMLEditor, B extends HTMLEditorBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements HTMLEditorBuilderExt<Z, B>
 {
 
     private boolean hasHtmlText;

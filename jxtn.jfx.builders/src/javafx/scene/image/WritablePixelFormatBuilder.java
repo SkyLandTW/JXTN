@@ -17,6 +17,7 @@ package javafx.scene.image;
 @SuppressWarnings("all")
 public class WritablePixelFormatBuilder<T extends java.nio.Buffer, Z extends WritablePixelFormat<T>, B extends WritablePixelFormatBuilder<T, Z, B>>
         extends javafx.scene.image.PixelFormatBuilder<T, Z, B>
+        implements WritablePixelFormatBuilderExt<T, Z, B>
 {
 
     @Override

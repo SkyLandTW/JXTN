@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class TriangleMeshBuilder<Z extends TriangleMesh, B extends TriangleMeshBuilder<Z, B>>
         extends javafx.scene.shape.MeshBuilder<Z, B>
+        implements TriangleMeshBuilderExt<Z, B>
 {
 
     @Override

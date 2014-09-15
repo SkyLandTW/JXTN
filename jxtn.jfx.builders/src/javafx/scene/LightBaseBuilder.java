@@ -17,6 +17,7 @@ package javafx.scene;
 @SuppressWarnings("all")
 public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z, B>>
         extends javafx.scene.NodeBuilder<Z, B>
+        implements LightBaseBuilderExt<Z, B>
 {
 
     private boolean hasColor;
@@ -47,7 +48,7 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
         if (this.hasLightOn)
             instance.setLightOn(this.valLightOn);
         if (this.hasScope)
-            instance.getScope().setAll(this.valScope);
+            instance.getScope().addAll(this.valScope);
         if (this.bound1Color)
             instance.colorProperty().bind(this.obsrv1Color);
         if (this.bound2Color)
@@ -112,6 +113,41 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
     {
         this.hasScope = true;
         this.valScope = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link LightBase#getScope}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B scopeAdd(java.util.Collection<javafx.scene.Node> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasScope = true;
+        if (this.valScope == null)
+            this.valScope = new java.util.ArrayList<>(value.size());
+        this.valScope.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link LightBase#getScope}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B scopeAdd(javafx.scene.Node... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasScope = true;
+        if (this.valScope == null)
+            this.valScope = new java.util.ArrayList<>(value.length);
+        this.valScope.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

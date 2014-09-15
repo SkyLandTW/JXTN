@@ -17,6 +17,7 @@ package org.controlsfx.control;
 @SuppressWarnings("all")
 public class CheckListViewBuilder<T extends java.lang.Object, Z extends CheckListView<T>, B extends CheckListViewBuilder<T, Z, B>>
         extends javafx.scene.control.ListViewBuilder<T, Z, B>
+        implements CheckListViewBuilderExt<T, Z, B>
 {
 
     private boolean hasCheckModel;

@@ -17,6 +17,7 @@ package javafx.scene.chart;
 @SuppressWarnings("all")
 public class ScatterChartBuilder<X extends java.lang.Object, Y extends java.lang.Object, Z extends ScatterChart<X, Y>, B extends ScatterChartBuilder<X, Y, Z, B>>
         extends javafx.scene.chart.XYChartBuilder<X, Y, Z, B>
+        implements ScatterChartBuilderExt<X, Y, Z, B>
 {
 
     @Override

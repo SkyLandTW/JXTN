@@ -17,6 +17,7 @@ package javafx.scene.transform;
 @SuppressWarnings("all")
 public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
         extends javafx.scene.transform.TransformBuilder<Z, B>
+        implements RotateBuilderExt<Z, B>
 {
 
     private boolean hasAngle;

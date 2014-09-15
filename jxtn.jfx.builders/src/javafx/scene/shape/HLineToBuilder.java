@@ -17,6 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class HLineToBuilder<Z extends HLineTo, B extends HLineToBuilder<Z, B>>
         extends javafx.scene.shape.PathElementBuilder<Z, B>
+        implements HLineToBuilderExt<Z, B>
 {
 
     private boolean hasX;

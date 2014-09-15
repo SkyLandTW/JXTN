@@ -17,6 +17,7 @@ package javafx.stage;
 @SuppressWarnings("all")
 public class PopupBuilder<Z extends Popup, B extends PopupBuilder<Z, B>>
         extends javafx.stage.PopupWindowBuilder<Z, B>
+        implements PopupBuilderExt<Z, B>
 {
 
     private boolean hasContent;
@@ -27,7 +28,7 @@ public class PopupBuilder<Z extends Popup, B extends PopupBuilder<Z, B>>
     {
         super.applyTo(instance);
         if (this.hasContent)
-            instance.getContent().setAll(this.valContent);
+            instance.getContent().addAll(this.valContent);
     }
 
     /**
@@ -56,6 +57,41 @@ public class PopupBuilder<Z extends Popup, B extends PopupBuilder<Z, B>>
     {
         this.hasContent = true;
         this.valContent = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Popup#getContent}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B contentAdd(java.util.Collection<javafx.scene.Node> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasContent = true;
+        if (this.valContent == null)
+            this.valContent = new java.util.ArrayList<>(value.size());
+        this.valContent.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Popup#getContent}的內容
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B contentAdd(javafx.scene.Node... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasContent = true;
+        if (this.valContent == null)
+            this.valContent = new java.util.ArrayList<>(value.length);
+        this.valContent.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
 

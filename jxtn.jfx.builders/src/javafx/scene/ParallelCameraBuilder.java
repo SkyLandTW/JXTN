@@ -17,6 +17,7 @@ package javafx.scene;
 @SuppressWarnings("all")
 public class ParallelCameraBuilder<Z extends ParallelCamera, B extends ParallelCameraBuilder<Z, B>>
         extends javafx.scene.CameraBuilder<Z, B>
+        implements ParallelCameraBuilderExt<Z, B>
 {
 
     @Override

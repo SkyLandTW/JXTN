@@ -17,6 +17,7 @@ package javafx.scene.media;
 @SuppressWarnings("all")
 public class AudioTrackBuilder<Z extends AudioTrack, B extends AudioTrackBuilder<Z, B>>
         extends javafx.scene.media.TrackBuilder<Z, B>
+        implements AudioTrackBuilderExt<Z, B>
 {
 
     @Override

@@ -17,6 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
         extends javafx.scene.control.ControlBuilder<Z, B>
+        implements LabeledBuilderExt<Z, B>
 {
 
     private boolean hasAlignment;

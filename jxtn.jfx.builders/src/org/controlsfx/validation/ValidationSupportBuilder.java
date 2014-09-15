@@ -17,6 +17,7 @@ package org.controlsfx.validation;
 @SuppressWarnings("all")
 public class ValidationSupportBuilder<Z extends ValidationSupport, B extends ValidationSupportBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
+        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
 
     private boolean hasValidationDecorator;

@@ -7,6 +7,7 @@ package javafx.scene.layout;
 import javafx.beans.binding.Bindings;
 import javafx.geometry.Insets;
 import jxtn.jfx.builders.JFX;
+import jxtn.jfx.meta.PathStep;
 
 /**
  * {@link GridPane}建構器延伸（供客製化）
@@ -43,6 +44,35 @@ public interface GridPaneBuilderExt<Z extends GridPane, B extends GridPaneBuilde
                         .GridPane_fillWidth(true).GridPane_fillHeight(true)
                         .GridPane_hgrow(Priority.ALWAYS)
                         .bindText(Bindings.select(root, steps))
+                        .editable(false)
+                        .build());
+        return this.self();
+    }
+
+    /**
+     * 增加唯讀欄位
+     *
+     * @param row 列號
+     * @param margin 邊界
+     * @param label 欄位標題
+     * @param step 屬性路徑(需已連結資料)
+     * @return 自己
+     */
+    default B addFieldRO(int row, Insets margin, String label, PathStep<?, String> step)
+    {
+        this.self().childrenAdd(
+                JFX.label()
+                        .GridPane_margin(margin)
+                        .GridPane_rowIndex(row).GridPane_columnIndex(0)
+                        .GridPane_fillWidth(true).GridPane_fillHeight(true)
+                        .text(label)
+                        .build(),
+                JFX.textField()
+                        .GridPane_margin(margin)
+                        .GridPane_rowIndex(row).GridPane_columnIndex(1)
+                        .GridPane_fillWidth(true).GridPane_fillHeight(true)
+                        .GridPane_hgrow(Priority.ALWAYS)
+                        .bindText(step.bind())
                         .editable(false)
                         .build());
         return this.self();

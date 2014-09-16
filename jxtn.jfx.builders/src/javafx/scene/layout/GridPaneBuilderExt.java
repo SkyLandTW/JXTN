@@ -4,7 +4,7 @@
 
 package javafx.scene.layout;
 
-import javafx.beans.binding.Bindings;
+import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import jxtn.jfx.builders.JFX;
 import jxtn.jfx.meta.PathStep;
@@ -25,11 +25,10 @@ public interface GridPaneBuilderExt<Z extends GridPane, B extends GridPaneBuilde
      * @param row 列號
      * @param margin 邊界
      * @param label 欄位標題
-     * @param root 資料來源
-     * @param steps 資料屬性路徑
+     * @param source 資料來源
      * @return 自己
      */
-    default B addFieldRO(int row, Insets margin, String label, Object root, String... steps)
+    default B addFieldRO(int row, Insets margin, String label, ObservableValue<? extends String> source)
     {
         this.self().childrenAdd(
                 JFX.label()
@@ -43,7 +42,7 @@ public interface GridPaneBuilderExt<Z extends GridPane, B extends GridPaneBuilde
                         .GridPane_rowIndex(row).GridPane_columnIndex(1)
                         .GridPane_fillWidth(true).GridPane_fillHeight(true)
                         .GridPane_hgrow(Priority.ALWAYS)
-                        .bindText(Bindings.select(root, steps))
+                        .bindText(source)
                         .editable(false)
                         .build());
         return this.self();

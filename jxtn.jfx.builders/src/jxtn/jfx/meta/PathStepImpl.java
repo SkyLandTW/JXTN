@@ -33,73 +33,87 @@ import java.util.Objects;
  * 物件路徑實作
  *
  * @author AqD
- * @param <Head> 路徑開頭的詮釋資料型態(即源頭物件的詮釋資料型態)
- * @param <Next> 路徑後段的詮釋資料型態(即目前屬性的詮釋資料型態)
+ * @param <TSource> 路徑源頭的資料型態
+ * @param <TTarget> 路徑目的的資料型態
  */
-public class PathStepImpl<Head, Next> implements PathStep<Head, Next>
+public class PathStepImpl<TSource, TTarget> implements PathStep<TSource, TTarget>
 {
-    protected final boolean hasHead;
-    protected final Head head;
-    protected final PathStep<Head, ?> parent;
-    protected final String step;
+    private final boolean hasDataSource;
+    private final TSource dataSource;
+    private final PathStep<TSource, ?> parent;
+    private final String stepName;
 
+    /**
+     * 建立根路徑
+     */
     public PathStepImpl()
     {
-        this.hasHead = false;
-        this.head = null;
+        this.hasDataSource = false;
+        this.dataSource = null;
         this.parent = null;
-        this.step = null;
+        this.stepName = null;
     }
 
-    public PathStepImpl(Head head)
+    /**
+     * 建立根路徑
+     *
+     * @param dataSource 資料來源，可為null
+     */
+    public PathStepImpl(TSource dataSource)
     {
-        this.hasHead = true;
-        this.head = head;
+        this.hasDataSource = true;
+        this.dataSource = dataSource;
         this.parent = null;
-        this.step = null;
+        this.stepName = null;
     }
 
-    public PathStepImpl(PathStep<Head, ?> parent, String step)
+    /**
+     * 建立路徑
+     *
+     * @param parent 上層路徑
+     * @param stepName 目前片段名稱，即屬性名稱
+     */
+    public PathStepImpl(PathStep<TSource, ?> parent, String stepName)
     {
         Objects.requireNonNull(parent);
-        Objects.requireNonNull(step);
-        this.hasHead = false;
-        this.head = null;
+        Objects.requireNonNull(stepName);
+        this.hasDataSource = false;
+        this.dataSource = null;
         this.parent = parent;
-        this.step = step;
+        this.stepName = stepName;
     }
 
     @Override
-    public boolean hasHead()
+    public boolean hasDataSource()
     {
         if (this.isRoot())
-            return this.hasHead;
+            return this.hasDataSource;
         else
-            return this.getParent().hasHead();
+            return this.getParent().hasDataSource();
     }
 
     @Override
-    public Head getHead()
+    public TSource getDataSource()
     {
         if (this.isRoot())
         {
-            if (!this.hasHead)
+            if (!this.hasDataSource)
                 throw new IllegalStateException();
-            return this.head;
+            return this.dataSource;
         }
         else
-            return this.getParent().getHead();
+            return this.getParent().getDataSource();
     }
 
     @Override
-    public PathStep<Head, ?> getParent()
+    public PathStep<TSource, ?> getParent()
     {
         return this.parent;
     }
 
     @Override
-    public String getStep()
+    public String getStepName()
     {
-        return this.step;
+        return this.stepName;
     }
 }

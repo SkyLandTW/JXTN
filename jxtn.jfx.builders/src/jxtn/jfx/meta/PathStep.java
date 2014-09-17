@@ -30,6 +30,7 @@ package jxtn.jfx.meta;
 import java.util.Collections;
 import java.util.List;
 
+import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.ObjectBinding;
 
@@ -37,47 +38,109 @@ import javafx.beans.binding.ObjectBinding;
  * 代表物件路徑
  *
  * @author AqD
- * @param <Head> 路徑開頭的詮釋資料型態(即源頭物件的詮釋資料型態)
- * @param <Next> 路徑後段的詮釋資料型態(即目前屬性的詮釋資料型態)
+ * @param <TSource> 路徑源頭的資料型態
+ * @param <TTarget> 路徑目的的資料型態
  */
-public interface PathStep<Head, Next>
+public interface PathStep<TSource, TTarget>
 {
-    public boolean hasHead();
+    /**
+     * 是否有資料來源
+     * <p>
+     * 資料來源可定義為null，這裡依然會傳回true
+     * </p>
+     *
+     * @return true表示目前路徑有定義資料來源
+     */
+    public boolean hasDataSource();
 
-    public Head getHead();
+    /**
+     * 取得資料來源
+     *
+     * @return 資料來源，可能為null
+     * @throws IllegalStateException 未指定資料來源
+     */
+    public TSource getDataSource();
 
-    public PathStep<Head, ?> getParent();
+    /**
+     * 取得前一段路徑
+     *
+     * @return 前一段路徑，或null表示目前路徑為根路徑。
+     */
+    public PathStep<TSource, ?> getParent();
 
-    public String getStep();
+    /**
+     * 取得目前路徑片段名稱
+     *
+     * @return 目前路徑片段，即屬性名稱。根路徑片段為null。
+     */
+    public String getStepName();
 
+    /**
+     * 是否為根路徑
+     *
+     * @return true表示目前路徑為根路徑
+     */
     default boolean isRoot()
     {
         return this.getParent() == null;
     }
 
+    /**
+     * 列出所有經過的路徑片段，不含根路徑
+     *
+     * @return 所有經過的路徑片段，不含根路徑
+     */
     default List<String> listPath()
     {
-        PathStep<Head, ?> tail = this;
+        PathStep<TSource, ?> tail = this;
         List<String> steps = IterableExt.linkLine(tail, p -> p.getParent())
                 .filter(p -> !p.isRoot())
-                .map(p -> p.getStep())
+                .map(p -> p.getStepName())
                 .toArrayList();
         Collections.reverse(steps);
         return Collections.unmodifiableList(steps);
     }
 
-    default ObjectBinding<Next> bind()
+    /**
+     * 建立物件繫節，用{@link #getDataSource}
+     *
+     * @return 物件繫節
+     * @throws IllegalStateException 未定義資料來源
+     */
+    @SuppressWarnings("unchecked")
+    default ObjectBinding<TTarget> bind()
     {
-        Head head = this.getHead();
-        List<String> pathList = this.listPath();
-        String[] pathArray = pathList.toArray(new String[pathList.size()]);
-        return Bindings.select(head, pathArray);
+        TSource head = this.getDataSource();
+        if (this.isRoot())
+        {
+            return Bindings.createObjectBinding(() -> (TTarget) head, (Observable) head);
+        }
+        else
+        {
+            List<String> pathList = this.listPath();
+            String[] pathArray = pathList.toArray(new String[pathList.size()]);
+            return Bindings.select(head, pathArray);
+        }
     }
 
-    default ObjectBinding<Next> bind(Head head)
+    /**
+     * 建立物件繫節，用指定的資料來源
+     *
+     * @param head 資料來源
+     * @return 物件繫節
+     */
+    @SuppressWarnings("unchecked")
+    default ObjectBinding<TTarget> bind(TSource head)
     {
-        List<String> pathList = this.listPath();
-        String[] pathArray = pathList.toArray(new String[pathList.size()]);
-        return Bindings.select(head, pathArray);
+        if (this.isRoot())
+        {
+            return Bindings.createObjectBinding(() -> (TTarget) head, (Observable) head);
+        }
+        else
+        {
+            List<String> pathList = this.listPath();
+            String[] pathArray = pathList.toArray(new String[pathList.size()]);
+            return Bindings.select(head, pathArray);
+        }
     }
 }

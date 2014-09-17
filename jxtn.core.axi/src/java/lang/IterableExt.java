@@ -246,7 +246,7 @@ public interface IterableExt<T>
      * @return 只包含{@code type}型態項目的列舉
      */
     @SuppressWarnings("unchecked")
-    default <R extends T> Iterable<R> ofType(Class<R> type)
+    default <R> Iterable<R> ofType(Class<R> type)
     {
         return this.filter(type::isInstance).map(t -> (R) t);
     }

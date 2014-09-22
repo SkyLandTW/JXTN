@@ -23,6 +23,13 @@ public interface GridPaneBuilderExt<Z extends GridPane, B extends GridPaneBuilde
 {
     /**
      * 增加唯讀欄位
+     * <p>
+     * 每個欄位佔第一行及第二行：
+     * <ol>
+     * <li>第一行顯示標籤({@code label})，向右中對齊</li>
+     * <li>第二行顯示文字控制{@link javafx.scene.control.TextField}，向左上對齊，橫向填滿，連結資料{@code source}</li>
+     * </ol>
+     * </p>
      *
      * @param row 列號
      * @param margin 邊界
@@ -57,6 +64,13 @@ public interface GridPaneBuilderExt<Z extends GridPane, B extends GridPaneBuilde
 
     /**
      * 增加自訂欄位
+     * <p>
+     * 每個欄位佔第一行及第二行：
+     * <ol>
+     * <li>第一行顯示標籤({@code label})，向右中對齊</li>
+     * <li>第二行顯示指定控制項({@code fieldNode})，向左上對齊，橫向填滿</li>
+     * </ol>
+     * </p>
      *
      * @param row 列號
      * @param margin 邊界
@@ -72,11 +86,15 @@ public interface GridPaneBuilderExt<Z extends GridPane, B extends GridPaneBuilde
         GridPane.setFillWidth(fieldNode, true);
         GridPane.setFillHeight(fieldNode, true);
         GridPane.setHgrow(fieldNode, Priority.ALWAYS);
+        GridPane.setHalignment(fieldNode, HPos.LEFT);
+        GridPane.setValignment(fieldNode, VPos.TOP);
         this.self().childrenAdd(
                 JFX.label()
                         .GridPane_margin(margin)
                         .GridPane_rowIndex(row).GridPane_columnIndex(0)
                         .GridPane_fillWidth(true).GridPane_fillHeight(true)
+                        .GridPane_halignment(HPos.RIGHT)
+                        .GridPane_valignment(VPos.CENTER)
                         .text(label)
                         .afterBuild(lbl -> lbl.minWidthProperty().bind(lbl.prefWidthProperty()))
                         .build(),

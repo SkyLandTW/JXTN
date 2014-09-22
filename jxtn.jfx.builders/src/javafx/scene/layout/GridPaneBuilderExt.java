@@ -6,6 +6,7 @@ package javafx.scene.layout;
 
 import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import jxtn.jfx.builders.JFX;
 
 /**
@@ -44,6 +45,34 @@ public interface GridPaneBuilderExt<Z extends GridPane, B extends GridPaneBuilde
                         .bindText(source)
                         .editable(false)
                         .build());
+        return this.self();
+    }
+
+    /**
+     * 增加自訂欄位
+     *
+     * @param row 列號
+     * @param margin 邊界
+     * @param label 欄位標題
+     * @param fieldNode 欄位節點
+     * @return 自己
+     */
+    default B addFieldCustom(int row, Insets margin, String label, Node fieldNode)
+    {
+        GridPane.setMargin(fieldNode, margin);
+        GridPane.setRowIndex(fieldNode, row);
+        GridPane.setColumnIndex(fieldNode, 1);
+        GridPane.setFillWidth(fieldNode, true);
+        GridPane.setFillHeight(fieldNode, true);
+        GridPane.setHgrow(fieldNode, Priority.ALWAYS);
+        this.self().childrenAdd(
+                JFX.label()
+                        .GridPane_margin(margin)
+                        .GridPane_rowIndex(row).GridPane_columnIndex(0)
+                        .GridPane_fillWidth(true).GridPane_fillHeight(true)
+                        .text(label)
+                        .build(),
+                fieldNode);
         return this.self();
     }
 }

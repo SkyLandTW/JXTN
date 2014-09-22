@@ -33,6 +33,7 @@ import java.util.List;
 import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.ObjectBinding;
+import javafx.beans.value.ObservableValue;
 
 /**
  * 代表物件路徑
@@ -141,6 +142,29 @@ public interface PathStep<TSource, TTarget>
             List<String> pathList = this.listPath();
             String[] pathArray = pathList.toArray(new String[pathList.size()]);
             return Bindings.select(head, pathArray);
+        }
+    }
+
+    /**
+     * 建立物件繫節，用指定的資料來源
+     *
+     * @param headObservable 資料來源
+     * @return 物件繫節
+     */
+    @SuppressWarnings("unchecked")
+    default ObjectBinding<TTarget> bind(ObservableValue<? extends TSource> headObservable)
+    {
+        if (this.isRoot())
+        {
+            return Bindings.createObjectBinding(() -> (TTarget) headObservable.getValue(), headObservable);
+        }
+        else
+        {
+            List<String> pathList = this.listPath();
+            if (pathList.isEmpty())
+                throw new IllegalStateException(this.toString());
+            String[] pathArray = pathList.toArray(new String[pathList.size()]);
+            return Bindings.select(headObservable, pathArray);
         }
     }
 }

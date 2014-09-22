@@ -30,9 +30,7 @@ package jxtn.jfx.meta;
 import java.util.Collections;
 import java.util.List;
 
-import javafx.beans.Observable;
-import javafx.beans.binding.Bindings;
-import javafx.beans.binding.ObjectBinding;
+import javafx.beans.binding.Binding;
 import javafx.beans.value.ObservableValue;
 
 /**
@@ -77,6 +75,30 @@ public interface PathStep<TSource, TTarget>
     public String getStepName();
 
     /**
+     * 建立物件繫節，用{@link #getDataSource}
+     *
+     * @return 物件繫節
+     * @throws IllegalStateException 未定義資料來源
+     */
+    Binding<TTarget> bind();
+
+    /**
+     * 建立物件繫節，用指定的資料來源
+     *
+     * @param head 資料來源
+     * @return 物件繫節
+     */
+    Binding<TTarget> bind(TSource head);
+
+    /**
+     * 建立物件繫節，用指定的資料來源
+     *
+     * @param headObservable 資料來源
+     * @return 物件繫節
+     */
+    Binding<TTarget> bind(ObservableValue<? extends TSource> headObservable);
+
+    /**
      * 是否為根路徑
      *
      * @return true表示目前路徑為根路徑
@@ -103,68 +125,14 @@ public interface PathStep<TSource, TTarget>
     }
 
     /**
-     * 建立物件繫節，用{@link #getDataSource}
+     * 列出所有經過的路徑片段，不含根路徑
      *
-     * @return 物件繫節
-     * @throws IllegalStateException 未定義資料來源
+     * @return 所有經過的路徑片段，不含根路徑
      */
-    @SuppressWarnings("unchecked")
-    default ObjectBinding<TTarget> bind()
+    default String[] listPathAsArray()
     {
-        TSource head = this.getDataSource();
-        if (this.isRoot())
-        {
-            return Bindings.createObjectBinding(() -> (TTarget) head, (Observable) head);
-        }
-        else
-        {
-            List<String> pathList = this.listPath();
-            String[] pathArray = pathList.toArray(new String[pathList.size()]);
-            return Bindings.select(head, pathArray);
-        }
-    }
-
-    /**
-     * 建立物件繫節，用指定的資料來源
-     *
-     * @param head 資料來源
-     * @return 物件繫節
-     */
-    @SuppressWarnings("unchecked")
-    default ObjectBinding<TTarget> bind(TSource head)
-    {
-        if (this.isRoot())
-        {
-            return Bindings.createObjectBinding(() -> (TTarget) head, (Observable) head);
-        }
-        else
-        {
-            List<String> pathList = this.listPath();
-            String[] pathArray = pathList.toArray(new String[pathList.size()]);
-            return Bindings.select(head, pathArray);
-        }
-    }
-
-    /**
-     * 建立物件繫節，用指定的資料來源
-     *
-     * @param headObservable 資料來源
-     * @return 物件繫節
-     */
-    @SuppressWarnings("unchecked")
-    default ObjectBinding<TTarget> bind(ObservableValue<? extends TSource> headObservable)
-    {
-        if (this.isRoot())
-        {
-            return Bindings.createObjectBinding(() -> (TTarget) headObservable.getValue(), headObservable);
-        }
-        else
-        {
-            List<String> pathList = this.listPath();
-            if (pathList.isEmpty())
-                throw new IllegalStateException(this.toString());
-            String[] pathArray = pathList.toArray(new String[pathList.size()]);
-            return Bindings.select(headObservable, pathArray);
-        }
+        List<String> pathList = this.listPath();
+        String[] pathArray = pathList.toArray(new String[pathList.size()]);
+        return pathArray;
     }
 }

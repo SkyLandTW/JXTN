@@ -30,13 +30,13 @@ package jxtn.jfx.meta;
 import java.util.Objects;
 
 /**
- * 物件路徑實作
+ * 物件路徑實作基底
  *
  * @author AqD
  * @param <TSource> 路徑源頭的資料型態
  * @param <TTarget> 路徑目的的資料型態
  */
-public class PathStepImpl<TSource, TTarget> implements PathStep<TSource, TTarget>
+public abstract class PathStepBase<TSource, TTarget> implements PathStep<TSource, TTarget>
 {
     private final boolean hasDataSource;
     private final TSource dataSource;
@@ -46,7 +46,7 @@ public class PathStepImpl<TSource, TTarget> implements PathStep<TSource, TTarget
     /**
      * 建立根路徑
      */
-    public PathStepImpl()
+    protected PathStepBase()
     {
         this.hasDataSource = false;
         this.dataSource = null;
@@ -59,7 +59,7 @@ public class PathStepImpl<TSource, TTarget> implements PathStep<TSource, TTarget
      *
      * @param dataSource 資料來源，可為null
      */
-    public PathStepImpl(TSource dataSource)
+    protected PathStepBase(TSource dataSource)
     {
         this.hasDataSource = true;
         this.dataSource = dataSource;
@@ -73,7 +73,7 @@ public class PathStepImpl<TSource, TTarget> implements PathStep<TSource, TTarget
      * @param parent 上層路徑
      * @param stepName 目前片段名稱，即屬性名稱
      */
-    public PathStepImpl(PathStep<TSource, ?> parent, String stepName)
+    protected PathStepBase(PathStep<TSource, ?> parent, String stepName)
     {
         Objects.requireNonNull(parent);
         Objects.requireNonNull(stepName);
@@ -84,7 +84,7 @@ public class PathStepImpl<TSource, TTarget> implements PathStep<TSource, TTarget
     }
 
     @Override
-    public boolean hasDataSource()
+    public final boolean hasDataSource()
     {
         if (this.isRoot())
             return this.hasDataSource;
@@ -93,7 +93,7 @@ public class PathStepImpl<TSource, TTarget> implements PathStep<TSource, TTarget
     }
 
     @Override
-    public TSource getDataSource()
+    public final TSource getDataSource()
     {
         if (this.isRoot())
         {
@@ -106,13 +106,13 @@ public class PathStepImpl<TSource, TTarget> implements PathStep<TSource, TTarget
     }
 
     @Override
-    public PathStep<TSource, ?> getParent()
+    public final PathStep<TSource, ?> getParent()
     {
         return this.parent;
     }
 
     @Override
-    public String getStepName()
+    public final String getStepName()
     {
         return this.stepName;
     }

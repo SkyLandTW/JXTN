@@ -5,7 +5,9 @@
 package javafx.scene.layout;
 
 import javafx.beans.value.ObservableValue;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.geometry.VPos;
 import javafx.scene.Node;
 import jxtn.jfx.builders.JFX;
 
@@ -35,12 +37,17 @@ public interface GridPaneBuilderExt<Z extends GridPane, B extends GridPaneBuilde
                         .GridPane_margin(margin)
                         .GridPane_rowIndex(row).GridPane_columnIndex(0)
                         .GridPane_fillWidth(true).GridPane_fillHeight(true)
+                        .GridPane_halignment(HPos.RIGHT)
+                        .GridPane_valignment(VPos.CENTER)
                         .text(label)
+                        .afterBuild(lbl -> lbl.minWidthProperty().bind(lbl.prefWidthProperty()))
                         .build(),
                 JFX.textField()
                         .GridPane_margin(margin)
                         .GridPane_rowIndex(row).GridPane_columnIndex(1)
                         .GridPane_fillWidth(true).GridPane_fillHeight(true)
+                        .GridPane_halignment(HPos.LEFT)
+                        .GridPane_valignment(VPos.TOP)
                         .GridPane_hgrow(Priority.ALWAYS)
                         .bindText(source)
                         .editable(false)
@@ -71,6 +78,7 @@ public interface GridPaneBuilderExt<Z extends GridPane, B extends GridPaneBuilde
                         .GridPane_rowIndex(row).GridPane_columnIndex(0)
                         .GridPane_fillWidth(true).GridPane_fillHeight(true)
                         .text(label)
+                        .afterBuild(lbl -> lbl.minWidthProperty().bind(lbl.prefWidthProperty()))
                         .build(),
                 fieldNode);
         return this.self();

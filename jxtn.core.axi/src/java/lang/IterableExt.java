@@ -70,7 +70,7 @@ public interface IterableExt<T>
      * @return 結合的列舉
      */
     @SafeVarargs
-    public static <T> Iterable<T> concatAll(Iterable<T>... iterables)
+    public static <T> Iterable<T> concatAll(Iterable<? extends T>... iterables)
     {
         return () -> new ConcatedIterator<>(Arrays.asList(iterables).iterator().map(Iterable::iterator));
     }
@@ -82,7 +82,7 @@ public interface IterableExt<T>
      * @param iterableIterable 要結合的列舉的列舉
      * @return 結合的列舉
      */
-    public static <T> Iterable<T> concatAll(Iterable<Iterable<T>> iterableIterable)
+    public static <T> Iterable<T> concatAll(Iterable<Iterable<? extends T>> iterableIterable)
     {
         return () -> new ConcatedIterator<>(iterableIterable.iterator().map(Iterable::iterator));
     }
@@ -94,7 +94,7 @@ public interface IterableExt<T>
      * @param iterableIterator 要結合的列舉的列舉器
      * @return 結合的列舉
      */
-    public static <T> Iterable<T> concatAll(Iterator<Iterable<T>> iterableIterator)
+    public static <T> Iterable<T> concatAll(Iterator<Iterable<? extends T>> iterableIterator)
     {
         return () -> new ConcatedIterator<>(iterableIterator.map(Iterable::iterator));
     }

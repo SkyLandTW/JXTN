@@ -89,7 +89,7 @@ public class PathStepToString<TSource> extends PathStepBase<TSource, String>
         {
             List<String> pathList = this.listPath();
             String[] pathArray = pathList.toArray(new String[pathList.size()]);
-            return Bindings.selectString(head, pathArray);
+            return Bindings.select(head, pathArray).asString("%s");
         }
     }
 

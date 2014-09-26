@@ -328,6 +328,7 @@ select *
                     //
                     Element childDescrElem = schemaDoc.createElement("child");
                     childDescrElem.setAttribute("table", dependentTableElem.getAttribute("name"));
+                    childDescrElem.setAttribute("keyName", dependentRefElem.getAttribute("name"));
                     childDescrElem.setAttribute("keyShortName", dependentRefElem.getAttribute("shortName"));
                     for (Element colRef : dependentRefElem.getChildNodes()
                             .iterable()

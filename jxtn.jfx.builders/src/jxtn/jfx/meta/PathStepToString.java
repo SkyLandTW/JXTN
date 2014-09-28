@@ -28,9 +28,11 @@
 package jxtn.jfx.meta;
 
 import java.util.List;
+import java.util.concurrent.Callable;
 
 import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
+import javafx.beans.binding.ObjectBinding;
 import javafx.beans.binding.StringBinding;
 import javafx.beans.value.ObservableValue;
 
@@ -89,7 +91,8 @@ public class PathStepToString<TSource> extends PathStepBase<TSource, String>
         {
             List<String> pathList = this.listPath();
             String[] pathArray = pathList.toArray(new String[pathList.size()]);
-            return Bindings.select(head, pathArray).asString("%s");
+            ObjectBinding<String> origBinding = Bindings.select(head, pathArray);
+            return Bindings.createStringBinding(new CallableForString(origBinding), origBinding);
         }
     }
 
@@ -135,5 +138,23 @@ public class PathStepToString<TSource> extends PathStepBase<TSource, String>
             String[] pathArray = pathList.toArray(new String[pathList.size()]);
             return Bindings.selectString(headObservable, pathArray);
         }
+    }
+
+    protected static class CallableForString implements Callable<String>
+    {
+        private final ObservableValue<String> source;
+
+        public CallableForString(ObservableValue<String> source)
+        {
+            this.source = source;
+        }
+
+        @Override
+        public String call()
+        {
+            String value = this.source.getValue();
+            return value == null ? "" : value;
+        }
+
     }
 }

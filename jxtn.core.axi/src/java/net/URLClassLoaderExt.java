@@ -25,7 +25,7 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-package java.util.net;
+package java.net;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

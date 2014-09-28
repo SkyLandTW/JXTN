@@ -25,29 +25,14 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-package com.sun.javafx.property;
-
-import javafx.beans.property.ReadOnlyObjectProperty;
-
-import com.sun.javafx.property.adapter.JavaBeanQuickAccessor;
-
 /**
- * JavaBean的輔助類別
- * <p>
- * 取代原本透過Reflection叫用{@link JavaBeanQuickAccessor}的作法（用途不明）
- * </p>
+ * Java核心的延伸功能（延伸<i>rt.jar</i>）
+ * <ul>
+ * <li>JAR檔必須發佈至<i>jre/lib/endorsed</i>目錄下，以覆蓋<i>rt.jar</i>內的類別</li>
+ * <li>實作內容不可引用<i>ext</i>以內的類別，因bootstrap類別載入器無法處理</li>
+ * </ul>
  *
  * @author AqD
  */
-public final class JavaBeanAccessHelper
-{
-    public static <T> ReadOnlyObjectProperty<T> createReadOnlyJavaBeanProperty(Object bean, String propertyName)
-            throws NoSuchMethodException
-    {
-        return JavaBeanQuickAccessor.createReadOnlyJavaBeanObjectProperty(bean, propertyName);
-    }
 
-    private JavaBeanAccessHelper()
-    {
-    }
-}
+package jxtn.core.axi;

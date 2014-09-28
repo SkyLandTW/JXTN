@@ -25,29 +25,24 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-package com.sun.javafx.property;
-
-import javafx.beans.property.ReadOnlyObjectProperty;
-
-import com.sun.javafx.property.adapter.JavaBeanQuickAccessor;
-
 /**
- * JavaBean的輔助類別
- * <p>
- * 取代原本透過Reflection叫用{@link JavaBeanQuickAccessor}的作法（用途不明）
- * </p>
- *
+ * JavaFX的介面延伸（延伸<i>jfxrt.jar</i>）
+ * <ul>
+ * <li>JAR檔不可放至<i>jre/lib/endorsed</i>目錄下，會無法參考<i>ext</i>內容</li>
+ * <li>JAR檔不可放至<i>jre/lib/ext</i>目錄下，會無法確保優先順序在<i>jfxrt.jar</i>之前</li>
+ * </ul>
+ * <pre>
+ * {@code
+ * // 假設JAR檔為jre/lib/jxtn.jfx.axi.jar，載入方式如下，以確保順序在其他ext之前
+ * URLClassLoader extClassLoader = (URLClassLoader) IterableExt
+ *         .linkLine(AppClass.class.getClassLoader(), cl -> cl.getParent())
+ *         .first(cl -> cl.getClass().getCanonicalName()
+ *                 .equals("sun.misc.Launcher.ExtClassLoader"))
+ * Path classpath = Paths.get(System.getProperty("java.home"), "lib", "jxtn.jfx.axi.jar");
+ * URLClassLoaderExt.insertURL(extClassLoader, classpath.toUri().toURL());
+ * }
+ * </pre>
  * @author AqD
  */
-public final class JavaBeanAccessHelper
-{
-    public static <T> ReadOnlyObjectProperty<T> createReadOnlyJavaBeanProperty(Object bean, String propertyName)
-            throws NoSuchMethodException
-    {
-        return JavaBeanQuickAccessor.createReadOnlyJavaBeanObjectProperty(bean, propertyName);
-    }
 
-    private JavaBeanAccessHelper()
-    {
-    }
-}
+package jxtn.jfx.axi;

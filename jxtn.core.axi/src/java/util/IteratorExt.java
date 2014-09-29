@@ -719,6 +719,34 @@ public interface IteratorExt<E>
     }
 
     /**
+     * 建立{@link HashMap}，依照鍵值做分群
+     *
+     * @param <K> 分群鍵值型態
+     * @param getKey 計算每個項目做分組的鍵值
+     * @param getValue 計算項目於新{@link HashMap}內的項目值
+     * @return {@link HashMap}，已分群組
+     */
+    default <K, V> HashMap<K, ArrayList<V>> toHashMapGrouped(Function<? super E, K> getKey, Function<? super E, V> getValue)
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        HashMap<K, ArrayList<V>> result = new HashMap<>();
+        while (thiz.hasNext())
+        {
+            E item = thiz.next();
+            K key = getKey.apply(item);
+            ArrayList<V> list = result.get(key);
+            if (list == null)
+            {
+                list = new ArrayList<>();
+                result.put(key, list);
+            }
+            V value = getValue.apply(item);
+            list.add(value);
+        }
+        return result;
+    }
+
+    /**
      * 建立{@link HashSet}
      * <p>
      * 重複值會被重疊覆蓋

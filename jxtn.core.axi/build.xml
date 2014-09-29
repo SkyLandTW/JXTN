@@ -26,6 +26,7 @@
             debug="true" debuglevel="lines,vars,source">
             <classpath refid="jxtn.core.axi.classpath" />
             <compilerarg value="-parameters"/>
+            <compilerarg value="-XDignore.symbol.file"/>
             <compilerarg value="-Xlint:deprecation"/>
             <compilerarg value="-Xlint:unchecked"/>
         </javac>

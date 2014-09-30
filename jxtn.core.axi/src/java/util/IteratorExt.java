@@ -721,7 +721,8 @@ public interface IteratorExt<E>
     /**
      * 建立{@link HashMap}，依照鍵值做分群
      *
-     * @param <K> 分群鍵值型態
+     * @param <K> 群組鍵值型態
+     * @param <V> 項目值型態
      * @param getKey 計算每個項目做分組的鍵值
      * @param getValue 計算項目於新{@link HashMap}內的項目值
      * @return {@link HashMap}，已分群組

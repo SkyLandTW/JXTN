@@ -145,6 +145,25 @@ public interface MapExt<K, V>
     /**
      * 對照目前的項目值以產生新的{@link HashMap}
      *
+     * @param <K2> 對照鍵值型態
+     * @param <V2> 對照項目值型態
+     * @param keyMapper 對照鍵值的函數
+     * @param valueMapper 對照項目值的函數
+     * @return 對照後的新{@link HashMap}(不依賴原有的)
+     */
+    default <K2, V2> HashMap<K2, V2> toHashMapMapped(
+            Function<? super K, K2> keyMapper,
+            Function<? super V, V2> valueMapper)
+    {
+        Map<K, V> thiz = (Map<K, V>) this;
+        HashMap<K2, V2> result = new HashMap<>(thiz.size());
+        thiz.forEach((k, v) -> result.put(keyMapper.apply(k), valueMapper.apply(v)));
+        return result;
+    }
+
+    /**
+     * 對照目前的項目值以產生新的{@link HashMap}
+     *
      * @param <V2> 對照項目值型態
      * @param mapper 對照項目值的函數
      * @return 對照後的新{@link HashMap}(不依賴原有的)
@@ -154,6 +173,25 @@ public interface MapExt<K, V>
         Map<K, V> thiz = (Map<K, V>) this;
         HashMap<K, V2> result = new HashMap<>(thiz.size());
         thiz.forEach((k, v) -> result.put(k, mapper.apply(k, v)));
+        return result;
+    }
+
+    /**
+     * 對照目前的項目值以產生新的{@link HashMap}
+     *
+     * @param <K2> 對照鍵值型態
+     * @param <V2> 對照項目值型態
+     * @param keyMapper 對照鍵值的函數
+     * @param valueMapper 對照項目值的函數
+     * @return 對照後的新{@link HashMap}(不依賴原有的)
+     */
+    default <K2, V2> HashMap<K2, V2> toHashMapMapped(
+            BiFunction<? super K, ? super V, K2> keyMapper,
+            BiFunction<? super K, ? super V, V2> valueMapper)
+    {
+        Map<K, V> thiz = (Map<K, V>) this;
+        HashMap<K2, V2> result = new HashMap<>(thiz.size());
+        thiz.forEach((k, v) -> result.put(keyMapper.apply(k, v), valueMapper.apply(k, v)));
         return result;
     }
 }

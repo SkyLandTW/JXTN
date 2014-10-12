@@ -39,9 +39,9 @@ as *Iterable.filter* and *Iterable.map*.
 
 
    ```java
-   void collapseNodesUnderTreeRoot(javafx.scene.control.TreeItem root) {
+   void collapseNestedNodesInTree(javafx.scene.control.TreeItem root) {
        IterableExt.linkTree(root, item -> item.getChildren())
-               .skip(1)
+               .skip(1) // skip the root itself
                .forEach(item -> item.setExpanded(false));
    }
    ```

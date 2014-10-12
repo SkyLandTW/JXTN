@@ -23,6 +23,27 @@ jxtn.core.axi
 Extending the Java Collection API by adding non-standard default methods such
 as *Iterable.filter* and *Iterable.map*.
 
+##### Examples
+    ```java
+    String joinNumbersToString(Iterable<Double> list) {
+        return String.join(", ", list.filter(d -> d != null).map(d -> String.format("%f", d)));
+    }
+    ```
+
+    ```java
+    Point2D getClosestPoint(Point2D origin, Iterable<Point2D> pointList) {
+        return pointList.firstOfMinDouble(p -> p.distance(origin));
+    }
+    ```
+
+    ```java
+    void collapseNodesUnderTreeRoot(javafx.scene.control.TreeItem root) {
+        IterableExt.linkTree(root, item -> item.getChildren())
+                .skip(1)
+                .forEach(item -> item.setExpanded(false));
+    }
+    ```
+
 ##### Functions
  - String: left/right/padLeft/padRight/...
  - Iterable: all/any/concat/filter/map/first/groupBy/avg/max/...
@@ -62,6 +83,9 @@ as *Iterable.filter* and *Iterable.map*.
       change the order of JARs (JARs under _endorsed_ should be at top).
 
 ##### Notes
+ - The library is not meant to match or replace the Java 8 Stream API, but to
+   provide shortcuts to the most commonly-used functions, which the Stream API
+   clearly lacks as it's not directly built on existing collection interfaces.
  - The licenses of modified OpenJDK source remain unchanged. They're NOT under
    public domain like the rest of files.
  - Comments are written in Chinese until I find a way to make dual-language

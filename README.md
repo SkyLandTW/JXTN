@@ -24,25 +24,27 @@ Extending the Java Collection API by adding non-standard default methods such
 as *Iterable.filter* and *Iterable.map*.
 
 ##### Examples
-    ```java
-    String joinNumbersToString(Iterable<Double> list) {
-        return String.join(", ", list.filter(d -> d != null).map(d -> String.format("%f", d)));
-    }
-    ```
 
-    ```java
-    Point2D getClosestPoint(Point2D origin, Iterable<Point2D> pointList) {
-        return pointList.firstOfMinDouble(p -> p.distance(origin));
-    }
-    ```
+   ```java
+   String joinNumbersToString(Iterable<Double> list) {
+       return String.join(", ", list.filter(d -> d != null).map(d -> String.format("%f", d)));
+   }
+   ```
 
-    ```java
-    void collapseNodesUnderTreeRoot(javafx.scene.control.TreeItem root) {
-        IterableExt.linkTree(root, item -> item.getChildren())
-                .skip(1)
-                .forEach(item -> item.setExpanded(false));
-    }
-    ```
+   ```java
+   Point2D getClosestPoint(Point2D origin, Iterable<Point2D> pointList) {
+       return pointList.firstOfMinDouble(p -> p.distance(origin));
+   }
+   ```
+
+
+   ```java
+   void collapseNodesUnderTreeRoot(javafx.scene.control.TreeItem root) {
+       IterableExt.linkTree(root, item -> item.getChildren())
+               .skip(1)
+               .forEach(item -> item.setExpanded(false));
+   }
+   ```
 
 ##### Functions
  - String: left/right/padLeft/padRight/...

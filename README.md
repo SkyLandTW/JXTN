@@ -12,7 +12,8 @@ Java 8 API Extensions and Utilities
  - **jxtn.core.axi:** Extensions to Java 8 API, to be put into *endorsed* dir.
  - **jxtn.core.dev:** Patches to compilers and IDEs
  - **jxtn.core.fmpp:** FMPP/FreeMarker data loaders for code generation.
- - **jxtn.jfx.builders:** Replacement of deprecated JavaFX builders API.
+ - **jxtn.jfx.axi:** Extensions to JavaFX 8.
+ - **jxtn.jfx.builders:** Replacement of deprecated JavaFX builders.
 
 ------------------------------------------------------------------------------
 
@@ -145,13 +146,14 @@ Overrides and extends classes/interfaces already existing in JavaFX.
     one, which cannot load anything under _ext_ as needed by this library.
     There are two ways:
 
-    1.Put the library into _jre/lib/ext_, rename the file to something like
+    * Put the library into _jre/lib/ext_, rename the file to something like
       _jfxaxi.jar_ to make sure it's before _jfxrt.jar_ (type *dir* on cmd to
       check this). While there is no guarantee on file order from _File.list()_
       calls, it actually works on NTFS and possibly some of Linux filesystems
       due to the internal organization (mostly B-tree) of file entries on
       directories.
-    2.Modify the classpath list of _ExtClassLoader_ at runtime by
+
+    * Modify the classpath list of _ExtClassLoader_ at runtime by
       _java.net.URLClassLoaderExt.insertURL()_ from _jxtn.core.axi_:
 
       ```java

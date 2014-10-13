@@ -29,6 +29,7 @@ package org.w3c.dom;
 
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.Objects;
 
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
@@ -44,28 +45,34 @@ import javax.xml.transform.stream.StreamResult;
  */
 public interface NodeExt
 {
-    default String toText()
+    /**
+     * 將XML結構轉為文字
+     *
+     * @return XML文字
+     * @throws TransformerException {@link Transformer#transform}拋出的例外
+     */
+    default String toText() throws TransformerException
     {
         StringWriter writer = new StringWriter();
         this.toText(writer);
         return writer.toString();
     }
 
-    default void toText(Writer writer)
+    /**
+     * 將XML結構轉為文字
+     *
+     * @param writer 寫入文字的目的地
+     * @throws TransformerException {@link Transformer#transform}拋出的例外
+     */
+    default void toText(Writer writer) throws TransformerException
     {
+        Objects.requireNonNull(writer);
         Node thiz = (Node) this;
-        try
-        {
-            Transformer transformer = TransformerFactory.newInstance().newTransformer();
-            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
-            StreamResult result = new StreamResult(writer);
-            DOMSource source = new DOMSource(thiz);
-            transformer.transform(source, result);
-        }
-        catch (TransformerException e)
-        {
-            throw new RuntimeException(e);
-        }
+        Transformer transformer = TransformerFactory.newInstance().newTransformer();
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+        StreamResult result = new StreamResult(writer);
+        DOMSource source = new DOMSource(thiz);
+        transformer.transform(source, result);
     }
 }

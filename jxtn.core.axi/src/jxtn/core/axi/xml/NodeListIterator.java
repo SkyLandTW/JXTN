@@ -34,6 +34,11 @@ import jxtn.core.axi.collections.AbstractIterator;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+/**
+ * {@link NodeList}的列舉器
+ * 
+ * @author AqD
+ */
 public class NodeListIterator extends AbstractIterator<Node>
 {
     protected final NodeList list;

@@ -1,6 +1,4 @@
 // @formatter:off
-// 延伸MapExt
-// 版本8u20
 /*
  * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -128,6 +126,7 @@ import java.util.function.Function;
  * @see Collection
  * @see Set
  * @since 1.2
+ * @origin OpenJDK 8u20, modified to extend {@link MapExt}
  */
 @SuppressWarnings("all")
 public interface Map<K,V> extends MapExt<K,V> {

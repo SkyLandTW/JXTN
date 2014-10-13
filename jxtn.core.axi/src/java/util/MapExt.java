@@ -30,6 +30,8 @@ package java.util;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
+import jxtn.core.axi.collections.MappedMap;
+
 /**
  * {@link Map}的延伸功能
  *
@@ -121,6 +123,36 @@ public interface MapExt<K, V>
     {
         Map<K, V> thiz = (Map<K, V>) this;
         return thiz.getOrDefault(key, defaultValue);
+    }
+
+    //////////////////////////////////////////////////////////////////////////
+    // 項目轉換
+    //
+
+    /**
+     * 依照對照函數建立對照{@link Map}
+     *
+     * @param <V2> 對照項目值型態
+     * @param mapper 對照項目值的函數
+     * @return 對照項目值的唯讀{@link Map}，依賴原有的{@link Map}
+     */
+    default <V2> Map<K, V2> mapValues(Function<? super V, ? extends V2> mapper)
+    {
+        Map<K, V> thiz = (Map<K, V>) this;
+        return new MappedMap<>(thiz, (k, v) -> mapper.apply(v));
+    }
+
+    /**
+     * 依照對照函數建立對照{@link Map}
+     *
+     * @param <V2> 對照項目值型態
+     * @param mapper 對照項目值的函數
+     * @return 對照項目值的唯讀{@link Map}，依賴原有的{@link Map}
+     */
+    default <V2> Map<K, V2> mapValues(BiFunction<? super K, ? super V, ? extends V2> mapper)
+    {
+        Map<K, V> thiz = (Map<K, V>) this;
+        return new MappedMap<>(thiz, mapper);
     }
 
     //////////////////////////////////////////////////////////////////////////

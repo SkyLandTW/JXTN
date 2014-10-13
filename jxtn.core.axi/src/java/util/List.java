@@ -1,6 +1,4 @@
 // @formatter:off
-// 延伸ListExt
-// 版本8u20
 /*
  * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -109,6 +107,7 @@ import java.util.function.UnaryOperator;
  * @see AbstractList
  * @see AbstractSequentialList
  * @since 1.2
+ * @origin OpenJDK 8u20, modified to extend {@link ListExt}
  */
 @SuppressWarnings("all")
 public interface List<E> extends Collection<E>, ListExt<E> {

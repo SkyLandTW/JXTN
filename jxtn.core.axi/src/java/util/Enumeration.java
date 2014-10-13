@@ -1,6 +1,4 @@
 // @formatter:off
-// 延伸EnumerationExt
-// 版本8u20
 /*
  * Copyright (c) 1994, 2005, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -60,6 +58,7 @@ package java.util;
  *
  * @author  Lee Boynton
  * @since   JDK1.0
+ * @origin OpenJDK 8u20, modified to extend {@link EnumerationExt}
  */
 @SuppressWarnings("all")
 public interface Enumeration<E> extends EnumerationExt<E> {

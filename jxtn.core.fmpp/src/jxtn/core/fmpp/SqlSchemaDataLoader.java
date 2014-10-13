@@ -80,10 +80,10 @@ public class SqlSchemaDataLoader extends XmlDataLoader
             this.doLoadConstraintTargets(connection, schemaDoc, globalKeys);
         }
         // 排除輔助欄位
-        for (Node tableNode : schemaRoot.getElementsByTagName("table").iterable())
+        for (Node tableNode : schemaRoot.getElementsByTagName("table").asList())
         {
             Element tableElem = (Element) tableNode;
-            List<Node> columnListCopy = tableElem.getElementsByTagName("column").iterable().toArrayList();
+            List<Node> columnListCopy = tableElem.getElementsByTagName("column").asList().toArrayList();
             Set<String> columnNameSet = new HashSet<>();
             columnListCopy.forEach(cn -> columnNameSet.add(((Element) cn).getAttribute("name")));
             for (Node columnNode : columnListCopy)
@@ -163,7 +163,7 @@ select *
                 while (rs.next())
                 {
                     String tableName = rs.getString("TABLE_NAME");
-                    Element tableElem = schemaDoc.getFirstChild().getChildNodes().iterable()
+                    Element tableElem = schemaDoc.getFirstChild().getChildNodes().asList()
                             .ofType(Element.class)
                             .filter(elem -> elem.getAttribute("name").equals(tableName))
                             .first();
@@ -212,7 +212,7 @@ select *
                 while (rs.next())
                 {
                     String tableName = rs.getString("TABLE_NAME");
-                    Element tableElem = schemaDoc.getFirstChild().getChildNodes().iterable()
+                    Element tableElem = schemaDoc.getFirstChild().getChildNodes().asList()
                             .ofType(Element.class)
                             .filter(elem -> elem.getAttribute("name").equals(tableName))
                             .first();
@@ -257,7 +257,7 @@ select *
                 while (rs.next())
                 {
                     String tableName = rs.getString("TABLE_NAME");
-                    Element tableElem = schemaDoc.getFirstChild().getChildNodes().iterable()
+                    Element tableElem = schemaDoc.getFirstChild().getChildNodes().asList()
                             .ofType(Element.class)
                             .filter(elem -> elem.getAttribute("name").equals(tableName))
                             .first();
@@ -268,7 +268,7 @@ select *
                     String columnName = rs.getString("COLUMN_NAME");
                     Element columnElem = tableElem
                             .getChildNodes()
-                            .iterable()
+                            .asList()
                             .ofType(Element.class)
                             .filter(elem -> elem.getNodeName().equals("column")
                                     && elem.getAttribute("name").equals(columnName))
@@ -331,7 +331,7 @@ select *
                     childDescrElem.setAttribute("keyName", dependentRefElem.getAttribute("name"));
                     childDescrElem.setAttribute("keyShortName", dependentRefElem.getAttribute("shortName"));
                     for (Element colRef : dependentRefElem.getChildNodes()
-                            .iterable()
+                            .asList()
                             .ofType(Element.class)
                             .filter(e -> e.getNodeName().equals("colRef")))
                     {

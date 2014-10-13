@@ -1,6 +1,4 @@
 // @formatter:off
-// 延伸IterableExt
-// 版本8u20
 /*
  * Copyright (c) 2003, 2013, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -44,6 +42,7 @@ import java.util.function.Consumer;
  *
  * @since 1.5
  * @jls 14.14.2 The enhanced for statement
+ * @origin OpenJDK 8u20, modified to extend {@link IterableExt}
  */
 @SuppressWarnings("all")
 public interface Iterable<T> extends IterableExt<T> {

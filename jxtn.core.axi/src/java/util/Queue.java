@@ -1,6 +1,4 @@
 // @formatter:off
-// 延伸QueueExt
-// 版本8u20
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
@@ -143,6 +141,7 @@ package java.util;
  * @since 1.5
  * @author Doug Lea
  * @param <E> the type of elements held in this collection
+ * @origin OpenJDK 8u20, modified to extend {@link QueueExt}
  */
 @SuppressWarnings("all")
 public interface Queue<E> extends Collection<E>, QueueExt<E> {

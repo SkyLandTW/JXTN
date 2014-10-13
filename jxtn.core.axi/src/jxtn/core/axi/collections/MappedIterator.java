@@ -28,6 +28,7 @@
 package jxtn.core.axi.collections;
 
 import java.util.Iterator;
+import java.util.Objects;
 import java.util.function.Function;
 
 /**
@@ -52,7 +53,7 @@ public class MappedIterator<T, R> extends AbstractIterator<R>
     /**
      * 建立指定函數做對照的列舉器
      * <p>
-     * {@link MappedIterator}會依照{@code mapper}將每個{@code parent}的項目做轉換
+     * {@link MappedIterator}會依照{@code mapper}將每個{@code source}的項目做轉換
      * </p>
      *
      * @param source 來源列舉器
@@ -60,6 +61,8 @@ public class MappedIterator<T, R> extends AbstractIterator<R>
      */
     public MappedIterator(Iterator<T> source, Function<? super T, R> mapper)
     {
+        Objects.requireNonNull(source);
+        Objects.requireNonNull(mapper);
         this.source = source;
         this.mapper = mapper;
     }

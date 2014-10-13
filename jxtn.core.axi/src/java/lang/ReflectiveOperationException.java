@@ -1,6 +1,4 @@
 // @formatter:off
-// 改繼承RuntimeException
-// 版本8u20
 /*
  * Copyright (c) 2009, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -34,6 +32,7 @@ package java.lang;
  *
  * @see LinkageError
  * @since 1.7
+ * @origin OpenJDK 8u20, changed to unchecked exception
  */
 @SuppressWarnings("all")
 public class ReflectiveOperationException extends RuntimeException {

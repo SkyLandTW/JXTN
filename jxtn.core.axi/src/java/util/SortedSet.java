@@ -1,6 +1,4 @@
 // @formatter:off
-// 延伸SortedSetExt
-// 版本8u20
 /*
  * Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -106,6 +104,7 @@ package java.util;
  * @see Comparator
  * @see ClassCastException
  * @since 1.2
+ * @origin OpenJDK 8u20, modified to extend {@link SortedSetExt}
  */
 @SuppressWarnings("all")
 public interface SortedSet<E> extends Set<E>, SortedSetExt<E> {

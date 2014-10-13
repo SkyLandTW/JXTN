@@ -1,6 +1,4 @@
 // @formatter:off
-// 延伸NodeExt
-// 版本8u20
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
@@ -43,6 +41,7 @@
  */
 
 package org.w3c.dom;
+
 
 /**
  * The <code>Node</code> interface is the primary datatype for the entire
@@ -164,6 +163,7 @@ package org.w3c.dom;
  * </tr>
  * </table>
  * <p>See also the <a href='http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407'>Document Object Model (DOM) Level 3 Core Specification</a>.
+ * @origin OpenJDK 8u20, modified to extend {@link NodeExt}
  */
 @SuppressWarnings("all")
 public interface Node extends NodeExt {

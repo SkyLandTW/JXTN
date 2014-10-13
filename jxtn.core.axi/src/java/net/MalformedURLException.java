@@ -1,6 +1,4 @@
 // @formatter:off
-// 改繼承RuntimeException
-// 版本8u20
 /*
  * Copyright (c) 1995, 2013, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -35,6 +33,7 @@ package java.net;
  *
  * @author  Arthur van Hoff
  * @since   JDK1.0
+ * @origin OpenJDK 8u20, changed to unchecked exception
  */
 public class MalformedURLException extends /* IOException */ RuntimeException {
     private static final long serialVersionUID = -182787522200415866L;

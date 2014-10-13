@@ -29,6 +29,7 @@ package jxtn.core.axi.collections;
 
 import java.util.Enumeration;
 import java.util.Iterator;
+import java.util.Objects;
 
 /**
  * {@link Enumeration}的列舉器界接
@@ -42,6 +43,7 @@ public class EnumerationIterator<E> implements Iterator<E>
 
     public EnumerationIterator(Enumeration<E> enumeration)
     {
+        Objects.requireNonNull(enumeration);
         this.enumeration = enumeration;
     }
 

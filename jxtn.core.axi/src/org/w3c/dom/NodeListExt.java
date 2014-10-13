@@ -27,7 +27,9 @@
 
 package org.w3c.dom;
 
-import jxtn.core.axi.xml.NodeListIterator;
+import java.util.List;
+
+import jxtn.core.axi.xml.NodeListWrapper;
 
 /**
  * {@link NodeList}的延伸功能
@@ -37,13 +39,13 @@ import jxtn.core.axi.xml.NodeListIterator;
 public interface NodeListExt
 {
     /**
-     * 傳回{@link NodeList}的列舉
+     * 傳回代表目前{@link NodeList}的清單（{@link Node}的{@link List}）
      *
-     * @return 目前{@link NodeList}的列舉
+     * @return 代表目前{@link NodeList}的清單（{@link Node}的{@link List}）
      */
-    default Iterable<Node> iterable()
+    default List<Node> asList()
     {
         NodeList thiz = (NodeList) this;
-        return () -> new NodeListIterator(thiz);
+        return new NodeListWrapper(thiz);
     }
 }

@@ -28,6 +28,7 @@
 package jxtn.core.axi.collections;
 
 import java.util.Iterator;
+import java.util.Objects;
 
 /**
  * 跳過指定項目數量的列舉器
@@ -50,9 +51,9 @@ public class SkippedIterator<T> extends AbstractIterator<T>
     private long sourceSteps;
 
     /**
-     * 建立新的過濾列舉
+     * 建立新的片段列舉，跳過開頭指定數量的項目
      * <p>
-     * {@link FilteredIterator}會依照{@code filter}的條件過濾{@code parent}
+     * {@link SkippedIterator}會依照{@code count}跳過{@code source}中的開頭項目
      * </p>
      *
      * @param source 來源列舉器
@@ -60,6 +61,9 @@ public class SkippedIterator<T> extends AbstractIterator<T>
      */
     public SkippedIterator(Iterator<T> source, int count)
     {
+        Objects.requireNonNull(source);
+        if (count < 0)
+            throw new IndexOutOfBoundsException();
         this.source = source;
         this.count = count;
     }

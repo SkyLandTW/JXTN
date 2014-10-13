@@ -28,6 +28,7 @@
 package jxtn.core.axi.collections;
 
 import java.util.Iterator;
+import java.util.Objects;
 
 /**
  * 結合多來源列舉的列舉器
@@ -56,13 +57,14 @@ public class ConcatedIterator<T> extends AbstractIterator<T>
     /**
      * 建立新的列舉
      * <p>
-     * {@link ConcatedIterator}會依照{@code parentIterator}內的順序展開列舉各項目
+     * {@link ConcatedIterator}會依照{@code sourceIterator}內的順序展開列舉各項目
      * </p>
      *
      * @param sourceIterator 來源列舉器的列舉器
      */
     public ConcatedIterator(Iterator<Iterator<? extends T>> sourceIterator)
     {
+        Objects.requireNonNull(sourceIterator);
         this.sourceIterator = sourceIterator;
     }
 

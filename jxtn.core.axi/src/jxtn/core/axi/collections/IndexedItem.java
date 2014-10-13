@@ -41,7 +41,7 @@ public final class IndexedItem<T> implements Comparable<IndexedItem<T>>
     public IndexedItem(int index, T value)
     {
         if (index < 0)
-            throw new IllegalArgumentException("index小於0");
+            throw new IndexOutOfBoundsException();
         this.index = index;
         this.value = value;
     }

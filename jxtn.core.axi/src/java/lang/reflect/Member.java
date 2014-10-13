@@ -1,6 +1,4 @@
 // @formatter:off
-// 延伸MemberExt
-// 版本8u20
 /*
  * Copyright (c) 1996, 2013, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -38,6 +36,7 @@ package java.lang.reflect;
  * @see Constructor
  *
  * @author Nakul Saraiya
+ * @origin OpenJDK 8u20, modified to extend {@link MemberExt}
  */
 @SuppressWarnings("all")
 public interface Member extends MemberExt {

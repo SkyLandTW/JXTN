@@ -1,6 +1,4 @@
 // @formatter:off
-// 延伸CharSequenceExt
-// 版本8u20
 /*
  * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -57,6 +55,7 @@ import java.util.stream.StreamSupport;
  * @author Mike McCloskey
  * @since 1.4
  * @spec JSR-51
+ * @origin OpenJDK 8u20, modified to extend {@link CharSequenceExt}
  */
 @SuppressWarnings("all")
 public interface CharSequence extends CharSequenceExt {

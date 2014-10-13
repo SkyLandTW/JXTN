@@ -40,7 +40,7 @@ public interface EnumerationExt<E>
     /**
      * 傳回代表目前物件的列舉器
      *
-     * @return 目前物件的列舉器
+     * @return 代表目前物件的列舉器
      */
     default Iterator<E> asIterator()
     {

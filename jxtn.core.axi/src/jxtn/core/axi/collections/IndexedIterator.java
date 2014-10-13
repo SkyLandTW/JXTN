@@ -28,6 +28,7 @@
 package jxtn.core.axi.collections;
 
 import java.util.Iterator;
+import java.util.Objects;
 
 /**
  * 加上索引的列舉器
@@ -51,6 +52,7 @@ public class IndexedIterator<T> extends AbstractIterator<IndexedItem<T>>
      */
     public IndexedIterator(Iterator<T> source)
     {
+        Objects.requireNonNull(source);
         this.source = source;
     }
 

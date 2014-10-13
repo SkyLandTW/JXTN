@@ -1,6 +1,4 @@
 // @formatter:off
-// 延伸CollectionExt
-// 版本8u20
 /*
  * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -142,6 +140,7 @@ import java.util.stream.StreamSupport;
  * @see     Arrays
  * @see     AbstractCollection
  * @since 1.2
+ * @origin OpenJDK 8u20, modified to extend {@link CollectionExt}
  */
 @SuppressWarnings("all")
 public interface Collection<E> extends Iterable<E>, CollectionExt<E> {

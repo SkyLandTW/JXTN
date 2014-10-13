@@ -28,6 +28,7 @@
 package jxtn.core.axi.collections;
 
 import java.util.Iterator;
+import java.util.Objects;
 import java.util.function.Predicate;
 
 /**
@@ -53,7 +54,7 @@ public class FilteredIterator<T> extends AbstractIterator<T>
     /**
      * 建立新的過濾列舉
      * <p>
-     * {@link FilteredIterator}會依照{@code filter}的條件過濾{@code parent}
+     * {@link FilteredIterator}會依照{@code filter}的條件過濾{@code source}
      * </p>
      *
      * @param source 來源列舉器
@@ -61,6 +62,8 @@ public class FilteredIterator<T> extends AbstractIterator<T>
      */
     public FilteredIterator(Iterator<T> source, Predicate<? super T> filter)
     {
+        Objects.requireNonNull(source);
+        Objects.requireNonNull(filter);
         this.source = source;
         this.filter = filter;
     }

@@ -27,35 +27,36 @@
 
 package jxtn.core.axi.xml;
 
+import java.util.AbstractList;
 import java.util.Objects;
-
-import jxtn.core.axi.collections.AbstractIterator;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * {@link NodeList}的列舉器
- * 
+ * {@link NodeList}的包裝（為{@link Node}的{@link java.util.List}）
+ *
  * @author AqD
  */
-public class NodeListIterator extends AbstractIterator<Node>
+public class NodeListWrapper extends AbstractList<Node>
 {
     protected final NodeList list;
 
-    public NodeListIterator(NodeList list)
+    public NodeListWrapper(NodeList list)
     {
         Objects.requireNonNull(list);
         this.list = list;
     }
 
     @Override
-    protected Node fetchNext()
+    public Node get(int index)
     {
-        int index = (int) this.getSteps();
-        if (index < this.list.getLength())
-            return this.list.item(index);
-        else
-            return this.end();
+        return this.list.item(index);
+    }
+
+    @Override
+    public int size()
+    {
+        return this.list.getLength();
     }
 }

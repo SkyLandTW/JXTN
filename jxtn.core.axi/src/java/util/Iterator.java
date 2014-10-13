@@ -1,6 +1,4 @@
 // @formatter:off
-// 延伸IteratorExt
-// 版本8u20
 /*
  * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -53,6 +51,7 @@ import java.util.function.Consumer;
  * @see ListIterator
  * @see Iterable
  * @since 1.2
+ * @origin OpenJDK 8u20, modified to extend {@link IteratorExt}
  */
 @SuppressWarnings("all")
 public interface Iterator<E> extends IteratorExt<E> {

@@ -81,7 +81,10 @@ public final class URLClassLoaderExt
     /**
      * 加入新的來源位址到開頭
      * <p>
-     * 依賴{@link URLClassLoader}及{@link URLClassPath}內部結構，驗證Java版本8u20
+     * 依賴{@link URLClassLoader}及{@link URLClassPath}內部結構，驗證Java版本：
+     * <ul>
+     * <li>Oracle Java SE 8u20</li>
+     * </ul>
      * </p>
      *
      * @param classLoader 要加入新位址的類別載入器

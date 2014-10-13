@@ -28,6 +28,7 @@
 package jxtn.core.axi.collections;
 
 import java.util.Iterator;
+import java.util.Objects;
 import java.util.function.Function;
 
 /**
@@ -47,23 +48,25 @@ public class ExpandedIterator<T, R> extends AbstractIterator<R>
     /**
      * 展開函數
      */
-    protected final Function<? super T, Iterator<R>> expander;
+    protected final Function<? super T, Iterator<R>> expand;
 
     protected Iterator<R> currentChildren;
 
     /**
      * 建立指定函數做展開的列舉器
      * <p>
-     * {@link MappedIterator}會依照{@code expander}將每個{@code parent}的項目做展開
+     * {@link MappedIterator}會依照{@code expand}將每個{@code source}的項目做展開
      * </p>
      *
      * @param source 來源列舉器
-     * @param expander 展開函數
+     * @param expand 展開函數
      */
-    public ExpandedIterator(Iterator<T> source, Function<? super T, Iterator<R>> expander)
+    public ExpandedIterator(Iterator<T> source, Function<? super T, Iterator<R>> expand)
     {
+        Objects.requireNonNull(source);
+        Objects.requireNonNull(expand);
         this.source = source;
-        this.expander = expander;
+        this.expand = expand;
     }
 
     @Override
@@ -74,7 +77,7 @@ public class ExpandedIterator<T, R> extends AbstractIterator<R>
             if (!this.source.hasNext())
                 return this.end();
             T parent = this.source.next();
-            this.currentChildren = this.expander.apply(parent);
+            this.currentChildren = this.expand.apply(parent);
         }
         while (true)
         {
@@ -84,7 +87,7 @@ public class ExpandedIterator<T, R> extends AbstractIterator<R>
             if (!this.source.hasNext())
                 return this.end();
             T parent = this.source.next();
-            this.currentChildren = this.expander.apply(parent);
+            this.currentChildren = this.expand.apply(parent);
         }
     }
 }

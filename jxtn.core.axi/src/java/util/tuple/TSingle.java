@@ -25,7 +25,7 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-package jxtn.core.axi.tuples;
+package java.util.tuple;
 
 /**
  * 支援單一子項目的Tuple

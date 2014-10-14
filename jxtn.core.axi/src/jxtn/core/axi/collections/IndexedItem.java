@@ -27,7 +27,7 @@
 
 package jxtn.core.axi.collections;
 
-import jxtn.core.axi.tuples.BaseTuple;
+import java.util.tuple.BaseTuple;
 
 /**
  * 索引項目，用在集合操作

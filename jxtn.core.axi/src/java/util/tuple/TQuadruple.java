@@ -25,26 +25,32 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-package jxtn.core.axi.tuples;
+package java.util.tuple;
 
 /**
- * 支援兩個子項目的Tuple
+ * 支援四個子項目的Tuple
  *
  * @author AqD
  * @param <V1> 第一子項目型態
  * @param <V2> 第二子項目型態
+ * @param <V3> 第三子項目型態
+ * @param <V4> 第四子項目型態
  */
 @SuppressWarnings("serial")
-public class TDouble<V1, V2> extends BaseTuple<TDouble<V1, V2>>
+public class TQuadruple<V1, V2, V3, V4> extends BaseTuple<TQuadruple<V1, V2, V3, V4>>
 {
     private final V1 v1;
     private final V2 v2;
+    private final V3 v3;
+    private final V4 v4;
 
-    public TDouble(V1 v1, V2 v2)
+    public TQuadruple(V1 v1, V2 v2, V3 v3, V4 v4)
     {
-        super(v1, v2);
+        super(v1, v2, v3, v4);
         this.v1 = v1;
         this.v2 = v2;
+        this.v3 = v3;
+        this.v4 = v4;
     }
 
     public V1 getItem1()
@@ -55,5 +61,15 @@ public class TDouble<V1, V2> extends BaseTuple<TDouble<V1, V2>>
     public V2 getItem2()
     {
         return this.v2;
+    }
+
+    public V3 getItem3()
+    {
+        return this.v3;
+    }
+
+    public V4 getItem4()
+    {
+        return this.v4;
     }
 }

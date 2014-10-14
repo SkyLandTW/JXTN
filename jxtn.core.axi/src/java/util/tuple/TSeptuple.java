@@ -25,10 +25,10 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-package jxtn.core.axi.tuples;
+package java.util.tuple;
 
 /**
- * 支援九個子項目的Tuple
+ * 支援七個子項目的Tuple
  *
  * @author AqD
  * @param <V1> 第一子項目型態
@@ -38,11 +38,9 @@ package jxtn.core.axi.tuples;
  * @param <V5> 第五子項目型態
  * @param <V6> 第六子項目型態
  * @param <V7> 第七子項目型態
- * @param <V8> 第八子項目型態
- * @param <V9> 第九子項目型態
  */
 @SuppressWarnings("serial")
-public class TNonuple<V1, V2, V3, V4, V5, V6, V7, V8, V9> extends BaseTuple<TNonuple<V1, V2, V3, V4, V5, V6, V7, V8, V9>>
+public class TSeptuple<V1, V2, V3, V4, V5, V6, V7> extends BaseTuple<TSeptuple<V1, V2, V3, V4, V5, V6, V7>>
 {
     private final V1 v1;
     private final V2 v2;
@@ -51,12 +49,10 @@ public class TNonuple<V1, V2, V3, V4, V5, V6, V7, V8, V9> extends BaseTuple<TNon
     private final V5 v5;
     private final V6 v6;
     private final V7 v7;
-    private final V8 v8;
-    private final V9 v9;
 
-    public TNonuple(V1 v1, V2 v2, V3 v3, V4 v4, V5 v5, V6 v6, V7 v7, V8 v8, V9 v9)
+    public TSeptuple(V1 v1, V2 v2, V3 v3, V4 v4, V5 v5, V6 v6, V7 v7)
     {
-        super(v1, v2, v3, v4, v5, v6, v7, v8, v9);
+        super(v1, v2, v3, v4, v5, v6, v7);
         this.v1 = v1;
         this.v2 = v2;
         this.v3 = v3;
@@ -64,8 +60,6 @@ public class TNonuple<V1, V2, V3, V4, V5, V6, V7, V8, V9> extends BaseTuple<TNon
         this.v5 = v5;
         this.v6 = v6;
         this.v7 = v7;
-        this.v8 = v8;
-        this.v9 = v9;
     }
 
     public V1 getItem1()
@@ -101,15 +95,5 @@ public class TNonuple<V1, V2, V3, V4, V5, V6, V7, V8, V9> extends BaseTuple<TNon
     public V7 getItem7()
     {
         return this.v7;
-    }
-
-    public V8 getItem8()
-    {
-        return this.v8;
-    }
-
-    public V9 getItem9()
-    {
-        return this.v9;
     }
 }

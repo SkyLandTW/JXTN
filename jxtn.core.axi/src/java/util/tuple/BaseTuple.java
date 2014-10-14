@@ -29,7 +29,6 @@ package java.util.tuple;
 
 import java.io.Serializable;
 import java.util.Arrays;
-import java.util.List;
 
 import jxtn.core.axi.comparators.ArrayComparators;
 
@@ -49,26 +48,24 @@ public abstract class BaseTuple<T extends BaseTuple<T>> implements Comparable<T>
 {
     private static final long serialVersionUID = -7698222474647340866L;
 
-    private final Object[] array;
-    private final List<Object> list;
+    private final Object[] valueArray;
 
     protected BaseTuple(Object... values)
     {
-        this.array = values;
-        this.list = Arrays.asList(values);
+        this.valueArray = values;
     }
 
     @Override
     public int compareTo(T other)
     {
-        return ArrayComparators.compare(this.getInternalArray(), other.getInternalArray());
+        return ArrayComparators.compare(this.getValueArray(), other.getValueArray());
     }
 
     @Override
     public boolean equals(Object other)
     {
         if (other instanceof BaseTuple)
-            return Arrays.equals(this.getInternalArray(), ((BaseTuple<?>) other).getInternalArray());
+            return Arrays.equals(this.getValueArray(), ((BaseTuple<?>) other).getValueArray());
         else
             return false;
     }
@@ -76,7 +73,7 @@ public abstract class BaseTuple<T extends BaseTuple<T>> implements Comparable<T>
     @Override
     public int hashCode()
     {
-        return Arrays.hashCode(this.getInternalArray());
+        return Arrays.hashCode(this.getValueArray());
     }
 
     /**
@@ -84,18 +81,8 @@ public abstract class BaseTuple<T extends BaseTuple<T>> implements Comparable<T>
      *
      * @return 包含所有子項目的內部陣列，不應修改
      */
-    public Object[] getInternalArray()
+    public Object[] getValueArray()
     {
-        return this.array;
-    }
-
-    /**
-     * 取得包含所有子項目的內部清單
-     *
-     * @return 包含所有子項目的內部清單，不應修改
-     */
-    public List<Object> getInternalList()
-    {
-        return this.list;
+        return this.valueArray;
     }
 }

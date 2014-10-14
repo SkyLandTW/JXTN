@@ -34,7 +34,6 @@ import java.util.function.ToDoubleFunction;
 import java.util.function.ToIntFunction;
 import java.util.function.ToLongFunction;
 
-import jxtn.core.axi.MemberComparators;
 import jxtn.core.axi.collections.ConcatedIterator;
 import jxtn.core.axi.collections.ExpandedIterator;
 import jxtn.core.axi.collections.FilteredIterator;
@@ -44,6 +43,7 @@ import jxtn.core.axi.collections.LinkLineIterator;
 import jxtn.core.axi.collections.LinkTreeIterator;
 import jxtn.core.axi.collections.MappedIterator;
 import jxtn.core.axi.collections.SkippedIterator;
+import jxtn.core.axi.comparators.MemberComparators;
 
 /**
  * {@link Iterator}的延伸功能

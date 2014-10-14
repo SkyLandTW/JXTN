@@ -34,7 +34,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * {@link NodeList}的包裝（為{@link Node}的{@link java.util.List}）
+ * 包裝{@link NodeList}成{@link Node}的{@link java.util.List}
  *
  * @author AqD
  */

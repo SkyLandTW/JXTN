@@ -25,7 +25,7 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-package jxtn.core.axi;
+package jxtn.core.axi.comparators;
 
 import java.util.Comparator;
 import java.util.Objects;
@@ -45,11 +45,54 @@ import java.util.function.ToLongFunction;
  */
 public final class MemberComparators
 {
+    /**
+     * 依照{@link Comparable}成員做比較
+     * <p>
+     * 支援null：null項目或成員作為較小的一方
+     * </p>
+     *
+     * @param <E> 要比較的物件型態
+     * @param <M> 代表{@code E}做比較的物件成員型態
+     * @param getMember 取得要代表{@code E}做比較的物件成員
+     * @return 依照{@code M}成員比較{@code E}的比較器
+     */
     public static <E, M extends Comparable<?>> Comparator<E> byComparable(Function<E, M> getMember)
     {
         return new MemberComparableComparator<E, M>(getMember);
     }
 
+    /**
+     * 依照boolean陣列成員做比較
+     * <p>
+     * 支援null：null項目或成員作為較小的一方
+     * </p>
+     *
+     * @param <E> 要比較的物件型態
+     * @param getMember 取得要代表{@code E}做比較的boolean陣列成員
+     * @return 依照boolean陣列成員比較{@code E}的比較器
+     */
+    public static <E> Comparator<E> byArrayOfBoolean(Function<E, boolean[]> getMember)
+    {
+        return new AbstractMemberComparator<E, boolean[]>(getMember)
+            {
+                @Override
+                protected int compareMember(boolean[] m1, boolean[] m2)
+                {
+                    return ArrayComparators.compare(m1, m2);
+                }
+            };
+    }
+
+    /**
+     * 依照byte陣列成員做比較
+     * <p>
+     * 支援null：null項目或成員作為較小的一方
+     * </p>
+     *
+     * @param <E> 要比較的物件型態
+     * @param getMember 取得要代表{@code E}做比較的byte陣列成員
+     * @return 依照byte陣列成員比較{@code E}的比較器
+     */
     public static <E> Comparator<E> byArrayOfByte(Function<E, byte[]> getMember)
     {
         return new AbstractMemberComparator<E, byte[]>(getMember)
@@ -57,20 +100,65 @@ public final class MemberComparators
                 @Override
                 protected int compareMember(byte[] m1, byte[] m2)
                 {
-                    int len = Math.min(m1.length, m2.length);
-                    for (int i = 0; i < len; i++)
-                    {
-                        byte v1 = m1[i];
-                        byte v2 = m2[i];
-                        int diff = v1 - v2;
-                        if (diff != 0)
-                            return diff > 0 ? 1 : -1;
-                    }
-                    return m1.length - m2.length;
+                    return ArrayComparators.compare(m1, m2);
                 }
             };
     }
 
+    /**
+     * 依照char陣列成員做比較
+     * <p>
+     * 支援null：null項目或成員作為較小的一方
+     * </p>
+     *
+     * @param <E> 要比較的物件型態
+     * @param getMember 取得要代表{@code E}做比較的char陣列成員
+     * @return 依照char陣列成員比較{@code E}的比較器
+     */
+    public static <E> Comparator<E> byArrayOfChar(Function<E, char[]> getMember)
+    {
+        return new AbstractMemberComparator<E, char[]>(getMember)
+            {
+                @Override
+                protected int compareMember(char[] m1, char[] m2)
+                {
+                    return ArrayComparators.compare(m1, m2);
+                }
+            };
+    }
+
+    /**
+     * 依照short陣列成員做比較
+     * <p>
+     * 支援null：null項目或成員作為較小的一方
+     * </p>
+     *
+     * @param <E> 要比較的物件型態
+     * @param getMember 取得要代表{@code E}做比較的short陣列成員
+     * @return 依照short陣列成員比較{@code E}的比較器
+     */
+    public static <E> Comparator<E> byArrayOfShort(Function<E, short[]> getMember)
+    {
+        return new AbstractMemberComparator<E, short[]>(getMember)
+            {
+                @Override
+                protected int compareMember(short[] m1, short[] m2)
+                {
+                    return ArrayComparators.compare(m1, m2);
+                }
+            };
+    }
+
+    /**
+     * 依照int陣列成員做比較
+     * <p>
+     * 支援null：null項目或成員作為較小的一方
+     * </p>
+     *
+     * @param <E> 要比較的物件型態
+     * @param getMember 取得要代表{@code E}做比較的int陣列成員
+     * @return 依照int陣列成員比較{@code E}的比較器
+     */
     public static <E> Comparator<E> byArrayOfInt(Function<E, int[]> getMember)
     {
         return new AbstractMemberComparator<E, int[]>(getMember)
@@ -78,20 +166,21 @@ public final class MemberComparators
                 @Override
                 protected int compareMember(int[] m1, int[] m2)
                 {
-                    int len = Math.min(m1.length, m2.length);
-                    for (int i = 0; i < len; i++)
-                    {
-                        int v1 = m1[i];
-                        int v2 = m2[i];
-                        int diff = v1 - v2;
-                        if (diff != 0)
-                            return diff > 0 ? 1 : -1;
-                    }
-                    return m1.length - m2.length;
+                    return ArrayComparators.compare(m1, m2);
                 }
             };
     }
 
+    /**
+     * 依照long陣列成員做比較
+     * <p>
+     * 支援null：null項目或成員作為較小的一方
+     * </p>
+     *
+     * @param <E> 要比較的物件型態
+     * @param getMember 取得要代表{@code E}做比較的long陣列成員
+     * @return 依照long陣列成員比較{@code E}的比較器
+     */
     public static <E> Comparator<E> byArrayOfLong(Function<E, long[]> getMember)
     {
         return new AbstractMemberComparator<E, long[]>(getMember)
@@ -99,20 +188,21 @@ public final class MemberComparators
                 @Override
                 protected int compareMember(long[] m1, long[] m2)
                 {
-                    int len = Math.min(m1.length, m2.length);
-                    for (int i = 0; i < len; i++)
-                    {
-                        long v1 = m1[i];
-                        long v2 = m2[i];
-                        long diff = v1 - v2;
-                        if (diff != 0)
-                            return diff > 0 ? 1 : -1;
-                    }
-                    return m1.length - m2.length;
+                    return ArrayComparators.compare(m1, m2);
                 }
             };
     }
 
+    /**
+     * 依照float陣列成員做比較
+     * <p>
+     * 支援null：null項目或成員作為較小的一方
+     * </p>
+     *
+     * @param <E> 要比較的物件型態
+     * @param getMember 取得要代表{@code E}做比較的float陣列成員
+     * @return 依照float陣列成員比較{@code E}的比較器
+     */
     public static <E> Comparator<E> byArrayOfFloat(Function<E, float[]> getMember)
     {
         return new AbstractMemberComparator<E, float[]>(getMember)
@@ -120,20 +210,21 @@ public final class MemberComparators
                 @Override
                 protected int compareMember(float[] m1, float[] m2)
                 {
-                    int len = Math.min(m1.length, m2.length);
-                    for (int i = 0; i < len; i++)
-                    {
-                        float v1 = m1[i];
-                        float v2 = m2[i];
-                        float diff = v1 - v2;
-                        if (diff != 0)
-                            return diff > 0 ? 1 : -1;
-                    }
-                    return m1.length - m2.length;
+                    return ArrayComparators.compare(m1, m2);
                 }
             };
     }
 
+    /**
+     * 依照double陣列成員做比較
+     * <p>
+     * 支援null：null項目或成員作為較小的一方
+     * </p>
+     *
+     * @param <E> 要比較的物件型態
+     * @param getMember 取得要代表{@code E}做比較的double陣列成員
+     * @return 依照double陣列成員比較{@code E}的比較器
+     */
     public static <E> Comparator<E> byArrayOfDouble(Function<E, double[]> getMember)
     {
         return new AbstractMemberComparator<E, double[]>(getMember)
@@ -141,35 +232,90 @@ public final class MemberComparators
                 @Override
                 protected int compareMember(double[] m1, double[] m2)
                 {
-                    int len = Math.min(m1.length, m2.length);
-                    for (int i = 0; i < len; i++)
-                    {
-                        double v1 = m1[i];
-                        double v2 = m2[i];
-                        double diff = v1 - v2;
-                        if (diff != 0)
-                            return diff > 0 ? 1 : -1;
-                    }
-                    return m1.length - m2.length;
+                    return ArrayComparators.compare(m1, m2);
                 }
             };
     }
 
+    /**
+     * 依照double陣列成員做比較
+     * <p>
+     * 支援null：null項目或成員作為較小的一方
+     * </p>
+     *
+     * @param <E> 要比較的物件型態
+     * @param <M> 代表{@code E}做比較的物件成員的陣列項目型態
+     * @param getMember 取得要代表{@code E}做比較的double陣列成員
+     * @return 依照double陣列成員比較{@code E}的比較器
+     */
+    @SuppressWarnings("rawtypes")
+    public static <E, M extends Comparable> Comparator<E> byArrayOfComparable(Function<E, M[]> getMember)
+    {
+        return new AbstractMemberComparator<E, M[]>(getMember)
+            {
+                @Override
+                protected int compareMember(M[] m1, M[] m2)
+                {
+                    return ArrayComparators.compare(m1, m2);
+                }
+            };
+    }
+
+    /**
+     * 依照boolean成員做比較
+     * <p>
+     * 支援null：null項目或成員作為較小的一方
+     * </p>
+     *
+     * @param <E> 要比較的物件型態
+     * @param getMember 取得要代表{@code E}做比較的物件成員
+     * @return 依照boolean成員比較{@code E}的比較器
+     */
     public static <E> Comparator<E> byBoolean(Predicate<E> getMember)
     {
         return new MemberBooleanComparator<E>(getMember);
     }
 
+    /**
+     * 依照double成員做比較
+     * <p>
+     * 支援null：null項目或成員作為較小的一方
+     * </p>
+     *
+     * @param <E> 要比較的物件型態
+     * @param getMember 取得要代表{@code E}做比較的物件成員
+     * @return 依照double成員比較{@code E}的比較器
+     */
     public static <E> Comparator<E> byDouble(ToDoubleFunction<E> getMember)
     {
         return new MemberDoubleComparator<E>(getMember);
     }
 
+    /**
+     * 依照int成員做比較
+     * <p>
+     * 支援null：null項目或成員作為較小的一方
+     * </p>
+     *
+     * @param <E> 要比較的物件型態
+     * @param getMember 取得要代表{@code E}做比較的物件成員
+     * @return 依照int成員比較{@code E}的比較器
+     */
     public static <E> Comparator<E> byInt(ToIntFunction<E> getMember)
     {
         return new MemberIntComparator<E>(getMember);
     }
 
+    /**
+     * 依照long成員做比較
+     * <p>
+     * 支援null：null項目或成員作為較小的一方
+     * </p>
+     *
+     * @param <E> 要比較的物件型態
+     * @param getMember 取得要代表{@code E}做比較的物件成員
+     * @return 依照long成員比較{@code E}的比較器
+     */
     public static <E> Comparator<E> byLong(ToLongFunction<E> getMember)
     {
         return new MemberLongComparator<E>(getMember);
@@ -179,7 +325,39 @@ public final class MemberComparators
     {
     }
 
-    public static class MemberComparableComparator<E, M extends Comparable<?>> implements Comparator<E>
+    private static abstract class AbstractMemberComparator<E, M> implements Comparator<E>
+    {
+        private final Function<E, M> getMember;
+
+        public AbstractMemberComparator(Function<E, M> getMember)
+        {
+            this.getMember = getMember;
+        }
+
+        @Override
+        public int compare(E o1, E o2)
+        {
+            if (o1 == null && o2 == null)
+                return 0;
+            if (o1 == null)
+                return -1;
+            if (o2 == null)
+                return 1;
+            M m1 = this.getMember.apply(o1);
+            M m2 = this.getMember.apply(o2);
+            if (m1 == null && m2 == null)
+                return 0;
+            if (m1 == null)
+                return -1;
+            if (m2 == null)
+                return 1;
+            return this.compareMember(m1, m2);
+        }
+
+        protected abstract int compareMember(M m1, M m2);
+    }
+
+    private static class MemberComparableComparator<E, M extends Comparable<?>> implements Comparator<E>
     {
         public final Function<E, M> getMember;
 
@@ -212,39 +390,7 @@ public final class MemberComparators
         }
     }
 
-    public static abstract class AbstractMemberComparator<E, M> implements Comparator<E>
-    {
-        private final Function<E, M> getMember;
-
-        public AbstractMemberComparator(Function<E, M> getMember)
-        {
-            this.getMember = getMember;
-        }
-
-        @Override
-        public int compare(E o1, E o2)
-        {
-            if (o1 == null && o2 == null)
-                return 0;
-            if (o1 == null)
-                return -1;
-            if (o2 == null)
-                return 1;
-            M m1 = this.getMember.apply(o1);
-            M m2 = this.getMember.apply(o2);
-            if (m1 == null && m2 == null)
-                return 0;
-            if (m1 == null)
-                return -1;
-            if (m2 == null)
-                return 1;
-            return this.compareMember(m1, m2);
-        }
-
-        protected abstract int compareMember(M m1, M m2);
-    }
-
-    public static class MemberBooleanComparator<E> implements Comparator<E>
+    private static class MemberBooleanComparator<E> implements Comparator<E>
     {
         public final Predicate<E> getMember;
 
@@ -274,7 +420,7 @@ public final class MemberComparators
         }
     }
 
-    public static class MemberDoubleComparator<E> implements Comparator<E>
+    private static class MemberDoubleComparator<E> implements Comparator<E>
     {
         public final ToDoubleFunction<E> getMember;
 
@@ -304,7 +450,7 @@ public final class MemberComparators
         }
     }
 
-    public static class MemberIntComparator<E> implements Comparator<E>
+    private static class MemberIntComparator<E> implements Comparator<E>
     {
         public final ToIntFunction<E> getMember;
 
@@ -334,7 +480,7 @@ public final class MemberComparators
         }
     }
 
-    public static class MemberLongComparator<E> implements Comparator<E>
+    private static class MemberLongComparator<E> implements Comparator<E>
     {
         public final ToLongFunction<E> getMember;
 

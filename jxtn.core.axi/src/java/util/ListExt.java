@@ -30,7 +30,7 @@ package java.util;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-import jxtn.core.axi.MemberComparators;
+import jxtn.core.axi.comparators.MemberComparators;
 
 /**
  * {@link List}的延伸功能
@@ -61,7 +61,7 @@ public interface ListExt<E> extends CollectionExt<E>
     default <V extends Comparable> void sort(Function<? super E, V> getKey)
     {
         List<E> thiz = (List<E>) this;
-        thiz.sort(new MemberComparators.MemberComparableComparator<>(getKey));
+        thiz.sort(MemberComparators.byComparable(getKey));
     }
 
     //////////////////////////////////////////////////////////////////////////

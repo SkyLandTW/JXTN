@@ -30,7 +30,7 @@ package java.util;
 import java.lang.reflect.Array;
 import java.util.function.Function;
 
-import jxtn.core.axi.MemberComparators;
+import jxtn.core.axi.comparators.MemberComparators;
 
 /**
  * {@link Collection}的延伸功能

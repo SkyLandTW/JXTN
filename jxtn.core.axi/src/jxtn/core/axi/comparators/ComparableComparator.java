@@ -25,7 +25,7 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-package jxtn.core.axi;
+package jxtn.core.axi.comparators;
 
 import java.util.Comparator;
 

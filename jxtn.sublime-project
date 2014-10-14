@@ -3,23 +3,7 @@
 	[
 		{
 			"follow_symlinks": true,
-			"path": "jxtn.core.axi"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "jxtn.core.dev"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "jxtn.core.fmpp"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "jxtn.jfx.axi"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "jxtn.jfx.builders"
+			"path": "."
 		}
 	]
 }

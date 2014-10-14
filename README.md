@@ -21,7 +21,10 @@ jxtn.core.axi
 -------------
 
 Extending the Java Collection API by adding non-standard default methods such
-as *Iterable.filter* and *Iterable.map*.
+as *Iterable.filter* and *Iterable.map*. The library provides the most common
+used functions directly on existing Java collections, as a simpler and
+easier-to-use alternative to Java 8 Stream API. which should be reserved for
+more advanced operations (parallelism etc) only.
 
 ##### Examples
 
@@ -46,16 +49,24 @@ as *Iterable.filter* and *Iterable.map*.
    }
    ```
 
-##### Functions
- - String: left/right/padLeft/padRight/...
- - Iterable: all/any/concat/filter/map/first/groupBy/avg/max/...
- - Iterator: *same as Iterable*
- - dom/NodeList: asList
+##### Functionality
+ - String methods: left/right/padLeft/padRight/...
+ - Iterable methods: all/any/concat/filter/map/first/groupBy/avg/max/...
+ - Iterator methods: *same as Iterable*
+ - dom/NodeList methods: asList
  - generic replacements of non-generic method declarations in the collection
    API, such as:
    * Collection.remove2(E): replaces *Collection.remove(Object)*
    * Map.get2(K): replaces *Map.get(Object)*
    * ......
+ - Function interfaces: *FunctionEx* and *SupplierEx* etc, to allow throwing of
+   exceptions while remain compatible with built-in interfaces (exceptions are
+   optionally wrapped as _RuntimeException_).
+ - Comparators: comparing arrays and by member.
+ - Tuples: like javatuples but support null values.
+ - Exceptions: _MalformedURLException_ and _ReflectiveOperationException_ are
+   changed to unchecked, since there is no point of dealing with them under
+   normal circumstances.
 
 ##### Dependencies
  - OpenJDK (as source) for Java version updating: To update the project for
@@ -84,19 +95,27 @@ as *Iterable.filter* and *Iterable.map*.
     * Intellij: same as above, and edit _config\options\jdk.table.xml_ to
       change the order of JARs (JARs under _endorsed_ should be at top).
 
+##### Compatibility
+ - AXI is compatible with Java SE 8u20 but not older versions due to change in
+   the default method *Collection.sort* in 8u20 (but not 8). Compatibility
+   shall not be an issue afterwards since the collection interfaces have been
+   stable for many years.
+ - Custom implementations of collection interfaces should not override the new
+   generic version of non-generic methods, for the sake of consistency, ex:
+   override *Collection.remove(Object)* instead of *Collection.remove2(E)*,
+   because *remove2(E)* should always call *remove(Object)* internally.
+
 ##### Notes
- - The library is not meant to match or replace the Java 8 Stream API, but to
-   provide shortcuts to the most commonly-used functions, which the Stream API
-   clearly lacks as it's not directly built on existing collection interfaces.
  - The licenses of modified OpenJDK source remain unchanged. They're NOT under
    public domain like the rest of files.
  - Comments are written in Chinese until I find a way to make dual-language
    javadoc.
- - Primitive methods are named differently instead of using overloads (
-   *firstOfMin* and *firstOfMinInt*), because they tend to break Java IDEs.
+ - Primitive methods are named differently depending on their types instead of
+   utilizing overloads (ex: *firstOfMin* and *firstOfMinInt*), because
+   overloading with function interfaces plus autoboxing tend to break code
+   parsing in Java IDEs.
  - No extension to Array classes for now because I don't know how to do it.
  - No test suite available. Some code may be broken since I never test them.
- - AXI should only be used with the latest released version of Oracle JDK/JRE.
 
 ------------------------------------------------------------------------------
 
@@ -144,8 +163,8 @@ jxtn.jfx.axi
 
 Overrides and extends classes/interfaces already existing in JavaFX.
 
-##### Functions
- - ObservableValue: asObject(mapper)/asBoolean(mapper)/...
+##### Functionality
+ - ObservableValue methods: asObject(mapper)/asBoolean(mapper)/...
 
 ##### Dependencies
  - OpenJDK (as source) for Java version updating: To update the project for

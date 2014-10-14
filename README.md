@@ -59,14 +59,14 @@ more advanced operations (parallelism etc) only.
    * Collection.remove2(E): replaces *Collection.remove(Object)*
    * Map.get2(K): replaces *Map.get(Object)*
    * ......
- - Function interfaces: *FunctionEx* and *SupplierEx* etc, to allow throwing of
-   exceptions while remain compatible with built-in interfaces (exceptions are
-   optionally wrapped as _RuntimeException_).
- - Comparators: comparing arrays and by member.
- - Tuples: like javatuples but support null values.
+ - Comparators: generic comparators for comparing arrays and by member.
  - Exceptions: _MalformedURLException_ and _ReflectiveOperationException_ are
    changed to unchecked, since there is no point of dealing with them under
    normal circumstances.
+ - Function interfaces: *FunctionEx*, *SupplierEx*, *ConsumerEx* etc, to allow
+   throwing of exceptions while remain compatible with built-in interfaces
+   (exceptions are optionally wrapped as _RuntimeException_).
+ - Tuples: like javatuples but support null values.
 
 ##### Dependencies
  - OpenJDK (as source) for Java version updating: To update the project for
@@ -88,8 +88,11 @@ more advanced operations (parallelism etc) only.
  1. Build *jxtn.core.axi.jar*
  2. Create the directory _jre/endorsed_ or _jre8/endorsed_
  3. Put *jxtn.core.axi.jar* into _endorsed_
- 4. Classes in *jxtn.core.axi.jar* (or any other jar files in _endorsed_)
-    automatically override anything provided in standard Java class library.
+ 4. Classes in *jxtn.core.axi.jar* (and all other jar files in _endorsed_) will
+    automatically override anything provided in the standard Java class library
+    (rt.jar). Note that you should not use the same way to override classes
+    under ext or others, because it'd be the bootstrap classloader which loads
+    endorsed jars and it cannot see other jars on application classpath.
  5. You may have to configure IDEs for code inspection to work correctly.
     * Eclipse: add jars under _endorsed_ to your JRE system libraries.
     * Intellij: same as above, and edit _config\options\jdk.table.xml_ to

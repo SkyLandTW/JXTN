@@ -25,48 +25,43 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-package jxtn.core.axi.collections;
-
-import jxtn.core.axi.tuples.BaseTuple;
+package jxtn.core.axi.tuples;
 
 /**
- * 索引項目，用在集合操作
+ * 支援三個子項目的Tuple
  *
  * @author AqD
- * @param <T> 項目型態
+ * @param <V1> 第一子項目型態
+ * @param <V2> 第二子項目型態
+ * @param <V3> 第三子項目型態
  */
 @SuppressWarnings("serial")
-public final class IndexedItem<T> extends BaseTuple<IndexedItem<T>>
+public class TTriple<V1, V2, V3> extends BaseTuple<TTriple<V1, V2, V3>>
 {
-    protected final int index;
-    protected final T value;
+    private final V1 v1;
+    private final V2 v2;
+    private final V3 v3;
 
-    public IndexedItem(int index, T value)
+    public TTriple(V1 v1, V2 v2, V3 v3)
     {
-        super(index, value);
-        if (index < 0)
-            throw new IndexOutOfBoundsException();
-        this.index = index;
-        this.value = value;
+        super(v1, v2, v3);
+        this.v1 = v1;
+        this.v2 = v2;
+        this.v3 = v3;
     }
 
-    /**
-     * 取得項目索引
-     *
-     * @return 項目索引
-     */
-    public int getIndex()
+    public V1 getItem1()
     {
-        return this.index;
+        return this.v1;
     }
 
-    /**
-     * 取得項目值
-     *
-     * @return 項目值
-     */
-    public T getValue()
+    public V2 getItem2()
     {
-        return this.value;
+        return this.v2;
+    }
+
+    public V3 getItem3()
+    {
+        return this.v3;
     }
 }

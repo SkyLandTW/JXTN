@@ -195,6 +195,23 @@ public class ArrayComparators
     }
 
     /**
+     * 取得物件陣列的比較器
+     *
+     * @return 物件陣列的比較器
+     */
+    public static final Comparator<Object[]> forObjects()
+    {
+        return new Comparator<Object[]>()
+            {
+                @Override
+                public int compare(Object[] m1, Object[] m2)
+                {
+                    return ArrayComparators.compare(m1, m2);
+                }
+            };
+    }
+
+    /**
      * 比較兩陣列
      * <p>
      * 支援null：null項目或成員作為較小的一方
@@ -465,6 +482,39 @@ public class ArrayComparators
             if (v2 == null)
                 return 1;
             int diff = v1.compareTo(v2);
+            if (diff != 0)
+                return diff;
+        }
+        return m1.length - m2.length;
+    }
+
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static int compare(Object[] m1, Object[] m2)
+    {
+        if (m1 == null && m2 == null)
+            return 0;
+        if (m1 == null)
+            return -1;
+        if (m2 == null)
+            return 1;
+        int len = Math.min(m1.length, m2.length);
+        for (int i = 0; i < len; i++)
+        {
+            Object v1 = m1[i];
+            Object v2 = m2[i];
+            if (v1 == null && v2 == null)
+                continue;
+            if (v1 == null)
+                return -1;
+            if (v2 == null)
+                return 1;
+            int diff;
+            if (v1 instanceof Comparable)
+                diff = ((Comparable) v1).compareTo(v2);
+            else if (v2 instanceof Comparable)
+                diff = -((Comparable) v2).compareTo(v1);
+            else
+                diff = v1.toString().compareTo(v2.toString());
             if (diff != 0)
                 return diff;
         }

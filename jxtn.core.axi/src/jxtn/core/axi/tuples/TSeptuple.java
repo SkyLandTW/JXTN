@@ -25,48 +25,75 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-package jxtn.core.axi.collections;
-
-import jxtn.core.axi.tuples.BaseTuple;
+package jxtn.core.axi.tuples;
 
 /**
- * 索引項目，用在集合操作
+ * 支援七個子項目的Tuple
  *
  * @author AqD
- * @param <T> 項目型態
+ * @param <V1> 第一子項目型態
+ * @param <V2> 第二子項目型態
+ * @param <V3> 第三子項目型態
+ * @param <V4> 第四子項目型態
+ * @param <V5> 第五子項目型態
+ * @param <V6> 第六子項目型態
+ * @param <V7> 第七子項目型態
  */
 @SuppressWarnings("serial")
-public final class IndexedItem<T> extends BaseTuple<IndexedItem<T>>
+public class TSeptuple<V1, V2, V3, V4, V5, V6, V7> extends BaseTuple<TSeptuple<V1, V2, V3, V4, V5, V6, V7>>
 {
-    protected final int index;
-    protected final T value;
+    private final V1 v1;
+    private final V2 v2;
+    private final V3 v3;
+    private final V4 v4;
+    private final V5 v5;
+    private final V6 v6;
+    private final V7 v7;
 
-    public IndexedItem(int index, T value)
+    public TSeptuple(V1 v1, V2 v2, V3 v3, V4 v4, V5 v5, V6 v6, V7 v7)
     {
-        super(index, value);
-        if (index < 0)
-            throw new IndexOutOfBoundsException();
-        this.index = index;
-        this.value = value;
+        super(v1, v2, v3, v4, v5, v6, v7);
+        this.v1 = v1;
+        this.v2 = v2;
+        this.v3 = v3;
+        this.v4 = v4;
+        this.v5 = v5;
+        this.v6 = v6;
+        this.v7 = v7;
     }
 
-    /**
-     * 取得項目索引
-     *
-     * @return 項目索引
-     */
-    public int getIndex()
+    public V1 getItem1()
     {
-        return this.index;
+        return this.v1;
     }
 
-    /**
-     * 取得項目值
-     *
-     * @return 項目值
-     */
-    public T getValue()
+    public V2 getItem2()
     {
-        return this.value;
+        return this.v2;
+    }
+
+    public V3 getItem3()
+    {
+        return this.v3;
+    }
+
+    public V4 getItem4()
+    {
+        return this.v4;
+    }
+
+    public V5 getItem5()
+    {
+        return this.v5;
+    }
+
+    public V6 getItem6()
+    {
+        return this.v6;
+    }
+
+    public V7 getItem7()
+    {
+        return this.v7;
     }
 }

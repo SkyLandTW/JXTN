@@ -25,48 +25,27 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-package jxtn.core.axi.collections;
-
-import jxtn.core.axi.tuples.BaseTuple;
+package jxtn.core.axi.tuples;
 
 /**
- * 索引項目，用在集合操作
+ * 支援單一子項目的Tuple
  *
  * @author AqD
- * @param <T> 項目型態
+ * @param <V1> 第一子項目型態
  */
 @SuppressWarnings("serial")
-public final class IndexedItem<T> extends BaseTuple<IndexedItem<T>>
+public class TSingle<V1> extends BaseTuple<TSingle<V1>>
 {
-    protected final int index;
-    protected final T value;
+    private final V1 v1;
 
-    public IndexedItem(int index, T value)
+    public TSingle(V1 v1)
     {
-        super(index, value);
-        if (index < 0)
-            throw new IndexOutOfBoundsException();
-        this.index = index;
-        this.value = value;
+        super(v1);
+        this.v1 = v1;
     }
 
-    /**
-     * 取得項目索引
-     *
-     * @return 項目索引
-     */
-    public int getIndex()
+    public V1 getItem1()
     {
-        return this.index;
-    }
-
-    /**
-     * 取得項目值
-     *
-     * @return 項目值
-     */
-    public T getValue()
-    {
-        return this.value;
+        return this.v1;
     }
 }

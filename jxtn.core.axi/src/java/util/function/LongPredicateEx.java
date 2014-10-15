@@ -38,6 +38,7 @@ public interface LongPredicateEx<TException extends Exception> extends LongPredi
 {
     boolean testEx(long value) throws TException;
 
+    @Deprecated
     @Override
     default boolean test(long value)
     {

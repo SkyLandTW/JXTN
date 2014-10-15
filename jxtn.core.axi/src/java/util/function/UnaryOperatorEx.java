@@ -39,6 +39,7 @@ public interface UnaryOperatorEx<T, TException extends Exception> extends UnaryO
 {
     T applyEx(T t) throws TException;
 
+    @Deprecated
     @Override
     default T apply(T t)
     {

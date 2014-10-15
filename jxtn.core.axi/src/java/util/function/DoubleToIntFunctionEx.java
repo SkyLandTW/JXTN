@@ -38,6 +38,7 @@ public interface DoubleToIntFunctionEx<TException extends Exception> extends Dou
 {
     int applyAsIntEx(double value) throws TException;
 
+    @Deprecated
     @Override
     default int applyAsInt(double value)
     {

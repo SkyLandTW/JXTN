@@ -39,6 +39,7 @@ public interface ToLongFunctionEx<T, TException extends Exception> extends ToLon
 {
     long applyAsLongEx(T t) throws TException;
 
+    @Deprecated
     @Override
     default long applyAsLong(T t)
     {

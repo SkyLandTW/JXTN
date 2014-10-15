@@ -38,6 +38,7 @@ public interface LongUnaryOperatorEx<TException extends Exception> extends LongU
 {
     long applyAsLongEx(long operand) throws TException;
 
+    @Deprecated
     @Override
     default long applyAsLong(long operand)
     {

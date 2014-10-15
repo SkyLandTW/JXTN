@@ -39,6 +39,7 @@ public interface BinaryOperatorEx<T, TException extends Exception> extends Binar
 {
     T applyEx(T t, T u) throws TException;
 
+    @Deprecated
     @Override
     default T apply(T t, T u)
     {

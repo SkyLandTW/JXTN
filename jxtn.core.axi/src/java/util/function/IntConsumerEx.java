@@ -38,6 +38,7 @@ public interface IntConsumerEx<TException extends Exception> extends IntConsumer
 {
     void acceptEx(int t) throws TException;
 
+    @Deprecated
     @Override
     default void accept(int t)
     {

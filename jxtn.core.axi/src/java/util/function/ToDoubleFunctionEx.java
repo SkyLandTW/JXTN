@@ -39,6 +39,7 @@ public interface ToDoubleFunctionEx<T, TException extends Exception> extends ToD
 {
     double applyAsDoubleEx(T t) throws TException;
 
+    @Deprecated
     @Override
     default double applyAsDouble(T t)
     {

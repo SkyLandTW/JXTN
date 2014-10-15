@@ -40,6 +40,7 @@ public interface ToLongBiFunctionEx<T, U, TException extends Exception> extends 
 {
     long applyAsLongEx(T t, U u) throws TException;
 
+    @Deprecated
     @Override
     default long applyAsLong(T t, U u)
     {

@@ -39,6 +39,7 @@ public interface BiPredicateEx<T, U, TException extends Exception> extends BiPre
 {
     boolean testEx(T t, U u) throws TException;
 
+    @Deprecated
     @Override
     default boolean test(T t, U u)
     {

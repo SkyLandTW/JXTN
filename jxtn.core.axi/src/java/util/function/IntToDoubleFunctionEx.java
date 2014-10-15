@@ -38,6 +38,7 @@ public interface IntToDoubleFunctionEx<TException extends Exception> extends Int
 {
     double applyAsDoubleEx(int value) throws TException;
 
+    @Deprecated
     @Override
     default double applyAsDouble(int value)
     {

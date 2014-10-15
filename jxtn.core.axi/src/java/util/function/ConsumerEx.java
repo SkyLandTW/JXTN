@@ -39,6 +39,7 @@ public interface ConsumerEx<T, TException extends Exception> extends Consumer<T>
 {
     void acceptEx(T t) throws TException;
 
+    @Deprecated
     @Override
     default void accept(T t)
     {

@@ -39,6 +39,7 @@ public interface ObjLongConsumerEx<T, TException extends Exception> extends ObjL
 {
     void acceptEx(T t, long value) throws TException;
 
+    @Deprecated
     @Override
     default void accept(T t, long value)
     {

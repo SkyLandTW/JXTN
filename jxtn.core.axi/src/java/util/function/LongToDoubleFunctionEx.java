@@ -38,6 +38,7 @@ public interface LongToDoubleFunctionEx<TException extends Exception> extends Lo
 {
     double applyAsDoubleEx(long value) throws TException;
 
+    @Deprecated
     @Override
     default double applyAsDouble(long value)
     {

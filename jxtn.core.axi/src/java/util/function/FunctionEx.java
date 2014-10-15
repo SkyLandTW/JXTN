@@ -40,6 +40,7 @@ public interface FunctionEx<T, R, TException extends Exception> extends Function
 {
     R applyEx(T t) throws TException;
 
+    @Deprecated
     @Override
     default R apply(T t)
     {

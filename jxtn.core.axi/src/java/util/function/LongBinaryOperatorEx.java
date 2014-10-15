@@ -37,6 +37,7 @@ public interface LongBinaryOperatorEx<TException extends Exception> extends Long
 {
     long applyAsLongEx(long left, long right) throws TException;
 
+    @Deprecated
     @Override
     default long applyAsLong(long left, long right)
     {

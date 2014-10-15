@@ -38,6 +38,7 @@ public interface DoubleSupplierEx<TException extends Exception> extends DoubleSu
 {
     double getAsDoubleEx() throws TException;
 
+    @Deprecated
     @Override
     default double getAsDouble()
     {

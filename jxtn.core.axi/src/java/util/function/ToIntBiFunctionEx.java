@@ -40,6 +40,7 @@ public interface ToIntBiFunctionEx<T, U, TException extends Exception> extends T
 {
     int applyAsIntEx(T t, U u) throws TException;
 
+    @Deprecated
     @Override
     default int applyAsInt(T t, U u)
     {

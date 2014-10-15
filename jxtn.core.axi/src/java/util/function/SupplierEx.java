@@ -39,6 +39,7 @@ public interface SupplierEx<T, TException extends Exception> extends Supplier<T>
 {
     T getEx() throws TException;
 
+    @Deprecated
     @Override
     default T get()
     {

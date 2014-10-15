@@ -38,6 +38,7 @@ public interface DoublePredicateEx<TException extends Exception> extends DoubleP
 {
     boolean testEx(double value) throws TException;
 
+    @Deprecated
     @Override
     default boolean test(double value)
     {

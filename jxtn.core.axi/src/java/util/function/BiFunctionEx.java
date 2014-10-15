@@ -50,6 +50,7 @@ public interface BiFunctionEx<T, U, R, TException extends Exception> extends BiF
         return (T t, U u) -> after.apply(this.apply(t, u));
     }
 
+    @Deprecated
     @Override
     default R apply(T t, U u)
     {

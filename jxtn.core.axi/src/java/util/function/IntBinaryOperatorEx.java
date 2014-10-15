@@ -37,6 +37,7 @@ public interface IntBinaryOperatorEx<TException extends Exception> extends IntBi
 {
     int applyAsIntEx(int left, int right) throws TException;
 
+    @Deprecated
     @Override
     default int applyAsInt(int left, int right)
     {

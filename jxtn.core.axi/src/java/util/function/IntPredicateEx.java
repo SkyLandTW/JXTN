@@ -38,6 +38,7 @@ public interface IntPredicateEx<TException extends Exception> extends IntPredica
 {
     boolean testEx(int value) throws TException;
 
+    @Deprecated
     @Override
     default boolean test(int value)
     {

@@ -39,6 +39,7 @@ public interface IntFunctionEx<R, TException extends Exception> extends IntFunct
 {
     R applyEx(int value) throws TException;
 
+    @Deprecated
     @Override
     default R apply(int value)
     {

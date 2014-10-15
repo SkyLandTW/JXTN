@@ -38,6 +38,7 @@ public interface IntToLongFunctionEx<TException extends Exception> extends IntTo
 {
     long applyAsLongEx(int value) throws TException;
 
+    @Deprecated
     @Override
     default long applyAsLong(int value)
     {

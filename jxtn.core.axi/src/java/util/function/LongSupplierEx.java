@@ -38,6 +38,7 @@ public interface LongSupplierEx<TException extends Exception> extends LongSuppli
 {
     long getAsLongEx() throws TException;
 
+    @Deprecated
     @Override
     default long getAsLong()
     {

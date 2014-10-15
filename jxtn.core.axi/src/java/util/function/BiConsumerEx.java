@@ -40,6 +40,7 @@ public interface BiConsumerEx<T, U, TException extends Exception> extends BiCons
 {
     void acceptEx(T t1, U t2) throws TException;
 
+    @Deprecated
     @Override
     default void accept(T t1, U t2)
     {

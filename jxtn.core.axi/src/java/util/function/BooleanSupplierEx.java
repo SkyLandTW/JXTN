@@ -37,6 +37,7 @@ public interface BooleanSupplierEx<TException extends Exception> extends Boolean
 {
     boolean getAsBooleanEx() throws TException;
 
+    @Deprecated
     @Override
     default boolean getAsBoolean()
     {

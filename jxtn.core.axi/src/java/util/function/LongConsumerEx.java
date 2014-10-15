@@ -38,6 +38,7 @@ public interface LongConsumerEx<TException extends Exception> extends LongConsum
 {
     void acceptEx(long t) throws TException;
 
+    @Deprecated
     @Override
     default void accept(long t)
     {

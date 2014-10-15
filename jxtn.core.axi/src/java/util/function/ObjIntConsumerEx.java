@@ -39,6 +39,7 @@ public interface ObjIntConsumerEx<T, TException extends Exception> extends ObjIn
 {
     void acceptEx(T t, int value) throws TException;
 
+    @Deprecated
     @Override
     default void accept(T t, int value)
     {

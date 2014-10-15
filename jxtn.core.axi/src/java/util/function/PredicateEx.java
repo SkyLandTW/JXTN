@@ -39,6 +39,7 @@ public interface PredicateEx<T, TException extends Exception> extends Predicate<
 {
     boolean testEx(T t) throws TException;
 
+    @Deprecated
     @Override
     default boolean test(T t)
     {

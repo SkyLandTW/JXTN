@@ -40,6 +40,7 @@ public interface ToDoubleBiFunctionEx<T, U, TException extends Exception> extend
 {
     double applyAsDoubleEx(T t, U u) throws TException;
 
+    @Deprecated
     @Override
     default double applyAsDouble(T t, U u)
     {

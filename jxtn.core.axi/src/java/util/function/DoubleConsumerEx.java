@@ -38,6 +38,7 @@ public interface DoubleConsumerEx<TException extends Exception> extends DoubleCo
 {
     void acceptEx(double t) throws TException;
 
+    @Deprecated
     @Override
     default void accept(double t)
     {

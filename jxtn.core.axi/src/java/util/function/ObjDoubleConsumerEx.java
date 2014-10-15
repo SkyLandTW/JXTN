@@ -39,6 +39,7 @@ public interface ObjDoubleConsumerEx<T, TException extends Exception> extends Ob
 {
     void acceptEx(T t, double value) throws TException;
 
+    @Deprecated
     @Override
     default void accept(T t, double value)
     {

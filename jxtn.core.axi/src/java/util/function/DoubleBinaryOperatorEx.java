@@ -38,6 +38,7 @@ public interface DoubleBinaryOperatorEx<TException extends Exception> extends Do
 {
     double applyAsDoubleEx(double left, double right) throws TException;
 
+    @Deprecated
     @Override
     default double applyAsDouble(double left, double right)
     {

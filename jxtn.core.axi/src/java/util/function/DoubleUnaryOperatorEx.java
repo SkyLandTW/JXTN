@@ -38,6 +38,7 @@ public interface DoubleUnaryOperatorEx<TException extends Exception> extends Dou
 {
     double applyAsDoubleEx(double operand) throws TException;
 
+    @Deprecated
     @Override
     default double applyAsDouble(double operand)
     {

@@ -38,6 +38,7 @@ public interface IntUnaryOperatorEx<TException extends Exception> extends IntUna
 {
     int applyAsIntEx(int operand) throws TException;
 
+    @Deprecated
     @Override
     default int applyAsInt(int operand)
     {

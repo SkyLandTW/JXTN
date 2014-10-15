@@ -38,6 +38,7 @@ public interface IntSupplierEx<TException extends Exception> extends IntSupplier
 {
     int getAsIntEx() throws TException;
 
+    @Deprecated
     @Override
     default int getAsInt()
     {

@@ -39,6 +39,7 @@ public interface ToIntFunctionEx<T, TException extends Exception> extends ToIntF
 {
     int applyAsIntEx(T t) throws TException;
 
+    @Deprecated
     @Override
     default int applyAsInt(T t)
     {

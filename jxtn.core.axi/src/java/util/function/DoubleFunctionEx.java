@@ -39,6 +39,7 @@ public interface DoubleFunctionEx<R, TException extends Exception> extends Doubl
 {
     R applyEx(double value) throws TException;
 
+    @Deprecated
     @Override
     default R apply(double value)
     {

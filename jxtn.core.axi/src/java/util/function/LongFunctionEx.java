@@ -39,6 +39,7 @@ public interface LongFunctionEx<R, TException extends Exception> extends LongFun
 {
     R applyEx(long value) throws TException;
 
+    @Deprecated
     @Override
     default R apply(long value)
     {

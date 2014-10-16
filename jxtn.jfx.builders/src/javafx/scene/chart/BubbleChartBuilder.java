@@ -39,4 +39,18 @@ public class BubbleChartBuilder<X extends java.lang.Object, Y extends java.lang.
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link BubbleChart}物件
+     *
+     * @return 新的{@link BubbleChart}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public BubbleChart<X, Y> build(javafx.scene.chart.Axis<X> arg0, javafx.scene.chart.Axis<Y> arg1, javafx.collections.ObservableList<javafx.scene.chart.XYChart.Series<X, Y>> arg2)
+    {
+        BubbleChart<X, Y> instance = new BubbleChart<X, Y>(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

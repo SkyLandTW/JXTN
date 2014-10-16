@@ -17,7 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class LightBuilder<Z extends Light, B extends LightBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements LightBuilderExt<Z, B>
 {
 
     private boolean hasColor;

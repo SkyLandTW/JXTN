@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link Rating}建構器
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.0.6_20.jar
+ * @version controlsfx-8.20.7.jar
  * @param <Z> 要建構的物件型態(需繼承{@link Rating})
  * @param <B> 建構器本身的型態(需繼承{@link RatingBuilder})
  */
@@ -346,6 +346,34 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     public Rating build()
     {
         Rating instance = new Rating();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Rating}物件
+     *
+     * @return 新的{@link Rating}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Rating build(int arg0)
+    {
+        Rating instance = new Rating(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Rating}物件
+     *
+     * @return 新的{@link Rating}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Rating build(int arg0, int arg1)
+    {
+        Rating instance = new Rating(arg0, arg1);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

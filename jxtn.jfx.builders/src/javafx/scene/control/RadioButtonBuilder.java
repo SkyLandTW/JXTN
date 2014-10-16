@@ -40,4 +40,18 @@ public class RadioButtonBuilder<Z extends RadioButton, B extends RadioButtonBuil
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link RadioButton}物件
+     *
+     * @return 新的{@link RadioButton}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public RadioButton build(java.lang.String arg0)
+    {
+        RadioButton instance = new RadioButton(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -233,4 +233,60 @@ public class ComboBoxListCellBuilder<T extends java.lang.Object, Z extends Combo
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ComboBoxListCell}物件
+     *
+     * @return 新的{@link ComboBoxListCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ComboBoxListCell<T> build(T[] arg0)
+    {
+        ComboBoxListCell<T> instance = new ComboBoxListCell<T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ComboBoxListCell}物件
+     *
+     * @return 新的{@link ComboBoxListCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ComboBoxListCell<T> build(javafx.collections.ObservableList<T> arg0)
+    {
+        ComboBoxListCell<T> instance = new ComboBoxListCell<T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ComboBoxListCell}物件
+     *
+     * @return 新的{@link ComboBoxListCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ComboBoxListCell<T> build(javafx.util.StringConverter<T> arg0, T[] arg1)
+    {
+        ComboBoxListCell<T> instance = new ComboBoxListCell<T>(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ComboBoxListCell}物件
+     *
+     * @return 新的{@link ComboBoxListCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ComboBoxListCell<T> build(javafx.util.StringConverter<T> arg0, javafx.collections.ObservableList<T> arg1)
+    {
+        ComboBoxListCell<T> instance = new ComboBoxListCell<T>(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

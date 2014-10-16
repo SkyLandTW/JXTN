@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="lib/controlsfx-8.0.6_20.jar" sourcepath="D:/CODE/3dGIS/controlsfx-controlsfx-f00d18bd57f7"/>
+	<classpathentry exported="true" kind="lib" path="lib/controlsfx-8.20.7.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/openjfx-dialogs-1.0.2.jar"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>

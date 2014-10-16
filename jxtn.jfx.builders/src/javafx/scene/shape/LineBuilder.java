@@ -288,4 +288,18 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Line}物件
+     *
+     * @return 新的{@link Line}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Line build(double arg0, double arg1, double arg2, double arg3)
+    {
+        Line instance = new Line(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

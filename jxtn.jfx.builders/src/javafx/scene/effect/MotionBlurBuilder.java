@@ -226,4 +226,18 @@ public class MotionBlurBuilder<Z extends MotionBlur, B extends MotionBlurBuilder
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link MotionBlur}物件
+     *
+     * @return 新的{@link MotionBlur}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public MotionBlur build(double arg0, double arg1)
+    {
+        MotionBlur instance = new MotionBlur(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

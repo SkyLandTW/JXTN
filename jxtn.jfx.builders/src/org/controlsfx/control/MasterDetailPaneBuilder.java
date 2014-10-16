@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link MasterDetailPane}建構器
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.0.6_20.jar
+ * @version controlsfx-8.20.7.jar
  * @param <Z> 要建構的物件型態(需繼承{@link MasterDetailPane})
  * @param <B> 建構器本身的型態(需繼承{@link MasterDetailPaneBuilder})
  */
@@ -408,6 +408,48 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     public MasterDetailPane build()
     {
         MasterDetailPane instance = new MasterDetailPane();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link MasterDetailPane}物件
+     *
+     * @return 新的{@link MasterDetailPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public MasterDetailPane build(javafx.geometry.Side arg0)
+    {
+        MasterDetailPane instance = new MasterDetailPane(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link MasterDetailPane}物件
+     *
+     * @return 新的{@link MasterDetailPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public MasterDetailPane build(javafx.geometry.Side arg0, boolean arg1)
+    {
+        MasterDetailPane instance = new MasterDetailPane(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link MasterDetailPane}物件
+     *
+     * @return 新的{@link MasterDetailPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public MasterDetailPane build(javafx.geometry.Side arg0, javafx.scene.Node arg1, javafx.scene.Node arg2, boolean arg3)
+    {
+        MasterDetailPane instance = new MasterDetailPane(arg0, arg1, arg2, arg3);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

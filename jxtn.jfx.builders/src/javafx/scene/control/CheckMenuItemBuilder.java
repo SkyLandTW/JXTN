@@ -102,4 +102,32 @@ public class CheckMenuItemBuilder<Z extends CheckMenuItem, B extends CheckMenuIt
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link CheckMenuItem}物件
+     *
+     * @return 新的{@link CheckMenuItem}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CheckMenuItem build(java.lang.String arg0)
+    {
+        CheckMenuItem instance = new CheckMenuItem(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link CheckMenuItem}物件
+     *
+     * @return 新的{@link CheckMenuItem}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CheckMenuItem build(java.lang.String arg0, javafx.scene.Node arg1)
+    {
+        CheckMenuItem instance = new CheckMenuItem(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -598,4 +598,46 @@ public class DropShadowBuilder<Z extends DropShadow, B extends DropShadowBuilder
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link DropShadow}物件
+     *
+     * @return 新的{@link DropShadow}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public DropShadow build(double arg0, javafx.scene.paint.Color arg1)
+    {
+        DropShadow instance = new DropShadow(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link DropShadow}物件
+     *
+     * @return 新的{@link DropShadow}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public DropShadow build(double arg0, double arg1, double arg2, javafx.scene.paint.Color arg3)
+    {
+        DropShadow instance = new DropShadow(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link DropShadow}物件
+     *
+     * @return 新的{@link DropShadow}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public DropShadow build(javafx.scene.effect.BlurType arg0, javafx.scene.paint.Color arg1, double arg2, double arg3, double arg4, double arg5)
+    {
+        DropShadow instance = new DropShadow(arg0, arg1, arg2, arg3, arg4, arg5);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

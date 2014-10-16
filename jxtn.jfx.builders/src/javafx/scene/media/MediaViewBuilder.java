@@ -598,4 +598,18 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link MediaView}物件
+     *
+     * @return 新的{@link MediaView}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public MediaView build(javafx.scene.media.MediaPlayer arg0)
+    {
+        MediaView instance = new MediaView(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

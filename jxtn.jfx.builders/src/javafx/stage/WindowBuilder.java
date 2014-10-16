@@ -17,7 +17,7 @@ package javafx.stage;
 @SuppressWarnings("all")
 public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements WindowBuilderExt<Z, B>
 {
 
     private boolean hasEventDispatcher;

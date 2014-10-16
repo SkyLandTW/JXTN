@@ -39,4 +39,18 @@ public class LinearGradientBuilder<Z extends LinearGradient, B extends LinearGra
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link LinearGradient}物件
+     *
+     * @return 新的{@link LinearGradient}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public LinearGradient build(double arg0, double arg1, double arg2, double arg3, boolean arg4, javafx.scene.paint.CycleMethod arg5, java.util.List<javafx.scene.paint.Stop> arg6)
+    {
+        LinearGradient instance = new LinearGradient(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

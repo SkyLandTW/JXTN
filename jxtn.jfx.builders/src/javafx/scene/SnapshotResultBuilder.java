@@ -17,7 +17,7 @@ package javafx.scene;
 @SuppressWarnings("all")
 public class SnapshotResultBuilder<Z extends SnapshotResult, B extends SnapshotResultBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements SnapshotResultBuilderExt<Z, B>
 {
 
     @Override

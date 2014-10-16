@@ -350,4 +350,18 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ColorInput}物件
+     *
+     * @return 新的{@link ColorInput}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ColorInput build(double arg0, double arg1, double arg2, double arg3, javafx.scene.paint.Paint arg4)
+    {
+        ColorInput instance = new ColorInput(arg0, arg1, arg2, arg3, arg4);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -40,4 +40,18 @@ public class ProgressBarBuilder<Z extends ProgressBar, B extends ProgressBarBuil
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ProgressBar}物件
+     *
+     * @return 新的{@link ProgressBar}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ProgressBar build(double arg0)
+    {
+        ProgressBar instance = new ProgressBar(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

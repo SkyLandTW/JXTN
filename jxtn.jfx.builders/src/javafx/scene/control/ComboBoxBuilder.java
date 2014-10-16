@@ -302,4 +302,18 @@ public class ComboBoxBuilder<T extends java.lang.Object, Z extends ComboBox<T>, 
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ComboBox}物件
+     *
+     * @return 新的{@link ComboBox}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ComboBox<T> build(javafx.collections.ObservableList<T> arg0)
+    {
+        ComboBox<T> instance = new ComboBox<T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

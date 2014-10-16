@@ -784,4 +784,18 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Slider}物件
+     *
+     * @return 新的{@link Slider}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Slider build(double arg0, double arg1, double arg2)
+    {
+        Slider instance = new Slider(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

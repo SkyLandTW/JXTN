@@ -17,7 +17,7 @@ package javafx.scene.text;
 @SuppressWarnings("all")
 public class FontBuilder<Z extends Font, B extends FontBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements FontBuilderExt<Z, B>
 {
 
     @Override
@@ -35,6 +35,20 @@ public class FontBuilder<Z extends Font, B extends FontBuilder<Z, B>>
     public Font build(double arg0)
     {
         Font instance = new Font(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Font}物件
+     *
+     * @return 新的{@link Font}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Font build(java.lang.String arg0, double arg1)
+    {
+        Font instance = new Font(arg0, arg1);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

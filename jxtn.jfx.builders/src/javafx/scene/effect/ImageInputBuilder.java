@@ -226,4 +226,32 @@ public class ImageInputBuilder<Z extends ImageInput, B extends ImageInputBuilder
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ImageInput}物件
+     *
+     * @return 新的{@link ImageInput}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ImageInput build(javafx.scene.image.Image arg0)
+    {
+        ImageInput instance = new ImageInput(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ImageInput}物件
+     *
+     * @return 新的{@link ImageInput}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ImageInput build(javafx.scene.image.Image arg0, double arg1, double arg2)
+    {
+        ImageInput instance = new ImageInput(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -164,4 +164,32 @@ public class CheckBoxListCellBuilder<T extends java.lang.Object, Z extends Check
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link CheckBoxListCell}物件
+     *
+     * @return 新的{@link CheckBoxListCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CheckBoxListCell<T> build(javafx.util.Callback<T, javafx.beans.value.ObservableValue<java.lang.Boolean>> arg0)
+    {
+        CheckBoxListCell<T> instance = new CheckBoxListCell<T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link CheckBoxListCell}物件
+     *
+     * @return 新的{@link CheckBoxListCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CheckBoxListCell<T> build(javafx.util.Callback<T, javafx.beans.value.ObservableValue<java.lang.Boolean>> arg0, javafx.util.StringConverter<T> arg1)
+    {
+        CheckBoxListCell<T> instance = new CheckBoxListCell<T>(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

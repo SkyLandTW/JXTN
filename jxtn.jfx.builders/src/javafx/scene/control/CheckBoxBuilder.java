@@ -226,4 +226,18 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link CheckBox}物件
+     *
+     * @return 新的{@link CheckBox}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CheckBox build(java.lang.String arg0)
+    {
+        CheckBox instance = new CheckBox(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

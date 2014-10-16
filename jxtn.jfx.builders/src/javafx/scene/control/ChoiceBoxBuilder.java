@@ -202,4 +202,18 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ChoiceBox}物件
+     *
+     * @return 新的{@link ChoiceBox}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ChoiceBox<T> build(javafx.collections.ObservableList<T> arg0)
+    {
+        ChoiceBox<T> instance = new ChoiceBox<T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

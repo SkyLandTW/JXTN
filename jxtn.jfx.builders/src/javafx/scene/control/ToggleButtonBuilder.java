@@ -164,4 +164,32 @@ public class ToggleButtonBuilder<Z extends ToggleButton, B extends ToggleButtonB
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ToggleButton}物件
+     *
+     * @return 新的{@link ToggleButton}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ToggleButton build(java.lang.String arg0)
+    {
+        ToggleButton instance = new ToggleButton(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ToggleButton}物件
+     *
+     * @return 新的{@link ToggleButton}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ToggleButton build(java.lang.String arg0, javafx.scene.Node arg1)
+    {
+        ToggleButton instance = new ToggleButton(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

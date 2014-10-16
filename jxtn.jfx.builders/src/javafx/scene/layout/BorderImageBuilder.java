@@ -17,7 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class BorderImageBuilder<Z extends BorderImage, B extends BorderImageBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements BorderImageBuilderExt<Z, B>
 {
 
     @Override

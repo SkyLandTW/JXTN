@@ -102,4 +102,18 @@ public class TextFieldTreeTableCellBuilder<S extends java.lang.Object, T extends
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link TextFieldTreeTableCell}物件
+     *
+     * @return 新的{@link TextFieldTreeTableCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public TextFieldTreeTableCell<S, T> build(javafx.util.StringConverter<T> arg0)
+    {
+        TextFieldTreeTableCell<S, T> instance = new TextFieldTreeTableCell<S, T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -40,4 +40,18 @@ public class PointLightBuilder<Z extends PointLight, B extends PointLightBuilder
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link PointLight}物件
+     *
+     * @return 新的{@link PointLight}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public PointLight build(javafx.scene.paint.Color arg0)
+    {
+        PointLight instance = new PointLight(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

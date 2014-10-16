@@ -164,4 +164,32 @@ public class RadioMenuItemBuilder<Z extends RadioMenuItem, B extends RadioMenuIt
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link RadioMenuItem}物件
+     *
+     * @return 新的{@link RadioMenuItem}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public RadioMenuItem build(java.lang.String arg0)
+    {
+        RadioMenuItem instance = new RadioMenuItem(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link RadioMenuItem}物件
+     *
+     * @return 新的{@link RadioMenuItem}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public RadioMenuItem build(java.lang.String arg0, javafx.scene.Node arg1)
+    {
+        RadioMenuItem instance = new RadioMenuItem(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

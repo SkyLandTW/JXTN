@@ -109,4 +109,18 @@ public class PolylineBuilder<Z extends Polyline, B extends PolylineBuilder<Z, B>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Polyline}物件
+     *
+     * @return 新的{@link Polyline}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Polyline build(double[] arg0)
+    {
+        Polyline instance = new Polyline(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

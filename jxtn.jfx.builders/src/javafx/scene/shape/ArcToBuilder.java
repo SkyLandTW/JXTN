@@ -474,4 +474,18 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ArcTo}物件
+     *
+     * @return 新的{@link ArcTo}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ArcTo build(double arg0, double arg1, double arg2, double arg3, double arg4, boolean arg5, boolean arg6)
+    {
+        ArcTo instance = new ArcTo(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

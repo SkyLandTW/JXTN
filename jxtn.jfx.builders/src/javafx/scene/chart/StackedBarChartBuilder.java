@@ -58,4 +58,32 @@ public class StackedBarChartBuilder<X extends java.lang.Object, Y extends java.l
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link StackedBarChart}物件
+     *
+     * @return 新的{@link StackedBarChart}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public StackedBarChart<X, Y> build(javafx.scene.chart.Axis<X> arg0, javafx.scene.chart.Axis<Y> arg1, javafx.collections.ObservableList<javafx.scene.chart.XYChart.Series<X, Y>> arg2)
+    {
+        StackedBarChart<X, Y> instance = new StackedBarChart<X, Y>(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link StackedBarChart}物件
+     *
+     * @return 新的{@link StackedBarChart}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public StackedBarChart<X, Y> build(javafx.scene.chart.Axis<X> arg0, javafx.scene.chart.Axis<Y> arg1, javafx.collections.ObservableList<javafx.scene.chart.XYChart.Series<X, Y>> arg2, double arg3)
+    {
+        StackedBarChart<X, Y> instance = new StackedBarChart<X, Y>(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

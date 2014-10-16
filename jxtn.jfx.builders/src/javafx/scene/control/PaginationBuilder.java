@@ -288,4 +288,32 @@ public class PaginationBuilder<Z extends Pagination, B extends PaginationBuilder
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Pagination}物件
+     *
+     * @return 新的{@link Pagination}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Pagination build(int arg0)
+    {
+        Pagination instance = new Pagination(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Pagination}物件
+     *
+     * @return 新的{@link Pagination}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Pagination build(int arg0, int arg1)
+    {
+        Pagination instance = new Pagination(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

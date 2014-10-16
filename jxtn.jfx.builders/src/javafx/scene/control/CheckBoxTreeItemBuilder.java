@@ -226,4 +226,60 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link CheckBoxTreeItem}物件
+     *
+     * @return 新的{@link CheckBoxTreeItem}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CheckBoxTreeItem<T> build(T arg0)
+    {
+        CheckBoxTreeItem<T> instance = new CheckBoxTreeItem<T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link CheckBoxTreeItem}物件
+     *
+     * @return 新的{@link CheckBoxTreeItem}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CheckBoxTreeItem<T> build(T arg0, javafx.scene.Node arg1)
+    {
+        CheckBoxTreeItem<T> instance = new CheckBoxTreeItem<T>(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link CheckBoxTreeItem}物件
+     *
+     * @return 新的{@link CheckBoxTreeItem}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CheckBoxTreeItem<T> build(T arg0, javafx.scene.Node arg1, boolean arg2)
+    {
+        CheckBoxTreeItem<T> instance = new CheckBoxTreeItem<T>(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link CheckBoxTreeItem}物件
+     *
+     * @return 新的{@link CheckBoxTreeItem}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CheckBoxTreeItem<T> build(T arg0, javafx.scene.Node arg1, boolean arg2, boolean arg3)
+    {
+        CheckBoxTreeItem<T> instance = new CheckBoxTreeItem<T>(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

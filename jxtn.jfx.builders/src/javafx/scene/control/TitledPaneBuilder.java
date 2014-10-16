@@ -288,4 +288,18 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link TitledPane}物件
+     *
+     * @return 新的{@link TitledPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public TitledPane build(java.lang.String arg0, javafx.scene.Node arg1)
+    {
+        TitledPane instance = new TitledPane(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

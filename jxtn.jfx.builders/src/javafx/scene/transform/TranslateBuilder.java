@@ -226,4 +226,32 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Translate}物件
+     *
+     * @return 新的{@link Translate}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Translate build(double arg0, double arg1)
+    {
+        Translate instance = new Translate(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Translate}物件
+     *
+     * @return 新的{@link Translate}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Translate build(double arg0, double arg1, double arg2)
+    {
+        Translate instance = new Translate(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

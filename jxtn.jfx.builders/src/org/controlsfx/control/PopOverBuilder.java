@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link PopOver}建構器
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.0.6_20.jar
+ * @version controlsfx-8.20.7.jar
  * @param <Z> 要建構的物件型態(需繼承{@link PopOver})
  * @param <B> 建構器本身的型態(需繼承{@link PopOverBuilder})
  */
@@ -532,6 +532,20 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     public PopOver build()
     {
         PopOver instance = new PopOver();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link PopOver}物件
+     *
+     * @return 新的{@link PopOver}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public PopOver build(javafx.scene.Node arg0)
+    {
+        PopOver instance = new PopOver(arg0);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

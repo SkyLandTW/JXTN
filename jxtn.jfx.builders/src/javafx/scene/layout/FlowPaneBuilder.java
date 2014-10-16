@@ -474,4 +474,102 @@ public class FlowPaneBuilder<Z extends FlowPane, B extends FlowPaneBuilder<Z, B>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link FlowPane}物件
+     *
+     * @return 新的{@link FlowPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public FlowPane build(javafx.geometry.Orientation arg0)
+    {
+        FlowPane instance = new FlowPane(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link FlowPane}物件
+     *
+     * @return 新的{@link FlowPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public FlowPane build(javafx.scene.Node[] arg0)
+    {
+        FlowPane instance = new FlowPane(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link FlowPane}物件
+     *
+     * @return 新的{@link FlowPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public FlowPane build(double arg0, double arg1)
+    {
+        FlowPane instance = new FlowPane(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link FlowPane}物件
+     *
+     * @return 新的{@link FlowPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public FlowPane build(javafx.geometry.Orientation arg0, javafx.scene.Node[] arg1)
+    {
+        FlowPane instance = new FlowPane(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link FlowPane}物件
+     *
+     * @return 新的{@link FlowPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public FlowPane build(javafx.geometry.Orientation arg0, double arg1, double arg2)
+    {
+        FlowPane instance = new FlowPane(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link FlowPane}物件
+     *
+     * @return 新的{@link FlowPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public FlowPane build(double arg0, double arg1, javafx.scene.Node[] arg2)
+    {
+        FlowPane instance = new FlowPane(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link FlowPane}物件
+     *
+     * @return 新的{@link FlowPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public FlowPane build(javafx.geometry.Orientation arg0, double arg1, double arg2, javafx.scene.Node[] arg3)
+    {
+        FlowPane instance = new FlowPane(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

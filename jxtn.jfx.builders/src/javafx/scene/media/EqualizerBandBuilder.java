@@ -17,7 +17,7 @@ package javafx.scene.media;
 @SuppressWarnings("all")
 public class EqualizerBandBuilder<Z extends EqualizerBand, B extends EqualizerBandBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements EqualizerBandBuilderExt<Z, B>
 {
 
     private boolean hasBandwidth;
@@ -93,6 +93,20 @@ public class EqualizerBandBuilder<Z extends EqualizerBand, B extends EqualizerBa
     public EqualizerBand build()
     {
         EqualizerBand instance = new EqualizerBand();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link EqualizerBand}物件
+     *
+     * @return 新的{@link EqualizerBand}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public EqualizerBand build(double arg0, double arg1, double arg2)
+    {
+        EqualizerBand instance = new EqualizerBand(arg0, arg1, arg2);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

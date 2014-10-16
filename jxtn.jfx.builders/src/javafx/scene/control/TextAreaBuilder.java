@@ -419,4 +419,18 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link TextArea}物件
+     *
+     * @return 新的{@link TextArea}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public TextArea build(java.lang.String arg0)
+    {
+        TextArea instance = new TextArea(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -39,4 +39,18 @@ public class KeyCharacterCombinationBuilder<Z extends KeyCharacterCombination, B
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link KeyCharacterCombination}物件
+     *
+     * @return 新的{@link KeyCharacterCombination}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public KeyCharacterCombination build(java.lang.String arg0, javafx.scene.input.KeyCombination.ModifierValue arg1, javafx.scene.input.KeyCombination.ModifierValue arg2, javafx.scene.input.KeyCombination.ModifierValue arg3, javafx.scene.input.KeyCombination.ModifierValue arg4, javafx.scene.input.KeyCombination.ModifierValue arg5)
+    {
+        KeyCharacterCombination instance = new KeyCharacterCombination(arg0, arg1, arg2, arg3, arg4, arg5);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

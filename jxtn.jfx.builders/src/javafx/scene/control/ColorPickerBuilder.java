@@ -109,4 +109,18 @@ public class ColorPickerBuilder<Z extends ColorPicker, B extends ColorPickerBuil
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ColorPicker}物件
+     *
+     * @return 新的{@link ColorPicker}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ColorPicker build(javafx.scene.paint.Color arg0)
+    {
+        ColorPicker instance = new ColorPicker(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

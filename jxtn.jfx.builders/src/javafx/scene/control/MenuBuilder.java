@@ -357,4 +357,32 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Menu}物件
+     *
+     * @return 新的{@link Menu}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Menu build(java.lang.String arg0)
+    {
+        Menu instance = new Menu(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Menu}物件
+     *
+     * @return 新的{@link Menu}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Menu build(java.lang.String arg0, javafx.scene.Node arg1)
+    {
+        Menu instance = new Menu(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

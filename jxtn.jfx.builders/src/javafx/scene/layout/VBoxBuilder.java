@@ -226,4 +226,46 @@ public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link VBox}物件
+     *
+     * @return 新的{@link VBox}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public VBox build(double arg0)
+    {
+        VBox instance = new VBox(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link VBox}物件
+     *
+     * @return 新的{@link VBox}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public VBox build(javafx.scene.Node[] arg0)
+    {
+        VBox instance = new VBox(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link VBox}物件
+     *
+     * @return 新的{@link VBox}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public VBox build(double arg0, javafx.scene.Node[] arg1)
+    {
+        VBox instance = new VBox(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

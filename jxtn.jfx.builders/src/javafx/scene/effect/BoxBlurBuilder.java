@@ -288,4 +288,18 @@ public class BoxBlurBuilder<Z extends BoxBlur, B extends BoxBlurBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link BoxBlur}物件
+     *
+     * @return 新的{@link BoxBlur}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public BoxBlur build(double arg0, double arg1, int arg2)
+    {
+        BoxBlur instance = new BoxBlur(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

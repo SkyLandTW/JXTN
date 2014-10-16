@@ -17,7 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class BorderBuilder<Z extends Border, B extends BorderBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements BorderBuilderExt<Z, B>
 {
 
     @Override
@@ -35,6 +35,48 @@ public class BorderBuilder<Z extends Border, B extends BorderBuilder<Z, B>>
     public Border build(javafx.scene.layout.BorderImage[] arg0)
     {
         Border instance = new Border(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Border}物件
+     *
+     * @return 新的{@link Border}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Border build(javafx.scene.layout.BorderStroke[] arg0)
+    {
+        Border instance = new Border(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Border}物件
+     *
+     * @return 新的{@link Border}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Border build(java.util.List<javafx.scene.layout.BorderStroke> arg0, java.util.List<javafx.scene.layout.BorderImage> arg1)
+    {
+        Border instance = new Border(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Border}物件
+     *
+     * @return 新的{@link Border}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Border build(javafx.scene.layout.BorderStroke[] arg0, javafx.scene.layout.BorderImage[] arg1)
+    {
+        Border instance = new Border(arg0, arg1);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

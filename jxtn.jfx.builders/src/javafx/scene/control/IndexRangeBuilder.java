@@ -17,7 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class IndexRangeBuilder<Z extends IndexRange, B extends IndexRangeBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements IndexRangeBuilderExt<Z, B>
 {
 
     @Override
@@ -35,6 +35,20 @@ public class IndexRangeBuilder<Z extends IndexRange, B extends IndexRangeBuilder
     public IndexRange build(javafx.scene.control.IndexRange arg0)
     {
         IndexRange instance = new IndexRange(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link IndexRange}物件
+     *
+     * @return 新的{@link IndexRange}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public IndexRange build(int arg0, int arg1)
+    {
+        IndexRange instance = new IndexRange(arg0, arg1);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

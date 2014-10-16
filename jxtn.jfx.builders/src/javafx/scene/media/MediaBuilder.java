@@ -17,7 +17,7 @@ package javafx.scene.media;
 @SuppressWarnings("all")
 public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements MediaBuilderExt<Z, B>
 {
 
     private boolean hasOnError;

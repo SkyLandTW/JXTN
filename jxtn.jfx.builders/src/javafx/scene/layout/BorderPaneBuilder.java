@@ -350,4 +350,32 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link BorderPane}物件
+     *
+     * @return 新的{@link BorderPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public BorderPane build(javafx.scene.Node arg0)
+    {
+        BorderPane instance = new BorderPane(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link BorderPane}物件
+     *
+     * @return 新的{@link BorderPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public BorderPane build(javafx.scene.Node arg0, javafx.scene.Node arg1, javafx.scene.Node arg2, javafx.scene.Node arg3, javafx.scene.Node arg4)
+    {
+        BorderPane instance = new BorderPane(arg0, arg1, arg2, arg3, arg4);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -102,4 +102,32 @@ public class HyperlinkBuilder<Z extends Hyperlink, B extends HyperlinkBuilder<Z,
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Hyperlink}物件
+     *
+     * @return 新的{@link Hyperlink}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Hyperlink build(java.lang.String arg0)
+    {
+        Hyperlink instance = new Hyperlink(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Hyperlink}物件
+     *
+     * @return 新的{@link Hyperlink}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Hyperlink build(java.lang.String arg0, javafx.scene.Node arg1)
+    {
+        Hyperlink instance = new Hyperlink(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

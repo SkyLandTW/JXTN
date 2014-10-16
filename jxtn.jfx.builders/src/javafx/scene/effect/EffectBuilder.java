@@ -17,7 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class EffectBuilder<Z extends Effect, B extends EffectBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements EffectBuilderExt<Z, B>
 {
 
     @Override

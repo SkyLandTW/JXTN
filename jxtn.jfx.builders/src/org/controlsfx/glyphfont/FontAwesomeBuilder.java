@@ -9,7 +9,7 @@ package org.controlsfx.glyphfont;
  * {@link FontAwesome}建構器
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.0.6_20.jar
+ * @version controlsfx-8.20.7.jar
  * @param <Z> 要建構的物件型態(需繼承{@link FontAwesome})
  * @param <B> 建構器本身的型態(需繼承{@link FontAwesomeBuilder})
  */
@@ -36,6 +36,34 @@ public class FontAwesomeBuilder<Z extends FontAwesome, B extends FontAwesomeBuil
     public FontAwesome build()
     {
         FontAwesome instance = new FontAwesome();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link FontAwesome}物件
+     *
+     * @return 新的{@link FontAwesome}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public FontAwesome build(java.io.InputStream arg0)
+    {
+        FontAwesome instance = new FontAwesome(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link FontAwesome}物件
+     *
+     * @return 新的{@link FontAwesome}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public FontAwesome build(java.lang.String arg0)
+    {
+        FontAwesome instance = new FontAwesome(arg0);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

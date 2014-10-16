@@ -102,4 +102,32 @@ public class SphereBuilder<Z extends Sphere, B extends SphereBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Sphere}物件
+     *
+     * @return 新的{@link Sphere}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Sphere build(double arg0)
+    {
+        Sphere instance = new Sphere(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Sphere}物件
+     *
+     * @return 新的{@link Sphere}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Sphere build(double arg0, int arg1)
+    {
+        Sphere instance = new Sphere(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

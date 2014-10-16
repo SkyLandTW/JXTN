@@ -39,4 +39,18 @@ public class RadialGradientBuilder<Z extends RadialGradient, B extends RadialGra
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link RadialGradient}物件
+     *
+     * @return 新的{@link RadialGradient}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public RadialGradient build(double arg0, double arg1, double arg2, double arg3, double arg4, boolean arg5, javafx.scene.paint.CycleMethod arg6, javafx.scene.paint.Stop[] arg7)
+    {
+        RadialGradient instance = new RadialGradient(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

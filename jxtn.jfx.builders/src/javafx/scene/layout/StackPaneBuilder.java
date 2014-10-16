@@ -102,4 +102,18 @@ public class StackPaneBuilder<Z extends StackPane, B extends StackPaneBuilder<Z,
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link StackPane}物件
+     *
+     * @return 新的{@link StackPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public StackPane build(javafx.scene.Node[] arg0)
+    {
+        StackPane instance = new StackPane(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

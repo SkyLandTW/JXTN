@@ -17,7 +17,7 @@ package javafx.scene.canvas;
 @SuppressWarnings("all")
 public class GraphicsContextBuilder<Z extends GraphicsContext, B extends GraphicsContextBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements GraphicsContextBuilderExt<Z, B>
 {
 
     private boolean hasEffect;

@@ -226,4 +226,60 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Circle}物件
+     *
+     * @return 新的{@link Circle}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Circle build(double arg0)
+    {
+        Circle instance = new Circle(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Circle}物件
+     *
+     * @return 新的{@link Circle}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Circle build(double arg0, javafx.scene.paint.Paint arg1)
+    {
+        Circle instance = new Circle(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Circle}物件
+     *
+     * @return 新的{@link Circle}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Circle build(double arg0, double arg1, double arg2)
+    {
+        Circle instance = new Circle(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Circle}物件
+     *
+     * @return 新的{@link Circle}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Circle build(double arg0, double arg1, double arg2, javafx.scene.paint.Paint arg3)
+    {
+        Circle instance = new Circle(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

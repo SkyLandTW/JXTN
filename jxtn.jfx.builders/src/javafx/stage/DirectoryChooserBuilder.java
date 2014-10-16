@@ -17,7 +17,7 @@ package javafx.stage;
 @SuppressWarnings("all")
 public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends DirectoryChooserBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements DirectoryChooserBuilderExt<Z, B>
 {
 
     private boolean hasInitialDirectory;

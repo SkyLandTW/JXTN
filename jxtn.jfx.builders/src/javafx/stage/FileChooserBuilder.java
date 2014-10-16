@@ -17,7 +17,7 @@ package javafx.stage;
 @SuppressWarnings("all")
 public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements FileChooserBuilderExt<Z, B>
 {
 
     private boolean hasExtensionFilters;

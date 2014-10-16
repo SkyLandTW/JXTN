@@ -17,7 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class BorderStrokeBuilder<Z extends BorderStroke, B extends BorderStrokeBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements BorderStrokeBuilderExt<Z, B>
 {
 
     @Override
@@ -35,6 +35,34 @@ public class BorderStrokeBuilder<Z extends BorderStroke, B extends BorderStrokeB
     public BorderStroke build(javafx.scene.paint.Paint arg0, javafx.scene.layout.BorderStrokeStyle arg1, javafx.scene.layout.CornerRadii arg2, javafx.scene.layout.BorderWidths arg3)
     {
         BorderStroke instance = new BorderStroke(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link BorderStroke}物件
+     *
+     * @return 新的{@link BorderStroke}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public BorderStroke build(javafx.scene.paint.Paint arg0, javafx.scene.layout.BorderStrokeStyle arg1, javafx.scene.layout.CornerRadii arg2, javafx.scene.layout.BorderWidths arg3, javafx.geometry.Insets arg4)
+    {
+        BorderStroke instance = new BorderStroke(arg0, arg1, arg2, arg3, arg4);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link BorderStroke}物件
+     *
+     * @return 新的{@link BorderStroke}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public BorderStroke build(javafx.scene.paint.Paint arg0, javafx.scene.paint.Paint arg1, javafx.scene.paint.Paint arg2, javafx.scene.paint.Paint arg3, javafx.scene.layout.BorderStrokeStyle arg4, javafx.scene.layout.BorderStrokeStyle arg5, javafx.scene.layout.BorderStrokeStyle arg6, javafx.scene.layout.BorderStrokeStyle arg7, javafx.scene.layout.CornerRadii arg8, javafx.scene.layout.BorderWidths arg9, javafx.geometry.Insets arg10)
+    {
+        BorderStroke instance = new BorderStroke(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

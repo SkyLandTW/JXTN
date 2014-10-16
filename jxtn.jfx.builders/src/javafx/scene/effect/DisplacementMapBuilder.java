@@ -474,4 +474,32 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link DisplacementMap}物件
+     *
+     * @return 新的{@link DisplacementMap}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public DisplacementMap build(javafx.scene.effect.FloatMap arg0)
+    {
+        DisplacementMap instance = new DisplacementMap(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link DisplacementMap}物件
+     *
+     * @return 新的{@link DisplacementMap}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public DisplacementMap build(javafx.scene.effect.FloatMap arg0, double arg1, double arg2, double arg3, double arg4)
+    {
+        DisplacementMap instance = new DisplacementMap(arg0, arg1, arg2, arg3, arg4);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

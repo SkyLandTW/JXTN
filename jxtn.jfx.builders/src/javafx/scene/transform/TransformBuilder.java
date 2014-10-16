@@ -17,7 +17,7 @@ package javafx.scene.transform;
 @SuppressWarnings("all")
 public class TransformBuilder<Z extends Transform, B extends TransformBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements TransformBuilderExt<Z, B>
 {
 
     private boolean hasOnTransformChanged;

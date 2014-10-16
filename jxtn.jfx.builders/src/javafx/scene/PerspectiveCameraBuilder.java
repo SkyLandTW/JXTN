@@ -164,4 +164,18 @@ public class PerspectiveCameraBuilder<Z extends PerspectiveCamera, B extends Per
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link PerspectiveCamera}物件
+     *
+     * @return 新的{@link PerspectiveCamera}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public PerspectiveCamera build(boolean arg0)
+    {
+        PerspectiveCamera instance = new PerspectiveCamera(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

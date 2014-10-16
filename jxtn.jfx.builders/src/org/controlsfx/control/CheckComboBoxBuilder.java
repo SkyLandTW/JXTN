@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link CheckComboBox}建構器
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.0.6_20.jar
+ * @version controlsfx-8.20.7.jar
  * @param <Z> 要建構的物件型態(需繼承{@link CheckComboBox})
  * @param <B> 建構器本身的型態(需繼承{@link CheckComboBoxBuilder})
  */
@@ -21,15 +21,15 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
 {
 
     private boolean hasCheckModel;
-    private javafx.scene.control.MultipleSelectionModel<T> valCheckModel;
+    private org.controlsfx.control.IndexedCheckModel<T> valCheckModel;
 
     private boolean hasItems;
     private java.util.Collection<T> valItems;
 
     private boolean bound1CheckModel;
     private boolean bound2CheckModel;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> obsrv1CheckModel;
-    private javafx.beans.property.Property<javafx.scene.control.MultipleSelectionModel<T>> obsrv2CheckModel;
+    private javafx.beans.value.ObservableValue<? extends org.controlsfx.control.IndexedCheckModel<T>> obsrv1CheckModel;
+    private javafx.beans.property.Property<org.controlsfx.control.IndexedCheckModel<T>> obsrv2CheckModel;
 
     @Override
     public void applyTo(Z instance)
@@ -46,13 +46,13 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
     }
 
     /**
-     * 設定屬性{@link CheckComboBox#setCheckModel(javafx.scene.control.MultipleSelectionModel)}
+     * 設定屬性{@link CheckComboBox#setCheckModel(org.controlsfx.control.IndexedCheckModel)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B checkModel(javafx.scene.control.MultipleSelectionModel<T> value)
+    public B checkModel(org.controlsfx.control.IndexedCheckModel<T> value)
     {
         this.hasCheckModel = true;
         this.valCheckModel = value;
@@ -130,7 +130,7 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindCheckModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> source)
+    public final B bindCheckModel(javafx.beans.value.ObservableValue<? extends org.controlsfx.control.IndexedCheckModel<T>> source)
     {
         java.util.Objects.requireNonNull(source);
         this.bound1CheckModel = true;
@@ -147,7 +147,7 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindBidirectionalCheckModel(javafx.beans.property.Property<javafx.scene.control.MultipleSelectionModel<T>> source)
+    public final B bindBidirectionalCheckModel(javafx.beans.property.Property<org.controlsfx.control.IndexedCheckModel<T>> source)
     {
         java.util.Objects.requireNonNull(source);
         this.bound1CheckModel = false;
@@ -167,6 +167,20 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
     public CheckComboBox<T> build()
     {
         CheckComboBox<T> instance = new CheckComboBox<T>();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link CheckComboBox}物件
+     *
+     * @return 新的{@link CheckComboBox}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CheckComboBox<T> build(javafx.collections.ObservableList<T> arg0)
+    {
+        CheckComboBox<T> instance = new CheckComboBox<T>(arg0);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

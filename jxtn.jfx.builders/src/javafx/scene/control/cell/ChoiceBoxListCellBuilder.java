@@ -171,4 +171,60 @@ public class ChoiceBoxListCellBuilder<T extends java.lang.Object, Z extends Choi
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ChoiceBoxListCell}物件
+     *
+     * @return 新的{@link ChoiceBoxListCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ChoiceBoxListCell<T> build(javafx.collections.ObservableList<T> arg0)
+    {
+        ChoiceBoxListCell<T> instance = new ChoiceBoxListCell<T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ChoiceBoxListCell}物件
+     *
+     * @return 新的{@link ChoiceBoxListCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ChoiceBoxListCell<T> build(T[] arg0)
+    {
+        ChoiceBoxListCell<T> instance = new ChoiceBoxListCell<T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ChoiceBoxListCell}物件
+     *
+     * @return 新的{@link ChoiceBoxListCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ChoiceBoxListCell<T> build(javafx.util.StringConverter<T> arg0, T[] arg1)
+    {
+        ChoiceBoxListCell<T> instance = new ChoiceBoxListCell<T>(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ChoiceBoxListCell}物件
+     *
+     * @return 新的{@link ChoiceBoxListCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ChoiceBoxListCell<T> build(javafx.util.StringConverter<T> arg0, javafx.collections.ObservableList<T> arg1)
+    {
+        ChoiceBoxListCell<T> instance = new ChoiceBoxListCell<T>(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

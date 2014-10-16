@@ -536,4 +536,18 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Tooltip}物件
+     *
+     * @return 新的{@link Tooltip}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Tooltip build(java.lang.String arg0)
+    {
+        Tooltip instance = new Tooltip(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -970,4 +970,18 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ScrollPane}物件
+     *
+     * @return 新的{@link ScrollPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ScrollPane build(javafx.scene.Node arg0)
+    {
+        ScrollPane instance = new ScrollPane(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

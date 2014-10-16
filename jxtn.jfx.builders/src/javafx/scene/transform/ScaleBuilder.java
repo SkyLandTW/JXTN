@@ -412,4 +412,60 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Scale}物件
+     *
+     * @return 新的{@link Scale}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Scale build(double arg0, double arg1)
+    {
+        Scale instance = new Scale(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Scale}物件
+     *
+     * @return 新的{@link Scale}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Scale build(double arg0, double arg1, double arg2)
+    {
+        Scale instance = new Scale(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Scale}物件
+     *
+     * @return 新的{@link Scale}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Scale build(double arg0, double arg1, double arg2, double arg3)
+    {
+        Scale instance = new Scale(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Scale}物件
+     *
+     * @return 新的{@link Scale}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Scale build(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5)
+    {
+        Scale instance = new Scale(arg0, arg1, arg2, arg3, arg4, arg5);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

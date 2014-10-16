@@ -101,4 +101,18 @@ public class AreaChartBuilder<X extends java.lang.Object, Y extends java.lang.Ob
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link AreaChart}物件
+     *
+     * @return 新的{@link AreaChart}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public AreaChart<X, Y> build(javafx.scene.chart.Axis<X> arg0, javafx.scene.chart.Axis<Y> arg1, javafx.collections.ObservableList<javafx.scene.chart.XYChart.Series<X, Y>> arg2)
+    {
+        AreaChart<X, Y> instance = new AreaChart<X, Y>(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

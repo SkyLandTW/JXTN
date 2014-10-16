@@ -288,4 +288,32 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Blend}物件
+     *
+     * @return 新的{@link Blend}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Blend build(javafx.scene.effect.BlendMode arg0)
+    {
+        Blend instance = new Blend(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Blend}物件
+     *
+     * @return 新的{@link Blend}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Blend build(javafx.scene.effect.BlendMode arg0, javafx.scene.effect.Effect arg1, javafx.scene.effect.Effect arg2)
+    {
+        Blend instance = new Blend(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

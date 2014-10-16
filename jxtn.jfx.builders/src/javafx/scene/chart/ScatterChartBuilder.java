@@ -39,4 +39,18 @@ public class ScatterChartBuilder<X extends java.lang.Object, Y extends java.lang
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ScatterChart}物件
+     *
+     * @return 新的{@link ScatterChart}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ScatterChart<X, Y> build(javafx.scene.chart.Axis<X> arg0, javafx.scene.chart.Axis<Y> arg1, javafx.collections.ObservableList<javafx.scene.chart.XYChart.Series<X, Y>> arg2)
+    {
+        ScatterChart<X, Y> instance = new ScatterChart<X, Y>(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

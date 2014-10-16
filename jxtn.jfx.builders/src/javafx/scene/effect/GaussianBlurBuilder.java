@@ -164,4 +164,18 @@ public class GaussianBlurBuilder<Z extends GaussianBlur, B extends GaussianBlurB
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link GaussianBlur}物件
+     *
+     * @return 新的{@link GaussianBlur}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public GaussianBlur build(double arg0)
+    {
+        GaussianBlur instance = new GaussianBlur(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

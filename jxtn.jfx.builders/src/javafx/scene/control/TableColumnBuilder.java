@@ -481,4 +481,18 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link TableColumn}物件
+     *
+     * @return 新的{@link TableColumn}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public TableColumn<S, T> build(java.lang.String arg0)
+    {
+        TableColumn<S, T> instance = new TableColumn<S, T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -17,7 +17,7 @@ package javafx.scene;
 @SuppressWarnings("all")
 public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements SceneBuilderExt<Z, B>
 {
 
     private boolean hasCamera;
@@ -2956,6 +2956,76 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     public Scene build(javafx.scene.Parent arg0)
     {
         Scene instance = new Scene(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Scene}物件
+     *
+     * @return 新的{@link Scene}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Scene build(javafx.scene.Parent arg0, javafx.scene.paint.Paint arg1)
+    {
+        Scene instance = new Scene(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Scene}物件
+     *
+     * @return 新的{@link Scene}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Scene build(javafx.scene.Parent arg0, double arg1, double arg2)
+    {
+        Scene instance = new Scene(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Scene}物件
+     *
+     * @return 新的{@link Scene}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Scene build(javafx.scene.Parent arg0, double arg1, double arg2, javafx.scene.paint.Paint arg3)
+    {
+        Scene instance = new Scene(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Scene}物件
+     *
+     * @return 新的{@link Scene}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Scene build(javafx.scene.Parent arg0, double arg1, double arg2, boolean arg3)
+    {
+        Scene instance = new Scene(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Scene}物件
+     *
+     * @return 新的{@link Scene}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Scene build(javafx.scene.Parent arg0, double arg1, double arg2, boolean arg3, javafx.scene.SceneAntialiasing arg4)
+    {
+        Scene instance = new Scene(arg0, arg1, arg2, arg3, arg4);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

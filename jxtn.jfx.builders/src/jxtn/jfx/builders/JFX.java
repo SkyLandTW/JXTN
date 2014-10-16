@@ -2404,6 +2404,83 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link javafx.scene.control.Alert}建構器
+     *
+     * @return 新的{@link javafx.scene.control.AlertBuilder}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.scene.control.AlertBuilder<javafx.scene.control.Alert, ?> alert()
+    {
+        return new javafx.scene.control.AlertBuilder();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.control.ButtonBar}建構器
+     *
+     * @return 新的{@link javafx.scene.control.ButtonBarBuilder}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.scene.control.ButtonBarBuilder<javafx.scene.control.ButtonBar, ?> buttonBar()
+    {
+        return new javafx.scene.control.ButtonBarBuilder();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.control.ButtonType}建構器
+     *
+     * @return 新的{@link javafx.scene.control.ButtonTypeBuilder}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.scene.control.ButtonTypeBuilder<javafx.scene.control.ButtonType, ?> buttonType()
+    {
+        return new javafx.scene.control.ButtonTypeBuilder();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.control.ChoiceDialog}建構器
+     *
+     * @return 新的{@link javafx.scene.control.ChoiceDialogBuilder}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <T extends java.lang.Object> javafx.scene.control.ChoiceDialogBuilder<T, javafx.scene.control.ChoiceDialog<T>, ?> choiceDialog()
+    {
+        return new javafx.scene.control.ChoiceDialogBuilder();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.control.Dialog}建構器
+     *
+     * @return 新的{@link javafx.scene.control.DialogBuilder}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <R extends java.lang.Object> javafx.scene.control.DialogBuilder<R, javafx.scene.control.Dialog<R>, ?> dialog()
+    {
+        return new javafx.scene.control.DialogBuilder();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.control.DialogPane}建構器
+     *
+     * @return 新的{@link javafx.scene.control.DialogPaneBuilder}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.scene.control.DialogPaneBuilder<javafx.scene.control.DialogPane, ?> dialogPane()
+    {
+        return new javafx.scene.control.DialogPaneBuilder();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.control.TextInputDialog}建構器
+     *
+     * @return 新的{@link javafx.scene.control.TextInputDialogBuilder}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.scene.control.TextInputDialogBuilder<javafx.scene.control.TextInputDialog, ?> textInputDialog()
+    {
+        return new javafx.scene.control.TextInputDialogBuilder();
+    }
+
+    /**
      * 建立新的{@link org.controlsfx.control.BreadCrumbBar}建構器
      *
      * @return 新的{@link org.controlsfx.control.BreadCrumbBarBuilder}
@@ -2412,17 +2489,6 @@ public final class JFX
     public static <T extends java.lang.Object> org.controlsfx.control.BreadCrumbBarBuilder<T, org.controlsfx.control.BreadCrumbBar<T>, ?> breadCrumbBar()
     {
         return new org.controlsfx.control.BreadCrumbBarBuilder();
-    }
-
-    /**
-     * 建立新的{@link org.controlsfx.control.ButtonBar}建構器
-     *
-     * @return 新的{@link org.controlsfx.control.ButtonBarBuilder}
-     */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static org.controlsfx.control.ButtonBarBuilder<org.controlsfx.control.ButtonBar, ?> buttonBar()
-    {
-        return new org.controlsfx.control.ButtonBarBuilder();
     }
 
     /**
@@ -2613,14 +2679,25 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.action.AbstractAction}建構器
+     * 建立新的{@link org.controlsfx.control.StatusBar}建構器
      *
-     * @return 新的{@link org.controlsfx.control.action.AbstractActionBuilder}
+     * @return 新的{@link org.controlsfx.control.StatusBarBuilder}
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static org.controlsfx.control.action.AbstractActionBuilder<org.controlsfx.control.action.AbstractAction, ?> abstractAction()
+    public static org.controlsfx.control.StatusBarBuilder<org.controlsfx.control.StatusBar, ?> statusBar()
     {
-        return new org.controlsfx.control.action.AbstractActionBuilder();
+        return new org.controlsfx.control.StatusBarBuilder();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.action.Action}建構器
+     *
+     * @return 新的{@link org.controlsfx.control.action.ActionBuilder}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.action.ActionBuilder<org.controlsfx.control.action.Action, ?> action()
+    {
+        return new org.controlsfx.control.action.ActionBuilder();
     }
 
     /**
@@ -2767,50 +2844,6 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.table.TableMenuButtonAccessor}建構器
-     *
-     * @return 新的{@link org.controlsfx.control.table.TableMenuButtonAccessorBuilder}
-     */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static org.controlsfx.control.table.TableMenuButtonAccessorBuilder<org.controlsfx.control.table.TableMenuButtonAccessor, ?> tableMenuButtonAccessor()
-    {
-        return new org.controlsfx.control.table.TableMenuButtonAccessorBuilder();
-    }
-
-    /**
-     * 建立新的{@link org.controlsfx.control.table.model.JavaFXTableModels}建構器
-     *
-     * @return 新的{@link org.controlsfx.control.table.model.JavaFXTableModelsBuilder}
-     */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static org.controlsfx.control.table.model.JavaFXTableModelsBuilder<org.controlsfx.control.table.model.JavaFXTableModels, ?> javaFXTableModels()
-    {
-        return new org.controlsfx.control.table.model.JavaFXTableModelsBuilder();
-    }
-
-    /**
-     * 建立新的{@link org.controlsfx.control.table.model.TableModelTableView}建構器
-     *
-     * @return 新的{@link org.controlsfx.control.table.model.TableModelTableViewBuilder}
-     */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static <S extends java.lang.Object> org.controlsfx.control.table.model.TableModelTableViewBuilder<S, org.controlsfx.control.table.model.TableModelTableView<S>, ?> tableModelTableView()
-    {
-        return new org.controlsfx.control.table.model.TableModelTableViewBuilder();
-    }
-
-    /**
-     * 建立新的{@link org.controlsfx.control.table.model.TableModelValueFactory}建構器
-     *
-     * @return 新的{@link org.controlsfx.control.table.model.TableModelValueFactoryBuilder}
-     */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static <S extends java.lang.Object, T extends java.lang.Object> org.controlsfx.control.table.model.TableModelValueFactoryBuilder<S, T, org.controlsfx.control.table.model.TableModelValueFactory<S, T>, ?> tableModelValueFactory()
-    {
-        return new org.controlsfx.control.table.model.TableModelValueFactoryBuilder();
-    }
-
-    /**
      * 建立新的{@link org.controlsfx.control.textfield.CustomPasswordField}建構器
      *
      * @return 新的{@link org.controlsfx.control.textfield.CustomPasswordFieldBuilder}
@@ -2833,25 +2866,69 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.dialog.DefaultDialogAction}建構器
+     * 建立新的{@link org.controlsfx.dialog.CommandLinksDialog}建構器
      *
-     * @return 新的{@link org.controlsfx.dialog.DefaultDialogActionBuilder}
+     * @return 新的{@link org.controlsfx.dialog.CommandLinksDialogBuilder}
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static org.controlsfx.dialog.DefaultDialogActionBuilder<org.controlsfx.dialog.DefaultDialogAction, ?> defaultDialogAction()
+    public static org.controlsfx.dialog.CommandLinksDialogBuilder<org.controlsfx.dialog.CommandLinksDialog, ?> commandLinksDialog()
     {
-        return new org.controlsfx.dialog.DefaultDialogActionBuilder();
+        return new org.controlsfx.dialog.CommandLinksDialogBuilder();
     }
 
     /**
-     * 建立新的{@link org.controlsfx.dialog.Dialog}建構器
+     * 建立新的{@link org.controlsfx.dialog.ExceptionDialog}建構器
      *
-     * @return 新的{@link org.controlsfx.dialog.DialogBuilder}
+     * @return 新的{@link org.controlsfx.dialog.ExceptionDialogBuilder}
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static org.controlsfx.dialog.DialogBuilder<org.controlsfx.dialog.Dialog, ?> dialog()
+    public static org.controlsfx.dialog.ExceptionDialogBuilder<org.controlsfx.dialog.ExceptionDialog, ?> exceptionDialog()
     {
-        return new org.controlsfx.dialog.DialogBuilder();
+        return new org.controlsfx.dialog.ExceptionDialogBuilder();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.dialog.FontSelectorDialog}建構器
+     *
+     * @return 新的{@link org.controlsfx.dialog.FontSelectorDialogBuilder}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.dialog.FontSelectorDialogBuilder<org.controlsfx.dialog.FontSelectorDialog, ?> fontSelectorDialog()
+    {
+        return new org.controlsfx.dialog.FontSelectorDialogBuilder();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.dialog.LoginDialog}建構器
+     *
+     * @return 新的{@link org.controlsfx.dialog.LoginDialogBuilder}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.dialog.LoginDialogBuilder<org.controlsfx.dialog.LoginDialog, ?> loginDialog()
+    {
+        return new org.controlsfx.dialog.LoginDialogBuilder();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.dialog.ProgressDialog}建構器
+     *
+     * @return 新的{@link org.controlsfx.dialog.ProgressDialogBuilder}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.dialog.ProgressDialogBuilder<org.controlsfx.dialog.ProgressDialog, ?> progressDialog()
+    {
+        return new org.controlsfx.dialog.ProgressDialogBuilder();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.dialog.Wizard}建構器
+     *
+     * @return 新的{@link org.controlsfx.dialog.WizardBuilder}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.dialog.WizardBuilder<org.controlsfx.dialog.Wizard, ?> wizard()
+    {
+        return new org.controlsfx.dialog.WizardBuilder();
     }
 
     /**

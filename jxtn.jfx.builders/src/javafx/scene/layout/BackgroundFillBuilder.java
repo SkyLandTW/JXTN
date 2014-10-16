@@ -17,7 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class BackgroundFillBuilder<Z extends BackgroundFill, B extends BackgroundFillBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements BackgroundFillBuilderExt<Z, B>
 {
 
     @Override

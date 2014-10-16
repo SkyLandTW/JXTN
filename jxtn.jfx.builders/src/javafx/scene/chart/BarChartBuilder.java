@@ -163,4 +163,32 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link BarChart}物件
+     *
+     * @return 新的{@link BarChart}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public BarChart<X, Y> build(javafx.scene.chart.Axis<X> arg0, javafx.scene.chart.Axis<Y> arg1, javafx.collections.ObservableList<javafx.scene.chart.XYChart.Series<X, Y>> arg2)
+    {
+        BarChart<X, Y> instance = new BarChart<X, Y>(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link BarChart}物件
+     *
+     * @return 新的{@link BarChart}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public BarChart<X, Y> build(javafx.scene.chart.Axis<X> arg0, javafx.scene.chart.Axis<Y> arg1, javafx.collections.ObservableList<javafx.scene.chart.XYChart.Series<X, Y>> arg2, double arg3)
+    {
+        BarChart<X, Y> instance = new BarChart<X, Y>(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

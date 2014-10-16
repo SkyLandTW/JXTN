@@ -411,4 +411,18 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link SubScene}物件
+     *
+     * @return 新的{@link SubScene}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public SubScene build(javafx.scene.Parent arg0, double arg1, double arg2, boolean arg3, javafx.scene.SceneAntialiasing arg4)
+    {
+        SubScene instance = new SubScene(arg0, arg1, arg2, arg3, arg4);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

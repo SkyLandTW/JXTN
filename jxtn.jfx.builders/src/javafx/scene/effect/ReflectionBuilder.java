@@ -350,4 +350,18 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Reflection}物件
+     *
+     * @return 新的{@link Reflection}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Reflection build(double arg0, double arg1, double arg2, double arg3)
+    {
+        Reflection instance = new Reflection(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

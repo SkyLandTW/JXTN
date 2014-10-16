@@ -784,4 +784,32 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Text}物件
+     *
+     * @return 新的{@link Text}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Text build(java.lang.String arg0)
+    {
+        Text instance = new Text(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Text}物件
+     *
+     * @return 新的{@link Text}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Text build(double arg0, double arg1, java.lang.String arg2)
+    {
+        Text instance = new Text(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

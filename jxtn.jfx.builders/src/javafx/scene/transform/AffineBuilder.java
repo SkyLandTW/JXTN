@@ -803,4 +803,60 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Affine}物件
+     *
+     * @return 新的{@link Affine}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Affine build(javafx.scene.transform.Transform arg0)
+    {
+        Affine instance = new Affine(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Affine}物件
+     *
+     * @return 新的{@link Affine}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Affine build(double[] arg0, javafx.scene.transform.MatrixType arg1, int arg2)
+    {
+        Affine instance = new Affine(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Affine}物件
+     *
+     * @return 新的{@link Affine}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Affine build(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5)
+    {
+        Affine instance = new Affine(arg0, arg1, arg2, arg3, arg4, arg5);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Affine}物件
+     *
+     * @return 新的{@link Affine}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Affine build(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5, double arg6, double arg7, double arg8, double arg9, double arg10, double arg11)
+    {
+        Affine instance = new Affine(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -164,4 +164,18 @@ public class MoveToBuilder<Z extends MoveTo, B extends MoveToBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link MoveTo}物件
+     *
+     * @return 新的{@link MoveTo}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public MoveTo build(double arg0, double arg1)
+    {
+        MoveTo instance = new MoveTo(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

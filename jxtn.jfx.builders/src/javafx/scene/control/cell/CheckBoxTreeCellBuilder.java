@@ -164,4 +164,32 @@ public class CheckBoxTreeCellBuilder<T extends java.lang.Object, Z extends Check
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link CheckBoxTreeCell}物件
+     *
+     * @return 新的{@link CheckBoxTreeCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CheckBoxTreeCell<T> build(javafx.util.Callback<javafx.scene.control.TreeItem<T>, javafx.beans.value.ObservableValue<java.lang.Boolean>> arg0)
+    {
+        CheckBoxTreeCell<T> instance = new CheckBoxTreeCell<T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link CheckBoxTreeCell}物件
+     *
+     * @return 新的{@link CheckBoxTreeCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CheckBoxTreeCell<T> build(javafx.util.Callback<javafx.scene.control.TreeItem<T>, javafx.beans.value.ObservableValue<java.lang.Boolean>> arg0, javafx.util.StringConverter<javafx.scene.control.TreeItem<T>> arg1)
+    {
+        CheckBoxTreeCell<T> instance = new CheckBoxTreeCell<T>(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

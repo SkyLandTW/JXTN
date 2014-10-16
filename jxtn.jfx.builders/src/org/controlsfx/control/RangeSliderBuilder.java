@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link RangeSlider}建構器
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.0.6_20.jar
+ * @version controlsfx-8.20.7.jar
  * @param <Z> 要建構的物件型態(需繼承{@link RangeSlider})
  * @param <B> 建構器本身的型態(需繼承{@link RangeSliderBuilder})
  */
@@ -842,6 +842,20 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     public RangeSlider build()
     {
         RangeSlider instance = new RangeSlider();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link RangeSlider}物件
+     *
+     * @return 新的{@link RangeSlider}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public RangeSlider build(double arg0, double arg1, double arg2, double arg3)
+    {
+        RangeSlider instance = new RangeSlider(arg0, arg1, arg2, arg3);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

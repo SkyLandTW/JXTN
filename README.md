@@ -231,8 +231,11 @@ builders are already included).
 
 ##### Dependencies
  - FMPP for re-generation of builder classes: tested on v0.9.14.
- - ControlsFX at runtime: tested on v8.0.6. It's optional - you could remove
-   the library alongwith everything under _org/controlsfx/*_ directory.
+
+##### Additionals
+ - ControlsFX v8.20.7: It's optional and you could remove the library and
+   builder classes under _org/controlsfx/*_ directory.
+ - OpenJFX Dialogs v1.0.2: Part of JavaFX 8u40 to provide dialog support.
 
 ##### Installation
  1. Build *jxtn.jfx.builders*

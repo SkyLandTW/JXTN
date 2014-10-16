@@ -17,7 +17,7 @@ package javafx.scene.image;
 @SuppressWarnings("all")
 public class PixelFormatBuilder<T extends java.nio.Buffer, Z extends PixelFormat<T>, B extends PixelFormatBuilder<T, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements PixelFormatBuilderExt<T, Z, B>
 {
 
     @Override

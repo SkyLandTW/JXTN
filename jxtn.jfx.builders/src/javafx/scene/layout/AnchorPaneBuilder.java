@@ -40,4 +40,18 @@ public class AnchorPaneBuilder<Z extends AnchorPane, B extends AnchorPaneBuilder
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link AnchorPane}物件
+     *
+     * @return 新的{@link AnchorPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public AnchorPane build(javafx.scene.Node[] arg0)
+    {
+        AnchorPane instance = new AnchorPane(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

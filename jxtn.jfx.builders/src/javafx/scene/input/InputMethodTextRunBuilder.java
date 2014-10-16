@@ -17,7 +17,7 @@ package javafx.scene.input;
 @SuppressWarnings("all")
 public class InputMethodTextRunBuilder<Z extends InputMethodTextRun, B extends InputMethodTextRunBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements InputMethodTextRunBuilderExt<Z, B>
 {
 
     @Override

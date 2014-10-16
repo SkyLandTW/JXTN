@@ -17,7 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class PathElementBuilder<Z extends PathElement, B extends PathElementBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements PathElementBuilderExt<Z, B>
 {
 
     private boolean hasAbsolute;

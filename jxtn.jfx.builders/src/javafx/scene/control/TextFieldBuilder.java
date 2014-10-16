@@ -226,4 +226,18 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link TextField}物件
+     *
+     * @return 新的{@link TextField}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public TextField build(java.lang.String arg0)
+    {
+        TextField instance = new TextField(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

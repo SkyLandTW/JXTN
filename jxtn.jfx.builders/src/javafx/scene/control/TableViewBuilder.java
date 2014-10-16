@@ -924,4 +924,18 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link TableView}物件
+     *
+     * @return 新的{@link TableView}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public TableView<S> build(javafx.collections.ObservableList<S> arg0)
+    {
+        TableView<S> instance = new TableView<S>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

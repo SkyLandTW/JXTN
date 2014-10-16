@@ -1110,4 +1110,18 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link TreeTableView}物件
+     *
+     * @return 新的{@link TreeTableView}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public TreeTableView<S> build(javafx.scene.control.TreeItem<S> arg0)
+    {
+        TreeTableView<S> instance = new TreeTableView<S>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

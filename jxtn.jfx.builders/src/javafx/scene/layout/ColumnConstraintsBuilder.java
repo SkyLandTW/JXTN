@@ -474,4 +474,46 @@ public class ColumnConstraintsBuilder<Z extends ColumnConstraints, B extends Col
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ColumnConstraints}物件
+     *
+     * @return 新的{@link ColumnConstraints}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ColumnConstraints build(double arg0)
+    {
+        ColumnConstraints instance = new ColumnConstraints(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ColumnConstraints}物件
+     *
+     * @return 新的{@link ColumnConstraints}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ColumnConstraints build(double arg0, double arg1, double arg2)
+    {
+        ColumnConstraints instance = new ColumnConstraints(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ColumnConstraints}物件
+     *
+     * @return 新的{@link ColumnConstraints}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ColumnConstraints build(double arg0, double arg1, double arg2, javafx.scene.layout.Priority arg3, javafx.geometry.HPos arg4, boolean arg5)
+    {
+        ColumnConstraints instance = new ColumnConstraints(arg0, arg1, arg2, arg3, arg4, arg5);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

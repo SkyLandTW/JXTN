@@ -59,4 +59,32 @@ public class LabelBuilder<Z extends Label, B extends LabelBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Label}物件
+     *
+     * @return 新的{@link Label}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Label build(java.lang.String arg0)
+    {
+        Label instance = new Label(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Label}物件
+     *
+     * @return 新的{@link Label}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Label build(java.lang.String arg0, javafx.scene.Node arg1)
+    {
+        Label instance = new Label(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -102,4 +102,18 @@ public class HLineToBuilder<Z extends HLineTo, B extends HLineToBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link HLineTo}物件
+     *
+     * @return 新的{@link HLineTo}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public HLineTo build(double arg0)
+    {
+        HLineTo instance = new HLineTo(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

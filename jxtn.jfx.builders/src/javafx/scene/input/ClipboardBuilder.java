@@ -17,7 +17,7 @@ package javafx.scene.input;
 @SuppressWarnings("all")
 public class ClipboardBuilder<Z extends Clipboard, B extends ClipboardBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements ClipboardBuilderExt<Z, B>
 {
 
     private boolean hasContent;

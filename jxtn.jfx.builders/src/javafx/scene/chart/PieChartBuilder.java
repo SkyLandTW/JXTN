@@ -350,4 +350,18 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link PieChart}物件
+     *
+     * @return 新的{@link PieChart}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public PieChart build(javafx.collections.ObservableList<javafx.scene.chart.PieChart.Data> arg0)
+    {
+        PieChart instance = new PieChart(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

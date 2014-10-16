@@ -226,4 +226,18 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Separator}物件
+     *
+     * @return 新的{@link Separator}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Separator build(javafx.geometry.Orientation arg0)
+    {
+        Separator instance = new Separator(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

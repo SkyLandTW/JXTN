@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link BreadCrumbBar}建構器
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.0.6_20.jar
+ * @version controlsfx-8.20.7.jar
  * @param <Z> 要建構的物件型態(需繼承{@link BreadCrumbBar})
  * @param <B> 建構器本身的型態(需繼承{@link BreadCrumbBarBuilder})
  */
@@ -284,6 +284,20 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     public BreadCrumbBar<T> build()
     {
         BreadCrumbBar<T> instance = new BreadCrumbBar<T>();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link BreadCrumbBar}物件
+     *
+     * @return 新的{@link BreadCrumbBar}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public BreadCrumbBar<T> build(javafx.scene.control.TreeItem<T> arg0)
+    {
+        BreadCrumbBar<T> instance = new BreadCrumbBar<T>(arg0);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

@@ -17,7 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends TableColumnBase<S, T>, B extends TableColumnBaseBuilder<S, T, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements TableColumnBaseBuilderExt<S, T, Z, B>
 {
 
     private boolean hasComparator;

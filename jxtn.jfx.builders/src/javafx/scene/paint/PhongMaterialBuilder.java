@@ -474,4 +474,32 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link PhongMaterial}物件
+     *
+     * @return 新的{@link PhongMaterial}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public PhongMaterial build(javafx.scene.paint.Color arg0)
+    {
+        PhongMaterial instance = new PhongMaterial(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link PhongMaterial}物件
+     *
+     * @return 新的{@link PhongMaterial}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public PhongMaterial build(javafx.scene.paint.Color arg0, javafx.scene.image.Image arg1, javafx.scene.image.Image arg2, javafx.scene.image.Image arg3, javafx.scene.image.Image arg4)
+    {
+        PhongMaterial instance = new PhongMaterial(arg0, arg1, arg2, arg3, arg4);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

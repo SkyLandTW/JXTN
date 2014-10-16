@@ -17,7 +17,7 @@ package javafx.scene.media;
 @SuppressWarnings("all")
 public class TrackBuilder<Z extends Track, B extends TrackBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements TrackBuilderExt<Z, B>
 {
 
     @Override

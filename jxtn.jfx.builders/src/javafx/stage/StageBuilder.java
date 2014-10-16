@@ -700,4 +700,18 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Stage}物件
+     *
+     * @return 新的{@link Stage}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Stage build(javafx.stage.StageStyle arg0)
+    {
+        Stage instance = new Stage(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

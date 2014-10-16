@@ -17,7 +17,7 @@ package javafx.scene.input;
 @SuppressWarnings("all")
 public class DataFormatBuilder<Z extends DataFormat, B extends DataFormatBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements DataFormatBuilderExt<Z, B>
 {
 
     @Override

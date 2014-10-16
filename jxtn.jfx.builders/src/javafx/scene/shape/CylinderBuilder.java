@@ -164,4 +164,32 @@ public class CylinderBuilder<Z extends Cylinder, B extends CylinderBuilder<Z, B>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Cylinder}物件
+     *
+     * @return 新的{@link Cylinder}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Cylinder build(double arg0, double arg1)
+    {
+        Cylinder instance = new Cylinder(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Cylinder}物件
+     *
+     * @return 新的{@link Cylinder}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Cylinder build(double arg0, double arg1, int arg2)
+    {
+        Cylinder instance = new Cylinder(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

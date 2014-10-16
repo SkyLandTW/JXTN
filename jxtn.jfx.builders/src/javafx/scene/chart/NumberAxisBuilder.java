@@ -164,4 +164,32 @@ public class NumberAxisBuilder<Z extends NumberAxis, B extends NumberAxisBuilder
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link NumberAxis}物件
+     *
+     * @return 新的{@link NumberAxis}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public NumberAxis build(double arg0, double arg1, double arg2)
+    {
+        NumberAxis instance = new NumberAxis(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link NumberAxis}物件
+     *
+     * @return 新的{@link NumberAxis}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public NumberAxis build(java.lang.String arg0, double arg1, double arg2, double arg3)
+    {
+        NumberAxis instance = new NumberAxis(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

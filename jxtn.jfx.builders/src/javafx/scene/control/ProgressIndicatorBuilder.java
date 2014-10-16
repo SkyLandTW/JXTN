@@ -102,4 +102,18 @@ public class ProgressIndicatorBuilder<Z extends ProgressIndicator, B extends Pro
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ProgressIndicator}物件
+     *
+     * @return 新的{@link ProgressIndicator}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ProgressIndicator build(double arg0)
+    {
+        ProgressIndicator instance = new ProgressIndicator(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

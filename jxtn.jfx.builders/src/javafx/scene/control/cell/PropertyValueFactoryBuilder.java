@@ -17,7 +17,7 @@ package javafx.scene.control.cell;
 @SuppressWarnings("all")
 public class PropertyValueFactoryBuilder<S extends java.lang.Object, T extends java.lang.Object, Z extends PropertyValueFactory<S, T>, B extends PropertyValueFactoryBuilder<S, T, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements PropertyValueFactoryBuilderExt<S, T, Z, B>
 {
 
     @Override

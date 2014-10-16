@@ -9,7 +9,7 @@ package org.controlsfx.glyphfont;
  * {@link Glyph}建構器
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.0.6_20.jar
+ * @version controlsfx-8.20.7.jar
  * @param <Z> 要建構的物件型態(需繼承{@link Glyph})
  * @param <B> 建構器本身的型態(需繼承{@link GlyphBuilder})
  */
@@ -20,10 +20,101 @@ public class GlyphBuilder<Z extends Glyph, B extends GlyphBuilder<Z, B>>
         implements GlyphBuilderExt<Z, B>
 {
 
+    private boolean hasColor;
+    private javafx.scene.paint.Color valColor;
+
+    private boolean hasFontFamily;
+    private java.lang.String valFontFamily;
+
+    private boolean hasFontSize;
+    private double valFontSize;
+
+    private boolean hasIcon;
+    private java.lang.Object valIcon;
+
     @Override
     public void applyTo(Z instance)
     {
         super.applyTo(instance);
+        if (this.hasColor)
+            instance.setColor(this.valColor);
+        if (this.hasFontFamily)
+            instance.setFontFamily(this.valFontFamily);
+        if (this.hasFontSize)
+            instance.setFontSize(this.valFontSize);
+        if (this.hasIcon)
+            instance.setIcon(this.valIcon);
+    }
+
+    /**
+     * 設定屬性{@link Glyph#setColor(javafx.scene.paint.Color)}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B color(javafx.scene.paint.Color value)
+    {
+        this.hasColor = true;
+        this.valColor = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Glyph#setFontFamily(java.lang.String)}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B fontFamily(java.lang.String value)
+    {
+        this.hasFontFamily = true;
+        this.valFontFamily = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Glyph#setFontSize(double)}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B fontSize(double value)
+    {
+        this.hasFontSize = true;
+        this.valFontSize = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Glyph#setIcon(java.lang.Object)}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B icon(java.lang.Object value)
+    {
+        this.hasIcon = true;
+        this.valIcon = value;
+        return (B) this;
+    }
+
+    /**
+     * 建構{@link Glyph}物件
+     *
+     * @return 新的{@link Glyph}物件實體
+     */
+    @Override
+    @SuppressWarnings("unchecked")
+    public Glyph build()
+    {
+        Glyph instance = new Glyph();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
     }
 
     /**
@@ -32,9 +123,23 @@ public class GlyphBuilder<Z extends Glyph, B extends GlyphBuilder<Z, B>>
      * @return 新的{@link Glyph}物件實體
      */
     @SuppressWarnings("unchecked")
-    public Glyph build(java.lang.String arg0, java.lang.Character arg1, double arg2, javafx.scene.paint.Color arg3)
+    public Glyph build(java.lang.String arg0, char arg1)
     {
-        Glyph instance = new Glyph(arg0, arg1, arg2, arg3);
+        Glyph instance = new Glyph(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Glyph}物件
+     *
+     * @return 新的{@link Glyph}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Glyph build(java.lang.String arg0, java.lang.Object arg1)
+    {
+        Glyph instance = new Glyph(arg0, arg1);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

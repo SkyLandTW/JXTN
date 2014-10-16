@@ -598,4 +598,18 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link PerspectiveTransform}物件
+     *
+     * @return 新的{@link PerspectiveTransform}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public PerspectiveTransform build(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5, double arg6, double arg7)
+    {
+        PerspectiveTransform instance = new PerspectiveTransform(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

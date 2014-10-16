@@ -164,4 +164,18 @@ public class CanvasBuilder<Z extends Canvas, B extends CanvasBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Canvas}物件
+     *
+     * @return 新的{@link Canvas}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Canvas build(double arg0, double arg1)
+    {
+        Canvas instance = new Canvas(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

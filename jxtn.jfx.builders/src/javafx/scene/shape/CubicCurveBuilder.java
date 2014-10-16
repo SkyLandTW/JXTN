@@ -536,4 +536,18 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link CubicCurve}物件
+     *
+     * @return 新的{@link CubicCurve}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CubicCurve build(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5, double arg6, double arg7)
+    {
+        CubicCurve instance = new CubicCurve(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

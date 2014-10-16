@@ -598,4 +598,46 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link InnerShadow}物件
+     *
+     * @return 新的{@link InnerShadow}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public InnerShadow build(double arg0, javafx.scene.paint.Color arg1)
+    {
+        InnerShadow instance = new InnerShadow(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link InnerShadow}物件
+     *
+     * @return 新的{@link InnerShadow}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public InnerShadow build(double arg0, double arg1, double arg2, javafx.scene.paint.Color arg3)
+    {
+        InnerShadow instance = new InnerShadow(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link InnerShadow}物件
+     *
+     * @return 新的{@link InnerShadow}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public InnerShadow build(javafx.scene.effect.BlurType arg0, javafx.scene.paint.Color arg1, double arg2, double arg3, double arg4, double arg5)
+    {
+        InnerShadow instance = new InnerShadow(arg0, arg1, arg2, arg3, arg4, arg5);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -474,4 +474,18 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Arc}物件
+     *
+     * @return 新的{@link Arc}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Arc build(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5)
+    {
+        Arc instance = new Arc(arg0, arg1, arg2, arg3, arg4, arg5);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

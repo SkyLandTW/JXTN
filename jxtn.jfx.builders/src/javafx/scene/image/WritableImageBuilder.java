@@ -39,4 +39,32 @@ public class WritableImageBuilder<Z extends WritableImage, B extends WritableIma
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link WritableImage}物件
+     *
+     * @return 新的{@link WritableImage}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public WritableImage build(javafx.scene.image.PixelReader arg0, int arg1, int arg2)
+    {
+        WritableImage instance = new WritableImage(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link WritableImage}物件
+     *
+     * @return 新的{@link WritableImage}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public WritableImage build(javafx.scene.image.PixelReader arg0, int arg1, int arg2, int arg3, int arg4)
+    {
+        WritableImage instance = new WritableImage(arg0, arg1, arg2, arg3, arg4);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -40,4 +40,32 @@ public class ImageCursorBuilder<Z extends ImageCursor, B extends ImageCursorBuil
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ImageCursor}物件
+     *
+     * @return 新的{@link ImageCursor}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ImageCursor build(javafx.scene.image.Image arg0)
+    {
+        ImageCursor instance = new ImageCursor(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ImageCursor}物件
+     *
+     * @return 新的{@link ImageCursor}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ImageCursor build(javafx.scene.image.Image arg0, double arg1, double arg2)
+    {
+        ImageCursor instance = new ImageCursor(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -17,7 +17,7 @@ package javafx.scene.media;
 @SuppressWarnings("all")
 public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqualizerBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements AudioEqualizerBuilderExt<Z, B>
 {
 
     private boolean hasBands;

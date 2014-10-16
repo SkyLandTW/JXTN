@@ -164,4 +164,18 @@ public class TextFlowBuilder<Z extends TextFlow, B extends TextFlowBuilder<Z, B>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link TextFlow}物件
+     *
+     * @return 新的{@link TextFlow}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public TextFlow build(javafx.scene.Node[] arg0)
+    {
+        TextFlow instance = new TextFlow(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

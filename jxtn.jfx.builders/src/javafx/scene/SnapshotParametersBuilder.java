@@ -17,7 +17,7 @@ package javafx.scene;
 @SuppressWarnings("all")
 public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends SnapshotParametersBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements SnapshotParametersBuilderExt<Z, B>
 {
 
     private boolean hasCamera;

@@ -17,7 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, B extends TreeItemBuilder<T, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements TreeItemBuilderExt<T, Z, B>
 {
 
     private boolean hasChildren;
@@ -291,6 +291,34 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     public TreeItem<T> build()
     {
         TreeItem<T> instance = new TreeItem<T>();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link TreeItem}物件
+     *
+     * @return 新的{@link TreeItem}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public TreeItem<T> build(T arg0)
+    {
+        TreeItem<T> instance = new TreeItem<T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link TreeItem}物件
+     *
+     * @return 新的{@link TreeItem}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public TreeItem<T> build(T arg0, javafx.scene.Node arg1)
+    {
+        TreeItem<T> instance = new TreeItem<T>(arg0, arg1);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

@@ -233,4 +233,18 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ContextMenu}物件
+     *
+     * @return 新的{@link ContextMenu}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ContextMenu build(javafx.scene.control.MenuItem[] arg0)
+    {
+        ContextMenu instance = new ContextMenu(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

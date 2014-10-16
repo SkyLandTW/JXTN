@@ -17,7 +17,7 @@ package javafx.scene;
 @SuppressWarnings("all")
 public class SceneAntialiasingBuilder<Z extends SceneAntialiasing, B extends SceneAntialiasingBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements SceneAntialiasingBuilderExt<Z, B>
 {
 
     @Override

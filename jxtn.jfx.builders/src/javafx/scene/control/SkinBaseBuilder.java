@@ -17,7 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class SkinBaseBuilder<C extends javafx.scene.control.Control, Z extends SkinBase<C>, B extends SkinBaseBuilder<C, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements SkinBaseBuilderExt<C, Z, B>
 {
 
     private boolean hasChildren;

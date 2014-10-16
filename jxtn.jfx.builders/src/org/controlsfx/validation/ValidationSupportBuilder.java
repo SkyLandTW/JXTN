@@ -9,7 +9,7 @@ package org.controlsfx.validation;
  * {@link ValidationSupport}建構器
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.0.6_20.jar
+ * @version controlsfx-8.20.7.jar
  * @param <Z> 要建構的物件型態(需繼承{@link ValidationSupport})
  * @param <B> 建構器本身的型態(需繼承{@link ValidationSupportBuilder})
  */
@@ -17,8 +17,11 @@ package org.controlsfx.validation;
 @SuppressWarnings("all")
 public class ValidationSupportBuilder<Z extends ValidationSupport, B extends ValidationSupportBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements ValidationSupportBuilderExt<Z, B>
 {
+
+    private boolean hasErrorDecorationEnabled;
+    private boolean valErrorDecorationEnabled;
 
     private boolean hasValidationDecorator;
     private org.controlsfx.validation.decoration.ValidationDecoration valValidationDecorator;
@@ -27,8 +30,24 @@ public class ValidationSupportBuilder<Z extends ValidationSupport, B extends Val
     public void applyTo(Z instance)
     {
         super.applyTo(instance);
+        if (this.hasErrorDecorationEnabled)
+            instance.setErrorDecorationEnabled(this.valErrorDecorationEnabled);
         if (this.hasValidationDecorator)
             instance.setValidationDecorator(this.valValidationDecorator);
+    }
+
+    /**
+     * 設定屬性{@link ValidationSupport#setErrorDecorationEnabled(boolean)}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B errorDecorationEnabled(boolean value)
+    {
+        this.hasErrorDecorationEnabled = true;
+        this.valErrorDecorationEnabled = value;
+        return (B) this;
     }
 
     /**

@@ -536,4 +536,32 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ImageView}物件
+     *
+     * @return 新的{@link ImageView}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ImageView build(javafx.scene.image.Image arg0)
+    {
+        ImageView instance = new ImageView(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ImageView}物件
+     *
+     * @return 新的{@link ImageView}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ImageView build(java.lang.String arg0)
+    {
+        ImageView instance = new ImageView(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

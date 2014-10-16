@@ -17,7 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements MenuItemBuilderExt<Z, B>
 {
 
     private boolean hasAccelerator;
@@ -744,6 +744,34 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     public MenuItem build()
     {
         MenuItem instance = new MenuItem();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link MenuItem}物件
+     *
+     * @return 新的{@link MenuItem}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public MenuItem build(java.lang.String arg0)
+    {
+        MenuItem instance = new MenuItem(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link MenuItem}物件
+     *
+     * @return 新的{@link MenuItem}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public MenuItem build(java.lang.String arg0, javafx.scene.Node arg1)
+    {
+        MenuItem instance = new MenuItem(arg0, arg1);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

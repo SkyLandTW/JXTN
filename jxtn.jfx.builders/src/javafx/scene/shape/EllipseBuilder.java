@@ -288,4 +288,32 @@ public class EllipseBuilder<Z extends Ellipse, B extends EllipseBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Ellipse}物件
+     *
+     * @return 新的{@link Ellipse}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Ellipse build(double arg0, double arg1)
+    {
+        Ellipse instance = new Ellipse(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Ellipse}物件
+     *
+     * @return 新的{@link Ellipse}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Ellipse build(double arg0, double arg1, double arg2, double arg3)
+    {
+        Ellipse instance = new Ellipse(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

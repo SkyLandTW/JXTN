@@ -17,7 +17,7 @@ package javafx.scene.shape;
 @SuppressWarnings("all")
 public class MeshBuilder<Z extends Mesh, B extends MeshBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements MeshBuilderExt<Z, B>
 {
 
     @Override

@@ -164,4 +164,32 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Button}物件
+     *
+     * @return 新的{@link Button}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Button build(java.lang.String arg0)
+    {
+        Button instance = new Button(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Button}物件
+     *
+     * @return 新的{@link Button}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Button build(java.lang.String arg0, javafx.scene.Node arg1)
+    {
+        Button instance = new Button(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

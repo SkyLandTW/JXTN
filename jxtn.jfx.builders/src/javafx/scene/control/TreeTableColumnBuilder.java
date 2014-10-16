@@ -481,4 +481,18 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link TreeTableColumn}物件
+     *
+     * @return 新的{@link TreeTableColumn}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public TreeTableColumn<S, T> build(java.lang.String arg0)
+    {
+        TreeTableColumn<S, T> instance = new TreeTableColumn<S, T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

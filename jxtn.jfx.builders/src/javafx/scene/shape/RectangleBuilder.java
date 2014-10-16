@@ -412,4 +412,46 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Rectangle}物件
+     *
+     * @return 新的{@link Rectangle}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Rectangle build(double arg0, double arg1)
+    {
+        Rectangle instance = new Rectangle(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Rectangle}物件
+     *
+     * @return 新的{@link Rectangle}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Rectangle build(double arg0, double arg1, javafx.scene.paint.Paint arg2)
+    {
+        Rectangle instance = new Rectangle(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Rectangle}物件
+     *
+     * @return 新的{@link Rectangle}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Rectangle build(double arg0, double arg1, double arg2, double arg3)
+    {
+        Rectangle instance = new Rectangle(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

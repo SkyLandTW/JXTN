@@ -226,4 +226,46 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link HBox}物件
+     *
+     * @return 新的{@link HBox}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public HBox build(javafx.scene.Node[] arg0)
+    {
+        HBox instance = new HBox(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link HBox}物件
+     *
+     * @return 新的{@link HBox}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public HBox build(double arg0)
+    {
+        HBox instance = new HBox(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link HBox}物件
+     *
+     * @return 新的{@link HBox}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public HBox build(double arg0, javafx.scene.Node[] arg1)
+    {
+        HBox instance = new HBox(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

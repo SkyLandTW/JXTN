@@ -288,4 +288,18 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link DatePicker}物件
+     *
+     * @return 新的{@link DatePicker}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public DatePicker build(java.time.LocalDate arg0)
+    {
+        DatePicker instance = new DatePicker(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

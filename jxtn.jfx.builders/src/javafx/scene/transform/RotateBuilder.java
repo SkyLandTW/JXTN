@@ -350,4 +350,74 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Rotate}物件
+     *
+     * @return 新的{@link Rotate}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Rotate build(double arg0)
+    {
+        Rotate instance = new Rotate(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Rotate}物件
+     *
+     * @return 新的{@link Rotate}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Rotate build(double arg0, javafx.geometry.Point3D arg1)
+    {
+        Rotate instance = new Rotate(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Rotate}物件
+     *
+     * @return 新的{@link Rotate}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Rotate build(double arg0, double arg1, double arg2)
+    {
+        Rotate instance = new Rotate(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Rotate}物件
+     *
+     * @return 新的{@link Rotate}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Rotate build(double arg0, double arg1, double arg2, double arg3)
+    {
+        Rotate instance = new Rotate(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Rotate}物件
+     *
+     * @return 新的{@link Rotate}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Rotate build(double arg0, double arg1, double arg2, double arg3, javafx.geometry.Point3D arg4)
+    {
+        Rotate instance = new Rotate(arg0, arg1, arg2, arg3, arg4);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

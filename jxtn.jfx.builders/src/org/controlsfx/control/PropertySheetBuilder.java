@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link PropertySheet}建構器
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.0.6_20.jar
+ * @version controlsfx-8.20.7.jar
  * @param <Z> 要建構的物件型態(需繼承{@link PropertySheet})
  * @param <B> 建構器本身的型態(需繼承{@link PropertySheetBuilder})
  */
@@ -329,6 +329,20 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     public PropertySheet build()
     {
         PropertySheet instance = new PropertySheet();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link PropertySheet}物件
+     *
+     * @return 新的{@link PropertySheet}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public PropertySheet build(javafx.collections.ObservableList<org.controlsfx.control.PropertySheet.Item> arg0)
+    {
+        PropertySheet instance = new PropertySheet(arg0);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

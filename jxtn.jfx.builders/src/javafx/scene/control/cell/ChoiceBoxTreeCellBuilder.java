@@ -171,4 +171,60 @@ public class ChoiceBoxTreeCellBuilder<T extends java.lang.Object, Z extends Choi
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ChoiceBoxTreeCell}物件
+     *
+     * @return 新的{@link ChoiceBoxTreeCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ChoiceBoxTreeCell<T> build(T[] arg0)
+    {
+        ChoiceBoxTreeCell<T> instance = new ChoiceBoxTreeCell<T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ChoiceBoxTreeCell}物件
+     *
+     * @return 新的{@link ChoiceBoxTreeCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ChoiceBoxTreeCell<T> build(javafx.collections.ObservableList<T> arg0)
+    {
+        ChoiceBoxTreeCell<T> instance = new ChoiceBoxTreeCell<T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ChoiceBoxTreeCell}物件
+     *
+     * @return 新的{@link ChoiceBoxTreeCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ChoiceBoxTreeCell<T> build(javafx.util.StringConverter<T> arg0, javafx.collections.ObservableList<T> arg1)
+    {
+        ChoiceBoxTreeCell<T> instance = new ChoiceBoxTreeCell<T>(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ChoiceBoxTreeCell}物件
+     *
+     * @return 新的{@link ChoiceBoxTreeCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ChoiceBoxTreeCell<T> build(javafx.util.StringConverter<T> arg0, T[] arg1)
+    {
+        ChoiceBoxTreeCell<T> instance = new ChoiceBoxTreeCell<T>(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

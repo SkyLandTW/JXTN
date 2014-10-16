@@ -171,4 +171,32 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Path}物件
+     *
+     * @return 新的{@link Path}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Path build(java.util.Collection<? extends javafx.scene.shape.PathElement> arg0)
+    {
+        Path instance = new Path(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Path}物件
+     *
+     * @return 新的{@link Path}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Path build(javafx.scene.shape.PathElement[] arg0)
+    {
+        Path instance = new Path(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -41,7 +41,6 @@ import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.w3c.dom.CDATASection;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -100,10 +99,8 @@ public class SqlSchemaDataLoader extends XmlDataLoader
             }
         }
         Element schemaXml = schemaDoc.createElement("xml");
-        CDATASection schemaXmlCDATA = schemaDoc.createCDATASection(schemaRoot.toText());
-        schemaXml.appendChild(schemaXmlCDATA);
+        schemaXml.appendChild(schemaDoc.createCDATASection(schemaRoot.toText()));
         schemaRoot.appendChild(schemaXml);
-        // System.out.println(schemaRoot.toText());
         return this.load(engine, args, schemaDoc);
     }
 

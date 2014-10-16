@@ -741,4 +741,18 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ListView}物件
+     *
+     * @return 新的{@link ListView}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ListView<T> build(javafx.collections.ObservableList<T> arg0)
+    {
+        ListView<T> instance = new ListView<T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

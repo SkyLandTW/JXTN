@@ -350,4 +350,18 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ColorAdjust}物件
+     *
+     * @return 新的{@link ColorAdjust}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ColorAdjust build(double arg0, double arg1, double arg2, double arg3)
+    {
+        ColorAdjust instance = new ColorAdjust(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

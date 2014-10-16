@@ -171,4 +171,32 @@ public class MenuButtonBuilder<Z extends MenuButton, B extends MenuButtonBuilder
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link MenuButton}物件
+     *
+     * @return 新的{@link MenuButton}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public MenuButton build(java.lang.String arg0)
+    {
+        MenuButton instance = new MenuButton(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link MenuButton}物件
+     *
+     * @return 新的{@link MenuButton}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public MenuButton build(java.lang.String arg0, javafx.scene.Node arg1)
+    {
+        MenuButton instance = new MenuButton(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

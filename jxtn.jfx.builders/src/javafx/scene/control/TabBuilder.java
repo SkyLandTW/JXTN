@@ -17,7 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements TabBuilderExt<Z, B>
 {
 
     private boolean hasClosable;
@@ -868,6 +868,20 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     public Tab build()
     {
         Tab instance = new Tab();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Tab}物件
+     *
+     * @return 新的{@link Tab}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Tab build(java.lang.String arg0)
+    {
+        Tab instance = new Tab(arg0);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

@@ -17,7 +17,7 @@ package javafx.scene.web;
 @SuppressWarnings("all")
 public class WebHistoryBuilder<Z extends WebHistory, B extends WebHistoryBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements WebHistoryBuilderExt<Z, B>
 {
 
     private boolean hasEntries;

@@ -109,4 +109,18 @@ public class PaneBuilder<Z extends Pane, B extends PaneBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Pane}物件
+     *
+     * @return 新的{@link Pane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Pane build(javafx.scene.Node[] arg0)
+    {
+        Pane instance = new Pane(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

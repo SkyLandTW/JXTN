@@ -164,4 +164,18 @@ public class BloomBuilder<Z extends Bloom, B extends BloomBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Bloom}物件
+     *
+     * @return 新的{@link Bloom}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Bloom build(double arg0)
+    {
+        Bloom instance = new Bloom(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -17,7 +17,7 @@ package javafx.scene.effect;
 @SuppressWarnings("all")
 public class FloatMapBuilder<Z extends FloatMap, B extends FloatMapBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements FloatMapBuilderExt<Z, B>
 {
 
     private boolean hasHeight;
@@ -160,6 +160,20 @@ public class FloatMapBuilder<Z extends FloatMap, B extends FloatMapBuilder<Z, B>
     public FloatMap build()
     {
         FloatMap instance = new FloatMap();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link FloatMap}物件
+     *
+     * @return 新的{@link FloatMap}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public FloatMap build(int arg0, int arg1)
+    {
+        FloatMap instance = new FloatMap(arg0, arg1);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

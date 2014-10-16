@@ -164,4 +164,18 @@ public class LineToBuilder<Z extends LineTo, B extends LineToBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link LineTo}物件
+     *
+     * @return 新的{@link LineTo}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public LineTo build(double arg0, double arg1)
+    {
+        LineTo instance = new LineTo(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

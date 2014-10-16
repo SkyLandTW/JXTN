@@ -17,7 +17,7 @@ package javafx.scene.image;
 @SuppressWarnings("all")
 public class ImageBuilder<Z extends Image, B extends ImageBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements ImageBuilderExt<Z, B>
 {
 
     @Override
@@ -35,6 +35,76 @@ public class ImageBuilder<Z extends Image, B extends ImageBuilder<Z, B>>
     public Image build(java.io.InputStream arg0)
     {
         Image instance = new Image(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Image}物件
+     *
+     * @return 新的{@link Image}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Image build(java.lang.String arg0)
+    {
+        Image instance = new Image(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Image}物件
+     *
+     * @return 新的{@link Image}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Image build(java.lang.String arg0, boolean arg1)
+    {
+        Image instance = new Image(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Image}物件
+     *
+     * @return 新的{@link Image}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Image build(java.lang.String arg0, double arg1, double arg2, boolean arg3, boolean arg4)
+    {
+        Image instance = new Image(arg0, arg1, arg2, arg3, arg4);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Image}物件
+     *
+     * @return 新的{@link Image}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Image build(java.io.InputStream arg0, double arg1, double arg2, boolean arg3, boolean arg4)
+    {
+        Image instance = new Image(arg0, arg1, arg2, arg3, arg4);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Image}物件
+     *
+     * @return 新的{@link Image}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Image build(java.lang.String arg0, double arg1, double arg2, boolean arg3, boolean arg4, boolean arg5)
+    {
+        Image instance = new Image(arg0, arg1, arg2, arg3, arg4, arg5);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

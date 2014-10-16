@@ -164,4 +164,32 @@ public class CustomMenuItemBuilder<Z extends CustomMenuItem, B extends CustomMen
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link CustomMenuItem}物件
+     *
+     * @return 新的{@link CustomMenuItem}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CustomMenuItem build(javafx.scene.Node arg0)
+    {
+        CustomMenuItem instance = new CustomMenuItem(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link CustomMenuItem}物件
+     *
+     * @return 新的{@link CustomMenuItem}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CustomMenuItem build(javafx.scene.Node arg0, boolean arg1)
+    {
+        CustomMenuItem instance = new CustomMenuItem(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -171,4 +171,32 @@ public class GroupBuilder<Z extends Group, B extends GroupBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Group}物件
+     *
+     * @return 新的{@link Group}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Group build(java.util.Collection<javafx.scene.Node> arg0)
+    {
+        Group instance = new Group(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Group}物件
+     *
+     * @return 新的{@link Group}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Group build(javafx.scene.Node[] arg0)
+    {
+        Group instance = new Group(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

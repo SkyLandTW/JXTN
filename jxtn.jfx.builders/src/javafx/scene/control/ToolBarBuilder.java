@@ -171,4 +171,18 @@ public class ToolBarBuilder<Z extends ToolBar, B extends ToolBarBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ToolBar}物件
+     *
+     * @return 新的{@link ToolBar}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ToolBar build(javafx.scene.Node[] arg0)
+    {
+        ToolBar instance = new ToolBar(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

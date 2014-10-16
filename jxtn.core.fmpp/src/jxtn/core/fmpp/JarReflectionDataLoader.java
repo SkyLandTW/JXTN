@@ -316,7 +316,9 @@ public class JarReflectionDataLoader extends XmlDataLoader
                 }
                 xmlRoot.appendChild(elemJar);
             }
-            System.out.println(xmlRoot.toText());
+            Element srcXml = xmlDoc.createElement("xml");
+            srcXml.appendChild(xmlDoc.createCDATASection(xmlRoot.toText()));
+            xmlRoot.appendChild(srcXml);
             return this.load(engine, args, xmlDoc);
         }
         catch (Throwable throwable)
@@ -544,9 +546,10 @@ public class JarReflectionDataLoader extends XmlDataLoader
         {
             return loader.loadClass(name.replace('/', '.'));
         }
-        catch (ClassNotFoundException e)
+        catch (Throwable e)
         {
-            throw new RuntimeException(e);
+            System.err.println("failed to load " + name);
+            throw new RuntimeException("failed to load " + name, e);
         }
     }
 

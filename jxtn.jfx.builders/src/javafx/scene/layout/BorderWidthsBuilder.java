@@ -17,7 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class BorderWidthsBuilder<Z extends BorderWidths, B extends BorderWidthsBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements BorderWidthsBuilderExt<Z, B>
 {
 
     @Override
@@ -35,6 +35,34 @@ public class BorderWidthsBuilder<Z extends BorderWidths, B extends BorderWidthsB
     public BorderWidths build(double arg0)
     {
         BorderWidths instance = new BorderWidths(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link BorderWidths}物件
+     *
+     * @return 新的{@link BorderWidths}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public BorderWidths build(double arg0, double arg1, double arg2, double arg3)
+    {
+        BorderWidths instance = new BorderWidths(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link BorderWidths}物件
+     *
+     * @return 新的{@link BorderWidths}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public BorderWidths build(double arg0, double arg1, double arg2, double arg3, boolean arg4, boolean arg5, boolean arg6, boolean arg7)
+    {
+        BorderWidths instance = new BorderWidths(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

@@ -17,7 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class ResizeFeaturesBaseBuilder<S extends java.lang.Object, Z extends ResizeFeaturesBase<S>, B extends ResizeFeaturesBaseBuilder<S, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements ResizeFeaturesBaseBuilderExt<S, Z, B>
 {
 
     @Override

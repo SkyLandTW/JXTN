@@ -40,4 +40,18 @@ public class AmbientLightBuilder<Z extends AmbientLight, B extends AmbientLightB
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link AmbientLight}物件
+     *
+     * @return 新的{@link AmbientLight}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public AmbientLight build(javafx.scene.paint.Color arg0)
+    {
+        AmbientLight instance = new AmbientLight(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

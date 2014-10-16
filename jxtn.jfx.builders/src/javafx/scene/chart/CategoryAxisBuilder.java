@@ -245,4 +245,18 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link CategoryAxis}物件
+     *
+     * @return 新的{@link CategoryAxis}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CategoryAxis build(javafx.collections.ObservableList<java.lang.String> arg0)
+    {
+        CategoryAxis instance = new CategoryAxis(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

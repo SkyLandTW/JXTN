@@ -39,4 +39,18 @@ public class ImagePatternBuilder<Z extends ImagePattern, B extends ImagePatternB
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link ImagePattern}物件
+     *
+     * @return 新的{@link ImagePattern}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ImagePattern build(javafx.scene.image.Image arg0, double arg1, double arg2, double arg3, double arg4, boolean arg5)
+    {
+        ImagePattern instance = new ImagePattern(arg0, arg1, arg2, arg3, arg4, arg5);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

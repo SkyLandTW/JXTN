@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link CheckTreeView}建構器
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.0.6_20.jar
+ * @version controlsfx-8.20.7.jar
  * @param <Z> 要建構的物件型態(需繼承{@link CheckTreeView})
  * @param <B> 建構器本身的型態(需繼承{@link CheckTreeViewBuilder})
  */
@@ -21,12 +21,12 @@ public class CheckTreeViewBuilder<T extends java.lang.Object, Z extends CheckTre
 {
 
     private boolean hasCheckModel;
-    private javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>> valCheckModel;
+    private org.controlsfx.control.CheckModel<javafx.scene.control.TreeItem<T>> valCheckModel;
 
     private boolean bound1CheckModel;
     private boolean bound2CheckModel;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>>> obsrv1CheckModel;
-    private javafx.beans.property.Property<javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>>> obsrv2CheckModel;
+    private javafx.beans.value.ObservableValue<? extends org.controlsfx.control.CheckModel<javafx.scene.control.TreeItem<T>>> obsrv1CheckModel;
+    private javafx.beans.property.Property<org.controlsfx.control.CheckModel<javafx.scene.control.TreeItem<T>>> obsrv2CheckModel;
 
     @Override
     public void applyTo(Z instance)
@@ -41,13 +41,13 @@ public class CheckTreeViewBuilder<T extends java.lang.Object, Z extends CheckTre
     }
 
     /**
-     * 設定屬性{@link CheckTreeView#setCheckModel(javafx.scene.control.MultipleSelectionModel)}
+     * 設定屬性{@link CheckTreeView#setCheckModel(org.controlsfx.control.CheckModel)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B checkModel(javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>> value)
+    public B checkModel(org.controlsfx.control.CheckModel<javafx.scene.control.TreeItem<T>> value)
     {
         this.hasCheckModel = true;
         this.valCheckModel = value;
@@ -61,7 +61,7 @@ public class CheckTreeViewBuilder<T extends java.lang.Object, Z extends CheckTre
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindCheckModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>>> source)
+    public final B bindCheckModel(javafx.beans.value.ObservableValue<? extends org.controlsfx.control.CheckModel<javafx.scene.control.TreeItem<T>>> source)
     {
         java.util.Objects.requireNonNull(source);
         this.bound1CheckModel = true;
@@ -78,7 +78,7 @@ public class CheckTreeViewBuilder<T extends java.lang.Object, Z extends CheckTre
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindBidirectionalCheckModel(javafx.beans.property.Property<javafx.scene.control.MultipleSelectionModel<javafx.scene.control.TreeItem<T>>> source)
+    public final B bindBidirectionalCheckModel(javafx.beans.property.Property<org.controlsfx.control.CheckModel<javafx.scene.control.TreeItem<T>>> source)
     {
         java.util.Objects.requireNonNull(source);
         this.bound1CheckModel = false;
@@ -98,6 +98,20 @@ public class CheckTreeViewBuilder<T extends java.lang.Object, Z extends CheckTre
     public CheckTreeView<T> build()
     {
         CheckTreeView<T> instance = new CheckTreeView<T>();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link CheckTreeView}物件
+     *
+     * @return 新的{@link CheckTreeView}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CheckTreeView<T> build(javafx.scene.control.CheckBoxTreeItem<T> arg0)
+    {
+        CheckTreeView<T> instance = new CheckTreeView<T>(arg0);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

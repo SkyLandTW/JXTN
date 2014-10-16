@@ -40,4 +40,18 @@ public class SplitMenuButtonBuilder<Z extends SplitMenuButton, B extends SplitMe
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link SplitMenuButton}物件
+     *
+     * @return 新的{@link SplitMenuButton}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public SplitMenuButton build(javafx.scene.control.MenuItem[] arg0)
+    {
+        SplitMenuButton instance = new SplitMenuButton(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link HiddenSidesPane}建構器
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.0.6_20.jar
+ * @version controlsfx-8.20.7.jar
  * @param <Z> 要建構的物件型態(需繼承{@link HiddenSidesPane})
  * @param <B> 建構器本身的型態(需繼承{@link HiddenSidesPaneBuilder})
  */
@@ -19,6 +19,12 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
         extends javafx.scene.control.ControlBuilder<Z, B>
         implements HiddenSidesPaneBuilderExt<Z, B>
 {
+
+    private boolean hasAnimationDelay;
+    private javafx.util.Duration valAnimationDelay;
+
+    private boolean hasAnimationDuration;
+    private javafx.util.Duration valAnimationDuration;
 
     private boolean hasBottom;
     private javafx.scene.Node valBottom;
@@ -40,6 +46,16 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
 
     private boolean hasTriggerDistance;
     private double valTriggerDistance;
+
+    private boolean bound1AnimationDelay;
+    private boolean bound2AnimationDelay;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.Duration> obsrv1AnimationDelay;
+    private javafx.beans.property.Property<javafx.util.Duration> obsrv2AnimationDelay;
+
+    private boolean bound1AnimationDuration;
+    private boolean bound2AnimationDuration;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.Duration> obsrv1AnimationDuration;
+    private javafx.beans.property.Property<javafx.util.Duration> obsrv2AnimationDuration;
 
     private boolean bound1Bottom;
     private boolean bound2Bottom;
@@ -80,6 +96,10 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     public void applyTo(Z instance)
     {
         super.applyTo(instance);
+        if (this.hasAnimationDelay)
+            instance.setAnimationDelay(this.valAnimationDelay);
+        if (this.hasAnimationDuration)
+            instance.setAnimationDuration(this.valAnimationDuration);
         if (this.hasBottom)
             instance.setBottom(this.valBottom);
         if (this.hasContent)
@@ -94,6 +114,14 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
             instance.setTop(this.valTop);
         if (this.hasTriggerDistance)
             instance.setTriggerDistance(this.valTriggerDistance);
+        if (this.bound1AnimationDelay)
+            instance.animationDelayProperty().bind(this.obsrv1AnimationDelay);
+        if (this.bound2AnimationDelay)
+            instance.animationDelayProperty().bindBidirectional(this.obsrv2AnimationDelay);
+        if (this.bound1AnimationDuration)
+            instance.animationDurationProperty().bind(this.obsrv1AnimationDuration);
+        if (this.bound2AnimationDuration)
+            instance.animationDurationProperty().bindBidirectional(this.obsrv2AnimationDuration);
         if (this.bound1Bottom)
             instance.bottomProperty().bind(this.obsrv1Bottom);
         if (this.bound2Bottom)
@@ -122,6 +150,34 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
             instance.triggerDistanceProperty().bind(this.obsrv1TriggerDistance);
         if (this.bound2TriggerDistance)
             instance.triggerDistanceProperty().bindBidirectional(this.obsrv2TriggerDistance);
+    }
+
+    /**
+     * 設定屬性{@link HiddenSidesPane#setAnimationDelay(javafx.util.Duration)}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B animationDelay(javafx.util.Duration value)
+    {
+        this.hasAnimationDelay = true;
+        this.valAnimationDelay = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link HiddenSidesPane#setAnimationDuration(javafx.util.Duration)}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B animationDuration(javafx.util.Duration value)
+    {
+        this.hasAnimationDuration = true;
+        this.valAnimationDuration = value;
+        return (B) this;
     }
 
     /**
@@ -219,6 +275,74 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     {
         this.hasTriggerDistance = true;
         this.valTriggerDistance = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link HiddenSidesPane#animationDelayProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindAnimationDelay(javafx.beans.value.ObservableValue<? extends javafx.util.Duration> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AnimationDelay = true;
+        this.obsrv1AnimationDelay = source;
+        this.bound2AnimationDelay = false;
+        this.obsrv2AnimationDelay = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link HiddenSidesPane#animationDelayProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAnimationDelay(javafx.beans.property.Property<javafx.util.Duration> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AnimationDelay = false;
+        this.obsrv1AnimationDelay = null;
+        this.bound2AnimationDelay = true;
+        this.obsrv2AnimationDelay = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link HiddenSidesPane#animationDurationProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindAnimationDuration(javafx.beans.value.ObservableValue<? extends javafx.util.Duration> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AnimationDuration = true;
+        this.obsrv1AnimationDuration = source;
+        this.bound2AnimationDuration = false;
+        this.obsrv2AnimationDuration = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link HiddenSidesPane#animationDurationProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAnimationDuration(javafx.beans.property.Property<javafx.util.Duration> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AnimationDuration = false;
+        this.obsrv1AnimationDuration = null;
+        this.bound2AnimationDuration = true;
+        this.obsrv2AnimationDuration = source;
         return (B) this;
     }
 
@@ -470,6 +594,20 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     public HiddenSidesPane build()
     {
         HiddenSidesPane instance = new HiddenSidesPane();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link HiddenSidesPane}物件
+     *
+     * @return 新的{@link HiddenSidesPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public HiddenSidesPane build(javafx.scene.Node arg0, javafx.scene.Node arg1, javafx.scene.Node arg2, javafx.scene.Node arg3, javafx.scene.Node arg4)
+    {
+        HiddenSidesPane instance = new HiddenSidesPane(arg0, arg1, arg2, arg3, arg4);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

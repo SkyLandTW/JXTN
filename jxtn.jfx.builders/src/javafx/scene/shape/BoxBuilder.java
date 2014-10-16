@@ -226,4 +226,18 @@ public class BoxBuilder<Z extends Box, B extends BoxBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Box}物件
+     *
+     * @return 新的{@link Box}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Box build(double arg0, double arg1, double arg2)
+    {
+        Box instance = new Box(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

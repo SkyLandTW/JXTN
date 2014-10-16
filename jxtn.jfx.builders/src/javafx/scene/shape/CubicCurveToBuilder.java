@@ -412,4 +412,18 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link CubicCurveTo}物件
+     *
+     * @return 新的{@link CubicCurveTo}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CubicCurveTo build(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5)
+    {
+        CubicCurveTo instance = new CubicCurveTo(arg0, arg1, arg2, arg3, arg4, arg5);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

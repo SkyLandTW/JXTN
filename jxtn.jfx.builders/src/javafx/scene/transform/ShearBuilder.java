@@ -288,4 +288,32 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Shear}物件
+     *
+     * @return 新的{@link Shear}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Shear build(double arg0, double arg1)
+    {
+        Shear instance = new Shear(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Shear}物件
+     *
+     * @return 新的{@link Shear}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Shear build(double arg0, double arg1, double arg2, double arg3)
+    {
+        Shear instance = new Shear(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

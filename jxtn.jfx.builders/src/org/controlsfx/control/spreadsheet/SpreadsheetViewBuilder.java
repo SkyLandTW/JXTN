@@ -9,7 +9,7 @@ package org.controlsfx.control.spreadsheet;
  * {@link SpreadsheetView}建構器
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.0.6_20.jar
+ * @version controlsfx-8.20.7.jar
  * @param <Z> 要建構的物件型態(需繼承{@link SpreadsheetView})
  * @param <B> 建構器本身的型態(需繼承{@link SpreadsheetViewBuilder})
  */
@@ -47,6 +47,9 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     private boolean hasGrid;
     private org.controlsfx.control.spreadsheet.Grid valGrid;
 
+    private boolean hasRowHeaderWidth;
+    private double valRowHeaderWidth;
+
     private boolean hasRowPickerCallback;
     private javafx.util.Callback<java.lang.Integer, java.lang.Void> valRowPickerCallback;
 
@@ -63,6 +66,11 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     private boolean bound2Editable;
     private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Editable;
     private javafx.beans.property.Property<Boolean> obsrv2Editable;
+
+    private boolean bound1RowHeaderWidth;
+    private boolean bound2RowHeaderWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1RowHeaderWidth;
+    private javafx.beans.property.Property<Number> obsrv2RowHeaderWidth;
 
     private boolean bound1ShowColumnHeader;
     private boolean bound2ShowColumnHeader;
@@ -96,6 +104,8 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
             instance.setFixingRowsAllowed(this.valFixingRowsAllowed);
         if (this.hasGrid)
             instance.setGrid(this.valGrid);
+        if (this.hasRowHeaderWidth)
+            instance.setRowHeaderWidth(this.valRowHeaderWidth);
         if (this.hasRowPickerCallback)
             instance.setRowPickerCallback(this.valRowPickerCallback);
         if (this.hasRowPickers)
@@ -108,6 +118,10 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
             instance.editableProperty().bind(this.obsrv1Editable);
         if (this.bound2Editable)
             instance.editableProperty().bindBidirectional(this.obsrv2Editable);
+        if (this.bound1RowHeaderWidth)
+            instance.rowHeaderWidthProperty().bind(this.obsrv1RowHeaderWidth);
+        if (this.bound2RowHeaderWidth)
+            instance.rowHeaderWidthProperty().bindBidirectional(this.obsrv2RowHeaderWidth);
         if (this.bound1ShowColumnHeader)
             instance.showColumnHeaderProperty().bind(this.obsrv1ShowColumnHeader);
         if (this.bound2ShowColumnHeader)
@@ -445,6 +459,20 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
+     * 設定屬性{@link SpreadsheetView#setRowHeaderWidth(double)}
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B rowHeaderWidth(double value)
+    {
+        this.hasRowHeaderWidth = true;
+        this.valRowHeaderWidth = value;
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link SpreadsheetView#setRowPickerCallback(javafx.util.Callback)}
      *
      * @param value 新的屬性值
@@ -585,6 +613,40 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
+     * 設定屬性{@link SpreadsheetView#rowHeaderWidthProperty}的連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindRowHeaderWidth(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1RowHeaderWidth = true;
+        this.obsrv1RowHeaderWidth = source;
+        this.bound2RowHeaderWidth = false;
+        this.obsrv2RowHeaderWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetView#rowHeaderWidthProperty}的雙向連結
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRowHeaderWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1RowHeaderWidth = false;
+        this.obsrv1RowHeaderWidth = null;
+        this.bound2RowHeaderWidth = true;
+        this.obsrv2RowHeaderWidth = source;
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link SpreadsheetView#showColumnHeaderProperty}的連結
      *
      * @param value 新的屬性連結(單向)
@@ -662,6 +724,20 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     public SpreadsheetView build()
     {
         SpreadsheetView instance = new SpreadsheetView();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link SpreadsheetView}物件
+     *
+     * @return 新的{@link SpreadsheetView}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public SpreadsheetView build(org.controlsfx.control.spreadsheet.Grid arg0)
+    {
+        SpreadsheetView instance = new SpreadsheetView(arg0);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

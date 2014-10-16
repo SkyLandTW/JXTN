@@ -164,4 +164,18 @@ public class SepiaToneBuilder<Z extends SepiaTone, B extends SepiaToneBuilder<Z,
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link SepiaTone}物件
+     *
+     * @return 新的{@link SepiaTone}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public SepiaTone build(double arg0)
+    {
+        SepiaTone instance = new SepiaTone(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

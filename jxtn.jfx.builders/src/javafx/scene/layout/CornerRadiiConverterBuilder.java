@@ -17,7 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class CornerRadiiConverterBuilder<Z extends CornerRadiiConverter, B extends CornerRadiiConverterBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements CornerRadiiConverterBuilderExt<Z, B>
 {
 
     @Override

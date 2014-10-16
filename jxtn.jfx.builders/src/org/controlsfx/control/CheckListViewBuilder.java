@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link CheckListView}建構器
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.0.6_20.jar
+ * @version controlsfx-8.20.7.jar
  * @param <Z> 要建構的物件型態(需繼承{@link CheckListView})
  * @param <B> 建構器本身的型態(需繼承{@link CheckListViewBuilder})
  */
@@ -21,12 +21,12 @@ public class CheckListViewBuilder<T extends java.lang.Object, Z extends CheckLis
 {
 
     private boolean hasCheckModel;
-    private javafx.scene.control.MultipleSelectionModel<T> valCheckModel;
+    private org.controlsfx.control.IndexedCheckModel<T> valCheckModel;
 
     private boolean bound1CheckModel;
     private boolean bound2CheckModel;
-    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> obsrv1CheckModel;
-    private javafx.beans.property.Property<javafx.scene.control.MultipleSelectionModel<T>> obsrv2CheckModel;
+    private javafx.beans.value.ObservableValue<? extends org.controlsfx.control.IndexedCheckModel<T>> obsrv1CheckModel;
+    private javafx.beans.property.Property<org.controlsfx.control.IndexedCheckModel<T>> obsrv2CheckModel;
 
     @Override
     public void applyTo(Z instance)
@@ -41,13 +41,13 @@ public class CheckListViewBuilder<T extends java.lang.Object, Z extends CheckLis
     }
 
     /**
-     * 設定屬性{@link CheckListView#setCheckModel(javafx.scene.control.MultipleSelectionModel)}
+     * 設定屬性{@link CheckListView#setCheckModel(org.controlsfx.control.IndexedCheckModel)}
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B checkModel(javafx.scene.control.MultipleSelectionModel<T> value)
+    public B checkModel(org.controlsfx.control.IndexedCheckModel<T> value)
     {
         this.hasCheckModel = true;
         this.valCheckModel = value;
@@ -61,7 +61,7 @@ public class CheckListViewBuilder<T extends java.lang.Object, Z extends CheckLis
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindCheckModel(javafx.beans.value.ObservableValue<? extends javafx.scene.control.MultipleSelectionModel<T>> source)
+    public final B bindCheckModel(javafx.beans.value.ObservableValue<? extends org.controlsfx.control.IndexedCheckModel<T>> source)
     {
         java.util.Objects.requireNonNull(source);
         this.bound1CheckModel = true;
@@ -78,7 +78,7 @@ public class CheckListViewBuilder<T extends java.lang.Object, Z extends CheckLis
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindBidirectionalCheckModel(javafx.beans.property.Property<javafx.scene.control.MultipleSelectionModel<T>> source)
+    public final B bindBidirectionalCheckModel(javafx.beans.property.Property<org.controlsfx.control.IndexedCheckModel<T>> source)
     {
         java.util.Objects.requireNonNull(source);
         this.bound1CheckModel = false;
@@ -98,6 +98,20 @@ public class CheckListViewBuilder<T extends java.lang.Object, Z extends CheckLis
     public CheckListView<T> build()
     {
         CheckListView<T> instance = new CheckListView<T>();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link CheckListView}物件
+     *
+     * @return 新的{@link CheckListView}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CheckListView<T> build(javafx.collections.ObservableList<T> arg0)
+    {
+        CheckListView<T> instance = new CheckListView<T>(arg0);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

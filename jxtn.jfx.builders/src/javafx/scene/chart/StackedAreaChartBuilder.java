@@ -101,4 +101,18 @@ public class StackedAreaChartBuilder<X extends java.lang.Object, Y extends java.
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link StackedAreaChart}物件
+     *
+     * @return 新的{@link StackedAreaChart}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public StackedAreaChart<X, Y> build(javafx.scene.chart.Axis<X> arg0, javafx.scene.chart.Axis<Y> arg1, javafx.collections.ObservableList<javafx.scene.chart.XYChart.Series<X, Y>> arg2)
+    {
+        StackedAreaChart<X, Y> instance = new StackedAreaChart<X, Y>(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

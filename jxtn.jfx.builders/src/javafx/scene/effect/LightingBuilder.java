@@ -474,4 +474,18 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Lighting}物件
+     *
+     * @return 新的{@link Lighting}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Lighting build(javafx.scene.effect.Light arg0)
+    {
+        Lighting instance = new Lighting(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

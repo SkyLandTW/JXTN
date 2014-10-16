@@ -412,4 +412,18 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link QuadCurve}物件
+     *
+     * @return 新的{@link QuadCurve}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public QuadCurve build(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5)
+    {
+        QuadCurve instance = new QuadCurve(arg0, arg1, arg2, arg3, arg4, arg5);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

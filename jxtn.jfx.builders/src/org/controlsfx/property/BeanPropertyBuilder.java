@@ -9,7 +9,7 @@ package org.controlsfx.property;
  * {@link BeanProperty}建構器
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.0.6_20.jar
+ * @version controlsfx-8.20.7.jar
  * @param <Z> 要建構的物件型態(需繼承{@link BeanProperty})
  * @param <B> 建構器本身的型態(需繼承{@link BeanPropertyBuilder})
  */
@@ -17,7 +17,7 @@ package org.controlsfx.property;
 @SuppressWarnings("all")
 public class BeanPropertyBuilder<Z extends BeanProperty, B extends BeanPropertyBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements BeanPropertyBuilderExt<Z, B>
 {
 
     private boolean hasEditable;

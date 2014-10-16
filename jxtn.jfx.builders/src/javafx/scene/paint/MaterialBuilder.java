@@ -17,7 +17,7 @@ package javafx.scene.paint;
 @SuppressWarnings("all")
 public class MaterialBuilder<Z extends Material, B extends MaterialBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements MaterialBuilderExt<Z, B>
 {
 
     @Override

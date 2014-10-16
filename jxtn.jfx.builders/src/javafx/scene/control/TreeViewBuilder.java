@@ -679,4 +679,18 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link TreeView}物件
+     *
+     * @return 新的{@link TreeView}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public TreeView<T> build(javafx.scene.control.TreeItem<T> arg0)
+    {
+        TreeView<T> instance = new TreeView<T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

@@ -17,7 +17,7 @@ package javafx.scene.input;
 @SuppressWarnings("all")
 public class PickResultBuilder<Z extends PickResult, B extends PickResultBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements PickResultBuilderExt<Z, B>
 {
 
     @Override
@@ -35,6 +35,34 @@ public class PickResultBuilder<Z extends PickResult, B extends PickResultBuilder
     public PickResult build(javafx.event.EventTarget arg0, double arg1, double arg2)
     {
         PickResult instance = new PickResult(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link PickResult}物件
+     *
+     * @return 新的{@link PickResult}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public PickResult build(javafx.scene.Node arg0, javafx.geometry.Point3D arg1, double arg2)
+    {
+        PickResult instance = new PickResult(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link PickResult}物件
+     *
+     * @return 新的{@link PickResult}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public PickResult build(javafx.scene.Node arg0, javafx.geometry.Point3D arg1, double arg2, int arg3, javafx.geometry.Point2D arg4)
+    {
+        PickResult instance = new PickResult(arg0, arg1, arg2, arg3, arg4);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

@@ -412,4 +412,32 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Shadow}物件
+     *
+     * @return 新的{@link Shadow}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Shadow build(double arg0, javafx.scene.paint.Color arg1)
+    {
+        Shadow instance = new Shadow(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Shadow}物件
+     *
+     * @return 新的{@link Shadow}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Shadow build(javafx.scene.effect.BlurType arg0, javafx.scene.paint.Color arg1, double arg2)
+    {
+        Shadow instance = new Shadow(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

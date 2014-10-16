@@ -102,4 +102,18 @@ public class MeshViewBuilder<Z extends MeshView, B extends MeshViewBuilder<Z, B>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link MeshView}物件
+     *
+     * @return 新的{@link MeshView}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public MeshView build(javafx.scene.shape.Mesh arg0)
+    {
+        MeshView instance = new MeshView(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

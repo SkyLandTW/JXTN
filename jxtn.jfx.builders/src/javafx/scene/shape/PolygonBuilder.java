@@ -109,4 +109,18 @@ public class PolygonBuilder<Z extends Polygon, B extends PolygonBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Polygon}物件
+     *
+     * @return 新的{@link Polygon}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Polygon build(double[] arg0)
+    {
+        Polygon instance = new Polygon(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

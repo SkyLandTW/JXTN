@@ -17,7 +17,7 @@ package javafx.scene.layout;
 @SuppressWarnings("all")
 public class CornerRadiiBuilder<Z extends CornerRadii, B extends CornerRadiiBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements CornerRadiiBuilderExt<Z, B>
 {
 
     @Override
@@ -35,6 +35,48 @@ public class CornerRadiiBuilder<Z extends CornerRadii, B extends CornerRadiiBuil
     public CornerRadii build(double arg0)
     {
         CornerRadii instance = new CornerRadii(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link CornerRadii}物件
+     *
+     * @return 新的{@link CornerRadii}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CornerRadii build(double arg0, boolean arg1)
+    {
+        CornerRadii instance = new CornerRadii(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link CornerRadii}物件
+     *
+     * @return 新的{@link CornerRadii}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CornerRadii build(double arg0, double arg1, double arg2, double arg3, boolean arg4)
+    {
+        CornerRadii instance = new CornerRadii(arg0, arg1, arg2, arg3, arg4);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link CornerRadii}物件
+     *
+     * @return 新的{@link CornerRadii}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public CornerRadii build(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5, double arg6, double arg7, boolean arg8, boolean arg9, boolean arg10, boolean arg11, boolean arg12, boolean arg13, boolean arg14, boolean arg15)
+    {
+        CornerRadii instance = new CornerRadii(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

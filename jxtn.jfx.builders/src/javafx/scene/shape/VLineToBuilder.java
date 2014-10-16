@@ -102,4 +102,18 @@ public class VLineToBuilder<Z extends VLineTo, B extends VLineToBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link VLineTo}物件
+     *
+     * @return 新的{@link VLineTo}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public VLineTo build(double arg0)
+    {
+        VLineTo instance = new VLineTo(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

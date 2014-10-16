@@ -17,7 +17,7 @@ package javafx.scene.control;
 @SuppressWarnings("all")
 public class ToggleGroupBuilder<Z extends ToggleGroup, B extends ToggleGroupBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements ToggleGroupBuilderExt<Z, B>
 {
 
     private boolean hasToggles;

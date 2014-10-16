@@ -164,4 +164,18 @@ public class GlowBuilder<Z extends Glow, B extends GlowBuilder<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Glow}物件
+     *
+     * @return 新的{@link Glow}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Glow build(double arg0)
+    {
+        Glow instance = new Glow(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

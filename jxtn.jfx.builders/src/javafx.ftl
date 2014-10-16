@@ -58,11 +58,14 @@
 </#function>
 <#-- 開始 -->
 <@pp.dropOutputFile />
-<#assign path = "lib/ext/jfxrt.jar, ../lib/controlsfx-8.0.6_20.jar">
+<#assign path = "lib/ext/jfxrt.jar, ../lib/openjfx-dialogs-1.0.2.jar, ../lib/controlsfx-8.20.7.jar">
 <#assign pkgs = "javafx.scene, javafx.stage, org.controlsfx">
 <#assign root = "java.lang.Object">
 <#-- 載入結構 -->
 <#assign xml = pp.loadData("jxtn.core.fmpp.JarReflectionDataLoader", path + "|" + pkgs + "|" + root, {})>
+<#-- 結構描述檔案 -->
+<@pp.changeOutputFile name = "javafx.xml" />
+${xml.reflection.xml}
 <#-- 建立彙總類別 -->
 <#assign fileName = "/jxtn/jfx/builders/JFX.java">
 <@pp.changeOutputFile name = fileName />
@@ -129,11 +132,10 @@ package ${class.@package};
 public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends ${class.@genericName}, B extends ${class.@name}Builder<${class.@genericParamPrepend}Z, B>>
     <#if class.@super != "">
         extends ${class.@super}Builder<${class.@superParamPrepend}Z, B>
-        implements ${class.@name}BuilderExt<${class.@genericParamPrepend}Z, B>
     <#else>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
     </#if>
+        implements ${class.@name}BuilderExt<${class.@genericParamPrepend}Z, B>
 {
  <#-- 一般屬性欄位 -->
   <#list class.property as property>
@@ -348,23 +350,25 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
  <#-- 結束屬性setter -->
  <#-- 建構方法 -->
  <#if class.@abstract == "false" && class.constructor?size != 0>
+   <#list class.constructor as constructor>
 
     /**
      * 建構{@link ${class.@name}}物件
      *
      * @return 新的{@link ${class.@name}}物件實體
      */
-   <#if class.constructor[0].@parameterCount == "0">
+    <#if constructor.@parameterCount == "0">
     @Override
-   </#if>
+    </#if>
     @SuppressWarnings("unchecked")
-    public ${class.@genericName} build(${class.constructor[0].@parametersDeclaration})
+    public ${class.@genericName} build(${constructor.@parametersDeclaration})
     {
-        ${class.@genericName} instance = new ${class.@genericName}(${class.constructor[0].@parametersCall});
+        ${class.@genericName} instance = new ${class.@genericName}(${constructor.@parametersCall});
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;
     }
+   </#list>
  </#if>
 }
 <#assign fileName = "/" + class.@package?replace(".", "/") + "/" + class.@name+"BuilderExt.java">

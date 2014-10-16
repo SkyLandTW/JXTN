@@ -9,7 +9,7 @@ package org.controlsfx.control.spreadsheet;
  * {@link SpreadsheetCellBase}建構器
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.0.6_20.jar
+ * @version controlsfx-8.20.7.jar
  * @param <Z> 要建構的物件型態(需繼承{@link SpreadsheetCellBase})
  * @param <B> 建構器本身的型態(需繼承{@link SpreadsheetCellBaseBuilder})
  */
@@ -17,14 +17,11 @@ package org.controlsfx.control.spreadsheet;
 @SuppressWarnings("all")
 public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends SpreadsheetCellBaseBuilder<Z, B>>
         extends jxtn.jfx.builders.AbstractBuilder<Z, B>
-        implements jxtn.jfx.builders.AbstractBuilderExt<Z, B>
+        implements SpreadsheetCellBaseBuilderExt<Z, B>
 {
 
     private boolean hasColumnSpan;
     private int valColumnSpan;
-
-    private boolean hasCommented;
-    private boolean valCommented;
 
     private boolean hasEditable;
     private boolean valEditable;
@@ -44,16 +41,6 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     private boolean hasTooltip;
     private java.lang.String valTooltip;
 
-    private boolean bound1Commented;
-    private boolean bound2Commented;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Commented;
-    private javafx.beans.property.Property<Boolean> obsrv2Commented;
-
-    private boolean bound1Editable;
-    private boolean bound2Editable;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Editable;
-    private javafx.beans.property.Property<Boolean> obsrv2Editable;
-
     private boolean bound1Format;
     private boolean bound2Format;
     private javafx.beans.value.ObservableValue<? extends String> obsrv1Format;
@@ -70,8 +57,6 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
         super.applyTo(instance);
         if (this.hasColumnSpan)
             instance.setColumnSpan(this.valColumnSpan);
-        if (this.hasCommented)
-            instance.setCommented(this.valCommented);
         if (this.hasEditable)
             instance.setEditable(this.valEditable);
         if (this.hasFormat)
@@ -84,14 +69,6 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
             instance.setRowSpan(this.valRowSpan);
         if (this.hasTooltip)
             instance.setTooltip(this.valTooltip);
-        if (this.bound1Commented)
-            instance.commentedProperty().bind(this.obsrv1Commented);
-        if (this.bound2Commented)
-            instance.commentedProperty().bindBidirectional(this.obsrv2Commented);
-        if (this.bound1Editable)
-            instance.editableProperty().bind(this.obsrv1Editable);
-        if (this.bound2Editable)
-            instance.editableProperty().bindBidirectional(this.obsrv2Editable);
         if (this.bound1Format)
             instance.formatProperty().bind(this.obsrv1Format);
         if (this.bound2Format)
@@ -113,20 +90,6 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     {
         this.hasColumnSpan = true;
         this.valColumnSpan = value;
-        return (B) this;
-    }
-
-    /**
-     * 設定屬性{@link SpreadsheetCellBase#setCommented(boolean)}
-     *
-     * @param value 新的屬性值
-     * @return 目前的建構器(this)
-     */
-    @SuppressWarnings("unchecked")
-    public B commented(boolean value)
-    {
-        this.hasCommented = true;
-        this.valCommented = value;
         return (B) this;
     }
 
@@ -215,74 +178,6 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#commentedProperty}的連結
-     *
-     * @param value 新的屬性連結(單向)
-     * @return 目前的建構器(this)
-     */
-    @SuppressWarnings("unchecked")
-    public final B bindCommented(javafx.beans.value.ObservableValue<? extends Boolean> source)
-    {
-        java.util.Objects.requireNonNull(source);
-        this.bound1Commented = true;
-        this.obsrv1Commented = source;
-        this.bound2Commented = false;
-        this.obsrv2Commented = null;
-        return (B) this;
-    }
-
-    /**
-     * 設定屬性{@link SpreadsheetCellBase#commentedProperty}的雙向連結
-     *
-     * @param value 新的屬性連結(單向)
-     * @return 目前的建構器(this)
-     */
-    @SuppressWarnings("unchecked")
-    public final B bindBidirectionalCommented(javafx.beans.property.Property<Boolean> source)
-    {
-        java.util.Objects.requireNonNull(source);
-        this.bound1Commented = false;
-        this.obsrv1Commented = null;
-        this.bound2Commented = true;
-        this.obsrv2Commented = source;
-        return (B) this;
-    }
-
-    /**
-     * 設定屬性{@link SpreadsheetCellBase#editableProperty}的連結
-     *
-     * @param value 新的屬性連結(單向)
-     * @return 目前的建構器(this)
-     */
-    @SuppressWarnings("unchecked")
-    public final B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
-    {
-        java.util.Objects.requireNonNull(source);
-        this.bound1Editable = true;
-        this.obsrv1Editable = source;
-        this.bound2Editable = false;
-        this.obsrv2Editable = null;
-        return (B) this;
-    }
-
-    /**
-     * 設定屬性{@link SpreadsheetCellBase#editableProperty}的雙向連結
-     *
-     * @param value 新的屬性連結(單向)
-     * @return 目前的建構器(this)
-     */
-    @SuppressWarnings("unchecked")
-    public final B bindBidirectionalEditable(javafx.beans.property.Property<Boolean> source)
-    {
-        java.util.Objects.requireNonNull(source);
-        this.bound1Editable = false;
-        this.obsrv1Editable = null;
-        this.bound2Editable = true;
-        this.obsrv2Editable = source;
-        return (B) this;
-    }
-
-    /**
      * 設定屬性{@link SpreadsheetCellBase#formatProperty}的連結
      *
      * @param value 新的屬性連結(單向)
@@ -359,6 +254,20 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     public SpreadsheetCellBase build(int arg0, int arg1, int arg2, int arg3)
     {
         SpreadsheetCellBase instance = new SpreadsheetCellBase(arg0, arg1, arg2, arg3);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link SpreadsheetCellBase}物件
+     *
+     * @return 新的{@link SpreadsheetCellBase}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public SpreadsheetCellBase build(int arg0, int arg1, int arg2, int arg3, org.controlsfx.control.spreadsheet.SpreadsheetCellType<?> arg4)
+    {
+        SpreadsheetCellBase instance = new SpreadsheetCellBase(arg0, arg1, arg2, arg3, arg4);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

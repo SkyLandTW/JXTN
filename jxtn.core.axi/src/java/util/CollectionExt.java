@@ -161,8 +161,7 @@ public interface CollectionExt<E> extends IterableExt<E>
      * @return {@link ArrayList}，已排序
      */
     @Override
-    @SuppressWarnings({ "rawtypes" })
-    default <V extends Comparable> ArrayList<E> toArrayListSorted(Function<E, V> getKey)
+    default <V extends Comparable<? super V>> ArrayList<E> toArrayListSorted(Function<E, V> getKey)
     {
         Collection<E> thiz = (Collection<E>) this;
         ArrayList<E> sorted = thiz.toArrayList();

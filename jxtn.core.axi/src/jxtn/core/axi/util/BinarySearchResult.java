@@ -25,42 +25,61 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-package jxtn.core.axi.comparators;
+package jxtn.core.axi.util;
 
-import java.util.Comparator;
+import java.util.tuple.BaseTuple;
 
 /**
- * 可比較{@link Comparable}的比較器
- * <p>
- * 支援null：null項目作為較小的一方
- * </p>
+ * 二元搜尋結果
  *
  * @author AqD
- * @param <T> 要比較的項目型態
  */
-public class ComparableComparator<T extends Comparable<? super T>> implements Comparator<T>
+@SuppressWarnings("serial")
+public class BinarySearchResult extends BaseTuple<BinarySearchResult>
 {
-    @SuppressWarnings("rawtypes")
-    public static final ComparableComparator instance = new ComparableComparator<>();
+    private final boolean found;
+    private final int insertPoint;
 
-    @SuppressWarnings("unchecked")
-    public static <T extends Comparable<? super T>> ComparableComparator<T> getInstance()
+    /**
+     * 用{@link java.util.Collections#binarySearch}的傳回值建立二元搜尋結果
+     *
+     * @param index {@link java.util.Collections#binarySearch}的傳回值，大於或等於0表示找到目標的位置，否則為-(插入點+1)
+     */
+    public BinarySearchResult(int index)
     {
-        return ComparableComparator.instance;
+        this(index >= 0, index >= 0 ? index : -index - 1);
     }
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    @Override
-    public int compare(T o1, T o2)
+    /**
+     * 建立二元搜尋結果
+     *
+     * @param found true表示找到目標
+     * @param insertPoint 目標位置或插入點
+     */
+    public BinarySearchResult(boolean found, int insertPoint)
     {
-        if (o1 == null && o2 == null)
-            return 0;
-        if (o1 == null)
-            return -1;
-        if (o2 == null)
-            return 1;
-        Comparable x1 = o1;
-        Comparable x2 = o2;
-        return x1.compareTo(x2);
+        super(found, insertPoint);
+        this.found = found;
+        this.insertPoint = insertPoint;
+    }
+
+    /**
+     * 是否找到目標
+     *
+     * @return true表示找到目標
+     */
+    public boolean isFound()
+    {
+        return this.found;
+    }
+
+    /**
+     * 目標位置或插入點（依照{@link #isFound}決定）
+     *
+     * @return 目標位置或插入點
+     */
+    public int getIndex()
+    {
+        return this.insertPoint;
     }
 }

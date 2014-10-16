@@ -31,6 +31,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 
 import jxtn.core.axi.comparators.MemberComparators;
+import jxtn.core.axi.util.BinarySearchResult;
 
 /**
  * {@link List}的延伸功能
@@ -52,13 +53,42 @@ public interface ListExt<E> extends CollectionExt<E>
     }
 
     /**
+     * 二元搜尋，用指定的函數計算排序用鍵值
+     *
+     * @param <K> 代表項目的鍵值型態
+     * @param getKey 取得項目鍵值的函數，清單本身須已用該鍵值進行排序
+     * @param key 要搜尋的目標鍵值
+     * @return 搜尋結果
+     */
+    default <K extends Comparable<? super K>> BinarySearchResult binarySearch(Function<? super E, ? extends K> getKey, K key)
+    {
+        List<E> thiz = (List<E>) this;
+        int low = 0;
+        int high = thiz.size() - 1;
+        while (low <= high)
+        {
+            int mid = (low + high) >>> 1;
+            E midVal = thiz.get(mid);
+            K midKey = getKey.apply(midVal);
+            Comparable<? super K> midKeyCmp = midKey;
+            int cmp = midKeyCmp.compareTo(key);
+            if (cmp < 0)
+                low = mid + 1;
+            else if (cmp > 0)
+                high = mid - 1;
+            else
+                return new BinarySearchResult(true, mid);
+        }
+        return new BinarySearchResult(false, low);
+    }
+
+    /**
      * 依照鍵值排序目前的清單
      *
      * @param <V> 排序用的鍵值型態
      * @param getKey 用作排序的鍵值計算函數
      */
-    @SuppressWarnings("rawtypes")
-    default <V extends Comparable> void sort(Function<? super E, V> getKey)
+    default <V extends Comparable<? super V>> void sort(Function<? super E, V> getKey)
     {
         List<E> thiz = (List<E>) this;
         thiz.sort(MemberComparators.byComparable(getKey));

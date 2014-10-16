@@ -480,8 +480,7 @@ public interface IterableExt<T>
      * @param getKey 計算每個項目的鍵值
      * @return {@link ArrayList}，已排序
      */
-    @SuppressWarnings({ "rawtypes" })
-    default <V extends Comparable> ArrayList<T> toArrayListSorted(Function<T, V> getKey)
+    default <V extends Comparable<? super V>> ArrayList<T> toArrayListSorted(Function<T, V> getKey)
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().toArrayListSorted(getKey);

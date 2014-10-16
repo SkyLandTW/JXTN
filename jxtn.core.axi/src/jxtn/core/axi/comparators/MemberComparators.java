@@ -56,7 +56,7 @@ public final class MemberComparators
      * @param getMember 取得要代表{@code E}做比較的物件成員
      * @return 依照{@code M}成員比較{@code E}的比較器
      */
-    public static <E, M extends Comparable<?>> Comparator<E> byComparable(Function<E, M> getMember)
+    public static <E, M extends Comparable<? super M>> Comparator<E> byComparable(Function<E, M> getMember)
     {
         return new MemberComparableComparator<E, M>(getMember);
     }
@@ -357,7 +357,7 @@ public final class MemberComparators
         protected abstract int compareMember(M m1, M m2);
     }
 
-    private static class MemberComparableComparator<E, M extends Comparable<?>> implements Comparator<E>
+    private static class MemberComparableComparator<E, M extends Comparable<? super M>> implements Comparator<E>
     {
         public final Function<E, M> getMember;
 

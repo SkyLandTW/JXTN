@@ -64,7 +64,9 @@ public class AccordionBuilder<Z extends Accordion, B extends AccordionBuilder<Z,
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B panes(java.util.Collection<javafx.scene.control.TitledPane> value)
     {

@@ -50,7 +50,9 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B elements(java.util.Collection<javafx.scene.shape.PathElement> value)
     {

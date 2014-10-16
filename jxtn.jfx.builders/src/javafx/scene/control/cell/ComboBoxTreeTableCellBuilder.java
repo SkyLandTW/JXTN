@@ -92,7 +92,9 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B items(java.util.Collection<T> value)
     {
@@ -268,7 +270,7 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
      * @return 新的{@link ComboBoxTreeTableCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ComboBoxTreeTableCell<S, T> build(javafx.util.StringConverter<T> arg0, T[] arg1)
+    public ComboBoxTreeTableCell<S, T> build(javafx.util.StringConverter<T> arg0, javafx.collections.ObservableList<T> arg1)
     {
         ComboBoxTreeTableCell<S, T> instance = new ComboBoxTreeTableCell<S, T>(arg0, arg1);
         this.applyTo((Z) instance);
@@ -282,7 +284,7 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
      * @return 新的{@link ComboBoxTreeTableCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ComboBoxTreeTableCell<S, T> build(javafx.util.StringConverter<T> arg0, javafx.collections.ObservableList<T> arg1)
+    public ComboBoxTreeTableCell<S, T> build(javafx.util.StringConverter<T> arg0, T[] arg1)
     {
         ComboBoxTreeTableCell<S, T> instance = new ComboBoxTreeTableCell<S, T>(arg0, arg1);
         this.applyTo((Z) instance);

@@ -41,7 +41,9 @@ public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqua
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B bands(java.util.Collection<javafx.scene.media.EqualizerBand> value)
     {

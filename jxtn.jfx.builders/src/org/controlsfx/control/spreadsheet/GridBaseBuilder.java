@@ -56,7 +56,9 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B columnHeaders(java.util.Collection<java.lang.String> value)
     {
@@ -134,7 +136,9 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B rowHeaders(java.util.Collection<java.lang.String> value)
     {

@@ -78,7 +78,9 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B items(java.util.Collection<javafx.scene.control.MenuItem> value)
     {

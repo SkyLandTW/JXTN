@@ -36,7 +36,9 @@ public class ActionGroupBuilder<Z extends ActionGroup, B extends ActionGroupBuil
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B actions(java.util.Collection<org.controlsfx.control.action.Action> value)
     {

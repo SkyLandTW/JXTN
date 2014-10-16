@@ -41,7 +41,9 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B childrenUnmodifiable(java.util.Collection<javafx.scene.Node> value)
     {
@@ -105,7 +107,9 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B stylesheets(java.util.Collection<java.lang.String> value)
     {

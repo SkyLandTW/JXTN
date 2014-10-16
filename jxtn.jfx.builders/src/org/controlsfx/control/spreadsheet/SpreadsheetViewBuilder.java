@@ -151,7 +151,9 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B columnPickers(java.util.Collection<java.lang.Integer> value)
     {
@@ -215,7 +217,9 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B columns(java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn> value)
     {
@@ -293,7 +297,9 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B fixedColumns(java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn> value)
     {
@@ -357,7 +363,9 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B fixedRows(java.util.Collection<java.lang.Integer> value)
     {
@@ -491,7 +499,9 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B rowPickers(java.util.Collection<java.lang.Integer> value)
     {

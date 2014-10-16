@@ -64,7 +64,9 @@ public class ChoiceBoxTableCellBuilder<S extends java.lang.Object, T extends jav
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B items(java.util.Collection<T> value)
     {
@@ -178,7 +180,7 @@ public class ChoiceBoxTableCellBuilder<S extends java.lang.Object, T extends jav
      * @return 新的{@link ChoiceBoxTableCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ChoiceBoxTableCell<S, T> build(javafx.collections.ObservableList<T> arg0)
+    public ChoiceBoxTableCell<S, T> build(T[] arg0)
     {
         ChoiceBoxTableCell<S, T> instance = new ChoiceBoxTableCell<S, T>(arg0);
         this.applyTo((Z) instance);
@@ -192,7 +194,7 @@ public class ChoiceBoxTableCellBuilder<S extends java.lang.Object, T extends jav
      * @return 新的{@link ChoiceBoxTableCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ChoiceBoxTableCell<S, T> build(T[] arg0)
+    public ChoiceBoxTableCell<S, T> build(javafx.collections.ObservableList<T> arg0)
     {
         ChoiceBoxTableCell<S, T> instance = new ChoiceBoxTableCell<S, T>(arg0);
         this.applyTo((Z) instance);

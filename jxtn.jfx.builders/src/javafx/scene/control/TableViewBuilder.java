@@ -215,7 +215,9 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B columns(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
     {
@@ -419,7 +421,9 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B sortOrder(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
     {
@@ -511,7 +515,9 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
      */
+    @Deprecated
     @SuppressWarnings("unchecked")
     public final B visibleLeafColumns(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
     {

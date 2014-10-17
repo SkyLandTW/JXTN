@@ -29,6 +29,7 @@ package java.net;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
 
@@ -51,20 +52,27 @@ public final class URLClassLoaderExt
 
     static
     {
-        URLClassLoader_addURLMethod = URLClassLoader.class.getDeclaredMethod("addURL", URL.class);
-        URLClassLoader_addURLMethod.setAccessible(true);
-        URLClassLoader_ucpField = URLClassLoader.class.getDeclaredField("ucp");
-        URLClassLoader_ucpField.setAccessible(true);
-        URLClassPath_loadersField = URLClassPath.class.getDeclaredField("loaders");
-        URLClassPath_loadersField.setAccessible(true);
-        URLClassPath_pathField = URLClassPath.class.getDeclaredField("path");
-        URLClassPath_pathField.setAccessible(true);
-        URLClassPath_getLoaderMethod = URLClassPath.class.getDeclaredMethod("getLoader", int.class);
-        URLClassPath_getLoaderMethod.setAccessible(true);
-        URLClassPath_Loader = Arrays.asList(URLClassPath.class.getDeclaredClasses())
-                .first(c -> c.getSimpleName().equals("Loader"));
-        URLClassPath_Loader_getBaseURLMethod = URLClassPath_Loader.getDeclaredMethod("getBaseURL");
-        URLClassPath_Loader_getBaseURLMethod.setAccessible(true);
+        try
+        {
+            URLClassLoader_addURLMethod = URLClassLoader.class.getDeclaredMethod("addURL", URL.class);
+            URLClassLoader_addURLMethod.setAccessible(true);
+            URLClassLoader_ucpField = URLClassLoader.class.getDeclaredField("ucp");
+            URLClassLoader_ucpField.setAccessible(true);
+            URLClassPath_loadersField = URLClassPath.class.getDeclaredField("loaders");
+            URLClassPath_loadersField.setAccessible(true);
+            URLClassPath_pathField = URLClassPath.class.getDeclaredField("path");
+            URLClassPath_pathField.setAccessible(true);
+            URLClassPath_getLoaderMethod = URLClassPath.class.getDeclaredMethod("getLoader", int.class);
+            URLClassPath_getLoaderMethod.setAccessible(true);
+            URLClassPath_Loader = Arrays.asList(URLClassPath.class.getDeclaredClasses())
+                    .first(c -> c.getSimpleName().equals("Loader"));
+            URLClassPath_Loader_getBaseURLMethod = URLClassPath_Loader.getDeclaredMethod("getBaseURL");
+            URLClassPath_Loader_getBaseURLMethod.setAccessible(true);
+        }
+        catch (ReflectiveOperationException e)
+        {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
@@ -75,7 +83,40 @@ public final class URLClassLoaderExt
      */
     public static synchronized void addURL(URLClassLoader classLoader, URL newURL)
     {
-        URLClassLoader_addURLMethod.invoke(classLoader, new Object[] { newURL });
+        try
+        {
+            URLClassLoader_addURLMethod.invoke(classLoader, new Object[] { newURL });
+        }
+        catch (ReflectiveOperationException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * 加入新的來源位址到開頭
+     * <p>
+     * 依賴{@link URLClassLoader}及{@link URLClassPath}內部結構，驗證Java版本：
+     * <ul>
+     * <li>Oracle Java SE 8u20</li>
+     * </ul>
+     * </p>
+     *
+     * @param classLoader 要加入新位址的類別載入器
+     * @param newPath 新的類別來源位址
+     */
+    public static synchronized void insertURL(URLClassLoader classLoader, Path newPath)
+    {
+        URL newURL;
+        try
+        {
+            newURL = newPath.toUri().toURL();
+        }
+        catch (MalformedURLException e)
+        {
+            throw new RuntimeException(e);
+        }
+        insertURL(classLoader, newURL);
     }
 
     /**
@@ -92,22 +133,29 @@ public final class URLClassLoaderExt
      */
     public static synchronized void insertURL(URLClassLoader classLoader, URL newURL)
     {
-        // Modified from http://pastebin.com/SNgmGMwq
-        URLClassPath ucp = (URLClassPath) URLClassLoader_ucpField.get(classLoader);
-        ucp.addURL(newURL);
-        @SuppressWarnings("unchecked") List<URL> path = (List<URL>) URLClassPath_pathField.get(ucp);
-        @SuppressWarnings("unchecked") List<Object> loaders = (List<Object>) URLClassPath_loadersField.get(ucp);
-        // 強制建立loader (要將loader排到首位)
-        URLClassPath_getLoaderMethod.invoke(ucp, path.size() - 1);
-        if (path.size() != loaders.size())
+        try
         {
-            throw new RuntimeException("Ehh... they should be same size!!");
+            // Modified from http://pastebin.com/SNgmGMwq
+            URLClassPath ucp = (URLClassPath) URLClassLoader_ucpField.get(classLoader);
+            ucp.addURL(newURL);
+            @SuppressWarnings("unchecked") List<URL> path = (List<URL>) URLClassPath_pathField.get(ucp);
+            @SuppressWarnings("unchecked") List<Object> loaders = (List<Object>) URLClassPath_loadersField.get(ucp);
+            // 強制建立loader (要將loader排到首位)
+            URLClassPath_getLoaderMethod.invoke(ucp, path.size() - 1);
+            if (path.size() != loaders.size())
+            {
+                throw new RuntimeException("Ehh... they should be same size!!");
+            }
+            else
+            {
+                int lastIndex = path.size() - 1;
+                path.add(0, path.remove(lastIndex));
+                loaders.add(0, loaders.remove(lastIndex));
+            }
         }
-        else
+        catch (ReflectiveOperationException e)
         {
-            int lastIndex = path.size() - 1;
-            path.add(0, path.remove(lastIndex));
-            loaders.add(0, loaders.remove(lastIndex));
+            throw new RuntimeException(e);
         }
         /*
         for (URL p : path)

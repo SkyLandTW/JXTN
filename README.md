@@ -60,9 +60,6 @@ more advanced operations (parallelism etc) only.
    * Map.get2(K): replaces *Map.get(Object)*
    * ......
  - Comparators: generic comparators for comparing arrays and by member.
- - Exceptions: _MalformedURLException_ and _ReflectiveOperationException_ are
-   changed to unchecked, since there is no point of dealing with them under
-   normal circumstances.
  - Function interfaces: *FunctionEx*, *SupplierEx*, *ConsumerEx* etc, to allow
    throwing of exceptions while remain compatible with built-in interfaces
    (exceptions are optionally wrapped as _RuntimeException_).

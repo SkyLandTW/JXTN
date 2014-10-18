@@ -1,5 +1,5 @@
-Multi-line strings in Eclipse JDT
-======================================
+Multi-line Strings in Eclipse JDT
+=================================
 
 Supports multi-line string literals in Eclipse JDT
 

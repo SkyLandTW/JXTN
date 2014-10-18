@@ -32,3 +32,5 @@ if (targetType == null || targetType == this) { // could not resolve any better,
     }
 ```
 
+Note *Iterable.map()* is a function provided by *jxtn.core.axi* - this fix
+cannot be directly used without it unless rewritten.

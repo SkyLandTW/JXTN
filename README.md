@@ -125,7 +125,8 @@ Provides patches to compilers and IDEs for bugfixes and new features.
 
 ##### Patches:
  - [Eclipse JDT; Fix resolve error triggered by *jxtn.core.axi*](jxtn.core.dev/fix_inner_type-eclipse.md)
- - [Eclipse JDT; Multi-line Strings in Java](jxtn.core.dev/multiline_string-eclipse.md)
+ - [Eclipse JDT; Multi-line Strings](jxtn.core.dev/multiline_string-eclipse.md)
+ - [Eclipse JDT; Suppress Checked Exceptions](jxtn.core.dev/suppress_exception-eclipse.md)
 
 ------------------------------------------------------------------------------
 

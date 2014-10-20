@@ -38,6 +38,7 @@ public interface RunnableEx<TException extends Exception> extends Runnable
 {
     void runEx() throws TException;
 
+    @Deprecated
     @Override
     default void run()
     {

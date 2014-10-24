@@ -94,7 +94,7 @@ public interface IterableExt<T>
      * @param iterableIterator 要結合的列舉的列舉器
      * @return 結合的列舉
      */
-    public static <T> Iterable<T> concatAll(Iterator<Iterable<? extends T>> iterableIterator)
+    public static <T> Iterable<T> concatAll(Iterator<Iterable<? extends T>, RuntimeException> iterableIterator)
     {
         return () -> new ConcatedIterator<>(iterableIterator.map(Iterable::iterator));
     }

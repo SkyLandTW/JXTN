@@ -51,7 +51,7 @@ public interface Iterable<T> extends IterableExt<T> {
      *
      * @return an Iterator.
      */
-    Iterator<T> iterator();
+    Iterator<T, RuntimeException> iterator();
 
     /**
      * Performs the given action for each element of the {@code Iterable}

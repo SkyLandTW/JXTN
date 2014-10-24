@@ -132,7 +132,7 @@ public interface Set<E> extends Collection<E>, SetExt<E> {
      * @return an iterator over the elements in this set
      */
     @Override
-    Iterator<E> iterator();
+    Iterator<E, RuntimeException> iterator();
 
     /**
      * Returns an array containing all of the elements in this set.

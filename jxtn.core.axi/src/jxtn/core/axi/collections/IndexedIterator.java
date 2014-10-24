@@ -41,7 +41,7 @@ public class IndexedIterator<T> extends AbstractIterator<IndexedItem<T>>
     /**
      * 來源列舉器
      */
-    protected final Iterator<T> source;
+    protected final Iterator<T, RuntimeException> source;
 
     protected int index = 0;
 
@@ -50,7 +50,7 @@ public class IndexedIterator<T> extends AbstractIterator<IndexedItem<T>>
      *
      * @param source 來源列舉器
      */
-    public IndexedIterator(Iterator<T> source)
+    public IndexedIterator(Iterator<T, RuntimeException> source)
     {
         Objects.requireNonNull(source);
         this.source = source;

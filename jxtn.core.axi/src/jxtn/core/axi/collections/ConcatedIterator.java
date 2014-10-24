@@ -41,7 +41,7 @@ public class ConcatedIterator<T> extends AbstractIterator<T>
     /**
      * 提供來源列舉器的列舉器
      */
-    protected final Iterator<Iterator<? extends T>> sourceIterator;
+    protected final Iterator<Iterator<? extends T, RuntimeException>, RuntimeException> sourceIterator;
 
     /**
      * 目前的來源列舉器
@@ -49,7 +49,7 @@ public class ConcatedIterator<T> extends AbstractIterator<T>
      * 即{@link #sourceIterator}的目前項目
      * </p>
      */
-    protected Iterator<? extends T> currentSource;
+    protected Iterator<? extends T, RuntimeException> currentSource;
 
     private long sourceIteratorSteps;
     private long currentSourceSteps;
@@ -62,7 +62,7 @@ public class ConcatedIterator<T> extends AbstractIterator<T>
      *
      * @param sourceIterator 來源列舉器的列舉器
      */
-    public ConcatedIterator(Iterator<Iterator<? extends T>> sourceIterator)
+    public ConcatedIterator(Iterator<Iterator<? extends T, RuntimeException>, RuntimeException> sourceIterator)
     {
         Objects.requireNonNull(sourceIterator);
         this.sourceIterator = sourceIterator;

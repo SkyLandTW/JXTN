@@ -42,7 +42,7 @@ public interface EnumerationExt<E>
      *
      * @return 代表目前物件的列舉器
      */
-    default Iterator<E> asIterator()
+    default Iterator<E, RuntimeException> asIterator()
     {
         Enumeration<E> thiz = (Enumeration<E>) this;
         return new EnumerationIterator<>(thiz);

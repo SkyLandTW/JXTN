@@ -54,7 +54,7 @@ import java.util.function.Consumer;
  * @origin OpenJDK 8u20, modified to extend {@link IteratorExt}
  */
 @SuppressWarnings("all")
-public interface Iterator<E> extends IteratorExt<E> {
+public interface Iterator<E, TException extends Exception> extends IteratorExt<E, TException> {
     /**
      * Returns {@code true} if the iteration has more elements.
      * (In other words, returns {@code true} if {@link #next} would

@@ -54,7 +54,7 @@ import jxtn.core.axi.comparators.MemberComparators;
  * @author AqD
  * @param <E> 列舉項目型態
  */
-public interface IteratorExt<E>
+public interface IteratorExt<E, TException extends Exception>
 {
     /**
      * 結合多個列舉器
@@ -64,7 +64,7 @@ public interface IteratorExt<E>
      * @return 結合的列舉器
      */
     @SafeVarargs
-    public static <T> Iterator<T> concatAll(Iterator<? extends T>... iterators)
+    public static <T> Iterator<T, RuntimeException> concatAll(Iterator<? extends T, RuntimeException>... iterators)
     {
         return new ConcatedIterator<>(Arrays.asList(iterators).iterator());
     }
@@ -76,7 +76,7 @@ public interface IteratorExt<E>
      * @param iteratorIterable 要結合的列舉器的列舉
      * @return 結合的列舉器
      */
-    public static <T> Iterator<T> concatAll(Iterable<Iterator<? extends T>> iteratorIterable)
+    public static <T> Iterator<T, RuntimeException> concatAll(Iterable<Iterator<? extends T, RuntimeException>> iteratorIterable)
     {
         return new ConcatedIterator<>(iteratorIterable.iterator());
     }
@@ -88,7 +88,7 @@ public interface IteratorExt<E>
      * @param iteratorIterator 要結合的列舉器的列舉器
      * @return 結合的列舉器
      */
-    public static <T> Iterator<T> concatAll(Iterator<Iterator<? extends T>> iteratorIterator)
+    public static <T> Iterator<T, RuntimeException> concatAll(Iterator<Iterator<? extends T, RuntimeException>, RuntimeException> iteratorIterator)
     {
         return new ConcatedIterator<>(iteratorIterator);
     }
@@ -101,7 +101,7 @@ public interface IteratorExt<E>
      * @param getNext 取得每個項目的下一個項目的函數，傳回null表示結尾
      * @return 串接列舉器
      */
-    public static <T> Iterator<T> linkLine(T item, Function<? super T, ? extends T> getNext)
+    public static <T> Iterator<T, RuntimeException> linkLine(T item, Function<? super T, ? extends T> getNext)
     {
         return new LinkLineIterator<>(item, getNext);
     }
@@ -114,7 +114,7 @@ public interface IteratorExt<E>
      * @param getChildren 取得每個項目的子項目集合，傳回null表示結尾
      * @return 串接列舉器
      */
-    public static <T> Iterator<T> linkTree(T item, Function<? super T, ? extends Iterator<? extends T>> getChildren)
+    public static <T> Iterator<T, RuntimeException> linkTree(T item, Function<? super T, ? extends Iterator<? extends T, RuntimeException>> getChildren)
     {
         return new LinkTreeIterator<>(item, getChildren);
     }
@@ -134,7 +134,7 @@ public interface IteratorExt<E>
      */
     default boolean all(Predicate<? super E> filter)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         while (thiz.hasNext())
         {
             E item = thiz.next();
@@ -157,7 +157,7 @@ public interface IteratorExt<E>
      */
     default boolean any(Predicate<? super E> filter)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         while (thiz.hasNext())
         {
             E item = thiz.next();
@@ -180,9 +180,9 @@ public interface IteratorExt<E>
      * @return 指定項目型態的列舉器(物件仍為目前列舉器)
      */
     @SuppressWarnings("unchecked")
-    default <V> Iterator<V> as()
+    default <V> Iterator<V, RuntimeException> as()
     {
-        return (Iterator<V>) this;
+        return (Iterator<V, RuntimeException>) this;
     }
 
     /**
@@ -192,9 +192,9 @@ public interface IteratorExt<E>
      * @param expander 展開項目的函數
      * @return 展開列舉器，依賴原有的列舉器
      */
-    default <R> Iterator<R> expand(Function<? super E, Iterator<R>> expander)
+    default <R> Iterator<R, RuntimeException> expand(Function<? super E, Iterator<R, RuntimeException>> expander)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         return new ExpandedIterator<>(thiz, expander);
     }
 
@@ -204,9 +204,9 @@ public interface IteratorExt<E>
      * @param filter 過濾條件
      * @return 過濾列舉器，依賴原有的列舉器
      */
-    default Iterator<E> filter(Predicate<? super E> filter)
+    default Iterator<E, RuntimeException> filter(Predicate<? super E> filter)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         return new FilteredIterator<>(thiz, filter);
     }
 
@@ -215,9 +215,9 @@ public interface IteratorExt<E>
      *
      * @return 加上索引的列舉器，依賴原有的列舉器
      */
-    default Iterator<IndexedItem<E>> indexed()
+    default Iterator<IndexedItem<E>, RuntimeException> indexed()
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         return new IndexedIterator<>(thiz);
     }
 
@@ -228,9 +228,9 @@ public interface IteratorExt<E>
      * @param mapper 對照項目的函數
      * @return 對照列舉器，依賴原有的列舉器
      */
-    default <R> Iterator<R> map(Function<? super E, R> mapper)
+    default <R> Iterator<R, RuntimeException> map(Function<? super E, R> mapper)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         return new MappedIterator<>(thiz, mapper);
     }
 
@@ -242,9 +242,9 @@ public interface IteratorExt<E>
      * @return 只包含{@code type}型態項目的列舉
      */
     @SuppressWarnings("unchecked")
-    default <R extends E> Iterator<R> ofType(Class<R> type)
+    default <R extends E> Iterator<R, RuntimeException> ofType(Class<R> type)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         return thiz.filter(type::isInstance).map(e -> (R) e);
     }
 
@@ -254,9 +254,9 @@ public interface IteratorExt<E>
      * @param count 要跳過的項目數量
      * @return 跳過指定數量的列舉器，依賴原有的列舉器
      */
-    default Iterator<E> skip(int count)
+    default Iterator<E, RuntimeException> skip(int count)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         return new SkippedIterator<>(thiz, count);
     }
 
@@ -276,7 +276,7 @@ public interface IteratorExt<E>
      */
     default E next(Predicate<E> filter)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         while (thiz.hasNext())
         {
             E item = thiz.next();
@@ -298,7 +298,7 @@ public interface IteratorExt<E>
      */
     default E nextOrNull()
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         if (thiz.hasNext())
         {
             return thiz.next();
@@ -317,7 +317,7 @@ public interface IteratorExt<E>
      */
     default E nextOrNull(Predicate<E> filter)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         while (thiz.hasNext())
         {
             E item = thiz.next();
@@ -338,7 +338,7 @@ public interface IteratorExt<E>
      */
     default E nextNth(int position)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         for (int i = 0; i < position; i++)
         {
             thiz.next();
@@ -354,7 +354,7 @@ public interface IteratorExt<E>
      */
     default E nextNthOrNull(int position)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         for (int i = 0; i < position; i++)
         {
             if (!thiz.hasNext())
@@ -376,7 +376,7 @@ public interface IteratorExt<E>
      */
     default <V extends Comparable<V>> E nextOfMax(Function<? super E, V> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         if (!thiz.hasNext())
             throw new NoSuchElementException();
         E maxE = thiz.next();
@@ -403,7 +403,7 @@ public interface IteratorExt<E>
      */
     default E nextOfMaxDouble(ToDoubleFunction<E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         if (!thiz.hasNext())
             throw new NoSuchElementException();
         E maxE = thiz.next();
@@ -430,7 +430,7 @@ public interface IteratorExt<E>
      */
     default E nextOfMaxInt(ToIntFunction<E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         if (!thiz.hasNext())
             throw new NoSuchElementException();
         E maxE = thiz.next();
@@ -457,7 +457,7 @@ public interface IteratorExt<E>
      */
     default E nextOfMaxLong(ToLongFunction<E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         if (!thiz.hasNext())
             throw new NoSuchElementException();
         E maxE = thiz.next();
@@ -485,7 +485,7 @@ public interface IteratorExt<E>
      */
     default <V extends Comparable<V>> E nextOfMin(Function<? super E, V> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         if (!thiz.hasNext())
             throw new NoSuchElementException();
         E minE = thiz.next();
@@ -512,7 +512,7 @@ public interface IteratorExt<E>
      */
     default E nextOfMinDouble(ToDoubleFunction<E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         if (!thiz.hasNext())
             throw new NoSuchElementException();
         E minE = thiz.next();
@@ -539,7 +539,7 @@ public interface IteratorExt<E>
      */
     default E nextOfMinInt(ToIntFunction<E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         if (!thiz.hasNext())
             throw new NoSuchElementException();
         E minE = thiz.next();
@@ -566,7 +566,7 @@ public interface IteratorExt<E>
      */
     default E nextOfMinLong(ToLongFunction<E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         if (!thiz.hasNext())
             throw new NoSuchElementException();
         E minE = thiz.next();
@@ -597,7 +597,7 @@ public interface IteratorExt<E>
     @SuppressWarnings("unchecked")
     default E[] toArray(Class<E> type)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         ArrayList<E> list = thiz.toArrayList();
         E[] array = (E[]) Array.newInstance(type, list.size());
         return list.toArray(array);
@@ -610,7 +610,7 @@ public interface IteratorExt<E>
      */
     default ArrayList<E> toArrayList()
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         ArrayList<E> coll = new ArrayList<>();
         while (thiz.hasNext())
         {
@@ -628,7 +628,7 @@ public interface IteratorExt<E>
      */
     default <V extends Comparable<? super V>> ArrayList<E> toArrayListSorted(Function<E, V> getKey)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         ArrayList<E> sorted = thiz.toArrayList();
         sorted.sort(MemberComparators.byComparable(getKey));
         return sorted;
@@ -642,7 +642,7 @@ public interface IteratorExt<E>
      */
     default ArrayList<E> toArrayListSorted(Comparator<E> comparator)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         ArrayList<E> sorted = thiz.toArrayList();
         sorted.sort(comparator);
         return sorted;
@@ -657,7 +657,7 @@ public interface IteratorExt<E>
      */
     default <K> HashMap<K, E> toHashMap(Function<? super E, K> getKey)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         HashMap<K, E> coll = new HashMap<>();
         while (thiz.hasNext())
         {
@@ -679,7 +679,7 @@ public interface IteratorExt<E>
      */
     default <K, V> HashMap<K, V> toHashMap(Function<? super E, K> getKey, Function<? super E, V> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         HashMap<K, V> coll = new HashMap<>();
         while (thiz.hasNext())
         {
@@ -700,7 +700,7 @@ public interface IteratorExt<E>
      */
     default <K> HashMap<K, ArrayList<E>> toHashMapGrouped(Function<? super E, K> getKey)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         HashMap<K, ArrayList<E>> result = new HashMap<>();
         while (thiz.hasNext())
         {
@@ -728,7 +728,7 @@ public interface IteratorExt<E>
      */
     default <K, V> HashMap<K, ArrayList<V>> toHashMapGrouped(Function<? super E, K> getKey, Function<? super E, V> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         HashMap<K, ArrayList<V>> result = new HashMap<>();
         while (thiz.hasNext())
         {
@@ -756,7 +756,7 @@ public interface IteratorExt<E>
      */
     default HashSet<E> toHashSet()
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         HashSet<E> coll = new HashSet<>();
         while (thiz.hasNext())
         {
@@ -777,7 +777,7 @@ public interface IteratorExt<E>
      */
     default double avgDouble(ToDoubleFunction<? super E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         double total = 0;
         double count = 0;
         while (thiz.hasNext())
@@ -805,7 +805,7 @@ public interface IteratorExt<E>
      */
     default int avgInt(ToIntFunction<? super E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         double total = 0;
         double count = 0;
         while (thiz.hasNext())
@@ -833,7 +833,7 @@ public interface IteratorExt<E>
      */
     default long avgLong(ToLongFunction<? super E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         double total = 0;
         double count = 0;
         while (thiz.hasNext())
@@ -861,7 +861,7 @@ public interface IteratorExt<E>
      */
     default double maxDouble(ToDoubleFunction<E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         Double maxValue = null;
         while (thiz.hasNext())
         {
@@ -883,7 +883,7 @@ public interface IteratorExt<E>
      */
     default int maxInt(ToIntFunction<E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         Integer maxValue = null;
         while (thiz.hasNext())
         {
@@ -905,7 +905,7 @@ public interface IteratorExt<E>
      */
     default long maxLong(ToLongFunction<E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         Long maxValue = null;
         while (thiz.hasNext())
         {
@@ -927,7 +927,7 @@ public interface IteratorExt<E>
      */
     default double minDouble(ToDoubleFunction<E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         Double minValue = null;
         while (thiz.hasNext())
         {
@@ -949,7 +949,7 @@ public interface IteratorExt<E>
      */
     default int minInt(ToIntFunction<E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         Integer minValue = null;
         while (thiz.hasNext())
         {
@@ -971,7 +971,7 @@ public interface IteratorExt<E>
      */
     default long minLong(ToLongFunction<E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         Long minValue = null;
         while (thiz.hasNext())
         {
@@ -993,7 +993,7 @@ public interface IteratorExt<E>
      */
     default double sumDouble(ToDoubleFunction<E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         double sumValue = 0;
         while (thiz.hasNext())
         {
@@ -1011,7 +1011,7 @@ public interface IteratorExt<E>
      */
     default int sumInt(ToIntFunction<E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         int sumValue = 0;
         while (thiz.hasNext())
         {
@@ -1029,7 +1029,7 @@ public interface IteratorExt<E>
      */
     default long sumLong(ToIntFunction<E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         long sumValue = 0;
         while (thiz.hasNext())
         {
@@ -1047,7 +1047,7 @@ public interface IteratorExt<E>
      */
     default long sumLong(ToLongFunction<E> getValue)
     {
-        Iterator<E> thiz = (Iterator<E>) this;
+        Iterator<E, RuntimeException> thiz = (Iterator<E, RuntimeException>) this;
         long sumValue = 0;
         while (thiz.hasNext())
         {

@@ -51,7 +51,7 @@ public class LinkTreeIterator<T> extends AbstractIterator<T>
     /**
      * 取得每個項目的子項目集合的函數
      */
-    protected final Function<? super T, ? extends Iterator<? extends T>> getChildren;
+    protected final Function<? super T, ? extends Iterator<? extends T, RuntimeException>> getChildren;
 
     /**
      * 堆疊
@@ -70,7 +70,7 @@ public class LinkTreeIterator<T> extends AbstractIterator<T>
      * @param initial 初始項目，可為null(空列舉)
      * @param getChildren 取得每個項目的子項目集合，傳回null表示結束
      */
-    public LinkTreeIterator(T initial, Function<? super T, ? extends Iterator<? extends T>> getChildren)
+    public LinkTreeIterator(T initial, Function<? super T, ? extends Iterator<? extends T, RuntimeException>> getChildren)
     {
         Objects.requireNonNull(getChildren);
         this.initial = initial;
@@ -131,7 +131,7 @@ public class LinkTreeIterator<T> extends AbstractIterator<T>
         /**
          * 目前項目的子項目列舉器
          */
-        public final Iterator<? extends T> children;
+        public final Iterator<? extends T, RuntimeException> children;
 
         /**
          * 建立新紀錄
@@ -141,7 +141,7 @@ public class LinkTreeIterator<T> extends AbstractIterator<T>
         public Entry(T item)
         {
             this.item = item;
-            Iterator<? extends T> childrenIterator = LinkTreeIterator.this.getChildren.apply(this.item);
+            Iterator<? extends T, RuntimeException> childrenIterator = LinkTreeIterator.this.getChildren.apply(this.item);
             if (childrenIterator != null)
                 this.children = childrenIterator;
             else

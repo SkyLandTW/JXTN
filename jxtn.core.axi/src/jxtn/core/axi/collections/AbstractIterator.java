@@ -39,7 +39,7 @@ import java.util.NoSuchElementException;
  * @author AqD
  * @param <T> 列舉項目型態
  */
-public abstract class AbstractIterator<T> implements Iterator<T>
+public abstract class AbstractIterator<T> implements Iterator<T, RuntimeException>
 {
     private State state = State.HEAD;
     private T next;

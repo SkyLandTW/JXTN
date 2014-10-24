@@ -43,7 +43,7 @@ public class MappedIterator<T, R> extends AbstractIterator<R>
     /**
      * 來源列舉器
      */
-    protected final Iterator<T> source;
+    protected final Iterator<T, RuntimeException> source;
 
     /**
      * 對照函數
@@ -59,7 +59,7 @@ public class MappedIterator<T, R> extends AbstractIterator<R>
      * @param source 來源列舉器
      * @param mapper 對照函數
      */
-    public MappedIterator(Iterator<T> source, Function<? super T, R> mapper)
+    public MappedIterator(Iterator<T, RuntimeException> source, Function<? super T, R> mapper)
     {
         Objects.requireNonNull(source);
         Objects.requireNonNull(mapper);

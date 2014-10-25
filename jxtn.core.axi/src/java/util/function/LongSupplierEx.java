@@ -28,7 +28,7 @@
 package java.util.function;
 
 /**
- * 可接受例外的{@link LongSupplier}
+ * 可拋出例外的{@link LongSupplier}。
  *
  * @author AqD
  * @param <TException> 例外型態

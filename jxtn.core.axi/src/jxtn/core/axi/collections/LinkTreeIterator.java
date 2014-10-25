@@ -33,9 +33,9 @@ import java.util.Stack;
 import java.util.function.Function;
 
 /**
- * 依照條件做一對多串接的列舉器
+ * 依照條件做一對多串接的列舉器。
  * <p>
- * depth-first
+ * depth-first。
  * </p>
  *
  * @author AqD
@@ -44,27 +44,27 @@ import java.util.function.Function;
 public class LinkTreeIterator<T> extends AbstractIterator<T>
 {
     /**
-     * 初始項目
+     * 初始項目。
      */
     protected final T initial;
 
     /**
-     * 取得每個項目的子項目集合的函數
+     * 取得每個項目的子項目集合的函數。
      */
     protected final Function<? super T, ? extends Iterator<? extends T>> getChildren;
 
     /**
-     * 堆疊
+     * 堆疊。
      * <p>
-     * 堆疊的最外層表示目前項目，內一層即是目前項目的上層，依此類推
+     * 堆疊的最外層表示目前項目，內一層即是目前項目的上層，依此類推。
      * </p>
      */
     protected final Stack<Entry> stack = new Stack<>();
 
     /**
-     * 建立新的串接列舉
+     * 建立新的串接列舉。
      * <p>
-     * {@link LinkTreeIterator}會依照{@code getNext}取得目前項目的下一個項目
+     * {@link LinkTreeIterator}會依照{@code getNext}取得目前項目的下一個項目。
      * </p>
      *
      * @param initial 初始項目，可為null(空列舉)
@@ -78,7 +78,7 @@ public class LinkTreeIterator<T> extends AbstractIterator<T>
     }
 
     /**
-     * 取得目前進行的深度
+     * 取得目前進行的深度。
      *
      * @return 目前進行的深度(根項目為1)
      */
@@ -117,24 +117,24 @@ public class LinkTreeIterator<T> extends AbstractIterator<T>
     }
 
     /**
-     * 堆疊紀錄
+     * 堆疊紀錄。
      *
      * @author AqD
      */
     public class Entry
     {
         /**
-         * 目前項目
+         * 目前項目。
          */
         public final T item;
 
         /**
-         * 目前項目的子項目列舉器
+         * 目前項目的子項目列舉器。
          */
         public final Iterator<? extends T> children;
 
         /**
-         * 建立新紀錄
+         * 建立新紀錄。
          *
          * @param item 項目
          */

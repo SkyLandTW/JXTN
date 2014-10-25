@@ -30,9 +30,9 @@ package jxtn.core.axi.comparators;
 import java.util.Comparator;
 
 /**
- * 成員比較器
+ * 成員比較器。
  * <p>
- * 支援null：null項目或成員作為較小的一方
+ * 支援null：null項目或成員作為較小的一方。
  * </p>
  *
  * @author AqD
@@ -40,7 +40,7 @@ import java.util.Comparator;
 public class ArrayComparators
 {
     /**
-     * 取得boolean陣列的比較器
+     * 取得boolean陣列的比較器。
      *
      * @return boolean陣列的比較器
      */
@@ -57,7 +57,7 @@ public class ArrayComparators
     }
 
     /**
-     * 取得byte陣列的比較器
+     * 取得byte陣列的比較器。
      *
      * @return byte陣列的比較器
      */
@@ -74,7 +74,7 @@ public class ArrayComparators
     }
 
     /**
-     * 取得char陣列的比較器
+     * 取得char陣列的比較器。
      *
      * @return char陣列的比較器
      */
@@ -91,7 +91,7 @@ public class ArrayComparators
     }
 
     /**
-     * 取得short陣列的比較器
+     * 取得short陣列的比較器。
      *
      * @return short陣列的比較器
      */
@@ -108,7 +108,7 @@ public class ArrayComparators
     }
 
     /**
-     * 取得int陣列的比較器
+     * 取得int陣列的比較器。
      *
      * @return int陣列的比較器
      */
@@ -125,7 +125,7 @@ public class ArrayComparators
     }
 
     /**
-     * 取得long陣列的比較器
+     * 取得long陣列的比較器。
      *
      * @return long陣列的比較器
      */
@@ -142,7 +142,7 @@ public class ArrayComparators
     }
 
     /**
-     * 取得float陣列的比較器
+     * 取得float陣列的比較器。
      *
      * @return float陣列的比較器
      */
@@ -159,7 +159,7 @@ public class ArrayComparators
     }
 
     /**
-     * 取得double陣列的比較器
+     * 取得double陣列的比較器。
      *
      * @return double陣列的比較器
      */
@@ -176,7 +176,7 @@ public class ArrayComparators
     }
 
     /**
-     * 取得{@link Comparable}陣列的比較器
+     * 取得{@link Comparable}陣列的比較器。
      *
      * @param <T> 陣列項目型態
      * @return {@link Comparable}陣列的比較器
@@ -195,7 +195,7 @@ public class ArrayComparators
     }
 
     /**
-     * 取得物件陣列的比較器
+     * 取得物件陣列的比較器。
      *
      * @return 物件陣列的比較器
      */
@@ -212,9 +212,9 @@ public class ArrayComparators
     }
 
     /**
-     * 比較兩陣列
+     * 比較兩陣列。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param m1 陣列1，可為null
@@ -241,9 +241,9 @@ public class ArrayComparators
     }
 
     /**
-     * 比較兩陣列
+     * 比較兩陣列。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param m1 陣列1，可為null
@@ -271,9 +271,9 @@ public class ArrayComparators
     }
 
     /**
-     * 比較兩陣列
+     * 比較兩陣列。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param m1 陣列1，可為null
@@ -301,9 +301,9 @@ public class ArrayComparators
     }
 
     /**
-     * 比較兩陣列
+     * 比較兩陣列。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param m1 陣列1，可為null
@@ -331,9 +331,9 @@ public class ArrayComparators
     }
 
     /**
-     * 比較兩陣列
+     * 比較兩陣列。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param m1 陣列1，可為null
@@ -361,9 +361,9 @@ public class ArrayComparators
     }
 
     /**
-     * 比較兩陣列
+     * 比較兩陣列。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param m1 陣列1，可為null
@@ -391,9 +391,9 @@ public class ArrayComparators
     }
 
     /**
-     * 比較兩陣列
+     * 比較兩陣列。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param m1 陣列1，可為null
@@ -421,9 +421,9 @@ public class ArrayComparators
     }
 
     /**
-     * 比較兩陣列
+     * 比較兩陣列。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param m1 陣列1，可為null
@@ -451,9 +451,9 @@ public class ArrayComparators
     }
 
     /**
-     * 比較兩陣列
+     * 比較兩陣列。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param <T> 陣列項目型態

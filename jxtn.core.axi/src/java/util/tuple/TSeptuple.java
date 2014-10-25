@@ -28,7 +28,7 @@
 package java.util.tuple;
 
 /**
- * 支援七個子項目的Tuple
+ * 支援七個子項目的Tuple。
  *
  * @author AqD
  * @param <V1> 第一子項目型態

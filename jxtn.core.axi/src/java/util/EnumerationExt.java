@@ -30,7 +30,7 @@ package java.util;
 import jxtn.core.axi.collections.EnumerationIterator;
 
 /**
- * {@link Enumeration}的延伸功能
+ * {@link Enumeration}的延伸功能。
  *
  * @author AqD
  * @param <E> 列舉項目型態
@@ -38,7 +38,7 @@ import jxtn.core.axi.collections.EnumerationIterator;
 public interface EnumerationExt<E>
 {
     /**
-     * 傳回代表目前物件的列舉器
+     * 傳回代表目前物件的列舉器。
      *
      * @return 代表目前物件的列舉器
      */

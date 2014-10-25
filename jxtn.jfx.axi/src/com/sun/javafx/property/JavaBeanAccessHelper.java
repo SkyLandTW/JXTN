@@ -32,9 +32,9 @@ import javafx.beans.property.ReadOnlyObjectProperty;
 import com.sun.javafx.property.adapter.JavaBeanQuickAccessor;
 
 /**
- * JavaBean的輔助類別
+ * JavaBean的輔助類別。
  * <p>
- * 取代原本透過Reflection叫用{@link JavaBeanQuickAccessor}的作法（用途不明）
+ * 取代原本透過Reflection叫用{@link JavaBeanQuickAccessor}的作法（用途不明）。
  * </p>
  *
  * @author AqD

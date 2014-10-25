@@ -31,7 +31,7 @@ import java.util.Iterator;
 import java.util.Objects;
 
 /**
- * 結合多來源列舉的列舉器
+ * 結合多來源列舉的列舉器。
  *
  * @author AqD
  * @param <T> 列舉項目型態
@@ -39,14 +39,14 @@ import java.util.Objects;
 public class ConcatedIterator<T> extends AbstractIterator<T>
 {
     /**
-     * 提供來源列舉器的列舉器
+     * 提供來源列舉器的列舉器。
      */
     protected final Iterator<Iterator<? extends T>> sourceIterator;
 
     /**
-     * 目前的來源列舉器
+     * 目前的來源列舉器。
      * <p>
-     * 即{@link #sourceIterator}的目前項目
+     * 即{@link #sourceIterator}的目前項目。
      * </p>
      */
     protected Iterator<? extends T> currentSource;
@@ -55,9 +55,9 @@ public class ConcatedIterator<T> extends AbstractIterator<T>
     private long currentSourceSteps;
 
     /**
-     * 建立新的列舉
+     * 建立新的列舉。
      * <p>
-     * {@link ConcatedIterator}會依照{@code sourceIterator}內的順序展開列舉各項目
+     * {@link ConcatedIterator}會依照{@code sourceIterator}內的順序展開列舉各項目。
      * </p>
      *
      * @param sourceIterator 來源列舉器的列舉器
@@ -76,7 +76,7 @@ public class ConcatedIterator<T> extends AbstractIterator<T>
     }
 
     /**
-     * 取得來源列舉器的列舉器的進行次數
+     * 取得來源列舉器的列舉器的進行次數。
      *
      * @return {@link #sourceIterator}的進行次數
      */
@@ -86,7 +86,7 @@ public class ConcatedIterator<T> extends AbstractIterator<T>
     }
 
     /**
-     * 取得目前的來源列舉器的進行次數
+     * 取得目前的來源列舉器的進行次數。
      *
      * @return {@link #currentSource}的進行次數
      */

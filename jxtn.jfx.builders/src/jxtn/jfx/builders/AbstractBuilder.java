@@ -32,7 +32,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 基底建構器
+ * 基底建構器。
  *
  * @author AqD
  * @param <Z> 要建構的物件型態
@@ -41,12 +41,12 @@ import java.util.function.Consumer;
 public class AbstractBuilder<Z, B extends AbstractBuilder<Z, B>>
 {
     /**
-     * 建構後執行動作集合
+     * 建構後執行動作集合。
      */
     protected ArrayList<Consumer<? super Z>> afterBuildActions;
 
     /**
-     * 套用建構器的屬性設定
+     * 套用建構器的屬性設定。
      *
      * @param instance 要套用屬性的物件實體
      */
@@ -57,7 +57,7 @@ public class AbstractBuilder<Z, B extends AbstractBuilder<Z, B>>
     }
 
     /**
-     * 註冊物件建構後的執行動作
+     * 註冊物件建構後的執行動作。
      *
      * @param action 執行動作
      * @return 目前建構器(this)
@@ -73,7 +73,7 @@ public class AbstractBuilder<Z, B extends AbstractBuilder<Z, B>>
     }
 
     /**
-     * 建構物件
+     * 建構物件。
      *
      * @return 建構的物件
      */
@@ -83,7 +83,7 @@ public class AbstractBuilder<Z, B extends AbstractBuilder<Z, B>>
     }
 
     /**
-     * 呼叫建構後的執行動作({@link #afterBuildActions})
+     * 呼叫建構後的執行動作({@link #afterBuildActions})。
      *
      * @param instance 要執行動作的目標物件
      */

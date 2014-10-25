@@ -31,7 +31,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * 提供列舉器的架構，參考guava
+ * 提供列舉器的架構，參考guava。
  * <p>
  * 會在{@link #hasNext()}時即取得下一項，比正常的列舉器早一步。
  * </p>
@@ -92,7 +92,7 @@ public abstract class AbstractIterator<T> implements Iterator<T>
     }
 
     /**
-     * 取得進行次數
+     * 取得進行次數。
      *
      * @return 進行次數
      */
@@ -102,7 +102,7 @@ public abstract class AbstractIterator<T> implements Iterator<T>
     }
 
     /**
-     * 是否在開頭狀態
+     * 是否在開頭狀態。
      *
      * @return true表示目前在開頭，尚未進行任何取得動作
      */
@@ -112,9 +112,9 @@ public abstract class AbstractIterator<T> implements Iterator<T>
     }
 
     /**
-     * 取得下一個項目
+     * 取得下一個項目。
      * <p>
-     * 無項目時傳回{@link #end()}表示結束
+     * 無項目時傳回{@link #end()}表示結束。
      * </p>
      *
      * @return 下一個項目
@@ -122,7 +122,7 @@ public abstract class AbstractIterator<T> implements Iterator<T>
     protected abstract T fetchNext();
 
     /**
-     * 提供繼承類別於{@link #fetchNext()}內叫用通知結束
+     * 提供繼承類別於{@link #fetchNext()}內叫用通知結束。
      *
      * @return null
      */
@@ -133,29 +133,29 @@ public abstract class AbstractIterator<T> implements Iterator<T>
     }
 
     /**
-     * 列舉器目前狀態
+     * 列舉器目前狀態。
      *
      * @author AqD
      */
     private enum State
     {
         /**
-         * 開始(需要取得下一個)
+         * 開始(需要取得下一個)。
          */
         HEAD,
 
         /**
-         * 需要取得下一個(呼叫{@link AbstractIterator#fetchNext()})
+         * 需要取得下一個(呼叫{@link AbstractIterator#fetchNext()})。
          */
         NEED_FETCH,
 
         /**
-         * 已有下一個項目可供使用
+         * 已有下一個項目可供使用。
          */
         AVAILABLE,
 
         /**
-         * 結束
+         * 結束。
          */
         END,
     }

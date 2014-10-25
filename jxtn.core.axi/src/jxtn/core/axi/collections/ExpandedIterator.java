@@ -32,7 +32,7 @@ import java.util.Objects;
 import java.util.function.Function;
 
 /**
- * 依照指定函數做展開的列舉器
+ * 依照指定函數做展開的列舉器。
  *
  * @author AqD
  * @param <T> 來源列舉項目型態
@@ -41,21 +41,21 @@ import java.util.function.Function;
 public class ExpandedIterator<T, R> extends AbstractIterator<R>
 {
     /**
-     * 來源列舉器
+     * 來源列舉器。
      */
     protected final Iterator<T> source;
 
     /**
-     * 展開函數
+     * 展開函數。
      */
     protected final Function<? super T, Iterator<R>> expand;
 
     protected Iterator<R> currentChildren;
 
     /**
-     * 建立指定函數做展開的列舉器
+     * 建立指定函數做展開的列舉器。
      * <p>
-     * {@link MappedIterator}會依照{@code expand}將每個{@code source}的項目做展開
+     * {@link MappedIterator}會依照{@code expand}將每個{@code source}的項目做展開。
      * </p>
      *
      * @param source 來源列舉器

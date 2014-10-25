@@ -28,7 +28,7 @@
 package java.util.function;
 
 /**
- * 可接受例外的{@link Function}
+ * 可拋出例外的{@link Function}。
  *
  * @author AqD
  * @param <T> 輸入參數型態

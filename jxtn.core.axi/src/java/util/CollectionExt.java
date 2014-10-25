@@ -33,7 +33,7 @@ import java.util.function.Function;
 import jxtn.core.axi.comparators.MemberComparators;
 
 /**
- * {@link Collection}的延伸功能
+ * {@link Collection}的延伸功能。
  *
  * @author AqD
  * @param <E> 集合項目型態
@@ -41,7 +41,7 @@ import jxtn.core.axi.comparators.MemberComparators;
 public interface CollectionExt<E> extends IterableExt<E>
 {
     /**
-     * 以{@link Iterable}型態表示
+     * 以{@link Iterable}型態表示。
      *
      * @return 以{@link Iterable}型態表示的目前物件
      */
@@ -56,7 +56,7 @@ public interface CollectionExt<E> extends IterableExt<E>
     //
 
     /**
-     * 泛型版本的{@link Collection#contains}
+     * 泛型版本的{@link Collection#contains}。
      *
      * @param e 要檢查是否包含的項目
      * @return true表示項目{@code e}在目前的集合內
@@ -69,7 +69,7 @@ public interface CollectionExt<E> extends IterableExt<E>
     }
 
     /**
-     * 泛型版本的{@link Collection#containsAll}
+     * 泛型版本的{@link Collection#containsAll}。
      *
      * @param c 要檢查是否包含的項目之集合
      * @return true表示所有{@code c}內的項目皆包含在目前的集合內
@@ -82,7 +82,7 @@ public interface CollectionExt<E> extends IterableExt<E>
     }
 
     /**
-     * 泛型版本的{@link Collection#remove}
+     * 泛型版本的{@link Collection#remove}。
      *
      * @param e 要移除的項目
      * @return true表示項目{@code e}移除成功，false表示集合並未包含{@code e}
@@ -95,7 +95,7 @@ public interface CollectionExt<E> extends IterableExt<E>
     }
 
     /**
-     * 泛型版本的{@link Collection#removeAll}
+     * 泛型版本的{@link Collection#removeAll}。
      *
      * @param c 要移除的項目之集合
      * @return true表示集合已變更
@@ -108,7 +108,7 @@ public interface CollectionExt<E> extends IterableExt<E>
     }
 
     /**
-     * 泛型版本的{@link Collection#retainAll}
+     * 泛型版本的{@link Collection#retainAll}。
      *
      * @param c 要保留的項目之集合
      * @return true表示集合已變更
@@ -125,7 +125,7 @@ public interface CollectionExt<E> extends IterableExt<E>
     //
 
     /**
-     * 建立陣列
+     * 用目前項目值建立陣列。
      *
      * @param type 陣列項目型態
      * @return 陣列
@@ -141,7 +141,7 @@ public interface CollectionExt<E> extends IterableExt<E>
     }
 
     /**
-     * 建立{@link ArrayList}
+     * 用目前項目值建立{@link ArrayList}。
      *
      * @return {@link ArrayList}
      */
@@ -154,7 +154,7 @@ public interface CollectionExt<E> extends IterableExt<E>
     }
 
     /**
-     * 建立{@link ArrayList}，依照鍵值做排序
+     * 用目前項目值建立{@link ArrayList}，依照鍵值做排序。
      *
      * @param <V> 鍵值型態
      * @param getKey 計算每個項目的鍵值
@@ -170,7 +170,7 @@ public interface CollectionExt<E> extends IterableExt<E>
     }
 
     /**
-     * 建立{@link ArrayList}，依照比較器做排序
+     * 用目前項目值建立{@link ArrayList}，依照比較器做排序。
      *
      * @param comparator 項目的比較器
      * @return {@link ArrayList}，已排序
@@ -185,7 +185,7 @@ public interface CollectionExt<E> extends IterableExt<E>
     }
 
     /**
-     * 建立{@link HashMap}
+     * 用目前項目值建立{@link HashMap}。
      *
      * @param <K> {@link HashMap}鍵值型態
      * @param getKey 計算項目於新{@link HashMap}內的鍵值
@@ -205,7 +205,7 @@ public interface CollectionExt<E> extends IterableExt<E>
     }
 
     /**
-     * 建立{@link HashMap}
+     * 用目前項目值建立{@link HashMap}。
      *
      * @param <K> {@link HashMap}鍵值型態
      * @param <V> {@link HashMap}項目值型態
@@ -228,9 +228,9 @@ public interface CollectionExt<E> extends IterableExt<E>
     }
 
     /**
-     * 建立{@link HashSet}
+     * 用目前項目值建立{@link HashSet}。
      * <p>
-     * 重複值會被重疊覆蓋
+     * 重複值會被重疊覆蓋，後面的優先。
      * </p>
      *
      * @return {@link HashSet}

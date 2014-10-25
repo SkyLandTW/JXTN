@@ -28,7 +28,7 @@
 package java.util.function;
 
 /**
- * 接受例外的{@link DoublePredicate}
+ * 可拋出例外的{@link DoublePredicate}。
  *
  * @author AqD
  * @param <TException> 例外型態

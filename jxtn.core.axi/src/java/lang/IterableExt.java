@@ -52,9 +52,9 @@ import jxtn.core.axi.collections.MappedIterator;
 import jxtn.core.axi.collections.SkippedIterator;
 
 /**
- * {@link Iterable}的延伸功能
+ * {@link Iterable}的延伸功能。
  * <p>
- * 添加延伸時應同步更新{@link java.util.IteratorExt}
+ * 添加延伸時應同步更新{@link java.util.IteratorExt}。
  * </p>
  *
  * @author AqD
@@ -63,7 +63,7 @@ import jxtn.core.axi.collections.SkippedIterator;
 public interface IterableExt<T>
 {
     /**
-     * 結合多個列舉
+     * 結合多個列舉。
      *
      * @param <T> 列舉項目型態
      * @param iterables 要結合的列舉集合
@@ -76,7 +76,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 結合多個列舉
+     * 結合多個列舉。
      *
      * @param <T> 列舉項目型態
      * @param iterableIterable 要結合的列舉的列舉
@@ -88,7 +88,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 結合多個列舉
+     * 結合多個列舉。
      *
      * @param <T> 列舉項目型態
      * @param iterableIterator 要結合的列舉的列舉器
@@ -113,7 +113,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 建立樹狀結構的串接列舉
+     * 建立樹狀結構的串接列舉。
      *
      * @param <T> 列舉項目型態
      * @param item 初始項目；根結點
@@ -134,7 +134,7 @@ public interface IterableExt<T>
     //
 
     /**
-     * 檢查是否所有項目皆符合指定條件
+     * 檢查是否所有項目皆符合指定條件。
      *
      * @param filter 條件測試的函數
      * @return true表示符合，或沒有項目可測試。false表示任一項目不符合。
@@ -146,7 +146,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 檢查是否有任一項目符合指定條件
+     * 檢查是否有任一項目符合指定條件。
      *
      * @param filter 條件測試的函數
      * @return true表示符合。false表示所有項目皆不符合，或沒有項目可測試。
@@ -162,9 +162,9 @@ public interface IterableExt<T>
     //
 
     /**
-     * 將目前列舉作為指定項目型態的列舉傳回
+     * 將目前列舉作為指定項目型態的列舉傳回。
      *
-     * @param <V> 傳回項目型態
+     * @param <V> 傳回項目型態。
      * @return 指定項目型態的列舉(物件仍為目前列舉)
      */
     @SuppressWarnings("unchecked")
@@ -174,7 +174,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 結合多個列舉
+     * 結合多個列舉。
      *
      * @param iterables 要結合在後面的其他列舉
      * @return 目前列舉及{@code iterables}的結合
@@ -190,7 +190,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 依照展開函數建立展開列舉
+     * 依照展開函數建立展開列舉。
      *
      * @param <R> 展開項目型態
      * @param expander 展開項目的函數
@@ -203,7 +203,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 依照條件建立過濾列舉
+     * 依照條件建立過濾列舉。
      *
      * @param filter 過濾條件
      * @return 過濾列舉，依賴原有的列舉
@@ -215,7 +215,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 建立加上索引的列舉
+     * 建立加上索引的列舉。
      *
      * @return 加上索引的列舉，依賴原有的列舉
      */
@@ -226,7 +226,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 依照對照函數建立對照列舉
+     * 依照對照函數建立對照列舉。
      *
      * @param <R> 對照項目型態
      * @param mapper 對照項目的函數
@@ -239,7 +239,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 建立只包含指定型態項目的列舉
+     * 建立只包含指定型態項目的列舉。
      *
      * @param <R> 要取得項目的型態
      * @param type 要取得項目的型態
@@ -252,7 +252,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 建立跳過指定項目數量的列舉
+     * 建立跳過指定項目數量的列舉。
      *
      * @param count 要跳過的項目數量
      * @return 跳過指定數量的列舉，依賴原有的列舉
@@ -268,9 +268,9 @@ public interface IterableExt<T>
     //
 
     /**
-     * 取得第一筆項目
+     * 取得第一筆項目。
      *
-     * @return 第一筆項目。
+     * @return 第一筆項目
      * @throws NoSuchElementException 沒有第一筆或符合條件的項目
      */
     default T first()
@@ -280,10 +280,10 @@ public interface IterableExt<T>
     }
 
     /**
-     * 取得符合條件的第一筆項目
+     * 取得符合條件的第一筆項目。
      *
      * @param filter 取得項目的條件測試函數
-     * @return 第一筆項目。
+     * @return 第一筆項目
      * @throws NoSuchElementException 沒有第一筆或符合條件的項目
      */
     default T first(Predicate<T> filter)
@@ -293,9 +293,9 @@ public interface IterableExt<T>
     }
 
     /**
-     * 取得第一筆項目
+     * 取得第一筆項目。
      *
-     * @return 第一筆項目，或null表示沒有項目。
+     * @return 第一筆項目，或null表示沒有項目
      */
     default T firstOrNull()
     {
@@ -304,10 +304,10 @@ public interface IterableExt<T>
     }
 
     /**
-     * 取得符合條件的第一筆項目
+     * 取得符合條件的第一筆項目。
      *
      * @param filter 取得項目的條件測試函數
-     * @return 第一筆項目，或null表示沒有項目。
+     * @return 第一筆項目，或null表示沒有項目
      */
     default T firstOrNull(Predicate<T> filter)
     {
@@ -316,7 +316,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 取得第一個可計算出最大數值的項目
+     * 取得第一個可計算出最大數值的項目。
      *
      * @param <V> 數值型態
      * @param getValue 計算項目數值的函數
@@ -330,7 +330,21 @@ public interface IterableExt<T>
     }
 
     /**
-     * 取得第一個可計算出最大數值的項目
+     * 取得第一個可計算出最大數值的項目。
+     *
+     * @param <V> 數值型態
+     * @param getValue 計算項目數值的函數
+     * @return 第一個計算出最大數值的項目，或null表示沒有項目
+     */
+    default <V extends Comparable<V>> T firstOfMaxOrNull(Function<? super T, V> getValue)
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        Iterator<T> it = thiz.iterator();
+        return it.hasNext() ? it.nextOfMax(getValue) : null;
+    }
+
+    /**
+     * 取得第一個可計算出最大數值的項目。
      *
      * @param getValue 計算項目數值的函數
      * @return 第一個計算出最大數值的項目
@@ -339,11 +353,12 @@ public interface IterableExt<T>
     default T firstOfMaxDouble(ToDoubleFunction<T> getValue)
     {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().nextOfMaxDouble(getValue);
+        Iterator<T> it = thiz.iterator();
+        return it.hasNext() ? it.nextOfMaxDouble(getValue) : null;
     }
 
     /**
-     * 取得第一個可計算出最大數值的項目
+     * 取得第一個可計算出最大數值的項目。
      *
      * @param getValue 計算項目數值的函數
      * @return 第一個計算出最大數值的項目
@@ -352,11 +367,12 @@ public interface IterableExt<T>
     default T firstOfMaxInt(ToIntFunction<T> getValue)
     {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().nextOfMaxInt(getValue);
+        Iterator<T> it = thiz.iterator();
+        return it.hasNext() ? it.nextOfMaxInt(getValue) : null;
     }
 
     /**
-     * 取得第一個可計算出最大數值的項目
+     * 取得第一個可計算出最大數值的項目。
      *
      * @param getValue 計算項目數值的函數
      * @return 第一個計算出最大數值的項目
@@ -365,11 +381,12 @@ public interface IterableExt<T>
     default T firstOfMaxLong(ToLongFunction<T> getValue)
     {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().nextOfMaxLong(getValue);
+        Iterator<T> it = thiz.iterator();
+        return it.hasNext() ? it.nextOfMaxLong(getValue) : null;
     }
 
     /**
-     * 取得第一個可計算出最小數值的項目
+     * 取得第一個可計算出最小數值的項目。
      *
      * @param <V> 數值型態
      * @param getValue 計算項目數值的函數
@@ -379,11 +396,12 @@ public interface IterableExt<T>
     default <V extends Comparable<V>> T firstOfMin(Function<? super T, V> getValue)
     {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().nextOfMin(getValue);
+        Iterator<T> it = thiz.iterator();
+        return it.hasNext() ? it.nextOfMin(getValue) : null;
     }
 
     /**
-     * 取得第一個可計算出最小數值的項目
+     * 取得第一個可計算出最小數值的項目。
      *
      * @param getValue 計算項目數值的函數
      * @return 第一個計算出最小數值的項目
@@ -392,11 +410,12 @@ public interface IterableExt<T>
     default T firstOfMinDouble(ToDoubleFunction<T> getValue)
     {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().nextOfMinDouble(getValue);
+        Iterator<T> it = thiz.iterator();
+        return it.hasNext() ? it.nextOfMinDouble(getValue) : null;
     }
 
     /**
-     * 取得第一個可計算出最小數值的項目
+     * 取得第一個可計算出最小數值的項目。
      *
      * @param getValue 計算項目數值的函數
      * @return 第一個計算出最小數值的項目
@@ -405,11 +424,12 @@ public interface IterableExt<T>
     default T firstOfMinInt(ToIntFunction<T> getValue)
     {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().nextOfMinInt(getValue);
+        Iterator<T> it = thiz.iterator();
+        return it.hasNext() ? it.nextOfMinInt(getValue) : null;
     }
 
     /**
-     * 取得第一個可計算出最小數值的項目
+     * 取得第一個可計算出最小數值的項目。
      *
      * @param getValue 計算項目數值的函數
      * @return 第一個計算出最小數值的項目
@@ -418,11 +438,12 @@ public interface IterableExt<T>
     default T firstOfMinLong(ToLongFunction<T> getValue)
     {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().nextOfMinLong(getValue);
+        Iterator<T> it = thiz.iterator();
+        return it.hasNext() ? it.nextOfMinLong(getValue) : null;
     }
 
     /**
-     * 取得第N筆項目
+     * 取得第N筆項目。
      *
      * @param position 位置
      * @return 第N筆項目
@@ -435,7 +456,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 取得第N筆項目
+     * 取得第N筆項目。
      *
      * @param position 位置
      * @return 第N筆項目，或null表示沒有第N筆項目
@@ -451,7 +472,7 @@ public interface IterableExt<T>
     //
 
     /**
-     * 建立陣列
+     * 用目前項目值建立陣列。
      *
      * @param type 陣列項目型態
      * @return 陣列
@@ -463,7 +484,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 建立{@link ArrayList}
+     * 用目前項目值建立{@link ArrayList}。
      *
      * @return {@link ArrayList}
      */
@@ -474,7 +495,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 建立{@link ArrayList}，依照鍵值做排序
+     * 用目前項目值建立{@link ArrayList}，依照鍵值做排序。
      *
      * @param <V> 鍵值型態
      * @param getKey 計算每個項目的鍵值
@@ -487,7 +508,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 建立{@link ArrayList}，依照比較器做排序
+     * 用目前項目值建立{@link ArrayList}，依照比較器做排序。
      *
      * @param comparator 項目的比較器
      * @return {@link ArrayList}，已排序
@@ -499,7 +520,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 建立{@link HashMap}
+     * 用目前項目值建立{@link HashMap}。
      *
      * @param <K> {@link HashMap}鍵值型態
      * @param getKey 計算項目於新{@link HashMap}內的鍵值
@@ -512,7 +533,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 建立{@link HashMap}
+     * 用目前項目值建立{@link HashMap}。
      *
      * @param <K> {@link HashMap}鍵值型態
      * @param <V> {@link HashMap}項目值型態
@@ -527,7 +548,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 建立{@link HashMap}，依照鍵值做分群
+     * 用目前項目值建立{@link HashMap}，依照鍵值做分群。
      *
      * @param <K> 分群鍵值型態
      * @param getKey 計算每個項目的鍵值
@@ -540,7 +561,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 建立{@link HashMap}，依照鍵值做分群
+     * 用目前項目值建立{@link HashMap}，依照鍵值做分群。
      *
      * @param <K> 群組鍵值型態
      * @param <V> 項目值型態
@@ -555,9 +576,9 @@ public interface IterableExt<T>
     }
 
     /**
-     * 建立{@link HashSet}
+     * 用目前項目值建立{@link HashSet}。
      * <p>
-     * 重複值會被重疊覆蓋。
+     * 重複值會被重疊覆蓋，後面的優先。
      * </p>
      *
      * @return {@link HashSet}
@@ -573,7 +594,7 @@ public interface IterableExt<T>
     //
 
     /**
-     * 計算項目代表數值的平均
+     * 計算項目代表數值的平均。
      *
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的平均
@@ -585,7 +606,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 計算項目代表數值的平均
+     * 計算項目代表數值的平均。
      *
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的平均
@@ -597,7 +618,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 計算項目代表數值的平均
+     * 計算項目代表數值的平均。
      *
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的平均
@@ -609,7 +630,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 計算項目代表數值的最大值
+     * 計算項目代表數值的最大值。
      *
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的最大值
@@ -621,7 +642,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 計算項目代表數值的最大值
+     * 計算項目代表數值的最大值。
      *
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的最大值
@@ -633,7 +654,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 計算項目代表數值的最大值
+     * 計算項目代表數值的最大值。
      *
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的最大值
@@ -645,7 +666,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 計算項目代表數值的最小值
+     * 計算項目代表數值的最小值。
      *
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的最小值
@@ -657,7 +678,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 計算項目代表數值的最小值
+     * 計算項目代表數值的最小值。
      *
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的最小值
@@ -669,7 +690,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 計算項目代表數值的最小值
+     * 計算項目代表數值的最小值。
      *
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的最小值
@@ -681,7 +702,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 計算項目代表數值的總和
+     * 計算項目代表數值的總和。
      *
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的總和
@@ -693,7 +714,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 計算項目代表數值的總和
+     * 計算項目代表數值的總和。
      *
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的總和
@@ -705,7 +726,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 計算項目代表數值的總和
+     * 計算項目代表數值的總和。
      *
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的總和
@@ -717,7 +738,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 計算項目代表數值的總和
+     * 計算項目代表數值的總和。
      *
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的總和

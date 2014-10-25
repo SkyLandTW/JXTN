@@ -32,14 +32,14 @@ import java.util.List;
 import jxtn.core.axi.xml.NodeListWrapper;
 
 /**
- * {@link NodeList}的延伸功能
+ * {@link NodeList}的延伸功能。
  *
  * @author AqD
  */
 public interface NodeListExt
 {
     /**
-     * 傳回代表目前{@link NodeList}的清單（{@link Node}的{@link List}）
+     * 傳回代表目前{@link NodeList}的清單（{@link Node}的{@link List}）。
      *
      * @return 代表目前{@link NodeList}的清單（{@link Node}的{@link List}）
      */

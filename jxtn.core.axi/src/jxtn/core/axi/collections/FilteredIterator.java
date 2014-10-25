@@ -32,7 +32,7 @@ import java.util.Objects;
 import java.util.function.Predicate;
 
 /**
- * 依照條件做過濾的列舉器
+ * 依照條件做過濾的列舉器。
  *
  * @author AqD
  * @param <T> 列舉項目型態
@@ -40,21 +40,21 @@ import java.util.function.Predicate;
 public class FilteredIterator<T> extends AbstractIterator<T>
 {
     /**
-     * 來源列舉器
+     * 來源列舉器。
      */
     protected final Iterator<T> source;
 
     /**
-     * 過濾條件
+     * 過濾條件。
      */
     protected final Predicate<? super T> filter;
 
     private long sourceSteps;
 
     /**
-     * 建立新的過濾列舉
+     * 建立新的過濾列舉。
      * <p>
-     * {@link FilteredIterator}會依照{@code filter}的條件過濾{@code source}
+     * {@link FilteredIterator}會依照{@code filter}的條件過濾{@code source}。
      * </p>
      *
      * @param source 來源列舉器
@@ -75,7 +75,7 @@ public class FilteredIterator<T> extends AbstractIterator<T>
     }
 
     /**
-     * 取得來源列舉器的進行次數
+     * 取得來源列舉器的進行次數。
      *
      * @return {@link #source}的進行次數(過濾前的)
      */

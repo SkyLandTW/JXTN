@@ -28,7 +28,7 @@
 package java.util;
 
 /**
- * {@link Set}的延伸功能
+ * {@link Set}的延伸功能。
  *
  * @author AqD
  * @param <E> 集的項目型態
@@ -36,7 +36,7 @@ package java.util;
 public interface SetExt<E> extends CollectionExt<E>
 {
     /**
-     * 以{@link Collection}型態表示
+     * 以{@link Collection}型態表示。
      *
      * @return 以{@link Collection}型態表示的目前物件
      */

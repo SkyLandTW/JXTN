@@ -31,7 +31,7 @@ import java.util.Objects;
 import java.util.function.Function;
 
 /**
- * 依照條件做一對一串接的列舉器
+ * 依照條件做一對一串接的列舉器。
  *
  * @author AqD
  * @param <T> 列舉項目型態
@@ -39,24 +39,24 @@ import java.util.function.Function;
 public class LinkLineIterator<T> extends AbstractIterator<T>
 {
     /**
-     * 初始項目
+     * 初始項目。
      */
     protected final T initial;
 
     /**
-     * 取得每個項目的下一個項目的函數
+     * 取得每個項目的下一個項目的函數。
      */
     protected final Function<? super T, ? extends T> getNext;
 
     /**
-     * 目前項目
+     * 目前項目。
      */
     protected T current;
 
     /**
-     * 建立新的串接列舉
+     * 建立新的串接列舉。
      * <p>
-     * {@link LinkLineIterator}會依照{@code getNext}取得目前項目的下一個項目
+     * {@link LinkLineIterator}會依照{@code getNext}取得目前項目的下一個項目。
      * </p>
      *
      * @param initial 初始項目，可為null(空列舉)

@@ -30,7 +30,7 @@ package jxtn.core.axi.collections;
 import java.util.tuple.BaseTuple;
 
 /**
- * 索引項目，用在集合操作
+ * 索引項目，用在集合操作。
  *
  * @author AqD
  * @param <T> 項目型態
@@ -51,7 +51,7 @@ public final class IndexedItem<T> extends BaseTuple<IndexedItem<T>>
     }
 
     /**
-     * 取得項目索引
+     * 取得項目索引。
      *
      * @return 項目索引
      */
@@ -61,7 +61,7 @@ public final class IndexedItem<T> extends BaseTuple<IndexedItem<T>>
     }
 
     /**
-     * 取得項目值
+     * 取得項目值。
      *
      * @return 項目值
      */

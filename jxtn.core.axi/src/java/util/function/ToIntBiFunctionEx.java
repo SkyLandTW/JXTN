@@ -28,7 +28,7 @@
 package java.util.function;
 
 /**
- * 可接受例外的{@link ToIntBiFunction}
+ * 可拋出例外的{@link ToIntBiFunction}。
  *
  * @author AqD
  * @param <T> 第一參數型態

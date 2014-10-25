@@ -28,7 +28,7 @@
 package java.util.function;
 
 /**
- * 接受例外的{@link ObjLongConsumer}
+ * 可拋出例外的{@link ObjLongConsumer}。
  *
  * @author AqD
  * @param <T> 第一參數型態

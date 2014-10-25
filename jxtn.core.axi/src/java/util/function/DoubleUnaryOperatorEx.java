@@ -28,7 +28,7 @@
 package java.util.function;
 
 /**
- * 接受例外的{@link DoubleUnaryOperator}
+ * 可拋出例外的{@link DoubleUnaryOperator}。
  *
  * @author AqD
  * @param <TException> 例外型態

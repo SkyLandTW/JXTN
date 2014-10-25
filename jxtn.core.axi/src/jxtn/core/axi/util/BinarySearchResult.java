@@ -30,7 +30,7 @@ package jxtn.core.axi.util;
 import java.util.tuple.BaseTuple;
 
 /**
- * 二元搜尋結果
+ * 二元搜尋結果。
  *
  * @author AqD
  */
@@ -41,7 +41,7 @@ public class BinarySearchResult extends BaseTuple<BinarySearchResult>
     private final int insertPoint;
 
     /**
-     * 用{@link java.util.Collections#binarySearch}的傳回值建立二元搜尋結果
+     * 用{@link java.util.Collections#binarySearch}的傳回值建立二元搜尋結果。
      *
      * @param index {@link java.util.Collections#binarySearch}的傳回值，大於或等於0表示找到目標的位置，否則為-(插入點+1)
      */
@@ -51,7 +51,7 @@ public class BinarySearchResult extends BaseTuple<BinarySearchResult>
     }
 
     /**
-     * 建立二元搜尋結果
+     * 建立二元搜尋結果。
      *
      * @param found true表示找到目標
      * @param insertPoint 目標位置或插入點
@@ -64,7 +64,7 @@ public class BinarySearchResult extends BaseTuple<BinarySearchResult>
     }
 
     /**
-     * 是否找到目標
+     * 是否找到目標。
      *
      * @return true表示找到目標
      */
@@ -74,7 +74,7 @@ public class BinarySearchResult extends BaseTuple<BinarySearchResult>
     }
 
     /**
-     * 目標位置或插入點（依照{@link #isFound}決定）
+     * 目標位置或插入點（依照{@link #isFound}決定）。
      *
      * @return 目標位置或插入點
      */

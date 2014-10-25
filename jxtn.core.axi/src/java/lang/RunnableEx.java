@@ -28,7 +28,7 @@
 package java.lang;
 
 /**
- * 可接受例外的{@link java.lang.Runnable}
+ * 可拋出例外的{@link java.lang.Runnable}。
  *
  * @author AqD
  * @param <TException> 例外型態

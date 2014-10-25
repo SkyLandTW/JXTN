@@ -28,7 +28,7 @@
 package java.util.function;
 
 /**
- * 可接受例外的{@link ToLongFunction}
+ * 可拋出例外的{@link ToLongFunction}。
  *
  * @author AqD
  * @param <T> 輸入參數型態

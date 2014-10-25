@@ -36,9 +36,9 @@ import java.util.function.ToIntFunction;
 import java.util.function.ToLongFunction;
 
 /**
- * 成員比較器
+ * 成員比較器。
  * <p>
- * 支援null：null項目或成員作為較小的一方
+ * 支援null：null項目或成員作為較小的一方。
  * </p>
  *
  * @author AqD
@@ -46,9 +46,9 @@ import java.util.function.ToLongFunction;
 public final class MemberComparators
 {
     /**
-     * 依照{@link Comparable}成員做比較
+     * 依照{@link Comparable}成員做比較。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param <E> 要比較的物件型態
@@ -62,9 +62,9 @@ public final class MemberComparators
     }
 
     /**
-     * 依照boolean陣列成員做比較
+     * 依照boolean陣列成員做比較。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param <E> 要比較的物件型態
@@ -84,9 +84,9 @@ public final class MemberComparators
     }
 
     /**
-     * 依照byte陣列成員做比較
+     * 依照byte陣列成員做比較。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param <E> 要比較的物件型態
@@ -106,9 +106,9 @@ public final class MemberComparators
     }
 
     /**
-     * 依照char陣列成員做比較
+     * 依照char陣列成員做比較。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param <E> 要比較的物件型態
@@ -128,9 +128,9 @@ public final class MemberComparators
     }
 
     /**
-     * 依照short陣列成員做比較
+     * 依照short陣列成員做比較。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param <E> 要比較的物件型態
@@ -150,9 +150,9 @@ public final class MemberComparators
     }
 
     /**
-     * 依照int陣列成員做比較
+     * 依照int陣列成員做比較。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param <E> 要比較的物件型態
@@ -172,9 +172,9 @@ public final class MemberComparators
     }
 
     /**
-     * 依照long陣列成員做比較
+     * 依照long陣列成員做比較。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param <E> 要比較的物件型態
@@ -194,9 +194,9 @@ public final class MemberComparators
     }
 
     /**
-     * 依照float陣列成員做比較
+     * 依照float陣列成員做比較。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param <E> 要比較的物件型態
@@ -216,9 +216,9 @@ public final class MemberComparators
     }
 
     /**
-     * 依照double陣列成員做比較
+     * 依照double陣列成員做比較。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param <E> 要比較的物件型態
@@ -238,9 +238,9 @@ public final class MemberComparators
     }
 
     /**
-     * 依照double陣列成員做比較
+     * 依照double陣列成員做比較。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param <E> 要比較的物件型態
@@ -262,9 +262,9 @@ public final class MemberComparators
     }
 
     /**
-     * 依照boolean成員做比較
+     * 依照boolean成員做比較。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param <E> 要比較的物件型態
@@ -277,9 +277,9 @@ public final class MemberComparators
     }
 
     /**
-     * 依照double成員做比較
+     * 依照double成員做比較。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param <E> 要比較的物件型態
@@ -292,9 +292,9 @@ public final class MemberComparators
     }
 
     /**
-     * 依照int成員做比較
+     * 依照int成員做比較。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param <E> 要比較的物件型態
@@ -307,9 +307,9 @@ public final class MemberComparators
     }
 
     /**
-     * 依照long成員做比較
+     * 依照long成員做比較。
      * <p>
-     * 支援null：null項目或成員作為較小的一方
+     * 支援null：null項目或成員作為較小的一方。
      * </p>
      *
      * @param <E> 要比較的物件型態

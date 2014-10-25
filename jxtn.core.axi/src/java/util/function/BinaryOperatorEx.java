@@ -28,7 +28,7 @@
 package java.util.function;
 
 /**
- * 可接受例外的{@link BinaryOperator}
+ * 可拋出例外的{@link BinaryOperator}。
  *
  * @author AqD
  * @param <T> 輸入參數及回傳結果型態

@@ -78,7 +78,7 @@ ${xml.reflection.xml}
 package jxtn.jfx.builders;
 
 /**
- * 建構器彙總
+ * 建構器彙總。
  *
  * @author ${xml.reflection.@loader}
  */
@@ -92,7 +92,7 @@ public final class JFX
 <#if !class.@name?ends_with("Event") && !class.@name?ends_with("Model") && class.constructor?size != 0 && class.constructor[0].@access == "public">
 
     /**
-     * 建立新的{@link ${class.@package}.${class.@name}}建構器
+     * 建立新的{@link ${class.@package}.${class.@name}}建構器。
      *
      * @return 新的{@link ${class.@package}.${class.@name}Builder}
      */
@@ -120,7 +120,7 @@ public final class JFX
 package ${class.@package};
 
 /**
- * {@link ${class.@name}}建構器
+ * {@link ${class.@name}}建構器。
  *
  * @author ${xml.reflection.@loader}
  * @version ${jar.@file}
@@ -204,14 +204,14 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
 
     <#if property.@static == "false">
     /**
-     * 設定屬性{@link ${class.@name}#set${property.@name?cap_first}(${setter.@rawType})}
+     * 設定屬性{@link ${class.@name}#set${property.@name?cap_first}(${setter.@rawType})}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
      */
     <#else>
     /**
-     * 設定屬性{@link ${property.@staticType}#set${property.@staticName?cap_first}}
+     * 設定屬性{@link ${property.@staticType}#set${property.@staticName?cap_first}}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -231,7 +231,7 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
    <#elseif property.@rawType?contains(".ObservableList") && property.getter.@abstract == "false">
 
     /**
-     * 設定集合屬性{@link ${class.@name}#get${property.@name?cap_first}}的內容
+     * 設定集合屬性{@link ${class.@name}#get${property.@name?cap_first}}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -250,7 +250,7 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
     }
 
     /**
-     * 設定集合屬性{@link ${class.@name}#get${property.@name?cap_first}}的內容
+     * 設定集合屬性{@link ${class.@name}#get${property.@name?cap_first}}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -268,7 +268,7 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
     }
 
     /**
-     * 增加集合屬性{@link ${class.@name}#get${property.@name?cap_first}}的內容
+     * 增加集合屬性{@link ${class.@name}#get${property.@name?cap_first}}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -288,7 +288,7 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
     }
 
     /**
-     * 增加集合屬性{@link ${class.@name}#get${property.@name?cap_first}}的內容
+     * 增加集合屬性{@link ${class.@name}#get${property.@name?cap_first}}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -315,7 +315,7 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
     <#assign fxPropName = method.@name?substring(0, method.@name?length - 8)>
 
     /**
-     * 設定屬性{@link ${class.@name}#${fxPropName}Property}的連結
+     * 設定屬性{@link ${class.@name}#${fxPropName}Property}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -332,7 +332,7 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
     }
 
     /**
-     * 設定屬性{@link ${class.@name}#${fxPropName}Property}的雙向連結
+     * 設定屬性{@link ${class.@name}#${fxPropName}Property}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -355,7 +355,7 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
    <#list class.constructor as constructor>
 
     /**
-     * 建構{@link ${class.@name}}物件
+     * 建構{@link ${class.@name}}物件。
      *
      * @return 新的{@link ${class.@name}}物件實體
      */
@@ -386,7 +386,7 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
 package ${class.@package};
 
 /**
- * {@link ${class.@name}}建構器延伸（供客製化）
+ * {@link ${class.@name}}建構器延伸（供客製化）。
  *
  * @author ${xml.reflection.@loader}
  * @version ${jar.@file}

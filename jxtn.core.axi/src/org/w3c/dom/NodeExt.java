@@ -39,14 +39,14 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 /**
- * {@link Node}的延伸功能
+ * {@link Node}的延伸功能。
  *
  * @author AqD
  */
 public interface NodeExt
 {
     /**
-     * 將XML結構轉為文字
+     * 將XML結構轉為文字。
      *
      * @return XML文字
      * @throws TransformerException {@link Transformer#transform}拋出的例外
@@ -59,7 +59,7 @@ public interface NodeExt
     }
 
     /**
-     * 將XML結構轉為文字
+     * 將XML結構轉為文字。
      *
      * @param writer 寫入文字的目的地
      * @throws TransformerException {@link Transformer#transform}拋出的例外

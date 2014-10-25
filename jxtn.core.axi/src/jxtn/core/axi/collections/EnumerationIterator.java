@@ -32,7 +32,7 @@ import java.util.Iterator;
 import java.util.Objects;
 
 /**
- * {@link Enumeration}的列舉器界接
+ * {@link Enumeration}的列舉器界接。
  *
  * @author AqD
  * @param <E> 列舉項目型態

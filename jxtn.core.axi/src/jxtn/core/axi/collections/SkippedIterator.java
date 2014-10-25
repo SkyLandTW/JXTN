@@ -31,7 +31,7 @@ import java.util.Iterator;
 import java.util.Objects;
 
 /**
- * 跳過指定項目數量的列舉器
+ * 跳過指定項目數量的列舉器。
  *
  * @author AqD
  * @param <T> 列舉項目型態
@@ -39,21 +39,21 @@ import java.util.Objects;
 public class SkippedIterator<T> extends AbstractIterator<T>
 {
     /**
-     * 來源列舉器
+     * 來源列舉器。
      */
     protected final Iterator<T> source;
 
     /**
-     * 要跳過項目數量
+     * 要跳過項目數量。
      */
     protected final int count;
 
     private long sourceSteps;
 
     /**
-     * 建立新的片段列舉，跳過開頭指定數量的項目
+     * 建立新的片段列舉，跳過開頭指定數量的項目。
      * <p>
-     * {@link SkippedIterator}會依照{@code count}跳過{@code source}中的開頭項目
+     * {@link SkippedIterator}會依照{@code count}跳過{@code source}中的開頭項目。
      * </p>
      *
      * @param source 來源列舉器
@@ -75,7 +75,7 @@ public class SkippedIterator<T> extends AbstractIterator<T>
     }
 
     /**
-     * 取得來源列舉器的進行次數
+     * 取得來源列舉器的進行次數。
      *
      * @return {@link #source}的進行次數(過濾前的)
      */

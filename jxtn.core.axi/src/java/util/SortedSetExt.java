@@ -28,7 +28,7 @@
 package java.util;
 
 /**
- * {@link SortedSet}的延伸功能
+ * {@link SortedSet}的延伸功能。
  *
  * @author AqD
  * @param <E> 集項目型態
@@ -36,7 +36,7 @@ package java.util;
 public interface SortedSetExt<E> extends SetExt<E>
 {
     /**
-     * 建立每個項目對照到位置索引的{@link Map}
+     * 建立每個項目對照到位置索引的{@link Map}。
      *
      * @return {@link Map}，內容是集合中每個項目，對照到該項於目前集合內的索引 (不依賴原有的集合)
      */

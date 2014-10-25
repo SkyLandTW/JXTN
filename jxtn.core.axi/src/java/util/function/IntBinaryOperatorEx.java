@@ -28,7 +28,7 @@
 package java.util.function;
 
 /**
- * 接受例外的{@link IntBinaryOperator}
+ * 可拋出例外的{@link IntBinaryOperator}。
  *
  * @author AqD
  * @param <TException> 例外型態

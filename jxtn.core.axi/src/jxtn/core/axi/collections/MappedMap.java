@@ -34,9 +34,9 @@ import java.util.Set;
 import java.util.function.BiFunction;
 
 /**
- * 依照指定函數做對照的{@link Map}
+ * 依照指定函數做對照的{@link Map}。
  * <p>
- * 不支援修改、{@link #containsValue}及{@link #values}
+ * 不支援修改、{@link #containsValue}及{@link #values}。
  * </p>
  *
  * @author AqD
@@ -47,19 +47,19 @@ import java.util.function.BiFunction;
 public class MappedMap<K, V, V2> implements Map<K, V2>
 {
     /**
-     * 來源{@link Map}
+     * 來源{@link Map}。
      */
     protected final Map<K, V> source;
 
     /**
-     * 對照函數
+     * 對照函數。
      */
     protected final BiFunction<? super K, ? super V, ? extends V2> mapper;
 
     /**
-     * 建立指定函數做對照的{@link Map}
+     * 建立指定函數做對照的{@link Map}。
      * <p>
-     * {@link MappedMap}會依照{@code mapper}將每個{@code source}的項目值做轉換
+     * {@link MappedMap}會依照{@code mapper}將每個{@code source}的項目值做轉換。
      * </p>
      *
      * @param source 來源列舉器

@@ -36,7 +36,7 @@ import java.util.List;
 import sun.misc.URLClassPath;
 
 /**
- * {@link URLClassLoader}的延伸功能
+ * {@link URLClassLoader}的延伸功能。
  *
  * @author AqD
  */
@@ -76,7 +76,7 @@ public final class URLClassLoaderExt
     }
 
     /**
-     * 加入新的來源位址到結尾
+     * 加入新的來源位址到結尾。
      *
      * @param classLoader 要加入新位址的類別載入器
      * @param newURL 新的類別來源位址
@@ -94,7 +94,7 @@ public final class URLClassLoaderExt
     }
 
     /**
-     * 加入新的來源位址到開頭
+     * 加入新的來源位址到開頭。
      * <p>
      * 依賴{@link URLClassLoader}及{@link URLClassPath}內部結構，驗證Java版本：
      * <ul>
@@ -120,7 +120,7 @@ public final class URLClassLoaderExt
     }
 
     /**
-     * 加入新的來源位址到開頭
+     * 加入新的來源位址到開頭。
      * <p>
      * 依賴{@link URLClassLoader}及{@link URLClassPath}內部結構，驗證Java版本：
      * <ul>

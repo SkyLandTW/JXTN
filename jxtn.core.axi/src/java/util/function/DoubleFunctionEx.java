@@ -28,7 +28,7 @@
 package java.util.function;
 
 /**
- * 可接受例外的{@link DoubleFunction}
+ * 可拋出例外的{@link DoubleFunction}。
  *
  * @author AqD
  * @param <R> 回傳結果型態

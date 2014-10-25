@@ -46,9 +46,9 @@ import jxtn.core.axi.collections.SkippedIterator;
 import jxtn.core.axi.comparators.MemberComparators;
 
 /**
- * {@link Iterator}的延伸功能
+ * {@link Iterator}的延伸功能。
  * <p>
- * 添加延伸時應同步更新{@link java.lang.IterableExt}
+ * 添加延伸時應同步更新{@link java.lang.IterableExt}。
  * </p>
  *
  * @author AqD
@@ -57,7 +57,7 @@ import jxtn.core.axi.comparators.MemberComparators;
 public interface IteratorExt<E>
 {
     /**
-     * 結合多個列舉器
+     * 結合多個列舉器。
      *
      * @param <T> 列舉項目型態
      * @param iterators 要結合的列舉器集合
@@ -70,7 +70,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 結合多個列舉器
+     * 結合多個列舉器。
      *
      * @param <T> 列舉項目型態
      * @param iteratorIterable 要結合的列舉器的列舉
@@ -82,7 +82,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 結合多個列舉器
+     * 結合多個列舉器。
      *
      * @param <T> 列舉項目型態
      * @param iteratorIterator 要結合的列舉器的列舉器
@@ -94,7 +94,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 建立線性結構的串接列舉器
+     * 建立線性結構的串接列舉器。
      *
      * @param <T> 列舉項目型態
      * @param item 初始項目
@@ -107,7 +107,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 建立樹狀結構的串接列舉器
+     * 建立樹狀結構的串接列舉器。
      *
      * @param <T> 列舉項目型態
      * @param item 初始項目；根結點
@@ -124,9 +124,9 @@ public interface IteratorExt<E>
     //
 
     /**
-     * 檢查是否所有剩餘項目皆符合指定條件
+     * 檢查是否所有剩餘項目皆符合指定條件。
      * <p>
-     * 結束後列舉器會停在結尾
+     * 結束後列舉器會停在結尾。
      * </p>
      *
      * @param filter 條件測試的函數
@@ -147,9 +147,9 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 檢查是否有任一項目符合指定條件
+     * 檢查是否有任一項目符合指定條件。
      * <p>
-     * 結束後列舉器會停在第一筆符合項目之後或是結尾
+     * 結束後列舉器會停在第一筆符合項目之後或是結尾。
      * </p>
      *
      * @param filter 條件測試的函數
@@ -174,7 +174,7 @@ public interface IteratorExt<E>
     //
 
     /**
-     * 將目前列舉器作為指定項目型態的列舉器傳回
+     * 將目前列舉器作為指定項目型態的列舉器傳回。
      *
      * @param <V> 傳回項目型態
      * @return 指定項目型態的列舉器(物件仍為目前列舉器)
@@ -186,7 +186,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 依照展開函數建立展開列舉器
+     * 依照展開函數建立展開列舉器。
      *
      * @param <R> 展開項目型態
      * @param expander 展開項目的函數
@@ -199,7 +199,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 依照條件建立過濾列舉器
+     * 依照條件建立過濾列舉器。
      *
      * @param filter 過濾條件
      * @return 過濾列舉器，依賴原有的列舉器
@@ -211,7 +211,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 建立加上索引的列舉器
+     * 建立加上索引的列舉器。
      *
      * @return 加上索引的列舉器，依賴原有的列舉器
      */
@@ -222,7 +222,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 依照對照函數建立對照列舉器
+     * 依照對照函數建立對照列舉器。
      *
      * @param <R> 對照項目型態
      * @param mapper 對照項目的函數
@@ -235,7 +235,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 建立只包含指定型態項目的列舉器
+     * 建立只包含指定型態項目的列舉器。
      *
      * @param <R> 要取得項目的型態
      * @param type 要取得項目的型態
@@ -249,7 +249,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 建立跳過指定項目數量的列舉器
+     * 建立跳過指定項目數量的列舉器。
      *
      * @param count 要跳過的項目數量
      * @return 跳過指定數量的列舉器，依賴原有的列舉器
@@ -265,9 +265,9 @@ public interface IteratorExt<E>
     //
 
     /**
-     * 取得符合條件的下一筆項目
+     * 取得符合條件的下一筆項目。
      * <p>
-     * 結束後列舉器會停在第一筆符合項目之後或是結尾
+     * 結束後列舉器會停在第一筆符合項目之後或是結尾。
      * </p>
      *
      * @param filter 取得項目的條件測試函數
@@ -289,9 +289,9 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 取得符合條件的下一筆項目
+     * 取得符合條件的下一筆項目。
      * <p>
-     * 結束後列舉器會停在第一筆符合項目之後或是結尾
+     * 結束後列舉器會停在第一筆符合項目之後或是結尾。
      * </p>
      *
      * @return 下一筆項目，或null表示沒有下一筆或符合條件的項目
@@ -307,9 +307,9 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 取得符合條件的下一筆項目
+     * 取得符合條件的下一筆項目。
      * <p>
-     * 結束後列舉器會停在第一筆符合項目之後或是結尾
+     * 結束後列舉器會停在第一筆符合項目之後或是結尾。
      * </p>
      *
      * @param filter 取得項目的條件測試函數
@@ -330,7 +330,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 取得第N筆項目
+     * 取得第N筆項目。
      *
      * @param position 位置(相對於目前位置)
      * @return 第N筆項目
@@ -347,7 +347,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 取得第N筆項目
+     * 取得第N筆項目。
      *
      * @param position 位置(相對於目前位置)
      * @return 第N筆項目，或null表示沒有第N筆項目
@@ -367,7 +367,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 取得下一個可計算出最大數值的項目
+     * 取得下一個可計算出最大數值的項目。
      *
      * @param <V> 數值型態
      * @param getValue 計算項目數值的函數
@@ -395,7 +395,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 取得下一個可計算出最大數值的項目
+     * 取得下一個可計算出最大數值的項目。
      *
      * @param getValue 計算項目數值的函數
      * @return 下一個計算出最大數值的項目
@@ -422,7 +422,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 取得下一個可計算出最大數值的項目
+     * 取得下一個可計算出最大數值的項目。
      *
      * @param getValue 計算項目數值的函數
      * @return 下一個計算出最大數值的項目
@@ -449,7 +449,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 取得下一個可計算出最大數值的項目
+     * 取得下一個可計算出最大數值的項目。
      *
      * @param getValue 計算項目數值的函數
      * @return 下一個計算出最大數值的項目
@@ -476,7 +476,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 取得下一個可計算出最小數值的項目
+     * 取得下一個可計算出最小數值的項目。
      *
      * @param <V> 數值型態
      * @param getValue 計算項目數值的函數
@@ -504,7 +504,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 取得下一個可計算出最小數值的項目
+     * 取得下一個可計算出最小數值的項目。
      *
      * @param getValue 計算項目數值的函數
      * @return 下一個計算出最小數值的項目
@@ -531,7 +531,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 取得下一個可計算出最小數值的項目
+     * 取得下一個可計算出最小數值的項目。
      *
      * @param getValue 計算項目數值的函數
      * @return 下一個計算出最小數值的項目
@@ -558,7 +558,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 取得下一個可計算出最小數值的項目
+     * 取得下一個可計算出最小數值的項目。
      *
      * @param getValue 計算項目數值的函數
      * @return 下一個計算出最小數值的項目
@@ -589,7 +589,7 @@ public interface IteratorExt<E>
     //
 
     /**
-     * 建立陣列
+     * 用目前項目值建立陣列。
      *
      * @param type 陣列項目型態
      * @return 陣列
@@ -604,7 +604,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 建立{@link ArrayList}
+     * 用目前項目值建立{@link ArrayList}。
      *
      * @return {@link ArrayList}
      */
@@ -620,7 +620,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 建立{@link ArrayList}，依照鍵值做排序
+     * 用目前項目值建立{@link ArrayList}，依照鍵值做排序。
      *
      * @param <V> 鍵值型態
      * @param getKey 計算每個項目的鍵值
@@ -635,7 +635,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 建立{@link ArrayList}，依照比較器做排序
+     * 用目前項目值建立{@link ArrayList}，依照比較器做排序。
      *
      * @param comparator 項目的比較器
      * @return {@link ArrayList}，已排序
@@ -649,7 +649,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 建立{@link HashMap}
+     * 用目前項目值建立{@link HashMap}。
      *
      * @param <K> {@link HashMap}鍵值型態
      * @param getKey 計算項目於新{@link HashMap}內的鍵值
@@ -669,7 +669,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 建立{@link HashMap}
+     * 用目前項目值建立{@link HashMap}。
      *
      * @param <K> {@link HashMap}鍵值型態
      * @param <V> {@link HashMap}項目值型態
@@ -692,7 +692,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 建立{@link HashMap}，依照鍵值做分群
+     * 用目前項目值建立{@link HashMap}，依照鍵值做分群。
      *
      * @param <K> 分群鍵值型態
      * @param getKey 計算每個項目的鍵值
@@ -718,7 +718,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 建立{@link HashMap}，依照鍵值做分群
+     * 用目前項目值建立{@link HashMap}，依照鍵值做分群。
      *
      * @param <K> 群組鍵值型態
      * @param <V> 項目值型態
@@ -747,9 +747,9 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 建立{@link HashSet}
+     * 用目前項目值建立{@link HashSet}。
      * <p>
-     * 重複值會被重疊覆蓋
+     * 重複值會被重疊覆蓋，後面的優先。
      * </p>
      *
      * @return {@link HashSet}
@@ -770,12 +770,12 @@ public interface IteratorExt<E>
     //
 
     /**
-     * 計算項目代表數值的平均
+     * 計算項目代表數值的平均。
      *
      * @param getValue 計算項目數值的函數
-     * @return 項目代表數值的平均
+     * @return 項目代表數值的平均，或null表示沒有項目
      */
-    default double avgDouble(ToDoubleFunction<? super E> getValue)
+    default Double avgDouble(ToDoubleFunction<? super E> getValue)
     {
         Iterator<E> thiz = (Iterator<E>) this;
         double total = 0;
@@ -793,17 +793,17 @@ public interface IteratorExt<E>
         }
         else
         {
-            return 0;
+            return null;
         }
     }
 
     /**
-     * 計算項目代表數值的平均
+     * 計算項目代表數值的平均。
      *
      * @param getValue 計算項目數值的函數
-     * @return 項目代表數值的平均
+     * @return 項目代表數值的平均，或null表示沒有項目
      */
-    default int avgInt(ToIntFunction<? super E> getValue)
+    default Integer avgInt(ToIntFunction<? super E> getValue)
     {
         Iterator<E> thiz = (Iterator<E>) this;
         double total = 0;
@@ -821,17 +821,17 @@ public interface IteratorExt<E>
         }
         else
         {
-            return 0;
+            return null;
         }
     }
 
     /**
-     * 計算項目代表數值的平均
+     * 計算項目代表數值的平均。
      *
      * @param getValue 計算項目數值的函數
-     * @return 項目代表數值的平均
+     * @return 項目代表數值的平均，或null表示沒有項目
      */
-    default long avgLong(ToLongFunction<? super E> getValue)
+    default Long avgLong(ToLongFunction<? super E> getValue)
     {
         Iterator<E> thiz = (Iterator<E>) this;
         double total = 0;
@@ -849,17 +849,17 @@ public interface IteratorExt<E>
         }
         else
         {
-            return 0;
+            return null;
         }
     }
 
     /**
-     * 計算項目代表數值的最大值
+     * 計算項目代表數值的最大值。
      *
      * @param getValue 計算項目數值的函數
-     * @return 項目代表數值的最大值
+     * @return 項目代表數值的最大值，或null表示沒有項目
      */
-    default double maxDouble(ToDoubleFunction<E> getValue)
+    default Double maxDouble(ToDoubleFunction<E> getValue)
     {
         Iterator<E> thiz = (Iterator<E>) this;
         Double maxValue = null;
@@ -872,16 +872,16 @@ public interface IteratorExt<E>
                 maxValue = v;
             }
         }
-        return maxValue != null ? maxValue : 0;
+        return maxValue;
     }
 
     /**
-     * 計算項目代表數值的最大值
+     * 計算項目代表數值的最大值。
      *
      * @param getValue 計算項目數值的函數
-     * @return 項目代表數值的最大值
+     * @return 項目代表數值的最大值，或null表示沒有項目
      */
-    default int maxInt(ToIntFunction<E> getValue)
+    default Integer maxInt(ToIntFunction<E> getValue)
     {
         Iterator<E> thiz = (Iterator<E>) this;
         Integer maxValue = null;
@@ -894,16 +894,16 @@ public interface IteratorExt<E>
                 maxValue = v;
             }
         }
-        return maxValue != null ? maxValue : 0;
+        return maxValue;
     }
 
     /**
-     * 計算項目代表數值的最大值
+     * 計算項目代表數值的最大值。
      *
      * @param getValue 計算項目數值的函數
-     * @return 項目代表數值的最大值
+     * @return 項目代表數值的最大值，或null表示沒有項目
      */
-    default long maxLong(ToLongFunction<E> getValue)
+    default Long maxLong(ToLongFunction<E> getValue)
     {
         Iterator<E> thiz = (Iterator<E>) this;
         Long maxValue = null;
@@ -916,16 +916,16 @@ public interface IteratorExt<E>
                 maxValue = v;
             }
         }
-        return maxValue != null ? maxValue : 0;
+        return maxValue;
     }
 
     /**
-     * 計算項目代表數值的最小值
+     * 計算項目代表數值的最小值。
      *
      * @param getValue 計算項目數值的函數
-     * @return 項目代表數值的最小值
+     * @return 項目代表數值的最小值，或null表示沒有項目
      */
-    default double minDouble(ToDoubleFunction<E> getValue)
+    default Double minDouble(ToDoubleFunction<E> getValue)
     {
         Iterator<E> thiz = (Iterator<E>) this;
         Double minValue = null;
@@ -938,16 +938,16 @@ public interface IteratorExt<E>
                 minValue = v;
             }
         }
-        return minValue != null ? minValue : 0;
+        return minValue;
     }
 
     /**
-     * 計算項目代表數值的最小值
+     * 計算項目代表數值的最小值。
      *
      * @param getValue 計算項目數值的函數
-     * @return 項目代表數值的最小值
+     * @return 項目代表數值的最小值，或null表示沒有項目
      */
-    default int minInt(ToIntFunction<E> getValue)
+    default Integer minInt(ToIntFunction<E> getValue)
     {
         Iterator<E> thiz = (Iterator<E>) this;
         Integer minValue = null;
@@ -960,16 +960,16 @@ public interface IteratorExt<E>
                 minValue = v;
             }
         }
-        return minValue != null ? minValue : 0;
+        return minValue;
     }
 
     /**
-     * 計算項目代表數值的最小值
+     * 計算項目代表數值的最小值。
      *
      * @param getValue 計算項目數值的函數
-     * @return 項目代表數值的最小值
+     * @return 項目代表數值的最小值，或null表示沒有項目
      */
-    default long minLong(ToLongFunction<E> getValue)
+    default Long minLong(ToLongFunction<E> getValue)
     {
         Iterator<E> thiz = (Iterator<E>) this;
         Long minValue = null;
@@ -982,14 +982,14 @@ public interface IteratorExt<E>
                 minValue = v;
             }
         }
-        return minValue != null ? minValue : 0;
+        return minValue;
     }
 
     /**
-     * 計算項目代表數值的總和
+     * 計算項目代表數值的總和。
      *
      * @param getValue 計算項目數值的函數
-     * @return 項目代表數值的總和
+     * @return 項目代表數值的總和，或null表示沒有項目
      */
     default double sumDouble(ToDoubleFunction<E> getValue)
     {
@@ -1004,7 +1004,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 計算項目代表數值的總和
+     * 計算項目代表數值的總和。
      *
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的總和
@@ -1022,7 +1022,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 計算項目代表數值的總和
+     * 計算項目代表數值的總和。
      *
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的總和
@@ -1040,7 +1040,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 計算項目代表數值的總和
+     * 計算項目代表數值的總和。
      *
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的總和

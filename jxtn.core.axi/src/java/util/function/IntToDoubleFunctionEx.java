@@ -28,7 +28,7 @@
 package java.util.function;
 
 /**
- * 可接受例外的{@link IntToDoubleFunction}
+ * 可拋出例外的{@link IntToDoubleFunction}。
  *
  * @author AqD
  * @param <TException> 例外型態

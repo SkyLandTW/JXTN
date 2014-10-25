@@ -33,7 +33,7 @@ import java.util.Arrays;
 import jxtn.core.axi.comparators.ArrayComparators;
 
 /**
- * 基本的Tuple型態
+ * 基本的Tuple型態。
  * <ul>
  * <li>子項目長度、順序及型態固定</li>
  * <li>子項目值可為null</li>
@@ -77,7 +77,7 @@ public abstract class BaseTuple<T extends BaseTuple<T>> implements Comparable<T>
     }
 
     /**
-     * 取得包含所有子項目的內部陣列
+     * 取得包含所有子項目的內部陣列。
      *
      * @return 包含所有子項目的內部陣列，不應修改
      */

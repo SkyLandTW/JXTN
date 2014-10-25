@@ -28,7 +28,7 @@
 package java.util.function;
 
 /**
- * 接受例外的{@link LongBinaryOperator}
+ * 接受例外的{@link LongBinaryOperator}。
  *
  * @author AqD
  * @param <TException> 例外型態

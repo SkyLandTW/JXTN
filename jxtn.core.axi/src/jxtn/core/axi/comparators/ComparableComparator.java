@@ -30,9 +30,9 @@ package jxtn.core.axi.comparators;
 import java.util.Comparator;
 
 /**
- * 可比較{@link Comparable}的比較器
+ * 可比較{@link Comparable}的比較器。
  * <p>
- * 支援null：null項目作為較小的一方
+ * 支援null：null項目作為較小的一方。
  * </p>
  *
  * @author AqD
@@ -40,8 +40,7 @@ import java.util.Comparator;
  */
 public class ComparableComparator<T extends Comparable<? super T>> implements Comparator<T>
 {
-    @SuppressWarnings("rawtypes")
-    public static final ComparableComparator instance = new ComparableComparator<>();
+    @SuppressWarnings("rawtypes") public static final ComparableComparator instance = new ComparableComparator<>();
 
     @SuppressWarnings("unchecked")
     public static <T extends Comparable<? super T>> ComparableComparator<T> getInstance()

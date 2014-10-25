@@ -28,7 +28,7 @@
 package java.lang.reflect;
 
 /**
- * {@link Member}的延伸功能
+ * {@link Member}的延伸功能。
  *
  * @author AqD
  */

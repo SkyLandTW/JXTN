@@ -30,7 +30,7 @@ package java.util.function;
 import java.util.Objects;
 
 /**
- * 可接受例外的{@link BiFunction}
+ * 可拋出例外的{@link BiFunction}。
  *
  * @author AqD
  * @param <T> 第一參數型態

@@ -31,7 +31,7 @@ import java.util.Iterator;
 import java.util.Objects;
 
 /**
- * 加上索引的列舉器
+ * 加上索引的列舉器。
  *
  * @author AqD
  * @param <T> 列舉項目型態
@@ -39,14 +39,14 @@ import java.util.Objects;
 public class IndexedIterator<T> extends AbstractIterator<IndexedItem<T>>
 {
     /**
-     * 來源列舉器
+     * 來源列舉器。
      */
     protected final Iterator<T> source;
 
     protected int index = 0;
 
     /**
-     * 建立加上索引的列舉器
+     * 建立加上索引的列舉器。
      *
      * @param source 來源列舉器
      */

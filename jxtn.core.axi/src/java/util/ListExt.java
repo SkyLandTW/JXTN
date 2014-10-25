@@ -34,7 +34,7 @@ import jxtn.core.axi.comparators.MemberComparators;
 import jxtn.core.axi.util.BinarySearchResult;
 
 /**
- * {@link List}的延伸功能
+ * {@link List}的延伸功能。
  *
  * @author AqD
  * @param <E> 清單項目型態
@@ -42,7 +42,7 @@ import jxtn.core.axi.util.BinarySearchResult;
 public interface ListExt<E> extends CollectionExt<E>
 {
     /**
-     * 以{@link Collection}型態表示
+     * 以{@link Collection}型態表示。
      *
      * @return 以{@link Collection}型態表示的目前物件
      */
@@ -53,7 +53,7 @@ public interface ListExt<E> extends CollectionExt<E>
     }
 
     /**
-     * 二元搜尋，用指定的函數計算排序用鍵值
+     * 二元搜尋，用指定的函數計算排序用鍵值。
      *
      * @param <K> 代表項目的鍵值型態
      * @param getKey 取得項目鍵值的函數，清單本身須已用該鍵值進行排序
@@ -83,7 +83,7 @@ public interface ListExt<E> extends CollectionExt<E>
     }
 
     /**
-     * 依照鍵值排序目前的清單
+     * 依照鍵值排序目前的清單。
      *
      * @param <V> 排序用的鍵值型態
      * @param getKey 用作排序的鍵值計算函數
@@ -99,7 +99,7 @@ public interface ListExt<E> extends CollectionExt<E>
     //
 
     /**
-     * 泛型版本的{@link List#indexOf}
+     * 泛型版本的{@link List#indexOf}。
      *
      * @param e 要檢查索引的項目
      * @return 第一個值等於{@code e}的項目索引，或是-1表示找不到
@@ -112,7 +112,7 @@ public interface ListExt<E> extends CollectionExt<E>
     }
 
     /**
-     * 泛型版本的{@link List#lastIndexOf}
+     * 泛型版本的{@link List#lastIndexOf}。
      *
      * @param e 要檢查索引的項目
      * @return 最後一個值等於{@code e}的項目索引，或是-1表示找不到
@@ -129,9 +129,9 @@ public interface ListExt<E> extends CollectionExt<E>
     //
 
     /**
-     * 取得第一筆項目
+     * 取得第一筆項目。
      *
-     * @return 第一筆項目。
+     * @return 第一筆項目
      * @throws NoSuchElementException 沒有項目
      */
     @Override
@@ -145,7 +145,7 @@ public interface ListExt<E> extends CollectionExt<E>
     }
 
     /**
-     * 取得第一筆項目
+     * 取得第一筆項目。
      *
      * @return 第一筆項目，或null表示沒有項目
      */
@@ -160,7 +160,7 @@ public interface ListExt<E> extends CollectionExt<E>
     }
 
     /**
-     * 取得符合指定條件的第一個項目索引
+     * 取得符合指定條件的第一個項目索引。
      *
      * @param filter 測試條件的函數
      * @return 符合{@code filter}的第一個項目索引，或-1表示找不到
@@ -180,7 +180,7 @@ public interface ListExt<E> extends CollectionExt<E>
     }
 
     /**
-     * 取得第N筆項目
+     * 取得第N筆項目。
      *
      * @param position 位置
      * @return 第N筆項目
@@ -196,7 +196,7 @@ public interface ListExt<E> extends CollectionExt<E>
     }
 
     /**
-     * 取得第N筆項目
+     * 取得第N筆項目或null。
      *
      * @param position 位置
      * @return 第N筆項目，或null表示沒有第N筆項目
@@ -211,9 +211,9 @@ public interface ListExt<E> extends CollectionExt<E>
     }
 
     /**
-     * 取得最後一筆項目
+     * 取得最後一筆項目。
      *
-     * @return 最後一筆項目。
+     * @return 最後一筆項目
      * @throws NoSuchElementException 沒有項目
      */
     default E last()
@@ -226,7 +226,7 @@ public interface ListExt<E> extends CollectionExt<E>
     }
 
     /**
-     * 取得最後一筆項目
+     * 取得最後一筆項目或null。
      *
      * @return 最後一筆項目，或null表示沒有項目
      */

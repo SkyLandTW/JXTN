@@ -33,7 +33,7 @@ import java.util.function.Function;
 import jxtn.core.axi.collections.MappedMap;
 
 /**
- * {@link Map}的延伸功能
+ * {@link Map}的延伸功能。
  *
  * @author AqD
  * @param <K> 鍵值型態
@@ -46,7 +46,7 @@ public interface MapExt<K, V>
     //
 
     /**
-     * 泛型版本的{@link Map#containsKey}
+     * 泛型版本的{@link Map#containsKey}。
      *
      * @param key 要檢查是否包含的索引鍵
      * @return true表示索引鍵{@code key}在目前的集合內
@@ -59,7 +59,7 @@ public interface MapExt<K, V>
     }
 
     /**
-     * 泛型版本的{@link Map#containsValue}
+     * 泛型版本的{@link Map#containsValue}。
      *
      * @param value 要檢查是否包含的項目值
      * @return true表示項目值{@code value}在目前的集合內
@@ -72,7 +72,7 @@ public interface MapExt<K, V>
     }
 
     /**
-     * 泛型版本的{@link Map#get}
+     * 泛型版本的{@link Map#get}。
      *
      * @param key 要取得項目值的索引鍵
      * @return 索引鍵{@code key}對照的項目值
@@ -85,7 +85,7 @@ public interface MapExt<K, V>
     }
 
     /**
-     * 泛型版本的{@link Map#remove(Object)}
+     * 泛型版本的{@link Map#remove(Object)}。
      *
      * @param key 要移除的索引鍵
      * @return 索引鍵{@code key}對照的項目值
@@ -98,7 +98,7 @@ public interface MapExt<K, V>
     }
 
     /**
-     * 泛型版本的{@link Map#remove(Object,Object)}
+     * 泛型版本的{@link Map#remove(Object,Object)}。
      *
      * @param key 要移除的索引鍵
      * @param value 要移除的項目值
@@ -112,7 +112,7 @@ public interface MapExt<K, V>
     }
 
     /**
-     * 泛型版本的{@link Map#getOrDefault}
+     * 泛型版本的{@link Map#getOrDefault}。
      *
      * @param key 要取得項目值的索引鍵
      * @param defaultValue 預設項目值
@@ -130,7 +130,7 @@ public interface MapExt<K, V>
     //
 
     /**
-     * 依照對照函數建立對照{@link Map}
+     * 依照對照函數建立對照{@link Map}。
      *
      * @param <V2> 對照項目值型態
      * @param mapper 對照項目值的函數
@@ -143,7 +143,7 @@ public interface MapExt<K, V>
     }
 
     /**
-     * 依照對照函數建立對照{@link Map}
+     * 依照對照函數建立對照{@link Map}。
      *
      * @param <V2> 對照項目值型態
      * @param mapper 對照項目值的函數
@@ -160,7 +160,7 @@ public interface MapExt<K, V>
     //
 
     /**
-     * 對照目前的項目值以產生新的{@link HashMap}
+     * 對照目前的項目值以產生新的{@link HashMap}。
      *
      * @param <V2> 對照項目值型態
      * @param mapper 對照項目值的函數
@@ -175,7 +175,7 @@ public interface MapExt<K, V>
     }
 
     /**
-     * 對照目前的項目值以產生新的{@link HashMap}
+     * 對照目前的項目值以產生新的{@link HashMap}。
      *
      * @param <K2> 對照鍵值型態
      * @param <V2> 對照項目值型態
@@ -194,7 +194,7 @@ public interface MapExt<K, V>
     }
 
     /**
-     * 對照目前的項目值以產生新的{@link HashMap}
+     * 對照目前的項目值以產生新的{@link HashMap}。
      *
      * @param <V2> 對照項目值型態
      * @param mapper 對照項目值的函數
@@ -209,7 +209,7 @@ public interface MapExt<K, V>
     }
 
     /**
-     * 對照目前的項目值以產生新的{@link HashMap}
+     * 對照目前的項目值以產生新的{@link HashMap}。
      *
      * @param <K2> 對照鍵值型態
      * @param <V2> 對照項目值型態

@@ -28,14 +28,14 @@
 package java.lang;
 
 /**
- * {@link CharSequence}的延伸功能
+ * {@link CharSequence}的延伸功能。
  *
  * @author AqD
  */
 public interface CharSequenceExt
 {
     /**
-     * 取得最左側指定長度的字串
+     * 取得最左側指定長度的字串。
      *
      * @param length 要取得的最大長度
      * @return 最左側的字串，長度不一定達{@code length}
@@ -48,7 +48,7 @@ public interface CharSequenceExt
     }
 
     /**
-     * 取得最右側指定長度的字串
+     * 取得最右側指定長度的字串。
      *
      * @param length 要取得的最大長度
      * @return 最右側的字串，長度不一定達{@code length}
@@ -61,7 +61,7 @@ public interface CharSequenceExt
     }
 
     /**
-     * 向左補滿空白至指定長度
+     * 向左補滿空白至指定長度。
      *
      * @param totalLength 要補滿的最大長度
      * @return 補滿後的字串
@@ -72,7 +72,7 @@ public interface CharSequenceExt
     }
 
     /**
-     * 向左補滿字元至指定長度
+     * 向左補滿字元至指定長度。
      *
      * @param totalLength 要補滿的最大長度
      * @param paddingChar 要補滿的字元
@@ -94,7 +94,7 @@ public interface CharSequenceExt
     }
 
     /**
-     * 向右補滿空白至指定長度
+     * 向右補滿空白至指定長度。
      *
      * @param totalLength 要補滿的最大長度
      * @return 補滿後的字串
@@ -105,7 +105,7 @@ public interface CharSequenceExt
     }
 
     /**
-     * 向右補滿字元至指定長度
+     * 向右補滿字元至指定長度。
      *
      * @param totalLength 要補滿的最大長度
      * @param paddingChar 要補滿的字元
@@ -127,9 +127,9 @@ public interface CharSequenceExt
     }
 
     /**
-     * 開頭字元改大寫
+     * 開頭字元改大寫。
      *
-     * @return 開頭字元改大寫後的字串
+     * @return 開頭字元改大寫後的新字串
      */
     default String toCapitalized()
     {
@@ -140,9 +140,9 @@ public interface CharSequenceExt
     }
 
     /**
-     * 開頭字元改小寫
+     * 開頭字元改小寫。
      *
-     * @return 開頭字元改小寫後的字串
+     * @return 開頭字元改小寫後的新字串
      */
     default String toUncapitalized()
     {

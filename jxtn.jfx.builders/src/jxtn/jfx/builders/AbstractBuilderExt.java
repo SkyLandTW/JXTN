@@ -28,7 +28,7 @@
 package jxtn.jfx.builders;
 
 /**
- * 基底建構器延伸
+ * 基底建構器延伸。
  *
  * @author AqD
  * @param <Z> 要建構的物件型態
@@ -37,7 +37,7 @@ package jxtn.jfx.builders;
 public interface AbstractBuilderExt<Z, B extends AbstractBuilder<Z, B>>
 {
     /**
-     * 傳回自己
+     * 傳回自己。
      *
      * @return 自己(this)
      */

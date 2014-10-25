@@ -28,7 +28,7 @@
 package java.util.function;
 
 /**
- * 接受例外的{@link IntConsumer}
+ * 可拋出例外的{@link IntConsumer}。
  *
  * @author AqD
  * @param <TException> 例外型態

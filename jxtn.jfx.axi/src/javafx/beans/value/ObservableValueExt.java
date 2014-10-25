@@ -42,7 +42,7 @@ import javafx.beans.binding.ObjectBinding;
 import javafx.beans.binding.StringBinding;
 
 /**
- * {@link ObservableValue}的延伸功能
+ * {@link ObservableValue}的延伸功能。
  *
  * @author AqD
  * @param <T> 被包裝的值型態（被觀察的項目型態）
@@ -50,7 +50,7 @@ import javafx.beans.binding.StringBinding;
 public interface ObservableValueExt<T>
 {
     /**
-     * 建立包裝目前觀察值為指定型態的繫節
+     * 建立包裝目前觀察值為指定型態的繫節。
      *
      * @param <R> 目的型態
      * @param mapper 轉換目前觀察值為指定型態的函數
@@ -63,7 +63,7 @@ public interface ObservableValueExt<T>
     }
 
     /**
-     * 建立包裝目前觀察值為布林型態的繫節
+     * 建立包裝目前觀察值為布林型態的繫節。
      *
      * @param mapper 轉換目前觀察值為布林型態的函數
      * @return 布林型態的繫節(依賴目前的觀察物件)
@@ -75,7 +75,7 @@ public interface ObservableValueExt<T>
     }
 
     /**
-     * 建立包裝目前觀察值為浮點型態的繫節
+     * 建立包裝目前觀察值為浮點型態的繫節。
      *
      * @param thiz 來源觀察值
      * @param mapper 轉換目前觀察值為浮點型態的函數
@@ -88,7 +88,7 @@ public interface ObservableValueExt<T>
     }
 
     /**
-     * 建立包裝目前觀察值為整數型態的繫節
+     * 建立包裝目前觀察值為整數型態的繫節。
      *
      * @param thiz 來源觀察值
      * @param mapper 轉換目前觀察值為整數型態的函數
@@ -101,7 +101,7 @@ public interface ObservableValueExt<T>
     }
 
     /**
-     * 建立包裝目前觀察值為長整數型態的繫節
+     * 建立包裝目前觀察值為長整數型態的繫節。
      *
      * @param thiz 來源觀察值
      * @param mapper 轉換目前觀察值為長整數型態的函數
@@ -114,7 +114,7 @@ public interface ObservableValueExt<T>
     }
 
     /**
-     * 建立包裝目前觀察值為字串型態的繫節
+     * 建立包裝目前觀察值為字串型態的繫節。
      *
      * @param thiz 來源觀察值
      * @param mapper 轉換目前觀察值為字串型態的函數

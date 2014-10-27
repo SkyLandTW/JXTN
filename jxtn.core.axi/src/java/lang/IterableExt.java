@@ -599,7 +599,7 @@ public interface IterableExt<T>
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的平均
      */
-    default double avgDouble(ToDoubleFunction<? super T> getValue)
+    default Double avgDouble(ToDoubleFunction<? super T> getValue)
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().avgDouble(getValue);
@@ -611,7 +611,7 @@ public interface IterableExt<T>
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的平均
      */
-    default int avgInt(ToIntFunction<? super T> getValue)
+    default Integer avgInt(ToIntFunction<? super T> getValue)
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().avgInt(getValue);
@@ -623,7 +623,7 @@ public interface IterableExt<T>
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的平均
      */
-    default long avgLong(ToLongFunction<? super T> getValue)
+    default Long avgLong(ToLongFunction<? super T> getValue)
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().avgLong(getValue);
@@ -635,7 +635,7 @@ public interface IterableExt<T>
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的最大值
      */
-    default double maxDouble(ToDoubleFunction<T> getValue)
+    default Double maxDouble(ToDoubleFunction<T> getValue)
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().maxDouble(getValue);
@@ -647,7 +647,7 @@ public interface IterableExt<T>
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的最大值
      */
-    default int maxInt(ToIntFunction<T> getValue)
+    default Integer maxInt(ToIntFunction<T> getValue)
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().maxInt(getValue);
@@ -659,7 +659,7 @@ public interface IterableExt<T>
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的最大值
      */
-    default long maxLong(ToLongFunction<T> getValue)
+    default Long maxLong(ToLongFunction<T> getValue)
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().maxLong(getValue);
@@ -671,7 +671,7 @@ public interface IterableExt<T>
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的最小值
      */
-    default double minDouble(ToDoubleFunction<T> getValue)
+    default Double minDouble(ToDoubleFunction<T> getValue)
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().minDouble(getValue);
@@ -683,7 +683,7 @@ public interface IterableExt<T>
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的最小值
      */
-    default int minInt(ToIntFunction<T> getValue)
+    default Integer minInt(ToIntFunction<T> getValue)
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().minInt(getValue);
@@ -695,7 +695,7 @@ public interface IterableExt<T>
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的最小值
      */
-    default long minLong(ToLongFunction<T> getValue)
+    default Long minLong(ToLongFunction<T> getValue)
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().minLong(getValue);

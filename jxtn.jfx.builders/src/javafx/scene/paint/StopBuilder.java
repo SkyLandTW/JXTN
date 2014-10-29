@@ -6,7 +6,7 @@
 package javafx.scene.paint;
 
 /**
- * {@link Stop}建構器
+ * {@link Stop}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class StopBuilder<Z extends Stop, B extends StopBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Stop}物件
+     * 建構{@link Stop}物件。
      *
      * @return 新的{@link Stop}物件實體
      */

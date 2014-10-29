@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link Cell}建構器
+ * {@link Cell}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -55,7 +55,7 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Cell#setEditable(boolean)}
+     * 設定屬性{@link Cell#setEditable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -69,7 +69,7 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Cell#setItem(T)}
+     * 設定屬性{@link Cell#setItem(T)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -83,7 +83,7 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Cell#editableProperty}的連結
+     * 設定屬性{@link Cell#editableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -100,7 +100,7 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Cell#editableProperty}的雙向連結
+     * 設定屬性{@link Cell#editableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -117,7 +117,7 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Cell#itemProperty}的連結
+     * 設定屬性{@link Cell#itemProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -134,7 +134,7 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Cell#itemProperty}的雙向連結
+     * 設定屬性{@link Cell#itemProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -151,7 +151,7 @@ public class CellBuilder<T extends java.lang.Object, Z extends Cell<T>, B extend
     }
 
     /**
-     * 建構{@link Cell}物件
+     * 建構{@link Cell}物件。
      *
      * @return 新的{@link Cell}物件實體
      */

@@ -6,7 +6,7 @@
 package javafx.scene.image;
 
 /**
- * {@link WritablePixelFormat}建構器
+ * {@link WritablePixelFormat}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar

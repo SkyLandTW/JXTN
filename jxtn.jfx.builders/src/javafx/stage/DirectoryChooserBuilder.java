@@ -6,7 +6,7 @@
 package javafx.stage;
 
 /**
- * {@link DirectoryChooser}建構器
+ * {@link DirectoryChooser}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -55,7 +55,7 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
     }
 
     /**
-     * 設定屬性{@link DirectoryChooser#setInitialDirectory(java.io.File)}
+     * 設定屬性{@link DirectoryChooser#setInitialDirectory(java.io.File)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -69,7 +69,7 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
     }
 
     /**
-     * 設定屬性{@link DirectoryChooser#setTitle(java.lang.String)}
+     * 設定屬性{@link DirectoryChooser#setTitle(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -83,7 +83,7 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
     }
 
     /**
-     * 設定屬性{@link DirectoryChooser#initialDirectoryProperty}的連結
+     * 設定屬性{@link DirectoryChooser#initialDirectoryProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -100,7 +100,7 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
     }
 
     /**
-     * 設定屬性{@link DirectoryChooser#initialDirectoryProperty}的雙向連結
+     * 設定屬性{@link DirectoryChooser#initialDirectoryProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -117,7 +117,7 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
     }
 
     /**
-     * 設定屬性{@link DirectoryChooser#titleProperty}的連結
+     * 設定屬性{@link DirectoryChooser#titleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -134,7 +134,7 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
     }
 
     /**
-     * 設定屬性{@link DirectoryChooser#titleProperty}的雙向連結
+     * 設定屬性{@link DirectoryChooser#titleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -151,7 +151,7 @@ public class DirectoryChooserBuilder<Z extends DirectoryChooser, B extends Direc
     }
 
     /**
-     * 建構{@link DirectoryChooser}物件
+     * 建構{@link DirectoryChooser}物件。
      *
      * @return 新的{@link DirectoryChooser}物件實體
      */

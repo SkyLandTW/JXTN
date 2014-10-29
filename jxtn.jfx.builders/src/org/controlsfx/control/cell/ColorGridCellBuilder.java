@@ -6,7 +6,7 @@
 package org.controlsfx.control.cell;
 
 /**
- * {@link ColorGridCell}建構器
+ * {@link ColorGridCell}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -27,7 +27,7 @@ public class ColorGridCellBuilder<Z extends ColorGridCell, B extends ColorGridCe
     }
 
     /**
-     * 建構{@link ColorGridCell}物件
+     * 建構{@link ColorGridCell}物件。
      *
      * @return 新的{@link ColorGridCell}物件實體
      */

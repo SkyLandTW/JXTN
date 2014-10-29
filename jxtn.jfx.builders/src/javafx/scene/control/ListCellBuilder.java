@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link ListCell}建構器
+ * {@link ListCell}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class ListCellBuilder<T extends java.lang.Object, Z extends ListCell<T>, 
     }
 
     /**
-     * 建構{@link ListCell}物件
+     * 建構{@link ListCell}物件。
      *
      * @return 新的{@link ListCell}物件實體
      */

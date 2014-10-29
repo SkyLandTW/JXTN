@@ -6,7 +6,7 @@
 package org.controlsfx.dialog;
 
 /**
- * {@link Wizard}建構器
+ * {@link Wizard}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -60,7 +60,7 @@ public class WizardBuilder<Z extends Wizard, B extends WizardBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Wizard#setFlow(org.controlsfx.dialog.Wizard.Flow)}
+     * 設定屬性{@link Wizard#setFlow(org.controlsfx.dialog.Wizard.Flow)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -74,7 +74,7 @@ public class WizardBuilder<Z extends Wizard, B extends WizardBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Wizard#setTitle(java.lang.String)}
+     * 設定屬性{@link Wizard#setTitle(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -88,7 +88,7 @@ public class WizardBuilder<Z extends Wizard, B extends WizardBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Wizard#setUserData(java.lang.Object)}
+     * 設定屬性{@link Wizard#setUserData(java.lang.Object)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -102,7 +102,7 @@ public class WizardBuilder<Z extends Wizard, B extends WizardBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Wizard#flowProperty}的連結
+     * 設定屬性{@link Wizard#flowProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -119,7 +119,7 @@ public class WizardBuilder<Z extends Wizard, B extends WizardBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Wizard#flowProperty}的雙向連結
+     * 設定屬性{@link Wizard#flowProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class WizardBuilder<Z extends Wizard, B extends WizardBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Wizard#titleProperty}的連結
+     * 設定屬性{@link Wizard#titleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class WizardBuilder<Z extends Wizard, B extends WizardBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Wizard#titleProperty}的雙向連結
+     * 設定屬性{@link Wizard#titleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -170,7 +170,7 @@ public class WizardBuilder<Z extends Wizard, B extends WizardBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Wizard}物件
+     * 建構{@link Wizard}物件。
      *
      * @return 新的{@link Wizard}物件實體
      */
@@ -185,7 +185,7 @@ public class WizardBuilder<Z extends Wizard, B extends WizardBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Wizard}物件
+     * 建構{@link Wizard}物件。
      *
      * @return 新的{@link Wizard}物件實體
      */
@@ -199,7 +199,7 @@ public class WizardBuilder<Z extends Wizard, B extends WizardBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Wizard}物件
+     * 建構{@link Wizard}物件。
      *
      * @return 新的{@link Wizard}物件實體
      */

@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link MenuItem}建構器
+ * {@link MenuItem}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -177,7 +177,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setAccelerator(javafx.scene.input.KeyCombination)}
+     * 設定屬性{@link MenuItem#setAccelerator(javafx.scene.input.KeyCombination)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -191,7 +191,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setDisable(boolean)}
+     * 設定屬性{@link MenuItem#setDisable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -205,7 +205,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setGraphic(javafx.scene.Node)}
+     * 設定屬性{@link MenuItem#setGraphic(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -219,7 +219,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setId(java.lang.String)}
+     * 設定屬性{@link MenuItem#setId(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -233,7 +233,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setMnemonicParsing(boolean)}
+     * 設定屬性{@link MenuItem#setMnemonicParsing(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -247,7 +247,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setOnAction(javafx.event.EventHandler)}
+     * 設定屬性{@link MenuItem#setOnAction(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -261,7 +261,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setOnMenuValidation(javafx.event.EventHandler)}
+     * 設定屬性{@link MenuItem#setOnMenuValidation(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -275,7 +275,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setStyle(java.lang.String)}
+     * 設定屬性{@link MenuItem#setStyle(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -289,7 +289,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定集合屬性{@link MenuItem#getStyleClass}的內容
+     * 設定集合屬性{@link MenuItem#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -305,7 +305,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定集合屬性{@link MenuItem#getStyleClass}的內容
+     * 設定集合屬性{@link MenuItem#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -320,7 +320,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 增加集合屬性{@link MenuItem#getStyleClass}的內容
+     * 增加集合屬性{@link MenuItem#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -337,7 +337,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 增加集合屬性{@link MenuItem#getStyleClass}的內容
+     * 增加集合屬性{@link MenuItem#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -355,7 +355,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setText(java.lang.String)}
+     * 設定屬性{@link MenuItem#setText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -369,7 +369,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setUserData(java.lang.Object)}
+     * 設定屬性{@link MenuItem#setUserData(java.lang.Object)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -383,7 +383,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#setVisible(boolean)}
+     * 設定屬性{@link MenuItem#setVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -397,7 +397,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#acceleratorProperty}的連結
+     * 設定屬性{@link MenuItem#acceleratorProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -414,7 +414,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#acceleratorProperty}的雙向連結
+     * 設定屬性{@link MenuItem#acceleratorProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -431,7 +431,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#disableProperty}的連結
+     * 設定屬性{@link MenuItem#disableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -448,7 +448,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#disableProperty}的雙向連結
+     * 設定屬性{@link MenuItem#disableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -465,7 +465,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#graphicProperty}的連結
+     * 設定屬性{@link MenuItem#graphicProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -482,7 +482,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#graphicProperty}的雙向連結
+     * 設定屬性{@link MenuItem#graphicProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -499,7 +499,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#idProperty}的連結
+     * 設定屬性{@link MenuItem#idProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -516,7 +516,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#idProperty}的雙向連結
+     * 設定屬性{@link MenuItem#idProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -533,7 +533,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#mnemonicParsingProperty}的連結
+     * 設定屬性{@link MenuItem#mnemonicParsingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -550,7 +550,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#mnemonicParsingProperty}的雙向連結
+     * 設定屬性{@link MenuItem#mnemonicParsingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -567,7 +567,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#onActionProperty}的連結
+     * 設定屬性{@link MenuItem#onActionProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -584,7 +584,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#onActionProperty}的雙向連結
+     * 設定屬性{@link MenuItem#onActionProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -601,7 +601,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#onMenuValidationProperty}的連結
+     * 設定屬性{@link MenuItem#onMenuValidationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -618,7 +618,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#onMenuValidationProperty}的雙向連結
+     * 設定屬性{@link MenuItem#onMenuValidationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -635,7 +635,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#styleProperty}的連結
+     * 設定屬性{@link MenuItem#styleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -652,7 +652,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#styleProperty}的雙向連結
+     * 設定屬性{@link MenuItem#styleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -669,7 +669,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#textProperty}的連結
+     * 設定屬性{@link MenuItem#textProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -686,7 +686,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#textProperty}的雙向連結
+     * 設定屬性{@link MenuItem#textProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -703,7 +703,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#visibleProperty}的連結
+     * 設定屬性{@link MenuItem#visibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -720,7 +720,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link MenuItem#visibleProperty}的雙向連結
+     * 設定屬性{@link MenuItem#visibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -737,7 +737,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 建構{@link MenuItem}物件
+     * 建構{@link MenuItem}物件。
      *
      * @return 新的{@link MenuItem}物件實體
      */
@@ -752,7 +752,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 建構{@link MenuItem}物件
+     * 建構{@link MenuItem}物件。
      *
      * @return 新的{@link MenuItem}物件實體
      */
@@ -766,7 +766,7 @@ public class MenuItemBuilder<Z extends MenuItem, B extends MenuItemBuilder<Z, B>
     }
 
     /**
-     * 建構{@link MenuItem}物件
+     * 建構{@link MenuItem}物件。
      *
      * @return 新的{@link MenuItem}物件實體
      */

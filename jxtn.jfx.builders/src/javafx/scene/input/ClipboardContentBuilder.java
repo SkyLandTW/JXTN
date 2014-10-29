@@ -6,7 +6,7 @@
 package javafx.scene.input;
 
 /**
- * {@link ClipboardContent}建構器
+ * {@link ClipboardContent}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class ClipboardContentBuilder<Z extends ClipboardContent, B extends Clipb
     }
 
     /**
-     * 建構{@link ClipboardContent}物件
+     * 建構{@link ClipboardContent}物件。
      *
      * @return 新的{@link ClipboardContent}物件實體
      */

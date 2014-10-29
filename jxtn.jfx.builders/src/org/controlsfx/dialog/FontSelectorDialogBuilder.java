@@ -6,7 +6,7 @@
 package org.controlsfx.dialog;
 
 /**
- * {@link FontSelectorDialog}建構器
+ * {@link FontSelectorDialog}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -27,7 +27,7 @@ public class FontSelectorDialogBuilder<Z extends FontSelectorDialog, B extends F
     }
 
     /**
-     * 建構{@link FontSelectorDialog}物件
+     * 建構{@link FontSelectorDialog}物件。
      *
      * @return 新的{@link FontSelectorDialog}物件實體
      */

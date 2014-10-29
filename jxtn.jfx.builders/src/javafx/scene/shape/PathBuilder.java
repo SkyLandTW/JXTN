@@ -6,7 +6,7 @@
 package javafx.scene.shape;
 
 /**
- * {@link Path}建構器
+ * {@link Path}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -46,7 +46,7 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Path#getElements}的內容
+     * 設定集合屬性{@link Path#getElements}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -62,7 +62,7 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Path#getElements}的內容
+     * 設定集合屬性{@link Path#getElements}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -77,7 +77,7 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Path#getElements}的內容
+     * 增加集合屬性{@link Path#getElements}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -94,7 +94,7 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Path#getElements}的內容
+     * 增加集合屬性{@link Path#getElements}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -112,7 +112,7 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Path#setFillRule(javafx.scene.shape.FillRule)}
+     * 設定屬性{@link Path#setFillRule(javafx.scene.shape.FillRule)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -126,7 +126,7 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Path#fillRuleProperty}的連結
+     * 設定屬性{@link Path#fillRuleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -143,7 +143,7 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Path#fillRuleProperty}的雙向連結
+     * 設定屬性{@link Path#fillRuleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -160,7 +160,7 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Path}物件
+     * 建構{@link Path}物件。
      *
      * @return 新的{@link Path}物件實體
      */
@@ -175,7 +175,7 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Path}物件
+     * 建構{@link Path}物件。
      *
      * @return 新的{@link Path}物件實體
      */
@@ -189,7 +189,7 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Path}物件
+     * 建構{@link Path}物件。
      *
      * @return 新的{@link Path}物件實體
      */

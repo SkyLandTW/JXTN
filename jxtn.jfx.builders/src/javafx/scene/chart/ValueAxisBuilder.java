@@ -6,7 +6,7 @@
 package javafx.scene.chart;
 
 /**
- * {@link ValueAxis}建構器
+ * {@link ValueAxis}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -111,7 +111,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#setLowerBound(double)}
+     * 設定屬性{@link ValueAxis#setLowerBound(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#setMinorTickCount(int)}
+     * 設定屬性{@link ValueAxis#setMinorTickCount(int)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#setMinorTickLength(double)}
+     * 設定屬性{@link ValueAxis#setMinorTickLength(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#setMinorTickVisible(boolean)}
+     * 設定屬性{@link ValueAxis#setMinorTickVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#setTickLabelFormatter(javafx.util.StringConverter)}
+     * 設定屬性{@link ValueAxis#setTickLabelFormatter(javafx.util.StringConverter)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#setUpperBound(double)}
+     * 設定屬性{@link ValueAxis#setUpperBound(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#lowerBoundProperty}的連結
+     * 設定屬性{@link ValueAxis#lowerBoundProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -212,7 +212,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#lowerBoundProperty}的雙向連結
+     * 設定屬性{@link ValueAxis#lowerBoundProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -229,7 +229,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#minorTickCountProperty}的連結
+     * 設定屬性{@link ValueAxis#minorTickCountProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -246,7 +246,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#minorTickCountProperty}的雙向連結
+     * 設定屬性{@link ValueAxis#minorTickCountProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -263,7 +263,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#minorTickLengthProperty}的連結
+     * 設定屬性{@link ValueAxis#minorTickLengthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -280,7 +280,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#minorTickLengthProperty}的雙向連結
+     * 設定屬性{@link ValueAxis#minorTickLengthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -297,7 +297,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#minorTickVisibleProperty}的連結
+     * 設定屬性{@link ValueAxis#minorTickVisibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -314,7 +314,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#minorTickVisibleProperty}的雙向連結
+     * 設定屬性{@link ValueAxis#minorTickVisibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -331,7 +331,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#tickLabelFormatterProperty}的連結
+     * 設定屬性{@link ValueAxis#tickLabelFormatterProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -348,7 +348,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#tickLabelFormatterProperty}的雙向連結
+     * 設定屬性{@link ValueAxis#tickLabelFormatterProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -365,7 +365,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#upperBoundProperty}的連結
+     * 設定屬性{@link ValueAxis#upperBoundProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -382,7 +382,7 @@ public class ValueAxisBuilder<T extends java.lang.Number, Z extends ValueAxis<T>
     }
 
     /**
-     * 設定屬性{@link ValueAxis#upperBoundProperty}的雙向連結
+     * 設定屬性{@link ValueAxis#upperBoundProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)

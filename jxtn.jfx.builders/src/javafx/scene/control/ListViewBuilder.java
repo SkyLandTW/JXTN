@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link ListView}建構器
+ * {@link ListView}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -96,6 +96,11 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> obsrv1OnEditStart;
     private javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ListView.EditEvent<T>>> obsrv2OnEditStart;
 
+    private boolean bound1OnScrollTo;
+    private boolean bound2OnScrollTo;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>>> obsrv1OnScrollTo;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>>> obsrv2OnScrollTo;
+
     private boolean bound1Orientation;
     private boolean bound2Orientation;
     private javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrv1Orientation;
@@ -171,6 +176,10 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
             instance.onEditStartProperty().bind(this.obsrv1OnEditStart);
         if (this.bound2OnEditStart)
             instance.onEditStartProperty().bindBidirectional(this.obsrv2OnEditStart);
+        if (this.bound1OnScrollTo)
+            instance.onScrollToProperty().bind(this.obsrv1OnScrollTo);
+        if (this.bound2OnScrollTo)
+            instance.onScrollToProperty().bindBidirectional(this.obsrv2OnScrollTo);
         if (this.bound1Orientation)
             instance.orientationProperty().bind(this.obsrv1Orientation);
         if (this.bound2Orientation)
@@ -186,7 +195,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#setCellFactory(javafx.util.Callback)}
+     * 設定屬性{@link ListView#setCellFactory(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -200,7 +209,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#setEditable(boolean)}
+     * 設定屬性{@link ListView#setEditable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -214,7 +223,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#setFixedCellSize(double)}
+     * 設定屬性{@link ListView#setFixedCellSize(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -228,7 +237,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#setFocusModel(javafx.scene.control.FocusModel)}
+     * 設定屬性{@link ListView#setFocusModel(javafx.scene.control.FocusModel)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -242,7 +251,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#setItems(javafx.collections.ObservableList)}
+     * 設定屬性{@link ListView#setItems(javafx.collections.ObservableList)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -256,7 +265,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#setOnEditCancel(javafx.event.EventHandler)}
+     * 設定屬性{@link ListView#setOnEditCancel(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -270,7 +279,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#setOnEditCommit(javafx.event.EventHandler)}
+     * 設定屬性{@link ListView#setOnEditCommit(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -284,7 +293,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#setOnEditStart(javafx.event.EventHandler)}
+     * 設定屬性{@link ListView#setOnEditStart(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -298,7 +307,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#setOnScrollTo(javafx.event.EventHandler)}
+     * 設定屬性{@link ListView#setOnScrollTo(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -312,7 +321,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#setOrientation(javafx.geometry.Orientation)}
+     * 設定屬性{@link ListView#setOrientation(javafx.geometry.Orientation)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -326,7 +335,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#setPlaceholder(javafx.scene.Node)}
+     * 設定屬性{@link ListView#setPlaceholder(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -340,7 +349,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#setSelectionModel(javafx.scene.control.MultipleSelectionModel)}
+     * 設定屬性{@link ListView#setSelectionModel(javafx.scene.control.MultipleSelectionModel)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -354,7 +363,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#cellFactoryProperty}的連結
+     * 設定屬性{@link ListView#cellFactoryProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -371,7 +380,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#cellFactoryProperty}的雙向連結
+     * 設定屬性{@link ListView#cellFactoryProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -388,7 +397,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#editableProperty}的連結
+     * 設定屬性{@link ListView#editableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -405,7 +414,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#editableProperty}的雙向連結
+     * 設定屬性{@link ListView#editableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -422,7 +431,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#fixedCellSizeProperty}的連結
+     * 設定屬性{@link ListView#fixedCellSizeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -439,7 +448,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#fixedCellSizeProperty}的雙向連結
+     * 設定屬性{@link ListView#fixedCellSizeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -456,7 +465,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#focusModelProperty}的連結
+     * 設定屬性{@link ListView#focusModelProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -473,7 +482,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#focusModelProperty}的雙向連結
+     * 設定屬性{@link ListView#focusModelProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -490,7 +499,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#itemsProperty}的連結
+     * 設定屬性{@link ListView#itemsProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -507,7 +516,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#itemsProperty}的雙向連結
+     * 設定屬性{@link ListView#itemsProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -524,7 +533,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#onEditCancelProperty}的連結
+     * 設定屬性{@link ListView#onEditCancelProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -541,7 +550,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#onEditCancelProperty}的雙向連結
+     * 設定屬性{@link ListView#onEditCancelProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -558,7 +567,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#onEditCommitProperty}的連結
+     * 設定屬性{@link ListView#onEditCommitProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -575,7 +584,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#onEditCommitProperty}的雙向連結
+     * 設定屬性{@link ListView#onEditCommitProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -592,7 +601,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#onEditStartProperty}的連結
+     * 設定屬性{@link ListView#onEditStartProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -609,7 +618,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#onEditStartProperty}的雙向連結
+     * 設定屬性{@link ListView#onEditStartProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -626,7 +635,41 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#orientationProperty}的連結
+     * 設定屬性{@link ListView#onScrollToProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindOnScrollTo(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnScrollTo = true;
+        this.obsrv1OnScrollTo = source;
+        this.bound2OnScrollTo = false;
+        this.obsrv2OnScrollTo = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ListView#onScrollToProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnScrollTo(javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnScrollTo = false;
+        this.obsrv1OnScrollTo = null;
+        this.bound2OnScrollTo = true;
+        this.obsrv2OnScrollTo = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ListView#orientationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -643,7 +686,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#orientationProperty}的雙向連結
+     * 設定屬性{@link ListView#orientationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -660,7 +703,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#placeholderProperty}的連結
+     * 設定屬性{@link ListView#placeholderProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -677,7 +720,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#placeholderProperty}的雙向連結
+     * 設定屬性{@link ListView#placeholderProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -694,7 +737,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#selectionModelProperty}的連結
+     * 設定屬性{@link ListView#selectionModelProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -711,7 +754,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 設定屬性{@link ListView#selectionModelProperty}的雙向連結
+     * 設定屬性{@link ListView#selectionModelProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -728,7 +771,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 建構{@link ListView}物件
+     * 建構{@link ListView}物件。
      *
      * @return 新的{@link ListView}物件實體
      */
@@ -743,7 +786,7 @@ public class ListViewBuilder<T extends java.lang.Object, Z extends ListView<T>, 
     }
 
     /**
-     * 建構{@link ListView}物件
+     * 建構{@link ListView}物件。
      *
      * @return 新的{@link ListView}物件實體
      */

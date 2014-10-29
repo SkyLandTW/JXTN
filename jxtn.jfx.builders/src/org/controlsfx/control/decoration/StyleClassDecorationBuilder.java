@@ -6,7 +6,7 @@
 package org.controlsfx.control.decoration;
 
 /**
- * {@link StyleClassDecoration}建構器
+ * {@link StyleClassDecoration}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -27,7 +27,7 @@ public class StyleClassDecorationBuilder<Z extends StyleClassDecoration, B exten
     }
 
     /**
-     * 建構{@link StyleClassDecoration}物件
+     * 建構{@link StyleClassDecoration}物件。
      *
      * @return 新的{@link StyleClassDecoration}物件實體
      */

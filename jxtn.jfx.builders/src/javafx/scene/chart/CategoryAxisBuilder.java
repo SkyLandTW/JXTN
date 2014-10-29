@@ -6,7 +6,7 @@
 package javafx.scene.chart;
 
 /**
- * {@link CategoryAxis}建構器
+ * {@link CategoryAxis}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -74,7 +74,7 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
     }
 
     /**
-     * 設定屬性{@link CategoryAxis#setCategories(javafx.collections.ObservableList)}
+     * 設定屬性{@link CategoryAxis#setCategories(javafx.collections.ObservableList)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -88,7 +88,7 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
     }
 
     /**
-     * 設定屬性{@link CategoryAxis#setEndMargin(double)}
+     * 設定屬性{@link CategoryAxis#setEndMargin(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -102,7 +102,7 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
     }
 
     /**
-     * 設定屬性{@link CategoryAxis#setGapStartAndEnd(boolean)}
+     * 設定屬性{@link CategoryAxis#setGapStartAndEnd(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -116,7 +116,7 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
     }
 
     /**
-     * 設定屬性{@link CategoryAxis#setStartMargin(double)}
+     * 設定屬性{@link CategoryAxis#setStartMargin(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -130,7 +130,7 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
     }
 
     /**
-     * 設定屬性{@link CategoryAxis#endMarginProperty}的連結
+     * 設定屬性{@link CategoryAxis#endMarginProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -147,7 +147,7 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
     }
 
     /**
-     * 設定屬性{@link CategoryAxis#endMarginProperty}的雙向連結
+     * 設定屬性{@link CategoryAxis#endMarginProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -164,7 +164,7 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
     }
 
     /**
-     * 設定屬性{@link CategoryAxis#gapStartAndEndProperty}的連結
+     * 設定屬性{@link CategoryAxis#gapStartAndEndProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
     }
 
     /**
-     * 設定屬性{@link CategoryAxis#gapStartAndEndProperty}的雙向連結
+     * 設定屬性{@link CategoryAxis#gapStartAndEndProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -198,7 +198,7 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
     }
 
     /**
-     * 設定屬性{@link CategoryAxis#startMarginProperty}的連結
+     * 設定屬性{@link CategoryAxis#startMarginProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -215,7 +215,7 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
     }
 
     /**
-     * 設定屬性{@link CategoryAxis#startMarginProperty}的雙向連結
+     * 設定屬性{@link CategoryAxis#startMarginProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -232,7 +232,7 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
     }
 
     /**
-     * 建構{@link CategoryAxis}物件
+     * 建構{@link CategoryAxis}物件。
      *
      * @return 新的{@link CategoryAxis}物件實體
      */
@@ -247,7 +247,7 @@ public class CategoryAxisBuilder<Z extends CategoryAxis, B extends CategoryAxisB
     }
 
     /**
-     * 建構{@link CategoryAxis}物件
+     * 建構{@link CategoryAxis}物件。
      *
      * @return 新的{@link CategoryAxis}物件實體
      */

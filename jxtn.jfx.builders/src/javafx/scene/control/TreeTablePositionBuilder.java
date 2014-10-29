@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link TreeTablePosition}建構器
+ * {@link TreeTablePosition}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class TreeTablePositionBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 建構{@link TreeTablePosition}物件
+     * 建構{@link TreeTablePosition}物件。
      *
      * @return 新的{@link TreeTablePosition}物件實體
      */

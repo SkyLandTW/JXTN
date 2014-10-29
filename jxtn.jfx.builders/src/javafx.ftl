@@ -28,7 +28,7 @@
   -- Author: AqD
   -->
 <#function isFXProp method>
-  <#if method.@static == "false" && method.@final == "true" && !method.@name?starts_with("get") && !method.@name?starts_with("set") && method.@name?ends_with("Property") && method.@returnType?contains("Property") && !method.@returnType?contains("ReadOnly")>
+  <#if method.@static == "false" && !method.@name?starts_with("get") && !method.@name?starts_with("set") && method.@name?ends_with("Property") && method.@returnType?contains("Property") && !method.@returnType?contains("ReadOnly")>
     <#return true>
   <#else>
     <#return false>

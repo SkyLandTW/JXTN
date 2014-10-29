@@ -6,7 +6,7 @@
 package javafx.scene;
 
 /**
- * {@link PointLight}建構器
+ * {@link PointLight}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class PointLightBuilder<Z extends PointLight, B extends PointLightBuilder
     }
 
     /**
-     * 建構{@link PointLight}物件
+     * 建構{@link PointLight}物件。
      *
      * @return 新的{@link PointLight}物件實體
      */
@@ -42,7 +42,7 @@ public class PointLightBuilder<Z extends PointLight, B extends PointLightBuilder
     }
 
     /**
-     * 建構{@link PointLight}物件
+     * 建構{@link PointLight}物件。
      *
      * @return 新的{@link PointLight}物件實體
      */

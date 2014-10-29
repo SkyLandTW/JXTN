@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link PopupControl}建構器
+ * {@link PopupControl}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -158,7 +158,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#setId(java.lang.String)}
+     * 設定屬性{@link PopupControl#setId(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -172,7 +172,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#setMaxHeight(double)}
+     * 設定屬性{@link PopupControl#setMaxHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -186,7 +186,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#setMaxWidth(double)}
+     * 設定屬性{@link PopupControl#setMaxWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -200,7 +200,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#setMinHeight(double)}
+     * 設定屬性{@link PopupControl#setMinHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -214,7 +214,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#setMinWidth(double)}
+     * 設定屬性{@link PopupControl#setMinWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -228,7 +228,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#setPrefHeight(double)}
+     * 設定屬性{@link PopupControl#setPrefHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -242,7 +242,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#setPrefWidth(double)}
+     * 設定屬性{@link PopupControl#setPrefWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -256,7 +256,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#setSkin(javafx.scene.control.Skin)}
+     * 設定屬性{@link PopupControl#setSkin(javafx.scene.control.Skin)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -270,7 +270,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#setStyle(java.lang.String)}
+     * 設定屬性{@link PopupControl#setStyle(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -284,7 +284,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定集合屬性{@link PopupControl#getStyleClass}的內容
+     * 設定集合屬性{@link PopupControl#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -300,7 +300,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定集合屬性{@link PopupControl#getStyleClass}的內容
+     * 設定集合屬性{@link PopupControl#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -315,7 +315,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 增加集合屬性{@link PopupControl#getStyleClass}的內容
+     * 增加集合屬性{@link PopupControl#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -332,7 +332,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 增加集合屬性{@link PopupControl#getStyleClass}的內容
+     * 增加集合屬性{@link PopupControl#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -350,7 +350,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#idProperty}的連結
+     * 設定屬性{@link PopupControl#idProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -367,7 +367,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#idProperty}的雙向連結
+     * 設定屬性{@link PopupControl#idProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -384,7 +384,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#maxHeightProperty}的連結
+     * 設定屬性{@link PopupControl#maxHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -401,7 +401,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#maxHeightProperty}的雙向連結
+     * 設定屬性{@link PopupControl#maxHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -418,7 +418,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#maxWidthProperty}的連結
+     * 設定屬性{@link PopupControl#maxWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -435,7 +435,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#maxWidthProperty}的雙向連結
+     * 設定屬性{@link PopupControl#maxWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -452,7 +452,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#minHeightProperty}的連結
+     * 設定屬性{@link PopupControl#minHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -469,7 +469,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#minHeightProperty}的雙向連結
+     * 設定屬性{@link PopupControl#minHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -486,7 +486,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#minWidthProperty}的連結
+     * 設定屬性{@link PopupControl#minWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -503,7 +503,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#minWidthProperty}的雙向連結
+     * 設定屬性{@link PopupControl#minWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -520,7 +520,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#prefHeightProperty}的連結
+     * 設定屬性{@link PopupControl#prefHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -537,7 +537,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#prefHeightProperty}的雙向連結
+     * 設定屬性{@link PopupControl#prefHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -554,7 +554,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#prefWidthProperty}的連結
+     * 設定屬性{@link PopupControl#prefWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -571,7 +571,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#prefWidthProperty}的雙向連結
+     * 設定屬性{@link PopupControl#prefWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -588,7 +588,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#skinProperty}的連結
+     * 設定屬性{@link PopupControl#skinProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -605,7 +605,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#skinProperty}的雙向連結
+     * 設定屬性{@link PopupControl#skinProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -622,7 +622,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#styleProperty}的連結
+     * 設定屬性{@link PopupControl#styleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -639,7 +639,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 設定屬性{@link PopupControl#styleProperty}的雙向連結
+     * 設定屬性{@link PopupControl#styleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -656,7 +656,7 @@ public class PopupControlBuilder<Z extends PopupControl, B extends PopupControlB
     }
 
     /**
-     * 建構{@link PopupControl}物件
+     * 建構{@link PopupControl}物件。
      *
      * @return 新的{@link PopupControl}物件實體
      */

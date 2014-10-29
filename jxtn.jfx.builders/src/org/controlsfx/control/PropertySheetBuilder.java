@@ -6,7 +6,7 @@
 package org.controlsfx.control;
 
 /**
- * {@link PropertySheet}建構器
+ * {@link PropertySheet}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -84,7 +84,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 設定集合屬性{@link PropertySheet#getItems}的內容
+     * 設定集合屬性{@link PropertySheet#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -100,7 +100,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 設定集合屬性{@link PropertySheet#getItems}的內容
+     * 設定集合屬性{@link PropertySheet#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -115,7 +115,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 增加集合屬性{@link PropertySheet#getItems}的內容
+     * 增加集合屬性{@link PropertySheet#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -132,7 +132,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 增加集合屬性{@link PropertySheet#getItems}的內容
+     * 增加集合屬性{@link PropertySheet#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -150,7 +150,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 設定屬性{@link PropertySheet#setMode(org.controlsfx.control.PropertySheet.Mode)}
+     * 設定屬性{@link PropertySheet#setMode(org.controlsfx.control.PropertySheet.Mode)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -164,7 +164,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 設定屬性{@link PropertySheet#setModeSwitcherVisible(boolean)}
+     * 設定屬性{@link PropertySheet#setModeSwitcherVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -178,7 +178,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 設定屬性{@link PropertySheet#setPropertyEditorFactory(javafx.util.Callback)}
+     * 設定屬性{@link PropertySheet#setPropertyEditorFactory(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -192,7 +192,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 設定屬性{@link PropertySheet#setSearchBoxVisible(boolean)}
+     * 設定屬性{@link PropertySheet#setSearchBoxVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -206,7 +206,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 設定屬性{@link PropertySheet#setTitleFilter(java.lang.String)}
+     * 設定屬性{@link PropertySheet#setTitleFilter(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -220,7 +220,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 設定屬性{@link PropertySheet#modeProperty}的連結
+     * 設定屬性{@link PropertySheet#modeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -237,7 +237,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 設定屬性{@link PropertySheet#modeProperty}的雙向連結
+     * 設定屬性{@link PropertySheet#modeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -254,7 +254,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 設定屬性{@link PropertySheet#modeSwitcherVisibleProperty}的連結
+     * 設定屬性{@link PropertySheet#modeSwitcherVisibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -271,7 +271,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 設定屬性{@link PropertySheet#modeSwitcherVisibleProperty}的雙向連結
+     * 設定屬性{@link PropertySheet#modeSwitcherVisibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -288,7 +288,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 設定屬性{@link PropertySheet#searchBoxVisibleProperty}的連結
+     * 設定屬性{@link PropertySheet#searchBoxVisibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -305,7 +305,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 設定屬性{@link PropertySheet#searchBoxVisibleProperty}的雙向連結
+     * 設定屬性{@link PropertySheet#searchBoxVisibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -322,7 +322,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 建構{@link PropertySheet}物件
+     * 建構{@link PropertySheet}物件。
      *
      * @return 新的{@link PropertySheet}物件實體
      */
@@ -337,7 +337,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
-     * 建構{@link PropertySheet}物件
+     * 建構{@link PropertySheet}物件。
      *
      * @return 新的{@link PropertySheet}物件實體
      */

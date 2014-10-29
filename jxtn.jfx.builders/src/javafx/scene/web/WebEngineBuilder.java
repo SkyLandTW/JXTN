@@ -6,7 +6,7 @@
 package javafx.scene.web;
 
 /**
- * {@link WebEngine}建構器
+ * {@link WebEngine}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -195,7 +195,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#setConfirmHandler(javafx.util.Callback)}
+     * 設定屬性{@link WebEngine#setConfirmHandler(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#setCreatePopupHandler(javafx.util.Callback)}
+     * 設定屬性{@link WebEngine#setCreatePopupHandler(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#setJavaScriptEnabled(boolean)}
+     * 設定屬性{@link WebEngine#setJavaScriptEnabled(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -237,7 +237,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#setOnAlert(javafx.event.EventHandler)}
+     * 設定屬性{@link WebEngine#setOnAlert(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -251,7 +251,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#setOnError(javafx.event.EventHandler)}
+     * 設定屬性{@link WebEngine#setOnError(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -265,7 +265,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#setOnResized(javafx.event.EventHandler)}
+     * 設定屬性{@link WebEngine#setOnResized(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -279,7 +279,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#setOnStatusChanged(javafx.event.EventHandler)}
+     * 設定屬性{@link WebEngine#setOnStatusChanged(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -293,7 +293,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#setOnVisibilityChanged(javafx.event.EventHandler)}
+     * 設定屬性{@link WebEngine#setOnVisibilityChanged(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -307,7 +307,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#setPromptHandler(javafx.util.Callback)}
+     * 設定屬性{@link WebEngine#setPromptHandler(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -321,7 +321,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#setUserAgent(java.lang.String)}
+     * 設定屬性{@link WebEngine#setUserAgent(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -335,7 +335,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#setUserDataDirectory(java.io.File)}
+     * 設定屬性{@link WebEngine#setUserDataDirectory(java.io.File)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -349,7 +349,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#setUserStyleSheetLocation(java.lang.String)}
+     * 設定屬性{@link WebEngine#setUserStyleSheetLocation(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -363,7 +363,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#confirmHandlerProperty}的連結
+     * 設定屬性{@link WebEngine#confirmHandlerProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -380,7 +380,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#confirmHandlerProperty}的雙向連結
+     * 設定屬性{@link WebEngine#confirmHandlerProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -397,7 +397,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#createPopupHandlerProperty}的連結
+     * 設定屬性{@link WebEngine#createPopupHandlerProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -414,7 +414,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#createPopupHandlerProperty}的雙向連結
+     * 設定屬性{@link WebEngine#createPopupHandlerProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -431,7 +431,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#javaScriptEnabledProperty}的連結
+     * 設定屬性{@link WebEngine#javaScriptEnabledProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -448,7 +448,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#javaScriptEnabledProperty}的雙向連結
+     * 設定屬性{@link WebEngine#javaScriptEnabledProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -465,7 +465,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#onAlertProperty}的連結
+     * 設定屬性{@link WebEngine#onAlertProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -482,7 +482,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#onAlertProperty}的雙向連結
+     * 設定屬性{@link WebEngine#onAlertProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -499,7 +499,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#onErrorProperty}的連結
+     * 設定屬性{@link WebEngine#onErrorProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -516,7 +516,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#onErrorProperty}的雙向連結
+     * 設定屬性{@link WebEngine#onErrorProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -533,7 +533,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#onResizedProperty}的連結
+     * 設定屬性{@link WebEngine#onResizedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -550,7 +550,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#onResizedProperty}的雙向連結
+     * 設定屬性{@link WebEngine#onResizedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -567,7 +567,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#onStatusChangedProperty}的連結
+     * 設定屬性{@link WebEngine#onStatusChangedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -584,7 +584,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#onStatusChangedProperty}的雙向連結
+     * 設定屬性{@link WebEngine#onStatusChangedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -601,7 +601,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#onVisibilityChangedProperty}的連結
+     * 設定屬性{@link WebEngine#onVisibilityChangedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -618,7 +618,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#onVisibilityChangedProperty}的雙向連結
+     * 設定屬性{@link WebEngine#onVisibilityChangedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -635,7 +635,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#promptHandlerProperty}的連結
+     * 設定屬性{@link WebEngine#promptHandlerProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -652,7 +652,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#promptHandlerProperty}的雙向連結
+     * 設定屬性{@link WebEngine#promptHandlerProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -669,7 +669,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#userAgentProperty}的連結
+     * 設定屬性{@link WebEngine#userAgentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -686,7 +686,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#userAgentProperty}的雙向連結
+     * 設定屬性{@link WebEngine#userAgentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -703,7 +703,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#userDataDirectoryProperty}的連結
+     * 設定屬性{@link WebEngine#userDataDirectoryProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -720,7 +720,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#userDataDirectoryProperty}的雙向連結
+     * 設定屬性{@link WebEngine#userDataDirectoryProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -737,7 +737,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#userStyleSheetLocationProperty}的連結
+     * 設定屬性{@link WebEngine#userStyleSheetLocationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -754,7 +754,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link WebEngine#userStyleSheetLocationProperty}的雙向連結
+     * 設定屬性{@link WebEngine#userStyleSheetLocationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -771,7 +771,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 建構{@link WebEngine}物件
+     * 建構{@link WebEngine}物件。
      *
      * @return 新的{@link WebEngine}物件實體
      */
@@ -786,7 +786,7 @@ public class WebEngineBuilder<Z extends WebEngine, B extends WebEngineBuilder<Z,
     }
 
     /**
-     * 建構{@link WebEngine}物件
+     * 建構{@link WebEngine}物件。
      *
      * @return 新的{@link WebEngine}物件實體
      */

@@ -6,7 +6,7 @@
 package javafx.scene.layout;
 
 /**
- * {@link BorderStrokeStyle}建構器
+ * {@link BorderStrokeStyle}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class BorderStrokeStyleBuilder<Z extends BorderStrokeStyle, B extends Bor
     }
 
     /**
-     * 建構{@link BorderStrokeStyle}物件
+     * 建構{@link BorderStrokeStyle}物件。
      *
      * @return 新的{@link BorderStrokeStyle}物件實體
      */

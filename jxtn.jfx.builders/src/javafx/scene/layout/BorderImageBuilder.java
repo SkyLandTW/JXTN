@@ -6,7 +6,7 @@
 package javafx.scene.layout;
 
 /**
- * {@link BorderImage}建構器
+ * {@link BorderImage}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class BorderImageBuilder<Z extends BorderImage, B extends BorderImageBuil
     }
 
     /**
-     * 建構{@link BorderImage}物件
+     * 建構{@link BorderImage}物件。
      *
      * @return 新的{@link BorderImage}物件實體
      */

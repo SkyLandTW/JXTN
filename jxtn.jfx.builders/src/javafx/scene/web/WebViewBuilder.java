@@ -6,7 +6,7 @@
 package javafx.scene.web;
 
 /**
- * {@link WebView}建構器
+ * {@link WebView}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -55,10 +55,45 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ContextMenuEnabled;
     private javafx.beans.property.Property<Boolean> obsrv2ContextMenuEnabled;
 
+    private boolean bound1FontScale;
+    private boolean bound2FontScale;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1FontScale;
+    private javafx.beans.property.Property<Number> obsrv2FontScale;
+
     private boolean bound1FontSmoothingType;
     private boolean bound2FontSmoothingType;
     private javafx.beans.value.ObservableValue<? extends javafx.scene.text.FontSmoothingType> obsrv1FontSmoothingType;
     private javafx.beans.property.Property<javafx.scene.text.FontSmoothingType> obsrv2FontSmoothingType;
+
+    private boolean bound1MaxHeight;
+    private boolean bound2MaxHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MaxHeight;
+    private javafx.beans.property.Property<Number> obsrv2MaxHeight;
+
+    private boolean bound1MaxWidth;
+    private boolean bound2MaxWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MaxWidth;
+    private javafx.beans.property.Property<Number> obsrv2MaxWidth;
+
+    private boolean bound1MinHeight;
+    private boolean bound2MinHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MinHeight;
+    private javafx.beans.property.Property<Number> obsrv2MinHeight;
+
+    private boolean bound1MinWidth;
+    private boolean bound2MinWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MinWidth;
+    private javafx.beans.property.Property<Number> obsrv2MinWidth;
+
+    private boolean bound1PrefHeight;
+    private boolean bound2PrefHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PrefHeight;
+    private javafx.beans.property.Property<Number> obsrv2PrefHeight;
+
+    private boolean bound1PrefWidth;
+    private boolean bound2PrefWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PrefWidth;
+    private javafx.beans.property.Property<Number> obsrv2PrefWidth;
 
     private boolean bound1Zoom;
     private boolean bound2Zoom;
@@ -93,10 +128,38 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
             instance.contextMenuEnabledProperty().bind(this.obsrv1ContextMenuEnabled);
         if (this.bound2ContextMenuEnabled)
             instance.contextMenuEnabledProperty().bindBidirectional(this.obsrv2ContextMenuEnabled);
+        if (this.bound1FontScale)
+            instance.fontScaleProperty().bind(this.obsrv1FontScale);
+        if (this.bound2FontScale)
+            instance.fontScaleProperty().bindBidirectional(this.obsrv2FontScale);
         if (this.bound1FontSmoothingType)
             instance.fontSmoothingTypeProperty().bind(this.obsrv1FontSmoothingType);
         if (this.bound2FontSmoothingType)
             instance.fontSmoothingTypeProperty().bindBidirectional(this.obsrv2FontSmoothingType);
+        if (this.bound1MaxHeight)
+            instance.maxHeightProperty().bind(this.obsrv1MaxHeight);
+        if (this.bound2MaxHeight)
+            instance.maxHeightProperty().bindBidirectional(this.obsrv2MaxHeight);
+        if (this.bound1MaxWidth)
+            instance.maxWidthProperty().bind(this.obsrv1MaxWidth);
+        if (this.bound2MaxWidth)
+            instance.maxWidthProperty().bindBidirectional(this.obsrv2MaxWidth);
+        if (this.bound1MinHeight)
+            instance.minHeightProperty().bind(this.obsrv1MinHeight);
+        if (this.bound2MinHeight)
+            instance.minHeightProperty().bindBidirectional(this.obsrv2MinHeight);
+        if (this.bound1MinWidth)
+            instance.minWidthProperty().bind(this.obsrv1MinWidth);
+        if (this.bound2MinWidth)
+            instance.minWidthProperty().bindBidirectional(this.obsrv2MinWidth);
+        if (this.bound1PrefHeight)
+            instance.prefHeightProperty().bind(this.obsrv1PrefHeight);
+        if (this.bound2PrefHeight)
+            instance.prefHeightProperty().bindBidirectional(this.obsrv2PrefHeight);
+        if (this.bound1PrefWidth)
+            instance.prefWidthProperty().bind(this.obsrv1PrefWidth);
+        if (this.bound2PrefWidth)
+            instance.prefWidthProperty().bindBidirectional(this.obsrv2PrefWidth);
         if (this.bound1Zoom)
             instance.zoomProperty().bind(this.obsrv1Zoom);
         if (this.bound2Zoom)
@@ -104,7 +167,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setContextMenuEnabled(boolean)}
+     * 設定屬性{@link WebView#setContextMenuEnabled(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -118,7 +181,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setFontScale(double)}
+     * 設定屬性{@link WebView#setFontScale(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -132,7 +195,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setFontSmoothingType(javafx.scene.text.FontSmoothingType)}
+     * 設定屬性{@link WebView#setFontSmoothingType(javafx.scene.text.FontSmoothingType)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -146,7 +209,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setMaxHeight(double)}
+     * 設定屬性{@link WebView#setMaxHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -160,7 +223,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setMaxWidth(double)}
+     * 設定屬性{@link WebView#setMaxWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -174,7 +237,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setMinHeight(double)}
+     * 設定屬性{@link WebView#setMinHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -188,7 +251,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setMinWidth(double)}
+     * 設定屬性{@link WebView#setMinWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -202,7 +265,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setPrefHeight(double)}
+     * 設定屬性{@link WebView#setPrefHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -216,7 +279,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setPrefWidth(double)}
+     * 設定屬性{@link WebView#setPrefWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -230,7 +293,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#setZoom(double)}
+     * 設定屬性{@link WebView#setZoom(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -244,7 +307,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#contextMenuEnabledProperty}的連結
+     * 設定屬性{@link WebView#contextMenuEnabledProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -261,7 +324,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#contextMenuEnabledProperty}的雙向連結
+     * 設定屬性{@link WebView#contextMenuEnabledProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -278,7 +341,41 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#fontSmoothingTypeProperty}的連結
+     * 設定屬性{@link WebView#fontScaleProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindFontScale(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FontScale = true;
+        this.obsrv1FontScale = source;
+        this.bound2FontScale = false;
+        this.obsrv2FontScale = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link WebView#fontScaleProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFontScale(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FontScale = false;
+        this.obsrv1FontScale = null;
+        this.bound2FontScale = true;
+        this.obsrv2FontScale = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link WebView#fontSmoothingTypeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -295,7 +392,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#fontSmoothingTypeProperty}的雙向連結
+     * 設定屬性{@link WebView#fontSmoothingTypeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -312,7 +409,211 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#zoomProperty}的連結
+     * 設定屬性{@link WebView#maxHeightProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindMaxHeight(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MaxHeight = true;
+        this.obsrv1MaxHeight = source;
+        this.bound2MaxHeight = false;
+        this.obsrv2MaxHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link WebView#maxHeightProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMaxHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MaxHeight = false;
+        this.obsrv1MaxHeight = null;
+        this.bound2MaxHeight = true;
+        this.obsrv2MaxHeight = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link WebView#maxWidthProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MaxWidth = true;
+        this.obsrv1MaxWidth = source;
+        this.bound2MaxWidth = false;
+        this.obsrv2MaxWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link WebView#maxWidthProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMaxWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MaxWidth = false;
+        this.obsrv1MaxWidth = null;
+        this.bound2MaxWidth = true;
+        this.obsrv2MaxWidth = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link WebView#minHeightProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindMinHeight(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinHeight = true;
+        this.obsrv1MinHeight = source;
+        this.bound2MinHeight = false;
+        this.obsrv2MinHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link WebView#minHeightProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMinHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinHeight = false;
+        this.obsrv1MinHeight = null;
+        this.bound2MinHeight = true;
+        this.obsrv2MinHeight = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link WebView#minWidthProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindMinWidth(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinWidth = true;
+        this.obsrv1MinWidth = source;
+        this.bound2MinWidth = false;
+        this.obsrv2MinWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link WebView#minWidthProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMinWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinWidth = false;
+        this.obsrv1MinWidth = null;
+        this.bound2MinWidth = true;
+        this.obsrv2MinWidth = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link WebView#prefHeightProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindPrefHeight(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PrefHeight = true;
+        this.obsrv1PrefHeight = source;
+        this.bound2PrefHeight = false;
+        this.obsrv2PrefHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link WebView#prefHeightProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPrefHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PrefHeight = false;
+        this.obsrv1PrefHeight = null;
+        this.bound2PrefHeight = true;
+        this.obsrv2PrefHeight = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link WebView#prefWidthProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PrefWidth = true;
+        this.obsrv1PrefWidth = source;
+        this.bound2PrefWidth = false;
+        this.obsrv2PrefWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link WebView#prefWidthProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPrefWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PrefWidth = false;
+        this.obsrv1PrefWidth = null;
+        this.bound2PrefWidth = true;
+        this.obsrv2PrefWidth = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link WebView#zoomProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -329,7 +630,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link WebView#zoomProperty}的雙向連結
+     * 設定屬性{@link WebView#zoomProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -346,7 +647,7 @@ public class WebViewBuilder<Z extends WebView, B extends WebViewBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link WebView}物件
+     * 建構{@link WebView}物件。
      *
      * @return 新的{@link WebView}物件實體
      */

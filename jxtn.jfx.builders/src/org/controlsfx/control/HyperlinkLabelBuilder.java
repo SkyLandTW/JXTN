@@ -6,7 +6,7 @@
 package org.controlsfx.control;
 
 /**
- * {@link HyperlinkLabel}建構器
+ * {@link HyperlinkLabel}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -55,7 +55,7 @@ public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends Hyperlink
     }
 
     /**
-     * 設定屬性{@link HyperlinkLabel#setOnAction(javafx.event.EventHandler)}
+     * 設定屬性{@link HyperlinkLabel#setOnAction(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -69,7 +69,7 @@ public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends Hyperlink
     }
 
     /**
-     * 設定屬性{@link HyperlinkLabel#setText(java.lang.String)}
+     * 設定屬性{@link HyperlinkLabel#setText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -83,7 +83,7 @@ public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends Hyperlink
     }
 
     /**
-     * 設定屬性{@link HyperlinkLabel#onActionProperty}的連結
+     * 設定屬性{@link HyperlinkLabel#onActionProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -100,7 +100,7 @@ public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends Hyperlink
     }
 
     /**
-     * 設定屬性{@link HyperlinkLabel#onActionProperty}的雙向連結
+     * 設定屬性{@link HyperlinkLabel#onActionProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -117,7 +117,7 @@ public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends Hyperlink
     }
 
     /**
-     * 設定屬性{@link HyperlinkLabel#textProperty}的連結
+     * 設定屬性{@link HyperlinkLabel#textProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -134,7 +134,7 @@ public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends Hyperlink
     }
 
     /**
-     * 設定屬性{@link HyperlinkLabel#textProperty}的雙向連結
+     * 設定屬性{@link HyperlinkLabel#textProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -151,7 +151,7 @@ public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends Hyperlink
     }
 
     /**
-     * 建構{@link HyperlinkLabel}物件
+     * 建構{@link HyperlinkLabel}物件。
      *
      * @return 新的{@link HyperlinkLabel}物件實體
      */
@@ -166,7 +166,7 @@ public class HyperlinkLabelBuilder<Z extends HyperlinkLabel, B extends Hyperlink
     }
 
     /**
-     * 建構{@link HyperlinkLabel}物件
+     * 建構{@link HyperlinkLabel}物件。
      *
      * @return 新的{@link HyperlinkLabel}物件實體
      */

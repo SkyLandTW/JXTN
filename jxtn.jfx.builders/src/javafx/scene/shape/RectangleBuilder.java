@@ -6,7 +6,7 @@
 package javafx.scene.shape;
 
 /**
- * {@link Rectangle}建構器
+ * {@link Rectangle}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -111,7 +111,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#setArcHeight(double)}
+     * 設定屬性{@link Rectangle#setArcHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#setArcWidth(double)}
+     * 設定屬性{@link Rectangle#setArcWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#setHeight(double)}
+     * 設定屬性{@link Rectangle#setHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#setWidth(double)}
+     * 設定屬性{@link Rectangle#setWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#setX(double)}
+     * 設定屬性{@link Rectangle#setX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#setY(double)}
+     * 設定屬性{@link Rectangle#setY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#arcHeightProperty}的連結
+     * 設定屬性{@link Rectangle#arcHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -212,7 +212,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#arcHeightProperty}的雙向連結
+     * 設定屬性{@link Rectangle#arcHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -229,7 +229,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#arcWidthProperty}的連結
+     * 設定屬性{@link Rectangle#arcWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -246,7 +246,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#arcWidthProperty}的雙向連結
+     * 設定屬性{@link Rectangle#arcWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -263,7 +263,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#heightProperty}的連結
+     * 設定屬性{@link Rectangle#heightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -280,7 +280,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#heightProperty}的雙向連結
+     * 設定屬性{@link Rectangle#heightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -297,7 +297,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#widthProperty}的連結
+     * 設定屬性{@link Rectangle#widthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -314,7 +314,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#widthProperty}的雙向連結
+     * 設定屬性{@link Rectangle#widthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -331,7 +331,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#xProperty}的連結
+     * 設定屬性{@link Rectangle#xProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -348,7 +348,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#xProperty}的雙向連結
+     * 設定屬性{@link Rectangle#xProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -365,7 +365,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#yProperty}的連結
+     * 設定屬性{@link Rectangle#yProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -382,7 +382,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Rectangle#yProperty}的雙向連結
+     * 設定屬性{@link Rectangle#yProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -399,7 +399,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 建構{@link Rectangle}物件
+     * 建構{@link Rectangle}物件。
      *
      * @return 新的{@link Rectangle}物件實體
      */
@@ -414,7 +414,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 建構{@link Rectangle}物件
+     * 建構{@link Rectangle}物件。
      *
      * @return 新的{@link Rectangle}物件實體
      */
@@ -428,7 +428,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 建構{@link Rectangle}物件
+     * 建構{@link Rectangle}物件。
      *
      * @return 新的{@link Rectangle}物件實體
      */
@@ -442,7 +442,7 @@ public class RectangleBuilder<Z extends Rectangle, B extends RectangleBuilder<Z,
     }
 
     /**
-     * 建構{@link Rectangle}物件
+     * 建構{@link Rectangle}物件。
      *
      * @return 新的{@link Rectangle}物件實體
      */

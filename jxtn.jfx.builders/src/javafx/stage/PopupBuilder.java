@@ -6,7 +6,7 @@
 package javafx.stage;
 
 /**
- * {@link Popup}建構器
+ * {@link Popup}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -32,7 +32,7 @@ public class PopupBuilder<Z extends Popup, B extends PopupBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Popup#getContent}的內容
+     * 設定集合屬性{@link Popup#getContent}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -48,7 +48,7 @@ public class PopupBuilder<Z extends Popup, B extends PopupBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Popup#getContent}的內容
+     * 設定集合屬性{@link Popup#getContent}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -63,7 +63,7 @@ public class PopupBuilder<Z extends Popup, B extends PopupBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Popup#getContent}的內容
+     * 增加集合屬性{@link Popup#getContent}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -80,7 +80,7 @@ public class PopupBuilder<Z extends Popup, B extends PopupBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Popup#getContent}的內容
+     * 增加集合屬性{@link Popup#getContent}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -98,7 +98,7 @@ public class PopupBuilder<Z extends Popup, B extends PopupBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Popup}物件
+     * 建構{@link Popup}物件。
      *
      * @return 新的{@link Popup}物件實體
      */

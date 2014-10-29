@@ -6,7 +6,7 @@
 package org.controlsfx.control;
 
 /**
- * {@link MasterDetailPane}建構器
+ * {@link MasterDetailPane}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -111,7 +111,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#setAnimated(boolean)}
+     * 設定屬性{@link MasterDetailPane#setAnimated(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#setDetailNode(javafx.scene.Node)}
+     * 設定屬性{@link MasterDetailPane#setDetailNode(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#setDetailSide(javafx.geometry.Side)}
+     * 設定屬性{@link MasterDetailPane#setDetailSide(javafx.geometry.Side)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#setDividerPosition(double)}
+     * 設定屬性{@link MasterDetailPane#setDividerPosition(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#setMasterNode(javafx.scene.Node)}
+     * 設定屬性{@link MasterDetailPane#setMasterNode(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#setShowDetailNode(boolean)}
+     * 設定屬性{@link MasterDetailPane#setShowDetailNode(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#animatedProperty}的連結
+     * 設定屬性{@link MasterDetailPane#animatedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -212,7 +212,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#animatedProperty}的雙向連結
+     * 設定屬性{@link MasterDetailPane#animatedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -229,7 +229,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#detailNodeProperty}的連結
+     * 設定屬性{@link MasterDetailPane#detailNodeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -246,7 +246,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#detailNodeProperty}的雙向連結
+     * 設定屬性{@link MasterDetailPane#detailNodeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -263,7 +263,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#detailSideProperty}的連結
+     * 設定屬性{@link MasterDetailPane#detailSideProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -280,7 +280,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#detailSideProperty}的雙向連結
+     * 設定屬性{@link MasterDetailPane#detailSideProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -297,7 +297,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#dividerPositionProperty}的連結
+     * 設定屬性{@link MasterDetailPane#dividerPositionProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -314,7 +314,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#dividerPositionProperty}的雙向連結
+     * 設定屬性{@link MasterDetailPane#dividerPositionProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -331,7 +331,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#masterNodeProperty}的連結
+     * 設定屬性{@link MasterDetailPane#masterNodeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -348,7 +348,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#masterNodeProperty}的雙向連結
+     * 設定屬性{@link MasterDetailPane#masterNodeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -365,7 +365,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#showDetailNodeProperty}的連結
+     * 設定屬性{@link MasterDetailPane#showDetailNodeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -382,7 +382,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 設定屬性{@link MasterDetailPane#showDetailNodeProperty}的雙向連結
+     * 設定屬性{@link MasterDetailPane#showDetailNodeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -399,7 +399,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 建構{@link MasterDetailPane}物件
+     * 建構{@link MasterDetailPane}物件。
      *
      * @return 新的{@link MasterDetailPane}物件實體
      */
@@ -414,7 +414,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 建構{@link MasterDetailPane}物件
+     * 建構{@link MasterDetailPane}物件。
      *
      * @return 新的{@link MasterDetailPane}物件實體
      */
@@ -428,7 +428,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 建構{@link MasterDetailPane}物件
+     * 建構{@link MasterDetailPane}物件。
      *
      * @return 新的{@link MasterDetailPane}物件實體
      */
@@ -442,7 +442,7 @@ public class MasterDetailPaneBuilder<Z extends MasterDetailPane, B extends Maste
     }
 
     /**
-     * 建構{@link MasterDetailPane}物件
+     * 建構{@link MasterDetailPane}物件。
      *
      * @return 新的{@link MasterDetailPane}物件實體
      */

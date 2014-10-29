@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link TreeTableView}建構器
+ * {@link TreeTableView}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -96,6 +96,21 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     private boolean bound2FocusModel;
     private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeTableView.TreeTableViewFocusModel<S>> obsrv1FocusModel;
     private javafx.beans.property.Property<javafx.scene.control.TreeTableView.TreeTableViewFocusModel<S>> obsrv2FocusModel;
+
+    private boolean bound1OnScrollToColumn;
+    private boolean bound2OnScrollToColumn;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<javafx.scene.control.TreeTableColumn<S, ?>>>> obsrv1OnScrollToColumn;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<javafx.scene.control.TreeTableColumn<S, ?>>>> obsrv2OnScrollToColumn;
+
+    private boolean bound1OnScrollTo;
+    private boolean bound2OnScrollTo;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>>> obsrv1OnScrollTo;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>>> obsrv2OnScrollTo;
+
+    private boolean bound1OnSort;
+    private boolean bound2OnSort;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.SortEvent<javafx.scene.control.TreeTableView<S>>>> obsrv1OnSort;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.SortEvent<javafx.scene.control.TreeTableView<S>>>> obsrv2OnSort;
 
     private boolean bound1Placeholder;
     private boolean bound2Placeholder;
@@ -200,6 +215,18 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
             instance.focusModelProperty().bind(this.obsrv1FocusModel);
         if (this.bound2FocusModel)
             instance.focusModelProperty().bindBidirectional(this.obsrv2FocusModel);
+        if (this.bound1OnScrollToColumn)
+            instance.onScrollToColumnProperty().bind(this.obsrv1OnScrollToColumn);
+        if (this.bound2OnScrollToColumn)
+            instance.onScrollToColumnProperty().bindBidirectional(this.obsrv2OnScrollToColumn);
+        if (this.bound1OnScrollTo)
+            instance.onScrollToProperty().bind(this.obsrv1OnScrollTo);
+        if (this.bound2OnScrollTo)
+            instance.onScrollToProperty().bindBidirectional(this.obsrv2OnScrollTo);
+        if (this.bound1OnSort)
+            instance.onSortProperty().bind(this.obsrv1OnSort);
+        if (this.bound2OnSort)
+            instance.onSortProperty().bindBidirectional(this.obsrv2OnSort);
         if (this.bound1Placeholder)
             instance.placeholderProperty().bind(this.obsrv1Placeholder);
         if (this.bound2Placeholder)
@@ -239,7 +266,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setColumnResizePolicy(javafx.util.Callback)}
+     * 設定屬性{@link TreeTableView#setColumnResizePolicy(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -253,7 +280,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定集合屬性{@link TreeTableView#getColumns}的內容
+     * 設定集合屬性{@link TreeTableView#getColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -269,7 +296,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定集合屬性{@link TreeTableView#getColumns}的內容
+     * 設定集合屬性{@link TreeTableView#getColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -284,7 +311,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 增加集合屬性{@link TreeTableView#getColumns}的內容
+     * 增加集合屬性{@link TreeTableView#getColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -301,7 +328,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 增加集合屬性{@link TreeTableView#getColumns}的內容
+     * 增加集合屬性{@link TreeTableView#getColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -319,7 +346,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setEditable(boolean)}
+     * 設定屬性{@link TreeTableView#setEditable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -333,7 +360,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setFixedCellSize(double)}
+     * 設定屬性{@link TreeTableView#setFixedCellSize(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -347,7 +374,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setFocusModel(javafx.scene.control.TreeTableView.TreeTableViewFocusModel)}
+     * 設定屬性{@link TreeTableView#setFocusModel(javafx.scene.control.TreeTableView.TreeTableViewFocusModel)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -361,7 +388,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setOnScrollTo(javafx.event.EventHandler)}
+     * 設定屬性{@link TreeTableView#setOnScrollTo(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -375,7 +402,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setOnScrollToColumn(javafx.event.EventHandler)}
+     * 設定屬性{@link TreeTableView#setOnScrollToColumn(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -389,7 +416,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setOnSort(javafx.event.EventHandler)}
+     * 設定屬性{@link TreeTableView#setOnSort(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -403,7 +430,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setPlaceholder(javafx.scene.Node)}
+     * 設定屬性{@link TreeTableView#setPlaceholder(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -417,7 +444,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setRoot(javafx.scene.control.TreeItem)}
+     * 設定屬性{@link TreeTableView#setRoot(javafx.scene.control.TreeItem)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -431,7 +458,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setRowFactory(javafx.util.Callback)}
+     * 設定屬性{@link TreeTableView#setRowFactory(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -445,7 +472,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setSelectionModel(javafx.scene.control.TreeTableView.TreeTableViewSelectionModel)}
+     * 設定屬性{@link TreeTableView#setSelectionModel(javafx.scene.control.TreeTableView.TreeTableViewSelectionModel)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -459,7 +486,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setShowRoot(boolean)}
+     * 設定屬性{@link TreeTableView#setShowRoot(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -473,7 +500,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setSortMode(javafx.scene.control.TreeSortMode)}
+     * 設定屬性{@link TreeTableView#setSortMode(javafx.scene.control.TreeSortMode)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -487,7 +514,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定集合屬性{@link TreeTableView#getSortOrder}的內容
+     * 設定集合屬性{@link TreeTableView#getSortOrder}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -503,7 +530,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定集合屬性{@link TreeTableView#getSortOrder}的內容
+     * 設定集合屬性{@link TreeTableView#getSortOrder}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -518,7 +545,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 增加集合屬性{@link TreeTableView#getSortOrder}的內容
+     * 增加集合屬性{@link TreeTableView#getSortOrder}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -535,7 +562,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 增加集合屬性{@link TreeTableView#getSortOrder}的內容
+     * 增加集合屬性{@link TreeTableView#getSortOrder}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -553,7 +580,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setSortPolicy(javafx.util.Callback)}
+     * 設定屬性{@link TreeTableView#setSortPolicy(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -567,7 +594,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setTableMenuButtonVisible(boolean)}
+     * 設定屬性{@link TreeTableView#setTableMenuButtonVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -581,7 +608,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#setTreeColumn(javafx.scene.control.TreeTableColumn)}
+     * 設定屬性{@link TreeTableView#setTreeColumn(javafx.scene.control.TreeTableColumn)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -595,7 +622,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定集合屬性{@link TreeTableView#getVisibleLeafColumns}的內容
+     * 設定集合屬性{@link TreeTableView#getVisibleLeafColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -611,7 +638,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定集合屬性{@link TreeTableView#getVisibleLeafColumns}的內容
+     * 設定集合屬性{@link TreeTableView#getVisibleLeafColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -626,7 +653,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 增加集合屬性{@link TreeTableView#getVisibleLeafColumns}的內容
+     * 增加集合屬性{@link TreeTableView#getVisibleLeafColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -643,7 +670,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 增加集合屬性{@link TreeTableView#getVisibleLeafColumns}的內容
+     * 增加集合屬性{@link TreeTableView#getVisibleLeafColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -661,7 +688,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#columnResizePolicyProperty}的連結
+     * 設定屬性{@link TreeTableView#columnResizePolicyProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -678,7 +705,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#columnResizePolicyProperty}的雙向連結
+     * 設定屬性{@link TreeTableView#columnResizePolicyProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -695,7 +722,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#editableProperty}的連結
+     * 設定屬性{@link TreeTableView#editableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -712,7 +739,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#editableProperty}的雙向連結
+     * 設定屬性{@link TreeTableView#editableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -729,7 +756,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#fixedCellSizeProperty}的連結
+     * 設定屬性{@link TreeTableView#fixedCellSizeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -746,7 +773,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#fixedCellSizeProperty}的雙向連結
+     * 設定屬性{@link TreeTableView#fixedCellSizeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -763,7 +790,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#focusModelProperty}的連結
+     * 設定屬性{@link TreeTableView#focusModelProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -780,7 +807,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#focusModelProperty}的雙向連結
+     * 設定屬性{@link TreeTableView#focusModelProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -797,7 +824,109 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#placeholderProperty}的連結
+     * 設定屬性{@link TreeTableView#onScrollToColumnProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindOnScrollToColumn(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<javafx.scene.control.TreeTableColumn<S, ?>>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnScrollToColumn = true;
+        this.obsrv1OnScrollToColumn = source;
+        this.bound2OnScrollToColumn = false;
+        this.obsrv2OnScrollToColumn = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#onScrollToColumnProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnScrollToColumn(javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<javafx.scene.control.TreeTableColumn<S, ?>>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnScrollToColumn = false;
+        this.obsrv1OnScrollToColumn = null;
+        this.bound2OnScrollToColumn = true;
+        this.obsrv2OnScrollToColumn = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#onScrollToProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindOnScrollTo(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnScrollTo = true;
+        this.obsrv1OnScrollTo = source;
+        this.bound2OnScrollTo = false;
+        this.obsrv2OnScrollTo = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#onScrollToProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnScrollTo(javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnScrollTo = false;
+        this.obsrv1OnScrollTo = null;
+        this.bound2OnScrollTo = true;
+        this.obsrv2OnScrollTo = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#onSortProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindOnSort(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.SortEvent<javafx.scene.control.TreeTableView<S>>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnSort = true;
+        this.obsrv1OnSort = source;
+        this.bound2OnSort = false;
+        this.obsrv2OnSort = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#onSortProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnSort(javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.SortEvent<javafx.scene.control.TreeTableView<S>>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnSort = false;
+        this.obsrv1OnSort = null;
+        this.bound2OnSort = true;
+        this.obsrv2OnSort = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeTableView#placeholderProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -814,7 +943,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#placeholderProperty}的雙向連結
+     * 設定屬性{@link TreeTableView#placeholderProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -831,7 +960,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#rootProperty}的連結
+     * 設定屬性{@link TreeTableView#rootProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -848,7 +977,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#rootProperty}的雙向連結
+     * 設定屬性{@link TreeTableView#rootProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -865,7 +994,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#rowFactoryProperty}的連結
+     * 設定屬性{@link TreeTableView#rowFactoryProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -882,7 +1011,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#rowFactoryProperty}的雙向連結
+     * 設定屬性{@link TreeTableView#rowFactoryProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -899,7 +1028,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#selectionModelProperty}的連結
+     * 設定屬性{@link TreeTableView#selectionModelProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -916,7 +1045,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#selectionModelProperty}的雙向連結
+     * 設定屬性{@link TreeTableView#selectionModelProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -933,7 +1062,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#showRootProperty}的連結
+     * 設定屬性{@link TreeTableView#showRootProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -950,7 +1079,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#showRootProperty}的雙向連結
+     * 設定屬性{@link TreeTableView#showRootProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -967,7 +1096,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#sortModeProperty}的連結
+     * 設定屬性{@link TreeTableView#sortModeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -984,7 +1113,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#sortModeProperty}的雙向連結
+     * 設定屬性{@link TreeTableView#sortModeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1001,7 +1130,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#sortPolicyProperty}的連結
+     * 設定屬性{@link TreeTableView#sortPolicyProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1018,7 +1147,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#sortPolicyProperty}的雙向連結
+     * 設定屬性{@link TreeTableView#sortPolicyProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1035,7 +1164,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#tableMenuButtonVisibleProperty}的連結
+     * 設定屬性{@link TreeTableView#tableMenuButtonVisibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1052,7 +1181,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#tableMenuButtonVisibleProperty}的雙向連結
+     * 設定屬性{@link TreeTableView#tableMenuButtonVisibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1069,7 +1198,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#treeColumnProperty}的連結
+     * 設定屬性{@link TreeTableView#treeColumnProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1086,7 +1215,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 設定屬性{@link TreeTableView#treeColumnProperty}的雙向連結
+     * 設定屬性{@link TreeTableView#treeColumnProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1103,7 +1232,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 建構{@link TreeTableView}物件
+     * 建構{@link TreeTableView}物件。
      *
      * @return 新的{@link TreeTableView}物件實體
      */
@@ -1118,7 +1247,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
-     * 建構{@link TreeTableView}物件
+     * 建構{@link TreeTableView}物件。
      *
      * @return 新的{@link TreeTableView}物件實體
      */

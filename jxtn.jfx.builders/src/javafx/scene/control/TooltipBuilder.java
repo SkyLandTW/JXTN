@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link Tooltip}建構器
+ * {@link Tooltip}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -139,7 +139,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#setContentDisplay(javafx.scene.control.ContentDisplay)}
+     * 設定屬性{@link Tooltip#setContentDisplay(javafx.scene.control.ContentDisplay)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#setFont(javafx.scene.text.Font)}
+     * 設定屬性{@link Tooltip#setFont(javafx.scene.text.Font)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#setGraphic(javafx.scene.Node)}
+     * 設定屬性{@link Tooltip#setGraphic(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#setGraphicTextGap(double)}
+     * 設定屬性{@link Tooltip#setGraphicTextGap(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#setText(java.lang.String)}
+     * 設定屬性{@link Tooltip#setText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#setTextAlignment(javafx.scene.text.TextAlignment)}
+     * 設定屬性{@link Tooltip#setTextAlignment(javafx.scene.text.TextAlignment)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#setTextOverrun(javafx.scene.control.OverrunStyle)}
+     * 設定屬性{@link Tooltip#setTextOverrun(javafx.scene.control.OverrunStyle)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -237,7 +237,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#setWrapText(boolean)}
+     * 設定屬性{@link Tooltip#setWrapText(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -251,7 +251,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#contentDisplayProperty}的連結
+     * 設定屬性{@link Tooltip#contentDisplayProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -268,7 +268,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#contentDisplayProperty}的雙向連結
+     * 設定屬性{@link Tooltip#contentDisplayProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -285,7 +285,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#fontProperty}的連結
+     * 設定屬性{@link Tooltip#fontProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -302,7 +302,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#fontProperty}的雙向連結
+     * 設定屬性{@link Tooltip#fontProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -319,7 +319,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#graphicProperty}的連結
+     * 設定屬性{@link Tooltip#graphicProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -336,7 +336,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#graphicProperty}的雙向連結
+     * 設定屬性{@link Tooltip#graphicProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -353,7 +353,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#graphicTextGapProperty}的連結
+     * 設定屬性{@link Tooltip#graphicTextGapProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -370,7 +370,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#graphicTextGapProperty}的雙向連結
+     * 設定屬性{@link Tooltip#graphicTextGapProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -387,7 +387,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#textAlignmentProperty}的連結
+     * 設定屬性{@link Tooltip#textAlignmentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -404,7 +404,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#textAlignmentProperty}的雙向連結
+     * 設定屬性{@link Tooltip#textAlignmentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -421,7 +421,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#textOverrunProperty}的連結
+     * 設定屬性{@link Tooltip#textOverrunProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -438,7 +438,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#textOverrunProperty}的雙向連結
+     * 設定屬性{@link Tooltip#textOverrunProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -455,7 +455,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#textProperty}的連結
+     * 設定屬性{@link Tooltip#textProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -472,7 +472,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#textProperty}的雙向連結
+     * 設定屬性{@link Tooltip#textProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -489,7 +489,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#wrapTextProperty}的連結
+     * 設定屬性{@link Tooltip#wrapTextProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -506,7 +506,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tooltip#wrapTextProperty}的雙向連結
+     * 設定屬性{@link Tooltip#wrapTextProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -523,7 +523,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Tooltip}物件
+     * 建構{@link Tooltip}物件。
      *
      * @return 新的{@link Tooltip}物件實體
      */
@@ -538,7 +538,7 @@ public class TooltipBuilder<Z extends Tooltip, B extends TooltipBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Tooltip}物件
+     * 建構{@link Tooltip}物件。
      *
      * @return 新的{@link Tooltip}物件實體
      */

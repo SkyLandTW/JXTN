@@ -6,7 +6,7 @@
 package javafx.scene.image;
 
 /**
- * {@link WritableImage}建構器
+ * {@link WritableImage}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class WritableImageBuilder<Z extends WritableImage, B extends WritableIma
     }
 
     /**
-     * 建構{@link WritableImage}物件
+     * 建構{@link WritableImage}物件。
      *
      * @return 新的{@link WritableImage}物件實體
      */
@@ -41,7 +41,7 @@ public class WritableImageBuilder<Z extends WritableImage, B extends WritableIma
     }
 
     /**
-     * 建構{@link WritableImage}物件
+     * 建構{@link WritableImage}物件。
      *
      * @return 新的{@link WritableImage}物件實體
      */
@@ -55,7 +55,7 @@ public class WritableImageBuilder<Z extends WritableImage, B extends WritableIma
     }
 
     /**
-     * 建構{@link WritableImage}物件
+     * 建構{@link WritableImage}物件。
      *
      * @return 新的{@link WritableImage}物件實體
      */

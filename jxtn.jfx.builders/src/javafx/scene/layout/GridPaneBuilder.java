@@ -6,7 +6,7 @@
 package javafx.scene.layout;
 
 /**
- * {@link GridPane}建構器
+ * {@link GridPane}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -93,7 +93,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridPane#setAlignment(javafx.geometry.Pos)}
+     * 設定屬性{@link GridPane#setAlignment(javafx.geometry.Pos)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -107,7 +107,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定集合屬性{@link GridPane#getColumnConstraints}的內容
+     * 設定集合屬性{@link GridPane#getColumnConstraints}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -123,7 +123,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定集合屬性{@link GridPane#getColumnConstraints}的內容
+     * 設定集合屬性{@link GridPane#getColumnConstraints}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -138,7 +138,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 增加集合屬性{@link GridPane#getColumnConstraints}的內容
+     * 增加集合屬性{@link GridPane#getColumnConstraints}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -155,7 +155,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 增加集合屬性{@link GridPane#getColumnConstraints}的內容
+     * 增加集合屬性{@link GridPane#getColumnConstraints}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -173,7 +173,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridPane#setGridLinesVisible(boolean)}
+     * 設定屬性{@link GridPane#setGridLinesVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -187,7 +187,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridPane#setHgap(double)}
+     * 設定屬性{@link GridPane#setHgap(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -201,7 +201,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定集合屬性{@link GridPane#getRowConstraints}的內容
+     * 設定集合屬性{@link GridPane#getRowConstraints}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -217,7 +217,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定集合屬性{@link GridPane#getRowConstraints}的內容
+     * 設定集合屬性{@link GridPane#getRowConstraints}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -232,7 +232,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 增加集合屬性{@link GridPane#getRowConstraints}的內容
+     * 增加集合屬性{@link GridPane#getRowConstraints}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -249,7 +249,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 增加集合屬性{@link GridPane#getRowConstraints}的內容
+     * 增加集合屬性{@link GridPane#getRowConstraints}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -267,7 +267,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridPane#setVgap(double)}
+     * 設定屬性{@link GridPane#setVgap(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -281,7 +281,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridPane#alignmentProperty}的連結
+     * 設定屬性{@link GridPane#alignmentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -298,7 +298,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridPane#alignmentProperty}的雙向連結
+     * 設定屬性{@link GridPane#alignmentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -315,7 +315,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridPane#gridLinesVisibleProperty}的連結
+     * 設定屬性{@link GridPane#gridLinesVisibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -332,7 +332,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridPane#gridLinesVisibleProperty}的雙向連結
+     * 設定屬性{@link GridPane#gridLinesVisibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -349,7 +349,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridPane#hgapProperty}的連結
+     * 設定屬性{@link GridPane#hgapProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -366,7 +366,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridPane#hgapProperty}的雙向連結
+     * 設定屬性{@link GridPane#hgapProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -383,7 +383,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridPane#vgapProperty}的連結
+     * 設定屬性{@link GridPane#vgapProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -400,7 +400,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridPane#vgapProperty}的雙向連結
+     * 設定屬性{@link GridPane#vgapProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -417,7 +417,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
-     * 建構{@link GridPane}物件
+     * 建構{@link GridPane}物件。
      *
      * @return 新的{@link GridPane}物件實體
      */

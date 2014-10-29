@@ -6,7 +6,7 @@
 package javafx.scene.paint;
 
 /**
- * {@link PhongMaterial}建構器
+ * {@link PhongMaterial}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -125,7 +125,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#setBumpMap(javafx.scene.image.Image)}
+     * 設定屬性{@link PhongMaterial#setBumpMap(javafx.scene.image.Image)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#setDiffuseColor(javafx.scene.paint.Color)}
+     * 設定屬性{@link PhongMaterial#setDiffuseColor(javafx.scene.paint.Color)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#setDiffuseMap(javafx.scene.image.Image)}
+     * 設定屬性{@link PhongMaterial#setDiffuseMap(javafx.scene.image.Image)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#setSelfIlluminationMap(javafx.scene.image.Image)}
+     * 設定屬性{@link PhongMaterial#setSelfIlluminationMap(javafx.scene.image.Image)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#setSpecularColor(javafx.scene.paint.Color)}
+     * 設定屬性{@link PhongMaterial#setSpecularColor(javafx.scene.paint.Color)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#setSpecularMap(javafx.scene.image.Image)}
+     * 設定屬性{@link PhongMaterial#setSpecularMap(javafx.scene.image.Image)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#setSpecularPower(double)}
+     * 設定屬性{@link PhongMaterial#setSpecularPower(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#bumpMapProperty}的連結
+     * 設定屬性{@link PhongMaterial#bumpMapProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -240,7 +240,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#bumpMapProperty}的雙向連結
+     * 設定屬性{@link PhongMaterial#bumpMapProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -257,7 +257,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#diffuseColorProperty}的連結
+     * 設定屬性{@link PhongMaterial#diffuseColorProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -274,7 +274,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#diffuseColorProperty}的雙向連結
+     * 設定屬性{@link PhongMaterial#diffuseColorProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -291,7 +291,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#diffuseMapProperty}的連結
+     * 設定屬性{@link PhongMaterial#diffuseMapProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -308,7 +308,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#diffuseMapProperty}的雙向連結
+     * 設定屬性{@link PhongMaterial#diffuseMapProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -325,7 +325,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#selfIlluminationMapProperty}的連結
+     * 設定屬性{@link PhongMaterial#selfIlluminationMapProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -342,7 +342,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#selfIlluminationMapProperty}的雙向連結
+     * 設定屬性{@link PhongMaterial#selfIlluminationMapProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -359,7 +359,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#specularColorProperty}的連結
+     * 設定屬性{@link PhongMaterial#specularColorProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -376,7 +376,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#specularColorProperty}的雙向連結
+     * 設定屬性{@link PhongMaterial#specularColorProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -393,7 +393,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#specularMapProperty}的連結
+     * 設定屬性{@link PhongMaterial#specularMapProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -410,7 +410,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#specularMapProperty}的雙向連結
+     * 設定屬性{@link PhongMaterial#specularMapProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -427,7 +427,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#specularPowerProperty}的連結
+     * 設定屬性{@link PhongMaterial#specularPowerProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -444,7 +444,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 設定屬性{@link PhongMaterial#specularPowerProperty}的雙向連結
+     * 設定屬性{@link PhongMaterial#specularPowerProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -461,7 +461,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 建構{@link PhongMaterial}物件
+     * 建構{@link PhongMaterial}物件。
      *
      * @return 新的{@link PhongMaterial}物件實體
      */
@@ -476,7 +476,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 建構{@link PhongMaterial}物件
+     * 建構{@link PhongMaterial}物件。
      *
      * @return 新的{@link PhongMaterial}物件實體
      */
@@ -490,7 +490,7 @@ public class PhongMaterialBuilder<Z extends PhongMaterial, B extends PhongMateri
     }
 
     /**
-     * 建構{@link PhongMaterial}物件
+     * 建構{@link PhongMaterial}物件。
      *
      * @return 新的{@link PhongMaterial}物件實體
      */

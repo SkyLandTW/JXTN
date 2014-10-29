@@ -6,7 +6,7 @@
 package javafx.scene.transform;
 
 /**
- * {@link Scale}建構器
+ * {@link Scale}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -111,7 +111,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#setPivotX(double)}
+     * 設定屬性{@link Scale#setPivotX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#setPivotY(double)}
+     * 設定屬性{@link Scale#setPivotY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#setPivotZ(double)}
+     * 設定屬性{@link Scale#setPivotZ(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#setX(double)}
+     * 設定屬性{@link Scale#setX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#setY(double)}
+     * 設定屬性{@link Scale#setY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#setZ(double)}
+     * 設定屬性{@link Scale#setZ(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#pivotXProperty}的連結
+     * 設定屬性{@link Scale#pivotXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -212,7 +212,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#pivotXProperty}的雙向連結
+     * 設定屬性{@link Scale#pivotXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -229,7 +229,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#pivotYProperty}的連結
+     * 設定屬性{@link Scale#pivotYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -246,7 +246,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#pivotYProperty}的雙向連結
+     * 設定屬性{@link Scale#pivotYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -263,7 +263,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#pivotZProperty}的連結
+     * 設定屬性{@link Scale#pivotZProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -280,7 +280,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#pivotZProperty}的雙向連結
+     * 設定屬性{@link Scale#pivotZProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -297,7 +297,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#xProperty}的連結
+     * 設定屬性{@link Scale#xProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -314,7 +314,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#xProperty}的雙向連結
+     * 設定屬性{@link Scale#xProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -331,7 +331,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#yProperty}的連結
+     * 設定屬性{@link Scale#yProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -348,7 +348,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#yProperty}的雙向連結
+     * 設定屬性{@link Scale#yProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -365,7 +365,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#zProperty}的連結
+     * 設定屬性{@link Scale#zProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -382,7 +382,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scale#zProperty}的雙向連結
+     * 設定屬性{@link Scale#zProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -399,7 +399,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Scale}物件
+     * 建構{@link Scale}物件。
      *
      * @return 新的{@link Scale}物件實體
      */
@@ -414,7 +414,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Scale}物件
+     * 建構{@link Scale}物件。
      *
      * @return 新的{@link Scale}物件實體
      */
@@ -428,7 +428,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Scale}物件
+     * 建構{@link Scale}物件。
      *
      * @return 新的{@link Scale}物件實體
      */
@@ -442,7 +442,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Scale}物件
+     * 建構{@link Scale}物件。
      *
      * @return 新的{@link Scale}物件實體
      */
@@ -456,7 +456,7 @@ public class ScaleBuilder<Z extends Scale, B extends ScaleBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Scale}物件
+     * 建構{@link Scale}物件。
      *
      * @return 新的{@link Scale}物件實體
      */

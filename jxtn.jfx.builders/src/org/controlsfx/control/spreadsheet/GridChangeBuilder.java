@@ -6,7 +6,7 @@
 package org.controlsfx.control.spreadsheet;
 
 /**
- * {@link GridChange}建構器
+ * {@link GridChange}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -27,7 +27,7 @@ public class GridChangeBuilder<Z extends GridChange, B extends GridChangeBuilder
     }
 
     /**
-     * 建構{@link GridChange}物件
+     * 建構{@link GridChange}物件。
      *
      * @return 新的{@link GridChange}物件實體
      */

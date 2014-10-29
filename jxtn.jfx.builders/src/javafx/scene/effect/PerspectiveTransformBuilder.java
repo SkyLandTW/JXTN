@@ -6,7 +6,7 @@
 package javafx.scene.effect;
 
 /**
- * {@link PerspectiveTransform}建構器
+ * {@link PerspectiveTransform}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -153,7 +153,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#setInput(javafx.scene.effect.Effect)}
+     * 設定屬性{@link PerspectiveTransform#setInput(javafx.scene.effect.Effect)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#setLlx(double)}
+     * 設定屬性{@link PerspectiveTransform#setLlx(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#setLly(double)}
+     * 設定屬性{@link PerspectiveTransform#setLly(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#setLrx(double)}
+     * 設定屬性{@link PerspectiveTransform#setLrx(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#setLry(double)}
+     * 設定屬性{@link PerspectiveTransform#setLry(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#setUlx(double)}
+     * 設定屬性{@link PerspectiveTransform#setUlx(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -237,7 +237,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#setUly(double)}
+     * 設定屬性{@link PerspectiveTransform#setUly(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -251,7 +251,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#setUrx(double)}
+     * 設定屬性{@link PerspectiveTransform#setUrx(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -265,7 +265,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#setUry(double)}
+     * 設定屬性{@link PerspectiveTransform#setUry(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -279,7 +279,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#inputProperty}的連結
+     * 設定屬性{@link PerspectiveTransform#inputProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -296,7 +296,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#inputProperty}的雙向連結
+     * 設定屬性{@link PerspectiveTransform#inputProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -313,7 +313,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#llxProperty}的連結
+     * 設定屬性{@link PerspectiveTransform#llxProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -330,7 +330,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#llxProperty}的雙向連結
+     * 設定屬性{@link PerspectiveTransform#llxProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -347,7 +347,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#llyProperty}的連結
+     * 設定屬性{@link PerspectiveTransform#llyProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -364,7 +364,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#llyProperty}的雙向連結
+     * 設定屬性{@link PerspectiveTransform#llyProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -381,7 +381,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#lrxProperty}的連結
+     * 設定屬性{@link PerspectiveTransform#lrxProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -398,7 +398,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#lrxProperty}的雙向連結
+     * 設定屬性{@link PerspectiveTransform#lrxProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -415,7 +415,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#lryProperty}的連結
+     * 設定屬性{@link PerspectiveTransform#lryProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -432,7 +432,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#lryProperty}的雙向連結
+     * 設定屬性{@link PerspectiveTransform#lryProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -449,7 +449,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#ulxProperty}的連結
+     * 設定屬性{@link PerspectiveTransform#ulxProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -466,7 +466,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#ulxProperty}的雙向連結
+     * 設定屬性{@link PerspectiveTransform#ulxProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -483,7 +483,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#ulyProperty}的連結
+     * 設定屬性{@link PerspectiveTransform#ulyProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -500,7 +500,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#ulyProperty}的雙向連結
+     * 設定屬性{@link PerspectiveTransform#ulyProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -517,7 +517,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#urxProperty}的連結
+     * 設定屬性{@link PerspectiveTransform#urxProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -534,7 +534,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#urxProperty}的雙向連結
+     * 設定屬性{@link PerspectiveTransform#urxProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -551,7 +551,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#uryProperty}的連結
+     * 設定屬性{@link PerspectiveTransform#uryProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -568,7 +568,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 設定屬性{@link PerspectiveTransform#uryProperty}的雙向連結
+     * 設定屬性{@link PerspectiveTransform#uryProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -585,7 +585,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 建構{@link PerspectiveTransform}物件
+     * 建構{@link PerspectiveTransform}物件。
      *
      * @return 新的{@link PerspectiveTransform}物件實體
      */
@@ -600,7 +600,7 @@ public class PerspectiveTransformBuilder<Z extends PerspectiveTransform, B exten
     }
 
     /**
-     * 建構{@link PerspectiveTransform}物件
+     * 建構{@link PerspectiveTransform}物件。
      *
      * @return 新的{@link PerspectiveTransform}物件實體
      */

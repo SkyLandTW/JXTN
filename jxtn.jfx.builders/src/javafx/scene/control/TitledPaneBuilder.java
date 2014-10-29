@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link TitledPane}建構器
+ * {@link TitledPane}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -83,7 +83,7 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     }
 
     /**
-     * 設定屬性{@link TitledPane#setAnimated(boolean)}
+     * 設定屬性{@link TitledPane#setAnimated(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -97,7 +97,7 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     }
 
     /**
-     * 設定屬性{@link TitledPane#setCollapsible(boolean)}
+     * 設定屬性{@link TitledPane#setCollapsible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     }
 
     /**
-     * 設定屬性{@link TitledPane#setContent(javafx.scene.Node)}
+     * 設定屬性{@link TitledPane#setContent(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     }
 
     /**
-     * 設定屬性{@link TitledPane#setExpanded(boolean)}
+     * 設定屬性{@link TitledPane#setExpanded(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     }
 
     /**
-     * 設定屬性{@link TitledPane#animatedProperty}的連結
+     * 設定屬性{@link TitledPane#animatedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -156,7 +156,7 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     }
 
     /**
-     * 設定屬性{@link TitledPane#animatedProperty}的雙向連結
+     * 設定屬性{@link TitledPane#animatedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -173,7 +173,7 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     }
 
     /**
-     * 設定屬性{@link TitledPane#collapsibleProperty}的連結
+     * 設定屬性{@link TitledPane#collapsibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -190,7 +190,7 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     }
 
     /**
-     * 設定屬性{@link TitledPane#collapsibleProperty}的雙向連結
+     * 設定屬性{@link TitledPane#collapsibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -207,7 +207,7 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     }
 
     /**
-     * 設定屬性{@link TitledPane#contentProperty}的連結
+     * 設定屬性{@link TitledPane#contentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -224,7 +224,7 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     }
 
     /**
-     * 設定屬性{@link TitledPane#contentProperty}的雙向連結
+     * 設定屬性{@link TitledPane#contentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -241,7 +241,7 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     }
 
     /**
-     * 設定屬性{@link TitledPane#expandedProperty}的連結
+     * 設定屬性{@link TitledPane#expandedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -258,7 +258,7 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     }
 
     /**
-     * 設定屬性{@link TitledPane#expandedProperty}的雙向連結
+     * 設定屬性{@link TitledPane#expandedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -275,7 +275,7 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     }
 
     /**
-     * 建構{@link TitledPane}物件
+     * 建構{@link TitledPane}物件。
      *
      * @return 新的{@link TitledPane}物件實體
      */
@@ -290,7 +290,7 @@ public class TitledPaneBuilder<Z extends TitledPane, B extends TitledPaneBuilder
     }
 
     /**
-     * 建構{@link TitledPane}物件
+     * 建構{@link TitledPane}物件。
      *
      * @return 新的{@link TitledPane}物件實體
      */

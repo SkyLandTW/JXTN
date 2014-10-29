@@ -6,7 +6,7 @@
 package javafx.scene.image;
 
 /**
- * {@link ImageView}建構器
+ * {@link ImageView}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -139,7 +139,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#setFitHeight(double)}
+     * 設定屬性{@link ImageView#setFitHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#setFitWidth(double)}
+     * 設定屬性{@link ImageView#setFitWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#setImage(javafx.scene.image.Image)}
+     * 設定屬性{@link ImageView#setImage(javafx.scene.image.Image)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#setPreserveRatio(boolean)}
+     * 設定屬性{@link ImageView#setPreserveRatio(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#setSmooth(boolean)}
+     * 設定屬性{@link ImageView#setSmooth(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#setViewport(javafx.geometry.Rectangle2D)}
+     * 設定屬性{@link ImageView#setViewport(javafx.geometry.Rectangle2D)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#setX(double)}
+     * 設定屬性{@link ImageView#setX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -237,7 +237,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#setY(double)}
+     * 設定屬性{@link ImageView#setY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -251,7 +251,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#fitHeightProperty}的連結
+     * 設定屬性{@link ImageView#fitHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -268,7 +268,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#fitHeightProperty}的雙向連結
+     * 設定屬性{@link ImageView#fitHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -285,7 +285,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#fitWidthProperty}的連結
+     * 設定屬性{@link ImageView#fitWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -302,7 +302,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#fitWidthProperty}的雙向連結
+     * 設定屬性{@link ImageView#fitWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -319,7 +319,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#imageProperty}的連結
+     * 設定屬性{@link ImageView#imageProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -336,7 +336,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#imageProperty}的雙向連結
+     * 設定屬性{@link ImageView#imageProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -353,7 +353,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#preserveRatioProperty}的連結
+     * 設定屬性{@link ImageView#preserveRatioProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -370,7 +370,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#preserveRatioProperty}的雙向連結
+     * 設定屬性{@link ImageView#preserveRatioProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -387,7 +387,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#smoothProperty}的連結
+     * 設定屬性{@link ImageView#smoothProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -404,7 +404,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#smoothProperty}的雙向連結
+     * 設定屬性{@link ImageView#smoothProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -421,7 +421,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#viewportProperty}的連結
+     * 設定屬性{@link ImageView#viewportProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -438,7 +438,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#viewportProperty}的雙向連結
+     * 設定屬性{@link ImageView#viewportProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -455,7 +455,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#xProperty}的連結
+     * 設定屬性{@link ImageView#xProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -472,7 +472,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#xProperty}的雙向連結
+     * 設定屬性{@link ImageView#xProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -489,7 +489,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#yProperty}的連結
+     * 設定屬性{@link ImageView#yProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -506,7 +506,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ImageView#yProperty}的雙向連結
+     * 設定屬性{@link ImageView#yProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -523,7 +523,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 建構{@link ImageView}物件
+     * 建構{@link ImageView}物件。
      *
      * @return 新的{@link ImageView}物件實體
      */
@@ -538,7 +538,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 建構{@link ImageView}物件
+     * 建構{@link ImageView}物件。
      *
      * @return 新的{@link ImageView}物件實體
      */
@@ -552,7 +552,7 @@ public class ImageViewBuilder<Z extends ImageView, B extends ImageViewBuilder<Z,
     }
 
     /**
-     * 建構{@link ImageView}物件
+     * 建構{@link ImageView}物件。
      *
      * @return 新的{@link ImageView}物件實體
      */

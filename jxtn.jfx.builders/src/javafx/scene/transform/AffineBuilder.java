@@ -6,7 +6,7 @@
 package javafx.scene.transform;
 
 /**
- * {@link Affine}建構器
+ * {@link Affine}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -200,7 +200,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setMxx(double)}
+     * 設定屬性{@link Affine#setMxx(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -214,7 +214,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setMxy(double)}
+     * 設定屬性{@link Affine#setMxy(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -228,7 +228,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setMxz(double)}
+     * 設定屬性{@link Affine#setMxz(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -242,7 +242,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setMyx(double)}
+     * 設定屬性{@link Affine#setMyx(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -256,7 +256,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setMyy(double)}
+     * 設定屬性{@link Affine#setMyy(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -270,7 +270,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setMyz(double)}
+     * 設定屬性{@link Affine#setMyz(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -284,7 +284,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setMzx(double)}
+     * 設定屬性{@link Affine#setMzx(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -298,7 +298,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setMzy(double)}
+     * 設定屬性{@link Affine#setMzy(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -312,7 +312,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setMzz(double)}
+     * 設定屬性{@link Affine#setMzz(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -326,7 +326,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setToTransform(javafx.scene.transform.Transform)}
+     * 設定屬性{@link Affine#setToTransform(javafx.scene.transform.Transform)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -340,7 +340,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setTx(double)}
+     * 設定屬性{@link Affine#setTx(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -354,7 +354,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setTy(double)}
+     * 設定屬性{@link Affine#setTy(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -368,7 +368,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#setTz(double)}
+     * 設定屬性{@link Affine#setTz(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -382,7 +382,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#mxxProperty}的連結
+     * 設定屬性{@link Affine#mxxProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -399,7 +399,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#mxxProperty}的雙向連結
+     * 設定屬性{@link Affine#mxxProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -416,7 +416,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#mxyProperty}的連結
+     * 設定屬性{@link Affine#mxyProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -433,7 +433,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#mxyProperty}的雙向連結
+     * 設定屬性{@link Affine#mxyProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -450,7 +450,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#mxzProperty}的連結
+     * 設定屬性{@link Affine#mxzProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -467,7 +467,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#mxzProperty}的雙向連結
+     * 設定屬性{@link Affine#mxzProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -484,7 +484,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#myxProperty}的連結
+     * 設定屬性{@link Affine#myxProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -501,7 +501,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#myxProperty}的雙向連結
+     * 設定屬性{@link Affine#myxProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -518,7 +518,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#myyProperty}的連結
+     * 設定屬性{@link Affine#myyProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -535,7 +535,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#myyProperty}的雙向連結
+     * 設定屬性{@link Affine#myyProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -552,7 +552,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#myzProperty}的連結
+     * 設定屬性{@link Affine#myzProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -569,7 +569,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#myzProperty}的雙向連結
+     * 設定屬性{@link Affine#myzProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -586,7 +586,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#mzxProperty}的連結
+     * 設定屬性{@link Affine#mzxProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -603,7 +603,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#mzxProperty}的雙向連結
+     * 設定屬性{@link Affine#mzxProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -620,7 +620,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#mzyProperty}的連結
+     * 設定屬性{@link Affine#mzyProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -637,7 +637,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#mzyProperty}的雙向連結
+     * 設定屬性{@link Affine#mzyProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -654,7 +654,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#mzzProperty}的連結
+     * 設定屬性{@link Affine#mzzProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -671,7 +671,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#mzzProperty}的雙向連結
+     * 設定屬性{@link Affine#mzzProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -688,7 +688,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#txProperty}的連結
+     * 設定屬性{@link Affine#txProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -705,7 +705,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#txProperty}的雙向連結
+     * 設定屬性{@link Affine#txProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -722,7 +722,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#tyProperty}的連結
+     * 設定屬性{@link Affine#tyProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -739,7 +739,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#tyProperty}的雙向連結
+     * 設定屬性{@link Affine#tyProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -756,7 +756,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#tzProperty}的連結
+     * 設定屬性{@link Affine#tzProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -773,7 +773,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Affine#tzProperty}的雙向連結
+     * 設定屬性{@link Affine#tzProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -790,7 +790,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Affine}物件
+     * 建構{@link Affine}物件。
      *
      * @return 新的{@link Affine}物件實體
      */
@@ -805,7 +805,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Affine}物件
+     * 建構{@link Affine}物件。
      *
      * @return 新的{@link Affine}物件實體
      */
@@ -819,7 +819,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Affine}物件
+     * 建構{@link Affine}物件。
      *
      * @return 新的{@link Affine}物件實體
      */
@@ -833,7 +833,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Affine}物件
+     * 建構{@link Affine}物件。
      *
      * @return 新的{@link Affine}物件實體
      */
@@ -847,7 +847,7 @@ public class AffineBuilder<Z extends Affine, B extends AffineBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Affine}物件
+     * 建構{@link Affine}物件。
      *
      * @return 新的{@link Affine}物件實體
      */

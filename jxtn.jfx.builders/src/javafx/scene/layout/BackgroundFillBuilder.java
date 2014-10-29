@@ -6,7 +6,7 @@
 package javafx.scene.layout;
 
 /**
- * {@link BackgroundFill}建構器
+ * {@link BackgroundFill}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class BackgroundFillBuilder<Z extends BackgroundFill, B extends Backgroun
     }
 
     /**
-     * 建構{@link BackgroundFill}物件
+     * 建構{@link BackgroundFill}物件。
      *
      * @return 新的{@link BackgroundFill}物件實體
      */

@@ -6,7 +6,7 @@
 package javafx.scene.text;
 
 /**
- * {@link Font}建構器
+ * {@link Font}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class FontBuilder<Z extends Font, B extends FontBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Font}物件
+     * 建構{@link Font}物件。
      *
      * @return 新的{@link Font}物件實體
      */
@@ -41,7 +41,7 @@ public class FontBuilder<Z extends Font, B extends FontBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Font}物件
+     * 建構{@link Font}物件。
      *
      * @return 新的{@link Font}物件實體
      */

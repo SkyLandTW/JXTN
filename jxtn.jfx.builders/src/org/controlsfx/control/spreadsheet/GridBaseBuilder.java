@@ -6,7 +6,7 @@
 package org.controlsfx.control.spreadsheet;
 
 /**
- * {@link GridBase}建構器
+ * {@link GridBase}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -35,6 +35,11 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     private boolean hasRows;
     private java.util.Collection<javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell>> valRows;
 
+    private boolean bound1Locked;
+    private boolean bound2Locked;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Locked;
+    private javafx.beans.property.Property<Boolean> obsrv2Locked;
+
     @Override
     public void applyTo(Z instance)
     {
@@ -49,10 +54,14 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
             instance.setRowHeightCallback(this.valRowHeightCallback);
         if (this.hasRows)
             instance.setRows(this.valRows);
+        if (this.bound1Locked)
+            instance.lockedProperty().bind(this.obsrv1Locked);
+        if (this.bound2Locked)
+            instance.lockedProperty().bindBidirectional(this.obsrv2Locked);
     }
 
     /**
-     * 設定集合屬性{@link GridBase#getColumnHeaders}的內容
+     * 設定集合屬性{@link GridBase#getColumnHeaders}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -68,7 +77,7 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     }
 
     /**
-     * 設定集合屬性{@link GridBase#getColumnHeaders}的內容
+     * 設定集合屬性{@link GridBase#getColumnHeaders}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -83,7 +92,7 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     }
 
     /**
-     * 增加集合屬性{@link GridBase#getColumnHeaders}的內容
+     * 增加集合屬性{@link GridBase#getColumnHeaders}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -100,7 +109,7 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     }
 
     /**
-     * 增加集合屬性{@link GridBase#getColumnHeaders}的內容
+     * 增加集合屬性{@link GridBase#getColumnHeaders}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -118,7 +127,7 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridBase#setLocked(java.lang.Boolean)}
+     * 設定屬性{@link GridBase#setLocked(java.lang.Boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -132,7 +141,7 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     }
 
     /**
-     * 設定集合屬性{@link GridBase#getRowHeaders}的內容
+     * 設定集合屬性{@link GridBase#getRowHeaders}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -148,7 +157,7 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     }
 
     /**
-     * 設定集合屬性{@link GridBase#getRowHeaders}的內容
+     * 設定集合屬性{@link GridBase#getRowHeaders}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -163,7 +172,7 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     }
 
     /**
-     * 增加集合屬性{@link GridBase#getRowHeaders}的內容
+     * 增加集合屬性{@link GridBase#getRowHeaders}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -180,7 +189,7 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     }
 
     /**
-     * 增加集合屬性{@link GridBase#getRowHeaders}的內容
+     * 增加集合屬性{@link GridBase#getRowHeaders}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -198,7 +207,7 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridBase#setRowHeightCallback(javafx.util.Callback)}
+     * 設定屬性{@link GridBase#setRowHeightCallback(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -212,7 +221,7 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link GridBase#setRows(java.util.Collection)}
+     * 設定屬性{@link GridBase#setRows(java.util.Collection)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -226,7 +235,41 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     }
 
     /**
-     * 建構{@link GridBase}物件
+     * 設定屬性{@link GridBase#lockedProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindLocked(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Locked = true;
+        this.obsrv1Locked = source;
+        this.bound2Locked = false;
+        this.obsrv2Locked = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link GridBase#lockedProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLocked(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Locked = false;
+        this.obsrv1Locked = null;
+        this.bound2Locked = true;
+        this.obsrv2Locked = source;
+        return (B) this;
+    }
+
+    /**
+     * 建構{@link GridBase}物件。
      *
      * @return 新的{@link GridBase}物件實體
      */

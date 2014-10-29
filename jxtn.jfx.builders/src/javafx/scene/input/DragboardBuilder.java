@@ -6,7 +6,7 @@
 package javafx.scene.input;
 
 /**
- * {@link Dragboard}建構器
+ * {@link Dragboard}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -42,7 +42,7 @@ public class DragboardBuilder<Z extends Dragboard, B extends DragboardBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Dragboard#setDragView(javafx.scene.image.Image)}
+     * 設定屬性{@link Dragboard#setDragView(javafx.scene.image.Image)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -56,7 +56,7 @@ public class DragboardBuilder<Z extends Dragboard, B extends DragboardBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Dragboard#setDragViewOffsetX(double)}
+     * 設定屬性{@link Dragboard#setDragViewOffsetX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -70,7 +70,7 @@ public class DragboardBuilder<Z extends Dragboard, B extends DragboardBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Dragboard#setDragViewOffsetY(double)}
+     * 設定屬性{@link Dragboard#setDragViewOffsetY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

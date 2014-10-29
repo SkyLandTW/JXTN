@@ -6,7 +6,7 @@
 package javafx.scene.media;
 
 /**
- * {@link AudioEqualizer}建構器
+ * {@link AudioEqualizer}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -26,6 +26,11 @@ public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqua
     private boolean hasEnabled;
     private boolean valEnabled;
 
+    private boolean bound1Enabled;
+    private boolean bound2Enabled;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Enabled;
+    private javafx.beans.property.Property<Boolean> obsrv2Enabled;
+
     @Override
     public void applyTo(Z instance)
     {
@@ -34,10 +39,14 @@ public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqua
             instance.getBands().addAll(this.valBands);
         if (this.hasEnabled)
             instance.setEnabled(this.valEnabled);
+        if (this.bound1Enabled)
+            instance.enabledProperty().bind(this.obsrv1Enabled);
+        if (this.bound2Enabled)
+            instance.enabledProperty().bindBidirectional(this.obsrv2Enabled);
     }
 
     /**
-     * 設定集合屬性{@link AudioEqualizer#getBands}的內容
+     * 設定集合屬性{@link AudioEqualizer#getBands}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -53,7 +62,7 @@ public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqua
     }
 
     /**
-     * 設定集合屬性{@link AudioEqualizer#getBands}的內容
+     * 設定集合屬性{@link AudioEqualizer#getBands}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -68,7 +77,7 @@ public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqua
     }
 
     /**
-     * 增加集合屬性{@link AudioEqualizer#getBands}的內容
+     * 增加集合屬性{@link AudioEqualizer#getBands}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -85,7 +94,7 @@ public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqua
     }
 
     /**
-     * 增加集合屬性{@link AudioEqualizer#getBands}的內容
+     * 增加集合屬性{@link AudioEqualizer#getBands}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -103,7 +112,7 @@ public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqua
     }
 
     /**
-     * 設定屬性{@link AudioEqualizer#setEnabled(boolean)}
+     * 設定屬性{@link AudioEqualizer#setEnabled(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -113,6 +122,40 @@ public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqua
     {
         this.hasEnabled = true;
         this.valEnabled = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AudioEqualizer#enabledProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindEnabled(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Enabled = true;
+        this.obsrv1Enabled = source;
+        this.bound2Enabled = false;
+        this.obsrv2Enabled = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AudioEqualizer#enabledProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalEnabled(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Enabled = false;
+        this.obsrv1Enabled = null;
+        this.bound2Enabled = true;
+        this.obsrv2Enabled = source;
         return (B) this;
     }
 }

@@ -6,7 +6,7 @@
 package org.controlsfx.control;
 
 /**
- * {@link NotificationPane}建構器
+ * {@link NotificationPane}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -144,7 +144,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定集合屬性{@link NotificationPane#getActions}的內容
+     * 設定集合屬性{@link NotificationPane#getActions}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -160,7 +160,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定集合屬性{@link NotificationPane#getActions}的內容
+     * 設定集合屬性{@link NotificationPane#getActions}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -175,7 +175,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 增加集合屬性{@link NotificationPane#getActions}的內容
+     * 增加集合屬性{@link NotificationPane#getActions}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -192,7 +192,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 增加集合屬性{@link NotificationPane#getActions}的內容
+     * 增加集合屬性{@link NotificationPane#getActions}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -210,7 +210,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#setContent(javafx.scene.Node)}
+     * 設定屬性{@link NotificationPane#setContent(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -224,7 +224,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#setGraphic(javafx.scene.Node)}
+     * 設定屬性{@link NotificationPane#setGraphic(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -238,7 +238,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#setOnHidden(javafx.event.EventHandler)}
+     * 設定屬性{@link NotificationPane#setOnHidden(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -252,7 +252,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#setOnHiding(javafx.event.EventHandler)}
+     * 設定屬性{@link NotificationPane#setOnHiding(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -266,7 +266,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#setOnShowing(javafx.event.EventHandler)}
+     * 設定屬性{@link NotificationPane#setOnShowing(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -280,7 +280,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#setOnShown(javafx.event.EventHandler)}
+     * 設定屬性{@link NotificationPane#setOnShown(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -294,7 +294,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#setShowFromTop(boolean)}
+     * 設定屬性{@link NotificationPane#setShowFromTop(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -308,7 +308,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#setText(java.lang.String)}
+     * 設定屬性{@link NotificationPane#setText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -322,7 +322,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#contentProperty}的連結
+     * 設定屬性{@link NotificationPane#contentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -339,7 +339,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#contentProperty}的雙向連結
+     * 設定屬性{@link NotificationPane#contentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -356,7 +356,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#graphicProperty}的連結
+     * 設定屬性{@link NotificationPane#graphicProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -373,7 +373,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#graphicProperty}的雙向連結
+     * 設定屬性{@link NotificationPane#graphicProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -390,7 +390,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#onHiddenProperty}的連結
+     * 設定屬性{@link NotificationPane#onHiddenProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -407,7 +407,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#onHiddenProperty}的雙向連結
+     * 設定屬性{@link NotificationPane#onHiddenProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -424,7 +424,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#onHidingProperty}的連結
+     * 設定屬性{@link NotificationPane#onHidingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -441,7 +441,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#onHidingProperty}的雙向連結
+     * 設定屬性{@link NotificationPane#onHidingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -458,7 +458,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#onShowingProperty}的連結
+     * 設定屬性{@link NotificationPane#onShowingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -475,7 +475,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#onShowingProperty}的雙向連結
+     * 設定屬性{@link NotificationPane#onShowingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -492,7 +492,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#onShownProperty}的連結
+     * 設定屬性{@link NotificationPane#onShownProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -509,7 +509,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#onShownProperty}的雙向連結
+     * 設定屬性{@link NotificationPane#onShownProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -526,7 +526,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#showFromTopProperty}的連結
+     * 設定屬性{@link NotificationPane#showFromTopProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -543,7 +543,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#showFromTopProperty}的雙向連結
+     * 設定屬性{@link NotificationPane#showFromTopProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -560,7 +560,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#textProperty}的連結
+     * 設定屬性{@link NotificationPane#textProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -577,7 +577,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 設定屬性{@link NotificationPane#textProperty}的雙向連結
+     * 設定屬性{@link NotificationPane#textProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -594,7 +594,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 建構{@link NotificationPane}物件
+     * 建構{@link NotificationPane}物件。
      *
      * @return 新的{@link NotificationPane}物件實體
      */
@@ -609,7 +609,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
-     * 建構{@link NotificationPane}物件
+     * 建構{@link NotificationPane}物件。
      *
      * @return 新的{@link NotificationPane}物件實體
      */

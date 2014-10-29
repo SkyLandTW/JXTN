@@ -6,7 +6,7 @@
 package javafx.scene.control.cell;
 
 /**
- * {@link ChoiceBoxTreeCell}建構器
+ * {@link ChoiceBoxTreeCell}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -46,7 +46,7 @@ public class ChoiceBoxTreeCellBuilder<T extends java.lang.Object, Z extends Choi
     }
 
     /**
-     * 設定屬性{@link ChoiceBoxTreeCell#setConverter(javafx.util.StringConverter)}
+     * 設定屬性{@link ChoiceBoxTreeCell#setConverter(javafx.util.StringConverter)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -60,7 +60,7 @@ public class ChoiceBoxTreeCellBuilder<T extends java.lang.Object, Z extends Choi
     }
 
     /**
-     * 設定集合屬性{@link ChoiceBoxTreeCell#getItems}的內容
+     * 設定集合屬性{@link ChoiceBoxTreeCell#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -76,7 +76,7 @@ public class ChoiceBoxTreeCellBuilder<T extends java.lang.Object, Z extends Choi
     }
 
     /**
-     * 設定集合屬性{@link ChoiceBoxTreeCell#getItems}的內容
+     * 設定集合屬性{@link ChoiceBoxTreeCell#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -91,7 +91,7 @@ public class ChoiceBoxTreeCellBuilder<T extends java.lang.Object, Z extends Choi
     }
 
     /**
-     * 增加集合屬性{@link ChoiceBoxTreeCell#getItems}的內容
+     * 增加集合屬性{@link ChoiceBoxTreeCell#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -108,7 +108,7 @@ public class ChoiceBoxTreeCellBuilder<T extends java.lang.Object, Z extends Choi
     }
 
     /**
-     * 增加集合屬性{@link ChoiceBoxTreeCell#getItems}的內容
+     * 增加集合屬性{@link ChoiceBoxTreeCell#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -126,7 +126,7 @@ public class ChoiceBoxTreeCellBuilder<T extends java.lang.Object, Z extends Choi
     }
 
     /**
-     * 設定屬性{@link ChoiceBoxTreeCell#converterProperty}的連結
+     * 設定屬性{@link ChoiceBoxTreeCell#converterProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -143,7 +143,7 @@ public class ChoiceBoxTreeCellBuilder<T extends java.lang.Object, Z extends Choi
     }
 
     /**
-     * 設定屬性{@link ChoiceBoxTreeCell#converterProperty}的雙向連結
+     * 設定屬性{@link ChoiceBoxTreeCell#converterProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -160,7 +160,7 @@ public class ChoiceBoxTreeCellBuilder<T extends java.lang.Object, Z extends Choi
     }
 
     /**
-     * 建構{@link ChoiceBoxTreeCell}物件
+     * 建構{@link ChoiceBoxTreeCell}物件。
      *
      * @return 新的{@link ChoiceBoxTreeCell}物件實體
      */
@@ -175,21 +175,7 @@ public class ChoiceBoxTreeCellBuilder<T extends java.lang.Object, Z extends Choi
     }
 
     /**
-     * 建構{@link ChoiceBoxTreeCell}物件
-     *
-     * @return 新的{@link ChoiceBoxTreeCell}物件實體
-     */
-    @SuppressWarnings("unchecked")
-    public ChoiceBoxTreeCell<T> build(javafx.collections.ObservableList<T> arg0)
-    {
-        ChoiceBoxTreeCell<T> instance = new ChoiceBoxTreeCell<T>(arg0);
-        this.applyTo((Z) instance);
-        this.doAfterBuild((Z) instance);
-        return instance;
-    }
-
-    /**
-     * 建構{@link ChoiceBoxTreeCell}物件
+     * 建構{@link ChoiceBoxTreeCell}物件。
      *
      * @return 新的{@link ChoiceBoxTreeCell}物件實體
      */
@@ -203,7 +189,21 @@ public class ChoiceBoxTreeCellBuilder<T extends java.lang.Object, Z extends Choi
     }
 
     /**
-     * 建構{@link ChoiceBoxTreeCell}物件
+     * 建構{@link ChoiceBoxTreeCell}物件。
+     *
+     * @return 新的{@link ChoiceBoxTreeCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ChoiceBoxTreeCell<T> build(javafx.collections.ObservableList<T> arg0)
+    {
+        ChoiceBoxTreeCell<T> instance = new ChoiceBoxTreeCell<T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ChoiceBoxTreeCell}物件。
      *
      * @return 新的{@link ChoiceBoxTreeCell}物件實體
      */
@@ -217,7 +217,7 @@ public class ChoiceBoxTreeCellBuilder<T extends java.lang.Object, Z extends Choi
     }
 
     /**
-     * 建構{@link ChoiceBoxTreeCell}物件
+     * 建構{@link ChoiceBoxTreeCell}物件。
      *
      * @return 新的{@link ChoiceBoxTreeCell}物件實體
      */

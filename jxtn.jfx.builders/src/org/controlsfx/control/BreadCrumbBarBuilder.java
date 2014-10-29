@@ -6,7 +6,7 @@
 package org.controlsfx.control;
 
 /**
- * {@link BreadCrumbBar}建構器
+ * {@link BreadCrumbBar}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -83,7 +83,7 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     }
 
     /**
-     * 設定屬性{@link BreadCrumbBar#setAutoNavigationEnabled(boolean)}
+     * 設定屬性{@link BreadCrumbBar#setAutoNavigationEnabled(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -97,7 +97,7 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     }
 
     /**
-     * 設定屬性{@link BreadCrumbBar#setCrumbFactory(javafx.util.Callback)}
+     * 設定屬性{@link BreadCrumbBar#setCrumbFactory(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     }
 
     /**
-     * 設定屬性{@link BreadCrumbBar#setOnCrumbAction(javafx.event.EventHandler)}
+     * 設定屬性{@link BreadCrumbBar#setOnCrumbAction(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     }
 
     /**
-     * 設定屬性{@link BreadCrumbBar#setSelectedCrumb(javafx.scene.control.TreeItem)}
+     * 設定屬性{@link BreadCrumbBar#setSelectedCrumb(javafx.scene.control.TreeItem)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     }
 
     /**
-     * 設定屬性{@link BreadCrumbBar#autoNavigationEnabledProperty}的連結
+     * 設定屬性{@link BreadCrumbBar#autoNavigationEnabledProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -156,7 +156,7 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     }
 
     /**
-     * 設定屬性{@link BreadCrumbBar#autoNavigationEnabledProperty}的雙向連結
+     * 設定屬性{@link BreadCrumbBar#autoNavigationEnabledProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -173,7 +173,7 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     }
 
     /**
-     * 設定屬性{@link BreadCrumbBar#crumbFactoryProperty}的連結
+     * 設定屬性{@link BreadCrumbBar#crumbFactoryProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -190,7 +190,7 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     }
 
     /**
-     * 設定屬性{@link BreadCrumbBar#crumbFactoryProperty}的雙向連結
+     * 設定屬性{@link BreadCrumbBar#crumbFactoryProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -207,7 +207,7 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     }
 
     /**
-     * 設定屬性{@link BreadCrumbBar#onCrumbActionProperty}的連結
+     * 設定屬性{@link BreadCrumbBar#onCrumbActionProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -224,7 +224,7 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     }
 
     /**
-     * 設定屬性{@link BreadCrumbBar#onCrumbActionProperty}的雙向連結
+     * 設定屬性{@link BreadCrumbBar#onCrumbActionProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -241,7 +241,7 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     }
 
     /**
-     * 設定屬性{@link BreadCrumbBar#selectedCrumbProperty}的連結
+     * 設定屬性{@link BreadCrumbBar#selectedCrumbProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -258,7 +258,7 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     }
 
     /**
-     * 設定屬性{@link BreadCrumbBar#selectedCrumbProperty}的雙向連結
+     * 設定屬性{@link BreadCrumbBar#selectedCrumbProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -275,7 +275,7 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     }
 
     /**
-     * 建構{@link BreadCrumbBar}物件
+     * 建構{@link BreadCrumbBar}物件。
      *
      * @return 新的{@link BreadCrumbBar}物件實體
      */
@@ -290,7 +290,7 @@ public class BreadCrumbBarBuilder<T extends java.lang.Object, Z extends BreadCru
     }
 
     /**
-     * 建構{@link BreadCrumbBar}物件
+     * 建構{@link BreadCrumbBar}物件。
      *
      * @return 新的{@link BreadCrumbBar}物件實體
      */

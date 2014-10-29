@@ -6,7 +6,7 @@
 package javafx.scene.chart;
 
 /**
- * {@link Chart}建構器
+ * {@link Chart}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -97,7 +97,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#setAnimated(boolean)}
+     * 設定屬性{@link Chart#setAnimated(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#setLegendSide(javafx.geometry.Side)}
+     * 設定屬性{@link Chart#setLegendSide(javafx.geometry.Side)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#setLegendVisible(boolean)}
+     * 設定屬性{@link Chart#setLegendVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#setTitle(java.lang.String)}
+     * 設定屬性{@link Chart#setTitle(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#setTitleSide(javafx.geometry.Side)}
+     * 設定屬性{@link Chart#setTitleSide(javafx.geometry.Side)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#animatedProperty}的連結
+     * 設定屬性{@link Chart#animatedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -184,7 +184,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#animatedProperty}的雙向連結
+     * 設定屬性{@link Chart#animatedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -201,7 +201,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#legendSideProperty}的連結
+     * 設定屬性{@link Chart#legendSideProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -218,7 +218,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#legendSideProperty}的雙向連結
+     * 設定屬性{@link Chart#legendSideProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -235,7 +235,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#legendVisibleProperty}的連結
+     * 設定屬性{@link Chart#legendVisibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -252,7 +252,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#legendVisibleProperty}的雙向連結
+     * 設定屬性{@link Chart#legendVisibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -269,7 +269,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#titleProperty}的連結
+     * 設定屬性{@link Chart#titleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -286,7 +286,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#titleProperty}的雙向連結
+     * 設定屬性{@link Chart#titleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -303,7 +303,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#titleSideProperty}的連結
+     * 設定屬性{@link Chart#titleSideProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -320,7 +320,7 @@ public class ChartBuilder<Z extends Chart, B extends ChartBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Chart#titleSideProperty}的雙向連結
+     * 設定屬性{@link Chart#titleSideProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)

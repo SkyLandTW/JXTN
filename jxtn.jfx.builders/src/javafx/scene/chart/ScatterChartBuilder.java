@@ -6,7 +6,7 @@
 package javafx.scene.chart;
 
 /**
- * {@link ScatterChart}建構器
+ * {@link ScatterChart}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class ScatterChartBuilder<X extends java.lang.Object, Y extends java.lang
     }
 
     /**
-     * 建構{@link ScatterChart}物件
+     * 建構{@link ScatterChart}物件。
      *
      * @return 新的{@link ScatterChart}物件實體
      */
@@ -41,7 +41,7 @@ public class ScatterChartBuilder<X extends java.lang.Object, Y extends java.lang
     }
 
     /**
-     * 建構{@link ScatterChart}物件
+     * 建構{@link ScatterChart}物件。
      *
      * @return 新的{@link ScatterChart}物件實體
      */

@@ -6,7 +6,7 @@
 package javafx.scene.shape;
 
 /**
- * {@link Polyline}建構器
+ * {@link Polyline}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -32,7 +32,7 @@ public class PolylineBuilder<Z extends Polyline, B extends PolylineBuilder<Z, B>
     }
 
     /**
-     * 設定集合屬性{@link Polyline#getPoints}的內容
+     * 設定集合屬性{@link Polyline#getPoints}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -48,7 +48,7 @@ public class PolylineBuilder<Z extends Polyline, B extends PolylineBuilder<Z, B>
     }
 
     /**
-     * 設定集合屬性{@link Polyline#getPoints}的內容
+     * 設定集合屬性{@link Polyline#getPoints}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -63,7 +63,7 @@ public class PolylineBuilder<Z extends Polyline, B extends PolylineBuilder<Z, B>
     }
 
     /**
-     * 增加集合屬性{@link Polyline#getPoints}的內容
+     * 增加集合屬性{@link Polyline#getPoints}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -80,7 +80,7 @@ public class PolylineBuilder<Z extends Polyline, B extends PolylineBuilder<Z, B>
     }
 
     /**
-     * 增加集合屬性{@link Polyline#getPoints}的內容
+     * 增加集合屬性{@link Polyline#getPoints}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -98,7 +98,7 @@ public class PolylineBuilder<Z extends Polyline, B extends PolylineBuilder<Z, B>
     }
 
     /**
-     * 建構{@link Polyline}物件
+     * 建構{@link Polyline}物件。
      *
      * @return 新的{@link Polyline}物件實體
      */
@@ -113,7 +113,7 @@ public class PolylineBuilder<Z extends Polyline, B extends PolylineBuilder<Z, B>
     }
 
     /**
-     * 建構{@link Polyline}物件
+     * 建構{@link Polyline}物件。
      *
      * @return 新的{@link Polyline}物件實體
      */

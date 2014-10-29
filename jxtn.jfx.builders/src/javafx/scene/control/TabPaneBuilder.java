@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link TabPane}建構器
+ * {@link TabPane}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -144,7 +144,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#setRotateGraphic(boolean)}
+     * 設定屬性{@link TabPane#setRotateGraphic(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -158,7 +158,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#setSelectionModel(javafx.scene.control.SingleSelectionModel)}
+     * 設定屬性{@link TabPane#setSelectionModel(javafx.scene.control.SingleSelectionModel)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -172,7 +172,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#setSide(javafx.geometry.Side)}
+     * 設定屬性{@link TabPane#setSide(javafx.geometry.Side)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -186,7 +186,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#setTabClosingPolicy(javafx.scene.control.TabPane.TabClosingPolicy)}
+     * 設定屬性{@link TabPane#setTabClosingPolicy(javafx.scene.control.TabPane.TabClosingPolicy)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -200,7 +200,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#setTabMaxHeight(double)}
+     * 設定屬性{@link TabPane#setTabMaxHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -214,7 +214,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#setTabMaxWidth(double)}
+     * 設定屬性{@link TabPane#setTabMaxWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -228,7 +228,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#setTabMinHeight(double)}
+     * 設定屬性{@link TabPane#setTabMinHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -242,7 +242,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#setTabMinWidth(double)}
+     * 設定屬性{@link TabPane#setTabMinWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -256,7 +256,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link TabPane#getTabs}的內容
+     * 設定集合屬性{@link TabPane#getTabs}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -272,7 +272,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link TabPane#getTabs}的內容
+     * 設定集合屬性{@link TabPane#getTabs}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -287,7 +287,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link TabPane#getTabs}的內容
+     * 增加集合屬性{@link TabPane#getTabs}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -304,7 +304,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link TabPane#getTabs}的內容
+     * 增加集合屬性{@link TabPane#getTabs}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -322,7 +322,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#rotateGraphicProperty}的連結
+     * 設定屬性{@link TabPane#rotateGraphicProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -339,7 +339,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#rotateGraphicProperty}的雙向連結
+     * 設定屬性{@link TabPane#rotateGraphicProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -356,7 +356,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#selectionModelProperty}的連結
+     * 設定屬性{@link TabPane#selectionModelProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -373,7 +373,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#selectionModelProperty}的雙向連結
+     * 設定屬性{@link TabPane#selectionModelProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -390,7 +390,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#sideProperty}的連結
+     * 設定屬性{@link TabPane#sideProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -407,7 +407,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#sideProperty}的雙向連結
+     * 設定屬性{@link TabPane#sideProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -424,7 +424,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#tabClosingPolicyProperty}的連結
+     * 設定屬性{@link TabPane#tabClosingPolicyProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -441,7 +441,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#tabClosingPolicyProperty}的雙向連結
+     * 設定屬性{@link TabPane#tabClosingPolicyProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -458,7 +458,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#tabMaxHeightProperty}的連結
+     * 設定屬性{@link TabPane#tabMaxHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -475,7 +475,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#tabMaxHeightProperty}的雙向連結
+     * 設定屬性{@link TabPane#tabMaxHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -492,7 +492,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#tabMaxWidthProperty}的連結
+     * 設定屬性{@link TabPane#tabMaxWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -509,7 +509,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#tabMaxWidthProperty}的雙向連結
+     * 設定屬性{@link TabPane#tabMaxWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -526,7 +526,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#tabMinHeightProperty}的連結
+     * 設定屬性{@link TabPane#tabMinHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -543,7 +543,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#tabMinHeightProperty}的雙向連結
+     * 設定屬性{@link TabPane#tabMinHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -560,7 +560,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#tabMinWidthProperty}的連結
+     * 設定屬性{@link TabPane#tabMinWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -577,7 +577,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link TabPane#tabMinWidthProperty}的雙向連結
+     * 設定屬性{@link TabPane#tabMinWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -594,7 +594,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link TabPane}物件
+     * 建構{@link TabPane}物件。
      *
      * @return 新的{@link TabPane}物件實體
      */

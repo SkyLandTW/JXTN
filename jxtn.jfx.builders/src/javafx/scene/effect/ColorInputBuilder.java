@@ -6,7 +6,7 @@
 package javafx.scene.effect;
 
 /**
- * {@link ColorInput}建構器
+ * {@link ColorInput}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -97,7 +97,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#setHeight(double)}
+     * 設定屬性{@link ColorInput#setHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#setPaint(javafx.scene.paint.Paint)}
+     * 設定屬性{@link ColorInput#setPaint(javafx.scene.paint.Paint)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#setWidth(double)}
+     * 設定屬性{@link ColorInput#setWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#setX(double)}
+     * 設定屬性{@link ColorInput#setX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#setY(double)}
+     * 設定屬性{@link ColorInput#setY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#heightProperty}的連結
+     * 設定屬性{@link ColorInput#heightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -184,7 +184,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#heightProperty}的雙向連結
+     * 設定屬性{@link ColorInput#heightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -201,7 +201,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#paintProperty}的連結
+     * 設定屬性{@link ColorInput#paintProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -218,7 +218,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#paintProperty}的雙向連結
+     * 設定屬性{@link ColorInput#paintProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -235,7 +235,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#widthProperty}的連結
+     * 設定屬性{@link ColorInput#widthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -252,7 +252,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#widthProperty}的雙向連結
+     * 設定屬性{@link ColorInput#widthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -269,7 +269,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#xProperty}的連結
+     * 設定屬性{@link ColorInput#xProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -286,7 +286,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#xProperty}的雙向連結
+     * 設定屬性{@link ColorInput#xProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -303,7 +303,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#yProperty}的連結
+     * 設定屬性{@link ColorInput#yProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -320,7 +320,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 設定屬性{@link ColorInput#yProperty}的雙向連結
+     * 設定屬性{@link ColorInput#yProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -337,7 +337,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 建構{@link ColorInput}物件
+     * 建構{@link ColorInput}物件。
      *
      * @return 新的{@link ColorInput}物件實體
      */
@@ -352,7 +352,7 @@ public class ColorInputBuilder<Z extends ColorInput, B extends ColorInputBuilder
     }
 
     /**
-     * 建構{@link ColorInput}物件
+     * 建構{@link ColorInput}物件。
      *
      * @return 新的{@link ColorInput}物件實體
      */

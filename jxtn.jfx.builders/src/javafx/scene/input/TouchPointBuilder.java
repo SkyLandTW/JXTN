@@ -6,7 +6,7 @@
 package javafx.scene.input;
 
 /**
- * {@link TouchPoint}建構器
+ * {@link TouchPoint}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class TouchPointBuilder<Z extends TouchPoint, B extends TouchPointBuilder
     }
 
     /**
-     * 建構{@link TouchPoint}物件
+     * 建構{@link TouchPoint}物件。
      *
      * @return 新的{@link TouchPoint}物件實體
      */

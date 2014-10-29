@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link ColorPicker}建構器
+ * {@link ColorPicker}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -32,7 +32,7 @@ public class ColorPickerBuilder<Z extends ColorPicker, B extends ColorPickerBuil
     }
 
     /**
-     * 設定集合屬性{@link ColorPicker#getCustomColors}的內容
+     * 設定集合屬性{@link ColorPicker#getCustomColors}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -48,7 +48,7 @@ public class ColorPickerBuilder<Z extends ColorPicker, B extends ColorPickerBuil
     }
 
     /**
-     * 設定集合屬性{@link ColorPicker#getCustomColors}的內容
+     * 設定集合屬性{@link ColorPicker#getCustomColors}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -63,7 +63,7 @@ public class ColorPickerBuilder<Z extends ColorPicker, B extends ColorPickerBuil
     }
 
     /**
-     * 增加集合屬性{@link ColorPicker#getCustomColors}的內容
+     * 增加集合屬性{@link ColorPicker#getCustomColors}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -80,7 +80,7 @@ public class ColorPickerBuilder<Z extends ColorPicker, B extends ColorPickerBuil
     }
 
     /**
-     * 增加集合屬性{@link ColorPicker#getCustomColors}的內容
+     * 增加集合屬性{@link ColorPicker#getCustomColors}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -98,7 +98,7 @@ public class ColorPickerBuilder<Z extends ColorPicker, B extends ColorPickerBuil
     }
 
     /**
-     * 建構{@link ColorPicker}物件
+     * 建構{@link ColorPicker}物件。
      *
      * @return 新的{@link ColorPicker}物件實體
      */
@@ -113,7 +113,7 @@ public class ColorPickerBuilder<Z extends ColorPicker, B extends ColorPickerBuil
     }
 
     /**
-     * 建構{@link ColorPicker}物件
+     * 建構{@link ColorPicker}物件。
      *
      * @return 新的{@link ColorPicker}物件實體
      */

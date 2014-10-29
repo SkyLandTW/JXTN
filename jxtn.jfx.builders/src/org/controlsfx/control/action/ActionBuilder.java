@@ -6,7 +6,7 @@
 package org.controlsfx.control.action;
 
 /**
- * {@link Action}建構器
+ * {@link Action}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -130,7 +130,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#setAccelerator(javafx.scene.input.KeyCombination)}
+     * 設定屬性{@link Action#setAccelerator(javafx.scene.input.KeyCombination)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -144,7 +144,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#setDisabled(boolean)}
+     * 設定屬性{@link Action#setDisabled(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -158,7 +158,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#setGraphic(javafx.scene.Node)}
+     * 設定屬性{@link Action#setGraphic(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -172,7 +172,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#setLongText(java.lang.String)}
+     * 設定屬性{@link Action#setLongText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -186,7 +186,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#setSelected(boolean)}
+     * 設定屬性{@link Action#setSelected(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -200,7 +200,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#setStyle(java.lang.String)}
+     * 設定屬性{@link Action#setStyle(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -214,7 +214,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Action#getStyleClass}的內容
+     * 設定集合屬性{@link Action#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -230,7 +230,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Action#getStyleClass}的內容
+     * 設定集合屬性{@link Action#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -245,7 +245,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Action#getStyleClass}的內容
+     * 增加集合屬性{@link Action#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -262,7 +262,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Action#getStyleClass}的內容
+     * 增加集合屬性{@link Action#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -280,7 +280,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#setText(java.lang.String)}
+     * 設定屬性{@link Action#setText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -294,7 +294,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#acceleratorProperty}的連結
+     * 設定屬性{@link Action#acceleratorProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -311,7 +311,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#acceleratorProperty}的雙向連結
+     * 設定屬性{@link Action#acceleratorProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -328,7 +328,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#disabledProperty}的連結
+     * 設定屬性{@link Action#disabledProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -345,7 +345,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#disabledProperty}的雙向連結
+     * 設定屬性{@link Action#disabledProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -362,7 +362,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#graphicProperty}的連結
+     * 設定屬性{@link Action#graphicProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -379,7 +379,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#graphicProperty}的雙向連結
+     * 設定屬性{@link Action#graphicProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -396,7 +396,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#longTextProperty}的連結
+     * 設定屬性{@link Action#longTextProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -413,7 +413,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#longTextProperty}的雙向連結
+     * 設定屬性{@link Action#longTextProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -430,7 +430,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#selectedProperty}的連結
+     * 設定屬性{@link Action#selectedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -447,7 +447,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#selectedProperty}的雙向連結
+     * 設定屬性{@link Action#selectedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -464,7 +464,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#styleProperty}的連結
+     * 設定屬性{@link Action#styleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -481,7 +481,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#styleProperty}的雙向連結
+     * 設定屬性{@link Action#styleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -498,7 +498,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#textProperty}的連結
+     * 設定屬性{@link Action#textProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -515,7 +515,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Action#textProperty}的雙向連結
+     * 設定屬性{@link Action#textProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -532,7 +532,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Action}物件
+     * 建構{@link Action}物件。
      *
      * @return 新的{@link Action}物件實體
      */
@@ -546,7 +546,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Action}物件
+     * 建構{@link Action}物件。
      *
      * @return 新的{@link Action}物件實體
      */
@@ -560,7 +560,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Action}物件
+     * 建構{@link Action}物件。
      *
      * @return 新的{@link Action}物件實體
      */

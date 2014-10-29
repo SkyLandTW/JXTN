@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link ScrollBar}建構器
+ * {@link ScrollBar}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -125,7 +125,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#setBlockIncrement(double)}
+     * 設定屬性{@link ScrollBar#setBlockIncrement(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#setMax(double)}
+     * 設定屬性{@link ScrollBar#setMax(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#setMin(double)}
+     * 設定屬性{@link ScrollBar#setMin(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#setOrientation(javafx.geometry.Orientation)}
+     * 設定屬性{@link ScrollBar#setOrientation(javafx.geometry.Orientation)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#setUnitIncrement(double)}
+     * 設定屬性{@link ScrollBar#setUnitIncrement(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#setValue(double)}
+     * 設定屬性{@link ScrollBar#setValue(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#setVisibleAmount(double)}
+     * 設定屬性{@link ScrollBar#setVisibleAmount(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#blockIncrementProperty}的連結
+     * 設定屬性{@link ScrollBar#blockIncrementProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -240,7 +240,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#blockIncrementProperty}的雙向連結
+     * 設定屬性{@link ScrollBar#blockIncrementProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -257,7 +257,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#maxProperty}的連結
+     * 設定屬性{@link ScrollBar#maxProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -274,7 +274,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#maxProperty}的雙向連結
+     * 設定屬性{@link ScrollBar#maxProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -291,7 +291,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#minProperty}的連結
+     * 設定屬性{@link ScrollBar#minProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -308,7 +308,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#minProperty}的雙向連結
+     * 設定屬性{@link ScrollBar#minProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -325,7 +325,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#orientationProperty}的連結
+     * 設定屬性{@link ScrollBar#orientationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -342,7 +342,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#orientationProperty}的雙向連結
+     * 設定屬性{@link ScrollBar#orientationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -359,7 +359,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#unitIncrementProperty}的連結
+     * 設定屬性{@link ScrollBar#unitIncrementProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -376,7 +376,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#unitIncrementProperty}的雙向連結
+     * 設定屬性{@link ScrollBar#unitIncrementProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -393,7 +393,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#valueProperty}的連結
+     * 設定屬性{@link ScrollBar#valueProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -410,7 +410,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#valueProperty}的雙向連結
+     * 設定屬性{@link ScrollBar#valueProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -427,7 +427,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#visibleAmountProperty}的連結
+     * 設定屬性{@link ScrollBar#visibleAmountProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -444,7 +444,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link ScrollBar#visibleAmountProperty}的雙向連結
+     * 設定屬性{@link ScrollBar#visibleAmountProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -461,7 +461,7 @@ public class ScrollBarBuilder<Z extends ScrollBar, B extends ScrollBarBuilder<Z,
     }
 
     /**
-     * 建構{@link ScrollBar}物件
+     * 建構{@link ScrollBar}物件。
      *
      * @return 新的{@link ScrollBar}物件實體
      */

@@ -6,7 +6,7 @@
 package org.controlsfx.control.spreadsheet;
 
 /**
- * {@link SpreadsheetColumn}建構器
+ * {@link SpreadsheetColumn}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -42,7 +42,7 @@ public class SpreadsheetColumnBuilder<Z extends SpreadsheetColumn, B extends Spr
     }
 
     /**
-     * 設定屬性{@link SpreadsheetColumn#setFixed(boolean)}
+     * 設定屬性{@link SpreadsheetColumn#setFixed(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -56,7 +56,7 @@ public class SpreadsheetColumnBuilder<Z extends SpreadsheetColumn, B extends Spr
     }
 
     /**
-     * 設定屬性{@link SpreadsheetColumn#setPrefWidth(double)}
+     * 設定屬性{@link SpreadsheetColumn#setPrefWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -70,7 +70,7 @@ public class SpreadsheetColumnBuilder<Z extends SpreadsheetColumn, B extends Spr
     }
 
     /**
-     * 設定屬性{@link SpreadsheetColumn#setResizable(boolean)}
+     * 設定屬性{@link SpreadsheetColumn#setResizable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

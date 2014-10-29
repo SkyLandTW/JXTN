@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link RadioButton}建構器
+ * {@link RadioButton}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class RadioButtonBuilder<Z extends RadioButton, B extends RadioButtonBuil
     }
 
     /**
-     * 建構{@link RadioButton}物件
+     * 建構{@link RadioButton}物件。
      *
      * @return 新的{@link RadioButton}物件實體
      */
@@ -42,7 +42,7 @@ public class RadioButtonBuilder<Z extends RadioButton, B extends RadioButtonBuil
     }
 
     /**
-     * 建構{@link RadioButton}物件
+     * 建構{@link RadioButton}物件。
      *
      * @return 新的{@link RadioButton}物件實體
      */

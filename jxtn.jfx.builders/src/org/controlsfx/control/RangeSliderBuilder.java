@@ -6,7 +6,7 @@
 package org.controlsfx.control;
 
 /**
- * {@link RangeSlider}建構器
+ * {@link RangeSlider}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -209,7 +209,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setBlockIncrement(double)}
+     * 設定屬性{@link RangeSlider#setBlockIncrement(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setHighValue(double)}
+     * 設定屬性{@link RangeSlider#setHighValue(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -237,7 +237,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setHighValueChanging(boolean)}
+     * 設定屬性{@link RangeSlider#setHighValueChanging(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -251,7 +251,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setLowValue(double)}
+     * 設定屬性{@link RangeSlider#setLowValue(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -265,7 +265,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setLowValueChanging(boolean)}
+     * 設定屬性{@link RangeSlider#setLowValueChanging(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -279,7 +279,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setMajorTickUnit(double)}
+     * 設定屬性{@link RangeSlider#setMajorTickUnit(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -293,7 +293,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setMax(double)}
+     * 設定屬性{@link RangeSlider#setMax(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -307,7 +307,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setMin(double)}
+     * 設定屬性{@link RangeSlider#setMin(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -321,7 +321,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setMinorTickCount(int)}
+     * 設定屬性{@link RangeSlider#setMinorTickCount(int)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -335,7 +335,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setOrientation(javafx.geometry.Orientation)}
+     * 設定屬性{@link RangeSlider#setOrientation(javafx.geometry.Orientation)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -349,7 +349,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setShowTickLabels(boolean)}
+     * 設定屬性{@link RangeSlider#setShowTickLabels(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -363,7 +363,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setShowTickMarks(boolean)}
+     * 設定屬性{@link RangeSlider#setShowTickMarks(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -377,7 +377,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#setSnapToTicks(boolean)}
+     * 設定屬性{@link RangeSlider#setSnapToTicks(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -391,7 +391,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#blockIncrementProperty}的連結
+     * 設定屬性{@link RangeSlider#blockIncrementProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -408,7 +408,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#blockIncrementProperty}的雙向連結
+     * 設定屬性{@link RangeSlider#blockIncrementProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -425,7 +425,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#highValueChangingProperty}的連結
+     * 設定屬性{@link RangeSlider#highValueChangingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -442,7 +442,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#highValueChangingProperty}的雙向連結
+     * 設定屬性{@link RangeSlider#highValueChangingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -459,7 +459,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#highValueProperty}的連結
+     * 設定屬性{@link RangeSlider#highValueProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -476,7 +476,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#highValueProperty}的雙向連結
+     * 設定屬性{@link RangeSlider#highValueProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -493,7 +493,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#lowValueChangingProperty}的連結
+     * 設定屬性{@link RangeSlider#lowValueChangingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -510,7 +510,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#lowValueChangingProperty}的雙向連結
+     * 設定屬性{@link RangeSlider#lowValueChangingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -527,7 +527,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#lowValueProperty}的連結
+     * 設定屬性{@link RangeSlider#lowValueProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -544,7 +544,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#lowValueProperty}的雙向連結
+     * 設定屬性{@link RangeSlider#lowValueProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -561,7 +561,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#majorTickUnitProperty}的連結
+     * 設定屬性{@link RangeSlider#majorTickUnitProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -578,7 +578,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#majorTickUnitProperty}的雙向連結
+     * 設定屬性{@link RangeSlider#majorTickUnitProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -595,7 +595,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#maxProperty}的連結
+     * 設定屬性{@link RangeSlider#maxProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -612,7 +612,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#maxProperty}的雙向連結
+     * 設定屬性{@link RangeSlider#maxProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -629,7 +629,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#minProperty}的連結
+     * 設定屬性{@link RangeSlider#minProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -646,7 +646,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#minProperty}的雙向連結
+     * 設定屬性{@link RangeSlider#minProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -663,7 +663,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#minorTickCountProperty}的連結
+     * 設定屬性{@link RangeSlider#minorTickCountProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -680,7 +680,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#minorTickCountProperty}的雙向連結
+     * 設定屬性{@link RangeSlider#minorTickCountProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -697,7 +697,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#orientationProperty}的連結
+     * 設定屬性{@link RangeSlider#orientationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -714,7 +714,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#orientationProperty}的雙向連結
+     * 設定屬性{@link RangeSlider#orientationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -731,7 +731,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#showTickLabelsProperty}的連結
+     * 設定屬性{@link RangeSlider#showTickLabelsProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -748,7 +748,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#showTickLabelsProperty}的雙向連結
+     * 設定屬性{@link RangeSlider#showTickLabelsProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -765,7 +765,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#showTickMarksProperty}的連結
+     * 設定屬性{@link RangeSlider#showTickMarksProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -782,7 +782,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#showTickMarksProperty}的雙向連結
+     * 設定屬性{@link RangeSlider#showTickMarksProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -799,7 +799,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#snapToTicksProperty}的連結
+     * 設定屬性{@link RangeSlider#snapToTicksProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -816,7 +816,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 設定屬性{@link RangeSlider#snapToTicksProperty}的雙向連結
+     * 設定屬性{@link RangeSlider#snapToTicksProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -833,7 +833,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 建構{@link RangeSlider}物件
+     * 建構{@link RangeSlider}物件。
      *
      * @return 新的{@link RangeSlider}物件實體
      */
@@ -848,7 +848,7 @@ public class RangeSliderBuilder<Z extends RangeSlider, B extends RangeSliderBuil
     }
 
     /**
-     * 建構{@link RangeSlider}物件
+     * 建構{@link RangeSlider}物件。
      *
      * @return 新的{@link RangeSlider}物件實體
      */

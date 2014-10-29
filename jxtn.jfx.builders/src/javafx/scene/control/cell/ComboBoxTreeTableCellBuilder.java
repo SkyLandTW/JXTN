@@ -6,7 +6,7 @@
 package javafx.scene.control.cell;
 
 /**
- * {@link ComboBoxTreeTableCell}建構器
+ * {@link ComboBoxTreeTableCell}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -60,7 +60,7 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
     }
 
     /**
-     * 設定屬性{@link ComboBoxTreeTableCell#setComboBoxEditable(boolean)}
+     * 設定屬性{@link ComboBoxTreeTableCell#setComboBoxEditable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -74,7 +74,7 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
     }
 
     /**
-     * 設定屬性{@link ComboBoxTreeTableCell#setConverter(javafx.util.StringConverter)}
+     * 設定屬性{@link ComboBoxTreeTableCell#setConverter(javafx.util.StringConverter)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -88,7 +88,7 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
     }
 
     /**
-     * 設定集合屬性{@link ComboBoxTreeTableCell#getItems}的內容
+     * 設定集合屬性{@link ComboBoxTreeTableCell#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -104,7 +104,7 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
     }
 
     /**
-     * 設定集合屬性{@link ComboBoxTreeTableCell#getItems}的內容
+     * 設定集合屬性{@link ComboBoxTreeTableCell#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -119,7 +119,7 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
     }
 
     /**
-     * 增加集合屬性{@link ComboBoxTreeTableCell#getItems}的內容
+     * 增加集合屬性{@link ComboBoxTreeTableCell#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
     }
 
     /**
-     * 增加集合屬性{@link ComboBoxTreeTableCell#getItems}的內容
+     * 增加集合屬性{@link ComboBoxTreeTableCell#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -154,7 +154,7 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
     }
 
     /**
-     * 設定屬性{@link ComboBoxTreeTableCell#comboBoxEditableProperty}的連結
+     * 設定屬性{@link ComboBoxTreeTableCell#comboBoxEditableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -171,7 +171,7 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
     }
 
     /**
-     * 設定屬性{@link ComboBoxTreeTableCell#comboBoxEditableProperty}的雙向連結
+     * 設定屬性{@link ComboBoxTreeTableCell#comboBoxEditableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -188,7 +188,7 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
     }
 
     /**
-     * 設定屬性{@link ComboBoxTreeTableCell#converterProperty}的連結
+     * 設定屬性{@link ComboBoxTreeTableCell#converterProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -205,7 +205,7 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
     }
 
     /**
-     * 設定屬性{@link ComboBoxTreeTableCell#converterProperty}的雙向連結
+     * 設定屬性{@link ComboBoxTreeTableCell#converterProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -222,7 +222,7 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
     }
 
     /**
-     * 建構{@link ComboBoxTreeTableCell}物件
+     * 建構{@link ComboBoxTreeTableCell}物件。
      *
      * @return 新的{@link ComboBoxTreeTableCell}物件實體
      */
@@ -237,21 +237,7 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
     }
 
     /**
-     * 建構{@link ComboBoxTreeTableCell}物件
-     *
-     * @return 新的{@link ComboBoxTreeTableCell}物件實體
-     */
-    @SuppressWarnings("unchecked")
-    public ComboBoxTreeTableCell<S, T> build(T[] arg0)
-    {
-        ComboBoxTreeTableCell<S, T> instance = new ComboBoxTreeTableCell<S, T>(arg0);
-        this.applyTo((Z) instance);
-        this.doAfterBuild((Z) instance);
-        return instance;
-    }
-
-    /**
-     * 建構{@link ComboBoxTreeTableCell}物件
+     * 建構{@link ComboBoxTreeTableCell}物件。
      *
      * @return 新的{@link ComboBoxTreeTableCell}物件實體
      */
@@ -265,7 +251,21 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
     }
 
     /**
-     * 建構{@link ComboBoxTreeTableCell}物件
+     * 建構{@link ComboBoxTreeTableCell}物件。
+     *
+     * @return 新的{@link ComboBoxTreeTableCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ComboBoxTreeTableCell<S, T> build(T[] arg0)
+    {
+        ComboBoxTreeTableCell<S, T> instance = new ComboBoxTreeTableCell<S, T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ComboBoxTreeTableCell}物件。
      *
      * @return 新的{@link ComboBoxTreeTableCell}物件實體
      */
@@ -279,7 +279,7 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
     }
 
     /**
-     * 建構{@link ComboBoxTreeTableCell}物件
+     * 建構{@link ComboBoxTreeTableCell}物件。
      *
      * @return 新的{@link ComboBoxTreeTableCell}物件實體
      */

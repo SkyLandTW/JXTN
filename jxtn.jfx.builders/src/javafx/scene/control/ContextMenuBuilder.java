@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link ContextMenu}建構器
+ * {@link ContextMenu}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -60,7 +60,7 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
     }
 
     /**
-     * 設定屬性{@link ContextMenu#setImpl_showRelativeToWindow(boolean)}
+     * 設定屬性{@link ContextMenu#setImpl_showRelativeToWindow(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -74,7 +74,7 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
     }
 
     /**
-     * 設定集合屬性{@link ContextMenu#getItems}的內容
+     * 設定集合屬性{@link ContextMenu#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -90,7 +90,7 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
     }
 
     /**
-     * 設定集合屬性{@link ContextMenu#getItems}的內容
+     * 設定集合屬性{@link ContextMenu#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -105,7 +105,7 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
     }
 
     /**
-     * 增加集合屬性{@link ContextMenu#getItems}的內容
+     * 增加集合屬性{@link ContextMenu#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -122,7 +122,7 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
     }
 
     /**
-     * 增加集合屬性{@link ContextMenu#getItems}的內容
+     * 增加集合屬性{@link ContextMenu#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -140,7 +140,7 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
     }
 
     /**
-     * 設定屬性{@link ContextMenu#setOnAction(javafx.event.EventHandler)}
+     * 設定屬性{@link ContextMenu#setOnAction(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -154,7 +154,7 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
     }
 
     /**
-     * 設定屬性{@link ContextMenu#impl_showRelativeToWindowProperty}的連結
+     * 設定屬性{@link ContextMenu#impl_showRelativeToWindowProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -171,7 +171,7 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
     }
 
     /**
-     * 設定屬性{@link ContextMenu#impl_showRelativeToWindowProperty}的雙向連結
+     * 設定屬性{@link ContextMenu#impl_showRelativeToWindowProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -188,7 +188,7 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
     }
 
     /**
-     * 設定屬性{@link ContextMenu#onActionProperty}的連結
+     * 設定屬性{@link ContextMenu#onActionProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -205,7 +205,7 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
     }
 
     /**
-     * 設定屬性{@link ContextMenu#onActionProperty}的雙向連結
+     * 設定屬性{@link ContextMenu#onActionProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -222,7 +222,7 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
     }
 
     /**
-     * 建構{@link ContextMenu}物件
+     * 建構{@link ContextMenu}物件。
      *
      * @return 新的{@link ContextMenu}物件實體
      */
@@ -237,7 +237,7 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
     }
 
     /**
-     * 建構{@link ContextMenu}物件
+     * 建構{@link ContextMenu}物件。
      *
      * @return 新的{@link ContextMenu}物件實體
      */

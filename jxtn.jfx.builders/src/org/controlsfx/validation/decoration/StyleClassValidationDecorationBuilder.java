@@ -6,7 +6,7 @@
 package org.controlsfx.validation.decoration;
 
 /**
- * {@link StyleClassValidationDecoration}建構器
+ * {@link StyleClassValidationDecoration}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -27,7 +27,7 @@ public class StyleClassValidationDecorationBuilder<Z extends StyleClassValidatio
     }
 
     /**
-     * 建構{@link StyleClassValidationDecoration}物件
+     * 建構{@link StyleClassValidationDecoration}物件。
      *
      * @return 新的{@link StyleClassValidationDecoration}物件實體
      */
@@ -42,7 +42,7 @@ public class StyleClassValidationDecorationBuilder<Z extends StyleClassValidatio
     }
 
     /**
-     * 建構{@link StyleClassValidationDecoration}物件
+     * 建構{@link StyleClassValidationDecoration}物件。
      *
      * @return 新的{@link StyleClassValidationDecoration}物件實體
      */

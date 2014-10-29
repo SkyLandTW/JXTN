@@ -6,7 +6,7 @@
 package org.controlsfx.validation.decoration;
 
 /**
- * {@link GraphicValidationDecoration}建構器
+ * {@link GraphicValidationDecoration}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -27,7 +27,7 @@ public class GraphicValidationDecorationBuilder<Z extends GraphicValidationDecor
     }
 
     /**
-     * 建構{@link GraphicValidationDecoration}物件
+     * 建構{@link GraphicValidationDecoration}物件。
      *
      * @return 新的{@link GraphicValidationDecoration}物件實體
      */

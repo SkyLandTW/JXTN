@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link TextInputDialog}建構器
+ * {@link TextInputDialog}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version openjfx-dialogs-1.0.2.jar
@@ -27,7 +27,7 @@ public class TextInputDialogBuilder<Z extends TextInputDialog, B extends TextInp
     }
 
     /**
-     * 建構{@link TextInputDialog}物件
+     * 建構{@link TextInputDialog}物件。
      *
      * @return 新的{@link TextInputDialog}物件實體
      */
@@ -42,7 +42,7 @@ public class TextInputDialogBuilder<Z extends TextInputDialog, B extends TextInp
     }
 
     /**
-     * 建構{@link TextInputDialog}物件
+     * 建構{@link TextInputDialog}物件。
      *
      * @return 新的{@link TextInputDialog}物件實體
      */

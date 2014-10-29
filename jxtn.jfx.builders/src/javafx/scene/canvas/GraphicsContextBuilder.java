@@ -6,7 +6,7 @@
 package javafx.scene.canvas;
 
 /**
- * {@link GraphicsContext}建構器
+ * {@link GraphicsContext}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -97,7 +97,7 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
     }
 
     /**
-     * 設定屬性{@link GraphicsContext#setEffect(javafx.scene.effect.Effect)}
+     * 設定屬性{@link GraphicsContext#setEffect(javafx.scene.effect.Effect)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
     }
 
     /**
-     * 設定屬性{@link GraphicsContext#setFill(javafx.scene.paint.Paint)}
+     * 設定屬性{@link GraphicsContext#setFill(javafx.scene.paint.Paint)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
     }
 
     /**
-     * 設定屬性{@link GraphicsContext#setFillRule(javafx.scene.shape.FillRule)}
+     * 設定屬性{@link GraphicsContext#setFillRule(javafx.scene.shape.FillRule)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
     }
 
     /**
-     * 設定屬性{@link GraphicsContext#setFont(javafx.scene.text.Font)}
+     * 設定屬性{@link GraphicsContext#setFont(javafx.scene.text.Font)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
     }
 
     /**
-     * 設定屬性{@link GraphicsContext#setGlobalAlpha(double)}
+     * 設定屬性{@link GraphicsContext#setGlobalAlpha(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
     }
 
     /**
-     * 設定屬性{@link GraphicsContext#setGlobalBlendMode(javafx.scene.effect.BlendMode)}
+     * 設定屬性{@link GraphicsContext#setGlobalBlendMode(javafx.scene.effect.BlendMode)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
     }
 
     /**
-     * 設定屬性{@link GraphicsContext#setLineCap(javafx.scene.shape.StrokeLineCap)}
+     * 設定屬性{@link GraphicsContext#setLineCap(javafx.scene.shape.StrokeLineCap)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
     }
 
     /**
-     * 設定屬性{@link GraphicsContext#setLineJoin(javafx.scene.shape.StrokeLineJoin)}
+     * 設定屬性{@link GraphicsContext#setLineJoin(javafx.scene.shape.StrokeLineJoin)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
     }
 
     /**
-     * 設定屬性{@link GraphicsContext#setLineWidth(double)}
+     * 設定屬性{@link GraphicsContext#setLineWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
     }
 
     /**
-     * 設定屬性{@link GraphicsContext#setMiterLimit(double)}
+     * 設定屬性{@link GraphicsContext#setMiterLimit(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -237,7 +237,7 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
     }
 
     /**
-     * 設定屬性{@link GraphicsContext#setStroke(javafx.scene.paint.Paint)}
+     * 設定屬性{@link GraphicsContext#setStroke(javafx.scene.paint.Paint)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -251,7 +251,7 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
     }
 
     /**
-     * 設定屬性{@link GraphicsContext#setTextAlign(javafx.scene.text.TextAlignment)}
+     * 設定屬性{@link GraphicsContext#setTextAlign(javafx.scene.text.TextAlignment)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -265,7 +265,7 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
     }
 
     /**
-     * 設定屬性{@link GraphicsContext#setTextBaseline(javafx.geometry.VPos)}
+     * 設定屬性{@link GraphicsContext#setTextBaseline(javafx.geometry.VPos)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -279,7 +279,7 @@ public class GraphicsContextBuilder<Z extends GraphicsContext, B extends Graphic
     }
 
     /**
-     * 設定屬性{@link GraphicsContext#setTransform(javafx.scene.transform.Affine)}
+     * 設定屬性{@link GraphicsContext#setTransform(javafx.scene.transform.Affine)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)

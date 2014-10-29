@@ -6,7 +6,7 @@
 package javafx.scene.shape;
 
 /**
- * {@link ArcTo}建構器
+ * {@link ArcTo}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -125,7 +125,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#setLargeArcFlag(boolean)}
+     * 設定屬性{@link ArcTo#setLargeArcFlag(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#setRadiusX(double)}
+     * 設定屬性{@link ArcTo#setRadiusX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#setRadiusY(double)}
+     * 設定屬性{@link ArcTo#setRadiusY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#setSweepFlag(boolean)}
+     * 設定屬性{@link ArcTo#setSweepFlag(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#setX(double)}
+     * 設定屬性{@link ArcTo#setX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#setXAxisRotation(double)}
+     * 設定屬性{@link ArcTo#setXAxisRotation(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#setY(double)}
+     * 設定屬性{@link ArcTo#setY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#XAxisRotationProperty}的連結
+     * 設定屬性{@link ArcTo#XAxisRotationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -240,7 +240,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#XAxisRotationProperty}的雙向連結
+     * 設定屬性{@link ArcTo#XAxisRotationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -257,7 +257,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#largeArcFlagProperty}的連結
+     * 設定屬性{@link ArcTo#largeArcFlagProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -274,7 +274,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#largeArcFlagProperty}的雙向連結
+     * 設定屬性{@link ArcTo#largeArcFlagProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -291,7 +291,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#radiusXProperty}的連結
+     * 設定屬性{@link ArcTo#radiusXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -308,7 +308,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#radiusXProperty}的雙向連結
+     * 設定屬性{@link ArcTo#radiusXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -325,7 +325,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#radiusYProperty}的連結
+     * 設定屬性{@link ArcTo#radiusYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -342,7 +342,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#radiusYProperty}的雙向連結
+     * 設定屬性{@link ArcTo#radiusYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -359,7 +359,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#sweepFlagProperty}的連結
+     * 設定屬性{@link ArcTo#sweepFlagProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -376,7 +376,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#sweepFlagProperty}的雙向連結
+     * 設定屬性{@link ArcTo#sweepFlagProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -393,7 +393,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#xProperty}的連結
+     * 設定屬性{@link ArcTo#xProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -410,7 +410,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#xProperty}的雙向連結
+     * 設定屬性{@link ArcTo#xProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -427,7 +427,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#yProperty}的連結
+     * 設定屬性{@link ArcTo#yProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -444,7 +444,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link ArcTo#yProperty}的雙向連結
+     * 設定屬性{@link ArcTo#yProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -461,7 +461,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link ArcTo}物件
+     * 建構{@link ArcTo}物件。
      *
      * @return 新的{@link ArcTo}物件實體
      */
@@ -476,7 +476,7 @@ public class ArcToBuilder<Z extends ArcTo, B extends ArcToBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link ArcTo}物件
+     * 建構{@link ArcTo}物件。
      *
      * @return 新的{@link ArcTo}物件實體
      */

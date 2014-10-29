@@ -6,7 +6,7 @@
 package javafx.scene.web;
 
 /**
- * {@link HTMLEditor}建構器
+ * {@link HTMLEditor}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -32,7 +32,7 @@ public class HTMLEditorBuilder<Z extends HTMLEditor, B extends HTMLEditorBuilder
     }
 
     /**
-     * 設定屬性{@link HTMLEditor#setHtmlText(java.lang.String)}
+     * 設定屬性{@link HTMLEditor#setHtmlText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -46,7 +46,7 @@ public class HTMLEditorBuilder<Z extends HTMLEditor, B extends HTMLEditorBuilder
     }
 
     /**
-     * 建構{@link HTMLEditor}物件
+     * 建構{@link HTMLEditor}物件。
      *
      * @return 新的{@link HTMLEditor}物件實體
      */

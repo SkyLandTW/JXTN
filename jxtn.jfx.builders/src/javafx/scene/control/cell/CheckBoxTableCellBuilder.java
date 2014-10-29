@@ -6,7 +6,7 @@
 package javafx.scene.control.cell;
 
 /**
- * {@link CheckBoxTableCell}建構器
+ * {@link CheckBoxTableCell}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -55,7 +55,7 @@ public class CheckBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 設定屬性{@link CheckBoxTableCell#setConverter(javafx.util.StringConverter)}
+     * 設定屬性{@link CheckBoxTableCell#setConverter(javafx.util.StringConverter)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -69,7 +69,7 @@ public class CheckBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 設定屬性{@link CheckBoxTableCell#setSelectedStateCallback(javafx.util.Callback)}
+     * 設定屬性{@link CheckBoxTableCell#setSelectedStateCallback(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -83,7 +83,7 @@ public class CheckBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 設定屬性{@link CheckBoxTableCell#converterProperty}的連結
+     * 設定屬性{@link CheckBoxTableCell#converterProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -100,7 +100,7 @@ public class CheckBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 設定屬性{@link CheckBoxTableCell#converterProperty}的雙向連結
+     * 設定屬性{@link CheckBoxTableCell#converterProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -117,7 +117,7 @@ public class CheckBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 設定屬性{@link CheckBoxTableCell#selectedStateCallbackProperty}的連結
+     * 設定屬性{@link CheckBoxTableCell#selectedStateCallbackProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -134,7 +134,7 @@ public class CheckBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 設定屬性{@link CheckBoxTableCell#selectedStateCallbackProperty}的雙向連結
+     * 設定屬性{@link CheckBoxTableCell#selectedStateCallbackProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -151,7 +151,7 @@ public class CheckBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 建構{@link CheckBoxTableCell}物件
+     * 建構{@link CheckBoxTableCell}物件。
      *
      * @return 新的{@link CheckBoxTableCell}物件實體
      */
@@ -166,7 +166,7 @@ public class CheckBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 建構{@link CheckBoxTableCell}物件
+     * 建構{@link CheckBoxTableCell}物件。
      *
      * @return 新的{@link CheckBoxTableCell}物件實體
      */
@@ -180,7 +180,7 @@ public class CheckBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 建構{@link CheckBoxTableCell}物件
+     * 建構{@link CheckBoxTableCell}物件。
      *
      * @return 新的{@link CheckBoxTableCell}物件實體
      */

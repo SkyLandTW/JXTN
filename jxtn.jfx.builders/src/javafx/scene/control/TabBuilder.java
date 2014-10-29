@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link Tab}建構器
+ * {@link Tab}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -205,7 +205,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setClosable(boolean)}
+     * 設定屬性{@link Tab#setClosable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -219,7 +219,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setContent(javafx.scene.Node)}
+     * 設定屬性{@link Tab#setContent(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -233,7 +233,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setContextMenu(javafx.scene.control.ContextMenu)}
+     * 設定屬性{@link Tab#setContextMenu(javafx.scene.control.ContextMenu)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -247,7 +247,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setDisable(boolean)}
+     * 設定屬性{@link Tab#setDisable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -261,7 +261,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setGraphic(javafx.scene.Node)}
+     * 設定屬性{@link Tab#setGraphic(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -275,7 +275,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setId(java.lang.String)}
+     * 設定屬性{@link Tab#setId(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -289,7 +289,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setOnCloseRequest(javafx.event.EventHandler)}
+     * 設定屬性{@link Tab#setOnCloseRequest(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -303,7 +303,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setOnClosed(javafx.event.EventHandler)}
+     * 設定屬性{@link Tab#setOnClosed(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -317,7 +317,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setOnSelectionChanged(javafx.event.EventHandler)}
+     * 設定屬性{@link Tab#setOnSelectionChanged(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -331,7 +331,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setStyle(java.lang.String)}
+     * 設定屬性{@link Tab#setStyle(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -345,7 +345,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Tab#getStyleClass}的內容
+     * 設定集合屬性{@link Tab#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -361,7 +361,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Tab#getStyleClass}的內容
+     * 設定集合屬性{@link Tab#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -376,7 +376,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Tab#getStyleClass}的內容
+     * 增加集合屬性{@link Tab#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -393,7 +393,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Tab#getStyleClass}的內容
+     * 增加集合屬性{@link Tab#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -411,7 +411,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setText(java.lang.String)}
+     * 設定屬性{@link Tab#setText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -425,7 +425,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setTooltip(javafx.scene.control.Tooltip)}
+     * 設定屬性{@link Tab#setTooltip(javafx.scene.control.Tooltip)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -439,7 +439,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#setUserData(java.lang.Object)}
+     * 設定屬性{@link Tab#setUserData(java.lang.Object)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -453,7 +453,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#closableProperty}的連結
+     * 設定屬性{@link Tab#closableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -470,7 +470,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#closableProperty}的雙向連結
+     * 設定屬性{@link Tab#closableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -487,7 +487,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#contentProperty}的連結
+     * 設定屬性{@link Tab#contentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -504,7 +504,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#contentProperty}的雙向連結
+     * 設定屬性{@link Tab#contentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -521,7 +521,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#contextMenuProperty}的連結
+     * 設定屬性{@link Tab#contextMenuProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -538,7 +538,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#contextMenuProperty}的雙向連結
+     * 設定屬性{@link Tab#contextMenuProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -555,7 +555,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#disableProperty}的連結
+     * 設定屬性{@link Tab#disableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -572,7 +572,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#disableProperty}的雙向連結
+     * 設定屬性{@link Tab#disableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -589,7 +589,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#graphicProperty}的連結
+     * 設定屬性{@link Tab#graphicProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -606,7 +606,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#graphicProperty}的雙向連結
+     * 設定屬性{@link Tab#graphicProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -623,7 +623,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#idProperty}的連結
+     * 設定屬性{@link Tab#idProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -640,7 +640,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#idProperty}的雙向連結
+     * 設定屬性{@link Tab#idProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -657,7 +657,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#onCloseRequestProperty}的連結
+     * 設定屬性{@link Tab#onCloseRequestProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -674,7 +674,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#onCloseRequestProperty}的雙向連結
+     * 設定屬性{@link Tab#onCloseRequestProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -691,7 +691,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#onClosedProperty}的連結
+     * 設定屬性{@link Tab#onClosedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -708,7 +708,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#onClosedProperty}的雙向連結
+     * 設定屬性{@link Tab#onClosedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -725,7 +725,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#onSelectionChangedProperty}的連結
+     * 設定屬性{@link Tab#onSelectionChangedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -742,7 +742,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#onSelectionChangedProperty}的雙向連結
+     * 設定屬性{@link Tab#onSelectionChangedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -759,7 +759,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#styleProperty}的連結
+     * 設定屬性{@link Tab#styleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -776,7 +776,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#styleProperty}的雙向連結
+     * 設定屬性{@link Tab#styleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -793,7 +793,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#textProperty}的連結
+     * 設定屬性{@link Tab#textProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -810,7 +810,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#textProperty}的雙向連結
+     * 設定屬性{@link Tab#textProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -827,7 +827,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#tooltipProperty}的連結
+     * 設定屬性{@link Tab#tooltipProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -844,7 +844,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Tab#tooltipProperty}的雙向連結
+     * 設定屬性{@link Tab#tooltipProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -861,7 +861,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Tab}物件
+     * 建構{@link Tab}物件。
      *
      * @return 新的{@link Tab}物件實體
      */
@@ -876,7 +876,7 @@ public class TabBuilder<Z extends Tab, B extends TabBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Tab}物件
+     * 建構{@link Tab}物件。
      *
      * @return 新的{@link Tab}物件實體
      */

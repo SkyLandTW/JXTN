@@ -6,7 +6,7 @@
 package javafx.scene.transform;
 
 /**
- * {@link NonInvertibleTransformException}建構器
+ * {@link NonInvertibleTransformException}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class NonInvertibleTransformExceptionBuilder<Z extends NonInvertibleTrans
     }
 
     /**
-     * 建構{@link NonInvertibleTransformException}物件
+     * 建構{@link NonInvertibleTransformException}物件。
      *
      * @return 新的{@link NonInvertibleTransformException}物件實體
      */

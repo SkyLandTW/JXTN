@@ -6,7 +6,7 @@
 package org.controlsfx.control;
 
 /**
- * {@link StatusBar}建構器
+ * {@link StatusBar}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -79,7 +79,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link StatusBar#setGraphic(javafx.scene.Node)}
+     * 設定屬性{@link StatusBar#setGraphic(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -93,7 +93,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
-     * 設定集合屬性{@link StatusBar#getLeftItems}的內容
+     * 設定集合屬性{@link StatusBar#getLeftItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -109,7 +109,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
-     * 設定集合屬性{@link StatusBar#getLeftItems}的內容
+     * 設定集合屬性{@link StatusBar#getLeftItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -124,7 +124,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
-     * 增加集合屬性{@link StatusBar#getLeftItems}的內容
+     * 增加集合屬性{@link StatusBar#getLeftItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -141,7 +141,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
-     * 增加集合屬性{@link StatusBar#getLeftItems}的內容
+     * 增加集合屬性{@link StatusBar#getLeftItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -159,7 +159,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link StatusBar#setProgress(double)}
+     * 設定屬性{@link StatusBar#setProgress(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -173,7 +173,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
-     * 設定集合屬性{@link StatusBar#getRightItems}的內容
+     * 設定集合屬性{@link StatusBar#getRightItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -189,7 +189,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
-     * 設定集合屬性{@link StatusBar#getRightItems}的內容
+     * 設定集合屬性{@link StatusBar#getRightItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -204,7 +204,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
-     * 增加集合屬性{@link StatusBar#getRightItems}的內容
+     * 增加集合屬性{@link StatusBar#getRightItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -221,7 +221,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
-     * 增加集合屬性{@link StatusBar#getRightItems}的內容
+     * 增加集合屬性{@link StatusBar#getRightItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -239,7 +239,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link StatusBar#setText(java.lang.String)}
+     * 設定屬性{@link StatusBar#setText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -253,7 +253,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link StatusBar#graphicProperty}的連結
+     * 設定屬性{@link StatusBar#graphicProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -270,7 +270,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link StatusBar#graphicProperty}的雙向連結
+     * 設定屬性{@link StatusBar#graphicProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -287,7 +287,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link StatusBar#progressProperty}的連結
+     * 設定屬性{@link StatusBar#progressProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -304,7 +304,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link StatusBar#progressProperty}的雙向連結
+     * 設定屬性{@link StatusBar#progressProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -321,7 +321,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link StatusBar#textProperty}的連結
+     * 設定屬性{@link StatusBar#textProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -338,7 +338,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link StatusBar#textProperty}的雙向連結
+     * 設定屬性{@link StatusBar#textProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -355,7 +355,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
-     * 建構{@link StatusBar}物件
+     * 建構{@link StatusBar}物件。
      *
      * @return 新的{@link StatusBar}物件實體
      */

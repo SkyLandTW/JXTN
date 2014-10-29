@@ -6,7 +6,7 @@
 package javafx.scene.paint;
 
 /**
- * {@link ImagePattern}建構器
+ * {@link ImagePattern}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class ImagePatternBuilder<Z extends ImagePattern, B extends ImagePatternB
     }
 
     /**
-     * 建構{@link ImagePattern}物件
+     * 建構{@link ImagePattern}物件。
      *
      * @return 新的{@link ImagePattern}物件實體
      */
@@ -41,7 +41,7 @@ public class ImagePatternBuilder<Z extends ImagePattern, B extends ImagePatternB
     }
 
     /**
-     * 建構{@link ImagePattern}物件
+     * 建構{@link ImagePattern}物件。
      *
      * @return 新的{@link ImagePattern}物件實體
      */

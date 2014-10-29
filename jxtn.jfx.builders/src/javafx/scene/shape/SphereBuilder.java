@@ -6,7 +6,7 @@
 package javafx.scene.shape;
 
 /**
- * {@link Sphere}建構器
+ * {@link Sphere}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -41,7 +41,7 @@ public class SphereBuilder<Z extends Sphere, B extends SphereBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Sphere#setRadius(double)}
+     * 設定屬性{@link Sphere#setRadius(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -55,7 +55,7 @@ public class SphereBuilder<Z extends Sphere, B extends SphereBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Sphere#radiusProperty}的連結
+     * 設定屬性{@link Sphere#radiusProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -72,7 +72,7 @@ public class SphereBuilder<Z extends Sphere, B extends SphereBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Sphere#radiusProperty}的雙向連結
+     * 設定屬性{@link Sphere#radiusProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -89,7 +89,7 @@ public class SphereBuilder<Z extends Sphere, B extends SphereBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Sphere}物件
+     * 建構{@link Sphere}物件。
      *
      * @return 新的{@link Sphere}物件實體
      */
@@ -104,7 +104,7 @@ public class SphereBuilder<Z extends Sphere, B extends SphereBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Sphere}物件
+     * 建構{@link Sphere}物件。
      *
      * @return 新的{@link Sphere}物件實體
      */
@@ -118,7 +118,7 @@ public class SphereBuilder<Z extends Sphere, B extends SphereBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Sphere}物件
+     * 建構{@link Sphere}物件。
      *
      * @return 新的{@link Sphere}物件實體
      */

@@ -6,7 +6,7 @@
 package javafx.scene.effect;
 
 /**
- * {@link GaussianBlur}建構器
+ * {@link GaussianBlur}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -55,7 +55,7 @@ public class GaussianBlurBuilder<Z extends GaussianBlur, B extends GaussianBlurB
     }
 
     /**
-     * 設定屬性{@link GaussianBlur#setInput(javafx.scene.effect.Effect)}
+     * 設定屬性{@link GaussianBlur#setInput(javafx.scene.effect.Effect)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -69,7 +69,7 @@ public class GaussianBlurBuilder<Z extends GaussianBlur, B extends GaussianBlurB
     }
 
     /**
-     * 設定屬性{@link GaussianBlur#setRadius(double)}
+     * 設定屬性{@link GaussianBlur#setRadius(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -83,7 +83,7 @@ public class GaussianBlurBuilder<Z extends GaussianBlur, B extends GaussianBlurB
     }
 
     /**
-     * 設定屬性{@link GaussianBlur#inputProperty}的連結
+     * 設定屬性{@link GaussianBlur#inputProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -100,7 +100,7 @@ public class GaussianBlurBuilder<Z extends GaussianBlur, B extends GaussianBlurB
     }
 
     /**
-     * 設定屬性{@link GaussianBlur#inputProperty}的雙向連結
+     * 設定屬性{@link GaussianBlur#inputProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -117,7 +117,7 @@ public class GaussianBlurBuilder<Z extends GaussianBlur, B extends GaussianBlurB
     }
 
     /**
-     * 設定屬性{@link GaussianBlur#radiusProperty}的連結
+     * 設定屬性{@link GaussianBlur#radiusProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -134,7 +134,7 @@ public class GaussianBlurBuilder<Z extends GaussianBlur, B extends GaussianBlurB
     }
 
     /**
-     * 設定屬性{@link GaussianBlur#radiusProperty}的雙向連結
+     * 設定屬性{@link GaussianBlur#radiusProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -151,7 +151,7 @@ public class GaussianBlurBuilder<Z extends GaussianBlur, B extends GaussianBlurB
     }
 
     /**
-     * 建構{@link GaussianBlur}物件
+     * 建構{@link GaussianBlur}物件。
      *
      * @return 新的{@link GaussianBlur}物件實體
      */
@@ -166,7 +166,7 @@ public class GaussianBlurBuilder<Z extends GaussianBlur, B extends GaussianBlurB
     }
 
     /**
-     * 建構{@link GaussianBlur}物件
+     * 建構{@link GaussianBlur}物件。
      *
      * @return 新的{@link GaussianBlur}物件實體
      */

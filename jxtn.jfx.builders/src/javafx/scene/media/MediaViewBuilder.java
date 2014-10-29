@@ -6,7 +6,7 @@
 package javafx.scene.media;
 
 /**
- * {@link MediaView}建構器
+ * {@link MediaView}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -153,7 +153,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#setFitHeight(double)}
+     * 設定屬性{@link MediaView#setFitHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#setFitWidth(double)}
+     * 設定屬性{@link MediaView#setFitWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#setMediaPlayer(javafx.scene.media.MediaPlayer)}
+     * 設定屬性{@link MediaView#setMediaPlayer(javafx.scene.media.MediaPlayer)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#setOnError(javafx.event.EventHandler)}
+     * 設定屬性{@link MediaView#setOnError(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#setPreserveRatio(boolean)}
+     * 設定屬性{@link MediaView#setPreserveRatio(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#setSmooth(boolean)}
+     * 設定屬性{@link MediaView#setSmooth(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -237,7 +237,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#setViewport(javafx.geometry.Rectangle2D)}
+     * 設定屬性{@link MediaView#setViewport(javafx.geometry.Rectangle2D)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -251,7 +251,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#setX(double)}
+     * 設定屬性{@link MediaView#setX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -265,7 +265,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#setY(double)}
+     * 設定屬性{@link MediaView#setY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -279,7 +279,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#fitHeightProperty}的連結
+     * 設定屬性{@link MediaView#fitHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -296,7 +296,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#fitHeightProperty}的雙向連結
+     * 設定屬性{@link MediaView#fitHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -313,7 +313,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#fitWidthProperty}的連結
+     * 設定屬性{@link MediaView#fitWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -330,7 +330,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#fitWidthProperty}的雙向連結
+     * 設定屬性{@link MediaView#fitWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -347,7 +347,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#mediaPlayerProperty}的連結
+     * 設定屬性{@link MediaView#mediaPlayerProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -364,7 +364,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#mediaPlayerProperty}的雙向連結
+     * 設定屬性{@link MediaView#mediaPlayerProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -381,7 +381,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#onErrorProperty}的連結
+     * 設定屬性{@link MediaView#onErrorProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -398,7 +398,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#onErrorProperty}的雙向連結
+     * 設定屬性{@link MediaView#onErrorProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -415,7 +415,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#preserveRatioProperty}的連結
+     * 設定屬性{@link MediaView#preserveRatioProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -432,7 +432,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#preserveRatioProperty}的雙向連結
+     * 設定屬性{@link MediaView#preserveRatioProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -449,7 +449,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#smoothProperty}的連結
+     * 設定屬性{@link MediaView#smoothProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -466,7 +466,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#smoothProperty}的雙向連結
+     * 設定屬性{@link MediaView#smoothProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -483,7 +483,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#viewportProperty}的連結
+     * 設定屬性{@link MediaView#viewportProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -500,7 +500,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#viewportProperty}的雙向連結
+     * 設定屬性{@link MediaView#viewportProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -517,7 +517,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#xProperty}的連結
+     * 設定屬性{@link MediaView#xProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -534,7 +534,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#xProperty}的雙向連結
+     * 設定屬性{@link MediaView#xProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -551,7 +551,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#yProperty}的連結
+     * 設定屬性{@link MediaView#yProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -568,7 +568,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link MediaView#yProperty}的雙向連結
+     * 設定屬性{@link MediaView#yProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -585,7 +585,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 建構{@link MediaView}物件
+     * 建構{@link MediaView}物件。
      *
      * @return 新的{@link MediaView}物件實體
      */
@@ -600,7 +600,7 @@ public class MediaViewBuilder<Z extends MediaView, B extends MediaViewBuilder<Z,
     }
 
     /**
-     * 建構{@link MediaView}物件
+     * 建構{@link MediaView}物件。
      *
      * @return 新的{@link MediaView}物件實體
      */

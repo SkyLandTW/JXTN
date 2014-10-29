@@ -6,7 +6,7 @@
 package javafx.scene.chart;
 
 /**
- * {@link XYChart}建構器
+ * {@link XYChart}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -125,7 +125,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#setAlternativeColumnFillVisible(boolean)}
+     * 設定屬性{@link XYChart#setAlternativeColumnFillVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#setAlternativeRowFillVisible(boolean)}
+     * 設定屬性{@link XYChart#setAlternativeRowFillVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#setData(javafx.collections.ObservableList)}
+     * 設定屬性{@link XYChart#setData(javafx.collections.ObservableList)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#setHorizontalGridLinesVisible(boolean)}
+     * 設定屬性{@link XYChart#setHorizontalGridLinesVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#setHorizontalZeroLineVisible(boolean)}
+     * 設定屬性{@link XYChart#setHorizontalZeroLineVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#setVerticalGridLinesVisible(boolean)}
+     * 設定屬性{@link XYChart#setVerticalGridLinesVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#setVerticalZeroLineVisible(boolean)}
+     * 設定屬性{@link XYChart#setVerticalZeroLineVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#alternativeColumnFillVisibleProperty}的連結
+     * 設定屬性{@link XYChart#alternativeColumnFillVisibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -240,7 +240,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#alternativeColumnFillVisibleProperty}的雙向連結
+     * 設定屬性{@link XYChart#alternativeColumnFillVisibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -257,7 +257,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#alternativeRowFillVisibleProperty}的連結
+     * 設定屬性{@link XYChart#alternativeRowFillVisibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -274,7 +274,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#alternativeRowFillVisibleProperty}的雙向連結
+     * 設定屬性{@link XYChart#alternativeRowFillVisibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -291,7 +291,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#dataProperty}的連結
+     * 設定屬性{@link XYChart#dataProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -308,7 +308,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#dataProperty}的雙向連結
+     * 設定屬性{@link XYChart#dataProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -325,7 +325,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#horizontalGridLinesVisibleProperty}的連結
+     * 設定屬性{@link XYChart#horizontalGridLinesVisibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -342,7 +342,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#horizontalGridLinesVisibleProperty}的雙向連結
+     * 設定屬性{@link XYChart#horizontalGridLinesVisibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -359,7 +359,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#horizontalZeroLineVisibleProperty}的連結
+     * 設定屬性{@link XYChart#horizontalZeroLineVisibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -376,7 +376,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#horizontalZeroLineVisibleProperty}的雙向連結
+     * 設定屬性{@link XYChart#horizontalZeroLineVisibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -393,7 +393,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#verticalGridLinesVisibleProperty}的連結
+     * 設定屬性{@link XYChart#verticalGridLinesVisibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -410,7 +410,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#verticalGridLinesVisibleProperty}的雙向連結
+     * 設定屬性{@link XYChart#verticalGridLinesVisibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -427,7 +427,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#verticalZeroLineVisibleProperty}的連結
+     * 設定屬性{@link XYChart#verticalZeroLineVisibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -444,7 +444,7 @@ public class XYChartBuilder<X extends java.lang.Object, Y extends java.lang.Obje
     }
 
     /**
-     * 設定屬性{@link XYChart#verticalZeroLineVisibleProperty}的雙向連結
+     * 設定屬性{@link XYChart#verticalZeroLineVisibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)

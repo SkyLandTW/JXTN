@@ -6,7 +6,7 @@
 package javafx.scene.layout;
 
 /**
- * {@link HBox}建構器
+ * {@link HBox}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -69,7 +69,7 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link HBox#setAlignment(javafx.geometry.Pos)}
+     * 設定屬性{@link HBox#setAlignment(javafx.geometry.Pos)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -83,7 +83,7 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link HBox#setFillHeight(boolean)}
+     * 設定屬性{@link HBox#setFillHeight(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -97,7 +97,7 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link HBox#setSpacing(double)}
+     * 設定屬性{@link HBox#setSpacing(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link HBox#alignmentProperty}的連結
+     * 設定屬性{@link HBox#alignmentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -128,7 +128,7 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link HBox#alignmentProperty}的雙向連結
+     * 設定屬性{@link HBox#alignmentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -145,7 +145,7 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link HBox#fillHeightProperty}的連結
+     * 設定屬性{@link HBox#fillHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -162,7 +162,7 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link HBox#fillHeightProperty}的雙向連結
+     * 設定屬性{@link HBox#fillHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -179,7 +179,7 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link HBox#spacingProperty}的連結
+     * 設定屬性{@link HBox#spacingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -196,7 +196,7 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link HBox#spacingProperty}的雙向連結
+     * 設定屬性{@link HBox#spacingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -213,7 +213,7 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link HBox}物件
+     * 建構{@link HBox}物件。
      *
      * @return 新的{@link HBox}物件實體
      */
@@ -228,21 +228,7 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link HBox}物件
-     *
-     * @return 新的{@link HBox}物件實體
-     */
-    @SuppressWarnings("unchecked")
-    public HBox build(javafx.scene.Node[] arg0)
-    {
-        HBox instance = new HBox(arg0);
-        this.applyTo((Z) instance);
-        this.doAfterBuild((Z) instance);
-        return instance;
-    }
-
-    /**
-     * 建構{@link HBox}物件
+     * 建構{@link HBox}物件。
      *
      * @return 新的{@link HBox}物件實體
      */
@@ -256,7 +242,21 @@ public class HBoxBuilder<Z extends HBox, B extends HBoxBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link HBox}物件
+     * 建構{@link HBox}物件。
+     *
+     * @return 新的{@link HBox}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public HBox build(javafx.scene.Node[] arg0)
+    {
+        HBox instance = new HBox(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link HBox}物件。
      *
      * @return 新的{@link HBox}物件實體
      */

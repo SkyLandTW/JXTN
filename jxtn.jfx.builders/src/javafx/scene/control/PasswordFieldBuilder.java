@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link PasswordField}建構器
+ * {@link PasswordField}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class PasswordFieldBuilder<Z extends PasswordField, B extends PasswordFie
     }
 
     /**
-     * 建構{@link PasswordField}物件
+     * 建構{@link PasswordField}物件。
      *
      * @return 新的{@link PasswordField}物件實體
      */

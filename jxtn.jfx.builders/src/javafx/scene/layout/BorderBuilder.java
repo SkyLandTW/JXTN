@@ -6,7 +6,7 @@
 package javafx.scene.layout;
 
 /**
- * {@link Border}建構器
+ * {@link Border}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class BorderBuilder<Z extends Border, B extends BorderBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Border}物件
+     * 建構{@link Border}物件。
      *
      * @return 新的{@link Border}物件實體
      */
@@ -41,7 +41,7 @@ public class BorderBuilder<Z extends Border, B extends BorderBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Border}物件
+     * 建構{@link Border}物件。
      *
      * @return 新的{@link Border}物件實體
      */
@@ -55,7 +55,7 @@ public class BorderBuilder<Z extends Border, B extends BorderBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Border}物件
+     * 建構{@link Border}物件。
      *
      * @return 新的{@link Border}物件實體
      */
@@ -69,7 +69,7 @@ public class BorderBuilder<Z extends Border, B extends BorderBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Border}物件
+     * 建構{@link Border}物件。
      *
      * @return 新的{@link Border}物件實體
      */

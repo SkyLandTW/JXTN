@@ -6,7 +6,7 @@
 package org.controlsfx.control;
 
 /**
- * {@link GridCell}建構器
+ * {@link GridCell}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -20,14 +20,57 @@ public class GridCellBuilder<T extends java.lang.Object, Z extends GridCell<T>, 
         implements GridCellBuilderExt<T, Z, B>
 {
 
+    private boolean bound1GridView;
+    private boolean bound2GridView;
+    private javafx.beans.value.ObservableValue<? extends org.controlsfx.control.GridView<T>> obsrv1GridView;
+    private javafx.beans.property.Property<org.controlsfx.control.GridView<T>> obsrv2GridView;
+
     @Override
     public void applyTo(Z instance)
     {
         super.applyTo(instance);
+        if (this.bound1GridView)
+            instance.gridViewProperty().bind(this.obsrv1GridView);
+        if (this.bound2GridView)
+            instance.gridViewProperty().bindBidirectional(this.obsrv2GridView);
     }
 
     /**
-     * 建構{@link GridCell}物件
+     * 設定屬性{@link GridCell#gridViewProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindGridView(javafx.beans.value.ObservableValue<? extends org.controlsfx.control.GridView<T>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1GridView = true;
+        this.obsrv1GridView = source;
+        this.bound2GridView = false;
+        this.obsrv2GridView = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link GridCell#gridViewProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalGridView(javafx.beans.property.Property<org.controlsfx.control.GridView<T>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1GridView = false;
+        this.obsrv1GridView = null;
+        this.bound2GridView = true;
+        this.obsrv2GridView = source;
+        return (B) this;
+    }
+
+    /**
+     * 建構{@link GridCell}物件。
      *
      * @return 新的{@link GridCell}物件實體
      */

@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link TreeTableCell}建構器
+ * {@link TreeTableCell}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class TreeTableCellBuilder<S extends java.lang.Object, T extends java.lan
     }
 
     /**
-     * 建構{@link TreeTableCell}物件
+     * 建構{@link TreeTableCell}物件。
      *
      * @return 新的{@link TreeTableCell}物件實體
      */

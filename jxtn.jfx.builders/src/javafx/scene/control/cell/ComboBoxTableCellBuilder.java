@@ -6,7 +6,7 @@
 package javafx.scene.control.cell;
 
 /**
- * {@link ComboBoxTableCell}建構器
+ * {@link ComboBoxTableCell}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -60,7 +60,7 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 設定屬性{@link ComboBoxTableCell#setComboBoxEditable(boolean)}
+     * 設定屬性{@link ComboBoxTableCell#setComboBoxEditable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -74,7 +74,7 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 設定屬性{@link ComboBoxTableCell#setConverter(javafx.util.StringConverter)}
+     * 設定屬性{@link ComboBoxTableCell#setConverter(javafx.util.StringConverter)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -88,7 +88,7 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 設定集合屬性{@link ComboBoxTableCell#getItems}的內容
+     * 設定集合屬性{@link ComboBoxTableCell#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -104,7 +104,7 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 設定集合屬性{@link ComboBoxTableCell#getItems}的內容
+     * 設定集合屬性{@link ComboBoxTableCell#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -119,7 +119,7 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 增加集合屬性{@link ComboBoxTableCell#getItems}的內容
+     * 增加集合屬性{@link ComboBoxTableCell#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 增加集合屬性{@link ComboBoxTableCell#getItems}的內容
+     * 增加集合屬性{@link ComboBoxTableCell#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -154,7 +154,7 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 設定屬性{@link ComboBoxTableCell#comboBoxEditableProperty}的連結
+     * 設定屬性{@link ComboBoxTableCell#comboBoxEditableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -171,7 +171,7 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 設定屬性{@link ComboBoxTableCell#comboBoxEditableProperty}的雙向連結
+     * 設定屬性{@link ComboBoxTableCell#comboBoxEditableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -188,7 +188,7 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 設定屬性{@link ComboBoxTableCell#converterProperty}的連結
+     * 設定屬性{@link ComboBoxTableCell#converterProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -205,7 +205,7 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 設定屬性{@link ComboBoxTableCell#converterProperty}的雙向連結
+     * 設定屬性{@link ComboBoxTableCell#converterProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -222,7 +222,7 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 建構{@link ComboBoxTableCell}物件
+     * 建構{@link ComboBoxTableCell}物件。
      *
      * @return 新的{@link ComboBoxTableCell}物件實體
      */
@@ -237,21 +237,7 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 建構{@link ComboBoxTableCell}物件
-     *
-     * @return 新的{@link ComboBoxTableCell}物件實體
-     */
-    @SuppressWarnings("unchecked")
-    public ComboBoxTableCell<S, T> build(javafx.collections.ObservableList<T> arg0)
-    {
-        ComboBoxTableCell<S, T> instance = new ComboBoxTableCell<S, T>(arg0);
-        this.applyTo((Z) instance);
-        this.doAfterBuild((Z) instance);
-        return instance;
-    }
-
-    /**
-     * 建構{@link ComboBoxTableCell}物件
+     * 建構{@link ComboBoxTableCell}物件。
      *
      * @return 新的{@link ComboBoxTableCell}物件實體
      */
@@ -265,12 +251,26 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 建構{@link ComboBoxTableCell}物件
+     * 建構{@link ComboBoxTableCell}物件。
      *
      * @return 新的{@link ComboBoxTableCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ComboBoxTableCell<S, T> build(javafx.util.StringConverter<T> arg0, T[] arg1)
+    public ComboBoxTableCell<S, T> build(javafx.collections.ObservableList<T> arg0)
+    {
+        ComboBoxTableCell<S, T> instance = new ComboBoxTableCell<S, T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ComboBoxTableCell}物件。
+     *
+     * @return 新的{@link ComboBoxTableCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ComboBoxTableCell<S, T> build(javafx.util.StringConverter<T> arg0, javafx.collections.ObservableList<T> arg1)
     {
         ComboBoxTableCell<S, T> instance = new ComboBoxTableCell<S, T>(arg0, arg1);
         this.applyTo((Z) instance);
@@ -279,12 +279,12 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
     }
 
     /**
-     * 建構{@link ComboBoxTableCell}物件
+     * 建構{@link ComboBoxTableCell}物件。
      *
      * @return 新的{@link ComboBoxTableCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ComboBoxTableCell<S, T> build(javafx.util.StringConverter<T> arg0, javafx.collections.ObservableList<T> arg1)
+    public ComboBoxTableCell<S, T> build(javafx.util.StringConverter<T> arg0, T[] arg1)
     {
         ComboBoxTableCell<S, T> instance = new ComboBoxTableCell<S, T>(arg0, arg1);
         this.applyTo((Z) instance);

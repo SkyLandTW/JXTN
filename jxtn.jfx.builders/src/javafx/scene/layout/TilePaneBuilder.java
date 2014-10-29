@@ -6,7 +6,7 @@
 package javafx.scene.layout;
 
 /**
- * {@link TilePane}建構器
+ * {@link TilePane}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -153,7 +153,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#setAlignment(javafx.geometry.Pos)}
+     * 設定屬性{@link TilePane#setAlignment(javafx.geometry.Pos)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#setHgap(double)}
+     * 設定屬性{@link TilePane#setHgap(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#setOrientation(javafx.geometry.Orientation)}
+     * 設定屬性{@link TilePane#setOrientation(javafx.geometry.Orientation)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#setPrefColumns(int)}
+     * 設定屬性{@link TilePane#setPrefColumns(int)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#setPrefRows(int)}
+     * 設定屬性{@link TilePane#setPrefRows(int)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#setPrefTileHeight(double)}
+     * 設定屬性{@link TilePane#setPrefTileHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -237,7 +237,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#setPrefTileWidth(double)}
+     * 設定屬性{@link TilePane#setPrefTileWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -251,7 +251,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#setTileAlignment(javafx.geometry.Pos)}
+     * 設定屬性{@link TilePane#setTileAlignment(javafx.geometry.Pos)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -265,7 +265,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#setVgap(double)}
+     * 設定屬性{@link TilePane#setVgap(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -279,7 +279,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#alignmentProperty}的連結
+     * 設定屬性{@link TilePane#alignmentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -296,7 +296,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#alignmentProperty}的雙向連結
+     * 設定屬性{@link TilePane#alignmentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -313,7 +313,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#hgapProperty}的連結
+     * 設定屬性{@link TilePane#hgapProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -330,7 +330,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#hgapProperty}的雙向連結
+     * 設定屬性{@link TilePane#hgapProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -347,7 +347,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#orientationProperty}的連結
+     * 設定屬性{@link TilePane#orientationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -364,7 +364,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#orientationProperty}的雙向連結
+     * 設定屬性{@link TilePane#orientationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -381,7 +381,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#prefColumnsProperty}的連結
+     * 設定屬性{@link TilePane#prefColumnsProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -398,7 +398,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#prefColumnsProperty}的雙向連結
+     * 設定屬性{@link TilePane#prefColumnsProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -415,7 +415,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#prefRowsProperty}的連結
+     * 設定屬性{@link TilePane#prefRowsProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -432,7 +432,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#prefRowsProperty}的雙向連結
+     * 設定屬性{@link TilePane#prefRowsProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -449,7 +449,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#prefTileHeightProperty}的連結
+     * 設定屬性{@link TilePane#prefTileHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -466,7 +466,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#prefTileHeightProperty}的雙向連結
+     * 設定屬性{@link TilePane#prefTileHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -483,7 +483,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#prefTileWidthProperty}的連結
+     * 設定屬性{@link TilePane#prefTileWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -500,7 +500,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#prefTileWidthProperty}的雙向連結
+     * 設定屬性{@link TilePane#prefTileWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -517,7 +517,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#tileAlignmentProperty}的連結
+     * 設定屬性{@link TilePane#tileAlignmentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -534,7 +534,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#tileAlignmentProperty}的雙向連結
+     * 設定屬性{@link TilePane#tileAlignmentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -551,7 +551,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#vgapProperty}的連結
+     * 設定屬性{@link TilePane#vgapProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -568,7 +568,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TilePane#vgapProperty}的雙向連結
+     * 設定屬性{@link TilePane#vgapProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -585,7 +585,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 建構{@link TilePane}物件
+     * 建構{@link TilePane}物件。
      *
      * @return 新的{@link TilePane}物件實體
      */
@@ -600,7 +600,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 建構{@link TilePane}物件
+     * 建構{@link TilePane}物件。
      *
      * @return 新的{@link TilePane}物件實體
      */
@@ -614,7 +614,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 建構{@link TilePane}物件
+     * 建構{@link TilePane}物件。
      *
      * @return 新的{@link TilePane}物件實體
      */
@@ -628,21 +628,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 建構{@link TilePane}物件
-     *
-     * @return 新的{@link TilePane}物件實體
-     */
-    @SuppressWarnings("unchecked")
-    public TilePane build(javafx.geometry.Orientation arg0, javafx.scene.Node[] arg1)
-    {
-        TilePane instance = new TilePane(arg0, arg1);
-        this.applyTo((Z) instance);
-        this.doAfterBuild((Z) instance);
-        return instance;
-    }
-
-    /**
-     * 建構{@link TilePane}物件
+     * 建構{@link TilePane}物件。
      *
      * @return 新的{@link TilePane}物件實體
      */
@@ -656,7 +642,21 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 建構{@link TilePane}物件
+     * 建構{@link TilePane}物件。
+     *
+     * @return 新的{@link TilePane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public TilePane build(javafx.geometry.Orientation arg0, javafx.scene.Node[] arg1)
+    {
+        TilePane instance = new TilePane(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link TilePane}物件。
      *
      * @return 新的{@link TilePane}物件實體
      */
@@ -670,7 +670,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 建構{@link TilePane}物件
+     * 建構{@link TilePane}物件。
      *
      * @return 新的{@link TilePane}物件實體
      */
@@ -684,7 +684,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
     }
 
     /**
-     * 建構{@link TilePane}物件
+     * 建構{@link TilePane}物件。
      *
      * @return 新的{@link TilePane}物件實體
      */

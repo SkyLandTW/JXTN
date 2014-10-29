@@ -6,7 +6,7 @@
 package org.controlsfx.dialog;
 
 /**
- * {@link LoginDialog}建構器
+ * {@link LoginDialog}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -27,7 +27,7 @@ public class LoginDialogBuilder<Z extends LoginDialog, B extends LoginDialogBuil
     }
 
     /**
-     * 建構{@link LoginDialog}物件
+     * 建構{@link LoginDialog}物件。
      *
      * @return 新的{@link LoginDialog}物件實體
      */

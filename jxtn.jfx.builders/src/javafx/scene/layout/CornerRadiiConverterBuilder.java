@@ -6,7 +6,7 @@
 package javafx.scene.layout;
 
 /**
- * {@link CornerRadiiConverter}建構器
+ * {@link CornerRadiiConverter}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar

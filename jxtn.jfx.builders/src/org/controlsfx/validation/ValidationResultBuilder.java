@@ -6,7 +6,7 @@
 package org.controlsfx.validation;
 
 /**
- * {@link ValidationResult}建構器
+ * {@link ValidationResult}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -27,7 +27,7 @@ public class ValidationResultBuilder<Z extends ValidationResult, B extends Valid
     }
 
     /**
-     * 建構{@link ValidationResult}物件
+     * 建構{@link ValidationResult}物件。
      *
      * @return 新的{@link ValidationResult}物件實體
      */

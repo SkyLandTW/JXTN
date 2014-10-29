@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link ButtonType}建構器
+ * {@link ButtonType}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version openjfx-dialogs-1.0.2.jar
@@ -27,7 +27,7 @@ public class ButtonTypeBuilder<Z extends ButtonType, B extends ButtonTypeBuilder
     }
 
     /**
-     * 建構{@link ButtonType}物件
+     * 建構{@link ButtonType}物件。
      *
      * @return 新的{@link ButtonType}物件實體
      */
@@ -41,7 +41,7 @@ public class ButtonTypeBuilder<Z extends ButtonType, B extends ButtonTypeBuilder
     }
 
     /**
-     * 建構{@link ButtonType}物件
+     * 建構{@link ButtonType}物件。
      *
      * @return 新的{@link ButtonType}物件實體
      */

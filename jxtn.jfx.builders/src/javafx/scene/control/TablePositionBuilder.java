@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link TablePosition}建構器
+ * {@link TablePosition}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class TablePositionBuilder<S extends java.lang.Object, T extends java.lan
     }
 
     /**
-     * 建構{@link TablePosition}物件
+     * 建構{@link TablePosition}物件。
      *
      * @return 新的{@link TablePosition}物件實體
      */

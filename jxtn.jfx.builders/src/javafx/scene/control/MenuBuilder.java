@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link Menu}建構器
+ * {@link Menu}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -88,7 +88,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Menu#getItems}的內容
+     * 設定集合屬性{@link Menu#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -104,7 +104,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Menu#getItems}的內容
+     * 設定集合屬性{@link Menu#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -119,7 +119,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Menu#getItems}的內容
+     * 增加集合屬性{@link Menu#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Menu#getItems}的內容
+     * 增加集合屬性{@link Menu#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -154,7 +154,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Menu#setOnHidden(javafx.event.EventHandler)}
+     * 設定屬性{@link Menu#setOnHidden(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -168,7 +168,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Menu#setOnHiding(javafx.event.EventHandler)}
+     * 設定屬性{@link Menu#setOnHiding(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -182,7 +182,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Menu#setOnShowing(javafx.event.EventHandler)}
+     * 設定屬性{@link Menu#setOnShowing(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -196,7 +196,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Menu#setOnShown(javafx.event.EventHandler)}
+     * 設定屬性{@link Menu#setOnShown(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -210,7 +210,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Menu#onHiddenProperty}的連結
+     * 設定屬性{@link Menu#onHiddenProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -227,7 +227,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Menu#onHiddenProperty}的雙向連結
+     * 設定屬性{@link Menu#onHiddenProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -244,7 +244,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Menu#onHidingProperty}的連結
+     * 設定屬性{@link Menu#onHidingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -261,7 +261,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Menu#onHidingProperty}的雙向連結
+     * 設定屬性{@link Menu#onHidingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -278,7 +278,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Menu#onShowingProperty}的連結
+     * 設定屬性{@link Menu#onShowingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -295,7 +295,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Menu#onShowingProperty}的雙向連結
+     * 設定屬性{@link Menu#onShowingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -312,7 +312,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Menu#onShownProperty}的連結
+     * 設定屬性{@link Menu#onShownProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -329,7 +329,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Menu#onShownProperty}的雙向連結
+     * 設定屬性{@link Menu#onShownProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -346,7 +346,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Menu}物件
+     * 建構{@link Menu}物件。
      *
      * @return 新的{@link Menu}物件實體
      */
@@ -361,7 +361,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Menu}物件
+     * 建構{@link Menu}物件。
      *
      * @return 新的{@link Menu}物件實體
      */
@@ -375,7 +375,7 @@ public class MenuBuilder<Z extends Menu, B extends MenuBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Menu}物件
+     * 建構{@link Menu}物件。
      *
      * @return 新的{@link Menu}物件實體
      */

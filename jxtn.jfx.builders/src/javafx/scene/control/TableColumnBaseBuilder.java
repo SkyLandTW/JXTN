@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link TableColumnBase}建構器
+ * {@link TableColumnBase}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -233,7 +233,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setComparator(java.util.Comparator)}
+     * 設定屬性{@link TableColumnBase#setComparator(java.util.Comparator)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -247,7 +247,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setContextMenu(javafx.scene.control.ContextMenu)}
+     * 設定屬性{@link TableColumnBase#setContextMenu(javafx.scene.control.ContextMenu)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -261,7 +261,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setEditable(boolean)}
+     * 設定屬性{@link TableColumnBase#setEditable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -275,7 +275,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setGraphic(javafx.scene.Node)}
+     * 設定屬性{@link TableColumnBase#setGraphic(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -289,7 +289,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setId(java.lang.String)}
+     * 設定屬性{@link TableColumnBase#setId(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -303,7 +303,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setMaxWidth(double)}
+     * 設定屬性{@link TableColumnBase#setMaxWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -317,7 +317,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setMinWidth(double)}
+     * 設定屬性{@link TableColumnBase#setMinWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -331,7 +331,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setPrefWidth(double)}
+     * 設定屬性{@link TableColumnBase#setPrefWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -345,7 +345,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setResizable(boolean)}
+     * 設定屬性{@link TableColumnBase#setResizable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -359,7 +359,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setSortNode(javafx.scene.Node)}
+     * 設定屬性{@link TableColumnBase#setSortNode(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -373,7 +373,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setSortable(boolean)}
+     * 設定屬性{@link TableColumnBase#setSortable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -387,7 +387,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setStyle(java.lang.String)}
+     * 設定屬性{@link TableColumnBase#setStyle(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -401,7 +401,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定集合屬性{@link TableColumnBase#getStyleClass}的內容
+     * 設定集合屬性{@link TableColumnBase#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -417,7 +417,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定集合屬性{@link TableColumnBase#getStyleClass}的內容
+     * 設定集合屬性{@link TableColumnBase#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -432,7 +432,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 增加集合屬性{@link TableColumnBase#getStyleClass}的內容
+     * 增加集合屬性{@link TableColumnBase#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -449,7 +449,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 增加集合屬性{@link TableColumnBase#getStyleClass}的內容
+     * 增加集合屬性{@link TableColumnBase#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -467,7 +467,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setText(java.lang.String)}
+     * 設定屬性{@link TableColumnBase#setText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -481,7 +481,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setUserData(java.lang.Object)}
+     * 設定屬性{@link TableColumnBase#setUserData(java.lang.Object)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -495,7 +495,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#setVisible(boolean)}
+     * 設定屬性{@link TableColumnBase#setVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -509,7 +509,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#comparatorProperty}的連結
+     * 設定屬性{@link TableColumnBase#comparatorProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -526,7 +526,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#comparatorProperty}的雙向連結
+     * 設定屬性{@link TableColumnBase#comparatorProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -543,7 +543,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#contextMenuProperty}的連結
+     * 設定屬性{@link TableColumnBase#contextMenuProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -560,7 +560,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#contextMenuProperty}的雙向連結
+     * 設定屬性{@link TableColumnBase#contextMenuProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -577,7 +577,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#editableProperty}的連結
+     * 設定屬性{@link TableColumnBase#editableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -594,7 +594,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#editableProperty}的雙向連結
+     * 設定屬性{@link TableColumnBase#editableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -611,7 +611,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#graphicProperty}的連結
+     * 設定屬性{@link TableColumnBase#graphicProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -628,7 +628,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#graphicProperty}的雙向連結
+     * 設定屬性{@link TableColumnBase#graphicProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -645,7 +645,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#idProperty}的連結
+     * 設定屬性{@link TableColumnBase#idProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -662,7 +662,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#idProperty}的雙向連結
+     * 設定屬性{@link TableColumnBase#idProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -679,7 +679,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#maxWidthProperty}的連結
+     * 設定屬性{@link TableColumnBase#maxWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -696,7 +696,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#maxWidthProperty}的雙向連結
+     * 設定屬性{@link TableColumnBase#maxWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -713,7 +713,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#minWidthProperty}的連結
+     * 設定屬性{@link TableColumnBase#minWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -730,7 +730,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#minWidthProperty}的雙向連結
+     * 設定屬性{@link TableColumnBase#minWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -747,7 +747,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#prefWidthProperty}的連結
+     * 設定屬性{@link TableColumnBase#prefWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -764,7 +764,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#prefWidthProperty}的雙向連結
+     * 設定屬性{@link TableColumnBase#prefWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -781,7 +781,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#resizableProperty}的連結
+     * 設定屬性{@link TableColumnBase#resizableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -798,7 +798,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#resizableProperty}的雙向連結
+     * 設定屬性{@link TableColumnBase#resizableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -815,7 +815,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#sortNodeProperty}的連結
+     * 設定屬性{@link TableColumnBase#sortNodeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -832,7 +832,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#sortNodeProperty}的雙向連結
+     * 設定屬性{@link TableColumnBase#sortNodeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -849,7 +849,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#sortableProperty}的連結
+     * 設定屬性{@link TableColumnBase#sortableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -866,7 +866,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#sortableProperty}的雙向連結
+     * 設定屬性{@link TableColumnBase#sortableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -883,7 +883,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#styleProperty}的連結
+     * 設定屬性{@link TableColumnBase#styleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -900,7 +900,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#styleProperty}的雙向連結
+     * 設定屬性{@link TableColumnBase#styleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -917,7 +917,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#textProperty}的連結
+     * 設定屬性{@link TableColumnBase#textProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -934,7 +934,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#textProperty}的雙向連結
+     * 設定屬性{@link TableColumnBase#textProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -951,7 +951,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#visibleProperty}的連結
+     * 設定屬性{@link TableColumnBase#visibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -968,7 +968,7 @@ public class TableColumnBaseBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TableColumnBase#visibleProperty}的雙向連結
+     * 設定屬性{@link TableColumnBase#visibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)

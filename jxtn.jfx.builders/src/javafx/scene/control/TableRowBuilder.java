@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link TableRow}建構器
+ * {@link TableRow}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class TableRowBuilder<T extends java.lang.Object, Z extends TableRow<T>, 
     }
 
     /**
-     * 建構{@link TableRow}物件
+     * 建構{@link TableRow}物件。
      *
      * @return 新的{@link TableRow}物件實體
      */

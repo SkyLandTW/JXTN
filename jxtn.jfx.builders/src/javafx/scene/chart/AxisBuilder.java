@@ -6,7 +6,7 @@
 package javafx.scene.chart;
 
 /**
- * {@link Axis}建構器
+ * {@link Axis}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -186,7 +186,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setAnimated(boolean)}
+     * 設定屬性{@link Axis#setAnimated(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -200,7 +200,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setAutoRanging(boolean)}
+     * 設定屬性{@link Axis#setAutoRanging(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -214,7 +214,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setLabel(java.lang.String)}
+     * 設定屬性{@link Axis#setLabel(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -228,7 +228,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setSide(javafx.geometry.Side)}
+     * 設定屬性{@link Axis#setSide(javafx.geometry.Side)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -242,7 +242,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setTickLabelFill(javafx.scene.paint.Paint)}
+     * 設定屬性{@link Axis#setTickLabelFill(javafx.scene.paint.Paint)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -256,7 +256,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setTickLabelFont(javafx.scene.text.Font)}
+     * 設定屬性{@link Axis#setTickLabelFont(javafx.scene.text.Font)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -270,7 +270,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setTickLabelGap(double)}
+     * 設定屬性{@link Axis#setTickLabelGap(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -284,7 +284,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setTickLabelRotation(double)}
+     * 設定屬性{@link Axis#setTickLabelRotation(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -298,7 +298,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setTickLabelsVisible(boolean)}
+     * 設定屬性{@link Axis#setTickLabelsVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -312,7 +312,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setTickLength(double)}
+     * 設定屬性{@link Axis#setTickLength(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -326,7 +326,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#setTickMarkVisible(boolean)}
+     * 設定屬性{@link Axis#setTickMarkVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -340,7 +340,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定集合屬性{@link Axis#getTickMarks}的內容
+     * 設定集合屬性{@link Axis#getTickMarks}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -356,7 +356,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定集合屬性{@link Axis#getTickMarks}的內容
+     * 設定集合屬性{@link Axis#getTickMarks}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -371,7 +371,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 增加集合屬性{@link Axis#getTickMarks}的內容
+     * 增加集合屬性{@link Axis#getTickMarks}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -388,7 +388,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 增加集合屬性{@link Axis#getTickMarks}的內容
+     * 增加集合屬性{@link Axis#getTickMarks}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -406,7 +406,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#animatedProperty}的連結
+     * 設定屬性{@link Axis#animatedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -423,7 +423,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#animatedProperty}的雙向連結
+     * 設定屬性{@link Axis#animatedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -440,7 +440,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#autoRangingProperty}的連結
+     * 設定屬性{@link Axis#autoRangingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -457,7 +457,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#autoRangingProperty}的雙向連結
+     * 設定屬性{@link Axis#autoRangingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -474,7 +474,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#labelProperty}的連結
+     * 設定屬性{@link Axis#labelProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -491,7 +491,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#labelProperty}的雙向連結
+     * 設定屬性{@link Axis#labelProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -508,7 +508,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#sideProperty}的連結
+     * 設定屬性{@link Axis#sideProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -525,7 +525,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#sideProperty}的雙向連結
+     * 設定屬性{@link Axis#sideProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -542,7 +542,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#tickLabelFillProperty}的連結
+     * 設定屬性{@link Axis#tickLabelFillProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -559,7 +559,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#tickLabelFillProperty}的雙向連結
+     * 設定屬性{@link Axis#tickLabelFillProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -576,7 +576,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#tickLabelFontProperty}的連結
+     * 設定屬性{@link Axis#tickLabelFontProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -593,7 +593,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#tickLabelFontProperty}的雙向連結
+     * 設定屬性{@link Axis#tickLabelFontProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -610,7 +610,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#tickLabelGapProperty}的連結
+     * 設定屬性{@link Axis#tickLabelGapProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -627,7 +627,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#tickLabelGapProperty}的雙向連結
+     * 設定屬性{@link Axis#tickLabelGapProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -644,7 +644,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#tickLabelRotationProperty}的連結
+     * 設定屬性{@link Axis#tickLabelRotationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -661,7 +661,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#tickLabelRotationProperty}的雙向連結
+     * 設定屬性{@link Axis#tickLabelRotationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -678,7 +678,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#tickLabelsVisibleProperty}的連結
+     * 設定屬性{@link Axis#tickLabelsVisibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -695,7 +695,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#tickLabelsVisibleProperty}的雙向連結
+     * 設定屬性{@link Axis#tickLabelsVisibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -712,7 +712,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#tickLengthProperty}的連結
+     * 設定屬性{@link Axis#tickLengthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -729,7 +729,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#tickLengthProperty}的雙向連結
+     * 設定屬性{@link Axis#tickLengthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -746,7 +746,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#tickMarkVisibleProperty}的連結
+     * 設定屬性{@link Axis#tickMarkVisibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -763,7 +763,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
-     * 設定屬性{@link Axis#tickMarkVisibleProperty}的雙向連結
+     * 設定屬性{@link Axis#tickMarkVisibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)

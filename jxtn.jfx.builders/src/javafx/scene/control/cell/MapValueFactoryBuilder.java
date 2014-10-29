@@ -6,7 +6,7 @@
 package javafx.scene.control.cell;
 
 /**
- * {@link MapValueFactory}建構器
+ * {@link MapValueFactory}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class MapValueFactoryBuilder<T extends java.lang.Object, Z extends MapVal
     }
 
     /**
-     * 建構{@link MapValueFactory}物件
+     * 建構{@link MapValueFactory}物件。
      *
      * @return 新的{@link MapValueFactory}物件實體
      */

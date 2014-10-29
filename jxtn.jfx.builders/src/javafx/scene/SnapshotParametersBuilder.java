@@ -6,7 +6,7 @@
 package javafx.scene;
 
 /**
- * {@link SnapshotParameters}建構器
+ * {@link SnapshotParameters}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -52,7 +52,7 @@ public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends S
     }
 
     /**
-     * 設定屬性{@link SnapshotParameters#setCamera(javafx.scene.Camera)}
+     * 設定屬性{@link SnapshotParameters#setCamera(javafx.scene.Camera)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -66,7 +66,7 @@ public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends S
     }
 
     /**
-     * 設定屬性{@link SnapshotParameters#setDepthBuffer(boolean)}
+     * 設定屬性{@link SnapshotParameters#setDepthBuffer(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -80,7 +80,7 @@ public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends S
     }
 
     /**
-     * 設定屬性{@link SnapshotParameters#setFill(javafx.scene.paint.Paint)}
+     * 設定屬性{@link SnapshotParameters#setFill(javafx.scene.paint.Paint)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -94,7 +94,7 @@ public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends S
     }
 
     /**
-     * 設定屬性{@link SnapshotParameters#setTransform(javafx.scene.transform.Transform)}
+     * 設定屬性{@link SnapshotParameters#setTransform(javafx.scene.transform.Transform)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -108,7 +108,7 @@ public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends S
     }
 
     /**
-     * 設定屬性{@link SnapshotParameters#setViewport(javafx.geometry.Rectangle2D)}
+     * 設定屬性{@link SnapshotParameters#setViewport(javafx.geometry.Rectangle2D)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -122,7 +122,7 @@ public class SnapshotParametersBuilder<Z extends SnapshotParameters, B extends S
     }
 
     /**
-     * 建構{@link SnapshotParameters}物件
+     * 建構{@link SnapshotParameters}物件。
      *
      * @return 新的{@link SnapshotParameters}物件實體
      */

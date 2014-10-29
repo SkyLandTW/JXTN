@@ -6,7 +6,7 @@
 package javafx.scene.shape;
 
 /**
- * {@link TriangleMesh}建構器
+ * {@link TriangleMesh}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class TriangleMeshBuilder<Z extends TriangleMesh, B extends TriangleMeshB
     }
 
     /**
-     * 建構{@link TriangleMesh}物件
+     * 建構{@link TriangleMesh}物件。
      *
      * @return 新的{@link TriangleMesh}物件實體
      */

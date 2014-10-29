@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link ProgressIndicator}建構器
+ * {@link ProgressIndicator}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -41,7 +41,7 @@ public class ProgressIndicatorBuilder<Z extends ProgressIndicator, B extends Pro
     }
 
     /**
-     * 設定屬性{@link ProgressIndicator#setProgress(double)}
+     * 設定屬性{@link ProgressIndicator#setProgress(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -55,7 +55,7 @@ public class ProgressIndicatorBuilder<Z extends ProgressIndicator, B extends Pro
     }
 
     /**
-     * 設定屬性{@link ProgressIndicator#progressProperty}的連結
+     * 設定屬性{@link ProgressIndicator#progressProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -72,7 +72,7 @@ public class ProgressIndicatorBuilder<Z extends ProgressIndicator, B extends Pro
     }
 
     /**
-     * 設定屬性{@link ProgressIndicator#progressProperty}的雙向連結
+     * 設定屬性{@link ProgressIndicator#progressProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -89,7 +89,7 @@ public class ProgressIndicatorBuilder<Z extends ProgressIndicator, B extends Pro
     }
 
     /**
-     * 建構{@link ProgressIndicator}物件
+     * 建構{@link ProgressIndicator}物件。
      *
      * @return 新的{@link ProgressIndicator}物件實體
      */
@@ -104,7 +104,7 @@ public class ProgressIndicatorBuilder<Z extends ProgressIndicator, B extends Pro
     }
 
     /**
-     * 建構{@link ProgressIndicator}物件
+     * 建構{@link ProgressIndicator}物件。
      *
      * @return 新的{@link ProgressIndicator}物件實體
      */

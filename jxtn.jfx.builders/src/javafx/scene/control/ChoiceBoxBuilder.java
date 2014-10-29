@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link ChoiceBox}建構器
+ * {@link ChoiceBox}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -32,6 +32,11 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
     private boolean hasValue;
     private T valValue;
 
+    private boolean bound1Converter;
+    private boolean bound2Converter;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> obsrv1Converter;
+    private javafx.beans.property.Property<javafx.util.StringConverter<T>> obsrv2Converter;
+
     private boolean bound1Items;
     private boolean bound2Items;
     private javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<T>> obsrv1Items;
@@ -41,6 +46,11 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
     private boolean bound2SelectionModel;
     private javafx.beans.value.ObservableValue<? extends javafx.scene.control.SingleSelectionModel<T>> obsrv1SelectionModel;
     private javafx.beans.property.Property<javafx.scene.control.SingleSelectionModel<T>> obsrv2SelectionModel;
+
+    private boolean bound1Value;
+    private boolean bound2Value;
+    private javafx.beans.value.ObservableValue<? extends T> obsrv1Value;
+    private javafx.beans.property.Property<T> obsrv2Value;
 
     @Override
     public void applyTo(Z instance)
@@ -54,6 +64,10 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
             instance.setSelectionModel(this.valSelectionModel);
         if (this.hasValue)
             instance.setValue(this.valValue);
+        if (this.bound1Converter)
+            instance.converterProperty().bind(this.obsrv1Converter);
+        if (this.bound2Converter)
+            instance.converterProperty().bindBidirectional(this.obsrv2Converter);
         if (this.bound1Items)
             instance.itemsProperty().bind(this.obsrv1Items);
         if (this.bound2Items)
@@ -62,10 +76,14 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
             instance.selectionModelProperty().bind(this.obsrv1SelectionModel);
         if (this.bound2SelectionModel)
             instance.selectionModelProperty().bindBidirectional(this.obsrv2SelectionModel);
+        if (this.bound1Value)
+            instance.valueProperty().bind(this.obsrv1Value);
+        if (this.bound2Value)
+            instance.valueProperty().bindBidirectional(this.obsrv2Value);
     }
 
     /**
-     * 設定屬性{@link ChoiceBox#setConverter(javafx.util.StringConverter)}
+     * 設定屬性{@link ChoiceBox#setConverter(javafx.util.StringConverter)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -79,7 +97,7 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
     }
 
     /**
-     * 設定屬性{@link ChoiceBox#setItems(javafx.collections.ObservableList)}
+     * 設定屬性{@link ChoiceBox#setItems(javafx.collections.ObservableList)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -93,7 +111,7 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
     }
 
     /**
-     * 設定屬性{@link ChoiceBox#setSelectionModel(javafx.scene.control.SingleSelectionModel)}
+     * 設定屬性{@link ChoiceBox#setSelectionModel(javafx.scene.control.SingleSelectionModel)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -107,7 +125,7 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
     }
 
     /**
-     * 設定屬性{@link ChoiceBox#setValue(T)}
+     * 設定屬性{@link ChoiceBox#setValue(T)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -121,7 +139,41 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
     }
 
     /**
-     * 設定屬性{@link ChoiceBox#itemsProperty}的連結
+     * 設定屬性{@link ChoiceBox#converterProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Converter = true;
+        this.obsrv1Converter = source;
+        this.bound2Converter = false;
+        this.obsrv2Converter = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ChoiceBox#converterProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalConverter(javafx.beans.property.Property<javafx.util.StringConverter<T>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Converter = false;
+        this.obsrv1Converter = null;
+        this.bound2Converter = true;
+        this.obsrv2Converter = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ChoiceBox#itemsProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -138,7 +190,7 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
     }
 
     /**
-     * 設定屬性{@link ChoiceBox#itemsProperty}的雙向連結
+     * 設定屬性{@link ChoiceBox#itemsProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -155,7 +207,7 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
     }
 
     /**
-     * 設定屬性{@link ChoiceBox#selectionModelProperty}的連結
+     * 設定屬性{@link ChoiceBox#selectionModelProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -172,7 +224,7 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
     }
 
     /**
-     * 設定屬性{@link ChoiceBox#selectionModelProperty}的雙向連結
+     * 設定屬性{@link ChoiceBox#selectionModelProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -189,7 +241,41 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
     }
 
     /**
-     * 建構{@link ChoiceBox}物件
+     * 設定屬性{@link ChoiceBox#valueProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindValue(javafx.beans.value.ObservableValue<? extends T> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Value = true;
+        this.obsrv1Value = source;
+        this.bound2Value = false;
+        this.obsrv2Value = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ChoiceBox#valueProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalValue(javafx.beans.property.Property<T> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Value = false;
+        this.obsrv1Value = null;
+        this.bound2Value = true;
+        this.obsrv2Value = source;
+        return (B) this;
+    }
+
+    /**
+     * 建構{@link ChoiceBox}物件。
      *
      * @return 新的{@link ChoiceBox}物件實體
      */
@@ -204,7 +290,7 @@ public class ChoiceBoxBuilder<T extends java.lang.Object, Z extends ChoiceBox<T>
     }
 
     /**
-     * 建構{@link ChoiceBox}物件
+     * 建構{@link ChoiceBox}物件。
      *
      * @return 新的{@link ChoiceBox}物件實體
      */

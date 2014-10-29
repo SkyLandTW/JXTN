@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link TreeTableColumn}建構器
+ * {@link TreeTableColumn}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -116,7 +116,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#setCellFactory(javafx.util.Callback)}
+     * 設定屬性{@link TreeTableColumn#setCellFactory(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -130,7 +130,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#setCellValueFactory(javafx.util.Callback)}
+     * 設定屬性{@link TreeTableColumn#setCellValueFactory(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -144,7 +144,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定集合屬性{@link TreeTableColumn#getColumns}的內容
+     * 設定集合屬性{@link TreeTableColumn#getColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -160,7 +160,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定集合屬性{@link TreeTableColumn#getColumns}的內容
+     * 設定集合屬性{@link TreeTableColumn#getColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -175,7 +175,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 增加集合屬性{@link TreeTableColumn#getColumns}的內容
+     * 增加集合屬性{@link TreeTableColumn#getColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -192,7 +192,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 增加集合屬性{@link TreeTableColumn#getColumns}的內容
+     * 增加集合屬性{@link TreeTableColumn#getColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -210,7 +210,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#setOnEditCancel(javafx.event.EventHandler)}
+     * 設定屬性{@link TreeTableColumn#setOnEditCancel(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -224,7 +224,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#setOnEditCommit(javafx.event.EventHandler)}
+     * 設定屬性{@link TreeTableColumn#setOnEditCommit(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -238,7 +238,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#setOnEditStart(javafx.event.EventHandler)}
+     * 設定屬性{@link TreeTableColumn#setOnEditStart(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -252,7 +252,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#setSortType(javafx.scene.control.TreeTableColumn.SortType)}
+     * 設定屬性{@link TreeTableColumn#setSortType(javafx.scene.control.TreeTableColumn.SortType)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -266,7 +266,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#cellFactoryProperty}的連結
+     * 設定屬性{@link TreeTableColumn#cellFactoryProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -283,7 +283,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#cellFactoryProperty}的雙向連結
+     * 設定屬性{@link TreeTableColumn#cellFactoryProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -300,7 +300,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#cellValueFactoryProperty}的連結
+     * 設定屬性{@link TreeTableColumn#cellValueFactoryProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -317,7 +317,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#cellValueFactoryProperty}的雙向連結
+     * 設定屬性{@link TreeTableColumn#cellValueFactoryProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -334,7 +334,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#onEditCancelProperty}的連結
+     * 設定屬性{@link TreeTableColumn#onEditCancelProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -351,7 +351,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#onEditCancelProperty}的雙向連結
+     * 設定屬性{@link TreeTableColumn#onEditCancelProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -368,7 +368,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#onEditCommitProperty}的連結
+     * 設定屬性{@link TreeTableColumn#onEditCommitProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -385,7 +385,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#onEditCommitProperty}的雙向連結
+     * 設定屬性{@link TreeTableColumn#onEditCommitProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -402,7 +402,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#onEditStartProperty}的連結
+     * 設定屬性{@link TreeTableColumn#onEditStartProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -419,7 +419,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#onEditStartProperty}的雙向連結
+     * 設定屬性{@link TreeTableColumn#onEditStartProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -436,7 +436,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#sortTypeProperty}的連結
+     * 設定屬性{@link TreeTableColumn#sortTypeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -453,7 +453,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 設定屬性{@link TreeTableColumn#sortTypeProperty}的雙向連結
+     * 設定屬性{@link TreeTableColumn#sortTypeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -470,7 +470,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 建構{@link TreeTableColumn}物件
+     * 建構{@link TreeTableColumn}物件。
      *
      * @return 新的{@link TreeTableColumn}物件實體
      */
@@ -485,7 +485,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
-     * 建構{@link TreeTableColumn}物件
+     * 建構{@link TreeTableColumn}物件。
      *
      * @return 新的{@link TreeTableColumn}物件實體
      */

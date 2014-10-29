@@ -6,7 +6,7 @@
 package javafx.scene.shape;
 
 /**
- * {@link QuadCurve}建構器
+ * {@link QuadCurve}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -111,7 +111,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link QuadCurve#setControlX(double)}
+     * 設定屬性{@link QuadCurve#setControlX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link QuadCurve#setControlY(double)}
+     * 設定屬性{@link QuadCurve#setControlY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link QuadCurve#setEndX(double)}
+     * 設定屬性{@link QuadCurve#setEndX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link QuadCurve#setEndY(double)}
+     * 設定屬性{@link QuadCurve#setEndY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link QuadCurve#setStartX(double)}
+     * 設定屬性{@link QuadCurve#setStartX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link QuadCurve#setStartY(double)}
+     * 設定屬性{@link QuadCurve#setStartY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link QuadCurve#controlXProperty}的連結
+     * 設定屬性{@link QuadCurve#controlXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -212,7 +212,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link QuadCurve#controlXProperty}的雙向連結
+     * 設定屬性{@link QuadCurve#controlXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -229,7 +229,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link QuadCurve#controlYProperty}的連結
+     * 設定屬性{@link QuadCurve#controlYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -246,7 +246,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link QuadCurve#controlYProperty}的雙向連結
+     * 設定屬性{@link QuadCurve#controlYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -263,7 +263,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link QuadCurve#endXProperty}的連結
+     * 設定屬性{@link QuadCurve#endXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -280,7 +280,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link QuadCurve#endXProperty}的雙向連結
+     * 設定屬性{@link QuadCurve#endXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -297,7 +297,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link QuadCurve#endYProperty}的連結
+     * 設定屬性{@link QuadCurve#endYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -314,7 +314,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link QuadCurve#endYProperty}的雙向連結
+     * 設定屬性{@link QuadCurve#endYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -331,7 +331,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link QuadCurve#startXProperty}的連結
+     * 設定屬性{@link QuadCurve#startXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -348,7 +348,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link QuadCurve#startXProperty}的雙向連結
+     * 設定屬性{@link QuadCurve#startXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -365,7 +365,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link QuadCurve#startYProperty}的連結
+     * 設定屬性{@link QuadCurve#startYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -382,7 +382,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link QuadCurve#startYProperty}的雙向連結
+     * 設定屬性{@link QuadCurve#startYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -399,7 +399,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 建構{@link QuadCurve}物件
+     * 建構{@link QuadCurve}物件。
      *
      * @return 新的{@link QuadCurve}物件實體
      */
@@ -414,7 +414,7 @@ public class QuadCurveBuilder<Z extends QuadCurve, B extends QuadCurveBuilder<Z,
     }
 
     /**
-     * 建構{@link QuadCurve}物件
+     * 建構{@link QuadCurve}物件。
      *
      * @return 新的{@link QuadCurve}物件實體
      */

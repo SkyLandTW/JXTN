@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link TextArea}建構器
+ * {@link TextArea}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -102,7 +102,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定集合屬性{@link TextArea#getParagraphs}的內容
+     * 設定集合屬性{@link TextArea#getParagraphs}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -118,7 +118,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定集合屬性{@link TextArea#getParagraphs}的內容
+     * 設定集合屬性{@link TextArea#getParagraphs}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -133,7 +133,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 增加集合屬性{@link TextArea#getParagraphs}的內容
+     * 增加集合屬性{@link TextArea#getParagraphs}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -150,7 +150,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 增加集合屬性{@link TextArea#getParagraphs}的內容
+     * 增加集合屬性{@link TextArea#getParagraphs}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -168,7 +168,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#setPrefColumnCount(int)}
+     * 設定屬性{@link TextArea#setPrefColumnCount(int)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -182,7 +182,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#setPrefRowCount(int)}
+     * 設定屬性{@link TextArea#setPrefRowCount(int)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -196,7 +196,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#setScrollLeft(double)}
+     * 設定屬性{@link TextArea#setScrollLeft(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -210,7 +210,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#setScrollTop(double)}
+     * 設定屬性{@link TextArea#setScrollTop(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -224,7 +224,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#setWrapText(boolean)}
+     * 設定屬性{@link TextArea#setWrapText(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -238,7 +238,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#prefColumnCountProperty}的連結
+     * 設定屬性{@link TextArea#prefColumnCountProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -255,7 +255,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#prefColumnCountProperty}的雙向連結
+     * 設定屬性{@link TextArea#prefColumnCountProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -272,7 +272,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#prefRowCountProperty}的連結
+     * 設定屬性{@link TextArea#prefRowCountProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -289,7 +289,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#prefRowCountProperty}的雙向連結
+     * 設定屬性{@link TextArea#prefRowCountProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -306,7 +306,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#scrollLeftProperty}的連結
+     * 設定屬性{@link TextArea#scrollLeftProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -323,7 +323,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#scrollLeftProperty}的雙向連結
+     * 設定屬性{@link TextArea#scrollLeftProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -340,7 +340,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#scrollTopProperty}的連結
+     * 設定屬性{@link TextArea#scrollTopProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -357,7 +357,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#scrollTopProperty}的雙向連結
+     * 設定屬性{@link TextArea#scrollTopProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -374,7 +374,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#wrapTextProperty}的連結
+     * 設定屬性{@link TextArea#wrapTextProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -391,7 +391,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link TextArea#wrapTextProperty}的雙向連結
+     * 設定屬性{@link TextArea#wrapTextProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -408,7 +408,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 建構{@link TextArea}物件
+     * 建構{@link TextArea}物件。
      *
      * @return 新的{@link TextArea}物件實體
      */
@@ -423,7 +423,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
-     * 建構{@link TextArea}物件
+     * 建構{@link TextArea}物件。
      *
      * @return 新的{@link TextArea}物件實體
      */

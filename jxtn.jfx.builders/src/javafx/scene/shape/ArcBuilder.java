@@ -6,7 +6,7 @@
 package javafx.scene.shape;
 
 /**
- * {@link Arc}建構器
+ * {@link Arc}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -125,7 +125,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#setCenterX(double)}
+     * 設定屬性{@link Arc#setCenterX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#setCenterY(double)}
+     * 設定屬性{@link Arc#setCenterY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#setLength(double)}
+     * 設定屬性{@link Arc#setLength(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#setRadiusX(double)}
+     * 設定屬性{@link Arc#setRadiusX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#setRadiusY(double)}
+     * 設定屬性{@link Arc#setRadiusY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#setStartAngle(double)}
+     * 設定屬性{@link Arc#setStartAngle(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#setType(javafx.scene.shape.ArcType)}
+     * 設定屬性{@link Arc#setType(javafx.scene.shape.ArcType)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#centerXProperty}的連結
+     * 設定屬性{@link Arc#centerXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -240,7 +240,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#centerXProperty}的雙向連結
+     * 設定屬性{@link Arc#centerXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -257,7 +257,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#centerYProperty}的連結
+     * 設定屬性{@link Arc#centerYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -274,7 +274,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#centerYProperty}的雙向連結
+     * 設定屬性{@link Arc#centerYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -291,7 +291,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#lengthProperty}的連結
+     * 設定屬性{@link Arc#lengthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -308,7 +308,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#lengthProperty}的雙向連結
+     * 設定屬性{@link Arc#lengthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -325,7 +325,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#radiusXProperty}的連結
+     * 設定屬性{@link Arc#radiusXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -342,7 +342,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#radiusXProperty}的雙向連結
+     * 設定屬性{@link Arc#radiusXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -359,7 +359,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#radiusYProperty}的連結
+     * 設定屬性{@link Arc#radiusYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -376,7 +376,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#radiusYProperty}的雙向連結
+     * 設定屬性{@link Arc#radiusYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -393,7 +393,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#startAngleProperty}的連結
+     * 設定屬性{@link Arc#startAngleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -410,7 +410,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#startAngleProperty}的雙向連結
+     * 設定屬性{@link Arc#startAngleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -427,7 +427,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#typeProperty}的連結
+     * 設定屬性{@link Arc#typeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -444,7 +444,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Arc#typeProperty}的雙向連結
+     * 設定屬性{@link Arc#typeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -461,7 +461,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Arc}物件
+     * 建構{@link Arc}物件。
      *
      * @return 新的{@link Arc}物件實體
      */
@@ -476,7 +476,7 @@ public class ArcBuilder<Z extends Arc, B extends ArcBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Arc}物件
+     * 建構{@link Arc}物件。
      *
      * @return 新的{@link Arc}物件實體
      */

@@ -6,7 +6,7 @@
 package javafx.scene.chart;
 
 /**
- * {@link AreaChart}建構器
+ * {@link AreaChart}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -41,7 +41,7 @@ public class AreaChartBuilder<X extends java.lang.Object, Y extends java.lang.Ob
     }
 
     /**
-     * 設定屬性{@link AreaChart#setCreateSymbols(boolean)}
+     * 設定屬性{@link AreaChart#setCreateSymbols(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -55,7 +55,7 @@ public class AreaChartBuilder<X extends java.lang.Object, Y extends java.lang.Ob
     }
 
     /**
-     * 設定屬性{@link AreaChart#createSymbolsProperty}的連結
+     * 設定屬性{@link AreaChart#createSymbolsProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -72,7 +72,7 @@ public class AreaChartBuilder<X extends java.lang.Object, Y extends java.lang.Ob
     }
 
     /**
-     * 設定屬性{@link AreaChart#createSymbolsProperty}的雙向連結
+     * 設定屬性{@link AreaChart#createSymbolsProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -89,7 +89,7 @@ public class AreaChartBuilder<X extends java.lang.Object, Y extends java.lang.Ob
     }
 
     /**
-     * 建構{@link AreaChart}物件
+     * 建構{@link AreaChart}物件。
      *
      * @return 新的{@link AreaChart}物件實體
      */
@@ -103,7 +103,7 @@ public class AreaChartBuilder<X extends java.lang.Object, Y extends java.lang.Ob
     }
 
     /**
-     * 建構{@link AreaChart}物件
+     * 建構{@link AreaChart}物件。
      *
      * @return 新的{@link AreaChart}物件實體
      */

@@ -6,7 +6,7 @@
 package org.controlsfx.dialog;
 
 /**
- * {@link ProgressDialog}建構器
+ * {@link ProgressDialog}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -27,7 +27,7 @@ public class ProgressDialogBuilder<Z extends ProgressDialog, B extends ProgressD
     }
 
     /**
-     * 建構{@link ProgressDialog}物件
+     * 建構{@link ProgressDialog}物件。
      *
      * @return 新的{@link ProgressDialog}物件實體
      */

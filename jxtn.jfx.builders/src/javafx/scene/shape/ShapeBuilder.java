@@ -6,7 +6,7 @@
 package javafx.scene.shape;
 
 /**
- * {@link Shape}建構器
+ * {@link Shape}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -158,7 +158,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#setFill(javafx.scene.paint.Paint)}
+     * 設定屬性{@link Shape#setFill(javafx.scene.paint.Paint)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -172,7 +172,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#setSmooth(boolean)}
+     * 設定屬性{@link Shape#setSmooth(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -186,7 +186,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#setStroke(javafx.scene.paint.Paint)}
+     * 設定屬性{@link Shape#setStroke(javafx.scene.paint.Paint)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -200,7 +200,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Shape#getStrokeDashArray}的內容
+     * 設定集合屬性{@link Shape#getStrokeDashArray}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -216,7 +216,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Shape#getStrokeDashArray}的內容
+     * 設定集合屬性{@link Shape#getStrokeDashArray}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -231,7 +231,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Shape#getStrokeDashArray}的內容
+     * 增加集合屬性{@link Shape#getStrokeDashArray}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -248,7 +248,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Shape#getStrokeDashArray}的內容
+     * 增加集合屬性{@link Shape#getStrokeDashArray}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -266,7 +266,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#setStrokeDashOffset(double)}
+     * 設定屬性{@link Shape#setStrokeDashOffset(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -280,7 +280,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#setStrokeLineCap(javafx.scene.shape.StrokeLineCap)}
+     * 設定屬性{@link Shape#setStrokeLineCap(javafx.scene.shape.StrokeLineCap)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -294,7 +294,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#setStrokeLineJoin(javafx.scene.shape.StrokeLineJoin)}
+     * 設定屬性{@link Shape#setStrokeLineJoin(javafx.scene.shape.StrokeLineJoin)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -308,7 +308,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#setStrokeMiterLimit(double)}
+     * 設定屬性{@link Shape#setStrokeMiterLimit(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -322,7 +322,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#setStrokeType(javafx.scene.shape.StrokeType)}
+     * 設定屬性{@link Shape#setStrokeType(javafx.scene.shape.StrokeType)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -336,7 +336,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#setStrokeWidth(double)}
+     * 設定屬性{@link Shape#setStrokeWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -350,7 +350,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#fillProperty}的連結
+     * 設定屬性{@link Shape#fillProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -367,7 +367,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#fillProperty}的雙向連結
+     * 設定屬性{@link Shape#fillProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -384,7 +384,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#smoothProperty}的連結
+     * 設定屬性{@link Shape#smoothProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -401,7 +401,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#smoothProperty}的雙向連結
+     * 設定屬性{@link Shape#smoothProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -418,7 +418,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#strokeDashOffsetProperty}的連結
+     * 設定屬性{@link Shape#strokeDashOffsetProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -435,7 +435,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#strokeDashOffsetProperty}的雙向連結
+     * 設定屬性{@link Shape#strokeDashOffsetProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -452,7 +452,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#strokeLineCapProperty}的連結
+     * 設定屬性{@link Shape#strokeLineCapProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -469,7 +469,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#strokeLineCapProperty}的雙向連結
+     * 設定屬性{@link Shape#strokeLineCapProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -486,7 +486,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#strokeLineJoinProperty}的連結
+     * 設定屬性{@link Shape#strokeLineJoinProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -503,7 +503,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#strokeLineJoinProperty}的雙向連結
+     * 設定屬性{@link Shape#strokeLineJoinProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -520,7 +520,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#strokeMiterLimitProperty}的連結
+     * 設定屬性{@link Shape#strokeMiterLimitProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -537,7 +537,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#strokeMiterLimitProperty}的雙向連結
+     * 設定屬性{@link Shape#strokeMiterLimitProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -554,7 +554,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#strokeProperty}的連結
+     * 設定屬性{@link Shape#strokeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -571,7 +571,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#strokeProperty}的雙向連結
+     * 設定屬性{@link Shape#strokeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -588,7 +588,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#strokeTypeProperty}的連結
+     * 設定屬性{@link Shape#strokeTypeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -605,7 +605,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#strokeTypeProperty}的雙向連結
+     * 設定屬性{@link Shape#strokeTypeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -622,7 +622,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#strokeWidthProperty}的連結
+     * 設定屬性{@link Shape#strokeWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -639,7 +639,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape#strokeWidthProperty}的雙向連結
+     * 設定屬性{@link Shape#strokeWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)

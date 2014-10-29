@@ -6,7 +6,7 @@
 package javafx.scene.media;
 
 /**
- * {@link Media}建構器
+ * {@link Media}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -26,6 +26,11 @@ public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
     private boolean hasTracks;
     private java.util.Collection<javafx.scene.media.Track> valTracks;
 
+    private boolean bound1OnError;
+    private boolean bound2OnError;
+    private javafx.beans.value.ObservableValue<? extends java.lang.Runnable> obsrv1OnError;
+    private javafx.beans.property.Property<java.lang.Runnable> obsrv2OnError;
+
     @Override
     public void applyTo(Z instance)
     {
@@ -34,10 +39,14 @@ public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
             instance.setOnError(this.valOnError);
         if (this.hasTracks)
             instance.getTracks().addAll(this.valTracks);
+        if (this.bound1OnError)
+            instance.onErrorProperty().bind(this.obsrv1OnError);
+        if (this.bound2OnError)
+            instance.onErrorProperty().bindBidirectional(this.obsrv2OnError);
     }
 
     /**
-     * 設定屬性{@link Media#setOnError(java.lang.Runnable)}
+     * 設定屬性{@link Media#setOnError(java.lang.Runnable)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -51,7 +60,7 @@ public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Media#getTracks}的內容
+     * 設定集合屬性{@link Media#getTracks}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -67,7 +76,7 @@ public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Media#getTracks}的內容
+     * 設定集合屬性{@link Media#getTracks}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -82,7 +91,7 @@ public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Media#getTracks}的內容
+     * 增加集合屬性{@link Media#getTracks}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -99,7 +108,7 @@ public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Media#getTracks}的內容
+     * 增加集合屬性{@link Media#getTracks}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -117,7 +126,41 @@ public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Media}物件
+     * 設定屬性{@link Media#onErrorProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindOnError(javafx.beans.value.ObservableValue<? extends java.lang.Runnable> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnError = true;
+        this.obsrv1OnError = source;
+        this.bound2OnError = false;
+        this.obsrv2OnError = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Media#onErrorProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnError(javafx.beans.property.Property<java.lang.Runnable> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnError = false;
+        this.obsrv1OnError = null;
+        this.bound2OnError = true;
+        this.obsrv2OnError = source;
+        return (B) this;
+    }
+
+    /**
+     * 建構{@link Media}物件。
      *
      * @return 新的{@link Media}物件實體
      */

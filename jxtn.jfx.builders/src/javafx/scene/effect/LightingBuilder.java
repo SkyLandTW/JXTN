@@ -6,7 +6,7 @@
 package javafx.scene.effect;
 
 /**
- * {@link Lighting}建構器
+ * {@link Lighting}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -125,7 +125,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#setBumpInput(javafx.scene.effect.Effect)}
+     * 設定屬性{@link Lighting#setBumpInput(javafx.scene.effect.Effect)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#setContentInput(javafx.scene.effect.Effect)}
+     * 設定屬性{@link Lighting#setContentInput(javafx.scene.effect.Effect)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#setDiffuseConstant(double)}
+     * 設定屬性{@link Lighting#setDiffuseConstant(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#setLight(javafx.scene.effect.Light)}
+     * 設定屬性{@link Lighting#setLight(javafx.scene.effect.Light)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#setSpecularConstant(double)}
+     * 設定屬性{@link Lighting#setSpecularConstant(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#setSpecularExponent(double)}
+     * 設定屬性{@link Lighting#setSpecularExponent(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#setSurfaceScale(double)}
+     * 設定屬性{@link Lighting#setSurfaceScale(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#bumpInputProperty}的連結
+     * 設定屬性{@link Lighting#bumpInputProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -240,7 +240,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#bumpInputProperty}的雙向連結
+     * 設定屬性{@link Lighting#bumpInputProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -257,7 +257,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#contentInputProperty}的連結
+     * 設定屬性{@link Lighting#contentInputProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -274,7 +274,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#contentInputProperty}的雙向連結
+     * 設定屬性{@link Lighting#contentInputProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -291,7 +291,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#diffuseConstantProperty}的連結
+     * 設定屬性{@link Lighting#diffuseConstantProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -308,7 +308,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#diffuseConstantProperty}的雙向連結
+     * 設定屬性{@link Lighting#diffuseConstantProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -325,7 +325,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#lightProperty}的連結
+     * 設定屬性{@link Lighting#lightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -342,7 +342,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#lightProperty}的雙向連結
+     * 設定屬性{@link Lighting#lightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -359,7 +359,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#specularConstantProperty}的連結
+     * 設定屬性{@link Lighting#specularConstantProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -376,7 +376,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#specularConstantProperty}的雙向連結
+     * 設定屬性{@link Lighting#specularConstantProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -393,7 +393,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#specularExponentProperty}的連結
+     * 設定屬性{@link Lighting#specularExponentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -410,7 +410,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#specularExponentProperty}的雙向連結
+     * 設定屬性{@link Lighting#specularExponentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -427,7 +427,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#surfaceScaleProperty}的連結
+     * 設定屬性{@link Lighting#surfaceScaleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -444,7 +444,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Lighting#surfaceScaleProperty}的雙向連結
+     * 設定屬性{@link Lighting#surfaceScaleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -461,7 +461,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 建構{@link Lighting}物件
+     * 建構{@link Lighting}物件。
      *
      * @return 新的{@link Lighting}物件實體
      */
@@ -476,7 +476,7 @@ public class LightingBuilder<Z extends Lighting, B extends LightingBuilder<Z, B>
     }
 
     /**
-     * 建構{@link Lighting}物件
+     * 建構{@link Lighting}物件。
      *
      * @return 新的{@link Lighting}物件實體
      */

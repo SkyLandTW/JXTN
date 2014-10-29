@@ -6,7 +6,7 @@
 package org.controlsfx.control;
 
 /**
- * {@link HiddenSidesPane}建構器
+ * {@link HiddenSidesPane}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -153,7 +153,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#setAnimationDelay(javafx.util.Duration)}
+     * 設定屬性{@link HiddenSidesPane#setAnimationDelay(javafx.util.Duration)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#setAnimationDuration(javafx.util.Duration)}
+     * 設定屬性{@link HiddenSidesPane#setAnimationDuration(javafx.util.Duration)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#setBottom(javafx.scene.Node)}
+     * 設定屬性{@link HiddenSidesPane#setBottom(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#setContent(javafx.scene.Node)}
+     * 設定屬性{@link HiddenSidesPane#setContent(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#setLeft(javafx.scene.Node)}
+     * 設定屬性{@link HiddenSidesPane#setLeft(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#setPinnedSide(javafx.geometry.Side)}
+     * 設定屬性{@link HiddenSidesPane#setPinnedSide(javafx.geometry.Side)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -237,7 +237,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#setRight(javafx.scene.Node)}
+     * 設定屬性{@link HiddenSidesPane#setRight(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -251,7 +251,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#setTop(javafx.scene.Node)}
+     * 設定屬性{@link HiddenSidesPane#setTop(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -265,7 +265,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#setTriggerDistance(double)}
+     * 設定屬性{@link HiddenSidesPane#setTriggerDistance(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -279,7 +279,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#animationDelayProperty}的連結
+     * 設定屬性{@link HiddenSidesPane#animationDelayProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -296,7 +296,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#animationDelayProperty}的雙向連結
+     * 設定屬性{@link HiddenSidesPane#animationDelayProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -313,7 +313,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#animationDurationProperty}的連結
+     * 設定屬性{@link HiddenSidesPane#animationDurationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -330,7 +330,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#animationDurationProperty}的雙向連結
+     * 設定屬性{@link HiddenSidesPane#animationDurationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -347,7 +347,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#bottomProperty}的連結
+     * 設定屬性{@link HiddenSidesPane#bottomProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -364,7 +364,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#bottomProperty}的雙向連結
+     * 設定屬性{@link HiddenSidesPane#bottomProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -381,7 +381,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#contentProperty}的連結
+     * 設定屬性{@link HiddenSidesPane#contentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -398,7 +398,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#contentProperty}的雙向連結
+     * 設定屬性{@link HiddenSidesPane#contentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -415,7 +415,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#leftProperty}的連結
+     * 設定屬性{@link HiddenSidesPane#leftProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -432,7 +432,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#leftProperty}的雙向連結
+     * 設定屬性{@link HiddenSidesPane#leftProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -449,7 +449,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#pinnedSideProperty}的連結
+     * 設定屬性{@link HiddenSidesPane#pinnedSideProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -466,7 +466,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#pinnedSideProperty}的雙向連結
+     * 設定屬性{@link HiddenSidesPane#pinnedSideProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -483,7 +483,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#rightProperty}的連結
+     * 設定屬性{@link HiddenSidesPane#rightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -500,7 +500,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#rightProperty}的雙向連結
+     * 設定屬性{@link HiddenSidesPane#rightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -517,7 +517,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#topProperty}的連結
+     * 設定屬性{@link HiddenSidesPane#topProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -534,7 +534,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#topProperty}的雙向連結
+     * 設定屬性{@link HiddenSidesPane#topProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -551,7 +551,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#triggerDistanceProperty}的連結
+     * 設定屬性{@link HiddenSidesPane#triggerDistanceProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -568,7 +568,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 設定屬性{@link HiddenSidesPane#triggerDistanceProperty}的雙向連結
+     * 設定屬性{@link HiddenSidesPane#triggerDistanceProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -585,7 +585,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 建構{@link HiddenSidesPane}物件
+     * 建構{@link HiddenSidesPane}物件。
      *
      * @return 新的{@link HiddenSidesPane}物件實體
      */
@@ -600,7 +600,7 @@ public class HiddenSidesPaneBuilder<Z extends HiddenSidesPane, B extends HiddenS
     }
 
     /**
-     * 建構{@link HiddenSidesPane}物件
+     * 建構{@link HiddenSidesPane}物件。
      *
      * @return 新的{@link HiddenSidesPane}物件實體
      */

@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link CheckBox}建構器
+ * {@link CheckBox}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -69,7 +69,7 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link CheckBox#setAllowIndeterminate(boolean)}
+     * 設定屬性{@link CheckBox#setAllowIndeterminate(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -83,7 +83,7 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link CheckBox#setIndeterminate(boolean)}
+     * 設定屬性{@link CheckBox#setIndeterminate(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -97,7 +97,7 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link CheckBox#setSelected(boolean)}
+     * 設定屬性{@link CheckBox#setSelected(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link CheckBox#allowIndeterminateProperty}的連結
+     * 設定屬性{@link CheckBox#allowIndeterminateProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -128,7 +128,7 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link CheckBox#allowIndeterminateProperty}的雙向連結
+     * 設定屬性{@link CheckBox#allowIndeterminateProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -145,7 +145,7 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link CheckBox#indeterminateProperty}的連結
+     * 設定屬性{@link CheckBox#indeterminateProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -162,7 +162,7 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link CheckBox#indeterminateProperty}的雙向連結
+     * 設定屬性{@link CheckBox#indeterminateProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -179,7 +179,7 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link CheckBox#selectedProperty}的連結
+     * 設定屬性{@link CheckBox#selectedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -196,7 +196,7 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link CheckBox#selectedProperty}的雙向連結
+     * 設定屬性{@link CheckBox#selectedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -213,7 +213,7 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
     }
 
     /**
-     * 建構{@link CheckBox}物件
+     * 建構{@link CheckBox}物件。
      *
      * @return 新的{@link CheckBox}物件實體
      */
@@ -228,7 +228,7 @@ public class CheckBoxBuilder<Z extends CheckBox, B extends CheckBoxBuilder<Z, B>
     }
 
     /**
-     * 建構{@link CheckBox}物件
+     * 建構{@link CheckBox}物件。
      *
      * @return 新的{@link CheckBox}物件實體
      */

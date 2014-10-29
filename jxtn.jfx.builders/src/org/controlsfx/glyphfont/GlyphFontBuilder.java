@@ -6,7 +6,7 @@
 package org.controlsfx.glyphfont;
 
 /**
- * {@link GlyphFont}建構器
+ * {@link GlyphFont}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -27,7 +27,7 @@ public class GlyphFontBuilder<Z extends GlyphFont, B extends GlyphFontBuilder<Z,
     }
 
     /**
-     * 建構{@link GlyphFont}物件
+     * 建構{@link GlyphFont}物件。
      *
      * @return 新的{@link GlyphFont}物件實體
      */
@@ -41,7 +41,7 @@ public class GlyphFontBuilder<Z extends GlyphFont, B extends GlyphFontBuilder<Z,
     }
 
     /**
-     * 建構{@link GlyphFont}物件
+     * 建構{@link GlyphFont}物件。
      *
      * @return 新的{@link GlyphFont}物件實體
      */
@@ -55,7 +55,7 @@ public class GlyphFontBuilder<Z extends GlyphFont, B extends GlyphFontBuilder<Z,
     }
 
     /**
-     * 建構{@link GlyphFont}物件
+     * 建構{@link GlyphFont}物件。
      *
      * @return 新的{@link GlyphFont}物件實體
      */
@@ -69,7 +69,7 @@ public class GlyphFontBuilder<Z extends GlyphFont, B extends GlyphFontBuilder<Z,
     }
 
     /**
-     * 建構{@link GlyphFont}物件
+     * 建構{@link GlyphFont}物件。
      *
      * @return 新的{@link GlyphFont}物件實體
      */

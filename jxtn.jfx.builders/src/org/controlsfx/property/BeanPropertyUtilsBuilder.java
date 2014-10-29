@@ -6,7 +6,7 @@
 package org.controlsfx.property;
 
 /**
- * {@link BeanPropertyUtils}建構器
+ * {@link BeanPropertyUtils}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar

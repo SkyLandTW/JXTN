@@ -6,7 +6,7 @@
 package javafx.scene.control.cell;
 
 /**
- * {@link PropertyValueFactory}建構器
+ * {@link PropertyValueFactory}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class PropertyValueFactoryBuilder<S extends java.lang.Object, T extends j
     }
 
     /**
-     * 建構{@link PropertyValueFactory}物件
+     * 建構{@link PropertyValueFactory}物件。
      *
      * @return 新的{@link PropertyValueFactory}物件實體
      */

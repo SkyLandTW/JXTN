@@ -6,7 +6,7 @@
 package org.controlsfx.control;
 
 /**
- * {@link PlusMinusSlider}建構器
+ * {@link PlusMinusSlider}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -55,7 +55,7 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
     }
 
     /**
-     * 設定屬性{@link PlusMinusSlider#setOnValueChanged(javafx.event.EventHandler)}
+     * 設定屬性{@link PlusMinusSlider#setOnValueChanged(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -69,7 +69,7 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
     }
 
     /**
-     * 設定屬性{@link PlusMinusSlider#setOrientation(javafx.geometry.Orientation)}
+     * 設定屬性{@link PlusMinusSlider#setOrientation(javafx.geometry.Orientation)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -83,7 +83,7 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
     }
 
     /**
-     * 設定屬性{@link PlusMinusSlider#onValueChangedProperty}的連結
+     * 設定屬性{@link PlusMinusSlider#onValueChangedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -100,7 +100,7 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
     }
 
     /**
-     * 設定屬性{@link PlusMinusSlider#onValueChangedProperty}的雙向連結
+     * 設定屬性{@link PlusMinusSlider#onValueChangedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -117,7 +117,7 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
     }
 
     /**
-     * 設定屬性{@link PlusMinusSlider#orientationProperty}的連結
+     * 設定屬性{@link PlusMinusSlider#orientationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -134,7 +134,7 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
     }
 
     /**
-     * 設定屬性{@link PlusMinusSlider#orientationProperty}的雙向連結
+     * 設定屬性{@link PlusMinusSlider#orientationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -151,7 +151,7 @@ public class PlusMinusSliderBuilder<Z extends PlusMinusSlider, B extends PlusMin
     }
 
     /**
-     * 建構{@link PlusMinusSlider}物件
+     * 建構{@link PlusMinusSlider}物件。
      *
      * @return 新的{@link PlusMinusSlider}物件實體
      */

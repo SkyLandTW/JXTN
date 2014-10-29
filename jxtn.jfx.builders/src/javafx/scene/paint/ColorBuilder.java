@@ -6,7 +6,7 @@
 package javafx.scene.paint;
 
 /**
- * {@link Color}建構器
+ * {@link Color}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class ColorBuilder<Z extends Color, B extends ColorBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Color}物件
+     * 建構{@link Color}物件。
      *
      * @return 新的{@link Color}物件實體
      */

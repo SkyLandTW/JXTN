@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link TextInputControl}建構器
+ * {@link TextInputControl}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -83,7 +83,7 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     }
 
     /**
-     * 設定屬性{@link TextInputControl#setEditable(boolean)}
+     * 設定屬性{@link TextInputControl#setEditable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -97,7 +97,7 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     }
 
     /**
-     * 設定屬性{@link TextInputControl#setFont(javafx.scene.text.Font)}
+     * 設定屬性{@link TextInputControl#setFont(javafx.scene.text.Font)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     }
 
     /**
-     * 設定屬性{@link TextInputControl#setPromptText(java.lang.String)}
+     * 設定屬性{@link TextInputControl#setPromptText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     }
 
     /**
-     * 設定屬性{@link TextInputControl#setText(java.lang.String)}
+     * 設定屬性{@link TextInputControl#setText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     }
 
     /**
-     * 設定屬性{@link TextInputControl#editableProperty}的連結
+     * 設定屬性{@link TextInputControl#editableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -156,7 +156,7 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     }
 
     /**
-     * 設定屬性{@link TextInputControl#editableProperty}的雙向連結
+     * 設定屬性{@link TextInputControl#editableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -173,7 +173,7 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     }
 
     /**
-     * 設定屬性{@link TextInputControl#fontProperty}的連結
+     * 設定屬性{@link TextInputControl#fontProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -190,7 +190,7 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     }
 
     /**
-     * 設定屬性{@link TextInputControl#fontProperty}的雙向連結
+     * 設定屬性{@link TextInputControl#fontProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -207,7 +207,7 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     }
 
     /**
-     * 設定屬性{@link TextInputControl#promptTextProperty}的連結
+     * 設定屬性{@link TextInputControl#promptTextProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -224,7 +224,7 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     }
 
     /**
-     * 設定屬性{@link TextInputControl#promptTextProperty}的雙向連結
+     * 設定屬性{@link TextInputControl#promptTextProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -241,7 +241,7 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     }
 
     /**
-     * 設定屬性{@link TextInputControl#textProperty}的連結
+     * 設定屬性{@link TextInputControl#textProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -258,7 +258,7 @@ public class TextInputControlBuilder<Z extends TextInputControl, B extends TextI
     }
 
     /**
-     * 設定屬性{@link TextInputControl#textProperty}的雙向連結
+     * 設定屬性{@link TextInputControl#textProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)

@@ -6,7 +6,7 @@
 package org.controlsfx.dialog;
 
 /**
- * {@link CommandLinksDialog}建構器
+ * {@link CommandLinksDialog}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -27,7 +27,7 @@ public class CommandLinksDialogBuilder<Z extends CommandLinksDialog, B extends C
     }
 
     /**
-     * 建構{@link CommandLinksDialog}物件
+     * 建構{@link CommandLinksDialog}物件。
      *
      * @return 新的{@link CommandLinksDialog}物件實體
      */
@@ -41,7 +41,7 @@ public class CommandLinksDialogBuilder<Z extends CommandLinksDialog, B extends C
     }
 
     /**
-     * 建構{@link CommandLinksDialog}物件
+     * 建構{@link CommandLinksDialog}物件。
      *
      * @return 新的{@link CommandLinksDialog}物件實體
      */

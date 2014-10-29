@@ -6,7 +6,7 @@
 package org.controlsfx.property.editor;
 
 /**
- * {@link DefaultPropertyEditorFactory}建構器
+ * {@link DefaultPropertyEditorFactory}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -27,7 +27,7 @@ public class DefaultPropertyEditorFactoryBuilder<Z extends DefaultPropertyEditor
     }
 
     /**
-     * 建構{@link DefaultPropertyEditorFactory}物件
+     * 建構{@link DefaultPropertyEditorFactory}物件。
      *
      * @return 新的{@link DefaultPropertyEditorFactory}物件實體
      */

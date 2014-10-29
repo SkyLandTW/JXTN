@@ -6,7 +6,7 @@
 package javafx.scene.layout;
 
 /**
- * {@link RowConstraints}建構器
+ * {@link RowConstraints}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -125,7 +125,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#setFillHeight(boolean)}
+     * 設定屬性{@link RowConstraints#setFillHeight(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#setMaxHeight(double)}
+     * 設定屬性{@link RowConstraints#setMaxHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#setMinHeight(double)}
+     * 設定屬性{@link RowConstraints#setMinHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#setPercentHeight(double)}
+     * 設定屬性{@link RowConstraints#setPercentHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#setPrefHeight(double)}
+     * 設定屬性{@link RowConstraints#setPrefHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#setValignment(javafx.geometry.VPos)}
+     * 設定屬性{@link RowConstraints#setValignment(javafx.geometry.VPos)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#setVgrow(javafx.scene.layout.Priority)}
+     * 設定屬性{@link RowConstraints#setVgrow(javafx.scene.layout.Priority)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#fillHeightProperty}的連結
+     * 設定屬性{@link RowConstraints#fillHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -240,7 +240,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#fillHeightProperty}的雙向連結
+     * 設定屬性{@link RowConstraints#fillHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -257,7 +257,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#maxHeightProperty}的連結
+     * 設定屬性{@link RowConstraints#maxHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -274,7 +274,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#maxHeightProperty}的雙向連結
+     * 設定屬性{@link RowConstraints#maxHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -291,7 +291,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#minHeightProperty}的連結
+     * 設定屬性{@link RowConstraints#minHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -308,7 +308,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#minHeightProperty}的雙向連結
+     * 設定屬性{@link RowConstraints#minHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -325,7 +325,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#percentHeightProperty}的連結
+     * 設定屬性{@link RowConstraints#percentHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -342,7 +342,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#percentHeightProperty}的雙向連結
+     * 設定屬性{@link RowConstraints#percentHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -359,7 +359,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#prefHeightProperty}的連結
+     * 設定屬性{@link RowConstraints#prefHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -376,7 +376,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#prefHeightProperty}的雙向連結
+     * 設定屬性{@link RowConstraints#prefHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -393,7 +393,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#valignmentProperty}的連結
+     * 設定屬性{@link RowConstraints#valignmentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -410,7 +410,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#valignmentProperty}的雙向連結
+     * 設定屬性{@link RowConstraints#valignmentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -427,7 +427,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#vgrowProperty}的連結
+     * 設定屬性{@link RowConstraints#vgrowProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -444,7 +444,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 設定屬性{@link RowConstraints#vgrowProperty}的雙向連結
+     * 設定屬性{@link RowConstraints#vgrowProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -461,7 +461,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 建構{@link RowConstraints}物件
+     * 建構{@link RowConstraints}物件。
      *
      * @return 新的{@link RowConstraints}物件實體
      */
@@ -476,7 +476,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 建構{@link RowConstraints}物件
+     * 建構{@link RowConstraints}物件。
      *
      * @return 新的{@link RowConstraints}物件實體
      */
@@ -490,7 +490,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 建構{@link RowConstraints}物件
+     * 建構{@link RowConstraints}物件。
      *
      * @return 新的{@link RowConstraints}物件實體
      */
@@ -504,7 +504,7 @@ public class RowConstraintsBuilder<Z extends RowConstraints, B extends RowConstr
     }
 
     /**
-     * 建構{@link RowConstraints}物件
+     * 建構{@link RowConstraints}物件。
      *
      * @return 新的{@link RowConstraints}物件實體
      */

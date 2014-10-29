@@ -6,7 +6,7 @@
 package org.controlsfx.control;
 
 /**
- * {@link CheckListView}建構器
+ * {@link CheckListView}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -41,7 +41,7 @@ public class CheckListViewBuilder<T extends java.lang.Object, Z extends CheckLis
     }
 
     /**
-     * 設定屬性{@link CheckListView#setCheckModel(org.controlsfx.control.IndexedCheckModel)}
+     * 設定屬性{@link CheckListView#setCheckModel(org.controlsfx.control.IndexedCheckModel)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -55,7 +55,7 @@ public class CheckListViewBuilder<T extends java.lang.Object, Z extends CheckLis
     }
 
     /**
-     * 設定屬性{@link CheckListView#checkModelProperty}的連結
+     * 設定屬性{@link CheckListView#checkModelProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -72,7 +72,7 @@ public class CheckListViewBuilder<T extends java.lang.Object, Z extends CheckLis
     }
 
     /**
-     * 設定屬性{@link CheckListView#checkModelProperty}的雙向連結
+     * 設定屬性{@link CheckListView#checkModelProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -89,7 +89,7 @@ public class CheckListViewBuilder<T extends java.lang.Object, Z extends CheckLis
     }
 
     /**
-     * 建構{@link CheckListView}物件
+     * 建構{@link CheckListView}物件。
      *
      * @return 新的{@link CheckListView}物件實體
      */
@@ -104,7 +104,7 @@ public class CheckListViewBuilder<T extends java.lang.Object, Z extends CheckLis
     }
 
     /**
-     * 建構{@link CheckListView}物件
+     * 建構{@link CheckListView}物件。
      *
      * @return 新的{@link CheckListView}物件實體
      */

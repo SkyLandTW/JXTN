@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link ProgressBar}建構器
+ * {@link ProgressBar}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class ProgressBarBuilder<Z extends ProgressBar, B extends ProgressBarBuil
     }
 
     /**
-     * 建構{@link ProgressBar}物件
+     * 建構{@link ProgressBar}物件。
      *
      * @return 新的{@link ProgressBar}物件實體
      */
@@ -42,7 +42,7 @@ public class ProgressBarBuilder<Z extends ProgressBar, B extends ProgressBarBuil
     }
 
     /**
-     * 建構{@link ProgressBar}物件
+     * 建構{@link ProgressBar}物件。
      *
      * @return 新的{@link ProgressBar}物件實體
      */

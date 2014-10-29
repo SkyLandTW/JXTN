@@ -6,7 +6,7 @@
 package javafx.scene.chart;
 
 /**
- * {@link StackedBarChart}建構器
+ * {@link StackedBarChart}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -23,16 +23,25 @@ public class StackedBarChartBuilder<X extends java.lang.Object, Y extends java.l
     private boolean hasCategoryGap;
     private double valCategoryGap;
 
+    private boolean bound1CategoryGap;
+    private boolean bound2CategoryGap;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1CategoryGap;
+    private javafx.beans.property.Property<Number> obsrv2CategoryGap;
+
     @Override
     public void applyTo(Z instance)
     {
         super.applyTo(instance);
         if (this.hasCategoryGap)
             instance.setCategoryGap(this.valCategoryGap);
+        if (this.bound1CategoryGap)
+            instance.categoryGapProperty().bind(this.obsrv1CategoryGap);
+        if (this.bound2CategoryGap)
+            instance.categoryGapProperty().bindBidirectional(this.obsrv2CategoryGap);
     }
 
     /**
-     * 設定屬性{@link StackedBarChart#setCategoryGap(double)}
+     * 設定屬性{@link StackedBarChart#setCategoryGap(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -46,7 +55,41 @@ public class StackedBarChartBuilder<X extends java.lang.Object, Y extends java.l
     }
 
     /**
-     * 建構{@link StackedBarChart}物件
+     * 設定屬性{@link StackedBarChart#categoryGapProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindCategoryGap(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CategoryGap = true;
+        this.obsrv1CategoryGap = source;
+        this.bound2CategoryGap = false;
+        this.obsrv2CategoryGap = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link StackedBarChart#categoryGapProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCategoryGap(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CategoryGap = false;
+        this.obsrv1CategoryGap = null;
+        this.bound2CategoryGap = true;
+        this.obsrv2CategoryGap = source;
+        return (B) this;
+    }
+
+    /**
+     * 建構{@link StackedBarChart}物件。
      *
      * @return 新的{@link StackedBarChart}物件實體
      */
@@ -60,7 +103,7 @@ public class StackedBarChartBuilder<X extends java.lang.Object, Y extends java.l
     }
 
     /**
-     * 建構{@link StackedBarChart}物件
+     * 建構{@link StackedBarChart}物件。
      *
      * @return 新的{@link StackedBarChart}物件實體
      */
@@ -74,7 +117,7 @@ public class StackedBarChartBuilder<X extends java.lang.Object, Y extends java.l
     }
 
     /**
-     * 建構{@link StackedBarChart}物件
+     * 建構{@link StackedBarChart}物件。
      *
      * @return 新的{@link StackedBarChart}物件實體
      */

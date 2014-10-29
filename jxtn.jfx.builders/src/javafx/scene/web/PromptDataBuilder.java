@@ -6,7 +6,7 @@
 package javafx.scene.web;
 
 /**
- * {@link PromptData}建構器
+ * {@link PromptData}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class PromptDataBuilder<Z extends PromptData, B extends PromptDataBuilder
     }
 
     /**
-     * 建構{@link PromptData}物件
+     * 建構{@link PromptData}物件。
      *
      * @return 新的{@link PromptData}物件實體
      */

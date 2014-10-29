@@ -6,7 +6,7 @@
 package javafx.scene.transform;
 
 /**
- * {@link Translate}建構器
+ * {@link Translate}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -69,7 +69,7 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Translate#setX(double)}
+     * 設定屬性{@link Translate#setX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -83,7 +83,7 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Translate#setY(double)}
+     * 設定屬性{@link Translate#setY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -97,7 +97,7 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Translate#setZ(double)}
+     * 設定屬性{@link Translate#setZ(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Translate#xProperty}的連結
+     * 設定屬性{@link Translate#xProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -128,7 +128,7 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Translate#xProperty}的雙向連結
+     * 設定屬性{@link Translate#xProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -145,7 +145,7 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Translate#yProperty}的連結
+     * 設定屬性{@link Translate#yProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -162,7 +162,7 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Translate#yProperty}的雙向連結
+     * 設定屬性{@link Translate#yProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -179,7 +179,7 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Translate#zProperty}的連結
+     * 設定屬性{@link Translate#zProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -196,7 +196,7 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Translate#zProperty}的雙向連結
+     * 設定屬性{@link Translate#zProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -213,7 +213,7 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
     }
 
     /**
-     * 建構{@link Translate}物件
+     * 建構{@link Translate}物件。
      *
      * @return 新的{@link Translate}物件實體
      */
@@ -228,7 +228,7 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
     }
 
     /**
-     * 建構{@link Translate}物件
+     * 建構{@link Translate}物件。
      *
      * @return 新的{@link Translate}物件實體
      */
@@ -242,7 +242,7 @@ public class TranslateBuilder<Z extends Translate, B extends TranslateBuilder<Z,
     }
 
     /**
-     * 建構{@link Translate}物件
+     * 建構{@link Translate}物件。
      *
      * @return 新的{@link Translate}物件實體
      */

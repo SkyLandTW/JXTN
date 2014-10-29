@@ -6,7 +6,7 @@
 package javafx.scene.shape;
 
 /**
- * {@link Shape3D}建構器
+ * {@link Shape3D}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -69,7 +69,7 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape3D#setCullFace(javafx.scene.shape.CullFace)}
+     * 設定屬性{@link Shape3D#setCullFace(javafx.scene.shape.CullFace)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -83,7 +83,7 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape3D#setDrawMode(javafx.scene.shape.DrawMode)}
+     * 設定屬性{@link Shape3D#setDrawMode(javafx.scene.shape.DrawMode)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -97,7 +97,7 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape3D#setMaterial(javafx.scene.paint.Material)}
+     * 設定屬性{@link Shape3D#setMaterial(javafx.scene.paint.Material)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape3D#cullFaceProperty}的連結
+     * 設定屬性{@link Shape3D#cullFaceProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -128,7 +128,7 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape3D#cullFaceProperty}的雙向連結
+     * 設定屬性{@link Shape3D#cullFaceProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -145,7 +145,7 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape3D#drawModeProperty}的連結
+     * 設定屬性{@link Shape3D#drawModeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -162,7 +162,7 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape3D#drawModeProperty}的雙向連結
+     * 設定屬性{@link Shape3D#drawModeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -179,7 +179,7 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape3D#materialProperty}的連結
+     * 設定屬性{@link Shape3D#materialProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -196,7 +196,7 @@ public class Shape3DBuilder<Z extends Shape3D, B extends Shape3DBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shape3D#materialProperty}的雙向連結
+     * 設定屬性{@link Shape3D#materialProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)

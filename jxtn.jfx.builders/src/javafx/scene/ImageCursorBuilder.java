@@ -6,7 +6,7 @@
 package javafx.scene;
 
 /**
- * {@link ImageCursor}建構器
+ * {@link ImageCursor}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class ImageCursorBuilder<Z extends ImageCursor, B extends ImageCursorBuil
     }
 
     /**
-     * 建構{@link ImageCursor}物件
+     * 建構{@link ImageCursor}物件。
      *
      * @return 新的{@link ImageCursor}物件實體
      */
@@ -42,7 +42,7 @@ public class ImageCursorBuilder<Z extends ImageCursor, B extends ImageCursorBuil
     }
 
     /**
-     * 建構{@link ImageCursor}物件
+     * 建構{@link ImageCursor}物件。
      *
      * @return 新的{@link ImageCursor}物件實體
      */
@@ -56,7 +56,7 @@ public class ImageCursorBuilder<Z extends ImageCursor, B extends ImageCursorBuil
     }
 
     /**
-     * 建構{@link ImageCursor}物件
+     * 建構{@link ImageCursor}物件。
      *
      * @return 新的{@link ImageCursor}物件實體
      */

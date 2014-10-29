@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link ComboBoxBase}建構器
+ * {@link ComboBoxBase}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -44,6 +44,16 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     private boolean hasValue;
     private T valValue;
 
+    private boolean bound1Armed;
+    private boolean bound2Armed;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Armed;
+    private javafx.beans.property.Property<Boolean> obsrv2Armed;
+
+    private boolean bound1Editable;
+    private boolean bound2Editable;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Editable;
+    private javafx.beans.property.Property<Boolean> obsrv2Editable;
+
     private boolean bound1OnAction;
     private boolean bound2OnAction;
     private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.event.ActionEvent>> obsrv1OnAction;
@@ -74,6 +84,11 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     private javafx.beans.value.ObservableValue<? extends String> obsrv1PromptText;
     private javafx.beans.property.Property<String> obsrv2PromptText;
 
+    private boolean bound1Value;
+    private boolean bound2Value;
+    private javafx.beans.value.ObservableValue<? extends T> obsrv1Value;
+    private javafx.beans.property.Property<T> obsrv2Value;
+
     @Override
     public void applyTo(Z instance)
     {
@@ -94,6 +109,14 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
             instance.setPromptText(this.valPromptText);
         if (this.hasValue)
             instance.setValue(this.valValue);
+        if (this.bound1Armed)
+            instance.armedProperty().bind(this.obsrv1Armed);
+        if (this.bound2Armed)
+            instance.armedProperty().bindBidirectional(this.obsrv2Armed);
+        if (this.bound1Editable)
+            instance.editableProperty().bind(this.obsrv1Editable);
+        if (this.bound2Editable)
+            instance.editableProperty().bindBidirectional(this.obsrv2Editable);
         if (this.bound1OnAction)
             instance.onActionProperty().bind(this.obsrv1OnAction);
         if (this.bound2OnAction)
@@ -118,10 +141,14 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
             instance.promptTextProperty().bind(this.obsrv1PromptText);
         if (this.bound2PromptText)
             instance.promptTextProperty().bindBidirectional(this.obsrv2PromptText);
+        if (this.bound1Value)
+            instance.valueProperty().bind(this.obsrv1Value);
+        if (this.bound2Value)
+            instance.valueProperty().bindBidirectional(this.obsrv2Value);
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#setEditable(boolean)}
+     * 設定屬性{@link ComboBoxBase#setEditable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -135,7 +162,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#setOnAction(javafx.event.EventHandler)}
+     * 設定屬性{@link ComboBoxBase#setOnAction(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -149,7 +176,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#setOnHidden(javafx.event.EventHandler)}
+     * 設定屬性{@link ComboBoxBase#setOnHidden(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -163,7 +190,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#setOnHiding(javafx.event.EventHandler)}
+     * 設定屬性{@link ComboBoxBase#setOnHiding(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -177,7 +204,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#setOnShowing(javafx.event.EventHandler)}
+     * 設定屬性{@link ComboBoxBase#setOnShowing(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -191,7 +218,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#setOnShown(javafx.event.EventHandler)}
+     * 設定屬性{@link ComboBoxBase#setOnShown(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -205,7 +232,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#setPromptText(java.lang.String)}
+     * 設定屬性{@link ComboBoxBase#setPromptText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -219,7 +246,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#setValue(T)}
+     * 設定屬性{@link ComboBoxBase#setValue(T)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -233,7 +260,75 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#onActionProperty}的連結
+     * 設定屬性{@link ComboBoxBase#armedProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindArmed(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Armed = true;
+        this.obsrv1Armed = source;
+        this.bound2Armed = false;
+        this.obsrv2Armed = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ComboBoxBase#armedProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalArmed(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Armed = false;
+        this.obsrv1Armed = null;
+        this.bound2Armed = true;
+        this.obsrv2Armed = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ComboBoxBase#editableProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindEditable(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Editable = true;
+        this.obsrv1Editable = source;
+        this.bound2Editable = false;
+        this.obsrv2Editable = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ComboBoxBase#editableProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalEditable(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Editable = false;
+        this.obsrv1Editable = null;
+        this.bound2Editable = true;
+        this.obsrv2Editable = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ComboBoxBase#onActionProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -250,7 +345,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#onActionProperty}的雙向連結
+     * 設定屬性{@link ComboBoxBase#onActionProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -267,7 +362,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#onHiddenProperty}的連結
+     * 設定屬性{@link ComboBoxBase#onHiddenProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -284,7 +379,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#onHiddenProperty}的雙向連結
+     * 設定屬性{@link ComboBoxBase#onHiddenProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -301,7 +396,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#onHidingProperty}的連結
+     * 設定屬性{@link ComboBoxBase#onHidingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -318,7 +413,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#onHidingProperty}的雙向連結
+     * 設定屬性{@link ComboBoxBase#onHidingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -335,7 +430,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#onShowingProperty}的連結
+     * 設定屬性{@link ComboBoxBase#onShowingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -352,7 +447,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#onShowingProperty}的雙向連結
+     * 設定屬性{@link ComboBoxBase#onShowingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -369,7 +464,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#onShownProperty}的連結
+     * 設定屬性{@link ComboBoxBase#onShownProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -386,7 +481,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#onShownProperty}的雙向連結
+     * 設定屬性{@link ComboBoxBase#onShownProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -403,7 +498,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#promptTextProperty}的連結
+     * 設定屬性{@link ComboBoxBase#promptTextProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -420,7 +515,7 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
     }
 
     /**
-     * 設定屬性{@link ComboBoxBase#promptTextProperty}的雙向連結
+     * 設定屬性{@link ComboBoxBase#promptTextProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -433,6 +528,40 @@ public class ComboBoxBaseBuilder<T extends java.lang.Object, Z extends ComboBoxB
         this.obsrv1PromptText = null;
         this.bound2PromptText = true;
         this.obsrv2PromptText = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ComboBoxBase#valueProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindValue(javafx.beans.value.ObservableValue<? extends T> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Value = true;
+        this.obsrv1Value = source;
+        this.bound2Value = false;
+        this.obsrv2Value = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ComboBoxBase#valueProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalValue(javafx.beans.property.Property<T> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Value = false;
+        this.obsrv1Value = null;
+        this.bound2Value = true;
+        this.obsrv2Value = source;
         return (B) this;
     }
 }

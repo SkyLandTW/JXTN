@@ -6,7 +6,7 @@
 package javafx.scene.chart;
 
 /**
- * {@link PieChart}建構器
+ * {@link PieChart}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -97,7 +97,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#setClockwise(boolean)}
+     * 設定屬性{@link PieChart#setClockwise(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#setData(javafx.collections.ObservableList)}
+     * 設定屬性{@link PieChart#setData(javafx.collections.ObservableList)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#setLabelLineLength(double)}
+     * 設定屬性{@link PieChart#setLabelLineLength(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#setLabelsVisible(boolean)}
+     * 設定屬性{@link PieChart#setLabelsVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#setStartAngle(double)}
+     * 設定屬性{@link PieChart#setStartAngle(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#clockwiseProperty}的連結
+     * 設定屬性{@link PieChart#clockwiseProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -184,7 +184,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#clockwiseProperty}的雙向連結
+     * 設定屬性{@link PieChart#clockwiseProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -201,7 +201,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#dataProperty}的連結
+     * 設定屬性{@link PieChart#dataProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -218,7 +218,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#dataProperty}的雙向連結
+     * 設定屬性{@link PieChart#dataProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -235,7 +235,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#labelLineLengthProperty}的連結
+     * 設定屬性{@link PieChart#labelLineLengthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -252,7 +252,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#labelLineLengthProperty}的雙向連結
+     * 設定屬性{@link PieChart#labelLineLengthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -269,7 +269,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#labelsVisibleProperty}的連結
+     * 設定屬性{@link PieChart#labelsVisibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -286,7 +286,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#labelsVisibleProperty}的雙向連結
+     * 設定屬性{@link PieChart#labelsVisibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -303,7 +303,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#startAngleProperty}的連結
+     * 設定屬性{@link PieChart#startAngleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -320,7 +320,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link PieChart#startAngleProperty}的雙向連結
+     * 設定屬性{@link PieChart#startAngleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -337,7 +337,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 建構{@link PieChart}物件
+     * 建構{@link PieChart}物件。
      *
      * @return 新的{@link PieChart}物件實體
      */
@@ -352,7 +352,7 @@ public class PieChartBuilder<Z extends PieChart, B extends PieChartBuilder<Z, B>
     }
 
     /**
-     * 建構{@link PieChart}物件
+     * 建構{@link PieChart}物件。
      *
      * @return 新的{@link PieChart}物件實體
      */

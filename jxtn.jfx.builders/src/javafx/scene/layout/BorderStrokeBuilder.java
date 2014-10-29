@@ -6,7 +6,7 @@
 package javafx.scene.layout;
 
 /**
- * {@link BorderStroke}建構器
+ * {@link BorderStroke}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class BorderStrokeBuilder<Z extends BorderStroke, B extends BorderStrokeB
     }
 
     /**
-     * 建構{@link BorderStroke}物件
+     * 建構{@link BorderStroke}物件。
      *
      * @return 新的{@link BorderStroke}物件實體
      */
@@ -41,7 +41,7 @@ public class BorderStrokeBuilder<Z extends BorderStroke, B extends BorderStrokeB
     }
 
     /**
-     * 建構{@link BorderStroke}物件
+     * 建構{@link BorderStroke}物件。
      *
      * @return 新的{@link BorderStroke}物件實體
      */
@@ -55,7 +55,7 @@ public class BorderStrokeBuilder<Z extends BorderStroke, B extends BorderStrokeB
     }
 
     /**
-     * 建構{@link BorderStroke}物件
+     * 建構{@link BorderStroke}物件。
      *
      * @return 新的{@link BorderStroke}物件實體
      */

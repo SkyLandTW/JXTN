@@ -6,7 +6,7 @@
 package javafx.scene;
 
 /**
- * {@link SubScene}建構器
+ * {@link SubScene}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -111,7 +111,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#setCamera(javafx.scene.Camera)}
+     * 設定屬性{@link SubScene#setCamera(javafx.scene.Camera)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#setFill(javafx.scene.paint.Paint)}
+     * 設定屬性{@link SubScene#setFill(javafx.scene.paint.Paint)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#setHeight(double)}
+     * 設定屬性{@link SubScene#setHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#setRoot(javafx.scene.Parent)}
+     * 設定屬性{@link SubScene#setRoot(javafx.scene.Parent)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#setUserAgentStylesheet(java.lang.String)}
+     * 設定屬性{@link SubScene#setUserAgentStylesheet(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#setWidth(double)}
+     * 設定屬性{@link SubScene#setWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#cameraProperty}的連結
+     * 設定屬性{@link SubScene#cameraProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -212,7 +212,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#cameraProperty}的雙向連結
+     * 設定屬性{@link SubScene#cameraProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -229,7 +229,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#fillProperty}的連結
+     * 設定屬性{@link SubScene#fillProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -246,7 +246,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#fillProperty}的雙向連結
+     * 設定屬性{@link SubScene#fillProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -263,7 +263,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#heightProperty}的連結
+     * 設定屬性{@link SubScene#heightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -280,7 +280,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#heightProperty}的雙向連結
+     * 設定屬性{@link SubScene#heightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -297,7 +297,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#rootProperty}的連結
+     * 設定屬性{@link SubScene#rootProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -314,7 +314,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#rootProperty}的雙向連結
+     * 設定屬性{@link SubScene#rootProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -331,7 +331,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#userAgentStylesheetProperty}的連結
+     * 設定屬性{@link SubScene#userAgentStylesheetProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -348,7 +348,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#userAgentStylesheetProperty}的雙向連結
+     * 設定屬性{@link SubScene#userAgentStylesheetProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -365,7 +365,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#widthProperty}的連結
+     * 設定屬性{@link SubScene#widthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -382,7 +382,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link SubScene#widthProperty}的雙向連結
+     * 設定屬性{@link SubScene#widthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -399,7 +399,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 建構{@link SubScene}物件
+     * 建構{@link SubScene}物件。
      *
      * @return 新的{@link SubScene}物件實體
      */
@@ -413,7 +413,7 @@ public class SubSceneBuilder<Z extends SubScene, B extends SubSceneBuilder<Z, B>
     }
 
     /**
-     * 建構{@link SubScene}物件
+     * 建構{@link SubScene}物件。
      *
      * @return 新的{@link SubScene}物件實體
      */

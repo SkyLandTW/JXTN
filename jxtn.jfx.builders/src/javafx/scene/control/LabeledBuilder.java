@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link Labeled}建構器
+ * {@link Labeled}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -223,7 +223,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setAlignment(javafx.geometry.Pos)}
+     * 設定屬性{@link Labeled#setAlignment(javafx.geometry.Pos)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -237,7 +237,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setContentDisplay(javafx.scene.control.ContentDisplay)}
+     * 設定屬性{@link Labeled#setContentDisplay(javafx.scene.control.ContentDisplay)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -251,7 +251,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setEllipsisString(java.lang.String)}
+     * 設定屬性{@link Labeled#setEllipsisString(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -265,7 +265,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setFont(javafx.scene.text.Font)}
+     * 設定屬性{@link Labeled#setFont(javafx.scene.text.Font)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -279,7 +279,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setGraphic(javafx.scene.Node)}
+     * 設定屬性{@link Labeled#setGraphic(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -293,7 +293,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setGraphicTextGap(double)}
+     * 設定屬性{@link Labeled#setGraphicTextGap(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -307,7 +307,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setLineSpacing(double)}
+     * 設定屬性{@link Labeled#setLineSpacing(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -321,7 +321,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setMnemonicParsing(boolean)}
+     * 設定屬性{@link Labeled#setMnemonicParsing(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -335,7 +335,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setText(java.lang.String)}
+     * 設定屬性{@link Labeled#setText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -349,7 +349,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setTextAlignment(javafx.scene.text.TextAlignment)}
+     * 設定屬性{@link Labeled#setTextAlignment(javafx.scene.text.TextAlignment)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -363,7 +363,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setTextFill(javafx.scene.paint.Paint)}
+     * 設定屬性{@link Labeled#setTextFill(javafx.scene.paint.Paint)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -377,7 +377,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setTextOverrun(javafx.scene.control.OverrunStyle)}
+     * 設定屬性{@link Labeled#setTextOverrun(javafx.scene.control.OverrunStyle)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -391,7 +391,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setUnderline(boolean)}
+     * 設定屬性{@link Labeled#setUnderline(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -405,7 +405,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#setWrapText(boolean)}
+     * 設定屬性{@link Labeled#setWrapText(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -419,7 +419,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#alignmentProperty}的連結
+     * 設定屬性{@link Labeled#alignmentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -436,7 +436,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#alignmentProperty}的雙向連結
+     * 設定屬性{@link Labeled#alignmentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -453,7 +453,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#contentDisplayProperty}的連結
+     * 設定屬性{@link Labeled#contentDisplayProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -470,7 +470,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#contentDisplayProperty}的雙向連結
+     * 設定屬性{@link Labeled#contentDisplayProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -487,7 +487,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#ellipsisStringProperty}的連結
+     * 設定屬性{@link Labeled#ellipsisStringProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -504,7 +504,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#ellipsisStringProperty}的雙向連結
+     * 設定屬性{@link Labeled#ellipsisStringProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -521,7 +521,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#fontProperty}的連結
+     * 設定屬性{@link Labeled#fontProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -538,7 +538,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#fontProperty}的雙向連結
+     * 設定屬性{@link Labeled#fontProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -555,7 +555,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#graphicProperty}的連結
+     * 設定屬性{@link Labeled#graphicProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -572,7 +572,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#graphicProperty}的雙向連結
+     * 設定屬性{@link Labeled#graphicProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -589,7 +589,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#graphicTextGapProperty}的連結
+     * 設定屬性{@link Labeled#graphicTextGapProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -606,7 +606,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#graphicTextGapProperty}的雙向連結
+     * 設定屬性{@link Labeled#graphicTextGapProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -623,7 +623,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#lineSpacingProperty}的連結
+     * 設定屬性{@link Labeled#lineSpacingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -640,7 +640,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#lineSpacingProperty}的雙向連結
+     * 設定屬性{@link Labeled#lineSpacingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -657,7 +657,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#mnemonicParsingProperty}的連結
+     * 設定屬性{@link Labeled#mnemonicParsingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -674,7 +674,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#mnemonicParsingProperty}的雙向連結
+     * 設定屬性{@link Labeled#mnemonicParsingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -691,7 +691,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#textAlignmentProperty}的連結
+     * 設定屬性{@link Labeled#textAlignmentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -708,7 +708,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#textAlignmentProperty}的雙向連結
+     * 設定屬性{@link Labeled#textAlignmentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -725,7 +725,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#textFillProperty}的連結
+     * 設定屬性{@link Labeled#textFillProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -742,7 +742,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#textFillProperty}的雙向連結
+     * 設定屬性{@link Labeled#textFillProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -759,7 +759,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#textOverrunProperty}的連結
+     * 設定屬性{@link Labeled#textOverrunProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -776,7 +776,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#textOverrunProperty}的雙向連結
+     * 設定屬性{@link Labeled#textOverrunProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -793,7 +793,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#textProperty}的連結
+     * 設定屬性{@link Labeled#textProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -810,7 +810,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#textProperty}的雙向連結
+     * 設定屬性{@link Labeled#textProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -827,7 +827,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#underlineProperty}的連結
+     * 設定屬性{@link Labeled#underlineProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -844,7 +844,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#underlineProperty}的雙向連結
+     * 設定屬性{@link Labeled#underlineProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -861,7 +861,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#wrapTextProperty}的連結
+     * 設定屬性{@link Labeled#wrapTextProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -878,7 +878,7 @@ public class LabeledBuilder<Z extends Labeled, B extends LabeledBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Labeled#wrapTextProperty}的雙向連結
+     * 設定屬性{@link Labeled#wrapTextProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)

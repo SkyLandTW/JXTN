@@ -6,7 +6,7 @@
 package javafx.scene;
 
 /**
- * {@link Parent}建構器
+ * {@link Parent}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -37,7 +37,7 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Parent#getChildrenUnmodifiable}的內容
+     * 設定集合屬性{@link Parent#getChildrenUnmodifiable}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -53,7 +53,7 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Parent#getChildrenUnmodifiable}的內容
+     * 設定集合屬性{@link Parent#getChildrenUnmodifiable}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -68,7 +68,7 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Parent#getChildrenUnmodifiable}的內容
+     * 增加集合屬性{@link Parent#getChildrenUnmodifiable}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -85,7 +85,7 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Parent#getChildrenUnmodifiable}的內容
+     * 增加集合屬性{@link Parent#getChildrenUnmodifiable}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -103,7 +103,7 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Parent#getStylesheets}的內容
+     * 設定集合屬性{@link Parent#getStylesheets}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -119,7 +119,7 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Parent#getStylesheets}的內容
+     * 設定集合屬性{@link Parent#getStylesheets}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -134,7 +134,7 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Parent#getStylesheets}的內容
+     * 增加集合屬性{@link Parent#getStylesheets}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -151,7 +151,7 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Parent#getStylesheets}的內容
+     * 增加集合屬性{@link Parent#getStylesheets}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)

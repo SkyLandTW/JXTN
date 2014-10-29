@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link Dialog}建構器
+ * {@link Dialog}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version openjfx-dialogs-1.0.2.jar
@@ -229,7 +229,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#setContentText(java.lang.String)}
+     * 設定屬性{@link Dialog#setContentText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -243,7 +243,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#setDialogPane(javafx.scene.control.DialogPane)}
+     * 設定屬性{@link Dialog#setDialogPane(javafx.scene.control.DialogPane)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -257,7 +257,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#setGraphic(javafx.scene.Node)}
+     * 設定屬性{@link Dialog#setGraphic(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -271,7 +271,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#setHeaderText(java.lang.String)}
+     * 設定屬性{@link Dialog#setHeaderText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -285,7 +285,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#setHeight(double)}
+     * 設定屬性{@link Dialog#setHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -299,7 +299,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#setOnCloseRequest(javafx.event.EventHandler)}
+     * 設定屬性{@link Dialog#setOnCloseRequest(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -313,7 +313,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#setOnHidden(javafx.event.EventHandler)}
+     * 設定屬性{@link Dialog#setOnHidden(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -327,7 +327,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#setOnHiding(javafx.event.EventHandler)}
+     * 設定屬性{@link Dialog#setOnHiding(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -341,7 +341,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#setOnShowing(javafx.event.EventHandler)}
+     * 設定屬性{@link Dialog#setOnShowing(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -355,7 +355,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#setOnShown(javafx.event.EventHandler)}
+     * 設定屬性{@link Dialog#setOnShown(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -369,7 +369,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#setResizable(boolean)}
+     * 設定屬性{@link Dialog#setResizable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -383,7 +383,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#setResult(R)}
+     * 設定屬性{@link Dialog#setResult(R)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -397,7 +397,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#setResultConverter(javafx.util.Callback)}
+     * 設定屬性{@link Dialog#setResultConverter(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -411,7 +411,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#setTitle(java.lang.String)}
+     * 設定屬性{@link Dialog#setTitle(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -425,7 +425,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#setWidth(double)}
+     * 設定屬性{@link Dialog#setWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -439,7 +439,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#setX(double)}
+     * 設定屬性{@link Dialog#setX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -453,7 +453,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#setY(double)}
+     * 設定屬性{@link Dialog#setY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -467,7 +467,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#contentTextProperty}的連結
+     * 設定屬性{@link Dialog#contentTextProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -484,7 +484,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#contentTextProperty}的雙向連結
+     * 設定屬性{@link Dialog#contentTextProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -501,7 +501,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#dialogPaneProperty}的連結
+     * 設定屬性{@link Dialog#dialogPaneProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -518,7 +518,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#dialogPaneProperty}的雙向連結
+     * 設定屬性{@link Dialog#dialogPaneProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -535,7 +535,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#graphicProperty}的連結
+     * 設定屬性{@link Dialog#graphicProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -552,7 +552,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#graphicProperty}的雙向連結
+     * 設定屬性{@link Dialog#graphicProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -569,7 +569,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#headerTextProperty}的連結
+     * 設定屬性{@link Dialog#headerTextProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -586,7 +586,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#headerTextProperty}的雙向連結
+     * 設定屬性{@link Dialog#headerTextProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -603,7 +603,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#onCloseRequestProperty}的連結
+     * 設定屬性{@link Dialog#onCloseRequestProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -620,7 +620,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#onCloseRequestProperty}的雙向連結
+     * 設定屬性{@link Dialog#onCloseRequestProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -637,7 +637,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#onHiddenProperty}的連結
+     * 設定屬性{@link Dialog#onHiddenProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -654,7 +654,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#onHiddenProperty}的雙向連結
+     * 設定屬性{@link Dialog#onHiddenProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -671,7 +671,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#onHidingProperty}的連結
+     * 設定屬性{@link Dialog#onHidingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -688,7 +688,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#onHidingProperty}的雙向連結
+     * 設定屬性{@link Dialog#onHidingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -705,7 +705,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#onShowingProperty}的連結
+     * 設定屬性{@link Dialog#onShowingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -722,7 +722,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#onShowingProperty}的雙向連結
+     * 設定屬性{@link Dialog#onShowingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -739,7 +739,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#onShownProperty}的連結
+     * 設定屬性{@link Dialog#onShownProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -756,7 +756,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#onShownProperty}的雙向連結
+     * 設定屬性{@link Dialog#onShownProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -773,7 +773,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#resizableProperty}的連結
+     * 設定屬性{@link Dialog#resizableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -790,7 +790,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#resizableProperty}的雙向連結
+     * 設定屬性{@link Dialog#resizableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -807,7 +807,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#resultConverterProperty}的連結
+     * 設定屬性{@link Dialog#resultConverterProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -824,7 +824,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#resultConverterProperty}的雙向連結
+     * 設定屬性{@link Dialog#resultConverterProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -841,7 +841,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#resultProperty}的連結
+     * 設定屬性{@link Dialog#resultProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -858,7 +858,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#resultProperty}的雙向連結
+     * 設定屬性{@link Dialog#resultProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -875,7 +875,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#titleProperty}的連結
+     * 設定屬性{@link Dialog#titleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -892,7 +892,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 設定屬性{@link Dialog#titleProperty}的雙向連結
+     * 設定屬性{@link Dialog#titleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -909,7 +909,7 @@ public class DialogBuilder<R extends java.lang.Object, Z extends Dialog<R>, B ex
     }
 
     /**
-     * 建構{@link Dialog}物件
+     * 建構{@link Dialog}物件。
      *
      * @return 新的{@link Dialog}物件實體
      */

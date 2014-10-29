@@ -6,7 +6,7 @@
 package javafx.stage;
 
 /**
- * {@link FileChooser}建構器
+ * {@link FileChooser}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -88,7 +88,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 設定集合屬性{@link FileChooser#getExtensionFilters}的內容
+     * 設定集合屬性{@link FileChooser#getExtensionFilters}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -104,7 +104,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 設定集合屬性{@link FileChooser#getExtensionFilters}的內容
+     * 設定集合屬性{@link FileChooser#getExtensionFilters}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -119,7 +119,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 增加集合屬性{@link FileChooser#getExtensionFilters}的內容
+     * 增加集合屬性{@link FileChooser#getExtensionFilters}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 增加集合屬性{@link FileChooser#getExtensionFilters}的內容
+     * 增加集合屬性{@link FileChooser#getExtensionFilters}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -154,7 +154,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 設定屬性{@link FileChooser#setInitialDirectory(java.io.File)}
+     * 設定屬性{@link FileChooser#setInitialDirectory(java.io.File)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -168,7 +168,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 設定屬性{@link FileChooser#setInitialFileName(java.lang.String)}
+     * 設定屬性{@link FileChooser#setInitialFileName(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -182,7 +182,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 設定屬性{@link FileChooser#setSelectedExtensionFilter(javafx.stage.FileChooser.ExtensionFilter)}
+     * 設定屬性{@link FileChooser#setSelectedExtensionFilter(javafx.stage.FileChooser.ExtensionFilter)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -196,7 +196,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 設定屬性{@link FileChooser#setTitle(java.lang.String)}
+     * 設定屬性{@link FileChooser#setTitle(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -210,7 +210,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 設定屬性{@link FileChooser#initialDirectoryProperty}的連結
+     * 設定屬性{@link FileChooser#initialDirectoryProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -227,7 +227,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 設定屬性{@link FileChooser#initialDirectoryProperty}的雙向連結
+     * 設定屬性{@link FileChooser#initialDirectoryProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -244,7 +244,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 設定屬性{@link FileChooser#initialFileNameProperty}的連結
+     * 設定屬性{@link FileChooser#initialFileNameProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -261,7 +261,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 設定屬性{@link FileChooser#initialFileNameProperty}的雙向連結
+     * 設定屬性{@link FileChooser#initialFileNameProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -278,7 +278,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 設定屬性{@link FileChooser#selectedExtensionFilterProperty}的連結
+     * 設定屬性{@link FileChooser#selectedExtensionFilterProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -295,7 +295,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 設定屬性{@link FileChooser#selectedExtensionFilterProperty}的雙向連結
+     * 設定屬性{@link FileChooser#selectedExtensionFilterProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -312,7 +312,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 設定屬性{@link FileChooser#titleProperty}的連結
+     * 設定屬性{@link FileChooser#titleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -329,7 +329,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 設定屬性{@link FileChooser#titleProperty}的雙向連結
+     * 設定屬性{@link FileChooser#titleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -346,7 +346,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
-     * 建構{@link FileChooser}物件
+     * 建構{@link FileChooser}物件。
      *
      * @return 新的{@link FileChooser}物件實體
      */

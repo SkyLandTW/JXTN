@@ -6,7 +6,7 @@
 package org.controlsfx.control.action;
 
 /**
- * {@link ActionGroup}建構器
+ * {@link ActionGroup}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -32,7 +32,7 @@ public class ActionGroupBuilder<Z extends ActionGroup, B extends ActionGroupBuil
     }
 
     /**
-     * 設定集合屬性{@link ActionGroup#getActions}的內容
+     * 設定集合屬性{@link ActionGroup#getActions}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -48,7 +48,7 @@ public class ActionGroupBuilder<Z extends ActionGroup, B extends ActionGroupBuil
     }
 
     /**
-     * 設定集合屬性{@link ActionGroup#getActions}的內容
+     * 設定集合屬性{@link ActionGroup#getActions}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -63,7 +63,7 @@ public class ActionGroupBuilder<Z extends ActionGroup, B extends ActionGroupBuil
     }
 
     /**
-     * 增加集合屬性{@link ActionGroup#getActions}的內容
+     * 增加集合屬性{@link ActionGroup#getActions}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -80,7 +80,7 @@ public class ActionGroupBuilder<Z extends ActionGroup, B extends ActionGroupBuil
     }
 
     /**
-     * 增加集合屬性{@link ActionGroup#getActions}的內容
+     * 增加集合屬性{@link ActionGroup#getActions}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -98,7 +98,7 @@ public class ActionGroupBuilder<Z extends ActionGroup, B extends ActionGroupBuil
     }
 
     /**
-     * 建構{@link ActionGroup}物件
+     * 建構{@link ActionGroup}物件。
      *
      * @return 新的{@link ActionGroup}物件實體
      */
@@ -112,7 +112,7 @@ public class ActionGroupBuilder<Z extends ActionGroup, B extends ActionGroupBuil
     }
 
     /**
-     * 建構{@link ActionGroup}物件
+     * 建構{@link ActionGroup}物件。
      *
      * @return 新的{@link ActionGroup}物件實體
      */
@@ -126,7 +126,7 @@ public class ActionGroupBuilder<Z extends ActionGroup, B extends ActionGroupBuil
     }
 
     /**
-     * 建構{@link ActionGroup}物件
+     * 建構{@link ActionGroup}物件。
      *
      * @return 新的{@link ActionGroup}物件實體
      */
@@ -140,7 +140,7 @@ public class ActionGroupBuilder<Z extends ActionGroup, B extends ActionGroupBuil
     }
 
     /**
-     * 建構{@link ActionGroup}物件
+     * 建構{@link ActionGroup}物件。
      *
      * @return 新的{@link ActionGroup}物件實體
      */

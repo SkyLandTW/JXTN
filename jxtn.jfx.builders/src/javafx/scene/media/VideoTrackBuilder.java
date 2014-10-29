@@ -6,7 +6,7 @@
 package javafx.scene.media;
 
 /**
- * {@link VideoTrack}建構器
+ * {@link VideoTrack}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar

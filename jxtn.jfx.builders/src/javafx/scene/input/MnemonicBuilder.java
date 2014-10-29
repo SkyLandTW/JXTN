@@ -6,7 +6,7 @@
 package javafx.scene.input;
 
 /**
- * {@link Mnemonic}建構器
+ * {@link Mnemonic}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -37,7 +37,7 @@ public class MnemonicBuilder<Z extends Mnemonic, B extends MnemonicBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Mnemonic#setKeyCombination(javafx.scene.input.KeyCombination)}
+     * 設定屬性{@link Mnemonic#setKeyCombination(javafx.scene.input.KeyCombination)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -51,7 +51,7 @@ public class MnemonicBuilder<Z extends Mnemonic, B extends MnemonicBuilder<Z, B>
     }
 
     /**
-     * 設定屬性{@link Mnemonic#setNode(javafx.scene.Node)}
+     * 設定屬性{@link Mnemonic#setNode(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -65,7 +65,7 @@ public class MnemonicBuilder<Z extends Mnemonic, B extends MnemonicBuilder<Z, B>
     }
 
     /**
-     * 建構{@link Mnemonic}物件
+     * 建構{@link Mnemonic}物件。
      *
      * @return 新的{@link Mnemonic}物件實體
      */

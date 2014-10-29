@@ -6,7 +6,7 @@
 package org.controlsfx.control;
 
 /**
- * {@link Rating}建構器
+ * {@link Rating}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -97,7 +97,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#setMax(int)}
+     * 設定屬性{@link Rating#setMax(int)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#setOrientation(javafx.geometry.Orientation)}
+     * 設定屬性{@link Rating#setOrientation(javafx.geometry.Orientation)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#setPartialRating(boolean)}
+     * 設定屬性{@link Rating#setPartialRating(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#setRating(double)}
+     * 設定屬性{@link Rating#setRating(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#setUpdateOnHover(boolean)}
+     * 設定屬性{@link Rating#setUpdateOnHover(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#maxProperty}的連結
+     * 設定屬性{@link Rating#maxProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -184,7 +184,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#maxProperty}的雙向連結
+     * 設定屬性{@link Rating#maxProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -201,7 +201,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#orientationProperty}的連結
+     * 設定屬性{@link Rating#orientationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -218,7 +218,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#orientationProperty}的雙向連結
+     * 設定屬性{@link Rating#orientationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -235,7 +235,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#partialRatingProperty}的連結
+     * 設定屬性{@link Rating#partialRatingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -252,7 +252,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#partialRatingProperty}的雙向連結
+     * 設定屬性{@link Rating#partialRatingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -269,7 +269,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#ratingProperty}的連結
+     * 設定屬性{@link Rating#ratingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -286,7 +286,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#ratingProperty}的雙向連結
+     * 設定屬性{@link Rating#ratingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -303,7 +303,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#updateOnHoverProperty}的連結
+     * 設定屬性{@link Rating#updateOnHoverProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -320,7 +320,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rating#updateOnHoverProperty}的雙向連結
+     * 設定屬性{@link Rating#updateOnHoverProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -337,7 +337,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Rating}物件
+     * 建構{@link Rating}物件。
      *
      * @return 新的{@link Rating}物件實體
      */
@@ -352,7 +352,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Rating}物件
+     * 建構{@link Rating}物件。
      *
      * @return 新的{@link Rating}物件實體
      */
@@ -366,7 +366,7 @@ public class RatingBuilder<Z extends Rating, B extends RatingBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Rating}物件
+     * 建構{@link Rating}物件。
      *
      * @return 新的{@link Rating}物件實體
      */

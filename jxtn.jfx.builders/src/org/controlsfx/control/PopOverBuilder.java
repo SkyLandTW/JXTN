@@ -6,7 +6,7 @@
 package org.controlsfx.control;
 
 /**
- * {@link PopOver}建構器
+ * {@link PopOver}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -139,7 +139,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#setArrowIndent(double)}
+     * 設定屬性{@link PopOver#setArrowIndent(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#setArrowLocation(org.controlsfx.control.PopOver.ArrowLocation)}
+     * 設定屬性{@link PopOver#setArrowLocation(org.controlsfx.control.PopOver.ArrowLocation)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#setArrowSize(double)}
+     * 設定屬性{@link PopOver#setArrowSize(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#setContentNode(javafx.scene.Node)}
+     * 設定屬性{@link PopOver#setContentNode(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#setCornerRadius(double)}
+     * 設定屬性{@link PopOver#setCornerRadius(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#setDetachable(boolean)}
+     * 設定屬性{@link PopOver#setDetachable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#setDetached(boolean)}
+     * 設定屬性{@link PopOver#setDetached(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -237,7 +237,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#setDetachedTitle(java.lang.String)}
+     * 設定屬性{@link PopOver#setDetachedTitle(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -251,7 +251,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#arrowIndentProperty}的連結
+     * 設定屬性{@link PopOver#arrowIndentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -268,7 +268,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#arrowIndentProperty}的雙向連結
+     * 設定屬性{@link PopOver#arrowIndentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -285,7 +285,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#arrowLocationProperty}的連結
+     * 設定屬性{@link PopOver#arrowLocationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -302,7 +302,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#arrowLocationProperty}的雙向連結
+     * 設定屬性{@link PopOver#arrowLocationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -319,7 +319,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#arrowSizeProperty}的連結
+     * 設定屬性{@link PopOver#arrowSizeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -336,7 +336,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#arrowSizeProperty}的雙向連結
+     * 設定屬性{@link PopOver#arrowSizeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -353,7 +353,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#contentNodeProperty}的連結
+     * 設定屬性{@link PopOver#contentNodeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -370,7 +370,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#contentNodeProperty}的雙向連結
+     * 設定屬性{@link PopOver#contentNodeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -387,7 +387,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#cornerRadiusProperty}的連結
+     * 設定屬性{@link PopOver#cornerRadiusProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -404,7 +404,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#cornerRadiusProperty}的雙向連結
+     * 設定屬性{@link PopOver#cornerRadiusProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -421,7 +421,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#detachableProperty}的連結
+     * 設定屬性{@link PopOver#detachableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -438,7 +438,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#detachableProperty}的雙向連結
+     * 設定屬性{@link PopOver#detachableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -455,7 +455,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#detachedProperty}的連結
+     * 設定屬性{@link PopOver#detachedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -472,7 +472,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#detachedProperty}的雙向連結
+     * 設定屬性{@link PopOver#detachedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -489,7 +489,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#detachedTitleProperty}的連結
+     * 設定屬性{@link PopOver#detachedTitleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -506,7 +506,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#detachedTitleProperty}的雙向連結
+     * 設定屬性{@link PopOver#detachedTitleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -523,7 +523,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link PopOver}物件
+     * 建構{@link PopOver}物件。
      *
      * @return 新的{@link PopOver}物件實體
      */
@@ -538,7 +538,7 @@ public class PopOverBuilder<Z extends PopOver, B extends PopOverBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link PopOver}物件
+     * 建構{@link PopOver}物件。
      *
      * @return 新的{@link PopOver}物件實體
      */

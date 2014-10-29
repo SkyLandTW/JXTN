@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link DialogPane}建構器
+ * {@link DialogPane}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version openjfx-dialogs-1.0.2.jar
@@ -130,7 +130,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定集合屬性{@link DialogPane#getButtonTypes}的內容
+     * 設定集合屬性{@link DialogPane#getButtonTypes}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -146,7 +146,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定集合屬性{@link DialogPane#getButtonTypes}的內容
+     * 設定集合屬性{@link DialogPane#getButtonTypes}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -161,7 +161,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 增加集合屬性{@link DialogPane#getButtonTypes}的內容
+     * 增加集合屬性{@link DialogPane#getButtonTypes}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -178,7 +178,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 增加集合屬性{@link DialogPane#getButtonTypes}的內容
+     * 增加集合屬性{@link DialogPane#getButtonTypes}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -196,7 +196,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#setContent(javafx.scene.Node)}
+     * 設定屬性{@link DialogPane#setContent(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -210,7 +210,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#setContentText(java.lang.String)}
+     * 設定屬性{@link DialogPane#setContentText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -224,7 +224,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#setExpandableContent(javafx.scene.Node)}
+     * 設定屬性{@link DialogPane#setExpandableContent(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -238,7 +238,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#setExpanded(boolean)}
+     * 設定屬性{@link DialogPane#setExpanded(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -252,7 +252,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#setGraphic(javafx.scene.Node)}
+     * 設定屬性{@link DialogPane#setGraphic(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -266,7 +266,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#setHeader(javafx.scene.Node)}
+     * 設定屬性{@link DialogPane#setHeader(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -280,7 +280,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#setHeaderText(java.lang.String)}
+     * 設定屬性{@link DialogPane#setHeaderText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -294,7 +294,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#contentProperty}的連結
+     * 設定屬性{@link DialogPane#contentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -311,7 +311,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#contentProperty}的雙向連結
+     * 設定屬性{@link DialogPane#contentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -328,7 +328,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#contentTextProperty}的連結
+     * 設定屬性{@link DialogPane#contentTextProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -345,7 +345,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#contentTextProperty}的雙向連結
+     * 設定屬性{@link DialogPane#contentTextProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -362,7 +362,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#expandableContentProperty}的連結
+     * 設定屬性{@link DialogPane#expandableContentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -379,7 +379,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#expandableContentProperty}的雙向連結
+     * 設定屬性{@link DialogPane#expandableContentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -396,7 +396,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#expandedProperty}的連結
+     * 設定屬性{@link DialogPane#expandedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -413,7 +413,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#expandedProperty}的雙向連結
+     * 設定屬性{@link DialogPane#expandedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -430,7 +430,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#graphicProperty}的連結
+     * 設定屬性{@link DialogPane#graphicProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -447,7 +447,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#graphicProperty}的雙向連結
+     * 設定屬性{@link DialogPane#graphicProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -464,7 +464,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#headerProperty}的連結
+     * 設定屬性{@link DialogPane#headerProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -481,7 +481,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#headerProperty}的雙向連結
+     * 設定屬性{@link DialogPane#headerProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -498,7 +498,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#headerTextProperty}的連結
+     * 設定屬性{@link DialogPane#headerTextProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -515,7 +515,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 設定屬性{@link DialogPane#headerTextProperty}的雙向連結
+     * 設定屬性{@link DialogPane#headerTextProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -532,7 +532,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
     }
 
     /**
-     * 建構{@link DialogPane}物件
+     * 建構{@link DialogPane}物件。
      *
      * @return 新的{@link DialogPane}物件實體
      */

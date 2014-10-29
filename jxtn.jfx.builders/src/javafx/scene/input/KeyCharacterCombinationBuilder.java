@@ -6,7 +6,7 @@
 package javafx.scene.input;
 
 /**
- * {@link KeyCharacterCombination}建構器
+ * {@link KeyCharacterCombination}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class KeyCharacterCombinationBuilder<Z extends KeyCharacterCombination, B
     }
 
     /**
-     * 建構{@link KeyCharacterCombination}物件
+     * 建構{@link KeyCharacterCombination}物件。
      *
      * @return 新的{@link KeyCharacterCombination}物件實體
      */
@@ -41,7 +41,7 @@ public class KeyCharacterCombinationBuilder<Z extends KeyCharacterCombination, B
     }
 
     /**
-     * 建構{@link KeyCharacterCombination}物件
+     * 建構{@link KeyCharacterCombination}物件。
      *
      * @return 新的{@link KeyCharacterCombination}物件實體
      */

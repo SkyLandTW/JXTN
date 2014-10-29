@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link TreeView}建構器
+ * {@link TreeView}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -88,6 +88,11 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.TreeView.EditEvent<T>>> obsrv1OnEditStart;
     private javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.TreeView.EditEvent<T>>> obsrv2OnEditStart;
 
+    private boolean bound1OnScrollTo;
+    private boolean bound2OnScrollTo;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>>> obsrv1OnScrollTo;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>>> obsrv2OnScrollTo;
+
     private boolean bound1Root;
     private boolean bound2Root;
     private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TreeItem<T>> obsrv1Root;
@@ -157,6 +162,10 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
             instance.onEditStartProperty().bind(this.obsrv1OnEditStart);
         if (this.bound2OnEditStart)
             instance.onEditStartProperty().bindBidirectional(this.obsrv2OnEditStart);
+        if (this.bound1OnScrollTo)
+            instance.onScrollToProperty().bind(this.obsrv1OnScrollTo);
+        if (this.bound2OnScrollTo)
+            instance.onScrollToProperty().bindBidirectional(this.obsrv2OnScrollTo);
         if (this.bound1Root)
             instance.rootProperty().bind(this.obsrv1Root);
         if (this.bound2Root)
@@ -172,7 +181,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setCellFactory(javafx.util.Callback)}
+     * 設定屬性{@link TreeView#setCellFactory(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -186,7 +195,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setEditable(boolean)}
+     * 設定屬性{@link TreeView#setEditable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -200,7 +209,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setFixedCellSize(double)}
+     * 設定屬性{@link TreeView#setFixedCellSize(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -214,7 +223,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setFocusModel(javafx.scene.control.FocusModel)}
+     * 設定屬性{@link TreeView#setFocusModel(javafx.scene.control.FocusModel)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -228,7 +237,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setOnEditCancel(javafx.event.EventHandler)}
+     * 設定屬性{@link TreeView#setOnEditCancel(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -242,7 +251,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setOnEditCommit(javafx.event.EventHandler)}
+     * 設定屬性{@link TreeView#setOnEditCommit(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -256,7 +265,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setOnEditStart(javafx.event.EventHandler)}
+     * 設定屬性{@link TreeView#setOnEditStart(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -270,7 +279,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setOnScrollTo(javafx.event.EventHandler)}
+     * 設定屬性{@link TreeView#setOnScrollTo(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -284,7 +293,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setRoot(javafx.scene.control.TreeItem)}
+     * 設定屬性{@link TreeView#setRoot(javafx.scene.control.TreeItem)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -298,7 +307,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setSelectionModel(javafx.scene.control.MultipleSelectionModel)}
+     * 設定屬性{@link TreeView#setSelectionModel(javafx.scene.control.MultipleSelectionModel)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -312,7 +321,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#setShowRoot(boolean)}
+     * 設定屬性{@link TreeView#setShowRoot(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -326,7 +335,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#cellFactoryProperty}的連結
+     * 設定屬性{@link TreeView#cellFactoryProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -343,7 +352,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#cellFactoryProperty}的雙向連結
+     * 設定屬性{@link TreeView#cellFactoryProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -360,7 +369,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#editableProperty}的連結
+     * 設定屬性{@link TreeView#editableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -377,7 +386,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#editableProperty}的雙向連結
+     * 設定屬性{@link TreeView#editableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -394,7 +403,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#fixedCellSizeProperty}的連結
+     * 設定屬性{@link TreeView#fixedCellSizeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -411,7 +420,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#fixedCellSizeProperty}的雙向連結
+     * 設定屬性{@link TreeView#fixedCellSizeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -428,7 +437,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#focusModelProperty}的連結
+     * 設定屬性{@link TreeView#focusModelProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -445,7 +454,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#focusModelProperty}的雙向連結
+     * 設定屬性{@link TreeView#focusModelProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -462,7 +471,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#onEditCancelProperty}的連結
+     * 設定屬性{@link TreeView#onEditCancelProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -479,7 +488,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#onEditCancelProperty}的雙向連結
+     * 設定屬性{@link TreeView#onEditCancelProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -496,7 +505,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#onEditCommitProperty}的連結
+     * 設定屬性{@link TreeView#onEditCommitProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -513,7 +522,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#onEditCommitProperty}的雙向連結
+     * 設定屬性{@link TreeView#onEditCommitProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -530,7 +539,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#onEditStartProperty}的連結
+     * 設定屬性{@link TreeView#onEditStartProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -547,7 +556,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#onEditStartProperty}的雙向連結
+     * 設定屬性{@link TreeView#onEditStartProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -564,7 +573,41 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#rootProperty}的連結
+     * 設定屬性{@link TreeView#onScrollToProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindOnScrollTo(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnScrollTo = true;
+        this.obsrv1OnScrollTo = source;
+        this.bound2OnScrollTo = false;
+        this.obsrv2OnScrollTo = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeView#onScrollToProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnScrollTo(javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnScrollTo = false;
+        this.obsrv1OnScrollTo = null;
+        this.bound2OnScrollTo = true;
+        this.obsrv2OnScrollTo = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TreeView#rootProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -581,7 +624,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#rootProperty}的雙向連結
+     * 設定屬性{@link TreeView#rootProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -598,7 +641,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#selectionModelProperty}的連結
+     * 設定屬性{@link TreeView#selectionModelProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -615,7 +658,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#selectionModelProperty}的雙向連結
+     * 設定屬性{@link TreeView#selectionModelProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -632,7 +675,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#showRootProperty}的連結
+     * 設定屬性{@link TreeView#showRootProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -649,7 +692,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeView#showRootProperty}的雙向連結
+     * 設定屬性{@link TreeView#showRootProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -666,7 +709,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 建構{@link TreeView}物件
+     * 建構{@link TreeView}物件。
      *
      * @return 新的{@link TreeView}物件實體
      */
@@ -681,7 +724,7 @@ public class TreeViewBuilder<T extends java.lang.Object, Z extends TreeView<T>, 
     }
 
     /**
-     * 建構{@link TreeView}物件
+     * 建構{@link TreeView}物件。
      *
      * @return 新的{@link TreeView}物件實體
      */

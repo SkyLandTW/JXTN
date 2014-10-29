@@ -6,7 +6,7 @@
 package org.controlsfx.control.spreadsheet;
 
 /**
- * {@link SpreadsheetCellBase}建構器
+ * {@link SpreadsheetCellBase}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -46,6 +46,11 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     private javafx.beans.value.ObservableValue<? extends String> obsrv1Format;
     private javafx.beans.property.Property<String> obsrv2Format;
 
+    private boolean bound1Graphic;
+    private boolean bound2Graphic;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Graphic;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Graphic;
+
     private boolean bound1Item;
     private boolean bound2Item;
     private javafx.beans.value.ObservableValue<? extends java.lang.Object> obsrv1Item;
@@ -73,6 +78,10 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
             instance.formatProperty().bind(this.obsrv1Format);
         if (this.bound2Format)
             instance.formatProperty().bindBidirectional(this.obsrv2Format);
+        if (this.bound1Graphic)
+            instance.graphicProperty().bind(this.obsrv1Graphic);
+        if (this.bound2Graphic)
+            instance.graphicProperty().bindBidirectional(this.obsrv2Graphic);
         if (this.bound1Item)
             instance.itemProperty().bind(this.obsrv1Item);
         if (this.bound2Item)
@@ -80,7 +89,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#setColumnSpan(int)}
+     * 設定屬性{@link SpreadsheetCellBase#setColumnSpan(int)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -94,7 +103,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#setEditable(boolean)}
+     * 設定屬性{@link SpreadsheetCellBase#setEditable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -108,7 +117,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#setFormat(java.lang.String)}
+     * 設定屬性{@link SpreadsheetCellBase#setFormat(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -122,7 +131,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#setGraphic(javafx.scene.Node)}
+     * 設定屬性{@link SpreadsheetCellBase#setGraphic(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -136,7 +145,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#setItem(java.lang.Object)}
+     * 設定屬性{@link SpreadsheetCellBase#setItem(java.lang.Object)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -150,7 +159,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#setRowSpan(int)}
+     * 設定屬性{@link SpreadsheetCellBase#setRowSpan(int)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -164,7 +173,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#setTooltip(java.lang.String)}
+     * 設定屬性{@link SpreadsheetCellBase#setTooltip(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -178,7 +187,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#formatProperty}的連結
+     * 設定屬性{@link SpreadsheetCellBase#formatProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -195,7 +204,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#formatProperty}的雙向連結
+     * 設定屬性{@link SpreadsheetCellBase#formatProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -212,7 +221,41 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#itemProperty}的連結
+     * 設定屬性{@link SpreadsheetCellBase#graphicProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindGraphic(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Graphic = true;
+        this.obsrv1Graphic = source;
+        this.bound2Graphic = false;
+        this.obsrv2Graphic = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#graphicProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalGraphic(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Graphic = false;
+        this.obsrv1Graphic = null;
+        this.bound2Graphic = true;
+        this.obsrv2Graphic = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#itemProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -229,7 +272,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 設定屬性{@link SpreadsheetCellBase#itemProperty}的雙向連結
+     * 設定屬性{@link SpreadsheetCellBase#itemProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -246,7 +289,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 建構{@link SpreadsheetCellBase}物件
+     * 建構{@link SpreadsheetCellBase}物件。
      *
      * @return 新的{@link SpreadsheetCellBase}物件實體
      */
@@ -260,7 +303,7 @@ public class SpreadsheetCellBaseBuilder<Z extends SpreadsheetCellBase, B extends
     }
 
     /**
-     * 建構{@link SpreadsheetCellBase}物件
+     * 建構{@link SpreadsheetCellBase}物件。
      *
      * @return 新的{@link SpreadsheetCellBase}物件實體
      */

@@ -6,7 +6,7 @@
 package javafx.scene.layout;
 
 /**
- * {@link Region}建構器
+ * {@link Region}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -237,7 +237,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#setBackground(javafx.scene.layout.Background)}
+     * 設定屬性{@link Region#setBackground(javafx.scene.layout.Background)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -251,7 +251,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#setBorder(javafx.scene.layout.Border)}
+     * 設定屬性{@link Region#setBorder(javafx.scene.layout.Border)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -265,7 +265,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#setCacheShape(boolean)}
+     * 設定屬性{@link Region#setCacheShape(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -279,7 +279,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#setCenterShape(boolean)}
+     * 設定屬性{@link Region#setCenterShape(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -293,7 +293,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#setMaxHeight(double)}
+     * 設定屬性{@link Region#setMaxHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -307,7 +307,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#setMaxWidth(double)}
+     * 設定屬性{@link Region#setMaxWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -321,7 +321,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#setMinHeight(double)}
+     * 設定屬性{@link Region#setMinHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -335,7 +335,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#setMinWidth(double)}
+     * 設定屬性{@link Region#setMinWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -349,7 +349,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#setOpaqueInsets(javafx.geometry.Insets)}
+     * 設定屬性{@link Region#setOpaqueInsets(javafx.geometry.Insets)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -363,7 +363,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#setPadding(javafx.geometry.Insets)}
+     * 設定屬性{@link Region#setPadding(javafx.geometry.Insets)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -377,7 +377,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#setPrefHeight(double)}
+     * 設定屬性{@link Region#setPrefHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -391,7 +391,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#setPrefWidth(double)}
+     * 設定屬性{@link Region#setPrefWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -405,7 +405,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#setScaleShape(boolean)}
+     * 設定屬性{@link Region#setScaleShape(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -419,7 +419,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#setShape(javafx.scene.shape.Shape)}
+     * 設定屬性{@link Region#setShape(javafx.scene.shape.Shape)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -433,7 +433,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#setSnapToPixel(boolean)}
+     * 設定屬性{@link Region#setSnapToPixel(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -447,7 +447,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#backgroundProperty}的連結
+     * 設定屬性{@link Region#backgroundProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -464,7 +464,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#backgroundProperty}的雙向連結
+     * 設定屬性{@link Region#backgroundProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -481,7 +481,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#borderProperty}的連結
+     * 設定屬性{@link Region#borderProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -498,7 +498,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#borderProperty}的雙向連結
+     * 設定屬性{@link Region#borderProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -515,7 +515,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#cacheShapeProperty}的連結
+     * 設定屬性{@link Region#cacheShapeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -532,7 +532,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#cacheShapeProperty}的雙向連結
+     * 設定屬性{@link Region#cacheShapeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -549,7 +549,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#centerShapeProperty}的連結
+     * 設定屬性{@link Region#centerShapeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -566,7 +566,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#centerShapeProperty}的雙向連結
+     * 設定屬性{@link Region#centerShapeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -583,7 +583,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#maxHeightProperty}的連結
+     * 設定屬性{@link Region#maxHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -600,7 +600,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#maxHeightProperty}的雙向連結
+     * 設定屬性{@link Region#maxHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -617,7 +617,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#maxWidthProperty}的連結
+     * 設定屬性{@link Region#maxWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -634,7 +634,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#maxWidthProperty}的雙向連結
+     * 設定屬性{@link Region#maxWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -651,7 +651,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#minHeightProperty}的連結
+     * 設定屬性{@link Region#minHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -668,7 +668,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#minHeightProperty}的雙向連結
+     * 設定屬性{@link Region#minHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -685,7 +685,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#minWidthProperty}的連結
+     * 設定屬性{@link Region#minWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -702,7 +702,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#minWidthProperty}的雙向連結
+     * 設定屬性{@link Region#minWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -719,7 +719,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#opaqueInsetsProperty}的連結
+     * 設定屬性{@link Region#opaqueInsetsProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -736,7 +736,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#opaqueInsetsProperty}的雙向連結
+     * 設定屬性{@link Region#opaqueInsetsProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -753,7 +753,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#paddingProperty}的連結
+     * 設定屬性{@link Region#paddingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -770,7 +770,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#paddingProperty}的雙向連結
+     * 設定屬性{@link Region#paddingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -787,7 +787,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#prefHeightProperty}的連結
+     * 設定屬性{@link Region#prefHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -804,7 +804,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#prefHeightProperty}的雙向連結
+     * 設定屬性{@link Region#prefHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -821,7 +821,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#prefWidthProperty}的連結
+     * 設定屬性{@link Region#prefWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -838,7 +838,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#prefWidthProperty}的雙向連結
+     * 設定屬性{@link Region#prefWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -855,7 +855,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#scaleShapeProperty}的連結
+     * 設定屬性{@link Region#scaleShapeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -872,7 +872,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#scaleShapeProperty}的雙向連結
+     * 設定屬性{@link Region#scaleShapeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -889,7 +889,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#shapeProperty}的連結
+     * 設定屬性{@link Region#shapeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -906,7 +906,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#shapeProperty}的雙向連結
+     * 設定屬性{@link Region#shapeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -923,7 +923,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#snapToPixelProperty}的連結
+     * 設定屬性{@link Region#snapToPixelProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -940,7 +940,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Region#snapToPixelProperty}的雙向連結
+     * 設定屬性{@link Region#snapToPixelProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -957,7 +957,7 @@ public class RegionBuilder<Z extends Region, B extends RegionBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Region}物件
+     * 建構{@link Region}物件。
      *
      * @return 新的{@link Region}物件實體
      */

@@ -6,7 +6,7 @@
 package javafx.scene.shape;
 
 /**
- * {@link CubicCurve}建構器
+ * {@link CubicCurve}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -139,7 +139,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#setControlX1(double)}
+     * 設定屬性{@link CubicCurve#setControlX1(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#setControlX2(double)}
+     * 設定屬性{@link CubicCurve#setControlX2(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#setControlY1(double)}
+     * 設定屬性{@link CubicCurve#setControlY1(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#setControlY2(double)}
+     * 設定屬性{@link CubicCurve#setControlY2(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#setEndX(double)}
+     * 設定屬性{@link CubicCurve#setEndX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#setEndY(double)}
+     * 設定屬性{@link CubicCurve#setEndY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#setStartX(double)}
+     * 設定屬性{@link CubicCurve#setStartX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -237,7 +237,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#setStartY(double)}
+     * 設定屬性{@link CubicCurve#setStartY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -251,7 +251,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#controlX1Property}的連結
+     * 設定屬性{@link CubicCurve#controlX1Property}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -268,7 +268,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#controlX1Property}的雙向連結
+     * 設定屬性{@link CubicCurve#controlX1Property}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -285,7 +285,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#controlX2Property}的連結
+     * 設定屬性{@link CubicCurve#controlX2Property}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -302,7 +302,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#controlX2Property}的雙向連結
+     * 設定屬性{@link CubicCurve#controlX2Property}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -319,7 +319,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#controlY1Property}的連結
+     * 設定屬性{@link CubicCurve#controlY1Property}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -336,7 +336,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#controlY1Property}的雙向連結
+     * 設定屬性{@link CubicCurve#controlY1Property}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -353,7 +353,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#controlY2Property}的連結
+     * 設定屬性{@link CubicCurve#controlY2Property}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -370,7 +370,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#controlY2Property}的雙向連結
+     * 設定屬性{@link CubicCurve#controlY2Property}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -387,7 +387,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#endXProperty}的連結
+     * 設定屬性{@link CubicCurve#endXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -404,7 +404,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#endXProperty}的雙向連結
+     * 設定屬性{@link CubicCurve#endXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -421,7 +421,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#endYProperty}的連結
+     * 設定屬性{@link CubicCurve#endYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -438,7 +438,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#endYProperty}的雙向連結
+     * 設定屬性{@link CubicCurve#endYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -455,7 +455,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#startXProperty}的連結
+     * 設定屬性{@link CubicCurve#startXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -472,7 +472,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#startXProperty}的雙向連結
+     * 設定屬性{@link CubicCurve#startXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -489,7 +489,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#startYProperty}的連結
+     * 設定屬性{@link CubicCurve#startYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -506,7 +506,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 設定屬性{@link CubicCurve#startYProperty}的雙向連結
+     * 設定屬性{@link CubicCurve#startYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -523,7 +523,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 建構{@link CubicCurve}物件
+     * 建構{@link CubicCurve}物件。
      *
      * @return 新的{@link CubicCurve}物件實體
      */
@@ -538,7 +538,7 @@ public class CubicCurveBuilder<Z extends CubicCurve, B extends CubicCurveBuilder
     }
 
     /**
-     * 建構{@link CubicCurve}物件
+     * 建構{@link CubicCurve}物件。
      *
      * @return 新的{@link CubicCurve}物件實體
      */

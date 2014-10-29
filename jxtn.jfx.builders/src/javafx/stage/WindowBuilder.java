@@ -6,7 +6,7 @@
 package javafx.stage;
 
 /**
- * {@link Window}建構器
+ * {@link Window}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -145,7 +145,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setEventDispatcher(javafx.event.EventDispatcher)}
+     * 設定屬性{@link Window#setEventDispatcher(javafx.event.EventDispatcher)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -159,7 +159,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setHeight(double)}
+     * 設定屬性{@link Window#setHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -173,7 +173,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setOnCloseRequest(javafx.event.EventHandler)}
+     * 設定屬性{@link Window#setOnCloseRequest(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -187,7 +187,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setOnHidden(javafx.event.EventHandler)}
+     * 設定屬性{@link Window#setOnHidden(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -201,7 +201,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setOnHiding(javafx.event.EventHandler)}
+     * 設定屬性{@link Window#setOnHiding(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -215,7 +215,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setOnShowing(javafx.event.EventHandler)}
+     * 設定屬性{@link Window#setOnShowing(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -229,7 +229,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setOnShown(javafx.event.EventHandler)}
+     * 設定屬性{@link Window#setOnShown(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -243,7 +243,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setOpacity(double)}
+     * 設定屬性{@link Window#setOpacity(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -257,7 +257,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setWidth(double)}
+     * 設定屬性{@link Window#setWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -271,7 +271,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setX(double)}
+     * 設定屬性{@link Window#setX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -285,7 +285,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#setY(double)}
+     * 設定屬性{@link Window#setY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -299,7 +299,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#eventDispatcherProperty}的連結
+     * 設定屬性{@link Window#eventDispatcherProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -316,7 +316,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#eventDispatcherProperty}的雙向連結
+     * 設定屬性{@link Window#eventDispatcherProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -333,7 +333,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#onCloseRequestProperty}的連結
+     * 設定屬性{@link Window#onCloseRequestProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -350,7 +350,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#onCloseRequestProperty}的雙向連結
+     * 設定屬性{@link Window#onCloseRequestProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -367,7 +367,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#onHiddenProperty}的連結
+     * 設定屬性{@link Window#onHiddenProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -384,7 +384,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#onHiddenProperty}的雙向連結
+     * 設定屬性{@link Window#onHiddenProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -401,7 +401,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#onHidingProperty}的連結
+     * 設定屬性{@link Window#onHidingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -418,7 +418,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#onHidingProperty}的雙向連結
+     * 設定屬性{@link Window#onHidingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -435,7 +435,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#onShowingProperty}的連結
+     * 設定屬性{@link Window#onShowingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -452,7 +452,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#onShowingProperty}的雙向連結
+     * 設定屬性{@link Window#onShowingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -469,7 +469,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#onShownProperty}的連結
+     * 設定屬性{@link Window#onShownProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -486,7 +486,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#onShownProperty}的雙向連結
+     * 設定屬性{@link Window#onShownProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -503,7 +503,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#opacityProperty}的連結
+     * 設定屬性{@link Window#opacityProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -520,7 +520,7 @@ public class WindowBuilder<Z extends Window, B extends WindowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Window#opacityProperty}的雙向連結
+     * 設定屬性{@link Window#opacityProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)

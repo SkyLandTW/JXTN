@@ -6,7 +6,7 @@
 package javafx.scene.effect;
 
 /**
- * {@link Blend}建構器
+ * {@link Blend}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -83,7 +83,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Blend#setBottomInput(javafx.scene.effect.Effect)}
+     * 設定屬性{@link Blend#setBottomInput(javafx.scene.effect.Effect)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -97,7 +97,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Blend#setMode(javafx.scene.effect.BlendMode)}
+     * 設定屬性{@link Blend#setMode(javafx.scene.effect.BlendMode)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Blend#setOpacity(double)}
+     * 設定屬性{@link Blend#setOpacity(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Blend#setTopInput(javafx.scene.effect.Effect)}
+     * 設定屬性{@link Blend#setTopInput(javafx.scene.effect.Effect)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Blend#bottomInputProperty}的連結
+     * 設定屬性{@link Blend#bottomInputProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -156,7 +156,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Blend#bottomInputProperty}的雙向連結
+     * 設定屬性{@link Blend#bottomInputProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -173,7 +173,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Blend#modeProperty}的連結
+     * 設定屬性{@link Blend#modeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -190,7 +190,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Blend#modeProperty}的雙向連結
+     * 設定屬性{@link Blend#modeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -207,7 +207,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Blend#opacityProperty}的連結
+     * 設定屬性{@link Blend#opacityProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -224,7 +224,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Blend#opacityProperty}的雙向連結
+     * 設定屬性{@link Blend#opacityProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -241,7 +241,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Blend#topInputProperty}的連結
+     * 設定屬性{@link Blend#topInputProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -258,7 +258,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Blend#topInputProperty}的雙向連結
+     * 設定屬性{@link Blend#topInputProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -275,7 +275,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Blend}物件
+     * 建構{@link Blend}物件。
      *
      * @return 新的{@link Blend}物件實體
      */
@@ -290,7 +290,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Blend}物件
+     * 建構{@link Blend}物件。
      *
      * @return 新的{@link Blend}物件實體
      */
@@ -304,7 +304,7 @@ public class BlendBuilder<Z extends Blend, B extends BlendBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Blend}物件
+     * 建構{@link Blend}物件。
      *
      * @return 新的{@link Blend}物件實體
      */

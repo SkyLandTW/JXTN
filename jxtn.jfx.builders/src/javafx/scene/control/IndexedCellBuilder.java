@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link IndexedCell}建構器
+ * {@link IndexedCell}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class IndexedCellBuilder<T extends java.lang.Object, Z extends IndexedCel
     }
 
     /**
-     * 建構{@link IndexedCell}物件
+     * 建構{@link IndexedCell}物件。
      *
      * @return 新的{@link IndexedCell}物件實體
      */

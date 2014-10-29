@@ -6,7 +6,7 @@
 package javafx.scene.effect;
 
 /**
- * {@link DisplacementMap}建構器
+ * {@link DisplacementMap}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -125,7 +125,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#setInput(javafx.scene.effect.Effect)}
+     * 設定屬性{@link DisplacementMap#setInput(javafx.scene.effect.Effect)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#setMapData(javafx.scene.effect.FloatMap)}
+     * 設定屬性{@link DisplacementMap#setMapData(javafx.scene.effect.FloatMap)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#setOffsetX(double)}
+     * 設定屬性{@link DisplacementMap#setOffsetX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#setOffsetY(double)}
+     * 設定屬性{@link DisplacementMap#setOffsetY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#setScaleX(double)}
+     * 設定屬性{@link DisplacementMap#setScaleX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#setScaleY(double)}
+     * 設定屬性{@link DisplacementMap#setScaleY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#setWrap(boolean)}
+     * 設定屬性{@link DisplacementMap#setWrap(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#inputProperty}的連結
+     * 設定屬性{@link DisplacementMap#inputProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -240,7 +240,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#inputProperty}的雙向連結
+     * 設定屬性{@link DisplacementMap#inputProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -257,7 +257,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#mapDataProperty}的連結
+     * 設定屬性{@link DisplacementMap#mapDataProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -274,7 +274,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#mapDataProperty}的雙向連結
+     * 設定屬性{@link DisplacementMap#mapDataProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -291,7 +291,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#offsetXProperty}的連結
+     * 設定屬性{@link DisplacementMap#offsetXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -308,7 +308,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#offsetXProperty}的雙向連結
+     * 設定屬性{@link DisplacementMap#offsetXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -325,7 +325,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#offsetYProperty}的連結
+     * 設定屬性{@link DisplacementMap#offsetYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -342,7 +342,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#offsetYProperty}的雙向連結
+     * 設定屬性{@link DisplacementMap#offsetYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -359,7 +359,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#scaleXProperty}的連結
+     * 設定屬性{@link DisplacementMap#scaleXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -376,7 +376,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#scaleXProperty}的雙向連結
+     * 設定屬性{@link DisplacementMap#scaleXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -393,7 +393,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#scaleYProperty}的連結
+     * 設定屬性{@link DisplacementMap#scaleYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -410,7 +410,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#scaleYProperty}的雙向連結
+     * 設定屬性{@link DisplacementMap#scaleYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -427,7 +427,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#wrapProperty}的連結
+     * 設定屬性{@link DisplacementMap#wrapProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -444,7 +444,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 設定屬性{@link DisplacementMap#wrapProperty}的雙向連結
+     * 設定屬性{@link DisplacementMap#wrapProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -461,7 +461,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 建構{@link DisplacementMap}物件
+     * 建構{@link DisplacementMap}物件。
      *
      * @return 新的{@link DisplacementMap}物件實體
      */
@@ -476,7 +476,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 建構{@link DisplacementMap}物件
+     * 建構{@link DisplacementMap}物件。
      *
      * @return 新的{@link DisplacementMap}物件實體
      */
@@ -490,7 +490,7 @@ public class DisplacementMapBuilder<Z extends DisplacementMap, B extends Displac
     }
 
     /**
-     * 建構{@link DisplacementMap}物件
+     * 建構{@link DisplacementMap}物件。
      *
      * @return 新的{@link DisplacementMap}物件實體
      */

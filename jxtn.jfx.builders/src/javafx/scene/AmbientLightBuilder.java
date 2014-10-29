@@ -6,7 +6,7 @@
 package javafx.scene;
 
 /**
- * {@link AmbientLight}建構器
+ * {@link AmbientLight}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class AmbientLightBuilder<Z extends AmbientLight, B extends AmbientLightB
     }
 
     /**
-     * 建構{@link AmbientLight}物件
+     * 建構{@link AmbientLight}物件。
      *
      * @return 新的{@link AmbientLight}物件實體
      */
@@ -42,7 +42,7 @@ public class AmbientLightBuilder<Z extends AmbientLight, B extends AmbientLightB
     }
 
     /**
-     * 建構{@link AmbientLight}物件
+     * 建構{@link AmbientLight}物件。
      *
      * @return 新的{@link AmbientLight}物件實體
      */

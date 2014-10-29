@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link ScrollPane}建構器
+ * {@link ScrollPane}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -237,7 +237,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setContent(javafx.scene.Node)}
+     * 設定屬性{@link ScrollPane#setContent(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -251,7 +251,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setFitToHeight(boolean)}
+     * 設定屬性{@link ScrollPane#setFitToHeight(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -265,7 +265,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setFitToWidth(boolean)}
+     * 設定屬性{@link ScrollPane#setFitToWidth(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -279,7 +279,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setHbarPolicy(javafx.scene.control.ScrollPane.ScrollBarPolicy)}
+     * 設定屬性{@link ScrollPane#setHbarPolicy(javafx.scene.control.ScrollPane.ScrollBarPolicy)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -293,7 +293,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setHmax(double)}
+     * 設定屬性{@link ScrollPane#setHmax(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -307,7 +307,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setHmin(double)}
+     * 設定屬性{@link ScrollPane#setHmin(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -321,7 +321,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setHvalue(double)}
+     * 設定屬性{@link ScrollPane#setHvalue(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -335,7 +335,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setPannable(boolean)}
+     * 設定屬性{@link ScrollPane#setPannable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -349,7 +349,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setPrefViewportHeight(double)}
+     * 設定屬性{@link ScrollPane#setPrefViewportHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -363,7 +363,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setPrefViewportWidth(double)}
+     * 設定屬性{@link ScrollPane#setPrefViewportWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -377,7 +377,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setVbarPolicy(javafx.scene.control.ScrollPane.ScrollBarPolicy)}
+     * 設定屬性{@link ScrollPane#setVbarPolicy(javafx.scene.control.ScrollPane.ScrollBarPolicy)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -391,7 +391,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setViewportBounds(javafx.geometry.Bounds)}
+     * 設定屬性{@link ScrollPane#setViewportBounds(javafx.geometry.Bounds)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -405,7 +405,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setVmax(double)}
+     * 設定屬性{@link ScrollPane#setVmax(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -419,7 +419,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setVmin(double)}
+     * 設定屬性{@link ScrollPane#setVmin(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -433,7 +433,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#setVvalue(double)}
+     * 設定屬性{@link ScrollPane#setVvalue(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -447,7 +447,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#contentProperty}的連結
+     * 設定屬性{@link ScrollPane#contentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -464,7 +464,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#contentProperty}的雙向連結
+     * 設定屬性{@link ScrollPane#contentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -481,7 +481,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#fitToHeightProperty}的連結
+     * 設定屬性{@link ScrollPane#fitToHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -498,7 +498,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#fitToHeightProperty}的雙向連結
+     * 設定屬性{@link ScrollPane#fitToHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -515,7 +515,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#fitToWidthProperty}的連結
+     * 設定屬性{@link ScrollPane#fitToWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -532,7 +532,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#fitToWidthProperty}的雙向連結
+     * 設定屬性{@link ScrollPane#fitToWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -549,7 +549,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#hbarPolicyProperty}的連結
+     * 設定屬性{@link ScrollPane#hbarPolicyProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -566,7 +566,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#hbarPolicyProperty}的雙向連結
+     * 設定屬性{@link ScrollPane#hbarPolicyProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -583,7 +583,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#hmaxProperty}的連結
+     * 設定屬性{@link ScrollPane#hmaxProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -600,7 +600,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#hmaxProperty}的雙向連結
+     * 設定屬性{@link ScrollPane#hmaxProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -617,7 +617,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#hminProperty}的連結
+     * 設定屬性{@link ScrollPane#hminProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -634,7 +634,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#hminProperty}的雙向連結
+     * 設定屬性{@link ScrollPane#hminProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -651,7 +651,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#hvalueProperty}的連結
+     * 設定屬性{@link ScrollPane#hvalueProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -668,7 +668,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#hvalueProperty}的雙向連結
+     * 設定屬性{@link ScrollPane#hvalueProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -685,7 +685,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#pannableProperty}的連結
+     * 設定屬性{@link ScrollPane#pannableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -702,7 +702,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#pannableProperty}的雙向連結
+     * 設定屬性{@link ScrollPane#pannableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -719,7 +719,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#prefViewportHeightProperty}的連結
+     * 設定屬性{@link ScrollPane#prefViewportHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -736,7 +736,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#prefViewportHeightProperty}的雙向連結
+     * 設定屬性{@link ScrollPane#prefViewportHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -753,7 +753,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#prefViewportWidthProperty}的連結
+     * 設定屬性{@link ScrollPane#prefViewportWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -770,7 +770,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#prefViewportWidthProperty}的雙向連結
+     * 設定屬性{@link ScrollPane#prefViewportWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -787,7 +787,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#vbarPolicyProperty}的連結
+     * 設定屬性{@link ScrollPane#vbarPolicyProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -804,7 +804,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#vbarPolicyProperty}的雙向連結
+     * 設定屬性{@link ScrollPane#vbarPolicyProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -821,7 +821,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#viewportBoundsProperty}的連結
+     * 設定屬性{@link ScrollPane#viewportBoundsProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -838,7 +838,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#viewportBoundsProperty}的雙向連結
+     * 設定屬性{@link ScrollPane#viewportBoundsProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -855,7 +855,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#vmaxProperty}的連結
+     * 設定屬性{@link ScrollPane#vmaxProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -872,7 +872,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#vmaxProperty}的雙向連結
+     * 設定屬性{@link ScrollPane#vmaxProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -889,7 +889,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#vminProperty}的連結
+     * 設定屬性{@link ScrollPane#vminProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -906,7 +906,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#vminProperty}的雙向連結
+     * 設定屬性{@link ScrollPane#vminProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -923,7 +923,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#vvalueProperty}的連結
+     * 設定屬性{@link ScrollPane#vvalueProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -940,7 +940,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 設定屬性{@link ScrollPane#vvalueProperty}的雙向連結
+     * 設定屬性{@link ScrollPane#vvalueProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -957,7 +957,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 建構{@link ScrollPane}物件
+     * 建構{@link ScrollPane}物件。
      *
      * @return 新的{@link ScrollPane}物件實體
      */
@@ -972,7 +972,7 @@ public class ScrollPaneBuilder<Z extends ScrollPane, B extends ScrollPaneBuilder
     }
 
     /**
-     * 建構{@link ScrollPane}物件
+     * 建構{@link ScrollPane}物件。
      *
      * @return 新的{@link ScrollPane}物件實體
      */

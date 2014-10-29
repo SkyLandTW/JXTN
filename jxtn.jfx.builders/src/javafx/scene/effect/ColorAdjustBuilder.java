@@ -6,7 +6,7 @@
 package javafx.scene.effect;
 
 /**
- * {@link ColorAdjust}建構器
+ * {@link ColorAdjust}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -97,7 +97,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#setBrightness(double)}
+     * 設定屬性{@link ColorAdjust#setBrightness(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#setContrast(double)}
+     * 設定屬性{@link ColorAdjust#setContrast(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#setHue(double)}
+     * 設定屬性{@link ColorAdjust#setHue(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#setInput(javafx.scene.effect.Effect)}
+     * 設定屬性{@link ColorAdjust#setInput(javafx.scene.effect.Effect)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#setSaturation(double)}
+     * 設定屬性{@link ColorAdjust#setSaturation(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#brightnessProperty}的連結
+     * 設定屬性{@link ColorAdjust#brightnessProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -184,7 +184,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#brightnessProperty}的雙向連結
+     * 設定屬性{@link ColorAdjust#brightnessProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -201,7 +201,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#contrastProperty}的連結
+     * 設定屬性{@link ColorAdjust#contrastProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -218,7 +218,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#contrastProperty}的雙向連結
+     * 設定屬性{@link ColorAdjust#contrastProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -235,7 +235,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#hueProperty}的連結
+     * 設定屬性{@link ColorAdjust#hueProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -252,7 +252,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#hueProperty}的雙向連結
+     * 設定屬性{@link ColorAdjust#hueProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -269,7 +269,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#inputProperty}的連結
+     * 設定屬性{@link ColorAdjust#inputProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -286,7 +286,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#inputProperty}的雙向連結
+     * 設定屬性{@link ColorAdjust#inputProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -303,7 +303,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#saturationProperty}的連結
+     * 設定屬性{@link ColorAdjust#saturationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -320,7 +320,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 設定屬性{@link ColorAdjust#saturationProperty}的雙向連結
+     * 設定屬性{@link ColorAdjust#saturationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -337,7 +337,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 建構{@link ColorAdjust}物件
+     * 建構{@link ColorAdjust}物件。
      *
      * @return 新的{@link ColorAdjust}物件實體
      */
@@ -352,7 +352,7 @@ public class ColorAdjustBuilder<Z extends ColorAdjust, B extends ColorAdjustBuil
     }
 
     /**
-     * 建構{@link ColorAdjust}物件
+     * 建構{@link ColorAdjust}物件。
      *
      * @return 新的{@link ColorAdjust}物件實體
      */

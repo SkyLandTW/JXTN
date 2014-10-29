@@ -6,7 +6,7 @@
 package org.controlsfx.glyphfont;
 
 /**
- * {@link Glyph}建構器
+ * {@link Glyph}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -47,7 +47,7 @@ public class GlyphBuilder<Z extends Glyph, B extends GlyphBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Glyph#setColor(javafx.scene.paint.Color)}
+     * 設定屬性{@link Glyph#setColor(javafx.scene.paint.Color)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -61,7 +61,7 @@ public class GlyphBuilder<Z extends Glyph, B extends GlyphBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Glyph#setFontFamily(java.lang.String)}
+     * 設定屬性{@link Glyph#setFontFamily(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -75,7 +75,7 @@ public class GlyphBuilder<Z extends Glyph, B extends GlyphBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Glyph#setFontSize(double)}
+     * 設定屬性{@link Glyph#setFontSize(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -89,7 +89,7 @@ public class GlyphBuilder<Z extends Glyph, B extends GlyphBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Glyph#setIcon(java.lang.Object)}
+     * 設定屬性{@link Glyph#setIcon(java.lang.Object)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -103,7 +103,7 @@ public class GlyphBuilder<Z extends Glyph, B extends GlyphBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Glyph}物件
+     * 建構{@link Glyph}物件。
      *
      * @return 新的{@link Glyph}物件實體
      */
@@ -118,7 +118,7 @@ public class GlyphBuilder<Z extends Glyph, B extends GlyphBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Glyph}物件
+     * 建構{@link Glyph}物件。
      *
      * @return 新的{@link Glyph}物件實體
      */
@@ -132,7 +132,7 @@ public class GlyphBuilder<Z extends Glyph, B extends GlyphBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Glyph}物件
+     * 建構{@link Glyph}物件。
      *
      * @return 新的{@link Glyph}物件實體
      */

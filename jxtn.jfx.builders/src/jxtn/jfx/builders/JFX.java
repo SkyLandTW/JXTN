@@ -6,7 +6,7 @@
 package jxtn.jfx.builders;
 
 /**
- * 建構器彙總
+ * 建構器彙總。
  *
  * @author JarReflectionDataLoader-1.0.0
  */
@@ -17,7 +17,7 @@ public final class JFX
     private JFX() {}
 
     /**
-     * 建立新的{@link javafx.scene.AmbientLight}建構器
+     * 建立新的{@link javafx.scene.AmbientLight}建構器。
      *
      * @return 新的{@link javafx.scene.AmbientLightBuilder}
      */
@@ -28,7 +28,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.Group}建構器
+     * 建立新的{@link javafx.scene.Group}建構器。
      *
      * @return 新的{@link javafx.scene.GroupBuilder}
      */
@@ -39,7 +39,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.ImageCursor}建構器
+     * 建立新的{@link javafx.scene.ImageCursor}建構器。
      *
      * @return 新的{@link javafx.scene.ImageCursorBuilder}
      */
@@ -50,7 +50,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.ParallelCamera}建構器
+     * 建立新的{@link javafx.scene.ParallelCamera}建構器。
      *
      * @return 新的{@link javafx.scene.ParallelCameraBuilder}
      */
@@ -61,7 +61,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.PerspectiveCamera}建構器
+     * 建立新的{@link javafx.scene.PerspectiveCamera}建構器。
      *
      * @return 新的{@link javafx.scene.PerspectiveCameraBuilder}
      */
@@ -72,7 +72,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.PointLight}建構器
+     * 建立新的{@link javafx.scene.PointLight}建構器。
      *
      * @return 新的{@link javafx.scene.PointLightBuilder}
      */
@@ -83,7 +83,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.Scene}建構器
+     * 建立新的{@link javafx.scene.Scene}建構器。
      *
      * @return 新的{@link javafx.scene.SceneBuilder}
      */
@@ -94,7 +94,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.SnapshotParameters}建構器
+     * 建立新的{@link javafx.scene.SnapshotParameters}建構器。
      *
      * @return 新的{@link javafx.scene.SnapshotParametersBuilder}
      */
@@ -105,7 +105,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.SubScene}建構器
+     * 建立新的{@link javafx.scene.SubScene}建構器。
      *
      * @return 新的{@link javafx.scene.SubSceneBuilder}
      */
@@ -116,7 +116,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.canvas.Canvas}建構器
+     * 建立新的{@link javafx.scene.canvas.Canvas}建構器。
      *
      * @return 新的{@link javafx.scene.canvas.CanvasBuilder}
      */
@@ -127,7 +127,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.chart.AreaChart}建構器
+     * 建立新的{@link javafx.scene.chart.AreaChart}建構器。
      *
      * @return 新的{@link javafx.scene.chart.AreaChartBuilder}
      */
@@ -138,7 +138,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.chart.Axis}建構器
+     * 建立新的{@link javafx.scene.chart.Axis}建構器。
      *
      * @return 新的{@link javafx.scene.chart.AxisBuilder}
      */
@@ -149,7 +149,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.chart.BarChart}建構器
+     * 建立新的{@link javafx.scene.chart.BarChart}建構器。
      *
      * @return 新的{@link javafx.scene.chart.BarChartBuilder}
      */
@@ -160,7 +160,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.chart.BubbleChart}建構器
+     * 建立新的{@link javafx.scene.chart.BubbleChart}建構器。
      *
      * @return 新的{@link javafx.scene.chart.BubbleChartBuilder}
      */
@@ -171,7 +171,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.chart.CategoryAxis}建構器
+     * 建立新的{@link javafx.scene.chart.CategoryAxis}建構器。
      *
      * @return 新的{@link javafx.scene.chart.CategoryAxisBuilder}
      */
@@ -182,7 +182,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.chart.Chart}建構器
+     * 建立新的{@link javafx.scene.chart.Chart}建構器。
      *
      * @return 新的{@link javafx.scene.chart.ChartBuilder}
      */
@@ -193,7 +193,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.chart.LineChart}建構器
+     * 建立新的{@link javafx.scene.chart.LineChart}建構器。
      *
      * @return 新的{@link javafx.scene.chart.LineChartBuilder}
      */
@@ -204,7 +204,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.chart.NumberAxis}建構器
+     * 建立新的{@link javafx.scene.chart.NumberAxis}建構器。
      *
      * @return 新的{@link javafx.scene.chart.NumberAxisBuilder}
      */
@@ -215,7 +215,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.chart.PieChart}建構器
+     * 建立新的{@link javafx.scene.chart.PieChart}建構器。
      *
      * @return 新的{@link javafx.scene.chart.PieChartBuilder}
      */
@@ -226,7 +226,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.chart.ScatterChart}建構器
+     * 建立新的{@link javafx.scene.chart.ScatterChart}建構器。
      *
      * @return 新的{@link javafx.scene.chart.ScatterChartBuilder}
      */
@@ -237,7 +237,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.chart.StackedAreaChart}建構器
+     * 建立新的{@link javafx.scene.chart.StackedAreaChart}建構器。
      *
      * @return 新的{@link javafx.scene.chart.StackedAreaChartBuilder}
      */
@@ -248,7 +248,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.chart.StackedBarChart}建構器
+     * 建立新的{@link javafx.scene.chart.StackedBarChart}建構器。
      *
      * @return 新的{@link javafx.scene.chart.StackedBarChartBuilder}
      */
@@ -259,7 +259,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.chart.ValueAxis}建構器
+     * 建立新的{@link javafx.scene.chart.ValueAxis}建構器。
      *
      * @return 新的{@link javafx.scene.chart.ValueAxisBuilder}
      */
@@ -270,7 +270,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.chart.XYChart}建構器
+     * 建立新的{@link javafx.scene.chart.XYChart}建構器。
      *
      * @return 新的{@link javafx.scene.chart.XYChartBuilder}
      */
@@ -281,7 +281,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.Accordion}建構器
+     * 建立新的{@link javafx.scene.control.Accordion}建構器。
      *
      * @return 新的{@link javafx.scene.control.AccordionBuilder}
      */
@@ -292,7 +292,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.Button}建構器
+     * 建立新的{@link javafx.scene.control.Button}建構器。
      *
      * @return 新的{@link javafx.scene.control.ButtonBuilder}
      */
@@ -303,7 +303,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ButtonBase}建構器
+     * 建立新的{@link javafx.scene.control.ButtonBase}建構器。
      *
      * @return 新的{@link javafx.scene.control.ButtonBaseBuilder}
      */
@@ -314,7 +314,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.Cell}建構器
+     * 建立新的{@link javafx.scene.control.Cell}建構器。
      *
      * @return 新的{@link javafx.scene.control.CellBuilder}
      */
@@ -325,7 +325,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.CheckBox}建構器
+     * 建立新的{@link javafx.scene.control.CheckBox}建構器。
      *
      * @return 新的{@link javafx.scene.control.CheckBoxBuilder}
      */
@@ -336,7 +336,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.CheckBoxTreeItem}建構器
+     * 建立新的{@link javafx.scene.control.CheckBoxTreeItem}建構器。
      *
      * @return 新的{@link javafx.scene.control.CheckBoxTreeItemBuilder}
      */
@@ -347,7 +347,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.CheckMenuItem}建構器
+     * 建立新的{@link javafx.scene.control.CheckMenuItem}建構器。
      *
      * @return 新的{@link javafx.scene.control.CheckMenuItemBuilder}
      */
@@ -358,7 +358,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ChoiceBox}建構器
+     * 建立新的{@link javafx.scene.control.ChoiceBox}建構器。
      *
      * @return 新的{@link javafx.scene.control.ChoiceBoxBuilder}
      */
@@ -369,7 +369,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ColorPicker}建構器
+     * 建立新的{@link javafx.scene.control.ColorPicker}建構器。
      *
      * @return 新的{@link javafx.scene.control.ColorPickerBuilder}
      */
@@ -380,7 +380,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ComboBox}建構器
+     * 建立新的{@link javafx.scene.control.ComboBox}建構器。
      *
      * @return 新的{@link javafx.scene.control.ComboBoxBuilder}
      */
@@ -391,7 +391,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ComboBoxBase}建構器
+     * 建立新的{@link javafx.scene.control.ComboBoxBase}建構器。
      *
      * @return 新的{@link javafx.scene.control.ComboBoxBaseBuilder}
      */
@@ -402,7 +402,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ContextMenu}建構器
+     * 建立新的{@link javafx.scene.control.ContextMenu}建構器。
      *
      * @return 新的{@link javafx.scene.control.ContextMenuBuilder}
      */
@@ -413,7 +413,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.CustomMenuItem}建構器
+     * 建立新的{@link javafx.scene.control.CustomMenuItem}建構器。
      *
      * @return 新的{@link javafx.scene.control.CustomMenuItemBuilder}
      */
@@ -424,7 +424,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.DateCell}建構器
+     * 建立新的{@link javafx.scene.control.DateCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.DateCellBuilder}
      */
@@ -435,7 +435,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.DatePicker}建構器
+     * 建立新的{@link javafx.scene.control.DatePicker}建構器。
      *
      * @return 新的{@link javafx.scene.control.DatePickerBuilder}
      */
@@ -446,7 +446,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.Hyperlink}建構器
+     * 建立新的{@link javafx.scene.control.Hyperlink}建構器。
      *
      * @return 新的{@link javafx.scene.control.HyperlinkBuilder}
      */
@@ -457,7 +457,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.IndexRange}建構器
+     * 建立新的{@link javafx.scene.control.IndexRange}建構器。
      *
      * @return 新的{@link javafx.scene.control.IndexRangeBuilder}
      */
@@ -468,7 +468,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.IndexedCell}建構器
+     * 建立新的{@link javafx.scene.control.IndexedCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.IndexedCellBuilder}
      */
@@ -479,7 +479,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.Label}建構器
+     * 建立新的{@link javafx.scene.control.Label}建構器。
      *
      * @return 新的{@link javafx.scene.control.LabelBuilder}
      */
@@ -490,7 +490,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.Labeled}建構器
+     * 建立新的{@link javafx.scene.control.Labeled}建構器。
      *
      * @return 新的{@link javafx.scene.control.LabeledBuilder}
      */
@@ -501,7 +501,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ListCell}建構器
+     * 建立新的{@link javafx.scene.control.ListCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.ListCellBuilder}
      */
@@ -512,7 +512,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ListView}建構器
+     * 建立新的{@link javafx.scene.control.ListView}建構器。
      *
      * @return 新的{@link javafx.scene.control.ListViewBuilder}
      */
@@ -523,7 +523,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.Menu}建構器
+     * 建立新的{@link javafx.scene.control.Menu}建構器。
      *
      * @return 新的{@link javafx.scene.control.MenuBuilder}
      */
@@ -534,7 +534,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.MenuBar}建構器
+     * 建立新的{@link javafx.scene.control.MenuBar}建構器。
      *
      * @return 新的{@link javafx.scene.control.MenuBarBuilder}
      */
@@ -545,7 +545,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.MenuButton}建構器
+     * 建立新的{@link javafx.scene.control.MenuButton}建構器。
      *
      * @return 新的{@link javafx.scene.control.MenuButtonBuilder}
      */
@@ -556,7 +556,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.MenuItem}建構器
+     * 建立新的{@link javafx.scene.control.MenuItem}建構器。
      *
      * @return 新的{@link javafx.scene.control.MenuItemBuilder}
      */
@@ -567,7 +567,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.Pagination}建構器
+     * 建立新的{@link javafx.scene.control.Pagination}建構器。
      *
      * @return 新的{@link javafx.scene.control.PaginationBuilder}
      */
@@ -578,7 +578,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.PasswordField}建構器
+     * 建立新的{@link javafx.scene.control.PasswordField}建構器。
      *
      * @return 新的{@link javafx.scene.control.PasswordFieldBuilder}
      */
@@ -589,7 +589,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.PopupControl}建構器
+     * 建立新的{@link javafx.scene.control.PopupControl}建構器。
      *
      * @return 新的{@link javafx.scene.control.PopupControlBuilder}
      */
@@ -600,7 +600,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ProgressBar}建構器
+     * 建立新的{@link javafx.scene.control.ProgressBar}建構器。
      *
      * @return 新的{@link javafx.scene.control.ProgressBarBuilder}
      */
@@ -611,7 +611,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ProgressIndicator}建構器
+     * 建立新的{@link javafx.scene.control.ProgressIndicator}建構器。
      *
      * @return 新的{@link javafx.scene.control.ProgressIndicatorBuilder}
      */
@@ -622,7 +622,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.RadioButton}建構器
+     * 建立新的{@link javafx.scene.control.RadioButton}建構器。
      *
      * @return 新的{@link javafx.scene.control.RadioButtonBuilder}
      */
@@ -633,7 +633,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.RadioMenuItem}建構器
+     * 建立新的{@link javafx.scene.control.RadioMenuItem}建構器。
      *
      * @return 新的{@link javafx.scene.control.RadioMenuItemBuilder}
      */
@@ -644,7 +644,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ResizeFeaturesBase}建構器
+     * 建立新的{@link javafx.scene.control.ResizeFeaturesBase}建構器。
      *
      * @return 新的{@link javafx.scene.control.ResizeFeaturesBaseBuilder}
      */
@@ -655,7 +655,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ScrollBar}建構器
+     * 建立新的{@link javafx.scene.control.ScrollBar}建構器。
      *
      * @return 新的{@link javafx.scene.control.ScrollBarBuilder}
      */
@@ -666,7 +666,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ScrollPane}建構器
+     * 建立新的{@link javafx.scene.control.ScrollPane}建構器。
      *
      * @return 新的{@link javafx.scene.control.ScrollPaneBuilder}
      */
@@ -677,7 +677,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.Separator}建構器
+     * 建立新的{@link javafx.scene.control.Separator}建構器。
      *
      * @return 新的{@link javafx.scene.control.SeparatorBuilder}
      */
@@ -688,7 +688,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.SeparatorMenuItem}建構器
+     * 建立新的{@link javafx.scene.control.SeparatorMenuItem}建構器。
      *
      * @return 新的{@link javafx.scene.control.SeparatorMenuItemBuilder}
      */
@@ -699,7 +699,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.Slider}建構器
+     * 建立新的{@link javafx.scene.control.Slider}建構器。
      *
      * @return 新的{@link javafx.scene.control.SliderBuilder}
      */
@@ -710,7 +710,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.SplitMenuButton}建構器
+     * 建立新的{@link javafx.scene.control.SplitMenuButton}建構器。
      *
      * @return 新的{@link javafx.scene.control.SplitMenuButtonBuilder}
      */
@@ -721,7 +721,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.SplitPane}建構器
+     * 建立新的{@link javafx.scene.control.SplitPane}建構器。
      *
      * @return 新的{@link javafx.scene.control.SplitPaneBuilder}
      */
@@ -732,7 +732,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.Tab}建構器
+     * 建立新的{@link javafx.scene.control.Tab}建構器。
      *
      * @return 新的{@link javafx.scene.control.TabBuilder}
      */
@@ -743,7 +743,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.TabPane}建構器
+     * 建立新的{@link javafx.scene.control.TabPane}建構器。
      *
      * @return 新的{@link javafx.scene.control.TabPaneBuilder}
      */
@@ -754,7 +754,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.TableCell}建構器
+     * 建立新的{@link javafx.scene.control.TableCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.TableCellBuilder}
      */
@@ -765,7 +765,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.TableColumn}建構器
+     * 建立新的{@link javafx.scene.control.TableColumn}建構器。
      *
      * @return 新的{@link javafx.scene.control.TableColumnBuilder}
      */
@@ -776,7 +776,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.TablePosition}建構器
+     * 建立新的{@link javafx.scene.control.TablePosition}建構器。
      *
      * @return 新的{@link javafx.scene.control.TablePositionBuilder}
      */
@@ -787,7 +787,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.TableRow}建構器
+     * 建立新的{@link javafx.scene.control.TableRow}建構器。
      *
      * @return 新的{@link javafx.scene.control.TableRowBuilder}
      */
@@ -798,7 +798,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.TableView}建構器
+     * 建立新的{@link javafx.scene.control.TableView}建構器。
      *
      * @return 新的{@link javafx.scene.control.TableViewBuilder}
      */
@@ -809,7 +809,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.TextArea}建構器
+     * 建立新的{@link javafx.scene.control.TextArea}建構器。
      *
      * @return 新的{@link javafx.scene.control.TextAreaBuilder}
      */
@@ -820,7 +820,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.TextField}建構器
+     * 建立新的{@link javafx.scene.control.TextField}建構器。
      *
      * @return 新的{@link javafx.scene.control.TextFieldBuilder}
      */
@@ -831,7 +831,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.TitledPane}建構器
+     * 建立新的{@link javafx.scene.control.TitledPane}建構器。
      *
      * @return 新的{@link javafx.scene.control.TitledPaneBuilder}
      */
@@ -842,7 +842,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ToggleButton}建構器
+     * 建立新的{@link javafx.scene.control.ToggleButton}建構器。
      *
      * @return 新的{@link javafx.scene.control.ToggleButtonBuilder}
      */
@@ -853,7 +853,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ToggleGroup}建構器
+     * 建立新的{@link javafx.scene.control.ToggleGroup}建構器。
      *
      * @return 新的{@link javafx.scene.control.ToggleGroupBuilder}
      */
@@ -864,7 +864,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ToolBar}建構器
+     * 建立新的{@link javafx.scene.control.ToolBar}建構器。
      *
      * @return 新的{@link javafx.scene.control.ToolBarBuilder}
      */
@@ -875,7 +875,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.Tooltip}建構器
+     * 建立新的{@link javafx.scene.control.Tooltip}建構器。
      *
      * @return 新的{@link javafx.scene.control.TooltipBuilder}
      */
@@ -886,7 +886,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.TreeCell}建構器
+     * 建立新的{@link javafx.scene.control.TreeCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.TreeCellBuilder}
      */
@@ -897,7 +897,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.TreeItem}建構器
+     * 建立新的{@link javafx.scene.control.TreeItem}建構器。
      *
      * @return 新的{@link javafx.scene.control.TreeItemBuilder}
      */
@@ -908,7 +908,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.TreeTableCell}建構器
+     * 建立新的{@link javafx.scene.control.TreeTableCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.TreeTableCellBuilder}
      */
@@ -919,7 +919,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.TreeTableColumn}建構器
+     * 建立新的{@link javafx.scene.control.TreeTableColumn}建構器。
      *
      * @return 新的{@link javafx.scene.control.TreeTableColumnBuilder}
      */
@@ -930,7 +930,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.TreeTablePosition}建構器
+     * 建立新的{@link javafx.scene.control.TreeTablePosition}建構器。
      *
      * @return 新的{@link javafx.scene.control.TreeTablePositionBuilder}
      */
@@ -941,7 +941,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.TreeTableRow}建構器
+     * 建立新的{@link javafx.scene.control.TreeTableRow}建構器。
      *
      * @return 新的{@link javafx.scene.control.TreeTableRowBuilder}
      */
@@ -952,7 +952,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.TreeTableView}建構器
+     * 建立新的{@link javafx.scene.control.TreeTableView}建構器。
      *
      * @return 新的{@link javafx.scene.control.TreeTableViewBuilder}
      */
@@ -963,7 +963,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.TreeView}建構器
+     * 建立新的{@link javafx.scene.control.TreeView}建構器。
      *
      * @return 新的{@link javafx.scene.control.TreeViewBuilder}
      */
@@ -974,7 +974,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.CheckBoxListCell}建構器
+     * 建立新的{@link javafx.scene.control.cell.CheckBoxListCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.CheckBoxListCellBuilder}
      */
@@ -985,7 +985,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.CheckBoxTableCell}建構器
+     * 建立新的{@link javafx.scene.control.cell.CheckBoxTableCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.CheckBoxTableCellBuilder}
      */
@@ -996,7 +996,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.CheckBoxTreeCell}建構器
+     * 建立新的{@link javafx.scene.control.cell.CheckBoxTreeCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.CheckBoxTreeCellBuilder}
      */
@@ -1007,7 +1007,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.CheckBoxTreeTableCell}建構器
+     * 建立新的{@link javafx.scene.control.cell.CheckBoxTreeTableCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.CheckBoxTreeTableCellBuilder}
      */
@@ -1018,7 +1018,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.ChoiceBoxListCell}建構器
+     * 建立新的{@link javafx.scene.control.cell.ChoiceBoxListCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.ChoiceBoxListCellBuilder}
      */
@@ -1029,7 +1029,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.ChoiceBoxTableCell}建構器
+     * 建立新的{@link javafx.scene.control.cell.ChoiceBoxTableCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.ChoiceBoxTableCellBuilder}
      */
@@ -1040,7 +1040,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.ChoiceBoxTreeCell}建構器
+     * 建立新的{@link javafx.scene.control.cell.ChoiceBoxTreeCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.ChoiceBoxTreeCellBuilder}
      */
@@ -1051,7 +1051,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.ChoiceBoxTreeTableCell}建構器
+     * 建立新的{@link javafx.scene.control.cell.ChoiceBoxTreeTableCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.ChoiceBoxTreeTableCellBuilder}
      */
@@ -1062,7 +1062,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.ComboBoxListCell}建構器
+     * 建立新的{@link javafx.scene.control.cell.ComboBoxListCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.ComboBoxListCellBuilder}
      */
@@ -1073,7 +1073,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.ComboBoxTableCell}建構器
+     * 建立新的{@link javafx.scene.control.cell.ComboBoxTableCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.ComboBoxTableCellBuilder}
      */
@@ -1084,7 +1084,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.ComboBoxTreeCell}建構器
+     * 建立新的{@link javafx.scene.control.cell.ComboBoxTreeCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.ComboBoxTreeCellBuilder}
      */
@@ -1095,7 +1095,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.ComboBoxTreeTableCell}建構器
+     * 建立新的{@link javafx.scene.control.cell.ComboBoxTreeTableCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.ComboBoxTreeTableCellBuilder}
      */
@@ -1106,7 +1106,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.MapValueFactory}建構器
+     * 建立新的{@link javafx.scene.control.cell.MapValueFactory}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.MapValueFactoryBuilder}
      */
@@ -1117,7 +1117,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.ProgressBarTableCell}建構器
+     * 建立新的{@link javafx.scene.control.cell.ProgressBarTableCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.ProgressBarTableCellBuilder}
      */
@@ -1128,7 +1128,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.ProgressBarTreeTableCell}建構器
+     * 建立新的{@link javafx.scene.control.cell.ProgressBarTreeTableCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.ProgressBarTreeTableCellBuilder}
      */
@@ -1139,7 +1139,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.PropertyValueFactory}建構器
+     * 建立新的{@link javafx.scene.control.cell.PropertyValueFactory}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.PropertyValueFactoryBuilder}
      */
@@ -1150,7 +1150,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.TextFieldListCell}建構器
+     * 建立新的{@link javafx.scene.control.cell.TextFieldListCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.TextFieldListCellBuilder}
      */
@@ -1161,7 +1161,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.TextFieldTableCell}建構器
+     * 建立新的{@link javafx.scene.control.cell.TextFieldTableCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.TextFieldTableCellBuilder}
      */
@@ -1172,7 +1172,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.TextFieldTreeCell}建構器
+     * 建立新的{@link javafx.scene.control.cell.TextFieldTreeCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.TextFieldTreeCellBuilder}
      */
@@ -1183,7 +1183,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.TextFieldTreeTableCell}建構器
+     * 建立新的{@link javafx.scene.control.cell.TextFieldTreeTableCell}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.TextFieldTreeTableCellBuilder}
      */
@@ -1194,7 +1194,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.cell.TreeItemPropertyValueFactory}建構器
+     * 建立新的{@link javafx.scene.control.cell.TreeItemPropertyValueFactory}建構器。
      *
      * @return 新的{@link javafx.scene.control.cell.TreeItemPropertyValueFactoryBuilder}
      */
@@ -1205,7 +1205,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.effect.Blend}建構器
+     * 建立新的{@link javafx.scene.effect.Blend}建構器。
      *
      * @return 新的{@link javafx.scene.effect.BlendBuilder}
      */
@@ -1216,7 +1216,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.effect.Bloom}建構器
+     * 建立新的{@link javafx.scene.effect.Bloom}建構器。
      *
      * @return 新的{@link javafx.scene.effect.BloomBuilder}
      */
@@ -1227,7 +1227,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.effect.BoxBlur}建構器
+     * 建立新的{@link javafx.scene.effect.BoxBlur}建構器。
      *
      * @return 新的{@link javafx.scene.effect.BoxBlurBuilder}
      */
@@ -1238,7 +1238,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.effect.ColorAdjust}建構器
+     * 建立新的{@link javafx.scene.effect.ColorAdjust}建構器。
      *
      * @return 新的{@link javafx.scene.effect.ColorAdjustBuilder}
      */
@@ -1249,7 +1249,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.effect.ColorInput}建構器
+     * 建立新的{@link javafx.scene.effect.ColorInput}建構器。
      *
      * @return 新的{@link javafx.scene.effect.ColorInputBuilder}
      */
@@ -1260,7 +1260,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.effect.DisplacementMap}建構器
+     * 建立新的{@link javafx.scene.effect.DisplacementMap}建構器。
      *
      * @return 新的{@link javafx.scene.effect.DisplacementMapBuilder}
      */
@@ -1271,7 +1271,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.effect.DropShadow}建構器
+     * 建立新的{@link javafx.scene.effect.DropShadow}建構器。
      *
      * @return 新的{@link javafx.scene.effect.DropShadowBuilder}
      */
@@ -1282,7 +1282,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.effect.FloatMap}建構器
+     * 建立新的{@link javafx.scene.effect.FloatMap}建構器。
      *
      * @return 新的{@link javafx.scene.effect.FloatMapBuilder}
      */
@@ -1293,7 +1293,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.effect.GaussianBlur}建構器
+     * 建立新的{@link javafx.scene.effect.GaussianBlur}建構器。
      *
      * @return 新的{@link javafx.scene.effect.GaussianBlurBuilder}
      */
@@ -1304,7 +1304,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.effect.Glow}建構器
+     * 建立新的{@link javafx.scene.effect.Glow}建構器。
      *
      * @return 新的{@link javafx.scene.effect.GlowBuilder}
      */
@@ -1315,7 +1315,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.effect.ImageInput}建構器
+     * 建立新的{@link javafx.scene.effect.ImageInput}建構器。
      *
      * @return 新的{@link javafx.scene.effect.ImageInputBuilder}
      */
@@ -1326,7 +1326,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.effect.InnerShadow}建構器
+     * 建立新的{@link javafx.scene.effect.InnerShadow}建構器。
      *
      * @return 新的{@link javafx.scene.effect.InnerShadowBuilder}
      */
@@ -1337,7 +1337,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.effect.Lighting}建構器
+     * 建立新的{@link javafx.scene.effect.Lighting}建構器。
      *
      * @return 新的{@link javafx.scene.effect.LightingBuilder}
      */
@@ -1348,7 +1348,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.effect.MotionBlur}建構器
+     * 建立新的{@link javafx.scene.effect.MotionBlur}建構器。
      *
      * @return 新的{@link javafx.scene.effect.MotionBlurBuilder}
      */
@@ -1359,7 +1359,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.effect.PerspectiveTransform}建構器
+     * 建立新的{@link javafx.scene.effect.PerspectiveTransform}建構器。
      *
      * @return 新的{@link javafx.scene.effect.PerspectiveTransformBuilder}
      */
@@ -1370,7 +1370,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.effect.Reflection}建構器
+     * 建立新的{@link javafx.scene.effect.Reflection}建構器。
      *
      * @return 新的{@link javafx.scene.effect.ReflectionBuilder}
      */
@@ -1381,7 +1381,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.effect.SepiaTone}建構器
+     * 建立新的{@link javafx.scene.effect.SepiaTone}建構器。
      *
      * @return 新的{@link javafx.scene.effect.SepiaToneBuilder}
      */
@@ -1392,7 +1392,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.effect.Shadow}建構器
+     * 建立新的{@link javafx.scene.effect.Shadow}建構器。
      *
      * @return 新的{@link javafx.scene.effect.ShadowBuilder}
      */
@@ -1403,7 +1403,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.image.Image}建構器
+     * 建立新的{@link javafx.scene.image.Image}建構器。
      *
      * @return 新的{@link javafx.scene.image.ImageBuilder}
      */
@@ -1414,7 +1414,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.image.ImageView}建構器
+     * 建立新的{@link javafx.scene.image.ImageView}建構器。
      *
      * @return 新的{@link javafx.scene.image.ImageViewBuilder}
      */
@@ -1425,7 +1425,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.image.WritableImage}建構器
+     * 建立新的{@link javafx.scene.image.WritableImage}建構器。
      *
      * @return 新的{@link javafx.scene.image.WritableImageBuilder}
      */
@@ -1436,7 +1436,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.input.ClipboardContent}建構器
+     * 建立新的{@link javafx.scene.input.ClipboardContent}建構器。
      *
      * @return 新的{@link javafx.scene.input.ClipboardContentBuilder}
      */
@@ -1447,7 +1447,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.input.DataFormat}建構器
+     * 建立新的{@link javafx.scene.input.DataFormat}建構器。
      *
      * @return 新的{@link javafx.scene.input.DataFormatBuilder}
      */
@@ -1458,7 +1458,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.input.InputMethodTextRun}建構器
+     * 建立新的{@link javafx.scene.input.InputMethodTextRun}建構器。
      *
      * @return 新的{@link javafx.scene.input.InputMethodTextRunBuilder}
      */
@@ -1469,7 +1469,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.input.KeyCharacterCombination}建構器
+     * 建立新的{@link javafx.scene.input.KeyCharacterCombination}建構器。
      *
      * @return 新的{@link javafx.scene.input.KeyCharacterCombinationBuilder}
      */
@@ -1480,7 +1480,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.input.KeyCodeCombination}建構器
+     * 建立新的{@link javafx.scene.input.KeyCodeCombination}建構器。
      *
      * @return 新的{@link javafx.scene.input.KeyCodeCombinationBuilder}
      */
@@ -1491,7 +1491,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.input.Mnemonic}建構器
+     * 建立新的{@link javafx.scene.input.Mnemonic}建構器。
      *
      * @return 新的{@link javafx.scene.input.MnemonicBuilder}
      */
@@ -1502,7 +1502,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.input.PickResult}建構器
+     * 建立新的{@link javafx.scene.input.PickResult}建構器。
      *
      * @return 新的{@link javafx.scene.input.PickResultBuilder}
      */
@@ -1513,7 +1513,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.input.TouchPoint}建構器
+     * 建立新的{@link javafx.scene.input.TouchPoint}建構器。
      *
      * @return 新的{@link javafx.scene.input.TouchPointBuilder}
      */
@@ -1524,7 +1524,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.AnchorPane}建構器
+     * 建立新的{@link javafx.scene.layout.AnchorPane}建構器。
      *
      * @return 新的{@link javafx.scene.layout.AnchorPaneBuilder}
      */
@@ -1535,7 +1535,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.Background}建構器
+     * 建立新的{@link javafx.scene.layout.Background}建構器。
      *
      * @return 新的{@link javafx.scene.layout.BackgroundBuilder}
      */
@@ -1546,7 +1546,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.BackgroundFill}建構器
+     * 建立新的{@link javafx.scene.layout.BackgroundFill}建構器。
      *
      * @return 新的{@link javafx.scene.layout.BackgroundFillBuilder}
      */
@@ -1557,7 +1557,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.BackgroundImage}建構器
+     * 建立新的{@link javafx.scene.layout.BackgroundImage}建構器。
      *
      * @return 新的{@link javafx.scene.layout.BackgroundImageBuilder}
      */
@@ -1568,7 +1568,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.BackgroundPosition}建構器
+     * 建立新的{@link javafx.scene.layout.BackgroundPosition}建構器。
      *
      * @return 新的{@link javafx.scene.layout.BackgroundPositionBuilder}
      */
@@ -1579,7 +1579,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.BackgroundSize}建構器
+     * 建立新的{@link javafx.scene.layout.BackgroundSize}建構器。
      *
      * @return 新的{@link javafx.scene.layout.BackgroundSizeBuilder}
      */
@@ -1590,7 +1590,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.Border}建構器
+     * 建立新的{@link javafx.scene.layout.Border}建構器。
      *
      * @return 新的{@link javafx.scene.layout.BorderBuilder}
      */
@@ -1601,7 +1601,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.BorderImage}建構器
+     * 建立新的{@link javafx.scene.layout.BorderImage}建構器。
      *
      * @return 新的{@link javafx.scene.layout.BorderImageBuilder}
      */
@@ -1612,7 +1612,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.BorderPane}建構器
+     * 建立新的{@link javafx.scene.layout.BorderPane}建構器。
      *
      * @return 新的{@link javafx.scene.layout.BorderPaneBuilder}
      */
@@ -1623,7 +1623,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.BorderStroke}建構器
+     * 建立新的{@link javafx.scene.layout.BorderStroke}建構器。
      *
      * @return 新的{@link javafx.scene.layout.BorderStrokeBuilder}
      */
@@ -1634,7 +1634,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.BorderStrokeStyle}建構器
+     * 建立新的{@link javafx.scene.layout.BorderStrokeStyle}建構器。
      *
      * @return 新的{@link javafx.scene.layout.BorderStrokeStyleBuilder}
      */
@@ -1645,7 +1645,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.BorderWidths}建構器
+     * 建立新的{@link javafx.scene.layout.BorderWidths}建構器。
      *
      * @return 新的{@link javafx.scene.layout.BorderWidthsBuilder}
      */
@@ -1656,7 +1656,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.ColumnConstraints}建構器
+     * 建立新的{@link javafx.scene.layout.ColumnConstraints}建構器。
      *
      * @return 新的{@link javafx.scene.layout.ColumnConstraintsBuilder}
      */
@@ -1667,7 +1667,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.CornerRadii}建構器
+     * 建立新的{@link javafx.scene.layout.CornerRadii}建構器。
      *
      * @return 新的{@link javafx.scene.layout.CornerRadiiBuilder}
      */
@@ -1678,7 +1678,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.FlowPane}建構器
+     * 建立新的{@link javafx.scene.layout.FlowPane}建構器。
      *
      * @return 新的{@link javafx.scene.layout.FlowPaneBuilder}
      */
@@ -1689,7 +1689,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.GridPane}建構器
+     * 建立新的{@link javafx.scene.layout.GridPane}建構器。
      *
      * @return 新的{@link javafx.scene.layout.GridPaneBuilder}
      */
@@ -1700,7 +1700,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.HBox}建構器
+     * 建立新的{@link javafx.scene.layout.HBox}建構器。
      *
      * @return 新的{@link javafx.scene.layout.HBoxBuilder}
      */
@@ -1711,7 +1711,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.Pane}建構器
+     * 建立新的{@link javafx.scene.layout.Pane}建構器。
      *
      * @return 新的{@link javafx.scene.layout.PaneBuilder}
      */
@@ -1722,7 +1722,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.Region}建構器
+     * 建立新的{@link javafx.scene.layout.Region}建構器。
      *
      * @return 新的{@link javafx.scene.layout.RegionBuilder}
      */
@@ -1733,7 +1733,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.RowConstraints}建構器
+     * 建立新的{@link javafx.scene.layout.RowConstraints}建構器。
      *
      * @return 新的{@link javafx.scene.layout.RowConstraintsBuilder}
      */
@@ -1744,7 +1744,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.StackPane}建構器
+     * 建立新的{@link javafx.scene.layout.StackPane}建構器。
      *
      * @return 新的{@link javafx.scene.layout.StackPaneBuilder}
      */
@@ -1755,7 +1755,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.TilePane}建構器
+     * 建立新的{@link javafx.scene.layout.TilePane}建構器。
      *
      * @return 新的{@link javafx.scene.layout.TilePaneBuilder}
      */
@@ -1766,7 +1766,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.layout.VBox}建構器
+     * 建立新的{@link javafx.scene.layout.VBox}建構器。
      *
      * @return 新的{@link javafx.scene.layout.VBoxBuilder}
      */
@@ -1777,7 +1777,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.media.AudioClip}建構器
+     * 建立新的{@link javafx.scene.media.AudioClip}建構器。
      *
      * @return 新的{@link javafx.scene.media.AudioClipBuilder}
      */
@@ -1788,7 +1788,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.media.EqualizerBand}建構器
+     * 建立新的{@link javafx.scene.media.EqualizerBand}建構器。
      *
      * @return 新的{@link javafx.scene.media.EqualizerBandBuilder}
      */
@@ -1799,7 +1799,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.media.Media}建構器
+     * 建立新的{@link javafx.scene.media.Media}建構器。
      *
      * @return 新的{@link javafx.scene.media.MediaBuilder}
      */
@@ -1810,7 +1810,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.media.MediaPlayer}建構器
+     * 建立新的{@link javafx.scene.media.MediaPlayer}建構器。
      *
      * @return 新的{@link javafx.scene.media.MediaPlayerBuilder}
      */
@@ -1821,7 +1821,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.media.MediaView}建構器
+     * 建立新的{@link javafx.scene.media.MediaView}建構器。
      *
      * @return 新的{@link javafx.scene.media.MediaViewBuilder}
      */
@@ -1832,7 +1832,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.paint.Color}建構器
+     * 建立新的{@link javafx.scene.paint.Color}建構器。
      *
      * @return 新的{@link javafx.scene.paint.ColorBuilder}
      */
@@ -1843,7 +1843,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.paint.ImagePattern}建構器
+     * 建立新的{@link javafx.scene.paint.ImagePattern}建構器。
      *
      * @return 新的{@link javafx.scene.paint.ImagePatternBuilder}
      */
@@ -1854,7 +1854,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.paint.LinearGradient}建構器
+     * 建立新的{@link javafx.scene.paint.LinearGradient}建構器。
      *
      * @return 新的{@link javafx.scene.paint.LinearGradientBuilder}
      */
@@ -1865,7 +1865,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.paint.PhongMaterial}建構器
+     * 建立新的{@link javafx.scene.paint.PhongMaterial}建構器。
      *
      * @return 新的{@link javafx.scene.paint.PhongMaterialBuilder}
      */
@@ -1876,7 +1876,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.paint.RadialGradient}建構器
+     * 建立新的{@link javafx.scene.paint.RadialGradient}建構器。
      *
      * @return 新的{@link javafx.scene.paint.RadialGradientBuilder}
      */
@@ -1887,7 +1887,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.paint.Stop}建構器
+     * 建立新的{@link javafx.scene.paint.Stop}建構器。
      *
      * @return 新的{@link javafx.scene.paint.StopBuilder}
      */
@@ -1898,7 +1898,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.Arc}建構器
+     * 建立新的{@link javafx.scene.shape.Arc}建構器。
      *
      * @return 新的{@link javafx.scene.shape.ArcBuilder}
      */
@@ -1909,7 +1909,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.ArcTo}建構器
+     * 建立新的{@link javafx.scene.shape.ArcTo}建構器。
      *
      * @return 新的{@link javafx.scene.shape.ArcToBuilder}
      */
@@ -1920,7 +1920,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.Box}建構器
+     * 建立新的{@link javafx.scene.shape.Box}建構器。
      *
      * @return 新的{@link javafx.scene.shape.BoxBuilder}
      */
@@ -1931,7 +1931,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.Circle}建構器
+     * 建立新的{@link javafx.scene.shape.Circle}建構器。
      *
      * @return 新的{@link javafx.scene.shape.CircleBuilder}
      */
@@ -1942,7 +1942,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.ClosePath}建構器
+     * 建立新的{@link javafx.scene.shape.ClosePath}建構器。
      *
      * @return 新的{@link javafx.scene.shape.ClosePathBuilder}
      */
@@ -1953,7 +1953,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.CubicCurve}建構器
+     * 建立新的{@link javafx.scene.shape.CubicCurve}建構器。
      *
      * @return 新的{@link javafx.scene.shape.CubicCurveBuilder}
      */
@@ -1964,7 +1964,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.CubicCurveTo}建構器
+     * 建立新的{@link javafx.scene.shape.CubicCurveTo}建構器。
      *
      * @return 新的{@link javafx.scene.shape.CubicCurveToBuilder}
      */
@@ -1975,7 +1975,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.Cylinder}建構器
+     * 建立新的{@link javafx.scene.shape.Cylinder}建構器。
      *
      * @return 新的{@link javafx.scene.shape.CylinderBuilder}
      */
@@ -1986,7 +1986,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.Ellipse}建構器
+     * 建立新的{@link javafx.scene.shape.Ellipse}建構器。
      *
      * @return 新的{@link javafx.scene.shape.EllipseBuilder}
      */
@@ -1997,7 +1997,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.HLineTo}建構器
+     * 建立新的{@link javafx.scene.shape.HLineTo}建構器。
      *
      * @return 新的{@link javafx.scene.shape.HLineToBuilder}
      */
@@ -2008,7 +2008,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.Line}建構器
+     * 建立新的{@link javafx.scene.shape.Line}建構器。
      *
      * @return 新的{@link javafx.scene.shape.LineBuilder}
      */
@@ -2019,7 +2019,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.LineTo}建構器
+     * 建立新的{@link javafx.scene.shape.LineTo}建構器。
      *
      * @return 新的{@link javafx.scene.shape.LineToBuilder}
      */
@@ -2030,7 +2030,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.MeshView}建構器
+     * 建立新的{@link javafx.scene.shape.MeshView}建構器。
      *
      * @return 新的{@link javafx.scene.shape.MeshViewBuilder}
      */
@@ -2041,7 +2041,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.MoveTo}建構器
+     * 建立新的{@link javafx.scene.shape.MoveTo}建構器。
      *
      * @return 新的{@link javafx.scene.shape.MoveToBuilder}
      */
@@ -2052,7 +2052,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.Path}建構器
+     * 建立新的{@link javafx.scene.shape.Path}建構器。
      *
      * @return 新的{@link javafx.scene.shape.PathBuilder}
      */
@@ -2063,7 +2063,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.PathElement}建構器
+     * 建立新的{@link javafx.scene.shape.PathElement}建構器。
      *
      * @return 新的{@link javafx.scene.shape.PathElementBuilder}
      */
@@ -2074,7 +2074,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.Polygon}建構器
+     * 建立新的{@link javafx.scene.shape.Polygon}建構器。
      *
      * @return 新的{@link javafx.scene.shape.PolygonBuilder}
      */
@@ -2085,7 +2085,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.Polyline}建構器
+     * 建立新的{@link javafx.scene.shape.Polyline}建構器。
      *
      * @return 新的{@link javafx.scene.shape.PolylineBuilder}
      */
@@ -2096,7 +2096,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.QuadCurve}建構器
+     * 建立新的{@link javafx.scene.shape.QuadCurve}建構器。
      *
      * @return 新的{@link javafx.scene.shape.QuadCurveBuilder}
      */
@@ -2107,7 +2107,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.QuadCurveTo}建構器
+     * 建立新的{@link javafx.scene.shape.QuadCurveTo}建構器。
      *
      * @return 新的{@link javafx.scene.shape.QuadCurveToBuilder}
      */
@@ -2118,7 +2118,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.Rectangle}建構器
+     * 建立新的{@link javafx.scene.shape.Rectangle}建構器。
      *
      * @return 新的{@link javafx.scene.shape.RectangleBuilder}
      */
@@ -2129,7 +2129,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.SVGPath}建構器
+     * 建立新的{@link javafx.scene.shape.SVGPath}建構器。
      *
      * @return 新的{@link javafx.scene.shape.SVGPathBuilder}
      */
@@ -2140,7 +2140,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.Shape}建構器
+     * 建立新的{@link javafx.scene.shape.Shape}建構器。
      *
      * @return 新的{@link javafx.scene.shape.ShapeBuilder}
      */
@@ -2151,7 +2151,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.Sphere}建構器
+     * 建立新的{@link javafx.scene.shape.Sphere}建構器。
      *
      * @return 新的{@link javafx.scene.shape.SphereBuilder}
      */
@@ -2162,7 +2162,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.TriangleMesh}建構器
+     * 建立新的{@link javafx.scene.shape.TriangleMesh}建構器。
      *
      * @return 新的{@link javafx.scene.shape.TriangleMeshBuilder}
      */
@@ -2173,7 +2173,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.shape.VLineTo}建構器
+     * 建立新的{@link javafx.scene.shape.VLineTo}建構器。
      *
      * @return 新的{@link javafx.scene.shape.VLineToBuilder}
      */
@@ -2184,7 +2184,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.text.Font}建構器
+     * 建立新的{@link javafx.scene.text.Font}建構器。
      *
      * @return 新的{@link javafx.scene.text.FontBuilder}
      */
@@ -2195,7 +2195,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.text.Text}建構器
+     * 建立新的{@link javafx.scene.text.Text}建構器。
      *
      * @return 新的{@link javafx.scene.text.TextBuilder}
      */
@@ -2206,7 +2206,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.text.TextFlow}建構器
+     * 建立新的{@link javafx.scene.text.TextFlow}建構器。
      *
      * @return 新的{@link javafx.scene.text.TextFlowBuilder}
      */
@@ -2217,7 +2217,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.transform.Affine}建構器
+     * 建立新的{@link javafx.scene.transform.Affine}建構器。
      *
      * @return 新的{@link javafx.scene.transform.AffineBuilder}
      */
@@ -2228,7 +2228,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.transform.NonInvertibleTransformException}建構器
+     * 建立新的{@link javafx.scene.transform.NonInvertibleTransformException}建構器。
      *
      * @return 新的{@link javafx.scene.transform.NonInvertibleTransformExceptionBuilder}
      */
@@ -2239,7 +2239,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.transform.Rotate}建構器
+     * 建立新的{@link javafx.scene.transform.Rotate}建構器。
      *
      * @return 新的{@link javafx.scene.transform.RotateBuilder}
      */
@@ -2250,7 +2250,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.transform.Scale}建構器
+     * 建立新的{@link javafx.scene.transform.Scale}建構器。
      *
      * @return 新的{@link javafx.scene.transform.ScaleBuilder}
      */
@@ -2261,7 +2261,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.transform.Shear}建構器
+     * 建立新的{@link javafx.scene.transform.Shear}建構器。
      *
      * @return 新的{@link javafx.scene.transform.ShearBuilder}
      */
@@ -2272,7 +2272,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.transform.Transform}建構器
+     * 建立新的{@link javafx.scene.transform.Transform}建構器。
      *
      * @return 新的{@link javafx.scene.transform.TransformBuilder}
      */
@@ -2283,7 +2283,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.transform.Translate}建構器
+     * 建立新的{@link javafx.scene.transform.Translate}建構器。
      *
      * @return 新的{@link javafx.scene.transform.TranslateBuilder}
      */
@@ -2294,7 +2294,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.web.HTMLEditor}建構器
+     * 建立新的{@link javafx.scene.web.HTMLEditor}建構器。
      *
      * @return 新的{@link javafx.scene.web.HTMLEditorBuilder}
      */
@@ -2305,7 +2305,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.web.PopupFeatures}建構器
+     * 建立新的{@link javafx.scene.web.PopupFeatures}建構器。
      *
      * @return 新的{@link javafx.scene.web.PopupFeaturesBuilder}
      */
@@ -2316,7 +2316,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.web.PromptData}建構器
+     * 建立新的{@link javafx.scene.web.PromptData}建構器。
      *
      * @return 新的{@link javafx.scene.web.PromptDataBuilder}
      */
@@ -2327,7 +2327,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.web.WebEngine}建構器
+     * 建立新的{@link javafx.scene.web.WebEngine}建構器。
      *
      * @return 新的{@link javafx.scene.web.WebEngineBuilder}
      */
@@ -2338,7 +2338,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.web.WebView}建構器
+     * 建立新的{@link javafx.scene.web.WebView}建構器。
      *
      * @return 新的{@link javafx.scene.web.WebViewBuilder}
      */
@@ -2349,7 +2349,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.stage.DirectoryChooser}建構器
+     * 建立新的{@link javafx.stage.DirectoryChooser}建構器。
      *
      * @return 新的{@link javafx.stage.DirectoryChooserBuilder}
      */
@@ -2360,7 +2360,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.stage.FileChooser}建構器
+     * 建立新的{@link javafx.stage.FileChooser}建構器。
      *
      * @return 新的{@link javafx.stage.FileChooserBuilder}
      */
@@ -2371,7 +2371,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.stage.Popup}建構器
+     * 建立新的{@link javafx.stage.Popup}建構器。
      *
      * @return 新的{@link javafx.stage.PopupBuilder}
      */
@@ -2382,7 +2382,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.stage.PopupWindow}建構器
+     * 建立新的{@link javafx.stage.PopupWindow}建構器。
      *
      * @return 新的{@link javafx.stage.PopupWindowBuilder}
      */
@@ -2393,7 +2393,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.stage.Stage}建構器
+     * 建立新的{@link javafx.stage.Stage}建構器。
      *
      * @return 新的{@link javafx.stage.StageBuilder}
      */
@@ -2404,7 +2404,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.Alert}建構器
+     * 建立新的{@link javafx.scene.control.Alert}建構器。
      *
      * @return 新的{@link javafx.scene.control.AlertBuilder}
      */
@@ -2415,7 +2415,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ButtonBar}建構器
+     * 建立新的{@link javafx.scene.control.ButtonBar}建構器。
      *
      * @return 新的{@link javafx.scene.control.ButtonBarBuilder}
      */
@@ -2426,7 +2426,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ButtonType}建構器
+     * 建立新的{@link javafx.scene.control.ButtonType}建構器。
      *
      * @return 新的{@link javafx.scene.control.ButtonTypeBuilder}
      */
@@ -2437,7 +2437,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.ChoiceDialog}建構器
+     * 建立新的{@link javafx.scene.control.ChoiceDialog}建構器。
      *
      * @return 新的{@link javafx.scene.control.ChoiceDialogBuilder}
      */
@@ -2448,7 +2448,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.Dialog}建構器
+     * 建立新的{@link javafx.scene.control.Dialog}建構器。
      *
      * @return 新的{@link javafx.scene.control.DialogBuilder}
      */
@@ -2459,7 +2459,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.DialogPane}建構器
+     * 建立新的{@link javafx.scene.control.DialogPane}建構器。
      *
      * @return 新的{@link javafx.scene.control.DialogPaneBuilder}
      */
@@ -2470,7 +2470,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link javafx.scene.control.TextInputDialog}建構器
+     * 建立新的{@link javafx.scene.control.TextInputDialog}建構器。
      *
      * @return 新的{@link javafx.scene.control.TextInputDialogBuilder}
      */
@@ -2481,7 +2481,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.BreadCrumbBar}建構器
+     * 建立新的{@link org.controlsfx.control.BreadCrumbBar}建構器。
      *
      * @return 新的{@link org.controlsfx.control.BreadCrumbBarBuilder}
      */
@@ -2492,7 +2492,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.CheckComboBox}建構器
+     * 建立新的{@link org.controlsfx.control.CheckComboBox}建構器。
      *
      * @return 新的{@link org.controlsfx.control.CheckComboBoxBuilder}
      */
@@ -2503,7 +2503,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.CheckListView}建構器
+     * 建立新的{@link org.controlsfx.control.CheckListView}建構器。
      *
      * @return 新的{@link org.controlsfx.control.CheckListViewBuilder}
      */
@@ -2514,7 +2514,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.CheckTreeView}建構器
+     * 建立新的{@link org.controlsfx.control.CheckTreeView}建構器。
      *
      * @return 新的{@link org.controlsfx.control.CheckTreeViewBuilder}
      */
@@ -2525,7 +2525,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.GridCell}建構器
+     * 建立新的{@link org.controlsfx.control.GridCell}建構器。
      *
      * @return 新的{@link org.controlsfx.control.GridCellBuilder}
      */
@@ -2536,7 +2536,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.GridView}建構器
+     * 建立新的{@link org.controlsfx.control.GridView}建構器。
      *
      * @return 新的{@link org.controlsfx.control.GridViewBuilder}
      */
@@ -2547,7 +2547,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.HiddenSidesPane}建構器
+     * 建立新的{@link org.controlsfx.control.HiddenSidesPane}建構器。
      *
      * @return 新的{@link org.controlsfx.control.HiddenSidesPaneBuilder}
      */
@@ -2558,7 +2558,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.HyperlinkLabel}建構器
+     * 建立新的{@link org.controlsfx.control.HyperlinkLabel}建構器。
      *
      * @return 新的{@link org.controlsfx.control.HyperlinkLabelBuilder}
      */
@@ -2569,7 +2569,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.InfoOverlay}建構器
+     * 建立新的{@link org.controlsfx.control.InfoOverlay}建構器。
      *
      * @return 新的{@link org.controlsfx.control.InfoOverlayBuilder}
      */
@@ -2580,7 +2580,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.MasterDetailPane}建構器
+     * 建立新的{@link org.controlsfx.control.MasterDetailPane}建構器。
      *
      * @return 新的{@link org.controlsfx.control.MasterDetailPaneBuilder}
      */
@@ -2591,7 +2591,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.NotificationPane}建構器
+     * 建立新的{@link org.controlsfx.control.NotificationPane}建構器。
      *
      * @return 新的{@link org.controlsfx.control.NotificationPaneBuilder}
      */
@@ -2602,7 +2602,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.PlusMinusSlider}建構器
+     * 建立新的{@link org.controlsfx.control.PlusMinusSlider}建構器。
      *
      * @return 新的{@link org.controlsfx.control.PlusMinusSliderBuilder}
      */
@@ -2613,7 +2613,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.PopOver}建構器
+     * 建立新的{@link org.controlsfx.control.PopOver}建構器。
      *
      * @return 新的{@link org.controlsfx.control.PopOverBuilder}
      */
@@ -2624,7 +2624,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.PropertySheet}建構器
+     * 建立新的{@link org.controlsfx.control.PropertySheet}建構器。
      *
      * @return 新的{@link org.controlsfx.control.PropertySheetBuilder}
      */
@@ -2635,7 +2635,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.RangeSlider}建構器
+     * 建立新的{@link org.controlsfx.control.RangeSlider}建構器。
      *
      * @return 新的{@link org.controlsfx.control.RangeSliderBuilder}
      */
@@ -2646,7 +2646,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.Rating}建構器
+     * 建立新的{@link org.controlsfx.control.Rating}建構器。
      *
      * @return 新的{@link org.controlsfx.control.RatingBuilder}
      */
@@ -2657,7 +2657,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.SegmentedButton}建構器
+     * 建立新的{@link org.controlsfx.control.SegmentedButton}建構器。
      *
      * @return 新的{@link org.controlsfx.control.SegmentedButtonBuilder}
      */
@@ -2668,7 +2668,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.SnapshotView}建構器
+     * 建立新的{@link org.controlsfx.control.SnapshotView}建構器。
      *
      * @return 新的{@link org.controlsfx.control.SnapshotViewBuilder}
      */
@@ -2679,7 +2679,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.StatusBar}建構器
+     * 建立新的{@link org.controlsfx.control.StatusBar}建構器。
      *
      * @return 新的{@link org.controlsfx.control.StatusBarBuilder}
      */
@@ -2690,7 +2690,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.action.Action}建構器
+     * 建立新的{@link org.controlsfx.control.action.Action}建構器。
      *
      * @return 新的{@link org.controlsfx.control.action.ActionBuilder}
      */
@@ -2701,7 +2701,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.action.ActionGroup}建構器
+     * 建立新的{@link org.controlsfx.control.action.ActionGroup}建構器。
      *
      * @return 新的{@link org.controlsfx.control.action.ActionGroupBuilder}
      */
@@ -2712,7 +2712,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.cell.ColorGridCell}建構器
+     * 建立新的{@link org.controlsfx.control.cell.ColorGridCell}建構器。
      *
      * @return 新的{@link org.controlsfx.control.cell.ColorGridCellBuilder}
      */
@@ -2723,7 +2723,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.cell.ImageGridCell}建構器
+     * 建立新的{@link org.controlsfx.control.cell.ImageGridCell}建構器。
      *
      * @return 新的{@link org.controlsfx.control.cell.ImageGridCellBuilder}
      */
@@ -2734,7 +2734,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.cell.MediaImageCell}建構器
+     * 建立新的{@link org.controlsfx.control.cell.MediaImageCell}建構器。
      *
      * @return 新的{@link org.controlsfx.control.cell.MediaImageCellBuilder}
      */
@@ -2745,7 +2745,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.decoration.GraphicDecoration}建構器
+     * 建立新的{@link org.controlsfx.control.decoration.GraphicDecoration}建構器。
      *
      * @return 新的{@link org.controlsfx.control.decoration.GraphicDecorationBuilder}
      */
@@ -2756,7 +2756,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.decoration.StyleClassDecoration}建構器
+     * 建立新的{@link org.controlsfx.control.decoration.StyleClassDecoration}建構器。
      *
      * @return 新的{@link org.controlsfx.control.decoration.StyleClassDecorationBuilder}
      */
@@ -2767,7 +2767,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.spreadsheet.GridBase}建構器
+     * 建立新的{@link org.controlsfx.control.spreadsheet.GridBase}建構器。
      *
      * @return 新的{@link org.controlsfx.control.spreadsheet.GridBaseBuilder}
      */
@@ -2778,7 +2778,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.spreadsheet.GridChange}建構器
+     * 建立新的{@link org.controlsfx.control.spreadsheet.GridChange}建構器。
      *
      * @return 新的{@link org.controlsfx.control.spreadsheet.GridChangeBuilder}
      */
@@ -2789,7 +2789,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellBase}建構器
+     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellBase}建構器。
      *
      * @return 新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellBaseBuilder}
      */
@@ -2800,7 +2800,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellEditor}建構器
+     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellEditor}建構器。
      *
      * @return 新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellEditorBuilder}
      */
@@ -2811,7 +2811,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellType}建構器
+     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellType}建構器。
      *
      * @return 新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellTypeBuilder}
      */
@@ -2822,7 +2822,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetView}建構器
+     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetView}建構器。
      *
      * @return 新的{@link org.controlsfx.control.spreadsheet.SpreadsheetViewBuilder}
      */
@@ -2833,7 +2833,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.spreadsheet.StringConverterWithFormat}建構器
+     * 建立新的{@link org.controlsfx.control.spreadsheet.StringConverterWithFormat}建構器。
      *
      * @return 新的{@link org.controlsfx.control.spreadsheet.StringConverterWithFormatBuilder}
      */
@@ -2844,7 +2844,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.textfield.CustomPasswordField}建構器
+     * 建立新的{@link org.controlsfx.control.textfield.CustomPasswordField}建構器。
      *
      * @return 新的{@link org.controlsfx.control.textfield.CustomPasswordFieldBuilder}
      */
@@ -2855,7 +2855,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.textfield.CustomTextField}建構器
+     * 建立新的{@link org.controlsfx.control.textfield.CustomTextField}建構器。
      *
      * @return 新的{@link org.controlsfx.control.textfield.CustomTextFieldBuilder}
      */
@@ -2866,7 +2866,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.dialog.CommandLinksDialog}建構器
+     * 建立新的{@link org.controlsfx.dialog.CommandLinksDialog}建構器。
      *
      * @return 新的{@link org.controlsfx.dialog.CommandLinksDialogBuilder}
      */
@@ -2877,7 +2877,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.dialog.ExceptionDialog}建構器
+     * 建立新的{@link org.controlsfx.dialog.ExceptionDialog}建構器。
      *
      * @return 新的{@link org.controlsfx.dialog.ExceptionDialogBuilder}
      */
@@ -2888,7 +2888,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.dialog.FontSelectorDialog}建構器
+     * 建立新的{@link org.controlsfx.dialog.FontSelectorDialog}建構器。
      *
      * @return 新的{@link org.controlsfx.dialog.FontSelectorDialogBuilder}
      */
@@ -2899,7 +2899,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.dialog.LoginDialog}建構器
+     * 建立新的{@link org.controlsfx.dialog.LoginDialog}建構器。
      *
      * @return 新的{@link org.controlsfx.dialog.LoginDialogBuilder}
      */
@@ -2910,7 +2910,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.dialog.ProgressDialog}建構器
+     * 建立新的{@link org.controlsfx.dialog.ProgressDialog}建構器。
      *
      * @return 新的{@link org.controlsfx.dialog.ProgressDialogBuilder}
      */
@@ -2921,7 +2921,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.dialog.Wizard}建構器
+     * 建立新的{@link org.controlsfx.dialog.Wizard}建構器。
      *
      * @return 新的{@link org.controlsfx.dialog.WizardBuilder}
      */
@@ -2932,7 +2932,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.glyphfont.FontAwesome}建構器
+     * 建立新的{@link org.controlsfx.glyphfont.FontAwesome}建構器。
      *
      * @return 新的{@link org.controlsfx.glyphfont.FontAwesomeBuilder}
      */
@@ -2943,7 +2943,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.glyphfont.Glyph}建構器
+     * 建立新的{@link org.controlsfx.glyphfont.Glyph}建構器。
      *
      * @return 新的{@link org.controlsfx.glyphfont.GlyphBuilder}
      */
@@ -2954,7 +2954,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.glyphfont.GlyphFont}建構器
+     * 建立新的{@link org.controlsfx.glyphfont.GlyphFont}建構器。
      *
      * @return 新的{@link org.controlsfx.glyphfont.GlyphFontBuilder}
      */
@@ -2965,7 +2965,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.property.BeanProperty}建構器
+     * 建立新的{@link org.controlsfx.property.BeanProperty}建構器。
      *
      * @return 新的{@link org.controlsfx.property.BeanPropertyBuilder}
      */
@@ -2976,7 +2976,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.property.editor.AbstractPropertyEditor}建構器
+     * 建立新的{@link org.controlsfx.property.editor.AbstractPropertyEditor}建構器。
      *
      * @return 新的{@link org.controlsfx.property.editor.AbstractPropertyEditorBuilder}
      */
@@ -2987,7 +2987,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.property.editor.DefaultPropertyEditorFactory}建構器
+     * 建立新的{@link org.controlsfx.property.editor.DefaultPropertyEditorFactory}建構器。
      *
      * @return 新的{@link org.controlsfx.property.editor.DefaultPropertyEditorFactoryBuilder}
      */
@@ -2998,7 +2998,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.tools.Utils}建構器
+     * 建立新的{@link org.controlsfx.tools.Utils}建構器。
      *
      * @return 新的{@link org.controlsfx.tools.UtilsBuilder}
      */
@@ -3009,7 +3009,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.validation.ValidationResult}建構器
+     * 建立新的{@link org.controlsfx.validation.ValidationResult}建構器。
      *
      * @return 新的{@link org.controlsfx.validation.ValidationResultBuilder}
      */
@@ -3020,7 +3020,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.validation.ValidationSupport}建構器
+     * 建立新的{@link org.controlsfx.validation.ValidationSupport}建構器。
      *
      * @return 新的{@link org.controlsfx.validation.ValidationSupportBuilder}
      */
@@ -3031,7 +3031,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.validation.decoration.AbstractValidationDecoration}建構器
+     * 建立新的{@link org.controlsfx.validation.decoration.AbstractValidationDecoration}建構器。
      *
      * @return 新的{@link org.controlsfx.validation.decoration.AbstractValidationDecorationBuilder}
      */
@@ -3042,7 +3042,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.validation.decoration.CompoundValidationDecoration}建構器
+     * 建立新的{@link org.controlsfx.validation.decoration.CompoundValidationDecoration}建構器。
      *
      * @return 新的{@link org.controlsfx.validation.decoration.CompoundValidationDecorationBuilder}
      */
@@ -3053,7 +3053,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.validation.decoration.GraphicValidationDecoration}建構器
+     * 建立新的{@link org.controlsfx.validation.decoration.GraphicValidationDecoration}建構器。
      *
      * @return 新的{@link org.controlsfx.validation.decoration.GraphicValidationDecorationBuilder}
      */
@@ -3064,7 +3064,7 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.validation.decoration.StyleClassValidationDecoration}建構器
+     * 建立新的{@link org.controlsfx.validation.decoration.StyleClassValidationDecoration}建構器。
      *
      * @return 新的{@link org.controlsfx.validation.decoration.StyleClassValidationDecorationBuilder}
      */

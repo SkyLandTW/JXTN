@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link CheckBoxTreeItem}建構器
+ * {@link CheckBoxTreeItem}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -69,7 +69,7 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 設定屬性{@link CheckBoxTreeItem#setIndependent(boolean)}
+     * 設定屬性{@link CheckBoxTreeItem#setIndependent(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -83,7 +83,7 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 設定屬性{@link CheckBoxTreeItem#setIndeterminate(boolean)}
+     * 設定屬性{@link CheckBoxTreeItem#setIndeterminate(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -97,7 +97,7 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 設定屬性{@link CheckBoxTreeItem#setSelected(boolean)}
+     * 設定屬性{@link CheckBoxTreeItem#setSelected(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 設定屬性{@link CheckBoxTreeItem#independentProperty}的連結
+     * 設定屬性{@link CheckBoxTreeItem#independentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -128,7 +128,7 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 設定屬性{@link CheckBoxTreeItem#independentProperty}的雙向連結
+     * 設定屬性{@link CheckBoxTreeItem#independentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -145,7 +145,7 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 設定屬性{@link CheckBoxTreeItem#indeterminateProperty}的連結
+     * 設定屬性{@link CheckBoxTreeItem#indeterminateProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -162,7 +162,7 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 設定屬性{@link CheckBoxTreeItem#indeterminateProperty}的雙向連結
+     * 設定屬性{@link CheckBoxTreeItem#indeterminateProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -179,7 +179,7 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 設定屬性{@link CheckBoxTreeItem#selectedProperty}的連結
+     * 設定屬性{@link CheckBoxTreeItem#selectedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -196,7 +196,7 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 設定屬性{@link CheckBoxTreeItem#selectedProperty}的雙向連結
+     * 設定屬性{@link CheckBoxTreeItem#selectedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -213,7 +213,7 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 建構{@link CheckBoxTreeItem}物件
+     * 建構{@link CheckBoxTreeItem}物件。
      *
      * @return 新的{@link CheckBoxTreeItem}物件實體
      */
@@ -228,7 +228,7 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 建構{@link CheckBoxTreeItem}物件
+     * 建構{@link CheckBoxTreeItem}物件。
      *
      * @return 新的{@link CheckBoxTreeItem}物件實體
      */
@@ -242,7 +242,7 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 建構{@link CheckBoxTreeItem}物件
+     * 建構{@link CheckBoxTreeItem}物件。
      *
      * @return 新的{@link CheckBoxTreeItem}物件實體
      */
@@ -256,7 +256,7 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 建構{@link CheckBoxTreeItem}物件
+     * 建構{@link CheckBoxTreeItem}物件。
      *
      * @return 新的{@link CheckBoxTreeItem}物件實體
      */
@@ -270,7 +270,7 @@ public class CheckBoxTreeItemBuilder<T extends java.lang.Object, Z extends Check
     }
 
     /**
-     * 建構{@link CheckBoxTreeItem}物件
+     * 建構{@link CheckBoxTreeItem}物件。
      *
      * @return 新的{@link CheckBoxTreeItem}物件實體
      */

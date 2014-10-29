@@ -6,7 +6,7 @@
 package javafx.scene.text;
 
 /**
- * {@link Text}建構器
+ * {@link Text}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -195,7 +195,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setBoundsType(javafx.scene.text.TextBoundsType)}
+     * 設定屬性{@link Text#setBoundsType(javafx.scene.text.TextBoundsType)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setFont(javafx.scene.text.Font)}
+     * 設定屬性{@link Text#setFont(javafx.scene.text.Font)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setFontSmoothingType(javafx.scene.text.FontSmoothingType)}
+     * 設定屬性{@link Text#setFontSmoothingType(javafx.scene.text.FontSmoothingType)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -237,7 +237,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setLineSpacing(double)}
+     * 設定屬性{@link Text#setLineSpacing(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -251,7 +251,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setStrikethrough(boolean)}
+     * 設定屬性{@link Text#setStrikethrough(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -265,7 +265,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setText(java.lang.String)}
+     * 設定屬性{@link Text#setText(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -279,7 +279,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setTextAlignment(javafx.scene.text.TextAlignment)}
+     * 設定屬性{@link Text#setTextAlignment(javafx.scene.text.TextAlignment)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -293,7 +293,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setTextOrigin(javafx.geometry.VPos)}
+     * 設定屬性{@link Text#setTextOrigin(javafx.geometry.VPos)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -307,7 +307,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setUnderline(boolean)}
+     * 設定屬性{@link Text#setUnderline(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -321,7 +321,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setWrappingWidth(double)}
+     * 設定屬性{@link Text#setWrappingWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -335,7 +335,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setX(double)}
+     * 設定屬性{@link Text#setX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -349,7 +349,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#setY(double)}
+     * 設定屬性{@link Text#setY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -363,7 +363,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#boundsTypeProperty}的連結
+     * 設定屬性{@link Text#boundsTypeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -380,7 +380,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#boundsTypeProperty}的雙向連結
+     * 設定屬性{@link Text#boundsTypeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -397,7 +397,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#fontProperty}的連結
+     * 設定屬性{@link Text#fontProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -414,7 +414,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#fontProperty}的雙向連結
+     * 設定屬性{@link Text#fontProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -431,7 +431,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#fontSmoothingTypeProperty}的連結
+     * 設定屬性{@link Text#fontSmoothingTypeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -448,7 +448,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#fontSmoothingTypeProperty}的雙向連結
+     * 設定屬性{@link Text#fontSmoothingTypeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -465,7 +465,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#lineSpacingProperty}的連結
+     * 設定屬性{@link Text#lineSpacingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -482,7 +482,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#lineSpacingProperty}的雙向連結
+     * 設定屬性{@link Text#lineSpacingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -499,7 +499,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#strikethroughProperty}的連結
+     * 設定屬性{@link Text#strikethroughProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -516,7 +516,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#strikethroughProperty}的雙向連結
+     * 設定屬性{@link Text#strikethroughProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -533,7 +533,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#textAlignmentProperty}的連結
+     * 設定屬性{@link Text#textAlignmentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -550,7 +550,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#textAlignmentProperty}的雙向連結
+     * 設定屬性{@link Text#textAlignmentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -567,7 +567,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#textOriginProperty}的連結
+     * 設定屬性{@link Text#textOriginProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -584,7 +584,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#textOriginProperty}的雙向連結
+     * 設定屬性{@link Text#textOriginProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -601,7 +601,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#textProperty}的連結
+     * 設定屬性{@link Text#textProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -618,7 +618,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#textProperty}的雙向連結
+     * 設定屬性{@link Text#textProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -635,7 +635,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#underlineProperty}的連結
+     * 設定屬性{@link Text#underlineProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -652,7 +652,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#underlineProperty}的雙向連結
+     * 設定屬性{@link Text#underlineProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -669,7 +669,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#wrappingWidthProperty}的連結
+     * 設定屬性{@link Text#wrappingWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -686,7 +686,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#wrappingWidthProperty}的雙向連結
+     * 設定屬性{@link Text#wrappingWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -703,7 +703,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#xProperty}的連結
+     * 設定屬性{@link Text#xProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -720,7 +720,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#xProperty}的雙向連結
+     * 設定屬性{@link Text#xProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -737,7 +737,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#yProperty}的連結
+     * 設定屬性{@link Text#yProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -754,7 +754,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Text#yProperty}的雙向連結
+     * 設定屬性{@link Text#yProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -771,7 +771,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Text}物件
+     * 建構{@link Text}物件。
      *
      * @return 新的{@link Text}物件實體
      */
@@ -786,7 +786,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Text}物件
+     * 建構{@link Text}物件。
      *
      * @return 新的{@link Text}物件實體
      */
@@ -800,7 +800,7 @@ public class TextBuilder<Z extends Text, B extends TextBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Text}物件
+     * 建構{@link Text}物件。
      *
      * @return 新的{@link Text}物件實體
      */

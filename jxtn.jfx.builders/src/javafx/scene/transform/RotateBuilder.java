@@ -6,7 +6,7 @@
 package javafx.scene.transform;
 
 /**
- * {@link Rotate}建構器
+ * {@link Rotate}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -97,7 +97,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#setAngle(double)}
+     * 設定屬性{@link Rotate#setAngle(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#setAxis(javafx.geometry.Point3D)}
+     * 設定屬性{@link Rotate#setAxis(javafx.geometry.Point3D)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#setPivotX(double)}
+     * 設定屬性{@link Rotate#setPivotX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#setPivotY(double)}
+     * 設定屬性{@link Rotate#setPivotY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#setPivotZ(double)}
+     * 設定屬性{@link Rotate#setPivotZ(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#angleProperty}的連結
+     * 設定屬性{@link Rotate#angleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -184,7 +184,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#angleProperty}的雙向連結
+     * 設定屬性{@link Rotate#angleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -201,7 +201,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#axisProperty}的連結
+     * 設定屬性{@link Rotate#axisProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -218,7 +218,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#axisProperty}的雙向連結
+     * 設定屬性{@link Rotate#axisProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -235,7 +235,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#pivotXProperty}的連結
+     * 設定屬性{@link Rotate#pivotXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -252,7 +252,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#pivotXProperty}的雙向連結
+     * 設定屬性{@link Rotate#pivotXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -269,7 +269,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#pivotYProperty}的連結
+     * 設定屬性{@link Rotate#pivotYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -286,7 +286,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#pivotYProperty}的雙向連結
+     * 設定屬性{@link Rotate#pivotYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -303,7 +303,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#pivotZProperty}的連結
+     * 設定屬性{@link Rotate#pivotZProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -320,7 +320,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Rotate#pivotZProperty}的雙向連結
+     * 設定屬性{@link Rotate#pivotZProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -337,7 +337,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Rotate}物件
+     * 建構{@link Rotate}物件。
      *
      * @return 新的{@link Rotate}物件實體
      */
@@ -352,7 +352,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Rotate}物件
+     * 建構{@link Rotate}物件。
      *
      * @return 新的{@link Rotate}物件實體
      */
@@ -366,7 +366,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Rotate}物件
+     * 建構{@link Rotate}物件。
      *
      * @return 新的{@link Rotate}物件實體
      */
@@ -380,7 +380,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Rotate}物件
+     * 建構{@link Rotate}物件。
      *
      * @return 新的{@link Rotate}物件實體
      */
@@ -394,7 +394,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Rotate}物件
+     * 建構{@link Rotate}物件。
      *
      * @return 新的{@link Rotate}物件實體
      */
@@ -408,7 +408,7 @@ public class RotateBuilder<Z extends Rotate, B extends RotateBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Rotate}物件
+     * 建構{@link Rotate}物件。
      *
      * @return 新的{@link Rotate}物件實體
      */

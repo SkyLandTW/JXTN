@@ -6,7 +6,7 @@
 package javafx.scene.effect;
 
 /**
- * {@link InnerShadow}建構器
+ * {@link InnerShadow}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -153,7 +153,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#setBlurType(javafx.scene.effect.BlurType)}
+     * 設定屬性{@link InnerShadow#setBlurType(javafx.scene.effect.BlurType)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#setChoke(double)}
+     * 設定屬性{@link InnerShadow#setChoke(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#setColor(javafx.scene.paint.Color)}
+     * 設定屬性{@link InnerShadow#setColor(javafx.scene.paint.Color)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#setHeight(double)}
+     * 設定屬性{@link InnerShadow#setHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#setInput(javafx.scene.effect.Effect)}
+     * 設定屬性{@link InnerShadow#setInput(javafx.scene.effect.Effect)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#setOffsetX(double)}
+     * 設定屬性{@link InnerShadow#setOffsetX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -237,7 +237,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#setOffsetY(double)}
+     * 設定屬性{@link InnerShadow#setOffsetY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -251,7 +251,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#setRadius(double)}
+     * 設定屬性{@link InnerShadow#setRadius(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -265,7 +265,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#setWidth(double)}
+     * 設定屬性{@link InnerShadow#setWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -279,7 +279,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#blurTypeProperty}的連結
+     * 設定屬性{@link InnerShadow#blurTypeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -296,7 +296,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#blurTypeProperty}的雙向連結
+     * 設定屬性{@link InnerShadow#blurTypeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -313,7 +313,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#chokeProperty}的連結
+     * 設定屬性{@link InnerShadow#chokeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -330,7 +330,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#chokeProperty}的雙向連結
+     * 設定屬性{@link InnerShadow#chokeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -347,7 +347,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#colorProperty}的連結
+     * 設定屬性{@link InnerShadow#colorProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -364,7 +364,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#colorProperty}的雙向連結
+     * 設定屬性{@link InnerShadow#colorProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -381,7 +381,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#heightProperty}的連結
+     * 設定屬性{@link InnerShadow#heightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -398,7 +398,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#heightProperty}的雙向連結
+     * 設定屬性{@link InnerShadow#heightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -415,7 +415,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#inputProperty}的連結
+     * 設定屬性{@link InnerShadow#inputProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -432,7 +432,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#inputProperty}的雙向連結
+     * 設定屬性{@link InnerShadow#inputProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -449,7 +449,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#offsetXProperty}的連結
+     * 設定屬性{@link InnerShadow#offsetXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -466,7 +466,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#offsetXProperty}的雙向連結
+     * 設定屬性{@link InnerShadow#offsetXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -483,7 +483,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#offsetYProperty}的連結
+     * 設定屬性{@link InnerShadow#offsetYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -500,7 +500,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#offsetYProperty}的雙向連結
+     * 設定屬性{@link InnerShadow#offsetYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -517,7 +517,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#radiusProperty}的連結
+     * 設定屬性{@link InnerShadow#radiusProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -534,7 +534,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#radiusProperty}的雙向連結
+     * 設定屬性{@link InnerShadow#radiusProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -551,7 +551,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#widthProperty}的連結
+     * 設定屬性{@link InnerShadow#widthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -568,7 +568,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 設定屬性{@link InnerShadow#widthProperty}的雙向連結
+     * 設定屬性{@link InnerShadow#widthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -585,7 +585,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 建構{@link InnerShadow}物件
+     * 建構{@link InnerShadow}物件。
      *
      * @return 新的{@link InnerShadow}物件實體
      */
@@ -600,7 +600,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 建構{@link InnerShadow}物件
+     * 建構{@link InnerShadow}物件。
      *
      * @return 新的{@link InnerShadow}物件實體
      */
@@ -614,7 +614,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 建構{@link InnerShadow}物件
+     * 建構{@link InnerShadow}物件。
      *
      * @return 新的{@link InnerShadow}物件實體
      */
@@ -628,7 +628,7 @@ public class InnerShadowBuilder<Z extends InnerShadow, B extends InnerShadowBuil
     }
 
     /**
-     * 建構{@link InnerShadow}物件
+     * 建構{@link InnerShadow}物件。
      *
      * @return 新的{@link InnerShadow}物件實體
      */

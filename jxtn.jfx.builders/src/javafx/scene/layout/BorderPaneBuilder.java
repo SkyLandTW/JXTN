@@ -6,7 +6,7 @@
 package javafx.scene.layout;
 
 /**
- * {@link BorderPane}建構器
+ * {@link BorderPane}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -97,7 +97,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#setBottom(javafx.scene.Node)}
+     * 設定屬性{@link BorderPane#setBottom(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#setCenter(javafx.scene.Node)}
+     * 設定屬性{@link BorderPane#setCenter(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#setLeft(javafx.scene.Node)}
+     * 設定屬性{@link BorderPane#setLeft(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#setRight(javafx.scene.Node)}
+     * 設定屬性{@link BorderPane#setRight(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#setTop(javafx.scene.Node)}
+     * 設定屬性{@link BorderPane#setTop(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#bottomProperty}的連結
+     * 設定屬性{@link BorderPane#bottomProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -184,7 +184,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#bottomProperty}的雙向連結
+     * 設定屬性{@link BorderPane#bottomProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -201,7 +201,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#centerProperty}的連結
+     * 設定屬性{@link BorderPane#centerProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -218,7 +218,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#centerProperty}的雙向連結
+     * 設定屬性{@link BorderPane#centerProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -235,7 +235,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#leftProperty}的連結
+     * 設定屬性{@link BorderPane#leftProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -252,7 +252,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#leftProperty}的雙向連結
+     * 設定屬性{@link BorderPane#leftProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -269,7 +269,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#rightProperty}的連結
+     * 設定屬性{@link BorderPane#rightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -286,7 +286,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#rightProperty}的雙向連結
+     * 設定屬性{@link BorderPane#rightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -303,7 +303,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#topProperty}的連結
+     * 設定屬性{@link BorderPane#topProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -320,7 +320,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 設定屬性{@link BorderPane#topProperty}的雙向連結
+     * 設定屬性{@link BorderPane#topProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -337,7 +337,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 建構{@link BorderPane}物件
+     * 建構{@link BorderPane}物件。
      *
      * @return 新的{@link BorderPane}物件實體
      */
@@ -352,7 +352,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 建構{@link BorderPane}物件
+     * 建構{@link BorderPane}物件。
      *
      * @return 新的{@link BorderPane}物件實體
      */
@@ -366,7 +366,7 @@ public class BorderPaneBuilder<Z extends BorderPane, B extends BorderPaneBuilder
     }
 
     /**
-     * 建構{@link BorderPane}物件
+     * 建構{@link BorderPane}物件。
      *
      * @return 新的{@link BorderPane}物件實體
      */

@@ -6,7 +6,7 @@
 package org.controlsfx.control.spreadsheet;
 
 /**
- * {@link SpreadsheetView}建構器
+ * {@link SpreadsheetView}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -133,7 +133,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#setColumnPickerCallback(javafx.util.Callback)}
+     * 設定屬性{@link SpreadsheetView#setColumnPickerCallback(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -147,7 +147,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定集合屬性{@link SpreadsheetView#getColumnPickers}的內容
+     * 設定集合屬性{@link SpreadsheetView#getColumnPickers}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -163,7 +163,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定集合屬性{@link SpreadsheetView#getColumnPickers}的內容
+     * 設定集合屬性{@link SpreadsheetView#getColumnPickers}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -178,7 +178,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 增加集合屬性{@link SpreadsheetView#getColumnPickers}的內容
+     * 增加集合屬性{@link SpreadsheetView#getColumnPickers}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 增加集合屬性{@link SpreadsheetView#getColumnPickers}的內容
+     * 增加集合屬性{@link SpreadsheetView#getColumnPickers}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -213,7 +213,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定集合屬性{@link SpreadsheetView#getColumns}的內容
+     * 設定集合屬性{@link SpreadsheetView#getColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -229,7 +229,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定集合屬性{@link SpreadsheetView#getColumns}的內容
+     * 設定集合屬性{@link SpreadsheetView#getColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -244,7 +244,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 增加集合屬性{@link SpreadsheetView#getColumns}的內容
+     * 增加集合屬性{@link SpreadsheetView#getColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -261,7 +261,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 增加集合屬性{@link SpreadsheetView#getColumns}的內容
+     * 增加集合屬性{@link SpreadsheetView#getColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -279,7 +279,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#setEditable(boolean)}
+     * 設定屬性{@link SpreadsheetView#setEditable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -293,7 +293,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定集合屬性{@link SpreadsheetView#getFixedColumns}的內容
+     * 設定集合屬性{@link SpreadsheetView#getFixedColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -309,7 +309,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定集合屬性{@link SpreadsheetView#getFixedColumns}的內容
+     * 設定集合屬性{@link SpreadsheetView#getFixedColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -324,7 +324,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 增加集合屬性{@link SpreadsheetView#getFixedColumns}的內容
+     * 增加集合屬性{@link SpreadsheetView#getFixedColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -341,7 +341,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 增加集合屬性{@link SpreadsheetView#getFixedColumns}的內容
+     * 增加集合屬性{@link SpreadsheetView#getFixedColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -359,7 +359,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定集合屬性{@link SpreadsheetView#getFixedRows}的內容
+     * 設定集合屬性{@link SpreadsheetView#getFixedRows}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -375,7 +375,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定集合屬性{@link SpreadsheetView#getFixedRows}的內容
+     * 設定集合屬性{@link SpreadsheetView#getFixedRows}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -390,7 +390,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 增加集合屬性{@link SpreadsheetView#getFixedRows}的內容
+     * 增加集合屬性{@link SpreadsheetView#getFixedRows}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -407,7 +407,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 增加集合屬性{@link SpreadsheetView#getFixedRows}的內容
+     * 增加集合屬性{@link SpreadsheetView#getFixedRows}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -425,7 +425,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#setFixingColumnsAllowed(boolean)}
+     * 設定屬性{@link SpreadsheetView#setFixingColumnsAllowed(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -439,7 +439,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#setFixingRowsAllowed(boolean)}
+     * 設定屬性{@link SpreadsheetView#setFixingRowsAllowed(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -453,7 +453,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#setGrid(org.controlsfx.control.spreadsheet.Grid)}
+     * 設定屬性{@link SpreadsheetView#setGrid(org.controlsfx.control.spreadsheet.Grid)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -467,7 +467,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#setRowHeaderWidth(double)}
+     * 設定屬性{@link SpreadsheetView#setRowHeaderWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -481,7 +481,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#setRowPickerCallback(javafx.util.Callback)}
+     * 設定屬性{@link SpreadsheetView#setRowPickerCallback(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -495,7 +495,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定集合屬性{@link SpreadsheetView#getRowPickers}的內容
+     * 設定集合屬性{@link SpreadsheetView#getRowPickers}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -511,7 +511,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定集合屬性{@link SpreadsheetView#getRowPickers}的內容
+     * 設定集合屬性{@link SpreadsheetView#getRowPickers}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -526,7 +526,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 增加集合屬性{@link SpreadsheetView#getRowPickers}的內容
+     * 增加集合屬性{@link SpreadsheetView#getRowPickers}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -543,7 +543,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 增加集合屬性{@link SpreadsheetView#getRowPickers}的內容
+     * 增加集合屬性{@link SpreadsheetView#getRowPickers}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -561,7 +561,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#setShowColumnHeader(boolean)}
+     * 設定屬性{@link SpreadsheetView#setShowColumnHeader(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -575,7 +575,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#setShowRowHeader(boolean)}
+     * 設定屬性{@link SpreadsheetView#setShowRowHeader(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -589,7 +589,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#editableProperty}的連結
+     * 設定屬性{@link SpreadsheetView#editableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -606,7 +606,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#editableProperty}的雙向連結
+     * 設定屬性{@link SpreadsheetView#editableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -623,7 +623,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#rowHeaderWidthProperty}的連結
+     * 設定屬性{@link SpreadsheetView#rowHeaderWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -640,7 +640,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#rowHeaderWidthProperty}的雙向連結
+     * 設定屬性{@link SpreadsheetView#rowHeaderWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -657,7 +657,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#showColumnHeaderProperty}的連結
+     * 設定屬性{@link SpreadsheetView#showColumnHeaderProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -674,7 +674,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#showColumnHeaderProperty}的雙向連結
+     * 設定屬性{@link SpreadsheetView#showColumnHeaderProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -691,7 +691,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#showRowHeaderProperty}的連結
+     * 設定屬性{@link SpreadsheetView#showRowHeaderProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -708,7 +708,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 設定屬性{@link SpreadsheetView#showRowHeaderProperty}的雙向連結
+     * 設定屬性{@link SpreadsheetView#showRowHeaderProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -725,7 +725,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 建構{@link SpreadsheetView}物件
+     * 建構{@link SpreadsheetView}物件。
      *
      * @return 新的{@link SpreadsheetView}物件實體
      */
@@ -740,7 +740,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
     }
 
     /**
-     * 建構{@link SpreadsheetView}物件
+     * 建構{@link SpreadsheetView}物件。
      *
      * @return 新的{@link SpreadsheetView}物件實體
      */

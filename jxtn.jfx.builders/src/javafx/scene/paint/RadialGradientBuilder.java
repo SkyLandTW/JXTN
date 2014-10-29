@@ -6,7 +6,7 @@
 package javafx.scene.paint;
 
 /**
- * {@link RadialGradient}建構器
+ * {@link RadialGradient}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class RadialGradientBuilder<Z extends RadialGradient, B extends RadialGra
     }
 
     /**
-     * 建構{@link RadialGradient}物件
+     * 建構{@link RadialGradient}物件。
      *
      * @return 新的{@link RadialGradient}物件實體
      */
@@ -41,7 +41,7 @@ public class RadialGradientBuilder<Z extends RadialGradient, B extends RadialGra
     }
 
     /**
-     * 建構{@link RadialGradient}物件
+     * 建構{@link RadialGradient}物件。
      *
      * @return 新的{@link RadialGradient}物件實體
      */

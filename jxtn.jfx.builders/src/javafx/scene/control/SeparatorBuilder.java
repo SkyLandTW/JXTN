@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link Separator}建構器
+ * {@link Separator}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -69,7 +69,7 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Separator#setHalignment(javafx.geometry.HPos)}
+     * 設定屬性{@link Separator#setHalignment(javafx.geometry.HPos)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -83,7 +83,7 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Separator#setOrientation(javafx.geometry.Orientation)}
+     * 設定屬性{@link Separator#setOrientation(javafx.geometry.Orientation)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -97,7 +97,7 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Separator#setValignment(javafx.geometry.VPos)}
+     * 設定屬性{@link Separator#setValignment(javafx.geometry.VPos)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Separator#halignmentProperty}的連結
+     * 設定屬性{@link Separator#halignmentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -128,7 +128,7 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Separator#halignmentProperty}的雙向連結
+     * 設定屬性{@link Separator#halignmentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -145,7 +145,7 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Separator#orientationProperty}的連結
+     * 設定屬性{@link Separator#orientationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -162,7 +162,7 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Separator#orientationProperty}的雙向連結
+     * 設定屬性{@link Separator#orientationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -179,7 +179,7 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Separator#valignmentProperty}的連結
+     * 設定屬性{@link Separator#valignmentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -196,7 +196,7 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link Separator#valignmentProperty}的雙向連結
+     * 設定屬性{@link Separator#valignmentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -213,7 +213,7 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
     }
 
     /**
-     * 建構{@link Separator}物件
+     * 建構{@link Separator}物件。
      *
      * @return 新的{@link Separator}物件實體
      */
@@ -228,7 +228,7 @@ public class SeparatorBuilder<Z extends Separator, B extends SeparatorBuilder<Z,
     }
 
     /**
-     * 建構{@link Separator}物件
+     * 建構{@link Separator}物件。
      *
      * @return 新的{@link Separator}物件實體
      */

@@ -6,7 +6,7 @@
 package javafx.scene.input;
 
 /**
- * {@link PickResult}建構器
+ * {@link PickResult}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class PickResultBuilder<Z extends PickResult, B extends PickResultBuilder
     }
 
     /**
-     * 建構{@link PickResult}物件
+     * 建構{@link PickResult}物件。
      *
      * @return 新的{@link PickResult}物件實體
      */
@@ -41,7 +41,7 @@ public class PickResultBuilder<Z extends PickResult, B extends PickResultBuilder
     }
 
     /**
-     * 建構{@link PickResult}物件
+     * 建構{@link PickResult}物件。
      *
      * @return 新的{@link PickResult}物件實體
      */
@@ -55,7 +55,7 @@ public class PickResultBuilder<Z extends PickResult, B extends PickResultBuilder
     }
 
     /**
-     * 建構{@link PickResult}物件
+     * 建構{@link PickResult}物件。
      *
      * @return 新的{@link PickResult}物件實體
      */

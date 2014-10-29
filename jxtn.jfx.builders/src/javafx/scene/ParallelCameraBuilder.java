@@ -6,7 +6,7 @@
 package javafx.scene;
 
 /**
- * {@link ParallelCamera}建構器
+ * {@link ParallelCamera}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class ParallelCameraBuilder<Z extends ParallelCamera, B extends ParallelC
     }
 
     /**
-     * 建構{@link ParallelCamera}物件
+     * 建構{@link ParallelCamera}物件。
      *
      * @return 新的{@link ParallelCamera}物件實體
      */

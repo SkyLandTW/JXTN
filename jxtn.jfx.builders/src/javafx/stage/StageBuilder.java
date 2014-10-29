@@ -6,7 +6,7 @@
 package javafx.stage;
 
 /**
- * {@link Stage}建構器
+ * {@link Stage}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -169,7 +169,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setAlwaysOnTop(boolean)}
+     * 設定屬性{@link Stage#setAlwaysOnTop(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -183,7 +183,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setFullScreen(boolean)}
+     * 設定屬性{@link Stage#setFullScreen(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -197,7 +197,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setFullScreenExitHint(java.lang.String)}
+     * 設定屬性{@link Stage#setFullScreenExitHint(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -211,7 +211,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setFullScreenExitKeyCombination(javafx.scene.input.KeyCombination)}
+     * 設定屬性{@link Stage#setFullScreenExitKeyCombination(javafx.scene.input.KeyCombination)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -225,7 +225,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setIconified(boolean)}
+     * 設定屬性{@link Stage#setIconified(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -239,7 +239,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Stage#getIcons}的內容
+     * 設定集合屬性{@link Stage#getIcons}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -255,7 +255,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Stage#getIcons}的內容
+     * 設定集合屬性{@link Stage#getIcons}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -270,7 +270,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Stage#getIcons}的內容
+     * 增加集合屬性{@link Stage#getIcons}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -287,7 +287,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Stage#getIcons}的內容
+     * 增加集合屬性{@link Stage#getIcons}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -305,7 +305,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setMaxHeight(double)}
+     * 設定屬性{@link Stage#setMaxHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -319,7 +319,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setMaxWidth(double)}
+     * 設定屬性{@link Stage#setMaxWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -333,7 +333,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setMaximized(boolean)}
+     * 設定屬性{@link Stage#setMaximized(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -347,7 +347,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setMinHeight(double)}
+     * 設定屬性{@link Stage#setMinHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -361,7 +361,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setMinWidth(double)}
+     * 設定屬性{@link Stage#setMinWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -375,7 +375,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setResizable(boolean)}
+     * 設定屬性{@link Stage#setResizable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -389,7 +389,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setScene(javafx.scene.Scene)}
+     * 設定屬性{@link Stage#setScene(javafx.scene.Scene)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -403,7 +403,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#setTitle(java.lang.String)}
+     * 設定屬性{@link Stage#setTitle(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -417,7 +417,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#fullScreenExitHintProperty}的連結
+     * 設定屬性{@link Stage#fullScreenExitHintProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -434,7 +434,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#fullScreenExitHintProperty}的雙向連結
+     * 設定屬性{@link Stage#fullScreenExitHintProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -451,7 +451,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#fullScreenExitKeyProperty}的連結
+     * 設定屬性{@link Stage#fullScreenExitKeyProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -468,7 +468,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#fullScreenExitKeyProperty}的雙向連結
+     * 設定屬性{@link Stage#fullScreenExitKeyProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -485,7 +485,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#maxHeightProperty}的連結
+     * 設定屬性{@link Stage#maxHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -502,7 +502,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#maxHeightProperty}的雙向連結
+     * 設定屬性{@link Stage#maxHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -519,7 +519,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#maxWidthProperty}的連結
+     * 設定屬性{@link Stage#maxWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -536,7 +536,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#maxWidthProperty}的雙向連結
+     * 設定屬性{@link Stage#maxWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -553,7 +553,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#minHeightProperty}的連結
+     * 設定屬性{@link Stage#minHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -570,7 +570,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#minHeightProperty}的雙向連結
+     * 設定屬性{@link Stage#minHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -587,7 +587,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#minWidthProperty}的連結
+     * 設定屬性{@link Stage#minWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -604,7 +604,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#minWidthProperty}的雙向連結
+     * 設定屬性{@link Stage#minWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -621,7 +621,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#resizableProperty}的連結
+     * 設定屬性{@link Stage#resizableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -638,7 +638,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#resizableProperty}的雙向連結
+     * 設定屬性{@link Stage#resizableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -655,7 +655,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#titleProperty}的連結
+     * 設定屬性{@link Stage#titleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -672,7 +672,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Stage#titleProperty}的雙向連結
+     * 設定屬性{@link Stage#titleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -689,7 +689,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Stage}物件
+     * 建構{@link Stage}物件。
      *
      * @return 新的{@link Stage}物件實體
      */
@@ -704,7 +704,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Stage}物件
+     * 建構{@link Stage}物件。
      *
      * @return 新的{@link Stage}物件實體
      */

@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link ResizeFeaturesBase}建構器
+ * {@link ResizeFeaturesBase}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class ResizeFeaturesBaseBuilder<S extends java.lang.Object, Z extends Res
     }
 
     /**
-     * 建構{@link ResizeFeaturesBase}物件
+     * 建構{@link ResizeFeaturesBase}物件。
      *
      * @return 新的{@link ResizeFeaturesBase}物件實體
      */

@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link ChoiceDialog}建構器
+ * {@link ChoiceDialog}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version openjfx-dialogs-1.0.2.jar
@@ -37,7 +37,7 @@ public class ChoiceDialogBuilder<T extends java.lang.Object, Z extends ChoiceDia
     }
 
     /**
-     * 設定集合屬性{@link ChoiceDialog#getItems}的內容
+     * 設定集合屬性{@link ChoiceDialog#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -53,7 +53,7 @@ public class ChoiceDialogBuilder<T extends java.lang.Object, Z extends ChoiceDia
     }
 
     /**
-     * 設定集合屬性{@link ChoiceDialog#getItems}的內容
+     * 設定集合屬性{@link ChoiceDialog#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -68,7 +68,7 @@ public class ChoiceDialogBuilder<T extends java.lang.Object, Z extends ChoiceDia
     }
 
     /**
-     * 增加集合屬性{@link ChoiceDialog#getItems}的內容
+     * 增加集合屬性{@link ChoiceDialog#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -85,7 +85,7 @@ public class ChoiceDialogBuilder<T extends java.lang.Object, Z extends ChoiceDia
     }
 
     /**
-     * 增加集合屬性{@link ChoiceDialog#getItems}的內容
+     * 增加集合屬性{@link ChoiceDialog#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -103,7 +103,7 @@ public class ChoiceDialogBuilder<T extends java.lang.Object, Z extends ChoiceDia
     }
 
     /**
-     * 設定屬性{@link ChoiceDialog#setSelectedItem(T)}
+     * 設定屬性{@link ChoiceDialog#setSelectedItem(T)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -117,7 +117,7 @@ public class ChoiceDialogBuilder<T extends java.lang.Object, Z extends ChoiceDia
     }
 
     /**
-     * 建構{@link ChoiceDialog}物件
+     * 建構{@link ChoiceDialog}物件。
      *
      * @return 新的{@link ChoiceDialog}物件實體
      */
@@ -132,7 +132,7 @@ public class ChoiceDialogBuilder<T extends java.lang.Object, Z extends ChoiceDia
     }
 
     /**
-     * 建構{@link ChoiceDialog}物件
+     * 建構{@link ChoiceDialog}物件。
      *
      * @return 新的{@link ChoiceDialog}物件實體
      */
@@ -146,7 +146,7 @@ public class ChoiceDialogBuilder<T extends java.lang.Object, Z extends ChoiceDia
     }
 
     /**
-     * 建構{@link ChoiceDialog}物件
+     * 建構{@link ChoiceDialog}物件。
      *
      * @return 新的{@link ChoiceDialog}物件實體
      */

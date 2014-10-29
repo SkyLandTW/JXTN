@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link Alert}建構器
+ * {@link Alert}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version openjfx-dialogs-1.0.2.jar
@@ -46,7 +46,7 @@ public class AlertBuilder<Z extends Alert, B extends AlertBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Alert#setAlertType(javafx.scene.control.Alert.AlertType)}
+     * 設定屬性{@link Alert#setAlertType(javafx.scene.control.Alert.AlertType)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -60,7 +60,7 @@ public class AlertBuilder<Z extends Alert, B extends AlertBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Alert#getButtonTypes}的內容
+     * 設定集合屬性{@link Alert#getButtonTypes}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -76,7 +76,7 @@ public class AlertBuilder<Z extends Alert, B extends AlertBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Alert#getButtonTypes}的內容
+     * 設定集合屬性{@link Alert#getButtonTypes}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -91,7 +91,7 @@ public class AlertBuilder<Z extends Alert, B extends AlertBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Alert#getButtonTypes}的內容
+     * 增加集合屬性{@link Alert#getButtonTypes}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -108,7 +108,7 @@ public class AlertBuilder<Z extends Alert, B extends AlertBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Alert#getButtonTypes}的內容
+     * 增加集合屬性{@link Alert#getButtonTypes}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -126,7 +126,7 @@ public class AlertBuilder<Z extends Alert, B extends AlertBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Alert#alertTypeProperty}的連結
+     * 設定屬性{@link Alert#alertTypeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -143,7 +143,7 @@ public class AlertBuilder<Z extends Alert, B extends AlertBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Alert#alertTypeProperty}的雙向連結
+     * 設定屬性{@link Alert#alertTypeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -160,7 +160,7 @@ public class AlertBuilder<Z extends Alert, B extends AlertBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Alert}物件
+     * 建構{@link Alert}物件。
      *
      * @return 新的{@link Alert}物件實體
      */
@@ -174,7 +174,7 @@ public class AlertBuilder<Z extends Alert, B extends AlertBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Alert}物件
+     * 建構{@link Alert}物件。
      *
      * @return 新的{@link Alert}物件實體
      */

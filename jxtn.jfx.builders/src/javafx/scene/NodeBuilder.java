@@ -6,7 +6,7 @@
 package javafx.scene;
 
 /**
- * {@link Node}建構器
+ * {@link Node}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -1129,7 +1129,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setBlendMode(javafx.scene.effect.BlendMode)}
+     * 設定屬性{@link Node#setBlendMode(javafx.scene.effect.BlendMode)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1143,7 +1143,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setCache(boolean)}
+     * 設定屬性{@link Node#setCache(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1157,7 +1157,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setCacheHint(javafx.scene.CacheHint)}
+     * 設定屬性{@link Node#setCacheHint(javafx.scene.CacheHint)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1171,7 +1171,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setClip(javafx.scene.Node)}
+     * 設定屬性{@link Node#setClip(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1185,7 +1185,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setCursor(javafx.scene.Cursor)}
+     * 設定屬性{@link Node#setCursor(javafx.scene.Cursor)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1199,7 +1199,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setDepthTest(javafx.scene.DepthTest)}
+     * 設定屬性{@link Node#setDepthTest(javafx.scene.DepthTest)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1213,7 +1213,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setDisable(boolean)}
+     * 設定屬性{@link Node#setDisable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1227,7 +1227,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setEffect(javafx.scene.effect.Effect)}
+     * 設定屬性{@link Node#setEffect(javafx.scene.effect.Effect)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1241,7 +1241,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setEventDispatcher(javafx.event.EventDispatcher)}
+     * 設定屬性{@link Node#setEventDispatcher(javafx.event.EventDispatcher)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1255,7 +1255,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setFocusTraversable(boolean)}
+     * 設定屬性{@link Node#setFocusTraversable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1269,7 +1269,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setId(java.lang.String)}
+     * 設定屬性{@link Node#setId(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1283,7 +1283,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setInputMethodRequests(javafx.scene.input.InputMethodRequests)}
+     * 設定屬性{@link Node#setInputMethodRequests(javafx.scene.input.InputMethodRequests)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1297,7 +1297,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setLayoutX(double)}
+     * 設定屬性{@link Node#setLayoutX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1311,7 +1311,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setLayoutY(double)}
+     * 設定屬性{@link Node#setLayoutY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1325,7 +1325,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setManaged(boolean)}
+     * 設定屬性{@link Node#setManaged(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1339,7 +1339,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setMouseTransparent(boolean)}
+     * 設定屬性{@link Node#setMouseTransparent(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1353,7 +1353,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setNodeOrientation(javafx.geometry.NodeOrientation)}
+     * 設定屬性{@link Node#setNodeOrientation(javafx.geometry.NodeOrientation)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1367,7 +1367,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnContextMenuRequested(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnContextMenuRequested(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1381,7 +1381,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnDragDetected(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnDragDetected(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1395,7 +1395,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnDragDone(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnDragDone(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1409,7 +1409,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnDragDropped(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnDragDropped(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1423,7 +1423,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnDragEntered(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnDragEntered(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1437,7 +1437,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnDragExited(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnDragExited(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1451,7 +1451,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnDragOver(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnDragOver(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1465,7 +1465,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnInputMethodTextChanged(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnInputMethodTextChanged(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1479,7 +1479,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnKeyPressed(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnKeyPressed(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1493,7 +1493,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnKeyReleased(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnKeyReleased(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1507,7 +1507,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnKeyTyped(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnKeyTyped(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1521,7 +1521,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseClicked(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnMouseClicked(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1535,7 +1535,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseDragEntered(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnMouseDragEntered(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1549,7 +1549,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseDragExited(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnMouseDragExited(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1563,7 +1563,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseDragOver(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnMouseDragOver(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1577,7 +1577,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseDragReleased(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnMouseDragReleased(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1591,7 +1591,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseDragged(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnMouseDragged(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1605,7 +1605,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseEntered(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnMouseEntered(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1619,7 +1619,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseExited(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnMouseExited(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1633,7 +1633,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseMoved(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnMouseMoved(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1647,7 +1647,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMousePressed(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnMousePressed(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1661,7 +1661,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnMouseReleased(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnMouseReleased(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1675,7 +1675,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnRotate(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnRotate(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1689,7 +1689,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnRotationFinished(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnRotationFinished(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1703,7 +1703,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnRotationStarted(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnRotationStarted(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1717,7 +1717,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnScroll(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnScroll(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1731,7 +1731,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnScrollFinished(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnScrollFinished(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1745,7 +1745,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnScrollStarted(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnScrollStarted(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1759,7 +1759,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnSwipeDown(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnSwipeDown(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1773,7 +1773,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnSwipeLeft(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnSwipeLeft(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1787,7 +1787,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnSwipeRight(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnSwipeRight(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1801,7 +1801,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnSwipeUp(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnSwipeUp(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1815,7 +1815,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnTouchMoved(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnTouchMoved(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1829,7 +1829,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnTouchPressed(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnTouchPressed(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1843,7 +1843,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnTouchReleased(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnTouchReleased(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1857,7 +1857,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnTouchStationary(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnTouchStationary(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1871,7 +1871,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnZoom(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnZoom(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1885,7 +1885,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnZoomFinished(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnZoomFinished(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1899,7 +1899,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOnZoomStarted(javafx.event.EventHandler)}
+     * 設定屬性{@link Node#setOnZoomStarted(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1913,7 +1913,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setOpacity(double)}
+     * 設定屬性{@link Node#setOpacity(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1927,7 +1927,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setPickOnBounds(boolean)}
+     * 設定屬性{@link Node#setPickOnBounds(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1941,7 +1941,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setRotate(double)}
+     * 設定屬性{@link Node#setRotate(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1955,7 +1955,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setRotationAxis(javafx.geometry.Point3D)}
+     * 設定屬性{@link Node#setRotationAxis(javafx.geometry.Point3D)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1969,7 +1969,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setScaleX(double)}
+     * 設定屬性{@link Node#setScaleX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1983,7 +1983,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setScaleY(double)}
+     * 設定屬性{@link Node#setScaleY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1997,7 +1997,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setScaleZ(double)}
+     * 設定屬性{@link Node#setScaleZ(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2011,7 +2011,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setStyle(java.lang.String)}
+     * 設定屬性{@link Node#setStyle(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2025,7 +2025,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Node#getStyleClass}的內容
+     * 設定集合屬性{@link Node#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -2041,7 +2041,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Node#getStyleClass}的內容
+     * 設定集合屬性{@link Node#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -2056,7 +2056,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Node#getStyleClass}的內容
+     * 增加集合屬性{@link Node#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -2073,7 +2073,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Node#getStyleClass}的內容
+     * 增加集合屬性{@link Node#getStyleClass}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -2091,7 +2091,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Node#getTransforms}的內容
+     * 設定集合屬性{@link Node#getTransforms}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -2107,7 +2107,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Node#getTransforms}的內容
+     * 設定集合屬性{@link Node#getTransforms}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -2122,7 +2122,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Node#getTransforms}的內容
+     * 增加集合屬性{@link Node#getTransforms}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -2139,7 +2139,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Node#getTransforms}的內容
+     * 增加集合屬性{@link Node#getTransforms}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -2157,7 +2157,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setTranslateX(double)}
+     * 設定屬性{@link Node#setTranslateX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2171,7 +2171,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setTranslateY(double)}
+     * 設定屬性{@link Node#setTranslateY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2185,7 +2185,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setTranslateZ(double)}
+     * 設定屬性{@link Node#setTranslateZ(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2199,7 +2199,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setUserData(java.lang.Object)}
+     * 設定屬性{@link Node#setUserData(java.lang.Object)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2213,7 +2213,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#setVisible(boolean)}
+     * 設定屬性{@link Node#setVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2227,7 +2227,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.AnchorPane#setBottomAnchor}
+     * 設定屬性{@link javafx.scene.layout.AnchorPane#setBottomAnchor}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2241,7 +2241,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.AnchorPane#setLeftAnchor}
+     * 設定屬性{@link javafx.scene.layout.AnchorPane#setLeftAnchor}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2255,7 +2255,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.AnchorPane#setRightAnchor}
+     * 設定屬性{@link javafx.scene.layout.AnchorPane#setRightAnchor}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2269,7 +2269,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.AnchorPane#setTopAnchor}
+     * 設定屬性{@link javafx.scene.layout.AnchorPane#setTopAnchor}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2283,7 +2283,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.BorderPane#setAlignment}
+     * 設定屬性{@link javafx.scene.layout.BorderPane#setAlignment}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2297,7 +2297,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.BorderPane#setMargin}
+     * 設定屬性{@link javafx.scene.layout.BorderPane#setMargin}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2311,7 +2311,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.FlowPane#setMargin}
+     * 設定屬性{@link javafx.scene.layout.FlowPane#setMargin}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2325,7 +2325,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.GridPane#setColumnIndex}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setColumnIndex}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2339,7 +2339,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.GridPane#setColumnSpan}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setColumnSpan}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2353,7 +2353,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.GridPane#setFillHeight}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setFillHeight}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2367,7 +2367,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.GridPane#setFillWidth}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setFillWidth}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2381,7 +2381,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.GridPane#setHalignment}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setHalignment}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2395,7 +2395,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.GridPane#setHgrow}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setHgrow}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2409,7 +2409,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.GridPane#setMargin}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setMargin}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2423,7 +2423,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.GridPane#setRowIndex}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setRowIndex}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2437,7 +2437,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.GridPane#setRowSpan}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setRowSpan}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2451,7 +2451,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.GridPane#setValignment}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setValignment}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2465,7 +2465,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.GridPane#setVgrow}
+     * 設定屬性{@link javafx.scene.layout.GridPane#setVgrow}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2479,7 +2479,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.HBox#setHgrow}
+     * 設定屬性{@link javafx.scene.layout.HBox#setHgrow}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2493,7 +2493,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.HBox#setMargin}
+     * 設定屬性{@link javafx.scene.layout.HBox#setMargin}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2507,7 +2507,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.control.SplitPane#setResizableWithParent}
+     * 設定屬性{@link javafx.scene.control.SplitPane#setResizableWithParent}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2521,7 +2521,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.StackPane#setAlignment}
+     * 設定屬性{@link javafx.scene.layout.StackPane#setAlignment}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2535,7 +2535,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.StackPane#setMargin}
+     * 設定屬性{@link javafx.scene.layout.StackPane#setMargin}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2549,7 +2549,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.TilePane#setAlignment}
+     * 設定屬性{@link javafx.scene.layout.TilePane#setAlignment}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2563,7 +2563,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.TilePane#setMargin}
+     * 設定屬性{@link javafx.scene.layout.TilePane#setMargin}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2577,7 +2577,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.VBox#setMargin}
+     * 設定屬性{@link javafx.scene.layout.VBox#setMargin}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2591,7 +2591,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link javafx.scene.layout.VBox#setVgrow}
+     * 設定屬性{@link javafx.scene.layout.VBox#setVgrow}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -2605,7 +2605,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#blendModeProperty}的連結
+     * 設定屬性{@link Node#blendModeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2622,7 +2622,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#blendModeProperty}的雙向連結
+     * 設定屬性{@link Node#blendModeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2639,7 +2639,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#cacheHintProperty}的連結
+     * 設定屬性{@link Node#cacheHintProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2656,7 +2656,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#cacheHintProperty}的雙向連結
+     * 設定屬性{@link Node#cacheHintProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2673,7 +2673,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#cacheProperty}的連結
+     * 設定屬性{@link Node#cacheProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2690,7 +2690,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#cacheProperty}的雙向連結
+     * 設定屬性{@link Node#cacheProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2707,7 +2707,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#clipProperty}的連結
+     * 設定屬性{@link Node#clipProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2724,7 +2724,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#clipProperty}的雙向連結
+     * 設定屬性{@link Node#clipProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2741,7 +2741,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#cursorProperty}的連結
+     * 設定屬性{@link Node#cursorProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2758,7 +2758,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#cursorProperty}的雙向連結
+     * 設定屬性{@link Node#cursorProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2775,7 +2775,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#depthTestProperty}的連結
+     * 設定屬性{@link Node#depthTestProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2792,7 +2792,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#depthTestProperty}的雙向連結
+     * 設定屬性{@link Node#depthTestProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2809,7 +2809,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#disableProperty}的連結
+     * 設定屬性{@link Node#disableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2826,7 +2826,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#disableProperty}的雙向連結
+     * 設定屬性{@link Node#disableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2843,7 +2843,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#effectProperty}的連結
+     * 設定屬性{@link Node#effectProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2860,7 +2860,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#effectProperty}的雙向連結
+     * 設定屬性{@link Node#effectProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2877,7 +2877,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#eventDispatcherProperty}的連結
+     * 設定屬性{@link Node#eventDispatcherProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2894,7 +2894,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#eventDispatcherProperty}的雙向連結
+     * 設定屬性{@link Node#eventDispatcherProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2911,7 +2911,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#focusTraversableProperty}的連結
+     * 設定屬性{@link Node#focusTraversableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2928,7 +2928,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#focusTraversableProperty}的雙向連結
+     * 設定屬性{@link Node#focusTraversableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2945,7 +2945,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#idProperty}的連結
+     * 設定屬性{@link Node#idProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2962,7 +2962,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#idProperty}的雙向連結
+     * 設定屬性{@link Node#idProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2979,7 +2979,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#inputMethodRequestsProperty}的連結
+     * 設定屬性{@link Node#inputMethodRequestsProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2996,7 +2996,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#inputMethodRequestsProperty}的雙向連結
+     * 設定屬性{@link Node#inputMethodRequestsProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3013,7 +3013,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#layoutXProperty}的連結
+     * 設定屬性{@link Node#layoutXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3030,7 +3030,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#layoutXProperty}的雙向連結
+     * 設定屬性{@link Node#layoutXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3047,7 +3047,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#layoutYProperty}的連結
+     * 設定屬性{@link Node#layoutYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3064,7 +3064,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#layoutYProperty}的雙向連結
+     * 設定屬性{@link Node#layoutYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3081,7 +3081,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#managedProperty}的連結
+     * 設定屬性{@link Node#managedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3098,7 +3098,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#managedProperty}的雙向連結
+     * 設定屬性{@link Node#managedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3115,7 +3115,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#mouseTransparentProperty}的連結
+     * 設定屬性{@link Node#mouseTransparentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3132,7 +3132,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#mouseTransparentProperty}的雙向連結
+     * 設定屬性{@link Node#mouseTransparentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3149,7 +3149,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#nodeOrientationProperty}的連結
+     * 設定屬性{@link Node#nodeOrientationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3166,7 +3166,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#nodeOrientationProperty}的雙向連結
+     * 設定屬性{@link Node#nodeOrientationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3183,7 +3183,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onContextMenuRequestedProperty}的連結
+     * 設定屬性{@link Node#onContextMenuRequestedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3200,7 +3200,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onContextMenuRequestedProperty}的雙向連結
+     * 設定屬性{@link Node#onContextMenuRequestedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3217,7 +3217,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onDragDetectedProperty}的連結
+     * 設定屬性{@link Node#onDragDetectedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3234,7 +3234,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onDragDetectedProperty}的雙向連結
+     * 設定屬性{@link Node#onDragDetectedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3251,7 +3251,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onDragDoneProperty}的連結
+     * 設定屬性{@link Node#onDragDoneProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3268,7 +3268,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onDragDoneProperty}的雙向連結
+     * 設定屬性{@link Node#onDragDoneProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3285,7 +3285,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onDragDroppedProperty}的連結
+     * 設定屬性{@link Node#onDragDroppedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3302,7 +3302,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onDragDroppedProperty}的雙向連結
+     * 設定屬性{@link Node#onDragDroppedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3319,7 +3319,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onDragEnteredProperty}的連結
+     * 設定屬性{@link Node#onDragEnteredProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3336,7 +3336,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onDragEnteredProperty}的雙向連結
+     * 設定屬性{@link Node#onDragEnteredProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3353,7 +3353,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onDragExitedProperty}的連結
+     * 設定屬性{@link Node#onDragExitedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3370,7 +3370,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onDragExitedProperty}的雙向連結
+     * 設定屬性{@link Node#onDragExitedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3387,7 +3387,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onDragOverProperty}的連結
+     * 設定屬性{@link Node#onDragOverProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3404,7 +3404,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onDragOverProperty}的雙向連結
+     * 設定屬性{@link Node#onDragOverProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3421,7 +3421,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onInputMethodTextChangedProperty}的連結
+     * 設定屬性{@link Node#onInputMethodTextChangedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3438,7 +3438,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onInputMethodTextChangedProperty}的雙向連結
+     * 設定屬性{@link Node#onInputMethodTextChangedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3455,7 +3455,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onKeyPressedProperty}的連結
+     * 設定屬性{@link Node#onKeyPressedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3472,7 +3472,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onKeyPressedProperty}的雙向連結
+     * 設定屬性{@link Node#onKeyPressedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3489,7 +3489,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onKeyReleasedProperty}的連結
+     * 設定屬性{@link Node#onKeyReleasedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3506,7 +3506,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onKeyReleasedProperty}的雙向連結
+     * 設定屬性{@link Node#onKeyReleasedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3523,7 +3523,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onKeyTypedProperty}的連結
+     * 設定屬性{@link Node#onKeyTypedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3540,7 +3540,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onKeyTypedProperty}的雙向連結
+     * 設定屬性{@link Node#onKeyTypedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3557,7 +3557,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseClickedProperty}的連結
+     * 設定屬性{@link Node#onMouseClickedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3574,7 +3574,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseClickedProperty}的雙向連結
+     * 設定屬性{@link Node#onMouseClickedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3591,7 +3591,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseDragEnteredProperty}的連結
+     * 設定屬性{@link Node#onMouseDragEnteredProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3608,7 +3608,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseDragEnteredProperty}的雙向連結
+     * 設定屬性{@link Node#onMouseDragEnteredProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3625,7 +3625,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseDragExitedProperty}的連結
+     * 設定屬性{@link Node#onMouseDragExitedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3642,7 +3642,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseDragExitedProperty}的雙向連結
+     * 設定屬性{@link Node#onMouseDragExitedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3659,7 +3659,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseDragOverProperty}的連結
+     * 設定屬性{@link Node#onMouseDragOverProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3676,7 +3676,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseDragOverProperty}的雙向連結
+     * 設定屬性{@link Node#onMouseDragOverProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3693,7 +3693,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseDragReleasedProperty}的連結
+     * 設定屬性{@link Node#onMouseDragReleasedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3710,7 +3710,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseDragReleasedProperty}的雙向連結
+     * 設定屬性{@link Node#onMouseDragReleasedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3727,7 +3727,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseDraggedProperty}的連結
+     * 設定屬性{@link Node#onMouseDraggedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3744,7 +3744,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseDraggedProperty}的雙向連結
+     * 設定屬性{@link Node#onMouseDraggedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3761,7 +3761,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseEnteredProperty}的連結
+     * 設定屬性{@link Node#onMouseEnteredProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3778,7 +3778,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseEnteredProperty}的雙向連結
+     * 設定屬性{@link Node#onMouseEnteredProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3795,7 +3795,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseExitedProperty}的連結
+     * 設定屬性{@link Node#onMouseExitedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3812,7 +3812,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseExitedProperty}的雙向連結
+     * 設定屬性{@link Node#onMouseExitedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3829,7 +3829,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseMovedProperty}的連結
+     * 設定屬性{@link Node#onMouseMovedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3846,7 +3846,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseMovedProperty}的雙向連結
+     * 設定屬性{@link Node#onMouseMovedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3863,7 +3863,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMousePressedProperty}的連結
+     * 設定屬性{@link Node#onMousePressedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3880,7 +3880,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMousePressedProperty}的雙向連結
+     * 設定屬性{@link Node#onMousePressedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3897,7 +3897,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseReleasedProperty}的連結
+     * 設定屬性{@link Node#onMouseReleasedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3914,7 +3914,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onMouseReleasedProperty}的雙向連結
+     * 設定屬性{@link Node#onMouseReleasedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3931,7 +3931,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onRotateProperty}的連結
+     * 設定屬性{@link Node#onRotateProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3948,7 +3948,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onRotateProperty}的雙向連結
+     * 設定屬性{@link Node#onRotateProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3965,7 +3965,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onRotationFinishedProperty}的連結
+     * 設定屬性{@link Node#onRotationFinishedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3982,7 +3982,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onRotationFinishedProperty}的雙向連結
+     * 設定屬性{@link Node#onRotationFinishedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -3999,7 +3999,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onRotationStartedProperty}的連結
+     * 設定屬性{@link Node#onRotationStartedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4016,7 +4016,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onRotationStartedProperty}的雙向連結
+     * 設定屬性{@link Node#onRotationStartedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4033,7 +4033,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onScrollFinishedProperty}的連結
+     * 設定屬性{@link Node#onScrollFinishedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4050,7 +4050,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onScrollFinishedProperty}的雙向連結
+     * 設定屬性{@link Node#onScrollFinishedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4067,7 +4067,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onScrollProperty}的連結
+     * 設定屬性{@link Node#onScrollProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4084,7 +4084,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onScrollProperty}的雙向連結
+     * 設定屬性{@link Node#onScrollProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4101,7 +4101,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onScrollStartedProperty}的連結
+     * 設定屬性{@link Node#onScrollStartedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4118,7 +4118,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onScrollStartedProperty}的雙向連結
+     * 設定屬性{@link Node#onScrollStartedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4135,7 +4135,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onSwipeDownProperty}的連結
+     * 設定屬性{@link Node#onSwipeDownProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4152,7 +4152,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onSwipeDownProperty}的雙向連結
+     * 設定屬性{@link Node#onSwipeDownProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4169,7 +4169,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onSwipeLeftProperty}的連結
+     * 設定屬性{@link Node#onSwipeLeftProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4186,7 +4186,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onSwipeLeftProperty}的雙向連結
+     * 設定屬性{@link Node#onSwipeLeftProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4203,7 +4203,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onSwipeRightProperty}的連結
+     * 設定屬性{@link Node#onSwipeRightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4220,7 +4220,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onSwipeRightProperty}的雙向連結
+     * 設定屬性{@link Node#onSwipeRightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4237,7 +4237,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onSwipeUpProperty}的連結
+     * 設定屬性{@link Node#onSwipeUpProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4254,7 +4254,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onSwipeUpProperty}的雙向連結
+     * 設定屬性{@link Node#onSwipeUpProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4271,7 +4271,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onTouchMovedProperty}的連結
+     * 設定屬性{@link Node#onTouchMovedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4288,7 +4288,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onTouchMovedProperty}的雙向連結
+     * 設定屬性{@link Node#onTouchMovedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4305,7 +4305,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onTouchPressedProperty}的連結
+     * 設定屬性{@link Node#onTouchPressedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4322,7 +4322,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onTouchPressedProperty}的雙向連結
+     * 設定屬性{@link Node#onTouchPressedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4339,7 +4339,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onTouchReleasedProperty}的連結
+     * 設定屬性{@link Node#onTouchReleasedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4356,7 +4356,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onTouchReleasedProperty}的雙向連結
+     * 設定屬性{@link Node#onTouchReleasedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4373,7 +4373,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onTouchStationaryProperty}的連結
+     * 設定屬性{@link Node#onTouchStationaryProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4390,7 +4390,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onTouchStationaryProperty}的雙向連結
+     * 設定屬性{@link Node#onTouchStationaryProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4407,7 +4407,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onZoomFinishedProperty}的連結
+     * 設定屬性{@link Node#onZoomFinishedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4424,7 +4424,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onZoomFinishedProperty}的雙向連結
+     * 設定屬性{@link Node#onZoomFinishedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4441,7 +4441,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onZoomProperty}的連結
+     * 設定屬性{@link Node#onZoomProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4458,7 +4458,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onZoomProperty}的雙向連結
+     * 設定屬性{@link Node#onZoomProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4475,7 +4475,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onZoomStartedProperty}的連結
+     * 設定屬性{@link Node#onZoomStartedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4492,7 +4492,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#onZoomStartedProperty}的雙向連結
+     * 設定屬性{@link Node#onZoomStartedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4509,7 +4509,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#opacityProperty}的連結
+     * 設定屬性{@link Node#opacityProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4526,7 +4526,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#opacityProperty}的雙向連結
+     * 設定屬性{@link Node#opacityProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4543,7 +4543,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#pickOnBoundsProperty}的連結
+     * 設定屬性{@link Node#pickOnBoundsProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4560,7 +4560,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#pickOnBoundsProperty}的雙向連結
+     * 設定屬性{@link Node#pickOnBoundsProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4577,7 +4577,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#rotateProperty}的連結
+     * 設定屬性{@link Node#rotateProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4594,7 +4594,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#rotateProperty}的雙向連結
+     * 設定屬性{@link Node#rotateProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4611,7 +4611,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#rotationAxisProperty}的連結
+     * 設定屬性{@link Node#rotationAxisProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4628,7 +4628,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#rotationAxisProperty}的雙向連結
+     * 設定屬性{@link Node#rotationAxisProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4645,7 +4645,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#scaleXProperty}的連結
+     * 設定屬性{@link Node#scaleXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4662,7 +4662,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#scaleXProperty}的雙向連結
+     * 設定屬性{@link Node#scaleXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4679,7 +4679,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#scaleYProperty}的連結
+     * 設定屬性{@link Node#scaleYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4696,7 +4696,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#scaleYProperty}的雙向連結
+     * 設定屬性{@link Node#scaleYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4713,7 +4713,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#scaleZProperty}的連結
+     * 設定屬性{@link Node#scaleZProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4730,7 +4730,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#scaleZProperty}的雙向連結
+     * 設定屬性{@link Node#scaleZProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4747,7 +4747,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#styleProperty}的連結
+     * 設定屬性{@link Node#styleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4764,7 +4764,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#styleProperty}的雙向連結
+     * 設定屬性{@link Node#styleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4781,7 +4781,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#translateXProperty}的連結
+     * 設定屬性{@link Node#translateXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4798,7 +4798,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#translateXProperty}的雙向連結
+     * 設定屬性{@link Node#translateXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4815,7 +4815,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#translateYProperty}的連結
+     * 設定屬性{@link Node#translateYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4832,7 +4832,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#translateYProperty}的雙向連結
+     * 設定屬性{@link Node#translateYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4849,7 +4849,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#translateZProperty}的連結
+     * 設定屬性{@link Node#translateZProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4866,7 +4866,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#translateZProperty}的雙向連結
+     * 設定屬性{@link Node#translateZProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4883,7 +4883,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#visibleProperty}的連結
+     * 設定屬性{@link Node#visibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -4900,7 +4900,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Node#visibleProperty}的雙向連結
+     * 設定屬性{@link Node#visibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)

@@ -6,7 +6,7 @@
 package javafx.scene.control.cell;
 
 /**
- * {@link TreeItemPropertyValueFactory}建構器
+ * {@link TreeItemPropertyValueFactory}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class TreeItemPropertyValueFactoryBuilder<S extends java.lang.Object, T e
     }
 
     /**
-     * 建構{@link TreeItemPropertyValueFactory}物件
+     * 建構{@link TreeItemPropertyValueFactory}物件。
      *
      * @return 新的{@link TreeItemPropertyValueFactory}物件實體
      */

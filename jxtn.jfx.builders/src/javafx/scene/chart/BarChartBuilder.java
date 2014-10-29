@@ -6,7 +6,7 @@
 package javafx.scene.chart;
 
 /**
- * {@link BarChart}建構器
+ * {@link BarChart}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -55,7 +55,7 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
     }
 
     /**
-     * 設定屬性{@link BarChart#setBarGap(double)}
+     * 設定屬性{@link BarChart#setBarGap(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -69,7 +69,7 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
     }
 
     /**
-     * 設定屬性{@link BarChart#setCategoryGap(double)}
+     * 設定屬性{@link BarChart#setCategoryGap(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -83,7 +83,7 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
     }
 
     /**
-     * 設定屬性{@link BarChart#barGapProperty}的連結
+     * 設定屬性{@link BarChart#barGapProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -100,7 +100,7 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
     }
 
     /**
-     * 設定屬性{@link BarChart#barGapProperty}的雙向連結
+     * 設定屬性{@link BarChart#barGapProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -117,7 +117,7 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
     }
 
     /**
-     * 設定屬性{@link BarChart#categoryGapProperty}的連結
+     * 設定屬性{@link BarChart#categoryGapProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -134,7 +134,7 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
     }
 
     /**
-     * 設定屬性{@link BarChart#categoryGapProperty}的雙向連結
+     * 設定屬性{@link BarChart#categoryGapProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -151,7 +151,7 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
     }
 
     /**
-     * 建構{@link BarChart}物件
+     * 建構{@link BarChart}物件。
      *
      * @return 新的{@link BarChart}物件實體
      */
@@ -165,7 +165,7 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
     }
 
     /**
-     * 建構{@link BarChart}物件
+     * 建構{@link BarChart}物件。
      *
      * @return 新的{@link BarChart}物件實體
      */
@@ -179,7 +179,7 @@ public class BarChartBuilder<X extends java.lang.Object, Y extends java.lang.Obj
     }
 
     /**
-     * 建構{@link BarChart}物件
+     * 建構{@link BarChart}物件。
      *
      * @return 新的{@link BarChart}物件實體
      */

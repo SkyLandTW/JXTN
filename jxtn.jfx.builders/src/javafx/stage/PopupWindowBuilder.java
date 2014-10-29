@@ -6,7 +6,7 @@
 package javafx.stage;
 
 /**
- * {@link PopupWindow}建構器
+ * {@link PopupWindow}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -121,7 +121,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#setAnchorLocation(javafx.stage.PopupWindow.AnchorLocation)}
+     * 設定屬性{@link PopupWindow#setAnchorLocation(javafx.stage.PopupWindow.AnchorLocation)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -135,7 +135,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#setAnchorX(double)}
+     * 設定屬性{@link PopupWindow#setAnchorX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -149,7 +149,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#setAnchorY(double)}
+     * 設定屬性{@link PopupWindow#setAnchorY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -163,7 +163,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#setAutoFix(boolean)}
+     * 設定屬性{@link PopupWindow#setAutoFix(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -177,7 +177,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#setAutoHide(boolean)}
+     * 設定屬性{@link PopupWindow#setAutoHide(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -191,7 +191,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#setConsumeAutoHidingEvents(boolean)}
+     * 設定屬性{@link PopupWindow#setConsumeAutoHidingEvents(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -205,7 +205,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#setHideOnEscape(boolean)}
+     * 設定屬性{@link PopupWindow#setHideOnEscape(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -219,7 +219,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#setOnAutoHide(javafx.event.EventHandler)}
+     * 設定屬性{@link PopupWindow#setOnAutoHide(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -233,7 +233,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#anchorLocationProperty}的連結
+     * 設定屬性{@link PopupWindow#anchorLocationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -250,7 +250,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#anchorLocationProperty}的雙向連結
+     * 設定屬性{@link PopupWindow#anchorLocationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -267,7 +267,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#autoFixProperty}的連結
+     * 設定屬性{@link PopupWindow#autoFixProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -284,7 +284,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#autoFixProperty}的雙向連結
+     * 設定屬性{@link PopupWindow#autoFixProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -301,7 +301,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#autoHideProperty}的連結
+     * 設定屬性{@link PopupWindow#autoHideProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -318,7 +318,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#autoHideProperty}的雙向連結
+     * 設定屬性{@link PopupWindow#autoHideProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -335,7 +335,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#consumeAutoHidingEventsProperty}的連結
+     * 設定屬性{@link PopupWindow#consumeAutoHidingEventsProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -352,7 +352,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#consumeAutoHidingEventsProperty}的雙向連結
+     * 設定屬性{@link PopupWindow#consumeAutoHidingEventsProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -369,7 +369,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#hideOnEscapeProperty}的連結
+     * 設定屬性{@link PopupWindow#hideOnEscapeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -386,7 +386,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#hideOnEscapeProperty}的雙向連結
+     * 設定屬性{@link PopupWindow#hideOnEscapeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -403,7 +403,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#onAutoHideProperty}的連結
+     * 設定屬性{@link PopupWindow#onAutoHideProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -420,7 +420,7 @@ public class PopupWindowBuilder<Z extends PopupWindow, B extends PopupWindowBuil
     }
 
     /**
-     * 設定屬性{@link PopupWindow#onAutoHideProperty}的雙向連結
+     * 設定屬性{@link PopupWindow#onAutoHideProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)

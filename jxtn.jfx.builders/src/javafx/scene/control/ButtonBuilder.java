@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link Button}建構器
+ * {@link Button}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -55,7 +55,7 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Button#setCancelButton(boolean)}
+     * 設定屬性{@link Button#setCancelButton(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -69,7 +69,7 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Button#setDefaultButton(boolean)}
+     * 設定屬性{@link Button#setDefaultButton(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -83,7 +83,7 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Button#cancelButtonProperty}的連結
+     * 設定屬性{@link Button#cancelButtonProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -100,7 +100,7 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Button#cancelButtonProperty}的雙向連結
+     * 設定屬性{@link Button#cancelButtonProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -117,7 +117,7 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Button#defaultButtonProperty}的連結
+     * 設定屬性{@link Button#defaultButtonProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -134,7 +134,7 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Button#defaultButtonProperty}的雙向連結
+     * 設定屬性{@link Button#defaultButtonProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -151,7 +151,7 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Button}物件
+     * 建構{@link Button}物件。
      *
      * @return 新的{@link Button}物件實體
      */
@@ -166,7 +166,7 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Button}物件
+     * 建構{@link Button}物件。
      *
      * @return 新的{@link Button}物件實體
      */
@@ -180,7 +180,7 @@ public class ButtonBuilder<Z extends Button, B extends ButtonBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Button}物件
+     * 建構{@link Button}物件。
      *
      * @return 新的{@link Button}物件實體
      */

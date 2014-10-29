@@ -6,7 +6,7 @@
 package javafx.scene.effect;
 
 /**
- * {@link Reflection}建構器
+ * {@link Reflection}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -97,7 +97,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#setBottomOpacity(double)}
+     * 設定屬性{@link Reflection#setBottomOpacity(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#setFraction(double)}
+     * 設定屬性{@link Reflection#setFraction(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#setInput(javafx.scene.effect.Effect)}
+     * 設定屬性{@link Reflection#setInput(javafx.scene.effect.Effect)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#setTopOffset(double)}
+     * 設定屬性{@link Reflection#setTopOffset(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#setTopOpacity(double)}
+     * 設定屬性{@link Reflection#setTopOpacity(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#bottomOpacityProperty}的連結
+     * 設定屬性{@link Reflection#bottomOpacityProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -184,7 +184,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#bottomOpacityProperty}的雙向連結
+     * 設定屬性{@link Reflection#bottomOpacityProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -201,7 +201,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#fractionProperty}的連結
+     * 設定屬性{@link Reflection#fractionProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -218,7 +218,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#fractionProperty}的雙向連結
+     * 設定屬性{@link Reflection#fractionProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -235,7 +235,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#inputProperty}的連結
+     * 設定屬性{@link Reflection#inputProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -252,7 +252,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#inputProperty}的雙向連結
+     * 設定屬性{@link Reflection#inputProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -269,7 +269,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#topOffsetProperty}的連結
+     * 設定屬性{@link Reflection#topOffsetProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -286,7 +286,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#topOffsetProperty}的雙向連結
+     * 設定屬性{@link Reflection#topOffsetProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -303,7 +303,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#topOpacityProperty}的連結
+     * 設定屬性{@link Reflection#topOpacityProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -320,7 +320,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 設定屬性{@link Reflection#topOpacityProperty}的雙向連結
+     * 設定屬性{@link Reflection#topOpacityProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -337,7 +337,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 建構{@link Reflection}物件
+     * 建構{@link Reflection}物件。
      *
      * @return 新的{@link Reflection}物件實體
      */
@@ -352,7 +352,7 @@ public class ReflectionBuilder<Z extends Reflection, B extends ReflectionBuilder
     }
 
     /**
-     * 建構{@link Reflection}物件
+     * 建構{@link Reflection}物件。
      *
      * @return 新的{@link Reflection}物件實體
      */

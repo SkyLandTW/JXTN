@@ -6,7 +6,7 @@
 package javafx.scene.input;
 
 /**
- * {@link DataFormat}建構器
+ * {@link DataFormat}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class DataFormatBuilder<Z extends DataFormat, B extends DataFormatBuilder
     }
 
     /**
-     * 建構{@link DataFormat}物件
+     * 建構{@link DataFormat}物件。
      *
      * @return 新的{@link DataFormat}物件實體
      */

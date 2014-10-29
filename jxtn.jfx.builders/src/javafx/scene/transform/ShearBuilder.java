@@ -6,7 +6,7 @@
 package javafx.scene.transform;
 
 /**
- * {@link Shear}建構器
+ * {@link Shear}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -83,7 +83,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shear#setPivotX(double)}
+     * 設定屬性{@link Shear#setPivotX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -97,7 +97,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shear#setPivotY(double)}
+     * 設定屬性{@link Shear#setPivotY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shear#setX(double)}
+     * 設定屬性{@link Shear#setX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shear#setY(double)}
+     * 設定屬性{@link Shear#setY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shear#pivotXProperty}的連結
+     * 設定屬性{@link Shear#pivotXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -156,7 +156,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shear#pivotXProperty}的雙向連結
+     * 設定屬性{@link Shear#pivotXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -173,7 +173,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shear#pivotYProperty}的連結
+     * 設定屬性{@link Shear#pivotYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -190,7 +190,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shear#pivotYProperty}的雙向連結
+     * 設定屬性{@link Shear#pivotYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -207,7 +207,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shear#xProperty}的連結
+     * 設定屬性{@link Shear#xProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -224,7 +224,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shear#xProperty}的雙向連結
+     * 設定屬性{@link Shear#xProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -241,7 +241,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shear#yProperty}的連結
+     * 設定屬性{@link Shear#yProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -258,7 +258,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shear#yProperty}的雙向連結
+     * 設定屬性{@link Shear#yProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -275,7 +275,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Shear}物件
+     * 建構{@link Shear}物件。
      *
      * @return 新的{@link Shear}物件實體
      */
@@ -290,7 +290,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Shear}物件
+     * 建構{@link Shear}物件。
      *
      * @return 新的{@link Shear}物件實體
      */
@@ -304,7 +304,7 @@ public class ShearBuilder<Z extends Shear, B extends ShearBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Shear}物件
+     * 建構{@link Shear}物件。
      *
      * @return 新的{@link Shear}物件實體
      */

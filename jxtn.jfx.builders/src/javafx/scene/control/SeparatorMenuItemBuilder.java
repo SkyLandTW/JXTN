@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link SeparatorMenuItem}建構器
+ * {@link SeparatorMenuItem}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class SeparatorMenuItemBuilder<Z extends SeparatorMenuItem, B extends Sep
     }
 
     /**
-     * 建構{@link SeparatorMenuItem}物件
+     * 建構{@link SeparatorMenuItem}物件。
      *
      * @return 新的{@link SeparatorMenuItem}物件實體
      */

@@ -6,7 +6,7 @@
 package javafx.scene.layout;
 
 /**
- * {@link StackPane}建構器
+ * {@link StackPane}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -41,7 +41,7 @@ public class StackPaneBuilder<Z extends StackPane, B extends StackPaneBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link StackPane#setAlignment(javafx.geometry.Pos)}
+     * 設定屬性{@link StackPane#setAlignment(javafx.geometry.Pos)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -55,7 +55,7 @@ public class StackPaneBuilder<Z extends StackPane, B extends StackPaneBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link StackPane#alignmentProperty}的連結
+     * 設定屬性{@link StackPane#alignmentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -72,7 +72,7 @@ public class StackPaneBuilder<Z extends StackPane, B extends StackPaneBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link StackPane#alignmentProperty}的雙向連結
+     * 設定屬性{@link StackPane#alignmentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -89,7 +89,7 @@ public class StackPaneBuilder<Z extends StackPane, B extends StackPaneBuilder<Z,
     }
 
     /**
-     * 建構{@link StackPane}物件
+     * 建構{@link StackPane}物件。
      *
      * @return 新的{@link StackPane}物件實體
      */
@@ -104,7 +104,7 @@ public class StackPaneBuilder<Z extends StackPane, B extends StackPaneBuilder<Z,
     }
 
     /**
-     * 建構{@link StackPane}物件
+     * 建構{@link StackPane}物件。
      *
      * @return 新的{@link StackPane}物件實體
      */

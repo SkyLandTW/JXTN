@@ -6,7 +6,7 @@
 package javafx.scene.web;
 
 /**
- * {@link PopupFeatures}建構器
+ * {@link PopupFeatures}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class PopupFeaturesBuilder<Z extends PopupFeatures, B extends PopupFeatur
     }
 
     /**
-     * 建構{@link PopupFeatures}物件
+     * 建構{@link PopupFeatures}物件。
      *
      * @return 新的{@link PopupFeatures}物件實體
      */

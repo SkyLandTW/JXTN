@@ -6,7 +6,7 @@
 package org.controlsfx.control;
 
 /**
- * {@link GridView}建構器
+ * {@link GridView}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -111,7 +111,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#setCellFactory(javafx.util.Callback)}
+     * 設定屬性{@link GridView#setCellFactory(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#setCellHeight(double)}
+     * 設定屬性{@link GridView#setCellHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#setCellWidth(double)}
+     * 設定屬性{@link GridView#setCellWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#setHorizontalCellSpacing(double)}
+     * 設定屬性{@link GridView#setHorizontalCellSpacing(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#setItems(javafx.collections.ObservableList)}
+     * 設定屬性{@link GridView#setItems(javafx.collections.ObservableList)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#setVerticalCellSpacing(double)}
+     * 設定屬性{@link GridView#setVerticalCellSpacing(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#cellFactoryProperty}的連結
+     * 設定屬性{@link GridView#cellFactoryProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -212,7 +212,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#cellFactoryProperty}的雙向連結
+     * 設定屬性{@link GridView#cellFactoryProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -229,7 +229,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#cellHeightProperty}的連結
+     * 設定屬性{@link GridView#cellHeightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -246,7 +246,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#cellHeightProperty}的雙向連結
+     * 設定屬性{@link GridView#cellHeightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -263,7 +263,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#cellWidthProperty}的連結
+     * 設定屬性{@link GridView#cellWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -280,7 +280,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#cellWidthProperty}的雙向連結
+     * 設定屬性{@link GridView#cellWidthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -297,7 +297,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#horizontalCellSpacingProperty}的連結
+     * 設定屬性{@link GridView#horizontalCellSpacingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -314,7 +314,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#horizontalCellSpacingProperty}的雙向連結
+     * 設定屬性{@link GridView#horizontalCellSpacingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -331,7 +331,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#itemsProperty}的連結
+     * 設定屬性{@link GridView#itemsProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -348,7 +348,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#itemsProperty}的雙向連結
+     * 設定屬性{@link GridView#itemsProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -365,7 +365,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#verticalCellSpacingProperty}的連結
+     * 設定屬性{@link GridView#verticalCellSpacingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -382,7 +382,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 設定屬性{@link GridView#verticalCellSpacingProperty}的雙向連結
+     * 設定屬性{@link GridView#verticalCellSpacingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -399,7 +399,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 建構{@link GridView}物件
+     * 建構{@link GridView}物件。
      *
      * @return 新的{@link GridView}物件實體
      */
@@ -414,7 +414,7 @@ public class GridViewBuilder<T extends java.lang.Object, Z extends GridView<T>, 
     }
 
     /**
-     * 建構{@link GridView}物件
+     * 建構{@link GridView}物件。
      *
      * @return 新的{@link GridView}物件實體
      */

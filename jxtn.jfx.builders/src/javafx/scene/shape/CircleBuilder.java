@@ -6,7 +6,7 @@
 package javafx.scene.shape;
 
 /**
- * {@link Circle}建構器
+ * {@link Circle}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -69,7 +69,7 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Circle#setCenterX(double)}
+     * 設定屬性{@link Circle#setCenterX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -83,7 +83,7 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Circle#setCenterY(double)}
+     * 設定屬性{@link Circle#setCenterY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -97,7 +97,7 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Circle#setRadius(double)}
+     * 設定屬性{@link Circle#setRadius(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Circle#centerXProperty}的連結
+     * 設定屬性{@link Circle#centerXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -128,7 +128,7 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Circle#centerXProperty}的雙向連結
+     * 設定屬性{@link Circle#centerXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -145,7 +145,7 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Circle#centerYProperty}的連結
+     * 設定屬性{@link Circle#centerYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -162,7 +162,7 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Circle#centerYProperty}的雙向連結
+     * 設定屬性{@link Circle#centerYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -179,7 +179,7 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Circle#radiusProperty}的連結
+     * 設定屬性{@link Circle#radiusProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -196,7 +196,7 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Circle#radiusProperty}的雙向連結
+     * 設定屬性{@link Circle#radiusProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -213,7 +213,7 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Circle}物件
+     * 建構{@link Circle}物件。
      *
      * @return 新的{@link Circle}物件實體
      */
@@ -228,7 +228,7 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Circle}物件
+     * 建構{@link Circle}物件。
      *
      * @return 新的{@link Circle}物件實體
      */
@@ -242,7 +242,7 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Circle}物件
+     * 建構{@link Circle}物件。
      *
      * @return 新的{@link Circle}物件實體
      */
@@ -256,7 +256,7 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Circle}物件
+     * 建構{@link Circle}物件。
      *
      * @return 新的{@link Circle}物件實體
      */
@@ -270,7 +270,7 @@ public class CircleBuilder<Z extends Circle, B extends CircleBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Circle}物件
+     * 建構{@link Circle}物件。
      *
      * @return 新的{@link Circle}物件實體
      */

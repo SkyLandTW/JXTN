@@ -6,7 +6,7 @@
 package org.controlsfx.control.textfield;
 
 /**
- * {@link AutoCompletionBinding}建構器
+ * {@link AutoCompletionBinding}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -46,7 +46,7 @@ public class AutoCompletionBindingBuilder<T extends java.lang.Object, Z extends 
     }
 
     /**
-     * 設定屬性{@link AutoCompletionBinding#setOnAutoCompleted(javafx.event.EventHandler)}
+     * 設定屬性{@link AutoCompletionBinding#setOnAutoCompleted(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -60,7 +60,7 @@ public class AutoCompletionBindingBuilder<T extends java.lang.Object, Z extends 
     }
 
     /**
-     * 設定屬性{@link AutoCompletionBinding#setUserInput(java.lang.String)}
+     * 設定屬性{@link AutoCompletionBinding#setUserInput(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -74,7 +74,7 @@ public class AutoCompletionBindingBuilder<T extends java.lang.Object, Z extends 
     }
 
     /**
-     * 設定屬性{@link AutoCompletionBinding#onAutoCompletedProperty}的連結
+     * 設定屬性{@link AutoCompletionBinding#onAutoCompletedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -91,7 +91,7 @@ public class AutoCompletionBindingBuilder<T extends java.lang.Object, Z extends 
     }
 
     /**
-     * 設定屬性{@link AutoCompletionBinding#onAutoCompletedProperty}的雙向連結
+     * 設定屬性{@link AutoCompletionBinding#onAutoCompletedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)

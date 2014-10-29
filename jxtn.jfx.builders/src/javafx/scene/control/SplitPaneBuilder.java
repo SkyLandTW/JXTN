@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link SplitPane}建構器
+ * {@link SplitPane}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -56,7 +56,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link SplitPane#setDividerPositions(double[])}
+     * 設定屬性{@link SplitPane#setDividerPositions(double[])}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -70,7 +70,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     }
 
     /**
-     * 設定集合屬性{@link SplitPane#getDividers}的內容
+     * 設定集合屬性{@link SplitPane#getDividers}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -86,7 +86,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     }
 
     /**
-     * 設定集合屬性{@link SplitPane#getDividers}的內容
+     * 設定集合屬性{@link SplitPane#getDividers}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -101,7 +101,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     }
 
     /**
-     * 增加集合屬性{@link SplitPane#getDividers}的內容
+     * 增加集合屬性{@link SplitPane#getDividers}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -118,7 +118,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     }
 
     /**
-     * 增加集合屬性{@link SplitPane#getDividers}的內容
+     * 增加集合屬性{@link SplitPane#getDividers}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     }
 
     /**
-     * 設定集合屬性{@link SplitPane#getItems}的內容
+     * 設定集合屬性{@link SplitPane#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -152,7 +152,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     }
 
     /**
-     * 設定集合屬性{@link SplitPane#getItems}的內容
+     * 設定集合屬性{@link SplitPane#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     }
 
     /**
-     * 增加集合屬性{@link SplitPane#getItems}的內容
+     * 增加集合屬性{@link SplitPane#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -184,7 +184,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     }
 
     /**
-     * 增加集合屬性{@link SplitPane#getItems}的內容
+     * 增加集合屬性{@link SplitPane#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -202,7 +202,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link SplitPane#setOrientation(javafx.geometry.Orientation)}
+     * 設定屬性{@link SplitPane#setOrientation(javafx.geometry.Orientation)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -216,7 +216,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link SplitPane#orientationProperty}的連結
+     * 設定屬性{@link SplitPane#orientationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -233,7 +233,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link SplitPane#orientationProperty}的雙向連結
+     * 設定屬性{@link SplitPane#orientationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -250,7 +250,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
     }
 
     /**
-     * 建構{@link SplitPane}物件
+     * 建構{@link SplitPane}物件。
      *
      * @return 新的{@link SplitPane}物件實體
      */

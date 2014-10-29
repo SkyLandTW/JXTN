@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link TableCell}建構器
+ * {@link TableCell}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class TableCellBuilder<S extends java.lang.Object, T extends java.lang.Ob
     }
 
     /**
-     * 建構{@link TableCell}物件
+     * 建構{@link TableCell}物件。
      *
      * @return 新的{@link TableCell}物件實體
      */

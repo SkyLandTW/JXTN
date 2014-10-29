@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link SkinBase}建構器
+ * {@link SkinBase}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -32,7 +32,7 @@ public class SkinBaseBuilder<C extends javafx.scene.control.Control, Z extends S
     }
 
     /**
-     * 設定集合屬性{@link SkinBase#getChildren}的內容
+     * 設定集合屬性{@link SkinBase#getChildren}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -48,7 +48,7 @@ public class SkinBaseBuilder<C extends javafx.scene.control.Control, Z extends S
     }
 
     /**
-     * 設定集合屬性{@link SkinBase#getChildren}的內容
+     * 設定集合屬性{@link SkinBase#getChildren}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -63,7 +63,7 @@ public class SkinBaseBuilder<C extends javafx.scene.control.Control, Z extends S
     }
 
     /**
-     * 增加集合屬性{@link SkinBase#getChildren}的內容
+     * 增加集合屬性{@link SkinBase#getChildren}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -80,7 +80,7 @@ public class SkinBaseBuilder<C extends javafx.scene.control.Control, Z extends S
     }
 
     /**
-     * 增加集合屬性{@link SkinBase#getChildren}的內容
+     * 增加集合屬性{@link SkinBase#getChildren}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)

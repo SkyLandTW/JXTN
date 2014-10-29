@@ -6,7 +6,7 @@
 package org.controlsfx.tools;
 
 /**
- * {@link Utils}建構器
+ * {@link Utils}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -27,7 +27,7 @@ public class UtilsBuilder<Z extends Utils, B extends UtilsBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Utils}物件
+     * 建構{@link Utils}物件。
      *
      * @return 新的{@link Utils}物件實體
      */

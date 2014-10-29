@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link DatePicker}建構器
+ * {@link DatePicker}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -83,7 +83,7 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     }
 
     /**
-     * 設定屬性{@link DatePicker#setChronology(java.time.chrono.Chronology)}
+     * 設定屬性{@link DatePicker#setChronology(java.time.chrono.Chronology)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -97,7 +97,7 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     }
 
     /**
-     * 設定屬性{@link DatePicker#setConverter(javafx.util.StringConverter)}
+     * 設定屬性{@link DatePicker#setConverter(javafx.util.StringConverter)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     }
 
     /**
-     * 設定屬性{@link DatePicker#setDayCellFactory(javafx.util.Callback)}
+     * 設定屬性{@link DatePicker#setDayCellFactory(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     }
 
     /**
-     * 設定屬性{@link DatePicker#setShowWeekNumbers(boolean)}
+     * 設定屬性{@link DatePicker#setShowWeekNumbers(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     }
 
     /**
-     * 設定屬性{@link DatePicker#chronologyProperty}的連結
+     * 設定屬性{@link DatePicker#chronologyProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -156,7 +156,7 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     }
 
     /**
-     * 設定屬性{@link DatePicker#chronologyProperty}的雙向連結
+     * 設定屬性{@link DatePicker#chronologyProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -173,7 +173,7 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     }
 
     /**
-     * 設定屬性{@link DatePicker#converterProperty}的連結
+     * 設定屬性{@link DatePicker#converterProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -190,7 +190,7 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     }
 
     /**
-     * 設定屬性{@link DatePicker#converterProperty}的雙向連結
+     * 設定屬性{@link DatePicker#converterProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -207,7 +207,7 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     }
 
     /**
-     * 設定屬性{@link DatePicker#dayCellFactoryProperty}的連結
+     * 設定屬性{@link DatePicker#dayCellFactoryProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -224,7 +224,7 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     }
 
     /**
-     * 設定屬性{@link DatePicker#dayCellFactoryProperty}的雙向連結
+     * 設定屬性{@link DatePicker#dayCellFactoryProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -241,7 +241,7 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     }
 
     /**
-     * 設定屬性{@link DatePicker#showWeekNumbersProperty}的連結
+     * 設定屬性{@link DatePicker#showWeekNumbersProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -258,7 +258,7 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     }
 
     /**
-     * 設定屬性{@link DatePicker#showWeekNumbersProperty}的雙向連結
+     * 設定屬性{@link DatePicker#showWeekNumbersProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -275,7 +275,7 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     }
 
     /**
-     * 建構{@link DatePicker}物件
+     * 建構{@link DatePicker}物件。
      *
      * @return 新的{@link DatePicker}物件實體
      */
@@ -290,7 +290,7 @@ public class DatePickerBuilder<Z extends DatePicker, B extends DatePickerBuilder
     }
 
     /**
-     * 建構{@link DatePicker}物件
+     * 建構{@link DatePicker}物件。
      *
      * @return 新的{@link DatePicker}物件實體
      */

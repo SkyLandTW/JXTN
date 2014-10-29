@@ -6,7 +6,7 @@
 package org.controlsfx.control.decoration;
 
 /**
- * {@link GraphicDecoration}建構器
+ * {@link GraphicDecoration}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -27,7 +27,7 @@ public class GraphicDecorationBuilder<Z extends GraphicDecoration, B extends Gra
     }
 
     /**
-     * 建構{@link GraphicDecoration}物件
+     * 建構{@link GraphicDecoration}物件。
      *
      * @return 新的{@link GraphicDecoration}物件實體
      */
@@ -41,7 +41,7 @@ public class GraphicDecorationBuilder<Z extends GraphicDecoration, B extends Gra
     }
 
     /**
-     * 建構{@link GraphicDecoration}物件
+     * 建構{@link GraphicDecoration}物件。
      *
      * @return 新的{@link GraphicDecoration}物件實體
      */
@@ -55,7 +55,7 @@ public class GraphicDecorationBuilder<Z extends GraphicDecoration, B extends Gra
     }
 
     /**
-     * 建構{@link GraphicDecoration}物件
+     * 建構{@link GraphicDecoration}物件。
      *
      * @return 新的{@link GraphicDecoration}物件實體
      */

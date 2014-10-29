@@ -6,7 +6,7 @@
 package org.controlsfx.glyphfont;
 
 /**
- * {@link FontAwesome}建構器
+ * {@link FontAwesome}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -27,7 +27,7 @@ public class FontAwesomeBuilder<Z extends FontAwesome, B extends FontAwesomeBuil
     }
 
     /**
-     * 建構{@link FontAwesome}物件
+     * 建構{@link FontAwesome}物件。
      *
      * @return 新的{@link FontAwesome}物件實體
      */
@@ -42,7 +42,7 @@ public class FontAwesomeBuilder<Z extends FontAwesome, B extends FontAwesomeBuil
     }
 
     /**
-     * 建構{@link FontAwesome}物件
+     * 建構{@link FontAwesome}物件。
      *
      * @return 新的{@link FontAwesome}物件實體
      */
@@ -56,7 +56,7 @@ public class FontAwesomeBuilder<Z extends FontAwesome, B extends FontAwesomeBuil
     }
 
     /**
-     * 建構{@link FontAwesome}物件
+     * 建構{@link FontAwesome}物件。
      *
      * @return 新的{@link FontAwesome}物件實體
      */

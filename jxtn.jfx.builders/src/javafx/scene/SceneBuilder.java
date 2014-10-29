@@ -6,7 +6,7 @@
 package javafx.scene;
 
 /**
- * {@link Scene}建構器
+ * {@link Scene}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -676,7 +676,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setCamera(javafx.scene.Camera)}
+     * 設定屬性{@link Scene#setCamera(javafx.scene.Camera)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -690,7 +690,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setCursor(javafx.scene.Cursor)}
+     * 設定屬性{@link Scene#setCursor(javafx.scene.Cursor)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -704,7 +704,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setEventDispatcher(javafx.event.EventDispatcher)}
+     * 設定屬性{@link Scene#setEventDispatcher(javafx.event.EventDispatcher)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -718,7 +718,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setFill(javafx.scene.paint.Paint)}
+     * 設定屬性{@link Scene#setFill(javafx.scene.paint.Paint)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -732,7 +732,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setNodeOrientation(javafx.geometry.NodeOrientation)}
+     * 設定屬性{@link Scene#setNodeOrientation(javafx.geometry.NodeOrientation)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -746,7 +746,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnContextMenuRequested(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnContextMenuRequested(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -760,7 +760,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnDragDetected(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnDragDetected(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -774,7 +774,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnDragDone(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnDragDone(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -788,7 +788,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnDragDropped(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnDragDropped(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -802,7 +802,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnDragEntered(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnDragEntered(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -816,7 +816,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnDragExited(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnDragExited(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -830,7 +830,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnDragOver(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnDragOver(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -844,7 +844,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnInputMethodTextChanged(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnInputMethodTextChanged(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -858,7 +858,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnKeyPressed(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnKeyPressed(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -872,7 +872,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnKeyReleased(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnKeyReleased(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -886,7 +886,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnKeyTyped(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnKeyTyped(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -900,7 +900,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseClicked(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnMouseClicked(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -914,7 +914,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseDragEntered(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnMouseDragEntered(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -928,7 +928,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseDragExited(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnMouseDragExited(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -942,7 +942,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseDragOver(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnMouseDragOver(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -956,7 +956,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseDragReleased(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnMouseDragReleased(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -970,7 +970,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseDragged(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnMouseDragged(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -984,7 +984,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseEntered(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnMouseEntered(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -998,7 +998,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseExited(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnMouseExited(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1012,7 +1012,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseMoved(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnMouseMoved(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1026,7 +1026,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMousePressed(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnMousePressed(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1040,7 +1040,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnMouseReleased(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnMouseReleased(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1054,7 +1054,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnRotate(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnRotate(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1068,7 +1068,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnRotationFinished(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnRotationFinished(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1082,7 +1082,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnRotationStarted(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnRotationStarted(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1096,7 +1096,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnScroll(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnScroll(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1110,7 +1110,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnScrollFinished(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnScrollFinished(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1124,7 +1124,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnScrollStarted(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnScrollStarted(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1138,7 +1138,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnSwipeDown(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnSwipeDown(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1152,7 +1152,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnSwipeLeft(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnSwipeLeft(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1166,7 +1166,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnSwipeRight(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnSwipeRight(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1180,7 +1180,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnSwipeUp(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnSwipeUp(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1194,7 +1194,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnTouchMoved(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnTouchMoved(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1208,7 +1208,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnTouchPressed(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnTouchPressed(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1222,7 +1222,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnTouchReleased(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnTouchReleased(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1236,7 +1236,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnTouchStationary(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnTouchStationary(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1250,7 +1250,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnZoom(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnZoom(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1264,7 +1264,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnZoomFinished(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnZoomFinished(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1278,7 +1278,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setOnZoomStarted(javafx.event.EventHandler)}
+     * 設定屬性{@link Scene#setOnZoomStarted(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1292,7 +1292,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setRoot(javafx.scene.Parent)}
+     * 設定屬性{@link Scene#setRoot(javafx.scene.Parent)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1306,7 +1306,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Scene#getStylesheets}的內容
+     * 設定集合屬性{@link Scene#getStylesheets}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -1322,7 +1322,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定集合屬性{@link Scene#getStylesheets}的內容
+     * 設定集合屬性{@link Scene#getStylesheets}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -1337,7 +1337,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Scene#getStylesheets}的內容
+     * 增加集合屬性{@link Scene#getStylesheets}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -1354,7 +1354,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 增加集合屬性{@link Scene#getStylesheets}的內容
+     * 增加集合屬性{@link Scene#getStylesheets}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -1372,7 +1372,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#setUserAgentStylesheet(java.lang.String)}
+     * 設定屬性{@link Scene#setUserAgentStylesheet(java.lang.String)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -1386,7 +1386,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#cameraProperty}的連結
+     * 設定屬性{@link Scene#cameraProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1403,7 +1403,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#cameraProperty}的雙向連結
+     * 設定屬性{@link Scene#cameraProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1420,7 +1420,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#cursorProperty}的連結
+     * 設定屬性{@link Scene#cursorProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1437,7 +1437,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#cursorProperty}的雙向連結
+     * 設定屬性{@link Scene#cursorProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1454,7 +1454,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#eventDispatcherProperty}的連結
+     * 設定屬性{@link Scene#eventDispatcherProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1471,7 +1471,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#eventDispatcherProperty}的雙向連結
+     * 設定屬性{@link Scene#eventDispatcherProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1488,7 +1488,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#fillProperty}的連結
+     * 設定屬性{@link Scene#fillProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1505,7 +1505,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#fillProperty}的雙向連結
+     * 設定屬性{@link Scene#fillProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1522,7 +1522,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#nodeOrientationProperty}的連結
+     * 設定屬性{@link Scene#nodeOrientationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1539,7 +1539,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#nodeOrientationProperty}的雙向連結
+     * 設定屬性{@link Scene#nodeOrientationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1556,7 +1556,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onContextMenuRequestedProperty}的連結
+     * 設定屬性{@link Scene#onContextMenuRequestedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1573,7 +1573,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onContextMenuRequestedProperty}的雙向連結
+     * 設定屬性{@link Scene#onContextMenuRequestedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1590,7 +1590,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onDragDetectedProperty}的連結
+     * 設定屬性{@link Scene#onDragDetectedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1607,7 +1607,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onDragDetectedProperty}的雙向連結
+     * 設定屬性{@link Scene#onDragDetectedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1624,7 +1624,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onDragDoneProperty}的連結
+     * 設定屬性{@link Scene#onDragDoneProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1641,7 +1641,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onDragDoneProperty}的雙向連結
+     * 設定屬性{@link Scene#onDragDoneProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1658,7 +1658,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onDragDroppedProperty}的連結
+     * 設定屬性{@link Scene#onDragDroppedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1675,7 +1675,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onDragDroppedProperty}的雙向連結
+     * 設定屬性{@link Scene#onDragDroppedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1692,7 +1692,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onDragEnteredProperty}的連結
+     * 設定屬性{@link Scene#onDragEnteredProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1709,7 +1709,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onDragEnteredProperty}的雙向連結
+     * 設定屬性{@link Scene#onDragEnteredProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1726,7 +1726,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onDragExitedProperty}的連結
+     * 設定屬性{@link Scene#onDragExitedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1743,7 +1743,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onDragExitedProperty}的雙向連結
+     * 設定屬性{@link Scene#onDragExitedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1760,7 +1760,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onDragOverProperty}的連結
+     * 設定屬性{@link Scene#onDragOverProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1777,7 +1777,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onDragOverProperty}的雙向連結
+     * 設定屬性{@link Scene#onDragOverProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1794,7 +1794,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onInputMethodTextChangedProperty}的連結
+     * 設定屬性{@link Scene#onInputMethodTextChangedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1811,7 +1811,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onInputMethodTextChangedProperty}的雙向連結
+     * 設定屬性{@link Scene#onInputMethodTextChangedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1828,7 +1828,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onKeyPressedProperty}的連結
+     * 設定屬性{@link Scene#onKeyPressedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1845,7 +1845,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onKeyPressedProperty}的雙向連結
+     * 設定屬性{@link Scene#onKeyPressedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1862,7 +1862,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onKeyReleasedProperty}的連結
+     * 設定屬性{@link Scene#onKeyReleasedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1879,7 +1879,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onKeyReleasedProperty}的雙向連結
+     * 設定屬性{@link Scene#onKeyReleasedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1896,7 +1896,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onKeyTypedProperty}的連結
+     * 設定屬性{@link Scene#onKeyTypedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1913,7 +1913,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onKeyTypedProperty}的雙向連結
+     * 設定屬性{@link Scene#onKeyTypedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1930,7 +1930,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseClickedProperty}的連結
+     * 設定屬性{@link Scene#onMouseClickedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1947,7 +1947,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseClickedProperty}的雙向連結
+     * 設定屬性{@link Scene#onMouseClickedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1964,7 +1964,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseDragEnteredProperty}的連結
+     * 設定屬性{@link Scene#onMouseDragEnteredProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1981,7 +1981,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseDragEnteredProperty}的雙向連結
+     * 設定屬性{@link Scene#onMouseDragEnteredProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -1998,7 +1998,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseDragExitedProperty}的連結
+     * 設定屬性{@link Scene#onMouseDragExitedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2015,7 +2015,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseDragExitedProperty}的雙向連結
+     * 設定屬性{@link Scene#onMouseDragExitedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2032,7 +2032,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseDragOverProperty}的連結
+     * 設定屬性{@link Scene#onMouseDragOverProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2049,7 +2049,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseDragOverProperty}的雙向連結
+     * 設定屬性{@link Scene#onMouseDragOverProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2066,7 +2066,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseDragReleasedProperty}的連結
+     * 設定屬性{@link Scene#onMouseDragReleasedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2083,7 +2083,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseDragReleasedProperty}的雙向連結
+     * 設定屬性{@link Scene#onMouseDragReleasedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2100,7 +2100,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseDraggedProperty}的連結
+     * 設定屬性{@link Scene#onMouseDraggedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2117,7 +2117,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseDraggedProperty}的雙向連結
+     * 設定屬性{@link Scene#onMouseDraggedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2134,7 +2134,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseEnteredProperty}的連結
+     * 設定屬性{@link Scene#onMouseEnteredProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2151,7 +2151,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseEnteredProperty}的雙向連結
+     * 設定屬性{@link Scene#onMouseEnteredProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2168,7 +2168,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseExitedProperty}的連結
+     * 設定屬性{@link Scene#onMouseExitedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2185,7 +2185,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseExitedProperty}的雙向連結
+     * 設定屬性{@link Scene#onMouseExitedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2202,7 +2202,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseMovedProperty}的連結
+     * 設定屬性{@link Scene#onMouseMovedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2219,7 +2219,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseMovedProperty}的雙向連結
+     * 設定屬性{@link Scene#onMouseMovedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2236,7 +2236,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMousePressedProperty}的連結
+     * 設定屬性{@link Scene#onMousePressedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2253,7 +2253,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMousePressedProperty}的雙向連結
+     * 設定屬性{@link Scene#onMousePressedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2270,7 +2270,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseReleasedProperty}的連結
+     * 設定屬性{@link Scene#onMouseReleasedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2287,7 +2287,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onMouseReleasedProperty}的雙向連結
+     * 設定屬性{@link Scene#onMouseReleasedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2304,7 +2304,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onRotateProperty}的連結
+     * 設定屬性{@link Scene#onRotateProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2321,7 +2321,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onRotateProperty}的雙向連結
+     * 設定屬性{@link Scene#onRotateProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2338,7 +2338,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onRotationFinishedProperty}的連結
+     * 設定屬性{@link Scene#onRotationFinishedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2355,7 +2355,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onRotationFinishedProperty}的雙向連結
+     * 設定屬性{@link Scene#onRotationFinishedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2372,7 +2372,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onRotationStartedProperty}的連結
+     * 設定屬性{@link Scene#onRotationStartedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2389,7 +2389,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onRotationStartedProperty}的雙向連結
+     * 設定屬性{@link Scene#onRotationStartedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2406,7 +2406,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onScrollFinishedProperty}的連結
+     * 設定屬性{@link Scene#onScrollFinishedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2423,7 +2423,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onScrollFinishedProperty}的雙向連結
+     * 設定屬性{@link Scene#onScrollFinishedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2440,7 +2440,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onScrollProperty}的連結
+     * 設定屬性{@link Scene#onScrollProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2457,7 +2457,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onScrollProperty}的雙向連結
+     * 設定屬性{@link Scene#onScrollProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2474,7 +2474,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onScrollStartedProperty}的連結
+     * 設定屬性{@link Scene#onScrollStartedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2491,7 +2491,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onScrollStartedProperty}的雙向連結
+     * 設定屬性{@link Scene#onScrollStartedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2508,7 +2508,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onSwipeDownProperty}的連結
+     * 設定屬性{@link Scene#onSwipeDownProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2525,7 +2525,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onSwipeDownProperty}的雙向連結
+     * 設定屬性{@link Scene#onSwipeDownProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2542,7 +2542,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onSwipeLeftProperty}的連結
+     * 設定屬性{@link Scene#onSwipeLeftProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2559,7 +2559,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onSwipeLeftProperty}的雙向連結
+     * 設定屬性{@link Scene#onSwipeLeftProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2576,7 +2576,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onSwipeRightProperty}的連結
+     * 設定屬性{@link Scene#onSwipeRightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2593,7 +2593,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onSwipeRightProperty}的雙向連結
+     * 設定屬性{@link Scene#onSwipeRightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2610,7 +2610,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onSwipeUpProperty}的連結
+     * 設定屬性{@link Scene#onSwipeUpProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2627,7 +2627,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onSwipeUpProperty}的雙向連結
+     * 設定屬性{@link Scene#onSwipeUpProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2644,7 +2644,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onTouchMovedProperty}的連結
+     * 設定屬性{@link Scene#onTouchMovedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2661,7 +2661,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onTouchMovedProperty}的雙向連結
+     * 設定屬性{@link Scene#onTouchMovedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2678,7 +2678,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onTouchPressedProperty}的連結
+     * 設定屬性{@link Scene#onTouchPressedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2695,7 +2695,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onTouchPressedProperty}的雙向連結
+     * 設定屬性{@link Scene#onTouchPressedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2712,7 +2712,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onTouchReleasedProperty}的連結
+     * 設定屬性{@link Scene#onTouchReleasedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2729,7 +2729,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onTouchReleasedProperty}的雙向連結
+     * 設定屬性{@link Scene#onTouchReleasedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2746,7 +2746,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onTouchStationaryProperty}的連結
+     * 設定屬性{@link Scene#onTouchStationaryProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2763,7 +2763,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onTouchStationaryProperty}的雙向連結
+     * 設定屬性{@link Scene#onTouchStationaryProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2780,7 +2780,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onZoomFinishedProperty}的連結
+     * 設定屬性{@link Scene#onZoomFinishedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2797,7 +2797,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onZoomFinishedProperty}的雙向連結
+     * 設定屬性{@link Scene#onZoomFinishedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2814,7 +2814,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onZoomProperty}的連結
+     * 設定屬性{@link Scene#onZoomProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2831,7 +2831,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onZoomProperty}的雙向連結
+     * 設定屬性{@link Scene#onZoomProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2848,7 +2848,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onZoomStartedProperty}的連結
+     * 設定屬性{@link Scene#onZoomStartedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2865,7 +2865,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#onZoomStartedProperty}的雙向連結
+     * 設定屬性{@link Scene#onZoomStartedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2882,7 +2882,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#rootProperty}的連結
+     * 設定屬性{@link Scene#rootProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2899,7 +2899,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#rootProperty}的雙向連結
+     * 設定屬性{@link Scene#rootProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2916,7 +2916,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#userAgentStylesheetProperty}的連結
+     * 設定屬性{@link Scene#userAgentStylesheetProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2933,7 +2933,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Scene#userAgentStylesheetProperty}的雙向連結
+     * 設定屬性{@link Scene#userAgentStylesheetProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -2950,7 +2950,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Scene}物件
+     * 建構{@link Scene}物件。
      *
      * @return 新的{@link Scene}物件實體
      */
@@ -2964,7 +2964,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Scene}物件
+     * 建構{@link Scene}物件。
      *
      * @return 新的{@link Scene}物件實體
      */
@@ -2978,7 +2978,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Scene}物件
+     * 建構{@link Scene}物件。
      *
      * @return 新的{@link Scene}物件實體
      */
@@ -2992,7 +2992,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Scene}物件
+     * 建構{@link Scene}物件。
      *
      * @return 新的{@link Scene}物件實體
      */
@@ -3006,7 +3006,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Scene}物件
+     * 建構{@link Scene}物件。
      *
      * @return 新的{@link Scene}物件實體
      */
@@ -3020,7 +3020,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Scene}物件
+     * 建構{@link Scene}物件。
      *
      * @return 新的{@link Scene}物件實體
      */

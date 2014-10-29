@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link TreeItem}建構器
+ * {@link TreeItem}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -74,7 +74,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 設定集合屬性{@link TreeItem#getChildren}的內容
+     * 設定集合屬性{@link TreeItem#getChildren}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -90,7 +90,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 設定集合屬性{@link TreeItem#getChildren}的內容
+     * 設定集合屬性{@link TreeItem#getChildren}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -105,7 +105,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 增加集合屬性{@link TreeItem#getChildren}的內容
+     * 增加集合屬性{@link TreeItem#getChildren}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -122,7 +122,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 增加集合屬性{@link TreeItem#getChildren}的內容
+     * 增加集合屬性{@link TreeItem#getChildren}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -140,7 +140,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeItem#setExpanded(boolean)}
+     * 設定屬性{@link TreeItem#setExpanded(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -154,7 +154,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeItem#setGraphic(javafx.scene.Node)}
+     * 設定屬性{@link TreeItem#setGraphic(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -168,7 +168,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeItem#setValue(T)}
+     * 設定屬性{@link TreeItem#setValue(T)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -182,7 +182,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeItem#expandedProperty}的連結
+     * 設定屬性{@link TreeItem#expandedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -199,7 +199,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeItem#expandedProperty}的雙向連結
+     * 設定屬性{@link TreeItem#expandedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -216,7 +216,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeItem#graphicProperty}的連結
+     * 設定屬性{@link TreeItem#graphicProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -233,7 +233,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeItem#graphicProperty}的雙向連結
+     * 設定屬性{@link TreeItem#graphicProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -250,7 +250,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeItem#valueProperty}的連結
+     * 設定屬性{@link TreeItem#valueProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -267,7 +267,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 設定屬性{@link TreeItem#valueProperty}的雙向連結
+     * 設定屬性{@link TreeItem#valueProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -284,7 +284,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 建構{@link TreeItem}物件
+     * 建構{@link TreeItem}物件。
      *
      * @return 新的{@link TreeItem}物件實體
      */
@@ -299,7 +299,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 建構{@link TreeItem}物件
+     * 建構{@link TreeItem}物件。
      *
      * @return 新的{@link TreeItem}物件實體
      */
@@ -313,7 +313,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
     }
 
     /**
-     * 建構{@link TreeItem}物件
+     * 建構{@link TreeItem}物件。
      *
      * @return 新的{@link TreeItem}物件實體
      */

@@ -6,7 +6,7 @@
 package org.controlsfx.control;
 
 /**
- * {@link CheckComboBox}建構器
+ * {@link CheckComboBox}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -46,7 +46,7 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
     }
 
     /**
-     * 設定屬性{@link CheckComboBox#setCheckModel(org.controlsfx.control.IndexedCheckModel)}
+     * 設定屬性{@link CheckComboBox#setCheckModel(org.controlsfx.control.IndexedCheckModel)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -60,7 +60,7 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
     }
 
     /**
-     * 設定集合屬性{@link CheckComboBox#getItems}的內容
+     * 設定集合屬性{@link CheckComboBox#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -76,7 +76,7 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
     }
 
     /**
-     * 設定集合屬性{@link CheckComboBox#getItems}的內容
+     * 設定集合屬性{@link CheckComboBox#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -91,7 +91,7 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
     }
 
     /**
-     * 增加集合屬性{@link CheckComboBox#getItems}的內容
+     * 增加集合屬性{@link CheckComboBox#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -108,7 +108,7 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
     }
 
     /**
-     * 增加集合屬性{@link CheckComboBox#getItems}的內容
+     * 增加集合屬性{@link CheckComboBox#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -126,7 +126,7 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
     }
 
     /**
-     * 設定屬性{@link CheckComboBox#checkModelProperty}的連結
+     * 設定屬性{@link CheckComboBox#checkModelProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -143,7 +143,7 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
     }
 
     /**
-     * 設定屬性{@link CheckComboBox#checkModelProperty}的雙向連結
+     * 設定屬性{@link CheckComboBox#checkModelProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -160,7 +160,7 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
     }
 
     /**
-     * 建構{@link CheckComboBox}物件
+     * 建構{@link CheckComboBox}物件。
      *
      * @return 新的{@link CheckComboBox}物件實體
      */
@@ -175,7 +175,7 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
     }
 
     /**
-     * 建構{@link CheckComboBox}物件
+     * 建構{@link CheckComboBox}物件。
      *
      * @return 新的{@link CheckComboBox}物件實體
      */

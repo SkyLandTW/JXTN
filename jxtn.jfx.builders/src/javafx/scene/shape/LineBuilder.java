@@ -6,7 +6,7 @@
 package javafx.scene.shape;
 
 /**
- * {@link Line}建構器
+ * {@link Line}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -83,7 +83,7 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Line#setEndX(double)}
+     * 設定屬性{@link Line#setEndX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -97,7 +97,7 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Line#setEndY(double)}
+     * 設定屬性{@link Line#setEndY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Line#setStartX(double)}
+     * 設定屬性{@link Line#setStartX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Line#setStartY(double)}
+     * 設定屬性{@link Line#setStartY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Line#endXProperty}的連結
+     * 設定屬性{@link Line#endXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -156,7 +156,7 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Line#endXProperty}的雙向連結
+     * 設定屬性{@link Line#endXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -173,7 +173,7 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Line#endYProperty}的連結
+     * 設定屬性{@link Line#endYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -190,7 +190,7 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Line#endYProperty}的雙向連結
+     * 設定屬性{@link Line#endYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -207,7 +207,7 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Line#startXProperty}的連結
+     * 設定屬性{@link Line#startXProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -224,7 +224,7 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Line#startXProperty}的雙向連結
+     * 設定屬性{@link Line#startXProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -241,7 +241,7 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Line#startYProperty}的連結
+     * 設定屬性{@link Line#startYProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -258,7 +258,7 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Line#startYProperty}的雙向連結
+     * 設定屬性{@link Line#startYProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -275,7 +275,7 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Line}物件
+     * 建構{@link Line}物件。
      *
      * @return 新的{@link Line}物件實體
      */
@@ -290,7 +290,7 @@ public class LineBuilder<Z extends Line, B extends LineBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Line}物件
+     * 建構{@link Line}物件。
      *
      * @return 新的{@link Line}物件實體
      */

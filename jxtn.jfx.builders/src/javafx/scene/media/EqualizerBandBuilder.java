@@ -6,7 +6,7 @@
 package javafx.scene.media;
 
 /**
- * {@link EqualizerBand}建構器
+ * {@link EqualizerBand}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -29,6 +29,21 @@ public class EqualizerBandBuilder<Z extends EqualizerBand, B extends EqualizerBa
     private boolean hasGain;
     private double valGain;
 
+    private boolean bound1Bandwidth;
+    private boolean bound2Bandwidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Bandwidth;
+    private javafx.beans.property.Property<Number> obsrv2Bandwidth;
+
+    private boolean bound1CenterFrequency;
+    private boolean bound2CenterFrequency;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1CenterFrequency;
+    private javafx.beans.property.Property<Number> obsrv2CenterFrequency;
+
+    private boolean bound1Gain;
+    private boolean bound2Gain;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Gain;
+    private javafx.beans.property.Property<Number> obsrv2Gain;
+
     @Override
     public void applyTo(Z instance)
     {
@@ -39,10 +54,22 @@ public class EqualizerBandBuilder<Z extends EqualizerBand, B extends EqualizerBa
             instance.setCenterFrequency(this.valCenterFrequency);
         if (this.hasGain)
             instance.setGain(this.valGain);
+        if (this.bound1Bandwidth)
+            instance.bandwidthProperty().bind(this.obsrv1Bandwidth);
+        if (this.bound2Bandwidth)
+            instance.bandwidthProperty().bindBidirectional(this.obsrv2Bandwidth);
+        if (this.bound1CenterFrequency)
+            instance.centerFrequencyProperty().bind(this.obsrv1CenterFrequency);
+        if (this.bound2CenterFrequency)
+            instance.centerFrequencyProperty().bindBidirectional(this.obsrv2CenterFrequency);
+        if (this.bound1Gain)
+            instance.gainProperty().bind(this.obsrv1Gain);
+        if (this.bound2Gain)
+            instance.gainProperty().bindBidirectional(this.obsrv2Gain);
     }
 
     /**
-     * 設定屬性{@link EqualizerBand#setBandwidth(double)}
+     * 設定屬性{@link EqualizerBand#setBandwidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -56,7 +83,7 @@ public class EqualizerBandBuilder<Z extends EqualizerBand, B extends EqualizerBa
     }
 
     /**
-     * 設定屬性{@link EqualizerBand#setCenterFrequency(double)}
+     * 設定屬性{@link EqualizerBand#setCenterFrequency(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -70,7 +97,7 @@ public class EqualizerBandBuilder<Z extends EqualizerBand, B extends EqualizerBa
     }
 
     /**
-     * 設定屬性{@link EqualizerBand#setGain(double)}
+     * 設定屬性{@link EqualizerBand#setGain(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -84,7 +111,109 @@ public class EqualizerBandBuilder<Z extends EqualizerBand, B extends EqualizerBa
     }
 
     /**
-     * 建構{@link EqualizerBand}物件
+     * 設定屬性{@link EqualizerBand#bandwidthProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBandwidth(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Bandwidth = true;
+        this.obsrv1Bandwidth = source;
+        this.bound2Bandwidth = false;
+        this.obsrv2Bandwidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link EqualizerBand#bandwidthProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalBandwidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Bandwidth = false;
+        this.obsrv1Bandwidth = null;
+        this.bound2Bandwidth = true;
+        this.obsrv2Bandwidth = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link EqualizerBand#centerFrequencyProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindCenterFrequency(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CenterFrequency = true;
+        this.obsrv1CenterFrequency = source;
+        this.bound2CenterFrequency = false;
+        this.obsrv2CenterFrequency = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link EqualizerBand#centerFrequencyProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCenterFrequency(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CenterFrequency = false;
+        this.obsrv1CenterFrequency = null;
+        this.bound2CenterFrequency = true;
+        this.obsrv2CenterFrequency = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link EqualizerBand#gainProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindGain(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Gain = true;
+        this.obsrv1Gain = source;
+        this.bound2Gain = false;
+        this.obsrv2Gain = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link EqualizerBand#gainProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalGain(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Gain = false;
+        this.obsrv1Gain = null;
+        this.bound2Gain = true;
+        this.obsrv2Gain = source;
+        return (B) this;
+    }
+
+    /**
+     * 建構{@link EqualizerBand}物件。
      *
      * @return 新的{@link EqualizerBand}物件實體
      */
@@ -99,7 +228,7 @@ public class EqualizerBandBuilder<Z extends EqualizerBand, B extends EqualizerBa
     }
 
     /**
-     * 建構{@link EqualizerBand}物件
+     * 建構{@link EqualizerBand}物件。
      *
      * @return 新的{@link EqualizerBand}物件實體
      */

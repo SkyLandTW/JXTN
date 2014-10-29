@@ -6,7 +6,7 @@
 package javafx.scene.control.cell;
 
 /**
- * {@link ChoiceBoxTableCell}建構器
+ * {@link ChoiceBoxTableCell}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -46,7 +46,7 @@ public class ChoiceBoxTableCellBuilder<S extends java.lang.Object, T extends jav
     }
 
     /**
-     * 設定屬性{@link ChoiceBoxTableCell#setConverter(javafx.util.StringConverter)}
+     * 設定屬性{@link ChoiceBoxTableCell#setConverter(javafx.util.StringConverter)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -60,7 +60,7 @@ public class ChoiceBoxTableCellBuilder<S extends java.lang.Object, T extends jav
     }
 
     /**
-     * 設定集合屬性{@link ChoiceBoxTableCell#getItems}的內容
+     * 設定集合屬性{@link ChoiceBoxTableCell#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -76,7 +76,7 @@ public class ChoiceBoxTableCellBuilder<S extends java.lang.Object, T extends jav
     }
 
     /**
-     * 設定集合屬性{@link ChoiceBoxTableCell#getItems}的內容
+     * 設定集合屬性{@link ChoiceBoxTableCell#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -91,7 +91,7 @@ public class ChoiceBoxTableCellBuilder<S extends java.lang.Object, T extends jav
     }
 
     /**
-     * 增加集合屬性{@link ChoiceBoxTableCell#getItems}的內容
+     * 增加集合屬性{@link ChoiceBoxTableCell#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -108,7 +108,7 @@ public class ChoiceBoxTableCellBuilder<S extends java.lang.Object, T extends jav
     }
 
     /**
-     * 增加集合屬性{@link ChoiceBoxTableCell#getItems}的內容
+     * 增加集合屬性{@link ChoiceBoxTableCell#getItems}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -126,7 +126,7 @@ public class ChoiceBoxTableCellBuilder<S extends java.lang.Object, T extends jav
     }
 
     /**
-     * 設定屬性{@link ChoiceBoxTableCell#converterProperty}的連結
+     * 設定屬性{@link ChoiceBoxTableCell#converterProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -143,7 +143,7 @@ public class ChoiceBoxTableCellBuilder<S extends java.lang.Object, T extends jav
     }
 
     /**
-     * 設定屬性{@link ChoiceBoxTableCell#converterProperty}的雙向連結
+     * 設定屬性{@link ChoiceBoxTableCell#converterProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -160,7 +160,7 @@ public class ChoiceBoxTableCellBuilder<S extends java.lang.Object, T extends jav
     }
 
     /**
-     * 建構{@link ChoiceBoxTableCell}物件
+     * 建構{@link ChoiceBoxTableCell}物件。
      *
      * @return 新的{@link ChoiceBoxTableCell}物件實體
      */
@@ -175,7 +175,7 @@ public class ChoiceBoxTableCellBuilder<S extends java.lang.Object, T extends jav
     }
 
     /**
-     * 建構{@link ChoiceBoxTableCell}物件
+     * 建構{@link ChoiceBoxTableCell}物件。
      *
      * @return 新的{@link ChoiceBoxTableCell}物件實體
      */
@@ -189,7 +189,7 @@ public class ChoiceBoxTableCellBuilder<S extends java.lang.Object, T extends jav
     }
 
     /**
-     * 建構{@link ChoiceBoxTableCell}物件
+     * 建構{@link ChoiceBoxTableCell}物件。
      *
      * @return 新的{@link ChoiceBoxTableCell}物件實體
      */
@@ -203,7 +203,7 @@ public class ChoiceBoxTableCellBuilder<S extends java.lang.Object, T extends jav
     }
 
     /**
-     * 建構{@link ChoiceBoxTableCell}物件
+     * 建構{@link ChoiceBoxTableCell}物件。
      *
      * @return 新的{@link ChoiceBoxTableCell}物件實體
      */
@@ -217,7 +217,7 @@ public class ChoiceBoxTableCellBuilder<S extends java.lang.Object, T extends jav
     }
 
     /**
-     * 建構{@link ChoiceBoxTableCell}物件
+     * 建構{@link ChoiceBoxTableCell}物件。
      *
      * @return 新的{@link ChoiceBoxTableCell}物件實體
      */

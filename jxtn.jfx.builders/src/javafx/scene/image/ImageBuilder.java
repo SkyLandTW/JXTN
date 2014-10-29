@@ -6,7 +6,7 @@
 package javafx.scene.image;
 
 /**
- * {@link Image}建構器
+ * {@link Image}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class ImageBuilder<Z extends Image, B extends ImageBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Image}物件
+     * 建構{@link Image}物件。
      *
      * @return 新的{@link Image}物件實體
      */
@@ -41,7 +41,7 @@ public class ImageBuilder<Z extends Image, B extends ImageBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Image}物件
+     * 建構{@link Image}物件。
      *
      * @return 新的{@link Image}物件實體
      */
@@ -55,7 +55,7 @@ public class ImageBuilder<Z extends Image, B extends ImageBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Image}物件
+     * 建構{@link Image}物件。
      *
      * @return 新的{@link Image}物件實體
      */
@@ -69,7 +69,7 @@ public class ImageBuilder<Z extends Image, B extends ImageBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Image}物件
+     * 建構{@link Image}物件。
      *
      * @return 新的{@link Image}物件實體
      */
@@ -83,7 +83,7 @@ public class ImageBuilder<Z extends Image, B extends ImageBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Image}物件
+     * 建構{@link Image}物件。
      *
      * @return 新的{@link Image}物件實體
      */
@@ -97,7 +97,7 @@ public class ImageBuilder<Z extends Image, B extends ImageBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Image}物件
+     * 建構{@link Image}物件。
      *
      * @return 新的{@link Image}物件實體
      */

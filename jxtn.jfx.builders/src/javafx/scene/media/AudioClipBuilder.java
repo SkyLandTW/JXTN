@@ -6,7 +6,7 @@
 package javafx.scene.media;
 
 /**
- * {@link AudioClip}建構器
+ * {@link AudioClip}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -38,6 +38,36 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
     private boolean hasVolume;
     private double valVolume;
 
+    private boolean bound1Balance;
+    private boolean bound2Balance;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Balance;
+    private javafx.beans.property.Property<Number> obsrv2Balance;
+
+    private boolean bound1CycleCount;
+    private boolean bound2CycleCount;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1CycleCount;
+    private javafx.beans.property.Property<Number> obsrv2CycleCount;
+
+    private boolean bound1Pan;
+    private boolean bound2Pan;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Pan;
+    private javafx.beans.property.Property<Number> obsrv2Pan;
+
+    private boolean bound1Priority;
+    private boolean bound2Priority;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Priority;
+    private javafx.beans.property.Property<Number> obsrv2Priority;
+
+    private boolean bound1Rate;
+    private boolean bound2Rate;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Rate;
+    private javafx.beans.property.Property<Number> obsrv2Rate;
+
+    private boolean bound1Volume;
+    private boolean bound2Volume;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1Volume;
+    private javafx.beans.property.Property<Number> obsrv2Volume;
+
     @Override
     public void applyTo(Z instance)
     {
@@ -54,10 +84,34 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
             instance.setRate(this.valRate);
         if (this.hasVolume)
             instance.setVolume(this.valVolume);
+        if (this.bound1Balance)
+            instance.balanceProperty().bind(this.obsrv1Balance);
+        if (this.bound2Balance)
+            instance.balanceProperty().bindBidirectional(this.obsrv2Balance);
+        if (this.bound1CycleCount)
+            instance.cycleCountProperty().bind(this.obsrv1CycleCount);
+        if (this.bound2CycleCount)
+            instance.cycleCountProperty().bindBidirectional(this.obsrv2CycleCount);
+        if (this.bound1Pan)
+            instance.panProperty().bind(this.obsrv1Pan);
+        if (this.bound2Pan)
+            instance.panProperty().bindBidirectional(this.obsrv2Pan);
+        if (this.bound1Priority)
+            instance.priorityProperty().bind(this.obsrv1Priority);
+        if (this.bound2Priority)
+            instance.priorityProperty().bindBidirectional(this.obsrv2Priority);
+        if (this.bound1Rate)
+            instance.rateProperty().bind(this.obsrv1Rate);
+        if (this.bound2Rate)
+            instance.rateProperty().bindBidirectional(this.obsrv2Rate);
+        if (this.bound1Volume)
+            instance.volumeProperty().bind(this.obsrv1Volume);
+        if (this.bound2Volume)
+            instance.volumeProperty().bindBidirectional(this.obsrv2Volume);
     }
 
     /**
-     * 設定屬性{@link AudioClip#setBalance(double)}
+     * 設定屬性{@link AudioClip#setBalance(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -71,7 +125,7 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link AudioClip#setCycleCount(int)}
+     * 設定屬性{@link AudioClip#setCycleCount(int)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -85,7 +139,7 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link AudioClip#setPan(double)}
+     * 設定屬性{@link AudioClip#setPan(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -99,7 +153,7 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link AudioClip#setPriority(int)}
+     * 設定屬性{@link AudioClip#setPriority(int)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -113,7 +167,7 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link AudioClip#setRate(double)}
+     * 設定屬性{@link AudioClip#setRate(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -127,7 +181,7 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link AudioClip#setVolume(double)}
+     * 設定屬性{@link AudioClip#setVolume(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -141,7 +195,211 @@ public class AudioClipBuilder<Z extends AudioClip, B extends AudioClipBuilder<Z,
     }
 
     /**
-     * 建構{@link AudioClip}物件
+     * 設定屬性{@link AudioClip#balanceProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBalance(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Balance = true;
+        this.obsrv1Balance = source;
+        this.bound2Balance = false;
+        this.obsrv2Balance = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AudioClip#balanceProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalBalance(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Balance = false;
+        this.obsrv1Balance = null;
+        this.bound2Balance = true;
+        this.obsrv2Balance = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AudioClip#cycleCountProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindCycleCount(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CycleCount = true;
+        this.obsrv1CycleCount = source;
+        this.bound2CycleCount = false;
+        this.obsrv2CycleCount = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AudioClip#cycleCountProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCycleCount(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CycleCount = false;
+        this.obsrv1CycleCount = null;
+        this.bound2CycleCount = true;
+        this.obsrv2CycleCount = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AudioClip#panProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindPan(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Pan = true;
+        this.obsrv1Pan = source;
+        this.bound2Pan = false;
+        this.obsrv2Pan = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AudioClip#panProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPan(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Pan = false;
+        this.obsrv1Pan = null;
+        this.bound2Pan = true;
+        this.obsrv2Pan = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AudioClip#priorityProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindPriority(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Priority = true;
+        this.obsrv1Priority = source;
+        this.bound2Priority = false;
+        this.obsrv2Priority = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AudioClip#priorityProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPriority(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Priority = false;
+        this.obsrv1Priority = null;
+        this.bound2Priority = true;
+        this.obsrv2Priority = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AudioClip#rateProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindRate(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Rate = true;
+        this.obsrv1Rate = source;
+        this.bound2Rate = false;
+        this.obsrv2Rate = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AudioClip#rateProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalRate(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Rate = false;
+        this.obsrv1Rate = null;
+        this.bound2Rate = true;
+        this.obsrv2Rate = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AudioClip#volumeProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindVolume(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Volume = true;
+        this.obsrv1Volume = source;
+        this.bound2Volume = false;
+        this.obsrv2Volume = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AudioClip#volumeProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalVolume(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Volume = false;
+        this.obsrv1Volume = null;
+        this.bound2Volume = true;
+        this.obsrv2Volume = source;
+        return (B) this;
+    }
+
+    /**
+     * 建構{@link AudioClip}物件。
      *
      * @return 新的{@link AudioClip}物件實體
      */

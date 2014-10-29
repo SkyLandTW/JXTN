@@ -6,7 +6,7 @@
 package org.controlsfx.control.cell;
 
 /**
- * {@link MediaImageCell}建構器
+ * {@link MediaImageCell}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -27,7 +27,7 @@ public class MediaImageCellBuilder<Z extends MediaImageCell, B extends MediaImag
     }
 
     /**
-     * 建構{@link MediaImageCell}物件
+     * 建構{@link MediaImageCell}物件。
      *
      * @return 新的{@link MediaImageCell}物件實體
      */

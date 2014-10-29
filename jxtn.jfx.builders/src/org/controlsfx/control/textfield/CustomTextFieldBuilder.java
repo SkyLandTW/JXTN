@@ -6,7 +6,7 @@
 package org.controlsfx.control.textfield;
 
 /**
- * {@link CustomTextField}建構器
+ * {@link CustomTextField}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -55,7 +55,7 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
     }
 
     /**
-     * 設定屬性{@link CustomTextField#setLeft(javafx.scene.Node)}
+     * 設定屬性{@link CustomTextField#setLeft(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -69,7 +69,7 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
     }
 
     /**
-     * 設定屬性{@link CustomTextField#setRight(javafx.scene.Node)}
+     * 設定屬性{@link CustomTextField#setRight(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -83,7 +83,7 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
     }
 
     /**
-     * 設定屬性{@link CustomTextField#leftProperty}的連結
+     * 設定屬性{@link CustomTextField#leftProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -100,7 +100,7 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
     }
 
     /**
-     * 設定屬性{@link CustomTextField#leftProperty}的雙向連結
+     * 設定屬性{@link CustomTextField#leftProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -117,7 +117,7 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
     }
 
     /**
-     * 設定屬性{@link CustomTextField#rightProperty}的連結
+     * 設定屬性{@link CustomTextField#rightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -134,7 +134,7 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
     }
 
     /**
-     * 設定屬性{@link CustomTextField#rightProperty}的雙向連結
+     * 設定屬性{@link CustomTextField#rightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -151,7 +151,7 @@ public class CustomTextFieldBuilder<Z extends CustomTextField, B extends CustomT
     }
 
     /**
-     * 建構{@link CustomTextField}物件
+     * 建構{@link CustomTextField}物件。
      *
      * @return 新的{@link CustomTextField}物件實體
      */

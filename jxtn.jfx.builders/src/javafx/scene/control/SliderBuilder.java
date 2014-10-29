@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link Slider}建構器
+ * {@link Slider}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -195,7 +195,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setBlockIncrement(double)}
+     * 設定屬性{@link Slider#setBlockIncrement(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -209,7 +209,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setLabelFormatter(javafx.util.StringConverter)}
+     * 設定屬性{@link Slider#setLabelFormatter(javafx.util.StringConverter)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -223,7 +223,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setMajorTickUnit(double)}
+     * 設定屬性{@link Slider#setMajorTickUnit(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -237,7 +237,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setMax(double)}
+     * 設定屬性{@link Slider#setMax(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -251,7 +251,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setMin(double)}
+     * 設定屬性{@link Slider#setMin(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -265,7 +265,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setMinorTickCount(int)}
+     * 設定屬性{@link Slider#setMinorTickCount(int)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -279,7 +279,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setOrientation(javafx.geometry.Orientation)}
+     * 設定屬性{@link Slider#setOrientation(javafx.geometry.Orientation)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -293,7 +293,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setShowTickLabels(boolean)}
+     * 設定屬性{@link Slider#setShowTickLabels(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -307,7 +307,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setShowTickMarks(boolean)}
+     * 設定屬性{@link Slider#setShowTickMarks(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -321,7 +321,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setSnapToTicks(boolean)}
+     * 設定屬性{@link Slider#setSnapToTicks(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -335,7 +335,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setValue(double)}
+     * 設定屬性{@link Slider#setValue(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -349,7 +349,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#setValueChanging(boolean)}
+     * 設定屬性{@link Slider#setValueChanging(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -363,7 +363,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#blockIncrementProperty}的連結
+     * 設定屬性{@link Slider#blockIncrementProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -380,7 +380,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#blockIncrementProperty}的雙向連結
+     * 設定屬性{@link Slider#blockIncrementProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -397,7 +397,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#labelFormatterProperty}的連結
+     * 設定屬性{@link Slider#labelFormatterProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -414,7 +414,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#labelFormatterProperty}的雙向連結
+     * 設定屬性{@link Slider#labelFormatterProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -431,7 +431,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#majorTickUnitProperty}的連結
+     * 設定屬性{@link Slider#majorTickUnitProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -448,7 +448,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#majorTickUnitProperty}的雙向連結
+     * 設定屬性{@link Slider#majorTickUnitProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -465,7 +465,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#maxProperty}的連結
+     * 設定屬性{@link Slider#maxProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -482,7 +482,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#maxProperty}的雙向連結
+     * 設定屬性{@link Slider#maxProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -499,7 +499,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#minProperty}的連結
+     * 設定屬性{@link Slider#minProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -516,7 +516,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#minProperty}的雙向連結
+     * 設定屬性{@link Slider#minProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -533,7 +533,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#minorTickCountProperty}的連結
+     * 設定屬性{@link Slider#minorTickCountProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -550,7 +550,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#minorTickCountProperty}的雙向連結
+     * 設定屬性{@link Slider#minorTickCountProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -567,7 +567,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#orientationProperty}的連結
+     * 設定屬性{@link Slider#orientationProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -584,7 +584,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#orientationProperty}的雙向連結
+     * 設定屬性{@link Slider#orientationProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -601,7 +601,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#showTickLabelsProperty}的連結
+     * 設定屬性{@link Slider#showTickLabelsProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -618,7 +618,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#showTickLabelsProperty}的雙向連結
+     * 設定屬性{@link Slider#showTickLabelsProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -635,7 +635,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#showTickMarksProperty}的連結
+     * 設定屬性{@link Slider#showTickMarksProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -652,7 +652,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#showTickMarksProperty}的雙向連結
+     * 設定屬性{@link Slider#showTickMarksProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -669,7 +669,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#snapToTicksProperty}的連結
+     * 設定屬性{@link Slider#snapToTicksProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -686,7 +686,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#snapToTicksProperty}的雙向連結
+     * 設定屬性{@link Slider#snapToTicksProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -703,7 +703,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#valueChangingProperty}的連結
+     * 設定屬性{@link Slider#valueChangingProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -720,7 +720,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#valueChangingProperty}的雙向連結
+     * 設定屬性{@link Slider#valueChangingProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -737,7 +737,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#valueProperty}的連結
+     * 設定屬性{@link Slider#valueProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -754,7 +754,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Slider#valueProperty}的雙向連結
+     * 設定屬性{@link Slider#valueProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -771,7 +771,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Slider}物件
+     * 建構{@link Slider}物件。
      *
      * @return 新的{@link Slider}物件實體
      */
@@ -786,7 +786,7 @@ public class SliderBuilder<Z extends Slider, B extends SliderBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Slider}物件
+     * 建構{@link Slider}物件。
      *
      * @return 新的{@link Slider}物件實體
      */

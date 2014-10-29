@@ -6,7 +6,7 @@
 package org.controlsfx.control;
 
 /**
- * {@link SegmentedButton}建構器
+ * {@link SegmentedButton}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -26,6 +26,11 @@ public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends Segment
     private boolean hasToggleGroup;
     private javafx.scene.control.ToggleGroup valToggleGroup;
 
+    private boolean bound1ToggleGroup;
+    private boolean bound2ToggleGroup;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.ToggleGroup> obsrv1ToggleGroup;
+    private javafx.beans.property.Property<javafx.scene.control.ToggleGroup> obsrv2ToggleGroup;
+
     @Override
     public void applyTo(Z instance)
     {
@@ -34,10 +39,14 @@ public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends Segment
             instance.getButtons().addAll(this.valButtons);
         if (this.hasToggleGroup)
             instance.setToggleGroup(this.valToggleGroup);
+        if (this.bound1ToggleGroup)
+            instance.toggleGroupProperty().bind(this.obsrv1ToggleGroup);
+        if (this.bound2ToggleGroup)
+            instance.toggleGroupProperty().bindBidirectional(this.obsrv2ToggleGroup);
     }
 
     /**
-     * 設定集合屬性{@link SegmentedButton#getButtons}的內容
+     * 設定集合屬性{@link SegmentedButton#getButtons}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -53,7 +62,7 @@ public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends Segment
     }
 
     /**
-     * 設定集合屬性{@link SegmentedButton#getButtons}的內容
+     * 設定集合屬性{@link SegmentedButton#getButtons}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -68,7 +77,7 @@ public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends Segment
     }
 
     /**
-     * 增加集合屬性{@link SegmentedButton#getButtons}的內容
+     * 增加集合屬性{@link SegmentedButton#getButtons}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -85,7 +94,7 @@ public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends Segment
     }
 
     /**
-     * 增加集合屬性{@link SegmentedButton#getButtons}的內容
+     * 增加集合屬性{@link SegmentedButton#getButtons}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -103,7 +112,7 @@ public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends Segment
     }
 
     /**
-     * 設定屬性{@link SegmentedButton#setToggleGroup(javafx.scene.control.ToggleGroup)}
+     * 設定屬性{@link SegmentedButton#setToggleGroup(javafx.scene.control.ToggleGroup)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -117,7 +126,41 @@ public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends Segment
     }
 
     /**
-     * 建構{@link SegmentedButton}物件
+     * 設定屬性{@link SegmentedButton#toggleGroupProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindToggleGroup(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ToggleGroup> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ToggleGroup = true;
+        this.obsrv1ToggleGroup = source;
+        this.bound2ToggleGroup = false;
+        this.obsrv2ToggleGroup = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SegmentedButton#toggleGroupProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalToggleGroup(javafx.beans.property.Property<javafx.scene.control.ToggleGroup> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ToggleGroup = false;
+        this.obsrv1ToggleGroup = null;
+        this.bound2ToggleGroup = true;
+        this.obsrv2ToggleGroup = source;
+        return (B) this;
+    }
+
+    /**
+     * 建構{@link SegmentedButton}物件。
      *
      * @return 新的{@link SegmentedButton}物件實體
      */
@@ -132,7 +175,7 @@ public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends Segment
     }
 
     /**
-     * 建構{@link SegmentedButton}物件
+     * 建構{@link SegmentedButton}物件。
      *
      * @return 新的{@link SegmentedButton}物件實體
      */
@@ -146,7 +189,7 @@ public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends Segment
     }
 
     /**
-     * 建構{@link SegmentedButton}物件
+     * 建構{@link SegmentedButton}物件。
      *
      * @return 新的{@link SegmentedButton}物件實體
      */

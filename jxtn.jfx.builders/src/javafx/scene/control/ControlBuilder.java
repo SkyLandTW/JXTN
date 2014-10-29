@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link Control}建構器
+ * {@link Control}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -69,7 +69,7 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Control#setContextMenu(javafx.scene.control.ContextMenu)}
+     * 設定屬性{@link Control#setContextMenu(javafx.scene.control.ContextMenu)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -83,7 +83,7 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Control#setSkin(javafx.scene.control.Skin)}
+     * 設定屬性{@link Control#setSkin(javafx.scene.control.Skin)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -97,7 +97,7 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Control#setTooltip(javafx.scene.control.Tooltip)}
+     * 設定屬性{@link Control#setTooltip(javafx.scene.control.Tooltip)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Control#contextMenuProperty}的連結
+     * 設定屬性{@link Control#contextMenuProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -128,7 +128,7 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Control#contextMenuProperty}的雙向連結
+     * 設定屬性{@link Control#contextMenuProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -145,7 +145,7 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Control#skinProperty}的連結
+     * 設定屬性{@link Control#skinProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -162,7 +162,7 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Control#skinProperty}的雙向連結
+     * 設定屬性{@link Control#skinProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -179,7 +179,7 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Control#tooltipProperty}的連結
+     * 設定屬性{@link Control#tooltipProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -196,7 +196,7 @@ public class ControlBuilder<Z extends Control, B extends ControlBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Control#tooltipProperty}的雙向連結
+     * 設定屬性{@link Control#tooltipProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)

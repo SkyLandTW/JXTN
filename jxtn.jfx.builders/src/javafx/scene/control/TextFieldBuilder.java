@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link TextField}建構器
+ * {@link TextField}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -69,7 +69,7 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link TextField#setAlignment(javafx.geometry.Pos)}
+     * 設定屬性{@link TextField#setAlignment(javafx.geometry.Pos)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -83,7 +83,7 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link TextField#setOnAction(javafx.event.EventHandler)}
+     * 設定屬性{@link TextField#setOnAction(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -97,7 +97,7 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link TextField#setPrefColumnCount(int)}
+     * 設定屬性{@link TextField#setPrefColumnCount(int)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -111,7 +111,7 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link TextField#alignmentProperty}的連結
+     * 設定屬性{@link TextField#alignmentProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -128,7 +128,7 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link TextField#alignmentProperty}的雙向連結
+     * 設定屬性{@link TextField#alignmentProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -145,7 +145,7 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link TextField#onActionProperty}的連結
+     * 設定屬性{@link TextField#onActionProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -162,7 +162,7 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link TextField#onActionProperty}的雙向連結
+     * 設定屬性{@link TextField#onActionProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -179,7 +179,7 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link TextField#prefColumnCountProperty}的連結
+     * 設定屬性{@link TextField#prefColumnCountProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -196,7 +196,7 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link TextField#prefColumnCountProperty}的雙向連結
+     * 設定屬性{@link TextField#prefColumnCountProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -213,7 +213,7 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
     }
 
     /**
-     * 建構{@link TextField}物件
+     * 建構{@link TextField}物件。
      *
      * @return 新的{@link TextField}物件實體
      */
@@ -228,7 +228,7 @@ public class TextFieldBuilder<Z extends TextField, B extends TextFieldBuilder<Z,
     }
 
     /**
-     * 建構{@link TextField}物件
+     * 建構{@link TextField}物件。
      *
      * @return 新的{@link TextField}物件實體
      */

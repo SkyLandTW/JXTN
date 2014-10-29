@@ -6,7 +6,7 @@
 package javafx.scene.control.cell;
 
 /**
- * {@link ProgressBarTreeTableCell}建構器
+ * {@link ProgressBarTreeTableCell}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class ProgressBarTreeTableCellBuilder<S extends java.lang.Object, Z exten
     }
 
     /**
-     * 建構{@link ProgressBarTreeTableCell}物件
+     * 建構{@link ProgressBarTreeTableCell}物件。
      *
      * @return 新的{@link ProgressBarTreeTableCell}物件實體
      */

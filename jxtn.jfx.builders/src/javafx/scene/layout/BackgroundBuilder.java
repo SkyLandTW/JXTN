@@ -6,7 +6,7 @@
 package javafx.scene.layout;
 
 /**
- * {@link Background}建構器
+ * {@link Background}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class BackgroundBuilder<Z extends Background, B extends BackgroundBuilder
     }
 
     /**
-     * 建構{@link Background}物件
+     * 建構{@link Background}物件。
      *
      * @return 新的{@link Background}物件實體
      */
@@ -41,7 +41,7 @@ public class BackgroundBuilder<Z extends Background, B extends BackgroundBuilder
     }
 
     /**
-     * 建構{@link Background}物件
+     * 建構{@link Background}物件。
      *
      * @return 新的{@link Background}物件實體
      */
@@ -55,7 +55,7 @@ public class BackgroundBuilder<Z extends Background, B extends BackgroundBuilder
     }
 
     /**
-     * 建構{@link Background}物件
+     * 建構{@link Background}物件。
      *
      * @return 新的{@link Background}物件實體
      */
@@ -69,7 +69,7 @@ public class BackgroundBuilder<Z extends Background, B extends BackgroundBuilder
     }
 
     /**
-     * 建構{@link Background}物件
+     * 建構{@link Background}物件。
      *
      * @return 新的{@link Background}物件實體
      */

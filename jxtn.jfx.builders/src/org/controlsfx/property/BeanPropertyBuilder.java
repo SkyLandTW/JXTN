@@ -6,7 +6,7 @@
 package org.controlsfx.property;
 
 /**
- * {@link BeanProperty}建構器
+ * {@link BeanProperty}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version controlsfx-8.20.7.jar
@@ -37,7 +37,7 @@ public class BeanPropertyBuilder<Z extends BeanProperty, B extends BeanPropertyB
     }
 
     /**
-     * 設定屬性{@link BeanProperty#setEditable(boolean)}
+     * 設定屬性{@link BeanProperty#setEditable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -51,7 +51,7 @@ public class BeanPropertyBuilder<Z extends BeanProperty, B extends BeanPropertyB
     }
 
     /**
-     * 設定屬性{@link BeanProperty#setValue(java.lang.Object)}
+     * 設定屬性{@link BeanProperty#setValue(java.lang.Object)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -65,7 +65,7 @@ public class BeanPropertyBuilder<Z extends BeanProperty, B extends BeanPropertyB
     }
 
     /**
-     * 建構{@link BeanProperty}物件
+     * 建構{@link BeanProperty}物件。
      *
      * @return 新的{@link BeanProperty}物件實體
      */

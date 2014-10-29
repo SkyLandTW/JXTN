@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link Label}建構器
+ * {@link Label}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -23,16 +23,25 @@ public class LabelBuilder<Z extends Label, B extends LabelBuilder<Z, B>>
     private boolean hasLabelFor;
     private javafx.scene.Node valLabelFor;
 
+    private boolean bound1LabelFor;
+    private boolean bound2LabelFor;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1LabelFor;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2LabelFor;
+
     @Override
     public void applyTo(Z instance)
     {
         super.applyTo(instance);
         if (this.hasLabelFor)
             instance.setLabelFor(this.valLabelFor);
+        if (this.bound1LabelFor)
+            instance.labelForProperty().bind(this.obsrv1LabelFor);
+        if (this.bound2LabelFor)
+            instance.labelForProperty().bindBidirectional(this.obsrv2LabelFor);
     }
 
     /**
-     * 設定屬性{@link Label#setLabelFor(javafx.scene.Node)}
+     * 設定屬性{@link Label#setLabelFor(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -46,7 +55,41 @@ public class LabelBuilder<Z extends Label, B extends LabelBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Label}物件
+     * 設定屬性{@link Label#labelForProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindLabelFor(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1LabelFor = true;
+        this.obsrv1LabelFor = source;
+        this.bound2LabelFor = false;
+        this.obsrv2LabelFor = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Label#labelForProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLabelFor(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1LabelFor = false;
+        this.obsrv1LabelFor = null;
+        this.bound2LabelFor = true;
+        this.obsrv2LabelFor = source;
+        return (B) this;
+    }
+
+    /**
+     * 建構{@link Label}物件。
      *
      * @return 新的{@link Label}物件實體
      */
@@ -61,7 +104,7 @@ public class LabelBuilder<Z extends Label, B extends LabelBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Label}物件
+     * 建構{@link Label}物件。
      *
      * @return 新的{@link Label}物件實體
      */
@@ -75,7 +118,7 @@ public class LabelBuilder<Z extends Label, B extends LabelBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Label}物件
+     * 建構{@link Label}物件。
      *
      * @return 新的{@link Label}物件實體
      */

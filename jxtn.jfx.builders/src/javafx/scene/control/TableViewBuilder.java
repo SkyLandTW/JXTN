@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link TableView}建構器
+ * {@link TableView}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -93,6 +93,21 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     private javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<S>> obsrv1Items;
     private javafx.beans.property.Property<javafx.collections.ObservableList<S>> obsrv2Items;
 
+    private boolean bound1OnScrollToColumn;
+    private boolean bound2OnScrollToColumn;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<javafx.scene.control.TableColumn<S, ?>>>> obsrv1OnScrollToColumn;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<javafx.scene.control.TableColumn<S, ?>>>> obsrv2OnScrollToColumn;
+
+    private boolean bound1OnScrollTo;
+    private boolean bound2OnScrollTo;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>>> obsrv1OnScrollTo;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>>> obsrv2OnScrollTo;
+
+    private boolean bound1OnSort;
+    private boolean bound2OnSort;
+    private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.SortEvent<javafx.scene.control.TableView<S>>>> obsrv1OnSort;
+    private javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.SortEvent<javafx.scene.control.TableView<S>>>> obsrv2OnSort;
+
     private boolean bound1Placeholder;
     private boolean bound2Placeholder;
     private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Placeholder;
@@ -174,6 +189,18 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
             instance.itemsProperty().bind(this.obsrv1Items);
         if (this.bound2Items)
             instance.itemsProperty().bindBidirectional(this.obsrv2Items);
+        if (this.bound1OnScrollToColumn)
+            instance.onScrollToColumnProperty().bind(this.obsrv1OnScrollToColumn);
+        if (this.bound2OnScrollToColumn)
+            instance.onScrollToColumnProperty().bindBidirectional(this.obsrv2OnScrollToColumn);
+        if (this.bound1OnScrollTo)
+            instance.onScrollToProperty().bind(this.obsrv1OnScrollTo);
+        if (this.bound2OnScrollTo)
+            instance.onScrollToProperty().bindBidirectional(this.obsrv2OnScrollTo);
+        if (this.bound1OnSort)
+            instance.onSortProperty().bind(this.obsrv1OnSort);
+        if (this.bound2OnSort)
+            instance.onSortProperty().bindBidirectional(this.obsrv2OnSort);
         if (this.bound1Placeholder)
             instance.placeholderProperty().bind(this.obsrv1Placeholder);
         if (this.bound2Placeholder)
@@ -197,7 +224,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setColumnResizePolicy(javafx.util.Callback)}
+     * 設定屬性{@link TableView#setColumnResizePolicy(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -211,7 +238,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定集合屬性{@link TableView#getColumns}的內容
+     * 設定集合屬性{@link TableView#getColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -227,7 +254,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定集合屬性{@link TableView#getColumns}的內容
+     * 設定集合屬性{@link TableView#getColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -242,7 +269,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 增加集合屬性{@link TableView#getColumns}的內容
+     * 增加集合屬性{@link TableView#getColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -259,7 +286,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 增加集合屬性{@link TableView#getColumns}的內容
+     * 增加集合屬性{@link TableView#getColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -277,7 +304,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setEditable(boolean)}
+     * 設定屬性{@link TableView#setEditable(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -291,7 +318,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setFixedCellSize(double)}
+     * 設定屬性{@link TableView#setFixedCellSize(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -305,7 +332,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setFocusModel(javafx.scene.control.TableView.TableViewFocusModel)}
+     * 設定屬性{@link TableView#setFocusModel(javafx.scene.control.TableView.TableViewFocusModel)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -319,7 +346,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setItems(javafx.collections.ObservableList)}
+     * 設定屬性{@link TableView#setItems(javafx.collections.ObservableList)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -333,7 +360,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setOnScrollTo(javafx.event.EventHandler)}
+     * 設定屬性{@link TableView#setOnScrollTo(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -347,7 +374,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setOnScrollToColumn(javafx.event.EventHandler)}
+     * 設定屬性{@link TableView#setOnScrollToColumn(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -361,7 +388,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setOnSort(javafx.event.EventHandler)}
+     * 設定屬性{@link TableView#setOnSort(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -375,7 +402,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setPlaceholder(javafx.scene.Node)}
+     * 設定屬性{@link TableView#setPlaceholder(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -389,7 +416,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setRowFactory(javafx.util.Callback)}
+     * 設定屬性{@link TableView#setRowFactory(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -403,7 +430,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setSelectionModel(javafx.scene.control.TableView.TableViewSelectionModel)}
+     * 設定屬性{@link TableView#setSelectionModel(javafx.scene.control.TableView.TableViewSelectionModel)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -417,7 +444,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定集合屬性{@link TableView#getSortOrder}的內容
+     * 設定集合屬性{@link TableView#getSortOrder}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -433,7 +460,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定集合屬性{@link TableView#getSortOrder}的內容
+     * 設定集合屬性{@link TableView#getSortOrder}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -448,7 +475,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 增加集合屬性{@link TableView#getSortOrder}的內容
+     * 增加集合屬性{@link TableView#getSortOrder}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -465,7 +492,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 增加集合屬性{@link TableView#getSortOrder}的內容
+     * 增加集合屬性{@link TableView#getSortOrder}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -483,7 +510,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setSortPolicy(javafx.util.Callback)}
+     * 設定屬性{@link TableView#setSortPolicy(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -497,7 +524,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#setTableMenuButtonVisible(boolean)}
+     * 設定屬性{@link TableView#setTableMenuButtonVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -511,7 +538,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定集合屬性{@link TableView#getVisibleLeafColumns}的內容
+     * 設定集合屬性{@link TableView#getVisibleLeafColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -527,7 +554,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定集合屬性{@link TableView#getVisibleLeafColumns}的內容
+     * 設定集合屬性{@link TableView#getVisibleLeafColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -542,7 +569,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 增加集合屬性{@link TableView#getVisibleLeafColumns}的內容
+     * 增加集合屬性{@link TableView#getVisibleLeafColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -559,7 +586,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 增加集合屬性{@link TableView#getVisibleLeafColumns}的內容
+     * 增加集合屬性{@link TableView#getVisibleLeafColumns}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -577,7 +604,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#columnResizePolicyProperty}的連結
+     * 設定屬性{@link TableView#columnResizePolicyProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -594,7 +621,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#columnResizePolicyProperty}的雙向連結
+     * 設定屬性{@link TableView#columnResizePolicyProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -611,7 +638,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#editableProperty}的連結
+     * 設定屬性{@link TableView#editableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -628,7 +655,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#editableProperty}的雙向連結
+     * 設定屬性{@link TableView#editableProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -645,7 +672,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#fixedCellSizeProperty}的連結
+     * 設定屬性{@link TableView#fixedCellSizeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -662,7 +689,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#fixedCellSizeProperty}的雙向連結
+     * 設定屬性{@link TableView#fixedCellSizeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -679,7 +706,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#focusModelProperty}的連結
+     * 設定屬性{@link TableView#focusModelProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -696,7 +723,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#focusModelProperty}的雙向連結
+     * 設定屬性{@link TableView#focusModelProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -713,7 +740,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#itemsProperty}的連結
+     * 設定屬性{@link TableView#itemsProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -730,7 +757,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#itemsProperty}的雙向連結
+     * 設定屬性{@link TableView#itemsProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -747,7 +774,109 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#placeholderProperty}的連結
+     * 設定屬性{@link TableView#onScrollToColumnProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindOnScrollToColumn(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<javafx.scene.control.TableColumn<S, ?>>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnScrollToColumn = true;
+        this.obsrv1OnScrollToColumn = source;
+        this.bound2OnScrollToColumn = false;
+        this.obsrv2OnScrollToColumn = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableView#onScrollToColumnProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnScrollToColumn(javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<javafx.scene.control.TableColumn<S, ?>>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnScrollToColumn = false;
+        this.obsrv1OnScrollToColumn = null;
+        this.bound2OnScrollToColumn = true;
+        this.obsrv2OnScrollToColumn = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableView#onScrollToProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindOnScrollTo(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnScrollTo = true;
+        this.obsrv1OnScrollTo = source;
+        this.bound2OnScrollTo = false;
+        this.obsrv2OnScrollTo = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableView#onScrollToProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnScrollTo(javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.ScrollToEvent<java.lang.Integer>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnScrollTo = false;
+        this.obsrv1OnScrollTo = null;
+        this.bound2OnScrollTo = true;
+        this.obsrv2OnScrollTo = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableView#onSortProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindOnSort(javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<javafx.scene.control.SortEvent<javafx.scene.control.TableView<S>>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnSort = true;
+        this.obsrv1OnSort = source;
+        this.bound2OnSort = false;
+        this.obsrv2OnSort = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableView#onSortProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOnSort(javafx.beans.property.Property<javafx.event.EventHandler<javafx.scene.control.SortEvent<javafx.scene.control.TableView<S>>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1OnSort = false;
+        this.obsrv1OnSort = null;
+        this.bound2OnSort = true;
+        this.obsrv2OnSort = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TableView#placeholderProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -764,7 +893,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#placeholderProperty}的雙向連結
+     * 設定屬性{@link TableView#placeholderProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -781,7 +910,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#rowFactoryProperty}的連結
+     * 設定屬性{@link TableView#rowFactoryProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -798,7 +927,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#rowFactoryProperty}的雙向連結
+     * 設定屬性{@link TableView#rowFactoryProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -815,7 +944,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#selectionModelProperty}的連結
+     * 設定屬性{@link TableView#selectionModelProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -832,7 +961,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#selectionModelProperty}的雙向連結
+     * 設定屬性{@link TableView#selectionModelProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -849,7 +978,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#sortPolicyProperty}的連結
+     * 設定屬性{@link TableView#sortPolicyProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -866,7 +995,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#sortPolicyProperty}的雙向連結
+     * 設定屬性{@link TableView#sortPolicyProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -883,7 +1012,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#tableMenuButtonVisibleProperty}的連結
+     * 設定屬性{@link TableView#tableMenuButtonVisibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -900,7 +1029,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 設定屬性{@link TableView#tableMenuButtonVisibleProperty}的雙向連結
+     * 設定屬性{@link TableView#tableMenuButtonVisibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -917,7 +1046,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 建構{@link TableView}物件
+     * 建構{@link TableView}物件。
      *
      * @return 新的{@link TableView}物件實體
      */
@@ -932,7 +1061,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
     }
 
     /**
-     * 建構{@link TableView}物件
+     * 建構{@link TableView}物件。
      *
      * @return 新的{@link TableView}物件實體
      */

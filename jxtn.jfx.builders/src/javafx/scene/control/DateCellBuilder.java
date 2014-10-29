@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link DateCell}建構器
+ * {@link DateCell}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class DateCellBuilder<Z extends DateCell, B extends DateCellBuilder<Z, B>
     }
 
     /**
-     * 建構{@link DateCell}物件
+     * 建構{@link DateCell}物件。
      *
      * @return 新的{@link DateCell}物件實體
      */

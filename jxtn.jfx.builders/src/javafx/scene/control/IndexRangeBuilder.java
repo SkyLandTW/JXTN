@@ -6,7 +6,7 @@
 package javafx.scene.control;
 
 /**
- * {@link IndexRange}建構器
+ * {@link IndexRange}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class IndexRangeBuilder<Z extends IndexRange, B extends IndexRangeBuilder
     }
 
     /**
-     * 建構{@link IndexRange}物件
+     * 建構{@link IndexRange}物件。
      *
      * @return 新的{@link IndexRange}物件實體
      */
@@ -41,7 +41,7 @@ public class IndexRangeBuilder<Z extends IndexRange, B extends IndexRangeBuilder
     }
 
     /**
-     * 建構{@link IndexRange}物件
+     * 建構{@link IndexRange}物件。
      *
      * @return 新的{@link IndexRange}物件實體
      */

@@ -6,7 +6,7 @@
 package javafx.scene;
 
 /**
- * {@link LightBase}建構器
+ * {@link LightBase}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -60,7 +60,7 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link LightBase#setColor(javafx.scene.paint.Color)}
+     * 設定屬性{@link LightBase#setColor(javafx.scene.paint.Color)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -74,7 +74,7 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link LightBase#setLightOn(boolean)}
+     * 設定屬性{@link LightBase#setLightOn(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -88,7 +88,7 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
     }
 
     /**
-     * 設定集合屬性{@link LightBase#getScope}的內容
+     * 設定集合屬性{@link LightBase#getScope}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -104,7 +104,7 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
     }
 
     /**
-     * 設定集合屬性{@link LightBase#getScope}的內容
+     * 設定集合屬性{@link LightBase#getScope}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -119,7 +119,7 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
     }
 
     /**
-     * 增加集合屬性{@link LightBase#getScope}的內容
+     * 增加集合屬性{@link LightBase#getScope}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -136,7 +136,7 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
     }
 
     /**
-     * 增加集合屬性{@link LightBase#getScope}的內容
+     * 增加集合屬性{@link LightBase#getScope}的內容。
      *
      * @param value 新的集合內容
      * @return 目前的建構器(this)
@@ -154,7 +154,7 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link LightBase#colorProperty}的連結
+     * 設定屬性{@link LightBase#colorProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -171,7 +171,7 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link LightBase#colorProperty}的雙向連結
+     * 設定屬性{@link LightBase#colorProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -188,7 +188,7 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link LightBase#lightOnProperty}的連結
+     * 設定屬性{@link LightBase#lightOnProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -205,7 +205,7 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
     }
 
     /**
-     * 設定屬性{@link LightBase#lightOnProperty}的雙向連結
+     * 設定屬性{@link LightBase#lightOnProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)

@@ -6,7 +6,7 @@
 package javafx.scene.shape;
 
 /**
- * {@link CubicCurveTo}建構器
+ * {@link CubicCurveTo}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -111,7 +111,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#setControlX1(double)}
+     * 設定屬性{@link CubicCurveTo#setControlX1(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#setControlX2(double)}
+     * 設定屬性{@link CubicCurveTo#setControlX2(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#setControlY1(double)}
+     * 設定屬性{@link CubicCurveTo#setControlY1(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#setControlY2(double)}
+     * 設定屬性{@link CubicCurveTo#setControlY2(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#setX(double)}
+     * 設定屬性{@link CubicCurveTo#setX(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#setY(double)}
+     * 設定屬性{@link CubicCurveTo#setY(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#controlX1Property}的連結
+     * 設定屬性{@link CubicCurveTo#controlX1Property}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -212,7 +212,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#controlX1Property}的雙向連結
+     * 設定屬性{@link CubicCurveTo#controlX1Property}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -229,7 +229,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#controlX2Property}的連結
+     * 設定屬性{@link CubicCurveTo#controlX2Property}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -246,7 +246,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#controlX2Property}的雙向連結
+     * 設定屬性{@link CubicCurveTo#controlX2Property}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -263,7 +263,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#controlY1Property}的連結
+     * 設定屬性{@link CubicCurveTo#controlY1Property}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -280,7 +280,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#controlY1Property}的雙向連結
+     * 設定屬性{@link CubicCurveTo#controlY1Property}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -297,7 +297,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#controlY2Property}的連結
+     * 設定屬性{@link CubicCurveTo#controlY2Property}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -314,7 +314,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#controlY2Property}的雙向連結
+     * 設定屬性{@link CubicCurveTo#controlY2Property}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -331,7 +331,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#xProperty}的連結
+     * 設定屬性{@link CubicCurveTo#xProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -348,7 +348,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#xProperty}的雙向連結
+     * 設定屬性{@link CubicCurveTo#xProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -365,7 +365,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#yProperty}的連結
+     * 設定屬性{@link CubicCurveTo#yProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -382,7 +382,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 設定屬性{@link CubicCurveTo#yProperty}的雙向連結
+     * 設定屬性{@link CubicCurveTo#yProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -399,7 +399,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 建構{@link CubicCurveTo}物件
+     * 建構{@link CubicCurveTo}物件。
      *
      * @return 新的{@link CubicCurveTo}物件實體
      */
@@ -414,7 +414,7 @@ public class CubicCurveToBuilder<Z extends CubicCurveTo, B extends CubicCurveToB
     }
 
     /**
-     * 建構{@link CubicCurveTo}物件
+     * 建構{@link CubicCurveTo}物件。
      *
      * @return 新的{@link CubicCurveTo}物件實體
      */

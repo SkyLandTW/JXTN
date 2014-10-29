@@ -6,7 +6,7 @@
 package javafx.scene.effect;
 
 /**
- * {@link Shadow}建構器
+ * {@link Shadow}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -111,7 +111,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#setBlurType(javafx.scene.effect.BlurType)}
+     * 設定屬性{@link Shadow#setBlurType(javafx.scene.effect.BlurType)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -125,7 +125,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#setColor(javafx.scene.paint.Color)}
+     * 設定屬性{@link Shadow#setColor(javafx.scene.paint.Color)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -139,7 +139,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#setHeight(double)}
+     * 設定屬性{@link Shadow#setHeight(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -153,7 +153,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#setInput(javafx.scene.effect.Effect)}
+     * 設定屬性{@link Shadow#setInput(javafx.scene.effect.Effect)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -167,7 +167,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#setRadius(double)}
+     * 設定屬性{@link Shadow#setRadius(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -181,7 +181,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#setWidth(double)}
+     * 設定屬性{@link Shadow#setWidth(double)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
@@ -195,7 +195,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#blurTypeProperty}的連結
+     * 設定屬性{@link Shadow#blurTypeProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -212,7 +212,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#blurTypeProperty}的雙向連結
+     * 設定屬性{@link Shadow#blurTypeProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -229,7 +229,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#colorProperty}的連結
+     * 設定屬性{@link Shadow#colorProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -246,7 +246,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#colorProperty}的雙向連結
+     * 設定屬性{@link Shadow#colorProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -263,7 +263,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#heightProperty}的連結
+     * 設定屬性{@link Shadow#heightProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -280,7 +280,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#heightProperty}的雙向連結
+     * 設定屬性{@link Shadow#heightProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -297,7 +297,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#inputProperty}的連結
+     * 設定屬性{@link Shadow#inputProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -314,7 +314,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#inputProperty}的雙向連結
+     * 設定屬性{@link Shadow#inputProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -331,7 +331,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#radiusProperty}的連結
+     * 設定屬性{@link Shadow#radiusProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -348,7 +348,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#radiusProperty}的雙向連結
+     * 設定屬性{@link Shadow#radiusProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -365,7 +365,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#widthProperty}的連結
+     * 設定屬性{@link Shadow#widthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -382,7 +382,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 設定屬性{@link Shadow#widthProperty}的雙向連結
+     * 設定屬性{@link Shadow#widthProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
@@ -399,7 +399,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Shadow}物件
+     * 建構{@link Shadow}物件。
      *
      * @return 新的{@link Shadow}物件實體
      */
@@ -414,7 +414,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Shadow}物件
+     * 建構{@link Shadow}物件。
      *
      * @return 新的{@link Shadow}物件實體
      */
@@ -428,7 +428,7 @@ public class ShadowBuilder<Z extends Shadow, B extends ShadowBuilder<Z, B>>
     }
 
     /**
-     * 建構{@link Shadow}物件
+     * 建構{@link Shadow}物件。
      *
      * @return 新的{@link Shadow}物件實體
      */

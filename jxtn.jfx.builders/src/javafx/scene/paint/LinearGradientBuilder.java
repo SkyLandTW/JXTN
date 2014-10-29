@@ -6,7 +6,7 @@
 package javafx.scene.paint;
 
 /**
- * {@link LinearGradient}建構器
+ * {@link LinearGradient}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
  * @version jfxrt.jar
@@ -27,7 +27,7 @@ public class LinearGradientBuilder<Z extends LinearGradient, B extends LinearGra
     }
 
     /**
-     * 建構{@link LinearGradient}物件
+     * 建構{@link LinearGradient}物件。
      *
      * @return 新的{@link LinearGradient}物件實體
      */
@@ -41,7 +41,7 @@ public class LinearGradientBuilder<Z extends LinearGradient, B extends LinearGra
     }
 
     /**
-     * 建構{@link LinearGradient}物件
+     * 建構{@link LinearGradient}物件。
      *
      * @return 新的{@link LinearGradient}物件實體
      */

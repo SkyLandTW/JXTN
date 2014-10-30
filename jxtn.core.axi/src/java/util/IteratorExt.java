@@ -213,6 +213,49 @@ public interface IteratorExt<E>
     }
 
     /**
+     * 結合多個項目到結尾。
+     *
+     * @param tailItems 要結合在結尾的其他項目
+     * @return 目前列舉及{@code tailItems}的結合
+     */
+    default Iterator<E> append(@SuppressWarnings("unchecked") E... tailItems)
+    {
+        List<Iterator<? extends E>> list = Arrays.asList(
+                (Iterator<E>) this,
+                Arrays.asList(tailItems).iterator());
+        return new ConcatedIterator<>(list.iterator());
+    }
+
+    /**
+     * 結合多個項目到開頭。
+     *
+     * @param headItems 要結合在開頭的其他項目
+     * @return 目前列舉及{@code tailItems}的結合
+     */
+    default Iterator<E> prepend(@SuppressWarnings("unchecked") E... headItems)
+    {
+        List<Iterator<? extends E>> list = Arrays.asList(
+                Arrays.asList(headItems).iterator(),
+                (Iterator<E>) this);
+        return new ConcatedIterator<>(list.iterator());
+    }
+
+    /**
+     * 結合多個列舉器。
+     *
+     * @param iterators 要結合在後面的其他列舉器
+     * @return 目前列舉器及{@code iterators}的結合
+     */
+    default Iterator<E> concat(@SuppressWarnings("unchecked") Iterator<? extends E>... iterators)
+    {
+        List<Iterator<? extends E>> list = new ArrayList<>(iterators.length + 1);
+        list.add((Iterator<E>) this);
+        for (Iterator<? extends E> other : iterators)
+            list.add(other);
+        return new ConcatedIterator<>(list.iterator());
+    }
+
+    /**
      * 依照展開函數建立展開列舉器。
      *
      * @param <R> 展開項目型態

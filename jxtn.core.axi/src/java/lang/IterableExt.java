@@ -202,13 +202,40 @@ public interface IterableExt<T>
     }
 
     /**
+     * 結合多個項目到結尾。
+     *
+     * @param tailItems 要結合在結尾的其他項目
+     * @return 目前列舉及{@code tailItems}的結合
+     */
+    default Iterable<T> append(@SuppressWarnings("unchecked") T... tailItems)
+    {
+        List<Iterable<? extends T>> list = Arrays.asList(
+                (Iterable<T>) this,
+                Arrays.asList(tailItems));
+        return () -> new ConcatedIterator<>(list.iterator().map(Iterable::iterator));
+    }
+
+    /**
+     * 結合多個項目到開頭。
+     *
+     * @param headItems 要結合在開頭的其他項目
+     * @return 目前列舉及{@code tailItems}的結合
+     */
+    default Iterable<T> prepend(@SuppressWarnings("unchecked") T... headItems)
+    {
+        List<Iterable<? extends T>> list = Arrays.asList(
+                Arrays.asList(headItems),
+                (Iterable<T>) this);
+        return () -> new ConcatedIterator<>(list.iterator().map(Iterable::iterator));
+    }
+
+    /**
      * 結合多個列舉。
      *
      * @param iterables 要結合在後面的其他列舉
      * @return 目前列舉及{@code iterables}的結合
      */
-    @SuppressWarnings("unchecked")
-    default Iterable<T> concat(Iterable<? extends T>... iterables)
+    default Iterable<T> concat(@SuppressWarnings("unchecked") Iterable<? extends T>... iterables)
     {
         List<Iterable<? extends T>> list = new ArrayList<>(iterables.length + 1);
         list.add((Iterable<T>) this);

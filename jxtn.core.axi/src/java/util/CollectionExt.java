@@ -196,7 +196,7 @@ public interface CollectionExt<E> extends IterableExt<E>
      */
     @Override
     default <K, KException extends Exception>
-            HashMap<K, E> toHashMap(FunctionEx<? super E, ? extends K, KException> getKey)
+            HashMap<K, E> toHashMap(FunctionEx<? super E, ? extends K, ? extends KException> getKey)
                     throws KException
     {
         Collection<E> thiz = (Collection<E>) this;
@@ -225,8 +225,8 @@ public interface CollectionExt<E> extends IterableExt<E>
     @Override
     default <K, V, KException extends Exception, VException extends Exception>
             HashMap<K, V> toHashMap(
-                    FunctionEx<? super E, ? extends K, KException> getKey,
-                    FunctionEx<? super E, ? extends V, VException> getValue)
+                    FunctionEx<? super E, ? extends K, ? extends KException> getKey,
+                    FunctionEx<? super E, ? extends V, ? extends VException> getValue)
                     throws KException, VException
     {
         Collection<E> thiz = (Collection<E>) this;

@@ -135,7 +135,7 @@ public interface MapExt<K, V>
      * @param action 要執行的動作
      * @throws TException 表示{@code action}丟出例外
      */
-    default <TException extends Exception> void forEachEx(BiConsumerEx<? super K, ? super V, TException> action)
+    default <TException extends Exception> void forEachEx(BiConsumerEx<? super K, ? super V, ? extends TException> action)
             throws TException
     {
         Objects.requireNonNull(action);
@@ -201,7 +201,7 @@ public interface MapExt<K, V>
      * @throws VException 表示{@code mapper}丟出例外
      */
     default <V2, VException extends Exception>
-            HashMap<K, V2> toHashMapMapped(FunctionEx<? super V, ? extends V2, VException> mapper)
+            HashMap<K, V2> toHashMapMapped(FunctionEx<? super V, ? extends V2, ? extends VException> mapper)
                     throws VException
     {
         Map<K, V> thiz = (Map<K, V>) this;
@@ -229,8 +229,8 @@ public interface MapExt<K, V>
      */
     default <K2, V2, KException extends Exception, VException extends Exception>
             HashMap<K2, V2> toHashMapMapped(
-                    FunctionEx<? super K, ? extends K2, KException> keyMapper,
-                    FunctionEx<? super V, ? extends V2, VException> valueMapper)
+                    FunctionEx<? super K, ? extends K2, ? extends KException> keyMapper,
+                    FunctionEx<? super V, ? extends V2, ? extends VException> valueMapper)
                     throws KException, VException
     {
         Map<K, V> thiz = (Map<K, V>) this;
@@ -254,7 +254,7 @@ public interface MapExt<K, V>
      * @throws VException 表示{@code mapper}丟出例外
      */
     default <V2, VException extends Exception> HashMap<K, V2>
-            toHashMapMapped(BiFunctionEx<? super K, ? super V, V2, VException> mapper)
+            toHashMapMapped(BiFunctionEx<? super K, ? super V, V2, ? extends VException> mapper)
                     throws VException
     {
         Map<K, V> thiz = (Map<K, V>) this;
@@ -283,8 +283,8 @@ public interface MapExt<K, V>
      */
     default <K2, V2, KException extends Exception, VException extends Exception>
             HashMap<K2, V2> toHashMapMapped(
-                    BiFunctionEx<? super K, ? super V, K2, KException> keyMapper,
-                    BiFunctionEx<? super K, ? super V, V2, VException> valueMapper)
+                    BiFunctionEx<? super K, ? super V, K2, ? extends KException> keyMapper,
+                    BiFunctionEx<? super K, ? super V, V2, ? extends VException> valueMapper)
                     throws KException, VException
     {
         Map<K, V> thiz = (Map<K, V>) this;

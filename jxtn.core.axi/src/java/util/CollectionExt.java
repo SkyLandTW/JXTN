@@ -29,6 +29,7 @@ package java.util;
 
 import java.lang.reflect.Array;
 import java.util.function.Function;
+import java.util.function.FunctionEx;
 
 import jxtn.core.axi.comparators.MemberComparators;
 
@@ -188,17 +189,21 @@ public interface CollectionExt<E> extends IterableExt<E>
      * 用目前項目值建立{@link HashMap}。
      *
      * @param <K> {@link HashMap}鍵值型態
+     * @param <KException> 計算鍵值函數可拋出的例外型態
      * @param getKey 計算項目於新{@link HashMap}內的鍵值
      * @return {@link HashMap}
+     * @throws KException 表示{@code getKey}丟出例外
      */
     @Override
-    default <K> HashMap<K, E> toHashMap(Function<? super E, K> getKey)
+    default <K, KException extends Exception>
+            HashMap<K, E> toHashMap(FunctionEx<? super E, K, KException> getKey)
+                    throws KException
     {
         Collection<E> thiz = (Collection<E>) this;
         HashMap<K, E> coll = new HashMap<>(thiz.size());
         for (E item : thiz)
         {
-            K k = getKey.apply(item);
+            K k = getKey.applyEx(item);
             coll.put(k, item);
         }
         return coll;
@@ -214,14 +219,18 @@ public interface CollectionExt<E> extends IterableExt<E>
      * @return {@link HashMap}
      */
     @Override
-    default <K, V> HashMap<K, V> toHashMap(Function<? super E, K> getKey, Function<? super E, V> getValue)
+    default <K, V, KException extends Exception, VException extends Exception>
+            HashMap<K, V> toHashMap(
+                    FunctionEx<? super E, K, KException> getKey,
+                    FunctionEx<? super E, V, VException> getValue)
+                    throws KException, VException
     {
         Collection<E> thiz = (Collection<E>) this;
         HashMap<K, V> coll = new HashMap<>(thiz.size());
         for (E item : thiz)
         {
-            K k = getKey.apply(item);
-            V v = getValue.apply(item);
+            K k = getKey.applyEx(item);
+            V v = getValue.applyEx(item);
             coll.put(k, v);
         }
         return coll;

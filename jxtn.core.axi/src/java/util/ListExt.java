@@ -28,7 +28,7 @@
 package java.util;
 
 import java.util.function.Function;
-import java.util.function.Predicate;
+import java.util.function.PredicateEx;
 
 import jxtn.core.axi.comparators.MemberComparators;
 import jxtn.core.axi.util.BinarySearchResult;
@@ -162,16 +162,19 @@ public interface ListExt<E> extends CollectionExt<E>
     /**
      * 取得符合指定條件的第一個項目索引。
      *
-     * @param filter 測試條件的函數
+     * @param <TException> 測試條件可拋出的例外型態
+     * @param condition 測試條件的函數
      * @return 符合{@code filter}的第一個項目索引，或-1表示找不到
+     * @throws TException 表示{@code condition}丟出例外
      */
-    default int firstIndexOf(Predicate<E> filter)
+    default <TException extends Exception> int firstIndexOf(PredicateEx<? super E, TException> condition)
+            throws TException
     {
         List<E> thiz = (List<E>) this;
         for (int i = 0; i < thiz.size(); i++)
         {
             E e = thiz.get(i);
-            if (filter.test(e))
+            if (condition.testEx(e))
             {
                 return i;
             }

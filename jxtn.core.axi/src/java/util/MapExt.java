@@ -27,8 +27,11 @@
 
 package java.util;
 
+import java.util.function.BiConsumerEx;
 import java.util.function.BiFunction;
+import java.util.function.BiFunctionEx;
 import java.util.function.Function;
+import java.util.function.FunctionEx;
 
 import jxtn.core.axi.collections.MappedMap;
 
@@ -125,6 +128,35 @@ public interface MapExt<K, V>
         return thiz.getOrDefault(key, defaultValue);
     }
 
+    /**
+     * 針對每個鍵值及項目值執行指定動作
+     *
+     * @param <TException> 動作可拋出的例外型態
+     * @param action 要執行的動作
+     * @throws TException 表示{@code action}丟出例外
+     */
+    default <TException extends Exception> void forEachEx(BiConsumerEx<? super K, ? super V, TException> action)
+            throws TException
+    {
+        Objects.requireNonNull(action);
+        Map<K, V> thiz = (Map<K, V>) this;
+        for (Map.Entry<K, V> entry : thiz.entrySet())
+        {
+            K k;
+            V v;
+            try
+            {
+                k = entry.getKey();
+                v = entry.getValue();
+            }
+            catch (IllegalStateException ise)
+            {
+                throw new ConcurrentModificationException(ise);
+            }
+            action.acceptEx(k, v);
+        }
+    }
+
     //////////////////////////////////////////////////////////////////////////
     // 項目轉換
     //
@@ -163,14 +195,22 @@ public interface MapExt<K, V>
      * 對照目前的項目值以產生新的{@link HashMap}。
      *
      * @param <V2> 對照項目值型態
+     * @param <VException> 計算項目值函數可拋出的例外型態
      * @param mapper 對照項目值的函數
      * @return 對照後的新{@link HashMap}(不依賴原有的)
+     * @throws VException 表示{@code mapper}丟出例外
      */
-    default <V2> HashMap<K, V2> toHashMapMapped(Function<? super V, V2> mapper)
+    default <V2, VException extends Exception>
+            HashMap<K, V2> toHashMapMapped(FunctionEx<? super V, ? extends V2, VException> mapper)
+                    throws VException
     {
         Map<K, V> thiz = (Map<K, V>) this;
         HashMap<K, V2> result = new HashMap<>(thiz.size());
-        thiz.forEach((k, v) -> result.put(k, mapper.apply(v)));
+        for (Map.Entry<K, V> entry : thiz.entrySet())
+        {
+            V2 newValue = mapper.applyEx(entry.getValue());
+            result.put(entry.getKey(), newValue);
+        }
         return result;
     }
 
@@ -179,17 +219,28 @@ public interface MapExt<K, V>
      *
      * @param <K2> 對照鍵值型態
      * @param <V2> 對照項目值型態
+     * @param <KException> 計算鍵值函數可拋出的例外型態
+     * @param <VException> 計算項目值函數可拋出的例外型態
      * @param keyMapper 對照鍵值的函數
      * @param valueMapper 對照項目值的函數
      * @return 對照後的新{@link HashMap}(不依賴原有的)
+     * @throws KException 表示{@code keyMapper}丟出例外
+     * @throws VException 表示{@code valueMapper}丟出例外
      */
-    default <K2, V2> HashMap<K2, V2> toHashMapMapped(
-            Function<? super K, K2> keyMapper,
-            Function<? super V, V2> valueMapper)
+    default <K2, V2, KException extends Exception, VException extends Exception>
+            HashMap<K2, V2> toHashMapMapped(
+                    FunctionEx<? super K, ? extends K2, KException> keyMapper,
+                    FunctionEx<? super V, ? extends V2, VException> valueMapper)
+                    throws KException, VException
     {
         Map<K, V> thiz = (Map<K, V>) this;
         HashMap<K2, V2> result = new HashMap<>(thiz.size());
-        thiz.forEach((k, v) -> result.put(keyMapper.apply(k), valueMapper.apply(v)));
+        for (Map.Entry<K, V> entry : thiz.entrySet())
+        {
+            K2 newKey = keyMapper.applyEx(entry.getKey());
+            V2 newVal = valueMapper.applyEx(entry.getValue());
+            result.put(newKey, newVal);
+        }
         return result;
     }
 
@@ -197,14 +248,23 @@ public interface MapExt<K, V>
      * 對照目前的項目值以產生新的{@link HashMap}。
      *
      * @param <V2> 對照項目值型態
+     * @param <VException> 計算項目值函數可拋出的例外型態
      * @param mapper 對照項目值的函數
      * @return 對照後的新{@link HashMap}(不依賴原有的)
+     * @throws VException 表示{@code mapper}丟出例外
      */
-    default <V2> HashMap<K, V2> toHashMapMapped(BiFunction<? super K, ? super V, V2> mapper)
+    default <V2, VException extends Exception> HashMap<K, V2>
+            toHashMapMapped(BiFunctionEx<? super K, ? super V, V2, VException> mapper)
+                    throws VException
     {
         Map<K, V> thiz = (Map<K, V>) this;
         HashMap<K, V2> result = new HashMap<>(thiz.size());
-        thiz.forEach((k, v) -> result.put(k, mapper.apply(k, v)));
+        for (Map.Entry<K, V> entry : thiz.entrySet())
+        {
+            K oldKey = entry.getKey();
+            V2 newValue = mapper.applyEx(oldKey, entry.getValue());
+            result.put(oldKey, newValue);
+        }
         return result;
     }
 
@@ -213,17 +273,30 @@ public interface MapExt<K, V>
      *
      * @param <K2> 對照鍵值型態
      * @param <V2> 對照項目值型態
+     * @param <KException> 計算鍵值函數可拋出的例外型態
+     * @param <VException> 計算項目值函數可拋出的例外型態
      * @param keyMapper 對照鍵值的函數
      * @param valueMapper 對照項目值的函數
      * @return 對照後的新{@link HashMap}(不依賴原有的)
+     * @throws KException 表示{@code keyMapper}丟出例外
+     * @throws VException 表示{@code valueMapper}丟出例外
      */
-    default <K2, V2> HashMap<K2, V2> toHashMapMapped(
-            BiFunction<? super K, ? super V, K2> keyMapper,
-            BiFunction<? super K, ? super V, V2> valueMapper)
+    default <K2, V2, KException extends Exception, VException extends Exception>
+            HashMap<K2, V2> toHashMapMapped(
+                    BiFunctionEx<? super K, ? super V, K2, KException> keyMapper,
+                    BiFunctionEx<? super K, ? super V, V2, VException> valueMapper)
+                    throws KException, VException
     {
         Map<K, V> thiz = (Map<K, V>) this;
         HashMap<K2, V2> result = new HashMap<>(thiz.size());
-        thiz.forEach((k, v) -> result.put(keyMapper.apply(k, v), valueMapper.apply(k, v)));
+        for (Map.Entry<K, V> entry : thiz.entrySet())
+        {
+            K oldKey = entry.getKey();
+            V oldVal = entry.getValue();
+            K2 newKey = keyMapper.applyEx(oldKey, oldVal);
+            V2 newVal = valueMapper.applyEx(oldKey, oldVal);
+            result.put(newKey, newVal);
+        }
         return result;
     }
 }

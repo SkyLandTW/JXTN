@@ -42,7 +42,7 @@ public class FilteredIterator<T> extends AbstractIterator<T>
     /**
      * 來源列舉器。
      */
-    protected final Iterator<T> source;
+    protected final Iterator<? extends T> source;
 
     /**
      * 過濾條件。
@@ -60,7 +60,7 @@ public class FilteredIterator<T> extends AbstractIterator<T>
      * @param source 來源列舉器
      * @param filter 過濾條件
      */
-    public FilteredIterator(Iterator<T> source, Predicate<? super T> filter)
+    public FilteredIterator(Iterator<? extends T> source, Predicate<? super T> filter)
     {
         Objects.requireNonNull(source);
         Objects.requireNonNull(filter);

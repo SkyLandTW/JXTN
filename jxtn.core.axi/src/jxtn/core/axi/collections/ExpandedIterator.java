@@ -43,14 +43,14 @@ public class ExpandedIterator<T, R> extends AbstractIterator<R>
     /**
      * 來源列舉器。
      */
-    protected final Iterator<T> source;
+    protected final Iterator<? extends T> source;
 
     /**
      * 展開函數。
      */
-    protected final Function<? super T, Iterator<R>> expand;
+    protected final Function<? super T, ? extends Iterator<? extends R>> expand;
 
-    protected Iterator<R> currentChildren;
+    protected Iterator<? extends R> currentChildren;
 
     /**
      * 建立指定函數做展開的列舉器。
@@ -61,7 +61,7 @@ public class ExpandedIterator<T, R> extends AbstractIterator<R>
      * @param source 來源列舉器
      * @param expand 展開函數
      */
-    public ExpandedIterator(Iterator<T> source, Function<? super T, Iterator<R>> expand)
+    public ExpandedIterator(Iterator<? extends T> source, Function<? super T, ? extends Iterator<? extends R>> expand)
     {
         Objects.requireNonNull(source);
         Objects.requireNonNull(expand);

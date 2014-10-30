@@ -41,11 +41,8 @@ import java.util.function.Function;
 import java.util.function.FunctionEx;
 import java.util.function.Predicate;
 import java.util.function.PredicateEx;
-import java.util.function.ToDoubleFunction;
 import java.util.function.ToDoubleFunctionEx;
-import java.util.function.ToIntFunction;
 import java.util.function.ToIntFunctionEx;
-import java.util.function.ToLongFunction;
 import java.util.function.ToLongFunctionEx;
 
 import jxtn.core.axi.collections.ConcatedIterator;
@@ -211,11 +208,11 @@ public interface IterableExt<T>
      * @return 目前列舉及{@code iterables}的結合
      */
     @SuppressWarnings("unchecked")
-    default Iterable<T> concat(Iterable<T>... iterables)
+    default Iterable<T> concat(Iterable<? extends T>... iterables)
     {
-        List<Iterable<T>> list = new ArrayList<>(iterables.length + 1);
+        List<Iterable<? extends T>> list = new ArrayList<>(iterables.length + 1);
         list.add((Iterable<T>) this);
-        for (Iterable<T> other : iterables)
+        for (Iterable<? extends T> other : iterables)
             list.add(other);
         return () -> new ConcatedIterator<>(list.iterator().map(Iterable::iterator));
     }
@@ -227,7 +224,7 @@ public interface IterableExt<T>
      * @param expander 展開項目的函數
      * @return 展開列舉，依賴原有的列舉
      */
-    default <R> Iterable<R> expand(Function<? super T, Iterable<R>> expander)
+    default <R> Iterable<R> expand(Function<? super T, ? extends Iterable<? extends R>> expander)
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return () -> new ExpandedIterator<>(thiz.iterator(), t -> expander.apply(t).iterator());
@@ -263,7 +260,7 @@ public interface IterableExt<T>
      * @param mapper 對照項目的函數
      * @return 對照列舉，依賴原有的列舉
      */
-    default <R> Iterable<R> map(Function<? super T, R> mapper)
+    default <R> Iterable<R> map(Function<? super T, ? extends R> mapper)
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return () -> new MappedIterator<>(thiz.iterator(), mapper);
@@ -277,7 +274,7 @@ public interface IterableExt<T>
      * @return 只包含{@code type}型態項目的列舉
      */
     @SuppressWarnings("unchecked")
-    default <R> Iterable<R> ofType(Class<R> type)
+    default <R> Iterable<R> ofType(Class<? extends R> type)
     {
         return this.filter(type::isInstance).map(t -> (R) t);
     }
@@ -319,7 +316,7 @@ public interface IterableExt<T>
      * @throws NoSuchElementException 沒有第一筆或符合條件的項目
      * @throws TException 表示{@code condition}丟出例外
      */
-    default <TException extends Exception> T first(PredicateEx<T, TException> condition)
+    default <TException extends Exception> T first(PredicateEx<? super T, TException> condition)
             throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -345,7 +342,7 @@ public interface IterableExt<T>
      * @return 第一筆項目，或null表示沒有項目
      * @throws TException 表示{@code condition}丟出例外
      */
-    default <TException extends Exception> T firstOrNull(PredicateEx<T, TException> condition)
+    default <TException extends Exception> T firstOrNull(PredicateEx<? super T, TException> condition)
             throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -362,8 +359,8 @@ public interface IterableExt<T>
      * @throws NoSuchElementException 沒有項目
      * @throws TException 表示{@code getValue}丟出例外
      */
-    default <V extends Comparable<V>, TException extends Exception>
-            T firstOfMax(FunctionEx<? super T, V, TException> getValue)
+    default <V extends Comparable<? super V>, TException extends Exception>
+            T firstOfMax(FunctionEx<? super T, ? extends V, TException> getValue)
                     throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -380,8 +377,8 @@ public interface IterableExt<T>
      * @return 第一個計算出最大數值的項目，或null表示沒有項目
      * @throws TException 表示{@code getValue}丟出例外
      */
-    default <V extends Comparable<V>, TException extends Exception>
-            T firstOfMaxOrNull(FunctionEx<? super T, V, TException> getValue)
+    default <V extends Comparable<? super V>, TException extends Exception>
+            T firstOfMaxOrNull(FunctionEx<? super T, ? extends V, TException> getValue)
                     throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -398,7 +395,7 @@ public interface IterableExt<T>
      * @throws NoSuchElementException 沒有項目
      * @throws TException 表示{@code getValue}丟出例外
      */
-    default <TException extends Exception> T firstOfMaxDouble(ToDoubleFunctionEx<T, TException> getValue)
+    default <TException extends Exception> T firstOfMaxDouble(ToDoubleFunctionEx<? super T, TException> getValue)
             throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -414,7 +411,7 @@ public interface IterableExt<T>
      * @return 第一個計算出最大數值的項目，或null表示沒有項目
      * @throws TException 表示{@code getValue}丟出例外
      */
-    default <TException extends Exception> T firstOfMaxDoubleOrNull(ToDoubleFunctionEx<T, TException> getValue)
+    default <TException extends Exception> T firstOfMaxDoubleOrNull(ToDoubleFunctionEx<? super T, TException> getValue)
             throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -431,7 +428,7 @@ public interface IterableExt<T>
      * @throws NoSuchElementException 沒有項目
      * @throws TException 表示{@code getValue}丟出例外
      */
-    default <TException extends Exception> T firstOfMaxInt(ToIntFunctionEx<T, TException> getValue)
+    default <TException extends Exception> T firstOfMaxInt(ToIntFunctionEx<? super T, TException> getValue)
             throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -447,7 +444,7 @@ public interface IterableExt<T>
      * @return 第一個計算出最大數值的項目，或null表示沒有項目
      * @throws TException 表示{@code getValue}丟出例外
      */
-    default <TException extends Exception> T firstOfMaxIntOrNull(ToIntFunctionEx<T, TException> getValue)
+    default <TException extends Exception> T firstOfMaxIntOrNull(ToIntFunctionEx<? super T, TException> getValue)
             throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -464,7 +461,7 @@ public interface IterableExt<T>
      * @throws NoSuchElementException 沒有項目
      * @throws TException 表示{@code getValue}丟出例外
      */
-    default <TException extends Exception> T firstOfMaxLong(ToLongFunctionEx<T, TException> getValue)
+    default <TException extends Exception> T firstOfMaxLong(ToLongFunctionEx<? super T, TException> getValue)
             throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -480,7 +477,7 @@ public interface IterableExt<T>
      * @return 第一個計算出最大數值的項目，或null表示沒有項目
      * @throws TException 表示{@code getValue}丟出例外
      */
-    default <TException extends Exception> T firstOfMaxLongOrNull(ToLongFunctionEx<T, TException> getValue)
+    default <TException extends Exception> T firstOfMaxLongOrNull(ToLongFunctionEx<? super T, TException> getValue)
             throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -498,8 +495,8 @@ public interface IterableExt<T>
      * @throws NoSuchElementException 沒有項目
      * @throws TException 表示{@code getValue}丟出例外
      */
-    default <V extends Comparable<V>, TException extends Exception>
-            T firstOfMin(FunctionEx<? super T, V, TException> getValue)
+    default <V extends Comparable<? super V>, TException extends Exception>
+            T firstOfMin(FunctionEx<? super T, ? extends V, TException> getValue)
                     throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -516,8 +513,8 @@ public interface IterableExt<T>
      * @return 第一個計算出最小數值的項目，或null表示沒有項目
      * @throws TException 表示{@code getValue}丟出例外
      */
-    default <V extends Comparable<V>, TException extends Exception>
-            T firstOfMinOrNull(FunctionEx<? super T, V, TException> getValue)
+    default <V extends Comparable<? super V>, TException extends Exception>
+            T firstOfMinOrNull(FunctionEx<? super T, ? extends V, TException> getValue)
                     throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -534,7 +531,7 @@ public interface IterableExt<T>
      * @throws NoSuchElementException 沒有項目
      * @throws TException 表示{@code getValue}丟出例外
      */
-    default <TException extends Exception> T firstOfMinDouble(ToDoubleFunctionEx<T, TException> getValue)
+    default <TException extends Exception> T firstOfMinDouble(ToDoubleFunctionEx<? super T, TException> getValue)
             throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -550,7 +547,7 @@ public interface IterableExt<T>
      * @return 第一個計算出最小數值的項目，或null表示沒有項目
      * @throws TException 表示{@code getValue}丟出例外
      */
-    default <TException extends Exception> T firstOfMinDoubleOrNull(ToDoubleFunctionEx<T, TException> getValue)
+    default <TException extends Exception> T firstOfMinDoubleOrNull(ToDoubleFunctionEx<? super T, TException> getValue)
             throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -567,7 +564,7 @@ public interface IterableExt<T>
      * @throws NoSuchElementException 沒有項目
      * @throws TException 表示{@code getValue}丟出例外
      */
-    default <TException extends Exception> T firstOfMinInt(ToIntFunctionEx<T, TException> getValue)
+    default <TException extends Exception> T firstOfMinInt(ToIntFunctionEx<? super T, TException> getValue)
             throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -583,7 +580,7 @@ public interface IterableExt<T>
      * @return 第一個計算出最小數值的項目，或null表示沒有項目
      * @throws TException 表示{@code getValue}丟出例外
      */
-    default <TException extends Exception> T firstOfMinIntOrNull(ToIntFunctionEx<T, TException> getValue)
+    default <TException extends Exception> T firstOfMinIntOrNull(ToIntFunctionEx<? super T, TException> getValue)
             throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -600,7 +597,7 @@ public interface IterableExt<T>
      * @throws NoSuchElementException 沒有項目
      * @throws TException 表示{@code getValue}丟出例外
      */
-    default <TException extends Exception> T firstOfMinLong(ToLongFunctionEx<T, TException> getValue)
+    default <TException extends Exception> T firstOfMinLong(ToLongFunctionEx<? super T, TException> getValue)
             throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -616,7 +613,7 @@ public interface IterableExt<T>
      * @return 第一個計算出最小數值的項目，或null表示沒有項目
      * @throws TException 表示{@code getValue}丟出例外
      */
-    default <TException extends Exception> T firstOfMinLongOrNull(ToLongFunctionEx<T, TException> getValue)
+    default <TException extends Exception> T firstOfMinLongOrNull(ToLongFunctionEx<? super T, TException> getValue)
             throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -657,7 +654,7 @@ public interface IterableExt<T>
      * 用目前項目值建立陣列。
      *
      * @param type 陣列項目型態
-     * @return 陣列
+     * @return 包含目前項目的陣列
      */
     default T[] toArray(Class<T> type)
     {
@@ -668,7 +665,7 @@ public interface IterableExt<T>
     /**
      * 用目前項目值建立{@link ArrayList}。
      *
-     * @return {@link ArrayList}
+     * @return 包含目前項目的{@link ArrayList}
      */
     default ArrayList<T> toArrayList()
     {
@@ -677,13 +674,46 @@ public interface IterableExt<T>
     }
 
     /**
+     * 用目前項目值建立{@link ArrayList}，依照條件做過濾。
+     *
+     * @param <TException> 測試條件可拋出的例外型態
+     * @param condition 取得項目的條件測試函數
+     * @return 包含符合條件項目的{@link ArrayList}
+     * @throws TException 表示{@code mapper}丟出例外
+     */
+    default <TException extends Exception> ArrayList<T>
+            toArrayListFiltered(PredicateEx<? super T, TException> condition)
+                    throws TException
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return thiz.iterator().toArrayListFiltered(condition);
+    }
+
+    /**
+     * 用目前項目值建立{@link ArrayList}，依照函數做對照。
+     *
+     * @param <R> 對照項目型態
+     * @param <TException> 對照函數可拋出的例外型態
+     * @param mapper 對照項目的函數
+     * @return 包含目前項目對照結果的{@link ArrayList}
+     * @throws TException 表示{@code mapper}丟出例外
+     */
+    default <R, TException extends Exception> ArrayList<R>
+            toArrayListMapped(FunctionEx<? super T, ? extends R, TException> mapper)
+                    throws TException
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return thiz.iterator().toArrayListMapped(mapper);
+    }
+
+    /**
      * 用目前項目值建立{@link ArrayList}，依照鍵值做排序。
      *
      * @param <V> 鍵值型態
      * @param getKey 計算每個項目的鍵值
-     * @return {@link ArrayList}，已排序
+     * @return 包含目前項目的{@link ArrayList}，已排序
      */
-    default <V extends Comparable<? super V>> ArrayList<T> toArrayListSorted(Function<T, V> getKey)
+    default <V extends Comparable<? super V>> ArrayList<T> toArrayListSorted(Function<? super T, ? extends V> getKey)
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().toArrayListSorted(getKey);
@@ -693,9 +723,9 @@ public interface IterableExt<T>
      * 用目前項目值建立{@link ArrayList}，依照比較器做排序。
      *
      * @param comparator 項目的比較器
-     * @return {@link ArrayList}，已排序
+     * @return 包含目前項目的{@link ArrayList}，已排序
      */
-    default ArrayList<T> toArrayListSorted(Comparator<T> comparator)
+    default ArrayList<T> toArrayListSorted(Comparator<? super T> comparator)
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().toArrayListSorted(comparator);
@@ -707,11 +737,11 @@ public interface IterableExt<T>
      * @param <K> {@link HashMap}鍵值型態
      * @param <KException> 計算鍵值函數可拋出的例外型態
      * @param getKey 計算項目於新{@link HashMap}內的鍵值
-     * @return {@link HashMap}
+     * @return 包含目前項目對照結果的{@link HashMap}
      * @throws KException 表示{@code getKey}丟出例外
      */
     default <K, KException extends Exception>
-            HashMap<K, T> toHashMap(FunctionEx<? super T, K, KException> getKey)
+            HashMap<K, T> toHashMap(FunctionEx<? super T, ? extends K, KException> getKey)
                     throws KException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -727,14 +757,14 @@ public interface IterableExt<T>
      * @param <VException> 計算項目值函數可拋出的例外型態
      * @param getKey 計算項目於新{@link HashMap}內的鍵值
      * @param getValue 計算項目於新{@link HashMap}內的項目值
-     * @return {@link HashMap}
+     * @return 包含目前項目對照結果的{@link HashMap}
      * @throws KException 表示{@code getKey}丟出例外
      * @throws VException 表示{@code getValue}丟出例外
      */
     default <K, V, KException extends Exception, VException extends Exception>
             HashMap<K, V> toHashMap(
-                    FunctionEx<? super T, K, KException> getKey,
-                    FunctionEx<? super T, V, VException> getValue)
+                    FunctionEx<? super T, ? extends K, KException> getKey,
+                    FunctionEx<? super T, ? extends V, VException> getValue)
                     throws KException, VException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -747,11 +777,11 @@ public interface IterableExt<T>
      * @param <K> 分群鍵值型態
      * @param <KException> 計算鍵值函數可拋出的例外型態
      * @param getKey 計算每個項目的鍵值
-     * @return {@link HashMap}，已分群組
+     * @return 包含目前項目分群組的{@link HashMap}
      * @throws KException 表示{@code getKey}丟出例外
      */
     default <K, KException extends Exception>
-            HashMap<K, ArrayList<T>> toHashMapGrouped(FunctionEx<? super T, K, KException> getKey)
+            HashMap<K, ArrayList<T>> toHashMapGrouped(FunctionEx<? super T, ? extends K, KException> getKey)
                     throws KException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -767,14 +797,14 @@ public interface IterableExt<T>
      * @param <VException> 計算項目值函數可拋出的例外型態
      * @param getKey 計算每個項目做分組的鍵值
      * @param getValue 計算項目於新{@link HashMap}內的項目值
-     * @return {@link HashMap}，已分群組
+     * @return 包含目前項目分群組的{@link HashMap}
      * @throws KException 表示{@code getKey}丟出例外
      * @throws VException 表示{@code getValue}丟出例外
      */
     default <K, V, KException extends Exception, VException extends Exception>
             HashMap<K, ArrayList<V>> toHashMapGrouped(
-                    FunctionEx<? super T, K, KException> getKey,
-                    FunctionEx<? super T, V, VException> getValue)
+                    FunctionEx<? super T, ? extends K, KException> getKey,
+                    FunctionEx<? super T, ? extends V, VException> getValue)
                     throws KException, VException
     {
         Iterable<T> thiz = (Iterable<T>) this;
@@ -787,7 +817,7 @@ public interface IterableExt<T>
      * 重複值會被重疊覆蓋，後面的優先。
      * </p>
      *
-     * @return {@link HashSet}
+     * @return 包含目前項目的{@link HashSet}
      */
     default HashSet<T> toHashSet()
     {
@@ -802,10 +832,13 @@ public interface IterableExt<T>
     /**
      * 計算項目代表數值的平均。
      *
+     * @param <TException> 計算數值函數可拋出的例外型態
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的平均，或null表示沒有項目
+     * @throws TException 表示{@code getValue}丟出例外
      */
-    default Double avgDouble(ToDoubleFunction<? super T> getValue)
+    default <TException extends Exception> Double avgDouble(ToDoubleFunctionEx<? super T, TException> getValue)
+            throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().avgDouble(getValue);
@@ -814,10 +847,13 @@ public interface IterableExt<T>
     /**
      * 計算項目代表數值的平均。
      *
+     * @param <TException> 計算數值函數可拋出的例外型態
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的平均，或null表示沒有項目
+     * @throws TException 表示{@code getValue}丟出例外
      */
-    default Integer avgInt(ToIntFunction<? super T> getValue)
+    default <TException extends Exception> Integer avgInt(ToIntFunctionEx<? super T, TException> getValue)
+            throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().avgInt(getValue);
@@ -826,10 +862,13 @@ public interface IterableExt<T>
     /**
      * 計算項目代表數值的平均。
      *
+     * @param <TException> 計算數值函數可拋出的例外型態
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的平均，或null表示沒有項目
+     * @throws TException 表示{@code getValue}丟出例外
      */
-    default Long avgLong(ToLongFunction<? super T> getValue)
+    default <TException extends Exception> Long avgLong(ToLongFunctionEx<? super T, TException> getValue)
+            throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().avgLong(getValue);
@@ -838,10 +877,13 @@ public interface IterableExt<T>
     /**
      * 計算項目代表數值的最大值。
      *
+     * @param <TException> 計算數值函數可拋出的例外型態
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的最大值，或null表示沒有項目
+     * @throws TException 表示{@code getValue}丟出例外
      */
-    default Double maxDouble(ToDoubleFunction<T> getValue)
+    default <TException extends Exception> Double maxDouble(ToDoubleFunctionEx<? super T, TException> getValue)
+            throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().maxDouble(getValue);
@@ -850,10 +892,13 @@ public interface IterableExt<T>
     /**
      * 計算項目代表數值的最大值。
      *
+     * @param <TException> 計算數值函數可拋出的例外型態
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的最大值，或null表示沒有項目
+     * @throws TException 表示{@code getValue}丟出例外
      */
-    default Integer maxInt(ToIntFunction<T> getValue)
+    default <TException extends Exception> Integer maxInt(ToIntFunctionEx<? super T, TException> getValue)
+            throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().maxInt(getValue);
@@ -862,10 +907,13 @@ public interface IterableExt<T>
     /**
      * 計算項目代表數值的最大值。
      *
+     * @param <TException> 計算數值函數可拋出的例外型態
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的最大值，或null表示沒有項目
+     * @throws TException 表示{@code getValue}丟出例外
      */
-    default Long maxLong(ToLongFunction<T> getValue)
+    default <TException extends Exception> Long maxLong(ToLongFunctionEx<? super T, TException> getValue)
+            throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().maxLong(getValue);
@@ -874,10 +922,13 @@ public interface IterableExt<T>
     /**
      * 計算項目代表數值的最小值。
      *
+     * @param <TException> 計算數值函數可拋出的例外型態
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的最小值，或null表示沒有項目
+     * @throws TException 表示{@code getValue}丟出例外
      */
-    default Double minDouble(ToDoubleFunction<T> getValue)
+    default <TException extends Exception> Double minDouble(ToDoubleFunctionEx<? super T, TException> getValue)
+            throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().minDouble(getValue);
@@ -886,10 +937,13 @@ public interface IterableExt<T>
     /**
      * 計算項目代表數值的最小值。
      *
+     * @param <TException> 計算數值函數可拋出的例外型態
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的最小值，或null表示沒有項目
+     * @throws TException 表示{@code getValue}丟出例外
      */
-    default Integer minInt(ToIntFunction<T> getValue)
+    default <TException extends Exception> Integer minInt(ToIntFunctionEx<? super T, TException> getValue)
+            throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().minInt(getValue);
@@ -898,10 +952,13 @@ public interface IterableExt<T>
     /**
      * 計算項目代表數值的最小值。
      *
+     * @param <TException> 計算數值函數可拋出的例外型態
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的最小值，或null表示沒有項目
+     * @throws TException 表示{@code getValue}丟出例外
      */
-    default Long minLong(ToLongFunction<T> getValue)
+    default <TException extends Exception> Long minLong(ToLongFunctionEx<? super T, TException> getValue)
+            throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().minLong(getValue);
@@ -910,10 +967,13 @@ public interface IterableExt<T>
     /**
      * 計算項目代表數值的總和。
      *
+     * @param <TException> 計算數值函數可拋出的例外型態
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的總和
+     * @throws TException 表示{@code getValue}丟出例外
      */
-    default double sumDouble(ToDoubleFunction<T> getValue)
+    default <TException extends Exception> double sumDouble(ToDoubleFunctionEx<? super T, TException> getValue)
+            throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().sumDouble(getValue);
@@ -922,10 +982,13 @@ public interface IterableExt<T>
     /**
      * 計算項目代表數值的總和。
      *
+     * @param <TException> 計算數值函數可拋出的例外型態
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的總和
+     * @throws TException 表示{@code getValue}丟出例外
      */
-    default int sumInt(ToIntFunction<T> getValue)
+    default <TException extends Exception> int sumInt(ToIntFunctionEx<? super T, TException> getValue)
+            throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().sumInt(getValue);
@@ -934,10 +997,13 @@ public interface IterableExt<T>
     /**
      * 計算項目代表數值的總和。
      *
+     * @param <TException> 計算數值函數可拋出的例外型態
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的總和
+     * @throws TException 表示{@code getValue}丟出例外
      */
-    default long sumLong(ToIntFunction<T> getValue)
+    default <TException extends Exception> long sumLong(ToIntFunctionEx<? super T, TException> getValue)
+            throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().sumLong(getValue);
@@ -946,10 +1012,13 @@ public interface IterableExt<T>
     /**
      * 計算項目代表數值的總和。
      *
+     * @param <TException> 計算數值函數可拋出的例外型態
      * @param getValue 計算項目數值的函數
      * @return 項目代表數值的總和
+     * @throws TException 表示{@code getValue}丟出例外
      */
-    default long sumLong(ToLongFunction<T> getValue)
+    default <TException extends Exception> long sumLong(ToLongFunctionEx<? super T, TException> getValue)
+            throws TException
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().sumLong(getValue);

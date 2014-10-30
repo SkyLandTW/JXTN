@@ -41,7 +41,7 @@ public class SkippedIterator<T> extends AbstractIterator<T>
     /**
      * 來源列舉器。
      */
-    protected final Iterator<T> source;
+    protected final Iterator<? extends T> source;
 
     /**
      * 要跳過項目數量。
@@ -59,7 +59,7 @@ public class SkippedIterator<T> extends AbstractIterator<T>
      * @param source 來源列舉器
      * @param count 要跳過項目數量
      */
-    public SkippedIterator(Iterator<T> source, int count)
+    public SkippedIterator(Iterator<? extends T> source, int count)
     {
         Objects.requireNonNull(source);
         if (count < 0)

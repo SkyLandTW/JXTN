@@ -129,7 +129,7 @@ public interface CollectionExt<E> extends IterableExt<E>
      * 用目前項目值建立陣列。
      *
      * @param type 陣列項目型態
-     * @return 陣列
+     * @return 包含目前項目的陣列
      */
     @Override
     @SuppressWarnings("unchecked")
@@ -144,7 +144,7 @@ public interface CollectionExt<E> extends IterableExt<E>
     /**
      * 用目前項目值建立{@link ArrayList}。
      *
-     * @return {@link ArrayList}
+     * @return 包含目前項目的{@link ArrayList}
      */
     @Override
     default ArrayList<E> toArrayList()
@@ -159,10 +159,10 @@ public interface CollectionExt<E> extends IterableExt<E>
      *
      * @param <V> 鍵值型態
      * @param getKey 計算每個項目的鍵值
-     * @return {@link ArrayList}，已排序
+     * @return 包含目前項目的{@link ArrayList}，已排序
      */
     @Override
-    default <V extends Comparable<? super V>> ArrayList<E> toArrayListSorted(Function<E, V> getKey)
+    default <V extends Comparable<? super V>> ArrayList<E> toArrayListSorted(Function<? super E, ? extends V> getKey)
     {
         Collection<E> thiz = (Collection<E>) this;
         ArrayList<E> sorted = thiz.toArrayList();
@@ -174,10 +174,10 @@ public interface CollectionExt<E> extends IterableExt<E>
      * 用目前項目值建立{@link ArrayList}，依照比較器做排序。
      *
      * @param comparator 項目的比較器
-     * @return {@link ArrayList}，已排序
+     * @return 包含目前項目的{@link ArrayList}，已排序
      */
     @Override
-    default ArrayList<E> toArrayListSorted(Comparator<E> comparator)
+    default ArrayList<E> toArrayListSorted(Comparator<? super E> comparator)
     {
         Collection<E> thiz = (Collection<E>) this;
         ArrayList<E> sorted = thiz.toArrayList();
@@ -191,12 +191,12 @@ public interface CollectionExt<E> extends IterableExt<E>
      * @param <K> {@link HashMap}鍵值型態
      * @param <KException> 計算鍵值函數可拋出的例外型態
      * @param getKey 計算項目於新{@link HashMap}內的鍵值
-     * @return {@link HashMap}
+     * @return 包含目前項目對照結果的{@link HashMap}
      * @throws KException 表示{@code getKey}丟出例外
      */
     @Override
     default <K, KException extends Exception>
-            HashMap<K, E> toHashMap(FunctionEx<? super E, K, KException> getKey)
+            HashMap<K, E> toHashMap(FunctionEx<? super E, ? extends K, KException> getKey)
                     throws KException
     {
         Collection<E> thiz = (Collection<E>) this;
@@ -214,15 +214,19 @@ public interface CollectionExt<E> extends IterableExt<E>
      *
      * @param <K> {@link HashMap}鍵值型態
      * @param <V> {@link HashMap}項目值型態
+     * @param <KException> 計算鍵值函數可拋出的例外型態
+     * @param <VException> 計算項目值函數可拋出的例外型態
      * @param getKey 計算項目於新{@link HashMap}內的鍵值
      * @param getValue 計算項目於新{@link HashMap}內的項目值
-     * @return {@link HashMap}
+     * @return 包含目前項目對照結果的{@link HashMap}
+     * @throws KException 表示{@code getKey}丟出例外
+     * @throws VException 表示{@code getValue}丟出例外
      */
     @Override
     default <K, V, KException extends Exception, VException extends Exception>
             HashMap<K, V> toHashMap(
-                    FunctionEx<? super E, K, KException> getKey,
-                    FunctionEx<? super E, V, VException> getValue)
+                    FunctionEx<? super E, ? extends K, KException> getKey,
+                    FunctionEx<? super E, ? extends V, VException> getValue)
                     throws KException, VException
     {
         Collection<E> thiz = (Collection<E>) this;
@@ -242,7 +246,7 @@ public interface CollectionExt<E> extends IterableExt<E>
      * 重複值會被重疊覆蓋，後面的優先。
      * </p>
      *
-     * @return {@link HashSet}
+     * @return 包含目前項目的{@link HashSet}
      */
     @Override
     default HashSet<E> toHashSet()

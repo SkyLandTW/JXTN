@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link NotificationPane}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.20.7.jar
+ * @version controlsfx-8.20.8.jar
  * @param <Z> 要建構的物件型態(需繼承{@link NotificationPane})
  * @param <B> 建構器本身的型態(需繼承{@link NotificationPaneBuilder})
  */
@@ -22,6 +22,9 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
 
     private boolean hasActions;
     private java.util.Collection<org.controlsfx.control.action.Action> valActions;
+
+    private boolean hasCloseButtonVisible;
+    private boolean valCloseButtonVisible;
 
     private boolean hasContent;
     private javafx.scene.Node valContent;
@@ -46,6 +49,11 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
 
     private boolean hasText;
     private java.lang.String valText;
+
+    private boolean bound1CloseButtonVisible;
+    private boolean bound2CloseButtonVisible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1CloseButtonVisible;
+    private javafx.beans.property.Property<Boolean> obsrv2CloseButtonVisible;
 
     private boolean bound1Content;
     private boolean bound2Content;
@@ -93,6 +101,8 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         super.applyTo(instance);
         if (this.hasActions)
             instance.getActions().addAll(this.valActions);
+        if (this.hasCloseButtonVisible)
+            instance.setCloseButtonVisible(this.valCloseButtonVisible);
         if (this.hasContent)
             instance.setContent(this.valContent);
         if (this.hasGraphic)
@@ -109,6 +119,10 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
             instance.setShowFromTop(this.valShowFromTop);
         if (this.hasText)
             instance.setText(this.valText);
+        if (this.bound1CloseButtonVisible)
+            instance.closeButtonVisibleProperty().bind(this.obsrv1CloseButtonVisible);
+        if (this.bound2CloseButtonVisible)
+            instance.closeButtonVisibleProperty().bindBidirectional(this.obsrv2CloseButtonVisible);
         if (this.bound1Content)
             instance.contentProperty().bind(this.obsrv1Content);
         if (this.bound2Content)
@@ -206,6 +220,20 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
         if (this.valActions == null)
             this.valActions = new java.util.ArrayList<>(value.length);
         this.valActions.addAll(java.util.Arrays.asList(value));
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link NotificationPane#setCloseButtonVisible(boolean)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B closeButtonVisible(boolean value)
+    {
+        this.hasCloseButtonVisible = true;
+        this.valCloseButtonVisible = value;
         return (B) this;
     }
 
@@ -318,6 +346,40 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     {
         this.hasText = true;
         this.valText = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link NotificationPane#closeButtonVisibleProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindCloseButtonVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CloseButtonVisible = true;
+        this.obsrv1CloseButtonVisible = source;
+        this.bound2CloseButtonVisible = false;
+        this.obsrv2CloseButtonVisible = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link NotificationPane#closeButtonVisibleProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCloseButtonVisible(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CloseButtonVisible = false;
+        this.obsrv1CloseButtonVisible = null;
+        this.bound2CloseButtonVisible = true;
+        this.obsrv2CloseButtonVisible = source;
         return (B) this;
     }
 

@@ -242,20 +242,6 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
      * @return 新的{@link ComboBoxTableCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ComboBoxTableCell<S, T> build(T[] arg0)
-    {
-        ComboBoxTableCell<S, T> instance = new ComboBoxTableCell<S, T>(arg0);
-        this.applyTo((Z) instance);
-        this.doAfterBuild((Z) instance);
-        return instance;
-    }
-
-    /**
-     * 建構{@link ComboBoxTableCell}物件。
-     *
-     * @return 新的{@link ComboBoxTableCell}物件實體
-     */
-    @SuppressWarnings("unchecked")
     public ComboBoxTableCell<S, T> build(javafx.collections.ObservableList<T> arg0)
     {
         ComboBoxTableCell<S, T> instance = new ComboBoxTableCell<S, T>(arg0);
@@ -270,7 +256,21 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
      * @return 新的{@link ComboBoxTableCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ComboBoxTableCell<S, T> build(javafx.util.StringConverter<T> arg0, javafx.collections.ObservableList<T> arg1)
+    public ComboBoxTableCell<S, T> build(T[] arg0)
+    {
+        ComboBoxTableCell<S, T> instance = new ComboBoxTableCell<S, T>(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link ComboBoxTableCell}物件。
+     *
+     * @return 新的{@link ComboBoxTableCell}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public ComboBoxTableCell<S, T> build(javafx.util.StringConverter<T> arg0, T[] arg1)
     {
         ComboBoxTableCell<S, T> instance = new ComboBoxTableCell<S, T>(arg0, arg1);
         this.applyTo((Z) instance);
@@ -284,7 +284,7 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
      * @return 新的{@link ComboBoxTableCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ComboBoxTableCell<S, T> build(javafx.util.StringConverter<T> arg0, T[] arg1)
+    public ComboBoxTableCell<S, T> build(javafx.util.StringConverter<T> arg0, javafx.collections.ObservableList<T> arg1)
     {
         ComboBoxTableCell<S, T> instance = new ComboBoxTableCell<S, T>(arg0, arg1);
         this.applyTo((Z) instance);

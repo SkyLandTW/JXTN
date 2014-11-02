@@ -5826,8 +5826,8 @@
       <property genericParam="" genericType="javafx.scene.Node" name="node" override="false" rawType="javafx.scene.Node" static="false">
         <getter abstract="false" access="public" final="true" name="getNode" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.Node" static="false"/>
       </property>
-      <property genericParam="" genericType="C" name="skinnable" override="false" rawType="C" static="false">
-        <getter abstract="false" access="public" final="true" name="getSkinnable" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="C" static="false"/>
+      <property genericParam="" genericType="javafx.scene.control.Skinnable" name="skinnable" override="false" rawType="javafx.scene.control.Skinnable" static="false">
+        <getter abstract="false" access="public" final="false" name="getSkinnable" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.Skinnable" static="false"/>
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="Slider" genericParam="" genericParamPrepend="" name="Slider" package="javafx.scene.control" super="javafx.scene.control.Control" superParam="" superParamPrepend="">
@@ -8733,11 +8733,11 @@
     <class abstract="false" genericDeclaration="T extends java.lang.Object" genericDeclarationPrepend="T extends java.lang.Object, " genericName="ComboBoxListCell&lt;T&gt;" genericParam="T" genericParamPrepend="T, " name="ComboBoxListCell" package="javafx.scene.control.cell" super="javafx.scene.control.ListCell" superParam="T" superParamPrepend="T, ">
       <typeParameter name="T"/>
       <constructor access="public" name="javafx.scene.control.cell.ComboBoxListCell" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
-      <constructor access="public" name="javafx.scene.control.cell.ComboBoxListCell" parameterCount="1" parametersCall="arg0" parametersDeclaration="T[] arg0" public="true" static="false">
-        <parameter genericType="T[]" name="arg0" type="java.lang.Object[]"/>
-      </constructor>
       <constructor access="public" name="javafx.scene.control.cell.ComboBoxListCell" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;T&gt; arg0" public="true" static="false">
         <parameter genericType="javafx.collections.ObservableList&lt;T&gt;" name="arg0" type="javafx.collections.ObservableList"/>
+      </constructor>
+      <constructor access="public" name="javafx.scene.control.cell.ComboBoxListCell" parameterCount="1" parametersCall="arg0" parametersDeclaration="T[] arg0" public="true" static="false">
+        <parameter genericType="T[]" name="arg0" type="java.lang.Object[]"/>
       </constructor>
       <constructor access="public" name="javafx.scene.control.cell.ComboBoxListCell" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="javafx.util.StringConverter&lt;T&gt; arg0, T[] arg1" public="true" static="false">
         <parameter genericType="javafx.util.StringConverter&lt;T&gt;" name="arg0" type="javafx.util.StringConverter"/>
@@ -8798,19 +8798,19 @@
       <typeParameter name="S"/>
       <typeParameter name="T"/>
       <constructor access="public" name="javafx.scene.control.cell.ComboBoxTableCell" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
-      <constructor access="public" name="javafx.scene.control.cell.ComboBoxTableCell" parameterCount="1" parametersCall="arg0" parametersDeclaration="T[] arg0" public="true" static="false">
-        <parameter genericType="T[]" name="arg0" type="java.lang.Object[]"/>
-      </constructor>
       <constructor access="public" name="javafx.scene.control.cell.ComboBoxTableCell" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;T&gt; arg0" public="true" static="false">
         <parameter genericType="javafx.collections.ObservableList&lt;T&gt;" name="arg0" type="javafx.collections.ObservableList"/>
       </constructor>
-      <constructor access="public" name="javafx.scene.control.cell.ComboBoxTableCell" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="javafx.util.StringConverter&lt;T&gt; arg0, javafx.collections.ObservableList&lt;T&gt; arg1" public="true" static="false">
-        <parameter genericType="javafx.util.StringConverter&lt;T&gt;" name="arg0" type="javafx.util.StringConverter"/>
-        <parameter genericType="javafx.collections.ObservableList&lt;T&gt;" name="arg1" type="javafx.collections.ObservableList"/>
+      <constructor access="public" name="javafx.scene.control.cell.ComboBoxTableCell" parameterCount="1" parametersCall="arg0" parametersDeclaration="T[] arg0" public="true" static="false">
+        <parameter genericType="T[]" name="arg0" type="java.lang.Object[]"/>
       </constructor>
       <constructor access="public" name="javafx.scene.control.cell.ComboBoxTableCell" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="javafx.util.StringConverter&lt;T&gt; arg0, T[] arg1" public="true" static="false">
         <parameter genericType="javafx.util.StringConverter&lt;T&gt;" name="arg0" type="javafx.util.StringConverter"/>
         <parameter genericType="T[]" name="arg1" type="java.lang.Object[]"/>
+      </constructor>
+      <constructor access="public" name="javafx.scene.control.cell.ComboBoxTableCell" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="javafx.util.StringConverter&lt;T&gt; arg0, javafx.collections.ObservableList&lt;T&gt; arg1" public="true" static="false">
+        <parameter genericType="javafx.util.StringConverter&lt;T&gt;" name="arg0" type="javafx.util.StringConverter"/>
+        <parameter genericType="javafx.collections.ObservableList&lt;T&gt;" name="arg1" type="javafx.collections.ObservableList"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="cancelEdit" override="true" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
       <method abstract="false" access="public" final="true" name="comboBoxEditableProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.BooleanProperty" static="false"/>
@@ -8862,11 +8862,11 @@
     <class abstract="false" genericDeclaration="T extends java.lang.Object" genericDeclarationPrepend="T extends java.lang.Object, " genericName="ComboBoxTreeCell&lt;T&gt;" genericParam="T" genericParamPrepend="T, " name="ComboBoxTreeCell" package="javafx.scene.control.cell" super="javafx.scene.control.TreeCell" superParam="T" superParamPrepend="T, ">
       <typeParameter name="T"/>
       <constructor access="public" name="javafx.scene.control.cell.ComboBoxTreeCell" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
-      <constructor access="public" name="javafx.scene.control.cell.ComboBoxTreeCell" parameterCount="1" parametersCall="arg0" parametersDeclaration="T[] arg0" public="true" static="false">
-        <parameter genericType="T[]" name="arg0" type="java.lang.Object[]"/>
-      </constructor>
       <constructor access="public" name="javafx.scene.control.cell.ComboBoxTreeCell" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;T&gt; arg0" public="true" static="false">
         <parameter genericType="javafx.collections.ObservableList&lt;T&gt;" name="arg0" type="javafx.collections.ObservableList"/>
+      </constructor>
+      <constructor access="public" name="javafx.scene.control.cell.ComboBoxTreeCell" parameterCount="1" parametersCall="arg0" parametersDeclaration="T[] arg0" public="true" static="false">
+        <parameter genericType="T[]" name="arg0" type="java.lang.Object[]"/>
       </constructor>
       <constructor access="public" name="javafx.scene.control.cell.ComboBoxTreeCell" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="javafx.util.StringConverter&lt;T&gt; arg0, T[] arg1" public="true" static="false">
         <parameter genericType="javafx.util.StringConverter&lt;T&gt;" name="arg0" type="javafx.util.StringConverter"/>
@@ -8927,19 +8927,19 @@
       <typeParameter name="S"/>
       <typeParameter name="T"/>
       <constructor access="public" name="javafx.scene.control.cell.ComboBoxTreeTableCell" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
-      <constructor access="public" name="javafx.scene.control.cell.ComboBoxTreeTableCell" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;T&gt; arg0" public="true" static="false">
-        <parameter genericType="javafx.collections.ObservableList&lt;T&gt;" name="arg0" type="javafx.collections.ObservableList"/>
-      </constructor>
       <constructor access="public" name="javafx.scene.control.cell.ComboBoxTreeTableCell" parameterCount="1" parametersCall="arg0" parametersDeclaration="T[] arg0" public="true" static="false">
         <parameter genericType="T[]" name="arg0" type="java.lang.Object[]"/>
       </constructor>
-      <constructor access="public" name="javafx.scene.control.cell.ComboBoxTreeTableCell" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="javafx.util.StringConverter&lt;T&gt; arg0, javafx.collections.ObservableList&lt;T&gt; arg1" public="true" static="false">
-        <parameter genericType="javafx.util.StringConverter&lt;T&gt;" name="arg0" type="javafx.util.StringConverter"/>
-        <parameter genericType="javafx.collections.ObservableList&lt;T&gt;" name="arg1" type="javafx.collections.ObservableList"/>
+      <constructor access="public" name="javafx.scene.control.cell.ComboBoxTreeTableCell" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;T&gt; arg0" public="true" static="false">
+        <parameter genericType="javafx.collections.ObservableList&lt;T&gt;" name="arg0" type="javafx.collections.ObservableList"/>
       </constructor>
       <constructor access="public" name="javafx.scene.control.cell.ComboBoxTreeTableCell" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="javafx.util.StringConverter&lt;T&gt; arg0, T[] arg1" public="true" static="false">
         <parameter genericType="javafx.util.StringConverter&lt;T&gt;" name="arg0" type="javafx.util.StringConverter"/>
         <parameter genericType="T[]" name="arg1" type="java.lang.Object[]"/>
+      </constructor>
+      <constructor access="public" name="javafx.scene.control.cell.ComboBoxTreeTableCell" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="javafx.util.StringConverter&lt;T&gt; arg0, javafx.collections.ObservableList&lt;T&gt; arg1" public="true" static="false">
+        <parameter genericType="javafx.util.StringConverter&lt;T&gt;" name="arg0" type="javafx.util.StringConverter"/>
+        <parameter genericType="javafx.collections.ObservableList&lt;T&gt;" name="arg1" type="javafx.collections.ObservableList"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="cancelEdit" override="true" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
       <method abstract="false" access="public" final="true" name="comboBoxEditableProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.BooleanProperty" static="false"/>
@@ -12953,23 +12953,23 @@
       <constructor access="public" name="javafx.scene.layout.FlowPane" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.Node[] arg0" public="true" static="false">
         <parameter genericType="javafx.scene.Node[]" name="arg0" type="javafx.scene.Node[]"/>
       </constructor>
-      <constructor access="public" name="javafx.scene.layout.FlowPane" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="javafx.geometry.Orientation arg0, javafx.scene.Node[] arg1" public="true" static="false">
-        <parameter genericType="javafx.geometry.Orientation" name="arg0" type="javafx.geometry.Orientation"/>
-        <parameter genericType="javafx.scene.Node[]" name="arg1" type="javafx.scene.Node[]"/>
-      </constructor>
       <constructor access="public" name="javafx.scene.layout.FlowPane" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="double arg0, double arg1" public="true" static="false">
         <parameter genericType="double" name="arg0" type="double"/>
         <parameter genericType="double" name="arg1" type="double"/>
       </constructor>
-      <constructor access="public" name="javafx.scene.layout.FlowPane" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="double arg0, double arg1, javafx.scene.Node[] arg2" public="true" static="false">
-        <parameter genericType="double" name="arg0" type="double"/>
-        <parameter genericType="double" name="arg1" type="double"/>
-        <parameter genericType="javafx.scene.Node[]" name="arg2" type="javafx.scene.Node[]"/>
+      <constructor access="public" name="javafx.scene.layout.FlowPane" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="javafx.geometry.Orientation arg0, javafx.scene.Node[] arg1" public="true" static="false">
+        <parameter genericType="javafx.geometry.Orientation" name="arg0" type="javafx.geometry.Orientation"/>
+        <parameter genericType="javafx.scene.Node[]" name="arg1" type="javafx.scene.Node[]"/>
       </constructor>
       <constructor access="public" name="javafx.scene.layout.FlowPane" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.geometry.Orientation arg0, double arg1, double arg2" public="true" static="false">
         <parameter genericType="javafx.geometry.Orientation" name="arg0" type="javafx.geometry.Orientation"/>
         <parameter genericType="double" name="arg1" type="double"/>
         <parameter genericType="double" name="arg2" type="double"/>
+      </constructor>
+      <constructor access="public" name="javafx.scene.layout.FlowPane" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="double arg0, double arg1, javafx.scene.Node[] arg2" public="true" static="false">
+        <parameter genericType="double" name="arg0" type="double"/>
+        <parameter genericType="double" name="arg1" type="double"/>
+        <parameter genericType="javafx.scene.Node[]" name="arg2" type="javafx.scene.Node[]"/>
       </constructor>
       <constructor access="public" name="javafx.scene.layout.FlowPane" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="javafx.geometry.Orientation arg0, double arg1, double arg2, javafx.scene.Node[] arg3" public="true" static="false">
         <parameter genericType="javafx.geometry.Orientation" name="arg0" type="javafx.geometry.Orientation"/>
@@ -13776,11 +13776,11 @@
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="TilePane" genericParam="" genericParamPrepend="" name="TilePane" package="javafx.scene.layout" super="javafx.scene.layout.Pane" superParam="" superParamPrepend="">
       <constructor access="public" name="javafx.scene.layout.TilePane" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
-      <constructor access="public" name="javafx.scene.layout.TilePane" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.Node[] arg0" public="true" static="false">
-        <parameter genericType="javafx.scene.Node[]" name="arg0" type="javafx.scene.Node[]"/>
-      </constructor>
       <constructor access="public" name="javafx.scene.layout.TilePane" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.geometry.Orientation arg0" public="true" static="false">
         <parameter genericType="javafx.geometry.Orientation" name="arg0" type="javafx.geometry.Orientation"/>
+      </constructor>
+      <constructor access="public" name="javafx.scene.layout.TilePane" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.Node[] arg0" public="true" static="false">
+        <parameter genericType="javafx.scene.Node[]" name="arg0" type="javafx.scene.Node[]"/>
       </constructor>
       <constructor access="public" name="javafx.scene.layout.TilePane" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="double arg0, double arg1" public="true" static="false">
         <parameter genericType="double" name="arg0" type="double"/>
@@ -13945,11 +13945,11 @@
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="VBox" genericParam="" genericParamPrepend="" name="VBox" package="javafx.scene.layout" super="javafx.scene.layout.Pane" superParam="" superParamPrepend="">
       <constructor access="public" name="javafx.scene.layout.VBox" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
-      <constructor access="public" name="javafx.scene.layout.VBox" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" static="false">
-        <parameter genericType="double" name="arg0" type="double"/>
-      </constructor>
       <constructor access="public" name="javafx.scene.layout.VBox" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.Node[] arg0" public="true" static="false">
         <parameter genericType="javafx.scene.Node[]" name="arg0" type="javafx.scene.Node[]"/>
+      </constructor>
+      <constructor access="public" name="javafx.scene.layout.VBox" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" static="false">
+        <parameter genericType="double" name="arg0" type="double"/>
       </constructor>
       <constructor access="public" name="javafx.scene.layout.VBox" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="double arg0, javafx.scene.Node[] arg1" public="true" static="false">
         <parameter genericType="double" name="arg0" type="double"/>
@@ -19693,7 +19693,7 @@
       </method>
     </class>
   </jar>
-  <jar file="controlsfx-8.20.7.jar">
+  <jar file="controlsfx-8.20.8.jar">
     <class abstract="false" genericDeclaration="T extends java.lang.Object" genericDeclarationPrepend="T extends java.lang.Object, " genericName="BreadCrumbBar&lt;T&gt;" genericParam="T" genericParamPrepend="T, " name="BreadCrumbBar" package="org.controlsfx.control" super="javafx.scene.control.Control" superParam="" superParamPrepend="">
       <typeParameter name="T"/>
       <constructor access="public" name="org.controlsfx.control.BreadCrumbBar" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
@@ -19758,7 +19758,9 @@
         <parameter genericType="javafx.collections.ObservableList&lt;T&gt;" name="arg0" type="javafx.collections.ObservableList"/>
       </constructor>
       <method abstract="false" access="public" final="true" name="checkModelProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;org.controlsfx.control.IndexedCheckModel&lt;T&gt;&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="converterProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.util.StringConverter&lt;T&gt;&gt;" static="false"/>
       <method abstract="false" access="public" final="true" name="getCheckModel" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="org.controlsfx.control.IndexedCheckModel&lt;T&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="getConverter" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.util.StringConverter&lt;T&gt;" static="false"/>
       <method abstract="false" access="public" final="false" name="getItemBooleanProperty" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="T arg0" public="true" returnType="javafx.beans.property.BooleanProperty" static="false">
         <parameter genericType="T" name="arg0" type="java.lang.Object"/>
       </method>
@@ -19769,10 +19771,19 @@
       <method abstract="false" access="public" final="true" name="setCheckModel" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.IndexedCheckModel&lt;T&gt; arg0" public="true" returnType="void" static="false">
         <parameter genericType="org.controlsfx.control.IndexedCheckModel&lt;T&gt;" name="arg0" type="org.controlsfx.control.IndexedCheckModel"/>
       </method>
+      <method abstract="false" access="public" final="true" name="setConverter" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.StringConverter&lt;T&gt; arg0" public="true" returnType="void" static="false">
+        <parameter genericType="javafx.util.StringConverter&lt;T&gt;" name="arg0" type="javafx.util.StringConverter"/>
+      </method>
       <property genericParam="T" genericType="org.controlsfx.control.IndexedCheckModel&lt;T&gt;" name="checkModel" override="false" rawType="org.controlsfx.control.IndexedCheckModel" static="false">
         <getter abstract="false" access="public" final="true" name="getCheckModel" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="org.controlsfx.control.IndexedCheckModel&lt;T&gt;" static="false"/>
         <setter abstract="false" access="public" final="true" genericParam="T" genericType="org.controlsfx.control.IndexedCheckModel&lt;T&gt;" index="" name="setCheckModel" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.IndexedCheckModel&lt;T&gt; arg0" public="true" rawType="org.controlsfx.control.IndexedCheckModel" returnType="void" static="false">
           <parameter genericType="org.controlsfx.control.IndexedCheckModel&lt;T&gt;" name="arg0" type="org.controlsfx.control.IndexedCheckModel"/>
+        </setter>
+      </property>
+      <property genericParam="T" genericType="javafx.util.StringConverter&lt;T&gt;" name="converter" override="false" rawType="javafx.util.StringConverter" static="false">
+        <getter abstract="false" access="public" final="true" name="getConverter" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.util.StringConverter&lt;T&gt;" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="T" genericType="javafx.util.StringConverter&lt;T&gt;" index="" name="setConverter" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.StringConverter&lt;T&gt; arg0" public="true" rawType="javafx.util.StringConverter" returnType="void" static="false">
+          <parameter genericType="javafx.util.StringConverter&lt;T&gt;" name="arg0" type="javafx.util.StringConverter"/>
         </setter>
       </property>
       <property genericParam="T" genericType="javafx.collections.ObservableList&lt;T&gt;" name="items" override="false" rawType="javafx.collections.ObservableList" static="false">
@@ -20095,6 +20106,76 @@
         </setter>
       </property>
     </class>
+    <class abstract="false" genericDeclaration="T extends java.lang.Object" genericDeclarationPrepend="T extends java.lang.Object, " genericName="ListSelectionView&lt;T&gt;" genericParam="T" genericParamPrepend="T, " name="ListSelectionView" package="org.controlsfx.control" super="javafx.scene.control.Control" superParam="" superParamPrepend="">
+      <typeParameter name="T"/>
+      <constructor access="public" name="org.controlsfx.control.ListSelectionView" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
+      <method abstract="false" access="public" final="true" name="getSourceFooter" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.Node" static="false"/>
+      <method abstract="false" access="public" final="true" name="getSourceHeader" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.Node" static="false"/>
+      <method abstract="false" access="public" final="true" name="getSourceItems" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;T&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="getTargetFooter" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.Node" static="false"/>
+      <method abstract="false" access="public" final="true" name="getTargetHeader" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.Node" static="false"/>
+      <method abstract="false" access="public" final="true" name="getTargetItems" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;T&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="setSourceFooter" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.Node arg0" public="true" returnType="void" static="false">
+        <parameter genericType="javafx.scene.Node" name="arg0" type="javafx.scene.Node"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setSourceHeader" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.Node arg0" public="true" returnType="void" static="false">
+        <parameter genericType="javafx.scene.Node" name="arg0" type="javafx.scene.Node"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setSourceItems" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;T&gt; arg0" public="true" returnType="void" static="false">
+        <parameter genericType="javafx.collections.ObservableList&lt;T&gt;" name="arg0" type="javafx.collections.ObservableList"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setTargetFooter" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.Node arg0" public="true" returnType="void" static="false">
+        <parameter genericType="javafx.scene.Node" name="arg0" type="javafx.scene.Node"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setTargetHeader" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.Node arg0" public="true" returnType="void" static="false">
+        <parameter genericType="javafx.scene.Node" name="arg0" type="javafx.scene.Node"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setTargetItems" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;T&gt; arg0" public="true" returnType="void" static="false">
+        <parameter genericType="javafx.collections.ObservableList&lt;T&gt;" name="arg0" type="javafx.collections.ObservableList"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="sourceFooterProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.scene.Node&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="sourceHeaderProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.scene.Node&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="sourceItemsProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.collections.ObservableList&lt;T&gt;&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="targetFooterProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.scene.Node&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="targetHeaderProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.scene.Node&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="targetItemsProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.collections.ObservableList&lt;T&gt;&gt;" static="false"/>
+      <property genericParam="" genericType="javafx.scene.Node" name="sourceFooter" override="false" rawType="javafx.scene.Node" static="false">
+        <getter abstract="false" access="public" final="true" name="getSourceFooter" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.Node" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="" genericType="javafx.scene.Node" index="" name="setSourceFooter" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.Node arg0" public="true" rawType="javafx.scene.Node" returnType="void" static="false">
+          <parameter genericType="javafx.scene.Node" name="arg0" type="javafx.scene.Node"/>
+        </setter>
+      </property>
+      <property genericParam="" genericType="javafx.scene.Node" name="sourceHeader" override="false" rawType="javafx.scene.Node" static="false">
+        <getter abstract="false" access="public" final="true" name="getSourceHeader" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.Node" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="" genericType="javafx.scene.Node" index="" name="setSourceHeader" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.Node arg0" public="true" rawType="javafx.scene.Node" returnType="void" static="false">
+          <parameter genericType="javafx.scene.Node" name="arg0" type="javafx.scene.Node"/>
+        </setter>
+      </property>
+      <property genericParam="T" genericType="javafx.collections.ObservableList&lt;T&gt;" name="sourceItems" override="false" rawType="javafx.collections.ObservableList" static="false">
+        <getter abstract="false" access="public" final="true" name="getSourceItems" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;T&gt;" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="T" genericType="javafx.collections.ObservableList&lt;T&gt;" index="" name="setSourceItems" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;T&gt; arg0" public="true" rawType="javafx.collections.ObservableList" returnType="void" static="false">
+          <parameter genericType="javafx.collections.ObservableList&lt;T&gt;" name="arg0" type="javafx.collections.ObservableList"/>
+        </setter>
+      </property>
+      <property genericParam="" genericType="javafx.scene.Node" name="targetFooter" override="false" rawType="javafx.scene.Node" static="false">
+        <getter abstract="false" access="public" final="true" name="getTargetFooter" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.Node" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="" genericType="javafx.scene.Node" index="" name="setTargetFooter" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.Node arg0" public="true" rawType="javafx.scene.Node" returnType="void" static="false">
+          <parameter genericType="javafx.scene.Node" name="arg0" type="javafx.scene.Node"/>
+        </setter>
+      </property>
+      <property genericParam="" genericType="javafx.scene.Node" name="targetHeader" override="false" rawType="javafx.scene.Node" static="false">
+        <getter abstract="false" access="public" final="true" name="getTargetHeader" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.Node" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="" genericType="javafx.scene.Node" index="" name="setTargetHeader" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.Node arg0" public="true" rawType="javafx.scene.Node" returnType="void" static="false">
+          <parameter genericType="javafx.scene.Node" name="arg0" type="javafx.scene.Node"/>
+        </setter>
+      </property>
+      <property genericParam="T" genericType="javafx.collections.ObservableList&lt;T&gt;" name="targetItems" override="false" rawType="javafx.collections.ObservableList" static="false">
+        <getter abstract="false" access="public" final="true" name="getTargetItems" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;T&gt;" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="T" genericType="javafx.collections.ObservableList&lt;T&gt;" index="" name="setTargetItems" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;T&gt; arg0" public="true" rawType="javafx.collections.ObservableList" returnType="void" static="false">
+          <parameter genericType="javafx.collections.ObservableList&lt;T&gt;" name="arg0" type="javafx.collections.ObservableList"/>
+        </setter>
+      </property>
+    </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="MasterDetailPane" genericParam="" genericParamPrepend="" name="MasterDetailPane" package="org.controlsfx.control" super="javafx.scene.control.Control" superParam="" superParamPrepend="">
       <constructor access="public" name="org.controlsfx.control.MasterDetailPane" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
       <constructor access="public" name="org.controlsfx.control.MasterDetailPane" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.geometry.Side arg0" public="true" static="false">
@@ -20187,6 +20268,7 @@
       <field access="public" final="true" name="ON_SHOWING" public="true" static="true" type="javafx.event.EventType"/>
       <field access="public" final="true" name="ON_SHOWN" public="true" static="true" type="javafx.event.EventType"/>
       <field access="public" final="true" name="STYLE_CLASS_DARK" public="true" static="true" type="java.lang.String"/>
+      <method abstract="false" access="public" final="true" name="closeButtonVisibleProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.BooleanProperty" static="false"/>
       <method abstract="false" access="public" final="true" name="contentProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.scene.Node&gt;" static="false"/>
       <method abstract="false" access="public" final="true" name="getActions" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;org.controlsfx.control.action.Action&gt;" static="false"/>
       <method abstract="false" access="public" final="true" name="getContent" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.Node" static="false"/>
@@ -20198,12 +20280,16 @@
       <method abstract="false" access="public" final="true" name="getText" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
       <method abstract="false" access="public" final="true" name="graphicProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.scene.Node&gt;" static="false"/>
       <method abstract="false" access="public" final="false" name="hide" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
+      <method abstract="false" access="public" final="true" name="isCloseButtonVisible" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
       <method abstract="false" access="public" final="true" name="isShowFromTop" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
       <method abstract="false" access="public" final="true" name="isShowing" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
       <method abstract="false" access="public" final="true" name="onHiddenProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.event.EventHandler&lt;javafx.event.Event&gt;&gt;" static="false"/>
       <method abstract="false" access="public" final="true" name="onHidingProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.event.EventHandler&lt;javafx.event.Event&gt;&gt;" static="false"/>
       <method abstract="false" access="public" final="true" name="onShowingProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.event.EventHandler&lt;javafx.event.Event&gt;&gt;" static="false"/>
       <method abstract="false" access="public" final="true" name="onShownProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.event.EventHandler&lt;javafx.event.Event&gt;&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="setCloseButtonVisible" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="boolean arg0" public="true" returnType="void" static="false">
+        <parameter genericType="boolean" name="arg0" type="boolean"/>
+      </method>
       <method abstract="false" access="public" final="true" name="setContent" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.Node arg0" public="true" returnType="void" static="false">
         <parameter genericType="javafx.scene.Node" name="arg0" type="javafx.scene.Node"/>
       </method>
@@ -20246,6 +20332,12 @@
       <method abstract="false" access="public" final="true" name="textProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.StringProperty" static="false"/>
       <property genericParam="org.controlsfx.control.action.Action" genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.action.Action&gt;" name="actions" override="false" rawType="javafx.collections.ObservableList" static="false">
         <getter abstract="false" access="public" final="true" name="getActions" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;org.controlsfx.control.action.Action&gt;" static="false"/>
+      </property>
+      <property genericParam="" genericType="boolean" name="closeButtonVisible" override="false" rawType="boolean" static="false">
+        <getter abstract="false" access="public" final="true" name="isCloseButtonVisible" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="" genericType="boolean" index="" name="setCloseButtonVisible" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="boolean arg0" public="true" rawType="boolean" returnType="void" static="false">
+          <parameter genericType="boolean" name="arg0" type="boolean"/>
+        </setter>
       </property>
       <property genericParam="" genericType="javafx.scene.Node" name="content" override="false" rawType="javafx.scene.Node" static="false">
         <getter abstract="false" access="public" final="true" name="getContent" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.Node" static="false"/>
@@ -20933,6 +21025,25 @@
         <setter abstract="false" access="public" final="true" genericParam="" genericType="java.lang.String" index="" name="setText" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.String arg0" public="true" rawType="java.lang.String" returnType="void" static="false">
           <parameter genericType="java.lang.String" name="arg0" type="java.lang.String"/>
         </setter>
+      </property>
+    </class>
+    <class abstract="false" genericDeclaration="T extends javafx.concurrent.Task&lt;?&gt;" genericDeclarationPrepend="T extends javafx.concurrent.Task&lt;?&gt;, " genericName="TaskProgressView&lt;T&gt;" genericParam="T" genericParamPrepend="T, " name="TaskProgressView" package="org.controlsfx.control" super="javafx.scene.control.Control" superParam="" superParamPrepend="">
+      <typeParameter name="T"/>
+      <constructor access="public" name="org.controlsfx.control.TaskProgressView" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
+      <method abstract="false" access="public" final="true" name="getGraphicFactory" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="getTasks" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;T&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="graphicFactoryProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.util.Callback&lt;T, javafx.scene.Node&gt;&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="setGraphicFactory" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.Callback&lt;T, javafx.scene.Node&gt; arg0" public="true" returnType="void" static="false">
+        <parameter genericType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" name="arg0" type="javafx.util.Callback"/>
+      </method>
+      <property genericParam="T, javafx.scene.Node" genericType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" name="graphicFactory" override="false" rawType="javafx.util.Callback" static="false">
+        <getter abstract="false" access="public" final="true" name="getGraphicFactory" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="T, javafx.scene.Node" genericType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" index="" name="setGraphicFactory" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.Callback&lt;T, javafx.scene.Node&gt; arg0" public="true" rawType="javafx.util.Callback" returnType="void" static="false">
+          <parameter genericType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" name="arg0" type="javafx.util.Callback"/>
+        </setter>
+      </property>
+      <property genericParam="T" genericType="javafx.collections.ObservableList&lt;T&gt;" name="tasks" override="false" rawType="javafx.collections.ObservableList" static="false">
+        <getter abstract="false" access="public" final="true" name="getTasks" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;T&gt;" static="false"/>
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="Action" genericParam="" genericParamPrepend="" name="Action" package="org.controlsfx.control.action" super="">

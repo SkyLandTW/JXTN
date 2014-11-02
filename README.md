@@ -231,7 +231,7 @@ builders are already included).
  - FMPP for re-generation of builder classes: tested on v0.9.14.
 
 ##### Additionals
- - ControlsFX v8.20.7: It's optional and you could remove the library and
+ - ControlsFX v8.20.8: It's optional and you could remove the library and
    builder classes under _org/controlsfx/*_ directory.
  - OpenJFX Dialogs v1.0.2: Part of JavaFX 8u40 to provide dialog support.
 

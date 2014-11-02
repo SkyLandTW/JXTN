@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link CheckComboBox}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.20.7.jar
+ * @version controlsfx-8.20.8.jar
  * @param <Z> 要建構的物件型態(需繼承{@link CheckComboBox})
  * @param <B> 建構器本身的型態(需繼承{@link CheckComboBoxBuilder})
  */
@@ -23,6 +23,9 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
     private boolean hasCheckModel;
     private org.controlsfx.control.IndexedCheckModel<T> valCheckModel;
 
+    private boolean hasConverter;
+    private javafx.util.StringConverter<T> valConverter;
+
     private boolean hasItems;
     private java.util.Collection<T> valItems;
 
@@ -31,18 +34,29 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
     private javafx.beans.value.ObservableValue<? extends org.controlsfx.control.IndexedCheckModel<T>> obsrv1CheckModel;
     private javafx.beans.property.Property<org.controlsfx.control.IndexedCheckModel<T>> obsrv2CheckModel;
 
+    private boolean bound1Converter;
+    private boolean bound2Converter;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> obsrv1Converter;
+    private javafx.beans.property.Property<javafx.util.StringConverter<T>> obsrv2Converter;
+
     @Override
     public void applyTo(Z instance)
     {
         super.applyTo(instance);
         if (this.hasCheckModel)
             instance.setCheckModel(this.valCheckModel);
+        if (this.hasConverter)
+            instance.setConverter(this.valConverter);
         if (this.hasItems)
             instance.getItems().addAll(this.valItems);
         if (this.bound1CheckModel)
             instance.checkModelProperty().bind(this.obsrv1CheckModel);
         if (this.bound2CheckModel)
             instance.checkModelProperty().bindBidirectional(this.obsrv2CheckModel);
+        if (this.bound1Converter)
+            instance.converterProperty().bind(this.obsrv1Converter);
+        if (this.bound2Converter)
+            instance.converterProperty().bindBidirectional(this.obsrv2Converter);
     }
 
     /**
@@ -56,6 +70,20 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
     {
         this.hasCheckModel = true;
         this.valCheckModel = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CheckComboBox#setConverter(javafx.util.StringConverter)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B converter(javafx.util.StringConverter<T> value)
+    {
+        this.hasConverter = true;
+        this.valConverter = value;
         return (B) this;
     }
 
@@ -156,6 +184,40 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
         this.obsrv1CheckModel = null;
         this.bound2CheckModel = true;
         this.obsrv2CheckModel = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CheckComboBox#converterProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindConverter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<T>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Converter = true;
+        this.obsrv1Converter = source;
+        this.bound2Converter = false;
+        this.obsrv2Converter = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link CheckComboBox#converterProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalConverter(javafx.beans.property.Property<javafx.util.StringConverter<T>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Converter = false;
+        this.obsrv1Converter = null;
+        this.bound2Converter = true;
+        this.obsrv2Converter = source;
         return (B) this;
     }
 

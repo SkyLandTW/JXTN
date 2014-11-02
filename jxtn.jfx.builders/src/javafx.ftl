@@ -58,7 +58,7 @@
 </#function>
 <#-- 開始 -->
 <@pp.dropOutputFile />
-<#assign path = "lib/ext/jfxrt.jar, ../lib/openjfx-dialogs-1.0.2.jar, ../lib/controlsfx-8.20.7.jar">
+<#assign path = "lib/ext/jfxrt.jar, ../lib/openjfx-dialogs-1.0.2.jar, ../lib/controlsfx-8.20.8.jar">
 <#assign pkgs = "javafx.scene, javafx.stage, org.controlsfx">
 <#assign root = "java.lang.Object">
 <#-- 載入結構 -->

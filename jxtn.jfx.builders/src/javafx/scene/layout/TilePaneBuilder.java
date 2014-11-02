@@ -605,7 +605,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
      * @return 新的{@link TilePane}物件實體
      */
     @SuppressWarnings("unchecked")
-    public TilePane build(javafx.scene.Node[] arg0)
+    public TilePane build(javafx.geometry.Orientation arg0)
     {
         TilePane instance = new TilePane(arg0);
         this.applyTo((Z) instance);
@@ -619,7 +619,7 @@ public class TilePaneBuilder<Z extends TilePane, B extends TilePaneBuilder<Z, B>
      * @return 新的{@link TilePane}物件實體
      */
     @SuppressWarnings("unchecked")
-    public TilePane build(javafx.geometry.Orientation arg0)
+    public TilePane build(javafx.scene.Node[] arg0)
     {
         TilePane instance = new TilePane(arg0);
         this.applyTo((Z) instance);

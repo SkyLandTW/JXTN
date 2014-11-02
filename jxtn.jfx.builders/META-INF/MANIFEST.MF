@@ -7,7 +7,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: JXTN@GitHub
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
- lib/controlsfx-8.20.7.jar,
+ lib/controlsfx-8.20.8.jar,
  lib/openjfx-dialogs-1.0.2.jar
 Export-Package: com.sun.javafx.scene.control.skin,
  javafx.scene,

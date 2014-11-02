@@ -242,7 +242,7 @@ public class ComboBoxTreeCellBuilder<T extends java.lang.Object, Z extends Combo
      * @return 新的{@link ComboBoxTreeCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ComboBoxTreeCell<T> build(T[] arg0)
+    public ComboBoxTreeCell<T> build(javafx.collections.ObservableList<T> arg0)
     {
         ComboBoxTreeCell<T> instance = new ComboBoxTreeCell<T>(arg0);
         this.applyTo((Z) instance);
@@ -256,7 +256,7 @@ public class ComboBoxTreeCellBuilder<T extends java.lang.Object, Z extends Combo
      * @return 新的{@link ComboBoxTreeCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ComboBoxTreeCell<T> build(javafx.collections.ObservableList<T> arg0)
+    public ComboBoxTreeCell<T> build(T[] arg0)
     {
         ComboBoxTreeCell<T> instance = new ComboBoxTreeCell<T>(arg0);
         this.applyTo((Z) instance);

@@ -2580,6 +2580,17 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link org.controlsfx.control.ListSelectionView}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.ListSelectionViewBuilder}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <T extends java.lang.Object> org.controlsfx.control.ListSelectionViewBuilder<T, org.controlsfx.control.ListSelectionView<T>, ?> listSelectionView()
+    {
+        return new org.controlsfx.control.ListSelectionViewBuilder();
+    }
+
+    /**
      * 建立新的{@link org.controlsfx.control.MasterDetailPane}建構器。
      *
      * @return 新的{@link org.controlsfx.control.MasterDetailPaneBuilder}
@@ -2687,6 +2698,17 @@ public final class JFX
     public static org.controlsfx.control.StatusBarBuilder<org.controlsfx.control.StatusBar, ?> statusBar()
     {
         return new org.controlsfx.control.StatusBarBuilder();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.TaskProgressView}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.TaskProgressViewBuilder}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <T extends javafx.concurrent.Task<?>> org.controlsfx.control.TaskProgressViewBuilder<T, org.controlsfx.control.TaskProgressView<T>, ?> taskProgressView()
+    {
+        return new org.controlsfx.control.TaskProgressViewBuilder();
     }
 
     /**

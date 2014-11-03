@@ -151,4 +151,67 @@ public interface GridPaneBuilderExt<Z extends GridPane, B extends GridPaneBuilde
         }
         return this.self();
     }
+
+    /**
+     * 增加自訂欄位
+     * <p>
+     * 每個欄位佔第一行及第二行：
+     * <ol>
+     * <li>第一行顯示標籤({@code label})，向右中對齊</li>
+     * <li>第二行顯示指定控制項({@code fieldNode})，向左上對齊，橫向填滿</li>
+     * </ol>
+     * </p>
+     *
+     * @param row 列號
+     * @param margin 邊界
+     * @param labelNode 欄位標題
+     * @param fieldNode 欄位節點
+     * @return 自己
+     */
+    default B addRowCustom(int row, Insets margin, Node labelNode, Node fieldNode)
+    {
+        return this.addRowCustomIf(true, row, margin, labelNode, fieldNode);
+    }
+
+    /**
+     * 增加自訂欄位
+     * <p>
+     * 每個欄位佔第一行及第二行：
+     * <ol>
+     * <li>第一行顯示標籤({@code label})，向右中對齊</li>
+     * <li>第二行顯示指定控制項({@code fieldNode})，向左上對齊，橫向填滿</li>
+     * </ol>
+     * </p>
+     *
+     * @param condition 條件，為true時才加入欄位
+     * @param row 列號
+     * @param margin 邊界
+     * @param labelNode 欄位標題節點
+     * @param fieldNode 欄位內容節點
+     * @return 自己
+     */
+    default B addRowCustomIf(boolean condition, int row, Insets margin, Node labelNode, Node fieldNode)
+    {
+        if (condition)
+        {
+            GridPane.setMargin(labelNode, margin);
+            GridPane.setRowIndex(labelNode, row);
+            GridPane.setColumnIndex(labelNode, 0);
+            GridPane.setFillWidth(labelNode, true);
+            GridPane.setFillHeight(labelNode, true);
+            GridPane.setHalignment(labelNode, HPos.RIGHT);
+            GridPane.setValignment(labelNode, VPos.CENTER);
+            //
+            GridPane.setMargin(fieldNode, margin);
+            GridPane.setRowIndex(fieldNode, row);
+            GridPane.setColumnIndex(fieldNode, 1);
+            GridPane.setFillWidth(fieldNode, true);
+            GridPane.setFillHeight(fieldNode, true);
+            GridPane.setHgrow(fieldNode, Priority.ALWAYS);
+            GridPane.setHalignment(fieldNode, HPos.LEFT);
+            GridPane.setValignment(fieldNode, VPos.TOP);
+            this.self().childrenAdd(labelNode, fieldNode);
+        }
+        return this.self();
+    }
 }

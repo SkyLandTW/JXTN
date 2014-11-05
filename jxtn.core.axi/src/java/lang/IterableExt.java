@@ -45,6 +45,8 @@ import java.util.function.ToDoubleFunctionEx;
 import java.util.function.ToIntFunctionEx;
 import java.util.function.ToLongFunctionEx;
 
+import jxtn.core.axi.collections.AfterConditionIterator;
+import jxtn.core.axi.collections.BeforeConditionIterator;
 import jxtn.core.axi.collections.ConcatedIterator;
 import jxtn.core.axi.collections.ExpandedIterator;
 import jxtn.core.axi.collections.FilteredIterator;
@@ -248,7 +250,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 依照展開函數建立展開列舉。
+     * 依照展開函數建立展開列舉（項目一對多展開）。
      *
      * @param <R> 展開項目型態
      * @param expander 展開項目的函數
@@ -261,7 +263,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 依照條件建立過濾列舉。
+     * 依照條件建立過濾列舉（保留符合條件之項目）。
      *
      * @param condition 過濾條件
      * @return 過濾列舉，依賴原有的列舉
@@ -270,6 +272,30 @@ public interface IterableExt<T>
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return () -> new FilteredIterator<>(thiz.iterator(), condition);
+    }
+
+    /**
+     * 依照條件建立剔除開頭的過濾列舉（保留符合條件之後項目，包含該項）。
+     *
+     * @param condition 過濾條件
+     * @return 過濾列舉，依賴原有的列舉
+     */
+    default Iterable<T> after(Predicate<? super T> condition)
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return () -> new AfterConditionIterator<>(thiz.iterator(), condition);
+    }
+
+    /**
+     * 依照條件建立剔除結尾的過濾列舉（保留符合條件之前項目，不含該項）。
+     *
+     * @param condition 過濾條件
+     * @return 過濾列舉，依賴原有的列舉
+     */
+    default Iterable<T> before(Predicate<? super T> condition)
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return () -> new BeforeConditionIterator<>(thiz.iterator(), condition);
     }
 
     /**

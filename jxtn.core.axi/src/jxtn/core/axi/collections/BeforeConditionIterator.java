@@ -32,12 +32,12 @@ import java.util.Objects;
 import java.util.function.Predicate;
 
 /**
- * 依照條件做過濾的列舉器。
+ * 保留指定條件之項目前內容的列舉器（剔除結尾）。
  *
  * @author AqD
  * @param <T> 列舉項目型態
  */
-public class FilteredIterator<T> extends AbstractIterator<T>
+public class BeforeConditionIterator<T> extends AbstractIterator<T>
 {
     /**
      * 來源列舉器。
@@ -52,15 +52,15 @@ public class FilteredIterator<T> extends AbstractIterator<T>
     private long sourceSteps;
 
     /**
-     * 建立新的過濾列舉器。
+     * 建立依照條件切斷結尾的列舉器。
      * <p>
-     * {@link FilteredIterator}會依照{@code filter}的條件過濾{@code source}。
+     * 會依照{@code filter}的條件過濾{@code source}，只保留第一個符合條件前的所有項目（不含該項目）。
      * </p>
      *
      * @param source 來源列舉器
      * @param condition 過濾條件
      */
-    public FilteredIterator(Iterator<? extends T> source, Predicate<? super T> condition)
+    public BeforeConditionIterator(Iterator<? extends T> source, Predicate<? super T> condition)
     {
         Objects.requireNonNull(source);
         Objects.requireNonNull(condition);
@@ -87,15 +87,18 @@ public class FilteredIterator<T> extends AbstractIterator<T>
     @Override
     protected T fetchNext()
     {
-        while (this.source.hasNext())
+        if (this.source.hasNext())
         {
             T item = this.source.next();
             this.sourceSteps += 1;
             if (this.condition.test(item))
-            {
+                return this.end();
+            else
                 return item;
-            }
         }
-        return this.end();
+        else
+        {
+            return this.end();
+        }
     }
 }

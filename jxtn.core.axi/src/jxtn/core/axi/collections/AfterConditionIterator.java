@@ -32,12 +32,12 @@ import java.util.Objects;
 import java.util.function.Predicate;
 
 /**
- * 依照條件做過濾的列舉器。
+ * 保留指定條件之項目後內容的列舉器（剔除開頭）。
  *
  * @author AqD
  * @param <T> 列舉項目型態
  */
-public class FilteredIterator<T> extends AbstractIterator<T>
+public class AfterConditionIterator<T> extends AbstractIterator<T>
 {
     /**
      * 來源列舉器。
@@ -50,17 +50,18 @@ public class FilteredIterator<T> extends AbstractIterator<T>
     protected final Predicate<? super T> condition;
 
     private long sourceSteps;
+    private boolean passed;
 
     /**
-     * 建立新的過濾列舉器。
+     * 建立依照條件剔除開頭的列舉器 *
      * <p>
-     * {@link FilteredIterator}會依照{@code filter}的條件過濾{@code source}。
+     * 會依照{@code filter}的條件過濾{@code source}，只保留第一個符合條件後的所有項目（包含該項目）。
      * </p>
      *
      * @param source 來源列舉器
      * @param condition 過濾條件
      */
-    public FilteredIterator(Iterator<? extends T> source, Predicate<? super T> condition)
+    public AfterConditionIterator(Iterator<? extends T> source, Predicate<? super T> condition)
     {
         Objects.requireNonNull(source);
         Objects.requireNonNull(condition);
@@ -87,15 +88,32 @@ public class FilteredIterator<T> extends AbstractIterator<T>
     @Override
     protected T fetchNext()
     {
-        while (this.source.hasNext())
+        if (this.passed)
         {
-            T item = this.source.next();
-            this.sourceSteps += 1;
-            if (this.condition.test(item))
+            if (this.source.hasNext())
             {
+                T item = this.source.next();
+                this.sourceSteps += 1;
                 return item;
             }
+            else
+            {
+                return this.end();
+            }
         }
-        return this.end();
+        else
+        {
+            while (this.source.hasNext())
+            {
+                T item = this.source.next();
+                this.sourceSteps += 1;
+                if (this.condition.test(item))
+                {
+                    this.passed = true;
+                    return item;
+                }
+            }
+            return this.end();
+        }
     }
 }

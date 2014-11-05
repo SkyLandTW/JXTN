@@ -37,6 +37,8 @@ import java.util.function.ToDoubleFunctionEx;
 import java.util.function.ToIntFunctionEx;
 import java.util.function.ToLongFunctionEx;
 
+import jxtn.core.axi.collections.AfterConditionIterator;
+import jxtn.core.axi.collections.BeforeConditionIterator;
 import jxtn.core.axi.collections.ConcatedIterator;
 import jxtn.core.axi.collections.ExpandedIterator;
 import jxtn.core.axi.collections.FilteredIterator;
@@ -281,6 +283,36 @@ public interface IteratorExt<E>
     {
         Iterator<E> thiz = (Iterator<E>) this;
         return new FilteredIterator<>(thiz, condition);
+    }
+
+    /**
+     * 依照條件建立剔除開頭的列舉器。
+     * <p>
+     * 列舉內容只保留第一個符合條件後的所有項目（包含該項目）。
+     * </p>
+     *
+     * @param condition 過濾條件
+     * @return 過濾列舉器，依賴原有的列舉器
+     */
+    default Iterator<E> after(Predicate<? super E> condition)
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        return new AfterConditionIterator<>(thiz, condition);
+    }
+
+    /**
+     * 依照條件建立剔除結尾的列舉器。
+     * <p>
+     * 列舉內容只保留第一個符合條件前的所有項目（不含該項目）。
+     * </p>
+     *
+     * @param condition 過濾條件
+     * @return 過濾列舉器，依賴原有的列舉器
+     */
+    default Iterator<E> before(Predicate<? super E> condition)
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        return new BeforeConditionIterator<>(thiz, condition);
     }
 
     /**

@@ -28,17 +28,20 @@ to:
 LRESULT WM_IME_ENDCOMPOSITION (long /*int*/ wParam, long /*int*/ lParam) {
     if (isInlineEnabled())
     {
-        Event event = new Event ();
-        event.detail = SWT.COMPOSITION_CHANGED;
-        event.start = startOffset;
-        event.end = startOffset;
-        event.text = "";
-        startOffset = -1;
-        ranges = null;
-        styles = null;
-        caretOffset = commitCount = 0;
-        text = "";
-        sendEvent (SWT.ImeComposition, event);
+        if (text.length() > 0)
+        {
+            Event event = new Event();
+            event.detail = SWT.COMPOSITION_CHANGED;
+            event.start = startOffset;
+            event.end = startOffset + text.length();
+            event.text = "";
+            caretOffset = commitCount = 0;
+            text = "";
+            ranges = null;
+            styles = null;
+            sendEvent(SWT.ImeComposition, event);
+            startOffset = -1;
+        }
         return LRESULT.ONE;
     }
     return null;

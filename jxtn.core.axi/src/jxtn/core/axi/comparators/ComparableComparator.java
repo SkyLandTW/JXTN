@@ -40,7 +40,8 @@ import java.util.Comparator;
  */
 public class ComparableComparator<T extends Comparable<? super T>> implements Comparator<T>
 {
-    @SuppressWarnings("rawtypes") public static final ComparableComparator instance = new ComparableComparator<>();
+    @SuppressWarnings("rawtypes")
+    public static final ComparableComparator instance = new ComparableComparator<>();
 
     @SuppressWarnings("unchecked")
     public static <T extends Comparable<? super T>> ComparableComparator<T> getInstance()

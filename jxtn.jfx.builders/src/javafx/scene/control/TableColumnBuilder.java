@@ -152,10 +152,10 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B columns(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
+    public final B columns(java.util.Collection<? extends javafx.scene.control.TableColumn<S, ?>> value)
     {
         this.hasColumns = true;
-        this.valColumns = value;
+        this.valColumns = (java.util.Collection<javafx.scene.control.TableColumn<S, ?>>) value;
         return (B) this;
     }
 
@@ -181,7 +181,7 @@ public class TableColumnBuilder<S extends java.lang.Object, T extends java.lang.
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B columnsAdd(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
+    public final B columnsAdd(java.util.Collection<? extends javafx.scene.control.TableColumn<S, ?>> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasColumns = true;

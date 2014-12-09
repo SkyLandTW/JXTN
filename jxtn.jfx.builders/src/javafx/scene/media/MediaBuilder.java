@@ -68,10 +68,10 @@ public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B tracks(java.util.Collection<javafx.scene.media.Track> value)
+    public final B tracks(java.util.Collection<? extends javafx.scene.media.Track> value)
     {
         this.hasTracks = true;
-        this.valTracks = value;
+        this.valTracks = (java.util.Collection<javafx.scene.media.Track>) value;
         return (B) this;
     }
 
@@ -97,7 +97,7 @@ public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B tracksAdd(java.util.Collection<javafx.scene.media.Track> value)
+    public final B tracksAdd(java.util.Collection<? extends javafx.scene.media.Track> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasTracks = true;

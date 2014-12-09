@@ -233,7 +233,7 @@ public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
      * @return 新的{@link VBox}物件實體
      */
     @SuppressWarnings("unchecked")
-    public VBox build(javafx.scene.Node[] arg0)
+    public VBox build(double arg0)
     {
         VBox instance = new VBox(arg0);
         this.applyTo((Z) instance);
@@ -247,7 +247,7 @@ public class VBoxBuilder<Z extends VBox, B extends VBoxBuilder<Z, B>>
      * @return 新的{@link VBox}物件實體
      */
     @SuppressWarnings("unchecked")
-    public VBox build(double arg0)
+    public VBox build(javafx.scene.Node[] arg0)
     {
         VBox instance = new VBox(arg0);
         this.applyTo((Z) instance);

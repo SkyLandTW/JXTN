@@ -288,10 +288,10 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B columns(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
+    public final B columns(java.util.Collection<? extends javafx.scene.control.TreeTableColumn<S, ?>> value)
     {
         this.hasColumns = true;
-        this.valColumns = value;
+        this.valColumns = (java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>>) value;
         return (B) this;
     }
 
@@ -317,7 +317,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B columnsAdd(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
+    public final B columnsAdd(java.util.Collection<? extends javafx.scene.control.TreeTableColumn<S, ?>> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasColumns = true;
@@ -522,10 +522,10 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B sortOrder(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
+    public final B sortOrder(java.util.Collection<? extends javafx.scene.control.TreeTableColumn<S, ?>> value)
     {
         this.hasSortOrder = true;
-        this.valSortOrder = value;
+        this.valSortOrder = (java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>>) value;
         return (B) this;
     }
 
@@ -551,7 +551,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B sortOrderAdd(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
+    public final B sortOrderAdd(java.util.Collection<? extends javafx.scene.control.TreeTableColumn<S, ?>> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasSortOrder = true;
@@ -630,10 +630,10 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B visibleLeafColumns(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
+    public final B visibleLeafColumns(java.util.Collection<? extends javafx.scene.control.TreeTableColumn<S, ?>> value)
     {
         this.hasVisibleLeafColumns = true;
-        this.valVisibleLeafColumns = value;
+        this.valVisibleLeafColumns = (java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>>) value;
         return (B) this;
     }
 
@@ -659,7 +659,7 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B visibleLeafColumnsAdd(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
+    public final B visibleLeafColumnsAdd(java.util.Collection<? extends javafx.scene.control.TreeTableColumn<S, ?>> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasVisibleLeafColumns = true;

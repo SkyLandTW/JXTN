@@ -68,10 +68,10 @@ public class TaskProgressViewBuilder<T extends javafx.concurrent.Task<?>, Z exte
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B tasks(java.util.Collection<T> value)
+    public final B tasks(java.util.Collection<? extends T> value)
     {
         this.hasTasks = true;
-        this.valTasks = value;
+        this.valTasks = (java.util.Collection<T>) value;
         return (B) this;
     }
 
@@ -97,7 +97,7 @@ public class TaskProgressViewBuilder<T extends javafx.concurrent.Task<?>, Z exte
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B tasksAdd(java.util.Collection<T> value)
+    public final B tasksAdd(java.util.Collection<? extends T> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasTasks = true;

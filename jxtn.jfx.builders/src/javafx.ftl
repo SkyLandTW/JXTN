@@ -242,10 +242,10 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
     @Override
     </#if>
     @SuppressWarnings("unchecked")
-    public final B ${property.@name}(java.util.Collection<${property.@genericParam}> value)
+    public final B ${property.@name}(java.util.Collection<? extends ${property.@genericParam}> value)
     {
         this.has${property.@name?cap_first} = true;
-        this.val${property.@name?cap_first} = value;
+        this.val${property.@name?cap_first} = (java.util.Collection<${property.@genericParam}>) value;
         return (B) this;
     }
 
@@ -277,7 +277,7 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
     @Override
     </#if>
     @SuppressWarnings("unchecked")
-    public final B ${property.@name}Add(java.util.Collection<${property.@genericParam}> value)
+    public final B ${property.@name}Add(java.util.Collection<? extends ${property.@genericParam}> value)
     {
         java.util.Objects.requireNonNull(value);
         this.has${property.@name?cap_first} = true;

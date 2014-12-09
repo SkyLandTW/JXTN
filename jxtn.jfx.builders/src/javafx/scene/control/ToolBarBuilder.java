@@ -54,10 +54,10 @@ public class ToolBarBuilder<Z extends ToolBar, B extends ToolBarBuilder<Z, B>>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B items(java.util.Collection<javafx.scene.Node> value)
+    public final B items(java.util.Collection<? extends javafx.scene.Node> value)
     {
         this.hasItems = true;
-        this.valItems = value;
+        this.valItems = (java.util.Collection<javafx.scene.Node>) value;
         return (B) this;
     }
 
@@ -83,7 +83,7 @@ public class ToolBarBuilder<Z extends ToolBar, B extends ToolBarBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B itemsAdd(java.util.Collection<javafx.scene.Node> value)
+    public final B itemsAdd(java.util.Collection<? extends javafx.scene.Node> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasItems = true;

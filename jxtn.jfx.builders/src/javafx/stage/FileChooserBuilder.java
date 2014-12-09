@@ -96,10 +96,10 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B extensionFilters(java.util.Collection<javafx.stage.FileChooser.ExtensionFilter> value)
+    public final B extensionFilters(java.util.Collection<? extends javafx.stage.FileChooser.ExtensionFilter> value)
     {
         this.hasExtensionFilters = true;
-        this.valExtensionFilters = value;
+        this.valExtensionFilters = (java.util.Collection<javafx.stage.FileChooser.ExtensionFilter>) value;
         return (B) this;
     }
 
@@ -125,7 +125,7 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B extensionFiltersAdd(java.util.Collection<javafx.stage.FileChooser.ExtensionFilter> value)
+    public final B extensionFiltersAdd(java.util.Collection<? extends javafx.stage.FileChooser.ExtensionFilter> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasExtensionFilters = true;

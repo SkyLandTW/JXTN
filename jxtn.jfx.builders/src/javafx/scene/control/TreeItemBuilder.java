@@ -82,10 +82,10 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B children(java.util.Collection<javafx.scene.control.TreeItem<T>> value)
+    public final B children(java.util.Collection<? extends javafx.scene.control.TreeItem<T>> value)
     {
         this.hasChildren = true;
-        this.valChildren = value;
+        this.valChildren = (java.util.Collection<javafx.scene.control.TreeItem<T>>) value;
         return (B) this;
     }
 
@@ -111,7 +111,7 @@ public class TreeItemBuilder<T extends java.lang.Object, Z extends TreeItem<T>, 
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B childrenAdd(java.util.Collection<javafx.scene.control.TreeItem<T>> value)
+    public final B childrenAdd(java.util.Collection<? extends javafx.scene.control.TreeItem<T>> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasChildren = true;

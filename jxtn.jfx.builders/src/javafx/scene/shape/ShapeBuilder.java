@@ -208,10 +208,10 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B strokeDashArray(java.util.Collection<java.lang.Double> value)
+    public final B strokeDashArray(java.util.Collection<? extends java.lang.Double> value)
     {
         this.hasStrokeDashArray = true;
-        this.valStrokeDashArray = value;
+        this.valStrokeDashArray = (java.util.Collection<java.lang.Double>) value;
         return (B) this;
     }
 
@@ -237,7 +237,7 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B strokeDashArrayAdd(java.util.Collection<java.lang.Double> value)
+    public final B strokeDashArrayAdd(java.util.Collection<? extends java.lang.Double> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasStrokeDashArray = true;

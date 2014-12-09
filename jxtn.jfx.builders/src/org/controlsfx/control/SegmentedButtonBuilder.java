@@ -54,10 +54,10 @@ public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends Segment
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B buttons(java.util.Collection<javafx.scene.control.ToggleButton> value)
+    public final B buttons(java.util.Collection<? extends javafx.scene.control.ToggleButton> value)
     {
         this.hasButtons = true;
-        this.valButtons = value;
+        this.valButtons = (java.util.Collection<javafx.scene.control.ToggleButton>) value;
         return (B) this;
     }
 
@@ -83,7 +83,7 @@ public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends Segment
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B buttonsAdd(java.util.Collection<javafx.scene.control.ToggleButton> value)
+    public final B buttonsAdd(java.util.Collection<? extends javafx.scene.control.ToggleButton> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasButtons = true;

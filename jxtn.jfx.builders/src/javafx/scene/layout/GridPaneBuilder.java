@@ -115,10 +115,10 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B columnConstraints(java.util.Collection<javafx.scene.layout.ColumnConstraints> value)
+    public final B columnConstraints(java.util.Collection<? extends javafx.scene.layout.ColumnConstraints> value)
     {
         this.hasColumnConstraints = true;
-        this.valColumnConstraints = value;
+        this.valColumnConstraints = (java.util.Collection<javafx.scene.layout.ColumnConstraints>) value;
         return (B) this;
     }
 
@@ -144,7 +144,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B columnConstraintsAdd(java.util.Collection<javafx.scene.layout.ColumnConstraints> value)
+    public final B columnConstraintsAdd(java.util.Collection<? extends javafx.scene.layout.ColumnConstraints> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasColumnConstraints = true;
@@ -209,10 +209,10 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B rowConstraints(java.util.Collection<javafx.scene.layout.RowConstraints> value)
+    public final B rowConstraints(java.util.Collection<? extends javafx.scene.layout.RowConstraints> value)
     {
         this.hasRowConstraints = true;
-        this.valRowConstraints = value;
+        this.valRowConstraints = (java.util.Collection<javafx.scene.layout.RowConstraints>) value;
         return (B) this;
     }
 
@@ -238,7 +238,7 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B rowConstraintsAdd(java.util.Collection<javafx.scene.layout.RowConstraints> value)
+    public final B rowConstraintsAdd(java.util.Collection<? extends javafx.scene.layout.RowConstraints> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasRowConstraints = true;

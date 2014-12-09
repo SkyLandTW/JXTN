@@ -54,10 +54,10 @@ public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqua
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B bands(java.util.Collection<javafx.scene.media.EqualizerBand> value)
+    public final B bands(java.util.Collection<? extends javafx.scene.media.EqualizerBand> value)
     {
         this.hasBands = true;
-        this.valBands = value;
+        this.valBands = (java.util.Collection<javafx.scene.media.EqualizerBand>) value;
         return (B) this;
     }
 
@@ -83,7 +83,7 @@ public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqua
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bandsAdd(java.util.Collection<javafx.scene.media.EqualizerBand> value)
+    public final B bandsAdd(java.util.Collection<? extends javafx.scene.media.EqualizerBand> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasBands = true;

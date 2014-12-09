@@ -96,10 +96,10 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B items(java.util.Collection<T> value)
+    public final B items(java.util.Collection<? extends T> value)
     {
         this.hasItems = true;
-        this.valItems = value;
+        this.valItems = (java.util.Collection<T>) value;
         return (B) this;
     }
 
@@ -125,7 +125,7 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B itemsAdd(java.util.Collection<T> value)
+    public final B itemsAdd(java.util.Collection<? extends T> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasItems = true;
@@ -242,7 +242,7 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
      * @return 新的{@link ComboBoxTableCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ComboBoxTableCell<S, T> build(javafx.collections.ObservableList<T> arg0)
+    public ComboBoxTableCell<S, T> build(T[] arg0)
     {
         ComboBoxTableCell<S, T> instance = new ComboBoxTableCell<S, T>(arg0);
         this.applyTo((Z) instance);
@@ -256,7 +256,7 @@ public class ComboBoxTableCellBuilder<S extends java.lang.Object, T extends java
      * @return 新的{@link ComboBoxTableCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ComboBoxTableCell<S, T> build(T[] arg0)
+    public ComboBoxTableCell<S, T> build(javafx.collections.ObservableList<T> arg0)
     {
         ComboBoxTableCell<S, T> instance = new ComboBoxTableCell<S, T>(arg0);
         this.applyTo((Z) instance);

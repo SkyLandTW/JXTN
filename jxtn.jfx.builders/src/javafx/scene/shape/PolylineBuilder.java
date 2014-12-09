@@ -40,10 +40,10 @@ public class PolylineBuilder<Z extends Polyline, B extends PolylineBuilder<Z, B>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B points(java.util.Collection<java.lang.Double> value)
+    public final B points(java.util.Collection<? extends java.lang.Double> value)
     {
         this.hasPoints = true;
-        this.valPoints = value;
+        this.valPoints = (java.util.Collection<java.lang.Double>) value;
         return (B) this;
     }
 
@@ -69,7 +69,7 @@ public class PolylineBuilder<Z extends Polyline, B extends PolylineBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B pointsAdd(java.util.Collection<java.lang.Double> value)
+    public final B pointsAdd(java.util.Collection<? extends java.lang.Double> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasPoints = true;

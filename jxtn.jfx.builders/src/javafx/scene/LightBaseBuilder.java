@@ -96,10 +96,10 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B scope(java.util.Collection<javafx.scene.Node> value)
+    public final B scope(java.util.Collection<? extends javafx.scene.Node> value)
     {
         this.hasScope = true;
-        this.valScope = value;
+        this.valScope = (java.util.Collection<javafx.scene.Node>) value;
         return (B) this;
     }
 
@@ -125,7 +125,7 @@ public class LightBaseBuilder<Z extends LightBase, B extends LightBaseBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B scopeAdd(java.util.Collection<javafx.scene.Node> value)
+    public final B scopeAdd(java.util.Collection<? extends javafx.scene.Node> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasScope = true;

@@ -40,10 +40,10 @@ public class PaneBuilder<Z extends Pane, B extends PaneBuilder<Z, B>>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B children(java.util.Collection<javafx.scene.Node> value)
+    public final B children(java.util.Collection<? extends javafx.scene.Node> value)
     {
         this.hasChildren = true;
-        this.valChildren = value;
+        this.valChildren = (java.util.Collection<javafx.scene.Node>) value;
         return (B) this;
     }
 
@@ -69,7 +69,7 @@ public class PaneBuilder<Z extends Pane, B extends PaneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B childrenAdd(java.util.Collection<javafx.scene.Node> value)
+    public final B childrenAdd(java.util.Collection<? extends javafx.scene.Node> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasChildren = true;

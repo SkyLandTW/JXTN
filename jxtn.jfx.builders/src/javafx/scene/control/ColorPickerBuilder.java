@@ -40,10 +40,10 @@ public class ColorPickerBuilder<Z extends ColorPicker, B extends ColorPickerBuil
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B customColors(java.util.Collection<javafx.scene.paint.Color> value)
+    public final B customColors(java.util.Collection<? extends javafx.scene.paint.Color> value)
     {
         this.hasCustomColors = true;
-        this.valCustomColors = value;
+        this.valCustomColors = (java.util.Collection<javafx.scene.paint.Color>) value;
         return (B) this;
     }
 
@@ -69,7 +69,7 @@ public class ColorPickerBuilder<Z extends ColorPicker, B extends ColorPickerBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B customColorsAdd(java.util.Collection<javafx.scene.paint.Color> value)
+    public final B customColorsAdd(java.util.Collection<? extends javafx.scene.paint.Color> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasCustomColors = true;

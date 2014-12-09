@@ -92,10 +92,10 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B items(java.util.Collection<org.controlsfx.control.PropertySheet.Item> value)
+    public final B items(java.util.Collection<? extends org.controlsfx.control.PropertySheet.Item> value)
     {
         this.hasItems = true;
-        this.valItems = value;
+        this.valItems = (java.util.Collection<org.controlsfx.control.PropertySheet.Item>) value;
         return (B) this;
     }
 
@@ -121,7 +121,7 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B itemsAdd(java.util.Collection<org.controlsfx.control.PropertySheet.Item> value)
+    public final B itemsAdd(java.util.Collection<? extends org.controlsfx.control.PropertySheet.Item> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasItems = true;

@@ -96,10 +96,10 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B buttons(java.util.Collection<javafx.scene.Node> value)
+    public final B buttons(java.util.Collection<? extends javafx.scene.Node> value)
     {
         this.hasButtons = true;
-        this.valButtons = value;
+        this.valButtons = (java.util.Collection<javafx.scene.Node>) value;
         return (B) this;
     }
 
@@ -125,7 +125,7 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B buttonsAdd(java.util.Collection<javafx.scene.Node> value)
+    public final B buttonsAdd(java.util.Collection<? extends javafx.scene.Node> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasButtons = true;

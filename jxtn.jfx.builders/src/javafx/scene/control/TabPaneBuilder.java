@@ -264,10 +264,10 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B tabs(java.util.Collection<javafx.scene.control.Tab> value)
+    public final B tabs(java.util.Collection<? extends javafx.scene.control.Tab> value)
     {
         this.hasTabs = true;
-        this.valTabs = value;
+        this.valTabs = (java.util.Collection<javafx.scene.control.Tab>) value;
         return (B) this;
     }
 
@@ -293,7 +293,7 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B tabsAdd(java.util.Collection<javafx.scene.control.Tab> value)
+    public final B tabsAdd(java.util.Collection<? extends javafx.scene.control.Tab> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasTabs = true;

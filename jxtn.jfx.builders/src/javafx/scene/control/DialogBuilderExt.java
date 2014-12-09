@@ -22,7 +22,7 @@ import javafx.scene.Node;
 public interface DialogBuilderExt<R extends java.lang.Object, Z extends Dialog<R>, B extends DialogBuilder<R, Z, B>>
         extends jxtn.jfx.builders.AbstractBuilderExt<Z, B>
 {
-    default B buttonTypes(Collection<ButtonType> buttonTypes)
+    default B buttonTypes(Collection<? extends ButtonType> buttonTypes)
     {
 
         this.self().afterBuild(d -> d.getDialogPane().getButtonTypes().addAll(buttonTypes));

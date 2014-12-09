@@ -78,10 +78,10 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B dividers(java.util.Collection<javafx.scene.control.SplitPane.Divider> value)
+    public final B dividers(java.util.Collection<? extends javafx.scene.control.SplitPane.Divider> value)
     {
         this.hasDividers = true;
-        this.valDividers = value;
+        this.valDividers = (java.util.Collection<javafx.scene.control.SplitPane.Divider>) value;
         return (B) this;
     }
 
@@ -107,7 +107,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B dividersAdd(java.util.Collection<javafx.scene.control.SplitPane.Divider> value)
+    public final B dividersAdd(java.util.Collection<? extends javafx.scene.control.SplitPane.Divider> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasDividers = true;
@@ -144,10 +144,10 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B items(java.util.Collection<javafx.scene.Node> value)
+    public final B items(java.util.Collection<? extends javafx.scene.Node> value)
     {
         this.hasItems = true;
-        this.valItems = value;
+        this.valItems = (java.util.Collection<javafx.scene.Node>) value;
         return (B) this;
     }
 
@@ -173,7 +173,7 @@ public class SplitPaneBuilder<Z extends SplitPane, B extends SplitPaneBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B itemsAdd(java.util.Collection<javafx.scene.Node> value)
+    public final B itemsAdd(java.util.Collection<? extends javafx.scene.Node> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasItems = true;

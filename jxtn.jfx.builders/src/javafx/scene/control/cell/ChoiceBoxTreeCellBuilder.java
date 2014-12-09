@@ -68,10 +68,10 @@ public class ChoiceBoxTreeCellBuilder<T extends java.lang.Object, Z extends Choi
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B items(java.util.Collection<T> value)
+    public final B items(java.util.Collection<? extends T> value)
     {
         this.hasItems = true;
-        this.valItems = value;
+        this.valItems = (java.util.Collection<T>) value;
         return (B) this;
     }
 
@@ -97,7 +97,7 @@ public class ChoiceBoxTreeCellBuilder<T extends java.lang.Object, Z extends Choi
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B itemsAdd(java.util.Collection<T> value)
+    public final B itemsAdd(java.util.Collection<? extends T> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasItems = true;
@@ -208,7 +208,7 @@ public class ChoiceBoxTreeCellBuilder<T extends java.lang.Object, Z extends Choi
      * @return 新的{@link ChoiceBoxTreeCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ChoiceBoxTreeCell<T> build(javafx.util.StringConverter<T> arg0, T[] arg1)
+    public ChoiceBoxTreeCell<T> build(javafx.util.StringConverter<T> arg0, javafx.collections.ObservableList<T> arg1)
     {
         ChoiceBoxTreeCell<T> instance = new ChoiceBoxTreeCell<T>(arg0, arg1);
         this.applyTo((Z) instance);
@@ -222,7 +222,7 @@ public class ChoiceBoxTreeCellBuilder<T extends java.lang.Object, Z extends Choi
      * @return 新的{@link ChoiceBoxTreeCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ChoiceBoxTreeCell<T> build(javafx.util.StringConverter<T> arg0, javafx.collections.ObservableList<T> arg1)
+    public ChoiceBoxTreeCell<T> build(javafx.util.StringConverter<T> arg0, T[] arg1)
     {
         ChoiceBoxTreeCell<T> instance = new ChoiceBoxTreeCell<T>(arg0, arg1);
         this.applyTo((Z) instance);

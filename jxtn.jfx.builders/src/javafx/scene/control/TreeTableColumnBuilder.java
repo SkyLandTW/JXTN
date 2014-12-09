@@ -152,10 +152,10 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B columns(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
+    public final B columns(java.util.Collection<? extends javafx.scene.control.TreeTableColumn<S, ?>> value)
     {
         this.hasColumns = true;
-        this.valColumns = value;
+        this.valColumns = (java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>>) value;
         return (B) this;
     }
 
@@ -181,7 +181,7 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B columnsAdd(java.util.Collection<javafx.scene.control.TreeTableColumn<S, ?>> value)
+    public final B columnsAdd(java.util.Collection<? extends javafx.scene.control.TreeTableColumn<S, ?>> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasColumns = true;

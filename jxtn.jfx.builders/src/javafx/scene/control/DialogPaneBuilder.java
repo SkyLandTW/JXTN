@@ -138,10 +138,10 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B buttonTypes(java.util.Collection<javafx.scene.control.ButtonType> value)
+    public final B buttonTypes(java.util.Collection<? extends javafx.scene.control.ButtonType> value)
     {
         this.hasButtonTypes = true;
-        this.valButtonTypes = value;
+        this.valButtonTypes = (java.util.Collection<javafx.scene.control.ButtonType>) value;
         return (B) this;
     }
 
@@ -167,7 +167,7 @@ public class DialogPaneBuilder<Z extends DialogPane, B extends DialogPaneBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B buttonTypesAdd(java.util.Collection<javafx.scene.control.ButtonType> value)
+    public final B buttonTypesAdd(java.util.Collection<? extends javafx.scene.control.ButtonType> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasButtonTypes = true;

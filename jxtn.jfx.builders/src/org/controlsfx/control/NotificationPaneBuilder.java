@@ -166,10 +166,10 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B actions(java.util.Collection<org.controlsfx.control.action.Action> value)
+    public final B actions(java.util.Collection<? extends org.controlsfx.control.action.Action> value)
     {
         this.hasActions = true;
-        this.valActions = value;
+        this.valActions = (java.util.Collection<org.controlsfx.control.action.Action>) value;
         return (B) this;
     }
 
@@ -195,7 +195,7 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B actionsAdd(java.util.Collection<org.controlsfx.control.action.Action> value)
+    public final B actionsAdd(java.util.Collection<? extends org.controlsfx.control.action.Action> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasActions = true;

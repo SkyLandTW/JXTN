@@ -96,10 +96,10 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B items(java.util.Collection<T> value)
+    public final B items(java.util.Collection<? extends T> value)
     {
         this.hasItems = true;
-        this.valItems = value;
+        this.valItems = (java.util.Collection<T>) value;
         return (B) this;
     }
 
@@ -125,7 +125,7 @@ public class CheckComboBoxBuilder<T extends java.lang.Object, Z extends CheckCom
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B itemsAdd(java.util.Collection<T> value)
+    public final B itemsAdd(java.util.Collection<? extends T> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasItems = true;

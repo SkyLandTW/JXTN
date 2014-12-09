@@ -222,10 +222,10 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B styleClass(java.util.Collection<java.lang.String> value)
+    public final B styleClass(java.util.Collection<? extends java.lang.String> value)
     {
         this.hasStyleClass = true;
-        this.valStyleClass = value;
+        this.valStyleClass = (java.util.Collection<java.lang.String>) value;
         return (B) this;
     }
 
@@ -251,7 +251,7 @@ public class ActionBuilder<Z extends Action, B extends ActionBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B styleClassAdd(java.util.Collection<java.lang.String> value)
+    public final B styleClassAdd(java.util.Collection<? extends java.lang.String> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasStyleClass = true;

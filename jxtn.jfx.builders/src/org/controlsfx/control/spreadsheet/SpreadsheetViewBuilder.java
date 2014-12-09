@@ -155,10 +155,10 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B columnPickers(java.util.Collection<java.lang.Integer> value)
+    public final B columnPickers(java.util.Collection<? extends java.lang.Integer> value)
     {
         this.hasColumnPickers = true;
-        this.valColumnPickers = value;
+        this.valColumnPickers = (java.util.Collection<java.lang.Integer>) value;
         return (B) this;
     }
 
@@ -184,7 +184,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B columnPickersAdd(java.util.Collection<java.lang.Integer> value)
+    public final B columnPickersAdd(java.util.Collection<? extends java.lang.Integer> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasColumnPickers = true;
@@ -221,10 +221,10 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B columns(java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn> value)
+    public final B columns(java.util.Collection<? extends org.controlsfx.control.spreadsheet.SpreadsheetColumn> value)
     {
         this.hasColumns = true;
-        this.valColumns = value;
+        this.valColumns = (java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn>) value;
         return (B) this;
     }
 
@@ -250,7 +250,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B columnsAdd(java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn> value)
+    public final B columnsAdd(java.util.Collection<? extends org.controlsfx.control.spreadsheet.SpreadsheetColumn> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasColumns = true;
@@ -301,10 +301,10 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B fixedColumns(java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn> value)
+    public final B fixedColumns(java.util.Collection<? extends org.controlsfx.control.spreadsheet.SpreadsheetColumn> value)
     {
         this.hasFixedColumns = true;
-        this.valFixedColumns = value;
+        this.valFixedColumns = (java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn>) value;
         return (B) this;
     }
 
@@ -330,7 +330,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B fixedColumnsAdd(java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn> value)
+    public final B fixedColumnsAdd(java.util.Collection<? extends org.controlsfx.control.spreadsheet.SpreadsheetColumn> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasFixedColumns = true;
@@ -367,10 +367,10 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B fixedRows(java.util.Collection<java.lang.Integer> value)
+    public final B fixedRows(java.util.Collection<? extends java.lang.Integer> value)
     {
         this.hasFixedRows = true;
-        this.valFixedRows = value;
+        this.valFixedRows = (java.util.Collection<java.lang.Integer>) value;
         return (B) this;
     }
 
@@ -396,7 +396,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B fixedRowsAdd(java.util.Collection<java.lang.Integer> value)
+    public final B fixedRowsAdd(java.util.Collection<? extends java.lang.Integer> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasFixedRows = true;
@@ -503,10 +503,10 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B rowPickers(java.util.Collection<java.lang.Integer> value)
+    public final B rowPickers(java.util.Collection<? extends java.lang.Integer> value)
     {
         this.hasRowPickers = true;
-        this.valRowPickers = value;
+        this.valRowPickers = (java.util.Collection<java.lang.Integer>) value;
         return (B) this;
     }
 
@@ -532,7 +532,7 @@ public class SpreadsheetViewBuilder<Z extends SpreadsheetView, B extends Spreads
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B rowPickersAdd(java.util.Collection<java.lang.Integer> value)
+    public final B rowPickersAdd(java.util.Collection<? extends java.lang.Integer> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasRowPickers = true;

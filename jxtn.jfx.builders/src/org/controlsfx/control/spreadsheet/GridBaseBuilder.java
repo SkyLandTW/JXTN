@@ -69,10 +69,10 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B columnHeaders(java.util.Collection<java.lang.String> value)
+    public final B columnHeaders(java.util.Collection<? extends java.lang.String> value)
     {
         this.hasColumnHeaders = true;
-        this.valColumnHeaders = value;
+        this.valColumnHeaders = (java.util.Collection<java.lang.String>) value;
         return (B) this;
     }
 
@@ -98,7 +98,7 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B columnHeadersAdd(java.util.Collection<java.lang.String> value)
+    public final B columnHeadersAdd(java.util.Collection<? extends java.lang.String> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasColumnHeaders = true;
@@ -149,10 +149,10 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B rowHeaders(java.util.Collection<java.lang.String> value)
+    public final B rowHeaders(java.util.Collection<? extends java.lang.String> value)
     {
         this.hasRowHeaders = true;
-        this.valRowHeaders = value;
+        this.valRowHeaders = (java.util.Collection<java.lang.String>) value;
         return (B) this;
     }
 
@@ -178,7 +178,7 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B rowHeadersAdd(java.util.Collection<java.lang.String> value)
+    public final B rowHeadersAdd(java.util.Collection<? extends java.lang.String> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasRowHeaders = true;

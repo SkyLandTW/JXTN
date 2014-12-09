@@ -110,10 +110,10 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B paragraphs(java.util.Collection<java.lang.CharSequence> value)
+    public final B paragraphs(java.util.Collection<? extends java.lang.CharSequence> value)
     {
         this.hasParagraphs = true;
-        this.valParagraphs = value;
+        this.valParagraphs = (java.util.Collection<java.lang.CharSequence>) value;
         return (B) this;
     }
 
@@ -139,7 +139,7 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B paragraphsAdd(java.util.Collection<java.lang.CharSequence> value)
+    public final B paragraphsAdd(java.util.Collection<? extends java.lang.CharSequence> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasParagraphs = true;

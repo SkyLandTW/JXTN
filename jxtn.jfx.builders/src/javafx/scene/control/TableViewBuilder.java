@@ -246,10 +246,10 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B columns(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
+    public final B columns(java.util.Collection<? extends javafx.scene.control.TableColumn<S, ?>> value)
     {
         this.hasColumns = true;
-        this.valColumns = value;
+        this.valColumns = (java.util.Collection<javafx.scene.control.TableColumn<S, ?>>) value;
         return (B) this;
     }
 
@@ -275,7 +275,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B columnsAdd(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
+    public final B columnsAdd(java.util.Collection<? extends javafx.scene.control.TableColumn<S, ?>> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasColumns = true;
@@ -452,10 +452,10 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B sortOrder(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
+    public final B sortOrder(java.util.Collection<? extends javafx.scene.control.TableColumn<S, ?>> value)
     {
         this.hasSortOrder = true;
-        this.valSortOrder = value;
+        this.valSortOrder = (java.util.Collection<javafx.scene.control.TableColumn<S, ?>>) value;
         return (B) this;
     }
 
@@ -481,7 +481,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B sortOrderAdd(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
+    public final B sortOrderAdd(java.util.Collection<? extends javafx.scene.control.TableColumn<S, ?>> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasSortOrder = true;
@@ -546,10 +546,10 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B visibleLeafColumns(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
+    public final B visibleLeafColumns(java.util.Collection<? extends javafx.scene.control.TableColumn<S, ?>> value)
     {
         this.hasVisibleLeafColumns = true;
-        this.valVisibleLeafColumns = value;
+        this.valVisibleLeafColumns = (java.util.Collection<javafx.scene.control.TableColumn<S, ?>>) value;
         return (B) this;
     }
 
@@ -575,7 +575,7 @@ public class TableViewBuilder<S extends java.lang.Object, Z extends TableView<S>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B visibleLeafColumnsAdd(java.util.Collection<javafx.scene.control.TableColumn<S, ?>> value)
+    public final B visibleLeafColumnsAdd(java.util.Collection<? extends javafx.scene.control.TableColumn<S, ?>> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasVisibleLeafColumns = true;

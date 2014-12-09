@@ -40,10 +40,10 @@ public class PopupBuilder<Z extends Popup, B extends PopupBuilder<Z, B>>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B content(java.util.Collection<javafx.scene.Node> value)
+    public final B content(java.util.Collection<? extends javafx.scene.Node> value)
     {
         this.hasContent = true;
-        this.valContent = value;
+        this.valContent = (java.util.Collection<javafx.scene.Node>) value;
         return (B) this;
     }
 
@@ -69,7 +69,7 @@ public class PopupBuilder<Z extends Popup, B extends PopupBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B contentAdd(java.util.Collection<javafx.scene.Node> value)
+    public final B contentAdd(java.util.Collection<? extends javafx.scene.Node> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasContent = true;

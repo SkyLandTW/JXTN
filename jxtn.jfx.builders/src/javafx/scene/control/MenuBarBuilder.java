@@ -54,10 +54,10 @@ public class MenuBarBuilder<Z extends MenuBar, B extends MenuBarBuilder<Z, B>>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B menus(java.util.Collection<javafx.scene.control.Menu> value)
+    public final B menus(java.util.Collection<? extends javafx.scene.control.Menu> value)
     {
         this.hasMenus = true;
-        this.valMenus = value;
+        this.valMenus = (java.util.Collection<javafx.scene.control.Menu>) value;
         return (B) this;
     }
 
@@ -83,7 +83,7 @@ public class MenuBarBuilder<Z extends MenuBar, B extends MenuBarBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B menusAdd(java.util.Collection<javafx.scene.control.Menu> value)
+    public final B menusAdd(java.util.Collection<? extends javafx.scene.control.Menu> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasMenus = true;

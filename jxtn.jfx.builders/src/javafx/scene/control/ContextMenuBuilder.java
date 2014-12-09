@@ -82,10 +82,10 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B items(java.util.Collection<javafx.scene.control.MenuItem> value)
+    public final B items(java.util.Collection<? extends javafx.scene.control.MenuItem> value)
     {
         this.hasItems = true;
-        this.valItems = value;
+        this.valItems = (java.util.Collection<javafx.scene.control.MenuItem>) value;
         return (B) this;
     }
 
@@ -111,7 +111,7 @@ public class ContextMenuBuilder<Z extends ContextMenu, B extends ContextMenuBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B itemsAdd(java.util.Collection<javafx.scene.control.MenuItem> value)
+    public final B itemsAdd(java.util.Collection<? extends javafx.scene.control.MenuItem> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasItems = true;

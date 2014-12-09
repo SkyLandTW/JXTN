@@ -101,10 +101,10 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B leftItems(java.util.Collection<javafx.scene.Node> value)
+    public final B leftItems(java.util.Collection<? extends javafx.scene.Node> value)
     {
         this.hasLeftItems = true;
-        this.valLeftItems = value;
+        this.valLeftItems = (java.util.Collection<javafx.scene.Node>) value;
         return (B) this;
     }
 
@@ -130,7 +130,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B leftItemsAdd(java.util.Collection<javafx.scene.Node> value)
+    public final B leftItemsAdd(java.util.Collection<? extends javafx.scene.Node> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasLeftItems = true;
@@ -181,10 +181,10 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B rightItems(java.util.Collection<javafx.scene.Node> value)
+    public final B rightItems(java.util.Collection<? extends javafx.scene.Node> value)
     {
         this.hasRightItems = true;
-        this.valRightItems = value;
+        this.valRightItems = (java.util.Collection<javafx.scene.Node>) value;
         return (B) this;
     }
 
@@ -210,7 +210,7 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B rightItemsAdd(java.util.Collection<javafx.scene.Node> value)
+    public final B rightItemsAdd(java.util.Collection<? extends javafx.scene.Node> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasRightItems = true;

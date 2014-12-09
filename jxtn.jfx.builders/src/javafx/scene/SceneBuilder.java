@@ -1314,10 +1314,10 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B stylesheets(java.util.Collection<java.lang.String> value)
+    public final B stylesheets(java.util.Collection<? extends java.lang.String> value)
     {
         this.hasStylesheets = true;
-        this.valStylesheets = value;
+        this.valStylesheets = (java.util.Collection<java.lang.String>) value;
         return (B) this;
     }
 
@@ -1343,7 +1343,7 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B stylesheetsAdd(java.util.Collection<java.lang.String> value)
+    public final B stylesheetsAdd(java.util.Collection<? extends java.lang.String> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasStylesheets = true;

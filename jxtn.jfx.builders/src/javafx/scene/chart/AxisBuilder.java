@@ -348,10 +348,10 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B tickMarks(java.util.Collection<javafx.scene.chart.Axis.TickMark<T>> value)
+    public final B tickMarks(java.util.Collection<? extends javafx.scene.chart.Axis.TickMark<T>> value)
     {
         this.hasTickMarks = true;
-        this.valTickMarks = value;
+        this.valTickMarks = (java.util.Collection<javafx.scene.chart.Axis.TickMark<T>>) value;
         return (B) this;
     }
 
@@ -377,7 +377,7 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B tickMarksAdd(java.util.Collection<javafx.scene.chart.Axis.TickMark<T>> value)
+    public final B tickMarksAdd(java.util.Collection<? extends javafx.scene.chart.Axis.TickMark<T>> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasTickMarks = true;

@@ -247,10 +247,10 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B icons(java.util.Collection<javafx.scene.image.Image> value)
+    public final B icons(java.util.Collection<? extends javafx.scene.image.Image> value)
     {
         this.hasIcons = true;
-        this.valIcons = value;
+        this.valIcons = (java.util.Collection<javafx.scene.image.Image>) value;
         return (B) this;
     }
 
@@ -276,7 +276,7 @@ public class StageBuilder<Z extends Stage, B extends StageBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B iconsAdd(java.util.Collection<javafx.scene.image.Image> value)
+    public final B iconsAdd(java.util.Collection<? extends javafx.scene.image.Image> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasIcons = true;

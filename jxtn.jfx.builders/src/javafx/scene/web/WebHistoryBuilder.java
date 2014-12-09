@@ -54,10 +54,10 @@ public class WebHistoryBuilder<Z extends WebHistory, B extends WebHistoryBuilder
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B entries(java.util.Collection<javafx.scene.web.WebHistory.Entry> value)
+    public final B entries(java.util.Collection<? extends javafx.scene.web.WebHistory.Entry> value)
     {
         this.hasEntries = true;
-        this.valEntries = value;
+        this.valEntries = (java.util.Collection<javafx.scene.web.WebHistory.Entry>) value;
         return (B) this;
     }
 
@@ -83,7 +83,7 @@ public class WebHistoryBuilder<Z extends WebHistory, B extends WebHistoryBuilder
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B entriesAdd(java.util.Collection<javafx.scene.web.WebHistory.Entry> value)
+    public final B entriesAdd(java.util.Collection<? extends javafx.scene.web.WebHistory.Entry> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasEntries = true;

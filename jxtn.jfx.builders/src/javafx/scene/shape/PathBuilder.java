@@ -54,10 +54,10 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B elements(java.util.Collection<javafx.scene.shape.PathElement> value)
+    public final B elements(java.util.Collection<? extends javafx.scene.shape.PathElement> value)
     {
         this.hasElements = true;
-        this.valElements = value;
+        this.valElements = (java.util.Collection<javafx.scene.shape.PathElement>) value;
         return (B) this;
     }
 
@@ -83,7 +83,7 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B elementsAdd(java.util.Collection<javafx.scene.shape.PathElement> value)
+    public final B elementsAdd(java.util.Collection<? extends javafx.scene.shape.PathElement> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasElements = true;

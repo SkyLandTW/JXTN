@@ -40,10 +40,10 @@ public class ToggleGroupBuilder<Z extends ToggleGroup, B extends ToggleGroupBuil
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B toggles(java.util.Collection<javafx.scene.control.Toggle> value)
+    public final B toggles(java.util.Collection<? extends javafx.scene.control.Toggle> value)
     {
         this.hasToggles = true;
-        this.valToggles = value;
+        this.valToggles = (java.util.Collection<javafx.scene.control.Toggle>) value;
         return (B) this;
     }
 
@@ -69,7 +69,7 @@ public class ToggleGroupBuilder<Z extends ToggleGroup, B extends ToggleGroupBuil
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B togglesAdd(java.util.Collection<javafx.scene.control.Toggle> value)
+    public final B togglesAdd(java.util.Collection<? extends javafx.scene.control.Toggle> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasToggles = true;

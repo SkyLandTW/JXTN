@@ -2033,10 +2033,10 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B styleClass(java.util.Collection<java.lang.String> value)
+    public final B styleClass(java.util.Collection<? extends java.lang.String> value)
     {
         this.hasStyleClass = true;
-        this.valStyleClass = value;
+        this.valStyleClass = (java.util.Collection<java.lang.String>) value;
         return (B) this;
     }
 
@@ -2062,7 +2062,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B styleClassAdd(java.util.Collection<java.lang.String> value)
+    public final B styleClassAdd(java.util.Collection<? extends java.lang.String> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasStyleClass = true;
@@ -2099,10 +2099,10 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B transforms(java.util.Collection<javafx.scene.transform.Transform> value)
+    public final B transforms(java.util.Collection<? extends javafx.scene.transform.Transform> value)
     {
         this.hasTransforms = true;
-        this.valTransforms = value;
+        this.valTransforms = (java.util.Collection<javafx.scene.transform.Transform>) value;
         return (B) this;
     }
 
@@ -2128,7 +2128,7 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B transformsAdd(java.util.Collection<javafx.scene.transform.Transform> value)
+    public final B transformsAdd(java.util.Collection<? extends javafx.scene.transform.Transform> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasTransforms = true;

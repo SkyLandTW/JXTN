@@ -168,6 +168,45 @@ public class TextAreaBuilder<Z extends TextArea, B extends TextAreaBuilder<Z, B>
     }
 
     /**
+     * 增加集合屬性{@link TextArea#getParagraphs}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B paragraphsAddNonNull(java.util.Collection<? extends java.lang.CharSequence> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasParagraphs = true;
+        if (this.valParagraphs == null)
+            this.valParagraphs = new java.util.ArrayList<>(value.size());
+        for (java.lang.CharSequence i : value)
+            if (i != null)
+                this.valParagraphs.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TextArea#getParagraphs}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B paragraphsAddNonNull(java.lang.CharSequence... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasParagraphs = true;
+        if (this.valParagraphs == null)
+            this.valParagraphs = new java.util.ArrayList<>(value.length);
+        for (java.lang.CharSequence i : value)
+            if (i != null)
+                this.valParagraphs.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link TextArea#setPrefColumnCount(int)}。
      *
      * @param value 新的屬性值

@@ -126,6 +126,45 @@ public class MediaBuilder<Z extends Media, B extends MediaBuilder<Z, B>>
     }
 
     /**
+     * 增加集合屬性{@link Media#getTracks}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B tracksAddNonNull(java.util.Collection<? extends javafx.scene.media.Track> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasTracks = true;
+        if (this.valTracks == null)
+            this.valTracks = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.media.Track i : value)
+            if (i != null)
+                this.valTracks.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Media#getTracks}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B tracksAddNonNull(javafx.scene.media.Track... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasTracks = true;
+        if (this.valTracks == null)
+            this.valTracks = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.media.Track i : value)
+            if (i != null)
+                this.valTracks.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link Media#onErrorProperty}的連結。
      *
      * @param value 新的屬性連結(單向)

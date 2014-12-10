@@ -210,6 +210,45 @@ public class TreeTableColumnBuilder<S extends java.lang.Object, T extends java.l
     }
 
     /**
+     * 增加集合屬性{@link TreeTableColumn#getColumns}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B columnsAddNonNull(java.util.Collection<? extends javafx.scene.control.TreeTableColumn<S, ?>> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumns = true;
+        if (this.valColumns == null)
+            this.valColumns = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.control.TreeTableColumn<S, ?> i : value)
+            if (i != null)
+                this.valColumns.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TreeTableColumn#getColumns}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B columnsAddNonNull(javafx.scene.control.TreeTableColumn<S, ?>... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumns = true;
+        if (this.valColumns == null)
+            this.valColumns = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.control.TreeTableColumn<S, ?> i : value)
+            if (i != null)
+                this.valColumns.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link TreeTableColumn#setOnEditCancel(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值

@@ -173,6 +173,45 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
     }
 
     /**
+     * 增加集合屬性{@link GridPane#getColumnConstraints}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B columnConstraintsAddNonNull(java.util.Collection<? extends javafx.scene.layout.ColumnConstraints> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumnConstraints = true;
+        if (this.valColumnConstraints == null)
+            this.valColumnConstraints = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.layout.ColumnConstraints i : value)
+            if (i != null)
+                this.valColumnConstraints.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link GridPane#getColumnConstraints}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B columnConstraintsAddNonNull(javafx.scene.layout.ColumnConstraints... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumnConstraints = true;
+        if (this.valColumnConstraints == null)
+            this.valColumnConstraints = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.layout.ColumnConstraints i : value)
+            if (i != null)
+                this.valColumnConstraints.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link GridPane#setGridLinesVisible(boolean)}。
      *
      * @param value 新的屬性值
@@ -263,6 +302,45 @@ public class GridPaneBuilder<Z extends GridPane, B extends GridPaneBuilder<Z, B>
         if (this.valRowConstraints == null)
             this.valRowConstraints = new java.util.ArrayList<>(value.length);
         this.valRowConstraints.addAll(java.util.Arrays.asList(value));
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link GridPane#getRowConstraints}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B rowConstraintsAddNonNull(java.util.Collection<? extends javafx.scene.layout.RowConstraints> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasRowConstraints = true;
+        if (this.valRowConstraints == null)
+            this.valRowConstraints = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.layout.RowConstraints i : value)
+            if (i != null)
+                this.valRowConstraints.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link GridPane#getRowConstraints}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B rowConstraintsAddNonNull(javafx.scene.layout.RowConstraints... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasRowConstraints = true;
+        if (this.valRowConstraints == null)
+            this.valRowConstraints = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.layout.RowConstraints i : value)
+            if (i != null)
+                this.valRowConstraints.add(i);
         return (B) this;
     }
 

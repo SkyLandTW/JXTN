@@ -159,6 +159,45 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
     }
 
     /**
+     * 增加集合屬性{@link StatusBar#getLeftItems}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B leftItemsAddNonNull(java.util.Collection<? extends javafx.scene.Node> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasLeftItems = true;
+        if (this.valLeftItems == null)
+            this.valLeftItems = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.Node i : value)
+            if (i != null)
+                this.valLeftItems.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link StatusBar#getLeftItems}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B leftItemsAddNonNull(javafx.scene.Node... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasLeftItems = true;
+        if (this.valLeftItems == null)
+            this.valLeftItems = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.Node i : value)
+            if (i != null)
+                this.valLeftItems.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link StatusBar#setProgress(double)}。
      *
      * @param value 新的屬性值
@@ -235,6 +274,45 @@ public class StatusBarBuilder<Z extends StatusBar, B extends StatusBarBuilder<Z,
         if (this.valRightItems == null)
             this.valRightItems = new java.util.ArrayList<>(value.length);
         this.valRightItems.addAll(java.util.Arrays.asList(value));
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link StatusBar#getRightItems}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B rightItemsAddNonNull(java.util.Collection<? extends javafx.scene.Node> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasRightItems = true;
+        if (this.valRightItems == null)
+            this.valRightItems = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.Node i : value)
+            if (i != null)
+                this.valRightItems.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link StatusBar#getRightItems}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B rightItemsAddNonNull(javafx.scene.Node... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasRightItems = true;
+        if (this.valRightItems == null)
+            this.valRightItems = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.Node i : value)
+            if (i != null)
+                this.valRightItems.add(i);
         return (B) this;
     }
 

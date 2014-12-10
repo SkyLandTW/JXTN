@@ -112,6 +112,45 @@ public class SegmentedButtonBuilder<Z extends SegmentedButton, B extends Segment
     }
 
     /**
+     * 增加集合屬性{@link SegmentedButton#getButtons}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B buttonsAddNonNull(java.util.Collection<? extends javafx.scene.control.ToggleButton> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasButtons = true;
+        if (this.valButtons == null)
+            this.valButtons = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.control.ToggleButton i : value)
+            if (i != null)
+                this.valButtons.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SegmentedButton#getButtons}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B buttonsAddNonNull(javafx.scene.control.ToggleButton... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasButtons = true;
+        if (this.valButtons == null)
+            this.valButtons = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.control.ToggleButton i : value)
+            if (i != null)
+                this.valButtons.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link SegmentedButton#setToggleGroup(javafx.scene.control.ToggleGroup)}。
      *
      * @param value 新的屬性值

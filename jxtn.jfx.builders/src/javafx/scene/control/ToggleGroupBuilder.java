@@ -98,6 +98,45 @@ public class ToggleGroupBuilder<Z extends ToggleGroup, B extends ToggleGroupBuil
     }
 
     /**
+     * 增加集合屬性{@link ToggleGroup#getToggles}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B togglesAddNonNull(java.util.Collection<? extends javafx.scene.control.Toggle> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasToggles = true;
+        if (this.valToggles == null)
+            this.valToggles = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.control.Toggle i : value)
+            if (i != null)
+                this.valToggles.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ToggleGroup#getToggles}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B togglesAddNonNull(javafx.scene.control.Toggle... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasToggles = true;
+        if (this.valToggles == null)
+            this.valToggles = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.control.Toggle i : value)
+            if (i != null)
+                this.valToggles.add(i);
+        return (B) this;
+    }
+
+    /**
      * 建構{@link ToggleGroup}物件。
      *
      * @return 新的{@link ToggleGroup}物件實體

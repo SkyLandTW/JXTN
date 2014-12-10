@@ -154,6 +154,45 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
     }
 
     /**
+     * 增加集合屬性{@link ComboBoxTreeTableCell#getItems}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B itemsAddNonNull(java.util.Collection<? extends T> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.size());
+        for (T i : value)
+            if (i != null)
+                this.valItems.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ComboBoxTreeTableCell#getItems}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B itemsAddNonNull(T... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.length);
+        for (T i : value)
+            if (i != null)
+                this.valItems.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link ComboBoxTreeTableCell#comboBoxEditableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
@@ -270,7 +309,7 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
      * @return 新的{@link ComboBoxTreeTableCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ComboBoxTreeTableCell<S, T> build(javafx.util.StringConverter<T> arg0, javafx.collections.ObservableList<T> arg1)
+    public ComboBoxTreeTableCell<S, T> build(javafx.util.StringConverter<T> arg0, T[] arg1)
     {
         ComboBoxTreeTableCell<S, T> instance = new ComboBoxTreeTableCell<S, T>(arg0, arg1);
         this.applyTo((Z) instance);
@@ -284,7 +323,7 @@ public class ComboBoxTreeTableCellBuilder<S extends java.lang.Object, T extends 
      * @return 新的{@link ComboBoxTreeTableCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ComboBoxTreeTableCell<S, T> build(javafx.util.StringConverter<T> arg0, T[] arg1)
+    public ComboBoxTreeTableCell<S, T> build(javafx.util.StringConverter<T> arg0, javafx.collections.ObservableList<T> arg1)
     {
         ComboBoxTreeTableCell<S, T> instance = new ComboBoxTreeTableCell<S, T>(arg0, arg1);
         this.applyTo((Z) instance);

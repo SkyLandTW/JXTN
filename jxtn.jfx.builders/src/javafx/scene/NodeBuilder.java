@@ -2091,6 +2091,45 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
     }
 
     /**
+     * 增加集合屬性{@link Node#getStyleClass}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B styleClassAddNonNull(java.util.Collection<? extends java.lang.String> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStyleClass = true;
+        if (this.valStyleClass == null)
+            this.valStyleClass = new java.util.ArrayList<>(value.size());
+        for (java.lang.String i : value)
+            if (i != null)
+                this.valStyleClass.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Node#getStyleClass}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B styleClassAddNonNull(java.lang.String... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStyleClass = true;
+        if (this.valStyleClass == null)
+            this.valStyleClass = new java.util.ArrayList<>(value.length);
+        for (java.lang.String i : value)
+            if (i != null)
+                this.valStyleClass.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定集合屬性{@link Node#getTransforms}的內容。
      *
      * @param value 新的集合內容
@@ -2153,6 +2192,45 @@ public class NodeBuilder<Z extends Node, B extends NodeBuilder<Z, B>>
         if (this.valTransforms == null)
             this.valTransforms = new java.util.ArrayList<>(value.length);
         this.valTransforms.addAll(java.util.Arrays.asList(value));
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Node#getTransforms}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B transformsAddNonNull(java.util.Collection<? extends javafx.scene.transform.Transform> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasTransforms = true;
+        if (this.valTransforms == null)
+            this.valTransforms = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.transform.Transform i : value)
+            if (i != null)
+                this.valTransforms.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Node#getTransforms}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B transformsAddNonNull(javafx.scene.transform.Transform... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasTransforms = true;
+        if (this.valTransforms == null)
+            this.valTransforms = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.transform.Transform i : value)
+            if (i != null)
+                this.valTransforms.add(i);
         return (B) this;
     }
 

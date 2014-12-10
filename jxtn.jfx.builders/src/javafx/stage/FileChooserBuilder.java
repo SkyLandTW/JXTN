@@ -154,6 +154,45 @@ public class FileChooserBuilder<Z extends FileChooser, B extends FileChooserBuil
     }
 
     /**
+     * 增加集合屬性{@link FileChooser#getExtensionFilters}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B extensionFiltersAddNonNull(java.util.Collection<? extends javafx.stage.FileChooser.ExtensionFilter> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasExtensionFilters = true;
+        if (this.valExtensionFilters == null)
+            this.valExtensionFilters = new java.util.ArrayList<>(value.size());
+        for (javafx.stage.FileChooser.ExtensionFilter i : value)
+            if (i != null)
+                this.valExtensionFilters.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link FileChooser#getExtensionFilters}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B extensionFiltersAddNonNull(javafx.stage.FileChooser.ExtensionFilter... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasExtensionFilters = true;
+        if (this.valExtensionFilters == null)
+            this.valExtensionFilters = new java.util.ArrayList<>(value.length);
+        for (javafx.stage.FileChooser.ExtensionFilter i : value)
+            if (i != null)
+                this.valExtensionFilters.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link FileChooser#setInitialDirectory(java.io.File)}。
      *
      * @param value 新的屬性值

@@ -266,6 +266,45 @@ public class ShapeBuilder<Z extends Shape, B extends ShapeBuilder<Z, B>>
     }
 
     /**
+     * 增加集合屬性{@link Shape#getStrokeDashArray}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B strokeDashArrayAddNonNull(java.util.Collection<? extends java.lang.Double> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStrokeDashArray = true;
+        if (this.valStrokeDashArray == null)
+            this.valStrokeDashArray = new java.util.ArrayList<>(value.size());
+        for (java.lang.Double i : value)
+            if (i != null)
+                this.valStrokeDashArray.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Shape#getStrokeDashArray}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B strokeDashArrayAddNonNull(java.lang.Double... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStrokeDashArray = true;
+        if (this.valStrokeDashArray == null)
+            this.valStrokeDashArray = new java.util.ArrayList<>(value.length);
+        for (java.lang.Double i : value)
+            if (i != null)
+                this.valStrokeDashArray.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link Shape#setStrokeDashOffset(double)}。
      *
      * @param value 新的屬性值

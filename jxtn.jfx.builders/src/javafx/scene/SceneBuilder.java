@@ -1372,6 +1372,45 @@ public class SceneBuilder<Z extends Scene, B extends SceneBuilder<Z, B>>
     }
 
     /**
+     * 增加集合屬性{@link Scene#getStylesheets}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B stylesheetsAddNonNull(java.util.Collection<? extends java.lang.String> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStylesheets = true;
+        if (this.valStylesheets == null)
+            this.valStylesheets = new java.util.ArrayList<>(value.size());
+        for (java.lang.String i : value)
+            if (i != null)
+                this.valStylesheets.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Scene#getStylesheets}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B stylesheetsAddNonNull(java.lang.String... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStylesheets = true;
+        if (this.valStylesheets == null)
+            this.valStylesheets = new java.util.ArrayList<>(value.length);
+        for (java.lang.String i : value)
+            if (i != null)
+                this.valStylesheets.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link Scene#setUserAgentStylesheet(java.lang.String)}。
      *
      * @param value 新的屬性值

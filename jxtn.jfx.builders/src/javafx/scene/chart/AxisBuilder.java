@@ -406,6 +406,45 @@ public class AxisBuilder<T extends java.lang.Object, Z extends Axis<T>, B extend
     }
 
     /**
+     * 增加集合屬性{@link Axis#getTickMarks}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B tickMarksAddNonNull(java.util.Collection<? extends javafx.scene.chart.Axis.TickMark<T>> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasTickMarks = true;
+        if (this.valTickMarks == null)
+            this.valTickMarks = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.chart.Axis.TickMark<T> i : value)
+            if (i != null)
+                this.valTickMarks.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Axis#getTickMarks}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B tickMarksAddNonNull(javafx.scene.chart.Axis.TickMark<T>... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasTickMarks = true;
+        if (this.valTickMarks == null)
+            this.valTickMarks = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.chart.Axis.TickMark<T> i : value)
+            if (i != null)
+                this.valTickMarks.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link Axis#animatedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)

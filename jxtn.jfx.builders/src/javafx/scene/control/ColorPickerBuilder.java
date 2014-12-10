@@ -98,6 +98,45 @@ public class ColorPickerBuilder<Z extends ColorPicker, B extends ColorPickerBuil
     }
 
     /**
+     * 增加集合屬性{@link ColorPicker#getCustomColors}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B customColorsAddNonNull(java.util.Collection<? extends javafx.scene.paint.Color> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasCustomColors = true;
+        if (this.valCustomColors == null)
+            this.valCustomColors = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.paint.Color i : value)
+            if (i != null)
+                this.valCustomColors.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ColorPicker#getCustomColors}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B customColorsAddNonNull(javafx.scene.paint.Color... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasCustomColors = true;
+        if (this.valCustomColors == null)
+            this.valCustomColors = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.paint.Color i : value)
+            if (i != null)
+                this.valCustomColors.add(i);
+        return (B) this;
+    }
+
+    /**
      * 建構{@link ColorPicker}物件。
      *
      * @return 新的{@link ColorPicker}物件實體

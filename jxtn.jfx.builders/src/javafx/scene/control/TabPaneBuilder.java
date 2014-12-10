@@ -322,6 +322,45 @@ public class TabPaneBuilder<Z extends TabPane, B extends TabPaneBuilder<Z, B>>
     }
 
     /**
+     * 增加集合屬性{@link TabPane#getTabs}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B tabsAddNonNull(java.util.Collection<? extends javafx.scene.control.Tab> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasTabs = true;
+        if (this.valTabs == null)
+            this.valTabs = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.control.Tab i : value)
+            if (i != null)
+                this.valTabs.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TabPane#getTabs}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B tabsAddNonNull(javafx.scene.control.Tab... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasTabs = true;
+        if (this.valTabs == null)
+            this.valTabs = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.control.Tab i : value)
+            if (i != null)
+                this.valTabs.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link TabPane#rotateGraphicProperty}的連結。
      *
      * @param value 新的屬性連結(單向)

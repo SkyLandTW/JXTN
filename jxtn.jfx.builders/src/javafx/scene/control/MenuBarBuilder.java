@@ -112,6 +112,45 @@ public class MenuBarBuilder<Z extends MenuBar, B extends MenuBarBuilder<Z, B>>
     }
 
     /**
+     * 增加集合屬性{@link MenuBar#getMenus}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B menusAddNonNull(java.util.Collection<? extends javafx.scene.control.Menu> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasMenus = true;
+        if (this.valMenus == null)
+            this.valMenus = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.control.Menu i : value)
+            if (i != null)
+                this.valMenus.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link MenuBar#getMenus}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B menusAddNonNull(javafx.scene.control.Menu... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasMenus = true;
+        if (this.valMenus == null)
+            this.valMenus = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.control.Menu i : value)
+            if (i != null)
+                this.valMenus.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link MenuBar#setUseSystemMenuBar(boolean)}。
      *
      * @param value 新的屬性值

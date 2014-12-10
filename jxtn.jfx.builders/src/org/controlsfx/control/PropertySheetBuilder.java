@@ -150,6 +150,45 @@ public class PropertySheetBuilder<Z extends PropertySheet, B extends PropertyShe
     }
 
     /**
+     * 增加集合屬性{@link PropertySheet#getItems}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B itemsAddNonNull(java.util.Collection<? extends org.controlsfx.control.PropertySheet.Item> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.size());
+        for (org.controlsfx.control.PropertySheet.Item i : value)
+            if (i != null)
+                this.valItems.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link PropertySheet#getItems}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B itemsAddNonNull(org.controlsfx.control.PropertySheet.Item... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.length);
+        for (org.controlsfx.control.PropertySheet.Item i : value)
+            if (i != null)
+                this.valItems.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link PropertySheet#setMode(org.controlsfx.control.PropertySheet.Mode)}。
      *
      * @param value 新的屬性值

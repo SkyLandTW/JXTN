@@ -126,6 +126,45 @@ public class AccordionBuilder<Z extends Accordion, B extends AccordionBuilder<Z,
     }
 
     /**
+     * 增加集合屬性{@link Accordion#getPanes}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B panesAddNonNull(java.util.Collection<? extends javafx.scene.control.TitledPane> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasPanes = true;
+        if (this.valPanes == null)
+            this.valPanes = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.control.TitledPane i : value)
+            if (i != null)
+                this.valPanes.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Accordion#getPanes}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B panesAddNonNull(javafx.scene.control.TitledPane... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasPanes = true;
+        if (this.valPanes == null)
+            this.valPanes = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.control.TitledPane i : value)
+            if (i != null)
+                this.valPanes.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link Accordion#expandedPaneProperty}的連結。
      *
      * @param value 新的屬性連結(單向)

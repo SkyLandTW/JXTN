@@ -127,6 +127,45 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
     }
 
     /**
+     * 增加集合屬性{@link GridBase#getColumnHeaders}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B columnHeadersAddNonNull(java.util.Collection<? extends java.lang.String> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumnHeaders = true;
+        if (this.valColumnHeaders == null)
+            this.valColumnHeaders = new java.util.ArrayList<>(value.size());
+        for (java.lang.String i : value)
+            if (i != null)
+                this.valColumnHeaders.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link GridBase#getColumnHeaders}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B columnHeadersAddNonNull(java.lang.String... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumnHeaders = true;
+        if (this.valColumnHeaders == null)
+            this.valColumnHeaders = new java.util.ArrayList<>(value.length);
+        for (java.lang.String i : value)
+            if (i != null)
+                this.valColumnHeaders.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link GridBase#setLocked(java.lang.Boolean)}。
      *
      * @param value 新的屬性值
@@ -203,6 +242,45 @@ public class GridBaseBuilder<Z extends GridBase, B extends GridBaseBuilder<Z, B>
         if (this.valRowHeaders == null)
             this.valRowHeaders = new java.util.ArrayList<>(value.length);
         this.valRowHeaders.addAll(java.util.Arrays.asList(value));
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link GridBase#getRowHeaders}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B rowHeadersAddNonNull(java.util.Collection<? extends java.lang.String> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasRowHeaders = true;
+        if (this.valRowHeaders == null)
+            this.valRowHeaders = new java.util.ArrayList<>(value.size());
+        for (java.lang.String i : value)
+            if (i != null)
+                this.valRowHeaders.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link GridBase#getRowHeaders}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B rowHeadersAddNonNull(java.lang.String... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasRowHeaders = true;
+        if (this.valRowHeaders == null)
+            this.valRowHeaders = new java.util.ArrayList<>(value.length);
+        for (java.lang.String i : value)
+            if (i != null)
+                this.valRowHeaders.add(i);
         return (B) this;
     }
 

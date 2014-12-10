@@ -112,6 +112,45 @@ public class PathBuilder<Z extends Path, B extends PathBuilder<Z, B>>
     }
 
     /**
+     * 增加集合屬性{@link Path#getElements}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B elementsAddNonNull(java.util.Collection<? extends javafx.scene.shape.PathElement> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasElements = true;
+        if (this.valElements == null)
+            this.valElements = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.shape.PathElement i : value)
+            if (i != null)
+                this.valElements.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Path#getElements}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B elementsAddNonNull(javafx.scene.shape.PathElement... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasElements = true;
+        if (this.valElements == null)
+            this.valElements = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.shape.PathElement i : value)
+            if (i != null)
+                this.valElements.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link Path#setFillRule(javafx.scene.shape.FillRule)}。
      *
      * @param value 新的屬性值

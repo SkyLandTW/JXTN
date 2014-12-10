@@ -98,6 +98,45 @@ public class PopupBuilder<Z extends Popup, B extends PopupBuilder<Z, B>>
     }
 
     /**
+     * 增加集合屬性{@link Popup#getContent}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B contentAddNonNull(java.util.Collection<? extends javafx.scene.Node> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasContent = true;
+        if (this.valContent == null)
+            this.valContent = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.Node i : value)
+            if (i != null)
+                this.valContent.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Popup#getContent}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B contentAddNonNull(javafx.scene.Node... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasContent = true;
+        if (this.valContent == null)
+            this.valContent = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.Node i : value)
+            if (i != null)
+                this.valContent.add(i);
+        return (B) this;
+    }
+
+    /**
      * 建構{@link Popup}物件。
      *
      * @return 新的{@link Popup}物件實體

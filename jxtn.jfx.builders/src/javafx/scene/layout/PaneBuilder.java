@@ -98,6 +98,45 @@ public class PaneBuilder<Z extends Pane, B extends PaneBuilder<Z, B>>
     }
 
     /**
+     * 增加集合屬性{@link Pane#getChildren}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B childrenAddNonNull(java.util.Collection<? extends javafx.scene.Node> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasChildren = true;
+        if (this.valChildren == null)
+            this.valChildren = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.Node i : value)
+            if (i != null)
+                this.valChildren.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Pane#getChildren}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B childrenAddNonNull(javafx.scene.Node... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasChildren = true;
+        if (this.valChildren == null)
+            this.valChildren = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.Node i : value)
+            if (i != null)
+                this.valChildren.add(i);
+        return (B) this;
+    }
+
+    /**
      * 建構{@link Pane}物件。
      *
      * @return 新的{@link Pane}物件實體

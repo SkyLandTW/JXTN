@@ -346,6 +346,45 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
+     * 增加集合屬性{@link TreeTableView#getColumns}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B columnsAddNonNull(java.util.Collection<? extends javafx.scene.control.TreeTableColumn<S, ?>> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumns = true;
+        if (this.valColumns == null)
+            this.valColumns = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.control.TreeTableColumn<S, ?> i : value)
+            if (i != null)
+                this.valColumns.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TreeTableView#getColumns}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B columnsAddNonNull(javafx.scene.control.TreeTableColumn<S, ?>... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasColumns = true;
+        if (this.valColumns == null)
+            this.valColumns = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.control.TreeTableColumn<S, ?> i : value)
+            if (i != null)
+                this.valColumns.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link TreeTableView#setEditable(boolean)}。
      *
      * @param value 新的屬性值
@@ -580,6 +619,45 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
     }
 
     /**
+     * 增加集合屬性{@link TreeTableView#getSortOrder}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B sortOrderAddNonNull(java.util.Collection<? extends javafx.scene.control.TreeTableColumn<S, ?>> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasSortOrder = true;
+        if (this.valSortOrder == null)
+            this.valSortOrder = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.control.TreeTableColumn<S, ?> i : value)
+            if (i != null)
+                this.valSortOrder.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TreeTableView#getSortOrder}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B sortOrderAddNonNull(javafx.scene.control.TreeTableColumn<S, ?>... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasSortOrder = true;
+        if (this.valSortOrder == null)
+            this.valSortOrder = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.control.TreeTableColumn<S, ?> i : value)
+            if (i != null)
+                this.valSortOrder.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link TreeTableView#setSortPolicy(javafx.util.Callback)}。
      *
      * @param value 新的屬性值
@@ -684,6 +762,45 @@ public class TreeTableViewBuilder<S extends java.lang.Object, Z extends TreeTabl
         if (this.valVisibleLeafColumns == null)
             this.valVisibleLeafColumns = new java.util.ArrayList<>(value.length);
         this.valVisibleLeafColumns.addAll(java.util.Arrays.asList(value));
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TreeTableView#getVisibleLeafColumns}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B visibleLeafColumnsAddNonNull(java.util.Collection<? extends javafx.scene.control.TreeTableColumn<S, ?>> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasVisibleLeafColumns = true;
+        if (this.valVisibleLeafColumns == null)
+            this.valVisibleLeafColumns = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.control.TreeTableColumn<S, ?> i : value)
+            if (i != null)
+                this.valVisibleLeafColumns.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link TreeTableView#getVisibleLeafColumns}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B visibleLeafColumnsAddNonNull(javafx.scene.control.TreeTableColumn<S, ?>... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasVisibleLeafColumns = true;
+        if (this.valVisibleLeafColumns == null)
+            this.valVisibleLeafColumns = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.control.TreeTableColumn<S, ?> i : value)
+            if (i != null)
+                this.valVisibleLeafColumns.add(i);
         return (B) this;
     }
 

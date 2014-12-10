@@ -126,6 +126,45 @@ public class ChoiceBoxListCellBuilder<T extends java.lang.Object, Z extends Choi
     }
 
     /**
+     * 增加集合屬性{@link ChoiceBoxListCell#getItems}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B itemsAddNonNull(java.util.Collection<? extends T> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.size());
+        for (T i : value)
+            if (i != null)
+                this.valItems.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ChoiceBoxListCell#getItems}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B itemsAddNonNull(T... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.length);
+        for (T i : value)
+            if (i != null)
+                this.valItems.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link ChoiceBoxListCell#converterProperty}的連結。
      *
      * @param value 新的屬性連結(單向)

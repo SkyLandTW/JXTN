@@ -112,6 +112,45 @@ public class WebHistoryBuilder<Z extends WebHistory, B extends WebHistoryBuilder
     }
 
     /**
+     * 增加集合屬性{@link WebHistory#getEntries}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B entriesAddNonNull(java.util.Collection<? extends javafx.scene.web.WebHistory.Entry> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasEntries = true;
+        if (this.valEntries == null)
+            this.valEntries = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.web.WebHistory.Entry i : value)
+            if (i != null)
+                this.valEntries.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link WebHistory#getEntries}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B entriesAddNonNull(javafx.scene.web.WebHistory.Entry... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasEntries = true;
+        if (this.valEntries == null)
+            this.valEntries = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.web.WebHistory.Entry i : value)
+            if (i != null)
+                this.valEntries.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link WebHistory#setMaxSize(int)}。
      *
      * @param value 新的屬性值

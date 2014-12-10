@@ -103,6 +103,45 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
     }
 
     /**
+     * 增加集合屬性{@link Parent#getChildrenUnmodifiable}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B childrenUnmodifiableAddNonNull(java.util.Collection<? extends javafx.scene.Node> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasChildrenUnmodifiable = true;
+        if (this.valChildrenUnmodifiable == null)
+            this.valChildrenUnmodifiable = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.Node i : value)
+            if (i != null)
+                this.valChildrenUnmodifiable.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Parent#getChildrenUnmodifiable}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B childrenUnmodifiableAddNonNull(javafx.scene.Node... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasChildrenUnmodifiable = true;
+        if (this.valChildrenUnmodifiable == null)
+            this.valChildrenUnmodifiable = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.Node i : value)
+            if (i != null)
+                this.valChildrenUnmodifiable.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定集合屬性{@link Parent#getStylesheets}的內容。
      *
      * @param value 新的集合內容
@@ -165,6 +204,45 @@ public class ParentBuilder<Z extends Parent, B extends ParentBuilder<Z, B>>
         if (this.valStylesheets == null)
             this.valStylesheets = new java.util.ArrayList<>(value.length);
         this.valStylesheets.addAll(java.util.Arrays.asList(value));
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Parent#getStylesheets}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B stylesheetsAddNonNull(java.util.Collection<? extends java.lang.String> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStylesheets = true;
+        if (this.valStylesheets == null)
+            this.valStylesheets = new java.util.ArrayList<>(value.size());
+        for (java.lang.String i : value)
+            if (i != null)
+                this.valStylesheets.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link Parent#getStylesheets}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B stylesheetsAddNonNull(java.lang.String... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasStylesheets = true;
+        if (this.valStylesheets == null)
+            this.valStylesheets = new java.util.ArrayList<>(value.length);
+        for (java.lang.String i : value)
+            if (i != null)
+                this.valStylesheets.add(i);
         return (B) this;
     }
 }

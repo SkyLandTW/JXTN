@@ -154,6 +154,45 @@ public class ButtonBarBuilder<Z extends ButtonBar, B extends ButtonBarBuilder<Z,
     }
 
     /**
+     * 增加集合屬性{@link ButtonBar#getButtons}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B buttonsAddNonNull(java.util.Collection<? extends javafx.scene.Node> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasButtons = true;
+        if (this.valButtons == null)
+            this.valButtons = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.Node i : value)
+            if (i != null)
+                this.valButtons.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ButtonBar#getButtons}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B buttonsAddNonNull(javafx.scene.Node... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasButtons = true;
+        if (this.valButtons == null)
+            this.valButtons = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.Node i : value)
+            if (i != null)
+                this.valButtons.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link ButtonBar#buttonMinWidthProperty}的連結。
      *
      * @param value 新的屬性連結(單向)

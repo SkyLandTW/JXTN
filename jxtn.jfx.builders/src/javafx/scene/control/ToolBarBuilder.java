@@ -112,6 +112,45 @@ public class ToolBarBuilder<Z extends ToolBar, B extends ToolBarBuilder<Z, B>>
     }
 
     /**
+     * 增加集合屬性{@link ToolBar#getItems}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B itemsAddNonNull(java.util.Collection<? extends javafx.scene.Node> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.Node i : value)
+            if (i != null)
+                this.valItems.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ToolBar#getItems}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B itemsAddNonNull(javafx.scene.Node... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.Node i : value)
+            if (i != null)
+                this.valItems.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link ToolBar#setOrientation(javafx.geometry.Orientation)}。
      *
      * @param value 新的屬性值

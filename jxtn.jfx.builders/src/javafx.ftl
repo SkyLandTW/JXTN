@@ -307,6 +307,51 @@ public class ${class.@name}Builder<${class.@genericDeclarationPrepend}Z extends 
         this.val${property.@name?cap_first}.addAll(java.util.Arrays.asList(value));
         return (B) this;
     }
+
+    /**
+     * 增加集合屬性{@link ${class.@name}#get${property.@name?cap_first}}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    <#if property.getter.@override == "true">
+    @Override
+    </#if>
+    @SuppressWarnings("unchecked")
+    public final B ${property.@name}AddNonNull(java.util.Collection<? extends ${property.@genericParam}> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.has${property.@name?cap_first} = true;
+        if (this.val${property.@name?cap_first} == null)
+            this.val${property.@name?cap_first} = new java.util.ArrayList<>(value.size());
+        for (${property.@genericParam} i : value)
+            if (i != null)
+                this.val${property.@name?cap_first}.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ${class.@name}#get${property.@name?cap_first}}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    <#if property.getter.@override == "true">
+    @Override
+    </#if>
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B ${property.@name}AddNonNull(${property.@genericParam}... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.has${property.@name?cap_first} = true;
+        if (this.val${property.@name?cap_first} == null)
+            this.val${property.@name?cap_first} = new java.util.ArrayList<>(value.length);
+        for (${property.@genericParam} i : value)
+            if (i != null)
+                this.val${property.@name?cap_first}.add(i);
+        return (B) this;
+    }
    </#if>
   </#list>
  <#-- FX屬性setter -->

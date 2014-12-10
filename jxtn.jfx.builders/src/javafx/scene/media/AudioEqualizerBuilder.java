@@ -112,6 +112,45 @@ public class AudioEqualizerBuilder<Z extends AudioEqualizer, B extends AudioEqua
     }
 
     /**
+     * 增加集合屬性{@link AudioEqualizer#getBands}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bandsAddNonNull(java.util.Collection<? extends javafx.scene.media.EqualizerBand> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasBands = true;
+        if (this.valBands == null)
+            this.valBands = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.media.EqualizerBand i : value)
+            if (i != null)
+                this.valBands.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link AudioEqualizer#getBands}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B bandsAddNonNull(javafx.scene.media.EqualizerBand... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasBands = true;
+        if (this.valBands == null)
+            this.valBands = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.media.EqualizerBand i : value)
+            if (i != null)
+                this.valBands.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link AudioEqualizer#setEnabled(boolean)}。
      *
      * @param value 新的屬性值

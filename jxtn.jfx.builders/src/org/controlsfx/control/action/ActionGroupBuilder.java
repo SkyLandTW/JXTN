@@ -98,6 +98,45 @@ public class ActionGroupBuilder<Z extends ActionGroup, B extends ActionGroupBuil
     }
 
     /**
+     * 增加集合屬性{@link ActionGroup#getActions}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B actionsAddNonNull(java.util.Collection<? extends org.controlsfx.control.action.Action> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasActions = true;
+        if (this.valActions == null)
+            this.valActions = new java.util.ArrayList<>(value.size());
+        for (org.controlsfx.control.action.Action i : value)
+            if (i != null)
+                this.valActions.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link ActionGroup#getActions}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B actionsAddNonNull(org.controlsfx.control.action.Action... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasActions = true;
+        if (this.valActions == null)
+            this.valActions = new java.util.ArrayList<>(value.length);
+        for (org.controlsfx.control.action.Action i : value)
+            if (i != null)
+                this.valActions.add(i);
+        return (B) this;
+    }
+
+    /**
      * 建構{@link ActionGroup}物件。
      *
      * @return 新的{@link ActionGroup}物件實體

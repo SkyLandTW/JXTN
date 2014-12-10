@@ -224,6 +224,45 @@ public class NotificationPaneBuilder<Z extends NotificationPane, B extends Notif
     }
 
     /**
+     * 增加集合屬性{@link NotificationPane#getActions}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B actionsAddNonNull(java.util.Collection<? extends org.controlsfx.control.action.Action> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasActions = true;
+        if (this.valActions == null)
+            this.valActions = new java.util.ArrayList<>(value.size());
+        for (org.controlsfx.control.action.Action i : value)
+            if (i != null)
+                this.valActions.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link NotificationPane#getActions}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B actionsAddNonNull(org.controlsfx.control.action.Action... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasActions = true;
+        if (this.valActions == null)
+            this.valActions = new java.util.ArrayList<>(value.length);
+        for (org.controlsfx.control.action.Action i : value)
+            if (i != null)
+                this.valActions.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link NotificationPane#setCloseButtonVisible(boolean)}。
      *
      * @param value 新的屬性值

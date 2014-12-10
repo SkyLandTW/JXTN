@@ -112,6 +112,45 @@ public class MenuButtonBuilder<Z extends MenuButton, B extends MenuButtonBuilder
     }
 
     /**
+     * 增加集合屬性{@link MenuButton#getItems}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B itemsAddNonNull(java.util.Collection<? extends javafx.scene.control.MenuItem> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.size());
+        for (javafx.scene.control.MenuItem i : value)
+            if (i != null)
+                this.valItems.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link MenuButton#getItems}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B itemsAddNonNull(javafx.scene.control.MenuItem... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.length);
+        for (javafx.scene.control.MenuItem i : value)
+            if (i != null)
+                this.valItems.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link MenuButton#setPopupSide(javafx.geometry.Side)}。
      *
      * @param value 新的屬性值

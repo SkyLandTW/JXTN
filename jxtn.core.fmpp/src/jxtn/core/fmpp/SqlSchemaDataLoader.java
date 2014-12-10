@@ -109,18 +109,7 @@ public class SqlSchemaDataLoader extends XmlDataLoader
         Objects.requireNonNull(connection);
         Objects.requireNonNull(schemaDoc);
         try (PreparedStatement stmt = connection.prepareStatement("
-select *,
-   (
-    select pa.rows
-      from sys.tables ta
-     inner join sys.partitions pa
-             on pa.object_id = ta.object_id
-     inner join sys.schemas sc
-             on ta.schema_id = sc.schema_id
-     where pa.index_id IN (1,0)
-       and sc.name = TABLE_SCHEMA
-       and ta.name = TABLE_NAME
-   ) as TABLE_ROWS
+select *
   from INFORMATION_SCHEMA.TABLES
  where TABLE_NAME not in ('sysdiagrams')
  order by TABLE_SCHEMA, TABLE_NAME
@@ -136,7 +125,6 @@ select *,
                     tableElem.setAttribute("catalog", rs.getString("TABLE_CATALOG"));
                     tableElem.setAttribute("schema", rs.getString("TABLE_SCHEMA"));
                     tableElem.setAttribute("name", tableName);
-                    tableElem.setAttribute("rows", Integer.toString(rs.getInt("TABLE_ROWS")));
                     schemaDoc.getFirstChild().appendChild(tableElem);
                 }
             }

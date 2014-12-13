@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: JXTN JavaFX Builders
-Bundle-SymbolicName: jxtn.jfx.builders;singleton:=true
+Bundle-SymbolicName: jxtn.jfx.makers;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: JXTN@GitHub
@@ -26,7 +26,7 @@ Export-Package: com.sun.javafx.scene.control.skin,
  javafx.scene.transform,
  javafx.scene.web,
  javafx.stage,
- jxtn.jfx.builders,
+ jxtn.jfx.makers,
  org.controlsfx,
  org.controlsfx.control,
  org.controlsfx.control.cell,

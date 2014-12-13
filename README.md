@@ -13,7 +13,7 @@ Java 8 API Extensions and Utilities
  - **jxtn.core.dev:** Patches to compilers and IDEs
  - **jxtn.core.fmpp:** FMPP/FreeMarker data loaders for code generation.
  - **jxtn.jfx.axi:** Extensions to JavaFX 8.
- - **jxtn.jfx.builders:** Replacement of deprecated JavaFX builders.
+ - **jxtn.jfx.makers:** Replacement of deprecated JavaFX builders.
 
 ------------------------------------------------------------------------------
 
@@ -221,8 +221,8 @@ Overrides and extends classes/interfaces already existing in JavaFX.
 
 ------------------------------------------------------------------------------
 
-jxtn.jfx.builders
------------------
+jxtn.jfx.makers
+---------------
 
 Re-creates the deprecated JavaFX builders, based on FMPP/FreeMarker template
 engine. It also provides bindings and you may easily extend the functionality
@@ -238,13 +238,13 @@ builders are already included).
  - OpenJFX Dialogs v1.0.2: Part of JavaFX 8u40 to provide dialog support.
 
 ##### Installation
- 1. Build *jxtn.jfx.builders*
- 2. Drop *jxtn.jfx.builders* into your own project(s) and make sure it's before
-    _ext/jfxrt.jar_ on classpath.
+ 1. Build *jxtn.jfx.makers*
+ 2. Drop *jxtn.jfx.makers* into your own project(s).
 
 ##### Notes
  - Comments are written in Chinese until I find ways to make dual-language
    javadoc.
+ - Builder classes are now Makers (ex: *LabelMaker* instead of *LabelBuilder*).
  - The re-created builders are nearly identical to official JavaFX builders,
    except the Builder.create() methods are replaced by a single *JFX* to avoid
    naming conflict (somehow Eclipse JDT compiler hates it). Instead of:

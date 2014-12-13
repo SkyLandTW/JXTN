@@ -270,7 +270,7 @@ public class JarReflectionDataLoader extends XmlDataLoader
                             .filter(m -> m.isPublic() && !m.isStatic()
                                     && !m.isAnnotationPresent(Deprecated.class)
                                     && this.isGetterOrSetter(m))
-                            .toArrayListSorted(m -> m.getName())
+                            .toArrayListSorted(m -> getMethodSortKey(m))
                             .toHashMapGrouped(m -> this.getPropertyName(m.getName()));
                     for (String propName : propertyMap.keySet().toArrayListSorted(n -> n))
                     {

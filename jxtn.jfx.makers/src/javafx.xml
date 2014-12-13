@@ -6740,8 +6740,8 @@
       <property genericParam="" genericType="int" name="column" override="false" rawType="int" static="false">
         <getter abstract="false" access="public" final="false" name="getColumn" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="int" static="false"/>
       </property>
-      <property genericParam="" genericType="javafx.scene.control.TableColumnBase" name="tableColumn" override="true" rawType="javafx.scene.control.TableColumnBase" static="false">
-        <getter abstract="false" access="public" final="false" name="getTableColumn" override="true" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.TableColumnBase" static="false"/>
+      <property genericParam="S, T" genericType="javafx.scene.control.TableColumn&lt;S, T&gt;" name="tableColumn" override="true" rawType="javafx.scene.control.TableColumn" static="false">
+        <getter abstract="false" access="public" final="true" name="getTableColumn" override="true" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.TableColumn&lt;S, T&gt;" static="false"/>
       </property>
       <property genericParam="S" genericType="javafx.scene.control.TableView&lt;S&gt;" name="tableView" override="false" rawType="javafx.scene.control.TableView" static="false">
         <getter abstract="false" access="public" final="true" name="getTableView" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.TableView&lt;S&gt;" static="false"/>
@@ -7860,8 +7860,8 @@
       <property genericParam="" genericType="int" name="column" override="false" rawType="int" static="false">
         <getter abstract="false" access="public" final="false" name="getColumn" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="int" static="false"/>
       </property>
-      <property genericParam="" genericType="javafx.scene.control.TableColumnBase" name="tableColumn" override="true" rawType="javafx.scene.control.TableColumnBase" static="false">
-        <getter abstract="false" access="public" final="false" name="getTableColumn" override="true" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.TableColumnBase" static="false"/>
+      <property genericParam="S, T" genericType="javafx.scene.control.TreeTableColumn&lt;S, T&gt;" name="tableColumn" override="true" rawType="javafx.scene.control.TreeTableColumn" static="false">
+        <getter abstract="false" access="public" final="true" name="getTableColumn" override="true" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.TreeTableColumn&lt;S, T&gt;" static="false"/>
       </property>
       <property genericParam="S" genericType="javafx.scene.control.TreeItem&lt;S&gt;" name="treeItem" override="false" rawType="javafx.scene.control.TreeItem" static="false">
         <getter abstract="false" access="public" final="true" name="getTreeItem" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.TreeItem&lt;S&gt;" static="false"/>

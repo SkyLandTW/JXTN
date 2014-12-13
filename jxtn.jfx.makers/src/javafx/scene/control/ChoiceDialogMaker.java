@@ -176,7 +176,7 @@ public class ChoiceDialogMaker<T extends java.lang.Object, Z extends ChoiceDialo
      * @return 新的{@link ChoiceDialog}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ChoiceDialog<T> build(T arg0, java.util.Collection<T> arg1)
+    public ChoiceDialog<T> build(T arg0, T[] arg1)
     {
         ChoiceDialog<T> instance = new ChoiceDialog<T>(arg0, arg1);
         this.applyTo((Z) instance);
@@ -190,7 +190,7 @@ public class ChoiceDialogMaker<T extends java.lang.Object, Z extends ChoiceDialo
      * @return 新的{@link ChoiceDialog}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ChoiceDialog<T> build(T arg0, T[] arg1)
+    public ChoiceDialog<T> build(T arg0, java.util.Collection<T> arg1)
     {
         ChoiceDialog<T> instance = new ChoiceDialog<T>(arg0, arg1);
         this.applyTo((Z) instance);

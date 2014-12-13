@@ -75,9 +75,9 @@ public class JarReflectionDataLoader extends XmlDataLoader
 {
     // 替換：javafx.scene.control.ListView.javafx.scene.control.ListView$EditEvent
     // 成為：javafx.scene.control.ListView.EditEvent
-    protected final Pattern genericFixPattern = Pattern.compile("(([a-z0-9]+\\.)+[A-Z][A-Za-z0-9]+)\\.\\1\\$");
+    private final Pattern genericFixPattern = Pattern.compile("(([a-z0-9]+\\.)+[A-Z][A-Za-z0-9]+)\\.\\1\\$");
 
-    protected final Pattern packageClassPattern = Pattern
+    private final Pattern packageClassPattern = Pattern
             .compile("(?<package>([a-z0-9]+)(\\.[a-z0-9]+)*)\\.(?<class>[A-Z].*)");
 
     @Override
@@ -248,19 +248,19 @@ public class JarReflectionDataLoader extends XmlDataLoader
                     }
                     for (Constructor constructor : Arrays.asList(klass.getDeclaredConstructors())
                             .filter(c -> c.isPublic() && !c.isAnnotationPresent(Deprecated.class))
-                            .toArrayListSorted(c -> c.getParameterCount()))
+                            .toArrayListSorted(c -> getConstructorSortKey(c)))
                     {
                         elemClass.appendChild(this.describeConstructor(xmlDoc, constructor));
                     }
                     for (Field field : Arrays.asList(klass.getDeclaredFields())
                             .filter(f -> f.isPublic() && !f.isAnnotationPresent(Deprecated.class))
-                            .toArrayListSorted(f -> f.getName()))
+                            .toArrayListSorted(f -> getFieldSortKey(f)))
                     {
                         elemClass.appendChild(this.describeField(xmlDoc, field));
                     }
                     for (Method method : Arrays.asList(klass.getDeclaredMethods())
                             .filter(m -> m.isPublic() && !m.isAnnotationPresent(Deprecated.class))
-                            .toArrayListSorted(m -> m.getName() + " " + m.toGenericString()))
+                            .toArrayListSorted(m -> getMethodSortKey(m)))
                     {
                         elemClass.appendChild(this.describeMethod(xmlDoc, method));
                     }
@@ -328,7 +328,7 @@ public class JarReflectionDataLoader extends XmlDataLoader
         }
     }
 
-    protected Element describeProperty(Document doc, String name, Method getter, Collection<Method> setterList)
+    private Element describeProperty(Document doc, String name, Method getter, Collection<Method> setterList)
     {
         Element elem = doc.createElement("property");
         elem.setAttribute("name", name);
@@ -389,7 +389,7 @@ public class JarReflectionDataLoader extends XmlDataLoader
         return elem;
     }
 
-    protected Element describeStaticProperty(Document doc, String name, Method getter, Method setter)
+    private Element describeStaticProperty(Document doc, String name, Method getter, Method setter)
     {
         Element elem = doc.createElement("property");
         elem.setAttribute("name", name);
@@ -425,7 +425,7 @@ public class JarReflectionDataLoader extends XmlDataLoader
         return elem;
     }
 
-    protected Element describeField(Document doc, Field field)
+    private Element describeField(Document doc, Field field)
     {
         Element elem = doc.createElement("field");
         elem.setAttribute("name", field.getName());
@@ -437,7 +437,7 @@ public class JarReflectionDataLoader extends XmlDataLoader
         return elem;
     }
 
-    protected Element describeConstructor(Document doc, Constructor constructor)
+    private Element describeConstructor(Document doc, Constructor constructor)
     {
         Element elem = doc.createElement("constructor");
         elem.setAttribute("name", constructor.getName());
@@ -451,7 +451,7 @@ public class JarReflectionDataLoader extends XmlDataLoader
         return elem;
     }
 
-    protected Element describeMethod(Document doc, Method method)
+    private Element describeMethod(Document doc, Method method)
     {
         Element elem = doc.createElement("method");
         elem.setAttribute("name", method.getName());
@@ -469,14 +469,14 @@ public class JarReflectionDataLoader extends XmlDataLoader
         return elem;
     }
 
-    protected Element describeTypeParameter(Document doc, TypeVariable typeParameter)
+    private Element describeTypeParameter(Document doc, TypeVariable typeParameter)
     {
         Element elem = doc.createElement("typeParameter");
         elem.setAttribute("name", typeParameter.getName());
         return elem;
     }
 
-    protected Element describeParameter(Document doc, Parameter parameter)
+    private Element describeParameter(Document doc, Parameter parameter)
     {
         Element elem = doc.createElement("parameter");
         elem.setAttribute("name", parameter.getName());
@@ -485,18 +485,18 @@ public class JarReflectionDataLoader extends XmlDataLoader
         return elem;
     }
 
-    protected String describeParametersCall(Parameter[] parameter)
+    private String describeParametersCall(Parameter[] parameter)
     {
         return String.join(", ", Arrays.asList(parameter).map(p -> p.getName()));
     }
 
-    protected String describeParametersDeclaration(Parameter[] parameter)
+    private String describeParametersDeclaration(Parameter[] parameter)
     {
         return String.join(", ", Arrays.asList(parameter).map(p ->
                 this.fixGenericTypeName(p.getParameterizedType().getTypeName()) + " " + p.getName()));
     }
 
-    protected Type findSuperclass(Class klass)
+    private Type findSuperclass(Class klass)
     {
         if (klass.getSuperclass() == null || klass.getSuperclass() == Object.class)
             return null;
@@ -526,7 +526,7 @@ public class JarReflectionDataLoader extends XmlDataLoader
         return supertype;
     }
 
-    protected String fixGenericTypeName(String genericTypeName)
+    private String fixGenericTypeName(String genericTypeName)
     {
         if (genericTypeName.contains("$"))
         {
@@ -540,7 +540,7 @@ public class JarReflectionDataLoader extends XmlDataLoader
         return genericTypeName;
     }
 
-    protected Class loadClass(ClassLoader loader, String name)
+    private Class loadClass(ClassLoader loader, String name)
     {
         try
         {
@@ -553,7 +553,7 @@ public class JarReflectionDataLoader extends XmlDataLoader
         }
     }
 
-    protected List<String> listClassNames(Path jarPath) throws IOException
+    private List<String> listClassNames(Path jarPath) throws IOException
     {
         List<String> classNames = new ArrayList<String>();
         try (FileInputStream file = new FileInputStream(jarPath.toFile());
@@ -573,7 +573,7 @@ public class JarReflectionDataLoader extends XmlDataLoader
         return classNames;
     }
 
-    protected String buildGenericDeclaration(TypeVariable[] typeParameters)
+    private String buildGenericDeclaration(TypeVariable[] typeParameters)
     {
         if (typeParameters.length == 0)
             return "";
@@ -594,7 +594,8 @@ public class JarReflectionDataLoader extends XmlDataLoader
             return String.join(", ", Arrays.asList(typeParameters).map(p -> p.getName()));
     }
 
-    protected String insertPostfix(String genericTypeName, String postfix)
+    /*
+    private String insertPostfix(String genericTypeName, String postfix)
     {
         if (genericTypeName == null)
             return null;
@@ -606,8 +607,9 @@ public class JarReflectionDataLoader extends XmlDataLoader
         else
             return genericTypeName + postfix;
     }
+     */
 
-    protected boolean isGetterOrSetter(Method method)
+    private boolean isGetterOrSetter(Method method)
     {
         String name = method.getName();
         if (name.length() > 2 && name.startsWith("is") && method.getParameterCount() == 0)
@@ -619,7 +621,7 @@ public class JarReflectionDataLoader extends XmlDataLoader
         return false;
     }
 
-    protected boolean isStaticGetterOrSetter(Method method)
+    private boolean isStaticGetterOrSetter(Method method)
     {
         String name = method.getName();
         if (name.length() > 2 && name.startsWith("is") && method.getParameterCount() == 1)
@@ -631,7 +633,7 @@ public class JarReflectionDataLoader extends XmlDataLoader
         return false;
     }
 
-    protected String getPropertyName(String accessorName)
+    private String getPropertyName(String accessorName)
     {
         if (accessorName.startsWith("is"))
             return accessorName.substring(2).toUncapitalized();
@@ -639,7 +641,7 @@ public class JarReflectionDataLoader extends XmlDataLoader
             return accessorName.substring(3).toUncapitalized();
     }
 
-    protected boolean checkMethodOverride(Method method)
+    private boolean checkMethodOverride(Method method)
     {
         if (method.getDeclaringClass() == Object.class)
             return false;
@@ -674,5 +676,25 @@ public class JarReflectionDataLoader extends XmlDataLoader
                 return true;
         }
         return false;
+    }
+
+    private static String getConstructorSortKey(Constructor constructor)
+    {
+        return String.format("%03d: %s",
+                constructor.getParameterCount(),
+                String.join(",", Arrays.asList(constructor.getGenericParameterTypes()).map(t -> t.getTypeName())));
+    }
+
+    private static String getFieldSortKey(Field field)
+    {
+        return field.getName();
+    }
+
+    private static String getMethodSortKey(Method method)
+    {
+        return String.format("%s %s %s",
+                method.getName(),
+                method.toGenericString(),
+                String.join(",", Arrays.asList(method.getGenericParameterTypes()).map(t -> t.getTypeName())));
     }
 }

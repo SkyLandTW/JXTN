@@ -32,20 +32,6 @@ public class GlyphFontMaker<Z extends GlyphFont, B extends GlyphFontMaker<Z, B>>
      * @return 新的{@link GlyphFont}物件實體
      */
     @SuppressWarnings("unchecked")
-    public GlyphFont build(java.lang.String arg0, int arg1, java.lang.String arg2)
-    {
-        GlyphFont instance = new GlyphFont(arg0, arg1, arg2);
-        this.applyTo((Z) instance);
-        this.doAfterBuild((Z) instance);
-        return instance;
-    }
-
-    /**
-     * 建構{@link GlyphFont}物件。
-     *
-     * @return 新的{@link GlyphFont}物件實體
-     */
-    @SuppressWarnings("unchecked")
     public GlyphFont build(java.lang.String arg0, int arg1, java.io.InputStream arg2)
     {
         GlyphFont instance = new GlyphFont(arg0, arg1, arg2);
@@ -60,7 +46,21 @@ public class GlyphFontMaker<Z extends GlyphFont, B extends GlyphFontMaker<Z, B>>
      * @return 新的{@link GlyphFont}物件實體
      */
     @SuppressWarnings("unchecked")
-    public GlyphFont build(java.lang.String arg0, int arg1, java.lang.String arg2, boolean arg3)
+    public GlyphFont build(java.lang.String arg0, int arg1, java.lang.String arg2)
+    {
+        GlyphFont instance = new GlyphFont(arg0, arg1, arg2);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link GlyphFont}物件。
+     *
+     * @return 新的{@link GlyphFont}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public GlyphFont build(java.lang.String arg0, int arg1, java.io.InputStream arg2, boolean arg3)
     {
         GlyphFont instance = new GlyphFont(arg0, arg1, arg2, arg3);
         this.applyTo((Z) instance);
@@ -74,7 +74,7 @@ public class GlyphFontMaker<Z extends GlyphFont, B extends GlyphFontMaker<Z, B>>
      * @return 新的{@link GlyphFont}物件實體
      */
     @SuppressWarnings("unchecked")
-    public GlyphFont build(java.lang.String arg0, int arg1, java.io.InputStream arg2, boolean arg3)
+    public GlyphFont build(java.lang.String arg0, int arg1, java.lang.String arg2, boolean arg3)
     {
         GlyphFont instance = new GlyphFont(arg0, arg1, arg2, arg3);
         this.applyTo((Z) instance);

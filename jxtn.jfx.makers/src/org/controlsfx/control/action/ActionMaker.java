@@ -576,7 +576,7 @@ public class ActionMaker<Z extends Action, B extends ActionMaker<Z, B>>
      * @return 新的{@link Action}物件實體
      */
     @SuppressWarnings("unchecked")
-    public Action build(java.util.function.Consumer<javafx.event.ActionEvent> arg0)
+    public Action build(java.lang.String arg0)
     {
         Action instance = new Action(arg0);
         this.applyTo((Z) instance);
@@ -590,7 +590,7 @@ public class ActionMaker<Z extends Action, B extends ActionMaker<Z, B>>
      * @return 新的{@link Action}物件實體
      */
     @SuppressWarnings("unchecked")
-    public Action build(java.lang.String arg0)
+    public Action build(java.util.function.Consumer<javafx.event.ActionEvent> arg0)
     {
         Action instance = new Action(arg0);
         this.applyTo((Z) instance);

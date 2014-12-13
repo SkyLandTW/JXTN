@@ -543,7 +543,7 @@ public class ImageViewMaker<Z extends ImageView, B extends ImageViewMaker<Z, B>>
      * @return 新的{@link ImageView}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ImageView build(javafx.scene.image.Image arg0)
+    public ImageView build(java.lang.String arg0)
     {
         ImageView instance = new ImageView(arg0);
         this.applyTo((Z) instance);
@@ -557,7 +557,7 @@ public class ImageViewMaker<Z extends ImageView, B extends ImageViewMaker<Z, B>>
      * @return 新的{@link ImageView}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ImageView build(java.lang.String arg0)
+    public ImageView build(javafx.scene.image.Image arg0)
     {
         ImageView instance = new ImageView(arg0);
         this.applyTo((Z) instance);

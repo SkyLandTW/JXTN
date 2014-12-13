@@ -74,7 +74,7 @@ public class ImageMaker<Z extends Image, B extends ImageMaker<Z, B>>
      * @return 新的{@link Image}物件實體
      */
     @SuppressWarnings("unchecked")
-    public Image build(java.lang.String arg0, double arg1, double arg2, boolean arg3, boolean arg4)
+    public Image build(java.io.InputStream arg0, double arg1, double arg2, boolean arg3, boolean arg4)
     {
         Image instance = new Image(arg0, arg1, arg2, arg3, arg4);
         this.applyTo((Z) instance);
@@ -88,7 +88,7 @@ public class ImageMaker<Z extends Image, B extends ImageMaker<Z, B>>
      * @return 新的{@link Image}物件實體
      */
     @SuppressWarnings("unchecked")
-    public Image build(java.io.InputStream arg0, double arg1, double arg2, boolean arg3, boolean arg4)
+    public Image build(java.lang.String arg0, double arg1, double arg2, boolean arg3, boolean arg4)
     {
         Image instance = new Image(arg0, arg1, arg2, arg3, arg4);
         this.applyTo((Z) instance);

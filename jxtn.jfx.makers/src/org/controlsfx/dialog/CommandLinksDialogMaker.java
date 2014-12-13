@@ -32,7 +32,7 @@ public class CommandLinksDialogMaker<Z extends CommandLinksDialog, B extends Com
      * @return 新的{@link CommandLinksDialog}物件實體
      */
     @SuppressWarnings("unchecked")
-    public CommandLinksDialog build(org.controlsfx.dialog.CommandLinksDialog.CommandLinksButtonType[] arg0)
+    public CommandLinksDialog build(java.util.List<org.controlsfx.dialog.CommandLinksDialog.CommandLinksButtonType> arg0)
     {
         CommandLinksDialog instance = new CommandLinksDialog(arg0);
         this.applyTo((Z) instance);
@@ -46,7 +46,7 @@ public class CommandLinksDialogMaker<Z extends CommandLinksDialog, B extends Com
      * @return 新的{@link CommandLinksDialog}物件實體
      */
     @SuppressWarnings("unchecked")
-    public CommandLinksDialog build(java.util.List<org.controlsfx.dialog.CommandLinksDialog.CommandLinksButtonType> arg0)
+    public CommandLinksDialog build(org.controlsfx.dialog.CommandLinksDialog.CommandLinksButtonType[] arg0)
     {
         CommandLinksDialog instance = new CommandLinksDialog(arg0);
         this.applyTo((Z) instance);

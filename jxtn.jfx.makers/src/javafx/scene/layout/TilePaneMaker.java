@@ -633,20 +633,6 @@ public class TilePaneMaker<Z extends TilePane, B extends TilePaneMaker<Z, B>>
      * @return 新的{@link TilePane}物件實體
      */
     @SuppressWarnings("unchecked")
-    public TilePane build(javafx.geometry.Orientation arg0, javafx.scene.Node[] arg1)
-    {
-        TilePane instance = new TilePane(arg0, arg1);
-        this.applyTo((Z) instance);
-        this.doAfterBuild((Z) instance);
-        return instance;
-    }
-
-    /**
-     * 建構{@link TilePane}物件。
-     *
-     * @return 新的{@link TilePane}物件實體
-     */
-    @SuppressWarnings("unchecked")
     public TilePane build(double arg0, double arg1)
     {
         TilePane instance = new TilePane(arg0, arg1);
@@ -661,7 +647,21 @@ public class TilePaneMaker<Z extends TilePane, B extends TilePaneMaker<Z, B>>
      * @return 新的{@link TilePane}物件實體
      */
     @SuppressWarnings("unchecked")
-    public TilePane build(javafx.geometry.Orientation arg0, double arg1, double arg2)
+    public TilePane build(javafx.geometry.Orientation arg0, javafx.scene.Node[] arg1)
+    {
+        TilePane instance = new TilePane(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link TilePane}物件。
+     *
+     * @return 新的{@link TilePane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public TilePane build(double arg0, double arg1, javafx.scene.Node[] arg2)
     {
         TilePane instance = new TilePane(arg0, arg1, arg2);
         this.applyTo((Z) instance);
@@ -675,7 +675,7 @@ public class TilePaneMaker<Z extends TilePane, B extends TilePaneMaker<Z, B>>
      * @return 新的{@link TilePane}物件實體
      */
     @SuppressWarnings("unchecked")
-    public TilePane build(double arg0, double arg1, javafx.scene.Node[] arg2)
+    public TilePane build(javafx.geometry.Orientation arg0, double arg1, double arg2)
     {
         TilePane instance = new TilePane(arg0, arg1, arg2);
         this.applyTo((Z) instance);

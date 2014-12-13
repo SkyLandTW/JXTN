@@ -32,20 +32,6 @@ public class BackgroundMaker<Z extends Background, B extends BackgroundMaker<Z, 
      * @return 新的{@link Background}物件實體
      */
     @SuppressWarnings("unchecked")
-    public Background build(javafx.scene.layout.BackgroundImage[] arg0)
-    {
-        Background instance = new Background(arg0);
-        this.applyTo((Z) instance);
-        this.doAfterBuild((Z) instance);
-        return instance;
-    }
-
-    /**
-     * 建構{@link Background}物件。
-     *
-     * @return 新的{@link Background}物件實體
-     */
-    @SuppressWarnings("unchecked")
     public Background build(javafx.scene.layout.BackgroundFill[] arg0)
     {
         Background instance = new Background(arg0);
@@ -60,7 +46,21 @@ public class BackgroundMaker<Z extends Background, B extends BackgroundMaker<Z, 
      * @return 新的{@link Background}物件實體
      */
     @SuppressWarnings("unchecked")
-    public Background build(javafx.scene.layout.BackgroundFill[] arg0, javafx.scene.layout.BackgroundImage[] arg1)
+    public Background build(javafx.scene.layout.BackgroundImage[] arg0)
+    {
+        Background instance = new Background(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link Background}物件。
+     *
+     * @return 新的{@link Background}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Background build(java.util.List<javafx.scene.layout.BackgroundFill> arg0, java.util.List<javafx.scene.layout.BackgroundImage> arg1)
     {
         Background instance = new Background(arg0, arg1);
         this.applyTo((Z) instance);
@@ -74,7 +74,7 @@ public class BackgroundMaker<Z extends Background, B extends BackgroundMaker<Z, 
      * @return 新的{@link Background}物件實體
      */
     @SuppressWarnings("unchecked")
-    public Background build(java.util.List<javafx.scene.layout.BackgroundFill> arg0, java.util.List<javafx.scene.layout.BackgroundImage> arg1)
+    public Background build(javafx.scene.layout.BackgroundFill[] arg0, javafx.scene.layout.BackgroundImage[] arg1)
     {
         Background instance = new Background(arg0, arg1);
         this.applyTo((Z) instance);

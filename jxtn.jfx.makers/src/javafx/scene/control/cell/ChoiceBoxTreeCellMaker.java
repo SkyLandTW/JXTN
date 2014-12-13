@@ -247,7 +247,7 @@ public class ChoiceBoxTreeCellMaker<T extends java.lang.Object, Z extends Choice
      * @return 新的{@link ChoiceBoxTreeCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ChoiceBoxTreeCell<T> build(javafx.util.StringConverter<T> arg0, javafx.collections.ObservableList<T> arg1)
+    public ChoiceBoxTreeCell<T> build(javafx.util.StringConverter<T> arg0, T[] arg1)
     {
         ChoiceBoxTreeCell<T> instance = new ChoiceBoxTreeCell<T>(arg0, arg1);
         this.applyTo((Z) instance);
@@ -261,7 +261,7 @@ public class ChoiceBoxTreeCellMaker<T extends java.lang.Object, Z extends Choice
      * @return 新的{@link ChoiceBoxTreeCell}物件實體
      */
     @SuppressWarnings("unchecked")
-    public ChoiceBoxTreeCell<T> build(javafx.util.StringConverter<T> arg0, T[] arg1)
+    public ChoiceBoxTreeCell<T> build(javafx.util.StringConverter<T> arg0, javafx.collections.ObservableList<T> arg1)
     {
         ChoiceBoxTreeCell<T> instance = new ChoiceBoxTreeCell<T>(arg0, arg1);
         this.applyTo((Z) instance);

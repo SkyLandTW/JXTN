@@ -233,7 +233,7 @@ public class InfoOverlayMaker<Z extends InfoOverlay, B extends InfoOverlayMaker<
      * @return 新的{@link InfoOverlay}物件實體
      */
     @SuppressWarnings("unchecked")
-    public InfoOverlay build(javafx.scene.Node arg0, java.lang.String arg1)
+    public InfoOverlay build(java.lang.String arg0, java.lang.String arg1)
     {
         InfoOverlay instance = new InfoOverlay(arg0, arg1);
         this.applyTo((Z) instance);
@@ -247,7 +247,7 @@ public class InfoOverlayMaker<Z extends InfoOverlay, B extends InfoOverlayMaker<
      * @return 新的{@link InfoOverlay}物件實體
      */
     @SuppressWarnings("unchecked")
-    public InfoOverlay build(java.lang.String arg0, java.lang.String arg1)
+    public InfoOverlay build(javafx.scene.Node arg0, java.lang.String arg1)
     {
         InfoOverlay instance = new InfoOverlay(arg0, arg1);
         this.applyTo((Z) instance);

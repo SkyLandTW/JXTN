@@ -3036,7 +3036,7 @@ public class SceneMaker<Z extends Scene, B extends SceneMaker<Z, B>>
      * @return 新的{@link Scene}物件實體
      */
     @SuppressWarnings("unchecked")
-    public Scene build(javafx.scene.Parent arg0, double arg1, double arg2, javafx.scene.paint.Paint arg3)
+    public Scene build(javafx.scene.Parent arg0, double arg1, double arg2, boolean arg3)
     {
         Scene instance = new Scene(arg0, arg1, arg2, arg3);
         this.applyTo((Z) instance);
@@ -3050,7 +3050,7 @@ public class SceneMaker<Z extends Scene, B extends SceneMaker<Z, B>>
      * @return 新的{@link Scene}物件實體
      */
     @SuppressWarnings("unchecked")
-    public Scene build(javafx.scene.Parent arg0, double arg1, double arg2, boolean arg3)
+    public Scene build(javafx.scene.Parent arg0, double arg1, double arg2, javafx.scene.paint.Paint arg3)
     {
         Scene instance = new Scene(arg0, arg1, arg2, arg3);
         this.applyTo((Z) instance);

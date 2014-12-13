@@ -509,7 +509,7 @@ public class FlowPaneMaker<Z extends FlowPane, B extends FlowPaneMaker<Z, B>>
      * @return 新的{@link FlowPane}物件實體
      */
     @SuppressWarnings("unchecked")
-    public FlowPane build(javafx.geometry.Orientation arg0, javafx.scene.Node[] arg1)
+    public FlowPane build(double arg0, double arg1)
     {
         FlowPane instance = new FlowPane(arg0, arg1);
         this.applyTo((Z) instance);
@@ -523,7 +523,7 @@ public class FlowPaneMaker<Z extends FlowPane, B extends FlowPaneMaker<Z, B>>
      * @return 新的{@link FlowPane}物件實體
      */
     @SuppressWarnings("unchecked")
-    public FlowPane build(double arg0, double arg1)
+    public FlowPane build(javafx.geometry.Orientation arg0, javafx.scene.Node[] arg1)
     {
         FlowPane instance = new FlowPane(arg0, arg1);
         this.applyTo((Z) instance);

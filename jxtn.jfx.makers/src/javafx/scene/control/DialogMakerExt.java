@@ -8,6 +8,9 @@ package javafx.scene.control;
 import java.util.Collection;
 
 import javafx.scene.Node;
+import javafx.stage.Modality;
+import javafx.stage.StageStyle;
+import javafx.stage.Window;
 
 /**
  * {@link Dialog}建構器延伸（供客製化）
@@ -47,6 +50,24 @@ public interface DialogMakerExt<R extends java.lang.Object, Z extends Dialog<R>,
     {
 
         this.self().afterBuild(d -> d.getDialogPane().setExpandableContent(content));
+        return this.self();
+    }
+
+    default B modality(Modality modality)
+    {
+        this.self().afterBuild(d -> d.initModality(modality));
+        return this.self();
+    }
+
+    default B owner(Window window)
+    {
+        this.self().afterBuild(d -> d.initOwner(window));
+        return this.self();
+    }
+
+    default B style(StageStyle style)
+    {
+        this.self().afterBuild(d -> d.initStyle(style));
         return this.self();
     }
 }

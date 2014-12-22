@@ -7,6 +7,7 @@ Supports multi-line string literals in Eclipse JDT
  - Eclipse JDT compilation
  - Eclipse JDT code assist
  - Eclipse JDT syntax highlighting
+ - Eclipse JDT generated LineNumberTable (*)
 
 ##### Tested environments:
  - Eclipse v4.4 (luna)
@@ -20,26 +21,57 @@ Modify *org.eclipse.jdt.core*
 
 ##### org.eclipse.jdt.internal.codeassist.complete.CompletionScanner
 
-Remove the following lines:
+Search for *INVALID_CHAR_IN_STRING*, make the following changes:
 
 ```java
 /**** \r and \n are not valid in string literals ****/
 if ((this.currentCharacter == '\n') || (this.currentCharacter == '\r')) {
-    ....
-    throw new InvalidInputException(INVALID_CHAR_IN_STRING);
+    ....                                                        // !REMOVE!
+    throw new InvalidInputException(INVALID_CHAR_IN_STRING);    // !REMOVE!
+    if (this.recordLineSeparator) {                             // !INSERT!
+        if (isUnicode) {                                        // !INSERT!
+            pushUnicodeLineSeparator();                         // !INSERT!
+        } else {                                                // !INSERT!
+            pushLineSeparator();                                // !INSERT!
+        }                                                       // !INSERT!
+    }                                                           // !INSERT!
 }
 ```
 
 ##### org.eclipse.jdt.internal.compiler.parser.Scanner
 
-Remove the following lines:
+Search for *INVALID_CHAR_IN_STRING*, make the following changes:
 
 ```java
 /**** \r and \n are not valid in string literals ****/
 if ((this.currentCharacter == '\n') || (this.currentCharacter == '\r')) {
-    ....
-    throw new InvalidInputException(INVALID_CHAR_IN_STRING);
+    ....                                                        // !REMOVE!
+    throw new InvalidInputException(INVALID_CHAR_IN_STRING);    // !REMOVE!
+    if (this.recordLineSeparator) {                             // !INSERT!
+        if (isUnicode) {                                        // !INSERT!
+            pushUnicodeLineSeparator();                         // !INSERT!
+        } else {                                                // !INSERT!
+            pushLineSeparator();                                // !INSERT!
+        }                                                       // !INSERT!
+    }                                                           // !INSERT!
 }
+```
+
+Search for *the string cannot go further that the line*, make the following changes:
+
+```java
+if (this.currentCharacter == '\r'){                                         // !REMOVE!
+    if (this.source[this.currentPosition] == '\n') this.currentPosition++;  // !REMOVE!
+    break NextToken; // the string cannot go further that the line          // !REMOVE!
+}                                                                           // !REMOVE!
+if (this.currentCharacter == '\n'){                                         // !REMOVE!
+    break; // the string cannot go further that the line                    // !REMOVE!
+}                                                                           // !REMOVE!
+if (this.currentCharacter == '\r' || this.currentCharacter == '\n') {       // !INSERT!
+    if (this.recordLineSeparator) {                                         // !INSERT!
+        pushLineSeparator();                                                // !INSERT!
+    }                                                                       // !INSERT!
+}                                                                           // !INSERT!
 ```
 
 ------------------------------------------------------------------------------

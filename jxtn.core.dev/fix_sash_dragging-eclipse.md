@@ -22,10 +22,21 @@ host.addMouseMoveListener(new MouseMoveListener() {
         ...
         ...
         adjustWeights(sashesToDrag, e.x, e.y);
-        host.layout();                              // REMOVE THIS LINE
-        host.update();                              // REMOVE THIS LINE
+        host.layout();                                          // REMOVE
+        host.update();                                          // REMOVE
+        if (!updateHostInProgress) {                            // INSERT
+            updateHostInProgress = true;                        // INSERT
+            host.getDisplay().timerExec(50, this::updateHost);  // INSERT
+        }                                                       // INSERT
+        ...
         ...
     }
+    private void updateHost() {                                 // INSERT
+        updateHostInProgress = false;                           // INSERT
+        host.layout();                                          // INSERT
+        host.update();                                          // INSERT
+    }                                                           // INSERT
+    private boolean updateHostInProgress;                       // INSERT
 });
 ```
 
@@ -37,9 +48,9 @@ host.addMouseListener(new MouseListener() {
     @Override
     public void mouseUp(MouseEvent e) {
         host.setCapture(false);
-        host.layout();                              // INSERT THIS LINE
-        host.update();                              // INSERT THIS LINE
         draggingSashes = false;
+        host.layout();                                          // INSERT
+        host.update();                                          // INSERT
     }
     ...
     ...

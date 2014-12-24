@@ -137,7 +137,9 @@ public class JarReflectionDataLoader extends XmlDataLoader
                         .filter(c -> Modifier.isPublic(c.getModifiers())
                                 && rootClass.isAssignableFrom(c)
                                 && !c.isAnnotation() && !c.isArray() && !c.isEnum() && !c.isInterface()
-                                && !c.isAnonymousClass() && !c.isLocalClass() && !c.isMemberClass() && !c.isSynthetic()
+                                && !c.isAnonymousClass() && !c.isLocalClass() && !c.isSynthetic()
+                                && !c.isMemberClass()
+                                // && (!c.isMemberClass() || Modifier.isStatic(c.getModifiers())) // 不支援static inner class
                                 && !c.isAnnotationPresent(Deprecated.class))
                         .toArrayList();
                 // 掃描靜態屬性
@@ -564,10 +566,19 @@ public class JarReflectionDataLoader extends XmlDataLoader
                 if (entry.isDirectory())
                     continue;
                 String name = entry.getName();
-                if (name.endsWith(".class") && !name.contains("$"))
+                if (!name.endsWith(".class"))
+                    continue;
+                int m1 = name.indexOf('$');
+                int m2 = name.lastIndexOf('$');
+                if (m1 != -1)
                 {
-                    classNames.add(name.substring(0, name.length() - ".class".length()));
+                    if (m1 != m2)
+                        continue;
+                    char c = name.charAt(m1 + 1);
+                    if (c >= '0' && c <= '9')
+                        continue;
                 }
+                classNames.add(name.substring(0, name.length() - ".class".length()));
             }
         }
         return classNames;

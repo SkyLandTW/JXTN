@@ -138,8 +138,7 @@ public class JarReflectionDataLoader extends XmlDataLoader
                                 && rootClass.isAssignableFrom(c)
                                 && !c.isAnnotation() && !c.isArray() && !c.isEnum() && !c.isInterface()
                                 && !c.isAnonymousClass() && !c.isLocalClass() && !c.isSynthetic()
-                                && !c.isMemberClass()
-                                // && (!c.isMemberClass() || Modifier.isStatic(c.getModifiers())) // 不支援static inner class
+                                && (!c.isMemberClass() || Modifier.isStatic(c.getModifiers()))
                                 && !c.isAnnotationPresent(Deprecated.class))
                         .toArrayList();
                 // 掃描靜態屬性
@@ -164,7 +163,7 @@ public class JarReflectionDataLoader extends XmlDataLoader
                         {
                             HashMap<String, ArrayList<Method>> pmap = staticPropertyMapRegistry.computeIfAbsent(
                                     type0, k -> new HashMap<>());
-                            pmap.put(klass.getSimpleName() + "_" + prop, mList);
+                            pmap.put(getShortName(klass) + "_" + prop, mList);
                         }
                     }
                 }
@@ -173,7 +172,7 @@ public class JarReflectionDataLoader extends XmlDataLoader
                 {
                     System.out.println(klass.getTypeName());
                     Element elemClass = xmlDoc.createElement("class");
-                    elemClass.setAttribute("name", klass.getSimpleName());
+                    elemClass.setAttribute("name", getShortName(klass));
                     elemClass.setAttribute("package", klass.getPackage().getName());
                     String paramsDeclaration = this.buildGenericDeclaration(klass.getTypeParameters());
                     String paramsName = this.buildGenericName(klass.getTypeParameters());
@@ -183,7 +182,7 @@ public class JarReflectionDataLoader extends XmlDataLoader
                     elemClass.setAttribute("genericParam", paramsName);
                     elemClass.setAttribute("genericParamPrepend", paramsName.length() == 0
                             ? "" : paramsName + ", ");
-                    elemClass.setAttribute("genericName", klass.getSimpleName()
+                    elemClass.setAttribute("genericName", getShortName(klass)
                             + (paramsName.length() == 0 ? "" : "<" + paramsName + ">"));
                     elemClass.setAttribute("abstract", Boolean.toString(Modifier.isAbstract(klass.getModifiers())));
                     // Parent
@@ -707,5 +706,14 @@ public class JarReflectionDataLoader extends XmlDataLoader
                 method.getName(),
                 method.toGenericString(),
                 String.join(",", Arrays.asList(method.getGenericParameterTypes()).map(t -> t.getTypeName())));
+    }
+
+    private static String getShortName(Class<?> klass)
+    {
+        String name = klass.getName();
+        int index = name.lastIndexOf('.');
+        if (index != -1)
+            name = name.substring(index + 1);
+        return name.replace('$', '.');
     }
 }

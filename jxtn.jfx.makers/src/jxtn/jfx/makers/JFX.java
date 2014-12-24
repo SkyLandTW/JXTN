@@ -149,6 +149,17 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link javafx.scene.chart.Axis.TickMark}建構器。
+     *
+     * @return 新的{@link javafx.scene.chart.Axis_TickMarkMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <T extends java.lang.Object> javafx.scene.chart.Axis_TickMarkMaker<T, javafx.scene.chart.Axis.TickMark<T>, ?> axis_TickMark()
+    {
+        return new javafx.scene.chart.Axis_TickMarkMaker();
+    }
+
+    /**
      * 建立新的{@link javafx.scene.chart.BarChart}建構器。
      *
      * @return 新的{@link javafx.scene.chart.BarChartMaker}
@@ -215,6 +226,17 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link javafx.scene.chart.NumberAxis.DefaultFormatter}建構器。
+     *
+     * @return 新的{@link javafx.scene.chart.NumberAxis_DefaultFormatterMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.scene.chart.NumberAxis_DefaultFormatterMaker<javafx.scene.chart.NumberAxis.DefaultFormatter, ?> numberAxis_DefaultFormatter()
+    {
+        return new javafx.scene.chart.NumberAxis_DefaultFormatterMaker();
+    }
+
+    /**
      * 建立新的{@link javafx.scene.chart.PieChart}建構器。
      *
      * @return 新的{@link javafx.scene.chart.PieChartMaker}
@@ -223,6 +245,17 @@ public final class JFX
     public static javafx.scene.chart.PieChartMaker<javafx.scene.chart.PieChart, ?> pieChart()
     {
         return new javafx.scene.chart.PieChartMaker();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.chart.PieChart.Data}建構器。
+     *
+     * @return 新的{@link javafx.scene.chart.PieChart_DataMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.scene.chart.PieChart_DataMaker<javafx.scene.chart.PieChart.Data, ?> pieChart_Data()
+    {
+        return new javafx.scene.chart.PieChart_DataMaker();
     }
 
     /**
@@ -278,6 +311,28 @@ public final class JFX
     public static <X extends java.lang.Object, Y extends java.lang.Object> javafx.scene.chart.XYChartMaker<X, Y, javafx.scene.chart.XYChart<X, Y>, ?> xYChart()
     {
         return new javafx.scene.chart.XYChartMaker();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.chart.XYChart.Data}建構器。
+     *
+     * @return 新的{@link javafx.scene.chart.XYChart_DataMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <X extends java.lang.Object, Y extends java.lang.Object> javafx.scene.chart.XYChart_DataMaker<X, Y, javafx.scene.chart.XYChart.Data<X, Y>, ?> xYChart_Data()
+    {
+        return new javafx.scene.chart.XYChart_DataMaker();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.chart.XYChart.Series}建構器。
+     *
+     * @return 新的{@link javafx.scene.chart.XYChart_SeriesMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <X extends java.lang.Object, Y extends java.lang.Object> javafx.scene.chart.XYChart_SeriesMaker<X, Y, javafx.scene.chart.XYChart.Series<X, Y>, ?> xYChart_Series()
+    {
+        return new javafx.scene.chart.XYChart_SeriesMaker();
     }
 
     /**
@@ -732,6 +787,17 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link javafx.scene.control.SplitPane.Divider}建構器。
+     *
+     * @return 新的{@link javafx.scene.control.SplitPane_DividerMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.scene.control.SplitPane_DividerMaker<javafx.scene.control.SplitPane.Divider, ?> splitPane_Divider()
+    {
+        return new javafx.scene.control.SplitPane_DividerMaker();
+    }
+
+    /**
      * 建立新的{@link javafx.scene.control.Tab}建構器。
      *
      * @return 新的{@link javafx.scene.control.TabMaker}
@@ -776,6 +842,17 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link javafx.scene.control.TableColumn.CellDataFeatures}建構器。
+     *
+     * @return 新的{@link javafx.scene.control.TableColumn_CellDataFeaturesMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <S extends java.lang.Object, T extends java.lang.Object> javafx.scene.control.TableColumn_CellDataFeaturesMaker<S, T, javafx.scene.control.TableColumn.CellDataFeatures<S, T>, ?> tableColumn_CellDataFeatures()
+    {
+        return new javafx.scene.control.TableColumn_CellDataFeaturesMaker();
+    }
+
+    /**
      * 建立新的{@link javafx.scene.control.TablePosition}建構器。
      *
      * @return 新的{@link javafx.scene.control.TablePositionMaker}
@@ -806,6 +883,17 @@ public final class JFX
     public static <S extends java.lang.Object> javafx.scene.control.TableViewMaker<S, javafx.scene.control.TableView<S>, ?> tableView()
     {
         return new javafx.scene.control.TableViewMaker();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.control.TableView.ResizeFeatures}建構器。
+     *
+     * @return 新的{@link javafx.scene.control.TableView_ResizeFeaturesMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <S extends java.lang.Object> javafx.scene.control.TableView_ResizeFeaturesMaker<S, javafx.scene.control.TableView.ResizeFeatures<S>, ?> tableView_ResizeFeatures()
+    {
+        return new javafx.scene.control.TableView_ResizeFeaturesMaker();
     }
 
     /**
@@ -930,6 +1018,17 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link javafx.scene.control.TreeTableColumn.CellDataFeatures}建構器。
+     *
+     * @return 新的{@link javafx.scene.control.TreeTableColumn_CellDataFeaturesMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <S extends java.lang.Object, T extends java.lang.Object> javafx.scene.control.TreeTableColumn_CellDataFeaturesMaker<S, T, javafx.scene.control.TreeTableColumn.CellDataFeatures<S, T>, ?> treeTableColumn_CellDataFeatures()
+    {
+        return new javafx.scene.control.TreeTableColumn_CellDataFeaturesMaker();
+    }
+
+    /**
      * 建立新的{@link javafx.scene.control.TreeTablePosition}建構器。
      *
      * @return 新的{@link javafx.scene.control.TreeTablePositionMaker}
@@ -960,6 +1059,17 @@ public final class JFX
     public static <S extends java.lang.Object> javafx.scene.control.TreeTableViewMaker<S, javafx.scene.control.TreeTableView<S>, ?> treeTableView()
     {
         return new javafx.scene.control.TreeTableViewMaker();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.control.TreeTableView.ResizeFeatures}建構器。
+     *
+     * @return 新的{@link javafx.scene.control.TreeTableView_ResizeFeaturesMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <S extends java.lang.Object> javafx.scene.control.TreeTableView_ResizeFeaturesMaker<S, javafx.scene.control.TreeTableView.ResizeFeatures<S>, ?> treeTableView_ResizeFeatures()
+    {
+        return new javafx.scene.control.TreeTableView_ResizeFeaturesMaker();
     }
 
     /**
@@ -1334,6 +1444,39 @@ public final class JFX
     public static javafx.scene.effect.InnerShadowMaker<javafx.scene.effect.InnerShadow, ?> innerShadow()
     {
         return new javafx.scene.effect.InnerShadowMaker();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.effect.Light.Distant}建構器。
+     *
+     * @return 新的{@link javafx.scene.effect.Light_DistantMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.scene.effect.Light_DistantMaker<javafx.scene.effect.Light.Distant, ?> light_Distant()
+    {
+        return new javafx.scene.effect.Light_DistantMaker();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.effect.Light.Point}建構器。
+     *
+     * @return 新的{@link javafx.scene.effect.Light_PointMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.scene.effect.Light_PointMaker<javafx.scene.effect.Light.Point, ?> light_Point()
+    {
+        return new javafx.scene.effect.Light_PointMaker();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.effect.Light.Spot}建構器。
+     *
+     * @return 新的{@link javafx.scene.effect.Light_SpotMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.scene.effect.Light_SpotMaker<javafx.scene.effect.Light.Spot, ?> light_Spot()
+    {
+        return new javafx.scene.effect.Light_SpotMaker();
     }
 
     /**
@@ -2371,6 +2514,17 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link javafx.stage.FileChooser.ExtensionFilter}建構器。
+     *
+     * @return 新的{@link javafx.stage.FileChooser_ExtensionFilterMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.stage.FileChooser_ExtensionFilterMaker<javafx.stage.FileChooser.ExtensionFilter, ?> fileChooser_ExtensionFilter()
+    {
+        return new javafx.stage.FileChooser_ExtensionFilterMaker();
+    }
+
+    /**
      * 建立新的{@link javafx.stage.Popup}建構器。
      *
      * @return 新的{@link javafx.stage.PopupMaker}
@@ -2800,6 +2954,17 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link org.controlsfx.control.spreadsheet.GridBase.MapBasedRowHeightFactory}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.spreadsheet.GridBase_MapBasedRowHeightFactoryMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.spreadsheet.GridBase_MapBasedRowHeightFactoryMaker<org.controlsfx.control.spreadsheet.GridBase.MapBasedRowHeightFactory, ?> gridBase_MapBasedRowHeightFactory()
+    {
+        return new org.controlsfx.control.spreadsheet.GridBase_MapBasedRowHeightFactoryMaker();
+    }
+
+    /**
      * 建立新的{@link org.controlsfx.control.spreadsheet.GridChange}建構器。
      *
      * @return 新的{@link org.controlsfx.control.spreadsheet.GridChangeMaker}
@@ -2833,6 +2998,83 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.DateEditor}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_DateEditorMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_DateEditorMaker<org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.DateEditor, ?> spreadsheetCellEditor_DateEditor()
+    {
+        return new org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_DateEditorMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.DoubleEditor}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_DoubleEditorMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_DoubleEditorMaker<org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.DoubleEditor, ?> spreadsheetCellEditor_DoubleEditor()
+    {
+        return new org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_DoubleEditorMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.IntegerEditor}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_IntegerEditorMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_IntegerEditorMaker<org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.IntegerEditor, ?> spreadsheetCellEditor_IntegerEditor()
+    {
+        return new org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_IntegerEditorMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.ListEditor}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_ListEditorMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <R extends java.lang.Object> org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_ListEditorMaker<R, org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.ListEditor<R>, ?> spreadsheetCellEditor_ListEditor()
+    {
+        return new org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_ListEditorMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.ObjectEditor}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_ObjectEditorMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_ObjectEditorMaker<org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.ObjectEditor, ?> spreadsheetCellEditor_ObjectEditor()
+    {
+        return new org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_ObjectEditorMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.StringEditor}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_StringEditorMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_StringEditorMaker<org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.StringEditor, ?> spreadsheetCellEditor_StringEditor()
+    {
+        return new org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_StringEditorMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.TextAreaEditor}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_TextAreaEditorMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_TextAreaEditorMaker<org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.TextAreaEditor, ?> spreadsheetCellEditor_TextAreaEditor()
+    {
+        return new org.controlsfx.control.spreadsheet.SpreadsheetCellEditor_TextAreaEditorMaker();
+    }
+
+    /**
      * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellType}建構器。
      *
      * @return 新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellTypeMaker}
@@ -2841,6 +3083,72 @@ public final class JFX
     public static <T extends java.lang.Object> org.controlsfx.control.spreadsheet.SpreadsheetCellTypeMaker<T, org.controlsfx.control.spreadsheet.SpreadsheetCellType<T>, ?> spreadsheetCellType()
     {
         return new org.controlsfx.control.spreadsheet.SpreadsheetCellTypeMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellType.DateType}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellType_DateTypeMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.spreadsheet.SpreadsheetCellType_DateTypeMaker<org.controlsfx.control.spreadsheet.SpreadsheetCellType.DateType, ?> spreadsheetCellType_DateType()
+    {
+        return new org.controlsfx.control.spreadsheet.SpreadsheetCellType_DateTypeMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellType.DoubleType}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellType_DoubleTypeMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.spreadsheet.SpreadsheetCellType_DoubleTypeMaker<org.controlsfx.control.spreadsheet.SpreadsheetCellType.DoubleType, ?> spreadsheetCellType_DoubleType()
+    {
+        return new org.controlsfx.control.spreadsheet.SpreadsheetCellType_DoubleTypeMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellType.IntegerType}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellType_IntegerTypeMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.spreadsheet.SpreadsheetCellType_IntegerTypeMaker<org.controlsfx.control.spreadsheet.SpreadsheetCellType.IntegerType, ?> spreadsheetCellType_IntegerType()
+    {
+        return new org.controlsfx.control.spreadsheet.SpreadsheetCellType_IntegerTypeMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellType.ListType}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellType_ListTypeMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.spreadsheet.SpreadsheetCellType_ListTypeMaker<org.controlsfx.control.spreadsheet.SpreadsheetCellType.ListType, ?> spreadsheetCellType_ListType()
+    {
+        return new org.controlsfx.control.spreadsheet.SpreadsheetCellType_ListTypeMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellType.ObjectType}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellType_ObjectTypeMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.spreadsheet.SpreadsheetCellType_ObjectTypeMaker<org.controlsfx.control.spreadsheet.SpreadsheetCellType.ObjectType, ?> spreadsheetCellType_ObjectType()
+    {
+        return new org.controlsfx.control.spreadsheet.SpreadsheetCellType_ObjectTypeMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellType.StringType}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.spreadsheet.SpreadsheetCellType_StringTypeMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.spreadsheet.SpreadsheetCellType_StringTypeMaker<org.controlsfx.control.spreadsheet.SpreadsheetCellType.StringType, ?> spreadsheetCellType_StringType()
+    {
+        return new org.controlsfx.control.spreadsheet.SpreadsheetCellType_StringTypeMaker();
     }
 
     /**
@@ -2899,6 +3207,17 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link org.controlsfx.dialog.CommandLinksDialog.CommandLinksButtonType}建構器。
+     *
+     * @return 新的{@link org.controlsfx.dialog.CommandLinksDialog_CommandLinksButtonTypeMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.dialog.CommandLinksDialog_CommandLinksButtonTypeMaker<org.controlsfx.dialog.CommandLinksDialog.CommandLinksButtonType, ?> commandLinksDialog_CommandLinksButtonType()
+    {
+        return new org.controlsfx.dialog.CommandLinksDialog_CommandLinksButtonTypeMaker();
+    }
+
+    /**
      * 建立新的{@link org.controlsfx.dialog.ExceptionDialog}建構器。
      *
      * @return 新的{@link org.controlsfx.dialog.ExceptionDialogMaker}
@@ -2951,6 +3270,28 @@ public final class JFX
     public static org.controlsfx.dialog.WizardMaker<org.controlsfx.dialog.Wizard, ?> wizard()
     {
         return new org.controlsfx.dialog.WizardMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.dialog.Wizard.LinearFlow}建構器。
+     *
+     * @return 新的{@link org.controlsfx.dialog.Wizard_LinearFlowMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.dialog.Wizard_LinearFlowMaker<org.controlsfx.dialog.Wizard.LinearFlow, ?> wizard_LinearFlow()
+    {
+        return new org.controlsfx.dialog.Wizard_LinearFlowMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.dialog.Wizard.WizardPane}建構器。
+     *
+     * @return 新的{@link org.controlsfx.dialog.Wizard_WizardPaneMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.dialog.Wizard_WizardPaneMaker<org.controlsfx.dialog.Wizard.WizardPane, ?> wizard_WizardPane()
+    {
+        return new org.controlsfx.dialog.Wizard_WizardPaneMaker();
     }
 
     /**

@@ -308,7 +308,7 @@ public final class JFX
      * @return 新的{@link javafx.scene.chart.XYChartMaker}
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static <X extends java.lang.Object, Y extends java.lang.Object> javafx.scene.chart.XYChartMaker<X, Y, javafx.scene.chart.XYChart<X, Y>, ?> xYChart()
+    public static <X extends java.lang.Object, Y extends java.lang.Object> javafx.scene.chart.XYChartMaker<X, Y, javafx.scene.chart.XYChart<X, Y>, ?> xyChart()
     {
         return new javafx.scene.chart.XYChartMaker();
     }
@@ -319,7 +319,7 @@ public final class JFX
      * @return 新的{@link javafx.scene.chart.XYChart_DataMaker}
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static <X extends java.lang.Object, Y extends java.lang.Object> javafx.scene.chart.XYChart_DataMaker<X, Y, javafx.scene.chart.XYChart.Data<X, Y>, ?> xYChart_Data()
+    public static <X extends java.lang.Object, Y extends java.lang.Object> javafx.scene.chart.XYChart_DataMaker<X, Y, javafx.scene.chart.XYChart.Data<X, Y>, ?> xyChart_Data()
     {
         return new javafx.scene.chart.XYChart_DataMaker();
     }
@@ -330,7 +330,7 @@ public final class JFX
      * @return 新的{@link javafx.scene.chart.XYChart_SeriesMaker}
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static <X extends java.lang.Object, Y extends java.lang.Object> javafx.scene.chart.XYChart_SeriesMaker<X, Y, javafx.scene.chart.XYChart.Series<X, Y>, ?> xYChart_Series()
+    public static <X extends java.lang.Object, Y extends java.lang.Object> javafx.scene.chart.XYChart_SeriesMaker<X, Y, javafx.scene.chart.XYChart.Series<X, Y>, ?> xyChart_Series()
     {
         return new javafx.scene.chart.XYChart_SeriesMaker();
     }
@@ -2277,7 +2277,7 @@ public final class JFX
      * @return 新的{@link javafx.scene.shape.SVGPathMaker}
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static javafx.scene.shape.SVGPathMaker<javafx.scene.shape.SVGPath, ?> sVGPath()
+    public static javafx.scene.shape.SVGPathMaker<javafx.scene.shape.SVGPath, ?> svgPath()
     {
         return new javafx.scene.shape.SVGPathMaker();
     }
@@ -2442,7 +2442,7 @@ public final class JFX
      * @return 新的{@link javafx.scene.web.HTMLEditorMaker}
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static javafx.scene.web.HTMLEditorMaker<javafx.scene.web.HTMLEditor, ?> hTMLEditor()
+    public static javafx.scene.web.HTMLEditorMaker<javafx.scene.web.HTMLEditor, ?> htmlEditor()
     {
         return new javafx.scene.web.HTMLEditorMaker();
     }

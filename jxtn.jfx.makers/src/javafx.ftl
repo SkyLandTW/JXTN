@@ -40,6 +40,20 @@
   </#list>
   <#return path?substring(1)>
 </#function>
+<#function uncap fullName>
+  <#assign last = fullName?length - 2>
+  <#assign path = "">
+  <#list 0..last as i>
+    <#assign part = fullName?substring(i, i + 1)>
+    <#assign next = fullName?substring(i + 1, i + 2)>
+    <#if part?upper_case == part && (i == 0 || next?lower_case != next)>
+        <#assign path = path + part?lower_case>
+    <#else>
+        <#return path + part + fullName?substring(i + 1)>
+    </#if>
+  </#list>
+  <#return path + fullName?substring(fullName?length - 1, fullName?length)>
+</#function>
 <#function isFXProp method>
   <#if method.@static == "false" && !method.@name?starts_with("get") && !method.@name?starts_with("set") && method.@name?ends_with("Property") && method.@returnType?contains("Property") && !method.@returnType?contains("ReadOnly")>
     <#return true>
@@ -110,7 +124,7 @@ public final class JFX
      * @return 新的{@link ${class.@package}.${class.@name?replace(".", "_")}Maker}
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static<#if class.@genericDeclaration != ""> <${class.@genericDeclaration}></#if> ${class.@package}.${class.@name?replace(".", "_")}Maker<${class.@genericParamPrepend}${class.@package}.${class.@genericName}, ?> ${class.@name?uncap_first?replace(".", "_")}()
+    public static<#if class.@genericDeclaration != ""> <${class.@genericDeclaration}></#if> ${class.@package}.${class.@name?replace(".", "_")}Maker<${class.@genericParamPrepend}${class.@package}.${class.@genericName}, ?> ${uncap(class.@name?replace(".", "_"))}()
     {
         return new ${class.@package}.${class.@name?replace(".", "_")}Maker();
     }

@@ -49,10 +49,24 @@ public interface ObservableListExt<E>
      * @param mapper 對照函數，負責建立來源項目的資料連結
      * @return 對照後的結果，會自動配合目前集合做更新
      */
-    default <R> ObservableList<R> toMappedObservable(Function<E, ObservableValue<R>> mapper)
+    default <R> ObservableList<R> toMappedObservableByBinding(Function<E, ObservableValue<R>> mapper)
     {
         ObservableList<R> mappedList = FXCollections.observableArrayList();
-        ObservableListHelper.mapTo((ObservableList<E>) this, mappedList, mapper);
+        ObservableListHelper.mapByBinding((ObservableList<E>) this, mappedList, mapper);
+        return mappedList;
+    }
+
+    /**
+     * 建立自動對照清單
+     *
+     * @param <R> 目的集合項目型態
+     * @param mapper 對照函數
+     * @return 對照後的結果，會自動配合目前集合做更新
+     */
+    default <R> ObservableList<R> toMappedObservableByValue(Function<E, R> mapper)
+    {
+        ObservableList<R> mappedList = FXCollections.observableArrayList();
+        ObservableListHelper.mapByValue((ObservableList<E>) this, mappedList, mapper);
         return mappedList;
     }
 
@@ -60,16 +74,16 @@ public interface ObservableListExt<E>
      * 建立自動群組
      *
      * @param <K> 項目群組鍵值型態
-     * @param grouper 群組函數(取得做群組的鍵值)，負責建立來源項目的資料連結
+     * @param grouper 群組函數(取得做群組的鍵值)，負責建立計算來源項目群組鍵的資料連結
      * @param createGroup 建立空白群組的函數
      * @param addToGroup 增加來源項目到群組的函數
      * @param removeFromGroup 從群組移除來源項目的函數，傳回true表示群組該移除
      * @return 群組後的結果(群組鍵值=>組內項目)，會自動配合目前集合做更新
      */
-    default <K> ObservableMap<K, ObservableList<E>> toGroupedObservable(Function<E, ObservableValue<K>> grouper)
+    default <K> ObservableMap<K, ObservableList<E>> toGroupedObservableByBinding(Function<E, ObservableValue<K>> grouper)
     {
         ObservableMap<K, ObservableList<E>> groupMap = FXCollections.observableHashMap();
-        ObservableListHelper.groupTo((ObservableList<E>) this, groupMap, grouper);
+        ObservableListHelper.groupByBinding((ObservableList<E>) this, groupMap, grouper);
         return groupMap;
     }
 
@@ -78,20 +92,60 @@ public interface ObservableListExt<E>
      *
      * @param <K> 項目群組鍵值型態
      * @param <G> 項目群組項目型態
-     * @param grouper 群組函數(取得做群組的鍵值)，負責建立來源項目的資料連結
+     * @param grouper 群組函數(取得做群組的鍵值)，負責建立計算來源項目群組鍵的資料連結
      * @param createGroup 建立空白群組的函數
      * @param addToGroup 增加來源項目到群組的函數
      * @param removeFromGroup 從群組移除來源項目的函數，傳回true表示群組該移除
      * @return 群組後的結果(群組鍵值=>自訂型態群組)，會自動配合目前集合做更新
      */
-    default <K, G> ObservableMap<K, G> toGroupedObservable(
+    default <K, G> ObservableMap<K, G> toGroupedObservableByBinding(
             Function<E, ObservableValue<K>> grouper,
             Function<K, G> createGroup,
             BiConsumer<G, E> addToGroup,
             BiPredicate<G, E> removeFromGroup)
     {
         ObservableMap<K, G> groupMap = FXCollections.observableHashMap();
-        ObservableListHelper.groupTo((ObservableList<E>) this, groupMap,
+        ObservableListHelper.groupByBinding((ObservableList<E>) this, groupMap,
+                grouper, createGroup, addToGroup, removeFromGroup);
+        return groupMap;
+    }
+
+    /**
+     * 建立自動群組
+     *
+     * @param <K> 項目群組鍵值型態
+     * @param grouper 群組函數(取得做群組的鍵值)，負責計算來源項目的群組鍵
+     * @param createGroup 建立空白群組的函數
+     * @param addToGroup 增加來源項目到群組的函數
+     * @param removeFromGroup 從群組移除來源項目的函數，傳回true表示群組該移除
+     * @return 群組後的結果(群組鍵值=>組內項目)，會自動配合目前集合做更新
+     */
+    default <K> ObservableMap<K, ObservableList<E>> toGroupedObservableByValue(Function<E, K> grouper)
+    {
+        ObservableMap<K, ObservableList<E>> groupMap = FXCollections.observableHashMap();
+        ObservableListHelper.groupByValue((ObservableList<E>) this, groupMap, grouper);
+        return groupMap;
+    }
+
+    /**
+     * 建立自動群組
+     *
+     * @param <K> 項目群組鍵值型態
+     * @param <G> 項目群組項目型態
+     * @param grouper 群組函數(取得做群組的鍵值)，負責計算來源項目的群組鍵
+     * @param createGroup 建立空白群組的函數
+     * @param addToGroup 增加來源項目到群組的函數
+     * @param removeFromGroup 從群組移除來源項目的函數，傳回true表示群組該移除
+     * @return 群組後的結果(群組鍵值=>自訂型態群組)，會自動配合目前集合做更新
+     */
+    default <K, G> ObservableMap<K, G> toGroupedObservableByValue(
+            Function<E, K> grouper,
+            Function<K, G> createGroup,
+            BiConsumer<G, E> addToGroup,
+            BiPredicate<G, E> removeFromGroup)
+    {
+        ObservableMap<K, G> groupMap = FXCollections.observableHashMap();
+        ObservableListHelper.groupByValue((ObservableList<E>) this, groupMap,
                 grouper, createGroup, addToGroup, removeFromGroup);
         return groupMap;
     }

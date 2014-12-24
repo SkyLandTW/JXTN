@@ -41,14 +41,14 @@ import jxtn.jfx.axi.ObservableSetHelper;
 public interface ObservableSetExt<E>
 {
     /**
-     * 建立自動對照的{@link ObservableList}
+     * 建立自動同步的{@link ObservableList}
      *
      * @return {@link ObservableList}，對應目前集的項目
      */
     default ObservableList<E> toObservable()
     {
         ObservableList<E> list = FXCollections.observableArrayList();
-        ObservableSetHelper.mapTo((ObservableSet<E>) this, list);
+        ObservableSetHelper.map((ObservableSet<E>) this, list);
         return list;
     }
 
@@ -59,10 +59,24 @@ public interface ObservableSetExt<E>
      * @param mapper 對照函數，負責建立來源項目的資料連結
      * @return {@link ObservableList}，對應目前集的項目
      */
-    default <R> ObservableList<R> toObservable(Function<E, ObservableValue<R>> mapper)
+    default <R> ObservableList<R> toMappedObservableByBinding(Function<E, ObservableValue<R>> mapper)
     {
         ObservableList<R> list = FXCollections.observableArrayList();
-        ObservableSetHelper.mapTo((ObservableSet<E>) this, list, mapper);
+        ObservableSetHelper.mapByBinding((ObservableSet<E>) this, list, mapper);
+        return list;
+    }
+
+    /**
+     * 建立自動對照的{@link ObservableList}
+     *
+     * @param <R> 目的集合項目型態
+     * @param mapper 對照函數
+     * @return {@link ObservableList}，對應目前集的項目
+     */
+    default <R> ObservableList<R> toMappedObservableByValue(Function<E, R> mapper)
+    {
+        ObservableList<R> list = FXCollections.observableArrayList();
+        ObservableSetHelper.mapByValue((ObservableSet<E>) this, list, mapper);
         return list;
     }
 }

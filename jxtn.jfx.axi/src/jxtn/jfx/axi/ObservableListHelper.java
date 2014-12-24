@@ -64,7 +64,7 @@ public final class ObservableListHelper
      * @param targetList 目的集合
      * @param mapper 對照函數，負責建立來源項目的資料連結
      */
-    public static <S, T> void mapTo(
+    public static <S, T> void mapByBinding(
             ObservableList<S> sourceList,
             ObservableList<T> targetList,
             Function<S, ObservableValue<T>> mapper)
@@ -110,8 +110,8 @@ public final class ObservableListHelper
                         {
                             ObservableValue<T> b = mapper.apply(s);
                             b.addListener(weakBindingListener);
-                            sourceToBindingMap.put(s, b);
                             targetList.add(b.getValue());
+                            sourceToBindingMap.put(s, b);
                         }
                     }
                 }
@@ -126,24 +126,88 @@ public final class ObservableListHelper
     }
 
     /**
+     * 透過指定的對照函數自動更新目的集合
+     * <ul>
+     * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@code T}(只呼叫一次{@code mapper})</li>
+     * </ul>
+     *
+     * @param <S> 來源集合項目型態
+     * @param <T> 目的集合項目型態
+     * @param sourceList 來源集合
+     * @param targetList 目的集合
+     * @param mapper 對照函數
+     */
+    public static <S, T> void mapByValue(
+            ObservableList<S> sourceList,
+            ObservableList<T> targetList,
+            Function<S, T> mapper)
+    {
+        Objects.requireNonNull(sourceList);
+        Objects.requireNonNull(targetList);
+        Objects.requireNonNull(mapper);
+        targetList.clear();
+        Map<S, T> sourceToTargetMap = new HashMap<>();
+        // 初始化
+        for (S s : sourceList)
+        {
+            T t = mapper.apply(s);
+            targetList.add(t);
+            sourceToTargetMap.put(s, t);
+        }
+        // 監聽來源
+        ListChangeListener<S> sourceListener = new ListChangeListener<S>()
+            {
+                @Override
+                public void onChanged(ListChangeListener.Change<? extends S> c)
+                {
+                    while (c.next())
+                    {
+                        if (c.wasPermutated())
+                            continue;
+                        for (S s : c.getRemoved())
+                        {
+                            T t = sourceToTargetMap.get2(s);
+                            targetList.remove2(t);
+                            sourceToTargetMap.remove2(s);
+                        }
+                        for (S s : c.getAddedSubList())
+                        {
+                            T t = mapper.apply(s);
+                            targetList.add(t);
+                            sourceToTargetMap.put(s, t);
+                        }
+                    }
+                }
+            };
+        sourceList.addListener(new WeakListChangeListener<>(sourceListener));
+        // 存放監聽器的參考(生命週期應同targetList)
+        targetList.addListener((InvalidationListener) iv ->
+            {
+                Object[] refs = { sourceListener, };
+                Objects.requireNonNull(refs);
+            });
+    }
+
+    /**
      * 透過指定的群組函數自動更新目的集合
      * <ul>
      * <li>{@code targetList}的目前內容會做清空</li>
-     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code mapper})</li>
+     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code grouper})</li>
      * </ul>
      *
      * @param <S> 來源集合項目型態
      * @param <K> 項目群組鍵值型態
      * @param sourceList 來源集合
      * @param targetGroupMap 目的群組集合
-     * @param grouper 群組函數(取得做群組的鍵值)，負責建立來源項目的資料連結
+     * @param grouper 群組函數(取得做群組的鍵值)，負責建立計算來源項目群組鍵的資料連結
      */
-    public static <S, K> void groupTo(
+    public static <S, K> void groupByBinding(
             ObservableList<S> sourceList,
             ObservableMap<K, ObservableList<S>> targetGroupMap,
             Function<S, ObservableValue<K>> grouper)
     {
-        groupTo(sourceList, targetGroupMap, grouper,
+        groupByBinding(sourceList, targetGroupMap, grouper,
                 k -> FXCollections.observableArrayList(),
                 (g, s) -> g.add(s),
                 (g, s) ->
@@ -157,7 +221,7 @@ public final class ObservableListHelper
      * 透過指定的群組函數自動更新目的集合
      * <ul>
      * <li>{@code targetList}的目前內容會做清空</li>
-     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code mapper})</li>
+     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code grouper})</li>
      * </ul>
      *
      * @param <S> 來源集合項目型態
@@ -165,12 +229,12 @@ public final class ObservableListHelper
      * @param <G> 項目群組項目型態
      * @param sourceList 來源集合
      * @param targetGroupMap 目的群組集合
-     * @param grouper 群組函數(取得做群組的鍵值)，負責建立來源項目的資料連結
+     * @param grouper 群組函數(取得做群組的鍵值)，負責建立計算來源項目群組鍵的資料連結
      * @param createGroup 建立空白群組的函數
      * @param addToGroup 增加來源項目到群組的函數
      * @param removeFromGroup 從群組移除來源項目的函數，傳回true表示群組該移除
      */
-    public static <S, K, G> void groupTo(
+    public static <S, K, G> void groupByBinding(
             ObservableList<S> sourceList,
             ObservableMap<K, G> targetGroupMap,
             Function<S, ObservableValue<K>> grouper,
@@ -247,6 +311,111 @@ public final class ObservableListHelper
         targetGroupMap.addListener((InvalidationListener) iv ->
             {
                 Object[] refs = { sourceListener, bindingListener, };
+                Objects.requireNonNull(refs);
+            });
+    }
+
+    /**
+     * 透過指定的群組函數自動更新目的集合
+     * <ul>
+     * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@code K}(只呼叫一次{@code grouper})</li>
+     * </ul>
+     *
+     * @param <S> 來源集合項目型態
+     * @param <K> 項目群組鍵值型態
+     * @param sourceList 來源集合
+     * @param targetGroupMap 目的群組集合
+     * @param grouper 群組函數(取得做群組的鍵值)，負責計算來源項目的群組鍵
+     */
+    public static <S, K> void groupByValue(
+            ObservableList<S> sourceList,
+            ObservableMap<K, ObservableList<S>> targetGroupMap,
+            Function<S, K> grouper)
+    {
+        groupByValue(sourceList, targetGroupMap, grouper,
+                k -> FXCollections.observableArrayList(),
+                (g, s) -> g.add(s),
+                (g, s) ->
+                    {
+                        g.remove2(s);
+                        return g.isEmpty();
+                    });
+    }
+
+    /**
+     * 透過指定的群組函數自動更新目的集合
+     * <ul>
+     * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@code K}(只呼叫一次{@code grouper})</li>
+     * </ul>
+     *
+     * @param <S> 來源集合項目型態
+     * @param <K> 項目群組鍵值型態
+     * @param <G> 項目群組項目型態
+     * @param sourceList 來源集合
+     * @param targetGroupMap 目的群組集合
+     * @param grouper 群組函數(取得做群組的鍵值)，負責計算來源項目的資料連結
+     * @param createGroup 建立空白群組的函數
+     * @param addToGroup 增加來源項目到群組的函數
+     * @param removeFromGroup 從群組移除來源項目的函數，傳回true表示群組該移除
+     */
+    public static <S, K, G> void groupByValue(
+            ObservableList<S> sourceList,
+            ObservableMap<K, G> targetGroupMap,
+            Function<S, K> grouper,
+            Function<K, G> createGroup,
+            BiConsumer<G, S> addToGroup,
+            BiPredicate<G, S> removeFromGroup)
+    {
+        Objects.requireNonNull(sourceList);
+        Objects.requireNonNull(targetGroupMap);
+        Objects.requireNonNull(grouper);
+        Objects.requireNonNull(addToGroup);
+        Objects.requireNonNull(removeFromGroup);
+        targetGroupMap.clear();
+        Map<S, K> sourceToKeyMap = new HashMap<>();
+        // 初始化
+        for (S s : sourceList)
+        {
+            K k = grouper.apply(s);
+            sourceToKeyMap.put(s, k);
+            G newG = targetGroupMap.computeIfAbsent(k, createGroup);
+            addToGroup.accept(newG, s);
+        }
+        // 監聽來源
+        ListChangeListener<S> sourceListener = new ListChangeListener<S>()
+            {
+                @Override
+                public void onChanged(ListChangeListener.Change<? extends S> c)
+                {
+                    while (c.next())
+                    {
+                        if (c.wasPermutated())
+                            continue;
+                        for (S s : c.getRemoved())
+                        {
+                            K oldK = sourceToKeyMap.get2(s);
+                            sourceToKeyMap.remove2(s);
+                            G oldG = targetGroupMap.get2(oldK);
+                            if (removeFromGroup.test(oldG, s))
+                                targetGroupMap.remove2(oldK);
+                        }
+                        for (S s : c.getAddedSubList())
+                        {
+                            K newK = grouper.apply(s);
+                            sourceToKeyMap.put(s, newK);
+                            G newG = targetGroupMap.computeIfAbsent(newK, createGroup);
+                            addToGroup.accept(newG, s);
+                        }
+                    }
+                }
+            };
+        sourceList.addListener(new WeakListChangeListener<>(sourceListener));
+        // 存放監聽器的參考(生命週期應同targetGroupMap)
+        targetGroupMap.addListener((InvalidationListener) iv ->
+            {
+                Object[] refs = { sourceListener, };
                 Objects.requireNonNull(refs);
             });
     }

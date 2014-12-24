@@ -58,7 +58,7 @@ public final class ObservableSetHelper
      * @param sourceSet 來源集
      * @param targetList 目的集合
      */
-    public static <S> void mapTo(ObservableSet<S> sourceSet, ObservableList<S> targetList)
+    public static <S> void map(ObservableSet<S> sourceSet, ObservableList<S> targetList)
     {
         Objects.requireNonNull(sourceSet);
         Objects.requireNonNull(targetList);
@@ -103,7 +103,7 @@ public final class ObservableSetHelper
      * @param targetList 目的集合
      * @param mapper 對照函數，負責建立來源項目的資料連結
      */
-    public static <S, T> void mapTo(
+    public static <S, T> void mapByBinding(
             ObservableSet<S> sourceSet,
             ObservableList<T> targetList,
             Function<S, ObservableValue<T>> mapper)
@@ -147,8 +147,8 @@ public final class ObservableSetHelper
                         S s = c.getElementAdded();
                         ObservableValue<T> b = mapper.apply(s);
                         b.addListener(weakBindingListener);
-                        sourceToBindingMap.put(s, b);
                         targetList.add(b.getValue());
+                        sourceToBindingMap.put(s, b);
                     }
                 }
             };
@@ -157,6 +157,67 @@ public final class ObservableSetHelper
         targetList.addListener((InvalidationListener) iv ->
             {
                 Object[] refs = { sourceListener, bindingListener, };
+                Objects.requireNonNull(refs);
+            });
+    }
+
+    /**
+     * 透過指定的對照函數自動更新目的集合
+     * <ul>
+     * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@code T}(只呼叫一次{@code mapper})</li>
+     * </ul>
+     *
+     * @param <S> 來源集合項目型態
+     * @param <T> 目的集合項目型態
+     * @param sourceSet 來源集
+     * @param targetList 目的集合
+     * @param mapper 對照函數
+     */
+    public static <S, T> void mapByValue(
+            ObservableSet<S> sourceSet,
+            ObservableList<T> targetList,
+            Function<S, T> mapper)
+    {
+        Objects.requireNonNull(sourceSet);
+        Objects.requireNonNull(targetList);
+        Objects.requireNonNull(mapper);
+        targetList.clear();
+        Map<S, T> sourceToTargetMap = new HashMap<>();
+        // 初始化
+        for (S s : sourceSet)
+        {
+            T t = mapper.apply(s);
+            targetList.add(t);
+            sourceToTargetMap.put(s, t);
+        }
+        // 監聽來源
+        SetChangeListener<S> sourceListener = new SetChangeListener<S>()
+            {
+                @Override
+                public void onChanged(SetChangeListener.Change<? extends S> c)
+                {
+                    if (c.wasRemoved())
+                    {
+                        S s = c.getElementRemoved();
+                        T t = sourceToTargetMap.get2(s);
+                        targetList.remove2(t);
+                        sourceToTargetMap.remove2(s);
+                    }
+                    if (c.wasAdded())
+                    {
+                        S s = c.getElementAdded();
+                        T t = mapper.apply(s);
+                        targetList.add(t);
+                        sourceToTargetMap.put(s, t);
+                    }
+                }
+            };
+        sourceSet.addListener(new WeakSetChangeListener<>(sourceListener));
+        // 存放監聽器的參考(生命週期應同targetList)
+        targetList.addListener((InvalidationListener) iv ->
+            {
+                Object[] refs = { sourceListener, };
                 Objects.requireNonNull(refs);
             });
     }

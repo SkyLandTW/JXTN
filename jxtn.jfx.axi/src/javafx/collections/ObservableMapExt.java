@@ -27,6 +27,9 @@
 
 package javafx.collections;
 
+import java.util.function.BiFunction;
+
+import javafx.beans.value.ObservableValue;
 import jxtn.jfx.axi.ObservableMapHelper;
 
 /**
@@ -46,7 +49,7 @@ public interface ObservableMapExt<K, V>
     default ObservableList<K> toKeysObservable()
     {
         ObservableList<K> list = FXCollections.observableArrayList();
-        ObservableMapHelper.mapKeysTo((ObservableMap<K, V>) this, list);
+        ObservableMapHelper.mapKeys((ObservableMap<K, V>) this, list);
         return list;
     }
 
@@ -58,7 +61,35 @@ public interface ObservableMapExt<K, V>
     default ObservableList<V> toValuesObservable()
     {
         ObservableList<V> list = FXCollections.observableArrayList();
-        ObservableMapHelper.mapValuesTo((ObservableMap<K, V>) this, list);
+        ObservableMapHelper.mapValues((ObservableMap<K, V>) this, list);
         return list;
+    }
+
+    /**
+     * 建立自動對照清單
+     *
+     * @param <R> 目的集合項目型態
+     * @param mapper 對照函數，負責建立來源項目的資料連結
+     * @return 對照後的結果，會自動配合目前集合做更新
+     */
+    default <R> ObservableList<R> toMappedObservableByBinding(BiFunction<K, V, ObservableValue<R>> mapper)
+    {
+        ObservableList<R> mappedList = FXCollections.observableArrayList();
+        ObservableMapHelper.mapEntriesByBinding((ObservableMap<K, V>) this, mappedList, mapper);
+        return mappedList;
+    }
+
+    /**
+     * 建立自動對照清單
+     *
+     * @param <R> 目的集合項目型態
+     * @param mapper 對照函數
+     * @return 對照後的結果，會自動配合目前集合做更新
+     */
+    default <R> ObservableList<R> toMappedObservableByValue(BiFunction<K, V, R> mapper)
+    {
+        ObservableList<R> mappedList = FXCollections.observableArrayList();
+        ObservableMapHelper.mapEntriesByValue((ObservableMap<K, V>) this, mappedList, mapper);
+        return mappedList;
     }
 }

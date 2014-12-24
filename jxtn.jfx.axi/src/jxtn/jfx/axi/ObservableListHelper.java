@@ -34,6 +34,8 @@ import java.util.function.BiConsumer;
 import java.util.function.BiPredicate;
 import java.util.function.Function;
 
+import javafx.beans.InvalidationListener;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.beans.value.WeakChangeListener;
 import javafx.collections.FXCollections;
@@ -73,21 +75,22 @@ public final class ObservableListHelper
         targetList.clear();
         Map<S, ObservableValue<? extends T>> sourceToBindingMap = new HashMap<>();
         // 來源項目異動監聽
-        WeakChangeListener<T> bindingListener = new WeakChangeListener<T>((b, oldT, newT) ->
+        ChangeListener<T> bindingListener = (b, oldT, newT) ->
             {
                 targetList.remove2(oldT);
                 targetList.add(newT);
-            });
+            };
+        WeakChangeListener<T> weakBindingListener = new WeakChangeListener<>(bindingListener);
         // 初始化
         for (S s : sourceList)
         {
             ObservableValue<T> b = mapper.apply(s);
-            b.addListener(bindingListener);
+            b.addListener(weakBindingListener);
             sourceToBindingMap.put(s, b);
         }
         targetList.addAll(sourceToBindingMap.values().map(b -> b.getValue()).toArrayList());
-        // 監聽來源集合
-        sourceList.addListener(new WeakListChangeListener<>(new ListChangeListener<S>()
+        // 監聽來源
+        ListChangeListener<S> sourceListener = new ListChangeListener<S>()
             {
                 @Override
                 public void onChanged(ListChangeListener.Change<? extends S> c)
@@ -99,20 +102,27 @@ public final class ObservableListHelper
                         for (S s : c.getRemoved())
                         {
                             ObservableValue<? extends T> b = sourceToBindingMap.get2(s);
-                            b.removeListener(bindingListener);
+                            b.removeListener(weakBindingListener);
                             targetList.remove2(b.getValue());
                             sourceToBindingMap.remove2(s);
                         }
                         for (S s : c.getAddedSubList())
                         {
                             ObservableValue<T> b = mapper.apply(s);
-                            b.addListener(bindingListener);
+                            b.addListener(weakBindingListener);
                             sourceToBindingMap.put(s, b);
                             targetList.add(b.getValue());
                         }
                     }
                 }
-            }));
+            };
+        sourceList.addListener(new WeakListChangeListener<>(sourceListener));
+        // 存放監聽器的參考(生命週期應同targetList)
+        targetList.addListener((InvalidationListener) iv ->
+            {
+                Object[] refs = { sourceListener, bindingListener, };
+                Objects.requireNonNull(refs);
+            });
     }
 
     /**
@@ -177,7 +187,7 @@ public final class ObservableListHelper
         Map<ObservableValue<? extends K>, S> bindingToSourceMap = new HashMap<>();
         Map<S, ObservableValue<? extends K>> sourceToBindingMap = new HashMap<>();
         // 來源項目異動監聽
-        WeakChangeListener<K> bindingListener = new WeakChangeListener<K>((b, oldK, newK) ->
+        ChangeListener<K> bindingListener = (b, oldK, newK) ->
             {
                 S s = bindingToSourceMap.get2(b);
                 G oldG = targetGroupMap.get2(oldK);
@@ -185,20 +195,21 @@ public final class ObservableListHelper
                     targetGroupMap.remove2(oldK);
                 G newG = targetGroupMap.computeIfAbsent(newK, createGroup);
                 addToGroup.accept(newG, s);
-            });
+            };
+        WeakChangeListener<K> weakBindingListener = new WeakChangeListener<>(bindingListener);
         // 初始化
         for (S s : sourceList)
         {
             ObservableValue<K> b = grouper.apply(s);
-            b.addListener(bindingListener);
+            b.addListener(weakBindingListener);
             bindingToSourceMap.put(b, s);
             sourceToBindingMap.put(s, b);
             K newK = b.getValue();
             G newG = targetGroupMap.computeIfAbsent(newK, createGroup);
             addToGroup.accept(newG, s);
         }
-        // 監聽來源集合
-        sourceList.addListener(new WeakListChangeListener<>(new ListChangeListener<S>()
+        // 監聽來源
+        ListChangeListener<S> sourceListener = new ListChangeListener<S>()
             {
                 @Override
                 public void onChanged(ListChangeListener.Change<? extends S> c)
@@ -210,7 +221,7 @@ public final class ObservableListHelper
                         for (S s : c.getRemoved())
                         {
                             ObservableValue<? extends K> b = sourceToBindingMap.get2(s);
-                            b.removeListener(bindingListener);
+                            b.removeListener(weakBindingListener);
                             bindingToSourceMap.remove2(b);
                             sourceToBindingMap.remove2(s);
                             K oldK = b.getValue();
@@ -221,7 +232,7 @@ public final class ObservableListHelper
                         for (S s : c.getAddedSubList())
                         {
                             ObservableValue<? extends K> b = grouper.apply(s);
-                            b.addListener(bindingListener);
+                            b.addListener(weakBindingListener);
                             bindingToSourceMap.put(b, s);
                             sourceToBindingMap.put(s, b);
                             K newK = b.getValue();
@@ -230,7 +241,14 @@ public final class ObservableListHelper
                         }
                     }
                 }
-            }));
+            };
+        sourceList.addListener(new WeakListChangeListener<>(sourceListener));
+        // 存放監聽器的參考(生命週期應同targetGroupMap)
+        targetGroupMap.addListener((InvalidationListener) iv ->
+            {
+                Object[] refs = { sourceListener, bindingListener, };
+                Objects.requireNonNull(refs);
+            });
     }
 
     private ObservableListHelper()

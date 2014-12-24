@@ -29,6 +29,7 @@ package jxtn.jfx.axi;
 
 import java.util.Objects;
 
+import javafx.beans.InvalidationListener;
 import javafx.collections.MapChangeListener;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
@@ -59,8 +60,8 @@ public final class ObservableMapHelper
         targetKeyList.clear();
         // 初始化
         targetKeyList.addAll(sourceMap.keySet());
-        // 監聽來源集合
-        sourceMap.addListener(new WeakMapChangeListener<>(new MapChangeListener<K, V>()
+        // 監聽來源
+        MapChangeListener<K, V> sourceListener = new MapChangeListener<K, V>()
             {
                 @Override
                 public void onChanged(MapChangeListener.Change<? extends K, ? extends V> c)
@@ -74,7 +75,14 @@ public final class ObservableMapHelper
                         targetKeyList.add(c.getKey());
                     }
                 }
-            }));
+            };
+        sourceMap.addListener(new WeakMapChangeListener<>(sourceListener));
+        // 存放監聽器的參考(生命週期應同targetKeyList)
+        targetKeyList.addListener((InvalidationListener) iv ->
+            {
+                Object[] refs = { sourceListener, };
+                Objects.requireNonNull(refs);
+            });
     }
 
     /**
@@ -95,8 +103,8 @@ public final class ObservableMapHelper
         targetValueList.clear();
         // 初始化
         targetValueList.addAll(sourceMap.values());
-        // 監聽來源集合
-        sourceMap.addListener(new WeakMapChangeListener<>(new MapChangeListener<K, V>()
+        // 監聽來源
+        MapChangeListener<K, V> sourceListener = new MapChangeListener<K, V>()
             {
                 @Override
                 public void onChanged(MapChangeListener.Change<? extends K, ? extends V> c)
@@ -111,7 +119,14 @@ public final class ObservableMapHelper
                         targetValueList.add(c.getValueAdded());
                     }
                 }
-            }));
+            };
+        sourceMap.addListener(new WeakMapChangeListener<>(sourceListener));
+        // 存放監聽器的參考(生命週期應同targetValueList)
+        targetValueList.addListener((InvalidationListener) iv ->
+            {
+                Object[] refs = { sourceListener, };
+                Objects.requireNonNull(refs);
+            });
     }
 
     private ObservableMapHelper()

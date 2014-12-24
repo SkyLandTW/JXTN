@@ -31,6 +31,6 @@
         </javac>
     </target>
     <target name="dist" depends="compile" description="產生JAR檔">
-        <jar jarfile="${dist}/${ant.project.name}.jar" basedir="${bin}" />
+        <jar jarfile="${dist}/jfx.axi.jar" basedir="${bin}" />
     </target>
 </project>

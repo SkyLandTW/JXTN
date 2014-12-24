@@ -32,6 +32,8 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 
+import javafx.beans.InvalidationListener;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.beans.value.WeakChangeListener;
 import javafx.collections.ObservableList;
@@ -63,8 +65,8 @@ public final class ObservableSetHelper
         targetList.clear();
         // 初始化
         targetList.addAll(sourceSet);
-        // 監聽來源集合
-        sourceSet.addListener(new WeakSetChangeListener<>(new SetChangeListener<S>()
+        // 監聽來源
+        SetChangeListener<S> sourceListener = new SetChangeListener<S>()
             {
                 @Override
                 public void onChanged(SetChangeListener.Change<? extends S> c)
@@ -78,7 +80,14 @@ public final class ObservableSetHelper
                         targetList.add(c.getElementAdded());
                     }
                 }
-            }));
+            };
+        sourceSet.addListener(new WeakSetChangeListener<>(sourceListener));
+        // 存放監聽器的參考(生命週期應同targetList)
+        targetList.addListener((InvalidationListener) iv ->
+            {
+                Object[] refs = { sourceListener, };
+                Objects.requireNonNull(refs);
+            });
     }
 
     /**
@@ -105,21 +114,22 @@ public final class ObservableSetHelper
         targetList.clear();
         Map<S, ObservableValue<? extends T>> sourceToBindingMap = new HashMap<>();
         // 來源項目異動監聽
-        WeakChangeListener<T> bindingListener = new WeakChangeListener<T>((b, oldT, newT) ->
+        ChangeListener<T> bindingListener = (b, oldT, newT) ->
             {
                 targetList.remove2(oldT);
                 targetList.add(newT);
-            });
+            };
+        WeakChangeListener<T> weakBindingListener = new WeakChangeListener<>(bindingListener);
         // 初始化
         for (S s : sourceSet)
         {
             ObservableValue<T> b = mapper.apply(s);
-            b.addListener(bindingListener);
+            b.addListener(weakBindingListener);
             sourceToBindingMap.put(s, b);
         }
         targetList.addAll(sourceToBindingMap.values().map(b -> b.getValue()).toArrayList());
-        // 監聽來源集合
-        sourceSet.addListener(new WeakSetChangeListener<>(new SetChangeListener<S>()
+        // 監聽來源
+        SetChangeListener<S> sourceListener = new SetChangeListener<S>()
             {
                 @Override
                 public void onChanged(SetChangeListener.Change<? extends S> c)
@@ -128,7 +138,7 @@ public final class ObservableSetHelper
                     {
                         S s = c.getElementRemoved();
                         ObservableValue<? extends T> b = sourceToBindingMap.get2(s);
-                        b.removeListener(bindingListener);
+                        b.removeListener(weakBindingListener);
                         targetList.remove2(b.getValue());
                         sourceToBindingMap.remove2(s);
                     }
@@ -136,12 +146,19 @@ public final class ObservableSetHelper
                     {
                         S s = c.getElementAdded();
                         ObservableValue<T> b = mapper.apply(s);
-                        b.addListener(bindingListener);
+                        b.addListener(weakBindingListener);
                         sourceToBindingMap.put(s, b);
                         targetList.add(b.getValue());
                     }
                 }
-            }));
+            };
+        sourceSet.addListener(new WeakSetChangeListener<>(sourceListener));
+        // 存放監聽器的參考(生命週期應同targetList)
+        targetList.addListener((InvalidationListener) iv ->
+            {
+                Object[] refs = { sourceListener, bindingListener, };
+                Objects.requireNonNull(refs);
+            });
     }
 
     private ObservableSetHelper()

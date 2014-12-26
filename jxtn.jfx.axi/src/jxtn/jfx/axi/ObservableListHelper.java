@@ -55,6 +55,7 @@ public final class ObservableListHelper
      * 透過指定的對照函數自動更新目的集合
      * <ul>
      * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetList}的項目順序比照{@code sourceList}</li>
      * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code mapper})</li>
      * </ul>
      *
@@ -98,20 +99,33 @@ public final class ObservableListHelper
                     while (c.next())
                     {
                         if (c.wasPermutated())
-                            continue;
-                        for (S s : c.getRemoved())
                         {
-                            ObservableValue<? extends T> b = sourceToBindingMap.get2(s);
-                            b.removeListener(weakBindingListener);
-                            targetList.remove2(b.getValue());
-                            sourceToBindingMap.remove2(s);
+                            for (int i = c.getFrom(); i < c.getTo(); i++)
+                            {
+                                int j = c.getPermutation(i);
+                                S s = sourceList.get(j);
+                                ObservableValue<? extends T> b = sourceToBindingMap.get2(s);
+                                targetList.set(i, b.getValue());
+                            }
                         }
-                        for (S s : c.getAddedSubList())
+                        else
                         {
-                            ObservableValue<T> b = mapper.apply(s);
-                            b.addListener(weakBindingListener);
-                            targetList.add(b.getValue());
-                            sourceToBindingMap.put(s, b);
+                            for (S s : c.getRemoved())
+                            {
+                                ObservableValue<? extends T> b = sourceToBindingMap.get2(s);
+                                b.removeListener(weakBindingListener);
+                                targetList.remove2(b.getValue());
+                                sourceToBindingMap.remove2(s);
+                            }
+                            int i = c.getFrom();
+                            for (S s : c.getAddedSubList())
+                            {
+                                ObservableValue<T> b = mapper.apply(s);
+                                b.addListener(weakBindingListener);
+                                targetList.add(i, b.getValue());
+                                sourceToBindingMap.put(s, b);
+                                i += 1;
+                            }
                         }
                     }
                 }
@@ -129,6 +143,7 @@ public final class ObservableListHelper
      * 透過指定的對照函數自動更新目的集合
      * <ul>
      * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetList}的項目順序比照{@code sourceList}</li>
      * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@code T}(只呼叫一次{@code mapper})</li>
      * </ul>
      *
@@ -164,18 +179,29 @@ public final class ObservableListHelper
                     while (c.next())
                     {
                         if (c.wasPermutated())
-                            continue;
-                        for (S s : c.getRemoved())
                         {
-                            T t = sourceToTargetMap.get2(s);
-                            targetList.remove2(t);
-                            sourceToTargetMap.remove2(s);
+                            for (int i = c.getFrom(); i < c.getTo(); i++)
+                            {
+                                int j = c.getPermutation(i);
+                                S s = sourceList.get(j);
+                                T t = sourceToTargetMap.get2(s);
+                                targetList.set(i, t);
+                            }
                         }
-                        for (S s : c.getAddedSubList())
+                        else
                         {
-                            T t = mapper.apply(s);
-                            targetList.add(t);
-                            sourceToTargetMap.put(s, t);
+                            for (S s : c.getRemoved())
+                            {
+                                T t = sourceToTargetMap.get2(s);
+                                targetList.remove2(t);
+                                sourceToTargetMap.remove2(s);
+                            }
+                            for (S s : c.getAddedSubList())
+                            {
+                                T t = mapper.apply(s);
+                                targetList.add(t);
+                                sourceToTargetMap.put(s, t);
+                            }
                         }
                     }
                 }
@@ -192,7 +218,8 @@ public final class ObservableListHelper
     /**
      * 透過指定的群組函數自動更新目的集合
      * <ul>
-     * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetGroupMap}的目前內容會做清空</li>
+     * <li>{@code targetGroupMap}的群組索引鍵不保證任何順序</li>
      * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code grouper})</li>
      * </ul>
      *
@@ -220,7 +247,8 @@ public final class ObservableListHelper
     /**
      * 透過指定的群組函數自動更新目的集合
      * <ul>
-     * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetGroupMap}的目前內容會做清空</li>
+     * <li>{@code targetGroupMap}的群組索引鍵不保證任何順序</li>
      * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code grouper})</li>
      * </ul>
      *
@@ -318,7 +346,8 @@ public final class ObservableListHelper
     /**
      * 透過指定的群組函數自動更新目的集合
      * <ul>
-     * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetGroupMap}的目前內容會做清空</li>
+     * <li>{@code targetGroupMap}的群組索引鍵不保證任何順序</li>
      * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@code K}(只呼叫一次{@code grouper})</li>
      * </ul>
      *
@@ -346,7 +375,8 @@ public final class ObservableListHelper
     /**
      * 透過指定的群組函數自動更新目的集合
      * <ul>
-     * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetGroupMap}的目前內容會做清空</li>
+     * <li>{@code targetGroupMap}的群組索引鍵不保證任何順序</li>
      * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@code K}(只呼叫一次{@code grouper})</li>
      * </ul>
      *

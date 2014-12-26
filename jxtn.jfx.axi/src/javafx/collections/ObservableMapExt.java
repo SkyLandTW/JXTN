@@ -43,6 +43,9 @@ public interface ObservableMapExt<K, V>
 {
     /**
      * 建立自動對照索引鍵的{@link ObservableList}
+     * <ul>
+     * <li>傳回{@link ObservableList}的索引鍵不保證任何順序</li>
+     * </ul>
      *
      * @return {@link ObservableList}，對應目前字典的索引鍵
      */
@@ -55,6 +58,9 @@ public interface ObservableMapExt<K, V>
 
     /**
      * 建立自動對照索引鍵的{@link ObservableList}
+     * <ul>
+     * <li>傳回{@link ObservableList}的項目值不保證任何順序</li>
+     * </ul>
      *
      * @return {@link ObservableList}，對應目前字典的項目值
      */
@@ -67,6 +73,10 @@ public interface ObservableMapExt<K, V>
 
     /**
      * 建立自動對照清單
+     * <ul>
+     * <li>傳回{@link ObservableList}的項目不保證任何順序</li>
+     * <li>針對每個目前{@link ObservableMap}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code mapper})</li>
+     * </ul>
      *
      * @param <R> 目的集合項目型態
      * @param mapper 對照函數，負責建立來源項目的資料連結
@@ -81,6 +91,10 @@ public interface ObservableMapExt<K, V>
 
     /**
      * 建立自動對照清單
+     * <ul>
+     * <li>傳回{@link ObservableList}的項目不保證任何順序</li>
+     * <li>針對每個目前{@link ObservableMap}的來源項目，只會建立一個{@code R}(只呼叫一次{@code mapper})</li>
+     * </ul>
      *
      * @param <R> 目的集合項目型態
      * @param mapper 對照函數

@@ -52,6 +52,7 @@ public final class ObservableSetHelper
      * 安排自動更新目的集合
      * <ul>
      * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetList}的項目不保證任何順序</li>
      * </ul>
      *
      * @param <S> 集合項目型態
@@ -94,6 +95,7 @@ public final class ObservableSetHelper
      * 透過指定的對照函數自動更新目的集合
      * <ul>
      * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetList}的項目不保證任何順序</li>
      * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code mapper})</li>
      * </ul>
      *
@@ -165,6 +167,7 @@ public final class ObservableSetHelper
      * 透過指定的對照函數自動更新目的集合
      * <ul>
      * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetList}的項目不保證任何順序</li>
      * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@code T}(只呼叫一次{@code mapper})</li>
      * </ul>
      *

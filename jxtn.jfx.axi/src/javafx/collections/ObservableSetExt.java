@@ -42,6 +42,9 @@ public interface ObservableSetExt<E>
 {
     /**
      * 建立自動同步的{@link ObservableList}
+     * <ul>
+     * <li>傳回{@link ObservableList}的項目不保證任何順序</li>
+     * </ul>
      *
      * @return {@link ObservableList}，對應目前集的項目
      */
@@ -54,6 +57,10 @@ public interface ObservableSetExt<E>
 
     /**
      * 建立自動對照的{@link ObservableList}
+     * <ul>
+     * <li>傳回{@link ObservableList}的項目不保證任何順序</li>
+     * <li>針對每個目前{@link ObservableSet}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code mapper})</li>
+     * </ul>
      *
      * @param <R> 目的集合項目型態
      * @param mapper 對照函數，負責建立來源項目的資料連結
@@ -68,6 +75,10 @@ public interface ObservableSetExt<E>
 
     /**
      * 建立自動對照的{@link ObservableList}
+     * <ul>
+     * <li>傳回{@link ObservableList}的項目不保證任何順序</li>
+     * <li>針對每個目前{@link ObservableSet}的來源項目，只會建立一個{@code R}(只呼叫一次{@code mapper})</li>
+     * </ul>
      *
      * @param <R> 目的集合項目型態
      * @param mapper 對照函數

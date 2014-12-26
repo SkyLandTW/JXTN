@@ -52,6 +52,7 @@ public final class ObservableMapHelper
      * 安排自動更新目的集合存放目前的索引鍵
      * <ul>
      * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetList}的項目不保證任何順序</li>
      * </ul>
      *
      * @param <K> 索引鍵型態
@@ -95,6 +96,7 @@ public final class ObservableMapHelper
      * 安排自動更新目的集合存放目前的索引鍵
      * <ul>
      * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetList}的項目不保證任何順序</li>
      * </ul>
      *
      * @param <K> 索引鍵型態
@@ -138,6 +140,7 @@ public final class ObservableMapHelper
      * 透過指定的對照函數自動更新目的集合
      * <ul>
      * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetList}的項目不保證任何順序</li>
      * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code mapper})</li>
      * </ul>
      *
@@ -210,6 +213,7 @@ public final class ObservableMapHelper
      * 透過指定的對照函數自動更新目的集合
      * <ul>
      * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetList}的項目不保證任何順序</li>
      * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@code R}(只呼叫一次{@code mapper})</li>
      * </ul>
      *

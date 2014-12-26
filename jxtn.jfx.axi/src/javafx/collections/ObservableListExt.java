@@ -44,6 +44,10 @@ public interface ObservableListExt<E>
 {
     /**
      * 建立自動對照清單
+     * <ul>
+     * <li>傳回{@link ObservableList}的項目順序比照目前{@link ObservableList}</li>
+     * <li>針對每個目前{@link ObservableList}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code mapper})</li>
+     * </ul>
      *
      * @param <R> 目的集合項目型態
      * @param mapper 對照函數，負責建立來源項目的資料連結
@@ -58,6 +62,10 @@ public interface ObservableListExt<E>
 
     /**
      * 建立自動對照清單
+     * <ul>
+     * <li>傳回{@link ObservableList}的項目順序比照目前{@link ObservableList}</li>
+     * <li>針對每個目前{@link ObservableList}的來源項目，只會建立一個{@code R}(只呼叫一次{@code mapper})</li>
+     * </ul>
      *
      * @param <R> 目的集合項目型態
      * @param mapper 對照函數
@@ -72,6 +80,10 @@ public interface ObservableListExt<E>
 
     /**
      * 建立自動群組
+     * <ul>
+     * <li>傳回{@link ObservableMap}的群組索引鍵及內容項目不保證任何順序</li>
+     * <li>針對每個目前{@link ObservableList}的來源項目，只會建立一個{@code K}(只呼叫一次{@code grouper})</li>
+     * </ul>
      *
      * @param <K> 項目群組鍵值型態
      * @param grouper 群組函數(取得做群組的鍵值)，負責建立計算來源項目群組鍵的資料連結
@@ -89,6 +101,10 @@ public interface ObservableListExt<E>
 
     /**
      * 建立自動群組
+     * <ul>
+     * <li>傳回{@link ObservableMap}的群組索引鍵不保證任何順序</li>
+     * <li>針對每個目前{@link ObservableList}的來源項目，只會建立一個{@code K}(只呼叫一次{@code grouper})</li>
+     * </ul>
      *
      * @param <K> 項目群組鍵值型態
      * @param <G> 項目群組項目型態
@@ -112,6 +128,10 @@ public interface ObservableListExt<E>
 
     /**
      * 建立自動群組
+     * <ul>
+     * <li>傳回{@link ObservableMap}的群組索引鍵及內容項目不保證任何順序</li>
+     * <li>針對每個目前{@link ObservableList}的來源項目，只會建立一個{@code K}(只呼叫一次{@code grouper})</li>
+     * </ul>
      *
      * @param <K> 項目群組鍵值型態
      * @param grouper 群組函數(取得做群組的鍵值)，負責計算來源項目的群組鍵
@@ -129,6 +149,10 @@ public interface ObservableListExt<E>
 
     /**
      * 建立自動群組
+     * <ul>
+     * <li>傳回{@link ObservableMap}的群組索引鍵不保證任何順序</li>
+     * <li>針對每個目前{@link ObservableList}的來源項目，只會建立一個{@code K}(只呼叫一次{@code grouper})</li>
+     * </ul>
      *
      * @param <K> 項目群組鍵值型態
      * @param <G> 項目群組項目型態

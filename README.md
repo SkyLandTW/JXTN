@@ -124,11 +124,11 @@ jxtn.core.dev
 Provides patches to compilers and IDEs for bugfixes and new features.
 
 ##### Patches:
- - [Eclipse JDT; Fix resolve error triggered by *jxtn.core.axi*](jxtn.core.dev/fix_inner_type-eclipse.md)
- - [Eclipse JDT; Multi-line Strings](jxtn.core.dev/multiline_string-eclipse.md)
- - [Eclipse JDT; Suppress Checked Exceptions](jxtn.core.dev/suppress_exception-eclipse.md)
- - [Eclipse SWT; Fix OleClientSite with Office 2007](jxtn.core.dev/fix_ole_office-swt.md)
- - [Eclipse SWT; Fix WM_IME_ENDCOMPOSITION](jxtn.core.dev/fix_ime_end-swt.md)
+ - [Eclipse JDT; Fix resolve error triggered by *jxtn.core.axi*](jxtn.core.dev/jdt-fix_inner_type.md)
+ - [Eclipse JDT; Multi-line Strings](jxtn.core.dev/jdt-multiline_string.md)
+ - [Eclipse JDT; Suppress Checked Exceptions](jxtn.core.dev/jdt-suppress_exception.md)
+ - [Eclipse SWT; Fix OleClientSite with Office 2007](jxtn.core.dev/swt-fix_ole_office.md)
+ - [Eclipse SWT; Fix WM_IME_ENDCOMPOSITION](jxtn.core.dev/swt-fix_ime_end.md)
 
 ------------------------------------------------------------------------------
 

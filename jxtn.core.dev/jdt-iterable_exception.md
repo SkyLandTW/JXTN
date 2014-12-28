@@ -3,16 +3,22 @@ Iterable with exception in Eclipse JDT
 
 Supports Iterable/Iterator with exceptions in Eclipse JDT
 
+*ABANDONED, DO NOT USE*
+*REQUIRE code from branch _iteratorEx2_ to work*
+
 ##### What changes:
  - Tailing generic parameters might be optional and default to
    *java.lang.RuntimeException* if their variable names contain "Exception"
    (case-sensitive).
- - TODO: For-Each loop may propergate exceptions, depending on *Iterable* type
-   parameters.
+ - For-Each loop may propergate exceptions, depending on checked exception list
+   from *Iterator.hasNext* and *Iterator.next* (probing method signatures).
 
 ##### What works:
  - Eclipse JDT compilation
  - Eclipse JDT code assist
+
+##### What doesn't work:
+ - Source compatibility
 
 ##### Tested environments:
  - Eclipse v4.4 (luna)

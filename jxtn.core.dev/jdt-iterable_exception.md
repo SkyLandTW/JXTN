@@ -24,6 +24,92 @@ Supports Iterable/Iterator with exceptions in Eclipse JDT
 Modify *org.eclipse.jdt.core*
 -----------------------------
 
+##### org.eclipse.jdt.internal.compiler.ast.ForeachStatement
+
+Add this field:
+```java
+    private TypeBinding iteratorReceiverType;
+    private TypeBinding collectionElementType;
+    private TypeBinding collectionIterableType;     // !INSERT!
+```
+
+Inside *resolve*, add this line:
+
+```java
+    ReferenceBinding iterableType = ......
+    if (iterableType == null && isTargetJsr14) {
+        iterableType = ......
+    }
+    this.collectionIterableType = iterableType;     // !INSERT!
+    checkIterable: {
+        if (iterableType == null) break checkIterable;
+```
+
+Inside *resolve*, remove this line:
+
+```java
+    if (arguments.length != 1) break checkIterable; // per construction can only be one
+```
+
+Inside *analyseCode*, add these lines:
+
+```java
+//end of loop
+////////////////////////////////////////////////////////////////////////////////////////////// !INSERT!
+if (kind == GENERIC_ITERABLE) {                                                             // !INSERT!
+    if (collectionIterableType != null) {                                                   // !INSERT!
+        // System.out.println("for-each on " + collectionIterableType);                     // !INSERT!
+        if (collectionIterableType.isValidBinding()) {                                      // !INSERT!
+            System.out.println(" => valid");                                                // !INSERT!
+            org.eclipse.jdt.internal.compiler.lookup.MethodBinding iteratorMethod           // !INSERT!
+                    = ((ReferenceBinding) collectionIterableType).getExactMethod(           // !INSERT!
+                        "iterator".toCharArray(),                                           // !INSERT!
+                        new TypeBinding[0],                                                 // !INSERT!
+                        this.scope.compilationUnitScope());                                 // !INSERT!
+            if (iteratorMethod != null && iteratorMethod.isValidBinding()) {                // !INSERT!
+                TypeBinding iteratorType = iteratorMethod.returnType;                       // !INSERT!
+                System.out.println(" => iterator " + iteratorType);                         // !INSERT!
+                if (iteratorType != null && iteratorType.isValidBinding()) {                // !INSERT!
+                    org.eclipse.jdt.internal.compiler.lookup.MethodBinding hasNextMethod    // !INSERT!
+                            = ((ReferenceBinding) iteratorType).getExactMethod(             // !INSERT!
+                                "hasNext".toCharArray(),                                    // !INSERT!
+                                new TypeBinding[0],                                         // !INSERT!
+                                this.scope.compilationUnitScope());                         // !INSERT!
+                    org.eclipse.jdt.internal.compiler.lookup.MethodBinding nextMethod       // !INSERT!
+                            = ((ReferenceBinding) iteratorType).getExactMethod(             // !INSERT!
+                                "next".toCharArray(),                                       // !INSERT!
+                                new TypeBinding[0],                                         // !INSERT!
+                                this.scope.compilationUnitScope());                         // !INSERT!
+                    if (hasNextMethod != null && nextMethod != null) {                      // !INSERT!
+                        ReferenceBinding[] thrownExceptions = new ReferenceBinding[         // !INSERT!
+                                hasNextMethod.thrownExceptions.length                       // !INSERT!
+                                + nextMethod.thrownExceptions.length                        // !INSERT!
+                        ];                                                                  // !INSERT!
+                        if (thrownExceptions.length > 0) {                                  // !INSERT!
+                            System.arraycopy(                                               // !INSERT!
+                                    hasNextMethod.thrownExceptions, 0,                      // !INSERT!
+                                    thrownExceptions, 0,                                    // !INSERT!
+                                    hasNextMethod.thrownExceptions.length);                 // !INSERT!
+                            System.arraycopy(                                               // !INSERT!
+                                    nextMethod.thrownExceptions, 0,                         // !INSERT!
+                                    thrownExceptions, hasNextMethod.thrownExceptions.length,// !INSERT!
+                                    nextMethod.thrownExceptions.length);                    // !INSERT!
+                            flowContext.checkExceptionHandlers(                             // !INSERT!
+                                    thrownExceptions,                                       // !INSERT!
+                                    this,                                                   // !INSERT!
+                                    flowInfo.unconditionalCopy(),                           // !INSERT!
+                                    currentScope);                                          // !INSERT!
+                        }                                                                   // !INSERT!
+                    }                                                                       // !INSERT!
+                }                                                                           // !INSERT!
+            }                                                                               // !INSERT!
+        }                                                                                   // !INSERT!
+    }                                                                                       // !INSERT!
+}                                                                                           // !INSERT!
+////////////////////////////////////////////////////////////////////////////////////////////// !INSERT!
+loopingContext.complainOnDeferredNullChecks(currentScope, actionInfo);
+```
+
 ##### org.eclipse.jdt.internal.compiler.ast.ParameterizedQualifiedTypeReference
 
 Inside *internalResolveLeafType*, add those lines:
@@ -97,4 +183,23 @@ if (this.typeArguments.length > 0 /* TODO: handles empty args */) {             
 final boolean isDiamond = (this.bits & ASTNode.IsDiamond) != 0;
 int argLength = this.typeArguments.length;
 TypeBinding[] argTypes = new TypeBinding[argLength];
+```
+
+##### org.eclipse.jdt.internal.compiler.lookup.ParameterizedTypeBinding
+
+Inside *substitute*, add those lines:
+
+```java
+if (currentType.arguments != null) {
+     if (currentType.arguments.length == 0) { // diamond type
+            return originalVariable;
+     }
+     ///////////////////////////////////////////////////////////////////////// !INSERT!
+     if (currentType.arguments.length <= originalVariable.rank) {           // !INSERT!
+            return originalVariable;                                        // !INSERT!
+     }                                                                      // !INSERT!
+     ///////////////////////////////////////////////////////////////////////// !INSERT!
+     TypeBinding substitute = currentType.arguments[originalVariable.rank];
+     return originalVariable.hasTypeAnnotations() ? this.environment.createAnnotatedType(substitute, originalVariable.getTypeAnnotations()) : substitute;
+}   
 ```

@@ -37,7 +37,7 @@ import java.util.Objects;
  * @author AqD
  * @param <E> 列舉項目型態
  */
-public class EnumerationIterator<E> implements Iterator<E>
+public class EnumerationIterator<E> implements Iterator<E, RuntimeException>
 {
     protected final Enumeration<E> enumeration;
 

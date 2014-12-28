@@ -38,15 +38,16 @@ import java.util.NoSuchElementException;
  *
  * @author AqD
  * @param <T> 列舉項目型態
+ * @param <TException> 列舉例外型態
  */
-public abstract class AbstractIterator<T> implements Iterator<T>
+public abstract class AbstractIterator<T, TException extends Exception> implements Iterator<T, TException>
 {
     private State state = State.HEAD;
     private T next;
     private long steps = 0;
 
     @Override
-    public final boolean hasNext()
+    public final boolean hasNext() throws TException
     {
         switch (this.state)
         {
@@ -74,7 +75,7 @@ public abstract class AbstractIterator<T> implements Iterator<T>
     }
 
     @Override
-    public final T next()
+    public final T next() throws TException
     {
         if (!this.hasNext())
             throw new NoSuchElementException();
@@ -118,8 +119,9 @@ public abstract class AbstractIterator<T> implements Iterator<T>
      * </p>
      *
      * @return 下一個項目
+     * @throws TException 列舉例外
      */
-    protected abstract T fetchNext();
+    protected abstract T fetchNext() throws TException;
 
     /**
      * 提供繼承類別於{@link #fetchNext()}內叫用通知結束。

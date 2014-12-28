@@ -143,7 +143,7 @@ import java.util.stream.StreamSupport;
  * @origin OpenJDK 8u20, modified to extend {@link CollectionExt}
  */
 @SuppressWarnings("all")
-public interface Collection<E> extends Iterable<E>, CollectionExt<E> {
+public interface Collection<E> extends Iterable<E, RuntimeException>, CollectionExt<E> {
     // Query Operations
 
     /**
@@ -190,7 +190,7 @@ public interface Collection<E> extends Iterable<E>, CollectionExt<E> {
      * @return an <tt>Iterator</tt> over the elements in this collection
      */
     @Override
-    Iterator<E> iterator();
+    Iterator<E, RuntimeException> iterator();
 
     /**
      * Returns an array containing all of the elements in this collection.
@@ -416,7 +416,7 @@ public interface Collection<E> extends Iterable<E>, CollectionExt<E> {
     default boolean removeIf(Predicate<? super E> filter) {
         Objects.requireNonNull(filter);
         boolean removed = false;
-        final Iterator<E> each = iterator();
+        final Iterator<E, RuntimeException> each = iterator();
         while (each.hasNext()) {
             if (filter.test(each.next())) {
                 each.remove();

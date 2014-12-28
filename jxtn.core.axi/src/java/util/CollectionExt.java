@@ -39,14 +39,14 @@ import jxtn.core.axi.comparators.MemberComparators;
  * @author AqD
  * @param <E> 集合項目型態
  */
-public interface CollectionExt<E> extends IterableExt<E>
+public interface CollectionExt<E> extends IterableExt<E, RuntimeException>
 {
     /**
      * 以{@link Iterable}型態表示。
      *
      * @return 以{@link Iterable}型態表示的目前物件
      */
-    default Iterable<E> asIterable()
+    default Iterable<E, RuntimeException> asIterable()
     {
         Collection<E> thiz = (Collection<E>) this;
         return thiz;

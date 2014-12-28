@@ -28,15 +28,16 @@
 package jxtn.core.axi.collections;
 
 import java.util.Objects;
-import java.util.function.Function;
+import java.util.function.FunctionEx;
 
 /**
  * 依照條件做一對一串接的列舉器。
  *
  * @author AqD
  * @param <T> 列舉項目型態
+ * @param <TException> 列舉例外型態
  */
-public class LinkLineIterator<T> extends AbstractIterator<T>
+public class LinkLineIterator<T, TException extends Exception> extends AbstractIterator<T, TException>
 {
     /**
      * 初始項目。
@@ -46,7 +47,7 @@ public class LinkLineIterator<T> extends AbstractIterator<T>
     /**
      * 取得每個項目的下一個項目的函數。
      */
-    protected final Function<? super T, ? extends T> getNext;
+    protected final FunctionEx<? super T, ? extends T, ? extends TException> getNext;
 
     /**
      * 目前項目。
@@ -62,7 +63,7 @@ public class LinkLineIterator<T> extends AbstractIterator<T>
      * @param initial 初始項目，可為null(空列舉)
      * @param getNext 取得每個項目的下一個項目，傳回null表示結束
      */
-    public LinkLineIterator(T initial, Function<? super T, ? extends T> getNext)
+    public LinkLineIterator(T initial, FunctionEx<? super T, ? extends T, ? extends TException> getNext)
     {
         Objects.requireNonNull(getNext);
         this.initial = initial;
@@ -70,13 +71,13 @@ public class LinkLineIterator<T> extends AbstractIterator<T>
     }
 
     @Override
-    protected T fetchNext()
+    protected T fetchNext() throws TException
     {
         // 取得項目
         if (this.isAtHead())
             this.current = this.initial;
         else
-            this.current = this.getNext.apply(this.current);
+            this.current = this.getNext.applyEx(this.current);
         // 檢查是否為null
         if (this.current != null)
             return this.current;

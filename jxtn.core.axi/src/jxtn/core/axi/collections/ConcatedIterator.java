@@ -35,13 +35,14 @@ import java.util.Objects;
  *
  * @author AqD
  * @param <T> 列舉項目型態
+ * @param <TException> 列舉例外型態
  */
-public class ConcatedIterator<T> extends AbstractIterator<T>
+public class ConcatedIterator<T, TException extends Exception> extends AbstractIterator<T, TException>
 {
     /**
      * 提供來源列舉器的列舉器。
      */
-    protected final Iterator<Iterator<? extends T>> sourceIterator;
+    protected final Iterator<Iterator<? extends T, ? extends TException>, RuntimeException> sourceIterator;
 
     /**
      * 目前的來源列舉器。
@@ -49,7 +50,7 @@ public class ConcatedIterator<T> extends AbstractIterator<T>
      * 即{@link #sourceIterator}的目前項目。
      * </p>
      */
-    protected Iterator<? extends T> currentSource;
+    protected Iterator<? extends T, ? extends TException> currentSource;
 
     private long sourceIteratorSteps;
     private long currentSourceSteps;
@@ -62,7 +63,7 @@ public class ConcatedIterator<T> extends AbstractIterator<T>
      *
      * @param sourceIterator 來源列舉器的列舉器
      */
-    public ConcatedIterator(Iterator<Iterator<? extends T>> sourceIterator)
+    public ConcatedIterator(Iterator<Iterator<? extends T, ? extends TException>, RuntimeException> sourceIterator)
     {
         Objects.requireNonNull(sourceIterator);
         this.sourceIterator = sourceIterator;
@@ -96,7 +97,7 @@ public class ConcatedIterator<T> extends AbstractIterator<T>
     }
 
     @Override
-    protected T fetchNext()
+    protected T fetchNext() throws TException
     {
         while (true)
         {

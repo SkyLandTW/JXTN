@@ -35,13 +35,14 @@ import java.util.Objects;
  *
  * @author AqD
  * @param <T> 列舉項目型態
+ * @param <TException> 列舉例外型態
  */
-public class IndexedIterator<T> extends AbstractIterator<IndexedItem<T>>
+public class IndexedIterator<T, TException extends Exception> extends AbstractIterator<IndexedItem<T>, TException>
 {
     /**
      * 來源列舉器。
      */
-    protected final Iterator<T> source;
+    protected final Iterator<T, ? extends TException> source;
 
     protected int index = 0;
 
@@ -50,14 +51,14 @@ public class IndexedIterator<T> extends AbstractIterator<IndexedItem<T>>
      *
      * @param source 來源列舉器
      */
-    public IndexedIterator(Iterator<T> source)
+    public IndexedIterator(Iterator<T, ? extends TException> source)
     {
         Objects.requireNonNull(source);
         this.source = source;
     }
 
     @Override
-    protected IndexedItem<T> fetchNext()
+    protected IndexedItem<T> fetchNext() throws TException
     {
         if (this.source.hasNext())
         {

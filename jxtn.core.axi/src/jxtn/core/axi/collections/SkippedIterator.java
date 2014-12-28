@@ -35,13 +35,14 @@ import java.util.Objects;
  *
  * @author AqD
  * @param <T> 列舉項目型態
+ * @param <TException> 列舉例外型態
  */
-public class SkippedIterator<T> extends AbstractIterator<T>
+public class SkippedIterator<T, TException extends Exception> extends AbstractIterator<T, TException>
 {
     /**
      * 來源列舉器。
      */
-    protected final Iterator<? extends T> source;
+    protected final Iterator<? extends T, ? extends TException> source;
 
     /**
      * 要跳過項目數量。
@@ -59,7 +60,7 @@ public class SkippedIterator<T> extends AbstractIterator<T>
      * @param source 來源列舉器
      * @param count 要跳過項目數量
      */
-    public SkippedIterator(Iterator<? extends T> source, int count)
+    public SkippedIterator(Iterator<? extends T, ? extends TException> source, int count)
     {
         Objects.requireNonNull(source);
         if (count < 0)
@@ -85,7 +86,7 @@ public class SkippedIterator<T> extends AbstractIterator<T>
     }
 
     @Override
-    protected T fetchNext()
+    protected T fetchNext() throws TException
     {
         if (this.isAtHead())
         {

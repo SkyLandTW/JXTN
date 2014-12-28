@@ -29,26 +29,25 @@ package jxtn.core.axi.collections;
 
 import java.util.Iterator;
 import java.util.Objects;
-import java.util.function.PredicateEx;
+import java.util.function.Predicate;
 
 /**
  * 保留指定條件之項目後內容的列舉器（剔除開頭）。
  *
  * @author AqD
  * @param <T> 列舉項目型態
- * @param <TException> 列舉例外型態
  */
-public class AfterConditionIterator<T, TException extends Exception> extends AbstractIterator<T, TException>
+public class AfterConditionIterator<T> extends AbstractIterator<T>
 {
     /**
      * 來源列舉器。
      */
-    protected final Iterator<? extends T, ? extends TException> source;
+    protected final Iterator<? extends T> source;
 
     /**
      * 過濾條件。
      */
-    protected final PredicateEx<? super T, ? extends TException> condition;
+    protected final Predicate<? super T> condition;
 
     private long sourceSteps;
     private boolean passed;
@@ -62,9 +61,7 @@ public class AfterConditionIterator<T, TException extends Exception> extends Abs
      * @param source 來源列舉器
      * @param condition 過濾條件
      */
-    public AfterConditionIterator(
-            Iterator<? extends T, ? extends TException> source,
-            PredicateEx<? super T, ? extends TException> condition)
+    public AfterConditionIterator(Iterator<? extends T> source, Predicate<? super T> condition)
     {
         Objects.requireNonNull(source);
         Objects.requireNonNull(condition);
@@ -89,7 +86,7 @@ public class AfterConditionIterator<T, TException extends Exception> extends Abs
     }
 
     @Override
-    protected T fetchNext() throws TException
+    protected T fetchNext()
     {
         if (this.passed)
         {
@@ -110,7 +107,7 @@ public class AfterConditionIterator<T, TException extends Exception> extends Abs
             {
                 T item = this.source.next();
                 this.sourceSteps += 1;
-                if (this.condition.testEx(item))
+                if (this.condition.test(item))
                 {
                     this.passed = true;
                     return item;

@@ -29,26 +29,25 @@ package jxtn.core.axi.collections;
 
 import java.util.Iterator;
 import java.util.Objects;
-import java.util.function.PredicateEx;
+import java.util.function.Predicate;
 
 /**
  * 保留指定條件之項目前內容的列舉器（剔除結尾）。
  *
  * @author AqD
  * @param <T> 列舉項目型態
- * @param <TException> 列舉例外型態
  */
-public class BeforeConditionIterator<T, TException extends Exception> extends AbstractIterator<T, TException>
+public class BeforeConditionIterator<T> extends AbstractIterator<T>
 {
     /**
      * 來源列舉器。
      */
-    protected final Iterator<? extends T, ? extends TException> source;
+    protected final Iterator<? extends T> source;
 
     /**
      * 過濾條件。
      */
-    protected final PredicateEx<? super T, ? extends TException> condition;
+    protected final Predicate<? super T> condition;
 
     private long sourceSteps;
 
@@ -61,9 +60,7 @@ public class BeforeConditionIterator<T, TException extends Exception> extends Ab
      * @param source 來源列舉器
      * @param condition 過濾條件
      */
-    public BeforeConditionIterator(
-            Iterator<? extends T, ? extends TException> source,
-            PredicateEx<? super T, ? extends TException> condition)
+    public BeforeConditionIterator(Iterator<? extends T> source, Predicate<? super T> condition)
     {
         Objects.requireNonNull(source);
         Objects.requireNonNull(condition);
@@ -88,13 +85,13 @@ public class BeforeConditionIterator<T, TException extends Exception> extends Ab
     }
 
     @Override
-    protected T fetchNext() throws TException
+    protected T fetchNext()
     {
         if (this.source.hasNext())
         {
             T item = this.source.next();
             this.sourceSteps += 1;
-            if (this.condition.testEx(item))
+            if (this.condition.test(item))
                 return this.end();
             else
                 return item;

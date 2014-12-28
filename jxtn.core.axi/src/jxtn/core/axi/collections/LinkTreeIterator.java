@@ -30,7 +30,7 @@ package jxtn.core.axi.collections;
 import java.util.Iterator;
 import java.util.Objects;
 import java.util.Stack;
-import java.util.function.FunctionEx;
+import java.util.function.Function;
 
 /**
  * 依照條件做一對多串接的列舉器。
@@ -40,9 +40,8 @@ import java.util.function.FunctionEx;
  *
  * @author AqD
  * @param <T> 列舉項目型態
- * @param <TException> 列舉例外型態
  */
-public class LinkTreeIterator<T, TException extends Exception> extends AbstractIterator<T, TException>
+public class LinkTreeIterator<T> extends AbstractIterator<T>
 {
     /**
      * 初始項目。
@@ -52,7 +51,7 @@ public class LinkTreeIterator<T, TException extends Exception> extends AbstractI
     /**
      * 取得每個項目的子項目集合的函數。
      */
-    protected final FunctionEx<? super T, ? extends Iterator<? extends T, ? extends TException>, ? extends TException> getChildren;
+    protected final Function<? super T, ? extends Iterator<? extends T>> getChildren;
 
     /**
      * 堆疊。
@@ -71,9 +70,7 @@ public class LinkTreeIterator<T, TException extends Exception> extends AbstractI
      * @param initial 初始項目，可為null(空列舉)
      * @param getChildren 取得每個項目的子項目集合，傳回null表示結束
      */
-    public LinkTreeIterator(
-            T initial,
-            FunctionEx<? super T, ? extends Iterator<? extends T, ? extends TException>, ? extends TException> getChildren)
+    public LinkTreeIterator(T initial, Function<? super T, ? extends Iterator<? extends T>> getChildren)
     {
         Objects.requireNonNull(getChildren);
         this.initial = initial;
@@ -91,7 +88,7 @@ public class LinkTreeIterator<T, TException extends Exception> extends AbstractI
     }
 
     @Override
-    protected T fetchNext() throws TException
+    protected T fetchNext()
     {
         if (this.isAtHead())
         {
@@ -134,18 +131,17 @@ public class LinkTreeIterator<T, TException extends Exception> extends AbstractI
         /**
          * 目前項目的子項目列舉器。
          */
-        public final Iterator<? extends T, ? extends TException> children;
+        public final Iterator<? extends T> children;
 
         /**
          * 建立新紀錄。
          *
          * @param item 項目
-         * @throws TException 列舉例外
          */
-        public Entry(T item) throws TException
+        public Entry(T item)
         {
             this.item = item;
-            Iterator<? extends T, ? extends TException> childrenIterator = LinkTreeIterator.this.getChildren.applyEx(this.item);
+            Iterator<? extends T> childrenIterator = LinkTreeIterator.this.getChildren.apply(this.item);
             if (childrenIterator != null)
                 this.children = childrenIterator;
             else

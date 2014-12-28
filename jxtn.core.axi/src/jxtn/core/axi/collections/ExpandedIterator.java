@@ -29,7 +29,7 @@ package jxtn.core.axi.collections;
 
 import java.util.Iterator;
 import java.util.Objects;
-import java.util.function.FunctionEx;
+import java.util.function.Function;
 
 /**
  * 依照指定函數做展開的列舉器。
@@ -37,21 +37,20 @@ import java.util.function.FunctionEx;
  * @author AqD
  * @param <T> 來源列舉項目型態
  * @param <R> 展開列舉項目型態
- * @param <TException> 來源及展開列舉例外型態
  */
-public class ExpandedIterator<T, R, TException extends Exception> extends AbstractIterator<R, TException>
+public class ExpandedIterator<T, R> extends AbstractIterator<R>
 {
     /**
      * 來源列舉器。
      */
-    protected final Iterator<? extends T, ? extends TException> source;
+    protected final Iterator<? extends T> source;
 
     /**
      * 展開函數。
      */
-    protected final FunctionEx<? super T, ? extends Iterator<? extends R, ? extends TException>, ? extends TException> expand;
+    protected final Function<? super T, ? extends Iterator<? extends R>> expand;
 
-    protected Iterator<? extends R, ? extends TException> currentChildren;
+    protected Iterator<? extends R> currentChildren;
 
     /**
      * 建立指定函數做展開的列舉器。
@@ -62,9 +61,7 @@ public class ExpandedIterator<T, R, TException extends Exception> extends Abstra
      * @param source 來源列舉器
      * @param expand 展開函數
      */
-    public ExpandedIterator(
-            Iterator<? extends T, ? extends TException> source,
-            FunctionEx<? super T, ? extends Iterator<? extends R, ? extends TException>, ? extends TException> expand)
+    public ExpandedIterator(Iterator<? extends T> source, Function<? super T, ? extends Iterator<? extends R>> expand)
     {
         Objects.requireNonNull(source);
         Objects.requireNonNull(expand);
@@ -73,14 +70,14 @@ public class ExpandedIterator<T, R, TException extends Exception> extends Abstra
     }
 
     @Override
-    protected R fetchNext() throws TException
+    protected R fetchNext()
     {
         if (this.isAtHead())
         {
             if (!this.source.hasNext())
                 return this.end();
             T parent = this.source.next();
-            this.currentChildren = this.expand.applyEx(parent);
+            this.currentChildren = this.expand.apply(parent);
         }
         while (true)
         {
@@ -90,7 +87,7 @@ public class ExpandedIterator<T, R, TException extends Exception> extends Abstra
             if (!this.source.hasNext())
                 return this.end();
             T parent = this.source.next();
-            this.currentChildren = this.expand.applyEx(parent);
+            this.currentChildren = this.expand.apply(parent);
         }
     }
 }

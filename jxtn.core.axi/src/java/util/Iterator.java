@@ -54,7 +54,7 @@ import java.util.function.Consumer;
  * @origin OpenJDK 8u20, modified to extend {@link IteratorExt}
  */
 @SuppressWarnings("all")
-public interface Iterator<E, IException extends Exception> extends IteratorExt<E, IException> {
+public interface Iterator<E> extends IteratorExt<E> {
     /**
      * Returns {@code true} if the iteration has more elements.
      * (In other words, returns {@code true} if {@link #next} would
@@ -62,7 +62,7 @@ public interface Iterator<E, IException extends Exception> extends IteratorExt<E
      *
      * @return {@code true} if the iteration has more elements
      */
-    boolean hasNext() throws IException;
+    boolean hasNext();
 
     /**
      * Returns the next element in the iteration.
@@ -70,7 +70,7 @@ public interface Iterator<E, IException extends Exception> extends IteratorExt<E
      * @return the next element in the iteration
      * @throws NoSuchElementException if the iteration has no more elements
      */
-    E next() throws IException;
+    E next();
 
     /**
      * Removes from the underlying collection the last element returned
@@ -113,7 +113,7 @@ public interface Iterator<E, IException extends Exception> extends IteratorExt<E
      * @throws NullPointerException if the specified action is null
      * @since 1.8
      */
-    default void forEachRemaining(Consumer<? super E> action) throws IException {
+    default void forEachRemaining(Consumer<? super E> action) {
         Objects.requireNonNull(action);
         while (this.hasNext())
             action.accept(this.next());

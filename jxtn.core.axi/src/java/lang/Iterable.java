@@ -45,13 +45,13 @@ import java.util.function.Consumer;
  * @origin OpenJDK 8u20, modified to extend {@link IterableExt}
  */
 @SuppressWarnings("all")
-public interface Iterable<T, EException extends Exception> extends IterableExt<T, EException> {
+public interface Iterable<T> extends IterableExt<T> {
     /**
      * Returns an iterator over elements of type {@code T}.
      *
      * @return an Iterator.
      */
-    Iterator<T, EException> iterator();
+    Iterator<T> iterator();
 
     /**
      * Performs the given action for each element of the {@code Iterable}
@@ -72,7 +72,7 @@ public interface Iterable<T, EException extends Exception> extends IterableExt<T
      * @throws NullPointerException if the specified action is null
      * @since 1.8
      */
-    default void forEach(Consumer<? super T> action) throws EException {
+    default void forEach(Consumer<? super T> action) {
         Objects.requireNonNull(action);
         for (T t : this) {
             action.accept(t);

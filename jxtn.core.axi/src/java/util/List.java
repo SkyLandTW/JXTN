@@ -156,7 +156,7 @@ public interface List<E> extends Collection<E>, ListExt<E> {
      * @return an iterator over the elements in this list in proper sequence
      */
     @Override
-    Iterator<E, RuntimeException> iterator();
+    Iterator<E> iterator();
 
     /**
      * Returns an array containing all of the elements in this list in proper

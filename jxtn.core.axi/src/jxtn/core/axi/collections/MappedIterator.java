@@ -29,7 +29,7 @@ package jxtn.core.axi.collections;
 
 import java.util.Iterator;
 import java.util.Objects;
-import java.util.function.FunctionEx;
+import java.util.function.Function;
 
 /**
  * 依照指定函數做對照的列舉器。
@@ -37,19 +37,18 @@ import java.util.function.FunctionEx;
  * @author AqD
  * @param <T> 來源列舉項目型態
  * @param <R> 目的列舉項目型態
- * @param <TException> 來源及目的列舉例外型態
  */
-public class MappedIterator<T, R, TException extends Exception> extends AbstractIterator<R, TException>
+public class MappedIterator<T, R> extends AbstractIterator<R>
 {
     /**
      * 來源列舉器。
      */
-    protected final Iterator<? extends T, ? extends TException> source;
+    protected final Iterator<? extends T> source;
 
     /**
      * 對照函數。
      */
-    protected final FunctionEx<? super T, ? extends R, ? extends TException> mapper;
+    protected final Function<? super T, ? extends R> mapper;
 
     /**
      * 建立指定函數做對照的列舉器。
@@ -60,9 +59,7 @@ public class MappedIterator<T, R, TException extends Exception> extends Abstract
      * @param source 來源列舉器
      * @param mapper 對照函數
      */
-    public MappedIterator(
-            Iterator<? extends T, ? extends TException> source,
-            FunctionEx<? super T, ? extends R, ? extends TException> mapper)
+    public MappedIterator(Iterator<? extends T> source, Function<? super T, ? extends R> mapper)
     {
         Objects.requireNonNull(source);
         Objects.requireNonNull(mapper);
@@ -71,12 +68,12 @@ public class MappedIterator<T, R, TException extends Exception> extends Abstract
     }
 
     @Override
-    protected R fetchNext() throws TException
+    protected R fetchNext()
     {
         if (this.source.hasNext())
         {
             T nextT = this.source.next();
-            R nextR = this.mapper.applyEx(nextT);
+            R nextR = this.mapper.apply(nextT);
             return nextR;
         }
         return this.end();

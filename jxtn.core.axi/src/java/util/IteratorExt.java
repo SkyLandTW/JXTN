@@ -971,6 +971,128 @@ public interface IteratorExt<E>
         return coll;
     }
 
+    /**
+     * 用目前項目值建立{@link TreeMap}。
+     *
+     * @param <K> {@link TreeMap}鍵值型態
+     * @param <KException> 計算鍵值函數可拋出的例外型態
+     * @param getKey 計算項目於新{@link TreeMap}內的鍵值
+     * @return 包含目前項目對照結果的{@link TreeMap}
+     * @throws KException 表示{@code getKey}丟出例外
+     */
+    default <K, KException extends Exception>
+            TreeMap<K, E> toTreeMap(FunctionEx<? super E, ? extends K, ? extends KException> getKey)
+                    throws KException
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        TreeMap<K, E> coll = new TreeMap<>();
+        while (thiz.hasNext())
+        {
+            E item = thiz.next();
+            K k = getKey.applyEx(item);
+            coll.put(k, item);
+        }
+        return coll;
+    }
+
+    /**
+     * 用目前項目值建立{@link TreeMap}。
+     *
+     * @param <K> {@link TreeMap}鍵值型態
+     * @param <V> {@link TreeMap}項目值型態
+     * @param <KException> 計算鍵值函數可拋出的例外型態
+     * @param <VException> 計算項目值函數可拋出的例外型態
+     * @param getKey 計算項目於新{@link TreeMap}內的鍵值
+     * @param getValue 計算項目於新{@link TreeMap}內的項目值
+     * @return 包含目前項目對照結果的{@link TreeMap}
+     * @throws KException 表示{@code getKey}丟出例外
+     * @throws VException 表示{@code getValue}丟出例外
+     */
+    default <K, V, KException extends Exception, VException extends Exception>
+            TreeMap<K, V> toTreeMap(
+                    FunctionEx<? super E, ? extends K, ? extends KException> getKey,
+                    FunctionEx<? super E, ? extends V, ? extends VException> getValue)
+                    throws KException, VException
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        TreeMap<K, V> coll = new TreeMap<>();
+        while (thiz.hasNext())
+        {
+            E item = thiz.next();
+            K k = getKey.applyEx(item);
+            V v = getValue.applyEx(item);
+            coll.put(k, v);
+        }
+        return coll;
+    }
+
+    /**
+     * 用目前項目值建立{@link TreeMap}，依照鍵值做分群。
+     *
+     * @param <K> 分群鍵值型態
+     * @param <KException> 計算鍵值函數可拋出的例外型態
+     * @param getKey 計算每個項目的鍵值
+     * @return 包含目前項目分群組的{@link TreeMap}
+     * @throws KException 表示{@code getKey}丟出例外
+     */
+    default <K, KException extends Exception>
+            TreeMap<K, ArrayList<E>> toTreeMapGrouped(FunctionEx<? super E, ? extends K, ? extends KException> getKey)
+                    throws KException
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        TreeMap<K, ArrayList<E>> result = new TreeMap<>();
+        while (thiz.hasNext())
+        {
+            E item = thiz.next();
+            K key = getKey.applyEx(item);
+            ArrayList<E> list = result.get(key);
+            if (list == null)
+            {
+                list = new ArrayList<>();
+                result.put(key, list);
+            }
+            list.add(item);
+        }
+        return result;
+    }
+
+    /**
+     * 用目前項目值建立{@link TreeMap}，依照鍵值做分群。
+     *
+     * @param <K> 群組鍵值型態
+     * @param <V> 項目值型態
+     * @param <KException> 計算鍵值函數可拋出的例外型態
+     * @param <VException> 計算項目值函數可拋出的例外型態
+     * @param getKey 計算每個項目做分組的鍵值
+     * @param getValue 計算項目於新{@link TreeMap}內的項目值
+     * @return 包含目前項目分群組的{@link TreeMap}
+     * @throws KException 表示{@code getKey}丟出例外
+     * @throws VException 表示{@code getValue}丟出例外
+     */
+    default <K, V, KException extends Exception, VException extends Exception>
+            TreeMap<K, ArrayList<V>> toTreeMapGrouped(
+                    FunctionEx<? super E, ? extends K, ? extends KException> getKey,
+                    FunctionEx<? super E, ? extends V, ? extends VException> getValue)
+                    throws KException, VException
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        TreeMap<K, ArrayList<V>> result = new TreeMap<>();
+        while (thiz.hasNext())
+        {
+            E item = thiz.next();
+            K key = getKey.applyEx(item);
+            ArrayList<V> list = result.get(key);
+            if (list == null)
+            {
+                list = new ArrayList<>();
+                result.put(key, list);
+            }
+            V value = getValue.applyEx(item);
+            list.add(value);
+        }
+        return result;
+    }
+
     //////////////////////////////////////////////////////////////////////////
     // 數學統計
     //

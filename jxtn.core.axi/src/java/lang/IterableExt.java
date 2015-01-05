@@ -36,6 +36,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Objects;
+import java.util.TreeMap;
 import java.util.function.ConsumerEx;
 import java.util.function.Function;
 import java.util.function.FunctionEx;
@@ -879,6 +880,86 @@ public interface IterableExt<T>
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().toHashSet();
+    }
+
+    /**
+     * 用目前項目值建立{@link TreeMap}。
+     *
+     * @param <K> {@link TreeMap}鍵值型態
+     * @param <KException> 計算鍵值函數可拋出的例外型態
+     * @param getKey 計算項目於新{@link TreeMap}內的鍵值
+     * @return 包含目前項目對照結果的{@link TreeMap}
+     * @throws KException 表示{@code getKey}丟出例外
+     */
+    default <K, KException extends Exception>
+            TreeMap<K, T> toTreeMap(FunctionEx<? super T, ? extends K, ? extends KException> getKey)
+                    throws KException
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return thiz.iterator().toTreeMap(getKey);
+    }
+
+    /**
+     * 用目前項目值建立{@link TreeMap}。
+     *
+     * @param <K> {@link TreeMap}鍵值型態
+     * @param <V> {@link TreeMap}項目值型態
+     * @param <KException> 計算鍵值函數可拋出的例外型態
+     * @param <VException> 計算項目值函數可拋出的例外型態
+     * @param getKey 計算項目於新{@link TreeMap}內的鍵值
+     * @param getValue 計算項目於新{@link TreeMap}內的項目值
+     * @return 包含目前項目對照結果的{@link TreeMap}
+     * @throws KException 表示{@code getKey}丟出例外
+     * @throws VException 表示{@code getValue}丟出例外
+     */
+    default <K, V, KException extends Exception, VException extends Exception>
+            TreeMap<K, V> toTreeMap(
+                    FunctionEx<? super T, ? extends K, ? extends KException> getKey,
+                    FunctionEx<? super T, ? extends V, ? extends VException> getValue)
+                    throws KException, VException
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return thiz.iterator().toTreeMap(getKey, getValue);
+    }
+
+    /**
+     * 用目前項目值建立{@link TreeMap}，依照鍵值做分群。
+     *
+     * @param <K> 分群鍵值型態
+     * @param <KException> 計算鍵值函數可拋出的例外型態
+     * @param getKey 計算每個項目的鍵值
+     * @return 包含目前項目分群組的{@link TreeMap}
+     * @throws KException 表示{@code getKey}丟出例外
+     */
+    default <K, KException extends Exception>
+            TreeMap<K, ArrayList<T>> toTreeMapGrouped(FunctionEx<? super T, ? extends K, ? extends KException> getKey)
+                    throws KException
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return thiz.iterator().toTreeMapGrouped(getKey);
+    }
+
+    /**
+     * 用目前項目值建立{@link TreeMap}，依照鍵值做分群。
+     *
+     * @param <K> 群組鍵值型態
+     * @param <V> 項目值型態
+     * @param <KException> 計算鍵值函數可拋出的例外型態
+     * @param <VException> 計算項目值函數可拋出的例外型態
+     * @param getKey 計算每個項目做分組的鍵值
+     * @param getValue 計算項目於新{@link TreeMap}內的項目值
+     * @return 包含目前項目分群組的{@link TreeMap}
+     * @throws KException 表示{@code getKey}丟出例外
+     * @throws VException 表示{@code getValue}丟出例外
+     */
+    default <K, V, KException extends Exception, VException extends Exception>
+            TreeMap<K, ArrayList<V>> toTreeMapGrouped(
+                    FunctionEx<? super T, ? extends K, ? extends KException> getKey,
+                    FunctionEx<? super T, ? extends V, ? extends VException> getValue)
+                    throws KException, VException
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return thiz.iterator().toTreeMapGrouped(getKey, getValue);
     }
 
     //////////////////////////////////////////////////////////////////////////

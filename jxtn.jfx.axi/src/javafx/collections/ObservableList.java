@@ -63,6 +63,7 @@ public interface ObservableList<E> extends List<E>, Observable, ObservableListEx
      * @param elements the elements to add
      * @return true (as specified by Collection.add(E))
      */
+    @SuppressWarnings("unchecked")
     public boolean addAll(E... elements);
 
     /**
@@ -71,6 +72,7 @@ public interface ObservableList<E> extends List<E>, Observable, ObservableListEx
      * @return true (as specified by Collection.add(E))
      * @throws NullPointerException if the specified arguments contain one or more null elements
      */
+    @SuppressWarnings("unchecked")
     public boolean setAll(E... elements);
 
     /**
@@ -86,6 +88,7 @@ public interface ObservableList<E> extends List<E>, Observable, ObservableListEx
      * @param elements the elements to be removed
      * @return true if list changed as a result of this call
      */
+    @SuppressWarnings("unchecked")
     public boolean removeAll(E... elements);
 
     /**
@@ -93,6 +96,7 @@ public interface ObservableList<E> extends List<E>, Observable, ObservableListEx
      * @param elements the elements to be retained
      * @return true if list changed as a result of this call
      */
+    @SuppressWarnings("unchecked")
     public boolean retainAll(E... elements);
 
     /**

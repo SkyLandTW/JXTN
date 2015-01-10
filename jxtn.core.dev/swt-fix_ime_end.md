@@ -12,7 +12,7 @@ Modify *org.eclipse.swt.win32*
 
 ##### org.eclipse.swt.widgets.IME
 
-Under method *WM_IME_ENDCOMPOSITION()*, replace the code:
+Under method *WM_IME_ENDCOMPOSITION()*, change the code:
 
 from:
 

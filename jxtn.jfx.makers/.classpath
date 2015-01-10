@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry excluding="**/*.ftl" kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="lib/controlsfx-8.20.8.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/openjfx-dialogs-1.0.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/controlsfx-8.20.8.jar" sourcepath="D:/CODE/cwmon.e4-Refs/controlsfx/controlsfx/src/main"/>
+	<classpathentry exported="true" kind="lib" path="lib/openjfx-dialogs-1.0.2.jar" sourcepath="D:/CODE/cwmon.e4-Refs/controlsfx-openjfx-dialogs-7273358fd294/src/main/java"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>

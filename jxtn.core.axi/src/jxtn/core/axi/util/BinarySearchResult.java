@@ -75,6 +75,9 @@ public class BinarySearchResult extends BaseTuple<BinarySearchResult>
 
     /**
      * 目標位置或插入點（依照{@link #isFound}決定）。
+     * <p>
+     * 插入點是指第一個等於或大於目標的項目索引，或是集合的長度（即目前所有項目之後）。
+     * </p>
      *
      * @return 目標位置或插入點
      */

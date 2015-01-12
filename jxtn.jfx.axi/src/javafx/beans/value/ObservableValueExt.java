@@ -28,14 +28,11 @@
 package javafx.beans.value;
 
 import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.ToDoubleFunction;
-import java.util.function.ToIntFunction;
-import java.util.function.ToLongFunction;
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
 import javafx.beans.binding.DoubleBinding;
+import javafx.beans.binding.FloatBinding;
 import javafx.beans.binding.IntegerBinding;
 import javafx.beans.binding.LongBinding;
 import javafx.beans.binding.ObjectBinding;
@@ -68,10 +65,10 @@ public interface ObservableValueExt<T>
      * @param mapper 轉換目前觀察值為布林型態的函數
      * @return 布林型態的繫節(依賴目前的觀察物件)
      */
-    default BooleanBinding asBoolean(Predicate<? super T> mapper)
+    default BooleanBinding asBoolean(Function<? super T, ? extends Boolean> mapper)
     {
         ObservableValue<T> thiz = (ObservableValue<T>) this;
-        return Bindings.createBooleanBinding(() -> mapper.test(thiz.getValue()), thiz);
+        return Bindings.createBooleanBinding(() -> mapper.apply(thiz.getValue()), thiz);
     }
 
     /**
@@ -81,10 +78,23 @@ public interface ObservableValueExt<T>
      * @param mapper 轉換目前觀察值為浮點型態的函數
      * @return 浮點型態的繫節(依賴目前的觀察物件)
      */
-    default DoubleBinding asDouble(ToDoubleFunction<? super T> mapper)
+    default FloatBinding asFloat(Function<? super T, ? extends Float> mapper)
     {
         ObservableValue<T> thiz = (ObservableValue<T>) this;
-        return Bindings.createDoubleBinding(() -> mapper.applyAsDouble(thiz.getValue()), thiz);
+        return Bindings.createFloatBinding(() -> mapper.apply(thiz.getValue()), thiz);
+    }
+
+    /**
+     * 建立包裝目前觀察值為浮點型態的繫節。
+     *
+     * @param thiz 來源觀察值
+     * @param mapper 轉換目前觀察值為浮點型態的函數
+     * @return 浮點型態的繫節(依賴目前的觀察物件)
+     */
+    default DoubleBinding asDouble(Function<? super T, ? extends Double> mapper)
+    {
+        ObservableValue<T> thiz = (ObservableValue<T>) this;
+        return Bindings.createDoubleBinding(() -> mapper.apply(thiz.getValue()), thiz);
     }
 
     /**
@@ -94,10 +104,10 @@ public interface ObservableValueExt<T>
      * @param mapper 轉換目前觀察值為整數型態的函數
      * @return 整數型態的繫節(依賴目前的觀察物件)
      */
-    default IntegerBinding asInteger(ToIntFunction<? super T> mapper)
+    default IntegerBinding asInteger(Function<? super T, ? extends Integer> mapper)
     {
         ObservableValue<T> thiz = (ObservableValue<T>) this;
-        return Bindings.createIntegerBinding(() -> mapper.applyAsInt(thiz.getValue()), thiz);
+        return Bindings.createIntegerBinding(() -> mapper.apply(thiz.getValue()), thiz);
     }
 
     /**
@@ -107,10 +117,10 @@ public interface ObservableValueExt<T>
      * @param mapper 轉換目前觀察值為長整數型態的函數
      * @return 長整數型態的繫節(依賴目前的觀察物件)
      */
-    default LongBinding asLong(ToLongFunction<? super T> mapper)
+    default LongBinding asLong(Function<? super T, ? extends Long> mapper)
     {
         ObservableValue<T> thiz = (ObservableValue<T>) this;
-        return Bindings.createLongBinding(() -> mapper.applyAsLong(thiz.getValue()), thiz);
+        return Bindings.createLongBinding(() -> mapper.apply(thiz.getValue()), thiz);
     }
 
     /**
@@ -120,7 +130,7 @@ public interface ObservableValueExt<T>
      * @param mapper 轉換目前觀察值為字串型態的函數
      * @return 字串型態的繫節(依賴目前的觀察物件)
      */
-    default StringBinding asString(Function<? super T, String> mapper)
+    default StringBinding asString(Function<? super T, ? extends String> mapper)
     {
         ObservableValue<T> thiz = (ObservableValue<T>) this;
         return Bindings.createStringBinding(() -> mapper.apply(thiz.getValue()), thiz);

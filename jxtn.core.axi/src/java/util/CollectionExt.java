@@ -162,7 +162,7 @@ public interface CollectionExt<E> extends IterableExt<E>
      * @return 包含目前項目的{@link ArrayList}，已排序
      */
     @Override
-    default <V extends Comparable<? super V>> ArrayList<E> toArrayListSorted(Function<? super E, ? extends V> getKey)
+    default <V extends Comparable<?>> ArrayList<E> toArrayListSorted(Function<? super E, ? extends V> getKey)
     {
         Collection<E> thiz = (Collection<E>) this;
         ArrayList<E> sorted = thiz.toArrayList();

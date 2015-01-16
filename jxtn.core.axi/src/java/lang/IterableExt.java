@@ -37,6 +37,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.TreeMap;
+import java.util.function.BiFunctionEx;
 import java.util.function.ConsumerEx;
 import java.util.function.Function;
 import java.util.function.FunctionEx;
@@ -965,6 +966,38 @@ public interface IterableExt<T>
     //////////////////////////////////////////////////////////////////////////
     // 數學統計
     //
+    /**
+     * 進行歸約動作
+     *
+     * @param <U> 歸約結果型態
+     * @param <TException> 累加函數可拋出的例外型態
+     * @param identity 初始值
+     * @param accumulator 累加函數
+     * @return 歸約結果
+     * @throws TException 表示{@code accumulator}丟出例外
+     */
+    default <U, TException extends Exception> U reduce(
+            U identity, BiFunctionEx<U, ? super T, U, TException> accumulator)
+            throws TException
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return thiz.iterator().reduce(identity, accumulator);
+    }
+
+    /**
+     * 統計符合條件的項目數量。
+     *
+     * @param <TException> 過濾條件函數可拋出的例外型態
+     * @param condition 過濾條件的函數
+     * @return 符合條件的項目數量
+     * @throws TException 表示{@code condition}丟出例外
+     */
+    default <TException extends Exception> int count(PredicateEx<? super T, ? extends TException> condition)
+            throws TException
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return thiz.iterator().count(condition);
+    }
 
     /**
      * 計算項目代表數值的平均。

@@ -42,3 +42,4 @@ Export-Package: com.sun.javafx.scene.control.skin,
  org.controlsfx.tools,
  org.controlsfx.validation,
  org.controlsfx.validation.decoration
+Eclipse-BundleShape: dir

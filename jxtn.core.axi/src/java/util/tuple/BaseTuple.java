@@ -76,6 +76,20 @@ public abstract class BaseTuple<T extends BaseTuple<T>> implements Comparable<T>
         return Arrays.hashCode(this.getValueArray());
     }
 
+    @Override
+    public String toString()
+    {
+        StringBuilder sb = new StringBuilder();
+        for (Object v : this.valueArray)
+        {
+            sb.append(String.valueOf(v));
+            sb.append(",");
+        }
+        if (sb.length() > 0)
+            sb.setLength(sb.length() - 1);
+        return sb.toString();
+    }
+
     /**
      * 取得包含所有子項目的內部陣列。
      *

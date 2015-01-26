@@ -1120,7 +1120,6 @@ public interface IteratorExt<E>
             result = accumulator.applyEx(result, e);
         }
         return result;
-
     }
 
     /**

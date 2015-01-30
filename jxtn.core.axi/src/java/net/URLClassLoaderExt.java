@@ -169,4 +169,8 @@ public final class URLClassLoaderExt
         }
          */
     }
+
+    private URLClassLoaderExt()
+    {
+    }
 }

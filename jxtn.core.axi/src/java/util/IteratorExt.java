@@ -70,7 +70,7 @@ public interface IteratorExt<E>
      * @return 結合的列舉器
      */
     @SafeVarargs
-    public static <T> Iterator<T> concatAll(Iterator<? extends T>... iterators)
+    static <T> Iterator<T> concatAll(Iterator<? extends T>... iterators)
     {
         return new ConcatedIterator<>(Arrays.asList(iterators).iterator());
     }
@@ -82,7 +82,7 @@ public interface IteratorExt<E>
      * @param iteratorIterable 要結合的列舉器的列舉
      * @return 結合的列舉器
      */
-    public static <T> Iterator<T> concatAll(Iterable<Iterator<? extends T>> iteratorIterable)
+    static <T> Iterator<T> concatAll(Iterable<Iterator<? extends T>> iteratorIterable)
     {
         return new ConcatedIterator<>(iteratorIterable.iterator());
     }
@@ -94,7 +94,7 @@ public interface IteratorExt<E>
      * @param iteratorIterator 要結合的列舉器的列舉器
      * @return 結合的列舉器
      */
-    public static <T> Iterator<T> concatAll(Iterator<Iterator<? extends T>> iteratorIterator)
+    static <T> Iterator<T> concatAll(Iterator<Iterator<? extends T>> iteratorIterator)
     {
         return new ConcatedIterator<>(iteratorIterator);
     }
@@ -107,7 +107,7 @@ public interface IteratorExt<E>
      * @param getNext 取得每個項目的下一個項目的函數，傳回null表示結尾
      * @return 串接列舉器
      */
-    public static <T> Iterator<T> linkLine(T item, Function<? super T, ? extends T> getNext)
+    static <T> Iterator<T> linkLine(T item, Function<? super T, ? extends T> getNext)
     {
         return new LinkLineIterator<>(item, getNext);
     }
@@ -120,7 +120,7 @@ public interface IteratorExt<E>
      * @param getChildren 取得每個項目的子項目集合，傳回null表示結尾
      * @return 串接列舉器
      */
-    public static <T> Iterator<T> linkTree(T item, Function<? super T, ? extends Iterator<? extends T>> getChildren)
+    static <T> Iterator<T> linkTree(T item, Function<? super T, ? extends Iterator<? extends T>> getChildren)
     {
         return new LinkTreeIterator<>(item, getChildren);
     }

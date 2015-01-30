@@ -38,7 +38,7 @@ import java.util.Comparator;
  * @author AqD
  * @param <T> 要比較的項目型態
  */
-public class ComparableComparator<T extends Comparable<? super T>> implements Comparator<T>
+public final class ComparableComparator<T extends Comparable<? super T>> implements Comparator<T>
 {
     @SuppressWarnings("rawtypes")
     public static final ComparableComparator instance = new ComparableComparator<>();

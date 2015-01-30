@@ -37,7 +37,7 @@ import java.util.Comparator;
  *
  * @author AqD
  */
-public class ArrayComparators
+public final class ArrayComparators
 {
     /**
      * 取得boolean陣列的比較器。

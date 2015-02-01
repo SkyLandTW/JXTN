@@ -63,6 +63,16 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
     {
         if (condition)
         {
+            Node fieldNode = JFX.textField()
+                    .GridPane_margin(margin)
+                    .GridPane_rowIndex(row).GridPane_columnIndex(1)
+                    .GridPane_fillWidth(true).GridPane_fillHeight(true)
+                    .GridPane_halignment(HPos.LEFT)
+                    .GridPane_valignment(VPos.TOP)
+                    .GridPane_hgrow(Priority.ALWAYS)
+                    .bindText(source)
+                    .editable(false)
+                    .build();
             this.self().childrenAdd(
                     JFX.label()
                             .GridPane_margin(margin)
@@ -70,19 +80,12 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
                             .GridPane_fillWidth(true).GridPane_fillHeight(true)
                             .GridPane_halignment(HPos.RIGHT)
                             .GridPane_valignment(VPos.CENTER)
+                            .labelFor(fieldNode)
                             .text(label)
+                            .ellipsisString(label)
                             .afterBuild(lbl -> lbl.minWidthProperty().bind(lbl.prefWidthProperty()))
                             .build(),
-                    JFX.textField()
-                            .GridPane_margin(margin)
-                            .GridPane_rowIndex(row).GridPane_columnIndex(1)
-                            .GridPane_fillWidth(true).GridPane_fillHeight(true)
-                            .GridPane_halignment(HPos.LEFT)
-                            .GridPane_valignment(VPos.TOP)
-                            .GridPane_hgrow(Priority.ALWAYS)
-                            .bindText(source)
-                            .editable(false)
-                            .build());
+                    fieldNode);
         }
         return this.self();
     }
@@ -145,6 +148,8 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
                             .GridPane_halignment(HPos.RIGHT)
                             .GridPane_valignment(VPos.CENTER)
                             .text(label)
+                            .ellipsisString(label)
+                            .labelFor(fieldNode)
                             .afterBuild(lbl -> lbl.minWidthProperty().bind(lbl.prefWidthProperty()))
                             .build(),
                     fieldNode);

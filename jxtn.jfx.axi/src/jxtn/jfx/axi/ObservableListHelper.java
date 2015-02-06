@@ -28,6 +28,7 @@
 package jxtn.jfx.axi;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.BiConsumer;
@@ -470,9 +471,10 @@ public final class ObservableListHelper
     /**
      * 透過指定的上層取得函數自動組織樹狀結構到{@link TreeItem}
      * <ul>
-     * <li>{@code targetList}的目前內容會做清空</li>
-     * <li>{@code targetList}的項目順序比照{@code sourceList}</li>
-     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@code T}(只呼叫一次{@code mapper})</li>
+     * <li>{@code targetRoot}的目前子項目會做清空</li>
+     * <li>{@code targetList}的子項目順序比照{@code sourceList}</li>
+     * <li>項目新加入到{@code sourceList}時，該項目的上層項目會先建立{@link TreeItem}節點並加入</li>
+     * <li>項目從{@code sourceList}被移除時，該項目的子項目的節點會被移到{@code targetRoot}</li>
      * </ul>
      *
      * @param <E> 項目型態
@@ -513,11 +515,13 @@ public final class ObservableListHelper
                                 TreeItem<E> node = sourceToNodeMap.get2(e);
                                 node.getParent().getChildren().remove2(node);
                                 sourceToNodeMap.remove2(e);
+                                moveChildNodesToRoot(targetRoot, node.getChildren());
                             }
                             int index = c.getFrom();
                             for (E e : c.getAddedSubList())
                             {
-                                addTreeElement(sourceList, targetRoot, getParent, createNode, sourceToNodeMap, e, index);
+                                if (!sourceToNodeMap.containsKey2(e))
+                                    addTreeElement(sourceList, targetRoot, getParent, createNode, sourceToNodeMap, e, index);
                                 index += 1;
                             }
                         }
@@ -533,7 +537,7 @@ public final class ObservableListHelper
             });
     }
 
-    protected static <E> void rebuildTree(
+    private static <E> void rebuildTree(
             ObservableList<E> sourceList,
             TreeItem<E> targetRoot,
             UnaryOperator<E> getParent,
@@ -548,6 +552,17 @@ public final class ObservableListHelper
             addTreeElement(sourceList, targetRoot, getParent, createNode, sourceToNodeMap, srcItem, index);
             index += 1;
         }
+    }
+
+    private static <E> void moveChildNodesToRoot(
+            TreeItem<E> root, ObservableList<TreeItem<E>> childNodes)
+    {
+        if (childNodes.isEmpty())
+            return;
+        ObservableList<TreeItem<E>> rootChildren = root.getChildren();
+        List<TreeItem<E>> childNodesCopy = childNodes.toArrayList();
+        childNodes.clear();
+        rootChildren.addAll(childNodesCopy);
     }
 
     private static <E> TreeItem<E> addTreeElement(

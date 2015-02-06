@@ -23,9 +23,9 @@ import com.sun.javafx.collections.ObservableListWrapper;
 import com.sun.javafx.embed.EmbeddedSceneInterface;
 
 /**
- * 修正IME輸入問題的{@link FXCanvas}
+ * 修正版的{@link FXCanvas}，包含可實作於子類別的修正
  * <ul>
- * <li>修正IME輸入問題</li>
+ * <li>修正IME輸入問題（<a href="https://javafx-jira.kenai.com/browse/RT-39268">JavaFX-JIRA RT-39268</a>）</li>
  * </ul>
  *
  * @author AqD
@@ -51,6 +51,7 @@ public class FXCanvas2 extends FXCanvas
 
     private EmbeddedSceneInterface scenePeer;
 
+    @SuppressWarnings("deprecation")
     public FXCanvas2(Composite parent, int style)
     {
         super(parent, style);

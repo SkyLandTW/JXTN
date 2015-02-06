@@ -244,7 +244,9 @@ public class FXCanvas extends Canvas {
 
     /**
      * @inheritDoc
+     * @deprecated use {@link FXCanvas2} instead
      */
+    @Deprecated
     public FXCanvas(@NamedArg("parent") Composite parent, @NamedArg("style") int style) {
         super(parent, style | SWT.NO_BACKGROUND);
         initFx();
@@ -841,9 +843,12 @@ public class FXCanvas extends Canvas {
 
         DropTarget createDropTarget(EmbeddedSceneInterface embeddedScene) {
             final DropTarget dropTarget = new DropTarget(FXCanvas.this, DND.DROP_COPY | DND.DROP_LINK | DND.DROP_MOVE);
+            /*                                                                                  // DnD Remove
             final EmbeddedSceneDTInterface fxDropTarget = embeddedScene.createDropTarget();
+             */
             dropTarget.setTransfer(getAllTransfers());
             dropTarget.addDropListener(new DropTargetListener() {
+                EmbeddedSceneDTInterface fxDropTarget;                                          // DnD Add
                 Object data;
                 // In SWT, the list of available types that the source can provide
                 // is part of the event.  FX queries this directly from the operating
@@ -886,6 +891,9 @@ public class FXCanvas extends Canvas {
                 };
                 @Override
                 public void dragEnter(DropTargetEvent event) {
+                    this.fxDropTarget = embeddedScene.createDropTarget();                       // DnD Add
+                    this.ignoreLeave = false;                                                   // DnD Add
+                    this.currentTransferData = null;                                            // DnD Add
                     dropTarget.setTransfer(getAllTransfers());
                     this.detail = event.detail;
                     this.operations = event.operations;
@@ -898,8 +906,14 @@ public class FXCanvas extends Canvas {
                     //transferData = null;
                     this.currentTransferData = null;
                     FXCanvas.this.getDisplay().asyncExec(() -> {
+                        /*                                                                      // DnD Remove
                         if (this.ignoreLeave) return;
                         fxDropTarget.handleDragLeave();
+                         */
+                        if (!this.ignoreLeave)                                                  // DnD Add
+                            this.fxDropTarget.handleDragLeave();                                // DnD Add
+                        this.fxDropTarget = null;                                               // DnD Add
+                        this.ignoreLeave = false;                                               // DnD Add
                     });
                 }
                 @Override

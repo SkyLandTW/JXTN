@@ -33,6 +33,7 @@ import java.util.Objects;
 import java.util.function.BiConsumer;
 import java.util.function.BiPredicate;
 import java.util.function.Function;
+import java.util.function.UnaryOperator;
 
 import javafx.beans.InvalidationListener;
 import javafx.beans.value.ChangeListener;
@@ -43,6 +44,8 @@ import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import javafx.collections.WeakListChangeListener;
+import javafx.scene.control.TreeItem;
+import jxtn.core.axi.util.BinarySearchResult;
 
 /**
  * {@link ObservableList}輔助
@@ -51,6 +54,10 @@ import javafx.collections.WeakListChangeListener;
  */
 public final class ObservableListHelper
 {
+    //////////////////////////////////////////////////////////////////////////
+    // 對照
+    //
+
     /**
      * 透過指定的對照函數自動更新目的集合
      * <ul>
@@ -216,6 +223,10 @@ public final class ObservableListHelper
                 Objects.requireNonNull(refs);
             });
     }
+
+    //////////////////////////////////////////////////////////////////////////
+    // 分組
+    //
 
     /**
      * 透過指定的群組函數自動更新目的集合
@@ -451,6 +462,123 @@ public final class ObservableListHelper
                 Objects.requireNonNull(refs);
             });
     }
+
+    //////////////////////////////////////////////////////////////////////////
+    // 組織為樹狀結構
+    //
+
+    /**
+     * 透過指定的上層取得函數自動組織樹狀結構到{@link TreeItem}
+     * <ul>
+     * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetList}的項目順序比照{@code sourceList}</li>
+     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@code T}(只呼叫一次{@code mapper})</li>
+     * </ul>
+     *
+     * @param <E> 項目型態
+     * @param sourceList 項目集合
+     * @param targetRoot 目的根結點
+     * @param getParent 取得項目之上層項目的函數，傳回null表示最上層(節點接到{@code targetRoot})
+     * @param createNode 從項目建立節點({@link TreeItem})的函數
+     */
+    public static <E> void organizeByValue(
+            ObservableList<E> sourceList,
+            TreeItem<E> targetRoot,
+            UnaryOperator<E> getParent,
+            Function<E, TreeItem<E>> createNode)
+    {
+        Objects.requireNonNull(sourceList);
+        Objects.requireNonNull(targetRoot);
+        Objects.requireNonNull(getParent);
+        targetRoot.getChildren().clear();
+        Map<E, TreeItem<E>> sourceToNodeMap = new HashMap<>();
+        // 初始化
+        rebuildTree(sourceList, targetRoot, getParent, createNode, sourceToNodeMap);
+        // 監聽來源
+        ListChangeListener<E> sourceListener = new ListChangeListener<E>()
+            {
+                @Override
+                public void onChanged(ListChangeListener.Change<? extends E> c)
+                {
+                    while (c.next())
+                    {
+                        if (c.wasPermutated())
+                        {
+                            rebuildTree(sourceList, targetRoot, getParent, createNode, sourceToNodeMap);
+                        }
+                        else
+                        {
+                            for (E e : c.getRemoved())
+                            {
+                                TreeItem<E> node = sourceToNodeMap.get2(e);
+                                node.getParent().getChildren().remove2(node);
+                                sourceToNodeMap.remove2(e);
+                            }
+                            int index = c.getFrom();
+                            for (E e : c.getAddedSubList())
+                            {
+                                addTreeElement(sourceList, targetRoot, getParent, createNode, sourceToNodeMap, e, index);
+                                index += 1;
+                            }
+                        }
+                    }
+                }
+            };
+        sourceList.addListener(new WeakListChangeListener<>(sourceListener));
+        // 存放監聽器的參考(生命週期應同targetList)
+        targetRoot.addEventHandler(TreeItem.valueChangedEvent(), e ->
+            {
+                Object[] refs = { sourceListener, };
+                Objects.requireNonNull(refs);
+            });
+    }
+
+    protected static <E> void rebuildTree(
+            ObservableList<E> sourceList,
+            TreeItem<E> targetRoot,
+            UnaryOperator<E> getParent,
+            Function<E, TreeItem<E>> createNode,
+            Map<E, TreeItem<E>> sourceToNodeMap)
+    {
+        targetRoot.getChildren().clear();
+        sourceToNodeMap.clear();
+        int index = 0;
+        for (E srcItem : sourceList)
+        {
+            addTreeElement(sourceList, targetRoot, getParent, createNode, sourceToNodeMap, srcItem, index);
+            index += 1;
+        }
+    }
+
+    private static <E> TreeItem<E> addTreeElement(
+            ObservableList<E> sourceList,
+            TreeItem<E> rootNode,
+            UnaryOperator<E> getParent,
+            Function<E, TreeItem<E>> createNode,
+            Map<E, TreeItem<E>> sourceToNodeMap,
+            E sourceItem,
+            Integer cachedSourceIndex)
+    {
+        TreeItem<E> sourceNode = createNode.apply(sourceItem);
+        E parentItem = getParent.apply(sourceItem);
+        TreeItem<E> parentNode;
+        if (parentItem == null)
+            parentNode = rootNode;
+        else if (sourceToNodeMap.containsKey2(parentItem))
+            parentNode = sourceToNodeMap.get2(parentItem);
+        else
+            parentNode = addTreeElement(sourceList, rootNode, getParent, createNode, sourceToNodeMap, parentItem, null);
+        Integer sourceIndex = cachedSourceIndex != null
+                ? cachedSourceIndex
+                : (Integer) sourceList.indexOf2(sourceItem);
+        ObservableList<TreeItem<E>> parentChildren = parentNode.getChildren();
+        BinarySearchResult result = parentChildren.binarySearch(n -> sourceList.indexOf2(n.getValue()), sourceIndex);
+        parentChildren.add(result.getIndex(), sourceNode);
+        sourceToNodeMap.put(sourceItem, sourceNode);
+        return sourceNode;
+    }
+
+    //////////////////////////////////////////////////////////////////////////
 
     private ObservableListHelper()
     {

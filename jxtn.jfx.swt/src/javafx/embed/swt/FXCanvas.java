@@ -131,6 +131,9 @@ import com.sun.javafx.stage.EmbeddedWindow;
  *    }
  * </pre>
  *
+ * <ul>
+ * <li>修正DnD錯誤（<a href="https://javafx-jira.kenai.com/browse/RT-39997">JavaFX-JIRA RT-39997</a>）</li>
+ * </ul>
  *
  * @since JavaFX 2.0
  */
@@ -934,9 +937,9 @@ public class FXCanvas extends Canvas {
                     if (detail == DND.DROP_NONE) detail = DND.DROP_COPY;
                     TransferMode acceptedMode, recommendedMode = HostContainer.this.getTransferMode(detail);
                     if (enter) {
-                        acceptedMode = fxDropTarget.handleDragEnter(pt.x, pt.y, event.x, event.y, recommendedMode, this.fxDragSource);
+                        acceptedMode = this.fxDropTarget.handleDragEnter(pt.x, pt.y, event.x, event.y, recommendedMode, this.fxDragSource);
                     } else {
-                        acceptedMode = fxDropTarget.handleDragOver(pt.x, pt.y, event.x, event.y, recommendedMode);
+                        acceptedMode = this.fxDropTarget.handleDragOver(pt.x, pt.y, event.x, event.y, recommendedMode);
                     }
                     event.detail = HostContainer.this.getDragAction(acceptedMode);
                 }
@@ -949,7 +952,7 @@ public class FXCanvas extends Canvas {
                     this.currentTransferData = event.currentDataType;
                     Point pt = FXCanvas.this.toControl(event.x, event.y);
                     TransferMode recommendedDropAction = HostContainer.this.getTransferMode(event.detail);
-                    TransferMode acceptedMode = fxDropTarget.handleDragDrop(pt.x, pt.y, event.x, event.y, recommendedDropAction);
+                    TransferMode acceptedMode = this.fxDropTarget.handleDragDrop(pt.x, pt.y, event.x, event.y, recommendedDropAction);
                     event.detail = HostContainer.this.getDragAction(acceptedMode);
                     this.data = null;
                     //transferData = null;

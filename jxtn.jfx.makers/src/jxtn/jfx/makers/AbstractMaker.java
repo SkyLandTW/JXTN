@@ -28,7 +28,9 @@
 package jxtn.jfx.makers;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Objects;
+import java.util.TreeMap;
 import java.util.function.Consumer;
 
 /**
@@ -41,9 +43,14 @@ import java.util.function.Consumer;
 public class AbstractMaker<Z, B extends AbstractMaker<Z, B>>
 {
     /**
-     * 建構後執行動作集合。
+     * 建構後執行動作集合(具名)。
      */
-    protected ArrayList<Consumer<? super Z>> afterBuildActions;
+    protected Map<String, Consumer<? super Z>> namedAfterBuildActions;
+
+    /**
+     * 建構後執行動作集合(不具名)。
+     */
+    protected ArrayList<Consumer<? super Z>> unnamedAfterBuildActions;
 
     /**
      * 套用建構器的屬性設定。
@@ -66,9 +73,26 @@ public class AbstractMaker<Z, B extends AbstractMaker<Z, B>>
     public final B afterBuild(Consumer<? super Z> action)
     {
         Objects.requireNonNull(action);
-        if (this.afterBuildActions == null)
-            this.afterBuildActions = new ArrayList<>();
-        this.afterBuildActions.add(action);
+        if (this.unnamedAfterBuildActions == null)
+            this.unnamedAfterBuildActions = new ArrayList<>();
+        this.unnamedAfterBuildActions.add(action);
+        return (B) this;
+    }
+
+    /**
+     * 註冊物件建構後的執行動作。
+     *
+     * @param name 動作名稱，名稱重複會覆蓋掉舊的
+     * @param action 執行動作
+     * @return 目前建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B afterBuild(String name, Consumer<? super Z> action)
+    {
+        Objects.requireNonNull(action);
+        if (this.namedAfterBuildActions == null)
+            this.namedAfterBuildActions = new TreeMap<>();
+        this.namedAfterBuildActions.put(name, action);
         return (B) this;
     }
 
@@ -83,16 +107,23 @@ public class AbstractMaker<Z, B extends AbstractMaker<Z, B>>
     }
 
     /**
-     * 呼叫建構後的執行動作({@link #afterBuildActions})。
+     * 呼叫建構後的執行動作({@link #unnamedAfterBuildActions})。
      *
      * @param instance 要執行動作的目標物件
      */
     protected final void doAfterBuild(Z instance)
     {
         Objects.requireNonNull(instance);
-        if (this.afterBuildActions != null)
+        if (this.namedAfterBuildActions != null)
         {
-            for (Consumer<? super Z> action : this.afterBuildActions)
+            for (Consumer<? super Z> action : this.namedAfterBuildActions.values())
+            {
+                action.accept(instance);
+            }
+        }
+        if (this.unnamedAfterBuildActions != null)
+        {
+            for (Consumer<? super Z> action : this.unnamedAfterBuildActions)
             {
                 action.accept(instance);
             }

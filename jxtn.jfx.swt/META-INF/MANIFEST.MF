@@ -6,5 +6,6 @@ Bundle-Version: 1.0.0
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: AqD@GitHub
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.swt
+Require-Bundle: org.eclipse.osgi,
+ org.eclipse.swt
 Export-Package: javafx.embed.swt

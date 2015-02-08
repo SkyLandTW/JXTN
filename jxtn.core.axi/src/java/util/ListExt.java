@@ -219,6 +219,7 @@ public interface ListExt<E> extends CollectionExt<E>
      * @return 最後一筆項目
      * @throws NoSuchElementException 沒有項目
      */
+    @Override
     default E last()
     {
         List<E> thiz = (List<E>) this;
@@ -229,10 +230,34 @@ public interface ListExt<E> extends CollectionExt<E>
     }
 
     /**
+     * 取得符合條件的最後一筆項目。
+     *
+     * @param <TException> 測試條件可拋出的例外型態
+     * @param condition 取得項目的條件測試函數
+     * @return 最後一筆項目
+     * @throws NoSuchElementException 沒有最後一筆或符合條件的項目
+     * @throws TException 表示{@code condition}丟出例外
+     */
+    @Override
+    default <TException extends Exception> E last(PredicateEx<? super E, ? extends TException> condition)
+            throws TException
+    {
+        List<E> thiz = (List<E>) this;
+        for (int i = thiz.size() - 1; i >= 0; i--)
+        {
+            E item = thiz.get(i);
+            if (condition.testEx(item))
+                return item;
+        }
+        throw new NoSuchElementException();
+    }
+
+    /**
      * 取得最後一筆項目或null。
      *
      * @return 最後一筆項目，或null表示沒有項目
      */
+    @Override
     default E lastOrNull()
     {
         List<E> thiz = (List<E>) this;
@@ -240,5 +265,27 @@ public interface ListExt<E> extends CollectionExt<E>
             return null;
         else
             return thiz.get(thiz.size() - 1);
+    }
+
+    /**
+     * 取得符合條件的最後一筆項目或null。
+     *
+     * @param <TException> 測試條件可拋出的例外型態
+     * @param condition 取得項目的條件測試函數
+     * @return 最後一筆項目，或null表示沒有符合條件的項目
+     * @throws TException 表示{@code condition}丟出例外
+     */
+    @Override
+    default <TException extends Exception> E lastOrNull(PredicateEx<? super E, ? extends TException> condition)
+            throws TException
+    {
+        List<E> thiz = (List<E>) this;
+        for (int i = thiz.size() - 1; i >= 0; i--)
+        {
+            E item = thiz.get(i);
+            if (condition.testEx(item))
+                return item;
+        }
+        return null;
     }
 }

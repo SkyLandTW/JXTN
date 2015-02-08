@@ -357,7 +357,7 @@ public interface IterableExt<T>
      * 取得第一筆項目。
      *
      * @return 第一筆項目
-     * @throws NoSuchElementException 沒有第一筆或符合條件的項目
+     * @throws NoSuchElementException 沒有任何項目
      */
     default T first()
     {
@@ -370,8 +370,8 @@ public interface IterableExt<T>
      *
      * @param <TException> 測試條件可拋出的例外型態
      * @param condition 取得項目的條件測試函數
-     * @return 第一筆項目
-     * @throws NoSuchElementException 沒有第一筆或符合條件的項目
+     * @return 符合條件的第一筆項目
+     * @throws NoSuchElementException 沒有任何符合條件的項目
      * @throws TException 表示{@code condition}丟出例外
      */
     default <TException extends Exception> T first(PredicateEx<? super T, ? extends TException> condition)
@@ -382,7 +382,7 @@ public interface IterableExt<T>
     }
 
     /**
-     * 取得第一筆項目。
+     * 取得第一筆項目或null。
      *
      * @return 第一筆項目，或null表示沒有項目
      */
@@ -393,11 +393,11 @@ public interface IterableExt<T>
     }
 
     /**
-     * 取得符合條件的第一筆項目。
+     * 取得符合條件的第一筆項目或null。
      *
      * @param <TException> 測試條件可拋出的例外型態
      * @param condition 取得項目的條件測試函數
-     * @return 第一筆項目，或null表示沒有項目
+     * @return 符合條件的第一筆項目，或null表示沒有項目
      * @throws TException 表示{@code condition}丟出例外
      */
     default <TException extends Exception> T firstOrNull(PredicateEx<? super T, ? extends TException> condition)
@@ -702,6 +702,60 @@ public interface IterableExt<T>
     {
         Iterable<T> thiz = (Iterable<T>) this;
         return thiz.iterator().nextNthOrNull(position);
+    }
+
+    /**
+     * 取得最後一筆項目。
+     *
+     * @return 最後一筆項目
+     * @throws NoSuchElementException 沒有任何項目
+     */
+    default T last()
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return thiz.iterator().last();
+    }
+
+    /**
+     * 取得符合條件的最後一筆項目。
+     *
+     * @param <TException> 測試條件可拋出的例外型態
+     * @param condition 取得項目的條件測試函數
+     * @return 最後一筆項目
+     * @throws NoSuchElementException 沒有最後一筆或符合條件的項目
+     * @throws TException 表示{@code condition}丟出例外
+     */
+    default <TException extends Exception> T last(PredicateEx<? super T, ? extends TException> condition)
+            throws TException
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return thiz.iterator().last(condition);
+    }
+
+    /**
+     * 取得最後一筆項目或null。
+     *
+     * @return 最後一筆項目，或null表示沒有項目
+     */
+    default T lastOrNull()
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return thiz.iterator().lastOrNull();
+    }
+
+    /**
+     * 取得符合條件的最後一筆項目或null。
+     *
+     * @param <TException> 測試條件可拋出的例外型態
+     * @param condition 取得項目的條件測試函數
+     * @return 最後一筆項目，或null表示沒有符合條件的項目
+     * @throws TException 表示{@code condition}丟出例外
+     */
+    default <TException extends Exception> T lastOrNull(PredicateEx<? super T, ? extends TException> condition)
+            throws TException
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return thiz.iterator().lastOrNull(condition);
     }
 
     //////////////////////////////////////////////////////////////////////////

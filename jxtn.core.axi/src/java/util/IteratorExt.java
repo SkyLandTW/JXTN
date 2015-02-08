@@ -378,7 +378,7 @@ public interface IteratorExt<E>
      *
      * @param <TException> 測試條件可拋出的例外型態
      * @param condition 取得項目的條件測試函數
-     * @return 下一筆項目
+     * @return 符合條件的下一筆項目
      * @throws NoSuchElementException 沒有下一筆或符合條件的項目
      * @throws TException 表示{@code condition}丟出例外
      */
@@ -398,12 +398,12 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 取得符合條件的下一筆項目。
+     * 取得下一筆項目或null。
      * <p>
      * 結束後列舉器會停在第一筆符合項目之後或是結尾。
      * </p>
      *
-     * @return 下一筆項目，或null表示沒有下一筆或符合條件的項目
+     * @return 下一筆項目，或null表示沒有下一筆項目
      */
     default E nextOrNull()
     {
@@ -416,14 +416,14 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 取得符合條件的下一筆項目。
+     * 取得符合條件的下一筆項目或null。
      * <p>
      * 結束後列舉器會停在第一筆符合項目之後或是結尾。
      * </p>
      *
      * @param <TException> 測試條件可拋出的例外型態
      * @param condition 取得項目的條件測試函數
-     * @return 下一筆項目，或null表示沒有下一筆或符合條件的項目
+     * @return 符合條件的下一筆項目，或null表示沒有下一筆或符合條件的項目
      * @throws TException 表示{@code condition}丟出例外
      */
     default <TException extends Exception> E nextOrNull(PredicateEx<? super E, ? extends TException> condition)
@@ -459,7 +459,7 @@ public interface IteratorExt<E>
     }
 
     /**
-     * 取得第N筆項目。
+     * 取得第N筆項目或null。
      *
      * @param position 位置(相對於目前位置)
      * @return 第N筆項目，或null表示沒有第N筆項目
@@ -720,6 +720,110 @@ public interface IteratorExt<E>
             }
         }
         return minE;
+    }
+
+    /**
+     * 取得最後一筆項目。
+     * <p>
+     * 結束後列舉器會停在結尾。
+     * </p>
+     *
+     * @return 最後一筆項目
+     * @throws NoSuchElementException 沒有下一筆項目
+     */
+    default E last()
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        boolean lastFound = false;
+        E lastMatched = null;
+        while (thiz.hasNext())
+        {
+            lastFound = true;
+            lastMatched = thiz.next();
+        }
+        if (lastFound)
+            return lastMatched;
+        else
+            throw new NoSuchElementException();
+    }
+
+    /**
+     * 取得符合條件的最後一筆項目。
+     * <p>
+     * 結束後列舉器會停在結尾。
+     * </p>
+     *
+     * @param <TException> 測試條件可拋出的例外型態
+     * @param condition 取得項目的條件測試函數
+     * @return 最後一筆符合條件的項目
+     * @throws NoSuchElementException 沒有任何符合條件的項目
+     * @throws TException 表示{@code condition}丟出例外
+     */
+    default <TException extends Exception> E last(PredicateEx<? super E, ? extends TException> condition)
+            throws TException
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        boolean lastFound = false;
+        E lastMatched = null;
+        while (thiz.hasNext())
+        {
+            E item = thiz.next();
+            if (condition.testEx(item))
+            {
+                lastFound = true;
+                lastMatched = item;
+            }
+        }
+        if (lastFound)
+            return lastMatched;
+        else
+            throw new NoSuchElementException();
+    }
+
+    /**
+     * 取得最後一筆項目或null。
+     * <p>
+     * 結束後列舉器會停在結尾。
+     * </p>
+     *
+     * @return 最後一筆項目，或null表示沒有任何項目
+     */
+    default E lastOrNull()
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        E lastMatched = null;
+        while (thiz.hasNext())
+        {
+            lastMatched = thiz.next();
+        }
+        return lastMatched;
+    }
+
+    /**
+     * 取得符合條件的最後一筆項目。
+     * <p>
+     * 結束後列舉器會停在結尾。
+     * </p>
+     *
+     * @param <TException> 測試條件可拋出的例外型態
+     * @param condition 取得項目的條件測試函數
+     * @return 符合條件的最後一筆項目，或null表示沒有任何符合條件的項目
+     * @throws TException 表示{@code condition}丟出例外
+     */
+    default <TException extends Exception> E lastOrNull(PredicateEx<? super E, ? extends TException> condition)
+            throws TException
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        E lastMatched = null;
+        while (thiz.hasNext())
+        {
+            E item = thiz.next();
+            if (condition.testEx(item))
+            {
+                lastMatched = item;
+            }
+        }
+        return lastMatched;
     }
 
     //////////////////////////////////////////////////////////////////////////

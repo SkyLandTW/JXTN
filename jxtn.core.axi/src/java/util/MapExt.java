@@ -299,4 +299,113 @@ public interface MapExt<K, V>
         }
         return result;
     }
+
+    /**
+     * 對照目前的項目值以產生新的{@link TreeMap}。
+     *
+     * @param <V2> 對照項目值型態
+     * @param <VException> 計算項目值函數可拋出的例外型態
+     * @param mapper 對照項目值的函數
+     * @return 對照後的新{@link TreeMap}(不依賴原有的)
+     * @throws VException 表示{@code mapper}丟出例外
+     */
+    default <V2, VException extends Exception>
+            TreeMap<K, V2> toTreeMapMapped(FunctionEx<? super V, ? extends V2, ? extends VException> mapper)
+                    throws VException
+    {
+        Map<K, V> thiz = (Map<K, V>) this;
+        TreeMap<K, V2> result = new TreeMap<>();
+        for (Map.Entry<K, V> entry : thiz.entrySet())
+        {
+            V2 newValue = mapper.applyEx(entry.getValue());
+            result.put(entry.getKey(), newValue);
+        }
+        return result;
+    }
+
+    /**
+     * 對照目前的項目值以產生新的{@link TreeMap}。
+     *
+     * @param <K2> 對照鍵值型態
+     * @param <V2> 對照項目值型態
+     * @param <KException> 計算鍵值函數可拋出的例外型態
+     * @param <VException> 計算項目值函數可拋出的例外型態
+     * @param keyMapper 對照鍵值的函數
+     * @param valueMapper 對照項目值的函數
+     * @return 對照後的新{@link TreeMap}(不依賴原有的)
+     * @throws KException 表示{@code keyMapper}丟出例外
+     * @throws VException 表示{@code valueMapper}丟出例外
+     */
+    default <K2, V2, KException extends Exception, VException extends Exception>
+            TreeMap<K2, V2> toTreeMapMapped(
+                    FunctionEx<? super K, ? extends K2, ? extends KException> keyMapper,
+                    FunctionEx<? super V, ? extends V2, ? extends VException> valueMapper)
+                    throws KException, VException
+    {
+        Map<K, V> thiz = (Map<K, V>) this;
+        TreeMap<K2, V2> result = new TreeMap<>();
+        for (Map.Entry<K, V> entry : thiz.entrySet())
+        {
+            K2 newKey = keyMapper.applyEx(entry.getKey());
+            V2 newVal = valueMapper.applyEx(entry.getValue());
+            result.put(newKey, newVal);
+        }
+        return result;
+    }
+
+    /**
+     * 對照目前的項目值以產生新的{@link TreeMap}。
+     *
+     * @param <V2> 對照項目值型態
+     * @param <VException> 計算項目值函數可拋出的例外型態
+     * @param mapper 對照項目值的函數
+     * @return 對照後的新{@link TreeMap}(不依賴原有的)
+     * @throws VException 表示{@code mapper}丟出例外
+     */
+    default <V2, VException extends Exception> TreeMap<K, V2>
+            toTreeMapMapped(BiFunctionEx<? super K, ? super V, V2, ? extends VException> mapper)
+                    throws VException
+    {
+        Map<K, V> thiz = (Map<K, V>) this;
+        TreeMap<K, V2> result = new TreeMap<>();
+        for (Map.Entry<K, V> entry : thiz.entrySet())
+        {
+            K oldKey = entry.getKey();
+            V2 newValue = mapper.applyEx(oldKey, entry.getValue());
+            result.put(oldKey, newValue);
+        }
+        return result;
+    }
+
+    /**
+     * 對照目前的項目值以產生新的{@link TreeMap}。
+     *
+     * @param <K2> 對照鍵值型態
+     * @param <V2> 對照項目值型態
+     * @param <KException> 計算鍵值函數可拋出的例外型態
+     * @param <VException> 計算項目值函數可拋出的例外型態
+     * @param keyMapper 對照鍵值的函數
+     * @param valueMapper 對照項目值的函數
+     * @return 對照後的新{@link TreeMap}(不依賴原有的)
+     * @throws KException 表示{@code keyMapper}丟出例外
+     * @throws VException 表示{@code valueMapper}丟出例外
+     */
+    default <K2, V2, KException extends Exception, VException extends Exception>
+            TreeMap<K2, V2> toTreeMapMapped(
+                    BiFunctionEx<? super K, ? super V, K2, ? extends KException> keyMapper,
+                    BiFunctionEx<? super K, ? super V, V2, ? extends VException> valueMapper)
+                    throws KException, VException
+    {
+        Map<K, V> thiz = (Map<K, V>) this;
+        TreeMap<K2, V2> result = new TreeMap<>();
+        for (Map.Entry<K, V> entry : thiz.entrySet())
+        {
+            K oldKey = entry.getKey();
+            V oldVal = entry.getValue();
+            K2 newKey = keyMapper.applyEx(oldKey, oldVal);
+            V2 newVal = valueMapper.applyEx(oldKey, oldVal);
+            result.put(newKey, newVal);
+        }
+        return result;
+    }
 }

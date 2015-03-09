@@ -58,11 +58,12 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
      * @param margin 邊界
      * @param label 欄位標題
      * @param source 資料來源
+     * @param styleClasses 輸入欄位樣式
      * @return 自己
      */
-    default B addFieldRO(int row, Insets margin, String label, ObservableValue<? extends String> source)
+    default B addFieldRO(int row, Insets margin, String label, ObservableValue<? extends String> source, String... styleClasses)
     {
-        return this.addFieldROIf(true, row, margin, label, source);
+        return this.addFieldROIf(true, row, margin, label, source, styleClasses);
     }
 
     /**
@@ -80,9 +81,10 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
      * @param margin 邊界
      * @param label 欄位標題
      * @param source 資料來源
+     * @param styleClasses 輸入欄位樣式
      * @return 自己
      */
-    default B addFieldROIf(boolean condition, int row, Insets margin, String label, ObservableValue<? extends String> source)
+    default B addFieldROIf(boolean condition, int row, Insets margin, String label, ObservableValue<? extends String> source, String... styleClasses)
     {
         if (condition)
         {
@@ -95,6 +97,7 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
                     .GridPane_hgrow(Priority.ALWAYS)
                     .bindText(source)
                     .editable(false)
+                    .styleClass(styleClasses)
                     .build();
             this.self().childrenAdd(
                     JFX.label()

@@ -9,3 +9,4 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.osgi,
  org.eclipse.swt
 Export-Package: javafx.embed.swt
+Eclipse-BundleShape: dir

@@ -1,4 +1,6 @@
 // @formatter:off
+// Extends ObservableListExt
+// Version 8u25
 /*
  * Copyright (c) 2010, 2014, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.

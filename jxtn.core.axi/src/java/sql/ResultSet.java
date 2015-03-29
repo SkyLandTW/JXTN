@@ -1,4 +1,6 @@
 // @formatter:off
+// Extends ResultSetExt
+// Version 8u25
 /*
  * Copyright (c) 1996, 2013, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.

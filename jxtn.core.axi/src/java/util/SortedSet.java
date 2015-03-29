@@ -1,4 +1,6 @@
 // @formatter:off
+// Extends SortedSetExt
+// Version 8u25
 /*
  * Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -221,6 +223,7 @@ public interface SortedSet<E> extends Set<E>, SortedSetExt<E> {
      * @return the last (highest) element currently in this set
      * @throws NoSuchElementException if this set is empty
      */
+    @Override
     E last();
 
     /**

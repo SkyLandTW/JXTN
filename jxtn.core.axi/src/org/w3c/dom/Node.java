@@ -1,4 +1,6 @@
 // @formatter:off
+// Extends NodeExt
+// Version 8u25
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *

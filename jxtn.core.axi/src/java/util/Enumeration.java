@@ -1,4 +1,6 @@
 // @formatter:off
+// Extends EnumerationExt
+// Version 8u25
 /*
  * Copyright (c) 1994, 2005, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.

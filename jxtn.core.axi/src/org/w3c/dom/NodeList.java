@@ -1,6 +1,6 @@
 // @formatter:off
-// 延伸NodeListExt
-// 版本8u20
+// Extends NodeListExt
+// Version 8u25
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *

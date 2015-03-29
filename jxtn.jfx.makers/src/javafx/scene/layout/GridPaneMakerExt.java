@@ -27,6 +27,7 @@
 
 package javafx.scene.layout;
 
+import javafx.beans.property.Property;
 import javafx.beans.value.ObservableValue;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -44,6 +45,10 @@ import jxtn.jfx.makers.JFX;
 public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z, B>>
         extends javafx.scene.layout.PaneMakerExt<Z, B>
 {
+    //////////////////////////////////////////////////////////////////////////
+    // 標籤及唯讀欄位
+    //
+
     /**
      * 增加唯讀欄位
      * <p>
@@ -63,7 +68,30 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
      */
     default B addFieldRO(int row, Insets margin, String label, ObservableValue<? extends String> source, String... styleClasses)
     {
-        return this.addFieldROIf(true, row, margin, label, source, styleClasses);
+        return this.addFieldROIf(true, row, 0, margin, label, source, styleClasses);
+    }
+
+    /**
+     * 增加唯讀欄位
+     * <p>
+     * 每個欄位佔第一行及第二行：
+     * <ol>
+     * <li>第一行顯示標籤({@code label})，向右中對齊</li>
+     * <li>第二行顯示文字控制{@link javafx.scene.control.TextField}，向左上對齊，橫向填滿，連結資料{@code source}</li>
+     * </ol>
+     * </p>
+     *
+     * @param row 列號
+     * @param column 行號
+     * @param margin 邊界
+     * @param label 欄位標題
+     * @param source 資料來源
+     * @param styleClasses 輸入欄位樣式
+     * @return 自己
+     */
+    default B addFieldRO(int row, int column, Insets margin, String label, ObservableValue<? extends String> source, String... styleClasses)
+    {
+        return this.addFieldROIf(true, row, column, margin, label, source, styleClasses);
     }
 
     /**
@@ -86,11 +114,37 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
      */
     default B addFieldROIf(boolean condition, int row, Insets margin, String label, ObservableValue<? extends String> source, String... styleClasses)
     {
+        return this.addFieldROIf(condition, row, 0, margin, label, source, styleClasses);
+    }
+
+    /**
+     * 增加唯讀欄位
+     * <p>
+     * 每個欄位佔第一行及第二行：
+     * <ol>
+     * <li>第一行顯示標籤({@code label})，向右中對齊</li>
+     * <li>第二行顯示文字控制{@link javafx.scene.control.TextField}，向左上對齊，橫向填滿，連結資料{@code source}</li>
+     * </ol>
+     * </p>
+     *
+     * @param condition 條件，為true時才加入欄位
+     * @param row 列號
+     * @param column 行號
+     * @param margin 邊界
+     * @param label 欄位標題
+     * @param source 資料來源
+     * @param styleClasses 輸入欄位樣式
+     * @return 自己
+     */
+    default B addFieldROIf(boolean condition, int row, int column, Insets margin, String label, ObservableValue<? extends String> source, String... styleClasses)
+    {
         if (condition)
         {
+            Insets labelMargin = column == 0 ? margin : new Insets(
+                    margin.getTop(), margin.getRight(), margin.getBottom(), margin.getLeft() * 2);
             Node fieldNode = JFX.textField()
                     .GridPane_margin(margin)
-                    .GridPane_rowIndex(row).GridPane_columnIndex(1)
+                    .GridPane_rowIndex(row).GridPane_columnIndex(column + 1)
                     .GridPane_fillWidth(true).GridPane_fillHeight(true)
                     .GridPane_halignment(HPos.LEFT)
                     .GridPane_valignment(VPos.TOP)
@@ -101,8 +155,8 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
                     .build();
             this.self().childrenAdd(
                     JFX.label()
-                            .GridPane_margin(margin)
-                            .GridPane_rowIndex(row).GridPane_columnIndex(0)
+                            .GridPane_margin(labelMargin)
+                            .GridPane_rowIndex(row).GridPane_columnIndex(column + 0)
                             .GridPane_fillWidth(true).GridPane_fillHeight(true)
                             .GridPane_halignment(HPos.RIGHT)
                             .GridPane_valignment(VPos.CENTER)
@@ -115,6 +169,135 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
         }
         return this.self();
     }
+
+    //////////////////////////////////////////////////////////////////////////
+    // 標籤及可輸入欄位
+    //
+
+    /**
+     * 增加可輸入欄位
+     * <p>
+     * 每個欄位佔第一行及第二行：
+     * <ol>
+     * <li>第一行顯示標籤({@code label})，向右中對齊</li>
+     * <li>第二行顯示文字控制{@link javafx.scene.control.TextField}，向左上對齊，橫向填滿，連結資料{@code source}</li>
+     * </ol>
+     * </p>
+     *
+     * @param row 列號
+     * @param margin 邊界
+     * @param label 欄位標題
+     * @param source 資料來源
+     * @param styleClasses 輸入欄位樣式
+     * @return 自己
+     */
+    default B addFieldRW(int row, Insets margin, String label, Property<String> source, String... styleClasses)
+    {
+        return this.addFieldRWIf(true, row, 0, margin, label, source, styleClasses);
+    }
+
+    /**
+     * 增加可輸入欄位
+     * <p>
+     * 每個欄位佔第一行及第二行：
+     * <ol>
+     * <li>第一行顯示標籤({@code label})，向右中對齊</li>
+     * <li>第二行顯示文字控制{@link javafx.scene.control.TextField}，向左上對齊，橫向填滿，連結資料{@code source}</li>
+     * </ol>
+     * </p>
+     *
+     * @param row 列號
+     * @param column 行號
+     * @param margin 邊界
+     * @param label 欄位標題
+     * @param source 資料來源
+     * @param styleClasses 輸入欄位樣式
+     * @return 自己
+     */
+    default B addFieldRW(int row, int column, Insets margin, String label, Property<String> source, String... styleClasses)
+    {
+        return this.addFieldRWIf(true, row, column, margin, label, source, styleClasses);
+    }
+
+    /**
+     * 增加可輸入欄位
+     * <p>
+     * 每個欄位佔第一行及第二行：
+     * <ol>
+     * <li>第一行顯示標籤({@code label})，向右中對齊</li>
+     * <li>第二行顯示文字控制{@link javafx.scene.control.TextField}，向左上對齊，橫向填滿，連結資料{@code source}</li>
+     * </ol>
+     * </p>
+     *
+     * @param condition 條件，為true時才加入欄位
+     * @param row 列號
+     * @param margin 邊界
+     * @param label 欄位標題
+     * @param source 資料來源
+     * @param styleClasses 輸入欄位樣式
+     * @return 自己
+     */
+    default B addFieldRWIf(boolean condition, int row, Insets margin, String label, Property<String> source, String... styleClasses)
+    {
+        return this.addFieldRWIf(condition, row, 0, margin, label, source, styleClasses);
+    }
+
+    /**
+     * 增加可輸入欄位
+     * <p>
+     * 每個欄位佔第一行及第二行：
+     * <ol>
+     * <li>第一行顯示標籤({@code label})，向右中對齊</li>
+     * <li>第二行顯示文字控制{@link javafx.scene.control.TextField}，向左上對齊，橫向填滿，連結資料{@code source}</li>
+     * </ol>
+     * </p>
+     *
+     * @param condition 條件，為true時才加入欄位
+     * @param row 列號
+     * @param column 行號
+     * @param margin 邊界
+     * @param label 欄位標題
+     * @param source 資料來源
+     * @param styleClasses 輸入欄位樣式
+     * @return 自己
+     */
+    default B addFieldRWIf(boolean condition, int row, int column, Insets margin, String label, Property<String> source, String... styleClasses)
+    {
+        if (condition)
+        {
+            Insets labelMargin = column == 0 ? margin : new Insets(
+                    margin.getTop(), margin.getRight(), margin.getBottom(), margin.getLeft() * 2);
+            Node fieldNode = JFX.textField()
+                    .GridPane_margin(margin)
+                    .GridPane_rowIndex(row).GridPane_columnIndex(column + 1)
+                    .GridPane_fillWidth(true).GridPane_fillHeight(true)
+                    .GridPane_halignment(HPos.LEFT)
+                    .GridPane_valignment(VPos.TOP)
+                    .GridPane_hgrow(Priority.ALWAYS)
+                    .bindBidirectionalText(source)
+                    .editable(true)
+                    .styleClass(styleClasses)
+                    .build();
+            this.self().childrenAdd(
+                    JFX.label()
+                            .GridPane_margin(labelMargin)
+                            .GridPane_rowIndex(row).GridPane_columnIndex(column + 0)
+                            .GridPane_fillWidth(true).GridPane_fillHeight(true)
+                            .GridPane_halignment(HPos.RIGHT)
+                            .GridPane_valignment(VPos.CENTER)
+                            .labelFor(fieldNode)
+                            .text(label)
+                            .ellipsisString(label)
+                            .afterBuild(lbl -> lbl.minWidthProperty().bind(lbl.prefWidthProperty()))
+                            .build(),
+                    fieldNode);
+        }
+        return this.self();
+    }
+
+    //////////////////////////////////////////////////////////////////////////
+    // 標籤及自訂輸入欄位
+    //
 
     /**
      * 增加自訂欄位
@@ -134,7 +317,29 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
      */
     default B addFieldCustom(int row, Insets margin, String label, Node fieldNode)
     {
-        return this.addFieldCustomIf(true, row, margin, label, fieldNode);
+        return this.addFieldCustomIf(true, row, 0, margin, label, fieldNode);
+    }
+
+    /**
+     * 增加自訂欄位
+     * <p>
+     * 每個欄位佔第一行及第二行：
+     * <ol>
+     * <li>第一行顯示標籤({@code label})，向右中對齊</li>
+     * <li>第二行顯示指定控制項({@code fieldNode})，向左上對齊，橫向填滿</li>
+     * </ol>
+     * </p>
+     *
+     * @param row 列號
+     * @param column 行號
+     * @param margin 邊界
+     * @param label 欄位標題
+     * @param fieldNode 欄位節點
+     * @return 自己
+     */
+    default B addFieldCustom(int row, int column, Insets margin, String label, Node fieldNode)
+    {
+        return this.addFieldCustomIf(true, row, column, margin, label, fieldNode);
     }
 
     /**
@@ -156,11 +361,36 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
      */
     default B addFieldCustomIf(boolean condition, int row, Insets margin, String label, Node fieldNode)
     {
+        return this.addFieldCustomIf(condition, row, 0, margin, label, fieldNode);
+    }
+
+    /**
+     * 增加自訂欄位
+     * <p>
+     * 每個欄位佔第一行及第二行：
+     * <ol>
+     * <li>第一行顯示標籤({@code label})，向右中對齊</li>
+     * <li>第二行顯示指定控制項({@code fieldNode})，向左上對齊，橫向填滿</li>
+     * </ol>
+     * </p>
+     *
+     * @param condition 條件，為true時才加入欄位
+     * @param row 列號
+     * @param column 行號
+     * @param margin 邊界
+     * @param label 欄位標題
+     * @param fieldNode 欄位節點
+     * @return 自己
+     */
+    default B addFieldCustomIf(boolean condition, int row, int column, Insets margin, String label, Node fieldNode)
+    {
         if (condition)
         {
+            Insets labelMargin = column == 0 ? margin : new Insets(
+                    margin.getTop(), margin.getRight(), margin.getBottom(), margin.getLeft() * 2);
             GridPane.setMargin(fieldNode, margin);
             GridPane.setRowIndex(fieldNode, row);
-            GridPane.setColumnIndex(fieldNode, 1);
+            GridPane.setColumnIndex(fieldNode, column + 1);
             GridPane.setFillWidth(fieldNode, true);
             GridPane.setFillHeight(fieldNode, true);
             GridPane.setHgrow(fieldNode, Priority.ALWAYS);
@@ -168,8 +398,8 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
             GridPane.setValignment(fieldNode, VPos.TOP);
             this.self().childrenAdd(
                     JFX.label()
-                            .GridPane_margin(margin)
-                            .GridPane_rowIndex(row).GridPane_columnIndex(0)
+                            .GridPane_margin(labelMargin)
+                            .GridPane_rowIndex(row).GridPane_columnIndex(column + 0)
                             .GridPane_fillWidth(true).GridPane_fillHeight(true)
                             .GridPane_halignment(HPos.RIGHT)
                             .GridPane_valignment(VPos.CENTER)
@@ -182,6 +412,10 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
         }
         return this.self();
     }
+
+    //////////////////////////////////////////////////////////////////////////
+    // 自訂標籤及自訂輸入欄位
+    //
 
     /**
      * 增加自訂欄位
@@ -199,9 +433,31 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
      * @param fieldNode 欄位節點
      * @return 自己
      */
-    default B addRowCustom(int row, Insets margin, Node labelNode, Node fieldNode)
+    default B addFieldCustom(int row, Insets margin, Node labelNode, Node fieldNode)
     {
-        return this.addRowCustomIf(true, row, margin, labelNode, fieldNode);
+        return this.addFieldCustomIf(true, row, margin, labelNode, fieldNode);
+    }
+
+    /**
+     * 增加自訂欄位
+     * <p>
+     * 每個欄位佔第一行及第二行：
+     * <ol>
+     * <li>第一行顯示標籤({@code label})，向右中對齊</li>
+     * <li>第二行顯示指定控制項({@code fieldNode})，向左上對齊，橫向填滿</li>
+     * </ol>
+     * </p>
+     *
+     * @param row 列號
+     * @param column 行號
+     * @param margin 邊界
+     * @param labelNode 欄位標題
+     * @param fieldNode 欄位節點
+     * @return 自己
+     */
+    default B addFieldCustom(int row, int column, Insets margin, Node labelNode, Node fieldNode)
+    {
+        return this.addFieldCustomIf(true, row, column, margin, labelNode, fieldNode);
     }
 
     /**
@@ -221,13 +477,39 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
      * @param fieldNode 欄位內容節點
      * @return 自己
      */
-    default B addRowCustomIf(boolean condition, int row, Insets margin, Node labelNode, Node fieldNode)
+    default B addFieldCustomIf(boolean condition, int row, Insets margin, Node labelNode, Node fieldNode)
+    {
+        return this.addFieldCustomIf(condition, row, 0, margin, labelNode, fieldNode);
+    }
+
+    /**
+     * 增加自訂欄位
+     * <p>
+     * 每個欄位佔第一行及第二行：
+     * <ol>
+     * <li>第一行顯示標籤({@code label})，向右中對齊</li>
+     * <li>第二行顯示指定控制項({@code fieldNode})，向左上對齊，橫向填滿</li>
+     * </ol>
+     * </p>
+     *
+     * @param condition 條件，為true時才加入欄位
+     * @param row 列號
+     * @param column 行號
+     * @param margin 邊界
+     * @param labelNode 欄位標題節點
+     * @param fieldNode 欄位內容節點
+     * @return 自己
+     */
+    default B addFieldCustomIf(boolean condition, int row, int column, Insets margin, Node labelNode, Node fieldNode)
     {
         if (condition)
         {
-            GridPane.setMargin(labelNode, margin);
+            Insets labelMargin = column == 0 ? margin : new Insets(
+                    margin.getTop(), margin.getRight(), margin.getBottom(), margin.getLeft() * 2);
+            //
+            GridPane.setMargin(labelNode, labelMargin);
             GridPane.setRowIndex(labelNode, row);
-            GridPane.setColumnIndex(labelNode, 0);
+            GridPane.setColumnIndex(labelNode, column + 0);
             GridPane.setFillWidth(labelNode, true);
             GridPane.setFillHeight(labelNode, true);
             GridPane.setHalignment(labelNode, HPos.RIGHT);
@@ -235,7 +517,7 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
             //
             GridPane.setMargin(fieldNode, margin);
             GridPane.setRowIndex(fieldNode, row);
-            GridPane.setColumnIndex(fieldNode, 1);
+            GridPane.setColumnIndex(fieldNode, column + 1);
             GridPane.setFillWidth(fieldNode, true);
             GridPane.setFillHeight(fieldNode, true);
             GridPane.setHgrow(fieldNode, Priority.ALWAYS);

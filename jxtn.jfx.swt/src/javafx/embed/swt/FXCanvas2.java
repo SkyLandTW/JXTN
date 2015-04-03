@@ -28,6 +28,7 @@
 package javafx.embed.swt;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.text.CharacterIterator;
 import java.util.ArrayList;
 import java.util.List;
@@ -55,18 +56,21 @@ import com.sun.javafx.embed.EmbeddedSceneInterface;
 public class FXCanvas2 extends FXCanvas
 {
     private static Field scenePeerField;
+    private static Method sendResizeEventToFXMethod;
 
     static
     {
         try
         {
             scenePeerField = FXCanvas.class.getDeclaredField("scenePeer");
+            sendResizeEventToFXMethod = FXCanvas.class.getDeclaredMethod("sendResizeEventToFX");
         }
-        catch (NoSuchFieldException e)
+        catch (ReflectiveOperationException e)
         {
             throw new RuntimeException(e);
         }
         scenePeerField.setAccessible(true);
+        sendResizeEventToFXMethod.setAccessible(true);
     }
 
     private final IME ime;
@@ -94,6 +98,11 @@ public class FXCanvas2 extends FXCanvas
             });
     }
 
+    /**
+     * 取得JavaFX的控制介面
+     *
+     * @return 控制介面
+     */
     public EmbeddedSceneInterface getScenePeer()
     {
         if (this.scenePeer == null)
@@ -108,6 +117,21 @@ public class FXCanvas2 extends FXCanvas
             }
         }
         return this.scenePeer;
+    }
+
+    /**
+     * 強迫JavaFX的{@link javafx.stage.Stage}及{@link javafx.scene.Scene}重新依照目前畫布更新尺寸
+     */
+    public void sendResizeEventToFX()
+    {
+        try
+        {
+            FXCanvas2.sendResizeEventToFXMethod.invoke(this);
+        }
+        catch (ReflectiveOperationException e)
+        {
+            throw new RuntimeException(e);
+        }
     }
 
     private void sendInputMethodEventToFX()

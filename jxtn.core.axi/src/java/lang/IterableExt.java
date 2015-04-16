@@ -844,6 +844,18 @@ public interface IterableExt<T>
     }
 
     /**
+     * 用目前項目值建立順序相反的{@link ArrayList}。
+     *
+     * @param comparator 項目的比較器
+     * @return 包含目前項目的{@link ArrayList}，順序相反
+     */
+    default ArrayList<T> toArrayListReversed()
+    {
+        Iterable<T> thiz = (Iterable<T>) this;
+        return thiz.iterator().toArrayListReversed();
+    }
+
+    /**
      * 用目前項目值建立{@link HashMap}。
      *
      * @param <K> {@link HashMap}鍵值型態

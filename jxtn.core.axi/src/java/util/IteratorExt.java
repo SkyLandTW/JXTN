@@ -936,6 +936,19 @@ public interface IteratorExt<E>
     }
 
     /**
+     * 用目前項目值建立順序相反的{@link ArrayList}。
+     *
+     * @return 包含目前項目的{@link ArrayList}，順序相反
+     */
+    default ArrayList<E> toArrayListReversed()
+    {
+        Iterator<E> thiz = (Iterator<E>) this;
+        ArrayList<E> reversed = thiz.toArrayList();
+        Collections.reverse(reversed);
+        return reversed;
+    }
+
+    /**
      * 用目前項目值建立{@link HashMap}。
      *
      * @param <K> {@link HashMap}鍵值型態

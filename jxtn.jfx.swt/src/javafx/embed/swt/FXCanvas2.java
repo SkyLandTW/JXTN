@@ -35,10 +35,15 @@ import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Point2D;
 import javafx.scene.input.InputMethodHighlight;
+import javafx.scene.input.InputMethodRequests;
 import javafx.scene.input.InputMethodTextRun;
 
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.internal.win32.COMPOSITIONFORM;
+import org.eclipse.swt.internal.win32.OS;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.IME;
 
@@ -53,6 +58,7 @@ import com.sun.javafx.embed.EmbeddedSceneInterface;
  *
  * @author AqD
  */
+@SuppressWarnings("restriction")
 public class FXCanvas2 extends FXCanvas
 {
     private static Field scenePeerField;
@@ -154,7 +160,30 @@ public class FXCanvas2 extends FXCanvas
                 scenePeer.inputMethodEvent(
                         javafx.scene.input.InputMethodEvent.INPUT_METHOD_TEXT_CHANGED,
                         composed, committed, this.ime.getCaretOffset());
+                this.updateImeCandicatePos();
             }
+        }
+    }
+
+    @SuppressWarnings("deprecation")
+    private void updateImeCandicatePos()
+    {
+        EmbeddedSceneInterface emScene = (EmbeddedSceneInterface) this.getScene().impl_getPeer();
+        InputMethodRequests imeRequests = emScene.getInputMethodRequests();
+        Point2D absolutePos = imeRequests.getTextLocation(0);
+        COMPOSITIONFORM lpCompForm = new COMPOSITIONFORM();
+        lpCompForm.dwStyle = OS.CFS_CANDIDATEPOS;
+        Point relativePos = this.toControl((int) absolutePos.getX(), (int) absolutePos.getY());
+        lpCompForm.x = relativePos.x;
+        lpCompForm.y = relativePos.y;
+        long hIMC = OS.ImmGetContext(this.handle);
+        try
+        {
+            OS.ImmSetCompositionWindow(hIMC, lpCompForm);
+        }
+        finally
+        {
+            OS.ImmReleaseContext(this.handle, hIMC);
         }
     }
 

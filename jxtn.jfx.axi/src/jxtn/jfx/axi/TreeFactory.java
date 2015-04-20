@@ -50,7 +50,7 @@ final class TreeFactory
             List<E> sourceList,
             TreeItem<E> targetRoot,
             UnaryOperator<E> getParent,
-            Function<E, TreeItem<E>> createNode,
+            Function<? super E, ? extends TreeItem<E>> createNode,
             Map<E, TreeItem<E>> sourceToNodeMap)
     {
         targetRoot.getChildren().clear();
@@ -67,9 +67,9 @@ final class TreeFactory
             Collection<E> sourceList,
             TreeItem<E> targetRoot,
             UnaryOperator<E> getParent,
-            Function<E, TreeItem<E>> createNode,
+            Function<? super E, ? extends TreeItem<E>> createNode,
             Map<E, TreeItem<E>> sourceToNodeMap,
-            Comparator<TreeItem<E>> comparator)
+            Comparator<? super TreeItem<E>> comparator)
     {
         targetRoot.getChildren().clear();
         sourceToNodeMap.clear();
@@ -91,7 +91,7 @@ final class TreeFactory
     }
 
     static <E> void moveChildNodesToRoot(
-            TreeItem<E> root, ObservableList<TreeItem<E>> childNodes, Comparator<TreeItem<E>> comparator)
+            TreeItem<E> root, ObservableList<TreeItem<E>> childNodes, Comparator<? super TreeItem<E>> comparator)
     {
         if (childNodes.isEmpty())
             return;
@@ -108,7 +108,7 @@ final class TreeFactory
     static <E> TreeItem<E> addTreeElement(
             TreeItem<E> rootNode,
             UnaryOperator<E> getParent,
-            Function<E, TreeItem<E>> createNode,
+            Function<? super E, ? extends TreeItem<E>> createNode,
             Map<E, TreeItem<E>> sourceToNodeMap,
             E sourceItem,
             List<E> sourceList,
@@ -136,10 +136,10 @@ final class TreeFactory
     static <E> TreeItem<E> addTreeElement(
             TreeItem<E> rootNode,
             UnaryOperator<E> getParent,
-            Function<E, TreeItem<E>> createNode,
+            Function<? super E, ? extends TreeItem<E>> createNode,
             Map<E, TreeItem<E>> sourceToNodeMap,
             E sourceItem,
-            Comparator<TreeItem<E>> comparator)
+            Comparator<? super TreeItem<E>> comparator)
     {
         TreeItem<E> sourceNode = createNode.apply(sourceItem);
         E parentItem = getParent.apply(sourceItem);

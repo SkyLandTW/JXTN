@@ -28,9 +28,11 @@
 package jxtn.jfx.axi;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.BiFunction;
+import java.util.function.Consumer;
 
 import javafx.beans.InvalidationListener;
 import javafx.beans.value.ChangeListener;
@@ -156,11 +158,42 @@ public final class ObservableMapHelper
             ObservableList<R> targetList,
             BiFunction<K, V, ObservableValue<R>> mapper)
     {
+        Object[] refs = mapEntriesByBinding(sourceMap, targetList, mapper, null);
+        // 存放監聽器的參考(生命週期應同targetList)
+        targetList.addListener((InvalidationListener) iv ->
+            {
+                Objects.requireNonNull(refs);
+            });
+    }
+
+    /**
+     * 透過指定的對照函數自動更新目的集合
+     * <ul>
+     * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetList}的項目不保證任何順序</li>
+     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code mapper})</li>
+     * </ul>
+     *
+     * @param <K> 索引鍵型態
+     * @param <V> 項目值型態
+     * @param <R> 目的集合項目型態
+     * @param sourceMap 來源字典
+     * @param targetList 目的集合
+     * @param mapper 對照函數，負責建立來源項目的資料連結
+     * @param onRemoved 移除目的後的callback，可為null
+     * @return 監聽器參考
+     */
+    public static <K, V, R> Object[] mapEntriesByBinding(
+            ObservableMap<K, V> sourceMap,
+            List<R> targetList,
+            BiFunction<K, V, ObservableValue<R>> mapper,
+            Consumer<? super ObservableValue<? super R>> onRemoved)
+    {
         Objects.requireNonNull(sourceMap);
         Objects.requireNonNull(targetList);
         Objects.requireNonNull(mapper);
         targetList.clear();
-        Map<K, ObservableValue<? extends R>> sourceKeyToBindingMap = new HashMap<>();
+        Map<K, ObservableValue<R>> sourceKeyToBindingMap = new HashMap<>();
         // 來源項目異動監聽
         ChangeListener<R> bindingListener = (b, oldR, newR) ->
             {
@@ -185,15 +218,17 @@ public final class ObservableMapHelper
                     K key = c.getKey();
                     if (c.wasRemoved())
                     {
-                        ObservableValue<? extends R> oldB = sourceKeyToBindingMap.get2(key);
+                        ObservableValue<R> oldB = sourceKeyToBindingMap.get2(key);
                         oldB.removeListener(weakBindingListener);
                         targetList.remove2(oldB.getValue());
                         sourceKeyToBindingMap.remove2(key);
+                        if (onRemoved != null)
+                            onRemoved.accept(oldB);
                     }
                     if (c.wasAdded())
                     {
                         V newV = c.getValueAdded();
-                        ObservableValue<? extends R> newB = mapper.apply(key, newV);
+                        ObservableValue<R> newB = mapper.apply(key, newV);
                         newB.addListener(weakBindingListener);
                         sourceKeyToBindingMap.put(key, newB);
                         targetList.add(newB.getValue());
@@ -201,12 +236,7 @@ public final class ObservableMapHelper
                 }
             };
         sourceMap.addListener(new WeakMapChangeListener<>(sourceListener));
-        // 存放監聽器的參考(生命週期應同targetList)
-        targetList.addListener((InvalidationListener) iv ->
-            {
-                Object[] refs = { sourceListener, bindingListener, };
-                Objects.requireNonNull(refs);
-            });
+        return new Object[] { sourceListener, bindingListener, };
     }
 
     /**
@@ -228,6 +258,37 @@ public final class ObservableMapHelper
             ObservableMap<K, V> sourceMap,
             ObservableList<R> targetList,
             BiFunction<K, V, R> mapper)
+    {
+        Object[] refs = mapEntriesByValue(sourceMap, targetList, mapper, null);
+        // 存放監聽器的參考(生命週期應同targetList)
+        targetList.addListener((InvalidationListener) iv ->
+            {
+                Objects.requireNonNull(refs);
+            });
+    }
+
+    /**
+     * 透過指定的對照函數自動更新目的集合
+     * <ul>
+     * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetList}的項目不保證任何順序</li>
+     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@code R}(只呼叫一次{@code mapper})</li>
+     * </ul>
+     *
+     * @param <K> 索引鍵型態
+     * @param <V> 項目值型態
+     * @param <R> 目的集合項目型態
+     * @param sourceMap 來源字典
+     * @param targetList 目的集合
+     * @param mapper 對照函數，負責建立來源項目的資料連結
+     * @param onRemoved 移除目的後的callback，可為null
+     * @return 監聽器參考
+     */
+    public static <K, V, R> Object[] mapEntriesByValue(
+            ObservableMap<K, V> sourceMap,
+            List<R> targetList,
+            BiFunction<K, V, R> mapper,
+            Consumer<? super R> onRemoved)
     {
         Objects.requireNonNull(sourceMap);
         Objects.requireNonNull(targetList);
@@ -253,6 +314,8 @@ public final class ObservableMapHelper
                         R oldR = sourceKeyToTargetMap.get2(key);
                         targetList.remove2(oldR);
                         sourceKeyToTargetMap.remove2(key);
+                        if (onRemoved != null)
+                            onRemoved.accept(oldR);
                     }
                     if (c.wasAdded())
                     {
@@ -264,12 +327,7 @@ public final class ObservableMapHelper
                 }
             };
         sourceMap.addListener(new WeakMapChangeListener<>(sourceListener));
-        // 存放監聽器的參考(生命週期應同targetList)
-        targetList.addListener((InvalidationListener) iv ->
-            {
-                Object[] refs = { sourceListener, };
-                Objects.requireNonNull(refs);
-            });
+        return new Object[] { sourceListener, };
     }
 
     private ObservableMapHelper()

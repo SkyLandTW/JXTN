@@ -29,10 +29,12 @@ package jxtn.jfx.axi;
 
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.BiConsumer;
 import java.util.function.BiPredicate;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
 
@@ -75,13 +77,43 @@ public final class ObservableListHelper
     public static <S, T> void mapByBinding(
             ObservableList<S> sourceList,
             ObservableList<T> targetList,
-            Function<S, ObservableValue<T>> mapper)
+            Function<? super S, ? extends ObservableValue<T>> mapper)
+    {
+        Object[] refs = mapByBinding(sourceList, targetList, mapper, null);
+        // 存放監聽器的參考(生命週期應同targetList)
+        targetList.addListener((InvalidationListener) iv ->
+            {
+                Objects.requireNonNull(refs);
+            });
+    }
+
+    /**
+     * 透過指定的對照函數自動更新目的集合
+     * <ul>
+     * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetList}的項目順序比照{@code sourceList}</li>
+     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code mapper})</li>
+     * </ul>
+     *
+     * @param <S> 來源集合項目型態
+     * @param <T> 目的集合項目型態
+     * @param sourceList 來源集合
+     * @param targetList 目的集合
+     * @param mapper 對照函數，負責建立來源項目的資料連結
+     * @param onRemoved 移除目的後的callback，可為null
+     * @return 監聽器參考
+     */
+    public static <S, T> Object[] mapByBinding(
+            ObservableList<S> sourceList,
+            List<T> targetList,
+            Function<? super S, ? extends ObservableValue<T>> mapper,
+            Consumer<? super ObservableValue<? super T>> onRemoved)
     {
         Objects.requireNonNull(sourceList);
         Objects.requireNonNull(targetList);
         Objects.requireNonNull(mapper);
         targetList.clear();
-        Map<S, ObservableValue<? extends T>> sourceToBindingMap = new HashMap<>();
+        Map<S, ObservableValue<T>> sourceToBindingMap = new HashMap<>();
         // 來源項目異動監聽
         ChangeListener<T> bindingListener = (b, oldT, newT) ->
             {
@@ -111,7 +143,7 @@ public final class ObservableListHelper
                             {
                                 int j = c.getPermutation(i);
                                 S s = sourceList.get(j);
-                                ObservableValue<? extends T> b = sourceToBindingMap.get2(s);
+                                ObservableValue<T> b = sourceToBindingMap.get2(s);
                                 targetList.set(i, b.getValue());
                             }
                         }
@@ -119,10 +151,12 @@ public final class ObservableListHelper
                         {
                             for (S s : c.getRemoved())
                             {
-                                ObservableValue<? extends T> b = sourceToBindingMap.get2(s);
+                                ObservableValue<T> b = sourceToBindingMap.get2(s);
                                 b.removeListener(weakBindingListener);
                                 targetList.remove2(b.getValue());
                                 sourceToBindingMap.remove2(s);
+                                if (onRemoved != null)
+                                    onRemoved.accept(b);
                             }
                             int i = c.getFrom();
                             for (S s : c.getAddedSubList())
@@ -138,12 +172,7 @@ public final class ObservableListHelper
                 }
             };
         sourceList.addListener(new WeakListChangeListener<>(sourceListener));
-        // 存放監聽器的參考(生命週期應同targetList)
-        targetList.addListener((InvalidationListener) iv ->
-            {
-                Object[] refs = { sourceListener, bindingListener, };
-                Objects.requireNonNull(refs);
-            });
+        return new Object[] { sourceListener, bindingListener, };
     }
 
     /**
@@ -163,7 +192,37 @@ public final class ObservableListHelper
     public static <S, T> void mapByValue(
             ObservableList<S> sourceList,
             ObservableList<T> targetList,
-            Function<S, T> mapper)
+            Function<? super S, ? extends T> mapper)
+    {
+        Object[] refs = mapByValue(sourceList, targetList, mapper, null);
+        // 存放監聽器的參考(生命週期應同targetList)
+        targetList.addListener((InvalidationListener) iv ->
+            {
+                Objects.requireNonNull(refs);
+            });
+    }
+
+    /**
+     * 透過指定的對照函數自動更新目的集合
+     * <ul>
+     * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetList}的項目順序比照{@code sourceList}</li>
+     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@code T}(只呼叫一次{@code mapper})</li>
+     * </ul>
+     *
+     * @param <S> 來源集合項目型態
+     * @param <T> 目的集合項目型態
+     * @param sourceList 來源集合
+     * @param targetList 目的集合
+     * @param mapper 對照函數
+     * @param onRemoved 移除目的後的callback，可為null
+     * @return 監聽器參考
+     */
+    public static <S, T> Object[] mapByValue(
+            ObservableList<S> sourceList,
+            List<T> targetList,
+            Function<? super S, ? extends T> mapper,
+            Consumer<? super T> onRemoved)
     {
         Objects.requireNonNull(sourceList);
         Objects.requireNonNull(targetList);
@@ -202,6 +261,8 @@ public final class ObservableListHelper
                                 T t = sourceToTargetMap.get2(s);
                                 targetList.remove2(t);
                                 sourceToTargetMap.remove2(s);
+                                if (onRemoved != null)
+                                    onRemoved.accept(t);
                             }
                             int i = c.getFrom();
                             for (S s : c.getAddedSubList())
@@ -216,12 +277,7 @@ public final class ObservableListHelper
                 }
             };
         sourceList.addListener(new WeakListChangeListener<>(sourceListener));
-        // 存放監聽器的參考(生命週期應同targetList)
-        targetList.addListener((InvalidationListener) iv ->
-            {
-                Object[] refs = { sourceListener, };
-                Objects.requireNonNull(refs);
-            });
+        return new Object[] { sourceListener, };
     }
 
     //////////////////////////////////////////////////////////////////////////
@@ -245,7 +301,7 @@ public final class ObservableListHelper
     public static <S, K> void groupByBinding(
             ObservableList<S> sourceList,
             ObservableMap<K, ObservableList<S>> targetGroupMap,
-            Function<S, ObservableValue<K>> grouper)
+            Function<? super S, ObservableValue<K>> grouper)
     {
         groupByBinding(sourceList, targetGroupMap, grouper,
                 k -> FXCollections.observableArrayList(),
@@ -278,10 +334,46 @@ public final class ObservableListHelper
     public static <S, K, G> void groupByBinding(
             ObservableList<S> sourceList,
             ObservableMap<K, G> targetGroupMap,
-            Function<S, ObservableValue<K>> grouper,
+            Function<? super S, ObservableValue<K>> grouper,
             Function<K, G> createGroup,
             BiConsumer<G, S> addToGroup,
             BiPredicate<G, S> removeFromGroup)
+    {
+        Object[] refs = groupByBinding(sourceList, (Map<K, G>) targetGroupMap,
+                grouper, createGroup, addToGroup, removeFromGroup);
+        // 存放監聽器的參考(生命週期應同targetGroupMap)
+        targetGroupMap.addListener((InvalidationListener) iv ->
+            {
+                Objects.requireNonNull(refs);
+            });
+    }
+
+    /**
+     * 透過指定的群組函數自動更新目的集合
+     * <ul>
+     * <li>{@code targetGroupMap}的目前內容會做清空</li>
+     * <li>{@code targetGroupMap}的群組索引鍵不保證任何順序</li>
+     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code grouper})</li>
+     * </ul>
+     *
+     * @param <S> 來源集合項目型態
+     * @param <K> 項目群組鍵值型態
+     * @param <G> 項目群組項目型態
+     * @param sourceList 來源集合
+     * @param targetGroupMap 目的群組集合
+     * @param grouper 群組函數(取得做群組的鍵值)，負責建立計算來源項目群組鍵的資料連結
+     * @param createGroup 建立空白群組的函數
+     * @param addToGroup 增加來源項目到群組的函數
+     * @param removeFromGroup 從群組移除來源項目的函數，傳回true表示群組該移除
+     * @return 監聽器參考
+     */
+    public static <S, K, G> Object[] groupByBinding(
+            ObservableList<S> sourceList,
+            Map<K, G> targetGroupMap,
+            Function<? super S, ObservableValue<K>> grouper,
+            Function<? super K, ? extends G> createGroup,
+            BiConsumer<? super G, ? super S> addToGroup,
+            BiPredicate<? super G, ? super S> removeFromGroup)
     {
         Objects.requireNonNull(sourceList);
         Objects.requireNonNull(targetGroupMap);
@@ -349,11 +441,7 @@ public final class ObservableListHelper
             };
         sourceList.addListener(new WeakListChangeListener<>(sourceListener));
         // 存放監聽器的參考(生命週期應同targetGroupMap)
-        targetGroupMap.addListener((InvalidationListener) iv ->
-            {
-                Object[] refs = { sourceListener, bindingListener, };
-                Objects.requireNonNull(refs);
-            });
+        return new Object[] { sourceListener, bindingListener, };
     }
 
     /**
@@ -373,7 +461,7 @@ public final class ObservableListHelper
     public static <S, K> void groupByValue(
             ObservableList<S> sourceList,
             ObservableMap<K, ObservableList<S>> targetGroupMap,
-            Function<S, K> grouper)
+            Function<? super S, ? extends K> grouper)
     {
         groupByValue(sourceList, targetGroupMap, grouper,
                 k -> FXCollections.observableArrayList(),
@@ -406,10 +494,46 @@ public final class ObservableListHelper
     public static <S, K, G> void groupByValue(
             ObservableList<S> sourceList,
             ObservableMap<K, G> targetGroupMap,
-            Function<S, K> grouper,
-            Function<K, G> createGroup,
-            BiConsumer<G, S> addToGroup,
-            BiPredicate<G, S> removeFromGroup)
+            Function<? super S, ? extends K> grouper,
+            Function<? super K, ? extends G> createGroup,
+            BiConsumer<? super G, ? super S> addToGroup,
+            BiPredicate<? super G, ? super S> removeFromGroup)
+    {
+        Object[] refs = groupByValue(sourceList, (Map<K, G>) targetGroupMap,
+                grouper, createGroup, addToGroup, removeFromGroup);
+        // 存放監聽器的參考(生命週期應同targetGroupMap)
+        targetGroupMap.addListener((InvalidationListener) iv ->
+            {
+                Objects.requireNonNull(refs);
+            });
+    }
+
+    /**
+     * 透過指定的群組函數自動更新目的集合
+     * <ul>
+     * <li>{@code targetGroupMap}的目前內容會做清空</li>
+     * <li>{@code targetGroupMap}的群組索引鍵不保證任何順序</li>
+     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@code K}(只呼叫一次{@code grouper})</li>
+     * </ul>
+     *
+     * @param <S> 來源集合項目型態
+     * @param <K> 項目群組鍵值型態
+     * @param <G> 項目群組項目型態
+     * @param sourceList 來源集合
+     * @param targetGroupMap 目的群組集合
+     * @param grouper 群組函數(取得做群組的鍵值)，負責計算來源項目的資料連結
+     * @param createGroup 建立空白群組的函數
+     * @param addToGroup 增加來源項目到群組的函數
+     * @param removeFromGroup 從群組移除來源項目的函數，傳回true表示群組該移除
+     * @return 監聽器參考
+     */
+    public static <S, K, G> Object[] groupByValue(
+            ObservableList<S> sourceList,
+            Map<K, G> targetGroupMap,
+            Function<? super S, ? extends K> grouper,
+            Function<? super K, ? extends G> createGroup,
+            BiConsumer<? super G, ? super S> addToGroup,
+            BiPredicate<? super G, ? super S> removeFromGroup)
     {
         Objects.requireNonNull(sourceList);
         Objects.requireNonNull(targetGroupMap);
@@ -456,11 +580,7 @@ public final class ObservableListHelper
             };
         sourceList.addListener(new WeakListChangeListener<>(sourceListener));
         // 存放監聽器的參考(生命週期應同targetGroupMap)
-        targetGroupMap.addListener((InvalidationListener) iv ->
-            {
-                Object[] refs = { sourceListener, };
-                Objects.requireNonNull(refs);
-            });
+        return new Object[] { sourceListener, };
     }
 
     //////////////////////////////////////////////////////////////////////////
@@ -486,7 +606,7 @@ public final class ObservableListHelper
             ObservableList<E> sourceList,
             TreeItem<E> targetRoot,
             UnaryOperator<E> getParent,
-            Function<E, TreeItem<E>> createNode)
+            Function<? super E, ? extends TreeItem<E>> createNode)
     {
         Objects.requireNonNull(sourceList);
         Objects.requireNonNull(targetRoot);
@@ -557,7 +677,7 @@ public final class ObservableListHelper
             ObservableList<E> sourceList,
             TreeItem<E> targetRoot,
             UnaryOperator<E> getParent,
-            Function<E, TreeItem<E>> createNode,
+            Function<? super E, ? extends TreeItem<E>> createNode,
             Comparator<? super E> comparator)
     {
         Objects.requireNonNull(sourceList);

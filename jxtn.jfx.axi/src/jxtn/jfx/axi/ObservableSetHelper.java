@@ -28,8 +28,10 @@
 package jxtn.jfx.axi;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 import javafx.beans.InvalidationListener;
@@ -108,13 +110,43 @@ public final class ObservableSetHelper
     public static <S, T> void mapByBinding(
             ObservableSet<S> sourceSet,
             ObservableList<T> targetList,
-            Function<S, ObservableValue<T>> mapper)
+            Function<? super S, ? extends ObservableValue<T>> mapper)
+    {
+        Object[] refs = mapByBinding(sourceSet, targetList, mapper, null);
+        // 存放監聽器的參考(生命週期應同targetList)
+        targetList.addListener((InvalidationListener) iv ->
+            {
+                Objects.requireNonNull(refs);
+            });
+    }
+
+    /**
+     * 透過指定的對照函數自動更新目的集合
+     * <ul>
+     * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetList}的項目不保證任何順序</li>
+     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code mapper})</li>
+     * </ul>
+     *
+     * @param <S> 來源集合項目型態
+     * @param <T> 目的集合項目型態
+     * @param sourceSet 來源集
+     * @param targetList 目的集合
+     * @param mapper 對照函數，負責建立來源項目的資料連結
+     * @param onRemoved 移除目的後的callback，可為null
+     * @return 監聽器參考
+     */
+    public static <S, T> Object[] mapByBinding(
+            ObservableSet<S> sourceSet,
+            List<T> targetList,
+            Function<? super S, ? extends ObservableValue<T>> mapper,
+            Consumer<? super ObservableValue<? super T>> onRemoved)
     {
         Objects.requireNonNull(sourceSet);
         Objects.requireNonNull(targetList);
         Objects.requireNonNull(mapper);
         targetList.clear();
-        Map<S, ObservableValue<? extends T>> sourceToBindingMap = new HashMap<>();
+        Map<S, ObservableValue<T>> sourceToBindingMap = new HashMap<>();
         // 來源項目異動監聽
         ChangeListener<T> bindingListener = (b, oldT, newT) ->
             {
@@ -139,10 +171,12 @@ public final class ObservableSetHelper
                     if (c.wasRemoved())
                     {
                         S s = c.getElementRemoved();
-                        ObservableValue<? extends T> b = sourceToBindingMap.get2(s);
+                        ObservableValue<T> b = sourceToBindingMap.get2(s);
                         b.removeListener(weakBindingListener);
                         targetList.remove2(b.getValue());
                         sourceToBindingMap.remove2(s);
+                        if (onRemoved != null)
+                            onRemoved.accept(b);
                     }
                     if (c.wasAdded())
                     {
@@ -155,12 +189,7 @@ public final class ObservableSetHelper
                 }
             };
         sourceSet.addListener(new WeakSetChangeListener<>(sourceListener));
-        // 存放監聽器的參考(生命週期應同targetList)
-        targetList.addListener((InvalidationListener) iv ->
-            {
-                Object[] refs = { sourceListener, bindingListener, };
-                Objects.requireNonNull(refs);
-            });
+        return new Object[] { sourceListener, bindingListener, };
     }
 
     /**
@@ -180,7 +209,37 @@ public final class ObservableSetHelper
     public static <S, T> void mapByValue(
             ObservableSet<S> sourceSet,
             ObservableList<T> targetList,
-            Function<S, T> mapper)
+            Function<? super S, ? extends T> mapper)
+    {
+        Object[] refs = mapByValue(sourceSet, targetList, mapper, null);
+        // 存放監聽器的參考(生命週期應同targetList)
+        targetList.addListener((InvalidationListener) iv ->
+            {
+                Objects.requireNonNull(refs);
+            });
+    }
+
+    /**
+     * 透過指定的對照函數自動更新目的集合
+     * <ul>
+     * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetList}的項目不保證任何順序</li>
+     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@code T}(只呼叫一次{@code mapper})</li>
+     * </ul>
+     *
+     * @param <S> 來源集合項目型態
+     * @param <T> 目的集合項目型態
+     * @param sourceSet 來源集
+     * @param targetList 目的集合
+     * @param mapper 對照函數
+     * @param onRemoved 移除目的後的callback，可為null
+     * @return 監聽器參考
+     */
+    public static <S, T> Object[] mapByValue(
+            ObservableSet<S> sourceSet,
+            List<T> targetList,
+            Function<? super S, ? extends T> mapper,
+            Consumer<? super T> onRemoved)
     {
         Objects.requireNonNull(sourceSet);
         Objects.requireNonNull(targetList);
@@ -206,6 +265,8 @@ public final class ObservableSetHelper
                         T t = sourceToTargetMap.get2(s);
                         targetList.remove2(t);
                         sourceToTargetMap.remove2(s);
+                        if (onRemoved != null)
+                            onRemoved.accept(t);
                     }
                     if (c.wasAdded())
                     {
@@ -217,12 +278,7 @@ public final class ObservableSetHelper
                 }
             };
         sourceSet.addListener(new WeakSetChangeListener<>(sourceListener));
-        // 存放監聽器的參考(生命週期應同targetList)
-        targetList.addListener((InvalidationListener) iv ->
-            {
-                Object[] refs = { sourceListener, };
-                Objects.requireNonNull(refs);
-            });
+        return new Object[] { sourceListener, };
     }
 
     private ObservableSetHelper()

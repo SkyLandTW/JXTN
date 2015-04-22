@@ -37,8 +37,10 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.tuple.TDouble;
 
+import javafx.beans.InvalidationListener;
 import javafx.beans.property.Property;
 import javafx.beans.property.ReadOnlyProperty;
+import javafx.beans.value.ChangeListener;
 
 import com.sun.javafx.binding.SelectBinding;
 
@@ -47,7 +49,8 @@ import com.sun.javafx.binding.SelectBinding;
  * <ul>
  * <li>改寫原本的{@code PropertyReference}以改善效能及支援非官方定義的屬性</li>
  * <li>所有公開成員皆為原本{@code PropertyReference}所定義，不可更動其介面</li>
- * <li>額外支援以{@code xxxProperty}命名的屬性欄位</li>
+ * <li>額外支援以{@code xxxProperty}命名的屬性方法及欄位</li>
+ * <li>額外支援常數名稱的方法及欄位，如<i>"nameProperty"</i>取得<i>nameProperty</i>的方法或欄位傳回的屬性本身(而非屬性的值)</li>
  * </ul>
  *
  * @param <T> 屬性型態
@@ -278,18 +281,15 @@ public final class PropertyReference<T>
                     }
                 }
             }
-            // fx getter
-            Method mPropGetter = tryGetMethod(clazz, name + "Property");
-            // fx field
-            Field mField = tryGetField(clazz, name + "Property");
             //
             this.valueGetter = mGetter;
             this.valueSetter = mSetter;
-            this.propertyGetter = mPropGetter;
-            this.propertyField = mField;
-            //
-            this.type = propType;
-            // setup getValue
+            this.propertyGetter = tryGetMethod(clazz, name + "Property");
+            this.propertyField = tryGetField(clazz, name + "Property");
+            this.constantGetter = tryGetMethod(clazz, name);
+            this.constantField = tryGetField(clazz, name);
+            this.type = this.resolvePropertyValueType(propType);
+            // determine getValue
             if (this.valueGetter != null)
             {
                 this.getValue = o -> invokeMethod(this.valueGetter, o);
@@ -310,11 +310,19 @@ public final class PropertyReference<T>
                         return p == null ? null : p.getValue();
                     };
             }
+            else if (this.constantGetter != null)
+            {
+                this.getValue = o -> invokeMethod(this.constantGetter, o);
+            }
+            else if (this.constantField != null)
+            {
+                this.getValue = o -> invokeFieldGet(this.constantField, o);
+            }
             else
             {
                 this.getValue = null;
             }
-            // setup setValue
+            // determine setValue
             if (this.valueSetter != null)
             {
                 this.setValue = (o, v) -> invokeMethod(this.valueSetter, o, v);
@@ -347,7 +355,7 @@ public final class PropertyReference<T>
             {
                 this.setValue = null;
             }
-            // setup getProperty
+            // determine getProperty
             if (this.propertyGetter != null)
             {
                 this.getProperty = o ->
@@ -362,6 +370,29 @@ public final class PropertyReference<T>
                     {
                         ReadOnlyProperty<?> p = (ReadOnlyProperty<?>) invokeFieldGet(this.propertyField, o);
                         return p;
+                    };
+            }
+            else if (this.constantGetter != null || this.constantField != null)
+            {
+                this.getProperty = o -> new ConstantObservable()
+                    {
+                        @Override
+                        public Object getBean()
+                        {
+                            return o;
+                        }
+
+                        @Override
+                        public String getName()
+                        {
+                            return name;
+                        }
+
+                        @Override
+                        public Object getValue()
+                        {
+                            return ReflectedPropertyInfo.this.getValue.apply(o);
+                        }
                     };
             }
             else
@@ -404,6 +435,31 @@ public final class PropertyReference<T>
             return hash;
         }
 
+        private Class<?> resolvePropertyValueType(Class<?> propertyValueType)
+        {
+            if (propertyValueType != null)
+                return propertyValueType;
+            if (this.propertyGetter != null)
+            {
+                Class<?> propertyType = (Class<?>) this.propertyGetter.getGenericReturnType();
+                Method valueGetter = tryGetMethod(propertyType, "getValue");
+                if (valueGetter != null)
+                    return (Class<?>) valueGetter.getGenericReturnType();
+            }
+            if (this.propertyField != null)
+            {
+                Class<?> propertyType = (Class<?>) this.propertyField.getGenericType();
+                Method valueGetter = tryGetMethod(propertyType, "getValue");
+                if (valueGetter != null)
+                    return (Class<?>) valueGetter.getGenericReturnType();
+            }
+            if (this.constantGetter != null)
+                return this.constantGetter.getReturnType();
+            if (this.constantField != null)
+                return this.constantField.getType();
+            return null;
+        }
+
         public final Class<?> clazz;
         public final String name;
         public final Class<?> type;
@@ -415,6 +471,8 @@ public final class PropertyReference<T>
         private final Method valueSetter;
         private final Method propertyGetter;
         private final Field propertyField;
+        private final Method constantGetter;
+        private final Field constantField;
 
         private static Object invokeFieldGet(Field field, Object instance)
         {
@@ -462,6 +520,33 @@ public final class PropertyReference<T>
             {
                 return null;
             }
+        }
+    }
+
+    private static abstract class ConstantObservable implements ReadOnlyProperty<Object>
+    {
+        @Override
+        public void addListener(ChangeListener<? super Object> listener)
+        {
+            //
+        }
+
+        @Override
+        public void removeListener(ChangeListener<? super Object> listener)
+        {
+            //
+        }
+
+        @Override
+        public void addListener(InvalidationListener listener)
+        {
+            //
+        }
+
+        @Override
+        public void removeListener(InvalidationListener listener)
+        {
+            //
         }
     }
 

@@ -42,17 +42,6 @@ import jxtn.core.axi.util.BinarySearchResult;
 public interface ListExt<E> extends CollectionExt<E>
 {
     /**
-     * 以{@link Collection}型態表示。
-     *
-     * @return 以{@link Collection}型態表示的目前物件
-     */
-    default Collection<E> asCollection()
-    {
-        List<E> thiz = (List<E>) this;
-        return thiz;
-    }
-
-    /**
      * 二元搜尋，用指定的函數計算排序用鍵值。
      *
      * @param <K> 代表項目的鍵值型態

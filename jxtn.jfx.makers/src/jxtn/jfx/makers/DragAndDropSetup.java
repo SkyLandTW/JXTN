@@ -36,7 +36,9 @@ import java.util.function.Predicate;
 import javafx.scene.Node;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DataFormat;
+import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 
 /**
@@ -93,7 +95,7 @@ public final class DragAndDropSetup<T>
     /**
      * 指定測試項目是否可接收被拖曳項目的條件
      *
-     * @param acceptDrop 測試項目是否可接收被拖曳項目的條件
+     * @param acceptDrop 測試項目是否可接收被拖曳項目的條件，(項目,新位置項目)
      * @return 目前的建構器(this)
      */
     public DragAndDropSetup<T> acceptDrop(BiPredicate<T, T> acceptDrop)
@@ -105,12 +107,12 @@ public final class DragAndDropSetup<T>
     /**
      * 指定拖放結束的移動項目到新位置的動作
      *
-     * @param reparentItem 拖放結束的移動項目到新位置的動作
+     * @param moveItem 拖放結束的移動項目到新位置的動作，(項目,新位置項目)
      * @return 目前的建構器(this)
      */
-    public DragAndDropSetup<T> reparentItem(BiConsumer<T, T> reparentItem)
+    public DragAndDropSetup<T> moveItem(BiConsumer<T, T> moveItem)
     {
-        this.reparentItem = reparentItem;
+        this.moveItem = moveItem;
         return this;
     }
 
@@ -131,63 +133,74 @@ public final class DragAndDropSetup<T>
         Objects.requireNonNull(this.itemFromId);
         Objects.requireNonNull(this.acceptDrag);
         Objects.requireNonNull(this.acceptDrop);
-        Objects.requireNonNull(this.reparentItem);
-        node.setOnDragDetected(e ->
-            {
-                if (isEmpty.test(node))
-                    return;
-                T item = getItem.apply(node);
-                if (!this.acceptDrag.test(item))
-                    return;
-                Dragboard dragBoard = node.startDragAndDrop(TransferMode.MOVE);
-                ClipboardContent content = new ClipboardContent();
-                content.put(DataFormat.PLAIN_TEXT, this.idFromItem.apply(item));
-                dragBoard.setContent(content);
-                e.consume();
-            });
-        node.setOnDragDone(e ->
-            {
-                e.setDropCompleted(e.getTransferMode() == TransferMode.MOVE);
-                e.consume();
-            });
-        node.setOnDragOver(e ->
-            {
-                if (isEmpty.test(node))
-                    return;
-                if (!e.getDragboard().hasString())
-                    return;
-                if (e.getDragboard().getString().equals(this.idFromItem.apply(getItem.apply(node))))
-                    return;
-                T itemToMove = this.itemFromId.apply(e.getDragboard().getString());
-                T newParent = getItem.apply(node);
-                if (this.acceptDrop.test(itemToMove, newParent))
-                {
-                    e.acceptTransferModes(TransferMode.MOVE);
-                }
-                e.consume();
-            });
-        node.setOnDragDropped(e ->
-            {
-                if (isEmpty.test(node))
-                    return;
-                if (!e.getDragboard().hasString())
-                    return;
-                if (e.getDragboard().getString().equals(this.idFromItem.apply(getItem.apply(node))))
-                    return;
-                T itemToMove = this.itemFromId.apply(e.getDragboard().getString());
-                T newParent = getItem.apply(node);
-                if (this.acceptDrop.test(itemToMove, newParent))
-                {
-                    this.reparentItem.accept(itemToMove, newParent);
-                }
-                e.consume();
-            });
+        Objects.requireNonNull(this.moveItem);
+        node.setOnDragDetected(e -> this.nodeOnDragDetected(node, isEmpty, getItem, e));
+        node.setOnDragDone(e -> this.nodeOnDragDone(e));
+        node.setOnDragOver(e -> this.nodeOnDragOver(node, isEmpty, getItem, e));
+        node.setOnDragDropped(e -> this.nodeOnDragDropped(node, isEmpty, getItem, e));
+    }
 
+    private <N extends Node> void nodeOnDragDetected(
+            N node, Predicate<N> isEmpty, Function<N, T> getItem, MouseEvent e)
+    {
+        if (isEmpty.test(node))
+            return;
+        T item = getItem.apply(node);
+        if (!this.acceptDrag.test(item))
+            return;
+        Dragboard dragBoard = node.startDragAndDrop(TransferMode.MOVE);
+        ClipboardContent content = new ClipboardContent();
+        String id = this.idFromItem.apply(item);
+        content.put(DataFormat.PLAIN_TEXT, Objects.requireNonNull(id));
+        dragBoard.setContent(content);
+        e.consume();
+    }
+
+    private void nodeOnDragDone(DragEvent e)
+    {
+        e.setDropCompleted(e.getTransferMode() == TransferMode.MOVE);
+        e.consume();
+    }
+
+    private <N extends Node> void nodeOnDragOver(
+            N node, Predicate<N> isEmpty, Function<N, T> getItem, DragEvent e)
+    {
+        if (isEmpty.test(node))
+            return;
+        if (!e.getDragboard().hasString())
+            return;
+        if (e.getDragboard().getString().equals(this.idFromItem.apply(getItem.apply(node))))
+            return;
+        T itemToMove = this.itemFromId.apply(e.getDragboard().getString());
+        T newParent = getItem.apply(node);
+        if (this.acceptDrop.test(itemToMove, newParent))
+        {
+            e.acceptTransferModes(TransferMode.MOVE);
+        }
+        e.consume();
+    }
+
+    private <N extends Node> void nodeOnDragDropped(
+            N node, Predicate<N> isEmpty, Function<N, T> getItem, DragEvent e)
+    {
+        if (isEmpty.test(node))
+            return;
+        if (!e.getDragboard().hasString())
+            return;
+        if (e.getDragboard().getString().equals(this.idFromItem.apply(getItem.apply(node))))
+            return;
+        T itemToMove = this.itemFromId.apply(e.getDragboard().getString());
+        T newParent = getItem.apply(node);
+        if (this.acceptDrop.test(itemToMove, newParent))
+        {
+            this.moveItem.accept(itemToMove, newParent);
+        }
+        e.consume();
     }
 
     private Function<T, String> idFromItem;
     private Function<String, T> itemFromId;
     private Predicate<T> acceptDrag;
     private BiPredicate<T, T> acceptDrop;
-    private BiConsumer<T, T> reparentItem;
+    private BiConsumer<T, T> moveItem;
 }

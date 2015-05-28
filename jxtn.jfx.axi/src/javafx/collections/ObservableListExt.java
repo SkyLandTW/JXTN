@@ -43,6 +43,23 @@ import jxtn.jfx.axi.ObservableListHelper;
 public interface ObservableListExt<E>
 {
     /**
+     * 建立自動過濾清單
+     * <ul>
+     * <li>傳回{@link ObservableList}的項目順序比照目前{@link ObservableList}</li>
+     * <li>針對每個目前{@link ObservableList}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code filter})</li>
+     * </ul>
+     *
+     * @param filter 過濾函數，負責建立過濾來源項目的資料連結
+     * @return 過濾後的結果，會自動配合目前集合做更新
+     */
+    default ObservableList<E> toFilteredObservableByBinding(Function<E, ObservableValue<Boolean>> filter)
+    {
+        ObservableList<E> filteredList = FXCollections.observableArrayList();
+        ObservableListHelper.filterByBinding((ObservableList<E>) this, filteredList, filter);
+        return filteredList;
+    }
+
+    /**
      * 建立自動對照清單
      * <ul>
      * <li>傳回{@link ObservableList}的項目順序比照目前{@link ObservableList}</li>

@@ -48,6 +48,7 @@ import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import javafx.collections.WeakListChangeListener;
 import javafx.scene.control.TreeItem;
+import jxtn.core.axi.util.BinarySearchResult;
 
 /**
  * {@link ObservableList}輔助
@@ -56,6 +57,152 @@ import javafx.scene.control.TreeItem;
  */
 public final class ObservableListHelper
 {
+    //////////////////////////////////////////////////////////////////////////
+    // 過濾
+    //
+
+    /**
+     * 透過指定的對照函數自動更新目的集合
+     * <ul>
+     * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetList}的項目順序比照{@code sourceList}</li>
+     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code mapper})</li>
+     * </ul>
+     *
+     * @param <S> 集合項目型態
+     * @param sourceList 來源集合
+     * @param targetList 目的集合
+     * @param filter 過濾函數，負責建立過濾來源項目的資料連結
+     */
+    public static <S> void filterByBinding(
+            ObservableList<S> sourceList,
+            ObservableList<S> targetList,
+            Function<? super S, ? extends ObservableValue<Boolean>> filter)
+    {
+        Object[] refs = filterByBinding(sourceList, targetList, filter, null);
+        // 存放監聽器的參考(生命週期應同targetList)
+        targetList.addListener((InvalidationListener) iv ->
+            {
+                Objects.requireNonNull(refs);
+            });
+    }
+
+    /**
+     * 透過指定的過濾函數自動更新目的集合
+     * <ul>
+     * <li>{@code targetList}的目前內容會做清空</li>
+     * <li>{@code targetList}的項目順序比照{@code sourceList}</li>
+     * <li>針對每個{@code sourceList}的來源項目，只會建立一個{@link ObservableValue}(只呼叫一次{@code filter})</li>
+     * </ul>
+     *
+     * @param <S> 集合項目型態
+     * @param sourceList 來源集合
+     * @param targetList 目的集合
+     * @param filter 過濾函數，負責建立過濾來源項目的資料連結
+     * @param onRemoved 移除目的後的callback，可為null
+     * @return 監聽器參考
+     */
+    public static <S> Object[] filterByBinding(
+            ObservableList<S> sourceList,
+            List<S> targetList,
+            Function<? super S, ? extends ObservableValue<Boolean>> filter,
+            Consumer<? super S> onRemoved)
+    {
+        Objects.requireNonNull(sourceList);
+        Objects.requireNonNull(targetList);
+        Objects.requireNonNull(filter);
+        targetList.clear();
+        Map<S, Integer> sourceToIndexMap = new HashMap<>();
+        Map<S, ObservableValue<? extends Boolean>> sourceToBindingMap = new HashMap<>();
+        Map<ObservableValue<? extends Boolean>, S> bindingToSourceMap = new HashMap<>();
+        // 來源項目異動監聽
+        ChangeListener<Boolean> bindingListener = (b, oldT, newT) ->
+            {
+                S source = bindingToSourceMap.get2(b);
+                if (newT == null || !newT.booleanValue())
+                    targetList.remove2(source);
+                else
+                    targetList.add(source);
+            };
+        WeakChangeListener<Boolean> weakBindingListener = new WeakChangeListener<>(bindingListener);
+        // 初始化
+        for (S s : sourceList)
+        {
+            ObservableValue<Boolean> b = filter.apply(s);
+            b.addListener(weakBindingListener);
+            sourceToIndexMap.put(s, sourceToIndexMap.size());
+            sourceToBindingMap.put(s, b);
+            bindingToSourceMap.put(b, s);
+        }
+        targetList.addAll(sourceToBindingMap.entrySet().filter(e -> e.getValue().getValue()).map(b -> b.getKey()).toArrayList());
+        // 監聽來源
+        ListChangeListener<S> sourceListener = new ListChangeListener<S>()
+            {
+                @Override
+                public void onChanged(ListChangeListener.Change<? extends S> change)
+                {
+                    while (change.next())
+                    {
+                        if (change.wasPermutated())
+                        {
+                            for (int oldIndex = change.getFrom(); oldIndex < change.getTo(); oldIndex++)
+                            {
+                                int newIndex = change.getPermutation(oldIndex);
+                                S source = sourceList.get(newIndex);
+                                sourceToIndexMap.put(source, newIndex);
+                                targetList.remove2(source);
+                            }
+                            for (int oldIndex = change.getFrom(); oldIndex < change.getTo(); oldIndex++)
+                            {
+                                int newIndex = change.getPermutation(oldIndex);
+                                S source = sourceList.get(newIndex);
+                                Boolean bvalue = sourceToBindingMap.get2(source).getValue();
+                                if (bvalue != null && bvalue.booleanValue())
+                                {
+                                    BinarySearchResult result = targetList.binarySearch(
+                                            s -> sourceToIndexMap.get2(s), sourceToIndexMap.get2(source));
+                                    targetList.add(result.getIndex(), source);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            for (S source : change.getRemoved())
+                            {
+                                ObservableValue<? extends Boolean> binding = sourceToBindingMap.get2(source);
+                                binding.removeListener(weakBindingListener);
+                                targetList.remove2(source);
+                                sourceToIndexMap.remove2(source);
+                                sourceToBindingMap.remove2(source);
+                                bindingToSourceMap.remove2(binding);
+                                if (onRemoved != null)
+                                    onRemoved.accept(source);
+                            }
+                            int index = change.getFrom();
+                            for (S source : change.getAddedSubList())
+                            {
+                                ObservableValue<? extends Boolean> binding = filter.apply(source);
+                                binding.addListener(weakBindingListener);
+                                sourceToIndexMap.put(source, index);
+                                sourceToBindingMap.put(source, binding);
+                                bindingToSourceMap.put(binding, source);
+                                Boolean bvalue = binding.getValue();
+                                if (bvalue != null && bvalue.booleanValue())
+                                {
+                                    BinarySearchResult result = targetList.binarySearch(
+                                            s -> sourceToIndexMap.get2(s), sourceToIndexMap.get2(source));
+                                    targetList.add(result.getIndex(), source);
+                                }
+                                index += 1;
+                            }
+                        }
+                    }
+                }
+            };
+        sourceList.addListener(new WeakListChangeListener<>(sourceListener));
+        return new Object[] { sourceListener, bindingListener, };
+    }
+
     //////////////////////////////////////////////////////////////////////////
     // 對照
     //

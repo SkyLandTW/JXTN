@@ -5,8 +5,6 @@ Overrides and extends classes/interfaces already existing in JavaFX.
 
 ##### Functionality
  - ObservableValue methods: asObject(mapper)/asBoolean(mapper)/...
- - ObservableList/Map/Set helper methods to listen and propergate changes into
-   another List/Map etc.
 
 ##### Dependencies
  - OpenJDK (as source) for Java version updating: To update the project for

@@ -1,3 +1,8 @@
 bin
 dist
 *.sublime-workspace
+/jxtn.jfx.axi/nbproject/private/
+/jxtn.core.axi/nbproject/private/
+/jxtn.jfx.makers/nbproject/private/
+/jxtn.core.fmpp/nbproject/private/
+/jxtn.jfx.swt/nbproject/private/

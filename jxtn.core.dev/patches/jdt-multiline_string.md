@@ -10,9 +10,12 @@ Supports multi-line string literals in Eclipse JDT
  - Eclipse JDT generated LineNumberTable (*)
 
 ##### Tested environments:
- - Eclipse v4.4 (luna)
+ - Eclipse v4.4 (Luna)
    * org.eclipse.jdt.core v3.10.0
    * org.eclipse.jdt.ui v3.10.0
+ - Eclipse v4.5 (Mars)
+   * org.eclipse.jdt.core v3.11.0
+   * org.eclipse.jdt.ui v3.11.0
 
 ------------------------------------------------------------------------------
 

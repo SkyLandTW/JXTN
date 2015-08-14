@@ -108,13 +108,8 @@ public class SqlSchemaDataLoader extends XmlDataLoader
     {
         Objects.requireNonNull(connection);
         Objects.requireNonNull(schemaDoc);
-        try (PreparedStatement stmt = connection.prepareStatement("
-select *
-  from INFORMATION_SCHEMA.TABLES
- where TABLE_NAME not in ('sysdiagrams')
- order by TABLE_SCHEMA, TABLE_NAME
-"
-                ))
+        try (PreparedStatement stmt = connection.prepareStatement(
+                "select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME not in ('sysdiagrams') order by TABLE_SCHEMA, TABLE_NAME"))
         {
             try (ResultSet rs = stmt.executeQuery())
             {
@@ -135,13 +130,8 @@ select *
     {
         Objects.requireNonNull(connection);
         Objects.requireNonNull(schemaDoc);
-        try (PreparedStatement stmt = connection.prepareStatement("
-select *
-  from INFORMATION_SCHEMA.COLUMNS
- where TABLE_NAME not in ('sysdiagrams')
- order by TABLE_SCHEMA, TABLE_NAME, ORDINAL_POSITION
-"
-                ))
+        try (PreparedStatement stmt = connection.prepareStatement(
+                "select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME not in ('sysdiagrams') order by TABLE_SCHEMA, TABLE_NAME, ORDINAL_POSITION"))
         {
             try (ResultSet rs = stmt.executeQuery())
             {
@@ -183,14 +173,8 @@ select *
         Objects.requireNonNull(connection);
         Objects.requireNonNull(schemaDoc);
         Objects.requireNonNull(globalKeys);
-        try (PreparedStatement stmt = connection.prepareStatement("
-select *
-  from INFORMATION_SCHEMA.TABLE_CONSTRAINTS
- where CONSTRAINT_TYPE in ('PRIMARY KEY', 'UNIQUE', 'FOREIGN KEY')
-   and TABLE_NAME not in ('sysdiagrams')
- order by TABLE_SCHEMA, TABLE_NAME, CONSTRAINT_TYPE, CONSTRAINT_NAME
-"
-                ))
+        try (PreparedStatement stmt = connection.prepareStatement(
+                "select * from INFORMATION_SCHEMA.TABLE_CONSTRAINTS where CONSTRAINT_TYPE in ('PRIMARY KEY', 'UNIQUE', 'FOREIGN KEY') and TABLE_NAME not in ('sysdiagrams') order by TABLE_SCHEMA, TABLE_NAME, CONSTRAINT_TYPE, CONSTRAINT_NAME"))
         {
             try (ResultSet rs = stmt.executeQuery())
             {
@@ -229,13 +213,8 @@ select *
         Objects.requireNonNull(connection);
         Objects.requireNonNull(schemaDoc);
         Objects.requireNonNull(globalKeys);
-        try (PreparedStatement stmt = connection.prepareStatement("
-select *
-  from INFORMATION_SCHEMA.KEY_COLUMN_USAGE
- where TABLE_NAME not in ('sysdiagrams')
- order by TABLE_SCHEMA, TABLE_NAME, CONSTRAINT_NAME, ORDINAL_POSITION
-"
-                ))
+        try (PreparedStatement stmt = connection.prepareStatement(
+                "select * from INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME not in ('sysdiagrams') order by TABLE_SCHEMA, TABLE_NAME, CONSTRAINT_NAME, ORDINAL_POSITION"))
         {
             try (ResultSet rs = stmt.executeQuery())
             {
@@ -287,12 +266,8 @@ select *
         Objects.requireNonNull(connection);
         Objects.requireNonNull(schemaDoc);
         Objects.requireNonNull(globalKeys);
-        try (PreparedStatement stmt = connection.prepareStatement("
-select *
-  from INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS
- order by CONSTRAINT_SCHEMA, CONSTRAINT_NAME
-"
-                ))
+        try (PreparedStatement stmt = connection.prepareStatement(
+                "select * from INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS order by CONSTRAINT_SCHEMA, CONSTRAINT_NAME"))
         {
             try (ResultSet rs = stmt.executeQuery())
             {

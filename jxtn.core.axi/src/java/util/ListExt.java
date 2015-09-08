@@ -42,6 +42,19 @@ import jxtn.core.axi.util.BinarySearchResult;
 public interface ListExt<E> extends CollectionExt<E>
 {
     /**
+     * 二元搜尋位置並插入，目標需實作{@link Comparable}。
+     *
+     * @param item 要插入的目標
+     */
+    default void binaryInsert(E item)
+    {
+        @SuppressWarnings("unchecked") Comparable<? super E> comparable = (Comparable<? super E>) item;
+        List<E> thiz = (List<E>) this;
+        BinarySearchResult result = this.binarySearch(comparable);
+        thiz.add(result.getIndex(), item);
+    }
+
+    /**
      * 二元搜尋，用指定的函數計算排序用鍵值。
      *
      * @param <K> 代表項目的鍵值型態

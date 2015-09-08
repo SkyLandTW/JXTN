@@ -51,6 +51,7 @@ public interface ListExt<E> extends CollectionExt<E>
      */
     default <K extends Comparable<? super K>> BinarySearchResult binarySearch(Function<? super E, ? extends K> getKey, K key)
     {
+        Objects.requireNonNull(getKey);
         List<E> thiz = (List<E>) this;
         int low = 0;
         int high = thiz.size() - 1;
@@ -72,6 +73,33 @@ public interface ListExt<E> extends CollectionExt<E>
     }
 
     /**
+     * 二元搜尋，目標需實作{@link Comparable}。
+     *
+     * @param item 要搜尋的目標
+     * @return 搜尋結果
+     */
+    default BinarySearchResult binarySearch(Comparable<? super E> item)
+    {
+        Objects.requireNonNull(item);
+        List<E> thiz = (List<E>) this;
+        int low = 0;
+        int high = thiz.size() - 1;
+        while (low <= high)
+        {
+            int mid = (low + high) >>> 1;
+            E midVal = thiz.get(mid);
+            int cmp = -item.compareTo(midVal);
+            if (cmp < 0)
+                low = mid + 1;
+            else if (cmp > 0)
+                high = mid - 1;
+            else
+                return new BinarySearchResult(true, mid);
+        }
+        return new BinarySearchResult(false, low);
+    }
+
+    /**
      * 依照鍵值排序目前的清單。
      *
      * @param <V> 排序用的鍵值型態
@@ -79,6 +107,7 @@ public interface ListExt<E> extends CollectionExt<E>
      */
     default <V extends Comparable<? super V>> void sort(Function<? super E, V> getKey)
     {
+        Objects.requireNonNull(getKey);
         List<E> thiz = (List<E>) this;
         thiz.sort(MemberComparators.byComparable(getKey));
     }

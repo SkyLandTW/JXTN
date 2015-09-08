@@ -86,6 +86,37 @@ public interface ListExt<E> extends CollectionExt<E>
     }
 
     /**
+     * 二元搜尋，用指定的函數計算排序用鍵值。
+     *
+     * @param <K> 代表項目的鍵值型態
+     * @param getKey 取得項目鍵值的函數，清單本身須已用該鍵值進行排序
+     * @param key 要搜尋的目標鍵值
+     * @param comparator 比較鍵值的{@link Comparator}
+     * @return 搜尋結果
+     */
+    default <K> BinarySearchResult binarySearch(Function<? super E, ? extends K> getKey, K key, Comparator<K> comparator)
+    {
+        Objects.requireNonNull(getKey);
+        List<E> thiz = (List<E>) this;
+        int low = 0;
+        int high = thiz.size() - 1;
+        while (low <= high)
+        {
+            int mid = (low + high) >>> 1;
+            E midVal = thiz.get(mid);
+            K midKey = getKey.apply(midVal);
+            int cmp = comparator.compare(midKey, key);
+            if (cmp < 0)
+                low = mid + 1;
+            else if (cmp > 0)
+                high = mid - 1;
+            else
+                return new BinarySearchResult(true, mid);
+        }
+        return new BinarySearchResult(false, low);
+    }
+
+    /**
      * 二元搜尋，目標需實作{@link Comparable}。
      *
      * @param item 要搜尋的目標

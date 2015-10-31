@@ -44,8 +44,7 @@ import java.util.function.BiFunction;
  * @param <V> 來源{@link Map}項目型態
  * @param <V2> 來源{@link Map}項目型態
  */
-public class MappedMap<K, V, V2> implements Map<K, V2>
-{
+public class MappedMap<K, V, V2> implements Map<K, V2> {
     /**
      * 來源{@link Map}。
      */
@@ -65,8 +64,7 @@ public class MappedMap<K, V, V2> implements Map<K, V2>
      * @param source 來源列舉器
      * @param mapper 對照函數
      */
-    public MappedMap(Map<K, V> source, BiFunction<? super K, ? super V, ? extends V2> mapper)
-    {
+    public MappedMap(Map<K, V> source, BiFunction<? super K, ? super V, ? extends V2> mapper) {
         Objects.requireNonNull(source);
         Objects.requireNonNull(mapper);
         this.source = source;
@@ -74,21 +72,18 @@ public class MappedMap<K, V, V2> implements Map<K, V2>
     }
 
     @Override
-    public int size()
-    {
+    public int size() {
         return this.source.size();
     }
 
     @Override
-    public boolean isEmpty()
-    {
+    public boolean isEmpty() {
         return this.source.isEmpty();
     }
 
     @Deprecated
     @Override
-    public boolean containsKey(Object key)
-    {
+    public boolean containsKey(Object key) {
         return this.source.containsKey(key);
     }
 
@@ -97,18 +92,15 @@ public class MappedMap<K, V, V2> implements Map<K, V2>
      */
     @Deprecated
     @Override
-    public boolean containsValue(Object value)
-    {
+    public boolean containsValue(Object value) {
         throw new UnsupportedOperationException();
     }
 
     @Deprecated
     @Override
     @SuppressWarnings("unchecked")
-    public V2 get(Object key)
-    {
-        if (this.source.containsKey(key))
-        {
+    public V2 get(Object key) {
+        if (this.source.containsKey(key)) {
             V value = this.source.get(key);
             return this.mapper.apply((K) key, value);
         }
@@ -119,8 +111,7 @@ public class MappedMap<K, V, V2> implements Map<K, V2>
      * @throws UnsupportedOperationException 不支援操作
      */
     @Override
-    public V2 put(K key, V2 value)
-    {
+    public V2 put(K key, V2 value) {
         throw new UnsupportedOperationException();
     }
 
@@ -129,8 +120,7 @@ public class MappedMap<K, V, V2> implements Map<K, V2>
      */
     @Deprecated
     @Override
-    public V2 remove(Object key)
-    {
+    public V2 remove(Object key) {
         throw new UnsupportedOperationException();
     }
 
@@ -138,8 +128,7 @@ public class MappedMap<K, V, V2> implements Map<K, V2>
      * @throws UnsupportedOperationException 不支援操作
      */
     @Override
-    public void putAll(Map<? extends K, ? extends V2> m)
-    {
+    public void putAll(Map<? extends K, ? extends V2> m) {
         throw new UnsupportedOperationException();
     }
 
@@ -147,14 +136,12 @@ public class MappedMap<K, V, V2> implements Map<K, V2>
      * @throws UnsupportedOperationException 不支援操作
      */
     @Override
-    public void clear()
-    {
+    public void clear() {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public Set<K> keySet()
-    {
+    public Set<K> keySet() {
         return this.source.keySet();
     }
 
@@ -162,8 +149,7 @@ public class MappedMap<K, V, V2> implements Map<K, V2>
      * @throws UnsupportedOperationException 不支援操作
      */
     @Override
-    public Collection<V2> values()
-    {
+    public Collection<V2> values() {
         throw new UnsupportedOperationException();
     }
 
@@ -171,8 +157,7 @@ public class MappedMap<K, V, V2> implements Map<K, V2>
      * @throws UnsupportedOperationException 不支援操作
      */
     @Override
-    public Set<java.util.Map.Entry<K, V2>> entrySet()
-    {
+    public Set<java.util.Map.Entry<K, V2>> entrySet() {
         throw new UnsupportedOperationException();
     }
 }

@@ -29,7 +29,6 @@ package java.util.tuple;
 
 import java.io.Serializable;
 import java.util.Arrays;
-
 import jxtn.core.axi.comparators.ArrayComparators;
 
 /**
@@ -44,49 +43,44 @@ import jxtn.core.axi.comparators.ArrayComparators;
  * @author AqD
  * @param <T> 最終類別型態
  */
-public abstract class BaseTuple<T extends BaseTuple<T>> implements Comparable<T>, Serializable
-{
+public abstract class BaseTuple<T extends BaseTuple<T>> implements Comparable<T>, Serializable {
     private static final long serialVersionUID = -7698222474647340866L;
 
     private final Object[] valueArray;
 
-    protected BaseTuple(Object... values)
-    {
+    protected BaseTuple(Object... values) {
         this.valueArray = values;
     }
 
     @Override
-    public int compareTo(T other)
-    {
+    public int compareTo(T other) {
         return ArrayComparators.compare(this.getValueArray(), other.getValueArray());
     }
 
     @Override
-    public boolean equals(Object other)
-    {
-        if (other instanceof BaseTuple)
+    public boolean equals(Object other) {
+        if (other instanceof BaseTuple) {
             return Arrays.equals(this.getValueArray(), ((BaseTuple<?>) other).getValueArray());
-        else
+        } else {
             return false;
+        }
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         return Arrays.hashCode(this.getValueArray());
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (Object v : this.valueArray)
-        {
+        for (Object v : this.valueArray) {
             sb.append(String.valueOf(v));
             sb.append(",");
         }
-        if (sb.length() > 0)
+        if (sb.length() > 0) {
             sb.setLength(sb.length() - 1);
+        }
         return sb.toString();
     }
 
@@ -95,8 +89,7 @@ public abstract class BaseTuple<T extends BaseTuple<T>> implements Comparable<T>
      *
      * @return 包含所有子項目的內部陣列，不應修改
      */
-    public Object[] getValueArray()
-    {
+    public Object[] getValueArray() {
         return this.valueArray;
     }
 }

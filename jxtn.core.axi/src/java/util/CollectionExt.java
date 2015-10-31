@@ -30,7 +30,6 @@ package java.util;
 import java.lang.reflect.Array;
 import java.util.function.Function;
 import java.util.function.FunctionEx;
-
 import jxtn.core.axi.comparators.MemberComparators;
 
 /**
@@ -39,8 +38,7 @@ import jxtn.core.axi.comparators.MemberComparators;
  * @author AqD
  * @param <E> 集合項目型態
  */
-public interface CollectionExt<E> extends IterableExt<E>
-{
+public interface CollectionExt<E> extends IterableExt<E> {
     //////////////////////////////////////////////////////////////////////////
     // 泛型方法
     //
@@ -52,8 +50,7 @@ public interface CollectionExt<E> extends IterableExt<E>
      * @return true表示項目{@code e}在目前的集合內
      */
     @SuppressWarnings("deprecation")
-    default boolean contains2(E e)
-    {
+    default boolean contains2(E e) {
         Collection<E> thiz = (Collection<E>) this;
         return thiz.contains(e);
     }
@@ -65,8 +62,7 @@ public interface CollectionExt<E> extends IterableExt<E>
      * @return true表示所有{@code c}內的項目皆包含在目前的集合內
      */
     @SuppressWarnings("deprecation")
-    default boolean containsAll2(Collection<? extends E> c)
-    {
+    default boolean containsAll2(Collection<? extends E> c) {
         Collection<E> thiz = (Collection<E>) this;
         return thiz.containsAll(c);
     }
@@ -78,8 +74,7 @@ public interface CollectionExt<E> extends IterableExt<E>
      * @return true表示項目{@code e}移除成功，false表示集合並未包含{@code e}
      */
     @SuppressWarnings("deprecation")
-    default boolean remove2(E e)
-    {
+    default boolean remove2(E e) {
         Collection<E> thiz = (Collection<E>) this;
         return thiz.remove(e);
     }
@@ -91,8 +86,7 @@ public interface CollectionExt<E> extends IterableExt<E>
      * @return true表示集合已變更
      */
     @SuppressWarnings("deprecation")
-    default boolean removeAll2(Collection<? extends E> c)
-    {
+    default boolean removeAll2(Collection<? extends E> c) {
         Collection<E> thiz = (Collection<E>) this;
         return thiz.removeAll(c);
     }
@@ -104,8 +98,7 @@ public interface CollectionExt<E> extends IterableExt<E>
      * @return true表示集合已變更
      */
     @SuppressWarnings("deprecation")
-    default boolean retainAll2(Collection<? extends E> c)
-    {
+    default boolean retainAll2(Collection<? extends E> c) {
         Collection<E> thiz = (Collection<E>) this;
         return thiz.retainAll(c);
     }
@@ -122,8 +115,7 @@ public interface CollectionExt<E> extends IterableExt<E>
      */
     @Override
     @SuppressWarnings("unchecked")
-    default E[] toArray(Class<E> type)
-    {
+    default E[] toArray(Class<E> type) {
         Collection<E> thiz = (Collection<E>) this;
         ArrayList<E> list = thiz.toArrayList();
         E[] array = (E[]) Array.newInstance(type, list.size());
@@ -136,8 +128,7 @@ public interface CollectionExt<E> extends IterableExt<E>
      * @return 包含目前項目的{@link ArrayList}
      */
     @Override
-    default ArrayList<E> toArrayList()
-    {
+    default ArrayList<E> toArrayList() {
         Collection<E> thiz = (Collection<E>) this;
         ArrayList<E> coll = new ArrayList<>(thiz);
         return coll;
@@ -151,8 +142,7 @@ public interface CollectionExt<E> extends IterableExt<E>
      * @return 包含目前項目的{@link ArrayList}，已排序
      */
     @Override
-    default <V extends Comparable<?>> ArrayList<E> toArrayListSorted(Function<? super E, ? extends V> getKey)
-    {
+    default <V extends Comparable<?>> ArrayList<E> toArrayListSorted(Function<? super E, ? extends V> getKey) {
         Collection<E> thiz = (Collection<E>) this;
         ArrayList<E> sorted = thiz.toArrayList();
         sorted.sort(MemberComparators.byComparable(getKey));
@@ -166,8 +156,7 @@ public interface CollectionExt<E> extends IterableExt<E>
      * @return 包含目前項目的{@link ArrayList}，已排序
      */
     @Override
-    default ArrayList<E> toArrayListSorted(Comparator<? super E> comparator)
-    {
+    default ArrayList<E> toArrayListSorted(Comparator<? super E> comparator) {
         Collection<E> thiz = (Collection<E>) this;
         ArrayList<E> sorted = thiz.toArrayList();
         sorted.sort(comparator);
@@ -184,14 +173,12 @@ public interface CollectionExt<E> extends IterableExt<E>
      * @throws KException 表示{@code getKey}丟出例外
      */
     @Override
-    default <K, KException extends Exception>
-            HashMap<K, E> toHashMap(FunctionEx<? super E, ? extends K, ? extends KException> getKey)
-                    throws KException
-    {
+    default <K, KException extends Throwable> HashMap<K, E> toHashMap(
+            FunctionEx<? super E, ? extends K, ? extends KException> getKey)
+                    throws KException {
         Collection<E> thiz = (Collection<E>) this;
         HashMap<K, E> coll = new HashMap<>(thiz.size());
-        for (E item : thiz)
-        {
+        for (E item : thiz) {
             K k = getKey.applyEx(item);
             coll.put(k, item);
         }
@@ -212,16 +199,13 @@ public interface CollectionExt<E> extends IterableExt<E>
      * @throws VException 表示{@code getValue}丟出例外
      */
     @Override
-    default <K, V, KException extends Exception, VException extends Exception>
-            HashMap<K, V> toHashMap(
-                    FunctionEx<? super E, ? extends K, ? extends KException> getKey,
-                    FunctionEx<? super E, ? extends V, ? extends VException> getValue)
-                    throws KException, VException
-    {
+    default <K, V, KException extends Throwable, VException extends Throwable> HashMap<K, V> toHashMap(
+            FunctionEx<? super E, ? extends K, ? extends KException> getKey,
+            FunctionEx<? super E, ? extends V, ? extends VException> getValue)
+                    throws KException, VException {
         Collection<E> thiz = (Collection<E>) this;
         HashMap<K, V> coll = new HashMap<>(thiz.size());
-        for (E item : thiz)
-        {
+        for (E item : thiz) {
             K k = getKey.applyEx(item);
             V v = getValue.applyEx(item);
             coll.put(k, v);
@@ -238,8 +222,7 @@ public interface CollectionExt<E> extends IterableExt<E>
      * @return 包含目前項目的{@link HashSet}
      */
     @Override
-    default HashSet<E> toHashSet()
-    {
+    default HashSet<E> toHashSet() {
         Collection<E> thiz = (Collection<E>) this;
         HashSet<E> coll = new HashSet<>(thiz);
         return coll;

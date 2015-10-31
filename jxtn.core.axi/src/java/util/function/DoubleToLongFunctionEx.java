@@ -34,26 +34,18 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface DoubleToLongFunctionEx<TException extends Exception> extends DoubleToLongFunction
-{
+public interface DoubleToLongFunctionEx<TException extends Throwable> extends DoubleToLongFunction {
     long applyAsLongEx(double value) throws TException;
 
     @Deprecated
     @Override
-    default long applyAsLong(double value)
-    {
-        try
-        {
+    default long applyAsLong(double value) {
+        try {
             return this.applyAsLongEx(value);
-        }
-        catch (Exception e)
-        {
-            if (e instanceof RuntimeException)
-            {
+        } catch (Throwable e) {
+            if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
-            }
-            else
-            {
+            } else {
                 throw new RuntimeException(e);
             }
         }

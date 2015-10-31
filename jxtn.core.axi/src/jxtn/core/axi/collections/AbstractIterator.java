@@ -39,17 +39,14 @@ import java.util.NoSuchElementException;
  * @author AqD
  * @param <T> 列舉項目型態
  */
-public abstract class AbstractIterator<T> implements Iterator<T>
-{
+public abstract class AbstractIterator<T> implements Iterator<T> {
     private State state = State.HEAD;
     private T next;
     private long steps = 0;
 
     @Override
-    public final boolean hasNext()
-    {
-        switch (this.state)
-        {
+    public final boolean hasNext() {
+        switch (this.state) {
         case END:
             return false;
         case AVAILABLE:
@@ -57,12 +54,9 @@ public abstract class AbstractIterator<T> implements Iterator<T>
         case HEAD:
         case NEED_FETCH:
             this.next = this.fetchNext();
-            if (this.state == State.END)
-            {
+            if (this.state == State.END) {
                 assert (this.next == null);
-            }
-            else
-            {
+            } else {
                 this.state = State.AVAILABLE;
                 this.steps += 1;
                 return true;
@@ -74,10 +68,10 @@ public abstract class AbstractIterator<T> implements Iterator<T>
     }
 
     @Override
-    public final T next()
-    {
-        if (!this.hasNext())
+    public final T next() {
+        if (!this.hasNext()) {
             throw new NoSuchElementException();
+        }
         T current = this.next;
         this.next = null;
         this.state = State.NEED_FETCH;
@@ -85,8 +79,7 @@ public abstract class AbstractIterator<T> implements Iterator<T>
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return this.getClass().toGenericString()
                 + String.format(":%s,steps=%d", this.state.name(), this.steps);
     }
@@ -96,8 +89,7 @@ public abstract class AbstractIterator<T> implements Iterator<T>
      *
      * @return 進行次數
      */
-    public final long getSteps()
-    {
+    public final long getSteps() {
         return this.steps;
     }
 
@@ -106,8 +98,7 @@ public abstract class AbstractIterator<T> implements Iterator<T>
      *
      * @return true表示目前在開頭，尚未進行任何取得動作
      */
-    public final boolean isAtHead()
-    {
+    public final boolean isAtHead() {
         return this.state == State.HEAD;
     }
 
@@ -126,8 +117,7 @@ public abstract class AbstractIterator<T> implements Iterator<T>
      *
      * @return null
      */
-    protected final T end()
-    {
+    protected final T end() {
         this.state = State.END;
         return null;
     }
@@ -137,8 +127,7 @@ public abstract class AbstractIterator<T> implements Iterator<T>
      *
      * @author AqD
      */
-    private enum State
-    {
+    private enum State {
         /**
          * 開始(需要取得下一個)。
          */

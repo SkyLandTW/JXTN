@@ -29,7 +29,6 @@ package jxtn.core.axi.xml;
 
 import java.util.AbstractList;
 import java.util.Objects;
-
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -38,25 +37,21 @@ import org.w3c.dom.NodeList;
  *
  * @author AqD
  */
-public class NodeListWrapper extends AbstractList<Node>
-{
+public class NodeListWrapper extends AbstractList<Node> {
     protected final NodeList list;
 
-    public NodeListWrapper(NodeList list)
-    {
+    public NodeListWrapper(NodeList list) {
         Objects.requireNonNull(list);
         this.list = list;
     }
 
     @Override
-    public Node get(int index)
-    {
+    public Node get(int index) {
         return this.list.item(index);
     }
 
     @Override
-    public int size()
-    {
+    public int size() {
         return this.list.getLength();
     }
 }

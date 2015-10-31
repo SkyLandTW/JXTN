@@ -36,26 +36,18 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface ToDoubleBiFunctionEx<T, U, TException extends Exception> extends ToDoubleBiFunction<T, U>
-{
+public interface ToDoubleBiFunctionEx<T, U, TException extends Throwable> extends ToDoubleBiFunction<T, U> {
     double applyAsDoubleEx(T t, U u) throws TException;
 
     @Deprecated
     @Override
-    default double applyAsDouble(T t, U u)
-    {
-        try
-        {
+    default double applyAsDouble(T t, U u) {
+        try {
             return this.applyAsDoubleEx(t, u);
-        }
-        catch (Exception e)
-        {
-            if (e instanceof RuntimeException)
-            {
+        } catch (Throwable e) {
+            if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
-            }
-            else
-            {
+            } else {
                 throw new RuntimeException(e);
             }
         }

@@ -35,26 +35,18 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface PredicateEx<T, TException extends Exception> extends Predicate<T>
-{
+public interface PredicateEx<T, TException extends Throwable> extends Predicate<T> {
     boolean testEx(T t) throws TException;
 
     @Deprecated
     @Override
-    default boolean test(T t)
-    {
-        try
-        {
+    default boolean test(T t) {
+        try {
             return this.testEx(t);
-        }
-        catch (Exception e)
-        {
-            if (e instanceof RuntimeException)
-            {
+        } catch (Throwable e) {
+            if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
-            }
-            else
-            {
+            } else {
                 throw new RuntimeException(e);
             }
         }

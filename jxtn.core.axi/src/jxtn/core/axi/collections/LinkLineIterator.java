@@ -36,8 +36,7 @@ import java.util.function.Function;
  * @author AqD
  * @param <T> 列舉項目型態
  */
-public class LinkLineIterator<T> extends AbstractIterator<T>
-{
+public class LinkLineIterator<T> extends AbstractIterator<T> {
     /**
      * 初始項目。
      */
@@ -62,25 +61,25 @@ public class LinkLineIterator<T> extends AbstractIterator<T>
      * @param initial 初始項目，可為null(空列舉)
      * @param getNext 取得每個項目的下一個項目，傳回null表示結束
      */
-    public LinkLineIterator(T initial, Function<? super T, ? extends T> getNext)
-    {
+    public LinkLineIterator(T initial, Function<? super T, ? extends T> getNext) {
         Objects.requireNonNull(getNext);
         this.initial = initial;
         this.getNext = getNext;
     }
 
     @Override
-    protected T fetchNext()
-    {
+    protected T fetchNext() {
         // 取得項目
-        if (this.isAtHead())
+        if (this.isAtHead()) {
             this.current = this.initial;
-        else
+        } else {
             this.current = this.getNext.apply(this.current);
+        }
         // 檢查是否為null
-        if (this.current != null)
+        if (this.current != null) {
             return this.current;
-        else
+        } else {
             return this.end();
+        }
     }
 }

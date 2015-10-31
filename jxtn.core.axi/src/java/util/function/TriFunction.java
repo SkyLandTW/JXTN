@@ -37,8 +37,7 @@ package java.util.function;
  * @param <R> 回傳結果型態
  */
 @FunctionalInterface
-public interface TriFunction<T, U, V, R>
-{
+public interface TriFunction<T, U, V, R> {
     /**
      * 套用函數
      *

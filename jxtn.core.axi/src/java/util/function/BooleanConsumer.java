@@ -35,8 +35,7 @@ import java.util.Objects;
  * @author AqD
  */
 @FunctionalInterface
-public interface BooleanConsumer
-{
+public interface BooleanConsumer {
     /**
      * 對布林值進行操作
      *
@@ -51,13 +50,11 @@ public interface BooleanConsumer
      * @return 合併目前操作及指定操作的新{@link BooleanConsumer}
      * @throws NullPointerException {@code after}為null
      */
-    default BooleanConsumer andThen(BooleanConsumer after)
-    {
+    default BooleanConsumer andThen(BooleanConsumer after) {
         Objects.requireNonNull(after);
-        return (boolean t) ->
-            {
-                accept(t);
-                after.accept(t);
-            };
+        return (boolean t) -> {
+            accept(t);
+            after.accept(t);
+        };
     }
 }

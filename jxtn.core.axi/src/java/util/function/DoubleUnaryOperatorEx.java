@@ -34,26 +34,18 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface DoubleUnaryOperatorEx<TException extends Exception> extends DoubleUnaryOperator
-{
+public interface DoubleUnaryOperatorEx<TException extends Throwable> extends DoubleUnaryOperator {
     double applyAsDoubleEx(double operand) throws TException;
 
     @Deprecated
     @Override
-    default double applyAsDouble(double operand)
-    {
-        try
-        {
+    default double applyAsDouble(double operand) {
+        try {
             return this.applyAsDoubleEx(operand);
-        }
-        catch (Exception e)
-        {
-            if (e instanceof RuntimeException)
-            {
+        } catch (Throwable e) {
+            if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
-            }
-            else
-            {
+            } else {
                 throw new RuntimeException(e);
             }
         }

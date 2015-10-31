@@ -34,26 +34,18 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface LongPredicateEx<TException extends Exception> extends LongPredicate
-{
+public interface LongPredicateEx<TException extends Throwable> extends LongPredicate {
     boolean testEx(long value) throws TException;
 
     @Deprecated
     @Override
-    default boolean test(long value)
-    {
-        try
-        {
+    default boolean test(long value) {
+        try {
             return this.testEx(value);
-        }
-        catch (Exception e)
-        {
-            if (e instanceof RuntimeException)
-            {
+        } catch (Throwable e) {
+            if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
-            }
-            else
-            {
+            } else {
                 throw new RuntimeException(e);
             }
         }

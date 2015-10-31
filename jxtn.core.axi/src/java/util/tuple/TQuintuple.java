@@ -38,16 +38,14 @@ package java.util.tuple;
  * @param <V5> 第五子項目型態
  */
 @SuppressWarnings("serial")
-public class TQuintuple<V1, V2, V3, V4, V5> extends BaseTuple<TQuintuple<V1, V2, V3, V4, V5>>
-{
+public class TQuintuple<V1, V2, V3, V4, V5> extends BaseTuple<TQuintuple<V1, V2, V3, V4, V5>> {
     private final V1 v1;
     private final V2 v2;
     private final V3 v3;
     private final V4 v4;
     private final V5 v5;
 
-    public TQuintuple(V1 v1, V2 v2, V3 v3, V4 v4, V5 v5)
-    {
+    public TQuintuple(V1 v1, V2 v2, V3 v3, V4 v4, V5 v5) {
         super(v1, v2, v3, v4, v5);
         this.v1 = v1;
         this.v2 = v2;
@@ -56,28 +54,23 @@ public class TQuintuple<V1, V2, V3, V4, V5> extends BaseTuple<TQuintuple<V1, V2,
         this.v5 = v5;
     }
 
-    public V1 getItem1()
-    {
+    public V1 getItem1() {
         return this.v1;
     }
 
-    public V2 getItem2()
-    {
+    public V2 getItem2() {
         return this.v2;
     }
 
-    public V3 getItem3()
-    {
+    public V3 getItem3() {
         return this.v3;
     }
 
-    public V4 getItem4()
-    {
+    public V4 getItem4() {
         return this.v4;
     }
 
-    public V5 getItem5()
-    {
+    public V5 getItem5() {
         return this.v5;
     }
 }

@@ -38,8 +38,7 @@ import java.util.function.Function;
  * @param <T> 來源列舉項目型態
  * @param <R> 目的列舉項目型態
  */
-public class MappedIterator<T, R> extends AbstractIterator<R>
-{
+public class MappedIterator<T, R> extends AbstractIterator<R> {
     /**
      * 來源列舉器。
      */
@@ -59,8 +58,7 @@ public class MappedIterator<T, R> extends AbstractIterator<R>
      * @param source 來源列舉器
      * @param mapper 對照函數
      */
-    public MappedIterator(Iterator<? extends T> source, Function<? super T, ? extends R> mapper)
-    {
+    public MappedIterator(Iterator<? extends T> source, Function<? super T, ? extends R> mapper) {
         Objects.requireNonNull(source);
         Objects.requireNonNull(mapper);
         this.source = source;
@@ -68,10 +66,8 @@ public class MappedIterator<T, R> extends AbstractIterator<R>
     }
 
     @Override
-    protected R fetchNext()
-    {
-        if (this.source.hasNext())
-        {
+    protected R fetchNext() {
+        if (this.source.hasNext()) {
             T nextT = this.source.next();
             R nextR = this.mapper.apply(nextT);
             return nextR;

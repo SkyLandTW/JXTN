@@ -35,26 +35,18 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface ObjIntConsumerEx<T, TException extends Exception> extends ObjIntConsumer<T>
-{
+public interface ObjIntConsumerEx<T, TException extends Throwable> extends ObjIntConsumer<T> {
     void acceptEx(T t, int value) throws TException;
 
     @Deprecated
     @Override
-    default void accept(T t, int value)
-    {
-        try
-        {
+    default void accept(T t, int value) {
+        try {
             this.acceptEx(t, value);
-        }
-        catch (Exception e)
-        {
-            if (e instanceof RuntimeException)
-            {
+        } catch (Throwable e) {
+            if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
-            }
-            else
-            {
+            } else {
                 throw new RuntimeException(e);
             }
         }

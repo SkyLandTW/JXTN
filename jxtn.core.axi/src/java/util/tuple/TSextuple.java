@@ -39,8 +39,7 @@ package java.util.tuple;
  * @param <V6> 第六子項目型態
  */
 @SuppressWarnings("serial")
-public class TSextuple<V1, V2, V3, V4, V5, V6> extends BaseTuple<TSextuple<V1, V2, V3, V4, V5, V6>>
-{
+public class TSextuple<V1, V2, V3, V4, V5, V6> extends BaseTuple<TSextuple<V1, V2, V3, V4, V5, V6>> {
     private final V1 v1;
     private final V2 v2;
     private final V3 v3;
@@ -48,8 +47,7 @@ public class TSextuple<V1, V2, V3, V4, V5, V6> extends BaseTuple<TSextuple<V1, V
     private final V5 v5;
     private final V6 v6;
 
-    public TSextuple(V1 v1, V2 v2, V3 v3, V4 v4, V5 v5, V6 v6)
-    {
+    public TSextuple(V1 v1, V2 v2, V3 v3, V4 v4, V5 v5, V6 v6) {
         super(v1, v2, v3, v4, v5, v6);
         this.v1 = v1;
         this.v2 = v2;
@@ -59,33 +57,27 @@ public class TSextuple<V1, V2, V3, V4, V5, V6> extends BaseTuple<TSextuple<V1, V
         this.v6 = v6;
     }
 
-    public V1 getItem1()
-    {
+    public V1 getItem1() {
         return this.v1;
     }
 
-    public V2 getItem2()
-    {
+    public V2 getItem2() {
         return this.v2;
     }
 
-    public V3 getItem3()
-    {
+    public V3 getItem3() {
         return this.v3;
     }
 
-    public V4 getItem4()
-    {
+    public V4 getItem4() {
         return this.v4;
     }
 
-    public V5 getItem5()
-    {
+    public V5 getItem5() {
         return this.v5;
     }
 
-    public V6 getItem6()
-    {
+    public V6 getItem6() {
         return this.v6;
     }
 }

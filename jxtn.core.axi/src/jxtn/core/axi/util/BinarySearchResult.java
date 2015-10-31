@@ -35,8 +35,7 @@ import java.util.tuple.BaseTuple;
  * @author AqD
  */
 @SuppressWarnings("serial")
-public class BinarySearchResult extends BaseTuple<BinarySearchResult>
-{
+public class BinarySearchResult extends BaseTuple<BinarySearchResult> {
     private final boolean found;
     private final int insertPoint;
 
@@ -45,8 +44,7 @@ public class BinarySearchResult extends BaseTuple<BinarySearchResult>
      *
      * @param index {@link java.util.Collections#binarySearch}的傳回值，大於或等於0表示找到目標的位置，否則為-(插入點+1)
      */
-    public BinarySearchResult(int index)
-    {
+    public BinarySearchResult(int index) {
         this(index >= 0, index >= 0 ? index : -index - 1);
     }
 
@@ -56,8 +54,7 @@ public class BinarySearchResult extends BaseTuple<BinarySearchResult>
      * @param found true表示找到目標
      * @param insertPoint 目標位置或插入點
      */
-    public BinarySearchResult(boolean found, int insertPoint)
-    {
+    public BinarySearchResult(boolean found, int insertPoint) {
         super(found, insertPoint);
         this.found = found;
         this.insertPoint = insertPoint;
@@ -68,8 +65,7 @@ public class BinarySearchResult extends BaseTuple<BinarySearchResult>
      *
      * @return true表示找到目標
      */
-    public boolean isFound()
-    {
+    public boolean isFound() {
         return this.found;
     }
 
@@ -81,8 +77,7 @@ public class BinarySearchResult extends BaseTuple<BinarySearchResult>
      *
      * @return 目標位置或插入點
      */
-    public int getIndex()
-    {
+    public int getIndex() {
         return this.insertPoint;
     }
 }

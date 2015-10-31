@@ -24,7 +24,6 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
-
 package java.lang.reflect;
 
 /**
@@ -32,88 +31,78 @@ package java.lang.reflect;
  *
  * @author AqD
  */
-public interface MemberExt
-{
-    default boolean isPublic()
-    {
+public interface MemberExt {
+
+    default boolean isPublic() {
         Member thiz = (Member) this;
         return Modifier.isPublic(thiz.getModifiers());
     }
 
-    default boolean isPrivate()
-    {
+    default boolean isPrivate() {
         Member thiz = (Member) this;
         return Modifier.isPrivate(thiz.getModifiers());
     }
 
-    default boolean isProtected()
-    {
+    default boolean isProtected() {
         Member thiz = (Member) this;
         return Modifier.isProtected(thiz.getModifiers());
     }
 
-    default boolean isStatic()
-    {
+    default boolean isStatic() {
         Member thiz = (Member) this;
         return Modifier.isStatic(thiz.getModifiers());
     }
 
-    default boolean isFinal()
-    {
+    default boolean isFinal() {
         Member thiz = (Member) this;
         return Modifier.isFinal(thiz.getModifiers());
     }
 
-    default boolean isSynchronized()
-    {
+    default boolean isSynchronized() {
         Member thiz = (Member) this;
         return Modifier.isSynchronized(thiz.getModifiers());
     }
 
-    default boolean isVolatile()
-    {
+    default boolean isVolatile() {
         Member thiz = (Member) this;
         return Modifier.isVolatile(thiz.getModifiers());
     }
 
-    default boolean isTransient()
-    {
+    default boolean isTransient() {
         Member thiz = (Member) this;
         return Modifier.isTransient(thiz.getModifiers());
     }
 
-    default boolean isNative()
-    {
+    default boolean isNative() {
         Member thiz = (Member) this;
         return Modifier.isNative(thiz.getModifiers());
     }
 
-    default boolean isInterface()
-    {
+    default boolean isInterface() {
         Member thiz = (Member) this;
         return Modifier.isInterface(thiz.getModifiers());
     }
 
-    default boolean isAbstract()
-    {
+    default boolean isAbstract() {
         Member thiz = (Member) this;
         return Modifier.isAbstract(thiz.getModifiers());
     }
 
-    default boolean isStrict()
-    {
+    default boolean isStrict() {
         Member thiz = (Member) this;
         return Modifier.isStrict(thiz.getModifiers());
     }
 
-    default String getAccessLevel()
-    {
-        if (this.isPublic())
+    default String getAccessLevel() {
+        if (this.isPublic()) {
             return "public";
-        if (this.isProtected())
+        }
+        if (this.isProtected()) {
             return "protected";
-        if (this.isPrivate())
+        }
+        if (this.isPrivate()) {
             return "private";
+        }
         return "package-private";
     }
 }

@@ -28,7 +28,6 @@
 package org.w3c.dom;
 
 import java.util.List;
-
 import jxtn.core.axi.xml.NodeListWrapper;
 
 /**
@@ -36,15 +35,13 @@ import jxtn.core.axi.xml.NodeListWrapper;
  *
  * @author AqD
  */
-public interface NodeListExt
-{
+public interface NodeListExt {
     /**
      * 傳回代表目前{@link NodeList}的清單（{@link Node}的{@link List}）。
      *
      * @return 代表目前{@link NodeList}的清單（{@link Node}的{@link List}）
      */
-    default List<Node> asList()
-    {
+    default List<Node> asList() {
         NodeList thiz = (NodeList) this;
         return new NodeListWrapper(thiz);
     }

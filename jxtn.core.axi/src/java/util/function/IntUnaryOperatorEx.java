@@ -34,26 +34,18 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface IntUnaryOperatorEx<TException extends Exception> extends IntUnaryOperator
-{
+public interface IntUnaryOperatorEx<TException extends Throwable> extends IntUnaryOperator {
     int applyAsIntEx(int operand) throws TException;
 
     @Deprecated
     @Override
-    default int applyAsInt(int operand)
-    {
-        try
-        {
+    default int applyAsInt(int operand) {
+        try {
             return this.applyAsIntEx(operand);
-        }
-        catch (Exception e)
-        {
-            if (e instanceof RuntimeException)
-            {
+        } catch (Throwable e) {
+            if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
-            }
-            else
-            {
+            } else {
                 throw new RuntimeException(e);
             }
         }

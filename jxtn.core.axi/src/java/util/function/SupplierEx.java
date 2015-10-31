@@ -35,24 +35,20 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface SupplierEx<T, TException extends Exception> extends Supplier<T>
-{
+public interface SupplierEx<T, TException extends Throwable> extends Supplier<T> {
     T getEx() throws TException;
 
     @Deprecated
     @Override
-    default T get()
-    {
-        try
-        {
+    default T get() {
+        try {
             return this.getEx();
-        }
-        catch (Exception e)
-        {
-            if (e instanceof RuntimeException)
+        } catch (Throwable e) {
+            if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
-            else
+            } else {
                 throw new RuntimeException(e);
+            }
         }
     }
 }

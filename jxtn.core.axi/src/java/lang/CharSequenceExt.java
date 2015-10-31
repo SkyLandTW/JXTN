@@ -24,131 +24,120 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
-
 package java.lang;
 
 /**
- * {@link CharSequence}的延伸功能。
+ * Extension to {@link CharSequence}
  *
  * @author AqD
  */
-public interface CharSequenceExt
-{
+public interface CharSequenceExt {
+
     /**
-     * 取得最左側指定長度的字串。
+     * Extract up to a specified length of substring in the left (beginning)
      *
-     * @param length 要取得的最大長度
-     * @return 最左側的字串，長度不一定達{@code length}
+     * @param length Maximum length of substring
+     * @return The substring extracted from the left; the length might be smaller than {@code length}.
      */
-    default String left(int length)
-    {
+    default String left(int length) {
         CharSequence thiz = (CharSequence) this;
         int validLength = Math.min(length, thiz.length());
         return thiz.subSequence(0, validLength).toString();
     }
 
     /**
-     * 取得最右側指定長度的字串。
+     * Extract up to a specified length of substring in the right (end)
      *
-     * @param length 要取得的最大長度
-     * @return 最右側的字串，長度不一定達{@code length}
+     * @param length Maximum length of substring
+     * @return The substring extracted from the right; the length might be smaller than {@code length}.
      */
-    default String right(int length)
-    {
+    default String right(int length) {
         CharSequence thiz = (CharSequence) this;
         int validLength = Math.min(length, thiz.length());
         return thiz.subSequence(thiz.length() - validLength, thiz.length()).toString();
     }
 
     /**
-     * 向左補滿空白至指定長度。
+     * Pad whitespaces in the left to a specified total length.
      *
-     * @param totalLength 要補滿的最大長度
-     * @return 補滿後的字串
+     * @param totalLength Total length of the resulting string
+     * @return The resulting string after padding
      */
-    default String padLeft(int totalLength)
-    {
+    default String padLeft(int totalLength) {
         return this.padLeft(totalLength, ' ');
     }
 
     /**
-     * 向左補滿字元至指定長度。
+     * Pad character in the left to a specified total length
      *
-     * @param totalLength 要補滿的最大長度
-     * @param paddingChar 要補滿的字元
-     * @return 補滿後的字串
+     * @param totalLength Total length of the resulting string
+     * @param paddingChar The character for padding
+     * @return The resulting string after padding
      */
-    default String padLeft(int totalLength, char paddingChar)
-    {
+    default String padLeft(int totalLength, char paddingChar) {
         CharSequence thiz = (CharSequence) this;
-        if (thiz.length() >= totalLength)
-        {
+        if (thiz.length() >= totalLength) {
             return this.toString();
         }
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < totalLength - thiz.length(); i++)
-        {
+        for (int i = 0; i < totalLength - thiz.length(); i++) {
             sb.append(paddingChar);
         }
         return sb.toString() + thiz.toString();
     }
 
     /**
-     * 向右補滿空白至指定長度。
+     * Pad whitespaces in the right to a specified total length
      *
-     * @param totalLength 要補滿的最大長度
-     * @return 補滿後的字串
+     * @param totalLength Total length of the resulting string
+     * @return The resulting string after padding
      */
-    default String padRight(int totalLength)
-    {
+    default String padRight(int totalLength) {
         return this.padRight(totalLength, ' ');
     }
 
     /**
-     * 向右補滿字元至指定長度。
+     * Pad characters in the right to a specified total length
      *
-     * @param totalLength 要補滿的最大長度
-     * @param paddingChar 要補滿的字元
-     * @return 補滿後的字串
+     * @param totalLength Total length of the resulting string
+     * @param paddingChar The character for padding
+     * @return The resulting string after padding
      */
-    default String padRight(int totalLength, char paddingChar)
-    {
+    default String padRight(int totalLength, char paddingChar) {
         CharSequence thiz = (CharSequence) this;
-        if (thiz.length() >= totalLength)
-        {
+        if (thiz.length() >= totalLength) {
             return this.toString();
         }
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < totalLength - thiz.length(); i++)
-        {
+        for (int i = 0; i < totalLength - thiz.length(); i++) {
             sb.append(paddingChar);
         }
         return thiz.toString() + sb.toString();
     }
 
     /**
-     * 開頭字元改大寫。
+     * Capitalize this string
      *
-     * @return 開頭字元改大寫後的新字串
+     * @return The capitalized version of this string; The original string is returned if no change is to be made.
      */
-    default String toCapitalized()
-    {
+    default String toCapitalized() {
         CharSequence thiz = (CharSequence) this;
-        if (thiz.length() == 0)
+        if (thiz.length() == 0) {
             return thiz.toString();
+        }
         return thiz.subSequence(0, 1).toString().toUpperCase() + thiz.subSequence(1, thiz.length());
     }
 
     /**
-     * 開頭字元改小寫。
+     * Un-capitalize this string
      *
-     * @return 開頭字元改小寫後的新字串
+     * @return The un-capitalized version of this string; The original string is returned if no change is to be made.
      */
-    default String toUncapitalized()
-    {
+    default String toUncapitalized() {
         CharSequence thiz = (CharSequence) this;
-        if (thiz.length() == 0)
+        if (thiz.length() == 0) {
             return thiz.toString();
+        }
         return thiz.subSequence(0, 1).toString().toLowerCase() + thiz.subSequence(1, thiz.length());
     }
 }

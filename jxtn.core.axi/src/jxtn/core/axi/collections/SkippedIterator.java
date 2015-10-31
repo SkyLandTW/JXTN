@@ -36,8 +36,7 @@ import java.util.Objects;
  * @author AqD
  * @param <T> 列舉項目型態
  */
-public class SkippedIterator<T> extends AbstractIterator<T>
-{
+public class SkippedIterator<T> extends AbstractIterator<T> {
     /**
      * 來源列舉器。
      */
@@ -59,18 +58,17 @@ public class SkippedIterator<T> extends AbstractIterator<T>
      * @param source 來源列舉器
      * @param count 要跳過項目數量
      */
-    public SkippedIterator(Iterator<? extends T> source, int count)
-    {
+    public SkippedIterator(Iterator<? extends T> source, int count) {
         Objects.requireNonNull(source);
-        if (count < 0)
+        if (count < 0) {
             throw new IndexOutOfBoundsException();
+        }
         this.source = source;
         this.count = count;
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return super.toString() + String.format(",srcSteps=%d", this.sourceSteps);
     }
 
@@ -79,26 +77,22 @@ public class SkippedIterator<T> extends AbstractIterator<T>
      *
      * @return {@link #source}的進行次數(過濾前的)
      */
-    public final long getSourceSteps()
-    {
+    public final long getSourceSteps() {
         return this.sourceSteps;
     }
 
     @Override
-    protected T fetchNext()
-    {
-        if (this.isAtHead())
-        {
-            for (int i = 0; i < this.count; i++)
-            {
-                if (!this.source.hasNext())
+    protected T fetchNext() {
+        if (this.isAtHead()) {
+            for (int i = 0; i < this.count; i++) {
+                if (!this.source.hasNext()) {
                     break;
+                }
                 this.source.next();
                 this.sourceSteps += 1;
             }
         }
-        if (this.source.hasNext())
-        {
+        if (this.source.hasNext()) {
             T item = this.source.next();
             this.sourceSteps += 1;
             return item;

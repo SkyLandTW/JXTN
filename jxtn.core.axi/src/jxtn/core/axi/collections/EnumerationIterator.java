@@ -37,25 +37,21 @@ import java.util.Objects;
  * @author AqD
  * @param <E> 列舉項目型態
  */
-public class EnumerationIterator<E> implements Iterator<E>
-{
+public class EnumerationIterator<E> implements Iterator<E> {
     protected final Enumeration<E> enumeration;
 
-    public EnumerationIterator(Enumeration<E> enumeration)
-    {
+    public EnumerationIterator(Enumeration<E> enumeration) {
         Objects.requireNonNull(enumeration);
         this.enumeration = enumeration;
     }
 
     @Override
-    public boolean hasNext()
-    {
+    public boolean hasNext() {
         return this.enumeration.hasMoreElements();
     }
 
     @Override
-    public E next()
-    {
+    public E next() {
         return this.enumeration.nextElement();
     }
 }

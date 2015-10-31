@@ -33,19 +33,16 @@ package java.util;
  * @author AqD
  * @param <E> 集項目型態
  */
-public interface SortedSetExt<E> extends SetExt<E>
-{
+public interface SortedSetExt<E> extends SetExt<E> {
     /**
      * 建立每個項目對照到位置索引的{@link Map}。
      *
      * @return {@link Map}，內容是集合中每個項目，對照到該項於目前集合內的索引 (不依賴原有的集合)
      */
-    default Map<E, Integer> toOrdinalMap()
-    {
+    default Map<E, Integer> toOrdinalMap() {
         SortedSet<E> thiz = (SortedSet<E>) this;
         Map<E, Integer> ordinalMap = new HashMap<>(thiz.size());
-        for (E item : thiz)
-        {
+        for (E item : thiz) {
             ordinalMap.put(item, ordinalMap.size());
         }
         return ordinalMap;

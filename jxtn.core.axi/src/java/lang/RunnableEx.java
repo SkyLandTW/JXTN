@@ -24,7 +24,6 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
-
 package java.lang;
 
 /**
@@ -34,24 +33,21 @@ package java.lang;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface RunnableEx<TException extends Exception> extends Runnable
-{
+public interface RunnableEx<TException extends Throwable> extends Runnable {
+
     void runEx() throws TException;
 
     @Deprecated
     @Override
-    default void run()
-    {
-        try
-        {
+    default void run() {
+        try {
             this.runEx();
-        }
-        catch (Exception e)
-        {
-            if (e instanceof RuntimeException)
+        } catch (Throwable e) {
+            if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
-            else
+            } else {
                 throw new RuntimeException(e);
+            }
         }
     }
 }

@@ -33,24 +33,20 @@ package java.util.function;
  * @author AqD
  * @param <TException> 例外型態
  */
-public interface BooleanSupplierEx<TException extends Exception> extends BooleanSupplier
-{
+public interface BooleanSupplierEx<TException extends Throwable> extends BooleanSupplier {
     boolean getAsBooleanEx() throws TException;
 
     @Deprecated
     @Override
-    default boolean getAsBoolean()
-    {
-        try
-        {
+    default boolean getAsBoolean() {
+        try {
             return this.getAsBooleanEx();
-        }
-        catch (Exception e)
-        {
-            if (e instanceof RuntimeException)
+        } catch (Throwable e) {
+            if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
-            else
+            } else {
                 throw new RuntimeException(e);
+            }
         }
     }
 }

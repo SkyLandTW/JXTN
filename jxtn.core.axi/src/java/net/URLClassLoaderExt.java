@@ -24,7 +24,6 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
-
 package java.net;
 
 import java.lang.reflect.Field;
@@ -32,7 +31,6 @@ import java.lang.reflect.Method;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
-
 import sun.misc.URLClassPath;
 
 /**
@@ -40,8 +38,8 @@ import sun.misc.URLClassPath;
  *
  * @author AqD
  */
-public final class URLClassLoaderExt
-{
+public final class URLClassLoaderExt {
+
     private static final Method URLClassLoader_addURLMethod;
     private static final Field URLClassLoader_ucpField;
     private static final Field URLClassPath_loadersField;
@@ -50,10 +48,8 @@ public final class URLClassLoaderExt
     private static final Class<?> URLClassPath_Loader;
     private static final Method URLClassPath_Loader_getBaseURLMethod;
 
-    static
-    {
-        try
-        {
+    static {
+        try {
             URLClassLoader_addURLMethod = URLClassLoader.class.getDeclaredMethod("addURL", URL.class);
             URLClassLoader_addURLMethod.setAccessible(true);
             URLClassLoader_ucpField = URLClassLoader.class.getDeclaredField("ucp");
@@ -68,9 +64,7 @@ public final class URLClassLoaderExt
                     .first(c -> c.getSimpleName().equals("Loader"));
             URLClassPath_Loader_getBaseURLMethod = URLClassPath_Loader.getDeclaredMethod("getBaseURL");
             URLClassPath_Loader_getBaseURLMethod.setAccessible(true);
-        }
-        catch (ReflectiveOperationException e)
-        {
+        } catch (ReflectiveOperationException e) {
             throw new RuntimeException(e);
         }
     }
@@ -81,14 +75,10 @@ public final class URLClassLoaderExt
      * @param classLoader 要加入新位址的類別載入器
      * @param newURL 新的類別來源位址
      */
-    public static synchronized void addURL(URLClassLoader classLoader, URL newURL)
-    {
-        try
-        {
+    public static synchronized void addURL(URLClassLoader classLoader, URL newURL) {
+        try {
             URLClassLoader_addURLMethod.invoke(classLoader, new Object[] { newURL });
-        }
-        catch (ReflectiveOperationException e)
-        {
+        } catch (ReflectiveOperationException e) {
             throw new RuntimeException(e);
         }
     }
@@ -105,15 +95,11 @@ public final class URLClassLoaderExt
      * @param classLoader 要加入新位址的類別載入器
      * @param newPath 新的類別來源位址
      */
-    public static synchronized void insertURL(URLClassLoader classLoader, Path newPath)
-    {
+    public static synchronized void insertURL(URLClassLoader classLoader, Path newPath) {
         URL newURL;
-        try
-        {
+        try {
             newURL = newPath.toUri().toURL();
-        }
-        catch (MalformedURLException e)
-        {
+        } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
         insertURL(classLoader, newURL);
@@ -131,46 +117,40 @@ public final class URLClassLoaderExt
      * @param classLoader 要加入新位址的類別載入器
      * @param newURL 新的類別來源位址
      */
-    public static synchronized void insertURL(URLClassLoader classLoader, URL newURL)
-    {
-        try
-        {
+    public static synchronized void insertURL(URLClassLoader classLoader, URL newURL) {
+        try {
             // Modified from http://pastebin.com/SNgmGMwq
             URLClassPath ucp = (URLClassPath) URLClassLoader_ucpField.get(classLoader);
             ucp.addURL(newURL);
-            @SuppressWarnings("unchecked") List<URL> path = (List<URL>) URLClassPath_pathField.get(ucp);
-            @SuppressWarnings("unchecked") List<Object> loaders = (List<Object>) URLClassPath_loadersField.get(ucp);
+            @SuppressWarnings("unchecked")
+            List<URL> path = (List<URL>) URLClassPath_pathField.get(ucp);
+            @SuppressWarnings("unchecked")
+            List<Object> loaders = (List<Object>) URLClassPath_loadersField.get(ucp);
             // 強制建立loader (要將loader排到首位)
             URLClassPath_getLoaderMethod.invoke(ucp, path.size() - 1);
-            if (path.size() != loaders.size())
-            {
+            if (path.size() != loaders.size()) {
                 throw new RuntimeException("Ehh... they should be same size!!");
-            }
-            else
-            {
+            } else {
                 int lastIndex = path.size() - 1;
                 path.add(0, path.remove(lastIndex));
                 loaders.add(0, loaders.remove(lastIndex));
             }
-        }
-        catch (ReflectiveOperationException e)
-        {
+        } catch (ReflectiveOperationException e) {
             throw new RuntimeException(e);
         }
         /*
-        for (URL p : path)
-        {
-            System.out.println("ext path: " + p);
-        }
-        for (Object l : loaders)
-        {
-            URL url = (URL) URLClassPath_Loader_getBaseURLMethod.invoke(l);
-            System.out.println("ext loader: " + url);
-        }
+         for (URL p : path)
+         {
+         System.out.println("ext path: " + p);
+         }
+         for (Object l : loaders)
+         {
+         URL url = (URL) URLClassPath_Loader_getBaseURLMethod.invoke(l);
+         System.out.println("ext loader: " + url);
+         }
          */
     }
 
-    private URLClassLoaderExt()
-    {
+    private URLClassLoaderExt() {
     }
 }

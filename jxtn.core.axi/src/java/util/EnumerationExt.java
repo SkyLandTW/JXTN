@@ -35,15 +35,13 @@ import jxtn.core.axi.collections.EnumerationIterator;
  * @author AqD
  * @param <E> 列舉項目型態
  */
-public interface EnumerationExt<E>
-{
+public interface EnumerationExt<E> {
     /**
      * 傳回代表目前物件的列舉器。
      *
      * @return 代表目前物件的列舉器
      */
-    default Iterator<E> asIterator()
-    {
+    default Iterator<E> asIterator() {
         Enumeration<E> thiz = (Enumeration<E>) this;
         return new EnumerationIterator<>(thiz);
     }

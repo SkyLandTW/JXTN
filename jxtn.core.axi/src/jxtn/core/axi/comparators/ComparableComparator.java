@@ -38,27 +38,27 @@ import java.util.Comparator;
  * @author AqD
  * @param <T> 要比較的項目型態
  */
-public final class ComparableComparator<T extends Comparable<? super T>> implements Comparator<T>
-{
+public final class ComparableComparator<T extends Comparable<? super T>> implements Comparator<T> {
     @SuppressWarnings("rawtypes")
     public static final ComparableComparator instance = new ComparableComparator<>();
 
     @SuppressWarnings("unchecked")
-    public static <T extends Comparable<? super T>> ComparableComparator<T> getInstance()
-    {
+    public static <T extends Comparable<? super T>> ComparableComparator<T> getInstance() {
         return ComparableComparator.instance;
     }
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
     @Override
-    public int compare(T o1, T o2)
-    {
-        if (o1 == null && o2 == null)
+    public int compare(T o1, T o2) {
+        if (o1 == null && o2 == null) {
             return 0;
-        if (o1 == null)
+        }
+        if (o1 == null) {
             return -1;
-        if (o2 == null)
+        }
+        if (o2 == null) {
             return 1;
+        }
         Comparable x1 = o1;
         Comparable x2 = o2;
         return x1.compareTo(x2);

@@ -30,7 +30,6 @@ package org.w3c.dom;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.Objects;
-
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
@@ -43,16 +42,14 @@ import javax.xml.transform.stream.StreamResult;
  *
  * @author AqD
  */
-public interface NodeExt
-{
+public interface NodeExt {
     /**
      * 將XML結構轉為文字。
      *
      * @return XML文字
      * @throws TransformerException {@link Transformer#transform}拋出的例外
      */
-    default String toText() throws TransformerException
-    {
+    default String toText() throws TransformerException {
         StringWriter writer = new StringWriter();
         this.toText(writer);
         return writer.toString();
@@ -64,8 +61,7 @@ public interface NodeExt
      * @param writer 寫入文字的目的地
      * @throws TransformerException {@link Transformer#transform}拋出的例外
      */
-    default void toText(Writer writer) throws TransformerException
-    {
+    default void toText(Writer writer) throws TransformerException {
         Objects.requireNonNull(writer);
         Node thiz = (Node) this;
         Transformer transformer = TransformerFactory.newInstance().newTransformer();

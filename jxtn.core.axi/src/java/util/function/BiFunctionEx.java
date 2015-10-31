@@ -39,33 +39,24 @@ import java.util.Objects;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface BiFunctionEx<T, U, R, TException extends Exception> extends BiFunction<T, U, R>
-{
+public interface BiFunctionEx<T, U, R, TException extends Throwable> extends BiFunction<T, U, R> {
     R applyEx(T t, U u) throws TException;
 
     @Override
-    default <V> BiFunctionEx<T, U, V, TException> andThen(Function<? super R, ? extends V> after)
-    {
+    default <V> BiFunctionEx<T, U, V, TException> andThen(Function<? super R, ? extends V> after) {
         Objects.requireNonNull(after);
         return (T t, U u) -> after.apply(this.apply(t, u));
     }
 
     @Deprecated
     @Override
-    default R apply(T t, U u)
-    {
-        try
-        {
+    default R apply(T t, U u) {
+        try {
             return this.applyEx(t, u);
-        }
-        catch (Exception e)
-        {
-            if (e instanceof RuntimeException)
-            {
+        } catch (Throwable e) {
+            if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
-            }
-            else
-            {
+            } else {
                 throw new RuntimeException(e);
             }
         }

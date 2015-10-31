@@ -35,25 +35,21 @@ package java.util.tuple;
  * @param <V2> 第二子項目型態
  */
 @SuppressWarnings("serial")
-public class TDouble<V1, V2> extends BaseTuple<TDouble<V1, V2>>
-{
+public class TDouble<V1, V2> extends BaseTuple<TDouble<V1, V2>> {
     private final V1 v1;
     private final V2 v2;
 
-    public TDouble(V1 v1, V2 v2)
-    {
+    public TDouble(V1 v1, V2 v2) {
         super(v1, v2);
         this.v1 = v1;
         this.v2 = v2;
     }
 
-    public V1 getItem1()
-    {
+    public V1 getItem1() {
         return this.v1;
     }
 
-    public V2 getItem2()
-    {
+    public V2 getItem2() {
         return this.v2;
     }
 }

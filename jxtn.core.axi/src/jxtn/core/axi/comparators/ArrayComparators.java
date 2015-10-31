@@ -37,23 +37,19 @@ import java.util.Comparator;
  *
  * @author AqD
  */
-public final class ArrayComparators
-{
+public final class ArrayComparators {
     /**
      * 取得boolean陣列的比較器。
      *
      * @return boolean陣列的比較器
      */
-    public static final Comparator<boolean[]> forBooleans()
-    {
-        return new Comparator<boolean[]>()
-            {
-                @Override
-                public int compare(boolean[] m1, boolean[] m2)
-                {
-                    return ArrayComparators.compare(m1, m2);
-                }
-            };
+    public static final Comparator<boolean[]> forBooleans() {
+        return new Comparator<boolean[]>() {
+            @Override
+            public int compare(boolean[] m1, boolean[] m2) {
+                return ArrayComparators.compare(m1, m2);
+            }
+        };
     }
 
     /**
@@ -61,16 +57,13 @@ public final class ArrayComparators
      *
      * @return byte陣列的比較器
      */
-    public static final Comparator<byte[]> forBytes()
-    {
-        return new Comparator<byte[]>()
-            {
-                @Override
-                public int compare(byte[] m1, byte[] m2)
-                {
-                    return ArrayComparators.compare(m1, m2);
-                }
-            };
+    public static final Comparator<byte[]> forBytes() {
+        return new Comparator<byte[]>() {
+            @Override
+            public int compare(byte[] m1, byte[] m2) {
+                return ArrayComparators.compare(m1, m2);
+            }
+        };
     }
 
     /**
@@ -78,16 +71,13 @@ public final class ArrayComparators
      *
      * @return char陣列的比較器
      */
-    public static final Comparator<char[]> forChars()
-    {
-        return new Comparator<char[]>()
-            {
-                @Override
-                public int compare(char[] m1, char[] m2)
-                {
-                    return ArrayComparators.compare(m1, m2);
-                }
-            };
+    public static final Comparator<char[]> forChars() {
+        return new Comparator<char[]>() {
+            @Override
+            public int compare(char[] m1, char[] m2) {
+                return ArrayComparators.compare(m1, m2);
+            }
+        };
     }
 
     /**
@@ -95,16 +85,13 @@ public final class ArrayComparators
      *
      * @return short陣列的比較器
      */
-    public static final Comparator<short[]> forShorts()
-    {
-        return new Comparator<short[]>()
-            {
-                @Override
-                public int compare(short[] m1, short[] m2)
-                {
-                    return ArrayComparators.compare(m1, m2);
-                }
-            };
+    public static final Comparator<short[]> forShorts() {
+        return new Comparator<short[]>() {
+            @Override
+            public int compare(short[] m1, short[] m2) {
+                return ArrayComparators.compare(m1, m2);
+            }
+        };
     }
 
     /**
@@ -112,16 +99,13 @@ public final class ArrayComparators
      *
      * @return int陣列的比較器
      */
-    public static final Comparator<int[]> forInts()
-    {
-        return new Comparator<int[]>()
-            {
-                @Override
-                public int compare(int[] m1, int[] m2)
-                {
-                    return ArrayComparators.compare(m1, m2);
-                }
-            };
+    public static final Comparator<int[]> forInts() {
+        return new Comparator<int[]>() {
+            @Override
+            public int compare(int[] m1, int[] m2) {
+                return ArrayComparators.compare(m1, m2);
+            }
+        };
     }
 
     /**
@@ -129,16 +113,13 @@ public final class ArrayComparators
      *
      * @return long陣列的比較器
      */
-    public static final Comparator<long[]> forLongs()
-    {
-        return new Comparator<long[]>()
-            {
-                @Override
-                public int compare(long[] m1, long[] m2)
-                {
-                    return ArrayComparators.compare(m1, m2);
-                }
-            };
+    public static final Comparator<long[]> forLongs() {
+        return new Comparator<long[]>() {
+            @Override
+            public int compare(long[] m1, long[] m2) {
+                return ArrayComparators.compare(m1, m2);
+            }
+        };
     }
 
     /**
@@ -146,16 +127,13 @@ public final class ArrayComparators
      *
      * @return float陣列的比較器
      */
-    public static final Comparator<float[]> forFloats()
-    {
-        return new Comparator<float[]>()
-            {
-                @Override
-                public int compare(float[] m1, float[] m2)
-                {
-                    return ArrayComparators.compare(m1, m2);
-                }
-            };
+    public static final Comparator<float[]> forFloats() {
+        return new Comparator<float[]>() {
+            @Override
+            public int compare(float[] m1, float[] m2) {
+                return ArrayComparators.compare(m1, m2);
+            }
+        };
     }
 
     /**
@@ -163,16 +141,13 @@ public final class ArrayComparators
      *
      * @return double陣列的比較器
      */
-    public static final Comparator<double[]> forDoubles()
-    {
-        return new Comparator<double[]>()
-            {
-                @Override
-                public int compare(double[] m1, double[] m2)
-                {
-                    return ArrayComparators.compare(m1, m2);
-                }
-            };
+    public static final Comparator<double[]> forDoubles() {
+        return new Comparator<double[]>() {
+            @Override
+            public int compare(double[] m1, double[] m2) {
+                return ArrayComparators.compare(m1, m2);
+            }
+        };
     }
 
     /**
@@ -182,16 +157,13 @@ public final class ArrayComparators
      * @return {@link Comparable}陣列的比較器
      */
     @SuppressWarnings("rawtypes")
-    public static final <T extends Comparable> Comparator<T[]> forComparables()
-    {
-        return new Comparator<T[]>()
-            {
-                @Override
-                public int compare(T[] m1, T[] m2)
-                {
-                    return ArrayComparators.compare(m1, m2);
-                }
-            };
+    public static final <T extends Comparable> Comparator<T[]> forComparables() {
+        return new Comparator<T[]>() {
+            @Override
+            public int compare(T[] m1, T[] m2) {
+                return ArrayComparators.compare(m1, m2);
+            }
+        };
     }
 
     /**
@@ -199,16 +171,13 @@ public final class ArrayComparators
      *
      * @return 物件陣列的比較器
      */
-    public static final Comparator<Object[]> forObjects()
-    {
-        return new Comparator<Object[]>()
-            {
-                @Override
-                public int compare(Object[] m1, Object[] m2)
-                {
-                    return ArrayComparators.compare(m1, m2);
-                }
-            };
+    public static final Comparator<Object[]> forObjects() {
+        return new Comparator<Object[]>() {
+            @Override
+            public int compare(Object[] m1, Object[] m2) {
+                return ArrayComparators.compare(m1, m2);
+            }
+        };
     }
 
     /**
@@ -221,21 +190,23 @@ public final class ArrayComparators
      * @param m2 陣列2，可為null
      * @return 0表示兩陣列相等，大於0表示{@code m1}大於{@code m2}，小於0表示{@code m1}小於{@code m2}
      */
-    public static int compare(boolean[] m1, boolean[] m2)
-    {
-        if (m1 == null && m2 == null)
+    public static int compare(boolean[] m1, boolean[] m2) {
+        if (m1 == null && m2 == null) {
             return 0;
-        if (m1 == null)
+        }
+        if (m1 == null) {
             return -1;
-        if (m2 == null)
+        }
+        if (m2 == null) {
             return 1;
+        }
         int len = Math.min(m1.length, m2.length);
-        for (int i = 0; i < len; i++)
-        {
+        for (int i = 0; i < len; i++) {
             boolean v1 = m1[i];
             boolean v2 = m2[i];
-            if (v1 != v2)
+            if (v1 != v2) {
                 return v1 ? 1 : -1;
+            }
         }
         return m1.length - m2.length;
     }
@@ -250,22 +221,24 @@ public final class ArrayComparators
      * @param m2 陣列2，可為null
      * @return 0表示兩陣列相等，大於0表示{@code m1}大於{@code m2}，小於0表示{@code m1}小於{@code m2}
      */
-    public static int compare(byte[] m1, byte[] m2)
-    {
-        if (m1 == null && m2 == null)
+    public static int compare(byte[] m1, byte[] m2) {
+        if (m1 == null && m2 == null) {
             return 0;
-        if (m1 == null)
+        }
+        if (m1 == null) {
             return -1;
-        if (m2 == null)
+        }
+        if (m2 == null) {
             return 1;
+        }
         int len = Math.min(m1.length, m2.length);
-        for (int i = 0; i < len; i++)
-        {
+        for (int i = 0; i < len; i++) {
             byte v1 = m1[i];
             byte v2 = m2[i];
             int diff = v1 - v2;
-            if (diff != 0)
+            if (diff != 0) {
                 return diff > 0 ? 1 : -1;
+            }
         }
         return m1.length - m2.length;
     }
@@ -280,22 +253,24 @@ public final class ArrayComparators
      * @param m2 陣列2，可為null
      * @return 0表示兩陣列相等，大於0表示{@code m1}大於{@code m2}，小於0表示{@code m1}小於{@code m2}
      */
-    public static int compare(char[] m1, char[] m2)
-    {
-        if (m1 == null && m2 == null)
+    public static int compare(char[] m1, char[] m2) {
+        if (m1 == null && m2 == null) {
             return 0;
-        if (m1 == null)
+        }
+        if (m1 == null) {
             return -1;
-        if (m2 == null)
+        }
+        if (m2 == null) {
             return 1;
+        }
         int len = Math.min(m1.length, m2.length);
-        for (int i = 0; i < len; i++)
-        {
+        for (int i = 0; i < len; i++) {
             char v1 = m1[i];
             char v2 = m2[i];
             int diff = v1 - v2;
-            if (diff != 0)
+            if (diff != 0) {
                 return diff > 0 ? 1 : -1;
+            }
         }
         return m1.length - m2.length;
     }
@@ -310,22 +285,24 @@ public final class ArrayComparators
      * @param m2 陣列2，可為null
      * @return 0表示兩陣列相等，大於0表示{@code m1}大於{@code m2}，小於0表示{@code m1}小於{@code m2}
      */
-    public static int compare(short[] m1, short[] m2)
-    {
-        if (m1 == null && m2 == null)
+    public static int compare(short[] m1, short[] m2) {
+        if (m1 == null && m2 == null) {
             return 0;
-        if (m1 == null)
+        }
+        if (m1 == null) {
             return -1;
-        if (m2 == null)
+        }
+        if (m2 == null) {
             return 1;
+        }
         int len = Math.min(m1.length, m2.length);
-        for (int i = 0; i < len; i++)
-        {
+        for (int i = 0; i < len; i++) {
             short v1 = m1[i];
             short v2 = m2[i];
             int diff = v1 - v2;
-            if (diff != 0)
+            if (diff != 0) {
                 return diff > 0 ? 1 : -1;
+            }
         }
         return m1.length - m2.length;
     }
@@ -340,22 +317,24 @@ public final class ArrayComparators
      * @param m2 陣列2，可為null
      * @return 0表示兩陣列相等，大於0表示{@code m1}大於{@code m2}，小於0表示{@code m1}小於{@code m2}
      */
-    public static int compare(int[] m1, int[] m2)
-    {
-        if (m1 == null && m2 == null)
+    public static int compare(int[] m1, int[] m2) {
+        if (m1 == null && m2 == null) {
             return 0;
-        if (m1 == null)
+        }
+        if (m1 == null) {
             return -1;
-        if (m2 == null)
+        }
+        if (m2 == null) {
             return 1;
+        }
         int len = Math.min(m1.length, m2.length);
-        for (int i = 0; i < len; i++)
-        {
+        for (int i = 0; i < len; i++) {
             int v1 = m1[i];
             int v2 = m2[i];
             int diff = v1 - v2;
-            if (diff != 0)
+            if (diff != 0) {
                 return diff > 0 ? 1 : -1;
+            }
         }
         return m1.length - m2.length;
     }
@@ -370,22 +349,24 @@ public final class ArrayComparators
      * @param m2 陣列2，可為null
      * @return 0表示兩陣列相等，大於0表示{@code m1}大於{@code m2}，小於0表示{@code m1}小於{@code m2}
      */
-    public static int compare(long[] m1, long[] m2)
-    {
-        if (m1 == null && m2 == null)
+    public static int compare(long[] m1, long[] m2) {
+        if (m1 == null && m2 == null) {
             return 0;
-        if (m1 == null)
+        }
+        if (m1 == null) {
             return -1;
-        if (m2 == null)
+        }
+        if (m2 == null) {
             return 1;
+        }
         int len = Math.min(m1.length, m2.length);
-        for (int i = 0; i < len; i++)
-        {
+        for (int i = 0; i < len; i++) {
             long v1 = m1[i];
             long v2 = m2[i];
             long diff = v1 - v2;
-            if (diff != 0)
+            if (diff != 0) {
                 return diff > 0 ? 1 : -1;
+            }
         }
         return m1.length - m2.length;
     }
@@ -400,22 +381,24 @@ public final class ArrayComparators
      * @param m2 陣列2，可為null
      * @return 0表示兩陣列相等，大於0表示{@code m1}大於{@code m2}，小於0表示{@code m1}小於{@code m2}
      */
-    public static int compare(float[] m1, float[] m2)
-    {
-        if (m1 == null && m2 == null)
+    public static int compare(float[] m1, float[] m2) {
+        if (m1 == null && m2 == null) {
             return 0;
-        if (m1 == null)
+        }
+        if (m1 == null) {
             return -1;
-        if (m2 == null)
+        }
+        if (m2 == null) {
             return 1;
+        }
         int len = Math.min(m1.length, m2.length);
-        for (int i = 0; i < len; i++)
-        {
+        for (int i = 0; i < len; i++) {
             float v1 = m1[i];
             float v2 = m2[i];
             float diff = v1 - v2;
-            if (diff != 0)
+            if (diff != 0) {
                 return diff > 0 ? 1 : -1;
+            }
         }
         return m1.length - m2.length;
     }
@@ -430,22 +413,24 @@ public final class ArrayComparators
      * @param m2 陣列2，可為null
      * @return 0表示兩陣列相等，大於0表示{@code m1}大於{@code m2}，小於0表示{@code m1}小於{@code m2}
      */
-    public static int compare(double[] m1, double[] m2)
-    {
-        if (m1 == null && m2 == null)
+    public static int compare(double[] m1, double[] m2) {
+        if (m1 == null && m2 == null) {
             return 0;
-        if (m1 == null)
+        }
+        if (m1 == null) {
             return -1;
-        if (m2 == null)
+        }
+        if (m2 == null) {
             return 1;
+        }
         int len = Math.min(m1.length, m2.length);
-        for (int i = 0; i < len; i++)
-        {
+        for (int i = 0; i < len; i++) {
             double v1 = m1[i];
             double v2 = m2[i];
             double diff = v1 - v2;
-            if (diff != 0)
+            if (diff != 0) {
                 return diff > 0 ? 1 : -1;
+            }
         }
         return m1.length - m2.length;
     }
@@ -462,66 +447,76 @@ public final class ArrayComparators
      * @return 0表示兩陣列相等，大於0表示{@code m1}大於{@code m2}，小於0表示{@code m1}小於{@code m2}
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static <T extends Comparable> int compare(T[] m1, T[] m2)
-    {
-        if (m1 == null && m2 == null)
+    public static <T extends Comparable> int compare(T[] m1, T[] m2) {
+        if (m1 == null && m2 == null) {
             return 0;
-        if (m1 == null)
+        }
+        if (m1 == null) {
             return -1;
-        if (m2 == null)
+        }
+        if (m2 == null) {
             return 1;
+        }
         int len = Math.min(m1.length, m2.length);
-        for (int i = 0; i < len; i++)
-        {
+        for (int i = 0; i < len; i++) {
             T v1 = m1[i];
             T v2 = m2[i];
-            if (v1 == null && v2 == null)
+            if (v1 == null && v2 == null) {
                 continue;
-            if (v1 == null)
+            }
+            if (v1 == null) {
                 return -1;
-            if (v2 == null)
+            }
+            if (v2 == null) {
                 return 1;
+            }
             int diff = v1.compareTo(v2);
-            if (diff != 0)
+            if (diff != 0) {
                 return diff;
+            }
         }
         return m1.length - m2.length;
     }
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static int compare(Object[] m1, Object[] m2)
-    {
-        if (m1 == null && m2 == null)
+    public static int compare(Object[] m1, Object[] m2) {
+        if (m1 == null && m2 == null) {
             return 0;
-        if (m1 == null)
+        }
+        if (m1 == null) {
             return -1;
-        if (m2 == null)
+        }
+        if (m2 == null) {
             return 1;
+        }
         int len = Math.min(m1.length, m2.length);
-        for (int i = 0; i < len; i++)
-        {
+        for (int i = 0; i < len; i++) {
             Object v1 = m1[i];
             Object v2 = m2[i];
-            if (v1 == null && v2 == null)
+            if (v1 == null && v2 == null) {
                 continue;
-            if (v1 == null)
+            }
+            if (v1 == null) {
                 return -1;
-            if (v2 == null)
+            }
+            if (v2 == null) {
                 return 1;
+            }
             int diff;
-            if (v1 instanceof Comparable)
+            if (v1 instanceof Comparable) {
                 diff = ((Comparable) v1).compareTo(v2);
-            else if (v2 instanceof Comparable)
+            } else if (v2 instanceof Comparable) {
                 diff = -((Comparable) v2).compareTo(v1);
-            else
+            } else {
                 diff = v1.toString().compareTo(v2.toString());
-            if (diff != 0)
+            }
+            if (diff != 0) {
                 return diff;
+            }
         }
         return m1.length - m2.length;
     }
 
-    private ArrayComparators()
-    {
+    private ArrayComparators() {
     }
 }

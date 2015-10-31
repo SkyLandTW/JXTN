@@ -34,18 +34,15 @@ package java.util.tuple;
  * @param <V1> 第一子項目型態
  */
 @SuppressWarnings("serial")
-public class TSingle<V1> extends BaseTuple<TSingle<V1>>
-{
+public class TSingle<V1> extends BaseTuple<TSingle<V1>> {
     private final V1 v1;
 
-    public TSingle(V1 v1)
-    {
+    public TSingle(V1 v1) {
         super(v1);
         this.v1 = v1;
     }
 
-    public V1 getItem1()
-    {
+    public V1 getItem1() {
         return this.v1;
     }
 }

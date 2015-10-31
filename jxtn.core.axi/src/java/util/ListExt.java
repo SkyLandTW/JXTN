@@ -29,7 +29,6 @@ package java.util;
 
 import java.util.function.Function;
 import java.util.function.PredicateEx;
-
 import jxtn.core.axi.comparators.MemberComparators;
 import jxtn.core.axi.util.BinarySearchResult;
 
@@ -39,16 +38,15 @@ import jxtn.core.axi.util.BinarySearchResult;
  * @author AqD
  * @param <E> 清單項目型態
  */
-public interface ListExt<E> extends CollectionExt<E>
-{
+public interface ListExt<E> extends CollectionExt<E> {
     /**
      * 二元搜尋位置並插入，目標需實作{@link Comparable}。
      *
      * @param item 要插入的目標
      */
-    default void binaryInsert(E item)
-    {
-        @SuppressWarnings("unchecked") Comparable<? super E> comparable = (Comparable<? super E>) item;
+    default void binaryInsert(E item) {
+        @SuppressWarnings("unchecked")
+        Comparable<? super E> comparable = (Comparable<? super E>) item;
         List<E> thiz = (List<E>) this;
         BinarySearchResult result = this.binarySearch(comparable);
         thiz.add(result.getIndex(), item);
@@ -62,25 +60,25 @@ public interface ListExt<E> extends CollectionExt<E>
      * @param key 要搜尋的目標鍵值
      * @return 搜尋結果
      */
-    default <K extends Comparable<? super K>> BinarySearchResult binarySearch(Function<? super E, ? extends K> getKey, K key)
-    {
+    default <K extends Comparable<? super K>> BinarySearchResult binarySearch(Function<? super E, ? extends K> getKey,
+            K key) {
         Objects.requireNonNull(getKey);
         List<E> thiz = (List<E>) this;
         int low = 0;
         int high = thiz.size() - 1;
-        while (low <= high)
-        {
+        while (low <= high) {
             int mid = (low + high) >>> 1;
             E midVal = thiz.get(mid);
             K midKey = getKey.apply(midVal);
             Comparable<? super K> midKeyCmp = midKey;
             int cmp = midKeyCmp.compareTo(key);
-            if (cmp < 0)
+            if (cmp < 0) {
                 low = mid + 1;
-            else if (cmp > 0)
+            } else if (cmp > 0) {
                 high = mid - 1;
-            else
+            } else {
                 return new BinarySearchResult(true, mid);
+            }
         }
         return new BinarySearchResult(false, low);
     }
@@ -94,24 +92,24 @@ public interface ListExt<E> extends CollectionExt<E>
      * @param comparator 比較鍵值的{@link Comparator}
      * @return 搜尋結果
      */
-    default <K> BinarySearchResult binarySearch(Function<? super E, ? extends K> getKey, K key, Comparator<K> comparator)
-    {
+    default <K> BinarySearchResult binarySearch(Function<? super E, ? extends K> getKey, K key,
+            Comparator<K> comparator) {
         Objects.requireNonNull(getKey);
         List<E> thiz = (List<E>) this;
         int low = 0;
         int high = thiz.size() - 1;
-        while (low <= high)
-        {
+        while (low <= high) {
             int mid = (low + high) >>> 1;
             E midVal = thiz.get(mid);
             K midKey = getKey.apply(midVal);
             int cmp = comparator.compare(midKey, key);
-            if (cmp < 0)
+            if (cmp < 0) {
                 low = mid + 1;
-            else if (cmp > 0)
+            } else if (cmp > 0) {
                 high = mid - 1;
-            else
+            } else {
                 return new BinarySearchResult(true, mid);
+            }
         }
         return new BinarySearchResult(false, low);
     }
@@ -122,23 +120,22 @@ public interface ListExt<E> extends CollectionExt<E>
      * @param item 要搜尋的目標
      * @return 搜尋結果
      */
-    default BinarySearchResult binarySearch(Comparable<? super E> item)
-    {
+    default BinarySearchResult binarySearch(Comparable<? super E> item) {
         Objects.requireNonNull(item);
         List<E> thiz = (List<E>) this;
         int low = 0;
         int high = thiz.size() - 1;
-        while (low <= high)
-        {
+        while (low <= high) {
             int mid = (low + high) >>> 1;
             E midVal = thiz.get(mid);
             int cmp = -item.compareTo(midVal);
-            if (cmp < 0)
+            if (cmp < 0) {
                 low = mid + 1;
-            else if (cmp > 0)
+            } else if (cmp > 0) {
                 high = mid - 1;
-            else
+            } else {
                 return new BinarySearchResult(true, mid);
+            }
         }
         return new BinarySearchResult(false, low);
     }
@@ -149,8 +146,7 @@ public interface ListExt<E> extends CollectionExt<E>
      * @param <V> 排序用的鍵值型態
      * @param getKey 用作排序的鍵值計算函數
      */
-    default <V extends Comparable<? super V>> void sort(Function<? super E, V> getKey)
-    {
+    default <V extends Comparable<? super V>> void sort(Function<? super E, V> getKey) {
         Objects.requireNonNull(getKey);
         List<E> thiz = (List<E>) this;
         thiz.sort(MemberComparators.byComparable(getKey));
@@ -167,8 +163,7 @@ public interface ListExt<E> extends CollectionExt<E>
      * @return 第一個值等於{@code e}的項目索引，或是-1表示找不到
      */
     @SuppressWarnings("deprecation")
-    default int indexOf2(E e)
-    {
+    default int indexOf2(E e) {
         List<E> thiz = (List<E>) this;
         return thiz.indexOf(e);
     }
@@ -180,8 +175,7 @@ public interface ListExt<E> extends CollectionExt<E>
      * @return 最後一個值等於{@code e}的項目索引，或是-1表示找不到
      */
     @SuppressWarnings("deprecation")
-    default int lastIndexOf2(E e)
-    {
+    default int lastIndexOf2(E e) {
         List<E> thiz = (List<E>) this;
         return thiz.lastIndexOf(e);
     }
@@ -197,13 +191,13 @@ public interface ListExt<E> extends CollectionExt<E>
      * @throws NoSuchElementException 沒有項目
      */
     @Override
-    default E first()
-    {
+    default E first() {
         List<E> thiz = (List<E>) this;
-        if (thiz.size() == 0)
+        if (thiz.size() == 0) {
             throw new NoSuchElementException();
-        else
+        } else {
             return thiz.get(0);
+        }
     }
 
     /**
@@ -212,13 +206,13 @@ public interface ListExt<E> extends CollectionExt<E>
      * @return 第一筆項目，或null表示沒有項目
      */
     @Override
-    default E firstOrNull()
-    {
+    default E firstOrNull() {
         List<E> thiz = (List<E>) this;
-        if (thiz.size() == 0)
+        if (thiz.size() == 0) {
             return null;
-        else
+        } else {
             return thiz.get(0);
+        }
     }
 
     /**
@@ -229,15 +223,12 @@ public interface ListExt<E> extends CollectionExt<E>
      * @return 符合{@code filter}的第一個項目索引，或-1表示找不到
      * @throws TException 表示{@code condition}丟出例外
      */
-    default <TException extends Exception> int firstIndexOf(PredicateEx<? super E, TException> condition)
-            throws TException
-    {
+    default <TException extends Throwable> int firstIndexOf(PredicateEx<? super E, TException> condition)
+            throws TException {
         List<E> thiz = (List<E>) this;
-        for (int i = 0; i < thiz.size(); i++)
-        {
+        for (int i = 0; i < thiz.size(); i++) {
             E e = thiz.get(i);
-            if (condition.testEx(e))
-            {
+            if (condition.testEx(e)) {
                 return i;
             }
         }
@@ -252,11 +243,11 @@ public interface ListExt<E> extends CollectionExt<E>
      * @throws NoSuchElementException 沒有第N筆項目
      */
     @Override
-    default E getNth(int position)
-    {
+    default E getNth(int position) {
         List<E> thiz = (List<E>) this;
-        if (position >= thiz.size())
+        if (position >= thiz.size()) {
             throw new NoSuchElementException(Integer.toString(position));
+        }
         return thiz.get(position);
     }
 
@@ -267,11 +258,11 @@ public interface ListExt<E> extends CollectionExt<E>
      * @return 第N筆項目，或null表示沒有第N筆項目
      */
     @Override
-    default E getNthOrNull(int position)
-    {
+    default E getNthOrNull(int position) {
         List<E> thiz = (List<E>) this;
-        if (position >= thiz.size())
+        if (position >= thiz.size()) {
             return null;
+        }
         return thiz.get(position);
     }
 
@@ -282,13 +273,13 @@ public interface ListExt<E> extends CollectionExt<E>
      * @throws NoSuchElementException 沒有項目
      */
     @Override
-    default E last()
-    {
+    default E last() {
         List<E> thiz = (List<E>) this;
-        if (thiz.size() == 0)
+        if (thiz.size() == 0) {
             throw new NoSuchElementException();
-        else
+        } else {
             return thiz.get(thiz.size() - 1);
+        }
     }
 
     /**
@@ -301,15 +292,14 @@ public interface ListExt<E> extends CollectionExt<E>
      * @throws TException 表示{@code condition}丟出例外
      */
     @Override
-    default <TException extends Exception> E last(PredicateEx<? super E, ? extends TException> condition)
-            throws TException
-    {
+    default <TException extends Throwable> E last(PredicateEx<? super E, ? extends TException> condition)
+            throws TException {
         List<E> thiz = (List<E>) this;
-        for (int i = thiz.size() - 1; i >= 0; i--)
-        {
+        for (int i = thiz.size() - 1; i >= 0; i--) {
             E item = thiz.get(i);
-            if (condition.testEx(item))
+            if (condition.testEx(item)) {
                 return item;
+            }
         }
         throw new NoSuchElementException();
     }
@@ -320,13 +310,13 @@ public interface ListExt<E> extends CollectionExt<E>
      * @return 最後一筆項目，或null表示沒有項目
      */
     @Override
-    default E lastOrNull()
-    {
+    default E lastOrNull() {
         List<E> thiz = (List<E>) this;
-        if (thiz.size() == 0)
+        if (thiz.size() == 0) {
             return null;
-        else
+        } else {
             return thiz.get(thiz.size() - 1);
+        }
     }
 
     /**
@@ -338,15 +328,14 @@ public interface ListExt<E> extends CollectionExt<E>
      * @throws TException 表示{@code condition}丟出例外
      */
     @Override
-    default <TException extends Exception> E lastOrNull(PredicateEx<? super E, ? extends TException> condition)
-            throws TException
-    {
+    default <TException extends Throwable> E lastOrNull(PredicateEx<? super E, ? extends TException> condition)
+            throws TException {
         List<E> thiz = (List<E>) this;
-        for (int i = thiz.size() - 1; i >= 0; i--)
-        {
+        for (int i = thiz.size() - 1; i >= 0; i--) {
             E item = thiz.get(i);
-            if (condition.testEx(item))
+            if (condition.testEx(item)) {
                 return item;
+            }
         }
         return null;
     }

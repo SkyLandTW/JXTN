@@ -117,7 +117,8 @@ public interface Iterator<E> extends IteratorExt<E> {
      */
     default void forEachRemaining(Consumer<? super E> action) {
         Objects.requireNonNull(action);
-        while (this.hasNext())
+        while (this.hasNext()) {
             action.accept(this.next());
+        }
     }
 }

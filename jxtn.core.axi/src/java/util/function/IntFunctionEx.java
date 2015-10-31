@@ -35,26 +35,18 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface IntFunctionEx<R, TException extends Exception> extends IntFunction<R>
-{
+public interface IntFunctionEx<R, TException extends Throwable> extends IntFunction<R> {
     R applyEx(int value) throws TException;
 
     @Deprecated
     @Override
-    default R apply(int value)
-    {
-        try
-        {
+    default R apply(int value) {
+        try {
             return this.applyEx(value);
-        }
-        catch (Exception e)
-        {
-            if (e instanceof RuntimeException)
-            {
+        } catch (Throwable e) {
+            if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
-            }
-            else
-            {
+            } else {
                 throw new RuntimeException(e);
             }
         }

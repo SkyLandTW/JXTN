@@ -27,13 +27,12 @@
 
 package java.sql;
 
+import com.sun.istack.internal.Nullable;
 import java.io.InputStream;
 import java.io.Reader;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.util.Calendar;
-
-import com.sun.istack.internal.Nullable;
 
 /**
  * {@link ResultSet}的延伸功能。
@@ -41,8 +40,7 @@ import com.sun.istack.internal.Nullable;
  * @author AqD
  */
 @SuppressWarnings("resource")
-public interface ResultSetExt
-{
+public interface ResultSetExt {
     /**
      * 尋找符合名稱的欄位其索引
      *
@@ -50,21 +48,20 @@ public interface ResultSetExt
      * @return 欄位索引(從1起算)，或null表示找不到。
      * @throws SQLException SQLException {@link ResultSet#getMetaData}例外
      */
-    default Integer findColumnOrNull(String columnLabel) throws SQLException
-    {
+    default Integer findColumnOrNull(String columnLabel) throws SQLException {
         ResultSet thiz = (ResultSet) this;
         ResultSetMetaData metaData = thiz.getMetaData();
-        for (int columnIndex = 1; columnIndex <= metaData.getColumnCount(); columnIndex++)
-        {
+        for (int columnIndex = 1; columnIndex <= metaData.getColumnCount(); columnIndex++) {
             // SQL Server官方用getColumnName而非getColumnLabel!!
-            if (metaData.getColumnName(columnIndex).equals(columnLabel))
+            if (metaData.getColumnName(columnIndex).equals(columnLabel)) {
                 return columnIndex;
+            }
         }
-        for (int columnIndex = 1; columnIndex <= metaData.getColumnCount(); columnIndex++)
-        {
+        for (int columnIndex = 1; columnIndex <= metaData.getColumnCount(); columnIndex++) {
             // SQL Server官方用getColumnName而非getColumnLabel!!
-            if (metaData.getColumnName(columnIndex).equalsIgnoreCase(columnLabel))
+            if (metaData.getColumnName(columnIndex).equalsIgnoreCase(columnLabel)) {
                 return columnIndex;
+            }
         }
         return null;
     }
@@ -81,11 +78,11 @@ public interface ResultSetExt
      * @throws SQLException {@link ResultSet#getBoolean(int)}例外
      */
     @com.sun.istack.internal.Nullable
-    default Boolean getBooleanOrNull(int columnIndex) throws SQLException
-    {
+    default Boolean getBooleanOrNull(int columnIndex) throws SQLException {
         ResultSet thiz = (ResultSet) this;
-        if (thiz.getObject(columnIndex) == null)
+        if (thiz.getObject(columnIndex) == null) {
             return null;
+        }
         return thiz.getBoolean(columnIndex);
     }
 
@@ -97,8 +94,7 @@ public interface ResultSetExt
      * @throws SQLException {@link ResultSet#getBoolean(int)}例外
      */
     @com.sun.istack.internal.Nullable
-    default Boolean getBooleanOrNull(String columnLabel) throws SQLException
-    {
+    default Boolean getBooleanOrNull(String columnLabel) throws SQLException {
         ResultSet thiz = (ResultSet) this;
         int columnIndex = thiz.findColumn(columnLabel);
         return getBooleanOrNull(columnIndex);
@@ -112,11 +108,11 @@ public interface ResultSetExt
      * @throws SQLException {@link ResultSet#getByte(int)}例外
      */
     @com.sun.istack.internal.Nullable
-    default Byte getByteOrNull(int columnIndex) throws SQLException
-    {
+    default Byte getByteOrNull(int columnIndex) throws SQLException {
         ResultSet thiz = (ResultSet) this;
-        if (thiz.getObject(columnIndex) == null)
+        if (thiz.getObject(columnIndex) == null) {
             return null;
+        }
         return thiz.getByte(columnIndex);
     }
 
@@ -128,8 +124,7 @@ public interface ResultSetExt
      * @throws SQLException {@link ResultSet#getByte(int)}例外
      */
     @com.sun.istack.internal.Nullable
-    default Byte getByteOrNull(String columnLabel) throws SQLException
-    {
+    default Byte getByteOrNull(String columnLabel) throws SQLException {
         ResultSet thiz = (ResultSet) this;
         int columnIndex = thiz.findColumn(columnLabel);
         return getByteOrNull(columnIndex);
@@ -143,11 +138,11 @@ public interface ResultSetExt
      * @throws SQLException {@link ResultSet#getShort(int)}例外
      */
     @com.sun.istack.internal.Nullable
-    default Short getShortOrNull(int columnIndex) throws SQLException
-    {
+    default Short getShortOrNull(int columnIndex) throws SQLException {
         ResultSet thiz = (ResultSet) this;
-        if (thiz.getObject(columnIndex) == null)
+        if (thiz.getObject(columnIndex) == null) {
             return null;
+        }
         return thiz.getShort(columnIndex);
     }
 
@@ -159,8 +154,7 @@ public interface ResultSetExt
      * @throws SQLException {@link ResultSet#getShort(int)}例外
      */
     @com.sun.istack.internal.Nullable
-    default Short getShortOrNull(String columnLabel) throws SQLException
-    {
+    default Short getShortOrNull(String columnLabel) throws SQLException {
         ResultSet thiz = (ResultSet) this;
         int columnIndex = thiz.findColumn(columnLabel);
         return getShortOrNull(columnIndex);
@@ -174,11 +168,11 @@ public interface ResultSetExt
      * @throws SQLException {@link ResultSet#getInt(int)}例外
      */
     @com.sun.istack.internal.Nullable
-    default Integer getIntOrNull(int columnIndex) throws SQLException
-    {
+    default Integer getIntOrNull(int columnIndex) throws SQLException {
         ResultSet thiz = (ResultSet) this;
-        if (thiz.getObject(columnIndex) == null)
+        if (thiz.getObject(columnIndex) == null) {
             return null;
+        }
         return thiz.getInt(columnIndex);
     }
 
@@ -190,8 +184,7 @@ public interface ResultSetExt
      * @throws SQLException {@link ResultSet#getInt(int)}例外
      */
     @com.sun.istack.internal.Nullable
-    default Integer getIntOrNull(String columnLabel) throws SQLException
-    {
+    default Integer getIntOrNull(String columnLabel) throws SQLException {
         ResultSet thiz = (ResultSet) this;
         int columnIndex = thiz.findColumn(columnLabel);
         return getIntOrNull(columnIndex);
@@ -205,11 +198,11 @@ public interface ResultSetExt
      * @throws SQLException {@link ResultSet#getLong(int)}例外
      */
     @Nullable
-    default Long getLongOrNull(int columnIndex) throws SQLException
-    {
+    default Long getLongOrNull(int columnIndex) throws SQLException {
         ResultSet thiz = (ResultSet) this;
-        if (thiz.getObject(columnIndex) == null)
+        if (thiz.getObject(columnIndex) == null) {
             return null;
+        }
         return thiz.getLong(columnIndex);
     }
 
@@ -221,8 +214,7 @@ public interface ResultSetExt
      * @throws SQLException {@link ResultSet#getLong(int)}例外
      */
     @Nullable
-    default Long getLongOrNull(String columnLabel) throws SQLException
-    {
+    default Long getLongOrNull(String columnLabel) throws SQLException {
         ResultSet thiz = (ResultSet) this;
         int columnIndex = thiz.findColumn(columnLabel);
         return getLongOrNull(columnIndex);
@@ -236,11 +228,11 @@ public interface ResultSetExt
      * @throws SQLException {@link ResultSet#getFloat(int)}例外
      */
     @com.sun.istack.internal.Nullable
-    default Float getFloatOrNull(int columnIndex) throws SQLException
-    {
+    default Float getFloatOrNull(int columnIndex) throws SQLException {
         ResultSet thiz = (ResultSet) this;
-        if (thiz.getObject(columnIndex) == null)
+        if (thiz.getObject(columnIndex) == null) {
             return null;
+        }
         return thiz.getFloat(columnIndex);
     }
 
@@ -252,8 +244,7 @@ public interface ResultSetExt
      * @throws SQLException {@link ResultSet#getFloat(int)}例外
      */
     @com.sun.istack.internal.Nullable
-    default Float getFloatOrNull(String columnLabel) throws SQLException
-    {
+    default Float getFloatOrNull(String columnLabel) throws SQLException {
         ResultSet thiz = (ResultSet) this;
         int columnIndex = thiz.findColumn(columnLabel);
         return getFloatOrNull(columnIndex);
@@ -267,11 +258,11 @@ public interface ResultSetExt
      * @throws SQLException {@link ResultSet#getDouble(int)}例外
      */
     @com.sun.istack.internal.Nullable
-    default Double getDoubleOrNull(int columnIndex) throws SQLException
-    {
+    default Double getDoubleOrNull(int columnIndex) throws SQLException {
         ResultSet thiz = (ResultSet) this;
-        if (thiz.getObject(columnIndex) == null)
+        if (thiz.getObject(columnIndex) == null) {
             return null;
+        }
         return thiz.getDouble(columnIndex);
     }
 
@@ -283,8 +274,7 @@ public interface ResultSetExt
      * @throws SQLException {@link ResultSet#getDouble(int)}例外
      */
     @com.sun.istack.internal.Nullable
-    default Double getDoubleOrNull(String columnLabel) throws SQLException
-    {
+    default Double getDoubleOrNull(String columnLabel) throws SQLException {
         ResultSet thiz = (ResultSet) this;
         int columnIndex = thiz.findColumn(columnLabel);
         return getDoubleOrNull(columnIndex);
@@ -302,13 +292,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getArray(int)}例外
      */
-    default Array tryGetArray(String columnLabel, Array fallbackValue) throws SQLException
-    {
+    default Array tryGetArray(String columnLabel, Array fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getArray(columnIndex);
+        }
     }
 
     /**
@@ -319,13 +309,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getAsciiStream(int)}例外
      */
-    default InputStream tryGetAsciiStream(String columnLabel, InputStream fallbackValue) throws SQLException
-    {
+    default InputStream tryGetAsciiStream(String columnLabel, InputStream fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getAsciiStream(columnIndex);
+        }
     }
 
     /**
@@ -336,13 +326,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getBigDecimal(int)}例外
      */
-    default BigDecimal tryGetBigDecimal(String columnLabel, BigDecimal fallbackValue) throws SQLException
-    {
+    default BigDecimal tryGetBigDecimal(String columnLabel, BigDecimal fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getBigDecimal(columnIndex);
+        }
     }
 
     /**
@@ -353,13 +343,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getBinaryStream(int)}例外
      */
-    default InputStream tryGetBinaryStream(String columnLabel, InputStream fallbackValue) throws SQLException
-    {
+    default InputStream tryGetBinaryStream(String columnLabel, InputStream fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getBinaryStream(columnIndex);
+        }
     }
 
     /**
@@ -370,13 +360,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getBlob(int)}例外
      */
-    default Blob tryGetBlob(String columnLabel, Blob fallbackValue) throws SQLException
-    {
+    default Blob tryGetBlob(String columnLabel, Blob fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getBlob(columnIndex);
+        }
     }
 
     /**
@@ -387,13 +377,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getBoolean(int)}例外
      */
-    default boolean tryGetBoolean(String columnLabel, boolean fallbackValue) throws SQLException
-    {
+    default boolean tryGetBoolean(String columnLabel, boolean fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getBoolean(columnIndex);
+        }
     }
 
     /**
@@ -404,13 +394,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getByte(int)}例外
      */
-    default byte tryGetByte(String columnLabel, byte fallbackValue) throws SQLException
-    {
+    default byte tryGetByte(String columnLabel, byte fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getByte(columnIndex);
+        }
     }
 
     /**
@@ -421,13 +411,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getBytes(int)}例外
      */
-    default byte[] tryGetBytes(String columnLabel, byte[] fallbackValue) throws SQLException
-    {
+    default byte[] tryGetBytes(String columnLabel, byte[] fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getBytes(columnIndex);
+        }
     }
 
     /**
@@ -438,13 +428,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getCharacterStream(int)}例外
      */
-    default Reader tryGetCharacterStream(String columnLabel, Reader fallbackValue) throws SQLException
-    {
+    default Reader tryGetCharacterStream(String columnLabel, Reader fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getCharacterStream(columnIndex);
+        }
     }
 
     /**
@@ -455,13 +445,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getClob(int)}例外
      */
-    default Clob tryGetClob(String columnLabel, Clob fallbackValue) throws SQLException
-    {
+    default Clob tryGetClob(String columnLabel, Clob fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getClob(columnIndex);
+        }
     }
 
     /**
@@ -472,13 +462,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getDate(int)}例外
      */
-    default Date tryGetDate(String columnLabel, Date fallbackValue) throws SQLException
-    {
+    default Date tryGetDate(String columnLabel, Date fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getDate(columnIndex);
+        }
     }
 
     /**
@@ -490,13 +480,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getDate(int)}例外
      */
-    default Date tryGetDate(String columnLabel, Calendar cal, Date fallbackValue) throws SQLException
-    {
+    default Date tryGetDate(String columnLabel, Calendar cal, Date fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getDate(columnIndex, cal);
+        }
     }
 
     /**
@@ -507,13 +497,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getDouble(int)}例外
      */
-    default double tryGetDouble(String columnLabel, double fallbackValue) throws SQLException
-    {
+    default double tryGetDouble(String columnLabel, double fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getDouble(columnIndex);
+        }
     }
 
     /**
@@ -524,13 +514,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getFloat(int)}例外
      */
-    default float tryGetFloat(String columnLabel, float fallbackValue) throws SQLException
-    {
+    default float tryGetFloat(String columnLabel, float fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getFloat(columnIndex);
+        }
     }
 
     /**
@@ -541,13 +531,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getInt(int)}例外
      */
-    default int tryGetInt(String columnLabel, int fallbackValue) throws SQLException
-    {
+    default int tryGetInt(String columnLabel, int fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getInt(columnIndex);
+        }
     }
 
     /**
@@ -558,13 +548,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getLong(int)}例外
      */
-    default long tryGetLong(String columnLabel, long fallbackValue) throws SQLException
-    {
+    default long tryGetLong(String columnLabel, long fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getLong(columnIndex);
+        }
     }
 
     /**
@@ -575,13 +565,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getNCharacterStream(int)}例外
      */
-    default Reader tryGetNCharacterStream(String columnLabel, Reader fallbackValue) throws SQLException
-    {
+    default Reader tryGetNCharacterStream(String columnLabel, Reader fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getNCharacterStream(columnIndex);
+        }
     }
 
     /**
@@ -592,13 +582,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getNClob(int)}例外
      */
-    default NClob tryGetNClob(String columnLabel, NClob fallbackValue) throws SQLException
-    {
+    default NClob tryGetNClob(String columnLabel, NClob fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getNClob(columnIndex);
+        }
     }
 
     /**
@@ -609,13 +599,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getNString(int)}例外
      */
-    default String tryGetNString(String columnLabel, String fallbackValue) throws SQLException
-    {
+    default String tryGetNString(String columnLabel, String fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getNString(columnIndex);
+        }
     }
 
     /**
@@ -626,13 +616,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getObject(int)}例外
      */
-    default Object tryGetObject(String columnLabel, Object fallbackValue) throws SQLException
-    {
+    default Object tryGetObject(String columnLabel, Object fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getObject(columnIndex);
+        }
     }
 
     /**
@@ -643,13 +633,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getRef(int)}例外
      */
-    default Ref tryGetRef(String columnLabel, Ref fallbackValue) throws SQLException
-    {
+    default Ref tryGetRef(String columnLabel, Ref fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getRef(columnIndex);
+        }
     }
 
     /**
@@ -660,13 +650,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getRowId(int)}例外
      */
-    default RowId tryGetRowId(String columnLabel, RowId fallbackValue) throws SQLException
-    {
+    default RowId tryGetRowId(String columnLabel, RowId fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getRowId(columnIndex);
+        }
     }
 
     /**
@@ -677,13 +667,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getShort(int)}例外
      */
-    default short tryGetShort(String columnLabel, short fallbackValue) throws SQLException
-    {
+    default short tryGetShort(String columnLabel, short fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getShort(columnIndex);
+        }
     }
 
     /**
@@ -694,13 +684,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getSQLXML(int)}例外
      */
-    default SQLXML tryGetSQLXML(String columnLabel, SQLXML fallbackValue) throws SQLException
-    {
+    default SQLXML tryGetSQLXML(String columnLabel, SQLXML fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getSQLXML(columnIndex);
+        }
     }
 
     /**
@@ -711,13 +701,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getString(int)}例外
      */
-    default String tryGetString(String columnLabel, String fallbackValue) throws SQLException
-    {
+    default String tryGetString(String columnLabel, String fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getString(columnIndex);
+        }
     }
 
     /**
@@ -728,13 +718,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getTime(int)}例外
      */
-    default Time tryGetTime(String columnLabel, Time fallbackValue) throws SQLException
-    {
+    default Time tryGetTime(String columnLabel, Time fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getTime(columnIndex);
+        }
     }
 
     /**
@@ -745,13 +735,13 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getTimestamp(int)}例外
      */
-    default Timestamp tryGetTimestamp(String columnLabel, Timestamp fallbackValue) throws SQLException
-    {
+    default Timestamp tryGetTimestamp(String columnLabel, Timestamp fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getTimestamp(columnIndex);
+        }
     }
 
     /**
@@ -762,12 +752,12 @@ public interface ResultSetExt
      * @return {@code columnLabel}欄位值或{@code defaultValue}
      * @throws SQLException {@link ResultSet#getURL(int)}例外
      */
-    default URL tryGetURL(String columnLabel, URL fallbackValue) throws SQLException
-    {
+    default URL tryGetURL(String columnLabel, URL fallbackValue) throws SQLException {
         Integer columnIndex = findColumnOrNull(columnLabel);
-        if (columnIndex == null)
+        if (columnIndex == null) {
             return fallbackValue;
-        else
+        } else {
             return ((ResultSet) this).getURL(columnIndex);
+        }
     }
 }

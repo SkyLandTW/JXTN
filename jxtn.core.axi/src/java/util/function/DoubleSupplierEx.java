@@ -34,24 +34,20 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface DoubleSupplierEx<TException extends Exception> extends DoubleSupplier
-{
+public interface DoubleSupplierEx<TException extends Throwable> extends DoubleSupplier {
     double getAsDoubleEx() throws TException;
 
     @Deprecated
     @Override
-    default double getAsDouble()
-    {
-        try
-        {
+    default double getAsDouble() {
+        try {
             return this.getAsDoubleEx();
-        }
-        catch (Exception e)
-        {
-            if (e instanceof RuntimeException)
+        } catch (Throwable e) {
+            if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
-            else
+            } else {
                 throw new RuntimeException(e);
+            }
         }
     }
 }

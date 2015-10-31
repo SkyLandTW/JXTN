@@ -36,8 +36,7 @@ import java.util.Objects;
  * @author AqD
  * @param <T> 列舉項目型態
  */
-public class ConcatedIterator<T> extends AbstractIterator<T>
-{
+public class ConcatedIterator<T> extends AbstractIterator<T> {
     /**
      * 提供來源列舉器的列舉器。
      */
@@ -62,15 +61,13 @@ public class ConcatedIterator<T> extends AbstractIterator<T>
      *
      * @param sourceIterator 來源列舉器的列舉器
      */
-    public ConcatedIterator(Iterator<Iterator<? extends T>> sourceIterator)
-    {
+    public ConcatedIterator(Iterator<Iterator<? extends T>> sourceIterator) {
         Objects.requireNonNull(sourceIterator);
         this.sourceIterator = sourceIterator;
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return super.toString() + String.format(",srcSteps=%d,curSteps=%d",
                 this.sourceIteratorSteps, this.currentSourceSteps);
     }
@@ -80,8 +77,7 @@ public class ConcatedIterator<T> extends AbstractIterator<T>
      *
      * @return {@link #sourceIterator}的進行次數
      */
-    public final long getSourceIteratorSteps()
-    {
+    public final long getSourceIteratorSteps() {
         return this.sourceIteratorSteps;
     }
 
@@ -90,30 +86,26 @@ public class ConcatedIterator<T> extends AbstractIterator<T>
      *
      * @return {@link #currentSource}的進行次數
      */
-    public final long getCurrentSourceSteps()
-    {
+    public final long getCurrentSourceSteps() {
         return this.currentSourceSteps;
     }
 
     @Override
-    protected T fetchNext()
-    {
-        while (true)
-        {
-            if (this.currentSource == null)
-            {
-                if (!this.sourceIterator.hasNext())
+    protected T fetchNext() {
+        while (true) {
+            if (this.currentSource == null) {
+                if (!this.sourceIterator.hasNext()) {
                     return this.end();
+                }
                 this.sourceIteratorSteps += 1;
                 this.currentSource = this.sourceIterator.next();
             }
-            if (this.currentSource.hasNext())
-            {
+            if (this.currentSource.hasNext()) {
                 this.currentSourceSteps += 1;
                 return this.currentSource.next();
-            }
-            else
+            } else {
                 this.currentSource = null;
+            }
         }
     }
 }

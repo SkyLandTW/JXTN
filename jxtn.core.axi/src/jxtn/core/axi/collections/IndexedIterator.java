@@ -36,8 +36,7 @@ import java.util.Objects;
  * @author AqD
  * @param <T> 列舉項目型態
  */
-public class IndexedIterator<T> extends AbstractIterator<IndexedItem<T>>
-{
+public class IndexedIterator<T> extends AbstractIterator<IndexedItem<T>> {
     /**
      * 來源列舉器。
      */
@@ -50,17 +49,14 @@ public class IndexedIterator<T> extends AbstractIterator<IndexedItem<T>>
      *
      * @param source 來源列舉器
      */
-    public IndexedIterator(Iterator<T> source)
-    {
+    public IndexedIterator(Iterator<T> source) {
         Objects.requireNonNull(source);
         this.source = source;
     }
 
     @Override
-    protected IndexedItem<T> fetchNext()
-    {
-        if (this.source.hasNext())
-        {
+    protected IndexedItem<T> fetchNext() {
+        if (this.source.hasNext()) {
             T nextT = this.source.next();
             IndexedItem<T> nextIndexedT = new IndexedItem<>(this.index, nextT);
             this.index += 1;

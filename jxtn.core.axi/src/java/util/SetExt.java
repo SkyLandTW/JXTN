@@ -33,15 +33,13 @@ package java.util;
  * @author AqD
  * @param <E> 集的項目型態
  */
-public interface SetExt<E> extends CollectionExt<E>
-{
+public interface SetExt<E> extends CollectionExt<E> {
     /**
      * 以{@link Collection}型態表示。
      *
      * @return 以{@link Collection}型態表示的目前物件
      */
-    default Collection<E> asCollection()
-    {
+    default Collection<E> asCollection() {
         Set<E> thiz = (Set<E>) this;
         return thiz;
     }

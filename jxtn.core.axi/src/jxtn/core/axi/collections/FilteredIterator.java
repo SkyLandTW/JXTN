@@ -37,8 +37,7 @@ import java.util.function.Predicate;
  * @author AqD
  * @param <T> 列舉項目型態
  */
-public class FilteredIterator<T> extends AbstractIterator<T>
-{
+public class FilteredIterator<T> extends AbstractIterator<T> {
     /**
      * 來源列舉器。
      */
@@ -60,8 +59,7 @@ public class FilteredIterator<T> extends AbstractIterator<T>
      * @param source 來源列舉器
      * @param condition 過濾條件
      */
-    public FilteredIterator(Iterator<? extends T> source, Predicate<? super T> condition)
-    {
+    public FilteredIterator(Iterator<? extends T> source, Predicate<? super T> condition) {
         Objects.requireNonNull(source);
         Objects.requireNonNull(condition);
         this.source = source;
@@ -69,8 +67,7 @@ public class FilteredIterator<T> extends AbstractIterator<T>
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return super.toString() + String.format(",srcSteps=%d", this.sourceSteps);
     }
 
@@ -79,20 +76,16 @@ public class FilteredIterator<T> extends AbstractIterator<T>
      *
      * @return {@link #source}的進行次數(過濾前的)
      */
-    public final long getSourceSteps()
-    {
+    public final long getSourceSteps() {
         return this.sourceSteps;
     }
 
     @Override
-    protected T fetchNext()
-    {
-        while (this.source.hasNext())
-        {
+    protected T fetchNext() {
+        while (this.source.hasNext()) {
             T item = this.source.next();
             this.sourceSteps += 1;
-            if (this.condition.test(item))
-            {
+            if (this.condition.test(item)) {
                 return item;
             }
         }

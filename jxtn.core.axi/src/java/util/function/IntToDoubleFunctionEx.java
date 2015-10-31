@@ -34,26 +34,18 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface IntToDoubleFunctionEx<TException extends Exception> extends IntToDoubleFunction
-{
+public interface IntToDoubleFunctionEx<TException extends Throwable> extends IntToDoubleFunction {
     double applyAsDoubleEx(int value) throws TException;
 
     @Deprecated
     @Override
-    default double applyAsDouble(int value)
-    {
-        try
-        {
+    default double applyAsDouble(int value) {
+        try {
             return this.applyAsDoubleEx(value);
-        }
-        catch (Exception e)
-        {
-            if (e instanceof RuntimeException)
-            {
+        } catch (Throwable e) {
+            if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
-            }
-            else
-            {
+            } else {
                 throw new RuntimeException(e);
             }
         }

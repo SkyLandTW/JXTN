@@ -38,8 +38,7 @@ import java.util.function.Function;
  * @param <T> 來源列舉項目型態
  * @param <R> 展開列舉項目型態
  */
-public class ExpandedIterator<T, R> extends AbstractIterator<R>
-{
+public class ExpandedIterator<T, R> extends AbstractIterator<R> {
     /**
      * 來源列舉器。
      */
@@ -61,8 +60,7 @@ public class ExpandedIterator<T, R> extends AbstractIterator<R>
      * @param source 來源列舉器
      * @param expand 展開函數
      */
-    public ExpandedIterator(Iterator<? extends T> source, Function<? super T, ? extends Iterator<? extends R>> expand)
-    {
+    public ExpandedIterator(Iterator<? extends T> source, Function<? super T, ? extends Iterator<? extends R>> expand) {
         Objects.requireNonNull(source);
         Objects.requireNonNull(expand);
         this.source = source;
@@ -70,22 +68,22 @@ public class ExpandedIterator<T, R> extends AbstractIterator<R>
     }
 
     @Override
-    protected R fetchNext()
-    {
-        if (this.isAtHead())
-        {
-            if (!this.source.hasNext())
+    protected R fetchNext() {
+        if (this.isAtHead()) {
+            if (!this.source.hasNext()) {
                 return this.end();
+            }
             T parent = this.source.next();
             this.currentChildren = this.expand.apply(parent);
         }
-        while (true)
-        {
-            if (this.currentChildren.hasNext())
+        while (true) {
+            if (this.currentChildren.hasNext()) {
                 return this.currentChildren.next();
+            }
             this.currentChildren = null;
-            if (!this.source.hasNext())
+            if (!this.source.hasNext()) {
                 return this.end();
+            }
             T parent = this.source.next();
             this.currentChildren = this.expand.apply(parent);
         }

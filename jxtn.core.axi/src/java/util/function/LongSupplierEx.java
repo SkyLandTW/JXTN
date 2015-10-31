@@ -34,24 +34,20 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface LongSupplierEx<TException extends Exception> extends LongSupplier
-{
+public interface LongSupplierEx<TException extends Throwable> extends LongSupplier {
     long getAsLongEx() throws TException;
 
     @Deprecated
     @Override
-    default long getAsLong()
-    {
-        try
-        {
+    default long getAsLong() {
+        try {
             return this.getAsLongEx();
-        }
-        catch (Exception e)
-        {
-            if (e instanceof RuntimeException)
+        } catch (Throwable e) {
+            if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
-            else
+            } else {
                 throw new RuntimeException(e);
+            }
         }
     }
 }

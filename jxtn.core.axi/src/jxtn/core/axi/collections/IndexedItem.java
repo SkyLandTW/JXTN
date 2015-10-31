@@ -36,16 +36,15 @@ import java.util.tuple.BaseTuple;
  * @param <T> 項目型態
  */
 @SuppressWarnings("serial")
-public final class IndexedItem<T> extends BaseTuple<IndexedItem<T>>
-{
+public final class IndexedItem<T> extends BaseTuple<IndexedItem<T>> {
     protected final int index;
     protected final T value;
 
-    public IndexedItem(int index, T value)
-    {
+    public IndexedItem(int index, T value) {
         super(index, value);
-        if (index < 0)
+        if (index < 0) {
             throw new IndexOutOfBoundsException();
+        }
         this.index = index;
         this.value = value;
     }
@@ -55,8 +54,7 @@ public final class IndexedItem<T> extends BaseTuple<IndexedItem<T>>
      *
      * @return 項目索引
      */
-    public int getIndex()
-    {
+    public int getIndex() {
         return this.index;
     }
 
@@ -65,8 +63,7 @@ public final class IndexedItem<T> extends BaseTuple<IndexedItem<T>>
      *
      * @return 項目值
      */
-    public T getValue()
-    {
+    public T getValue() {
         return this.value;
     }
 }

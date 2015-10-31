@@ -41,8 +41,7 @@ import java.util.function.Function;
  * @author AqD
  * @param <T> 列舉項目型態
  */
-public class LinkTreeIterator<T> extends AbstractIterator<T>
-{
+public class LinkTreeIterator<T> extends AbstractIterator<T> {
     /**
      * 初始項目。
      */
@@ -70,8 +69,7 @@ public class LinkTreeIterator<T> extends AbstractIterator<T>
      * @param initial 初始項目，可為null(空列舉)
      * @param getChildren 取得每個項目的子項目集合，傳回null表示結束
      */
-    public LinkTreeIterator(T initial, Function<? super T, ? extends Iterator<? extends T>> getChildren)
-    {
+    public LinkTreeIterator(T initial, Function<? super T, ? extends Iterator<? extends T>> getChildren) {
         Objects.requireNonNull(getChildren);
         this.initial = initial;
         this.getChildren = getChildren;
@@ -82,31 +80,25 @@ public class LinkTreeIterator<T> extends AbstractIterator<T>
      *
      * @return 目前進行的深度(根項目為1)
      */
-    public int getDepth()
-    {
+    public int getDepth() {
         return this.stack.size();
     }
 
     @Override
-    protected T fetchNext()
-    {
-        if (this.isAtHead())
-        {
-            if (this.initial == null)
+    protected T fetchNext() {
+        if (this.isAtHead()) {
+            if (this.initial == null) {
                 return this.end();
-            else
+            } else {
                 return this.stack.push(new Entry(this.initial)).item;
+            }
         }
-        while (!this.stack.isEmpty())
-        {
+        while (!this.stack.isEmpty()) {
             Entry entry = this.stack.peek();
-            if (entry.children != null)
-            {
-                while (entry.children.hasNext())
-                {
+            if (entry.children != null) {
+                while (entry.children.hasNext()) {
                     T next = entry.children.next();
-                    if (next != null)
-                    {
+                    if (next != null) {
                         return this.stack.push(new Entry(next)).item;
                     }
                 }
@@ -121,8 +113,7 @@ public class LinkTreeIterator<T> extends AbstractIterator<T>
      *
      * @author AqD
      */
-    public class Entry
-    {
+    public class Entry {
         /**
          * 目前項目。
          */
@@ -138,14 +129,14 @@ public class LinkTreeIterator<T> extends AbstractIterator<T>
          *
          * @param item 項目
          */
-        public Entry(T item)
-        {
+        public Entry(T item) {
             this.item = item;
             Iterator<? extends T> childrenIterator = LinkTreeIterator.this.getChildren.apply(this.item);
-            if (childrenIterator != null)
+            if (childrenIterator != null) {
                 this.children = childrenIterator;
-            else
+            } else {
                 this.children = null;
+            }
         }
     }
 }

@@ -36,8 +36,7 @@ package java.util.function;
  * @param <V> 第三參數型態
  */
 @FunctionalInterface
-public interface TriPredicate<T, U, V>
-{
+public interface TriPredicate<T, U, V> {
     /**
      * 測試條件
      *

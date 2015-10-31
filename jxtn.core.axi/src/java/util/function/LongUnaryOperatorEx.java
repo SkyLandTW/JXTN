@@ -34,26 +34,18 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface LongUnaryOperatorEx<TException extends Exception> extends LongUnaryOperator
-{
+public interface LongUnaryOperatorEx<TException extends Throwable> extends LongUnaryOperator {
     long applyAsLongEx(long operand) throws TException;
 
     @Deprecated
     @Override
-    default long applyAsLong(long operand)
-    {
-        try
-        {
+    default long applyAsLong(long operand) {
+        try {
             return this.applyAsLongEx(operand);
-        }
-        catch (Exception e)
-        {
-            if (e instanceof RuntimeException)
-            {
+        } catch (Throwable e) {
+            if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
-            }
-            else
-            {
+            } else {
                 throw new RuntimeException(e);
             }
         }

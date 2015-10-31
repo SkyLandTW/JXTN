@@ -33,7 +33,6 @@ package java.util;
  * @author AqD
  * @param <E> 佇列的項目型態
  */
-public interface QueueExt<E> extends CollectionExt<E>
-{
+public interface QueueExt<E> extends CollectionExt<E> {
     //
 }

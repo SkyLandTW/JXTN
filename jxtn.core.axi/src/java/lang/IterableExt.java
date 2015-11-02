@@ -77,7 +77,7 @@ public interface IterableExt<T> {
      */
     @SafeVarargs
     static <T> Iterable<T> concatAll(Iterable<? extends T>... iterables) {
-        return () -> new ConcatedIterator<>(Arrays.asList(iterables).iterator().map(Iterable::iterator));
+        return () -> new ConcatedIterator<>(Arrays.asList(iterables).iterator().mapRemaining(Iterable::iterator));
     }
 
     /**
@@ -88,7 +88,7 @@ public interface IterableExt<T> {
      * @return The combined {@link Iterable} which can be used to iterate through all items from {@code iterables}
      */
     static <T> Iterable<T> concatAll(Iterable<Iterable<? extends T>> iterableIterable) {
-        return () -> new ConcatedIterator<>(iterableIterable.iterator().map(Iterable::iterator));
+        return () -> new ConcatedIterator<>(iterableIterable.iterator().mapRemaining(Iterable::iterator));
     }
 
     /**
@@ -99,7 +99,7 @@ public interface IterableExt<T> {
      * @return The combined {@link Iterable} which can be used to iterate through all items from {@code iterables}
      */
     static <T> Iterable<T> concatAll(Iterator<Iterable<? extends T>> iterableIterator) {
-        return () -> new ConcatedIterator<>(iterableIterator.map(Iterable::iterator));
+        return () -> new ConcatedIterator<>(iterableIterator.mapRemaining(Iterable::iterator));
     }
 
     /**
@@ -160,7 +160,7 @@ public interface IterableExt<T> {
     default <TException extends Throwable> boolean all(PredicateEx<? super T, ? extends TException> condition)
             throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().all(condition);
+        return thiz.iterator().allRemaining(condition);
     }
 
     /**
@@ -174,7 +174,7 @@ public interface IterableExt<T> {
     default <TException extends Throwable> boolean any(PredicateEx<? super T, ? extends TException> condition)
             throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().any(condition);
+        return thiz.iterator().anyRemaining(condition);
     }
 
     //////////////////////////////////////////////////////////////////////////
@@ -203,7 +203,7 @@ public interface IterableExt<T> {
         List<Iterable<? extends T>> list = Arrays.asList(
                 (Iterable<T>) this,
                 Arrays.asList(tailItems));
-        return () -> new ConcatedIterator<>(list.iterator().map(Iterable::iterator));
+        return () -> new ConcatedIterator<>(list.iterator().mapRemaining(Iterable::iterator));
     }
 
     /**
@@ -217,7 +217,7 @@ public interface IterableExt<T> {
         List<Iterable<? extends T>> list = Arrays.asList(
                 Arrays.asList(headItems),
                 (Iterable<T>) this);
-        return () -> new ConcatedIterator<>(list.iterator().map(Iterable::iterator));
+        return () -> new ConcatedIterator<>(list.iterator().mapRemaining(Iterable::iterator));
     }
 
     /**
@@ -233,7 +233,7 @@ public interface IterableExt<T> {
         for (Iterable<? extends T> other : iterables) {
             list.add(other);
         }
-        return () -> new ConcatedIterator<>(list.iterator().map(Iterable::iterator));
+        return () -> new ConcatedIterator<>(list.iterator().mapRemaining(Iterable::iterator));
     }
 
     /**
@@ -675,7 +675,7 @@ public interface IterableExt<T> {
      */
     default T last() {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().last();
+        return thiz.iterator().lastOfRemaining();
     }
 
     /**
@@ -690,7 +690,7 @@ public interface IterableExt<T> {
     default <TException extends Throwable> T last(PredicateEx<? super T, ? extends TException> condition)
             throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().last(condition);
+        return thiz.iterator().lastOfRemaining(condition);
     }
 
     /**
@@ -700,7 +700,7 @@ public interface IterableExt<T> {
      */
     default T lastOrNull() {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().lastOrNull();
+        return thiz.iterator().lastOfRemainingOrNull();
     }
 
     /**
@@ -714,7 +714,7 @@ public interface IterableExt<T> {
     default <TException extends Throwable> T lastOrNull(PredicateEx<? super T, ? extends TException> condition)
             throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().lastOrNull(condition);
+        return thiz.iterator().lastOfRemainingOrNull(condition);
     }
 
     //////////////////////////////////////////////////////////////////////////
@@ -728,7 +728,7 @@ public interface IterableExt<T> {
      */
     default T[] toArray(Class<T> type) {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().toArray(type);
+        return thiz.iterator().remainingToArray(type);
     }
 
     /**
@@ -738,7 +738,7 @@ public interface IterableExt<T> {
      */
     default ArrayList<T> toArrayList() {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().toArrayList();
+        return thiz.iterator().remainingToArrayList();
     }
 
     /**
@@ -753,7 +753,7 @@ public interface IterableExt<T> {
             PredicateEx<? super T, ? extends TException> condition)
                     throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().toArrayListFiltered(condition);
+        return thiz.iterator().remainingToArrayListFiltered(condition);
     }
 
     /**
@@ -769,7 +769,7 @@ public interface IterableExt<T> {
             FunctionEx<? super T, ? extends R, ? extends TException> mapper)
                     throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().toArrayListMapped(mapper);
+        return thiz.iterator().remainingToArrayListMapped(mapper);
     }
 
     /**
@@ -781,7 +781,7 @@ public interface IterableExt<T> {
      */
     default <V extends Comparable<?>> ArrayList<T> toArrayListSorted(Function<? super T, ? extends V> getKey) {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().toArrayListSorted(getKey);
+        return thiz.iterator().remainingToArrayListSorted(getKey);
     }
 
     /**
@@ -792,7 +792,7 @@ public interface IterableExt<T> {
      */
     default ArrayList<T> toArrayListSorted(Comparator<? super T> comparator) {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().toArrayListSorted(comparator);
+        return thiz.iterator().remainingToArrayListSorted(comparator);
     }
 
     /**
@@ -803,7 +803,7 @@ public interface IterableExt<T> {
      */
     default ArrayList<T> toArrayListReversed() {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().toArrayListReversed();
+        return thiz.iterator().remainingToArrayListReversed();
     }
 
     /**
@@ -819,7 +819,7 @@ public interface IterableExt<T> {
             FunctionEx<? super T, ? extends K, ? extends KException> getKey)
                     throws KException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().toHashMap(getKey);
+        return thiz.iterator().remainingToHashMap(getKey);
     }
 
     /**
@@ -840,7 +840,7 @@ public interface IterableExt<T> {
             FunctionEx<? super T, ? extends V, ? extends VException> getValue)
                     throws KException, VException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().toHashMap(getKey, getValue);
+        return thiz.iterator().remainingToHashMap(getKey, getValue);
     }
 
     /**
@@ -856,7 +856,7 @@ public interface IterableExt<T> {
             FunctionEx<? super T, ? extends K, ? extends KException> getKey)
                     throws KException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().toHashMapGrouped(getKey);
+        return thiz.iterator().remainingToHashMapGrouped(getKey);
     }
 
     /**
@@ -872,12 +872,13 @@ public interface IterableExt<T> {
      * @throws KException 表示{@code getKey}丟出例外
      * @throws VException 表示{@code getValue}丟出例外
      */
-    default <K, V, KException extends Throwable, VException extends Throwable> HashMap<K, ArrayList<V>> toHashMapGrouped(
-            FunctionEx<? super T, ? extends K, ? extends KException> getKey,
-            FunctionEx<? super T, ? extends V, ? extends VException> getValue)
-                    throws KException, VException {
+    default <K, V, KException extends Throwable, VException extends Throwable> HashMap<K, ArrayList<V>>
+            toHashMapGrouped(
+                    FunctionEx<? super T, ? extends K, ? extends KException> getKey,
+                    FunctionEx<? super T, ? extends V, ? extends VException> getValue)
+                            throws KException, VException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().toHashMapGrouped(getKey, getValue);
+        return thiz.iterator().remainingToHashMapGrouped(getKey, getValue);
     }
 
     /**
@@ -890,7 +891,7 @@ public interface IterableExt<T> {
      */
     default HashSet<T> toHashSet() {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().toHashSet();
+        return thiz.iterator().remainingToHashSet();
     }
 
     /**
@@ -906,7 +907,7 @@ public interface IterableExt<T> {
             FunctionEx<? super T, ? extends K, ? extends KException> getKey)
                     throws KException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().toTreeMap(getKey);
+        return thiz.iterator().remainingToTreeMap(getKey);
     }
 
     /**
@@ -927,7 +928,7 @@ public interface IterableExt<T> {
             FunctionEx<? super T, ? extends V, ? extends VException> getValue)
                     throws KException, VException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().toTreeMap(getKey, getValue);
+        return thiz.iterator().remainingToTreeMap(getKey, getValue);
     }
 
     /**
@@ -943,7 +944,7 @@ public interface IterableExt<T> {
             FunctionEx<? super T, ? extends K, ? extends KException> getKey)
                     throws KException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().toTreeMapGrouped(getKey);
+        return thiz.iterator().remainingToTreeMapGrouped(getKey);
     }
 
     /**
@@ -959,12 +960,13 @@ public interface IterableExt<T> {
      * @throws KException 表示{@code getKey}丟出例外
      * @throws VException 表示{@code getValue}丟出例外
      */
-    default <K, V, KException extends Throwable, VException extends Throwable> TreeMap<K, ArrayList<V>> toTreeMapGrouped(
-            FunctionEx<? super T, ? extends K, ? extends KException> getKey,
-            FunctionEx<? super T, ? extends V, ? extends VException> getValue)
-                    throws KException, VException {
+    default <K, V, KException extends Throwable, VException extends Throwable> TreeMap<K, ArrayList<V>>
+            toTreeMapGrouped(
+                    FunctionEx<? super T, ? extends K, ? extends KException> getKey,
+                    FunctionEx<? super T, ? extends V, ? extends VException> getValue)
+                            throws KException, VException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().toTreeMapGrouped(getKey, getValue);
+        return thiz.iterator().remainingToTreeMapGrouped(getKey, getValue);
     }
 
     //////////////////////////////////////////////////////////////////////////
@@ -984,7 +986,7 @@ public interface IterableExt<T> {
             U identity, BiFunctionEx<U, ? super T, U, TException> accumulator)
                     throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().reduce(identity, accumulator);
+        return thiz.iterator().reduceRemaining(identity, accumulator);
     }
 
     /**
@@ -998,7 +1000,7 @@ public interface IterableExt<T> {
     default <TException extends Throwable> int count(PredicateEx<? super T, ? extends TException> condition)
             throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().count(condition);
+        return thiz.iterator().countRemaining(condition);
     }
 
     /**
@@ -1013,7 +1015,7 @@ public interface IterableExt<T> {
             ToDoubleFunctionEx<? super T, ? extends TException> getValue)
                     throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().avgDouble(getValue);
+        return thiz.iterator().avgRemainingDouble(getValue);
     }
 
     /**
@@ -1027,7 +1029,7 @@ public interface IterableExt<T> {
     default <TException extends Throwable> Integer avgInt(ToIntFunctionEx<? super T, ? extends TException> getValue)
             throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().avgInt(getValue);
+        return thiz.iterator().avgRemainingInt(getValue);
     }
 
     /**
@@ -1041,7 +1043,7 @@ public interface IterableExt<T> {
     default <TException extends Throwable> Long avgLong(ToLongFunctionEx<? super T, ? extends TException> getValue)
             throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().avgLong(getValue);
+        return thiz.iterator().avgRemainingLong(getValue);
     }
 
     /**
@@ -1056,7 +1058,7 @@ public interface IterableExt<T> {
             ToDoubleFunctionEx<? super T, ? extends TException> getValue)
                     throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().maxDouble(getValue);
+        return thiz.iterator().maxRemainingDouble(getValue);
     }
 
     /**
@@ -1070,7 +1072,7 @@ public interface IterableExt<T> {
     default <TException extends Throwable> Integer maxInt(ToIntFunctionEx<? super T, ? extends TException> getValue)
             throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().maxInt(getValue);
+        return thiz.iterator().maxRemainingInt(getValue);
     }
 
     /**
@@ -1084,7 +1086,7 @@ public interface IterableExt<T> {
     default <TException extends Throwable> Long maxLong(ToLongFunctionEx<? super T, ? extends TException> getValue)
             throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().maxLong(getValue);
+        return thiz.iterator().maxRemainingLong(getValue);
     }
 
     /**
@@ -1099,7 +1101,7 @@ public interface IterableExt<T> {
             ToDoubleFunctionEx<? super T, ? extends TException> getValue)
                     throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().minDouble(getValue);
+        return thiz.iterator().minRemainingDouble(getValue);
     }
 
     /**
@@ -1113,7 +1115,7 @@ public interface IterableExt<T> {
     default <TException extends Throwable> Integer minInt(ToIntFunctionEx<? super T, ? extends TException> getValue)
             throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().minInt(getValue);
+        return thiz.iterator().minRemainingInt(getValue);
     }
 
     /**
@@ -1127,7 +1129,7 @@ public interface IterableExt<T> {
     default <TException extends Throwable> Long minLong(ToLongFunctionEx<? super T, ? extends TException> getValue)
             throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().minLong(getValue);
+        return thiz.iterator().minRemainingLong(getValue);
     }
 
     /**
@@ -1142,7 +1144,7 @@ public interface IterableExt<T> {
             ToDoubleFunctionEx<? super T, ? extends TException> getValue)
                     throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().sumDouble(getValue);
+        return thiz.iterator().sumRemainingDouble(getValue);
     }
 
     /**
@@ -1156,7 +1158,7 @@ public interface IterableExt<T> {
     default <TException extends Throwable> int sumInt(ToIntFunctionEx<? super T, ? extends TException> getValue)
             throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().sumInt(getValue);
+        return thiz.iterator().sumRemainingInt(getValue);
     }
 
     /**
@@ -1170,7 +1172,7 @@ public interface IterableExt<T> {
     default <TException extends Throwable> long sumLong(ToIntFunctionEx<? super T, ? extends TException> getValue)
             throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().sumLong(getValue);
+        return thiz.iterator().sumRemainingLong(getValue);
     }
 
     /**
@@ -1184,6 +1186,6 @@ public interface IterableExt<T> {
     default <TException extends Throwable> long sumLong(ToLongFunctionEx<? super T, ? extends TException> getValue)
             throws TException {
         Iterable<T> thiz = (Iterable<T>) this;
-        return thiz.iterator().sumLong(getValue);
+        return thiz.iterator().sumRemainingLong(getValue);
     }
 }

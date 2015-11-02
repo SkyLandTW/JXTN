@@ -927,4 +927,18 @@ public class TabMaker<Z extends Tab, B extends TabMaker<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Tab}物件。
+     *
+     * @return 新的{@link Tab}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Tab build(java.lang.String arg0, javafx.scene.Node arg1)
+    {
+        Tab instance = new Tab(arg0, arg1);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

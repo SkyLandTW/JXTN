@@ -161,6 +161,9 @@ public class SceneMaker<Z extends Scene, B extends SceneMaker<Z, B>>
     private boolean hasUserAgentStylesheet;
     private java.lang.String valUserAgentStylesheet;
 
+    private boolean hasUserData;
+    private java.lang.Object valUserData;
+
     private boolean bound1Camera;
     private boolean bound2Camera;
     private javafx.beans.value.ObservableValue<? extends javafx.scene.Camera> obsrv1Camera;
@@ -489,6 +492,8 @@ public class SceneMaker<Z extends Scene, B extends SceneMaker<Z, B>>
             instance.getStylesheets().addAll(this.valStylesheets);
         if (this.hasUserAgentStylesheet)
             instance.setUserAgentStylesheet(this.valUserAgentStylesheet);
+        if (this.hasUserData)
+            instance.setUserData(this.valUserData);
         if (this.bound1Camera)
             instance.cameraProperty().bind(this.obsrv1Camera);
         if (this.bound2Camera)
@@ -1421,6 +1426,20 @@ public class SceneMaker<Z extends Scene, B extends SceneMaker<Z, B>>
     {
         this.hasUserAgentStylesheet = true;
         this.valUserAgentStylesheet = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Scene#setUserData(java.lang.Object)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B userData(java.lang.Object value)
+    {
+        this.hasUserData = true;
+        this.valUserData = value;
         return (B) this;
     }
 

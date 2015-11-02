@@ -32,6 +32,9 @@ public class GraphicsContextMaker<Z extends GraphicsContext, B extends GraphicsC
     private boolean hasFont;
     private javafx.scene.text.Font valFont;
 
+    private boolean hasFontSmoothingType;
+    private javafx.scene.text.FontSmoothingType valFontSmoothingType;
+
     private boolean hasGlobalAlpha;
     private double valGlobalAlpha;
 
@@ -40,6 +43,12 @@ public class GraphicsContextMaker<Z extends GraphicsContext, B extends GraphicsC
 
     private boolean hasLineCap;
     private javafx.scene.shape.StrokeLineCap valLineCap;
+
+    private boolean hasLineDashOffset;
+    private double valLineDashOffset;
+
+    private boolean hasLineDashes;
+    private double[] valLineDashes;
 
     private boolean hasLineJoin;
     private javafx.scene.shape.StrokeLineJoin valLineJoin;
@@ -74,12 +83,18 @@ public class GraphicsContextMaker<Z extends GraphicsContext, B extends GraphicsC
             instance.setFillRule(this.valFillRule);
         if (this.hasFont)
             instance.setFont(this.valFont);
+        if (this.hasFontSmoothingType)
+            instance.setFontSmoothingType(this.valFontSmoothingType);
         if (this.hasGlobalAlpha)
             instance.setGlobalAlpha(this.valGlobalAlpha);
         if (this.hasGlobalBlendMode)
             instance.setGlobalBlendMode(this.valGlobalBlendMode);
         if (this.hasLineCap)
             instance.setLineCap(this.valLineCap);
+        if (this.hasLineDashOffset)
+            instance.setLineDashOffset(this.valLineDashOffset);
+        if (this.hasLineDashes)
+            instance.setLineDashes(this.valLineDashes);
         if (this.hasLineJoin)
             instance.setLineJoin(this.valLineJoin);
         if (this.hasLineWidth)
@@ -153,6 +168,20 @@ public class GraphicsContextMaker<Z extends GraphicsContext, B extends GraphicsC
     }
 
     /**
+     * 設定屬性{@link GraphicsContext#setFontSmoothingType(javafx.scene.text.FontSmoothingType)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B fontSmoothingType(javafx.scene.text.FontSmoothingType value)
+    {
+        this.hasFontSmoothingType = true;
+        this.valFontSmoothingType = value;
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link GraphicsContext#setGlobalAlpha(double)}。
      *
      * @param value 新的屬性值
@@ -191,6 +220,34 @@ public class GraphicsContextMaker<Z extends GraphicsContext, B extends GraphicsC
     {
         this.hasLineCap = true;
         this.valLineCap = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link GraphicsContext#setLineDashOffset(double)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B lineDashOffset(double value)
+    {
+        this.hasLineDashOffset = true;
+        this.valLineDashOffset = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link GraphicsContext#setLineDashes(double[])}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B lineDashes(double[] value)
+    {
+        this.hasLineDashes = true;
+        this.valLineDashes = value;
         return (B) this;
     }
 

@@ -20,8 +20,16 @@ public class LineChartMaker<X extends java.lang.Object, Y extends java.lang.Obje
         implements LineChartMakerExt<X, Y, Z, B>
 {
 
+    private boolean hasAxisSortingPolicy;
+    private javafx.scene.chart.LineChart.SortingPolicy valAxisSortingPolicy;
+
     private boolean hasCreateSymbols;
     private boolean valCreateSymbols;
+
+    private boolean bound1AxisSortingPolicy;
+    private boolean bound2AxisSortingPolicy;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.chart.LineChart.SortingPolicy> obsrv1AxisSortingPolicy;
+    private javafx.beans.property.Property<javafx.scene.chart.LineChart.SortingPolicy> obsrv2AxisSortingPolicy;
 
     private boolean bound1CreateSymbols;
     private boolean bound2CreateSymbols;
@@ -32,12 +40,32 @@ public class LineChartMaker<X extends java.lang.Object, Y extends java.lang.Obje
     public void applyTo(Z instance)
     {
         super.applyTo(instance);
+        if (this.hasAxisSortingPolicy)
+            instance.setAxisSortingPolicy(this.valAxisSortingPolicy);
         if (this.hasCreateSymbols)
             instance.setCreateSymbols(this.valCreateSymbols);
+        if (this.bound1AxisSortingPolicy)
+            instance.axisSortingPolicyProperty().bind(this.obsrv1AxisSortingPolicy);
+        if (this.bound2AxisSortingPolicy)
+            instance.axisSortingPolicyProperty().bindBidirectional(this.obsrv2AxisSortingPolicy);
         if (this.bound1CreateSymbols)
             instance.createSymbolsProperty().bind(this.obsrv1CreateSymbols);
         if (this.bound2CreateSymbols)
             instance.createSymbolsProperty().bindBidirectional(this.obsrv2CreateSymbols);
+    }
+
+    /**
+     * 設定屬性{@link LineChart#setAxisSortingPolicy(javafx.scene.chart.LineChart.SortingPolicy)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B axisSortingPolicy(javafx.scene.chart.LineChart.SortingPolicy value)
+    {
+        this.hasAxisSortingPolicy = true;
+        this.valAxisSortingPolicy = value;
+        return (B) this;
     }
 
     /**
@@ -51,6 +79,40 @@ public class LineChartMaker<X extends java.lang.Object, Y extends java.lang.Obje
     {
         this.hasCreateSymbols = true;
         this.valCreateSymbols = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link LineChart#axisSortingPolicyProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindAxisSortingPolicy(javafx.beans.value.ObservableValue<? extends javafx.scene.chart.LineChart.SortingPolicy> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AxisSortingPolicy = true;
+        this.obsrv1AxisSortingPolicy = source;
+        this.bound2AxisSortingPolicy = false;
+        this.obsrv2AxisSortingPolicy = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link LineChart#axisSortingPolicyProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAxisSortingPolicy(javafx.beans.property.Property<javafx.scene.chart.LineChart.SortingPolicy> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AxisSortingPolicy = false;
+        this.obsrv1AxisSortingPolicy = null;
+        this.bound2AxisSortingPolicy = true;
+        this.obsrv2AxisSortingPolicy = source;
         return (B) this;
     }
 

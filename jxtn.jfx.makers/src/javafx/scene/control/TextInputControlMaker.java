@@ -32,6 +32,9 @@ public class TextInputControlMaker<Z extends TextInputControl, B extends TextInp
     private boolean hasText;
     private java.lang.String valText;
 
+    private boolean hasTextFormatter;
+    private javafx.scene.control.TextFormatter<?> valTextFormatter;
+
     private boolean bound1Editable;
     private boolean bound2Editable;
     private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Editable;
@@ -46,6 +49,11 @@ public class TextInputControlMaker<Z extends TextInputControl, B extends TextInp
     private boolean bound2PromptText;
     private javafx.beans.value.ObservableValue<? extends String> obsrv1PromptText;
     private javafx.beans.property.Property<String> obsrv2PromptText;
+
+    private boolean bound1TextFormatter;
+    private boolean bound2TextFormatter;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.TextFormatter<?>> obsrv1TextFormatter;
+    private javafx.beans.property.Property<javafx.scene.control.TextFormatter<?>> obsrv2TextFormatter;
 
     private boolean bound1Text;
     private boolean bound2Text;
@@ -64,6 +72,8 @@ public class TextInputControlMaker<Z extends TextInputControl, B extends TextInp
             instance.setPromptText(this.valPromptText);
         if (this.hasText)
             instance.setText(this.valText);
+        if (this.hasTextFormatter)
+            instance.setTextFormatter(this.valTextFormatter);
         if (this.bound1Editable)
             instance.editableProperty().bind(this.obsrv1Editable);
         if (this.bound2Editable)
@@ -76,6 +86,10 @@ public class TextInputControlMaker<Z extends TextInputControl, B extends TextInp
             instance.promptTextProperty().bind(this.obsrv1PromptText);
         if (this.bound2PromptText)
             instance.promptTextProperty().bindBidirectional(this.obsrv2PromptText);
+        if (this.bound1TextFormatter)
+            instance.textFormatterProperty().bind(this.obsrv1TextFormatter);
+        if (this.bound2TextFormatter)
+            instance.textFormatterProperty().bindBidirectional(this.obsrv2TextFormatter);
         if (this.bound1Text)
             instance.textProperty().bind(this.obsrv1Text);
         if (this.bound2Text)
@@ -135,6 +149,20 @@ public class TextInputControlMaker<Z extends TextInputControl, B extends TextInp
     {
         this.hasText = true;
         this.valText = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TextInputControl#setTextFormatter(javafx.scene.control.TextFormatter)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B textFormatter(javafx.scene.control.TextFormatter<?> value)
+    {
+        this.hasTextFormatter = true;
+        this.valTextFormatter = value;
         return (B) this;
     }
 
@@ -237,6 +265,40 @@ public class TextInputControlMaker<Z extends TextInputControl, B extends TextInp
         this.obsrv1PromptText = null;
         this.bound2PromptText = true;
         this.obsrv2PromptText = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TextInputControl#textFormatterProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindTextFormatter(javafx.beans.value.ObservableValue<? extends javafx.scene.control.TextFormatter<?>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TextFormatter = true;
+        this.obsrv1TextFormatter = source;
+        this.bound2TextFormatter = false;
+        this.obsrv2TextFormatter = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TextInputControl#textFormatterProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTextFormatter(javafx.beans.property.Property<javafx.scene.control.TextFormatter<?>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1TextFormatter = false;
+        this.obsrv1TextFormatter = null;
+        this.bound2TextFormatter = true;
+        this.obsrv2TextFormatter = source;
         return (B) this;
     }
 

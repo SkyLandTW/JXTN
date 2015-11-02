@@ -9,7 +9,7 @@ package javafx.scene.control;
  * {@link Alert}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version openjfx-dialogs-1.0.2.jar
+ * @version jfxrt.jar
  * @param <Z> 要建構的物件型態(需繼承{@link Alert})
  * @param <B> 建構器本身的型態(需繼承{@link AlertMaker})
  */

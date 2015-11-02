@@ -341,4 +341,18 @@ public class SplitPaneMaker<Z extends SplitPane, B extends SplitPaneMaker<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link SplitPane}物件。
+     *
+     * @return 新的{@link SplitPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public SplitPane build(javafx.scene.Node[] arg0)
+    {
+        SplitPane instance = new SplitPane(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

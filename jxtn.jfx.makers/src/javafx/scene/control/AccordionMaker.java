@@ -212,4 +212,18 @@ public class AccordionMaker<Z extends Accordion, B extends AccordionMaker<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link Accordion}物件。
+     *
+     * @return 新的{@link Accordion}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public Accordion build(javafx.scene.control.TitledPane[] arg0)
+    {
+        Accordion instance = new Accordion(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

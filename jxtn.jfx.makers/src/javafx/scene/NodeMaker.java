@@ -20,6 +20,18 @@ public class NodeMaker<Z extends Node, B extends NodeMaker<Z, B>>
         implements NodeMakerExt<Z, B>
 {
 
+    private boolean hasAccessibleHelp;
+    private java.lang.String valAccessibleHelp;
+
+    private boolean hasAccessibleRole;
+    private javafx.scene.AccessibleRole valAccessibleRole;
+
+    private boolean hasAccessibleRoleDescription;
+    private java.lang.String valAccessibleRoleDescription;
+
+    private boolean hasAccessibleText;
+    private java.lang.String valAccessibleText;
+
     private boolean hasBlendMode;
     private javafx.scene.effect.BlendMode valBlendMode;
 
@@ -251,6 +263,12 @@ public class NodeMaker<Z extends Node, B extends NodeMaker<Z, B>>
     private boolean hasBorderPane_margin;
     private javafx.geometry.Insets valBorderPane_margin;
 
+    private boolean hasButtonBar_buttonData;
+    private javafx.scene.control.ButtonBar.ButtonData valButtonBar_buttonData;
+
+    private boolean hasButtonBar_buttonUniformSize;
+    private boolean valButtonBar_buttonUniformSize;
+
     private boolean hasFlowPane_margin;
     private javafx.geometry.Insets valFlowPane_margin;
 
@@ -313,6 +331,26 @@ public class NodeMaker<Z extends Node, B extends NodeMaker<Z, B>>
 
     private boolean hasVBox_vgrow;
     private javafx.scene.layout.Priority valVBox_vgrow;
+
+    private boolean bound1AccessibleHelp;
+    private boolean bound2AccessibleHelp;
+    private javafx.beans.value.ObservableValue<? extends java.lang.String> obsrv1AccessibleHelp;
+    private javafx.beans.property.Property<java.lang.String> obsrv2AccessibleHelp;
+
+    private boolean bound1AccessibleRoleDescription;
+    private boolean bound2AccessibleRoleDescription;
+    private javafx.beans.value.ObservableValue<? extends java.lang.String> obsrv1AccessibleRoleDescription;
+    private javafx.beans.property.Property<java.lang.String> obsrv2AccessibleRoleDescription;
+
+    private boolean bound1AccessibleRole;
+    private boolean bound2AccessibleRole;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.AccessibleRole> obsrv1AccessibleRole;
+    private javafx.beans.property.Property<javafx.scene.AccessibleRole> obsrv2AccessibleRole;
+
+    private boolean bound1AccessibleText;
+    private boolean bound2AccessibleText;
+    private javafx.beans.value.ObservableValue<? extends java.lang.String> obsrv1AccessibleText;
+    private javafx.beans.property.Property<java.lang.String> obsrv2AccessibleText;
 
     private boolean bound1BlendMode;
     private boolean bound2BlendMode;
@@ -658,6 +696,14 @@ public class NodeMaker<Z extends Node, B extends NodeMaker<Z, B>>
     public void applyTo(Z instance)
     {
         super.applyTo(instance);
+        if (this.hasAccessibleHelp)
+            instance.setAccessibleHelp(this.valAccessibleHelp);
+        if (this.hasAccessibleRole)
+            instance.setAccessibleRole(this.valAccessibleRole);
+        if (this.hasAccessibleRoleDescription)
+            instance.setAccessibleRoleDescription(this.valAccessibleRoleDescription);
+        if (this.hasAccessibleText)
+            instance.setAccessibleText(this.valAccessibleText);
         if (this.hasBlendMode)
             instance.setBlendMode(this.valBlendMode);
         if (this.hasCache)
@@ -812,6 +858,10 @@ public class NodeMaker<Z extends Node, B extends NodeMaker<Z, B>>
             javafx.scene.layout.BorderPane.setAlignment(instance, this.valBorderPane_alignment);
         if (this.hasBorderPane_margin)
             javafx.scene.layout.BorderPane.setMargin(instance, this.valBorderPane_margin);
+        if (this.hasButtonBar_buttonData)
+            javafx.scene.control.ButtonBar.setButtonData(instance, this.valButtonBar_buttonData);
+        if (this.hasButtonBar_buttonUniformSize)
+            javafx.scene.control.ButtonBar.setButtonUniformSize(instance, this.valButtonBar_buttonUniformSize);
         if (this.hasFlowPane_margin)
             javafx.scene.layout.FlowPane.setMargin(instance, this.valFlowPane_margin);
         if (this.hasGridPane_columnIndex)
@@ -854,6 +904,22 @@ public class NodeMaker<Z extends Node, B extends NodeMaker<Z, B>>
             javafx.scene.layout.VBox.setMargin(instance, this.valVBox_margin);
         if (this.hasVBox_vgrow)
             javafx.scene.layout.VBox.setVgrow(instance, this.valVBox_vgrow);
+        if (this.bound1AccessibleHelp)
+            instance.accessibleHelpProperty().bind(this.obsrv1AccessibleHelp);
+        if (this.bound2AccessibleHelp)
+            instance.accessibleHelpProperty().bindBidirectional(this.obsrv2AccessibleHelp);
+        if (this.bound1AccessibleRoleDescription)
+            instance.accessibleRoleDescriptionProperty().bind(this.obsrv1AccessibleRoleDescription);
+        if (this.bound2AccessibleRoleDescription)
+            instance.accessibleRoleDescriptionProperty().bindBidirectional(this.obsrv2AccessibleRoleDescription);
+        if (this.bound1AccessibleRole)
+            instance.accessibleRoleProperty().bind(this.obsrv1AccessibleRole);
+        if (this.bound2AccessibleRole)
+            instance.accessibleRoleProperty().bindBidirectional(this.obsrv2AccessibleRole);
+        if (this.bound1AccessibleText)
+            instance.accessibleTextProperty().bind(this.obsrv1AccessibleText);
+        if (this.bound2AccessibleText)
+            instance.accessibleTextProperty().bindBidirectional(this.obsrv2AccessibleText);
         if (this.bound1BlendMode)
             instance.blendModeProperty().bind(this.obsrv1BlendMode);
         if (this.bound2BlendMode)
@@ -1126,6 +1192,62 @@ public class NodeMaker<Z extends Node, B extends NodeMaker<Z, B>>
             instance.visibleProperty().bind(this.obsrv1Visible);
         if (this.bound2Visible)
             instance.visibleProperty().bindBidirectional(this.obsrv2Visible);
+    }
+
+    /**
+     * 設定屬性{@link Node#setAccessibleHelp(java.lang.String)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B accessibleHelp(java.lang.String value)
+    {
+        this.hasAccessibleHelp = true;
+        this.valAccessibleHelp = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Node#setAccessibleRole(javafx.scene.AccessibleRole)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B accessibleRole(javafx.scene.AccessibleRole value)
+    {
+        this.hasAccessibleRole = true;
+        this.valAccessibleRole = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Node#setAccessibleRoleDescription(java.lang.String)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B accessibleRoleDescription(java.lang.String value)
+    {
+        this.hasAccessibleRoleDescription = true;
+        this.valAccessibleRoleDescription = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Node#setAccessibleText(java.lang.String)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B accessibleText(java.lang.String value)
+    {
+        this.hasAccessibleText = true;
+        this.valAccessibleText = value;
+        return (B) this;
     }
 
     /**
@@ -2389,6 +2511,34 @@ public class NodeMaker<Z extends Node, B extends NodeMaker<Z, B>>
     }
 
     /**
+     * 設定屬性{@link javafx.scene.control.ButtonBar#setButtonData}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B ButtonBar_buttonData(javafx.scene.control.ButtonBar.ButtonData value)
+    {
+        this.hasButtonBar_buttonData = true;
+        this.valButtonBar_buttonData = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link javafx.scene.control.ButtonBar#setButtonUniformSize}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B ButtonBar_buttonUniformSize(boolean value)
+    {
+        this.hasButtonBar_buttonUniformSize = true;
+        this.valButtonBar_buttonUniformSize = value;
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link javafx.scene.layout.FlowPane#setMargin}。
      *
      * @param value 新的屬性值
@@ -2679,6 +2829,142 @@ public class NodeMaker<Z extends Node, B extends NodeMaker<Z, B>>
     {
         this.hasVBox_vgrow = true;
         this.valVBox_vgrow = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Node#accessibleHelpProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindAccessibleHelp(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AccessibleHelp = true;
+        this.obsrv1AccessibleHelp = source;
+        this.bound2AccessibleHelp = false;
+        this.obsrv2AccessibleHelp = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Node#accessibleHelpProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAccessibleHelp(javafx.beans.property.Property<java.lang.String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AccessibleHelp = false;
+        this.obsrv1AccessibleHelp = null;
+        this.bound2AccessibleHelp = true;
+        this.obsrv2AccessibleHelp = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Node#accessibleRoleDescriptionProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindAccessibleRoleDescription(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AccessibleRoleDescription = true;
+        this.obsrv1AccessibleRoleDescription = source;
+        this.bound2AccessibleRoleDescription = false;
+        this.obsrv2AccessibleRoleDescription = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Node#accessibleRoleDescriptionProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAccessibleRoleDescription(javafx.beans.property.Property<java.lang.String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AccessibleRoleDescription = false;
+        this.obsrv1AccessibleRoleDescription = null;
+        this.bound2AccessibleRoleDescription = true;
+        this.obsrv2AccessibleRoleDescription = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Node#accessibleRoleProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindAccessibleRole(javafx.beans.value.ObservableValue<? extends javafx.scene.AccessibleRole> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AccessibleRole = true;
+        this.obsrv1AccessibleRole = source;
+        this.bound2AccessibleRole = false;
+        this.obsrv2AccessibleRole = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Node#accessibleRoleProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAccessibleRole(javafx.beans.property.Property<javafx.scene.AccessibleRole> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AccessibleRole = false;
+        this.obsrv1AccessibleRole = null;
+        this.bound2AccessibleRole = true;
+        this.obsrv2AccessibleRole = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Node#accessibleTextProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindAccessibleText(javafx.beans.value.ObservableValue<? extends java.lang.String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AccessibleText = true;
+        this.obsrv1AccessibleText = source;
+        this.bound2AccessibleText = false;
+        this.obsrv2AccessibleText = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Node#accessibleTextProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAccessibleText(javafx.beans.property.Property<java.lang.String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1AccessibleText = false;
+        this.obsrv1AccessibleText = null;
+        this.bound2AccessibleText = true;
+        this.obsrv2AccessibleText = source;
         return (B) this;
     }
 

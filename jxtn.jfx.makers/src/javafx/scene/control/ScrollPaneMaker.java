@@ -41,6 +41,12 @@ public class ScrollPaneMaker<Z extends ScrollPane, B extends ScrollPaneMaker<Z, 
     private boolean hasHvalue;
     private double valHvalue;
 
+    private boolean hasMinViewportHeight;
+    private double valMinViewportHeight;
+
+    private boolean hasMinViewportWidth;
+    private double valMinViewportWidth;
+
     private boolean hasPannable;
     private boolean valPannable;
 
@@ -100,6 +106,16 @@ public class ScrollPaneMaker<Z extends ScrollPane, B extends ScrollPaneMaker<Z, 
     private javafx.beans.value.ObservableValue<? extends Number> obsrv1Hvalue;
     private javafx.beans.property.Property<Number> obsrv2Hvalue;
 
+    private boolean bound1MinViewportHeight;
+    private boolean bound2MinViewportHeight;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MinViewportHeight;
+    private javafx.beans.property.Property<Number> obsrv2MinViewportHeight;
+
+    private boolean bound1MinViewportWidth;
+    private boolean bound2MinViewportWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MinViewportWidth;
+    private javafx.beans.property.Property<Number> obsrv2MinViewportWidth;
+
     private boolean bound1Pannable;
     private boolean bound2Pannable;
     private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Pannable;
@@ -158,6 +174,10 @@ public class ScrollPaneMaker<Z extends ScrollPane, B extends ScrollPaneMaker<Z, 
             instance.setHmin(this.valHmin);
         if (this.hasHvalue)
             instance.setHvalue(this.valHvalue);
+        if (this.hasMinViewportHeight)
+            instance.setMinViewportHeight(this.valMinViewportHeight);
+        if (this.hasMinViewportWidth)
+            instance.setMinViewportWidth(this.valMinViewportWidth);
         if (this.hasPannable)
             instance.setPannable(this.valPannable);
         if (this.hasPrefViewportHeight)
@@ -202,6 +222,14 @@ public class ScrollPaneMaker<Z extends ScrollPane, B extends ScrollPaneMaker<Z, 
             instance.hvalueProperty().bind(this.obsrv1Hvalue);
         if (this.bound2Hvalue)
             instance.hvalueProperty().bindBidirectional(this.obsrv2Hvalue);
+        if (this.bound1MinViewportHeight)
+            instance.minViewportHeightProperty().bind(this.obsrv1MinViewportHeight);
+        if (this.bound2MinViewportHeight)
+            instance.minViewportHeightProperty().bindBidirectional(this.obsrv2MinViewportHeight);
+        if (this.bound1MinViewportWidth)
+            instance.minViewportWidthProperty().bind(this.obsrv1MinViewportWidth);
+        if (this.bound2MinViewportWidth)
+            instance.minViewportWidthProperty().bindBidirectional(this.obsrv2MinViewportWidth);
         if (this.bound1Pannable)
             instance.pannableProperty().bind(this.obsrv1Pannable);
         if (this.bound2Pannable)
@@ -331,6 +359,34 @@ public class ScrollPaneMaker<Z extends ScrollPane, B extends ScrollPaneMaker<Z, 
     {
         this.hasHvalue = true;
         this.valHvalue = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#setMinViewportHeight(double)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B minViewportHeight(double value)
+    {
+        this.hasMinViewportHeight = true;
+        this.valMinViewportHeight = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#setMinViewportWidth(double)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B minViewportWidth(double value)
+    {
+        this.hasMinViewportWidth = true;
+        this.valMinViewportWidth = value;
         return (B) this;
     }
 
@@ -681,6 +737,74 @@ public class ScrollPaneMaker<Z extends ScrollPane, B extends ScrollPaneMaker<Z, 
         this.obsrv1Hvalue = null;
         this.bound2Hvalue = true;
         this.obsrv2Hvalue = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#minViewportHeightProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindMinViewportHeight(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinViewportHeight = true;
+        this.obsrv1MinViewportHeight = source;
+        this.bound2MinViewportHeight = false;
+        this.obsrv2MinViewportHeight = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#minViewportHeightProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMinViewportHeight(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinViewportHeight = false;
+        this.obsrv1MinViewportHeight = null;
+        this.bound2MinViewportHeight = true;
+        this.obsrv2MinViewportHeight = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#minViewportWidthProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindMinViewportWidth(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinViewportWidth = true;
+        this.obsrv1MinViewportWidth = source;
+        this.bound2MinViewportWidth = false;
+        this.obsrv2MinViewportWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ScrollPane#minViewportWidthProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMinViewportWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinViewportWidth = false;
+        this.obsrv1MinViewportWidth = null;
+        this.bound2MinViewportWidth = true;
+        this.obsrv2MinViewportWidth = source;
         return (B) this;
     }
 

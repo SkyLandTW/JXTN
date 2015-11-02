@@ -67,4 +67,18 @@ public class PickResultMaker<Z extends PickResult, B extends PickResultMaker<Z, 
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link PickResult}物件。
+     *
+     * @return 新的{@link PickResult}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public PickResult build(javafx.scene.Node arg0, javafx.geometry.Point3D arg1, double arg2, int arg3, javafx.geometry.Point3D arg4, javafx.geometry.Point2D arg5)
+    {
+        PickResult instance = new PickResult(arg0, arg1, arg2, arg3, arg4, arg5);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

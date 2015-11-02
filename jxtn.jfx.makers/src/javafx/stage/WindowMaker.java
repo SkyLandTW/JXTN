@@ -44,6 +44,9 @@ public class WindowMaker<Z extends Window, B extends WindowMaker<Z, B>>
     private boolean hasOpacity;
     private double valOpacity;
 
+    private boolean hasUserData;
+    private java.lang.Object valUserData;
+
     private boolean hasWidth;
     private double valWidth;
 
@@ -108,6 +111,8 @@ public class WindowMaker<Z extends Window, B extends WindowMaker<Z, B>>
             instance.setOnShown(this.valOnShown);
         if (this.hasOpacity)
             instance.setOpacity(this.valOpacity);
+        if (this.hasUserData)
+            instance.setUserData(this.valUserData);
         if (this.hasWidth)
             instance.setWidth(this.valWidth);
         if (this.hasX)
@@ -253,6 +258,20 @@ public class WindowMaker<Z extends Window, B extends WindowMaker<Z, B>>
     {
         this.hasOpacity = true;
         this.valOpacity = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Window#setUserData(java.lang.Object)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B userData(java.lang.Object value)
+    {
+        this.hasUserData = true;
+        this.valUserData = value;
         return (B) this;
     }
 

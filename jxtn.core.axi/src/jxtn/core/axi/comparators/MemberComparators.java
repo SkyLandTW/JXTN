@@ -56,7 +56,7 @@ public final class MemberComparators {
      * @return 依照{@code M}成員比較{@code E}的比較器
      */
     public static <E, M extends Comparable<?>> Comparator<E> byComparable(Function<E, M> getMember) {
-        return new MemberComparableComparator<E, M>(getMember);
+        return new MemberComparableComparator<>(getMember);
     }
 
     /**
@@ -243,7 +243,7 @@ public final class MemberComparators {
      * @return 依照boolean成員比較{@code E}的比較器
      */
     public static <E> Comparator<E> byBoolean(Predicate<E> getMember) {
-        return new MemberBooleanComparator<E>(getMember);
+        return new MemberBooleanComparator<>(getMember);
     }
 
     /**
@@ -257,7 +257,7 @@ public final class MemberComparators {
      * @return 依照double成員比較{@code E}的比較器
      */
     public static <E> Comparator<E> byDouble(ToDoubleFunction<E> getMember) {
-        return new MemberDoubleComparator<E>(getMember);
+        return new MemberDoubleComparator<>(getMember);
     }
 
     /**
@@ -271,7 +271,7 @@ public final class MemberComparators {
      * @return 依照int成員比較{@code E}的比較器
      */
     public static <E> Comparator<E> byInt(ToIntFunction<E> getMember) {
-        return new MemberIntComparator<E>(getMember);
+        return new MemberIntComparator<>(getMember);
     }
 
     /**
@@ -285,7 +285,7 @@ public final class MemberComparators {
      * @return 依照long成員比較{@code E}的比較器
      */
     public static <E> Comparator<E> byLong(ToLongFunction<E> getMember) {
-        return new MemberLongComparator<E>(getMember);
+        return new MemberLongComparator<>(getMember);
     }
 
     private MemberComparators() {

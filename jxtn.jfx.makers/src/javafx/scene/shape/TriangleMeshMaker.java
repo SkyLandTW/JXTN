@@ -20,10 +20,72 @@ public class TriangleMeshMaker<Z extends TriangleMesh, B extends TriangleMeshMak
         implements TriangleMeshMakerExt<Z, B>
 {
 
+    private boolean hasVertexFormat;
+    private javafx.scene.shape.VertexFormat valVertexFormat;
+
+    private boolean bound1VertexFormat;
+    private boolean bound2VertexFormat;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.shape.VertexFormat> obsrv1VertexFormat;
+    private javafx.beans.property.Property<javafx.scene.shape.VertexFormat> obsrv2VertexFormat;
+
     @Override
     public void applyTo(Z instance)
     {
         super.applyTo(instance);
+        if (this.hasVertexFormat)
+            instance.setVertexFormat(this.valVertexFormat);
+        if (this.bound1VertexFormat)
+            instance.vertexFormatProperty().bind(this.obsrv1VertexFormat);
+        if (this.bound2VertexFormat)
+            instance.vertexFormatProperty().bindBidirectional(this.obsrv2VertexFormat);
+    }
+
+    /**
+     * 設定屬性{@link TriangleMesh#setVertexFormat(javafx.scene.shape.VertexFormat)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B vertexFormat(javafx.scene.shape.VertexFormat value)
+    {
+        this.hasVertexFormat = true;
+        this.valVertexFormat = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TriangleMesh#vertexFormatProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindVertexFormat(javafx.beans.value.ObservableValue<? extends javafx.scene.shape.VertexFormat> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1VertexFormat = true;
+        this.obsrv1VertexFormat = source;
+        this.bound2VertexFormat = false;
+        this.obsrv2VertexFormat = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link TriangleMesh#vertexFormatProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalVertexFormat(javafx.beans.property.Property<javafx.scene.shape.VertexFormat> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1VertexFormat = false;
+        this.obsrv1VertexFormat = null;
+        this.bound2VertexFormat = true;
+        this.obsrv2VertexFormat = source;
+        return (B) this;
     }
 
     /**
@@ -36,6 +98,20 @@ public class TriangleMeshMaker<Z extends TriangleMesh, B extends TriangleMeshMak
     public TriangleMesh build()
     {
         TriangleMesh instance = new TriangleMesh();
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
+
+    /**
+     * 建構{@link TriangleMesh}物件。
+     *
+     * @return 新的{@link TriangleMesh}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public TriangleMesh build(javafx.scene.shape.VertexFormat arg0)
+    {
+        TriangleMesh instance = new TriangleMesh(arg0);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

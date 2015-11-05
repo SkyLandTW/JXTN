@@ -646,4 +646,18 @@ public class TabPaneMaker<Z extends TabPane, B extends TabPaneMaker<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link TabPane}物件。
+     *
+     * @return 新的{@link TabPane}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public TabPane build(javafx.scene.control.Tab[] arg0)
+    {
+        TabPane instance = new TabPane(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

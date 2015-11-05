@@ -7,10 +7,8 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: AqD@GitHub
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
- lib/controlsfx-8.20.8.jar,
- lib/openjfx-dialogs-1.0.2.jar
-Export-Package: com.sun.javafx.scene.control.skin,
- javafx.scene,
+ lib/controlsfx-8.20.8.jar
+Export-Package: javafx.scene,
  javafx.scene.canvas,
  javafx.scene.chart,
  javafx.scene.control,
@@ -27,8 +25,8 @@ Export-Package: com.sun.javafx.scene.control.skin,
  javafx.scene.web,
  javafx.stage,
  jxtn.jfx.makers,
- org.controlsfx,
  org.controlsfx.control,
+ org.controlsfx.control.action,
  org.controlsfx.control.cell,
  org.controlsfx.control.decoration,
  org.controlsfx.control.spreadsheet,

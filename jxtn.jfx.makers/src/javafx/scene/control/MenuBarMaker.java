@@ -212,4 +212,18 @@ public class MenuBarMaker<Z extends MenuBar, B extends MenuBarMaker<Z, B>>
         this.doAfterBuild((Z) instance);
         return instance;
     }
+
+    /**
+     * 建構{@link MenuBar}物件。
+     *
+     * @return 新的{@link MenuBar}物件實體
+     */
+    @SuppressWarnings("unchecked")
+    public MenuBar build(javafx.scene.control.Menu[] arg0)
+    {
+        MenuBar instance = new MenuBar(arg0);
+        this.applyTo((Z) instance);
+        this.doAfterBuild((Z) instance);
+        return instance;
+    }
 }

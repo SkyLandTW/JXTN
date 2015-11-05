@@ -46,6 +46,13 @@ more advanced operations (parallelism etc) only.
    (exceptions are optionally wrapped as _RuntimeException_).
  - Tuples: like javatuples but support null values.
 
+##### Runtime License
+ - Due to the restriction of 'Oracle Binary Code License Agreement' (
+   SUPPLEMENTAL LICENSE TERMS, Section F), you may not able to use this library
+   with the official JRE/JDK provided by Oracle. Instead you should use binary
+   from OpenJDK - such as [Zulu](http://www.azul.com/downloads/zulu/) or the
+   OpenJDK packages on most Linux distributions.
+
 ##### Dependencies
  - OpenJDK (as source) for Java version updating: To update the project for
    newer Java versions, simply copy the latest source files from OpenJDK,

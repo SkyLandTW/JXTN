@@ -347,6 +347,17 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link javafx.scene.control.Alert}建構器。
+     *
+     * @return 新的{@link javafx.scene.control.AlertMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.scene.control.AlertMaker<javafx.scene.control.Alert, ?> alert()
+    {
+        return new javafx.scene.control.AlertMaker();
+    }
+
+    /**
      * 建立新的{@link javafx.scene.control.Button}建構器。
      *
      * @return 新的{@link javafx.scene.control.ButtonMaker}
@@ -358,6 +369,17 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link javafx.scene.control.ButtonBar}建構器。
+     *
+     * @return 新的{@link javafx.scene.control.ButtonBarMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.scene.control.ButtonBarMaker<javafx.scene.control.ButtonBar, ?> buttonBar()
+    {
+        return new javafx.scene.control.ButtonBarMaker();
+    }
+
+    /**
      * 建立新的{@link javafx.scene.control.ButtonBase}建構器。
      *
      * @return 新的{@link javafx.scene.control.ButtonBaseMaker}
@@ -366,6 +388,17 @@ public final class JFX
     public static javafx.scene.control.ButtonBaseMaker<javafx.scene.control.ButtonBase, ?> buttonBase()
     {
         return new javafx.scene.control.ButtonBaseMaker();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.control.ButtonType}建構器。
+     *
+     * @return 新的{@link javafx.scene.control.ButtonTypeMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.scene.control.ButtonTypeMaker<javafx.scene.control.ButtonType, ?> buttonType()
+    {
+        return new javafx.scene.control.ButtonTypeMaker();
     }
 
     /**
@@ -421,6 +454,17 @@ public final class JFX
     public static <T extends java.lang.Object> javafx.scene.control.ChoiceBoxMaker<T, javafx.scene.control.ChoiceBox<T>, ?> choiceBox()
     {
         return new javafx.scene.control.ChoiceBoxMaker();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.control.ChoiceDialog}建構器。
+     *
+     * @return 新的{@link javafx.scene.control.ChoiceDialogMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <T extends java.lang.Object> javafx.scene.control.ChoiceDialogMaker<T, javafx.scene.control.ChoiceDialog<T>, ?> choiceDialog()
+    {
+        return new javafx.scene.control.ChoiceDialogMaker();
     }
 
     /**
@@ -498,6 +542,28 @@ public final class JFX
     public static javafx.scene.control.DatePickerMaker<javafx.scene.control.DatePicker, ?> datePicker()
     {
         return new javafx.scene.control.DatePickerMaker();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.control.Dialog}建構器。
+     *
+     * @return 新的{@link javafx.scene.control.DialogMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <R extends java.lang.Object> javafx.scene.control.DialogMaker<R, javafx.scene.control.Dialog<R>, ?> dialog()
+    {
+        return new javafx.scene.control.DialogMaker();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.control.DialogPane}建構器。
+     *
+     * @return 新的{@link javafx.scene.control.DialogPaneMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.scene.control.DialogPaneMaker<javafx.scene.control.DialogPane, ?> dialogPane()
+    {
+        return new javafx.scene.control.DialogPaneMaker();
     }
 
     /**
@@ -765,6 +831,61 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link javafx.scene.control.Spinner}建構器。
+     *
+     * @return 新的{@link javafx.scene.control.SpinnerMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <T extends java.lang.Object> javafx.scene.control.SpinnerMaker<T, javafx.scene.control.Spinner<T>, ?> spinner()
+    {
+        return new javafx.scene.control.SpinnerMaker();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.control.SpinnerValueFactory}建構器。
+     *
+     * @return 新的{@link javafx.scene.control.SpinnerValueFactoryMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <T extends java.lang.Object> javafx.scene.control.SpinnerValueFactoryMaker<T, javafx.scene.control.SpinnerValueFactory<T>, ?> spinnerValueFactory()
+    {
+        return new javafx.scene.control.SpinnerValueFactoryMaker();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.control.SpinnerValueFactory.DoubleSpinnerValueFactory}建構器。
+     *
+     * @return 新的{@link javafx.scene.control.SpinnerValueFactory_DoubleSpinnerValueFactoryMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.scene.control.SpinnerValueFactory_DoubleSpinnerValueFactoryMaker<javafx.scene.control.SpinnerValueFactory.DoubleSpinnerValueFactory, ?> spinnerValueFactory_DoubleSpinnerValueFactory()
+    {
+        return new javafx.scene.control.SpinnerValueFactory_DoubleSpinnerValueFactoryMaker();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory}建構器。
+     *
+     * @return 新的{@link javafx.scene.control.SpinnerValueFactory_IntegerSpinnerValueFactoryMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.scene.control.SpinnerValueFactory_IntegerSpinnerValueFactoryMaker<javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory, ?> spinnerValueFactory_IntegerSpinnerValueFactory()
+    {
+        return new javafx.scene.control.SpinnerValueFactory_IntegerSpinnerValueFactoryMaker();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.control.SpinnerValueFactory.ListSpinnerValueFactory}建構器。
+     *
+     * @return 新的{@link javafx.scene.control.SpinnerValueFactory_ListSpinnerValueFactoryMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <T extends java.lang.Object> javafx.scene.control.SpinnerValueFactory_ListSpinnerValueFactoryMaker<T, javafx.scene.control.SpinnerValueFactory.ListSpinnerValueFactory<T>, ?> spinnerValueFactory_ListSpinnerValueFactory()
+    {
+        return new javafx.scene.control.SpinnerValueFactory_ListSpinnerValueFactoryMaker();
+    }
+
+    /**
      * 建立新的{@link javafx.scene.control.SplitMenuButton}建構器。
      *
      * @return 新的{@link javafx.scene.control.SplitMenuButtonMaker}
@@ -916,6 +1037,28 @@ public final class JFX
     public static javafx.scene.control.TextFieldMaker<javafx.scene.control.TextField, ?> textField()
     {
         return new javafx.scene.control.TextFieldMaker();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.control.TextFormatter}建構器。
+     *
+     * @return 新的{@link javafx.scene.control.TextFormatterMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <V extends java.lang.Object> javafx.scene.control.TextFormatterMaker<V, javafx.scene.control.TextFormatter<V>, ?> textFormatter()
+    {
+        return new javafx.scene.control.TextFormatterMaker();
+    }
+
+    /**
+     * 建立新的{@link javafx.scene.control.TextInputDialog}建構器。
+     *
+     * @return 新的{@link javafx.scene.control.TextInputDialogMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static javafx.scene.control.TextInputDialogMaker<javafx.scene.control.TextInputDialog, ?> textInputDialog()
+    {
+        return new javafx.scene.control.TextInputDialogMaker();
     }
 
     /**
@@ -2555,83 +2698,6 @@ public final class JFX
     public static javafx.stage.StageMaker<javafx.stage.Stage, ?> stage()
     {
         return new javafx.stage.StageMaker();
-    }
-
-    /**
-     * 建立新的{@link javafx.scene.control.Alert}建構器。
-     *
-     * @return 新的{@link javafx.scene.control.AlertMaker}
-     */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static javafx.scene.control.AlertMaker<javafx.scene.control.Alert, ?> alert()
-    {
-        return new javafx.scene.control.AlertMaker();
-    }
-
-    /**
-     * 建立新的{@link javafx.scene.control.ButtonBar}建構器。
-     *
-     * @return 新的{@link javafx.scene.control.ButtonBarMaker}
-     */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static javafx.scene.control.ButtonBarMaker<javafx.scene.control.ButtonBar, ?> buttonBar()
-    {
-        return new javafx.scene.control.ButtonBarMaker();
-    }
-
-    /**
-     * 建立新的{@link javafx.scene.control.ButtonType}建構器。
-     *
-     * @return 新的{@link javafx.scene.control.ButtonTypeMaker}
-     */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static javafx.scene.control.ButtonTypeMaker<javafx.scene.control.ButtonType, ?> buttonType()
-    {
-        return new javafx.scene.control.ButtonTypeMaker();
-    }
-
-    /**
-     * 建立新的{@link javafx.scene.control.ChoiceDialog}建構器。
-     *
-     * @return 新的{@link javafx.scene.control.ChoiceDialogMaker}
-     */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static <T extends java.lang.Object> javafx.scene.control.ChoiceDialogMaker<T, javafx.scene.control.ChoiceDialog<T>, ?> choiceDialog()
-    {
-        return new javafx.scene.control.ChoiceDialogMaker();
-    }
-
-    /**
-     * 建立新的{@link javafx.scene.control.Dialog}建構器。
-     *
-     * @return 新的{@link javafx.scene.control.DialogMaker}
-     */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static <R extends java.lang.Object> javafx.scene.control.DialogMaker<R, javafx.scene.control.Dialog<R>, ?> dialog()
-    {
-        return new javafx.scene.control.DialogMaker();
-    }
-
-    /**
-     * 建立新的{@link javafx.scene.control.DialogPane}建構器。
-     *
-     * @return 新的{@link javafx.scene.control.DialogPaneMaker}
-     */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static javafx.scene.control.DialogPaneMaker<javafx.scene.control.DialogPane, ?> dialogPane()
-    {
-        return new javafx.scene.control.DialogPaneMaker();
-    }
-
-    /**
-     * 建立新的{@link javafx.scene.control.TextInputDialog}建構器。
-     *
-     * @return 新的{@link javafx.scene.control.TextInputDialogMaker}
-     */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static javafx.scene.control.TextInputDialogMaker<javafx.scene.control.TextInputDialog, ?> textInputDialog()
-    {
-        return new javafx.scene.control.TextInputDialogMaker();
     }
 
     /**

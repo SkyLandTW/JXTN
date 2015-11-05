@@ -23,12 +23,17 @@ public class ToggleGroupMaker<Z extends ToggleGroup, B extends ToggleGroupMaker<
     private boolean hasToggles;
     private java.util.Collection<javafx.scene.control.Toggle> valToggles;
 
+    private boolean hasUserData;
+    private java.lang.Object valUserData;
+
     @Override
     public void applyTo(Z instance)
     {
         super.applyTo(instance);
         if (this.hasToggles)
             instance.getToggles().addAll(this.valToggles);
+        if (this.hasUserData)
+            instance.setUserData(this.valUserData);
     }
 
     /**
@@ -133,6 +138,20 @@ public class ToggleGroupMaker<Z extends ToggleGroup, B extends ToggleGroupMaker<
         for (javafx.scene.control.Toggle i : value)
             if (i != null)
                 this.valToggles.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ToggleGroup#setUserData(java.lang.Object)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B userData(java.lang.Object value)
+    {
+        this.hasUserData = true;
+        this.valUserData = value;
         return (B) this;
     }
 

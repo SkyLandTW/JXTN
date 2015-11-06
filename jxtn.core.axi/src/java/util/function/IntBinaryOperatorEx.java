@@ -33,7 +33,7 @@ package java.util.function;
  * @author AqD
  * @param <TException> 例外型態
  */
-public interface IntBinaryOperatorEx<TException extends Throwable> extends IntBinaryOperator {
+public interface IntBinaryOperatorEx<TException extends Exception> extends IntBinaryOperator {
     int applyAsIntEx(int left, int right) throws TException;
 
     @Deprecated
@@ -41,7 +41,7 @@ public interface IntBinaryOperatorEx<TException extends Throwable> extends IntBi
     default int applyAsInt(int left, int right) {
         try {
             return this.applyAsIntEx(left, right);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

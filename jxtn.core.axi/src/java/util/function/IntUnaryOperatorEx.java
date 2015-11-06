@@ -34,7 +34,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface IntUnaryOperatorEx<TException extends Throwable> extends IntUnaryOperator {
+public interface IntUnaryOperatorEx<TException extends Exception> extends IntUnaryOperator {
     int applyAsIntEx(int operand) throws TException;
 
     @Deprecated
@@ -42,7 +42,7 @@ public interface IntUnaryOperatorEx<TException extends Throwable> extends IntUna
     default int applyAsInt(int operand) {
         try {
             return this.applyAsIntEx(operand);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

@@ -36,7 +36,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface FunctionEx<T, R, TException extends Throwable> extends Function<T, R> {
+public interface FunctionEx<T, R, TException extends Exception> extends Function<T, R> {
     R applyEx(T t) throws TException;
 
     @Deprecated
@@ -44,7 +44,7 @@ public interface FunctionEx<T, R, TException extends Throwable> extends Function
     default R apply(T t) {
         try {
             return this.applyEx(t);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

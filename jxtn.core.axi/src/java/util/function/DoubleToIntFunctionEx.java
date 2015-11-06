@@ -34,7 +34,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface DoubleToIntFunctionEx<TException extends Throwable> extends DoubleToIntFunction {
+public interface DoubleToIntFunctionEx<TException extends Exception> extends DoubleToIntFunction {
     int applyAsIntEx(double value) throws TException;
 
     @Deprecated
@@ -42,7 +42,7 @@ public interface DoubleToIntFunctionEx<TException extends Throwable> extends Dou
     default int applyAsInt(double value) {
         try {
             return this.applyAsIntEx(value);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

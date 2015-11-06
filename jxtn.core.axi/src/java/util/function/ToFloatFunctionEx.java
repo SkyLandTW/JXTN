@@ -35,7 +35,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface ToFloatFunctionEx<T, TException extends Throwable> extends ToFloatFunction<T> {
+public interface ToFloatFunctionEx<T, TException extends Exception> extends ToFloatFunction<T> {
     float applyAsFloatEx(T t) throws TException;
 
     @Deprecated
@@ -43,7 +43,7 @@ public interface ToFloatFunctionEx<T, TException extends Throwable> extends ToFl
     default float applyAsFloat(T t) {
         try {
             return this.applyAsFloatEx(t);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

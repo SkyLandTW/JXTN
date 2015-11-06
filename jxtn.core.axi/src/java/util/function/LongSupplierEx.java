@@ -34,7 +34,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface LongSupplierEx<TException extends Throwable> extends LongSupplier {
+public interface LongSupplierEx<TException extends Exception> extends LongSupplier {
     long getAsLongEx() throws TException;
 
     @Deprecated
@@ -42,7 +42,7 @@ public interface LongSupplierEx<TException extends Throwable> extends LongSuppli
     default long getAsLong() {
         try {
             return this.getAsLongEx();
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

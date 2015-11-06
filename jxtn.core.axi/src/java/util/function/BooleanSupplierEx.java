@@ -33,7 +33,7 @@ package java.util.function;
  * @author AqD
  * @param <TException> 例外型態
  */
-public interface BooleanSupplierEx<TException extends Throwable> extends BooleanSupplier {
+public interface BooleanSupplierEx<TException extends Exception> extends BooleanSupplier {
     boolean getAsBooleanEx() throws TException;
 
     @Deprecated
@@ -41,7 +41,7 @@ public interface BooleanSupplierEx<TException extends Throwable> extends Boolean
     default boolean getAsBoolean() {
         try {
             return this.getAsBooleanEx();
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

@@ -33,7 +33,7 @@ package java.util.function;
  * @author AqD
  * @param <TException> 例外型態
  */
-public interface BooleanConsumerEx<TException extends Throwable> extends BooleanConsumer {
+public interface BooleanConsumerEx<TException extends Exception> extends BooleanConsumer {
     void acceptEx(boolean value) throws TException;
 
     @Deprecated
@@ -41,7 +41,7 @@ public interface BooleanConsumerEx<TException extends Throwable> extends Boolean
     default void accept(boolean value) {
         try {
             this.acceptEx(value);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

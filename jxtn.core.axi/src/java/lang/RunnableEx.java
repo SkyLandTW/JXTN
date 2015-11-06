@@ -33,7 +33,7 @@ package java.lang;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface RunnableEx<TException extends Throwable> extends Runnable {
+public interface RunnableEx<TException extends Exception> extends Runnable {
 
     void runEx() throws TException;
 
@@ -42,7 +42,7 @@ public interface RunnableEx<TException extends Throwable> extends Runnable {
     default void run() {
         try {
             this.runEx();
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

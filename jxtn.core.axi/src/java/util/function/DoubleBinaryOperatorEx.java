@@ -34,7 +34,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface DoubleBinaryOperatorEx<TException extends Throwable> extends DoubleBinaryOperator {
+public interface DoubleBinaryOperatorEx<TException extends Exception> extends DoubleBinaryOperator {
     double applyAsDoubleEx(double left, double right) throws TException;
 
     @Deprecated
@@ -42,7 +42,7 @@ public interface DoubleBinaryOperatorEx<TException extends Throwable> extends Do
     default double applyAsDouble(double left, double right) {
         try {
             return this.applyAsDoubleEx(left, right);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

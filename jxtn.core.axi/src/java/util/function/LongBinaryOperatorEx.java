@@ -33,7 +33,7 @@ package java.util.function;
  * @author AqD
  * @param <TException> 例外型態
  */
-public interface LongBinaryOperatorEx<TException extends Throwable> extends LongBinaryOperator {
+public interface LongBinaryOperatorEx<TException extends Exception> extends LongBinaryOperator {
     long applyAsLongEx(long left, long right) throws TException;
 
     @Deprecated
@@ -41,7 +41,7 @@ public interface LongBinaryOperatorEx<TException extends Throwable> extends Long
     default long applyAsLong(long left, long right) {
         try {
             return this.applyAsLongEx(left, right);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

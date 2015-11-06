@@ -34,7 +34,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface IntPredicateEx<TException extends Throwable> extends IntPredicate {
+public interface IntPredicateEx<TException extends Exception> extends IntPredicate {
     boolean testEx(int value) throws TException;
 
     @Deprecated
@@ -42,7 +42,7 @@ public interface IntPredicateEx<TException extends Throwable> extends IntPredica
     default boolean test(int value) {
         try {
             return this.testEx(value);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

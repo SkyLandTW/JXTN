@@ -34,7 +34,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface IntConsumerEx<TException extends Throwable> extends IntConsumer {
+public interface IntConsumerEx<TException extends Exception> extends IntConsumer {
     void acceptEx(int t) throws TException;
 
     @Deprecated
@@ -42,7 +42,7 @@ public interface IntConsumerEx<TException extends Throwable> extends IntConsumer
     default void accept(int t) {
         try {
             this.acceptEx(t);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

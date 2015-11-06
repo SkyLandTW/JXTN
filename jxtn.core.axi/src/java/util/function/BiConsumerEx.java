@@ -36,7 +36,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface BiConsumerEx<T, U, TException extends Throwable> extends BiConsumer<T, U> {
+public interface BiConsumerEx<T, U, TException extends Exception> extends BiConsumer<T, U> {
     void acceptEx(T t1, U t2) throws TException;
 
     @Deprecated
@@ -44,7 +44,7 @@ public interface BiConsumerEx<T, U, TException extends Throwable> extends BiCons
     default void accept(T t1, U t2) {
         try {
             this.acceptEx(t1, t2);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

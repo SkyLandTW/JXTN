@@ -35,7 +35,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface UnaryOperatorEx<T, TException extends Throwable> extends UnaryOperator<T> {
+public interface UnaryOperatorEx<T, TException extends Exception> extends UnaryOperator<T> {
     T applyEx(T t) throws TException;
 
     @Deprecated
@@ -43,7 +43,7 @@ public interface UnaryOperatorEx<T, TException extends Throwable> extends UnaryO
     default T apply(T t) {
         try {
             return this.applyEx(t);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

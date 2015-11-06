@@ -35,7 +35,7 @@ package java.util.function;
  * @param <U> 第二參數型態
  * @param <TException> 例外型態
  */
-public interface BiPredicateEx<T, U, TException extends Throwable> extends BiPredicate<T, U> {
+public interface BiPredicateEx<T, U, TException extends Exception> extends BiPredicate<T, U> {
     boolean testEx(T t, U u) throws TException;
 
     @Deprecated
@@ -43,7 +43,7 @@ public interface BiPredicateEx<T, U, TException extends Throwable> extends BiPre
     default boolean test(T t, U u) {
         try {
             return this.testEx(t, u);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

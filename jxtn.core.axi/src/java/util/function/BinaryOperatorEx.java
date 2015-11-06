@@ -35,7 +35,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface BinaryOperatorEx<T, TException extends Throwable> extends BinaryOperator<T> {
+public interface BinaryOperatorEx<T, TException extends Exception> extends BinaryOperator<T> {
     T applyEx(T t, T u) throws TException;
 
     @Deprecated
@@ -43,7 +43,7 @@ public interface BinaryOperatorEx<T, TException extends Throwable> extends Binar
     default T apply(T t, T u) {
         try {
             return this.applyEx(t, u);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

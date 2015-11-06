@@ -35,7 +35,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface SupplierEx<T, TException extends Throwable> extends Supplier<T> {
+public interface SupplierEx<T, TException extends Exception> extends Supplier<T> {
     T getEx() throws TException;
 
     @Deprecated
@@ -43,7 +43,7 @@ public interface SupplierEx<T, TException extends Throwable> extends Supplier<T>
     default T get() {
         try {
             return this.getEx();
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

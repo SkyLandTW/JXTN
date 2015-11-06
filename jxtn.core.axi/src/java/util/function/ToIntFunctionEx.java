@@ -35,7 +35,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface ToIntFunctionEx<T, TException extends Throwable> extends ToIntFunction<T> {
+public interface ToIntFunctionEx<T, TException extends Exception> extends ToIntFunction<T> {
     int applyAsIntEx(T t) throws TException;
 
     @Deprecated
@@ -43,7 +43,7 @@ public interface ToIntFunctionEx<T, TException extends Throwable> extends ToIntF
     default int applyAsInt(T t) {
         try {
             return this.applyAsIntEx(t);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

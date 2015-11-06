@@ -34,7 +34,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface LongUnaryOperatorEx<TException extends Throwable> extends LongUnaryOperator {
+public interface LongUnaryOperatorEx<TException extends Exception> extends LongUnaryOperator {
     long applyAsLongEx(long operand) throws TException;
 
     @Deprecated
@@ -42,7 +42,7 @@ public interface LongUnaryOperatorEx<TException extends Throwable> extends LongU
     default long applyAsLong(long operand) {
         try {
             return this.applyAsLongEx(operand);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

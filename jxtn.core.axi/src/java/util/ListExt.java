@@ -223,7 +223,7 @@ public interface ListExt<E> extends CollectionExt<E> {
      * @return 符合{@code filter}的第一個項目索引，或-1表示找不到
      * @throws TException 表示{@code condition}丟出例外
      */
-    default <TException extends Throwable> int firstIndexOf(PredicateEx<? super E, TException> condition)
+    default <TException extends Exception> int firstIndexOf(PredicateEx<? super E, TException> condition)
             throws TException {
         List<E> thiz = (List<E>) this;
         for (int i = 0; i < thiz.size(); i++) {
@@ -292,7 +292,7 @@ public interface ListExt<E> extends CollectionExt<E> {
      * @throws TException 表示{@code condition}丟出例外
      */
     @Override
-    default <TException extends Throwable> E last(PredicateEx<? super E, ? extends TException> condition)
+    default <TException extends Exception> E last(PredicateEx<? super E, ? extends TException> condition)
             throws TException {
         List<E> thiz = (List<E>) this;
         for (int i = thiz.size() - 1; i >= 0; i--) {
@@ -328,7 +328,7 @@ public interface ListExt<E> extends CollectionExt<E> {
      * @throws TException 表示{@code condition}丟出例外
      */
     @Override
-    default <TException extends Throwable> E lastOrNull(PredicateEx<? super E, ? extends TException> condition)
+    default <TException extends Exception> E lastOrNull(PredicateEx<? super E, ? extends TException> condition)
             throws TException {
         List<E> thiz = (List<E>) this;
         for (int i = thiz.size() - 1; i >= 0; i--) {

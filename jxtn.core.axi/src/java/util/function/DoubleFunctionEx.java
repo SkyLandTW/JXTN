@@ -35,7 +35,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface DoubleFunctionEx<R, TException extends Throwable> extends DoubleFunction<R> {
+public interface DoubleFunctionEx<R, TException extends Exception> extends DoubleFunction<R> {
     R applyEx(double value) throws TException;
 
     @Deprecated
@@ -43,7 +43,7 @@ public interface DoubleFunctionEx<R, TException extends Throwable> extends Doubl
     default R apply(double value) {
         try {
             return this.applyEx(value);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

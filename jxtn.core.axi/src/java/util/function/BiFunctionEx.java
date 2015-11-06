@@ -39,7 +39,7 @@ import java.util.Objects;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface BiFunctionEx<T, U, R, TException extends Throwable> extends BiFunction<T, U, R> {
+public interface BiFunctionEx<T, U, R, TException extends Exception> extends BiFunction<T, U, R> {
     R applyEx(T t, U u) throws TException;
 
     @Override
@@ -53,7 +53,7 @@ public interface BiFunctionEx<T, U, R, TException extends Throwable> extends BiF
     default R apply(T t, U u) {
         try {
             return this.applyEx(t, u);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

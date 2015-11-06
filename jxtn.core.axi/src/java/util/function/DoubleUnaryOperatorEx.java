@@ -34,7 +34,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface DoubleUnaryOperatorEx<TException extends Throwable> extends DoubleUnaryOperator {
+public interface DoubleUnaryOperatorEx<TException extends Exception> extends DoubleUnaryOperator {
     double applyAsDoubleEx(double operand) throws TException;
 
     @Deprecated
@@ -42,7 +42,7 @@ public interface DoubleUnaryOperatorEx<TException extends Throwable> extends Dou
     default double applyAsDouble(double operand) {
         try {
             return this.applyAsDoubleEx(operand);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

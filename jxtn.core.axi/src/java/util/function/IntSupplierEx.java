@@ -34,7 +34,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface IntSupplierEx<TException extends Throwable> extends IntSupplier {
+public interface IntSupplierEx<TException extends Exception> extends IntSupplier {
     int getAsIntEx() throws TException;
 
     @Deprecated
@@ -42,7 +42,7 @@ public interface IntSupplierEx<TException extends Throwable> extends IntSupplier
     default int getAsInt() {
         try {
             return this.getAsIntEx();
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

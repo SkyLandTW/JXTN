@@ -35,7 +35,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface BooleanFunctionEx<R, TException extends Throwable> extends BooleanFunction<R> {
+public interface BooleanFunctionEx<R, TException extends Exception> extends BooleanFunction<R> {
     R applyEx(boolean value) throws TException;
 
     @Deprecated
@@ -43,7 +43,7 @@ public interface BooleanFunctionEx<R, TException extends Throwable> extends Bool
     default R apply(boolean value) {
         try {
             return this.applyEx(value);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

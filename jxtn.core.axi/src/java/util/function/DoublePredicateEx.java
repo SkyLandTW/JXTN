@@ -34,7 +34,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 @FunctionalInterface
-public interface DoublePredicateEx<TException extends Throwable> extends DoublePredicate {
+public interface DoublePredicateEx<TException extends Exception> extends DoublePredicate {
     boolean testEx(double value) throws TException;
 
     @Deprecated
@@ -42,7 +42,7 @@ public interface DoublePredicateEx<TException extends Throwable> extends DoubleP
     default boolean test(double value) {
         try {
             return this.testEx(value);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
             } else {

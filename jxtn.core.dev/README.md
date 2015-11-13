@@ -13,3 +13,4 @@ Provides patches to compilers and IDEs for bugfixes and new features.
 ##### Compatibility:
  - Eclipse 4.4 Luna
  - Eclipse 4.5 Mars
+ - Eclipse 4.5.1 Mars 1

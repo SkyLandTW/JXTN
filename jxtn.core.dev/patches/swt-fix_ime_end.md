@@ -1,6 +1,8 @@
 Fix WM_IME_ENDCOMPOSITION in Eclipse SWT
 ========================================
 
+Fix [Bug 450182](https://bugs.eclipse.org/bugs/show_bug.cgi?id=450182)
+
 Correctly handles *WM_IME_ENDCOMPOSITION* message by firing a
 *COMPOSITION_CHANGED* event containing empty composed text and empty committed
 text.

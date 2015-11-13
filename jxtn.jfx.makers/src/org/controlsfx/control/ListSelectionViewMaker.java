@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link ListSelectionView}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.20.8.jar
+ * @version controlsfx-8.40.11-20151113.010656-84.jar
  * @param <Z> 要建構的物件型態(需繼承{@link ListSelectionView})
  * @param <B> 建構器本身的型態(需繼承{@link ListSelectionViewMaker})
  */
@@ -19,6 +19,12 @@ public class ListSelectionViewMaker<T extends java.lang.Object, Z extends ListSe
         extends javafx.scene.control.ControlMaker<Z, B>
         implements ListSelectionViewMakerExt<T, Z, B>
 {
+
+    private boolean hasCellFactory;
+    private javafx.util.Callback<javafx.scene.control.ListView<T>, javafx.scene.control.ListCell<T>> valCellFactory;
+
+    private boolean hasOrientation;
+    private javafx.geometry.Orientation valOrientation;
 
     private boolean hasSourceFooter;
     private javafx.scene.Node valSourceFooter;
@@ -37,6 +43,16 @@ public class ListSelectionViewMaker<T extends java.lang.Object, Z extends ListSe
 
     private boolean hasTargetItems;
     private javafx.collections.ObservableList<T> valTargetItems;
+
+    private boolean bound1CellFactory;
+    private boolean bound2CellFactory;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.ListView<T>, javafx.scene.control.ListCell<T>>> obsrv1CellFactory;
+    private javafx.beans.property.Property<javafx.util.Callback<javafx.scene.control.ListView<T>, javafx.scene.control.ListCell<T>>> obsrv2CellFactory;
+
+    private boolean bound1Orientation;
+    private boolean bound2Orientation;
+    private javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> obsrv1Orientation;
+    private javafx.beans.property.Property<javafx.geometry.Orientation> obsrv2Orientation;
 
     private boolean bound1SourceFooter;
     private boolean bound2SourceFooter;
@@ -72,6 +88,10 @@ public class ListSelectionViewMaker<T extends java.lang.Object, Z extends ListSe
     public void applyTo(Z instance)
     {
         super.applyTo(instance);
+        if (this.hasCellFactory)
+            instance.setCellFactory(this.valCellFactory);
+        if (this.hasOrientation)
+            instance.setOrientation(this.valOrientation);
         if (this.hasSourceFooter)
             instance.setSourceFooter(this.valSourceFooter);
         if (this.hasSourceHeader)
@@ -84,6 +104,14 @@ public class ListSelectionViewMaker<T extends java.lang.Object, Z extends ListSe
             instance.setTargetHeader(this.valTargetHeader);
         if (this.hasTargetItems)
             instance.setTargetItems(this.valTargetItems);
+        if (this.bound1CellFactory)
+            instance.cellFactoryProperty().bind(this.obsrv1CellFactory);
+        if (this.bound2CellFactory)
+            instance.cellFactoryProperty().bindBidirectional(this.obsrv2CellFactory);
+        if (this.bound1Orientation)
+            instance.orientationProperty().bind(this.obsrv1Orientation);
+        if (this.bound2Orientation)
+            instance.orientationProperty().bindBidirectional(this.obsrv2Orientation);
         if (this.bound1SourceFooter)
             instance.sourceFooterProperty().bind(this.obsrv1SourceFooter);
         if (this.bound2SourceFooter)
@@ -108,6 +136,34 @@ public class ListSelectionViewMaker<T extends java.lang.Object, Z extends ListSe
             instance.targetItemsProperty().bind(this.obsrv1TargetItems);
         if (this.bound2TargetItems)
             instance.targetItemsProperty().bindBidirectional(this.obsrv2TargetItems);
+    }
+
+    /**
+     * 設定屬性{@link ListSelectionView#setCellFactory(javafx.util.Callback)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B cellFactory(javafx.util.Callback<javafx.scene.control.ListView<T>, javafx.scene.control.ListCell<T>> value)
+    {
+        this.hasCellFactory = true;
+        this.valCellFactory = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ListSelectionView#setOrientation(javafx.geometry.Orientation)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B orientation(javafx.geometry.Orientation value)
+    {
+        this.hasOrientation = true;
+        this.valOrientation = value;
+        return (B) this;
     }
 
     /**
@@ -191,6 +247,74 @@ public class ListSelectionViewMaker<T extends java.lang.Object, Z extends ListSe
     {
         this.hasTargetItems = true;
         this.valTargetItems = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ListSelectionView#cellFactoryProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindCellFactory(javafx.beans.value.ObservableValue<? extends javafx.util.Callback<javafx.scene.control.ListView<T>, javafx.scene.control.ListCell<T>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CellFactory = true;
+        this.obsrv1CellFactory = source;
+        this.bound2CellFactory = false;
+        this.obsrv2CellFactory = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ListSelectionView#cellFactoryProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCellFactory(javafx.beans.property.Property<javafx.util.Callback<javafx.scene.control.ListView<T>, javafx.scene.control.ListCell<T>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CellFactory = false;
+        this.obsrv1CellFactory = null;
+        this.bound2CellFactory = true;
+        this.obsrv2CellFactory = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ListSelectionView#orientationProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindOrientation(javafx.beans.value.ObservableValue<? extends javafx.geometry.Orientation> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Orientation = true;
+        this.obsrv1Orientation = source;
+        this.bound2Orientation = false;
+        this.obsrv2Orientation = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link ListSelectionView#orientationProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalOrientation(javafx.beans.property.Property<javafx.geometry.Orientation> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Orientation = false;
+        this.obsrv1Orientation = null;
+        this.bound2Orientation = true;
+        this.obsrv2Orientation = source;
         return (B) this;
     }
 

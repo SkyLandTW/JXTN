@@ -2811,6 +2811,17 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link org.controlsfx.control.MaskerPane}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.MaskerPaneMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.MaskerPaneMaker<org.controlsfx.control.MaskerPane, ?> maskerPane()
+    {
+        return new org.controlsfx.control.MaskerPaneMaker();
+    }
+
+    /**
      * 建立新的{@link org.controlsfx.control.MasterDetailPane}建構器。
      *
      * @return 新的{@link org.controlsfx.control.MasterDetailPaneMaker}
@@ -2932,6 +2943,17 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link org.controlsfx.control.ToggleSwitch}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.ToggleSwitchMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.ToggleSwitchMaker<org.controlsfx.control.ToggleSwitch, ?> toggleSwitch()
+    {
+        return new org.controlsfx.control.ToggleSwitchMaker();
+    }
+
+    /**
      * 建立新的{@link org.controlsfx.control.action.Action}建構器。
      *
      * @return 新的{@link org.controlsfx.control.action.ActionMaker}
@@ -2951,6 +2973,28 @@ public final class JFX
     public static org.controlsfx.control.action.ActionGroupMaker<org.controlsfx.control.action.ActionGroup, ?> actionGroup()
     {
         return new org.controlsfx.control.action.ActionGroupMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.action.AnnotatedAction}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.action.AnnotatedActionMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.action.AnnotatedActionMaker<org.controlsfx.control.action.AnnotatedAction, ?> annotatedAction()
+    {
+        return new org.controlsfx.control.action.AnnotatedActionMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.action.DefaultActionFactory}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.action.DefaultActionFactoryMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.action.DefaultActionFactoryMaker<org.controlsfx.control.action.DefaultActionFactory, ?> defaultActionFactory()
+    {
+        return new org.controlsfx.control.action.DefaultActionFactoryMaker();
     }
 
     /**
@@ -3039,6 +3083,17 @@ public final class JFX
     public static org.controlsfx.control.spreadsheet.GridChangeMaker<org.controlsfx.control.spreadsheet.GridChange, ?> gridChange()
     {
         return new org.controlsfx.control.spreadsheet.GridChangeMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.spreadsheet.Picker}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.spreadsheet.PickerMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.spreadsheet.PickerMaker<org.controlsfx.control.spreadsheet.Picker, ?> picker()
+    {
+        return new org.controlsfx.control.spreadsheet.PickerMaker();
     }
 
     /**
@@ -3240,6 +3295,17 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link org.controlsfx.control.table.TableFilter}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.table.TableFilterMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <T extends java.lang.Object> org.controlsfx.control.table.TableFilterMaker<T, org.controlsfx.control.table.TableFilter<T>, ?> tableFilter()
+    {
+        return new org.controlsfx.control.table.TableFilterMaker();
+    }
+
+    /**
      * 建立新的{@link org.controlsfx.control.textfield.CustomPasswordField}建構器。
      *
      * @return 新的{@link org.controlsfx.control.textfield.CustomPasswordFieldMaker}
@@ -3350,14 +3416,14 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.dialog.Wizard.WizardPane}建構器。
+     * 建立新的{@link org.controlsfx.dialog.WizardPane}建構器。
      *
-     * @return 新的{@link org.controlsfx.dialog.Wizard_WizardPaneMaker}
+     * @return 新的{@link org.controlsfx.dialog.WizardPaneMaker}
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static org.controlsfx.dialog.Wizard_WizardPaneMaker<org.controlsfx.dialog.Wizard.WizardPane, ?> wizard_WizardPane()
+    public static org.controlsfx.dialog.WizardPaneMaker<org.controlsfx.dialog.WizardPane, ?> wizardPane()
     {
-        return new org.controlsfx.dialog.Wizard_WizardPaneMaker();
+        return new org.controlsfx.dialog.WizardPaneMaker();
     }
 
     /**

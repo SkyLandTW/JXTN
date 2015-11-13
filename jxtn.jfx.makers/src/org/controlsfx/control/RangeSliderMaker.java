@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link RangeSlider}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.20.8.jar
+ * @version controlsfx-8.40.11-20151113.010656-84.jar
  * @param <Z> 要建構的物件型態(需繼承{@link RangeSlider})
  * @param <B> 建構器本身的型態(需繼承{@link RangeSliderMaker})
  */
@@ -28,6 +28,9 @@ public class RangeSliderMaker<Z extends RangeSlider, B extends RangeSliderMaker<
 
     private boolean hasHighValueChanging;
     private boolean valHighValueChanging;
+
+    private boolean hasLabelFormatter;
+    private javafx.util.StringConverter<java.lang.Number> valLabelFormatter;
 
     private boolean hasLowValue;
     private double valLowValue;
@@ -73,6 +76,11 @@ public class RangeSliderMaker<Z extends RangeSlider, B extends RangeSliderMaker<
     private boolean bound2HighValue;
     private javafx.beans.value.ObservableValue<? extends Number> obsrv1HighValue;
     private javafx.beans.property.Property<Number> obsrv2HighValue;
+
+    private boolean bound1LabelFormatter;
+    private boolean bound2LabelFormatter;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<java.lang.Number>> obsrv1LabelFormatter;
+    private javafx.beans.property.Property<javafx.util.StringConverter<java.lang.Number>> obsrv2LabelFormatter;
 
     private boolean bound1LowValueChanging;
     private boolean bound2LowValueChanging;
@@ -134,6 +142,8 @@ public class RangeSliderMaker<Z extends RangeSlider, B extends RangeSliderMaker<
             instance.setHighValue(this.valHighValue);
         if (this.hasHighValueChanging)
             instance.setHighValueChanging(this.valHighValueChanging);
+        if (this.hasLabelFormatter)
+            instance.setLabelFormatter(this.valLabelFormatter);
         if (this.hasLowValue)
             instance.setLowValue(this.valLowValue);
         if (this.hasLowValueChanging)
@@ -166,6 +176,10 @@ public class RangeSliderMaker<Z extends RangeSlider, B extends RangeSliderMaker<
             instance.highValueProperty().bind(this.obsrv1HighValue);
         if (this.bound2HighValue)
             instance.highValueProperty().bindBidirectional(this.obsrv2HighValue);
+        if (this.bound1LabelFormatter)
+            instance.labelFormatterProperty().bind(this.obsrv1LabelFormatter);
+        if (this.bound2LabelFormatter)
+            instance.labelFormatterProperty().bindBidirectional(this.obsrv2LabelFormatter);
         if (this.bound1LowValueChanging)
             instance.lowValueChangingProperty().bind(this.obsrv1LowValueChanging);
         if (this.bound2LowValueChanging)
@@ -247,6 +261,20 @@ public class RangeSliderMaker<Z extends RangeSlider, B extends RangeSliderMaker<
     {
         this.hasHighValueChanging = true;
         this.valHighValueChanging = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link RangeSlider#setLabelFormatter(javafx.util.StringConverter)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B labelFormatter(javafx.util.StringConverter<java.lang.Number> value)
+    {
+        this.hasLabelFormatter = true;
+        this.valLabelFormatter = value;
         return (B) this;
     }
 
@@ -489,6 +517,40 @@ public class RangeSliderMaker<Z extends RangeSlider, B extends RangeSliderMaker<
         this.obsrv1HighValue = null;
         this.bound2HighValue = true;
         this.obsrv2HighValue = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link RangeSlider#labelFormatterProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindLabelFormatter(javafx.beans.value.ObservableValue<? extends javafx.util.StringConverter<java.lang.Number>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1LabelFormatter = true;
+        this.obsrv1LabelFormatter = source;
+        this.bound2LabelFormatter = false;
+        this.obsrv2LabelFormatter = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link RangeSlider#labelFormatterProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalLabelFormatter(javafx.beans.property.Property<javafx.util.StringConverter<java.lang.Number>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1LabelFormatter = false;
+        this.obsrv1LabelFormatter = null;
+        this.bound2LabelFormatter = true;
+        this.obsrv2LabelFormatter = source;
         return (B) this;
     }
 

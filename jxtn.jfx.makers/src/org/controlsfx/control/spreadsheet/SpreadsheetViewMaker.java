@@ -9,7 +9,7 @@ package org.controlsfx.control.spreadsheet;
  * {@link SpreadsheetView}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.20.8.jar
+ * @version controlsfx-8.40.11-20151113.010656-84.jar
  * @param <Z> 要建構的物件型態(需繼承{@link SpreadsheetView})
  * @param <B> 建構器本身的型態(需繼承{@link SpreadsheetViewMaker})
  */
@@ -19,12 +19,6 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
         extends javafx.scene.control.ControlMaker<Z, B>
         implements SpreadsheetViewMakerExt<Z, B>
 {
-
-    private boolean hasColumnPickerCallback;
-    private javafx.util.Callback<java.lang.Integer, java.lang.Void> valColumnPickerCallback;
-
-    private boolean hasColumnPickers;
-    private java.util.Collection<java.lang.Integer> valColumnPickers;
 
     private boolean hasColumns;
     private java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn> valColumns;
@@ -49,12 +43,6 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
 
     private boolean hasRowHeaderWidth;
     private double valRowHeaderWidth;
-
-    private boolean hasRowPickerCallback;
-    private javafx.util.Callback<java.lang.Integer, java.lang.Void> valRowPickerCallback;
-
-    private boolean hasRowPickers;
-    private java.util.Collection<java.lang.Integer> valRowPickers;
 
     private boolean hasShowColumnHeader;
     private boolean valShowColumnHeader;
@@ -86,10 +74,6 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
     public void applyTo(Z instance)
     {
         super.applyTo(instance);
-        if (this.hasColumnPickerCallback)
-            instance.setColumnPickerCallback(this.valColumnPickerCallback);
-        if (this.hasColumnPickers)
-            instance.getColumnPickers().addAll(this.valColumnPickers);
         if (this.hasColumns)
             instance.getColumns().addAll(this.valColumns);
         if (this.hasEditable)
@@ -106,10 +90,6 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
             instance.setGrid(this.valGrid);
         if (this.hasRowHeaderWidth)
             instance.setRowHeaderWidth(this.valRowHeaderWidth);
-        if (this.hasRowPickerCallback)
-            instance.setRowPickerCallback(this.valRowPickerCallback);
-        if (this.hasRowPickers)
-            instance.getRowPickers().addAll(this.valRowPickers);
         if (this.hasShowColumnHeader)
             instance.setShowColumnHeader(this.valShowColumnHeader);
         if (this.hasShowRowHeader)
@@ -130,125 +110,6 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
             instance.showRowHeaderProperty().bind(this.obsrv1ShowRowHeader);
         if (this.bound2ShowRowHeader)
             instance.showRowHeaderProperty().bindBidirectional(this.obsrv2ShowRowHeader);
-    }
-
-    /**
-     * 設定屬性{@link SpreadsheetView#setColumnPickerCallback(javafx.util.Callback)}。
-     *
-     * @param value 新的屬性值
-     * @return 目前的建構器(this)
-     */
-    @SuppressWarnings("unchecked")
-    public B columnPickerCallback(javafx.util.Callback<java.lang.Integer, java.lang.Void> value)
-    {
-        this.hasColumnPickerCallback = true;
-        this.valColumnPickerCallback = value;
-        return (B) this;
-    }
-
-    /**
-     * 設定集合屬性{@link SpreadsheetView#getColumnPickers}的內容。
-     *
-     * @param value 新的集合內容
-     * @return 目前的建構器(this)
-     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
-     */
-    @Deprecated
-    @SuppressWarnings("unchecked")
-    public final B columnPickers(java.util.Collection<? extends java.lang.Integer> value)
-    {
-        this.hasColumnPickers = true;
-        this.valColumnPickers = (java.util.Collection<java.lang.Integer>) value;
-        return (B) this;
-    }
-
-    /**
-     * 設定集合屬性{@link SpreadsheetView#getColumnPickers}的內容。
-     *
-     * @param value 新的集合內容
-     * @return 目前的建構器(this)
-     */
-    @SafeVarargs
-    @SuppressWarnings("unchecked")
-    public final B columnPickers(java.lang.Integer... value)
-    {
-        this.hasColumnPickers = true;
-        this.valColumnPickers = java.util.Arrays.asList(value);
-        return (B) this;
-    }
-
-    /**
-     * 增加集合屬性{@link SpreadsheetView#getColumnPickers}的內容。
-     *
-     * @param value 新的集合內容
-     * @return 目前的建構器(this)
-     */
-    @SuppressWarnings("unchecked")
-    public final B columnPickersAdd(java.util.Collection<? extends java.lang.Integer> value)
-    {
-        java.util.Objects.requireNonNull(value);
-        this.hasColumnPickers = true;
-        if (this.valColumnPickers == null)
-            this.valColumnPickers = new java.util.ArrayList<>(value.size());
-        this.valColumnPickers.addAll(value);
-        return (B) this;
-    }
-
-    /**
-     * 增加集合屬性{@link SpreadsheetView#getColumnPickers}的內容。
-     *
-     * @param value 新的集合內容
-     * @return 目前的建構器(this)
-     */
-    @SafeVarargs
-    @SuppressWarnings("unchecked")
-    public final B columnPickersAdd(java.lang.Integer... value)
-    {
-        java.util.Objects.requireNonNull(value);
-        this.hasColumnPickers = true;
-        if (this.valColumnPickers == null)
-            this.valColumnPickers = new java.util.ArrayList<>(value.length);
-        this.valColumnPickers.addAll(java.util.Arrays.asList(value));
-        return (B) this;
-    }
-
-    /**
-     * 增加集合屬性{@link SpreadsheetView#getColumnPickers}的內容，排除null項目。
-     *
-     * @param value 新的集合內容
-     * @return 目前的建構器(this)
-     */
-    @SuppressWarnings("unchecked")
-    public final B columnPickersAddNonNull(java.util.Collection<? extends java.lang.Integer> value)
-    {
-        java.util.Objects.requireNonNull(value);
-        this.hasColumnPickers = true;
-        if (this.valColumnPickers == null)
-            this.valColumnPickers = new java.util.ArrayList<>(value.size());
-        for (java.lang.Integer i : value)
-            if (i != null)
-                this.valColumnPickers.add(i);
-        return (B) this;
-    }
-
-    /**
-     * 增加集合屬性{@link SpreadsheetView#getColumnPickers}的內容，排除null項目。
-     *
-     * @param value 新的集合內容
-     * @return 目前的建構器(this)
-     */
-    @SafeVarargs
-    @SuppressWarnings("unchecked")
-    public final B columnPickersAddNonNull(java.lang.Integer... value)
-    {
-        java.util.Objects.requireNonNull(value);
-        this.hasColumnPickers = true;
-        if (this.valColumnPickers == null)
-            this.valColumnPickers = new java.util.ArrayList<>(value.length);
-        for (java.lang.Integer i : value)
-            if (i != null)
-                this.valColumnPickers.add(i);
-        return (B) this;
     }
 
     /**
@@ -633,125 +494,6 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
     {
         this.hasRowHeaderWidth = true;
         this.valRowHeaderWidth = value;
-        return (B) this;
-    }
-
-    /**
-     * 設定屬性{@link SpreadsheetView#setRowPickerCallback(javafx.util.Callback)}。
-     *
-     * @param value 新的屬性值
-     * @return 目前的建構器(this)
-     */
-    @SuppressWarnings("unchecked")
-    public B rowPickerCallback(javafx.util.Callback<java.lang.Integer, java.lang.Void> value)
-    {
-        this.hasRowPickerCallback = true;
-        this.valRowPickerCallback = value;
-        return (B) this;
-    }
-
-    /**
-     * 設定集合屬性{@link SpreadsheetView#getRowPickers}的內容。
-     *
-     * @param value 新的集合內容
-     * @return 目前的建構器(this)
-     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
-     */
-    @Deprecated
-    @SuppressWarnings("unchecked")
-    public final B rowPickers(java.util.Collection<? extends java.lang.Integer> value)
-    {
-        this.hasRowPickers = true;
-        this.valRowPickers = (java.util.Collection<java.lang.Integer>) value;
-        return (B) this;
-    }
-
-    /**
-     * 設定集合屬性{@link SpreadsheetView#getRowPickers}的內容。
-     *
-     * @param value 新的集合內容
-     * @return 目前的建構器(this)
-     */
-    @SafeVarargs
-    @SuppressWarnings("unchecked")
-    public final B rowPickers(java.lang.Integer... value)
-    {
-        this.hasRowPickers = true;
-        this.valRowPickers = java.util.Arrays.asList(value);
-        return (B) this;
-    }
-
-    /**
-     * 增加集合屬性{@link SpreadsheetView#getRowPickers}的內容。
-     *
-     * @param value 新的集合內容
-     * @return 目前的建構器(this)
-     */
-    @SuppressWarnings("unchecked")
-    public final B rowPickersAdd(java.util.Collection<? extends java.lang.Integer> value)
-    {
-        java.util.Objects.requireNonNull(value);
-        this.hasRowPickers = true;
-        if (this.valRowPickers == null)
-            this.valRowPickers = new java.util.ArrayList<>(value.size());
-        this.valRowPickers.addAll(value);
-        return (B) this;
-    }
-
-    /**
-     * 增加集合屬性{@link SpreadsheetView#getRowPickers}的內容。
-     *
-     * @param value 新的集合內容
-     * @return 目前的建構器(this)
-     */
-    @SafeVarargs
-    @SuppressWarnings("unchecked")
-    public final B rowPickersAdd(java.lang.Integer... value)
-    {
-        java.util.Objects.requireNonNull(value);
-        this.hasRowPickers = true;
-        if (this.valRowPickers == null)
-            this.valRowPickers = new java.util.ArrayList<>(value.length);
-        this.valRowPickers.addAll(java.util.Arrays.asList(value));
-        return (B) this;
-    }
-
-    /**
-     * 增加集合屬性{@link SpreadsheetView#getRowPickers}的內容，排除null項目。
-     *
-     * @param value 新的集合內容
-     * @return 目前的建構器(this)
-     */
-    @SuppressWarnings("unchecked")
-    public final B rowPickersAddNonNull(java.util.Collection<? extends java.lang.Integer> value)
-    {
-        java.util.Objects.requireNonNull(value);
-        this.hasRowPickers = true;
-        if (this.valRowPickers == null)
-            this.valRowPickers = new java.util.ArrayList<>(value.size());
-        for (java.lang.Integer i : value)
-            if (i != null)
-                this.valRowPickers.add(i);
-        return (B) this;
-    }
-
-    /**
-     * 增加集合屬性{@link SpreadsheetView#getRowPickers}的內容，排除null項目。
-     *
-     * @param value 新的集合內容
-     * @return 目前的建構器(this)
-     */
-    @SafeVarargs
-    @SuppressWarnings("unchecked")
-    public final B rowPickersAddNonNull(java.lang.Integer... value)
-    {
-        java.util.Objects.requireNonNull(value);
-        this.hasRowPickers = true;
-        if (this.valRowPickers == null)
-            this.valRowPickers = new java.util.ArrayList<>(value.length);
-        for (java.lang.Integer i : value)
-            if (i != null)
-                this.valRowPickers.add(i);
         return (B) this;
     }
 

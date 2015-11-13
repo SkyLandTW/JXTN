@@ -9,7 +9,7 @@ package org.controlsfx.glyphfont;
  * {@link Glyph}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.20.8.jar
+ * @version controlsfx-8.40.11-20151113.010656-84.jar
  * @param <Z> 要建構的物件型態(需繼承{@link Glyph})
  * @param <B> 建構器本身的型態(需繼承{@link GlyphMaker})
  */
@@ -32,6 +32,11 @@ public class GlyphMaker<Z extends Glyph, B extends GlyphMaker<Z, B>>
     private boolean hasIcon;
     private java.lang.Object valIcon;
 
+    private boolean bound1Icon;
+    private boolean bound2Icon;
+    private javafx.beans.value.ObservableValue<? extends java.lang.Object> obsrv1Icon;
+    private javafx.beans.property.Property<java.lang.Object> obsrv2Icon;
+
     @Override
     public void applyTo(Z instance)
     {
@@ -44,6 +49,10 @@ public class GlyphMaker<Z extends Glyph, B extends GlyphMaker<Z, B>>
             instance.setFontSize(this.valFontSize);
         if (this.hasIcon)
             instance.setIcon(this.valIcon);
+        if (this.bound1Icon)
+            instance.iconProperty().bind(this.obsrv1Icon);
+        if (this.bound2Icon)
+            instance.iconProperty().bindBidirectional(this.obsrv2Icon);
     }
 
     /**
@@ -99,6 +108,40 @@ public class GlyphMaker<Z extends Glyph, B extends GlyphMaker<Z, B>>
     {
         this.hasIcon = true;
         this.valIcon = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Glyph#iconProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindIcon(javafx.beans.value.ObservableValue<? extends java.lang.Object> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Icon = true;
+        this.obsrv1Icon = source;
+        this.bound2Icon = false;
+        this.obsrv2Icon = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Glyph#iconProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalIcon(javafx.beans.property.Property<java.lang.Object> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Icon = false;
+        this.obsrv1Icon = null;
+        this.bound2Icon = true;
+        this.obsrv2Icon = source;
         return (B) this;
     }
 

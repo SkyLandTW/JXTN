@@ -9,7 +9,7 @@ package org.controlsfx.control.spreadsheet;
  * {@link SpreadsheetCellBase}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.20.8.jar
+ * @version controlsfx-8.40.11-20151113.010656-84.jar
  * @param <Z> 要建構的物件型態(需繼承{@link SpreadsheetCellBase})
  * @param <B> 建構器本身的型態(需繼承{@link SpreadsheetCellBaseMaker})
  */
@@ -38,8 +38,14 @@ public class SpreadsheetCellBaseMaker<Z extends SpreadsheetCellBase, B extends S
     private boolean hasRowSpan;
     private int valRowSpan;
 
+    private boolean hasStyle;
+    private java.lang.String valStyle;
+
     private boolean hasTooltip;
     private java.lang.String valTooltip;
+
+    private boolean hasWrapText;
+    private boolean valWrapText;
 
     private boolean bound1Format;
     private boolean bound2Format;
@@ -55,6 +61,11 @@ public class SpreadsheetCellBaseMaker<Z extends SpreadsheetCellBase, B extends S
     private boolean bound2Item;
     private javafx.beans.value.ObservableValue<? extends java.lang.Object> obsrv1Item;
     private javafx.beans.property.Property<java.lang.Object> obsrv2Item;
+
+    private boolean bound1Style;
+    private boolean bound2Style;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Style;
+    private javafx.beans.property.Property<String> obsrv2Style;
 
     @Override
     public void applyTo(Z instance)
@@ -72,8 +83,12 @@ public class SpreadsheetCellBaseMaker<Z extends SpreadsheetCellBase, B extends S
             instance.setItem(this.valItem);
         if (this.hasRowSpan)
             instance.setRowSpan(this.valRowSpan);
+        if (this.hasStyle)
+            instance.setStyle(this.valStyle);
         if (this.hasTooltip)
             instance.setTooltip(this.valTooltip);
+        if (this.hasWrapText)
+            instance.setWrapText(this.valWrapText);
         if (this.bound1Format)
             instance.formatProperty().bind(this.obsrv1Format);
         if (this.bound2Format)
@@ -86,6 +101,10 @@ public class SpreadsheetCellBaseMaker<Z extends SpreadsheetCellBase, B extends S
             instance.itemProperty().bind(this.obsrv1Item);
         if (this.bound2Item)
             instance.itemProperty().bindBidirectional(this.obsrv2Item);
+        if (this.bound1Style)
+            instance.styleProperty().bind(this.obsrv1Style);
+        if (this.bound2Style)
+            instance.styleProperty().bindBidirectional(this.obsrv2Style);
     }
 
     /**
@@ -173,6 +192,20 @@ public class SpreadsheetCellBaseMaker<Z extends SpreadsheetCellBase, B extends S
     }
 
     /**
+     * 設定屬性{@link SpreadsheetCellBase#setStyle(java.lang.String)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B style(java.lang.String value)
+    {
+        this.hasStyle = true;
+        this.valStyle = value;
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link SpreadsheetCellBase#setTooltip(java.lang.String)}。
      *
      * @param value 新的屬性值
@@ -183,6 +216,20 @@ public class SpreadsheetCellBaseMaker<Z extends SpreadsheetCellBase, B extends S
     {
         this.hasTooltip = true;
         this.valTooltip = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#setWrapText(boolean)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B wrapText(boolean value)
+    {
+        this.hasWrapText = true;
+        this.valWrapText = value;
         return (B) this;
     }
 
@@ -285,6 +332,40 @@ public class SpreadsheetCellBaseMaker<Z extends SpreadsheetCellBase, B extends S
         this.obsrv1Item = null;
         this.bound2Item = true;
         this.obsrv2Item = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#styleProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindStyle(javafx.beans.value.ObservableValue<? extends String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Style = true;
+        this.obsrv1Style = source;
+        this.bound2Style = false;
+        this.obsrv2Style = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#styleProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStyle(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Style = false;
+        this.obsrv1Style = null;
+        this.bound2Style = true;
+        this.obsrv2Style = source;
         return (B) this;
     }
 

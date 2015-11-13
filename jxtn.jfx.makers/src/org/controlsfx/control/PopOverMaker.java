@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link PopOver}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.20.8.jar
+ * @version controlsfx-8.40.11-20151113.010656-84.jar
  * @param <Z> 要建構的物件型態(需繼承{@link PopOver})
  * @param <B> 建構器本身的型態(需繼承{@link PopOverMaker})
  */
@@ -41,8 +41,11 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
     private boolean hasDetached;
     private boolean valDetached;
 
-    private boolean hasDetachedTitle;
-    private java.lang.String valDetachedTitle;
+    private boolean hasHeaderAlwaysVisible;
+    private boolean valHeaderAlwaysVisible;
+
+    private boolean hasTitle;
+    private java.lang.String valTitle;
 
     private boolean bound1ArrowIndent;
     private boolean bound2ArrowIndent;
@@ -79,10 +82,15 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
     private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Detached;
     private javafx.beans.property.Property<Boolean> obsrv2Detached;
 
-    private boolean bound1DetachedTitle;
-    private boolean bound2DetachedTitle;
-    private javafx.beans.value.ObservableValue<? extends String> obsrv1DetachedTitle;
-    private javafx.beans.property.Property<String> obsrv2DetachedTitle;
+    private boolean bound1HeaderAlwaysVisible;
+    private boolean bound2HeaderAlwaysVisible;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1HeaderAlwaysVisible;
+    private javafx.beans.property.Property<Boolean> obsrv2HeaderAlwaysVisible;
+
+    private boolean bound1Title;
+    private boolean bound2Title;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1Title;
+    private javafx.beans.property.Property<String> obsrv2Title;
 
     @Override
     public void applyTo(Z instance)
@@ -102,8 +110,10 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
             instance.setDetachable(this.valDetachable);
         if (this.hasDetached)
             instance.setDetached(this.valDetached);
-        if (this.hasDetachedTitle)
-            instance.setDetachedTitle(this.valDetachedTitle);
+        if (this.hasHeaderAlwaysVisible)
+            instance.setHeaderAlwaysVisible(this.valHeaderAlwaysVisible);
+        if (this.hasTitle)
+            instance.setTitle(this.valTitle);
         if (this.bound1ArrowIndent)
             instance.arrowIndentProperty().bind(this.obsrv1ArrowIndent);
         if (this.bound2ArrowIndent)
@@ -132,10 +142,14 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
             instance.detachedProperty().bind(this.obsrv1Detached);
         if (this.bound2Detached)
             instance.detachedProperty().bindBidirectional(this.obsrv2Detached);
-        if (this.bound1DetachedTitle)
-            instance.detachedTitleProperty().bind(this.obsrv1DetachedTitle);
-        if (this.bound2DetachedTitle)
-            instance.detachedTitleProperty().bindBidirectional(this.obsrv2DetachedTitle);
+        if (this.bound1HeaderAlwaysVisible)
+            instance.headerAlwaysVisibleProperty().bind(this.obsrv1HeaderAlwaysVisible);
+        if (this.bound2HeaderAlwaysVisible)
+            instance.headerAlwaysVisibleProperty().bindBidirectional(this.obsrv2HeaderAlwaysVisible);
+        if (this.bound1Title)
+            instance.titleProperty().bind(this.obsrv1Title);
+        if (this.bound2Title)
+            instance.titleProperty().bindBidirectional(this.obsrv2Title);
     }
 
     /**
@@ -237,16 +251,30 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#setDetachedTitle(java.lang.String)}。
+     * 設定屬性{@link PopOver#setHeaderAlwaysVisible(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B detachedTitle(java.lang.String value)
+    public B headerAlwaysVisible(boolean value)
     {
-        this.hasDetachedTitle = true;
-        this.valDetachedTitle = value;
+        this.hasHeaderAlwaysVisible = true;
+        this.valHeaderAlwaysVisible = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#setTitle(java.lang.String)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B title(java.lang.String value)
+    {
+        this.hasTitle = true;
+        this.valTitle = value;
         return (B) this;
     }
 
@@ -489,36 +517,70 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
     }
 
     /**
-     * 設定屬性{@link PopOver#detachedTitleProperty}的連結。
+     * 設定屬性{@link PopOver#headerAlwaysVisibleProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindDetachedTitle(javafx.beans.value.ObservableValue<? extends String> source)
+    public final B bindHeaderAlwaysVisible(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.bound1DetachedTitle = true;
-        this.obsrv1DetachedTitle = source;
-        this.bound2DetachedTitle = false;
-        this.obsrv2DetachedTitle = null;
+        this.bound1HeaderAlwaysVisible = true;
+        this.obsrv1HeaderAlwaysVisible = source;
+        this.bound2HeaderAlwaysVisible = false;
+        this.obsrv2HeaderAlwaysVisible = null;
         return (B) this;
     }
 
     /**
-     * 設定屬性{@link PopOver#detachedTitleProperty}的雙向連結。
+     * 設定屬性{@link PopOver#headerAlwaysVisibleProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindBidirectionalDetachedTitle(javafx.beans.property.Property<String> source)
+    public final B bindBidirectionalHeaderAlwaysVisible(javafx.beans.property.Property<Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.bound1DetachedTitle = false;
-        this.obsrv1DetachedTitle = null;
-        this.bound2DetachedTitle = true;
-        this.obsrv2DetachedTitle = source;
+        this.bound1HeaderAlwaysVisible = false;
+        this.obsrv1HeaderAlwaysVisible = null;
+        this.bound2HeaderAlwaysVisible = true;
+        this.obsrv2HeaderAlwaysVisible = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#titleProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindTitle(javafx.beans.value.ObservableValue<? extends String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Title = true;
+        this.obsrv1Title = source;
+        this.bound2Title = false;
+        this.obsrv2Title = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#titleProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalTitle(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Title = false;
+        this.obsrv1Title = null;
+        this.bound2Title = true;
+        this.obsrv2Title = source;
         return (B) this;
     }
 

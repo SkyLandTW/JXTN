@@ -7,7 +7,8 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: AqD@GitHub
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
- lib/controlsfx-8.20.8.jar
+ lib/controlsfx-8.40.11-20151113.010656-84.jar
+Eclipse-BundleShape: dir
 Export-Package: javafx.scene,
  javafx.scene.canvas,
  javafx.scene.chart,
@@ -40,4 +41,3 @@ Export-Package: javafx.scene,
  org.controlsfx.tools,
  org.controlsfx.validation,
  org.controlsfx.validation.decoration
-Eclipse-BundleShape: dir

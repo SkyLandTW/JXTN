@@ -9,7 +9,7 @@ package org.controlsfx.control.spreadsheet;
  * {@link GridBase}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.20.8.jar
+ * @version controlsfx-8.40.11-20151113.010656-84.jar
  * @param <Z> 要建構的物件型態(需繼承{@link GridBase})
  * @param <B> 建構器本身的型態(需繼承{@link GridBaseMaker})
  */
@@ -25,6 +25,9 @@ public class GridBaseMaker<Z extends GridBase, B extends GridBaseMaker<Z, B>>
 
     private boolean hasLocked;
     private java.lang.Boolean valLocked;
+
+    private boolean hasResizableRows;
+    private java.util.BitSet valResizableRows;
 
     private boolean hasRowHeaders;
     private java.util.Collection<java.lang.String> valRowHeaders;
@@ -48,6 +51,8 @@ public class GridBaseMaker<Z extends GridBase, B extends GridBaseMaker<Z, B>>
             instance.getColumnHeaders().addAll(this.valColumnHeaders);
         if (this.hasLocked)
             instance.setLocked(this.valLocked);
+        if (this.hasResizableRows)
+            instance.setResizableRows(this.valResizableRows);
         if (this.hasRowHeaders)
             instance.getRowHeaders().addAll(this.valRowHeaders);
         if (this.hasRowHeightCallback)
@@ -176,6 +181,20 @@ public class GridBaseMaker<Z extends GridBase, B extends GridBaseMaker<Z, B>>
     {
         this.hasLocked = true;
         this.valLocked = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link GridBase#setResizableRows(java.util.BitSet)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B resizableRows(java.util.BitSet value)
+    {
+        this.hasResizableRows = true;
+        this.valResizableRows = value;
         return (B) this;
     }
 

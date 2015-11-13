@@ -9,7 +9,7 @@ package org.controlsfx.dialog;
  * {@link Wizard.LinearFlow}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.20.8.jar
+ * @version controlsfx-8.40.11-20151113.010656-84.jar
  * @param <Z> 要建構的物件型態(需繼承{@link Wizard.LinearFlow})
  * @param <B> 建構器本身的型態(需繼承{@link Wizard.LinearFlowMaker})
  */
@@ -32,7 +32,7 @@ public class Wizard_LinearFlowMaker<Z extends Wizard.LinearFlow, B extends Wizar
      * @return 新的{@link Wizard.LinearFlow}物件實體
      */
     @SuppressWarnings("unchecked")
-    public Wizard.LinearFlow build(java.util.Collection<org.controlsfx.dialog.Wizard.WizardPane> arg0)
+    public Wizard.LinearFlow build(java.util.Collection<org.controlsfx.dialog.WizardPane> arg0)
     {
         Wizard.LinearFlow instance = new Wizard.LinearFlow(arg0);
         this.applyTo((Z) instance);
@@ -46,7 +46,7 @@ public class Wizard_LinearFlowMaker<Z extends Wizard.LinearFlow, B extends Wizar
      * @return 新的{@link Wizard.LinearFlow}物件實體
      */
     @SuppressWarnings("unchecked")
-    public Wizard.LinearFlow build(org.controlsfx.dialog.Wizard.WizardPane[] arg0)
+    public Wizard.LinearFlow build(org.controlsfx.dialog.WizardPane[] arg0)
     {
         Wizard.LinearFlow instance = new Wizard.LinearFlow(arg0);
         this.applyTo((Z) instance);

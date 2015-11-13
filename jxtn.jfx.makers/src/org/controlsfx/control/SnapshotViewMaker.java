@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link SnapshotView}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.20.8.jar
+ * @version controlsfx-8.40.11-20151113.010656-84.jar
  * @param <Z> 要建構的物件型態(需繼承{@link SnapshotView})
  * @param <B> 建構器本身的型態(需繼承{@link SnapshotViewMaker})
  */
@@ -32,11 +32,32 @@ public class SnapshotViewMaker<Z extends SnapshotView, B extends SnapshotViewMak
     private boolean hasSelectionActive;
     private boolean valSelectionActive;
 
-    private boolean hasSelectionActivityExplicitlyManaged;
-    private boolean valSelectionActivityExplicitlyManaged;
+    private boolean hasSelectionActivityManaged;
+    private boolean valSelectionActivityManaged;
+
+    private boolean hasSelectionAreaBoundary;
+    private org.controlsfx.control.SnapshotView.Boundary valSelectionAreaBoundary;
+
+    private boolean hasSelectionAreaFill;
+    private javafx.scene.paint.Paint valSelectionAreaFill;
+
+    private boolean hasSelectionBorderPaint;
+    private javafx.scene.paint.Paint valSelectionBorderPaint;
+
+    private boolean hasSelectionBorderWidth;
+    private double valSelectionBorderWidth;
+
+    private boolean hasSelectionMouseTransparent;
+    private boolean valSelectionMouseTransparent;
 
     private boolean hasSelectionRatioFixed;
     private boolean valSelectionRatioFixed;
+
+    private boolean hasUnselectedAreaBoundary;
+    private org.controlsfx.control.SnapshotView.Boundary valUnselectedAreaBoundary;
+
+    private boolean hasUnselectedAreaFill;
+    private javafx.scene.paint.Paint valUnselectedAreaFill;
 
     private boolean bound1FixedSelectionRatio;
     private boolean bound2FixedSelectionRatio;
@@ -53,15 +74,35 @@ public class SnapshotViewMaker<Z extends SnapshotView, B extends SnapshotViewMak
     private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1SelectionActive;
     private javafx.beans.property.Property<Boolean> obsrv2SelectionActive;
 
-    private boolean bound1SelectionActivityExplicitlyManaged;
-    private boolean bound2SelectionActivityExplicitlyManaged;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1SelectionActivityExplicitlyManaged;
-    private javafx.beans.property.Property<Boolean> obsrv2SelectionActivityExplicitlyManaged;
+    private boolean bound1SelectionActivityManaged;
+    private boolean bound2SelectionActivityManaged;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1SelectionActivityManaged;
+    private javafx.beans.property.Property<Boolean> obsrv2SelectionActivityManaged;
 
-    private boolean bound1SelectionChanging;
-    private boolean bound2SelectionChanging;
-    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1SelectionChanging;
-    private javafx.beans.property.Property<Boolean> obsrv2SelectionChanging;
+    private boolean bound1SelectionAreaBoundary;
+    private boolean bound2SelectionAreaBoundary;
+    private javafx.beans.value.ObservableValue<? extends org.controlsfx.control.SnapshotView.Boundary> obsrv1SelectionAreaBoundary;
+    private javafx.beans.property.Property<org.controlsfx.control.SnapshotView.Boundary> obsrv2SelectionAreaBoundary;
+
+    private boolean bound1SelectionAreaFill;
+    private boolean bound2SelectionAreaFill;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> obsrv1SelectionAreaFill;
+    private javafx.beans.property.Property<javafx.scene.paint.Paint> obsrv2SelectionAreaFill;
+
+    private boolean bound1SelectionBorderPaint;
+    private boolean bound2SelectionBorderPaint;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> obsrv1SelectionBorderPaint;
+    private javafx.beans.property.Property<javafx.scene.paint.Paint> obsrv2SelectionBorderPaint;
+
+    private boolean bound1SelectionBorderWidth;
+    private boolean bound2SelectionBorderWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1SelectionBorderWidth;
+    private javafx.beans.property.Property<Number> obsrv2SelectionBorderWidth;
+
+    private boolean bound1SelectionMouseTransparent;
+    private boolean bound2SelectionMouseTransparent;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1SelectionMouseTransparent;
+    private javafx.beans.property.Property<Boolean> obsrv2SelectionMouseTransparent;
 
     private boolean bound1Selection;
     private boolean bound2Selection;
@@ -72,6 +113,16 @@ public class SnapshotViewMaker<Z extends SnapshotView, B extends SnapshotViewMak
     private boolean bound2SelectionRatioFixed;
     private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1SelectionRatioFixed;
     private javafx.beans.property.Property<Boolean> obsrv2SelectionRatioFixed;
+
+    private boolean bound1UnselectedAreaBoundary;
+    private boolean bound2UnselectedAreaBoundary;
+    private javafx.beans.value.ObservableValue<? extends org.controlsfx.control.SnapshotView.Boundary> obsrv1UnselectedAreaBoundary;
+    private javafx.beans.property.Property<org.controlsfx.control.SnapshotView.Boundary> obsrv2UnselectedAreaBoundary;
+
+    private boolean bound1UnselectedAreaFill;
+    private boolean bound2UnselectedAreaFill;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> obsrv1UnselectedAreaFill;
+    private javafx.beans.property.Property<javafx.scene.paint.Paint> obsrv2UnselectedAreaFill;
 
     @Override
     public void applyTo(Z instance)
@@ -85,10 +136,24 @@ public class SnapshotViewMaker<Z extends SnapshotView, B extends SnapshotViewMak
             instance.setSelection(this.valSelection);
         if (this.hasSelectionActive)
             instance.setSelectionActive(this.valSelectionActive);
-        if (this.hasSelectionActivityExplicitlyManaged)
-            instance.setSelectionActivityExplicitlyManaged(this.valSelectionActivityExplicitlyManaged);
+        if (this.hasSelectionActivityManaged)
+            instance.setSelectionActivityManaged(this.valSelectionActivityManaged);
+        if (this.hasSelectionAreaBoundary)
+            instance.setSelectionAreaBoundary(this.valSelectionAreaBoundary);
+        if (this.hasSelectionAreaFill)
+            instance.setSelectionAreaFill(this.valSelectionAreaFill);
+        if (this.hasSelectionBorderPaint)
+            instance.setSelectionBorderPaint(this.valSelectionBorderPaint);
+        if (this.hasSelectionBorderWidth)
+            instance.setSelectionBorderWidth(this.valSelectionBorderWidth);
+        if (this.hasSelectionMouseTransparent)
+            instance.setSelectionMouseTransparent(this.valSelectionMouseTransparent);
         if (this.hasSelectionRatioFixed)
             instance.setSelectionRatioFixed(this.valSelectionRatioFixed);
+        if (this.hasUnselectedAreaBoundary)
+            instance.setUnselectedAreaBoundary(this.valUnselectedAreaBoundary);
+        if (this.hasUnselectedAreaFill)
+            instance.setUnselectedAreaFill(this.valUnselectedAreaFill);
         if (this.bound1FixedSelectionRatio)
             instance.fixedSelectionRatioProperty().bind(this.obsrv1FixedSelectionRatio);
         if (this.bound2FixedSelectionRatio)
@@ -101,14 +166,30 @@ public class SnapshotViewMaker<Z extends SnapshotView, B extends SnapshotViewMak
             instance.selectionActiveProperty().bind(this.obsrv1SelectionActive);
         if (this.bound2SelectionActive)
             instance.selectionActiveProperty().bindBidirectional(this.obsrv2SelectionActive);
-        if (this.bound1SelectionActivityExplicitlyManaged)
-            instance.selectionActivityExplicitlyManagedProperty().bind(this.obsrv1SelectionActivityExplicitlyManaged);
-        if (this.bound2SelectionActivityExplicitlyManaged)
-            instance.selectionActivityExplicitlyManagedProperty().bindBidirectional(this.obsrv2SelectionActivityExplicitlyManaged);
-        if (this.bound1SelectionChanging)
-            instance.selectionChangingProperty().bind(this.obsrv1SelectionChanging);
-        if (this.bound2SelectionChanging)
-            instance.selectionChangingProperty().bindBidirectional(this.obsrv2SelectionChanging);
+        if (this.bound1SelectionActivityManaged)
+            instance.selectionActivityManagedProperty().bind(this.obsrv1SelectionActivityManaged);
+        if (this.bound2SelectionActivityManaged)
+            instance.selectionActivityManagedProperty().bindBidirectional(this.obsrv2SelectionActivityManaged);
+        if (this.bound1SelectionAreaBoundary)
+            instance.selectionAreaBoundaryProperty().bind(this.obsrv1SelectionAreaBoundary);
+        if (this.bound2SelectionAreaBoundary)
+            instance.selectionAreaBoundaryProperty().bindBidirectional(this.obsrv2SelectionAreaBoundary);
+        if (this.bound1SelectionAreaFill)
+            instance.selectionAreaFillProperty().bind(this.obsrv1SelectionAreaFill);
+        if (this.bound2SelectionAreaFill)
+            instance.selectionAreaFillProperty().bindBidirectional(this.obsrv2SelectionAreaFill);
+        if (this.bound1SelectionBorderPaint)
+            instance.selectionBorderPaintProperty().bind(this.obsrv1SelectionBorderPaint);
+        if (this.bound2SelectionBorderPaint)
+            instance.selectionBorderPaintProperty().bindBidirectional(this.obsrv2SelectionBorderPaint);
+        if (this.bound1SelectionBorderWidth)
+            instance.selectionBorderWidthProperty().bind(this.obsrv1SelectionBorderWidth);
+        if (this.bound2SelectionBorderWidth)
+            instance.selectionBorderWidthProperty().bindBidirectional(this.obsrv2SelectionBorderWidth);
+        if (this.bound1SelectionMouseTransparent)
+            instance.selectionMouseTransparentProperty().bind(this.obsrv1SelectionMouseTransparent);
+        if (this.bound2SelectionMouseTransparent)
+            instance.selectionMouseTransparentProperty().bindBidirectional(this.obsrv2SelectionMouseTransparent);
         if (this.bound1Selection)
             instance.selectionProperty().bind(this.obsrv1Selection);
         if (this.bound2Selection)
@@ -117,6 +198,14 @@ public class SnapshotViewMaker<Z extends SnapshotView, B extends SnapshotViewMak
             instance.selectionRatioFixedProperty().bind(this.obsrv1SelectionRatioFixed);
         if (this.bound2SelectionRatioFixed)
             instance.selectionRatioFixedProperty().bindBidirectional(this.obsrv2SelectionRatioFixed);
+        if (this.bound1UnselectedAreaBoundary)
+            instance.unselectedAreaBoundaryProperty().bind(this.obsrv1UnselectedAreaBoundary);
+        if (this.bound2UnselectedAreaBoundary)
+            instance.unselectedAreaBoundaryProperty().bindBidirectional(this.obsrv2UnselectedAreaBoundary);
+        if (this.bound1UnselectedAreaFill)
+            instance.unselectedAreaFillProperty().bind(this.obsrv1UnselectedAreaFill);
+        if (this.bound2UnselectedAreaFill)
+            instance.unselectedAreaFillProperty().bindBidirectional(this.obsrv2UnselectedAreaFill);
     }
 
     /**
@@ -176,16 +265,86 @@ public class SnapshotViewMaker<Z extends SnapshotView, B extends SnapshotViewMak
     }
 
     /**
-     * 設定屬性{@link SnapshotView#setSelectionActivityExplicitlyManaged(boolean)}。
+     * 設定屬性{@link SnapshotView#setSelectionActivityManaged(boolean)}。
      *
      * @param value 新的屬性值
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public B selectionActivityExplicitlyManaged(boolean value)
+    public B selectionActivityManaged(boolean value)
     {
-        this.hasSelectionActivityExplicitlyManaged = true;
-        this.valSelectionActivityExplicitlyManaged = value;
+        this.hasSelectionActivityManaged = true;
+        this.valSelectionActivityManaged = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#setSelectionAreaBoundary(org.controlsfx.control.SnapshotView.Boundary)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B selectionAreaBoundary(org.controlsfx.control.SnapshotView.Boundary value)
+    {
+        this.hasSelectionAreaBoundary = true;
+        this.valSelectionAreaBoundary = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#setSelectionAreaFill(javafx.scene.paint.Paint)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B selectionAreaFill(javafx.scene.paint.Paint value)
+    {
+        this.hasSelectionAreaFill = true;
+        this.valSelectionAreaFill = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#setSelectionBorderPaint(javafx.scene.paint.Paint)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B selectionBorderPaint(javafx.scene.paint.Paint value)
+    {
+        this.hasSelectionBorderPaint = true;
+        this.valSelectionBorderPaint = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#setSelectionBorderWidth(double)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B selectionBorderWidth(double value)
+    {
+        this.hasSelectionBorderWidth = true;
+        this.valSelectionBorderWidth = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#setSelectionMouseTransparent(boolean)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B selectionMouseTransparent(boolean value)
+    {
+        this.hasSelectionMouseTransparent = true;
+        this.valSelectionMouseTransparent = value;
         return (B) this;
     }
 
@@ -200,6 +359,34 @@ public class SnapshotViewMaker<Z extends SnapshotView, B extends SnapshotViewMak
     {
         this.hasSelectionRatioFixed = true;
         this.valSelectionRatioFixed = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#setUnselectedAreaBoundary(org.controlsfx.control.SnapshotView.Boundary)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B unselectedAreaBoundary(org.controlsfx.control.SnapshotView.Boundary value)
+    {
+        this.hasUnselectedAreaBoundary = true;
+        this.valUnselectedAreaBoundary = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#setUnselectedAreaFill(javafx.scene.paint.Paint)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B unselectedAreaFill(javafx.scene.paint.Paint value)
+    {
+        this.hasUnselectedAreaFill = true;
+        this.valUnselectedAreaFill = value;
         return (B) this;
     }
 
@@ -306,70 +493,206 @@ public class SnapshotViewMaker<Z extends SnapshotView, B extends SnapshotViewMak
     }
 
     /**
-     * 設定屬性{@link SnapshotView#selectionActivityExplicitlyManagedProperty}的連結。
+     * 設定屬性{@link SnapshotView#selectionActivityManagedProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindSelectionActivityExplicitlyManaged(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindSelectionActivityManaged(javafx.beans.value.ObservableValue<? extends Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.bound1SelectionActivityExplicitlyManaged = true;
-        this.obsrv1SelectionActivityExplicitlyManaged = source;
-        this.bound2SelectionActivityExplicitlyManaged = false;
-        this.obsrv2SelectionActivityExplicitlyManaged = null;
+        this.bound1SelectionActivityManaged = true;
+        this.obsrv1SelectionActivityManaged = source;
+        this.bound2SelectionActivityManaged = false;
+        this.obsrv2SelectionActivityManaged = null;
         return (B) this;
     }
 
     /**
-     * 設定屬性{@link SnapshotView#selectionActivityExplicitlyManagedProperty}的雙向連結。
+     * 設定屬性{@link SnapshotView#selectionActivityManagedProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindBidirectionalSelectionActivityExplicitlyManaged(javafx.beans.property.Property<Boolean> source)
+    public final B bindBidirectionalSelectionActivityManaged(javafx.beans.property.Property<Boolean> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.bound1SelectionActivityExplicitlyManaged = false;
-        this.obsrv1SelectionActivityExplicitlyManaged = null;
-        this.bound2SelectionActivityExplicitlyManaged = true;
-        this.obsrv2SelectionActivityExplicitlyManaged = source;
+        this.bound1SelectionActivityManaged = false;
+        this.obsrv1SelectionActivityManaged = null;
+        this.bound2SelectionActivityManaged = true;
+        this.obsrv2SelectionActivityManaged = source;
         return (B) this;
     }
 
     /**
-     * 設定屬性{@link SnapshotView#selectionChangingProperty}的連結。
+     * 設定屬性{@link SnapshotView#selectionAreaBoundaryProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindSelectionChanging(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    public final B bindSelectionAreaBoundary(javafx.beans.value.ObservableValue<? extends org.controlsfx.control.SnapshotView.Boundary> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.bound1SelectionChanging = true;
-        this.obsrv1SelectionChanging = source;
-        this.bound2SelectionChanging = false;
-        this.obsrv2SelectionChanging = null;
+        this.bound1SelectionAreaBoundary = true;
+        this.obsrv1SelectionAreaBoundary = source;
+        this.bound2SelectionAreaBoundary = false;
+        this.obsrv2SelectionAreaBoundary = null;
         return (B) this;
     }
 
     /**
-     * 設定屬性{@link SnapshotView#selectionChangingProperty}的雙向連結。
+     * 設定屬性{@link SnapshotView#selectionAreaBoundaryProperty}的雙向連結。
      *
      * @param value 新的屬性連結(單向)
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindBidirectionalSelectionChanging(javafx.beans.property.Property<Boolean> source)
+    public final B bindBidirectionalSelectionAreaBoundary(javafx.beans.property.Property<org.controlsfx.control.SnapshotView.Boundary> source)
     {
         java.util.Objects.requireNonNull(source);
-        this.bound1SelectionChanging = false;
-        this.obsrv1SelectionChanging = null;
-        this.bound2SelectionChanging = true;
-        this.obsrv2SelectionChanging = source;
+        this.bound1SelectionAreaBoundary = false;
+        this.obsrv1SelectionAreaBoundary = null;
+        this.bound2SelectionAreaBoundary = true;
+        this.obsrv2SelectionAreaBoundary = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#selectionAreaFillProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindSelectionAreaFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SelectionAreaFill = true;
+        this.obsrv1SelectionAreaFill = source;
+        this.bound2SelectionAreaFill = false;
+        this.obsrv2SelectionAreaFill = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#selectionAreaFillProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSelectionAreaFill(javafx.beans.property.Property<javafx.scene.paint.Paint> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SelectionAreaFill = false;
+        this.obsrv1SelectionAreaFill = null;
+        this.bound2SelectionAreaFill = true;
+        this.obsrv2SelectionAreaFill = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#selectionBorderPaintProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindSelectionBorderPaint(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SelectionBorderPaint = true;
+        this.obsrv1SelectionBorderPaint = source;
+        this.bound2SelectionBorderPaint = false;
+        this.obsrv2SelectionBorderPaint = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#selectionBorderPaintProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSelectionBorderPaint(javafx.beans.property.Property<javafx.scene.paint.Paint> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SelectionBorderPaint = false;
+        this.obsrv1SelectionBorderPaint = null;
+        this.bound2SelectionBorderPaint = true;
+        this.obsrv2SelectionBorderPaint = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#selectionBorderWidthProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindSelectionBorderWidth(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SelectionBorderWidth = true;
+        this.obsrv1SelectionBorderWidth = source;
+        this.bound2SelectionBorderWidth = false;
+        this.obsrv2SelectionBorderWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#selectionBorderWidthProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSelectionBorderWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SelectionBorderWidth = false;
+        this.obsrv1SelectionBorderWidth = null;
+        this.bound2SelectionBorderWidth = true;
+        this.obsrv2SelectionBorderWidth = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#selectionMouseTransparentProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindSelectionMouseTransparent(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SelectionMouseTransparent = true;
+        this.obsrv1SelectionMouseTransparent = source;
+        this.bound2SelectionMouseTransparent = false;
+        this.obsrv2SelectionMouseTransparent = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#selectionMouseTransparentProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalSelectionMouseTransparent(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1SelectionMouseTransparent = false;
+        this.obsrv1SelectionMouseTransparent = null;
+        this.bound2SelectionMouseTransparent = true;
+        this.obsrv2SelectionMouseTransparent = source;
         return (B) this;
     }
 
@@ -442,6 +765,74 @@ public class SnapshotViewMaker<Z extends SnapshotView, B extends SnapshotViewMak
     }
 
     /**
+     * 設定屬性{@link SnapshotView#unselectedAreaBoundaryProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindUnselectedAreaBoundary(javafx.beans.value.ObservableValue<? extends org.controlsfx.control.SnapshotView.Boundary> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1UnselectedAreaBoundary = true;
+        this.obsrv1UnselectedAreaBoundary = source;
+        this.bound2UnselectedAreaBoundary = false;
+        this.obsrv2UnselectedAreaBoundary = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#unselectedAreaBoundaryProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalUnselectedAreaBoundary(javafx.beans.property.Property<org.controlsfx.control.SnapshotView.Boundary> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1UnselectedAreaBoundary = false;
+        this.obsrv1UnselectedAreaBoundary = null;
+        this.bound2UnselectedAreaBoundary = true;
+        this.obsrv2UnselectedAreaBoundary = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#unselectedAreaFillProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindUnselectedAreaFill(javafx.beans.value.ObservableValue<? extends javafx.scene.paint.Paint> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1UnselectedAreaFill = true;
+        this.obsrv1UnselectedAreaFill = source;
+        this.bound2UnselectedAreaFill = false;
+        this.obsrv2UnselectedAreaFill = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SnapshotView#unselectedAreaFillProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalUnselectedAreaFill(javafx.beans.property.Property<javafx.scene.paint.Paint> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1UnselectedAreaFill = false;
+        this.obsrv1UnselectedAreaFill = null;
+        this.bound2UnselectedAreaFill = true;
+        this.obsrv2UnselectedAreaFill = source;
+        return (B) this;
+    }
+
+    /**
      * 建構{@link SnapshotView}物件。
      *
      * @return 新的{@link SnapshotView}物件實體
@@ -451,20 +842,6 @@ public class SnapshotViewMaker<Z extends SnapshotView, B extends SnapshotViewMak
     public SnapshotView build()
     {
         SnapshotView instance = new SnapshotView();
-        this.applyTo((Z) instance);
-        this.doAfterBuild((Z) instance);
-        return instance;
-    }
-
-    /**
-     * 建構{@link SnapshotView}物件。
-     *
-     * @return 新的{@link SnapshotView}物件實體
-     */
-    @SuppressWarnings("unchecked")
-    public SnapshotView build(java.lang.String arg0)
-    {
-        SnapshotView instance = new SnapshotView(arg0);
         this.applyTo((Z) instance);
         this.doAfterBuild((Z) instance);
         return instance;

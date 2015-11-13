@@ -9,7 +9,7 @@ package org.controlsfx.dialog;
  * {@link Wizard}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.20.8.jar
+ * @version controlsfx-8.40.11-20151113.010656-84.jar
  * @param <Z> 要建構的物件型態(需繼承{@link Wizard})
  * @param <B> 建構器本身的型態(需繼承{@link WizardMaker})
  */
@@ -23,6 +23,12 @@ public class WizardMaker<Z extends Wizard, B extends WizardMaker<Z, B>>
     private boolean hasFlow;
     private org.controlsfx.dialog.Wizard.Flow valFlow;
 
+    private boolean hasInvalid;
+    private boolean valInvalid;
+
+    private boolean hasReadSettings;
+    private boolean valReadSettings;
+
     private boolean hasTitle;
     private java.lang.String valTitle;
 
@@ -33,6 +39,21 @@ public class WizardMaker<Z extends Wizard, B extends WizardMaker<Z, B>>
     private boolean bound2Flow;
     private javafx.beans.value.ObservableValue<? extends org.controlsfx.dialog.Wizard.Flow> obsrv1Flow;
     private javafx.beans.property.Property<org.controlsfx.dialog.Wizard.Flow> obsrv2Flow;
+
+    private boolean bound1Invalid;
+    private boolean bound2Invalid;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Invalid;
+    private javafx.beans.property.Property<Boolean> obsrv2Invalid;
+
+    private boolean bound1ReadSettings;
+    private boolean bound2ReadSettings;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ReadSettings;
+    private javafx.beans.property.Property<Boolean> obsrv2ReadSettings;
+
+    private boolean bound1Result;
+    private boolean bound2Result;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.control.ButtonType> obsrv1Result;
+    private javafx.beans.property.Property<javafx.scene.control.ButtonType> obsrv2Result;
 
     private boolean bound1Title;
     private boolean bound2Title;
@@ -45,6 +66,10 @@ public class WizardMaker<Z extends Wizard, B extends WizardMaker<Z, B>>
         super.applyTo(instance);
         if (this.hasFlow)
             instance.setFlow(this.valFlow);
+        if (this.hasInvalid)
+            instance.setInvalid(this.valInvalid);
+        if (this.hasReadSettings)
+            instance.setReadSettings(this.valReadSettings);
         if (this.hasTitle)
             instance.setTitle(this.valTitle);
         if (this.hasUserData)
@@ -53,6 +78,18 @@ public class WizardMaker<Z extends Wizard, B extends WizardMaker<Z, B>>
             instance.flowProperty().bind(this.obsrv1Flow);
         if (this.bound2Flow)
             instance.flowProperty().bindBidirectional(this.obsrv2Flow);
+        if (this.bound1Invalid)
+            instance.invalidProperty().bind(this.obsrv1Invalid);
+        if (this.bound2Invalid)
+            instance.invalidProperty().bindBidirectional(this.obsrv2Invalid);
+        if (this.bound1ReadSettings)
+            instance.readSettingsProperty().bind(this.obsrv1ReadSettings);
+        if (this.bound2ReadSettings)
+            instance.readSettingsProperty().bindBidirectional(this.obsrv2ReadSettings);
+        if (this.bound1Result)
+            instance.resultProperty().bind(this.obsrv1Result);
+        if (this.bound2Result)
+            instance.resultProperty().bindBidirectional(this.obsrv2Result);
         if (this.bound1Title)
             instance.titleProperty().bind(this.obsrv1Title);
         if (this.bound2Title)
@@ -70,6 +107,34 @@ public class WizardMaker<Z extends Wizard, B extends WizardMaker<Z, B>>
     {
         this.hasFlow = true;
         this.valFlow = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Wizard#setInvalid(boolean)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B invalid(boolean value)
+    {
+        this.hasInvalid = true;
+        this.valInvalid = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Wizard#setReadSettings(boolean)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B readSettings(boolean value)
+    {
+        this.hasReadSettings = true;
+        this.valReadSettings = value;
         return (B) this;
     }
 
@@ -132,6 +197,108 @@ public class WizardMaker<Z extends Wizard, B extends WizardMaker<Z, B>>
         this.obsrv1Flow = null;
         this.bound2Flow = true;
         this.obsrv2Flow = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Wizard#invalidProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindInvalid(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Invalid = true;
+        this.obsrv1Invalid = source;
+        this.bound2Invalid = false;
+        this.obsrv2Invalid = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Wizard#invalidProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalInvalid(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Invalid = false;
+        this.obsrv1Invalid = null;
+        this.bound2Invalid = true;
+        this.obsrv2Invalid = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Wizard#readSettingsProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindReadSettings(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ReadSettings = true;
+        this.obsrv1ReadSettings = source;
+        this.bound2ReadSettings = false;
+        this.obsrv2ReadSettings = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Wizard#readSettingsProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalReadSettings(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ReadSettings = false;
+        this.obsrv1ReadSettings = null;
+        this.bound2ReadSettings = true;
+        this.obsrv2ReadSettings = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Wizard#resultProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindResult(javafx.beans.value.ObservableValue<? extends javafx.scene.control.ButtonType> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Result = true;
+        this.obsrv1Result = source;
+        this.bound2Result = false;
+        this.obsrv2Result = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link Wizard#resultProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalResult(javafx.beans.property.Property<javafx.scene.control.ButtonType> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Result = false;
+        this.obsrv1Result = null;
+        this.bound2Result = true;
+        this.obsrv2Result = source;
         return (B) this;
     }
 

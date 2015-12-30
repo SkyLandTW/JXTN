@@ -35,6 +35,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface ToFloatFunction<T> {
+
     /**
      * 套用函數到指定參數
      *

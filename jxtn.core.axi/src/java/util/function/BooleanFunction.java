@@ -35,6 +35,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface BooleanFunction<R> {
+
     /**
      * 套用函數到指定的參數
      *

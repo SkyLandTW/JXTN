@@ -35,6 +35,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface IntPredicateEx<TException extends Exception> extends IntPredicate {
+
     boolean testEx(int value) throws TException;
 
     @Deprecated

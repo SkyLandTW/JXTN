@@ -35,6 +35,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface LongPredicateEx<TException extends Exception> extends LongPredicate {
+
     boolean testEx(long value) throws TException;
 
     @Deprecated

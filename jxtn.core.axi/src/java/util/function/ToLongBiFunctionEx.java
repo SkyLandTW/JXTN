@@ -37,6 +37,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface ToLongBiFunctionEx<T, U, TException extends Exception> extends ToLongBiFunction<T, U> {
+
     long applyAsLongEx(T t, U u) throws TException;
 
     @Deprecated

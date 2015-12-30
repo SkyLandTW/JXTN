@@ -34,6 +34,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 public interface BooleanSupplierEx<TException extends Exception> extends BooleanSupplier {
+
     boolean getAsBooleanEx() throws TException;
 
     @Deprecated

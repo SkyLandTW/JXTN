@@ -34,6 +34,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 public interface LongBinaryOperatorEx<TException extends Exception> extends LongBinaryOperator {
+
     long applyAsLongEx(long left, long right) throws TException;
 
     @Deprecated

@@ -36,6 +36,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface ToFloatFunctionEx<T, TException extends Exception> extends ToFloatFunction<T> {
+
     float applyAsFloatEx(T t) throws TException;
 
     @Deprecated

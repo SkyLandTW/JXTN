@@ -34,6 +34,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 public interface IntBinaryOperatorEx<TException extends Exception> extends IntBinaryOperator {
+
     int applyAsIntEx(int left, int right) throws TException;
 
     @Deprecated

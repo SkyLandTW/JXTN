@@ -36,6 +36,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface BinaryOperatorEx<T, TException extends Exception> extends BinaryOperator<T> {
+
     T applyEx(T t, T u) throws TException;
 
     @Deprecated

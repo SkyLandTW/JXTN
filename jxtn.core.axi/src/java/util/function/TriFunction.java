@@ -38,6 +38,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface TriFunction<T, U, V, R> {
+
     /**
      * 套用函數
      *

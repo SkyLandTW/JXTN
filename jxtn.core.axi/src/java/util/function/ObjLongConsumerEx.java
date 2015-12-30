@@ -36,6 +36,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface ObjLongConsumerEx<T, TException extends Exception> extends ObjLongConsumer<T> {
+
     void acceptEx(T t, long value) throws TException;
 
     @Deprecated

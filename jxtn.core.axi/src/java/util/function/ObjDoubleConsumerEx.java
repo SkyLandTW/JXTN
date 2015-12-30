@@ -36,6 +36,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface ObjDoubleConsumerEx<T, TException extends Exception> extends ObjDoubleConsumer<T> {
+
     void acceptEx(T t, double value) throws TException;
 
     @Deprecated

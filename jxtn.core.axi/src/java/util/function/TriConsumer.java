@@ -37,6 +37,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface TriConsumer<T, U, V> {
+
     /**
      * 接受參數
      *

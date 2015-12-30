@@ -40,6 +40,7 @@ import java.util.Objects;
  */
 @FunctionalInterface
 public interface BiFunctionEx<T, U, R, TException extends Exception> extends BiFunction<T, U, R> {
+
     R applyEx(T t, U u) throws TException;
 
     @Override

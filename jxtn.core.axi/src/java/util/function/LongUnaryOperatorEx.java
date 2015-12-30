@@ -35,6 +35,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface LongUnaryOperatorEx<TException extends Exception> extends LongUnaryOperator {
+
     long applyAsLongEx(long operand) throws TException;
 
     @Deprecated

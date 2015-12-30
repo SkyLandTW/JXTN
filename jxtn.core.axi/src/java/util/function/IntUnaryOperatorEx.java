@@ -35,6 +35,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface IntUnaryOperatorEx<TException extends Exception> extends IntUnaryOperator {
+
     int applyAsIntEx(int operand) throws TException;
 
     @Deprecated

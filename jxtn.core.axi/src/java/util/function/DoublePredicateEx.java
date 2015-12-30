@@ -35,6 +35,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface DoublePredicateEx<TException extends Exception> extends DoublePredicate {
+
     boolean testEx(double value) throws TException;
 
     @Deprecated

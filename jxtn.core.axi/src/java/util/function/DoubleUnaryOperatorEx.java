@@ -35,6 +35,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface DoubleUnaryOperatorEx<TException extends Exception> extends DoubleUnaryOperator {
+
     double applyAsDoubleEx(double operand) throws TException;
 
     @Deprecated

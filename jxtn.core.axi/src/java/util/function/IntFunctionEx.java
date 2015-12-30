@@ -36,6 +36,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface IntFunctionEx<R, TException extends Exception> extends IntFunction<R> {
+
     R applyEx(int value) throws TException;
 
     @Deprecated

@@ -36,6 +36,7 @@ package java.util.function;
  * @param <TException> 例外型態
  */
 public interface BiPredicateEx<T, U, TException extends Exception> extends BiPredicate<T, U> {
+
     boolean testEx(T t, U u) throws TException;
 
     @Deprecated

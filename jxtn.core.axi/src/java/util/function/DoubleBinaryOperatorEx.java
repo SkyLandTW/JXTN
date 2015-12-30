@@ -35,6 +35,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface DoubleBinaryOperatorEx<TException extends Exception> extends DoubleBinaryOperator {
+
     double applyAsDoubleEx(double left, double right) throws TException;
 
     @Deprecated

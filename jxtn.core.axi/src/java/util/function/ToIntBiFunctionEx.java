@@ -37,6 +37,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface ToIntBiFunctionEx<T, U, TException extends Exception> extends ToIntBiFunction<T, U> {
+
     int applyAsIntEx(T t, U u) throws TException;
 
     @Deprecated

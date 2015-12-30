@@ -35,6 +35,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface IntConsumerEx<TException extends Exception> extends IntConsumer {
+
     void acceptEx(int t) throws TException;
 
     @Deprecated

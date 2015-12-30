@@ -36,6 +36,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface BooleanFunctionEx<R, TException extends Exception> extends BooleanFunction<R> {
+
     R applyEx(boolean value) throws TException;
 
     @Deprecated

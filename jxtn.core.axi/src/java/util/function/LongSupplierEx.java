@@ -35,6 +35,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface LongSupplierEx<TException extends Exception> extends LongSupplier {
+
     long getAsLongEx() throws TException;
 
     @Deprecated

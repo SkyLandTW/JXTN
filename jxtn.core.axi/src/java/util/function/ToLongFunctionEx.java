@@ -36,6 +36,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface ToLongFunctionEx<T, TException extends Exception> extends ToLongFunction<T> {
+
     long applyAsLongEx(T t) throws TException;
 
     @Deprecated

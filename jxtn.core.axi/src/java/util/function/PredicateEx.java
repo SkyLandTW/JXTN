@@ -36,6 +36,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface PredicateEx<T, TException extends Exception> extends Predicate<T> {
+
     boolean testEx(T t) throws TException;
 
     @Deprecated

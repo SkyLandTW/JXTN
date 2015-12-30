@@ -37,6 +37,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface BiConsumerEx<T, U, TException extends Exception> extends BiConsumer<T, U> {
+
     void acceptEx(T t1, U t2) throws TException;
 
     @Deprecated

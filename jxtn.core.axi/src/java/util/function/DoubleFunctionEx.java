@@ -36,6 +36,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface DoubleFunctionEx<R, TException extends Exception> extends DoubleFunction<R> {
+
     R applyEx(double value) throws TException;
 
     @Deprecated

@@ -36,6 +36,7 @@ import java.util.Objects;
  */
 @FunctionalInterface
 public interface BooleanConsumer {
+
     /**
      * 對布林值進行操作
      *

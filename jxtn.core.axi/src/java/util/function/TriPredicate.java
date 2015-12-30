@@ -37,6 +37,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface TriPredicate<T, U, V> {
+
     /**
      * 測試條件
      *

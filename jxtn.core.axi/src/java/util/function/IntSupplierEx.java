@@ -35,6 +35,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface IntSupplierEx<TException extends Exception> extends IntSupplier {
+
     int getAsIntEx() throws TException;
 
     @Deprecated

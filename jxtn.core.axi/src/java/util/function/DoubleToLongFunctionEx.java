@@ -35,6 +35,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface DoubleToLongFunctionEx<TException extends Exception> extends DoubleToLongFunction {
+
     long applyAsLongEx(double value) throws TException;
 
     @Deprecated

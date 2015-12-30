@@ -35,6 +35,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface DoubleSupplierEx<TException extends Exception> extends DoubleSupplier {
+
     double getAsDoubleEx() throws TException;
 
     @Deprecated

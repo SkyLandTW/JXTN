@@ -36,6 +36,7 @@ package java.util.function;
  */
 @FunctionalInterface
 public interface ToDoubleFunctionEx<T, TException extends Exception> extends ToDoubleFunction<T> {
+
     double applyAsDoubleEx(T t) throws TException;
 
     @Deprecated

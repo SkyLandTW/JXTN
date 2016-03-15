@@ -11,7 +11,7 @@ builders are already included).
 
 ##### Additionals
  - Java/OpenJDK/OpenJFX 8u60 or newer (with built-in dialogs support).
- - ControlsFX v8.20.8: It's optional and you could remove the library and
+ - ControlsFX v8.40.10: It's optional and you could remove the library and
    builder classes under _org/controlsfx/*_ directory.
  
 ##### Installation

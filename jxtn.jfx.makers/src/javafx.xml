@@ -21502,7 +21502,7 @@
       </property>
     </class>
   </jar>
-  <jar file="controlsfx-8.40.11-20151113.010656-84.jar">
+  <jar file="controlsfx-8.40.10.jar">
     <class abstract="false" genericDeclaration="T extends java.lang.Object" genericDeclarationPrepend="T extends java.lang.Object, " genericName="BreadCrumbBar&lt;T&gt;" genericParam="T" genericParamPrepend="T, " name="BreadCrumbBar" package="org.controlsfx.control" super="javafx.scene.control.Control" superParam="" superParamPrepend="">
       <typeParameter name="T"/>
       <constructor access="public" name="org.controlsfx.control.BreadCrumbBar" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>

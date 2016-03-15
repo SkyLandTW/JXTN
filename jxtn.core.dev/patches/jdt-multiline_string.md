@@ -19,6 +19,9 @@ Supports multi-line string literals in Eclipse JDT
  - Eclipse v4.5.1 (Mars 1)
    * org.eclipse.jdt.core v3.11.1
    * org.eclipse.jdt.ui v3.11.1
+ - Eclipse v4.5.2 (Mars 2)
+   * org.eclipse.jdt.core v3.11.2
+   * org.eclipse.jdt.ui v3.11.2
 
 ------------------------------------------------------------------------------
 

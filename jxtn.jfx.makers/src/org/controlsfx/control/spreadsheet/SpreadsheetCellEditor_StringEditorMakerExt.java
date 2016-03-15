@@ -9,7 +9,7 @@ package org.controlsfx.control.spreadsheet;
  * {@link SpreadsheetCellEditor.StringEditor}建構器延伸（供客製化）。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.20.8.jar
+ * @version controlsfx-8.40.10.jar
  * @param <Z> 要建構的物件型態(需繼承{@link SpreadsheetCellEditor.StringEditor})
  * @param <B> 建構器本身的型態(需繼承{@link SpreadsheetCellEditor_StringEditorMaker})
  */

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry excluding="**/*.ftl" kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="lib/controlsfx-8.40.11-20151113.010656-84.jar" sourcepath="lib/controlsfx-8.40.11-20151113.010656-84-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/controlsfx-8.40.10.jar" sourcepath="lib/controlsfx-8.40.10-sources.jar"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>

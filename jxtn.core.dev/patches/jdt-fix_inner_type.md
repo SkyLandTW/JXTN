@@ -21,7 +21,9 @@ if (targetType == null || targetType == this) { // could not resolve any better,
     // report the missing class file first - only if not resolving a previously missing type
     if ((this.tagBits & TagBits.HasMissingType) == 0 && !environment.mayTolerateMissingType) {
         // ADD THESE LINES
-        String fullName = String.join(".", java.util.Arrays.asList(this.compoundName).map(a -> new String(a)));
+        String fullName = String.join(".", java.util.Arrays.asList(this.compoundName)
+                .stream().map(a -> new String(a))
+                .collect(java.util.stream.Collectors.toList()));
         System.err.println("\tunresolved type: " + fullName);
         if (!(fullName.startsWith("java.") && fullName.contains("$")))
         // END

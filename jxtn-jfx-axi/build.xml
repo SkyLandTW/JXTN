@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="jxtn-jfx-axi" basedir="." default="dist">
+    <property environment="env" />
+    <property name="src" location="src" />
+    <property name="bin" location="bin" />
+    <property name="dist" location="../dist" />
+    <path id="jxtn-jfx-axi.classpath">
+        <pathelement location="bin" />
+    </path>
+    <target name="init">
+        <mkdir dir="${bin}" />
+        <mkdir dir="${dist}" />
+    	<delete includeemptydirs="true">
+    	    <fileset dir="${bin}" includes="**/*"/>
+    	</delete>
+    	<copy includeemptydirs="false" todir="bin">
+            <fileset dir="${src}">
+                <exclude name="**/*.launch" />
+                <exclude name="**/*.java" />
+            </fileset>
+        </copy>
+    </target>
+    <target name="compile" depends="init" description="編譯程式">
+        <javac srcdir="${src}" destdir="${bin}"
+            source="1.8" target="1.8" encoding="utf-8" includeantruntime="false"
+            debug="true" debuglevel="lines,vars,source">
+            <classpath refid="jxtn-jfx-axi.classpath" />
+            <compilerarg value="-parameters"/>
+            <compilerarg value="-XDignore.symbol.file"/>
+            <compilerarg value="-Xlint:deprecation"/>
+            <compilerarg value="-Xlint:unchecked"/>
+        </javac>
+    </target>
+    <target name="dist" depends="compile" description="產生JAR檔">
+        <jar jarfile="${dist}/jfx.axi.jar" basedir="${bin}" />
+    </target>
+</project>

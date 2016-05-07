@@ -24,19 +24,34 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package jxtn.core.unix;
+
+import java.util.Iterator;
+import java.util.Objects;
 
 /**
- * The package contains a set of wrappers and utilities to interface Unix-like OS directly.
- * <p>
- * Rules/Considerations:
- * <ul>
- * <li>Architecture: 64-bit</li>
- * <li>Endianness: Little Endian</li>
- * <li>Charset: UTF-8</li>
- * <li>Target OS: Linux after v3.0</li>
- * </ul>
- * </p>
+ * Splitting iterable for {@link ByteArray} or {@link ByteString}
  *
+ * @param <T> {@link ByteArray} or {@link ByteString}
  * @author aqd
  */
-package jxtn.core.unix;
+public final class ByteSequenceSplittingIterable<T extends ByteSequence<T>>
+        implements Iterable<T> {
+
+    private final T string;
+    private final T separator;
+
+    public ByteSequenceSplittingIterable(T string, T separator) {
+        this.string = Objects.requireNonNull(string);
+        this.separator = Objects.requireNonNull(separator);
+        if (separator.isEmpty()) {
+            throw new IllegalArgumentException("separator");
+        }
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new ByteSequenceSplittingIterator<>(this.string, this.separator);
+    }
+
+}

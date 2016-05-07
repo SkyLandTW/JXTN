@@ -24,19 +24,44 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package jxtn.core.unix;
+
+import java.util.Objects;
+import jxtn.core.axi.collections.AbstractIterator;
 
 /**
- * The package contains a set of wrappers and utilities to interface Unix-like OS directly.
- * <p>
- * Rules/Considerations:
- * <ul>
- * <li>Architecture: 64-bit</li>
- * <li>Endianness: Little Endian</li>
- * <li>Charset: UTF-8</li>
- * <li>Target OS: Linux after v3.0</li>
- * </ul>
- * </p>
+ * Searching iterator for {@link ByteArray} or {@link ByteString}
  *
+ * @param <T> {@link ByteArray} or {@link ByteString}
  * @author aqd
  */
-package jxtn.core.unix;
+public final class ByteSequenceSearchingIterator<T extends ByteSequence<T>>
+        extends AbstractIterator<T> {
+
+    private final T string;
+    private final T target;
+
+    private int offset = 0;
+
+    public ByteSequenceSearchingIterator(T string, T target) {
+        this.string = Objects.requireNonNull(string);
+        this.target = Objects.requireNonNull(target);
+        if (target.isEmpty()) {
+            throw new IllegalArgumentException("target");
+        }
+    }
+
+    @Override
+    protected T fetchNext() {
+        int index = this.string.indexOf(this.target, this.offset);
+        if (index < 0) {
+            this.offset = this.string.length();
+            return this.end();
+        } else {
+            T remaining = this.string.substring(index);
+            this.offset = index + this.target.length();
+            return remaining;
+        }
+    }
+
+}

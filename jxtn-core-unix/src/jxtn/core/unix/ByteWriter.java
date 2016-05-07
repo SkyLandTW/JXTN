@@ -24,19 +24,17 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package jxtn.core.unix;
 
 /**
- * The package contains a set of wrappers and utilities to interface Unix-like OS directly.
- * <p>
- * Rules/Considerations:
- * <ul>
- * <li>Architecture: 64-bit</li>
- * <li>Endianness: Little Endian</li>
- * <li>Charset: UTF-8</li>
- * <li>Target OS: Linux after v3.0</li>
- * </ul>
- * </p>
+ * Byte writer
  *
+ * @param <TException> Throwable exception type
  * @author aqd
  */
-package jxtn.core.unix;
+public interface ByteWriter<TException extends Exception> {
+
+    void writeByte(byte b) throws TException;
+
+    void writeBytes(ByteSequence<?> bytes) throws TException;
+}

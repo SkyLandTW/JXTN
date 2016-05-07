@@ -24,19 +24,48 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package jxtn.core.unix;
+
+import java.util.Objects;
+import jxtn.core.axi.collections.AbstractIterator;
 
 /**
- * The package contains a set of wrappers and utilities to interface Unix-like OS directly.
- * <p>
- * Rules/Considerations:
- * <ul>
- * <li>Architecture: 64-bit</li>
- * <li>Endianness: Little Endian</li>
- * <li>Charset: UTF-8</li>
- * <li>Target OS: Linux after v3.0</li>
- * </ul>
- * </p>
+ * Splitting iterator for {@link ByteArray} or {@link ByteString}
  *
+ * @param <T> {@link ByteArray} or {@link ByteString}
  * @author aqd
  */
-package jxtn.core.unix;
+public final class ByteSequenceSplittingIterator<T extends ByteSequence<T>>
+        extends AbstractIterator<T> {
+
+    private final T string;
+    private final T separator;
+
+    private int offset = 0;
+    private boolean endNext = false;
+
+    public ByteSequenceSplittingIterator(T string, T separator) {
+        this.string = Objects.requireNonNull(string);
+        this.separator = Objects.requireNonNull(separator);
+        if (separator.isEmpty()) {
+            throw new IllegalArgumentException("separator");
+        }
+    }
+
+    @Override
+    protected T fetchNext() {
+        if (this.endNext) {
+            return this.end();
+        }
+        int sepIndex = this.string.indexOf(this.separator, this.offset);
+        if (sepIndex < 0) {
+            this.endNext = true;
+            return this.string.substring(this.offset);
+        } else {
+            T part = this.string.substring(this.offset, sepIndex);
+            this.offset = sepIndex + this.separator.length();
+            return part;
+        }
+    }
+
+}

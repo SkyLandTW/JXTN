@@ -1,7 +1,7 @@
 vpath %.c ../src
 
 CC = gcc
-CFLAGS = -c -fPIC -Wall -std=gnu99 -I/usr/lib/jvm/default-java/include
+CFLAGS = -c -fPIC -Wall -std=gnu99 -I$$JAVA_HOME/include -I$$JAVA_HOME/include/linux
 LDFLAGS =
 
 OBJDIR := obj
@@ -9,7 +9,7 @@ SRCDIR := src
 
 SRC = unix.c
 OBJ = $(patsubst %.c,$(OBJDIR)/%.o,$(SRC))
-BIN = dist/libjxtn-core-unix.so
+BIN = ../dist/libjxtn-core-unix.so
 
 all: $(BIN)
 

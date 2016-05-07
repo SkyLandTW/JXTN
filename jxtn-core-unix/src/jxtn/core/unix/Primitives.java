@@ -24,19 +24,54 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package jxtn.core.unix;
 
 /**
- * The package contains a set of wrappers and utilities to interface Unix-like OS directly.
- * <p>
- * Rules/Considerations:
- * <ul>
- * <li>Architecture: 64-bit</li>
- * <li>Endianness: Little Endian</li>
- * <li>Charset: UTF-8</li>
- * <li>Target OS: Linux after v3.0</li>
- * </ul>
- * </p>
+ * Primitives related utility (byte/int/...)
  *
  * @author aqd
  */
-package jxtn.core.unix;
+public final class Primitives {
+
+    public static final byte NIBBLE_MASK = 0x0F;
+    public static final short BYTE_MASK = 0xFF;
+    public static final int SHORT_MASK = 0xFFFF;
+    public static final long INT_MASK = 0xFFFFFFFFL;
+
+    public static final int NIBBLE_BITS = 4;
+    public static final int BYTE_BITS = 8;
+    public static final int SHORT_BITS = 16;
+    public static final int INT_BITS = 32;
+    public static final int LONG_BITS = 64;
+
+    public static byte lowNibble(byte b) {
+        return (byte) (b & NIBBLE_MASK);
+    }
+
+    public static byte lowNibble(int b) {
+        return (byte) (b & NIBBLE_MASK);
+    }
+
+    public static byte highNibble(byte b) {
+        return (byte) ((b >>> 4) & NIBBLE_MASK);
+    }
+
+    public static byte highNibble(int b) {
+        return (byte) ((b >>> 4) & NIBBLE_MASK);
+    }
+
+    public static short unsigned(byte v) {
+        return (short) (v & BYTE_MASK);
+    }
+
+    public static int unsigned(short v) {
+        return v & SHORT_MASK;
+    }
+
+    public static long unsigned(int v) {
+        return v & INT_MASK;
+    }
+
+    private Primitives() {
+    }
+}

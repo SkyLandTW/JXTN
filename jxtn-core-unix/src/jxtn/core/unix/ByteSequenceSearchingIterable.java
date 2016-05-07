@@ -24,19 +24,34 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package jxtn.core.unix;
+
+import java.util.Iterator;
+import java.util.Objects;
 
 /**
- * The package contains a set of wrappers and utilities to interface Unix-like OS directly.
- * <p>
- * Rules/Considerations:
- * <ul>
- * <li>Architecture: 64-bit</li>
- * <li>Endianness: Little Endian</li>
- * <li>Charset: UTF-8</li>
- * <li>Target OS: Linux after v3.0</li>
- * </ul>
- * </p>
+ * Searching iterable for {@link ByteArray} or {@link ByteString}
  *
+ * @param <T> {@link ByteArray} or {@link ByteString}
  * @author aqd
  */
-package jxtn.core.unix;
+public final class ByteSequenceSearchingIterable<T extends ByteSequence<T>>
+        implements Iterable<T> {
+
+    private final T string;
+    private final T target;
+
+    public ByteSequenceSearchingIterable(T string, T target) {
+        this.string = Objects.requireNonNull(string);
+        this.target = Objects.requireNonNull(target);
+        if (target.isEmpty()) {
+            throw new IllegalArgumentException("target");
+        }
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new ByteSequenceSearchingIterator<>(this.string, this.target);
+    }
+
+}

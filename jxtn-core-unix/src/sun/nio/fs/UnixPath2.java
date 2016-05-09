@@ -24,29 +24,20 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package sun.nio.fs;
 
-#include <jni.h>
+import java.nio.file.Path;
 
-#include <errno.h>
-#include <string.h>
+public final class UnixPath2 {
 
-#include "internals.h"
+    public static byte[] getBytes(Path path) {
+        return ((UnixPath) path).asByteArray();
+    }
 
-__thread int jxtn_core_unix_errno;
+    public static byte[] getBytes(UnixPath path) {
+        return path.asByteArray();
+    }
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_Errno_errno(JNIEnv *env, jclass thisObj) {
-    return jxtn_core_unix_errno;
-}
-
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_Errno_globalErrno(JNIEnv *env, jclass thisObj) {
-    return errno;
-}
-
-JNIEXPORT void JNICALL Java_jxtn_core_unix_Errno_setErrno(JNIEnv *env, jclass thisObj, jint errnum) {
-    jxtn_core_unix_errno = errnum;
-}
-
-JNIEXPORT jstring JNICALL Java_jxtn_core_unix_Errno_strerror(JNIEnv *env, jclass thisObj, jint errnum) {
-    char* msg = strerror(errnum);
-    return msg == NULL ? NULL : (*env)->NewStringUTF(env, msg);
+    private UnixPath2() {
+    }
 }

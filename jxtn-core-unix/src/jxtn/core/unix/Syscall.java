@@ -26,7 +26,9 @@
  */
 package jxtn.core.unix;
 
+import java.nio.file.Path;
 import sun.misc.Unsafe;
+import sun.nio.fs.UnixPath2;
 
 /**
  * Unix system calls
@@ -39,37 +41,57 @@ public final class Syscall {
         Runtime.getRuntime().loadLibrary("jxtn-core-unix");
     }
 
-    public static int access(String pathname, int mode) {
-        return access(tPath(pathname), Unsafe.ARRAY_BYTE_BASE_OFFSET, mode);
+    public static int access(Path pathname, int mode) {
+        return access(tPath(pathname), mode);
     }
 
-    public static native int access(Object pathname_base, long pathname_offset, int mode);
+    public static int access(String pathname, int mode) {
+        return access(tPath(pathname), mode);
+    }
+
+    public static native int access(byte[] pathname, int mode);
+
+    public static int chdir(Path path) {
+        return chdir(tPath(path));
+    }
 
     public static int chdir(String path) {
-        return chdir(tPath(path), Unsafe.ARRAY_BYTE_BASE_OFFSET);
+        return chdir(tPath(path));
     }
 
-    public static native int chdir(Object path_base, long path_offset);
+    public static native int chdir(byte[] path);
+
+    public static int chown(Path pathname, int owner, int group) {
+        return chown(tPath(pathname), owner, group);
+    }
 
     public static int chown(String pathname, int owner, int group) {
-        return chown(tPath(pathname), Unsafe.ARRAY_BYTE_BASE_OFFSET, owner, group);
+        return chown(tPath(pathname), owner, group);
     }
 
-    public static native int chown(Object pathname_base, long pathname_offset, int owner, int group);
+    public static native int chown(byte[] pathname, int owner, int group);
+
+    public static int chroot(Path path) {
+        return chroot(tPath(path));
+    }
 
     public static int chroot(String path) {
-        return chroot(tPath(path), Unsafe.ARRAY_BYTE_BASE_OFFSET);
+        return chroot(tPath(path));
     }
 
-    public static native int chroot(Object path_base, long path_offset);
+    public static native int chroot(byte[] path);
 
     public static native int close(int fd);
 
-    public static int creat(String pathname, int mode) {
-        return creat(tPath(pathname), Unsafe.ARRAY_BYTE_BASE_OFFSET, mode);
+    public static int creat(Path pathname, int mode) {
+        return creat(tPath(pathname), mode);
     }
 
-    public static native int creat(Object pathname_base, long pathname_offset, int mode);
+    public static int creat(String pathname, int mode) {
+        return creat(tPath(pathname), mode);
+    }
+
+    public static native int creat(byte[] pathname, int mode);
 
     public static native int fallocate(int fd, int mode, long offset, long len);
 
@@ -87,21 +109,33 @@ public final class Syscall {
 
     public static native int kill(int pid, int sig);
 
+    public static int link(Path oldpath, Path newpath) {
+        return link(tPath(oldpath), tPath(newpath));
+    }
+
+    public static int link(String oldpath, String newpath) {
+        return link(tPath(oldpath), tPath(newpath));
+    }
+
+    public static native int link(byte[] oldpath, byte[] newpath);
+
     public static native int madvise(long addr, long length, int advice);
 
+    public static int mkdirs(Path pathname, int mode) {
+        return mkdirs(tPath(pathname), mode);
+    }
+
     public static int mkdirs(String pathname, int mode) {
-        byte[] pathname_cstr = tPath(pathname);
-        return mkdirs(pathname_cstr, mode);
+        return mkdirs(tPath(pathname), mode);
     }
 
     public static int mkdirs(byte[] pathname_cstr, int mode) {
-        if (mkdir(pathname_cstr, Unsafe.ARRAY_BYTE_BASE_OFFSET, mode) == 0) {
+        if (mkdir(pathname_cstr, mode) == 0) {
             return 0;
         }
-        int err = Errno.errno();
-        System.out.println(new ByteArray(pathname_cstr).stripAfter((byte) '\0', false) + ": err " + err);
-        switch (err) {
+        switch (Errno.errno()) {
         case Errno.EEXIST:
+            Errno.setErrno(0);
             return 0;
         case Errno.ENOENT:
             int pathname_len = ByteSequences.indexOf(pathname_cstr, 0, (byte) '\0');
@@ -114,27 +148,35 @@ public final class Syscall {
                 return -1;
             }
             pathname_cstr[pathname_sep] = (byte) '/';
-            return mkdir(pathname_cstr, Unsafe.ARRAY_BYTE_BASE_OFFSET, mode);
+            return mkdir(pathname_cstr, mode);
         default:
             return -1;
         }
     }
 
-    public static int mkdir(String pathname, int mode) {
-        return mkdir(tPath(pathname), Unsafe.ARRAY_BYTE_BASE_OFFSET, mode);
+    public static int mkdir(Path pathname, int mode) {
+        return mkdir(tPath(pathname), mode);
     }
 
-    public static native int mkdir(Object pathname_base, long pathname_offset, int mode);
+    public static int mkdir(String pathname, int mode) {
+        return mkdir(tPath(pathname), mode);
+    }
+
+    public static native int mkdir(byte[] pathname, int mode);
 
     public static native long mmap(long addr, long length, int prot, int flags, int fd, long offset);
 
     public static native int munmap(long addr, long length);
 
-    public static int open(String pathname, int flags, int mode) {
-        return open(tPath(pathname), Unsafe.ARRAY_BYTE_BASE_OFFSET, flags, mode);
+    public static int open(Path pathname, int flags, int mode) {
+        return open(tPath(pathname), flags, mode);
     }
 
-    public static native int open(Object pathname_base, long pathname_offset, int flags, int mode);
+    public static int open(String pathname, int flags, int mode) {
+        return open(tPath(pathname), flags, mode);
+    }
+
+    public static native int open(byte[] pathname, int flags, int mode);
 
     public static long read(int fd, byte[] buf, int offset, int count) {
         return read(fd, buf, Unsafe.ARRAY_BYTE_BASE_OFFSET + offset, count);
@@ -142,11 +184,35 @@ public final class Syscall {
 
     public static native long read(int fd, Object buf_base, long buf_offset, long count);
 
-    public static int rmdir(String pathname) {
-        return rmdir(tPath(pathname), Unsafe.ARRAY_BYTE_BASE_OFFSET);
+    public static int rename(Path oldpath, Path newpath) {
+        return rename(tPath(oldpath), tPath(newpath));
     }
 
-    public static native int rmdir(Object pathname_base, long pathname_offset);
+    public static int rename(String oldpath, String newpath) {
+        return rename(tPath(oldpath), tPath(newpath));
+    }
+
+    public static native int rename(byte[] oldpath, byte[] newpath);
+
+    public static int rmdir(Path pathname) {
+        return rmdir(tPath(pathname));
+    }
+
+    public static int rmdir(String pathname) {
+        return rmdir(tPath(pathname));
+    }
+
+    public static native int rmdir(byte[] pathname);
+
+    public static int symlink(Path target, Path linkpath) {
+        return symlink(tPath(target), tPath(linkpath));
+    }
+
+    public static int symlink(String target, String linkpath) {
+        return symlink(tPath(target), tPath(linkpath));
+    }
+
+    public static native int symlink(byte[] target, byte[] linkpath);
 
     public static long write(int fd, byte[] buf, int offset, int count) {
         return write(fd, buf, Unsafe.ARRAY_BYTE_BASE_OFFSET + offset, count);
@@ -159,6 +225,16 @@ public final class Syscall {
     public static native long setxattr(String path, String name, long value, long size, int flags);
     public static native long listxattr(String path, long list, long size);
      */
+
+    private static byte[] tPath(Path path) {
+        byte[] path_s = UnixPath2.getBytes(path);
+        if (path_s[path_s.length - 1] == (byte) '\0') {
+            return path_s;
+        }
+        byte[] path_b = new byte[path_s.length + 1];
+        ByteSequences.copyTo(path_s, path_b, path_s.length);
+        return path_b;
+    }
 
     private static byte[] tPath(String path) {
         byte[] path_b = new byte[Limits.PATH_MAX];

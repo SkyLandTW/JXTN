@@ -96,44 +96,44 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_fork(JNIEnv *env, jclass this
     return ret;
 }
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_getegid(JNIEnv *env, jclass thisObj
-        ) {
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_getegid(JNIEnv *env, jclass thisObj) {
     return getegid();
 }
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_geteuid(JNIEnv *env, jclass thisObj
-        ) {
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_geteuid(JNIEnv *env, jclass thisObj) {
     return geteuid();
 }
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_getgid(JNIEnv *env, jclass thisObj
-        ) {
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_getgid(JNIEnv *env, jclass thisObj) {
     return getgid();
 }
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_getpid(JNIEnv *env, jclass thisObj
-        ) {
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_getpid(JNIEnv *env, jclass thisObj) {
     return getpid();
 }
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_getppid(JNIEnv *env, jclass thisObj
-        ) {
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_getppid(JNIEnv *env, jclass thisObj) {
     return getppid();
 }
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_gettid(JNIEnv *env, jclass thisObj
-        ) {
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_gettid(JNIEnv *env, jclass thisObj) {
     return syscall(SYS_gettid);
 }
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_getuid(JNIEnv *env, jclass thisObj
-        ) {
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_getuid(JNIEnv *env, jclass thisObj) {
     return getuid();
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_kill(JNIEnv *env, jclass thisObj,
         jint pid, jint sig) {
     int ret = kill(pid, sig);
+    jxtn_core_unix_errno = ret == -1 ? errno : 0;
+    return ret;
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_link(JNIEnv *env, jclass thisObj,
+        jbyteArray oldpath, jbyteArray newpath) {
+    int ret = link(resolveBA(oldpath), resolveBA(newpath));
     jxtn_core_unix_errno = ret == -1 ? errno : 0;
     return ret;
 }
@@ -182,7 +182,7 @@ JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_read(JNIEnv *env, jclass thi
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_rename(JNIEnv *env, jclass thisObj,
-        jbyteArray oldpath, jbyteArray newpath, jlong newpath_offset) {
+        jbyteArray oldpath, jbyteArray newpath) {
     int ret = rename(resolveBA(oldpath), resolveBA(newpath));
     jxtn_core_unix_errno = ret == -1 ? errno : 0;
     return ret;
@@ -191,6 +191,13 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_rename(JNIEnv *env, jclass th
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_rmdir(JNIEnv *env, jclass thisObj,
         jbyteArray pathname) {
     int ret = rmdir(resolveBA(pathname));
+    jxtn_core_unix_errno = ret == -1 ? errno : 0;
+    return ret;
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_symlink(JNIEnv *env, jclass thisObj,
+        jbyteArray target, jbyteArray linkpath) {
+    int ret = symlink(resolveBA(target), resolveBA(linkpath));
     jxtn_core_unix_errno = ret == -1 ? errno : 0;
     return ret;
 }

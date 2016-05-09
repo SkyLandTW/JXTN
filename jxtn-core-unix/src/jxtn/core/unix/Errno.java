@@ -176,6 +176,8 @@ public final class Errno {
 
     public static native int globalErrno();
 
+    public static native void setErrno(int errnum);
+
     public static native String strerror(int errnum);
 
 }

@@ -25,19 +25,14 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-/**
- * The package contains a set of wrappers and utilities to interface Unix-like OS directly.
- * <p>
- * Rules/Considerations:
- * <ul>
- * <li>Architecture: 64-bit only</li>
- * <li>Endianness: Little Endian only</li>
- * <li>Charset: UTF-8 only</li>
- * <li>Target OS: Linux including v3.0 and later</li>
- * <li>Maximum performance and minimum memory cost</li>
- * </ul>
- * </p>
- *
- * @author aqd
- */
-package jxtn.core.unix;
+#include <jni.h>
+
+#include <linux/limits.h>
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Limits_nameMax(JNIEnv *env, jclass thisObj) {
+    return NAME_MAX;
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Limits_pathMax(JNIEnv *env, jclass thisObj) {
+    return PATH_MAX;
+}

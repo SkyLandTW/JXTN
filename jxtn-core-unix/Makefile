@@ -1,13 +1,13 @@
 vpath %.c ../src
 
 CC = gcc
-CFLAGS = -c -fPIC -Wall -std=gnu99 -I$$JAVA_HOME/include -I$$JAVA_HOME/include/linux
+CFLAGS = -c -fPIC -Wall -Werror -std=gnu99 -I$$JAVA_HOME/include -I$$JAVA_HOME/include/linux
 LDFLAGS =
 
 OBJDIR := obj
 SRCDIR := src
 
-SRC = unix.c
+SRC = errno.c limits.c stdio.c syscall.c
 OBJ = $(patsubst %.c,$(OBJDIR)/%.o,$(SRC))
 BIN = ../dist/libjxtn-core-unix.so
 
@@ -16,7 +16,7 @@ all: $(BIN)
 install: $(BIN)
 	sudo install $(BIN) /usr/lib/jni/`basename $(BIN)`
 
-$(OBJDIR)/%.o : $(SRCDIR)/%.c Makefile
+$(OBJDIR)/%.o : $(SRCDIR)/%.c $(SRCDIR)/internals.h Makefile
 	@mkdir -p `dirname $@`
 	$(CC) $(CFLAGS) -c $< -o $@
 

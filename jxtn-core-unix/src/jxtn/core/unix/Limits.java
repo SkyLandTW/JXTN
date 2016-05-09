@@ -27,56 +27,24 @@
 package jxtn.core.unix;
 
 /**
- * Unix system calls
+ * Unix system limitations
  *
  * @author aqd
  */
-public final class Syscalls {
+public final class Limits {
+
+    public static final int NAME_MAX;
+
+    public static final int PATH_MAX;
 
     static {
         Runtime.getRuntime().loadLibrary("jxtn-core-unix");
+        NAME_MAX = nameMax();
+        PATH_MAX = pathMax();
     }
 
-    public static native int errno();
+    public static native int nameMax();
 
-    public static native int access(long pathname, int mode);
+    public static native int pathMax();
 
-    public static native int chdir(long path);
-
-    public static native int chown(long pathname, int owner, int group);
-
-    public static native int chroot(long path);
-
-    public static native int close(int fd);
-
-    public static native int creat(long pathname, int mode);
-
-    public static native int fallocate(int fd, int mode, long offset, long len);
-
-    public static native int fork();
-
-    public static native int getpid();
-
-    public static native int getppid();
-
-    public static native int kill(int pid, int sig);
-
-    public static native int madvise(long addr, long length, int advice);
-
-    public static native int mkdir(long pathname, int mode);
-
-    public static native long mmap(long addr, long length, int prot, int flags, int fd, long offset);
-
-    public static native int munmap(long addr, long length);
-
-    public static native int open(long pathname, int flags, int mode);
-
-    /*
-    public static native long getxattr(String path, String name, long value, long size);
-    public static native long setxattr(String path, String name, long value, long size, int flags);
-    public static native long listxattr(String path, long list, long size);
-     */
-
-    private Syscalls() {
-    }
 }

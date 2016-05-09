@@ -25,19 +25,27 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-/**
- * The package contains a set of wrappers and utilities to interface Unix-like OS directly.
- * <p>
- * Rules/Considerations:
- * <ul>
- * <li>Architecture: 64-bit only</li>
- * <li>Endianness: Little Endian only</li>
- * <li>Charset: UTF-8 only</li>
- * <li>Target OS: Linux including v3.0 and later</li>
- * <li>Maximum performance and minimum memory cost</li>
- * </ul>
- * </p>
- *
- * @author aqd
- */
-package jxtn.core.unix;
+#include <jni.h>
+
+#include <errno.h>
+#include <string.h>
+
+#include "internals.h"
+
+__thread int jxtn_core_unix_errno;
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Errno_errno(JNIEnv *env, jclass thisObj
+        ) {
+    return jxtn_core_unix_errno;
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Errno_globalErrno(JNIEnv *env, jclass thisObj
+        ) {
+    return errno;
+}
+
+JNIEXPORT jstring JNICALL Java_jxtn_core_unix_Errno_strerror(JNIEnv *env, jclass thisObj,
+        jint errnum) {
+    char* msg = strerror(errnum);
+    return msg == NULL ? NULL : (*env)->NewStringUTF(env, msg);
+}

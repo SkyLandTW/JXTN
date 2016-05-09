@@ -24,20 +24,29 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package jxtn.core.unix;
+
+import sun.misc.Unsafe;
 
 /**
- * The package contains a set of wrappers and utilities to interface Unix-like OS directly.
- * <p>
- * Rules/Considerations:
- * <ul>
- * <li>Architecture: 64-bit only</li>
- * <li>Endianness: Little Endian only</li>
- * <li>Charset: UTF-8 only</li>
- * <li>Target OS: Linux including v3.0 and later</li>
- * <li>Maximum performance and minimum memory cost</li>
- * </ul>
- * </p>
+ * <i>stdio</i> wrapper, for testing purpose
  *
  * @author aqd
  */
-package jxtn.core.unix;
+public final class Stdio {
+
+    static {
+        Runtime.getRuntime().loadLibrary("jxtn-core-unix");
+    }
+
+    public static void printf(String format) {
+        byte[] format_b = new byte[format.length() * 3];
+        FastUTF8.encodeToCString(format, format_b);
+        printf(format_b, Unsafe.ARRAY_BYTE_BASE_OFFSET);
+    }
+
+    public static native void printf(Object format_base, long format_offset);
+
+    private Stdio() {
+    }
+}

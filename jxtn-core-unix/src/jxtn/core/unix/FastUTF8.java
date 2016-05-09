@@ -28,6 +28,17 @@ package jxtn.core.unix;
 
 import java.nio.ByteBuffer;
 
+/**
+ * UTF-8 related functions
+ * <p>
+ * Rules:
+ * <ul>
+ * <li>Errors are ignored silently unless explicitly stated.</li>
+ * </ul>
+ * </p>
+ *
+ * @author aqd
+ */
 public final class FastUTF8 {
 
     private static final int UTF8_2B_MIN = 0b11000000;
@@ -37,6 +48,12 @@ public final class FastUTF8 {
     private static final int UTF8_6B_MIN = 0b11111100;
     private static final int UTF8_6B_MAX = 0b11111101;
 
+    /**
+     * Encode a single character to UTF-8 bytes
+     *
+     * @param c character to encode
+     * @return UTF-8 bytes representing {@code c}
+     */
     public static byte[] encode(char c) {
         if (c < 0x80) {
             // Have at most seven bits
@@ -57,23 +74,150 @@ public final class FastUTF8 {
         }
     }
 
+    /**
+     * Encode a single character to UTF-8 bytes and store in specified destination array
+     *
+     * @param c character to encode
+     * @param dstBuffer destination buffer to store the resulting UTF-8 bytes
+     * @param dstOffset offset in destination buffer for storing of the resulting UTF-8 bytes
+     * @return number of UTF-8 bytes encoded from {@code c}
+     */
+    public static int encode(char c, byte[] dstBuffer, int dstOffset) {
+        if (c < 0x80) {
+            // Have at most seven bits
+            dstBuffer[dstOffset] = (byte) c;
+            return 1;
+        } else if (c < 0x800) {
+            // 2 bytes, 11 bits
+            dstBuffer[dstOffset + 0] = (byte) (0xc0 | (c >> 6));
+            dstBuffer[dstOffset + 1] = (byte) (0x80 | (c & 0x3f));
+            return 2;
+        } else {
+            // 3 bytes, 16 bits
+            dstBuffer[dstOffset + 0] = (byte) (0xe0 | ((c >> 12)));
+            dstBuffer[dstOffset + 1] = (byte) (0x80 | ((c >> 6) & 0x3f));
+            dstBuffer[dstOffset + 2] = (byte) (0x80 | (c & 0x3f));
+            return 3;
+        }
+    }
+
+    /**
+     * Encode a {@link String} to UTF-8 C String (NUL-terminated) and store in specified destination array
+     * <p>
+     * If the length or the capacity of {@code dstBuffer} is insufficient, this method shall encode as much as it can
+     * and return the length of encoded UTF-8 bytes. There is no indication about the status of completion.
+     * </p>
+     *
+     * @param s string to encode
+     * @param dstBuffer destination buffer to store the resulting UTF-8 bytes
+     * @return number of UTF-8 bytes encoded from {@code s}, not including the NUL termination at the end.
+     */
+    public static int encodeToCString(String s, byte[] dstBuffer) {
+        return encodeToCString(s, dstBuffer, 0, dstBuffer.length);
+    }
+
+    /**
+     * Encode a {@link String}r to UTF-8 C String (NUL-terminated) and store in specified destination array
+     * <p>
+     * If the length or the capacity of {@code dstBuffer} is insufficient, this method shall encode as much as it can
+     * and return the length of encoded UTF-8 bytes. There is no indication about the status of completion.
+     * </p>
+     *
+     * @param s string to encode
+     * @param dstBuffer destination buffer to store the resulting UTF-8 bytes
+     * @param dstOffset offset in destination buffer for storing of the resulting UTF-8 bytes
+     * @param dstLength length in destination buffer which may be used to store the results
+     * @return number of UTF-8 bytes encoded from {@code s}, not including the NUL termination at the end.
+     */
+    public static int encodeToCString(String s, byte[] dstBuffer, int dstOffset, int dstLength) {
+        int dPos = dstOffset;
+        int dEnd = dstOffset + Math.min(dstBuffer.length - dstOffset, dstLength) - 1 /* NUL */;
+        int sLen = s.length();
+        for (int i = 0; i < sLen; i++) {
+            char c = s.charAt(i);
+            if (c < 0x80) {
+                if (dPos > dEnd - 1) {
+                    break;
+                }
+                // Have at most seven bits
+                dstBuffer[dPos] = (byte) c;
+                dPos += 1;
+            } else if (c < 0x800) {
+                if (dPos > dEnd - 2) {
+                    break;
+                }
+                // 2 bytes, 11 bits
+                dstBuffer[dPos + 0] = (byte) (0xc0 | (c >> 6));
+                dstBuffer[dPos + 1] = (byte) (0x80 | (c & 0x3f));
+                dPos += 2;
+            } else {
+                if (dPos > dEnd - 3) {
+                    break;
+                }
+                // 3 bytes, 16 bits
+                dstBuffer[dPos + 0] = (byte) (0xe0 | ((c >> 12)));
+                dstBuffer[dPos + 1] = (byte) (0x80 | ((c >> 6) & 0x3f));
+                dstBuffer[dPos + 2] = (byte) (0x80 | (c & 0x3f));
+                dPos += 3;
+            }
+        }
+        dstBuffer[dPos] = 0;
+        return dPos - dstOffset;
+    }
+
+    /**
+     * Verify whether characters in the given buffer are correct UTF-8 sequences.
+     *
+     * @param buffer buffer to check
+     * @return true if {@code buffer} is in UTF-8
+     */
     public static boolean verify(ByteBuffer buffer) {
         return verify(buffer.array(),
                 buffer.arrayOffset() + buffer.position(),
                 buffer.remaining());
     }
 
+    /**
+     * Verify whether characters in the given {@link ByteArray} are correct UTF-8 sequences.
+     *
+     * @param string string to check
+     * @return true if {@code buffer} is in UTF-8
+     */
+    public static boolean verify(ByteArray string) {
+        return verify(string.source(), string.offset(), string.length());
+    }
+
+    /**
+     * Verify whether characters in the given {@link ByteString} are correct UTF-8 sequences.
+     *
+     * @param string string to check
+     * @return true if {@code buffer} is in UTF-8
+     */
     public static boolean verify(ByteString string) {
         return verify(string.source(), string.offset(), string.length());
     }
 
+    /**
+     * Verify whether characters in the given buffer are correct UTF-8 sequences.
+     *
+     * @param buffer buffer to check
+     * @return true if {@code buffer} is in UTF-8
+     */
     public static boolean verify(byte[] buffer) {
         return verify(buffer, 0, buffer.length);
     }
 
-    public static boolean verify(byte[] buffer, int start, int length) {
-        int index = start;
-        int limit = start + length;
+    /**
+     * Verify whether characters in the given buffer are correct UTF-8 sequences.
+     *
+     * @param buffer buffer to check
+     * @param offset offset of contents in {@code buffer} to check
+     * @param length length of contents in {@code buffer} to check, from {@code offset}
+     * @return true if {@code buffer} is in UTF-8
+     */
+    public static boolean verify(byte[] buffer, int offset, int length) {
+        int index = offset;
+        int limit = offset + length;
         while (index < limit && buffer[index] >= 0) {
             index++;
         }

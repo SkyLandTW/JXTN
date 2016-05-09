@@ -25,19 +25,12 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-/**
- * The package contains a set of wrappers and utilities to interface Unix-like OS directly.
- * <p>
- * Rules/Considerations:
- * <ul>
- * <li>Architecture: 64-bit only</li>
- * <li>Endianness: Little Endian only</li>
- * <li>Charset: UTF-8 only</li>
- * <li>Target OS: Linux including v3.0 and later</li>
- * <li>Maximum performance and minimum memory cost</li>
- * </ul>
- * </p>
- *
- * @author aqd
- */
-package jxtn.core.unix;
+#include <jni.h>
+
+#include "internals.h"
+
+JNIEXPORT void JNICALL Java_jxtn_core_unix_Stdio_printf(JNIEnv *env, jclass thisObj,
+        jobject format_base, jlong format_offset) {
+    char* format = (char*) resolve(format_base, format_offset);
+    printf("%s", format);
+}

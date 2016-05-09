@@ -20,6 +20,7 @@ It's intended for:
 
 #### Current Goals
 
+- Maximum performance and minimum memory cost; use of reflection shall be minimal and JNA cannot be used.
 - UTF-8 encoded strings (ByteString)
 - Very basic calls such as getpid/getuid
 - Direct File Operations without exceptions

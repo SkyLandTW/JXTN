@@ -172,12 +172,36 @@ public final class Errno {
         Runtime.getRuntime().loadLibrary("jxtn-core-unix");
     }
 
+    /**
+     * Get the thread-local <i>errno</i> filled by this library.
+     *
+     * @return <i>errno</i> filled by this library.
+     */
     public static native int errno();
 
+    /**
+     * Get the global thread-local <i>errno</i> filled by all syscalls.
+     *
+     * @return <i>errno</i> filled by all syscalls.
+     */
     public static native int globalErrno();
 
+    /**
+     * Set the {@link #errno} (thread-local)
+     *
+     * @param errnum new error number
+     */
     public static native void setErrno(int errnum);
 
+    /**
+     * Get the error message associated with the given error number
+     * <p>
+     * A new message string is created and returned in every calls.
+     * </p>
+     *
+     * @param errnum error number
+     * @return an error message associated with {@code errnum}
+     */
     public static native String strerror(int errnum);
 
 }

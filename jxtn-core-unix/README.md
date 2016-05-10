@@ -28,3 +28,12 @@ It's intended for:
 - Direct File Mapping (64-bit) 
 
 (Networking is of lower priority because I don't need it for now)
+
+#### Build & Install
+
+1. Install JDK headers ("apt-get install openjdk-8-jdk")
+2. Set *JAVA_HOME* to the JDK directory
+3. Execute *make install* in the *jxtn-core-unix* directory
+4. Build the JAR file by ant
+
+*libjxtn-core-unix.so* will be installed into */usr/lib/jni/* by make

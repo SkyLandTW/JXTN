@@ -34,6 +34,7 @@
 #include <signal.h>
 #include <string.h>
 #include <sys/mman.h>
+#include <sys/sendfile.h>
 #include <sys/stat.h>
 #include <sys/syscall.h>
 #include <unistd.h>
@@ -96,6 +97,13 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_fork(JNIEnv *env, jclass this
     return ret;
 }
 
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_fstat(JNIEnv *env, jclass thisObj,
+        jint fd, jbyteArray buf) {
+    int ret = fstat(fd, resolveBA(buf));
+    jxtn_core_unix_errno = ret == -1 ? errno : 0;
+    return ret;
+}
+
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_getegid(JNIEnv *env, jclass thisObj) {
     return getegid();
 }
@@ -142,6 +150,13 @@ JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_lseek(JNIEnv *env, jclass th
         jint fd, jlong offset, jint whence) {
     long ret = lseek(fd, offset, whence);
     jxtn_core_unix_errno = ret == -1L ? errno : 0;
+    return ret;
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_lstat(JNIEnv *env, jclass thisObj,
+        jbyteArray pathname, jbyteArray buf) {
+    int ret = lstat(resolveBA(pathname), resolveBA(buf));
+    jxtn_core_unix_errno = ret == -1 ? errno : 0;
     return ret;
 }
 
@@ -198,6 +213,20 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_rename(JNIEnv *env, jclass th
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_rmdir(JNIEnv *env, jclass thisObj,
         jbyteArray pathname) {
     int ret = rmdir(resolveBA(pathname));
+    jxtn_core_unix_errno = ret == -1 ? errno : 0;
+    return ret;
+}
+
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_sendfile(JNIEnv *env, jclass thisObj,
+        jint out_fd, jint in_fd, jlong offset, jint count) {
+    long ret = sendfile(out_fd, in_fd, &offset, count);
+    jxtn_core_unix_errno = ret == -1L ? errno : 0;
+    return ret;
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_stat(JNIEnv *env, jclass thisObj,
+        jbyteArray pathname, jbyteArray buf) {
+    int ret = stat(resolveBA(pathname), resolveBA(buf));
     jxtn_core_unix_errno = ret == -1 ? errno : 0;
     return ret;
 }

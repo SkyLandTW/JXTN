@@ -26,6 +26,7 @@
  */
 package jxtn.core.unix;
 
+import java.nio.ByteBuffer;
 import java.nio.file.Path;
 import sun.misc.Unsafe;
 import sun.nio.fs.UnixPath2;
@@ -97,6 +98,17 @@ public final class Syscall {
 
     public static native int fork();
 
+    public static int fstat(int fd, Out<Stat> outBuf) {
+        byte[] buf = new byte[144];
+        int ret;
+        if ((ret = fstat(fd, buf)) == 0) {
+            outBuf.set(new Stat(ByteBuffer.wrap(buf)));
+        }
+        return ret;
+    }
+
+    public static native int fstat(int fd, byte[] buf);
+
     public static native int geteuid();
 
     public static native int getpid();
@@ -121,6 +133,25 @@ public final class Syscall {
 
     public static native long lseek(int fd, long offset, int whence);
 
+    public static int lstat(Path pathname, Out<Stat> outBuf) {
+        return lstat(tPath(pathname), outBuf);
+    }
+
+    public static int lstat(String pathname, Out<Stat> outBuf) {
+        return lstat(tPath(pathname), outBuf);
+    }
+
+    public static int lstat(byte[] pathname, Out<Stat> outBuf) {
+        byte[] buf = new byte[144];
+        int ret;
+        if ((ret = lstat(pathname, buf)) == 0) {
+            outBuf.set(new Stat(ByteBuffer.wrap(buf)));
+        }
+        return ret;
+    }
+
+    public static native int lstat(byte[] pathname, byte[] buf);
+
     public static native int madvise(long addr, long length, int advice);
 
     public static int mkdirs(Path pathname, int mode) {
@@ -133,7 +164,7 @@ public final class Syscall {
 
     public static int mkdirs(byte[] pathname_cstr, int mode) {
         if (mkdir(pathname_cstr, mode) == 0) {
-            return 0;
+            return 1;
         }
         switch (Errno.errno()) {
         case Errno.EEXIST:
@@ -145,12 +176,19 @@ public final class Syscall {
             if (pathname_sep <= 0) {
                 return -1;
             }
+            // create parent
             pathname_cstr[pathname_sep] = (byte) '\0';
-            if (mkdirs(pathname_cstr, mode) != 0) {
+            int ret_p;
+            if ((ret_p = mkdirs(pathname_cstr, mode)) == -1) {
                 return -1;
             }
+            // create self
             pathname_cstr[pathname_sep] = (byte) '/';
-            return mkdir(pathname_cstr, mode);
+            if (mkdir(pathname_cstr, mode) == 0) {
+                return 1 + ret_p;
+            } else {
+                return Errno.errno() == Errno.EEXIST ? ret_p : -1;
+            }
         default:
             return -1;
         }
@@ -205,6 +243,27 @@ public final class Syscall {
     }
 
     public static native int rmdir(byte[] pathname);
+
+    public static native long sendfile(int out_fd, int in_fd, long offset, long count);
+
+    public static int stat(Path pathname, Out<Stat> outBuf) {
+        return stat(tPath(pathname), outBuf);
+    }
+
+    public static int stat(String pathname, Out<Stat> outBuf) {
+        return stat(tPath(pathname), outBuf);
+    }
+
+    public static int stat(byte[] pathname, Out<Stat> outBuf) {
+        byte[] buf = new byte[144];
+        int ret;
+        if ((ret = stat(pathname, buf)) == 0) {
+            outBuf.set(new Stat(ByteBuffer.wrap(buf)));
+        }
+        return ret;
+    }
+
+    public static native int stat(byte[] pathname, byte[] buf);
 
     public static int symlink(Path target, Path linkpath) {
         return symlink(tPath(target), tPath(linkpath));

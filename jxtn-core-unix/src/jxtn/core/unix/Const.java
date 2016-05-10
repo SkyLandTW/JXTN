@@ -62,6 +62,15 @@ public final class Const {
     public static final int O_PATH /*     */ = 010000000;
     public static final int O_TMPFILE /*  */ = 020200000;
 
+    /* fadvise */
+
+    public static final int POSIX_FADV_NORMAL = 0; /* No further special treatment.  */
+    public static final int POSIX_FADV_RANDOM = 1; /* Expect random page references.  */
+    public static final int POSIX_FADV_SEQUENTIAL = 2; /* Expect sequential page references.  */
+    public static final int POSIX_FADV_WILLNEED = 3; /* Will need these pages.  */
+    public static final int POSIX_FADV_DONTNEED = 4; /* Don't need these pages.  */
+    public static final int POSIX_FADV_NOREUSE = 5; /* Data will be accessed once.  */
+
     /* lseek */
 
     public static final int SEEK_SET = 0; /* Seek from beginning of file.  */

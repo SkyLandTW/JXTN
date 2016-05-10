@@ -48,16 +48,16 @@ public final class Timespec implements Comparable<Timespec> {
         this.tv_nsec = buffer.getLong();
     }
 
-    public final DateInfo toDateInfo() {
+    public DateInfo toDateInfo() {
         return new DateInfo(this.tv_sec);
     }
 
-    public final TimeInfo toTimeInfo() {
+    public TimeInfo toTimeInfo() {
         return new TimeInfo(this.tv_sec, this.tv_nsec);
     }
 
     @Override
-    public final int compareTo(Timespec other) {
+    public int compareTo(Timespec other) {
         long sec_diff = this.tv_sec - other.tv_sec;
         if (sec_diff > 0) {
             return 1;
@@ -74,7 +74,7 @@ public final class Timespec implements Comparable<Timespec> {
     }
 
     @Override
-    public final boolean equals(Object obj) {
+    public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
@@ -84,7 +84,7 @@ public final class Timespec implements Comparable<Timespec> {
         return this.equals((Timespec) obj);
     }
 
-    public final boolean equals(Timespec other) {
+    public boolean equals(Timespec other) {
         if (other == this) {
             return true;
         }
@@ -96,23 +96,23 @@ public final class Timespec implements Comparable<Timespec> {
     }
 
     @Override
-    public final int hashCode() {
+    public int hashCode() {
         int hash = 5;
         hash = 17 * hash + (int) (this.tv_sec);
         hash = 17 * hash + (int) (this.tv_nsec);
         return hash;
     }
 
-    public final LocalDateTime toLocalDateTime() {
+    public LocalDateTime toLocalDateTime() {
         return LocalDateTime.ofEpochSecond(this.tv_sec, (int) this.tv_nsec, ZoneOffset.UTC);
     }
 
-    public final OffsetDateTime toOffsetDateTime() {
+    public OffsetDateTime toOffsetDateTime() {
         return OffsetDateTime.of(this.toLocalDateTime(), ZoneOffset.UTC);
     }
 
     @Override
-    public final String toString() {
+    public String toString() {
         return this.toDateInfo() + "T" + this.toTimeInfo() + "Z";
     }
 
@@ -139,7 +139,7 @@ public final class Timespec implements Comparable<Timespec> {
         }
 
         @Override
-        public final String toString() {
+        public String toString() {
             StringBuilder sb = new StringBuilder("2015-10-29".length());
             sb.append(StringFormat.padLeft(String.valueOf(this.year), 4, '0'));
             sb.append('-');
@@ -168,7 +168,7 @@ public final class Timespec implements Comparable<Timespec> {
         }
 
         @Override
-        public final String toString() {
+        public String toString() {
             StringBuilder sb = new StringBuilder("19:21:52.891".length());
             sb.append(StringFormat.padLeft(String.valueOf(this.hour), 2, '0'));
             sb.append(':');

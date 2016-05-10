@@ -26,6 +26,8 @@
  */
 package jxtn.core.unix;
 
+import java.lang.reflect.Field;
+
 /**
  * Unix Error numbers
  *
@@ -168,8 +170,50 @@ public final class Errno {
     public static final int ERFKILL = 132; /* Operation not possible due to RF-kill */
     public static final int EHWPOISON = 133; /* Memory page has hardware error */
 
+    public static final String[] errnumToName;
+    public static final String[] errnumToDescription;
+
     static {
         Runtime.getRuntime().loadLibrary("jxtn-core-unix");
+        errnumToName = new String[256];
+        errnumToDescription = new String[256];
+        for (Field field : Errno.class.getDeclaredFields()) {
+            if (field.getType() != Integer.TYPE || !field.getName().startsWith("E")) {
+                continue;
+            }
+            int errnum;
+            try {
+                errnum = (int) field.get(null);
+            } catch (ReflectiveOperationException e) {
+                throw new RuntimeException(e);
+            }
+            errnumToName[errnum] = field.getName();
+            errnumToDescription[errnum] = strerror(errnum);
+        }
+    }
+
+    public static String errName() {
+        int errno = errno();
+        if (errno == 0) {
+            return "SUCCESS";
+        }
+        if (errno < 0 || errno >= errnumToName.length) {
+            return Integer.toString(errno);
+        }
+        String name = errnumToName[errno];
+        return name == null ? Integer.toString(errno) : name;
+    }
+
+    public static String errDescription() {
+        int errno = errno();
+        if (errno == 0) {
+            return "Success";
+        }
+        if (errno < 0 || errno >= errnumToDescription.length) {
+            return Integer.toString(errno);
+        }
+        String descr = errnumToDescription[errno];
+        return descr == null ? Integer.toString(errno) : descr;
     }
 
     /**

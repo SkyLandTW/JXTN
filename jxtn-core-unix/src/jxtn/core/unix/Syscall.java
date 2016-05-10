@@ -94,6 +94,8 @@ public final class Syscall {
 
     public static native int creat(byte[] pathname, int mode);
 
+    public static native int fadvise(int fd, long offset, long len, int advice);
+
     public static native int fallocate(int fd, int mode, long offset, long len);
 
     public static native int fork();
@@ -108,6 +110,8 @@ public final class Syscall {
     }
 
     public static native int fstat(int fd, byte[] buf);
+
+    public static native int ftruncate(int fd, long length);
 
     public static native int geteuid();
 
@@ -218,8 +222,12 @@ public final class Syscall {
 
     public static native int open(byte[] pathname, int flags, int mode);
 
+    public static long read(int fd, ByteBuffer buf) {
+        return read(fd, buf.array(), buf.arrayOffset() + buf.position(), buf.remaining());
+    }
+
     public static long read(int fd, byte[] buf, int offset, int count) {
-        return read(fd, buf, Unsafe.ARRAY_BYTE_BASE_OFFSET + offset, count);
+        return read(fd, (Object) buf, Unsafe.ARRAY_BYTE_BASE_OFFSET + offset, count);
     }
 
     public static native long read(int fd, Object buf_base, long buf_offset, long count);
@@ -275,8 +283,22 @@ public final class Syscall {
 
     public static native int symlink(byte[] target, byte[] linkpath);
 
+    public static int truncate(Path pathname, long length) {
+        return truncate(tPath(pathname), length);
+    }
+
+    public static int truncate(String pathname, long length) {
+        return truncate(tPath(pathname), length);
+    }
+
+    public static native int truncate(byte[] pathname, long length);
+
+    public static long write(int fd, ByteBuffer buf) {
+        return write(fd, buf.array(), buf.arrayOffset() + buf.position(), buf.remaining());
+    }
+
     public static long write(int fd, byte[] buf, int offset, int count) {
-        return write(fd, buf, Unsafe.ARRAY_BYTE_BASE_OFFSET + offset, count);
+        return write(fd, (Object) buf, Unsafe.ARRAY_BYTE_BASE_OFFSET + offset, count);
     }
 
     public static native long write(int fd, Object buf_base, long buf_offset, long count);

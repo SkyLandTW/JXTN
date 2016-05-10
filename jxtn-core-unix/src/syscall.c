@@ -83,6 +83,13 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_creat(JNIEnv *env, jclass thi
     return ret;
 }
 
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_fadvise(JNIEnv *env, jclass thisObj,
+        jint fd, jlong offset, jlong len, jint advice) {
+    int ret = posix_fadvise(fd, offset, len, advice);
+    jxtn_core_unix_errno = ret == -1 ? errno : 0;
+    return ret;
+}
+
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_fallocate(JNIEnv *env, jclass thisObj,
         jint fd, jint mode, jlong offset, jlong len) {
     int ret = fallocate(fd, mode, offset, len);
@@ -100,6 +107,13 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_fork(JNIEnv *env, jclass this
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_fstat(JNIEnv *env, jclass thisObj,
         jint fd, jbyteArray buf) {
     int ret = fstat(fd, resolveBA(buf));
+    jxtn_core_unix_errno = ret == -1 ? errno : 0;
+    return ret;
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_ftruncate(JNIEnv *env, jclass thisObj,
+        jint fd, jlong length) {
+    int ret = ftruncate(fd, length);
     jxtn_core_unix_errno = ret == -1 ? errno : 0;
     return ret;
 }
@@ -234,6 +248,13 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_stat(JNIEnv *env, jclass this
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_symlink(JNIEnv *env, jclass thisObj,
         jbyteArray target, jbyteArray linkpath) {
     int ret = symlink(resolveBA(target), resolveBA(linkpath));
+    jxtn_core_unix_errno = ret == -1 ? errno : 0;
+    return ret;
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_truncate(JNIEnv *env, jclass thisObj,
+        jbyteArray path, jlong length) {
+    int ret = truncate(resolveBA(path), length);
     jxtn_core_unix_errno = ret == -1 ? errno : 0;
     return ret;
 }

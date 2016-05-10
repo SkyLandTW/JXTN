@@ -26,16 +26,36 @@
  */
 package sun.nio.fs;
 
+import java.lang.reflect.Field;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public final class UnixPath2 {
 
-    public static byte[] getBytes(Path path) {
-        return ((UnixPath) path).asByteArray();
+    private static Class<? extends Path> unixPathClass;
+    private static Field unixPathPathField;
+
+    static {
+        unixPathClass = Paths.get("/home").getClass();
+        try {
+            unixPathPathField = unixPathClass.getDeclaredField("path");
+        } catch (ReflectiveOperationException e) {
+            throw new RuntimeException(e);
+        }
+        unixPathPathField.setAccessible(true);
     }
 
-    public static byte[] getBytes(UnixPath path) {
-        return path.asByteArray();
+    public static byte[] getBytes(Path path) {
+        if (path.getClass() == unixPathClass) {
+            try {
+                return (byte[]) unixPathPathField.get(path);
+            } catch (ReflectiveOperationException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            return path.toString().getBytes(StandardCharsets.UTF_8);
+        }
     }
 
     private UnixPath2() {

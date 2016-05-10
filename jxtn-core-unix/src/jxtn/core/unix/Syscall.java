@@ -119,6 +119,8 @@ public final class Syscall {
 
     public static native int link(byte[] oldpath, byte[] newpath);
 
+    public static native long lseek(int fd, long offset, int whence);
+
     public static native int madvise(long addr, long length, int advice);
 
     public static int mkdirs(Path pathname, int mode) {
@@ -138,8 +140,8 @@ public final class Syscall {
             Errno.setErrno(0);
             return 0;
         case Errno.ENOENT:
-            int pathname_len = ByteSequences.indexOf(pathname_cstr, 0, (byte) '\0');
-            int pathname_sep = ByteSequences.lastIndexOf(pathname_cstr, 0, pathname_len, (byte) '/');
+            int pathname_len = ByteArrays.indexOf(pathname_cstr, 0, (byte) '\0');
+            int pathname_sep = ByteArrays.lastIndexOf(pathname_cstr, 0, pathname_len, (byte) '/');
             if (pathname_sep <= 0) {
                 return -1;
             }
@@ -232,7 +234,7 @@ public final class Syscall {
             return path_s;
         }
         byte[] path_b = new byte[path_s.length + 1];
-        ByteSequences.copyTo(path_s, path_b, path_s.length);
+        System.arraycopy(path_s, 0, path_b, 0, path_s.length);
         return path_b;
     }
 

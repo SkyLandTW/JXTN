@@ -26,52 +26,29 @@
  */
 package jxtn.core.unix;
 
-/**
- * Primitives related utility (byte/int/...)
- *
- * @author aqd
- */
-public final class Primitives {
+final class ByteArrays {
 
-    public static final byte NIBBLE_MASK = 0x0F;
-    public static final short BYTE_MASK = 0xFF;
-    public static final int SHORT_MASK = 0xFFFF;
-    public static final long INT_MASK = 0xFFFFFFFFL;
-
-    public static final int NIBBLE_BITS = 4;
-    public static final int BYTE_BITS = 8;
-    public static final int SHORT_BITS = 16;
-    public static final int INT_BITS = 32;
-    public static final int LONG_BITS = 64;
-
-    public static byte lowNibble(byte b) {
-        return (byte) (b & NIBBLE_MASK);
+    public static int indexOf(byte[] source, int sourceOffset, byte ch) {
+        return indexOf(source, sourceOffset, source.length - sourceOffset, ch);
     }
 
-    public static byte lowNibble(int b) {
-        return (byte) (b & NIBBLE_MASK);
+    public static int indexOf(byte[] source, int sourceOffset, int sourceCount, byte ch) {
+        for (int i = sourceOffset; i < sourceOffset + sourceCount; i++) {
+            if (source[i] == ch) {
+                return i;
+            }
+        }
+        return -1;
     }
 
-    public static byte highNibble(byte b) {
-        return (byte) ((b >>> 4) & NIBBLE_MASK);
+    public static int lastIndexOf(byte[] source, int sourceOffset, int sourceCount, byte ch) {
+        int i = sourceOffset + sourceCount - 1;
+        for (; i >= sourceOffset; i--) {
+            if (source[i] == ch) {
+                return i;
+            }
+        }
+        return -1;
     }
 
-    public static byte highNibble(int b) {
-        return (byte) ((b >>> 4) & NIBBLE_MASK);
-    }
-
-    public static short unsigned(byte v) {
-        return (short) (v & BYTE_MASK);
-    }
-
-    public static int unsigned(short v) {
-        return v & SHORT_MASK;
-    }
-
-    public static long unsigned(int v) {
-        return v & INT_MASK;
-    }
-
-    private Primitives() {
-    }
 }

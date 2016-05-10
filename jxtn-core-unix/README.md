@@ -5,8 +5,8 @@ Provide direct access to Unix/Linux system calls to replace the crippled and ine
 
 #### Dependencies
 
-- jxtn-core-axi (Collection extensions)
-- OpenJDK 8
+- OpenJDK 8 or Oracle JDK 8 (Linux version only)
+- _jxtn-core-axi_ is **NOT** required.
 
 #### Restrictions
 

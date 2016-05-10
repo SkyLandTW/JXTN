@@ -62,6 +62,14 @@ public final class Const {
     public static final int O_PATH /*     */ = 010000000;
     public static final int O_TMPFILE /*  */ = 020200000;
 
+    /* lseek */
+
+    public static final int SEEK_SET = 0; /* Seek from beginning of file.  */
+    public static final int SEEK_CUR = 1; /* Seek from current position.  */
+    public static final int SEEK_END = 2; /* Seek from end of file.  */
+    public static final int SEEK_DATA = 3; /* Seek to next data.  */
+    public static final int SEEK_HOLE = 4; /* Seek to next hole.  */
+
     private Const() {
     }
 }

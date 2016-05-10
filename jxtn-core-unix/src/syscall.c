@@ -138,6 +138,13 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_link(JNIEnv *env, jclass this
     return ret;
 }
 
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_lseek(JNIEnv *env, jclass thisObj,
+        jint fd, jlong offset, jint whence) {
+    long ret = lseek(fd, offset, whence);
+    jxtn_core_unix_errno = ret == -1L ? errno : 0;
+    return ret;
+}
+
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_madvise(JNIEnv *env, jclass thisObj,
         jlong addr, jlong length, jint advice) {
     int ret = madvise((void*) addr, length, advice);

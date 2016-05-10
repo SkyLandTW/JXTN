@@ -178,26 +178,6 @@ public final class FastUTF8 {
     }
 
     /**
-     * Verify whether characters in the given {@link ByteArray} are correct UTF-8 sequences.
-     *
-     * @param string string to check
-     * @return true if {@code buffer} is in UTF-8
-     */
-    public static boolean verify(ByteArray string) {
-        return verify(string.source(), string.offset(), string.length());
-    }
-
-    /**
-     * Verify whether characters in the given {@link ByteString} are correct UTF-8 sequences.
-     *
-     * @param string string to check
-     * @return true if {@code buffer} is in UTF-8
-     */
-    public static boolean verify(ByteString string) {
-        return verify(string.source(), string.offset(), string.length());
-    }
-
-    /**
      * Verify whether characters in the given buffer are correct UTF-8 sequences.
      *
      * @param buffer buffer to check
@@ -235,7 +215,7 @@ public final class FastUTF8 {
                     return true;
                 }
             } while ((firstByte = buffer[index++]) >= 0);
-            int firstChar = Primitives.unsigned(firstByte);
+            int firstChar = firstByte & 0xFF;
             //
             if (firstChar < UTF8_2B_MIN) {
                 return false;

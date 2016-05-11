@@ -284,12 +284,32 @@ public final class Syscall {
 
     public static native int open(byte[] pathname, int flags, int mode);
 
+    public static long pread(int fd, ByteBuffer buf, long offset) {
+        return rBuffer(buf, pread(fd, buf.array(), buf.arrayOffset() + buf.position(), buf.remaining(), offset));
+    }
+
+    public static long pread(int fd, byte[] buf_array, int buf_offset, int count, long offset) {
+        return pread(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET + buf_offset, count, offset);
+    }
+
+    public static native long pread(int fd, Object buf_base, long buf_offset, long count, long offset);
+
+    public static long pwrite(int fd, ByteBuffer buf, long offset) {
+        return rBuffer(buf, pwrite(fd, buf.array(), buf.arrayOffset() + buf.position(), buf.remaining(), offset));
+    }
+
+    public static long pwrite(int fd, byte[] buf_array, int buf_offset, int count, long offset) {
+        return pwrite(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET + buf_offset, count, offset);
+    }
+
+    public static native long pwrite(int fd, Object buf_base, long buf_offset, long count, long offset);
+
     public static long read(int fd, ByteBuffer buf) {
         return rBuffer(buf, read(fd, buf.array(), buf.arrayOffset() + buf.position(), buf.remaining()));
     }
 
-    public static long read(int fd, byte[] buf, int offset, int count) {
-        return read(fd, (Object) buf, Unsafe.ARRAY_BYTE_BASE_OFFSET + offset, count);
+    public static long read(int fd, byte[] buf_array, int buf_offset, int count) {
+        return read(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET + buf_offset, count);
     }
 
     public static native long read(int fd, Object buf_base, long buf_offset, long count);
@@ -369,8 +389,8 @@ public final class Syscall {
         return rBuffer(buf, write(fd, buf.array(), buf.arrayOffset() + buf.position(), buf.remaining()));
     }
 
-    public static long write(int fd, byte[] buf, int offset, int count) {
-        return write(fd, (Object) buf, Unsafe.ARRAY_BYTE_BASE_OFFSET + offset, count);
+    public static long write(int fd, byte[] buf_array, int buf_offset, int count) {
+        return write(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET + buf_offset, count);
     }
 
     public static native long write(int fd, Object buf_base, long buf_offset, long count);

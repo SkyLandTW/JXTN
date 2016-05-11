@@ -210,6 +210,18 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_open(JNIEnv *env, jclass this
     return ERR(open(resolveCS(pathname), flags, mode));
 }
 
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_pread(JNIEnv *env, jclass thisObj,
+        int fd, jobject buf_base, jlong buf_offset, jlong count, jlong offset) {
+    void* buf = resolve(buf_base, buf_offset);
+    return ERRL(pread(fd, buf, UL(count), offset));
+}
+
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_pwrite(JNIEnv *env, jclass thisObj,
+        int fd, jobject buf_base, jlong buf_offset, jlong count, jlong offset) {
+    void* buf = resolve(buf_base, buf_offset);
+    return ERRL(pwrite(fd, buf, UL(count), offset));
+}
+
 JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_read(JNIEnv *env, jclass thisObj,
         int fd, jobject buf_base, jlong buf_offset, jlong count) {
     void* buf = resolve(buf_base, buf_offset);

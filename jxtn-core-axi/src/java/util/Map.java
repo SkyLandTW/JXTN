@@ -1195,4 +1195,72 @@ public interface Map<K,V> extends MapExt<K,V> {
         }
         return newValue;
     }
+
+    /**
+     * 泛型版本的{@link Map#containsKey}。
+     *
+     * @param key 要檢查是否包含的索引鍵
+     * @return true表示索引鍵{@code key}在目前的集合內
+     */
+    @SuppressWarnings("deprecation")
+    default boolean containsKey2(K key) {
+        return this.containsKey(key);
+    }
+
+    /**
+     * 泛型版本的{@link Map#containsValue}。
+     *
+     * @param value 要檢查是否包含的項目值
+     * @return true表示項目值{@code value}在目前的集合內
+     */
+    @SuppressWarnings("deprecation")
+    default boolean containsValue2(V value) {
+        return this.containsValue(value);
+    }
+
+    /**
+     * 泛型版本的{@link Map#get}。
+     *
+     * @param key 要取得項目值的索引鍵
+     * @return 索引鍵{@code key}對照的項目值
+     */
+    @SuppressWarnings("deprecation")
+    default V get2(K key) {
+        return this.get(key);
+    }
+
+    /**
+     * 泛型版本的{@link Map#remove(Object)}。
+     *
+     * @param key 要移除的索引鍵
+     * @return 索引鍵{@code key}對照的項目值
+     */
+    @SuppressWarnings({ "deprecation", "javadoc" })
+    default V remove2(K key) {
+        return this.remove(key);
+    }
+
+    /**
+     * 泛型版本的{@link Map#remove(Object,Object)}。
+     *
+     * @param key 要移除的索引鍵
+     * @param value 要移除的項目值
+     * @return true表示移除成功
+     */
+    @SuppressWarnings({ "deprecation", "javadoc" })
+    default boolean remove2(K key, V value) {
+        return this.remove(key, value);
+    }
+
+    /**
+     * 泛型版本的{@link Map#getOrDefault}。
+     *
+     * @param key 要取得項目值的索引鍵
+     * @param defaultValue 預設項目值
+     * @return 索引鍵{@code key}對照的項目值，或{@code defaultValue}
+     */
+    @SuppressWarnings("deprecation")
+    default V getOrDefault2(K key, V defaultValue) {
+        return this.getOrDefault(key, defaultValue);
+    }
 }

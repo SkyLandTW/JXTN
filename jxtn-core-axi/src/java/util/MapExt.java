@@ -47,80 +47,6 @@ public interface MapExt<K, V> {
     //
 
     /**
-     * 泛型版本的{@link Map#containsKey}。
-     *
-     * @param key 要檢查是否包含的索引鍵
-     * @return true表示索引鍵{@code key}在目前的集合內
-     */
-    @SuppressWarnings("deprecation")
-    default boolean containsKey2(K key) {
-        Map<K, V> thiz = (Map<K, V>) this;
-        return thiz.containsKey(key);
-    }
-
-    /**
-     * 泛型版本的{@link Map#containsValue}。
-     *
-     * @param value 要檢查是否包含的項目值
-     * @return true表示項目值{@code value}在目前的集合內
-     */
-    @SuppressWarnings("deprecation")
-    default boolean containsValue2(V value) {
-        Map<K, V> thiz = (Map<K, V>) this;
-        return thiz.containsValue(value);
-    }
-
-    /**
-     * 泛型版本的{@link Map#get}。
-     *
-     * @param key 要取得項目值的索引鍵
-     * @return 索引鍵{@code key}對照的項目值
-     */
-    @SuppressWarnings("deprecation")
-    default V get2(K key) {
-        Map<K, V> thiz = (Map<K, V>) this;
-        return thiz.get(key);
-    }
-
-    /**
-     * 泛型版本的{@link Map#remove(Object)}。
-     *
-     * @param key 要移除的索引鍵
-     * @return 索引鍵{@code key}對照的項目值
-     */
-    @SuppressWarnings({ "deprecation", "javadoc" })
-    default V remove2(K key) {
-        Map<K, V> thiz = (Map<K, V>) this;
-        return thiz.remove(key);
-    }
-
-    /**
-     * 泛型版本的{@link Map#remove(Object,Object)}。
-     *
-     * @param key 要移除的索引鍵
-     * @param value 要移除的項目值
-     * @return true表示移除成功
-     */
-    @SuppressWarnings({ "deprecation", "javadoc" })
-    default boolean remove2(K key, V value) {
-        Map<K, V> thiz = (Map<K, V>) this;
-        return thiz.remove(key, value);
-    }
-
-    /**
-     * 泛型版本的{@link Map#getOrDefault}。
-     *
-     * @param key 要取得項目值的索引鍵
-     * @param defaultValue 預設項目值
-     * @return 索引鍵{@code key}對照的項目值，或{@code defaultValue}
-     */
-    @SuppressWarnings("deprecation")
-    default V getOrDefault2(K key, V defaultValue) {
-        Map<K, V> thiz = (Map<K, V>) this;
-        return thiz.getOrDefault(key, defaultValue);
-    }
-
-    /**
      * 針對每個鍵值及項目值執行指定動作
      *
      * @param <TException> 動作可拋出的例外型態
@@ -129,7 +55,7 @@ public interface MapExt<K, V> {
      */
     default <TException extends Exception> void forEachEx(
             BiConsumerEx<? super K, ? super V, ? extends TException> action)
-                    throws TException {
+            throws TException {
         Objects.requireNonNull(action);
         Map<K, V> thiz = (Map<K, V>) this;
         for (Map.Entry<K, V> entry : thiz.entrySet()) {
@@ -188,7 +114,7 @@ public interface MapExt<K, V> {
      */
     default <V2, VException extends Exception> HashMap<K, V2> toHashMapMapped(
             FunctionEx<? super V, ? extends V2, ? extends VException> mapper)
-                    throws VException {
+            throws VException {
         Map<K, V> thiz = (Map<K, V>) this;
         HashMap<K, V2> result = new HashMap<>(thiz.size());
         for (Map.Entry<K, V> entry : thiz.entrySet()) {
@@ -214,7 +140,7 @@ public interface MapExt<K, V> {
     default <K2, V2, KException extends Exception, VException extends Exception> HashMap<K2, V2> toHashMapMapped(
             FunctionEx<? super K, ? extends K2, ? extends KException> keyMapper,
             FunctionEx<? super V, ? extends V2, ? extends VException> valueMapper)
-                    throws KException, VException {
+            throws KException, VException {
         Map<K, V> thiz = (Map<K, V>) this;
         HashMap<K2, V2> result = new HashMap<>(thiz.size());
         for (Map.Entry<K, V> entry : thiz.entrySet()) {
@@ -236,7 +162,7 @@ public interface MapExt<K, V> {
      */
     default <V2, VException extends Exception> HashMap<K, V2> toHashMapMapped(
             BiFunctionEx<? super K, ? super V, V2, ? extends VException> mapper)
-                    throws VException {
+            throws VException {
         Map<K, V> thiz = (Map<K, V>) this;
         HashMap<K, V2> result = new HashMap<>(thiz.size());
         for (Map.Entry<K, V> entry : thiz.entrySet()) {
@@ -263,7 +189,7 @@ public interface MapExt<K, V> {
     default <K2, V2, KException extends Exception, VException extends Exception> HashMap<K2, V2> toHashMapMapped(
             BiFunctionEx<? super K, ? super V, K2, ? extends KException> keyMapper,
             BiFunctionEx<? super K, ? super V, V2, ? extends VException> valueMapper)
-                    throws KException, VException {
+            throws KException, VException {
         Map<K, V> thiz = (Map<K, V>) this;
         HashMap<K2, V2> result = new HashMap<>(thiz.size());
         for (Map.Entry<K, V> entry : thiz.entrySet()) {
@@ -287,7 +213,7 @@ public interface MapExt<K, V> {
      */
     default <V2, VException extends Exception> TreeMap<K, V2> toTreeMapMapped(
             FunctionEx<? super V, ? extends V2, ? extends VException> mapper)
-                    throws VException {
+            throws VException {
         Map<K, V> thiz = (Map<K, V>) this;
         TreeMap<K, V2> result = new TreeMap<>();
         for (Map.Entry<K, V> entry : thiz.entrySet()) {
@@ -313,7 +239,7 @@ public interface MapExt<K, V> {
     default <K2, V2, KException extends Exception, VException extends Exception> TreeMap<K2, V2> toTreeMapMapped(
             FunctionEx<? super K, ? extends K2, ? extends KException> keyMapper,
             FunctionEx<? super V, ? extends V2, ? extends VException> valueMapper)
-                    throws KException, VException {
+            throws KException, VException {
         Map<K, V> thiz = (Map<K, V>) this;
         TreeMap<K2, V2> result = new TreeMap<>();
         for (Map.Entry<K, V> entry : thiz.entrySet()) {
@@ -335,7 +261,7 @@ public interface MapExt<K, V> {
      */
     default <V2, VException extends Exception> TreeMap<K, V2> toTreeMapMapped(
             BiFunctionEx<? super K, ? super V, V2, ? extends VException> mapper)
-                    throws VException {
+            throws VException {
         Map<K, V> thiz = (Map<K, V>) this;
         TreeMap<K, V2> result = new TreeMap<>();
         for (Map.Entry<K, V> entry : thiz.entrySet()) {
@@ -362,7 +288,7 @@ public interface MapExt<K, V> {
     default <K2, V2, KException extends Exception, VException extends Exception> TreeMap<K2, V2> toTreeMapMapped(
             BiFunctionEx<? super K, ? super V, K2, ? extends KException> keyMapper,
             BiFunctionEx<? super K, ? super V, V2, ? extends VException> valueMapper)
-                    throws KException, VException {
+            throws KException, VException {
         Map<K, V> thiz = (Map<K, V>) this;
         TreeMap<K2, V2> result = new TreeMap<>();
         for (Map.Entry<K, V> entry : thiz.entrySet()) {

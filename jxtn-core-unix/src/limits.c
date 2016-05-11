@@ -25,9 +25,9 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-#include <jni.h>
-
 #include <linux/limits.h>
+
+#include "internals.h"
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Limits_nameMax(JNIEnv *env, jclass thisObj) {
     return NAME_MAX;

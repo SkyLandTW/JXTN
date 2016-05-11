@@ -79,6 +79,11 @@ public final class Const {
     public static final int SEEK_DATA = 3; /* Seek to next data.  */
     public static final int SEEK_HOLE = 4; /* Seek to next hole.  */
 
+    /* xattr */
+
+    public static final int XATTR_CREATE = 0x1; /* set value, fail if attr already exists */
+    public static final int XATTR_REPLACE = 0x2; /* set value, fail if attr does not exist */
+
     private Const() {
     }
 }

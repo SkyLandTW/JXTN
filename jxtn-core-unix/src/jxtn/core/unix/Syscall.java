@@ -98,7 +98,23 @@ public final class Syscall {
 
     public static native int fallocate(int fd, int mode, long offset, long len);
 
+    public static long fgetxattr(int fd, String name, ByteBuffer value) {
+        if (value == null) {
+            return fgetxattr(fd, tName(name), null, 0L);
+        } else {
+            return rBuffer(value, fgetxattr(fd, tName(name), tArray(value), value.remaining()));
+        }
+    }
+
+    public static native long fgetxattr(int fd, byte[] name, byte[] value, long size);
+
     public static native int fork();
+
+    public static int fsetxattr(int fd, String name, ByteBuffer value, int flags) {
+        return rBuffer(value, fsetxattr(fd, tName(name), tArray(value), value.remaining(), flags));
+    }
+
+    public static native int fsetxattr(int fd, byte[] name, byte[] value, long size, int flags);
 
     public static int fstat(int fd, Out<Stat> outBuf) {
         byte[] buf = new byte[144];
@@ -123,7 +139,43 @@ public final class Syscall {
 
     public static native int getuid();
 
+    public static long getxattr(Path path, String name, ByteBuffer value) {
+        if (value == null) {
+            return getxattr(tPath(path), tName(name), null, 0);
+        } else {
+            return rBuffer(value, getxattr(tPath(path), tName(name), tArray(value), value.remaining()));
+        }
+    }
+
+    public static long getxattr(String path, String name, ByteBuffer value) {
+        if (value == null) {
+            return getxattr(tPath(path), tName(name), null, 0);
+        } else {
+            return rBuffer(value, getxattr(tPath(path), tName(name), tArray(value), value.remaining()));
+        }
+    }
+
+    public static native long getxattr(byte[] path, byte[] name, byte[] value, long size);
+
     public static native int kill(int pid, int sig);
+
+    public static long lgetxattr(Path path, String name, ByteBuffer value) {
+        if (value == null) {
+            return lgetxattr(tPath(path), tName(name), null, 0);
+        } else {
+            return rBuffer(value, lgetxattr(tPath(path), tName(name), tArray(value), value.remaining()));
+        }
+    }
+
+    public static long lgetxattr(String path, String name, ByteBuffer value) {
+        if (value == null) {
+            return lgetxattr(tPath(path), tName(name), null, 0);
+        } else {
+            return rBuffer(value, lgetxattr(tPath(path), tName(name), tArray(value), value.remaining()));
+        }
+    }
+
+    public static native long lgetxattr(byte[] path, byte[] name, byte[] value, long size);
 
     public static int link(Path oldpath, Path newpath) {
         return link(tPath(oldpath), tPath(newpath));
@@ -136,6 +188,16 @@ public final class Syscall {
     public static native int link(byte[] oldpath, byte[] newpath);
 
     public static native long lseek(int fd, long offset, int whence);
+
+    public static int lsetxattr(Path path, String name, ByteBuffer value, int flags) {
+        return rBuffer(value, lsetxattr(tPath(path), tName(name), tArray(value), value.remaining(), flags));
+    }
+
+    public static int lsetxattr(String path, String name, ByteBuffer value, int flags) {
+        return rBuffer(value, lsetxattr(tPath(path), tName(name), tArray(value), value.remaining(), flags));
+    }
+
+    public static native int lsetxattr(byte[] path, byte[] name, byte[] value, long size, int flags);
 
     public static int lstat(Path pathname, Out<Stat> outBuf) {
         return lstat(tPath(pathname), outBuf);
@@ -223,7 +285,7 @@ public final class Syscall {
     public static native int open(byte[] pathname, int flags, int mode);
 
     public static long read(int fd, ByteBuffer buf) {
-        return read(fd, buf.array(), buf.arrayOffset() + buf.position(), buf.remaining());
+        return rBuffer(buf, read(fd, buf.array(), buf.arrayOffset() + buf.position(), buf.remaining()));
     }
 
     public static long read(int fd, byte[] buf, int offset, int count) {
@@ -253,6 +315,16 @@ public final class Syscall {
     public static native int rmdir(byte[] pathname);
 
     public static native long sendfile(int out_fd, int in_fd, long offset, long count);
+
+    public static int setxattr(Path path, String name, ByteBuffer value, int flags) {
+        return rBuffer(value, setxattr(tPath(path), tName(name), tArray(value), value.remaining(), flags));
+    }
+
+    public static int setxattr(String path, String name, ByteBuffer value, int flags) {
+        return rBuffer(value, setxattr(tPath(path), tName(name), tArray(value), value.remaining(), flags));
+    }
+
+    public static native int setxattr(byte[] path, byte[] name, byte[] value, long size, int flags);
 
     public static int stat(Path pathname, Out<Stat> outBuf) {
         return stat(tPath(pathname), outBuf);
@@ -294,7 +366,7 @@ public final class Syscall {
     public static native int truncate(byte[] pathname, long length);
 
     public static long write(int fd, ByteBuffer buf) {
-        return write(fd, buf.array(), buf.arrayOffset() + buf.position(), buf.remaining());
+        return rBuffer(buf, write(fd, buf.array(), buf.arrayOffset() + buf.position(), buf.remaining()));
     }
 
     public static long write(int fd, byte[] buf, int offset, int count) {
@@ -329,6 +401,28 @@ public final class Syscall {
         byte[] name_b = new byte[Limits.PATH_MAX];
         FastUTF8.encodeToCString(name, name_b);
         return name_b;
+    }
+
+    private static byte[] tArray(ByteBuffer buffer) {
+        if (buffer.arrayOffset() + buffer.position() == 0) {
+            return buffer.array();
+        } else {
+            return ByteArrays.copy(buffer);
+        }
+    }
+
+    private static long rBuffer(ByteBuffer buffer, long length) {
+        if (length != -1L) {
+            buffer.position(buffer.position() + (int) length);
+        }
+        return length;
+    }
+
+    private static int rBuffer(ByteBuffer buffer, int status) {
+        if (status != -1) {
+            buffer.position(buffer.limit());
+        }
+        return status;
     }
 
     private Syscall() {

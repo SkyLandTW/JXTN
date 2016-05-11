@@ -25,9 +25,6 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-#include <jni.h>
-
-#include <errno.h>
 #include <string.h>
 
 #include "internals.h"

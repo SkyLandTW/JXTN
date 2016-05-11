@@ -27,9 +27,6 @@
 
 #define _GNU_SOURCE
 
-#include <jni.h>
-
-#include <errno.h>
 #include <fcntl.h>
 #include <signal.h>
 #include <string.h>
@@ -37,97 +34,95 @@
 #include <sys/sendfile.h>
 #include <sys/stat.h>
 #include <sys/syscall.h>
+#include <sys/types.h>
 #include <unistd.h>
+
+#include <attr/xattr.h>
 
 #include "internals.h"
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_access(JNIEnv *env, jclass thisObj,
         jbyteArray pathname, jint mode) {
-    int ret = access(resolveBA(pathname), mode);
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(access(resolveCS(pathname), mode));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_chdir(JNIEnv *env, jclass thisObj,
         jbyteArray path) {
-    int ret = chdir(resolveBA(path));
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(chdir(resolveCS(path)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_chown(JNIEnv *env, jclass thisObj,
         jbyteArray pathname, jint owner, jint group) {
-    int ret = chown(resolveBA(pathname), owner, group);
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(chown(resolveCS(pathname), UI(owner), UI(group)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_chroot(JNIEnv *env, jclass thisObj,
         jbyteArray path) {
-    int ret = chroot(resolveBA(path));
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(chroot(resolveCS(path)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_close(JNIEnv *env, jclass thisObj,
         jint fd) {
-    int ret = close(fd);
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(close(fd));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_creat(JNIEnv *env, jclass thisObj,
         jbyteArray pathname, jint mode) {
-    int ret = creat(resolveBA(pathname), mode);
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(creat(resolveCS(pathname), UI(mode)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_fadvise(JNIEnv *env, jclass thisObj,
         jint fd, jlong offset, jlong len, jint advice) {
-    int ret = posix_fadvise(fd, offset, len, advice);
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(posix_fadvise(fd, offset, len, advice));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_fallocate(JNIEnv *env, jclass thisObj,
         jint fd, jint mode, jlong offset, jlong len) {
-    int ret = fallocate(fd, mode, offset, len);
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(fallocate(fd, mode, offset, len));
+}
+
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_fgetxattr(JNIEnv *env, jclass thisObj,
+        jint filedes, jbyteArray name, jbyteArray value, jlong size) {
+    if (value != NULL && (*env)->GetArrayLength(env, value) < size) {
+        return SETERRL(EFAULT);
+    }
+    return ERRL(fgetxattr(filedes, resolveCS(name), resolveBA(value), UL(size)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_fork(JNIEnv *env, jclass thisObj
         ) {
-    int ret = fork();
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(fork());
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_fsetxattr(JNIEnv *env, jclass thisObj,
+        jint filedes, jbyteArray name, jbyteArray value, jlong size, jint flags) {
+    if (value == NULL || (*env)->GetArrayLength(env, value) < size) {
+        return SETERR(EFAULT);
+    }
+    return ERR(fsetxattr(filedes, resolveCS(name), resolveBA(value), UL(size), flags));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_fstat(JNIEnv *env, jclass thisObj,
         jint fd, jbyteArray buf) {
-    int ret = fstat(fd, resolveBA(buf));
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+
+    return ERR(fstat(fd, (struct stat *) resolveBA(buf)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_ftruncate(JNIEnv *env, jclass thisObj,
         jint fd, jlong length) {
-    int ret = ftruncate(fd, length);
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(ftruncate(fd, length));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_getegid(JNIEnv *env, jclass thisObj) {
-    return getegid();
+    return SI(getegid());
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_geteuid(JNIEnv *env, jclass thisObj) {
-    return geteuid();
+    return SI(geteuid());
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_getgid(JNIEnv *env, jclass thisObj) {
-    return getgid();
+    return SI(getgid());
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_getpid(JNIEnv *env, jclass thisObj) {
@@ -139,130 +134,128 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_getppid(JNIEnv *env, jclass t
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_gettid(JNIEnv *env, jclass thisObj) {
-    return syscall(SYS_gettid);
+    return (pid_t) syscall(SYS_gettid);
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_getuid(JNIEnv *env, jclass thisObj) {
-    return getuid();
+    return SI(getuid());
+}
+
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_getxattr(JNIEnv *env, jclass thisObj,
+        jbyteArray path, jbyteArray name, jbyteArray value, jlong size) {
+    if (value != NULL && (*env)->GetArrayLength(env, value) < size) {
+        return SETERRL(EFAULT);
+    }
+    return ERRL(getxattr(resolveCS(path), resolveCS(name), resolveBA(value), UL(size)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_kill(JNIEnv *env, jclass thisObj,
         jint pid, jint sig) {
-    int ret = kill(pid, sig);
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(kill(pid, sig));
+}
+
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_lgetxattr(JNIEnv *env, jclass thisObj,
+        jbyteArray path, jbyteArray name, jbyteArray value, jlong size) {
+    if (value != NULL && (*env)->GetArrayLength(env, value) < size) {
+        return SETERRL(EFAULT);
+    }
+    return ERRL(lgetxattr(resolveCS(path), resolveCS(name), resolveBA(value), UL(size)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_link(JNIEnv *env, jclass thisObj,
         jbyteArray oldpath, jbyteArray newpath) {
-    int ret = link(resolveBA(oldpath), resolveBA(newpath));
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(link(resolveCS(oldpath), resolveCS(newpath)));
 }
 
 JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_lseek(JNIEnv *env, jclass thisObj,
         jint fd, jlong offset, jint whence) {
-    long ret = lseek(fd, offset, whence);
-    jxtn_core_unix_errno = ret == -1L ? errno : 0;
-    return ret;
+    return ERRL(lseek(fd, offset, whence));
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_lsetxattr(JNIEnv *env, jclass thisObj,
+        jbyteArray path, jbyteArray name, jbyteArray value, jlong size, jint flags) {
+    if (value == NULL || (*env)->GetArrayLength(env, value) < size) {
+        return SETERR(EFAULT);
+    }
+    return ERR(lsetxattr(resolveCS(path), resolveCS(name), resolveBA(value), UL(size), flags));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_lstat(JNIEnv *env, jclass thisObj,
         jbyteArray pathname, jbyteArray buf) {
-    int ret = lstat(resolveBA(pathname), resolveBA(buf));
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(lstat(resolveCS(pathname), (struct stat *) resolveBA(buf)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_madvise(JNIEnv *env, jclass thisObj,
         jlong addr, jlong length, jint advice) {
-    int ret = madvise((void*) addr, length, advice);
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(madvise((void*) addr, UL(length), advice));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_mkdir(JNIEnv *env, jclass thisObj,
         jbyteArray pathname, jint mode) {
-    int ret = mkdir(resolveBA(pathname), mode);
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(mkdir(resolveCS(pathname), UI(mode)));
 }
 
 JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_mmap(JNIEnv *env, jclass thisObj,
         jlong addr, jlong length, jint prot, jint flags, jint fd, jlong offset) {
-    void* ret = mmap((void*) addr, length, prot, flags, fd, offset);
-    jxtn_core_unix_errno = ret == (void*) -1 ? errno : 0;
-    return (long) ret;
+    return ERRVP(mmap((void*) addr, UL(length), prot, flags, fd, offset));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_munmap(JNIEnv *env, jclass thisObj,
         jlong addr, jlong length) {
-    int ret = munmap((void*) addr, length);
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(munmap((void*) addr, UL(length)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_open(JNIEnv *env, jclass thisObj,
         jbyteArray pathname, jint flags, jint mode) {
-    int ret = open(resolveBA(pathname), flags, mode);
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(open(resolveCS(pathname), flags, mode));
 }
 
 JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_read(JNIEnv *env, jclass thisObj,
         int fd, jobject buf_base, jlong buf_offset, jlong count) {
     void* buf = resolve(buf_base, buf_offset);
-    long ret = read(fd, buf, count);
-    jxtn_core_unix_errno = ret == -1L ? errno : 0;
-    return ret;
+    return ERRL(read(fd, buf, UL(count)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_rename(JNIEnv *env, jclass thisObj,
         jbyteArray oldpath, jbyteArray newpath) {
-    int ret = rename(resolveBA(oldpath), resolveBA(newpath));
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(rename(resolveCS(oldpath), resolveCS(newpath)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_rmdir(JNIEnv *env, jclass thisObj,
         jbyteArray pathname) {
-    int ret = rmdir(resolveBA(pathname));
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(rmdir(resolveCS(pathname)));
 }
 
 JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_sendfile(JNIEnv *env, jclass thisObj,
-        jint out_fd, jint in_fd, jlong offset, jint count) {
-    long ret = sendfile(out_fd, in_fd, &offset, count);
-    jxtn_core_unix_errno = ret == -1L ? errno : 0;
-    return ret;
+        jint out_fd, jint in_fd, jlong offset, jlong count) {
+    return ERRL(sendfile(out_fd, in_fd, &offset, UL(count)));
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_setxattr(JNIEnv *env, jclass thisObj,
+        jbyteArray path, jbyteArray name, jbyteArray value, jlong size, jint flags) {
+    if (value == NULL || (*env)->GetArrayLength(env, value) < size) {
+        return SETERR(EFAULT);
+    }
+    return ERR(setxattr(resolveCS(path), resolveCS(name), resolveBA(value), UL(size), flags));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_stat(JNIEnv *env, jclass thisObj,
         jbyteArray pathname, jbyteArray buf) {
-    int ret = stat(resolveBA(pathname), resolveBA(buf));
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(stat(resolveCS(pathname), (struct stat *) resolveBA(buf)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_symlink(JNIEnv *env, jclass thisObj,
         jbyteArray target, jbyteArray linkpath) {
-    int ret = symlink(resolveBA(target), resolveBA(linkpath));
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(symlink(resolveCS(target), resolveCS(linkpath)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_truncate(JNIEnv *env, jclass thisObj,
         jbyteArray path, jlong length) {
-    int ret = truncate(resolveBA(path), length);
-    jxtn_core_unix_errno = ret == -1 ? errno : 0;
-    return ret;
+    return ERR(truncate(resolveCS(path), length));
 }
 
 JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_write(JNIEnv *env, jclass thisObj,
         int fd, jobject buf_base, jlong buf_offset, jlong count) {
     void* buf = resolve(buf_base, buf_offset);
-    long ret = write(fd, buf, count);
-    jxtn_core_unix_errno = ret == -1L ? errno : 0;
-    return ret;
+    return ERRL(write(fd, buf, UL(count)));
 }

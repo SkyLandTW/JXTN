@@ -25,8 +25,6 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-#include <jni.h>
-
 #include "internals.h"
 
 JNIEXPORT void JNICALL Java_jxtn_core_unix_Stdio_printf(JNIEnv *env, jclass thisObj,

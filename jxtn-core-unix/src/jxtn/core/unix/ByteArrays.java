@@ -26,7 +26,15 @@
  */
 package jxtn.core.unix;
 
+import java.nio.ByteBuffer;
+
 final class ByteArrays {
+
+    public static byte[] copy(ByteBuffer buffer) {
+        byte[] dst = new byte[buffer.remaining()];
+        System.arraycopy(buffer.array(), buffer.arrayOffset() + buffer.position(), dst, 0, buffer.remaining());
+        return dst;
+    }
 
     public static int indexOf(byte[] source, int sourceOffset, byte ch) {
         return indexOf(source, sourceOffset, source.length - sourceOffset, ch);

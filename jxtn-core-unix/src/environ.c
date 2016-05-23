@@ -71,8 +71,8 @@ static const char** environ_find_argv(void) {
 
 static void* environ_find_stack(void) {
     unsigned long* argc_ptr = NULL;
-    // Find argc by scanning all pointers from (_x_sys_environ - 2), until there is
-    // a pointer that contains a very small value (whose address cannot be real)
+    // Find argc by scanning all pointers from (environ - 2), until there is a pointer that contains a very small value
+    // (impossible to be an address of reserved or allocated memory)
     for (argc_ptr = (unsigned long*) environ - 2; *argc_ptr > 255; argc_ptr--)
         ;
     return argc_ptr;

@@ -31,6 +31,7 @@
 #include <signal.h>
 #include <string.h>
 #include <sys/mman.h>
+#include <sys/prctl.h>
 #include <sys/sendfile.h>
 #include <sys/stat.h>
 #include <sys/syscall.h>
@@ -208,6 +209,11 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_munmap(JNIEnv *env, jclass th
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_open(JNIEnv *env, jclass thisObj,
         jbyteArray pathname, jint flags, jint mode) {
     return ERR(open(resolveCS(pathname), flags, mode));
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_prctl(JNIEnv *env, jclass thisObj,
+        int option, jlong arg2, jlong arg3, jlong arg4, jlong arg5) {
+    return ERR(prctl(option, UL(arg2), UL(arg3), UL(arg4), UL(arg5)));
 }
 
 JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_pread(JNIEnv *env, jclass thisObj,

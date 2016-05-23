@@ -24,14 +24,19 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
-package sun.nio.fs;
+package jxtn.core.unix;
 
 import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public final class UnixPath2 {
+/**
+ * Helper functions for C paths
+ *
+ * @author aqd
+ */
+public final class CPaths {
 
     private static Class<? extends Path> unixPathClass;
     private static Field unixPathPathField;
@@ -58,6 +63,6 @@ public final class UnixPath2 {
         }
     }
 
-    private UnixPath2() {
+    private CPaths() {
     }
 }

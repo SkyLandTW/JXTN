@@ -29,7 +29,6 @@ package jxtn.core.unix;
 import java.nio.ByteBuffer;
 import java.nio.file.Path;
 import sun.misc.Unsafe;
-import sun.nio.fs.UnixPath2;
 
 /**
  * Unix system calls
@@ -284,6 +283,8 @@ public final class Syscall {
 
     public static native int open(byte[] pathname, int flags, int mode);
 
+    public static native int prctl(int option, long arg2, long arg3, long arg4, long arg5);
+
     public static long pread(int fd, ByteBuffer buf, long offset) {
         return rBuffer(buf, pread(fd, buf.array(), buf.arrayOffset() + buf.position(), buf.remaining(), offset));
     }
@@ -402,7 +403,7 @@ public final class Syscall {
      */
 
     private static byte[] tPath(Path path) {
-        byte[] path_s = UnixPath2.getBytes(path);
+        byte[] path_s = CPaths.getBytes(path);
         if (path_s[path_s.length - 1] == (byte) '\0') {
             return path_s;
         }

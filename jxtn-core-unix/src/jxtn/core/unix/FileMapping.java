@@ -75,6 +75,7 @@ public final class FileMapping implements Closeable {
         return (i + 0xfffL) & ~0xfffL;
     }
 
+    private final String source;
     private final boolean fromChannel;
     private final long address;
     private final long length;
@@ -83,6 +84,7 @@ public final class FileMapping implements Closeable {
     private boolean closed;
 
     public FileMapping(FileChannel channel, long length, boolean canWrite) {
+        this.source = IOInternals.toString(channel);
         this.fromChannel = true;
         int imode = canWrite ? 1 : 0;
         try {
@@ -95,6 +97,7 @@ public final class FileMapping implements Closeable {
     }
 
     public FileMapping(Path path, int prot, int flags) throws IOException {
+        this.source = path.toString();
         this.fromChannel = false;
         int rw = 0;
         if ((prot & Const.PROT_READ) != 0 || (prot & Const.PROT_EXEC) != 0) {
@@ -127,6 +130,7 @@ public final class FileMapping implements Closeable {
     }
 
     public FileMapping(int fd, long offset, long length, int prot, int flags) throws IOException {
+        this.source = "fd=" + fd;
         this.fromChannel = false;
         this.address = Syscall.mmap(0L, length, prot, flags, fd, offset);
         if (this.address == Const.MAP_FAILED) {
@@ -137,28 +141,12 @@ public final class FileMapping implements Closeable {
     }
 
     public FileMapping(long address, long length) {
+        this.source = "addr=0x" + StringFormat.padLeft(Long.toUnsignedString(address, 16), 16, '0')
+                + "+" + length;
         this.fromChannel = false;
         this.address = address;
         this.pointer = address;
         this.length = length;
-    }
-
-    @Override
-    public void close() {
-        if (this.closed) {
-            return;
-        }
-        if (this.fromChannel) {
-            try {
-                channelUnmap0.invoke(null, this.address, roundTo4096(this.length));
-            } catch (ReflectiveOperationException e) {
-                throw new RuntimeException(e);
-            } finally {
-                this.closed = true;
-            }
-        } else {
-            Syscall.munmap(this.address, this.length);
-        }
     }
 
     public boolean hasRemaining() {
@@ -303,6 +291,33 @@ public final class FileMapping implements Closeable {
 
     public void putDataAt(long offset, byte[] data) {
         unsafe.copyMemory(data, Unsafe.ARRAY_BYTE_BASE_OFFSET, null, this.pointer + offset, data.length);
+    }
+
+    @Override
+    public void close() {
+        if (this.closed) {
+            return;
+        }
+        try {
+            if (this.fromChannel) {
+                try {
+                    channelUnmap0.invoke(null, this.address, roundTo4096(this.length));
+                } catch (ReflectiveOperationException e) {
+                    throw new RuntimeException(e);
+                }
+            } else {
+                if (Syscall.munmap(this.address, this.length) == -1) {
+                    System.err.println("munmap " + this.source + ": " + Errno.errName());
+                }
+            }
+        } finally {
+            this.closed = true;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "mmap_" + this.source;
     }
 
     @Override

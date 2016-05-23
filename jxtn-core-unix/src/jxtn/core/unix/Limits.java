@@ -31,14 +31,13 @@ package jxtn.core.unix;
  *
  * @author aqd
  */
-public final class Limits {
+public final class Limits extends Unix {
 
     public static final int NAME_MAX;
 
     public static final int PATH_MAX;
 
     static {
-        Runtime.getRuntime().loadLibrary("jxtn-core-unix");
         NAME_MAX = nameMax();
         PATH_MAX = pathMax();
     }

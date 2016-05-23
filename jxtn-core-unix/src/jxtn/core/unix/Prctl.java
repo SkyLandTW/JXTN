@@ -33,11 +33,7 @@ import sun.misc.Unsafe;
  *
  * @author aqd
  */
-public final class Prctl {
-
-    static {
-        Runtime.getRuntime().loadLibrary("jxtn-core-unix");
-    }
+public final class Prctl extends Unix {
 
     public static final int PR_SET_PDEATHSIG = 1;
     public static final int PR_GET_PDEATHSIG = 2;
@@ -292,13 +288,7 @@ public final class Prctl {
      * @param name new process name
      * @return 0 on success, or -1 ({@link Errno})
      */
-    public static int setName(String name) {
-        byte[] name_b = new byte[16];
-        FastUTF8.encodeToCString(name, name_b);
-        return setName(name_b);
-    }
-
-    public static native int setName(byte[] name);
+    public static native int setName(String name);
 
     private Prctl() {
     }

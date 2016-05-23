@@ -35,11 +35,7 @@ import sun.misc.Unsafe;
  *
  * @author aqd
  */
-public final class Syscall {
-
-    static {
-        Runtime.getRuntime().loadLibrary("jxtn-core-unix");
-    }
+public final class Syscall extends Unix {
 
     public static int access(Path pathname, int mode) {
         return access(tPath(pathname), mode);

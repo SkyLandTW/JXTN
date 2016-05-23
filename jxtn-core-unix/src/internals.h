@@ -28,6 +28,9 @@
 #include <jni.h>
 #include <errno.h>
 
+#define MAX(X,Y) ((X) > (Y) ? (X) : (Y))
+#define MIN(X,Y) ((X) < (Y) ? (X) : (Y))
+
 extern __thread int jxtn_core_unix_errno;
 
 /**

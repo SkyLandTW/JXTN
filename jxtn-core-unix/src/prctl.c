@@ -38,10 +38,12 @@ static char prctl_process_name[16];
 static void prctl_setName_handler(int signum);
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Prctl_setName(JNIEnv *env, jclass thisObj,
-        jbyteArray name) {
-    const char* nameSource = resolveCS(name);
-    strncpy(prctl_process_name, nameSource, 16);
-    prctl_process_name[15] = '\0';
+        jstring name) {
+    const char* name_b = (*env)->GetStringUTFChars(env, name, NULL);
+    const size_t len = MIN(strlen(name_b), 15);
+    strncpy(prctl_process_name, name_b, len);
+    (*env)->ReleaseStringUTFChars(env, name, name_b);
+    prctl_process_name[len] = '\0';
     if (signal(SIGUSR1, prctl_setName_handler) == SIG_ERR)
         return -1;
     if (syscall(SYS_tgkill, getpid(), getpid(), SIGUSR1) == -1)

@@ -26,23 +26,17 @@
  */
 package jxtn.core.unix;
 
-import sun.misc.Unsafe;
-
 /**
- * <i>stdio</i> wrapper, for testing purpose
+ * Base class for all those requiring <i>jxtn-core-unix</i>
  *
  * @author aqd
  */
-public final class Stdio extends Unix {
+class Unix {
 
-    public static void printf(String format) {
-        byte[] format_b = new byte[format.length() * 3];
-        FastUTF8.encodeToCString(format, format_b);
-        printf(format_b, Unsafe.ARRAY_BYTE_BASE_OFFSET);
+    static {
+        Runtime.getRuntime().loadLibrary("jxtn-core-unix");
     }
 
-    public static native void printf(Object format_base, long format_offset);
-
-    private Stdio() {
+    Unix() {
     }
 }

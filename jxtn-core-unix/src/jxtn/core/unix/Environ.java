@@ -26,23 +26,39 @@
  */
 package jxtn.core.unix;
 
-import sun.misc.Unsafe;
-
 /**
- * <i>stdio</i> wrapper, for testing purpose
+ * Program stack and environment
  *
  * @author aqd
  */
-public final class Stdio extends Unix {
+public final class Environ extends Unix {
 
-    public static void printf(String format) {
-        byte[] format_b = new byte[format.length() * 3];
-        FastUTF8.encodeToCString(format, format_b);
-        printf(format_b, Unsafe.ARRAY_BYTE_BASE_OFFSET);
-    }
+    /**
+     * Get the count of command arguments
+     *
+     * @return count of command arguments
+     */
+    public static native int getArgc();
 
-    public static native void printf(Object format_base, long format_offset);
+    /**
+     * Get the value of specified argument
+     *
+     * @param index index of the argument to get
+     * @return argument value
+     */
+    public static native String getArgv(int index);
 
-    private Stdio() {
+    /**
+     * Set the value of specified argument
+     * <p>
+     * {@code value} is limited by the size of the current argument value
+     * </p>
+     *
+     * @param index index of the argument to set
+     * @param value new argument value
+     */
+    public static native void setArgv(int index, String value);
+
+    private Environ() {
     }
 }

@@ -33,7 +33,7 @@ import java.lang.reflect.Field;
  *
  * @author aqd
  */
-public final class Errno {
+public final class Errno extends Unix {
 
     public static final int EPERM = 1; /* Operation not permitted */
     public static final int ENOENT = 2; /* No such file or directory */
@@ -174,7 +174,6 @@ public final class Errno {
     public static final String[] errnumToDescription;
 
     static {
-        Runtime.getRuntime().loadLibrary("jxtn-core-unix");
         errnumToName = new String[256];
         errnumToDescription = new String[256];
         for (Field field : Errno.class.getDeclaredFields()) {

@@ -35,6 +35,10 @@ import sun.misc.Unsafe;
  */
 public final class Prctl {
 
+    static {
+        Runtime.getRuntime().loadLibrary("jxtn-core-unix");
+    }
+
     public static final int PR_SET_PDEATHSIG = 1;
     public static final int PR_GET_PDEATHSIG = 2;
 
@@ -227,6 +231,14 @@ public final class Prctl {
     public static final int PR_CAP_AMBIENT_LOWER = 3;
     public static final int PR_CAP_AMBIENT_CLEAR_ALL = 4;
 
+    /**
+     * Get the thread name
+     * <p>
+     * <b>NOT</b> process name, because none of Java threads is the root thread
+     * </p>
+     *
+     * @return thread name
+     */
     public static String prGetName() {
         final int NAME_LEN = 16;
         Unsafe unsafe = Memory.unsafe;
@@ -244,6 +256,15 @@ public final class Prctl {
         }
     }
 
+    /**
+     * Set the thread name
+     * <p>
+     * <b>NOT</b> process name, because none of Java threads is the root thread
+     * </p>
+     *
+     * @param name thread name
+     * @return true on success
+     */
     public static boolean prSetName(String name) {
         final int NAME_LEN = 16;
         Unsafe unsafe = Memory.unsafe;
@@ -260,6 +281,24 @@ public final class Prctl {
             unsafe.freeMemory(cbuffer);
         }
     }
+
+    /**
+     * Set the process name
+     * <p>
+     * The underlying JNI function uses <i>SIGUSR1</i> in order to set {@code name} by the root thread and resets the
+     * handler to the OS default afterwards. Beware of the side-effects.
+     * </p>
+     *
+     * @param name new process name
+     * @return 0 on success, or -1 ({@link Errno})
+     */
+    public static int setName(String name) {
+        byte[] name_b = new byte[16];
+        FastUTF8.encodeToCString(name, name_b);
+        return setName(name_b);
+    }
+
+    public static native int setName(byte[] name);
 
     private Prctl() {
     }

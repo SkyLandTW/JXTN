@@ -30,7 +30,12 @@ import java.lang.reflect.Field;
 import java.nio.channels.FileChannel;
 import sun.nio.ch.FileChannelImpl;
 
-final class IOInternals {
+/**
+ * Access to {@link FileChannel} internals
+ * 
+ * @author aqd
+ */
+final class Channels {
 
     private static final Field FileChannelImpl_fd;
     private static final Field FileChannelImpl_path;
@@ -69,6 +74,6 @@ final class IOInternals {
         return channel.toString();
     }
 
-    private IOInternals() {
+    private Channels() {
     }
 }

@@ -29,7 +29,6 @@ package jxtn.core.unix;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import sun.misc.Unsafe;
-import sun.nio.ch.FileChannelImpl;
 
 /**
  * Access to memory-related internal classes
@@ -39,21 +38,19 @@ import sun.nio.ch.FileChannelImpl;
 public final class Memory {
 
     public static final Unsafe unsafe;
-    public static final Method mmap;
-    public static final Method unmap;
     public static final Method reserveMemory;
     public static final Method unreserveMemory;
 
     static {
         try {
-            Field singleoneInstanceField = Unsafe.class.getDeclaredField("theUnsafe");
-            singleoneInstanceField.setAccessible(true);
-            unsafe = (Unsafe) singleoneInstanceField.get(null);
-            mmap = getMethod(FileChannelImpl.class, "map0", int.class, long.class, long.class);
-            unmap = getMethod(FileChannelImpl.class, "unmap0", long.class, long.class);
+            Field theUnsafe = Unsafe.class.getDeclaredField("theUnsafe");
+            theUnsafe.setAccessible(true);
+            unsafe = (Unsafe) theUnsafe.get(null);
             Class<?> bitsClass = Class.forName("java.nio.Bits");
-            reserveMemory = getMethod(bitsClass, "reserveMemory", long.class, int.class);
-            unreserveMemory = getMethod(bitsClass, "unreserveMemory", long.class, int.class);
+            reserveMemory = bitsClass.getDeclaredMethod("reserveMemory", long.class, int.class);
+            reserveMemory.setAccessible(true);
+            unreserveMemory = bitsClass.getDeclaredMethod("unreserveMemory", long.class, int.class);
+            unreserveMemory.setAccessible(true);
         } catch (ReflectiveOperationException e) {
             throw new RuntimeException(e);
         }
@@ -73,13 +70,6 @@ public final class Memory {
         } catch (ReflectiveOperationException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    private static Method getMethod(Class<?> cls, String name, Class<?>... params)
-            throws ReflectiveOperationException {
-        Method m = cls.getDeclaredMethod(name, params);
-        m.setAccessible(true);
-        return m;
     }
 
     private Memory() {

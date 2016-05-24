@@ -26,6 +26,12 @@
  */
 package jxtn.core.unix;
 
+/**
+ * Out/Ref reference
+ *
+ * @author aqd
+ * @param <T> referenced value type
+ */
 public final class Out<T> {
 
     private boolean assigned;

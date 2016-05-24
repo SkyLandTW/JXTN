@@ -28,7 +28,6 @@ package jxtn.core.unix;
 
 import java.io.Closeable;
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.nio.channels.FileChannel;
 import java.nio.file.Path;
@@ -48,27 +47,19 @@ import sun.nio.ch.FileChannelImpl;
  */
 public final class FileMapping implements Closeable {
 
-    private static final Unsafe unsafe;
+    private static final Unsafe unsafe = Memory.unsafe;
     private static final Method channelMap0;
     private static final Method channelUnmap0;
 
     static {
         try {
-            Field singleoneInstanceField = Unsafe.class.getDeclaredField("theUnsafe");
-            singleoneInstanceField.setAccessible(true);
-            unsafe = (Unsafe) singleoneInstanceField.get(null);
-            channelMap0 = getMethod(FileChannelImpl.class, "map0", int.class, long.class, long.class);
-            channelUnmap0 = getMethod(FileChannelImpl.class, "unmap0", long.class, long.class);
+            channelMap0 = FileChannelImpl.class.getDeclaredMethod("map0", int.class, long.class, long.class);
+            channelMap0.setAccessible(true);
+            channelUnmap0 = FileChannelImpl.class.getDeclaredMethod("unmap0", long.class, long.class);
+            channelUnmap0.setAccessible(true);
         } catch (ReflectiveOperationException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    private static Method getMethod(Class<?> cls, String name, Class<?>... params)
-            throws ReflectiveOperationException {
-        Method m = cls.getDeclaredMethod(name, params);
-        m.setAccessible(true);
-        return m;
     }
 
     private static long roundTo4096(long i) {
@@ -84,7 +75,7 @@ public final class FileMapping implements Closeable {
     private boolean closed;
 
     public FileMapping(FileChannel channel, long length, boolean canWrite) {
-        this.source = IOInternals.toString(channel);
+        this.source = Channels.toString(channel);
         this.fromChannel = true;
         int imode = canWrite ? 1 : 0;
         try {
@@ -303,7 +294,7 @@ public final class FileMapping implements Closeable {
                 try {
                     channelUnmap0.invoke(null, this.address, roundTo4096(this.length));
                 } catch (ReflectiveOperationException e) {
-                    throw new RuntimeException(e);
+                    e.printStackTrace();
                 }
             } else {
                 if (Syscall.munmap(this.address, this.length) == -1) {

@@ -26,6 +26,11 @@
  */
 package jxtn.core.unix;
 
+/**
+ * Syscall constants
+ * 
+ * @author aqd
+ */
 public final class Const {
 
     /* access */

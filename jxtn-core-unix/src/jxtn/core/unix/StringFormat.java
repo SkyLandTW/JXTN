@@ -26,6 +26,11 @@
  */
 package jxtn.core.unix;
 
+/**
+ * Format strings
+ *
+ * @author aqd
+ */
 final class StringFormat {
 
     public static String padLeft(String str, int totalLength, char paddingChar) {
@@ -37,6 +42,17 @@ final class StringFormat {
             sb.append(paddingChar);
         }
         return sb.toString() + str.toString();
+    }
+
+    public static String padRight(String str, int totalLength, char paddingChar) {
+        if (str.length() >= totalLength) {
+            return str;
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < totalLength - str.length(); i++) {
+            sb.append(paddingChar);
+        }
+        return str.toString() + sb.toString();
     }
 
     private StringFormat() {

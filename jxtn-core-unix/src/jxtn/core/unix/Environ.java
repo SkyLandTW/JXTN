@@ -51,7 +51,7 @@ public final class Environ extends Unix {
     /**
      * Set the value of specified argument
      * <p>
-     * {@code value} is limited by the size of the current argument value
+     * {@code value} is limited by the size of the initial argument value
      * </p>
      *
      * @param index index of the argument to set

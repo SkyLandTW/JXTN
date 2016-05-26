@@ -37,11 +37,11 @@ import java.nio.ByteOrder;
 public final class Stat {
 
     public static long major(long dev) {
-        return ((dev >> 8) & 0xfff) | ((int) (dev >> 32) & ~0xfff);
+        return ((dev >>> 8) & 0xfff) | ((int) (dev >>> 32) & ~0xfff);
     }
 
     public static long minor(long dev) {
-        return (dev & 0xff) | ((int) (dev >> 12) & ~0xff);
+        return (dev & 0xff) | ((int) (dev >>> 12) & ~0xff);
     }
 
     public final long st_dev;

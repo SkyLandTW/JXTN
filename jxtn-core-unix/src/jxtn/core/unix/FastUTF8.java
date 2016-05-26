@@ -61,14 +61,14 @@ public final class FastUTF8 {
         } else if (c < 0x800) {
             // 2 bytes, 11 bits
             return new byte[] {
-                    (byte) (0xc0 | (c >> 6)),
+                    (byte) (0xc0 | (c >>> 6)),
                     (byte) (0x80 | (c & 0x3f))
             };
         } else {
             // 3 bytes, 16 bits
             return new byte[] {
-                    (byte) (0xe0 | ((c >> 12))),
-                    (byte) (0x80 | ((c >> 6) & 0x3f)),
+                    (byte) (0xe0 | ((c >>> 12))),
+                    (byte) (0x80 | ((c >>> 6) & 0x3f)),
                     (byte) (0x80 | (c & 0x3f))
             };
         }
@@ -89,13 +89,13 @@ public final class FastUTF8 {
             return 1;
         } else if (c < 0x800) {
             // 2 bytes, 11 bits
-            dstBuffer[dstOffset + 0] = (byte) (0xc0 | (c >> 6));
+            dstBuffer[dstOffset + 0] = (byte) (0xc0 | (c >>> 6));
             dstBuffer[dstOffset + 1] = (byte) (0x80 | (c & 0x3f));
             return 2;
         } else {
             // 3 bytes, 16 bits
-            dstBuffer[dstOffset + 0] = (byte) (0xe0 | ((c >> 12)));
-            dstBuffer[dstOffset + 1] = (byte) (0x80 | ((c >> 6) & 0x3f));
+            dstBuffer[dstOffset + 0] = (byte) (0xe0 | ((c >>> 12)));
+            dstBuffer[dstOffset + 1] = (byte) (0x80 | ((c >>> 6) & 0x3f));
             dstBuffer[dstOffset + 2] = (byte) (0x80 | (c & 0x3f));
             return 3;
         }
@@ -147,7 +147,7 @@ public final class FastUTF8 {
                     break;
                 }
                 // 2 bytes, 11 bits
-                dstBuffer[dPos + 0] = (byte) (0xc0 | (c >> 6));
+                dstBuffer[dPos + 0] = (byte) (0xc0 | (c >>> 6));
                 dstBuffer[dPos + 1] = (byte) (0x80 | (c & 0x3f));
                 dPos += 2;
             } else {
@@ -155,8 +155,8 @@ public final class FastUTF8 {
                     break;
                 }
                 // 3 bytes, 16 bits
-                dstBuffer[dPos + 0] = (byte) (0xe0 | ((c >> 12)));
-                dstBuffer[dPos + 1] = (byte) (0x80 | ((c >> 6) & 0x3f));
+                dstBuffer[dPos + 0] = (byte) (0xe0 | ((c >>> 12)));
+                dstBuffer[dPos + 1] = (byte) (0x80 | ((c >>> 6) & 0x3f));
                 dstBuffer[dPos + 2] = (byte) (0x80 | (c & 0x3f));
                 dPos += 3;
             }

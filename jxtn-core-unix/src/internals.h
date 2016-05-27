@@ -159,8 +159,9 @@ static inline void* resolveBA(jbyteArray base) {
     if (base == NULL) {
         return NULL;
     }
-    void* base_ptr = *((void**) base);
     // hotspot/src/share/vm/prims/unsafe.cpp, index_oop_from_field_offset_long (from "oop" to data address)
+    void* base_ptr = *((void**) base);
+    //
     return base_ptr + 16;
 }
 
@@ -176,7 +177,8 @@ static inline const char* resolveCS(jbyteArray base) {
     if (base == NULL) {
         return NULL;
     }
-    void* base_ptr = *((void**) base);
     // hotspot/src/share/vm/prims/unsafe.cpp, index_oop_from_field_offset_long (from "oop" to data address)
+    void* base_ptr = *((void**) base);
+    //
     return (const char*) (base_ptr + 16);
 }

@@ -279,6 +279,10 @@ public final class Syscall extends Unix {
 
     public static native int open(byte[] pathname, int flags, int mode);
 
+    public static native int pipe(int[] pipefd);
+
+    public static native int pipe2(int[] pipefd, int flags);
+
     public static native int prctl(int option, long arg2, long arg3, long arg4, long arg5);
 
     public static long pread(int fd, ByteBuffer buf, long offset) {
@@ -381,6 +385,8 @@ public final class Syscall extends Unix {
     }
 
     public static native int truncate(byte[] pathname, long length);
+
+    public static native int waitpid(int pid, int[] status, int options);
 
     public static long write(int fd, ByteBuffer buf) {
         return rBuffer(buf, write(fd, buf.array(), buf.arrayOffset() + buf.position(), buf.remaining()));

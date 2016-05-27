@@ -36,6 +36,7 @@
 #include <sys/stat.h>
 #include <sys/syscall.h>
 #include <sys/types.h>
+#include <sys/wait.h>
 #include <unistd.h>
 
 #include <attr/xattr.h>
@@ -211,6 +212,28 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_open(JNIEnv *env, jclass this
     return ERR(open(resolveCS(pathname), flags, mode));
 }
 
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_pipe(JNIEnv *env, jclass thisObj,
+        jintArray pipefd) {
+    if (pipefd == NULL || (*env)->GetArrayLength(env, pipefd) != 2) {
+        return SETERR(EFAULT);
+    }
+    jint *pipefd_ptr = (*env)->GetIntArrayElements(env, pipefd, 0);
+    jint ret = ERR(pipe(pipefd_ptr));
+    (*env)->ReleaseIntArrayElements(env, pipefd, pipefd_ptr, 0);
+    return ret;
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_pipe2(JNIEnv *env, jclass thisObj,
+        jintArray pipefd, jint flags) {
+    if (pipefd == NULL || (*env)->GetArrayLength(env, pipefd) != 2) {
+        return SETERR(EFAULT);
+    }
+    jint *pipefd_ptr = (*env)->GetIntArrayElements(env, pipefd, 0);
+    jint ret = ERR(pipe2(pipefd_ptr, flags));
+    (*env)->ReleaseIntArrayElements(env, pipefd, pipefd_ptr, 0);
+    return ret;
+}
+
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_prctl(JNIEnv *env, jclass thisObj,
         int option, jlong arg2, jlong arg3, jlong arg4, jlong arg5) {
     return ERR(prctl(option, UL(arg2), UL(arg3), UL(arg4), UL(arg5)));
@@ -270,6 +293,24 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_symlink(JNIEnv *env, jclass t
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_truncate(JNIEnv *env, jclass thisObj,
         jbyteArray path, jlong length) {
     return ERR(truncate(resolveCS(path), length));
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_waitpid(JNIEnv *env, jclass thisObj,
+        jint pid, jintArray status, jint options) {
+    if (status != NULL && (*env)->GetArrayLength(env, status) != 1) {
+        return SETERR(EFAULT);
+    }
+    jint *status_ptr;
+    if (status != NULL) {
+        status_ptr = (*env)->GetIntArrayElements(env, status, 0);
+    } else {
+        status_ptr = NULL;
+    }
+    pid_t ret = ERR(waitpid(pid, status_ptr, options));
+    if (status != NULL) {
+        (*env)->ReleaseIntArrayElements(env, status, status_ptr, 0);
+    }
+    return ret;
 }
 
 JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_write(JNIEnv *env, jclass thisObj,

@@ -28,7 +28,7 @@ package jxtn.core.unix;
 
 /**
  * Syscall constants
- * 
+ *
  * @author aqd
  */
 public final class Const {
@@ -144,6 +144,57 @@ public final class Const {
     public static final int MS_ASYNC = 1; /* Sync memory asynchronously. */
     public static final int MS_SYNC = 4; /* Synchronous memory sync. */
     public static final int MS_INVALIDATE = 2; /* Invalidate the caches. */
+
+    /* signal */
+
+    public static final int SIGHUP = 1; /* Hangup (POSIX).  */
+    public static final int SIGINT = 2; /* Interrupt (ANSI).  */
+    public static final int SIGQUIT = 3; /* Quit (POSIX).  */
+    public static final int SIGILL = 4; /* Illegal instruction (ANSI).  */
+    public static final int SIGTRAP = 5; /* Trace trap (POSIX).  */
+    public static final int SIGABRT = 6; /* Abort (ANSI).  */
+    public static final int SIGIOT = 6; /* IOT trap (4.2 BSD).  */
+    public static final int SIGBUS = 7; /* BUS error (4.2 BSD).  */
+    public static final int SIGFPE = 8; /* Floating-point exception (ANSI).  */
+    public static final int SIGKILL = 9; /* Kill, unblockable (POSIX).  */
+    public static final int SIGUSR1 = 10; /* User-defined signal 1 (POSIX).  */
+    public static final int SIGSEGV = 11; /* Segmentation violation (ANSI).  */
+    public static final int SIGUSR2 = 12; /* User-defined signal 2 (POSIX).  */
+    public static final int SIGPIPE = 13; /* Broken pipe (POSIX).  */
+    public static final int SIGALRM = 14; /* Alarm clock (POSIX).  */
+    public static final int SIGTERM = 15; /* Termination (ANSI).  */
+    public static final int SIGSTKFLT = 16; /* Stack fault.  */
+    public static final int SIGCHLD = 17; /* Child status has changed (POSIX).  */
+    public static final int SIGCLD = SIGCHLD; /* Same as SIGCHLD (System V).  */
+    public static final int SIGCONT = 18; /* Continue (POSIX).  */
+    public static final int SIGSTOP = 19; /* Stop, unblockable (POSIX).  */
+    public static final int SIGTSTP = 20; /* Keyboard stop (POSIX).  */
+    public static final int SIGTTIN = 21; /* Background read from tty (POSIX).  */
+    public static final int SIGTTOU = 22; /* Background write to tty (POSIX).  */
+    public static final int SIGURG = 23; /* Urgent condition on socket (4.2 BSD).  */
+    public static final int SIGXCPU = 24; /* CPU limit exceeded (4.2 BSD).  */
+    public static final int SIGXFSZ = 25; /* File size limit exceeded (4.2 BSD).  */
+    public static final int SIGVTALRM = 26; /* Virtual alarm clock (4.2 BSD).  */
+    public static final int SIGPROF = 27; /* Profiling alarm clock (4.2 BSD).  */
+    public static final int SIGWINCH = 28; /* Window size change (4.3 BSD, Sun).  */
+    public static final int SIGIO = 29; /* I/O now possible (4.2 BSD).  */
+    public static final int SIGPOLL = SIGIO; /* Pollable event occurred (System V).  */
+    public static final int SIGPWR = 30; /* Power failure restart (System V).  */
+    public static final int SIGSYS = 31; /* Bad system call.  */
+
+    /* wait */
+
+    public static final int WNOHANG = 1; /* Don't block waiting.  */
+    public static final int WUNTRACED = 2; /* Report status of stopped children.  */
+
+    /* Bits in the fourth argument to `waitid'.  */
+    public static final int WSTOPPED = 2; /* Report stopped child (same as WUNTRACED). */
+    public static final int WEXITED = 4; /* Report dead child.  */
+    public static final int WCONTINUED = 8; /* Report continued child.  */
+    public static final int WNOWAIT = 0x01000000; /* Don't reap, just poll status.  */
+    public static final int __WNOTHREAD = 0x20000000; /* Don't wait on children of other threads in this group */
+    public static final int __WALL = 0x40000000; /* Wait for any child.  */
+    public static final int __WCLONE = 0x80000000; /* Wait for cloned process.  */
 
     /* xattr */
 

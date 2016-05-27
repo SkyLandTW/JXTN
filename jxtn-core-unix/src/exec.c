@@ -62,21 +62,18 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Exec_pexec(JNIEnv *env, jclass thisOb
         }
         // child
         if (fd_stdin != 0) {
-            fprintf(stderr, "dup %d to 0\n", fd_stdin);
             close(0);
             if (dup2(fd_stdin, 0) == -1) {
                 perror("dup stdin");
             }
         }
         if (fd_stdout != 1) {
-            fprintf(stderr, "dup %d to 1\n", fd_stdout);
             close(1);
             if (dup2(fd_stdout, 1) == -1) {
                 perror("dup stdout");
             }
         }
         if (fd_stderr != 2) {
-            fprintf(stderr, "dup %d to 2\n", fd_stderr);
             close(2);
             if (dup2(fd_stderr, 2) == -1) {
                 perror("dup stderr");

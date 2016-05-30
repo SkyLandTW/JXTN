@@ -38,7 +38,7 @@ extern char **environ;
 static void closefrom(int lowfd);
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Exec_pexec(JNIEnv *env, jclass thisObj,
-        jint fd_stdin, jint fd_stdout, jint fd_stderr, jstring filename, jobjectArray argv) {
+        jint fd_stdin, jint fd_stdout, jint fd_stderr, jstring filename, jobjectArray argv, jobjectArray envp) {
     if (filename == NULL) {
         return SETERR(EFAULT);
     }
@@ -54,6 +54,20 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Exec_pexec(JNIEnv *env, jclass thisOb
         }
     }
     argv_b[argv_len] = NULL;
+    // add C envp
+    const int envp_len = envp == NULL ? 0 : (*env)->GetArrayLength(env, envp);
+    char * envp_b[envp_len + 1];
+    char ** child_environ;
+    if (envp != NULL) {
+        for (int i = 0; i < envp_len; i++) {
+            jstring evi = (jstring)(*env)->GetObjectArrayElement(env, envp, i);
+            envp_b[i] = (char*) (*env)->GetStringUTFChars(env, evi, NULL);
+        }
+        envp_b[envp_len] = NULL;
+        child_environ = envp_b;
+    } else {
+        child_environ = environ;
+    }
     // fork
     pid_t pid = fork();
     if (pid == 0) {
@@ -80,7 +94,7 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Exec_pexec(JNIEnv *env, jclass thisOb
             }
         }
         closefrom(3);
-        if (execve(filename_b, argv_b, environ) == -1) {
+        if (execve(filename_b, argv_b, child_environ) == -1) {
             perror("execve");
         }
         exit(1);
@@ -92,6 +106,13 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Exec_pexec(JNIEnv *env, jclass thisOb
         for (int i = 0; i < argv_len; i++) {
             jstring arg = (jstring)(*env)->GetObjectArrayElement(env, argv, i);
             (*env)->ReleaseStringUTFChars(env, arg, argv_b[i]);
+        }
+    }
+    // delete C envp
+    if (envp != NULL) {
+        for (int i = 0; i < envp_len; i++) {
+            jstring evi = (jstring)(*env)->GetObjectArrayElement(env, envp, i);
+            (*env)->ReleaseStringUTFChars(env, evi, envp_b[i]);
         }
     }
     //

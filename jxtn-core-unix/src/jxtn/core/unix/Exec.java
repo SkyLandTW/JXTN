@@ -33,6 +33,22 @@ package jxtn.core.unix;
  */
 public final class Exec extends Unix {
 
-    public static native int pexec(int fd_stdin, int fd_stdout, int fd_stderr, String filename, String[] argv);
+    /**
+     * Launch a child program with specified FDs of stdin/stdout/stderr
+     * <p>
+     * The {@code filename}, {@code argv} and {@code envp} have the same purpose as the parameters to the system call
+     * {@code execve()}.
+     * </p>
+     *
+     * @param fd_stdin FD of child's stdin, set to 0 if no redirection needed
+     * @param fd_stdout FD of child's stdout, set to 1 if no redirection needed
+     * @param fd_stderr FD of child's stderr, set to 2 if no redirection needed
+     * @param filename Path to the child program file
+     * @param argv Arguments to the child program, should contain the process name at least
+     * @param envp Environment variables for the child program, set to null for the parent's environment
+     * @return PID of the launched child process, or -1 if error occurred (see {@link Errno#errno})
+     */
+    public static native int pexec(int fd_stdin, int fd_stdout, int fd_stderr,
+            String filename, String[] argv, String[] envp);
 
 }

@@ -35,7 +35,7 @@ import java.util.tuple.BaseTuple;
  * @author AqD
  */
 @SuppressWarnings("serial")
-public class BinarySearchResult extends BaseTuple<BinarySearchResult> {
+public final class BinarySearchResult extends BaseTuple<BinarySearchResult> {
     private final boolean found;
     private final int insertPoint;
 

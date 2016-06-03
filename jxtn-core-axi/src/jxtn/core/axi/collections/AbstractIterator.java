@@ -44,6 +44,24 @@ public abstract class AbstractIterator<T> implements Iterator<T> {
     private T next;
     private long steps = 0;
 
+    /**
+     * 取得進行次數。
+     *
+     * @return 進行次數
+     */
+    public final long getSteps() {
+        return this.steps;
+    }
+
+    /**
+     * 是否在開頭狀態。
+     *
+     * @return true表示目前在開頭，尚未進行任何取得動作
+     */
+    public final boolean isAtHead() {
+        return this.state == State.HEAD;
+    }
+
     @Override
     public final boolean hasNext() {
         switch (this.state) {
@@ -82,24 +100,6 @@ public abstract class AbstractIterator<T> implements Iterator<T> {
     public String toString() {
         return this.getClass().toGenericString()
                 + String.format(":%s,steps=%d", this.state.name(), this.steps);
-    }
-
-    /**
-     * 取得進行次數。
-     *
-     * @return 進行次數
-     */
-    public final long getSteps() {
-        return this.steps;
-    }
-
-    /**
-     * 是否在開頭狀態。
-     *
-     * @return true表示目前在開頭，尚未進行任何取得動作
-     */
-    public final boolean isAtHead() {
-        return this.state == State.HEAD;
     }
 
     /**

@@ -36,7 +36,7 @@ package java.util.tuple;
  * @param <V3> 第三子項目型態
  */
 @SuppressWarnings("serial")
-public class TTriple<V1, V2, V3> extends BaseTuple<TTriple<V1, V2, V3>> {
+public final class TTriple<V1, V2, V3> extends BaseTuple<TTriple<V1, V2, V3>> {
     private final V1 v1;
     private final V2 v2;
     private final V3 v3;

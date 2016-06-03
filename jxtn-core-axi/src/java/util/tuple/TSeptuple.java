@@ -40,7 +40,7 @@ package java.util.tuple;
  * @param <V7> 第七子項目型態
  */
 @SuppressWarnings("serial")
-public class TSeptuple<V1, V2, V3, V4, V5, V6, V7> extends BaseTuple<TSeptuple<V1, V2, V3, V4, V5, V6, V7>> {
+public final class TSeptuple<V1, V2, V3, V4, V5, V6, V7> extends BaseTuple<TSeptuple<V1, V2, V3, V4, V5, V6, V7>> {
     private final V1 v1;
     private final V2 v2;
     private final V3 v3;

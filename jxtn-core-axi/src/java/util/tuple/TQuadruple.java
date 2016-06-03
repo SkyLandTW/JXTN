@@ -37,7 +37,7 @@ package java.util.tuple;
  * @param <V4> 第四子項目型態
  */
 @SuppressWarnings("serial")
-public class TQuadruple<V1, V2, V3, V4> extends BaseTuple<TQuadruple<V1, V2, V3, V4>> {
+public final class TQuadruple<V1, V2, V3, V4> extends BaseTuple<TQuadruple<V1, V2, V3, V4>> {
     private final V1 v1;
     private final V2 v2;
     private final V3 v3;

@@ -75,11 +75,13 @@ public final class URLClassLoaderExt {
      * @param classLoader 要加入新位址的類別載入器
      * @param newURL 新的類別來源位址
      */
-    public static synchronized void addURL(URLClassLoader classLoader, URL newURL) {
-        try {
-            URLClassLoader_addURLMethod.invoke(classLoader, new Object[] { newURL });
-        } catch (ReflectiveOperationException e) {
-            throw new RuntimeException(e);
+    public static void addURL(URLClassLoader classLoader, URL newURL) {
+        synchronized (classLoader) {
+            try {
+                URLClassLoader_addURLMethod.invoke(classLoader, new Object[] { newURL });
+            } catch (ReflectiveOperationException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
@@ -95,7 +97,7 @@ public final class URLClassLoaderExt {
      * @param classLoader 要加入新位址的類別載入器
      * @param newPath 新的類別來源位址
      */
-    public static synchronized void insertURL(URLClassLoader classLoader, Path newPath) {
+    public static void insertURL(URLClassLoader classLoader, Path newPath) {
         URL newURL;
         try {
             newURL = newPath.toUri().toURL();
@@ -117,37 +119,37 @@ public final class URLClassLoaderExt {
      * @param classLoader 要加入新位址的類別載入器
      * @param newURL 新的類別來源位址
      */
-    public static synchronized void insertURL(URLClassLoader classLoader, URL newURL) {
-        try {
-            // Modified from http://pastebin.com/SNgmGMwq
-            URLClassPath ucp = (URLClassPath) URLClassLoader_ucpField.get(classLoader);
-            ucp.addURL(newURL);
-            @SuppressWarnings("unchecked")
-            List<URL> path = (List<URL>) URLClassPath_pathField.get(ucp);
-            @SuppressWarnings("unchecked")
-            List<Object> loaders = (List<Object>) URLClassPath_loadersField.get(ucp);
-            // 強制建立loader (要將loader排到首位)
-            URLClassPath_getLoaderMethod.invoke(ucp, path.size() - 1);
-            if (path.size() != loaders.size()) {
-                throw new RuntimeException("Ehh... they should be same size!!");
-            } else {
-                int lastIndex = path.size() - 1;
-                path.add(0, path.remove(lastIndex));
-                loaders.add(0, loaders.remove(lastIndex));
+    public static void insertURL(URLClassLoader classLoader, URL newURL) {
+        synchronized (classLoader) {
+            try {
+                // Modified from http://pastebin.com/SNgmGMwq
+                URLClassPath ucp = (URLClassPath) URLClassLoader_ucpField.get(classLoader);
+                ucp.addURL(newURL);
+                @SuppressWarnings("unchecked")
+                List<URL> path = (List<URL>) URLClassPath_pathField.get(ucp);
+                @SuppressWarnings("unchecked")
+                List<Object> loaders = (List<Object>) URLClassPath_loadersField.get(ucp);
+                // 強制建立loader (要將loader排到首位)
+                URLClassPath_getLoaderMethod.invoke(ucp, path.size() - 1);
+                if (path.size() != loaders.size()) {
+                    throw new RuntimeException("Ehh... they should be same size!!");
+                } else {
+                    int lastIndex = path.size() - 1;
+                    path.add(0, path.remove(lastIndex));
+                    loaders.add(0, loaders.remove(lastIndex));
+                }
+            } catch (ReflectiveOperationException e) {
+                throw new RuntimeException(e);
             }
-        } catch (ReflectiveOperationException e) {
-            throw new RuntimeException(e);
         }
         /*
-         for (URL p : path)
-         {
-         System.out.println("ext path: " + p);
-         }
-         for (Object l : loaders)
-         {
-         URL url = (URL) URLClassPath_Loader_getBaseURLMethod.invoke(l);
-         System.out.println("ext loader: " + url);
-         }
+        for (URL p : path) {
+            System.out.println("ext path: " + p);
+        }
+        for (Object l : loaders) {
+            URL url = (URL) URLClassPath_Loader_getBaseURLMethod.invoke(l);
+            System.out.println("ext loader: " + url);
+        }
          */
     }
 

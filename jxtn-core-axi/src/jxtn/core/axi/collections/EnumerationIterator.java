@@ -37,12 +37,11 @@ import java.util.Objects;
  * @author AqD
  * @param <E> 列舉項目型態
  */
-public class EnumerationIterator<E> implements Iterator<E> {
-    protected final Enumeration<E> enumeration;
+public final class EnumerationIterator<E> implements Iterator<E> {
+    private final Enumeration<E> enumeration;
 
     public EnumerationIterator(Enumeration<E> enumeration) {
-        Objects.requireNonNull(enumeration);
-        this.enumeration = enumeration;
+        this.enumeration = Objects.requireNonNull(enumeration);
     }
 
     @Override

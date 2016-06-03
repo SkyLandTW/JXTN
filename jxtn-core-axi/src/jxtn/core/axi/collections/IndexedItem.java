@@ -37,8 +37,8 @@ import java.util.tuple.BaseTuple;
  */
 @SuppressWarnings("serial")
 public final class IndexedItem<T> extends BaseTuple<IndexedItem<T>> {
-    protected final int index;
-    protected final T value;
+    private final int index;
+    private final T value;
 
     public IndexedItem(int index, T value) {
         super(index, value);

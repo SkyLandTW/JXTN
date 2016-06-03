@@ -47,6 +47,9 @@ public final class ComparableComparator<T extends Comparable<? super T>> impleme
         return ComparableComparator.instance;
     }
 
+    private ComparableComparator() {
+    }
+
     @SuppressWarnings({ "rawtypes", "unchecked" })
     @Override
     public int compare(T o1, T o2) {

@@ -37,16 +37,9 @@ import java.util.function.Predicate;
  * @author AqD
  * @param <T> 列舉項目型態
  */
-public class AfterConditionIterator<T> extends AbstractIterator<T> {
-    /**
-     * 來源列舉器。
-     */
-    protected final Iterator<? extends T> source;
-
-    /**
-     * 過濾條件。
-     */
-    protected final Predicate<? super T> condition;
+public final class AfterConditionIterator<T> extends AbstractIterator<T> {
+    private final Iterator<? extends T> source;
+    private final Predicate<? super T> condition;
 
     private long sourceSteps;
     private boolean passed;
@@ -61,15 +54,8 @@ public class AfterConditionIterator<T> extends AbstractIterator<T> {
      * @param condition 過濾條件
      */
     public AfterConditionIterator(Iterator<? extends T> source, Predicate<? super T> condition) {
-        Objects.requireNonNull(source);
-        Objects.requireNonNull(condition);
-        this.source = source;
-        this.condition = condition;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString() + String.format(",srcSteps=%d", this.sourceSteps);
+        this.source = Objects.requireNonNull(source);
+        this.condition = Objects.requireNonNull(condition);
     }
 
     /**
@@ -77,8 +63,13 @@ public class AfterConditionIterator<T> extends AbstractIterator<T> {
      *
      * @return {@link #source}的進行次數(過濾前的)
      */
-    public final long getSourceSteps() {
+    public long getSourceSteps() {
         return this.sourceSteps;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + String.format(",srcSteps=%d", this.sourceSteps);
     }
 
     @Override

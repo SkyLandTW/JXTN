@@ -36,20 +36,10 @@ import java.util.Objects;
  * @author AqD
  * @param <T> 列舉項目型態
  */
-public class ConcatedIterator<T> extends AbstractIterator<T> {
-    /**
-     * 提供來源列舉器的列舉器。
-     */
-    protected final Iterator<Iterator<? extends T>> sourceIterator;
+public final class ConcatedIterator<T> extends AbstractIterator<T> {
+    private final Iterator<Iterator<? extends T>> sourceIterator;
 
-    /**
-     * 目前的來源列舉器。
-     * <p>
-     * 即{@link #sourceIterator}的目前項目。
-     * </p>
-     */
-    protected Iterator<? extends T> currentSource;
-
+    private Iterator<? extends T> currentSource;
     private long sourceIteratorSteps;
     private long currentSourceSteps;
 
@@ -62,14 +52,7 @@ public class ConcatedIterator<T> extends AbstractIterator<T> {
      * @param sourceIterator 來源列舉器的列舉器
      */
     public ConcatedIterator(Iterator<Iterator<? extends T>> sourceIterator) {
-        Objects.requireNonNull(sourceIterator);
-        this.sourceIterator = sourceIterator;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString() + String.format(",srcSteps=%d,curSteps=%d",
-                this.sourceIteratorSteps, this.currentSourceSteps);
+        this.sourceIterator = Objects.requireNonNull(sourceIterator);
     }
 
     /**
@@ -77,7 +60,7 @@ public class ConcatedIterator<T> extends AbstractIterator<T> {
      *
      * @return {@link #sourceIterator}的進行次數
      */
-    public final long getSourceIteratorSteps() {
+    public long getSourceIteratorSteps() {
         return this.sourceIteratorSteps;
     }
 
@@ -86,8 +69,14 @@ public class ConcatedIterator<T> extends AbstractIterator<T> {
      *
      * @return {@link #currentSource}的進行次數
      */
-    public final long getCurrentSourceSteps() {
+    public long getCurrentSourceSteps() {
         return this.currentSourceSteps;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + String.format(",srcSteps=%d,curSteps=%d",
+                this.sourceIteratorSteps, this.currentSourceSteps);
     }
 
     @Override
@@ -99,12 +88,14 @@ public class ConcatedIterator<T> extends AbstractIterator<T> {
                 }
                 this.sourceIteratorSteps += 1;
                 this.currentSource = this.sourceIterator.next();
+                this.currentSourceSteps = 0;
             }
             if (this.currentSource.hasNext()) {
                 this.currentSourceSteps += 1;
                 return this.currentSource.next();
             } else {
                 this.currentSource = null;
+                this.currentSourceSteps = 0;
             }
         }
     }

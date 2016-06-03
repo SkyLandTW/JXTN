@@ -41,7 +41,8 @@ package java.util.tuple;
  * @param <V8> 第八子項目型態
  */
 @SuppressWarnings("serial")
-public class TOctuple<V1, V2, V3, V4, V5, V6, V7, V8> extends BaseTuple<TOctuple<V1, V2, V3, V4, V5, V6, V7, V8>> {
+public final class TOctuple<V1, V2, V3, V4, V5, V6, V7, V8>
+        extends BaseTuple<TOctuple<V1, V2, V3, V4, V5, V6, V7, V8>> {
     private final V1 v1;
     private final V2 v2;
     private final V3 v3;

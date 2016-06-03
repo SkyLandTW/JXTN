@@ -38,7 +38,7 @@ package java.util.tuple;
  * @param <V5> 第五子項目型態
  */
 @SuppressWarnings("serial")
-public class TQuintuple<V1, V2, V3, V4, V5> extends BaseTuple<TQuintuple<V1, V2, V3, V4, V5>> {
+public final class TQuintuple<V1, V2, V3, V4, V5> extends BaseTuple<TQuintuple<V1, V2, V3, V4, V5>> {
     private final V1 v1;
     private final V2 v2;
     private final V3 v3;

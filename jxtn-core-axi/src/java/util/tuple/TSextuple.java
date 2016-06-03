@@ -39,7 +39,7 @@ package java.util.tuple;
  * @param <V6> 第六子項目型態
  */
 @SuppressWarnings("serial")
-public class TSextuple<V1, V2, V3, V4, V5, V6> extends BaseTuple<TSextuple<V1, V2, V3, V4, V5, V6>> {
+public final class TSextuple<V1, V2, V3, V4, V5, V6> extends BaseTuple<TSextuple<V1, V2, V3, V4, V5, V6>> {
     private final V1 v1;
     private final V2 v2;
     private final V3 v3;

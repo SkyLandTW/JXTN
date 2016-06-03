@@ -42,7 +42,7 @@ package java.util.tuple;
  * @param <V9> 第九子項目型態
  */
 @SuppressWarnings("serial")
-public class TNonuple<V1, V2, V3, V4, V5, V6, V7, V8, V9>
+public final class TNonuple<V1, V2, V3, V4, V5, V6, V7, V8, V9>
         extends BaseTuple<TNonuple<V1, V2, V3, V4, V5, V6, V7, V8, V9>> {
     private final V1 v1;
     private final V2 v2;

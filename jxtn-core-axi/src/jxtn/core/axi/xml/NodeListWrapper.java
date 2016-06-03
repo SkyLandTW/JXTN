@@ -37,12 +37,11 @@ import org.w3c.dom.NodeList;
  *
  * @author AqD
  */
-public class NodeListWrapper extends AbstractList<Node> {
-    protected final NodeList list;
+public final class NodeListWrapper extends AbstractList<Node> {
+    private final NodeList list;
 
     public NodeListWrapper(NodeList list) {
-        Objects.requireNonNull(list);
-        this.list = list;
+        this.list = Objects.requireNonNull(list);
     }
 
     @Override

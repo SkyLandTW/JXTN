@@ -38,18 +38,11 @@ import java.util.function.Function;
  * @param <T> 來源列舉項目型態
  * @param <R> 展開列舉項目型態
  */
-public class ExpandedIterator<T, R> extends AbstractIterator<R> {
-    /**
-     * 來源列舉器。
-     */
-    protected final Iterator<? extends T> source;
+public final class ExpandedIterator<T, R> extends AbstractIterator<R> {
+    private final Iterator<? extends T> source;
+    private final Function<? super T, ? extends Iterator<? extends R>> expand;
 
-    /**
-     * 展開函數。
-     */
-    protected final Function<? super T, ? extends Iterator<? extends R>> expand;
-
-    protected Iterator<? extends R> currentChildren;
+    private Iterator<? extends R> currentChildren;
 
     /**
      * 建立指定函數做展開的列舉器。
@@ -61,10 +54,8 @@ public class ExpandedIterator<T, R> extends AbstractIterator<R> {
      * @param expand 展開函數
      */
     public ExpandedIterator(Iterator<? extends T> source, Function<? super T, ? extends Iterator<? extends R>> expand) {
-        Objects.requireNonNull(source);
-        Objects.requireNonNull(expand);
-        this.source = source;
-        this.expand = expand;
+        this.source = Objects.requireNonNull(source);
+        this.expand = Objects.requireNonNull(expand);
     }
 
     @Override

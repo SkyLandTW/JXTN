@@ -47,6 +47,7 @@ public abstract class BaseTuple<T extends BaseTuple<T>> implements Comparable<T>
     private static final long serialVersionUID = -7698222474647340866L;
 
     private final Object[] valueArray;
+    private Integer hashCode;
 
     protected BaseTuple(Object... values) {
         this.valueArray = values;
@@ -67,8 +68,11 @@ public abstract class BaseTuple<T extends BaseTuple<T>> implements Comparable<T>
     }
 
     @Override
-    public int hashCode() {
-        return Arrays.hashCode(this.getValueArray());
+    public final int hashCode() {
+        if (this.hashCode == null) {
+            this.hashCode = Arrays.hashCode(this.getValueArray());
+        }
+        return this.hashCode;
     }
 
     @Override
@@ -89,7 +93,7 @@ public abstract class BaseTuple<T extends BaseTuple<T>> implements Comparable<T>
      *
      * @return 包含所有子項目的內部陣列，不應修改
      */
-    public Object[] getValueArray() {
+    public final Object[] getValueArray() {
         return this.valueArray;
     }
 }

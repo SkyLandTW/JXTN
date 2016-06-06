@@ -26,6 +26,10 @@
  */
 package jxtn.core.unix;
 
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+
 /**
  * Base class for all those requiring <i>jxtn-core-unix</i>
  *
@@ -35,6 +39,58 @@ class Unix {
 
     static {
         Runtime.getRuntime().loadLibrary("jxtn-core-unix");
+    }
+
+    protected static long rBuffer(ByteBuffer buffer, long length) {
+        if (length != -1L) {
+            buffer.position(buffer.position() + (int) length);
+        }
+        return length;
+    }
+
+    protected static int rBuffer(ByteBuffer buffer, int status) {
+        if (status != -1) {
+            buffer.position(buffer.limit());
+        }
+        return status;
+    }
+
+    protected static byte[][] tArgs(String[] args) {
+        byte[][] args_b = new byte[args.length][];
+        for (int i = 0; i < args.length; i++) {
+            args_b[i] = args[i].getBytes(StandardCharsets.UTF_8);
+        }
+        return args_b;
+    }
+
+    protected static byte[] tArray(ByteBuffer buffer) {
+        if (buffer.arrayOffset() + buffer.position() == 0) {
+            return buffer.array();
+        } else {
+            return ByteArrays.copy(buffer);
+        }
+    }
+
+    protected static byte[] tName(String name) {
+        byte[] name_b = new byte[Limits.PATH_MAX];
+        FastUTF8.encodeToCString(name, name_b);
+        return name_b;
+    }
+
+    protected static byte[] tPath(Path path) {
+        byte[] path_s = CPaths.getBytes(path);
+        if (path_s[path_s.length - 1] == (byte) '\0') {
+            return path_s;
+        }
+        byte[] path_b = new byte[path_s.length + 1];
+        System.arraycopy(path_s, 0, path_b, 0, path_s.length);
+        return path_b;
+    }
+
+    protected static byte[] tPath(String path) {
+        byte[] path_b = new byte[Limits.PATH_MAX];
+        FastUTF8.encodeToCString(path, path_b);
+        return path_b;
     }
 
     Unix() {

@@ -7,7 +7,7 @@ LDFLAGS =
 OBJDIR := obj
 SRCDIR := src
 
-SRC = environ.c errno.c exec.c limits.c prctl.c stdio.c syscall.c
+SRC = environ.c errno.c limits.c prctl.c stdio.c syscall.c syscall2.c
 OBJ = $(patsubst %.c,$(OBJDIR)/%.o,$(SRC))
 BIN = ../dist/libjxtn-core-unix.so
 

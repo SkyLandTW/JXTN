@@ -84,11 +84,9 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_fallocate(JNIEnv *env, jclass
 }
 
 JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_fgetxattr(JNIEnv *env, jclass thisObj,
-        jint filedes, jbyteArray name, jbyteArray value, jlong size) {
-    if (value != NULL && (*env)->GetArrayLength(env, value) < size) {
-        return SETERRL(EFAULT);
-    }
-    return ERRL(fgetxattr(filedes, resolveCS(name), resolveBA(value), UL(size)));
+        jint filedes, jbyteArray name, jbyteArray value) {
+    size_t size = value == NULL ? 0 : UL((*env)->GetArrayLength(env, value));
+    return ERRL(fgetxattr(filedes, resolveCS(name), resolveBA(value), size));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_fork(JNIEnv *env, jclass thisObj
@@ -97,16 +95,16 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_fork(JNIEnv *env, jclass this
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_fsetxattr(JNIEnv *env, jclass thisObj,
-        jint filedes, jbyteArray name, jbyteArray value, jlong size, jint flags) {
-    if (value == NULL || (*env)->GetArrayLength(env, value) < size) {
+        jint filedes, jbyteArray name, jbyteArray value, jint flags) {
+    if (value == NULL) {
         return SETERR(EFAULT);
     }
-    return ERR(fsetxattr(filedes, resolveCS(name), resolveBA(value), UL(size), flags));
+    size_t size = UL((*env)->GetArrayLength(env, value));
+    return ERR(fsetxattr(filedes, resolveCS(name), resolveBA(value), size, flags));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_fstat(JNIEnv *env, jclass thisObj,
         jint fd, jbyteArray buf) {
-
     return ERR(fstat(fd, (struct stat *) resolveBA(buf)));
 }
 
@@ -144,11 +142,9 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_getuid(JNIEnv *env, jclass th
 }
 
 JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_getxattr(JNIEnv *env, jclass thisObj,
-        jbyteArray path, jbyteArray name, jbyteArray value, jlong size) {
-    if (value != NULL && (*env)->GetArrayLength(env, value) < size) {
-        return SETERRL(EFAULT);
-    }
-    return ERRL(getxattr(resolveCS(path), resolveCS(name), resolveBA(value), UL(size)));
+        jbyteArray path, jbyteArray name, jbyteArray value) {
+    size_t size = value == NULL ? 0 : UL((*env)->GetArrayLength(env, value));
+    return ERRL(getxattr(resolveCS(path), resolveCS(name), resolveBA(value), size));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_kill(JNIEnv *env, jclass thisObj,
@@ -157,11 +153,9 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_kill(JNIEnv *env, jclass this
 }
 
 JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_lgetxattr(JNIEnv *env, jclass thisObj,
-        jbyteArray path, jbyteArray name, jbyteArray value, jlong size) {
-    if (value != NULL && (*env)->GetArrayLength(env, value) < size) {
-        return SETERRL(EFAULT);
-    }
-    return ERRL(lgetxattr(resolveCS(path), resolveCS(name), resolveBA(value), UL(size)));
+        jbyteArray path, jbyteArray name, jbyteArray value) {
+    size_t size = value == NULL ? 0 : UL((*env)->GetArrayLength(env, value));
+    return ERRL(lgetxattr(resolveCS(path), resolveCS(name), resolveBA(value), size));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_link(JNIEnv *env, jclass thisObj,
@@ -175,11 +169,12 @@ JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_lseek(JNIEnv *env, jclass th
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_lsetxattr(JNIEnv *env, jclass thisObj,
-        jbyteArray path, jbyteArray name, jbyteArray value, jlong size, jint flags) {
-    if (value == NULL || (*env)->GetArrayLength(env, value) < size) {
+        jbyteArray path, jbyteArray name, jbyteArray value, jint flags) {
+    if (value == NULL) {
         return SETERR(EFAULT);
     }
-    return ERR(lsetxattr(resolveCS(path), resolveCS(name), resolveBA(value), UL(size), flags));
+    size_t size = UL((*env)->GetArrayLength(env, value));
+    return ERR(lsetxattr(resolveCS(path), resolveCS(name), resolveBA(value), size, flags));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_lstat(JNIEnv *env, jclass thisObj,
@@ -273,11 +268,12 @@ JNIEXPORT jlong JNICALL Java_jxtn_core_unix_Syscall_sendfile(JNIEnv *env, jclass
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_setxattr(JNIEnv *env, jclass thisObj,
-        jbyteArray path, jbyteArray name, jbyteArray value, jlong size, jint flags) {
-    if (value == NULL || (*env)->GetArrayLength(env, value) < size) {
+        jbyteArray path, jbyteArray name, jbyteArray value, jint flags) {
+    if (value == NULL) {
         return SETERR(EFAULT);
     }
-    return ERR(setxattr(resolveCS(path), resolveCS(name), resolveBA(value), UL(size), flags));
+    size_t size = UL((*env)->GetArrayLength(env, value));
+    return ERR(setxattr(resolveCS(path), resolveCS(name), resolveBA(value), size, flags));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall_stat(JNIEnv *env, jclass thisObj,

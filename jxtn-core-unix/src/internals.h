@@ -109,7 +109,7 @@ static inline jlong ERRVP(void* return_value) {
  * @return -1
  */
 static inline jint SETERR(int errnum) {
-    jxtn_core_unix_errno = errno;
+    jxtn_core_unix_errno = errnum;
     return -1;
 }
 
@@ -120,7 +120,7 @@ static inline jint SETERR(int errnum) {
  * @return -1
  */
 static inline jlong SETERRL(int errnum) {
-    jxtn_core_unix_errno = errno;
+    jxtn_core_unix_errno = errnum;
     return -1L;
 }
 

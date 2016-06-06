@@ -26,12 +26,28 @@
  */
 package jxtn.core.unix;
 
+import java.nio.file.Path;
+
 /**
- * Process execution
+ * Extensions to UNIX system calls
  *
  * @author aqd
  */
-public final class Exec extends Unix {
+public final class Syscall2 extends Unix {
+
+    public static int pexec(int fd_stdin, int fd_stdout, int fd_stderr,
+            Path filename, String[] argv, String[] envp) {
+        return pexec(fd_stdin, fd_stdout, fd_stderr, tPath(filename),
+                argv == null ? null : tArgs(argv),
+                envp == null ? null : tArgs(envp));
+    }
+
+    public static int pexec(int fd_stdin, int fd_stdout, int fd_stderr,
+            String filename, String[] argv, String[] envp) {
+        return pexec(fd_stdin, fd_stdout, fd_stderr, tPath(filename),
+                argv == null ? null : tArgs(argv),
+                envp == null ? null : tArgs(envp));
+    }
 
     /**
      * Launch a child program with specified FDs of stdin/stdout/stderr
@@ -49,6 +65,16 @@ public final class Exec extends Unix {
      * @return PID of the launched child process, or -1 if error occurred (see {@link Errno#errno})
      */
     public static native int pexec(int fd_stdin, int fd_stdout, int fd_stderr,
-            String filename, String[] argv, String[] envp);
+            byte[] filename, byte[][] argv, byte[][] envp);
+
+    public static int mkdirs(Path pathname, int mode) {
+        return mkdirs(tPath(pathname), mode);
+    }
+
+    public static int mkdirs(String pathname, int mode) {
+        return mkdirs(tPath(pathname), mode);
+    }
+
+    public static native int mkdirs(byte[] pathname, int mode);
 
 }

@@ -29,11 +29,11 @@ package jxtn.core.unix;
 import java.lang.reflect.Field;
 
 /**
- * Unix Error numbers
+ * {@code errno} wrappers
  *
  * @author aqd
  */
-public final class Errno extends Unix {
+public final class NativeErrno extends JNIBase {
 
     public static final int EPERM = 1; /* Operation not permitted */
     public static final int ENOENT = 2; /* No such file or directory */
@@ -176,7 +176,7 @@ public final class Errno extends Unix {
     static {
         errnumToName = new String[256];
         errnumToDescription = new String[256];
-        for (Field field : Errno.class.getDeclaredFields()) {
+        for (Field field : NativeErrno.class.getDeclaredFields()) {
             if (field.getType() != Integer.TYPE || !field.getName().startsWith("E")) {
                 continue;
             }
@@ -247,4 +247,6 @@ public final class Errno extends Unix {
      */
     public static native String strerror(int errnum);
 
+    private NativeErrno() {
+    }
 }

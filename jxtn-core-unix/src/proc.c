@@ -25,14 +25,42 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-#include <linux/limits.h>
+#include <signal.h>
+#include <sys/syscall.h>
+#include <unistd.h>
 
 #include "internals.h"
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_nameMax(JNIEnv *env, jclass thisObj) {
-    return NAME_MAX;
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc_fork(JNIEnv *env, jclass thisObj
+        ) {
+    return ERR(fork());
 }
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_pathMax(JNIEnv *env, jclass thisObj) {
-    return PATH_MAX;
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc_getegid(JNIEnv *env, jclass thisObj) {
+    return SI(getegid());
 }
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc_geteuid(JNIEnv *env, jclass thisObj) {
+    return SI(geteuid());
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc_getgid(JNIEnv *env, jclass thisObj) {
+    return SI(getgid());
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc_getpid(JNIEnv *env, jclass thisObj) {
+    return getpid();
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc_getppid(JNIEnv *env, jclass thisObj) {
+    return getppid();
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc_gettid(JNIEnv *env, jclass thisObj) {
+    return (pid_t) syscall(SYS_gettid);
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc_getuid(JNIEnv *env, jclass thisObj) {
+    return SI(getuid());
+}
+

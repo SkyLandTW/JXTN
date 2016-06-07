@@ -24,15 +24,27 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package jxtn.core.unix;
 
-#include <linux/limits.h>
+/**
+ * Process-related syscall wrappers
+ *
+ * @author aqd
+ */
+public final class NativeProc extends JNIBase {
 
-#include "internals.h"
+    public static native int fork();
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_nameMax(JNIEnv *env, jclass thisObj) {
-    return NAME_MAX;
-}
+    public static native int geteuid();
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_pathMax(JNIEnv *env, jclass thisObj) {
-    return PATH_MAX;
+    public static native int getpid();
+
+    public static native int getppid();
+
+    public static native int gettid();
+
+    public static native int getuid();
+
+    private NativeProc() {
+    }
 }

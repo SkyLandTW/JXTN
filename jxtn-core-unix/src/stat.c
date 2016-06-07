@@ -24,41 +24,24 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
-package jxtn.core.unix;
 
-/**
- * Program stack and environment
- *
- * @author aqd
- */
-public final class Environ extends Unix {
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>
 
-    /**
-     * Get the count of command arguments
-     *
-     * @return count of command arguments
-     */
-    public static native int getArgc();
+#include "internals.h"
 
-    /**
-     * Get the value of specified argument
-     *
-     * @param index index of the argument to get
-     * @return argument value
-     */
-    public static native String getArgv(int index);
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeStat_stat(JNIEnv *env, jclass thisObj,
+        jbyteArray pathname, jbyteArray buf) {
+    return ERR(stat(resolveCS(pathname), (struct stat *) resolveBA(buf)));
+}
 
-    /**
-     * Set the value of specified argument
-     * <p>
-     * {@code value} is limited by the size of the initial argument value
-     * </p>
-     *
-     * @param index index of the argument to set
-     * @param value new argument value
-     */
-    public static native void setArgv(int index, String value);
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeStat_fstat(JNIEnv *env, jclass thisObj,
+        jint fd, jbyteArray buf) {
+    return ERR(fstat(fd, (struct stat *) resolveBA(buf)));
+}
 
-    private Environ() {
-    }
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeStat_lstat(JNIEnv *env, jclass thisObj,
+        jbyteArray pathname, jbyteArray buf) {
+    return ERR(lstat(resolveCS(pathname), (struct stat *) resolveBA(buf)));
 }

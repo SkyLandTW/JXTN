@@ -25,34 +25,11 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-#include <signal.h>
-#include <string.h>
 #include <sys/prctl.h>
-#include <sys/syscall.h>
-#include <unistd.h>
 
 #include "internals.h"
 
-static char prctl_process_name[16];
-
-static void prctl_setName_handler(int signum);
-
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_Prctl_setName(JNIEnv *env, jclass thisObj,
-        jstring name) {
-    const char* name_b = (*env)->GetStringUTFChars(env, name, NULL);
-    const size_t len = MIN(strlen(name_b), 15);
-    strncpy(prctl_process_name, name_b, len);
-    (*env)->ReleaseStringUTFChars(env, name, name_b);
-    prctl_process_name[len] = '\0';
-    if (signal(SIGUSR1, prctl_setName_handler) == SIG_ERR)
-        return -1;
-    if (syscall(SYS_tgkill, getpid(), getpid(), SIGUSR1) == -1)
-        return -1;
-    return 0;
-}
-
-static void prctl_setName_handler(int signum) {
-    signal(SIGUSR1, SIG_DFL);
-    if (prctl(PR_SET_NAME, prctl_process_name, 0L, 0L, 0L) == -1)
-        perror("PR_SET_NAME");
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativePrctl_prctl(JNIEnv *env, jclass thisObj,
+        int option, jlong arg2, jlong arg3, jlong arg4, jlong arg5) {
+    return ERR(prctl(option, UL(arg2), UL(arg3), UL(arg4), UL(arg5)));
 }

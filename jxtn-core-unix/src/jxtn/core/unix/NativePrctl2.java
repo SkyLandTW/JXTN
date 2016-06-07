@@ -24,15 +24,32 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package jxtn.core.unix;
 
-#include <linux/limits.h>
+/**
+ * {@code prctl()} syscall extensions
+ *
+ * @author aqd
+ */
+public final class NativePrctl2 extends JNIBase {
 
-#include "internals.h"
+    /**
+     * Set the process name of the root thread
+     * <p>
+     * The root-thread name is the official process name in Linux ({@code /proc/PID/status}), however, most utilities
+     * such as {@code ps} and {@code pidof} use the name passed from the process environment instead (see
+     * {@link NativeEnv#setArgv}).
+     * </p>
+     * <p>
+     * The underlying JNI function uses <i>SIGUSR1</i> in order to set {@code name} by the root thread and resets the
+     * handler to the OS default afterwards. Beware of the side-effects.
+     * </p>
+     *
+     * @param name new process name of the main thread
+     * @return 0 on success, or -1 ({@link NativeErrno})
+     */
+    public static native int prSetNameRoot(String name);
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_nameMax(JNIEnv *env, jclass thisObj) {
-    return NAME_MAX;
-}
-
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_pathMax(JNIEnv *env, jclass thisObj) {
-    return PATH_MAX;
+    private NativePrctl2() {
+    }
 }

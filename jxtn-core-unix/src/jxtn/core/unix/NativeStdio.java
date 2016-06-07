@@ -24,15 +24,25 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package jxtn.core.unix;
 
-#include <linux/limits.h>
+import sun.misc.Unsafe;
 
-#include "internals.h"
+/**
+ * <i>stdio</i> wrapper, for testing purpose
+ *
+ * @author aqd
+ */
+public final class NativeStdio extends JNIBase {
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_nameMax(JNIEnv *env, jclass thisObj) {
-    return NAME_MAX;
-}
+    public static void printf(String format) {
+        byte[] format_b = new byte[format.length() * 3];
+        FastUTF8.encodeToCString(format, format_b);
+        printf(format_b, Unsafe.ARRAY_BYTE_BASE_OFFSET);
+    }
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_pathMax(JNIEnv *env, jclass thisObj) {
-    return PATH_MAX;
+    public static native void printf(Object format_base, long format_offset);
+
+    private NativeStdio() {
+    }
 }

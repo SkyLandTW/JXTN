@@ -29,11 +29,11 @@ package jxtn.core.unix;
 import java.nio.file.Path;
 
 /**
- * Extensions to UNIX system calls
+ * Process-related syscall extensions
  *
  * @author aqd
  */
-public final class Syscall2 extends Unix {
+public final class NativeProc2 extends JNIBase {
 
     public static int pexec(int fd_stdin, int fd_stdout, int fd_stderr,
             Path filename, String[] argv, String[] envp) {
@@ -62,19 +62,11 @@ public final class Syscall2 extends Unix {
      * @param filename Path to the child program file
      * @param argv Arguments to the child program, should contain the process name at least
      * @param envp Environment variables for the child program, set to null for the parent's environment
-     * @return PID of the launched child process, or -1 if error occurred (see {@link Errno#errno})
+     * @return PID of the launched child process, or -1 if error occurred (see {@link NativeErrno#errno})
      */
     public static native int pexec(int fd_stdin, int fd_stdout, int fd_stderr,
             byte[] filename, byte[][] argv, byte[][] envp);
 
-    public static int mkdirs(Path pathname, int mode) {
-        return mkdirs(tPath(pathname), mode);
+    private NativeProc2() {
     }
-
-    public static int mkdirs(String pathname, int mode) {
-        return mkdirs(tPath(pathname), mode);
-    }
-
-    public static native int mkdirs(byte[] pathname, int mode);
-
 }

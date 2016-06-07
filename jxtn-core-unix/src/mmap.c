@@ -25,14 +25,26 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-#include <linux/limits.h>
+#include <sys/mman.h>
 
 #include "internals.h"
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_nameMax(JNIEnv *env, jclass thisObj) {
-    return NAME_MAX;
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeMMap_madvise(JNIEnv *env, jclass thisObj,
+        jlong addr, jlong length, jint advice) {
+    return ERR(madvise((void*) addr, UL(length), advice));
 }
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_pathMax(JNIEnv *env, jclass thisObj) {
-    return PATH_MAX;
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeMMap_mmap(JNIEnv *env, jclass thisObj,
+        jlong addr, jlong length, jint prot, jint flags, jint fd, jlong offset) {
+    return ERRVP(mmap((void*) addr, UL(length), prot, flags, fd, offset));
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeMMap_msync(JNIEnv *env, jclass thisObj,
+        jlong addr, jlong length, jint flags) {
+    return ERR(msync((void*) addr, UL(length), flags));
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeMMap_munmap(JNIEnv *env, jclass thisObj,
+        jlong addr, jlong length) {
+    return ERR(munmap((void*) addr, UL(length)));
 }

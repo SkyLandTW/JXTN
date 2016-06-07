@@ -27,23 +27,25 @@
 package jxtn.core.unix;
 
 /**
- * Unix system limitations
- *
+ * {@code wait4} syscall wrappers
+ * 
  * @author aqd
  */
-public final class Limits extends Unix {
+public final class NativeWait extends JNIBase {
 
-    public static final int NAME_MAX;
+    public static final int WSTOPPED = 2; /* Report stopped child (same as WUNTRACED). */
+    public static final int WEXITED = 4; /* Report dead child.  */
+    public static final int WCONTINUED = 8; /* Report continued child.  */
+    public static final int WNOWAIT = 0x01000000; /* Don't reap, just poll status.  */
+    public static final int __WNOTHREAD = 0x20000000; /* Don't wait on children of other threads in this group */
+    public static final int __WALL = 0x40000000; /* Wait for any child.  */
+    public static final int __WCLONE = 0x80000000; /* Wait for cloned process.  */
 
-    public static final int PATH_MAX;
+    public static final int WNOHANG = 1; /* Don't block waiting.  */
+    public static final int WUNTRACED = 2; /* Report status of stopped children.  */
 
-    static {
-        NAME_MAX = nameMax();
-        PATH_MAX = pathMax();
+    public static native int waitpid(int pid, int[] status, int options);
+
+    private NativeWait() {
     }
-
-    public static native int nameMax();
-
-    public static native int pathMax();
-
 }

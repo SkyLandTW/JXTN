@@ -30,17 +30,17 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 /**
- * <i>struct stat64</i>
+ * {@code struct stat64}
  *
  * @author aqd
  */
-public final class Stat {
+public final class Stat64 {
 
-    public static long major(long dev) {
+    private static long major(long dev) {
         return ((dev >>> 8) & 0xfff) | ((int) (dev >>> 32) & ~0xfff);
     }
 
-    public static long minor(long dev) {
+    private static long minor(long dev) {
         return (dev & 0xff) | ((int) (dev >>> 12) & ~0xff);
     }
 
@@ -58,7 +58,7 @@ public final class Stat {
     public final Timespec st_mtim;
     public final Timespec st_ctim;
 
-    public Stat(ByteBuffer buffer) {
+    Stat64(ByteBuffer buffer) {
         buffer.order(ByteOrder.nativeOrder());
         this.st_dev = buffer.getLong();
         this.st_ino = buffer.getLong();

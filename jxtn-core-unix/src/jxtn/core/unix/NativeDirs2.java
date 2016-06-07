@@ -24,15 +24,37 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package jxtn.core.unix;
 
-#include <linux/limits.h>
+import java.nio.file.Path;
 
-#include "internals.h"
+/**
+ * Directory-related syscall extensions
+ *
+ * @author aqd
+ */
+public final class NativeDirs2 extends JNIBase {
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_nameMax(JNIEnv *env, jclass thisObj) {
-    return NAME_MAX;
-}
+    public static int mkdirs(Path pathname, int mode) {
+        return mkdirs(tPath(pathname), mode);
+    }
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_pathMax(JNIEnv *env, jclass thisObj) {
-    return PATH_MAX;
+    public static int mkdirs(String pathname, int mode) {
+        return mkdirs(tPath(pathname), mode);
+    }
+
+    /**
+     * Create specified directory and all parent directories if non-existent
+     * <p>
+     * If {@code pathname} already exists, 0 would be returned.
+     * </p>
+     *
+     * @param pathname Directory to create (may be modified during the process)
+     * @param mode Mode of the directory as well as all parent directories
+     * @return numbers of directories created, or -1 on error
+     */
+    static native int mkdirs(byte[] pathname, int mode);
+
+    private NativeDirs2() {
+    }
 }

@@ -25,14 +25,24 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-#include <linux/limits.h>
+#include <sys/wait.h>
 
 #include "internals.h"
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_nameMax(JNIEnv *env, jclass thisObj) {
-    return NAME_MAX;
-}
-
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_pathMax(JNIEnv *env, jclass thisObj) {
-    return PATH_MAX;
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeWait_waitpid(JNIEnv *env, jclass thisObj,
+        jint pid, jintArray status, jint options) {
+    if (status != NULL && (*env)->GetArrayLength(env, status) != 1) {
+        return SETERR(EFAULT);
+    }
+    jint *status_ptr;
+    if (status != NULL) {
+        status_ptr = (*env)->GetIntArrayElements(env, status, 0);
+    } else {
+        status_ptr = NULL;
+    }
+    pid_t ret = ERR(waitpid(pid, status_ptr, options));
+    if (status != NULL) {
+        (*env)->ReleaseIntArrayElements(env, status, status_ptr, 0);
+    }
+    return ret;
 }

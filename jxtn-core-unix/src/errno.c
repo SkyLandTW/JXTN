@@ -31,19 +31,19 @@
 
 __thread int jxtn_core_unix_errno;
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_Errno_errno(JNIEnv *env, jclass thisObj) {
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeErrno_errno(JNIEnv *env, jclass thisObj) {
     return jxtn_core_unix_errno;
 }
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_Errno_globalErrno(JNIEnv *env, jclass thisObj) {
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeErrno_globalErrno(JNIEnv *env, jclass thisObj) {
     return errno;
 }
 
-JNIEXPORT void JNICALL Java_jxtn_core_unix_Errno_setErrno(JNIEnv *env, jclass thisObj, jint errnum) {
+JNIEXPORT void JNICALL Java_jxtn_core_unix_NativeErrno_setErrno(JNIEnv *env, jclass thisObj, jint errnum) {
     jxtn_core_unix_errno = errnum;
 }
 
-JNIEXPORT jstring JNICALL Java_jxtn_core_unix_Errno_strerror(JNIEnv *env, jclass thisObj, jint errnum) {
+JNIEXPORT jstring JNICALL Java_jxtn_core_unix_NativeErrno_strerror(JNIEnv *env, jclass thisObj, jint errnum) {
     char* msg = strerror(errnum);
     return msg == NULL ? NULL : (*env)->NewStringUTF(env, msg);
 }

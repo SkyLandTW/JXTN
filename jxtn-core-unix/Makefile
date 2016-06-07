@@ -7,7 +7,8 @@ LDFLAGS =
 OBJDIR := obj
 SRCDIR := src
 
-SRC = environ.c errno.c limits.c prctl.c stdio.c syscall.c syscall2.c
+DEP = $(SRCDIR)/internals.h Makefile
+SRC = dirs.c dirs2.c env.c errno.c files.c io.c limits.c mmap.c prctl.c prctl2.c proc.c proc2.c sigs.c stat.c stdio.c wait.c xattr.c
 OBJ = $(patsubst %.c,$(OBJDIR)/%.o,$(SRC))
 BIN = ../dist/libjxtn-core-unix.so
 
@@ -16,7 +17,7 @@ all: $(BIN)
 install: $(BIN)
 	sudo install $(BIN) /usr/lib/jni/`basename $(BIN)`
 
-$(OBJDIR)/%.o : $(SRCDIR)/%.c $(SRCDIR)/internals.h Makefile
+$(OBJDIR)/%.o : $(SRCDIR)/%.c $(DEP)
 	@mkdir -p `dirname $@`
 	$(CC) $(CFLAGS) -c $< -o $@
 

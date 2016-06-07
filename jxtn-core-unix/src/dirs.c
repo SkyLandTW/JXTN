@@ -25,14 +25,28 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-#include <linux/limits.h>
+#include <sys/stat.h>
+#include <unistd.h>
 
 #include "internals.h"
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_nameMax(JNIEnv *env, jclass thisObj) {
-    return NAME_MAX;
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs_chdir(JNIEnv *env, jclass thisObj,
+        jbyteArray path) {
+    return ERR(chdir(resolveCS(path)));
 }
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_pathMax(JNIEnv *env, jclass thisObj) {
-    return PATH_MAX;
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs_chroot(JNIEnv *env, jclass thisObj,
+        jbyteArray path) {
+    return ERR(chroot(resolveCS(path)));
 }
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs_mkdir(JNIEnv *env, jclass thisObj,
+        jbyteArray pathname, jint mode) {
+    return ERR(mkdir(resolveCS(pathname), UI(mode)));
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs_rmdir(JNIEnv *env, jclass thisObj,
+        jbyteArray pathname) {
+    return ERR(rmdir(resolveCS(pathname)));
+}
+

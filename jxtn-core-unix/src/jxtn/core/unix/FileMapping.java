@@ -91,31 +91,31 @@ public final class FileMapping implements Closeable {
         this.source = path.toString();
         this.fromChannel = false;
         int rw = 0;
-        if ((prot & Const.PROT_READ) != 0 || (prot & Const.PROT_EXEC) != 0) {
-            if ((prot & Const.PROT_WRITE) != 0) {
-                rw = Const.O_RDWR;
+        if ((prot & NativeMMap.PROT_READ) != 0 || (prot & NativeMMap.PROT_EXEC) != 0) {
+            if ((prot & NativeMMap.PROT_WRITE) != 0) {
+                rw = NativeFiles.O_RDWR;
             } else {
-                rw = Const.O_RDONLY;
+                rw = NativeFiles.O_RDONLY;
             }
-        } else if ((prot & Const.PROT_WRITE) != 0) {
-            rw = Const.O_WRONLY;
+        } else if ((prot & NativeMMap.PROT_WRITE) != 0) {
+            rw = NativeFiles.O_WRONLY;
         }
-        int fd = Syscall.open(path, rw, 0);
+        int fd = NativeFiles.open(path, rw, 0);
         if (fd == -1) {
-            throw new IOException("open " + path + ": " + Errno.errName());
+            throw new IOException("open " + path + ": " + NativeErrno.errName());
         }
         try {
-            Out<Stat> ostat = new Out<>();
-            if (Syscall.fstat(fd, ostat) == -1) {
-                throw new IOException("stat " + path + ": " + Errno.errName());
+            Out<Stat64> ostat = new Out<>();
+            if (NativeStat.fstat(fd, ostat) == -1) {
+                throw new IOException("stat " + path + ": " + NativeErrno.errName());
             }
             this.length = ostat.get().st_size;
-            this.address = Syscall.mmap(0L, this.length, prot, flags, fd, 0L);
-            if (this.address == Const.MAP_FAILED) {
-                throw new IOException("mmap " + path + ": " + Errno.errName());
+            this.address = NativeMMap.mmap(0L, this.length, prot, flags, fd, 0L);
+            if (this.address == NativeMMap.MAP_FAILED) {
+                throw new IOException("mmap " + path + ": " + NativeErrno.errName());
             }
         } finally {
-            Syscall.close(fd);
+            NativeIO.close(fd);
         }
         this.pointer = this.address;
     }
@@ -123,9 +123,9 @@ public final class FileMapping implements Closeable {
     public FileMapping(int fd, long offset, long length, int prot, int flags) throws IOException {
         this.source = "fd=" + fd;
         this.fromChannel = false;
-        this.address = Syscall.mmap(0L, length, prot, flags, fd, offset);
-        if (this.address == Const.MAP_FAILED) {
-            throw new IOException("mmap " + fd + ": " + Errno.errName());
+        this.address = NativeMMap.mmap(0L, length, prot, flags, fd, offset);
+        if (this.address == NativeMMap.MAP_FAILED) {
+            throw new IOException("mmap " + fd + ": " + NativeErrno.errName());
         }
         this.pointer = this.address;
         this.length = length;
@@ -297,8 +297,8 @@ public final class FileMapping implements Closeable {
                     e.printStackTrace();
                 }
             } else {
-                if (Syscall.munmap(this.address, this.length) == -1) {
-                    System.err.println("munmap " + this.source + ": " + Errno.errName());
+                if (NativeMMap.munmap(this.address, this.length) == -1) {
+                    System.err.println("munmap " + this.source + ": " + NativeErrno.errName());
                 }
             }
         } finally {

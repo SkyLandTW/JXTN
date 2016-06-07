@@ -29,11 +29,11 @@ package jxtn.core.unix;
 import sun.misc.Unsafe;
 
 /**
- * Helper class for {@link Syscall#prctl}
+ * {@code prctl()} syscall wrappers
  *
  * @author aqd
  */
-public final class Prctl extends Unix {
+public final class NativePrctl extends JNIBase {
 
     public static final int PR_SET_PDEATHSIG = 1;
     public static final int PR_GET_PDEATHSIG = 2;
@@ -240,8 +240,8 @@ public final class Prctl extends Unix {
         Unsafe unsafe = Memory.unsafe;
         long cbuffer = unsafe.allocateMemory(NAME_LEN);
         try {
-            if (Syscall.prctl(PR_GET_NAME, cbuffer, 0L, 0L, 0L) == -1) {
-                System.err.println("PR_GET_NAME: " + Errno.errName());
+            if (prctl(PR_GET_NAME, cbuffer, 0L, 0L, 0L) == -1) {
+                System.err.println("PR_GET_NAME: " + NativeErrno.errName());
                 return null;
             }
             byte[] jbuffer = new byte[NAME_LEN];
@@ -268,8 +268,8 @@ public final class Prctl extends Unix {
         try {
             byte[] jbuffer = CStrings.from(name, NAME_LEN);
             unsafe.copyMemory(jbuffer, Unsafe.ARRAY_BYTE_BASE_OFFSET, null, cbuffer, jbuffer.length);
-            if (Syscall.prctl(PR_SET_NAME, cbuffer, 0L, 0L, 0L) == -1) {
-                System.err.println("PR_SET_NAME: " + Errno.errName());
+            if (prctl(PR_SET_NAME, cbuffer, 0L, 0L, 0L) == -1) {
+                System.err.println("PR_SET_NAME: " + NativeErrno.errName());
                 return false;
             }
             return true;
@@ -278,18 +278,8 @@ public final class Prctl extends Unix {
         }
     }
 
-    /**
-     * Set the process name
-     * <p>
-     * The underlying JNI function uses <i>SIGUSR1</i> in order to set {@code name} by the root thread and resets the
-     * handler to the OS default afterwards. Beware of the side-effects.
-     * </p>
-     *
-     * @param name new process name
-     * @return 0 on success, or -1 ({@link Errno})
-     */
-    public static native int setName(String name);
+    static native int prctl(int option, long arg2, long arg3, long arg4, long arg5);
 
-    private Prctl() {
+    private NativePrctl() {
     }
 }

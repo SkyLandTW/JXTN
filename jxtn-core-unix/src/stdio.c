@@ -27,7 +27,7 @@
 
 #include "internals.h"
 
-JNIEXPORT void JNICALL Java_jxtn_core_unix_Stdio_printf(JNIEnv *env, jclass thisObj,
+JNIEXPORT void JNICALL Java_jxtn_core_unix_NativeStdio_printf(JNIEnv *env, jclass thisObj,
         jobject format_base, jlong format_offset) {
     char* format = (char*) resolve(format_base, format_offset);
     printf("%s", format);

@@ -24,15 +24,28 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package jxtn.core.unix;
 
-#include <linux/limits.h>
+/**
+ * Unix system limitations
+ *
+ * @author aqd
+ */
+public final class NativeLimits extends JNIBase {
 
-#include "internals.h"
+    public static final int NAME_MAX;
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_nameMax(JNIEnv *env, jclass thisObj) {
-    return NAME_MAX;
-}
+    public static final int PATH_MAX;
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_pathMax(JNIEnv *env, jclass thisObj) {
-    return PATH_MAX;
+    static {
+        NAME_MAX = nameMax();
+        PATH_MAX = pathMax();
+    }
+
+    public static native int nameMax();
+
+    public static native int pathMax();
+
+    private NativeLimits() {
+    }
 }

@@ -44,27 +44,10 @@ extern char **environ;
  */
 static void closefrom(int lowfd);
 
-/**
- * Create specified directory and all parent directories if non-existent
- * <p>
- * If {@code pathname} already exists, 0 would be returned.
- * </p>
- *
- * @param pathname Directory to create (may be modified during the process)
- * @param mode Mode of the directory as well as all parent directories
- * @return numbers of directories created, or -1 on error
- */
-static int mkdirs(const char *pathname, mode_t mode);
-
 static pid_t pexec(int fd_stdin, int fd_stdout, int fd_stderr, const char *filename,
         char * const argv[], char * const envp[]);
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall2_mkdirs(JNIEnv *env, jclass thisObj,
-        jbyteArray pathname, jint mode) {
-    return ERR(mkdirs(resolveCS(pathname), UI(mode)));
-}
-
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_Syscall2_pexec(JNIEnv *env, jclass thisObj,
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc2_pexec(JNIEnv *env, jclass thisObj,
         jint fd_stdin, jint fd_stdout, jint fd_stderr, jbyteArray filename, jobjectArray argv, jobjectArray envp) {
     if (filename == NULL) {
         return SETERR(EFAULT);
@@ -148,41 +131,4 @@ static pid_t pexec(int fd_stdin, int fd_stdout, int fd_stderr, const char *filen
         exit(1);
     }
     return ERR(pid);
-}
-
-static int mkdirs(const char *pathname, mode_t mode) {
-    if (mkdir(pathname, mode) == 0) {
-        errno = 0;
-        return 1;
-    }
-    switch (errno) {
-    case EEXIST:
-        errno = 0;
-        return 0;
-    case ENOENT: {
-        char* pathname_sep = strrchr(pathname, '/');
-        if (pathname_sep == NULL) {
-            return -1; // errno = ENOENT
-        }
-        // create parent
-        *pathname_sep = '\0';
-        int ret_p = mkdirs(pathname, mode);
-        *pathname_sep = '/';
-        if (ret_p == -1) {
-            return -1; // pass errno
-        }
-        // create self
-        if (mkdir(pathname, mode) == 0) {
-            errno = 0;
-            return 1 + ret_p;
-        } else if (errno == EEXIST) {
-            errno = 0;
-            return ret_p;
-        } else {
-            return -1; // pass errno
-        }
-    }
-    default:
-        return -1; // pass errno
-    }
 }

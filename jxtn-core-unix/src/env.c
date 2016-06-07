@@ -31,24 +31,24 @@
 
 extern char **environ;
 
-static int environ_find_argc(void);
-static const char** environ_find_argv(void);
-static void* environ_find_stack(void);
+static int env_find_argc(void);
+static const char** env_find_argv(void);
+static void* env_find_stack(void);
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_Environ_getArgc(JNIEnv *env, jclass thisObj) {
-    return environ_find_argc();
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeEnv_getArgc(JNIEnv *env, jclass thisObj) {
+    return env_find_argc();
 }
 
-JNIEXPORT jstring JNICALL Java_jxtn_core_unix_Environ_getArgv(JNIEnv *env, jclass thisObj,
+JNIEXPORT jstring JNICALL Java_jxtn_core_unix_NativeEnv_getArgv(JNIEnv *env, jclass thisObj,
         jint index) {
-    const char** argv = environ_find_argv();
+    const char** argv = env_find_argv();
     const char* value = argv[index];
     return value == NULL ? NULL : (*env)->NewStringUTF(env, value);
 }
 
-JNIEXPORT void JNICALL Java_jxtn_core_unix_Environ_setArgv(JNIEnv *env, jclass thisObj,
+JNIEXPORT void JNICALL Java_jxtn_core_unix_NativeEnv_setArgv(JNIEnv *env, jclass thisObj,
         jint index, jstring value) {
-    char** argv = (char**) environ_find_argv();
+    char** argv = (char**) env_find_argv();
     const char* value_b = (*env)->GetStringUTFChars(env, value, NULL);
     if (argv[index] != NULL) {
         const size_t maxlen = (size_t) ((argv[index + 1] == NULL ? environ[0] : argv[index + 1]) - 1 - argv[index]);
@@ -59,17 +59,17 @@ JNIEXPORT void JNICALL Java_jxtn_core_unix_Environ_setArgv(JNIEnv *env, jclass t
     (*env)->ReleaseStringUTFChars(env, value, value_b);
 }
 
-static int environ_find_argc(void) {
-    return *(int*) environ_find_stack();
+static int env_find_argc(void) {
+    return *(int*) env_find_stack();
 }
 
-static const char** environ_find_argv(void) {
-    unsigned long* argc_ptr = (unsigned long*) environ_find_stack();
+static const char** env_find_argv(void) {
+    unsigned long* argc_ptr = (unsigned long*) env_find_stack();
     unsigned long* argv_ptr = argc_ptr + 1;
     return (const char**) argv_ptr;
 }
 
-static void* environ_find_stack(void) {
+static void* env_find_stack(void) {
     unsigned long* argc_ptr = NULL;
     // Find argc by scanning all pointers from (environ - 2), until there is a pointer that contains a very small value
     // (impossible to be an address of reserved or allocated memory)

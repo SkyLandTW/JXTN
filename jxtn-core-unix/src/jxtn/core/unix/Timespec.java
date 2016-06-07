@@ -33,7 +33,7 @@ import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 
 /**
- * <i>struct timespec</i>
+ * {@codse struct timespec}
  *
  * @author aqd
  */
@@ -42,7 +42,7 @@ public final class Timespec implements Comparable<Timespec> {
     public final long tv_sec;
     public final long tv_nsec;
 
-    public Timespec(ByteBuffer buffer) {
+    Timespec(ByteBuffer buffer) {
         buffer.order(ByteOrder.nativeOrder());
         this.tv_sec = buffer.getLong();
         this.tv_nsec = buffer.getLong();

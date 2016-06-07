@@ -35,7 +35,7 @@ import java.nio.file.Path;
  *
  * @author aqd
  */
-class Unix {
+abstract class JNIBase {
 
     static {
         Runtime.getRuntime().loadLibrary("jxtn-core-unix");
@@ -72,7 +72,7 @@ class Unix {
     }
 
     protected static byte[] tName(String name) {
-        byte[] name_b = new byte[Limits.PATH_MAX];
+        byte[] name_b = new byte[NativeLimits.PATH_MAX];
         FastUTF8.encodeToCString(name, name_b);
         return name_b;
     }
@@ -88,11 +88,11 @@ class Unix {
     }
 
     protected static byte[] tPath(String path) {
-        byte[] path_b = new byte[Limits.PATH_MAX];
+        byte[] path_b = new byte[NativeLimits.PATH_MAX];
         FastUTF8.encodeToCString(path, path_b);
         return path_b;
     }
 
-    Unix() {
+    JNIBase() {
     }
 }

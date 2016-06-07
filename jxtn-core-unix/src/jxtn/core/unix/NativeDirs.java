@@ -24,15 +24,65 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package jxtn.core.unix;
 
-#include <linux/limits.h>
+import java.nio.file.Path;
 
-#include "internals.h"
+/**
+ * Directory-related syscall wrappers
+ *
+ * @author aqd
+ */
+public final class NativeDirs extends JNIBase {
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_nameMax(JNIEnv *env, jclass thisObj) {
-    return NAME_MAX;
-}
+    /* chdir */
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_pathMax(JNIEnv *env, jclass thisObj) {
-    return PATH_MAX;
+    public static int chdir(Path path) {
+        return chdir(tPath(path));
+    }
+
+    public static int chdir(String path) {
+        return chdir(tPath(path));
+    }
+
+    static native int chdir(byte[] path);
+
+    /* chroot */
+
+    public static int chroot(Path path) {
+        return chroot(tPath(path));
+    }
+
+    public static int chroot(String path) {
+        return chroot(tPath(path));
+    }
+
+    static native int chroot(byte[] path);
+
+    /* mkdir */
+
+    public static int mkdir(Path pathname, int mode) {
+        return mkdir(tPath(pathname), mode);
+    }
+
+    public static int mkdir(String pathname, int mode) {
+        return mkdir(tPath(pathname), mode);
+    }
+
+    static native int mkdir(byte[] pathname, int mode);
+
+    /* rmdir */
+
+    public static int rmdir(Path pathname) {
+        return rmdir(tPath(pathname));
+    }
+
+    public static int rmdir(String pathname) {
+        return rmdir(tPath(pathname));
+    }
+
+    static native int rmdir(byte[] pathname);
+
+    private NativeDirs() {
+    }
 }

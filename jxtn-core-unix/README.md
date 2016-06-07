@@ -18,14 +18,16 @@ It's intended for:
 - Default Charset: UTF-8
 - Target OS: Linux after v3.0
 
-#### Current Goals
+#### Current Features
 
-- Maximum performance and minimum memory cost; use of reflection shall be minimal and JNA cannot be used.
+- Maximum performance and minimum memory cost; No reflection.
 - UTF-8 encoded strings (ByteString)
-- Very basic calls such as getpid/getuid
-- Direct File Operations without exceptions
+- Basic calls such as getpid/getuid
+- Direct File Operations without exception mechanism
 - Direct File I/O without Java streams
 - Direct File Mapping (64-bit) 
+- Process invocation and in/out/err redierction (pexec)
+- Process renaming
 
 (Networking is of lower priority because I don't need it for now)
 

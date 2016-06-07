@@ -25,14 +25,34 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-#include <linux/limits.h>
+#include <signal.h>
+#include <string.h>
+#include <sys/prctl.h>
+#include <sys/syscall.h>
+#include <unistd.h>
 
 #include "internals.h"
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_nameMax(JNIEnv *env, jclass thisObj) {
-    return NAME_MAX;
+static char prctl_process_name[16];
+
+static void prctl_setName_handler(int signum);
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativePrctl2_prSetNameRoot(JNIEnv *env, jclass thisObj,
+        jstring name) {
+    const char* name_b = (*env)->GetStringUTFChars(env, name, NULL);
+    const size_t len = MIN(strlen(name_b), 15);
+    strncpy(prctl_process_name, name_b, len);
+    (*env)->ReleaseStringUTFChars(env, name, name_b);
+    prctl_process_name[len] = '\0';
+    if (signal(SIGUSR1, prctl_setName_handler) == SIG_ERR)
+        return -1;
+    if (syscall(SYS_tgkill, getpid(), getpid(), SIGUSR1) == -1)
+        return -1;
+    return 0;
 }
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_pathMax(JNIEnv *env, jclass thisObj) {
-    return PATH_MAX;
+static void prctl_setName_handler(int signum) {
+    signal(SIGUSR1, SIG_DFL);
+    if (prctl(PR_SET_NAME, prctl_process_name, 0L, 0L, 0L) == -1)
+        perror("PR_SET_NAME");
 }

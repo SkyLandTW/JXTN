@@ -24,15 +24,41 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package jxtn.core.unix;
 
-#include <linux/limits.h>
+/**
+ * Program stack and environment
+ *
+ * @author aqd
+ */
+public final class NativeEnv extends JNIBase {
 
-#include "internals.h"
+    /**
+     * Get the count of command arguments
+     *
+     * @return count of command arguments
+     */
+    public static native int getArgc();
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_nameMax(JNIEnv *env, jclass thisObj) {
-    return NAME_MAX;
-}
+    /**
+     * Get the value of specified argument
+     *
+     * @param index index of the argument to get
+     * @return argument value
+     */
+    public static native String getArgv(int index);
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_pathMax(JNIEnv *env, jclass thisObj) {
-    return PATH_MAX;
+    /**
+     * Set the value of specified argument
+     * <p>
+     * {@code value} is limited by the size of the initial argument value; truncated automatically if too long.
+     * </p>
+     *
+     * @param index index of the argument to set
+     * @param value new argument value
+     */
+    public static native void setArgv(int index, String value);
+
+    private NativeEnv() {
+    }
 }

@@ -44,18 +44,69 @@ public final class Stat64 {
         return (dev & 0xff) | ((int) (dev >>> 12) & ~0xff);
     }
 
+    /**
+     * ID of device containing file
+     */
     public final long st_dev;
+
+    /**
+     * inode number
+     */
     public final long st_ino;
+
+    /**
+     * number of hard links
+     */
     public final long st_nlink;
+
+    /**
+     * protection
+     */
     public final int st_mode;
+
+    /**
+     * user ID of owner
+     */
     public final int st_uid;
+
+    /**
+     * group ID of owner
+     */
     public final int st_gid;
+
+    /**
+     * device ID (if special file)
+     */
     public final long st_rdev;
+
+    /**
+     * total size, in bytes
+     */
     public final long st_size;
+
+    /**
+     * blocksize for filesystem I/O
+     */
     public final long st_blksize;
+
+    /**
+     * number of 512B blocks allocated
+     */
     public final long st_blocks;
+
+    /**
+     * time of last access
+     */
     public final Timespec st_atim;
+
+    /**
+     * time of last modification
+     */
     public final Timespec st_mtim;
+
+    /**
+     * time of last status change
+     */
     public final Timespec st_ctim;
 
     Stat64(ByteBuffer buffer) {

@@ -26,6 +26,7 @@
  */
 
 #include <sys/stat.h>
+#include <sys/syscall.h>
 #include <unistd.h>
 
 #include "internals.h"
@@ -40,9 +41,28 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs_chroot(JNIEnv *env, jclass
     return ERR(chroot(resolveCS(path)));
 }
 
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs_fchdir(JNIEnv *env, jclass thisObj,
+        jint fd) {
+    return ERR(fchdir(fd));
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs_getdents64(JNIEnv *env, jclass thisObj,
+        jint fd, jbyteArray dirp) {
+    if (dirp == NULL) {
+        return SETERR(EFAULT);
+    }
+    size_t count = UL((*env)->GetArrayLength(env, dirp));
+    return ERR((int) syscall(SYS_getdents64, fd, resolveBA(dirp), count));
+}
+
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs_mkdir(JNIEnv *env, jclass thisObj,
         jbyteArray pathname, jint mode) {
     return ERR(mkdir(resolveCS(pathname), UI(mode)));
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs_mkdirat(JNIEnv *env, jclass thisObj,
+        jint dirfd, jbyteArray pathname, jint mode) {
+    return ERR(mkdirat(dirfd, resolveCS(pathname), UI(mode)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs_rmdir(JNIEnv *env, jclass thisObj,

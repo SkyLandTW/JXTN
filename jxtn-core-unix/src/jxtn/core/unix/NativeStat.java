@@ -31,7 +31,7 @@ import java.nio.file.Path;
 
 /**
  * {@code stat()} syscall wrappers
- * 
+ *
  * @author aqd
  */
 public final class NativeStat extends JNIBase {
@@ -69,6 +69,27 @@ public final class NativeStat extends JNIBase {
     }
 
     static native int fstat(int fd, byte[] buf);
+
+    /* fstatat */
+
+    public static int fstatat(int dirfd, Path pathname, Out<Stat64> buf_out, int flags) {
+        return fstatat(dirfd, tPath(pathname), buf_out, flags);
+    }
+
+    public static int fstatat(int dirfd, String pathname, Out<Stat64> buf_out, int flags) {
+        return fstatat(dirfd, tPath(pathname), buf_out, flags);
+    }
+
+    private static int fstatat(int dirfd, byte[] pathname, Out<Stat64> buf_out, int flags) {
+        byte[] buf = new byte[144];
+        int ret = fstatat(dirfd, pathname, buf, flags);
+        if (ret != -1) {
+            buf_out.set(new Stat64(ByteBuffer.wrap(buf)));
+        }
+        return ret;
+    }
+
+    static native int fstatat(int dirfd, byte[] pathname, byte[] buf, int flags);
 
     /* lstat */
 

@@ -30,10 +30,19 @@ import java.nio.file.Path;
 
 /**
  * File-related syscall wrappers
- * 
+ *
  * @author aqd
  */
 public final class NativeFiles extends JNIBase {
+
+    public static final int AT_FDCWD = -100; /* Special value used to indicate the *at functions
+                                                should use the current working directory. */
+    public static final int AT_SYMLINK_NOFOLLOW = 0x100; /* Do not follow symbolic links.  */
+    public static final int AT_REMOVEDIR = 0x200; /* Remove directory instead of unlinking file.  */
+    public static final int AT_EACCESS = 0x200; /* Test access permitted for effective IDs, not real IDs.  */
+    public static final int AT_SYMLINK_FOLLOW = 0x400; /* Follow symbolic links.  */
+    public static final int AT_NO_AUTOMOUNT = 0x800; /* Suppress terminal automount traversal.  */
+    public static final int AT_EMPTY_PATH = 0x1000; /* Allow empty relative pathname.  */
 
     /* access */
 
@@ -51,6 +60,18 @@ public final class NativeFiles extends JNIBase {
     }
 
     static native int access(byte[] pathname, int mode);
+
+    /* chmod */
+
+    public static int chmod(Path pathname, int mode) {
+        return chmod(tPath(pathname), mode);
+    }
+
+    public static int chmod(String pathname, int mode) {
+        return chmod(tPath(pathname), mode);
+    }
+
+    static native int chmod(byte[] pathname, int mode);
 
     /* chown */
 
@@ -87,13 +108,69 @@ public final class NativeFiles extends JNIBase {
 
     public static native int fadvise(int fd, long offset, long len, int advice);
 
+    /* faccessat */
+
+    public static int faccessat(int dirfd, Path pathname, int mode, int flags) {
+        return faccessat(dirfd, tPath(pathname), mode, flags);
+    }
+
+    public static int faccessat(int dirfd, String pathname, int mode, int flags) {
+        return faccessat(dirfd, tPath(pathname), mode, flags);
+    }
+
+    static native int faccessat(int dirfd, byte[] pathname, int mode, int flags);
+
     /* fallocate */
 
     public static native int fallocate(int fd, int mode, long offset, long len);
 
+    /* fchmod */
+
+    public static native int fchmod(int fd, int mode);
+
+    /* fchmodat */
+
+    public static int fchmodat(int dirfd, Path pathname, int mode, int flags) {
+        return fchmodat(dirfd, tPath(pathname), mode, flags);
+    }
+
+    public static int fchmodat(int dirfd, String pathname, int mode, int flags) {
+        return fchmodat(dirfd, tPath(pathname), mode, flags);
+    }
+
+    static native int fchmodat(int dirfd, byte[] pathname, int mode, int flags);
+
+    /* fchown */
+
+    static native int fchown(int fd, int owner, int group);
+
+    /* fchownat */
+
+    public static int fchownat(int dirfd, Path pathname, int owner, int group, int flags) {
+        return fchownat(dirfd, tPath(pathname), owner, group, flags);
+    }
+
+    public static int fchownat(int dirfd, String pathname, int owner, int group, int flags) {
+        return fchownat(dirfd, tPath(pathname), owner, group, flags);
+    }
+
+    static native int fchownat(int dirfd, byte[] pathname, int owner, int group, int flags);
+
     /* ftruncate */
 
     public static native int ftruncate(int fd, long length);
+
+    /* lchown */
+
+    public static int lchown(Path pathname, int owner, int group) {
+        return lchown(tPath(pathname), owner, group);
+    }
+
+    public static int lchown(String pathname, int owner, int group) {
+        return lchown(tPath(pathname), owner, group);
+    }
+
+    static native int lchown(byte[] pathname, int owner, int group);
 
     /* link */
 
@@ -106,6 +183,18 @@ public final class NativeFiles extends JNIBase {
     }
 
     static native int link(byte[] oldpath, byte[] newpath);
+
+    /* linkat */
+
+    public static int linkat(int olddirfd, Path oldpath, int newdirfd, Path newpath, int flags) {
+        return linkat(olddirfd, tPath(oldpath), newdirfd, tPath(newpath), flags);
+    }
+
+    public static int linkat(int olddirfd, String oldpath, int newdirfd, String newpath, int flags) {
+        return linkat(olddirfd, tPath(oldpath), newdirfd, tPath(newpath), flags);
+    }
+
+    static native int linkat(int olddirfd, byte[] oldpath, int newdirfd, byte[] newpath, int flags);
 
     /* lseek */
 
@@ -154,6 +243,18 @@ public final class NativeFiles extends JNIBase {
 
     static native int open(byte[] pathname, int flags, int mode);
 
+    /* openat */
+
+    public static int openat(int dirfd, Path pathname, int flags, int mode) {
+        return openat(dirfd, tPath(pathname), flags, mode);
+    }
+
+    public static int openat(int dirfd, String pathname, int flags, int mode) {
+        return openat(dirfd, tPath(pathname), flags, mode);
+    }
+
+    static native int openat(int dirfd, byte[] pathname, int flags, int mode);
+
     /* pipe */
 
     public static native int pipe(int[] pipefd);
@@ -174,6 +275,34 @@ public final class NativeFiles extends JNIBase {
 
     static native int rename(byte[] oldpath, byte[] newpath);
 
+    /* renameat */
+
+    public static int renameat(int olddirfd, Path oldpath, int newdirfd, Path newpath) {
+        return renameat(olddirfd, tPath(oldpath), newdirfd, tPath(newpath));
+    }
+
+    public static int renameat(int olddirfd, String oldpath, int newdirfd, String newpath) {
+        return renameat(olddirfd, tPath(oldpath), newdirfd, tPath(newpath));
+    }
+
+    static native int renameat(int olddirfd, byte[] oldpath, int newdirfd, byte[] newpath);
+
+    /* renameat2 */
+
+    public static final int RENAME_NOREPLACE = (1 << 0); /* Don't overwrite target */
+    public static final int RENAME_EXCHANGE = (1 << 1); /* Exchange source and dest */
+    public static final int RENAME_WHITEOUT = (1 << 2); /* Whiteout source */
+
+    public static int renameat2(int olddirfd, Path oldpath, int newdirfd, Path newpath, int flags) {
+        return renameat2(olddirfd, tPath(oldpath), newdirfd, tPath(newpath), flags);
+    }
+
+    public static int renameat2(int olddirfd, String oldpath, int newdirfd, String newpath, int flags) {
+        return renameat2(olddirfd, tPath(oldpath), newdirfd, tPath(newpath), flags);
+    }
+
+    static native int renameat2(int olddirfd, byte[] oldpath, int newdirfd, byte[] newpath, int flags);
+
     /* symlink */
 
     public static int symlink(Path target, Path linkpath) {
@@ -186,6 +315,18 @@ public final class NativeFiles extends JNIBase {
 
     static native int symlink(byte[] target, byte[] linkpath);
 
+    /* symlinkat */
+
+    public static int symlinkat(Path target, int newdirfd, Path linkpath) {
+        return symlinkat(tPath(target), newdirfd, tPath(linkpath));
+    }
+
+    public static int symlinkat(String target, int newdirfd, String linkpath) {
+        return symlinkat(tPath(target), newdirfd, tPath(linkpath));
+    }
+
+    static native int symlinkat(byte[] target, int newdirfd, byte[] linkpath);
+
     /* truncate */
 
     public static int truncate(Path pathname, long length) {
@@ -197,6 +338,30 @@ public final class NativeFiles extends JNIBase {
     }
 
     static native int truncate(byte[] pathname, long length);
+
+    /* unlink */
+
+    public static int unlink(Path pathname) {
+        return unlink(tPath(pathname));
+    }
+
+    public static int unlink(String pathname) {
+        return unlink(tPath(pathname));
+    }
+
+    static native int unlink(byte[] pathname);
+
+    /* unlinkat */
+
+    public static int unlinkat(int dirfd, Path pathname, int flags) {
+        return unlinkat(dirfd, tPath(pathname), flags);
+    }
+
+    public static int unlinkat(int dirfd, String pathname, int flags) {
+        return unlinkat(dirfd, tPath(pathname), flags);
+    }
+
+    static native int unlinkat(int dirfd, byte[] pathname, int flags);
 
     private NativeFiles() {
     }

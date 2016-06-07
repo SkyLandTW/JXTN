@@ -26,6 +26,8 @@
  */
 package jxtn.core.unix;
 
+import java.nio.ByteBuffer;
+
 /**
  * Helper functions for C strings
  *
@@ -35,6 +37,22 @@ public final class CStrings {
 
     public static String toString(byte[] cstring) {
         return new String(cstring, 0, strlen(cstring));
+    }
+
+    public static byte[] from(ByteBuffer buffer, int maxLength) {
+        byte[] rawAry = buffer.array();
+        int rawBeg = buffer.arrayOffset() + buffer.position();
+        int rawEnd = rawBeg + Math.min(buffer.remaining(), maxLength);
+        int pos;
+        for (pos = rawBeg; pos < rawEnd; pos++) {
+            if (rawAry[pos] == (byte) '\0') {
+                break;
+            }
+        }
+        byte[] cstring = new byte[pos - rawBeg + 1];
+        System.arraycopy(rawAry, rawBeg, cstring, 0, cstring.length - 1);
+        cstring[cstring.length - 1] = 0;
+        return cstring;
     }
 
     public static byte[] from(String jstring, int maxLength) {

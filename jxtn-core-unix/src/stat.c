@@ -41,6 +41,11 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeStat_fstat(JNIEnv *env, jclass 
     return ERR(fstat(fd, (struct stat *) resolveBA(buf)));
 }
 
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeStat_fstatat(JNIEnv *env, jclass thisObj,
+        jint dirfd, jbyteArray pathname, jbyteArray buf, int flags) {
+    return ERR(fstatat(dirfd, resolveCS(pathname), (struct stat *) resolveBA(buf), flags));
+}
+
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeStat_lstat(JNIEnv *env, jclass thisObj,
         jbyteArray pathname, jbyteArray buf) {
     return ERR(lstat(resolveCS(pathname), (struct stat *) resolveBA(buf)));

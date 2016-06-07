@@ -25,10 +25,13 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
+#include <fcntl.h>
 #include <string.h>
 #include <sys/stat.h>
+#include <sys/syscall.h>
 #include <sys/types.h>
 
+#include "dirent.h"
 #include "internals.h"
 
 /**
@@ -43,9 +46,25 @@
  */
 static int mkdirs(const char *pathname, mode_t mode);
 
+/**
+ * Delete specified directory or file as well as all contents
+ * <p>
+ * If {@code pathname} doesn't exist, 0 would be returned.
+ * </p>
+ *
+ * @param pathname Directory or file to delete
+ * @return numbers of directories and files deleted, or -1 on error
+ */
+static int rmdirs(const char *pathname);
+
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs2_mkdirs(JNIEnv *env, jclass thisObj,
         jbyteArray pathname, jint mode) {
     return ERR(mkdirs(resolveCS(pathname), UI(mode)));
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs2_rmdirs(JNIEnv *env, jclass thisObj,
+        jbyteArray pathname) {
+    return ERR(rmdirs(resolveCS(pathname)));
 }
 
 static int mkdirs(const char *pathname, mode_t mode) {
@@ -83,4 +102,43 @@ static int mkdirs(const char *pathname, mode_t mode) {
     default:
         return -1; // pass errno
     }
+}
+
+static int rmdirs_on_dir_begin(int dirfd, struct linux_dirent64* dirp, void* param) {
+    return 0;
+}
+
+static int rmdirs_on_file(int dirfd, struct linux_dirent64* dirp, void* param) {
+    return unlinkat(dirfd, dirp->d_name, 0) == 0 ? 1 : -1;
+}
+
+static int rmdirs_on_dir_end(int dirfd, struct linux_dirent64* dirp, void* param) {
+    return unlinkat(dirfd, dirp->d_name, AT_REMOVEDIR) == 0 ? 1 : -1;
+}
+
+static int rmdirs(const char *pathname) {
+    int dirfd = open(pathname, O_DIRECTORY | O_RDONLY, 0);
+    if (dirfd == -1) {
+        switch (errno) {
+        case ENOENT:
+            errno = 0;
+            return 0;
+        case ENOTDIR:
+            return unlink(pathname) == 0 ? 1 : -1;
+        default:
+            return dirfd;
+        }
+    }
+    int ret = walkdirs(dirfd, NULL, rmdirs_on_dir_begin, rmdirs_on_file, rmdirs_on_dir_end);
+    if (ret < 0) {
+        int err = errno;
+        close(dirfd);
+        errno = err;
+        return ret;
+    }
+    close(dirfd);
+    if (rmdir(pathname) == -1) {
+        return -1;
+    }
+    return ret + 1;
 }

@@ -35,6 +35,8 @@ import java.nio.file.Path;
  */
 public final class NativeDirs2 extends JNIBase {
 
+    /* mkdirs */
+
     public static int mkdirs(Path pathname, int mode) {
         return mkdirs(tPath(pathname), mode);
     }
@@ -54,6 +56,28 @@ public final class NativeDirs2 extends JNIBase {
      * @return numbers of directories created, or -1 on error
      */
     static native int mkdirs(byte[] pathname, int mode);
+
+    /* rmdirs */
+
+    public static int rmdirs(Path pathname) {
+        return rmdirs(tPath(pathname));
+    }
+
+    public static int rmdirs(String pathname) {
+        return rmdirs(tPath(pathname));
+    }
+
+    /**
+     * Create specified directory and all parent directories if non-existent
+     * <p>
+     * If {@code pathname} already exists, 0 would be returned.
+     * </p>
+     *
+     * @param pathname Directory to create (may be modified during the process)
+     * @param mode Mode of the directory as well as all parent directories
+     * @return numbers of directories created, or -1 on error
+     */
+    static native int rmdirs(byte[] pathname);
 
     private NativeDirs2() {
     }

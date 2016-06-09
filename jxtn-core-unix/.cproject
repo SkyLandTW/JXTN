@@ -52,7 +52,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src-jni"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -69,18 +69,18 @@
 			<resource resourceType="PROJECT" workspacePath="/jxtn.core.unix"/>
 		</configuration>
 	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.1067089342;cdt.managedbuild.toolchain.gnu.base.1067089342.980789250;cdt.managedbuild.tool.gnu.cpp.compiler.base.1061828800;cdt.managedbuild.tool.gnu.cpp.compiler.input.301546661">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.1067089342;cdt.managedbuild.toolchain.gnu.base.1067089342.980789250;cdt.managedbuild.tool.gnu.c.compiler.base.1043168041;cdt.managedbuild.tool.gnu.c.compiler.input.455834559">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings">
 		<doc-comment-owner id="org.eclipse.cdt.ui.doxygen">
 			<path value=""/>
 		</doc-comment-owner>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.1067089342;cdt.managedbuild.toolchain.gnu.base.1067089342.980789250;cdt.managedbuild.tool.gnu.c.compiler.base.1043168041;cdt.managedbuild.tool.gnu.c.compiler.input.455834559">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.1067089342;cdt.managedbuild.toolchain.gnu.base.1067089342.980789250;cdt.managedbuild.tool.gnu.cpp.compiler.base.1061828800;cdt.managedbuild.tool.gnu.cpp.compiler.input.301546661">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 	</storageModule>
 </cproject>

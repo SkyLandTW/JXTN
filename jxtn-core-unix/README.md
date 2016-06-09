@@ -26,6 +26,7 @@ It's intended for:
 - Direct File Operations without exception mechanism
 - Direct File I/O without Java streams
 - Direct File Mapping (64-bit) 
+- Direct Directory Reading through getdents64()
 - Process invocation and in/out/err redierction (pexec)
 - Process renaming
 

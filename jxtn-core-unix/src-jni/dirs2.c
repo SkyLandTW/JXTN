@@ -117,7 +117,10 @@ static int rmdirs_on_dir_end(int dirfd, struct linux_dirent64* dirp, void* param
 }
 
 static int rmdirs(const char *pathname) {
-    int dirfd = open(pathname, O_DIRECTORY | O_RDONLY, 0);
+    int dirfd = open(pathname, O_RDONLY | O_CLOEXEC | O_DIRECTORY | O_NOATIME, 0);
+    if (dirfd == -1 && errno == EPERM) {
+        dirfd = open(pathname, O_RDONLY | O_CLOEXEC | O_DIRECTORY, 0);
+    }
     if (dirfd == -1) {
         switch (errno) {
         case ENOENT:

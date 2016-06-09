@@ -31,6 +31,9 @@
 #include <unistd.h>
 
 #define GETDENTS64_BUF_SIZE (256 * 1024)
+#ifndef O_NOATIME
+#define O_NOATIME __O_NOATIME
+#endif
 
 enum
 {
@@ -85,15 +88,18 @@ static inline int walkdirs(int dirfd, void* param,
                 if (on_dir_begin != NULL) {
                     if ((ret = on_dir_begin(dirfd, d, param)) < 0) {
                         err = errno;
-                        goto end;
+                        goto END;
                     }
                     total += ret;
                 }
-                int child_dirfd = openat(dirfd, d->d_name, O_DIRECTORY | O_RDONLY);
+                int child_dirfd = openat(dirfd, d->d_name, O_RDONLY | O_CLOEXEC | O_DIRECTORY | O_NOATIME);
+                if (child_dirfd == -1 && errno == EPERM) {
+                    child_dirfd = openat(dirfd, d->d_name, O_RDONLY | O_CLOEXEC | O_DIRECTORY);
+                }
                 if (child_dirfd == -1) {
                     ret = child_dirfd;
                     err = errno;
-                    goto end;
+                    goto END;
                 }
                 ret = walkdirs(child_dirfd, param, on_dir_begin, on_file, on_dir_end);
                 if (ret < 0) {
@@ -101,13 +107,13 @@ static inline int walkdirs(int dirfd, void* param,
                 }
                 close(child_dirfd);
                 if (ret < 0) {
-                    goto end;
+                    goto END;
                 }
                 total += ret;
                 if (on_dir_end != NULL) {
                     if ((ret = on_dir_end(dirfd, d, param)) < 0) {
                         err = errno;
-                        goto end;
+                        goto END;
                     }
                     total += ret;
                 }
@@ -115,7 +121,7 @@ static inline int walkdirs(int dirfd, void* param,
                 if (on_file != NULL) {
                     if ((ret = on_file(dirfd, d, param)) < 0) {
                         err = errno;
-                        goto end;
+                        goto END;
                     }
                     total += ret;
                 }
@@ -124,7 +130,7 @@ static inline int walkdirs(int dirfd, void* param,
         }
     }
     err = errno;
-    end:
+    END:
     free(dirp_buf);
     if (ret >= 0) {
         errno = 0;

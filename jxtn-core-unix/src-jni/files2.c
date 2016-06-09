@@ -36,10 +36,7 @@
 
 #include "internals.h"
 
-#ifndef O_NOATIME
-#define O_NOATIME __O_NOATIME
-#endif
-
+static ssize_t copyfile_sparse(int srcfd, int dstfd);
 static int copyat(int olddirfd, const char* oldpath, int newdirfd, const char* newpath);
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeFiles2_copy(JNIEnv *env, jclass thisObj,
@@ -88,7 +85,7 @@ static int copyat(int olddirfd, const char* oldpath, int newdirfd, const char* n
         return -1;
     }
     fchown(newfd, oldstat.st_uid, oldstat.st_gid); // ignore error
-    if (sendfile(newfd, oldfd, NULL, UL(oldstat.st_size)) == -1) {
+    if (copyfile_sparse(oldfd, newfd) == -1) {
         err = errno;
         close(newfd);
         close(oldfd);
@@ -103,3 +100,42 @@ static int copyat(int olddirfd, const char* oldpath, int newdirfd, const char* n
     utimensat(newdirfd, newpath, times, 0); // ignore error
     return 0;
 }
+
+static ssize_t copyfile_sparse(int srcfd, int dstfd) {
+    ssize_t srcend = lseek(srcfd, 0L, SEEK_END);
+    if (srcend == -1L) {
+        return -1L;
+    }
+    if (ftruncate(dstfd, srcend) == -1) {
+        return -1L;
+    }
+    ssize_t num_total = 0L;
+    ssize_t srcpos = 0L;
+    while (srcpos < srcend) {
+        ssize_t next_beg = srcpos = lseek(srcfd, srcpos, SEEK_DATA);
+        if (next_beg == -1L) {
+            return -1L;
+        }
+        ssize_t next_end = srcpos = lseek(srcfd, srcpos, SEEK_HOLE);
+        if (next_end == -1L) {
+            return -1L;
+        }
+        ssize_t next_len = next_end - next_beg;
+        if (next_len > 0) {
+            if (lseek(srcfd, next_beg, SEEK_SET) == -1L) {
+                return -1L;
+            }
+            if (lseek(dstfd, next_beg, SEEK_SET) == -1L) {
+                return -1L;
+            }
+            ssize_t num = sendfile(dstfd, srcfd, NULL, UL(next_len));
+            if (num == -1L) {
+                return -1L;
+            }
+            num_total += num;
+        }
+        srcpos = next_end;
+    }
+    return num_total;
+}
+

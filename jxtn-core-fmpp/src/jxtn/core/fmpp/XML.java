@@ -25,10 +25,12 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-package org.w3c.dom;
+package jxtn.core.fmpp;
 
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.AbstractList;
+import java.util.List;
 import java.util.Objects;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
@@ -36,39 +38,49 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
-/**
- * {@link Node}的延伸功能。
- *
- * @author AqD
- */
-public interface NodeExt {
-    /**
-     * 將XML結構轉為文字。
-     *
-     * @return XML文字
-     * @throws TransformerException {@link Transformer#transform}拋出的例外
-     */
-    default String toText() throws TransformerException {
+final class XML {
+
+    public static List<Node> asList(NodeList nodeList) {
+        return new NodeListList(nodeList);
+    }
+
+    public static String toText(Node node) throws TransformerException {
         StringWriter writer = new StringWriter();
-        this.toText(writer);
+        toText(node, writer);
         return writer.toString();
     }
 
-    /**
-     * 將XML結構轉為文字。
-     *
-     * @param writer 寫入文字的目的地
-     * @throws TransformerException {@link Transformer#transform}拋出的例外
-     */
-    default void toText(Writer writer) throws TransformerException {
+    public static void toText(Node node, Writer writer) throws TransformerException {
         Objects.requireNonNull(writer);
-        Node thiz = (Node) this;
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
         transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
         StreamResult result = new StreamResult(writer);
-        DOMSource source = new DOMSource(thiz);
+        DOMSource source = new DOMSource(node);
         transformer.transform(source, result);
+    }
+
+    private static final class NodeListList extends AbstractList<Node> {
+        private final NodeList nodeList;
+
+        public NodeListList(NodeList nodeList) {
+            this.nodeList = Objects.requireNonNull(nodeList);
+        }
+
+        @Override
+        public Node get(int index) {
+            return this.nodeList.item(index);
+        }
+
+        @Override
+        public int size() {
+            return this.nodeList.getLength();
+        }
+    }
+
+    private XML() {
     }
 }

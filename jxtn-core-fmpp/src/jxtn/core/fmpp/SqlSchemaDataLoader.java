@@ -34,6 +34,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.AbstractList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -44,6 +45,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * 以資料庫schema做為資料來源的載入器
@@ -72,9 +74,9 @@ public class SqlSchemaDataLoader extends XmlDataLoader {
             this.doLoadConstraintTargets(connection, schemaDoc, globalKeys);
         }
         // 排除輔助欄位
-        for (Node tableNode : schemaRoot.getElementsByTagName("table").asList()) {
+        for (Node tableNode : XML.asList(schemaRoot.getElementsByTagName("table"))) {
             Element tableElem = (Element) tableNode;
-            List<Node> columnListCopy = tableElem.getElementsByTagName("column").asList().toArrayList();
+            List<Node> columnListCopy = XML.asList(tableElem.getElementsByTagName("column")).toArrayList();
             Set<String> columnNameSet = new HashSet<>();
             columnListCopy.forEach(cn -> columnNameSet.add(((Element) cn).getAttribute("name")));
             for (Node columnNode : columnListCopy) {
@@ -88,7 +90,7 @@ public class SqlSchemaDataLoader extends XmlDataLoader {
             }
         }
         Element schemaXml = schemaDoc.createElement("xml");
-        schemaXml.appendChild(schemaDoc.createCDATASection(schemaRoot.toText()));
+        schemaXml.appendChild(schemaDoc.createCDATASection(XML.toText(schemaRoot)));
         schemaRoot.appendChild(schemaXml);
         return this.load(engine, args, schemaDoc);
     }
@@ -119,7 +121,7 @@ public class SqlSchemaDataLoader extends XmlDataLoader {
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
                     String tableName = rs.getString("TABLE_NAME");
-                    Element tableElem = schemaDoc.getFirstChild().getChildNodes().asList()
+                    Element tableElem = XML.asList(schemaDoc.getFirstChild().getChildNodes())
                             .ofType(Element.class)
                             .filter(elem -> elem.getAttribute("name").equals(tableName))
                             .first();
@@ -159,7 +161,7 @@ public class SqlSchemaDataLoader extends XmlDataLoader {
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
                     String tableName = rs.getString("TABLE_NAME");
-                    Element tableElem = schemaDoc.getFirstChild().getChildNodes().asList()
+                    Element tableElem = XML.asList(schemaDoc.getFirstChild().getChildNodes())
                             .ofType(Element.class)
                             .filter(elem -> elem.getAttribute("name").equals(tableName))
                             .first();
@@ -196,7 +198,7 @@ public class SqlSchemaDataLoader extends XmlDataLoader {
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
                     String tableName = rs.getString("TABLE_NAME");
-                    Element tableElem = schemaDoc.getFirstChild().getChildNodes().asList()
+                    Element tableElem = XML.asList(schemaDoc.getFirstChild().getChildNodes())
                             .ofType(Element.class)
                             .filter(elem -> elem.getAttribute("name").equals(tableName))
                             .first();
@@ -206,9 +208,7 @@ public class SqlSchemaDataLoader extends XmlDataLoader {
                         continue;
                     }
                     String columnName = rs.getString("COLUMN_NAME");
-                    Element columnElem = tableElem
-                            .getChildNodes()
-                            .asList()
+                    Element columnElem = XML.asList(tableElem.getChildNodes())
                             .ofType(Element.class)
                             .filter(elem -> elem.getNodeName().equals("column")
                                     && elem.getAttribute("name").equals(columnName))
@@ -262,8 +262,7 @@ public class SqlSchemaDataLoader extends XmlDataLoader {
                     childDescrElem.setAttribute("table", dependentTableElem.getAttribute("name"));
                     childDescrElem.setAttribute("keyName", dependentRefElem.getAttribute("name"));
                     childDescrElem.setAttribute("keyShortName", dependentRefElem.getAttribute("shortName"));
-                    for (Element colRef : dependentRefElem.getChildNodes()
-                            .asList()
+                    for (Element colRef : XML.asList(dependentRefElem.getChildNodes())
                             .ofType(Element.class)
                             .filter(e -> e.getNodeName().equals("colRef"))) {
                         Element colRefCopy = (Element) colRef.cloneNode(false);
@@ -358,5 +357,19 @@ public class SqlSchemaDataLoader extends XmlDataLoader {
         default:
             throw new IllegalArgumentException();
         }
+    }
+
+    protected static List<Node> asList(NodeList list) {
+        return new AbstractList<Node>() {
+            @Override
+            public Node get(int index) {
+                return list.item(index);
+            }
+
+            @Override
+            public int size() {
+                return list.getLength();
+            }
+        };
     }
 }

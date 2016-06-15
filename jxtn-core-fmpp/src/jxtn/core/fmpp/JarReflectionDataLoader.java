@@ -284,7 +284,7 @@ public class JarReflectionDataLoader extends XmlDataLoader {
                 xmlRoot.appendChild(elemJar);
             }
             Element srcXml = xmlDoc.createElement("xml");
-            srcXml.appendChild(xmlDoc.createCDATASection(xmlRoot.toText()));
+            srcXml.appendChild(xmlDoc.createCDATASection(XML.toText(xmlRoot)));
             xmlRoot.appendChild(srcXml);
             return this.load(engine, args, xmlDoc);
         } catch (Throwable throwable) {

@@ -37,6 +37,8 @@ import java.util.function.Consumer;
  */
 public final class NativeDirs extends JNIBase {
 
+    static final int DEFAULT_GETDENTS_BUFFER_SIZE = Dirent64.BUFFER_SIZE << 8;
+
     /* chdir */
 
     public static int chdir(Path path) {
@@ -64,7 +66,11 @@ public final class NativeDirs extends JNIBase {
     /* getdents64 */
 
     public static int getdents64(int fd, Consumer<Dirent64> direntConsumer) {
-        byte[] dirp_ary = new byte[256 * 1024];
+        return getdents64(fd, direntConsumer, DEFAULT_GETDENTS_BUFFER_SIZE);
+    }
+
+    public static int getdents64(int fd, Consumer<Dirent64> direntConsumer, int bufferLength) {
+        byte[] dirp_ary = new byte[Math.max(bufferLength, Dirent64.BUFFER_SIZE)];
         ByteBuffer dirp_buf = ByteBuffer.wrap(dirp_ary);
         int total = 0;
         int ret;

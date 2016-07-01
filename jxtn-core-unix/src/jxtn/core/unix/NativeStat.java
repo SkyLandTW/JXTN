@@ -47,7 +47,7 @@ public final class NativeStat extends JNIBase {
     }
 
     private static int stat(byte[] pathname, Out<Stat64> buf_out) {
-        byte[] buf = new byte[144];
+        byte[] buf = new byte[Stat64.BUFFER_SIZE];
         int ret = stat(pathname, buf);
         if (ret != -1) {
             buf_out.set(new Stat64(ByteBuffer.wrap(buf)));
@@ -60,7 +60,7 @@ public final class NativeStat extends JNIBase {
     /* fstat */
 
     public static int fstat(int fd, Out<Stat64> buf_out) {
-        byte[] buf = new byte[144];
+        byte[] buf = new byte[Stat64.BUFFER_SIZE];
         int ret = fstat(fd, buf);
         if (ret != -1) {
             buf_out.set(new Stat64(ByteBuffer.wrap(buf)));
@@ -81,7 +81,7 @@ public final class NativeStat extends JNIBase {
     }
 
     private static int fstatat(int dirfd, byte[] pathname, Out<Stat64> buf_out, int flags) {
-        byte[] buf = new byte[144];
+        byte[] buf = new byte[Stat64.BUFFER_SIZE];
         int ret = fstatat(dirfd, pathname, buf, flags);
         if (ret != -1) {
             buf_out.set(new Stat64(ByteBuffer.wrap(buf)));
@@ -102,7 +102,7 @@ public final class NativeStat extends JNIBase {
     }
 
     private static int lstat(byte[] pathname, Out<Stat64> buf_out) {
-        byte[] buf = new byte[144];
+        byte[] buf = new byte[Stat64.BUFFER_SIZE];
         int ret = lstat(pathname, buf);
         if (ret != -1) {
             buf_out.set(new Stat64(ByteBuffer.wrap(buf)));

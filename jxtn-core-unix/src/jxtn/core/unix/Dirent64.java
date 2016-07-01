@@ -46,6 +46,8 @@ public final class Dirent64 {
     public static final byte DT_SOCK = 12; /* This is a UNIX domain socket. */
     public static final byte DT_WHT = 14; /* */
 
+    static final int BUFFER_SIZE = 8 + 8 + 2 + 1 + 256;
+
     /**
      * 64-bit inode number
      */
@@ -71,14 +73,23 @@ public final class Dirent64 {
      */
     public final byte[] d_name;
 
+    private String d_nameStr;
+
+    public String d_name() {
+        if (this.d_nameStr == null) {
+            this.d_nameStr = new String(this.d_name, 0, this.d_name.length - 1);
+        }
+        return this.d_nameStr;
+    }
+
     Dirent64(ByteBuffer buffer) {
         buffer.order(ByteOrder.nativeOrder());
         int start = buffer.position();
-        this.d_ino = buffer.getLong();
-        this.d_off = buffer.getLong();
-        this.d_reclen = buffer.getShort() & 0xFFFF;
-        this.d_type = buffer.get();
-        this.d_name = CStrings.from(buffer, NativeLimits.NAME_MAX);
+        this.d_ino = buffer.getLong();                                  // 8
+        this.d_off = buffer.getLong();                                  // 8
+        this.d_reclen = buffer.getShort() & 0xFFFF;                     // 2
+        this.d_type = buffer.get();                                     // 1
+        this.d_name = CStrings.from(buffer, NativeLimits.NAME_MAX + 1); // 256
         buffer.position(start + this.d_reclen);
     }
 }

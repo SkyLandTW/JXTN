@@ -36,6 +36,8 @@ import java.nio.ByteOrder;
  */
 public final class Stat64 {
 
+    static final int BUFFER_SIZE = 144;
+
     private static long major(long dev) {
         return ((dev >>> 8) & 0xfff) | ((int) (dev >>> 32) & ~0xfff);
     }

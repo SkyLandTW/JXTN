@@ -26,8 +26,10 @@
  */
 
 #include <errno.h>
+#include <fcntl.h>
 #include <stdlib.h>
 #include <sys/syscall.h>
+#include <sys/types.h>
 #include <unistd.h>
 
 #define GETDENTS64_BUF_SIZE (256 * 1024)

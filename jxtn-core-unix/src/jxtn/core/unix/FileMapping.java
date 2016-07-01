@@ -29,9 +29,9 @@ package jxtn.core.unix;
 import java.io.Closeable;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;
 import java.nio.file.Path;
-import sun.misc.Unsafe;
 import sun.nio.ch.FileChannelImpl;
 
 /**
@@ -45,9 +45,8 @@ import sun.nio.ch.FileChannelImpl;
  *
  * @author aqd
  */
-public final class FileMapping implements Closeable {
+public final class FileMapping {
 
-    private static final Unsafe unsafe = Memory.unsafe;
     private static final Method channelMap0;
     private static final Method channelUnmap0;
 
@@ -62,34 +61,30 @@ public final class FileMapping implements Closeable {
         }
     }
 
-    private static long roundTo4096(long i) {
-        return (i + 0xfffL) & ~0xfffL;
+    public static NativeBuffer create(FileChannel channel, long length, boolean canWrite)
+            throws IOException {
+        return create(channel, length, canWrite, ByteOrder.nativeOrder());
     }
 
-    private final String source;
-    private final boolean fromChannel;
-    private final long address;
-    private final long length;
-
-    private long pointer;
-    private boolean closed;
-
-    public FileMapping(FileChannel channel, long length, boolean canWrite) {
-        this.source = Channels.toString(channel);
-        this.fromChannel = true;
+    public static NativeBuffer create(FileChannel channel, long length, boolean canWrite, ByteOrder order)
+            throws IOException {
         int imode = canWrite ? 1 : 0;
+        long address;
         try {
-            this.address = (long) channelMap0.invoke(channel, imode, 0L, roundTo4096(length));
+            address = (long) channelMap0.invoke(channel, imode, 0L, roundTo4096(length));
         } catch (ReflectiveOperationException e) {
-            throw new RuntimeException(e);
+            throw new IOException(e.getCause());
         }
-        this.pointer = this.address;
-        this.length = length;
+        FileMappingFromChannel source = new FileMappingFromChannel(channel, address, length);
+        return wrap(source, order);
     }
 
-    public FileMapping(Path path, int prot, int flags) throws IOException {
-        this.source = path.toString();
-        this.fromChannel = false;
+    public static NativeBuffer tryCreate(Path path, int prot, int flags) {
+        return tryCreate(path, prot, flags, ByteOrder.nativeOrder());
+    }
+
+    public static NativeBuffer tryCreate(Path path, int prot, int flags, ByteOrder order) {
+        String name = path.toString();
         int rw = 0;
         if ((prot & NativeMMap.PROT_READ) != 0 || (prot & NativeMMap.PROT_EXEC) != 0) {
             if ((prot & NativeMMap.PROT_WRITE) != 0) {
@@ -102,218 +97,129 @@ public final class FileMapping implements Closeable {
         }
         int fd = NativeFiles.open(path, rw, 0);
         if (fd == -1) {
-            throw new IOException("open " + path + ": " + NativeErrno.errName());
+            return null;
         }
+        long address, length;
         try {
             Out<Stat64> ostat = new Out<>();
             if (NativeStat.fstat(fd, ostat) == -1) {
-                throw new IOException("stat " + path + ": " + NativeErrno.errName());
+                return null;
             }
-            this.length = ostat.get().st_size;
-            this.address = NativeMMap.mmap(0L, this.length, prot, flags, fd, 0L);
-            if (this.address == NativeMMap.MAP_FAILED) {
-                throw new IOException("mmap " + path + ": " + NativeErrno.errName());
+            length = ostat.get().st_size;
+            address = NativeMMap.mmap(0L, length, prot, flags, fd, 0L);
+            if (address == NativeMMap.MAP_FAILED) {
+                return null;
             }
         } finally {
             NativeIO.close(fd);
         }
-        this.pointer = this.address;
+        FileMappingFromUnix source = new FileMappingFromUnix(name, address, length);
+        return wrap(source, order);
     }
 
-    public FileMapping(int fd, long offset, long length, int prot, int flags) throws IOException {
-        this.source = "fd=" + fd;
-        this.fromChannel = false;
-        this.address = NativeMMap.mmap(0L, length, prot, flags, fd, offset);
-        if (this.address == NativeMMap.MAP_FAILED) {
-            throw new IOException("mmap " + fd + ": " + NativeErrno.errName());
+    public static NativeBuffer tryCreate(int fd, long offset, long length, int prot, int flags) {
+        return tryCreate(fd, offset, length, prot, flags, ByteOrder.nativeOrder());
+    }
+
+    public static NativeBuffer tryCreate(int fd, long offset, long length, int prot, int flags, ByteOrder order) {
+        String name = "fd=" + fd;
+        long address = NativeMMap.mmap(0L, length, prot, flags, fd, offset);
+        if (address == NativeMMap.MAP_FAILED) {
+            return null;
         }
-        this.pointer = this.address;
-        this.length = length;
+        FileMappingFromUnix source = new FileMappingFromUnix(name, address, length);
+        return wrap(source, order);
     }
 
-    public FileMapping(long address, long length) {
-        this.source = "addr=0x" + StringFormat.padLeft(Long.toUnsignedString(address, 16), 16, '0')
-                + "+" + length;
-        this.fromChannel = false;
-        this.address = address;
-        this.pointer = address;
-        this.length = length;
-    }
-
-    public boolean hasRemaining() {
-        return (this.pointer - this.address) < this.length;
-    }
-
-    public long length() {
-        return this.length;
-    }
-
-    public void move(long relativePosition) {
-        this.pointer += relativePosition;
-    }
-
-    public long position() {
-        return this.pointer - this.address;
-    }
-
-    public void position(long absolutePosition) {
-        this.pointer = this.address + absolutePosition;
-    }
-
-    public byte getByte() {
-        byte value = unsafe.getByte(this.pointer);
-        this.pointer += 1;
-        return value;
-    }
-
-    public short getShort() {
-        short value = unsafe.getShort(this.pointer);
-        this.pointer += 2;
-        return value;
-    }
-
-    public int getInt() {
-        int value = unsafe.getInt(this.pointer);
-        this.pointer += 4;
-        return value;
-    }
-
-    public long getLong() {
-        long value = unsafe.getLong(this.pointer);
-        this.pointer += 8;
-        return value;
-    }
-
-    public short getUByte() {
-        byte value = unsafe.getByte(this.pointer);
-        this.pointer += 1;
-        return (short) (value & 0xFF);
-    }
-
-    public int getUShort() {
-        short value = unsafe.getShort(this.pointer);
-        this.pointer += 2;
-        return value & 0xFFFF;
-    }
-
-    public long getUInt() {
-        int value = unsafe.getInt(this.pointer);
-        this.pointer += 4;
-        return value & 0xFFFFFFFFL;
-    }
-
-    public void getData(byte[] data) {
-        unsafe.copyMemory(null, this.pointer, data, Unsafe.ARRAY_BYTE_BASE_OFFSET, data.length);
-        this.pointer += data.length;
-    }
-
-    public byte getByteAt(long offset) {
-        return unsafe.getByte(this.pointer + offset);
-    }
-
-    public short getShortAt(long offset) {
-        return unsafe.getShort(this.pointer + offset);
-    }
-
-    public int getIntAt(long offset) {
-        return unsafe.getInt(this.pointer + offset);
-    }
-
-    public long getLongAt(long offset) {
-        return unsafe.getLong(this.pointer + offset);
-    }
-
-    public short getUByteAt(long offset) {
-        return (short) (unsafe.getByte(this.pointer + offset) & 0xFF);
-    }
-
-    public int getUShortAt(long offset) {
-        return unsafe.getShort(this.pointer + offset) & 0xFFFF;
-    }
-
-    public long getUIntAt(long offset) {
-        return unsafe.getInt(this.pointer + offset) & 0xFFFFFFFFL;
-    }
-
-    public void getDataAt(long offset, byte[] data) {
-        unsafe.copyMemory(null, this.pointer + offset, data, Unsafe.ARRAY_BYTE_BASE_OFFSET, data.length);
-    }
-
-    public void putByte(byte val) {
-        unsafe.putByte(this.pointer, val);
-        this.pointer += 1;
-    }
-
-    public void putShort(short val) {
-        unsafe.putShort(this.pointer, val);
-        this.pointer += 2;
-    }
-
-    public void putInt(int val) {
-        unsafe.putInt(this.pointer, val);
-        this.pointer += 4;
-    }
-
-    public void putLong(long val) {
-        unsafe.putLong(this.pointer, val);
-        this.pointer += 8;
-    }
-
-    public void putData(byte[] data) {
-        unsafe.copyMemory(data, Unsafe.ARRAY_BYTE_BASE_OFFSET, null, this.pointer, data.length);
-        this.pointer += data.length;
-    }
-
-    public void putByteAt(long offset, byte val) {
-        unsafe.putByte(this.pointer + offset, val);
-    }
-
-    public void putShortAt(long offset, short val) {
-        unsafe.putShort(this.pointer + offset, val);
-    }
-
-    public void putIntAt(long offset, int val) {
-        unsafe.putInt(this.pointer + offset, val);
-    }
-
-    public void putLongAt(long offset, long val) {
-        unsafe.putLong(this.pointer + offset, val);
-    }
-
-    public void putDataAt(long offset, byte[] data) {
-        unsafe.copyMemory(data, Unsafe.ARRAY_BYTE_BASE_OFFSET, null, this.pointer + offset, data.length);
-    }
-
-    @Override
-    public void close() {
-        if (this.closed) {
-            return;
+    private static NativeBuffer wrap(FileMappingSource source, ByteOrder order) {
+        if (order == ByteOrder.nativeOrder()) {
+            return new NativeBufferNE(source, source.address, source.length);
+        } else {
+            return new NativeBufferRE(source, source.address, source.length);
         }
-        try {
-            if (this.fromChannel) {
-                try {
-                    channelUnmap0.invoke(null, this.address, roundTo4096(this.length));
-                } catch (ReflectiveOperationException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                if (NativeMMap.munmap(this.address, this.length) == -1) {
-                    System.err.println("munmap " + this.source + ": " + NativeErrno.errName());
-                }
+    }
+
+    private static long roundTo4096(long i) {
+        return (i + 0xfffL) & ~0xfffL;
+    }
+
+    private static abstract class FileMappingSource implements Closeable {
+        protected final long address;
+        protected final long length;
+
+        protected FileMappingSource(long address, long length) {
+            this.address = address;
+            this.length = length;
+        }
+
+        @Override
+        public abstract void close();
+
+        @Override
+        protected void finalize() throws Throwable {
+            this.close();
+            super.finalize();
+        }
+    }
+
+    private static final class FileMappingFromChannel extends FileMappingSource {
+        private final String name;
+        private boolean closed;
+
+        public FileMappingFromChannel(FileChannel channel, long address, long length) {
+            super(address, length);
+            this.name = Channels.toString(channel);
+        }
+
+        @Override
+        public void close() {
+            if (this.closed) {
+                return;
             }
-        } finally {
-            this.closed = true;
+            try {
+                channelUnmap0.invoke(null, this.address, roundTo4096(this.length));
+            } catch (ReflectiveOperationException e) {
+                e.printStackTrace();
+            } finally {
+                this.closed = true;
+            }
+        }
+
+        @Override
+        public String toString() {
+            return "mmap_" + this.name;
         }
     }
 
-    @Override
-    public String toString() {
-        return "mmap_" + this.source;
+    private static final class FileMappingFromUnix extends FileMappingSource {
+        private final String name;
+        private boolean closed;
+
+        public FileMappingFromUnix(String name, long address, long length) {
+            super(address, length);
+            this.name = name;
+        }
+
+        @Override
+        public void close() {
+            if (this.closed) {
+                return;
+            }
+            try {
+                if (NativeMMap.munmap(this.address, this.length) == -1) {
+                    System.err.println("munmap " + this.name + ": " + NativeErrno.errName());
+                }
+            } finally {
+                this.closed = true;
+            }
+        }
+
+        @Override
+        public String toString() {
+            return "mmap_" + this.name;
+        }
     }
 
-    @Override
-    protected void finalize() throws Throwable {
-        this.close();
-        super.finalize();
+    private FileMapping() {
     }
 }

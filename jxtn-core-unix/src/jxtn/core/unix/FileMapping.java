@@ -29,7 +29,6 @@ package jxtn.core.unix;
 import java.io.Closeable;
 import java.io.IOException;
 import java.lang.reflect.Method;
-import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;
 import java.nio.file.Path;
 import sun.nio.ch.FileChannelImpl;
@@ -63,11 +62,6 @@ public final class FileMapping {
 
     public static NativeBuffer create(FileChannel channel, long length, boolean canWrite)
             throws IOException {
-        return create(channel, length, canWrite, ByteOrder.nativeOrder());
-    }
-
-    public static NativeBuffer create(FileChannel channel, long length, boolean canWrite, ByteOrder order)
-            throws IOException {
         int imode = canWrite ? 1 : 0;
         long address;
         try {
@@ -76,14 +70,10 @@ public final class FileMapping {
             throw new IOException(e.getCause());
         }
         FileMappingFromChannel source = new FileMappingFromChannel(channel, address, length);
-        return wrap(source, order);
+        return wrap(source);
     }
 
     public static NativeBuffer tryCreate(Path path, int prot, int flags) {
-        return tryCreate(path, prot, flags, ByteOrder.nativeOrder());
-    }
-
-    public static NativeBuffer tryCreate(Path path, int prot, int flags, ByteOrder order) {
         String name = path.toString();
         int rw = 0;
         if ((prot & NativeMMap.PROT_READ) != 0 || (prot & NativeMMap.PROT_EXEC) != 0) {
@@ -114,29 +104,21 @@ public final class FileMapping {
             NativeIO.close(fd);
         }
         FileMappingFromUnix source = new FileMappingFromUnix(name, address, length);
-        return wrap(source, order);
+        return wrap(source);
     }
 
     public static NativeBuffer tryCreate(int fd, long offset, long length, int prot, int flags) {
-        return tryCreate(fd, offset, length, prot, flags, ByteOrder.nativeOrder());
-    }
-
-    public static NativeBuffer tryCreate(int fd, long offset, long length, int prot, int flags, ByteOrder order) {
         String name = "fd=" + fd;
         long address = NativeMMap.mmap(0L, length, prot, flags, fd, offset);
         if (address == NativeMMap.MAP_FAILED) {
             return null;
         }
         FileMappingFromUnix source = new FileMappingFromUnix(name, address, length);
-        return wrap(source, order);
+        return wrap(source);
     }
 
-    private static NativeBuffer wrap(FileMappingSource source, ByteOrder order) {
-        if (order == ByteOrder.nativeOrder()) {
-            return new NativeBufferNE(source, source.address, source.length);
-        } else {
-            return new NativeBufferRE(source, source.address, source.length);
-        }
+    private static NativeBuffer wrap(FileMappingSource source) {
+        return new NativeBuffer(source, source.address, source.length);
     }
 
     private static long roundTo4096(long i) {

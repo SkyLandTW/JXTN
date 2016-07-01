@@ -1,106 +1,217 @@
-/*
- * This is free and unencumbered software released into the public domain.
- *
- * Anyone is free to copy, modify, publish, use, compile, sell, or
- * distribute this software, either in source code form or as a compiled
- * binary, for any purpose, commercial or non-commercial, and by any
- * means.
- *
- * In jurisdictions that recognize copyright laws, the author or authors
- * of this software dedicate any and all copyright interest in the
- * software to the public domain. We make this dedication for the benefit
- * of the public at large and to the detriment of our heirs and
- * successors. We intend this dedication to be an overt act of
- * relinquishment in perpetuity of all present and future rights to this
- * software under copyright law.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
- * IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
- * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
- * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
- * OTHER DEALINGS IN THE SOFTWARE.
- *
- * For more information, please refer to <http://unlicense.org/>
- */
 package jxtn.core.unix;
 
 import java.io.Closeable;
-import java.nio.ByteBuffer;
+import java.io.IOException;
 import java.nio.ByteOrder;
+import sun.misc.Unsafe;
 
-/**
- * {@link ByteBuffer}-like wrapper for unsafe/native memory block
- *
- * @author aqd
- */
-public interface NativeBuffer extends Closeable {
+public class NativeBuffer implements Closeable {
 
-    ByteOrder order();
+    private static final Unsafe unsafe = Memory.unsafe;
 
-    boolean hasRemaining();
+    private final Closeable source;
+    private final long address;
+    private final long length;
 
-    long length();
+    private long pointer;
+    private boolean swapped;
+    private boolean closed;
 
-    void move(long relativePosition);
+    public NativeBuffer(Closeable source, long address, long length) {
+        this.source = source;
+        this.address = address;
+        this.length = length;
+        //
+        this.pointer = address;
+        this.swapped = false;
+    }
 
-    long position();
+    public final ByteOrder order() {
+        if (this.swapped) {
+            return ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN
+                    ? ByteOrder.BIG_ENDIAN : ByteOrder.LITTLE_ENDIAN;
+        } else {
+            return ByteOrder.nativeOrder();
+        }
+    }
 
-    void position(long absolutePosition);
+    public final void order(ByteOrder newOrder) {
+        this.swapped = newOrder != ByteOrder.nativeOrder();
+    }
 
-    byte getByte();
+    public final boolean hasRemaining() {
+        return (this.pointer - this.address) < this.length;
+    }
 
-    short getShort();
+    public final long length() {
+        return this.length;
+    }
 
-    int getInt();
+    public final void move(long relativePosition) {
+        this.pointer += relativePosition;
+    }
 
-    long getLong();
+    public final long position() {
+        return this.pointer - this.address;
+    }
 
-    short getUByte();
+    public final void position(long absolutePosition) {
+        this.pointer = this.address + absolutePosition;
+    }
 
-    int getUShort();
+    public final byte getByte() {
+        byte value = unsafe.getByte(this.pointer);
+        this.pointer += 1;
+        return value;
+    }
 
-    long getUInt();
+    public final short getShort() {
+        short value = unsafe.getShort(this.pointer);
+        this.pointer += 2;
+        return this.swapped ? Short.reverseBytes(value) : value;
+    }
 
-    void getData(byte[] data);
+    public final int getInt() {
+        int value = unsafe.getInt(this.pointer);
+        this.pointer += 4;
+        return this.swapped ? Integer.reverseBytes(value) : value;
+    }
 
-    byte getByteAt(long offset);
+    public final long getLong() {
+        long value = unsafe.getLong(this.pointer);
+        this.pointer += 8;
+        return this.swapped ? Long.reverseBytes(value) : value;
+    }
 
-    short getShortAt(long offset);
+    public final short getUByte() {
+        byte value = unsafe.getByte(this.pointer);
+        this.pointer += 1;
+        return (short) (value & 0xFF);
+    }
 
-    int getIntAt(long offset);
+    public final int getUShort() {
+        short value = unsafe.getShort(this.pointer);
+        this.pointer += 2;
+        return (this.swapped ? Short.reverseBytes(value) : value) & 0xFFFF;
+    }
 
-    long getLongAt(long offset);
+    public final long getUInt() {
+        int value = unsafe.getInt(this.pointer);
+        this.pointer += 4;
+        return (this.swapped ? Integer.reverseBytes(value) : value) & 0xFFFFFFFFL;
+    }
 
-    short getUByteAt(long offset);
+    public final void getData(byte[] data) {
+        unsafe.copyMemory(null, this.pointer, data, Unsafe.ARRAY_BYTE_BASE_OFFSET, data.length);
+        this.pointer += data.length;
+    }
 
-    int getUShortAt(long offset);
+    public final byte getByteAt(long offset) {
+        return unsafe.getByte(this.pointer + offset);
+    }
 
-    long getUIntAt(long offset);
+    public final short getShortAt(long offset) {
+        short value = unsafe.getShort(this.pointer + offset);
+        return this.swapped ? Short.reverseBytes(value) : value;
+    }
 
-    void getDataAt(long offset, byte[] data);
+    public final int getIntAt(long offset) {
+        int value = unsafe.getInt(this.pointer + offset);
+        return this.swapped ? Integer.reverseBytes(value) : value;
+    }
 
-    void putByte(byte val);
+    public final long getLongAt(long offset) {
+        long value = unsafe.getLong(this.pointer + offset);
+        return this.swapped ? Long.reverseBytes(value) : value;
+    }
 
-    void putShort(short val);
+    public final short getUByteAt(long offset) {
+        return (short) (unsafe.getByte(this.pointer + offset) & 0xFF);
+    }
 
-    void putInt(int val);
+    public final int getUShortAt(long offset) {
+        short value = unsafe.getShort(this.pointer + offset);
+        return (this.swapped ? Short.reverseBytes(value) : value) & 0xFFFF;
+    }
 
-    void putLong(long val);
+    public final long getUIntAt(long offset) {
+        int value = unsafe.getInt(this.pointer + offset);
+        return (this.swapped ? Integer.reverseBytes(value) : value) & 0xFFFFFFFFL;
+    }
 
-    void putData(byte[] data);
+    public final void getDataAt(long offset, byte[] data) {
+        unsafe.copyMemory(null, this.pointer + offset, data, Unsafe.ARRAY_BYTE_BASE_OFFSET, data.length);
+    }
 
-    void putByteAt(long offset, byte val);
+    public final void putByte(byte val) {
+        unsafe.putByte(this.pointer, val);
+        this.pointer += 1;
+    }
 
-    void putShortAt(long offset, short val);
+    public final void putShort(short val) {
+        unsafe.putShort(this.pointer, this.swapped ? Short.reverseBytes(val) : val);
+        this.pointer += 2;
+    }
 
-    void putIntAt(long offset, int val);
+    public final void putInt(int val) {
+        unsafe.putInt(this.pointer, this.swapped ? Integer.reverseBytes(val) : val);
+        this.pointer += 4;
+    }
 
-    void putLongAt(long offset, long val);
+    public final void putLong(long val) {
+        unsafe.putLong(this.pointer, this.swapped ? Long.reverseBytes(val) : val);
+        this.pointer += 8;
+    }
 
-    void putDataAt(long offset, byte[] data);
+    public final void putData(byte[] data) {
+        unsafe.copyMemory(data, Unsafe.ARRAY_BYTE_BASE_OFFSET, null, this.pointer, data.length);
+        this.pointer += data.length;
+    }
+
+    public final void putByteAt(long offset, byte val) {
+        unsafe.putByte(this.pointer + offset, val);
+    }
+
+    public final void putShortAt(long offset, short val) {
+        unsafe.putShort(this.pointer + offset, this.swapped ? Short.reverseBytes(val) : val);
+    }
+
+    public final void putIntAt(long offset, int val) {
+        unsafe.putInt(this.pointer + offset, this.swapped ? Integer.reverseBytes(val) : val);
+    }
+
+    public final void putLongAt(long offset, long val) {
+        unsafe.putLong(this.pointer + offset, this.swapped ? Long.reverseBytes(val) : val);
+    }
+
+    public final void putDataAt(long offset, byte[] data) {
+        unsafe.copyMemory(data, Unsafe.ARRAY_BYTE_BASE_OFFSET, null, this.pointer + offset, data.length);
+    }
 
     @Override
-    void close();
+    public final void close() {
+        if (this.closed) {
+            return;
+        }
+        try {
+            if (this.source != null) {
+                this.source.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            this.closed = true;
+        }
+    }
+
+    @Override
+    public final String toString() {
+        return "nbuf_" + this.source;
+    }
+
+    @Override
+    protected final void finalize() throws Throwable {
+        this.close();
+        super.finalize();
+    }
 }

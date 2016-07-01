@@ -38,12 +38,12 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeINotify_init1(JNIEnv *env, jcla
     return ERR(inotify_init1(flags));
 }
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeINotify_add_watch(JNIEnv *env, jclass thisObj,
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeINotify_add_1watch(JNIEnv *env, jclass thisObj,
         jint fd, jbyteArray pathname, jint mask) {
     return ERR(inotify_add_watch(fd, resolveCS(pathname), UI(mask)));
 }
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeINotify_rm_watch(JNIEnv *env, jclass thisObj,
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeINotify_rm_1watch(JNIEnv *env, jclass thisObj,
         jint fd, jint wd) {
     return ERR(inotify_rm_watch(fd, wd));
 }

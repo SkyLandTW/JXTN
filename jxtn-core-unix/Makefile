@@ -8,7 +8,7 @@ OBJDIR := obj
 SRCDIR := src-jni
 
 DEP = $(SRCDIR)/dirent.h $(SRCDIR)/internals.h Makefile
-SRC = dirs.c dirs2.c env.c errno.c files.c files2.c io.c limits.c mmap.c prctl.c prctl2.c proc.c proc2.c sigs.c stat.c stdio.c wait.c xattr.c
+SRC = dirs.c dirs2.c env.c errno.c files.c files2.c inotify.c io.c limits.c mmap.c prctl.c prctl2.c proc.c proc2.c sigs.c stat.c stdio.c wait.c xattr.c
 OBJ = $(patsubst %.c,$(OBJDIR)/%.o,$(SRC))
 BIN = ../dist/libjxtn-core-unix.so
 

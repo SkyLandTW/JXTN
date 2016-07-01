@@ -39,14 +39,39 @@ public final class Dirent64 {
     public static final byte DT_UNKNOWN = 0; /* The file type is unknown. */
     public static final byte DT_FIFO = 1; /* This is a named pipe (FIFO). */
     public static final byte DT_CHR = 2; /* This is a character device. */
-    public static final byte DT_DIR = 3; /* This is a directory. */
+    public static final byte DT_DIR = 4; /* This is a directory. */
     public static final byte DT_BLK = 6; /* This is a block device. */
     public static final byte DT_REG = 8; /* This is a regular file. */
     public static final byte DT_LNK = 10; /* This is a symbolic link. */
     public static final byte DT_SOCK = 12; /* This is a UNIX domain socket. */
     public static final byte DT_WHT = 14; /* */
 
-    static final int BUFFER_SIZE = 8 + 8 + 2 + 1 + 256;
+    public static final int BUFFER_SIZE = 8 + 8 + 2 + 1 + NativeLimits.NAME_MAX + 1;
+
+    public static String d_typeName(int d_type) {
+        switch (d_type) {
+        case DT_UNKNOWN:
+            return "unknown";
+        case DT_FIFO:
+            return "FIFO";
+        case DT_CHR:
+            return "character device";
+        case DT_DIR:
+            return "directory";
+        case DT_BLK:
+            return "block device";
+        case DT_REG:
+            return "regular";
+        case DT_LNK:
+            return "symbolic link";
+        case DT_SOCK:
+            return "UNIX domain socket";
+        case DT_WHT:
+            return "WHT";
+        default:
+            return Integer.toString(d_type);
+        }
+    }
 
     /**
      * 64-bit inode number
@@ -75,13 +100,6 @@ public final class Dirent64 {
 
     private String d_nameStr;
 
-    public String d_name() {
-        if (this.d_nameStr == null) {
-            this.d_nameStr = new String(this.d_name, 0, this.d_name.length - 1);
-        }
-        return this.d_nameStr;
-    }
-
     Dirent64(ByteBuffer buffer) {
         buffer.order(ByteOrder.nativeOrder());
         int start = buffer.position();
@@ -91,5 +109,30 @@ public final class Dirent64 {
         this.d_type = buffer.get();                                     // 1
         this.d_name = CStrings.from(buffer, NativeLimits.NAME_MAX + 1); // 256
         buffer.position(start + this.d_reclen);
+    }
+
+    public String d_name() {
+        if (this.d_nameStr == null) {
+            this.d_nameStr = new String(this.d_name, 0, this.d_name.length - 1);
+        }
+        return this.d_nameStr;
+    }
+
+    public boolean isSelf() {
+        return this.d_name.length >= 2
+                && this.d_name[0] == '.'
+                && this.d_name[1] == '\0';
+    }
+
+    public boolean isParent() {
+        return this.d_name.length >= 3
+                && this.d_name[0] == '.'
+                && this.d_name[1] == '.'
+                && this.d_name[2] == '\0';
+    }
+
+    @Override
+    public String toString() {
+        return this.d_name();
     }
 }

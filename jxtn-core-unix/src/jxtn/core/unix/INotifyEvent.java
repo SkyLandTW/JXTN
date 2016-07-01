@@ -28,10 +28,65 @@ package jxtn.core.unix;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.util.ArrayList;
+import java.util.List;
 
 public final class INotifyEvent {
 
-    public static final int BUFFER_SIZE = 4 + 4 + 4 + 4 + 256;
+    public static final int BUFFER_SIZE = 4 + 4 + 4 + 4 + NativeLimits.NAME_MAX + 1;
+
+    public static String maskName(long mask) {
+        List<String> maskNames = new ArrayList<>();
+        if ((mask & NativeINotify.IN_ACCESS) != 0) {
+            maskNames.add("IN_ACCESS");
+        }
+        if ((mask & NativeINotify.IN_MODIFY) != 0) {
+            maskNames.add("IN_MODIFY");
+        }
+        if ((mask & NativeINotify.IN_ATTRIB) != 0) {
+            maskNames.add("IN_ATTRIB");
+        }
+        if ((mask & NativeINotify.IN_CLOSE_WRITE) != 0) {
+            maskNames.add("IN_CLOSE_WRITE");
+        }
+        if ((mask & NativeINotify.IN_CLOSE_NOWRITE) != 0) {
+            maskNames.add("IN_CLOSE_NOWRITE");
+        }
+        if ((mask & NativeINotify.IN_OPEN) != 0) {
+            maskNames.add("IN_OPEN");
+        }
+        if ((mask & NativeINotify.IN_MOVED_FROM) != 0) {
+            maskNames.add("IN_MOVED_FROM");
+        }
+        if ((mask & NativeINotify.IN_MOVED_TO) != 0) {
+            maskNames.add("IN_MOVED_TO");
+        }
+        if ((mask & NativeINotify.IN_CREATE) != 0) {
+            maskNames.add("IN_CREATE");
+        }
+        if ((mask & NativeINotify.IN_DELETE) != 0) {
+            maskNames.add("IN_DELETE");
+        }
+        if ((mask & NativeINotify.IN_DELETE_SELF) != 0) {
+            maskNames.add("IN_DELETE_SELF");
+        }
+        if ((mask & NativeINotify.IN_MOVE_SELF) != 0) {
+            maskNames.add("IN_MOVE_SELF");
+        }
+        if ((mask & NativeINotify.IN_UNMOUNT) != 0) {
+            maskNames.add("IN_UNMOUNT");
+        }
+        if ((mask & NativeINotify.IN_Q_OVERFLOW) != 0) {
+            maskNames.add("IN_Q_OVERFLOW");
+        }
+        if ((mask & NativeINotify.IN_IGNORED) != 0) {
+            maskNames.add("IN_IGNORED");
+        }
+        if ((mask & NativeINotify.IN_ISDIR) != 0) {
+            maskNames.add("IN_ISDIR");
+        }
+        return String.join(",", maskNames);
+    }
 
     public final int wd;
     public final long mask;
@@ -43,7 +98,7 @@ public final class INotifyEvent {
 
     public String name() {
         if (this.nameStr == null) {
-            this.nameStr = new String(this.name, 0, this.name.length - 1);
+            this.nameStr = CStrings.toString(this.name);
         }
         return this.nameStr;
     }
@@ -56,5 +111,10 @@ public final class INotifyEvent {
         this.len = buffer.getInt() & 0xFFFFFFFF;        // 4
         this.name = new byte[this.len];
         buffer.get(this.name);                          // [len]
+    }
+
+    @Override
+    public String toString() {
+        return this.wd + "|" + maskName(this.mask) + "|" + this.name();
     }
 }

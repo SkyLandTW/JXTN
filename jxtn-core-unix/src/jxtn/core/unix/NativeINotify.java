@@ -74,6 +74,11 @@ public final class NativeINotify extends JNIBase {
     public static final int IN_ISDIR = 0x40000000; /* Event occurred against dir. */
     public static final int IN_ONESHOT = 0x80000000; /* Only send event once. */
 
+    public static final int IN_ALL_EVENTS = (IN_ACCESS | IN_MODIFY | IN_ATTRIB | IN_CLOSE_WRITE
+            | IN_CLOSE_NOWRITE | IN_OPEN | IN_MOVED_FROM
+            | IN_MOVED_TO | IN_CREATE | IN_DELETE
+            | IN_DELETE_SELF | IN_MOVE_SELF);
+
     /* */
 
     static final int DEFAULT_INOTIFY_BUFFER_SIZE = INotifyEvent.BUFFER_SIZE << 8;
@@ -114,6 +119,7 @@ public final class NativeINotify extends JNIBase {
         long ret;
         while ((ret = NativeIO.read(fd, inotify_ary, 0, inotify_ary.length)) > 0) {
             ByteBuffer inotify_buf = ByteBuffer.wrap(inotify_ary);
+            inotify_buf.limit((int) ret);
             total += ret;
             while (inotify_buf.hasRemaining()) {
                 INotifyEvent event = new INotifyEvent(inotify_buf);

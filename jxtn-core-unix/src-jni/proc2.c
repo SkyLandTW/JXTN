@@ -79,6 +79,8 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc2_pexec(JNIEnv *env, jclass
     return ERR(pexec(fd_stdin, fd_stdout, fd_stderr, resolveCS(filename), argv_b, child_environ));
 }
 
+#define DT_DIR 4
+
 static void closefrom(int lowfd) {
     struct dirent **namelist;
     int n = scandir("/proc/self/fd", &namelist, NULL, alphasort);

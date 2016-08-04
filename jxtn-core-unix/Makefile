@@ -1,7 +1,7 @@
 vpath %.c ../src-jni
 
 CC = gcc
-CFLAGS = -c -fPIC -Wall -Wconversion -Wc++-compat -Werror -std=gnu99 -I$$JAVA_HOME/include -I$$JAVA_HOME/include/linux
+CFLAGS = -c -g -O2 -fPIC -Wall -Wconversion -Wc++-compat -Werror -std=gnu99 -I$$JAVA_HOME/include -I$$JAVA_HOME/include/linux
 LDFLAGS =
 
 OBJDIR := obj

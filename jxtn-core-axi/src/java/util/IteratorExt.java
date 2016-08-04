@@ -517,7 +517,7 @@ public interface IteratorExt<E> {
      */
     default <V extends Comparable<? super V>, TException extends Exception> E nextOfMax(
             FunctionEx<? super E, ? extends V, ? extends TException> getValue)
-                    throws TException {
+            throws TException {
         Iterator<E> thiz = (Iterator<E>) this;
         if (!thiz.hasNext()) {
             throw new NoSuchElementException();
@@ -546,7 +546,7 @@ public interface IteratorExt<E> {
      */
     default <TException extends Exception> E nextOfMaxDouble(
             ToDoubleFunctionEx<? super E, ? extends TException> getValue)
-                    throws TException {
+            throws TException {
         Iterator<E> thiz = (Iterator<E>) this;
         if (!thiz.hasNext()) {
             throw new NoSuchElementException();
@@ -632,7 +632,7 @@ public interface IteratorExt<E> {
      */
     default <V extends Comparable<? super V>, TException extends Exception> E nextOfMin(
             FunctionEx<? super E, ? extends V, ? extends TException> getValue)
-                    throws TException {
+            throws TException {
         Iterator<E> thiz = (Iterator<E>) this;
         if (!thiz.hasNext()) {
             throw new NoSuchElementException();
@@ -661,7 +661,7 @@ public interface IteratorExt<E> {
      */
     default <TException extends Exception> E nextOfMinDouble(
             ToDoubleFunctionEx<? super E, ? extends TException> getValue)
-                    throws TException {
+            throws TException {
         Iterator<E> thiz = (Iterator<E>) this;
         if (!thiz.hasNext()) {
             throw new NoSuchElementException();
@@ -874,7 +874,7 @@ public interface IteratorExt<E> {
      */
     default <TException extends Exception> ArrayList<E> remainingToArrayListFiltered(
             PredicateEx<? super E, ? extends TException> condition)
-                    throws TException {
+            throws TException {
         Iterator<E> thiz = (Iterator<E>) this;
         ArrayList<E> coll = new ArrayList<>();
         while (thiz.hasNext()) {
@@ -897,7 +897,7 @@ public interface IteratorExt<E> {
      */
     default <R, TException extends Exception> ArrayList<R> remainingToArrayListMapped(
             FunctionEx<? super E, ? extends R, ? extends TException> mapper)
-                    throws TException {
+            throws TException {
         Iterator<E> thiz = (Iterator<E>) this;
         ArrayList<R> coll = new ArrayList<>();
         while (thiz.hasNext()) {
@@ -956,7 +956,7 @@ public interface IteratorExt<E> {
      */
     default <K, KException extends Exception> HashMap<K, E> remainingToHashMap(
             FunctionEx<? super E, ? extends K, ? extends KException> getKey)
-                    throws KException {
+            throws KException {
         Iterator<E> thiz = (Iterator<E>) this;
         HashMap<K, E> coll = new HashMap<>();
         while (thiz.hasNext()) {
@@ -983,7 +983,7 @@ public interface IteratorExt<E> {
     default <K, V, KException extends Exception, VException extends Exception> HashMap<K, V> remainingToHashMap(
             FunctionEx<? super E, ? extends K, ? extends KException> getKey,
             FunctionEx<? super E, ? extends V, ? extends VException> getValue)
-                    throws KException, VException {
+            throws KException, VException {
         Iterator<E> thiz = (Iterator<E>) this;
         HashMap<K, V> coll = new HashMap<>();
         while (thiz.hasNext()) {
@@ -1006,7 +1006,7 @@ public interface IteratorExt<E> {
      */
     default <K, KException extends Exception> HashMap<K, ArrayList<E>> remainingToHashMapGrouped(
             FunctionEx<? super E, ? extends K, ? extends KException> getKey)
-                    throws KException {
+            throws KException {
         Iterator<E> thiz = (Iterator<E>) this;
         HashMap<K, ArrayList<E>> result = new HashMap<>();
         while (thiz.hasNext()) {
@@ -1039,7 +1039,7 @@ public interface IteratorExt<E> {
             remainingToHashMapGrouped(
                     FunctionEx<? super E, ? extends K, ? extends KException> getKey,
                     FunctionEx<? super E, ? extends V, ? extends VException> getValue)
-                            throws KException, VException {
+                    throws KException, VException {
         Iterator<E> thiz = (Iterator<E>) this;
         HashMap<K, ArrayList<V>> result = new HashMap<>();
         while (thiz.hasNext()) {
@@ -1084,7 +1084,7 @@ public interface IteratorExt<E> {
      */
     default <K, KException extends Exception> TreeMap<K, E> remainingToTreeMap(
             FunctionEx<? super E, ? extends K, ? extends KException> getKey)
-                    throws KException {
+            throws KException {
         Iterator<E> thiz = (Iterator<E>) this;
         TreeMap<K, E> coll = new TreeMap<>();
         while (thiz.hasNext()) {
@@ -1111,7 +1111,7 @@ public interface IteratorExt<E> {
     default <K, V, KException extends Exception, VException extends Exception> TreeMap<K, V> remainingToTreeMap(
             FunctionEx<? super E, ? extends K, ? extends KException> getKey,
             FunctionEx<? super E, ? extends V, ? extends VException> getValue)
-                    throws KException, VException {
+            throws KException, VException {
         Iterator<E> thiz = (Iterator<E>) this;
         TreeMap<K, V> coll = new TreeMap<>();
         while (thiz.hasNext()) {
@@ -1134,7 +1134,7 @@ public interface IteratorExt<E> {
      */
     default <K, KException extends Exception> TreeMap<K, ArrayList<E>> remainingToTreeMapGrouped(
             FunctionEx<? super E, ? extends K, ? extends KException> getKey)
-                    throws KException {
+            throws KException {
         Iterator<E> thiz = (Iterator<E>) this;
         TreeMap<K, ArrayList<E>> result = new TreeMap<>();
         while (thiz.hasNext()) {
@@ -1167,7 +1167,7 @@ public interface IteratorExt<E> {
             remainingToTreeMapGrouped(
                     FunctionEx<? super E, ? extends K, ? extends KException> getKey,
                     FunctionEx<? super E, ? extends V, ? extends VException> getValue)
-                            throws KException, VException {
+                    throws KException, VException {
         Iterator<E> thiz = (Iterator<E>) this;
         TreeMap<K, ArrayList<V>> result = new TreeMap<>();
         while (thiz.hasNext()) {
@@ -1182,6 +1182,23 @@ public interface IteratorExt<E> {
             list.add(value);
         }
         return result;
+    }
+
+    /**
+     * 用目前項目值建立{@link TreeSet}。
+     * <p>
+     * 重複值會被重疊覆蓋，後面的優先。
+     * </p>
+     *
+     * @return 包含目前項目的{@link TreeSet}
+     */
+    default TreeSet<E> remainingToTreeSet() {
+        Iterator<E> thiz = (Iterator<E>) this;
+        TreeSet<E> coll = new TreeSet<>();
+        while (thiz.hasNext()) {
+            coll.add(thiz.next());
+        }
+        return coll;
     }
 
     //////////////////////////////////////////////////////////////////////////
@@ -1200,7 +1217,7 @@ public interface IteratorExt<E> {
      */
     default <U, TException extends Exception> U reduceRemaining(
             U identity, BiFunctionEx<U, ? super E, U, TException> accumulator)
-                    throws TException {
+            throws TException {
         Iterator<E> thiz = (Iterator<E>) this;
         U result = identity;
         while (thiz.hasNext()) {
@@ -1241,7 +1258,7 @@ public interface IteratorExt<E> {
      */
     default <TException extends Exception> Double avgRemainingDouble(
             ToDoubleFunctionEx<? super E, ? extends TException> getValue)
-                    throws TException {
+            throws TException {
         Iterator<E> thiz = (Iterator<E>) this;
         double total = 0;
         double count = 0;
@@ -1322,7 +1339,7 @@ public interface IteratorExt<E> {
      */
     default <TException extends Exception> Double maxRemainingDouble(
             ToDoubleFunctionEx<? super E, ? extends TException> getValue)
-                    throws TException {
+            throws TException {
         Iterator<E> thiz = (Iterator<E>) this;
         Double maxValue = null;
         while (thiz.hasNext()) {
@@ -1391,7 +1408,7 @@ public interface IteratorExt<E> {
      */
     default <TException extends Exception> Double minRemainingDouble(
             ToDoubleFunctionEx<? super E, ? extends TException> getValue)
-                    throws TException {
+            throws TException {
         Iterator<E> thiz = (Iterator<E>) this;
         Double minValue = null;
         while (thiz.hasNext()) {
@@ -1460,7 +1477,7 @@ public interface IteratorExt<E> {
      */
     default <TException extends Exception> double sumRemainingDouble(
             ToDoubleFunctionEx<? super E, ? extends TException> getValue)
-                    throws TException {
+            throws TException {
         Iterator<E> thiz = (Iterator<E>) this;
         double sumValue = 0;
         while (thiz.hasNext()) {

@@ -15,3 +15,4 @@ Provides patches to compilers and IDEs for bugfixes and new features.
  - Eclipse 4.5 Mars
  - Eclipse 4.5.1 Mars 1
  - Eclipse 4.5.2 Mars 2
+ - Eclipse 4.6 Neon

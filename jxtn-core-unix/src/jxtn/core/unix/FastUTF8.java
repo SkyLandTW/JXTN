@@ -112,6 +112,96 @@ public final class FastUTF8 {
      * @param dstBuffer destination buffer to store the resulting UTF-8 bytes
      * @return number of UTF-8 bytes encoded from {@code s}, not including the NUL termination at the end.
      */
+    public static int encode(String s, byte[] dstBuffer) {
+        return encode(s, dstBuffer, 0, dstBuffer.length);
+    }
+
+    public static int encode(String s, byte[] dstBuffer, int dstOffset, int dstLength) {
+        int dPos = dstOffset;
+        int dEnd = dstOffset + Math.min(dstBuffer.length - dstOffset, dstLength) - 1 /* NUL */;
+        int sLen = s.length();
+        for (int i = 0; i < sLen; i++) {
+            char c = s.charAt(i);
+            if (c < 0x80) {
+                if (dPos > dEnd - 1) {
+                    break;
+                }
+                // Have at most seven bits
+                dstBuffer[dPos] = (byte) c;
+                dPos += 1;
+            } else if (c < 0x800) {
+                if (dPos > dEnd - 2) {
+                    break;
+                }
+                // 2 bytes, 11 bits
+                dstBuffer[dPos + 0] = (byte) (0xc0 | (c >>> 6));
+                dstBuffer[dPos + 1] = (byte) (0x80 | (c & 0x3f));
+                dPos += 2;
+            } else {
+                if (dPos > dEnd - 3) {
+                    break;
+                }
+                // 3 bytes, 16 bits
+                dstBuffer[dPos + 0] = (byte) (0xe0 | ((c >>> 12)));
+                dstBuffer[dPos + 1] = (byte) (0x80 | ((c >>> 6) & 0x3f));
+                dstBuffer[dPos + 2] = (byte) (0x80 | (c & 0x3f));
+                dPos += 3;
+            }
+        }
+        return dPos - dstOffset;
+    }
+
+    public static int encode(char[] s, byte[] dstBuffer) {
+        return encode(s, 0, s.length, dstBuffer, 0, dstBuffer.length);
+    }
+
+    public static int encode(char[] srcBuffer, int srcOffset, int srcLength,
+            byte[] dstBuffer, int dstOffset, int dstLength) {
+        int dPos = dstOffset;
+        int dEnd = dstOffset + Math.min(dstBuffer.length - dstOffset, dstLength) - 1 /* NUL */;
+        int sEnd = srcOffset + srcLength;
+        for (int i = srcOffset; i < sEnd; i++) {
+            char c = srcBuffer[i];
+            if (c < 0x80) {
+                if (dPos > dEnd - 1) {
+                    break;
+                }
+                // Have at most seven bits
+                dstBuffer[dPos] = (byte) c;
+                dPos += 1;
+            } else if (c < 0x800) {
+                if (dPos > dEnd - 2) {
+                    break;
+                }
+                // 2 bytes, 11 bits
+                dstBuffer[dPos + 0] = (byte) (0xc0 | (c >>> 6));
+                dstBuffer[dPos + 1] = (byte) (0x80 | (c & 0x3f));
+                dPos += 2;
+            } else {
+                if (dPos > dEnd - 3) {
+                    break;
+                }
+                // 3 bytes, 16 bits
+                dstBuffer[dPos + 0] = (byte) (0xe0 | ((c >>> 12)));
+                dstBuffer[dPos + 1] = (byte) (0x80 | ((c >>> 6) & 0x3f));
+                dstBuffer[dPos + 2] = (byte) (0x80 | (c & 0x3f));
+                dPos += 3;
+            }
+        }
+        return dPos - dstOffset;
+    }
+
+    /**
+     * Encode a {@link String} to UTF-8 C String (NUL-terminated) and store in specified destination array
+     * <p>
+     * If the length or the capacity of {@code dstBuffer} is insufficient, this method shall encode as much as it can
+     * and return the length of encoded UTF-8 bytes. There is no indication about the status of completion.
+     * </p>
+     *
+     * @param s string to encode
+     * @param dstBuffer destination buffer to store the resulting UTF-8 bytes
+     * @return number of UTF-8 bytes encoded from {@code s}, not including the NUL termination at the end.
+     */
     public static int encodeToCString(String s, byte[] dstBuffer) {
         return encodeToCString(s, dstBuffer, 0, dstBuffer.length);
     }
@@ -135,6 +225,47 @@ public final class FastUTF8 {
         int sLen = s.length();
         for (int i = 0; i < sLen; i++) {
             char c = s.charAt(i);
+            if (c < 0x80) {
+                if (dPos > dEnd - 1) {
+                    break;
+                }
+                // Have at most seven bits
+                dstBuffer[dPos] = (byte) c;
+                dPos += 1;
+            } else if (c < 0x800) {
+                if (dPos > dEnd - 2) {
+                    break;
+                }
+                // 2 bytes, 11 bits
+                dstBuffer[dPos + 0] = (byte) (0xc0 | (c >>> 6));
+                dstBuffer[dPos + 1] = (byte) (0x80 | (c & 0x3f));
+                dPos += 2;
+            } else {
+                if (dPos > dEnd - 3) {
+                    break;
+                }
+                // 3 bytes, 16 bits
+                dstBuffer[dPos + 0] = (byte) (0xe0 | ((c >>> 12)));
+                dstBuffer[dPos + 1] = (byte) (0x80 | ((c >>> 6) & 0x3f));
+                dstBuffer[dPos + 2] = (byte) (0x80 | (c & 0x3f));
+                dPos += 3;
+            }
+        }
+        dstBuffer[dPos] = 0;
+        return dPos - dstOffset;
+    }
+
+    public static int encodeToCString(char[] s, byte[] dstBuffer) {
+        return encodeToCString(s, 0, s.length, dstBuffer, 0, dstBuffer.length);
+    }
+
+    public static int encodeToCString(char[] srcBuffer, int srcOffset, int srcLength,
+            byte[] dstBuffer, int dstOffset, int dstLength) {
+        int dPos = dstOffset;
+        int dEnd = dstOffset + Math.min(dstBuffer.length - dstOffset, dstLength) - 1 /* NUL */;
+        int sEnd = srcOffset + srcLength;
+        for (int i = srcOffset; i < sEnd; i++) {
+            char c = srcBuffer[i];
             if (c < 0x80) {
                 if (dPos > dEnd - 1) {
                     break;

@@ -59,29 +59,14 @@ public final class NativeIO extends JNIBase {
 
     /* preadv */
 
-    public static long preadv(int fd, List<ByteBuffer> iovecs, long offset) {
-        byte[][] iov_bases = new byte[iovecs.size()][];
-        int[] iov_offs = new int[iovecs.size()];
-        long[] iov_lens = new long[iovecs.size()];
-        for (int i = 0; i < iovecs.size(); i++) {
-            ByteBuffer buf = iovecs.get(i);
-            iov_bases[i] = buf.array();
-            iov_offs[i] = buf.arrayOffset() + buf.position();
-            iov_lens[i] = buf.remaining();
-        }
-        long ret = preadv(fd, iov_bases, iov_offs, iov_lens, offset);
-        if (ret != -1L) {
-            long r = ret;
-            int i = 0;
-            while (r >= 0L) {
-                ByteBuffer buf = iovecs.get(i);
-                int len = (int) Math.min(r, iov_lens[i]);
-                buf.position(buf.position() + len);
-                r -= len;
-                i += 1;
-            }
-        }
-        return ret;
+    public static long preadv_arrays(int fd, List<byte[]> iovecs, long offset) {
+        IOVecs iov = IOVecs.fromArrays(iovecs);
+        return iov.end(preadv(fd, iov.iov_bases, iov.iov_offs, iov.iov_lens, offset));
+    }
+
+    public static long preadv_buffers(int fd, List<ByteBuffer> iovecs, long offset) {
+        IOVecs iov = IOVecs.fromBuffers(iovecs);
+        return iov.end(preadv(fd, iov.iov_bases, iov.iov_offs, iov.iov_lens, offset));
     }
 
     static native long preadv(int fd, byte[][] iov_bases, int[] iov_offs, long[] iov_lens, long offset);
@@ -104,29 +89,14 @@ public final class NativeIO extends JNIBase {
 
     /* pwritev */
 
-    public static long pwritev(int fd, List<ByteBuffer> iovecs, long offset) {
-        byte[][] iov_bases = new byte[iovecs.size()][];
-        int[] iov_offs = new int[iovecs.size()];
-        long[] iov_lens = new long[iovecs.size()];
-        for (int i = 0; i < iovecs.size(); i++) {
-            ByteBuffer buf = iovecs.get(i);
-            iov_bases[i] = buf.array();
-            iov_offs[i] = buf.arrayOffset() + buf.position();
-            iov_lens[i] = buf.remaining();
-        }
-        long ret = pwritev(fd, iov_bases, iov_offs, iov_lens, offset);
-        if (ret != -1L) {
-            long r = ret;
-            int i = 0;
-            while (r >= 0L) {
-                ByteBuffer buf = iovecs.get(i);
-                int len = (int) Math.min(r, iov_lens[i]);
-                buf.position(buf.position() + len);
-                r -= len;
-                i += 1;
-            }
-        }
-        return ret;
+    public static long pwritev_arrays(int fd, List<byte[]> iovecs, long offset) {
+        IOVecs iov = IOVecs.fromArrays(iovecs);
+        return iov.end(pwritev(fd, iov.iov_bases, iov.iov_offs, iov.iov_lens, offset));
+    }
+
+    public static long pwritev_buffers(int fd, List<ByteBuffer> iovecs, long offset) {
+        IOVecs iov = IOVecs.fromBuffers(iovecs);
+        return iov.end(pwritev(fd, iov.iov_bases, iov.iov_offs, iov.iov_lens, offset));
     }
 
     static native long pwritev(int fd, byte[][] iov_bases, int[] iov_offs, long[] iov_lens, long offset);
@@ -146,6 +116,20 @@ public final class NativeIO extends JNIBase {
     }
 
     static native long read(int fd, Object buf_base, long buf_offset, long count);
+
+    /* readv */
+
+    public static long readv_arrays(int fd, List<byte[]> iovecs) {
+        IOVecs iov = IOVecs.fromArrays(iovecs);
+        return iov.end(readv(fd, iov.iov_bases, iov.iov_offs, iov.iov_lens));
+    }
+
+    public static long readv_buffers(int fd, List<ByteBuffer> iovecs) {
+        IOVecs iov = IOVecs.fromBuffers(iovecs);
+        return iov.end(readv(fd, iov.iov_bases, iov.iov_offs, iov.iov_lens));
+    }
+
+    static native long readv(int fd, byte[][] iov_bases, int[] iov_offs, long[] iov_lens);
 
     /* sendfile */
 
@@ -167,6 +151,77 @@ public final class NativeIO extends JNIBase {
 
     static native long write(int fd, Object buf_base, long buf_offset, long count);
 
+    /* writev */
+
+    public static long writev_arrays(int fd, List<byte[]> iovecs) {
+        IOVecs iov = IOVecs.fromArrays(iovecs);
+        return iov.end(writev(fd, iov.iov_bases, iov.iov_offs, iov.iov_lens));
+    }
+
+    public static long writev_buffers(int fd, List<ByteBuffer> iovecs) {
+        IOVecs iov = IOVecs.fromBuffers(iovecs);
+        return iov.end(writev(fd, iov.iov_bases, iov.iov_offs, iov.iov_lens));
+    }
+
+    static native long writev(int fd, byte[][] iov_bases, int[] iov_offs, long[] iov_lens);
+
     private NativeIO() {
+    }
+
+    private static final class IOVecs {
+        public static IOVecs fromArrays(List<byte[]> arrays) {
+            byte[][] iov_bases = new byte[arrays.size()][];
+            int[] iov_offs = new int[arrays.size()];
+            long[] iov_lens = new long[arrays.size()];
+            for (int i = 0; i < arrays.size(); i++) {
+                byte[] ary = arrays.get(i);
+                iov_bases[i] = ary;
+                iov_offs[i] = 0;
+                iov_lens[i] = ary.length;
+            }
+            return new IOVecs(iov_bases, iov_offs, iov_lens, null);
+        }
+
+        public static IOVecs fromBuffers(List<ByteBuffer> buffers) {
+            byte[][] iov_bases = new byte[buffers.size()][];
+            int[] iov_offs = new int[buffers.size()];
+            long[] iov_lens = new long[buffers.size()];
+            for (int i = 0; i < buffers.size(); i++) {
+                ByteBuffer buf = buffers.get(i);
+                iov_bases[i] = buf.array();
+                iov_offs[i] = buf.arrayOffset() + buf.position();
+                iov_lens[i] = buf.remaining();
+            }
+            return new IOVecs(iov_bases, iov_offs, iov_lens, buffers);
+        }
+
+        public final byte[][] iov_bases;
+        public final int[] iov_offs;
+        public final long[] iov_lens;
+
+        private final List<ByteBuffer> iovecs_buffer;
+
+        private IOVecs(byte[][] iov_bases, int[] iov_offs, long[] iov_lens, List<ByteBuffer> iovecs_buffer) {
+            this.iov_bases = iov_bases;
+            this.iov_offs = iov_offs;
+            this.iov_lens = iov_lens;
+            this.iovecs_buffer = iovecs_buffer;
+        }
+
+        public long end(long ret) {
+            if (ret == -1L || this.iovecs_buffer == null) {
+                return ret;
+            }
+            long r = ret;
+            int i = 0;
+            while (r > 0L) {
+                ByteBuffer buf = this.iovecs_buffer.get(i);
+                int len = (int) Math.min(r, this.iov_lens[i]);
+                buf.position(buf.position() + len);
+                r -= len;
+                i += 1;
+            }
+            return ret;
+        }
     }
 }

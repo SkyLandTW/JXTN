@@ -36,3 +36,7 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_nameMax(JNIEnv *env, jcl
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_pathMax(JNIEnv *env, jclass thisObj) {
     return PATH_MAX;
 }
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_pipeBuf(JNIEnv *env, jclass thisObj) {
+    return PIPE_BUF;
+}

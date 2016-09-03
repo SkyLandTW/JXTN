@@ -27,6 +27,7 @@
 package jxtn.core.unix;
 
 import java.nio.ByteBuffer;
+import java.util.List;
 import sun.misc.Unsafe;
 
 /**
@@ -46,11 +47,44 @@ public final class NativeIO extends JNIBase {
         return rBuffer(buf, pread(fd, buf.array(), buf.arrayOffset() + buf.position(), buf.remaining(), offset));
     }
 
-    public static long pread(int fd, byte[] buf_array, int buf_offset, int count, long offset) {
+    public static long pread(int fd, byte[] buf_array, long offset) {
+        return pread(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET, buf_array.length, offset);
+    }
+
+    static long pread(int fd, byte[] buf_array, int buf_offset, int count, long offset) {
         return pread(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET + buf_offset, count, offset);
     }
 
     static native long pread(int fd, Object buf_base, long buf_offset, long count, long offset);
+
+    /* preadv */
+
+    public static long preadv(int fd, List<ByteBuffer> iovecs, long offset) {
+        byte[][] iov_bases = new byte[iovecs.size()][];
+        int[] iov_offs = new int[iovecs.size()];
+        long[] iov_lens = new long[iovecs.size()];
+        for (int i = 0; i < iovecs.size(); i++) {
+            ByteBuffer buf = iovecs.get(i);
+            iov_bases[i] = buf.array();
+            iov_offs[i] = buf.arrayOffset() + buf.position();
+            iov_lens[i] = buf.remaining();
+        }
+        long ret = preadv(fd, iov_bases, iov_offs, iov_lens, offset);
+        if (ret != -1L) {
+            long r = ret;
+            int i = 0;
+            while (r >= 0L) {
+                ByteBuffer buf = iovecs.get(i);
+                int len = (int) Math.min(r, iov_lens[i]);
+                buf.position(buf.position() + len);
+                r -= len;
+                i += 1;
+            }
+        }
+        return ret;
+    }
+
+    static native long preadv(int fd, byte[][] iov_bases, int[] iov_offs, long[] iov_lens, long offset);
 
     /* pwrite */
 
@@ -58,11 +92,44 @@ public final class NativeIO extends JNIBase {
         return rBuffer(buf, pwrite(fd, buf.array(), buf.arrayOffset() + buf.position(), buf.remaining(), offset));
     }
 
-    public static long pwrite(int fd, byte[] buf_array, int buf_offset, int count, long offset) {
+    public static long pwrite(int fd, byte[] buf_array, long offset) {
+        return pwrite(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET, buf_array.length, offset);
+    }
+
+    static long pwrite(int fd, byte[] buf_array, int buf_offset, int count, long offset) {
         return pwrite(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET + buf_offset, count, offset);
     }
 
     static native long pwrite(int fd, Object buf_base, long buf_offset, long count, long offset);
+
+    /* pwritev */
+
+    public static long pwritev(int fd, List<ByteBuffer> iovecs, long offset) {
+        byte[][] iov_bases = new byte[iovecs.size()][];
+        int[] iov_offs = new int[iovecs.size()];
+        long[] iov_lens = new long[iovecs.size()];
+        for (int i = 0; i < iovecs.size(); i++) {
+            ByteBuffer buf = iovecs.get(i);
+            iov_bases[i] = buf.array();
+            iov_offs[i] = buf.arrayOffset() + buf.position();
+            iov_lens[i] = buf.remaining();
+        }
+        long ret = pwritev(fd, iov_bases, iov_offs, iov_lens, offset);
+        if (ret != -1L) {
+            long r = ret;
+            int i = 0;
+            while (r >= 0L) {
+                ByteBuffer buf = iovecs.get(i);
+                int len = (int) Math.min(r, iov_lens[i]);
+                buf.position(buf.position() + len);
+                r -= len;
+                i += 1;
+            }
+        }
+        return ret;
+    }
+
+    static native long pwritev(int fd, byte[][] iov_bases, int[] iov_offs, long[] iov_lens, long offset);
 
     /* read */
 
@@ -70,7 +137,11 @@ public final class NativeIO extends JNIBase {
         return rBuffer(buf, read(fd, buf.array(), buf.arrayOffset() + buf.position(), buf.remaining()));
     }
 
-    public static long read(int fd, byte[] buf_array, int buf_offset, int count) {
+    public static long read(int fd, byte[] buf_array) {
+        return read(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET, buf_array.length);
+    }
+
+    static long read(int fd, byte[] buf_array, int buf_offset, int count) {
         return read(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET + buf_offset, count);
     }
 
@@ -86,7 +157,11 @@ public final class NativeIO extends JNIBase {
         return rBuffer(buf, write(fd, buf.array(), buf.arrayOffset() + buf.position(), buf.remaining()));
     }
 
-    public static long write(int fd, byte[] buf_array, int buf_offset, int count) {
+    public static long write(int fd, byte[] buf_array) {
+        return write(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET, buf_array.length);
+    }
+
+    static long write(int fd, byte[] buf_array, int buf_offset, int count) {
         return write(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET + buf_offset, count);
     }
 

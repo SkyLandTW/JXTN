@@ -25,7 +25,7 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-#include <dirent.h>
+#include <linux/limits.h>
 #include <signal.h>
 #include <stdlib.h>
 #include <string.h>
@@ -34,6 +34,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 
+#include "dirent.h"
 #include "internals.h"
 
 extern char **environ;
@@ -79,25 +80,39 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc2_pexec(JNIEnv *env, jclass
     return ERR(pexec(fd_stdin, fd_stdout, fd_stderr, resolveCS(filename), argv_b, child_environ));
 }
 
-#define DT_DIR 4
-
 static void closefrom(int lowfd) {
-    struct dirent **namelist;
-    int n = scandir("/proc/self/fd", &namelist, NULL, alphasort);
-    if (n >= 0) {
-        while (n--) {
-            if (namelist[n]->d_type != DT_DIR
-                    && namelist[n]->d_name[0] >= '0'
-                    && namelist[n]->d_name[0] <= '9') {
-                int fd = atoi(namelist[n]->d_name);
+    int dirfd = open("/proc/self/fd", O_RDONLY | O_CLOEXEC | O_DIRECTORY, 0);
+    if (dirfd < 0) {
+        perror("open /proc/self/fd");
+        return;
+    }
+    void* dirp_buf = malloc(GETDENTS64_BUF_SIZE);
+    struct linux_dirent64 * dirp = (struct linux_dirent64 *) dirp_buf;
+    int ret;
+    while ((ret = getdents64(dirfd, dirp, GETDENTS64_BUF_SIZE)) > 0) {
+        void* d_buf = dirp_buf;
+        void* d_end = dirp_buf + ret;
+        while (d_buf < d_end) {
+            struct linux_dirent64 * d = (struct linux_dirent64 *) d_buf;
+            if (dname_is_self(d->d_name) || dname_is_parent(d->d_name)) {
+                // nothing
+            } else if (d->d_type != DT_DIR
+                    && d->d_name[0] >= '0'
+                    && d->d_name[0] <= '9') {
+                int fd = atoi(d->d_name);
                 if (fd >= lowfd) {
-                    close(fd);
+                    if (close(fd) == -1) {
+                        char str[PATH_MAX];
+                        sprintf(str, "%d: close /proc/self/fd/%s\n", getpid(), d->d_name);
+                        perror(str);
+                    }
                 }
             }
-            free(namelist[n]);
+            d_buf = d_buf + d->d_reclen;
         }
-        free(namelist);
     }
+    free(dirp_buf);
+    close(dirfd);
 }
 
 static pid_t pexec(int fd_stdin, int fd_stdout, int fd_stderr, const char *filename,

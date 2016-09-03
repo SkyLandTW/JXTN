@@ -84,7 +84,9 @@ static int copyat(int olddirfd, const char* oldpath, int newdirfd, const char* n
         errno = err;
         return -1;
     }
-    fchown(newfd, oldstat.st_uid, oldstat.st_gid); // ignore error
+    if (fchown(newfd, oldstat.st_uid, oldstat.st_gid) == -1) {
+        // ignore error
+    }
     if (copyfile_sparse(oldfd, newfd) == -1) {
         err = errno;
         close(newfd);

@@ -170,6 +170,9 @@ public final class NativeIO extends JNIBase {
 
     private static final class IOVecs {
         public static IOVecs fromArrays(List<byte[]> arrays) {
+            if (arrays.size() > NativeLimits.IOV_MAX) {
+                throw new IllegalArgumentException("iovecs too large: " + arrays.size() + ">" + NativeLimits.IOV_MAX);
+            }
             byte[][] iov_bases = new byte[arrays.size()][];
             int[] iov_offs = new int[arrays.size()];
             long[] iov_lens = new long[arrays.size()];
@@ -183,6 +186,9 @@ public final class NativeIO extends JNIBase {
         }
 
         public static IOVecs fromBuffers(List<ByteBuffer> buffers) {
+            if (buffers.size() > NativeLimits.IOV_MAX) {
+                throw new IllegalArgumentException("iovecs too large: " + buffers.size() + ">" + NativeLimits.IOV_MAX);
+            }
             byte[][] iov_bases = new byte[buffers.size()][];
             int[] iov_offs = new int[buffers.size()];
             long[] iov_lens = new long[buffers.size()];

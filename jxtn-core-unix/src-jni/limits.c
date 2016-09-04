@@ -25,9 +25,14 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
+#include <bits/xopen_lim.h>
 #include <linux/limits.h>
 
 #include "internals.h"
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_iovMax(JNIEnv *env, jclass thisObj) {
+    return IOV_MAX;
+}
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeLimits_nameMax(JNIEnv *env, jclass thisObj) {
     return NAME_MAX;

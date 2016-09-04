@@ -33,15 +33,19 @@ package jxtn.core.unix;
  */
 public final class NativeLimits extends JNIBase {
 
+    public static final int IOV_MAX;
     public static final int NAME_MAX;
     public static final int PATH_MAX;
     public static final int PIPE_BUF;
 
     static {
+        IOV_MAX = iovMax();
         NAME_MAX = nameMax();
         PATH_MAX = pathMax();
         PIPE_BUF = pipeBuf();
     }
+
+    private static native int iovMax();
 
     private static native int nameMax();
 

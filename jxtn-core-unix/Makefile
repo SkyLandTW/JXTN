@@ -1,14 +1,15 @@
 vpath %.c ../src-jni
 
 CC = gcc
-CFLAGS = -c -g -O2 -fPIC -Wall -Wconversion -Wc++-compat -Werror -std=gnu99 -I$$JAVA_HOME/include -I$$JAVA_HOME/include/linux
+CFLAGS = -ggdb3 -O2 -fPIC -Wall -Wconversion -Wc++-compat -Werror -std=gnu99 -I$$JAVA_HOME/include -I$$JAVA_HOME/include/linux
 LDFLAGS =
 
+DEPDIR := dep
 OBJDIR := obj
 SRCDIR := src-jni
 
-DEP = $(SRCDIR)/dirent.h $(SRCDIR)/internals.h Makefile
-SRC = dirs.c dirs2.c env.c errno.c files.c files2.c inotify.c io.c limits.c mmap.c prctl.c prctl2.c proc.c proc2.c sigs.c stat.c stdio.c wait.c xattr.c
+SRC = $(notdir $(wildcard $(SRCDIR)/*.c))
+DEP = $(patsubst %.c,$(DEPDIR)/%.d,$(SRC))
 OBJ = $(patsubst %.c,$(OBJDIR)/%.o,$(SRC))
 BIN = ../dist/libjxtn-core-unix.so
 
@@ -17,13 +18,20 @@ all: $(BIN)
 install: $(BIN)
 	sudo install $(BIN) /usr/lib/jni/`basename $(BIN)`
 
-$(OBJDIR)/%.o : $(SRCDIR)/%.c $(DEP)
+-include $(DEP)
+
+$(DEPDIR)/%.d: $(SRCDIR)/%.c Makefile
+	@mkdir -p `dirname $@`
+	echo -n '$(OBJDIR)/' > $@
+	$(CC) -MM $(CFLAGS) $< >> $@
+
+$(OBJDIR)/%.o : $(SRCDIR)/%.c $(DEPDIR)/%.d
 	@mkdir -p `dirname $@`
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(BIN): $(OBJ) Makefile
+$(BIN): $(OBJ)
 	@mkdir -p dist
 	$(CC) -shared $(OBJ) -o $(BIN) $(LDFLAGS)
 
 clean:
-	rm -f $(OBJ) $(BIN)
+	rm -f $(DEP) $(OBJ) $(BIN)

@@ -24,12 +24,39 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package jxtn.core.unix;
 
-#include <sys/prctl.h>
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-#include "internals.h"
+public final class Sockaddr_in extends Sockaddr {
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativePrctl_prctl(JNIEnv *env, jclass thisObj,
-        jint option, jlong arg2, jlong arg3, jlong arg4, jlong arg5) {
-    return ERR(prctl(option, UL(arg2), UL(arg3), UL(arg4), UL(arg5)));
+    public final int port;
+    public final byte[] addr = new byte[4];
+
+    public Sockaddr_in(ByteBuffer buffer) {
+        super(NativeNet.AF_INET);
+        this.port = buffer.order(ByteOrder.BIG_ENDIAN).getShort() & 0xFFFF;
+        buffer.order(ByteOrder.nativeOrder());
+        buffer.get(this.addr);
+    }
+
+    public Sockaddr_in(int port, byte[] addr) {
+        super(NativeNet.AF_INET);
+        this.port = port;
+        if (addr != null) {
+            System.arraycopy(addr, 0, this.addr, 0, this.addr.length);
+        }
+    }
+
+    @Override
+    public byte[] toBytes() {
+        byte[] array = new byte[2 + 2 + 4 + 8];
+        ByteBuffer buffer = ByteBuffer.wrap(array);
+        buffer.order(ByteOrder.nativeOrder()).putShort(this.family);
+        buffer.order(ByteOrder.BIG_ENDIAN).putShort((short) this.port);
+        buffer.order(ByteOrder.nativeOrder());
+        buffer.put(this.addr);
+        return array;
+    }
 }

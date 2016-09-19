@@ -24,12 +24,27 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package jxtn.core.unix;
 
-#include <sys/prctl.h>
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-#include "internals.h"
+public final class Sockaddr_un extends Sockaddr {
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativePrctl_prctl(JNIEnv *env, jclass thisObj,
-        jint option, jlong arg2, jlong arg3, jlong arg4, jlong arg5) {
-    return ERR(prctl(option, UL(arg2), UL(arg3), UL(arg4), UL(arg5)));
+    public final byte[] path = new byte[108];
+
+    public Sockaddr_un(ByteBuffer buffer) {
+        super(NativeNet.AF_UNIX);
+        buffer.order(ByteOrder.nativeOrder());
+        buffer.get(this.path);
+    }
+
+    @Override
+    public byte[] toBytes() {
+        byte[] array = new byte[2 + 108];
+        ByteBuffer buffer = ByteBuffer.wrap(array);
+        buffer.order(ByteOrder.nativeOrder()).putShort(this.family);
+        buffer.put(this.path);
+        return array;
+    }
 }

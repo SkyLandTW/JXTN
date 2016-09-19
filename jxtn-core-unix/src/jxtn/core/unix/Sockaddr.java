@@ -24,12 +24,34 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package jxtn.core.unix;
 
-#include <sys/prctl.h>
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-#include "internals.h"
+public abstract class Sockaddr {
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativePrctl_prctl(JNIEnv *env, jclass thisObj,
-        jint option, jlong arg2, jlong arg3, jlong arg4, jlong arg5) {
-    return ERR(prctl(option, UL(arg2), UL(arg3), UL(arg4), UL(arg5)));
+    public static final Sockaddr from(ByteBuffer buffer) {
+        short family = buffer.order(ByteOrder.nativeOrder()).getShort();
+        switch (family) {
+        case NativeNet.AF_UNIX:
+            return new Sockaddr_un(buffer);
+        case NativeNet.AF_PACKET:
+            return new Sockaddr_ll(buffer);
+        case NativeNet.AF_INET:
+            return new Sockaddr_in(buffer);
+        case NativeNet.AF_INET6:
+            return new Sockaddr_in6(buffer);
+        default:
+            throw new IllegalArgumentException("unsupported family: " + family);
+        }
+    }
+
+    public final short family;
+
+    protected Sockaddr(short family) {
+        this.family = family;
+    }
+
+    public abstract byte[] toBytes();
 }

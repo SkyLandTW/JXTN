@@ -29,8 +29,7 @@ It's intended for:
 - Direct Directory Reading through getdents64()
 - Process invocation and in/out/err redierction (pexec)
 - Process renaming
-
-(Networking is of lower priority because I don't need it for now)
+- BSD Socket related calls
 
 #### Build & Install
 

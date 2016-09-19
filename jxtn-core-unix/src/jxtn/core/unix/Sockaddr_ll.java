@@ -24,12 +24,43 @@
  *
  * For more information, please refer to <http://unlicense.org/>
  */
+package jxtn.core.unix;
 
-#include <sys/prctl.h>
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-#include "internals.h"
+public final class Sockaddr_ll extends Sockaddr {
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativePrctl_prctl(JNIEnv *env, jclass thisObj,
-        jint option, jlong arg2, jlong arg3, jlong arg4, jlong arg5) {
-    return ERR(prctl(option, UL(arg2), UL(arg3), UL(arg4), UL(arg5)));
+    public final short protocol;
+    public final int ifindex;
+    public final short hatype;
+    public final byte pkttype;
+    public final byte halen;
+    public final byte[] addr = new byte[8];
+
+    public Sockaddr_ll(ByteBuffer buffer) {
+        super(NativeNet.AF_PACKET);
+        this.protocol = buffer.order(ByteOrder.BIG_ENDIAN).getShort();
+        buffer.order(ByteOrder.nativeOrder());
+        this.ifindex = buffer.getInt();
+        this.hatype = buffer.getShort();
+        this.pkttype = buffer.get();
+        this.halen = buffer.get();
+        buffer.get(this.addr);
+    }
+
+    @Override
+    public byte[] toBytes() {
+        byte[] array = new byte[2 + 2 + 4 + 2 + 1 + 1 + 8];
+        ByteBuffer buffer = ByteBuffer.wrap(array);
+        buffer.order(ByteOrder.nativeOrder()).putShort(this.family);
+        buffer.order(ByteOrder.BIG_ENDIAN).putShort(this.protocol);
+        buffer.order(ByteOrder.nativeOrder());
+        buffer.putInt(this.ifindex);
+        buffer.putShort(this.hatype);
+        buffer.put(this.pkttype);
+        buffer.put(this.halen);
+        buffer.put(this.addr);
+        return array;
+    }
 }

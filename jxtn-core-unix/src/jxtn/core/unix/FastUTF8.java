@@ -112,11 +112,11 @@ public final class FastUTF8 {
      * @param dstBuffer destination buffer to store the resulting UTF-8 bytes
      * @return number of UTF-8 bytes encoded from {@code s}, not including the NUL termination at the end.
      */
-    public static int encode(String s, byte[] dstBuffer) {
+    public static int encode(CharSequence s, byte[] dstBuffer) {
         return encode(s, dstBuffer, 0, dstBuffer.length);
     }
 
-    public static int encode(String s, byte[] dstBuffer, int dstOffset, int dstLength) {
+    public static int encode(CharSequence s, byte[] dstBuffer, int dstOffset, int dstLength) {
         int dPos = dstOffset;
         int dEnd = dstOffset + Math.min(dstBuffer.length - dstOffset, dstLength) - 1 /* NUL */;
         int sLen = s.length();
@@ -202,7 +202,7 @@ public final class FastUTF8 {
      * @param dstBuffer destination buffer to store the resulting UTF-8 bytes
      * @return number of UTF-8 bytes encoded from {@code s}, not including the NUL termination at the end.
      */
-    public static int encodeToCString(String s, byte[] dstBuffer) {
+    public static int encodeToCString(CharSequence s, byte[] dstBuffer) {
         return encodeToCString(s, dstBuffer, 0, dstBuffer.length);
     }
 
@@ -219,7 +219,7 @@ public final class FastUTF8 {
      * @param dstLength length in destination buffer which may be used to store the results
      * @return number of UTF-8 bytes encoded from {@code s}, not including the NUL termination at the end.
      */
-    public static int encodeToCString(String s, byte[] dstBuffer, int dstOffset, int dstLength) {
+    public static int encodeToCString(CharSequence s, byte[] dstBuffer, int dstOffset, int dstLength) {
         int dPos = dstOffset;
         int dEnd = dstOffset + Math.min(dstBuffer.length - dstOffset, dstLength) - 1 /* NUL */;
         int sLen = s.length();

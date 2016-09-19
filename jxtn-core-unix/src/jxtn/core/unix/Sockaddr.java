@@ -34,6 +34,16 @@ public abstract class Sockaddr {
     public static final Sockaddr from(ByteBuffer buffer) {
         short family = buffer.order(ByteOrder.nativeOrder()).getShort();
         switch (family) {
+        case NativeNet.AF_UNSPEC:
+            return new Sockaddr(NativeNet.AF_UNSPEC) {
+                @Override
+                public byte[] toBytes() {
+                    byte[] array = new byte[2];
+                    ByteBuffer buffer = ByteBuffer.wrap(array);
+                    buffer.order(ByteOrder.nativeOrder()).putShort(this.family);
+                    return array;
+                }
+            };
         case NativeNet.AF_UNIX:
             return new Sockaddr_un(buffer);
         case NativeNet.AF_PACKET:

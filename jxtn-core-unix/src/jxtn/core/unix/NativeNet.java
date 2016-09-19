@@ -165,7 +165,7 @@ public final class NativeNet extends JNIBase {
         return bind(sockfd, addr == null ? null : addr.toBytes());
     }
 
-    static native int bind(int sockfd, byte[] addr);
+    private static native int bind(int sockfd, byte[] addr);
 
     /* listen */
 
@@ -182,7 +182,7 @@ public final class NativeNet extends JNIBase {
         return ret;
     }
 
-    static native int accept(int sockfd, byte[] addr);
+    private static native int accept(int sockfd, byte[] addr);
 
     /* accept4 */
 
@@ -195,5 +195,84 @@ public final class NativeNet extends JNIBase {
         return ret;
     }
 
-    static native int accept4(int sockfd, byte[] addr, int flags);
+    private static native int accept4(int sockfd, byte[] addr, int flags);
+
+    /* For setsockopt(2) */
+
+    public static final int SOL_SOCKET = 1;
+
+    public static final int SO_DEBUG = 1;
+    public static final int SO_REUSEADDR = 2;
+    public static final int SO_TYPE = 3;
+    public static final int SO_ERROR = 4;
+    public static final int SO_DONTROUTE = 5;
+    public static final int SO_BROADCAST = 6;
+    public static final int SO_SNDBUF = 7;
+    public static final int SO_RCVBUF = 8;
+    public static final int SO_SNDBUFFORCE = 32;
+    public static final int SO_RCVBUFFORCE = 33;
+    public static final int SO_KEEPALIVE = 9;
+    public static final int SO_OOBINLINE = 10;
+    public static final int SO_NO_CHECK = 11;
+    public static final int SO_PRIORITY = 12;
+    public static final int SO_LINGER = 13;
+    public static final int SO_BSDCOMPAT = 14;
+    public static final int SO_REUSEPORT = 15;
+
+    public static final int SO_PASSCRED = 16;
+    public static final int SO_PEERCRED = 17;
+    public static final int SO_RCVLOWAT = 18;
+    public static final int SO_SNDLOWAT = 19;
+    public static final int SO_RCVTIMEO = 20;
+    public static final int SO_SNDTIMEO = 21;
+
+    /* Security levels - as per NRL IPv6 - don't actually do anything */
+
+    public static final int SO_SECURITY_AUTHENTICATION = 22;
+    public static final int SO_SECURITY_ENCRYPTION_TRANSPORT = 23;
+    public static final int SO_SECURITY_ENCRYPTION_NETWORK = 24;
+
+    public static final int SO_BINDTODEVICE = 25;
+
+    /* Socket filtering */
+    public static final int SO_ATTACH_FILTER = 26;
+    public static final int SO_DETACH_FILTER = 27;
+    public static final int SO_GET_FILTER = SO_ATTACH_FILTER;
+
+    public static final int SO_PEERNAME = 28;
+    public static final int SO_TIMESTAMP = 29;
+    public static final int SCM_TIMESTAMP = SO_TIMESTAMP;
+    public static final int SO_ACCEPTCONN = 30;
+    public static final int SO_PEERSEC = 31;
+    public static final int SO_PASSSEC = 34;
+    public static final int SO_TIMESTAMPNS = 35;
+    public static final int SCM_TIMESTAMPNS = SO_TIMESTAMPNS;
+    public static final int SO_MARK = 36;
+    public static final int SO_TIMESTAMPING = 37;
+    public static final int SCM_TIMESTAMPING = SO_TIMESTAMPING;
+    public static final int SO_PROTOCOL = 38;
+    public static final int SO_DOMAIN = 39;
+    public static final int SO_RXQ_OVFL = 40;
+    public static final int SO_WIFI_STATUS = 41;
+    public static final int SCM_WIFI_STATUS = SO_WIFI_STATUS;
+    public static final int SO_PEEK_OFF = 42;
+
+    /* Instruct lower device to use last 4-bytes of skb data as FCS */
+    public static final int SO_NOFCS = 43;
+    public static final int SO_LOCK_FILTER = 44;
+    public static final int SO_SELECT_ERR_QUEUE = 45;
+    public static final int SO_BUSY_POLL = 46;
+    public static final int SO_MAX_PACING_RATE = 47;
+    public static final int SO_BPF_EXTENSIONS = 48;
+    public static final int SO_INCOMING_CPU = 49;
+    public static final int SO_ATTACH_BPF = 50;
+    public static final int SO_DETACH_BPF = SO_DETACH_FILTER;
+
+    /* getsockopt */
+
+    public static native int getsockopt(int sockfd, int level, int optname, byte[] optval);
+
+    /* setsockopt */
+
+    public static native int setsockopt(int sockfd, int level, int optname, byte[] optval);
 }

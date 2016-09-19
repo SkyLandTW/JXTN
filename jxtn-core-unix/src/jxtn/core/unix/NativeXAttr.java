@@ -4,7 +4,7 @@ import java.nio.file.Path;
 
 /**
  * {@code xattr}-related syscall wrappers
- * 
+ *
  * @author aqd
  */
 public final class NativeXAttr extends JNIBase {
@@ -30,7 +30,7 @@ public final class NativeXAttr extends JNIBase {
         return getxattr(tPath(path), tName(name), value);
     }
 
-    static native long getxattr(byte[] path, byte[] name, byte[] value);
+    private static native long getxattr(byte[] path, byte[] name, byte[] value);
 
     /* setxattr */
 
@@ -42,7 +42,7 @@ public final class NativeXAttr extends JNIBase {
         return setxattr(tPath(path), tName(name), value, flags);
     }
 
-    static native int setxattr(byte[] path, byte[] name, byte[] value, int flags);
+    private static native int setxattr(byte[] path, byte[] name, byte[] value, int flags);
 
     /* fgetxattr */
 
@@ -54,7 +54,7 @@ public final class NativeXAttr extends JNIBase {
         return fgetxattr(fd, tName(name), value);
     }
 
-    static native long fgetxattr(int fd, byte[] name, byte[] value);
+    private static native long fgetxattr(int fd, byte[] name, byte[] value);
 
     /* fsetxattr */
 
@@ -62,7 +62,7 @@ public final class NativeXAttr extends JNIBase {
         return fsetxattr(fd, tName(name), value, flags);
     }
 
-    static native int fsetxattr(int fd, byte[] name, byte[] value, int flags);
+    private static native int fsetxattr(int fd, byte[] name, byte[] value, int flags);
 
     /* lgetxattr */
 
@@ -82,7 +82,7 @@ public final class NativeXAttr extends JNIBase {
         return lgetxattr(tPath(path), tName(name), value);
     }
 
-    static native long lgetxattr(byte[] path, byte[] name, byte[] value);
+    private static native long lgetxattr(byte[] path, byte[] name, byte[] value);
 
     /* lsetxattr */
 
@@ -94,7 +94,7 @@ public final class NativeXAttr extends JNIBase {
         return lsetxattr(tPath(path), tName(name), value, flags);
     }
 
-    static native int lsetxattr(byte[] path, byte[] name, byte[] value, int flags);
+    private static native int lsetxattr(byte[] path, byte[] name, byte[] value, int flags);
 
     private NativeXAttr() {
     }

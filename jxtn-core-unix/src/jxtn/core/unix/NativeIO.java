@@ -51,11 +51,11 @@ public final class NativeIO extends JNIBase {
         return pread(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET, buf_array.length, offset);
     }
 
-    static long pread(int fd, byte[] buf_array, int buf_offset, int count, long offset) {
+    public static long pread(int fd, byte[] buf_array, int buf_offset, int count, long offset) {
         return pread(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET + buf_offset, count, offset);
     }
 
-    static native long pread(int fd, Object buf_base, long buf_offset, long count, long offset);
+    private static native long pread(int fd, Object buf_base, long buf_offset, long count, long offset);
 
     /* preadv */
 
@@ -69,7 +69,7 @@ public final class NativeIO extends JNIBase {
         return iov.end(preadv(fd, iov.iov_bases, iov.iov_offs, iov.iov_lens, offset));
     }
 
-    static native long preadv(int fd, byte[][] iov_bases, int[] iov_offs, long[] iov_lens, long offset);
+    private static native long preadv(int fd, byte[][] iov_bases, int[] iov_offs, long[] iov_lens, long offset);
 
     /* pwrite */
 
@@ -81,11 +81,11 @@ public final class NativeIO extends JNIBase {
         return pwrite(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET, buf_array.length, offset);
     }
 
-    static long pwrite(int fd, byte[] buf_array, int buf_offset, int count, long offset) {
+    public static long pwrite(int fd, byte[] buf_array, int buf_offset, int count, long offset) {
         return pwrite(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET + buf_offset, count, offset);
     }
 
-    static native long pwrite(int fd, Object buf_base, long buf_offset, long count, long offset);
+    private static native long pwrite(int fd, Object buf_base, long buf_offset, long count, long offset);
 
     /* pwritev */
 
@@ -99,7 +99,7 @@ public final class NativeIO extends JNIBase {
         return iov.end(pwritev(fd, iov.iov_bases, iov.iov_offs, iov.iov_lens, offset));
     }
 
-    static native long pwritev(int fd, byte[][] iov_bases, int[] iov_offs, long[] iov_lens, long offset);
+    private static native long pwritev(int fd, byte[][] iov_bases, int[] iov_offs, long[] iov_lens, long offset);
 
     /* read */
 
@@ -111,11 +111,11 @@ public final class NativeIO extends JNIBase {
         return read(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET, buf_array.length);
     }
 
-    static long read(int fd, byte[] buf_array, int buf_offset, int count) {
+    public static long read(int fd, byte[] buf_array, int buf_offset, int count) {
         return read(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET + buf_offset, count);
     }
 
-    static native long read(int fd, Object buf_base, long buf_offset, long count);
+    private static native long read(int fd, Object buf_base, long buf_offset, long count);
 
     /* readv */
 
@@ -129,7 +129,7 @@ public final class NativeIO extends JNIBase {
         return iov.end(readv(fd, iov.iov_bases, iov.iov_offs, iov.iov_lens));
     }
 
-    static native long readv(int fd, byte[][] iov_bases, int[] iov_offs, long[] iov_lens);
+    private static native long readv(int fd, byte[][] iov_bases, int[] iov_offs, long[] iov_lens);
 
     /* sendfile */
 
@@ -145,11 +145,11 @@ public final class NativeIO extends JNIBase {
         return write(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET, buf_array.length);
     }
 
-    static long write(int fd, byte[] buf_array, int buf_offset, int count) {
+    public static long write(int fd, byte[] buf_array, int buf_offset, int count) {
         return write(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET + buf_offset, count);
     }
 
-    static native long write(int fd, Object buf_base, long buf_offset, long count);
+    private static native long write(int fd, Object buf_base, long buf_offset, long count);
 
     /* writev */
 
@@ -163,7 +163,7 @@ public final class NativeIO extends JNIBase {
         return iov.end(writev(fd, iov.iov_bases, iov.iov_offs, iov.iov_lens));
     }
 
-    static native long writev(int fd, byte[][] iov_bases, int[] iov_offs, long[] iov_lens);
+    private static native long writev(int fd, byte[][] iov_bases, int[] iov_offs, long[] iov_lens);
 
     private NativeIO() {
     }

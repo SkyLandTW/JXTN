@@ -49,7 +49,7 @@ public final class NativeDirs extends JNIBase {
         return chdir(tPath(path));
     }
 
-    static native int chdir(byte[] path);
+    private static native int chdir(byte[] path);
 
     /* chroot */
 
@@ -61,7 +61,7 @@ public final class NativeDirs extends JNIBase {
         return chroot(tPath(path));
     }
 
-    static native int chroot(byte[] path);
+    private static native int chroot(byte[] path);
 
     /* getdents64 */
 
@@ -90,7 +90,7 @@ public final class NativeDirs extends JNIBase {
         }
     }
 
-    static native int getdents64(int fd, byte[] dirp);
+    private static native int getdents64(int fd, byte[] dirp);
 
     /* fchdir */
 
@@ -108,7 +108,7 @@ public final class NativeDirs extends JNIBase {
         return mkdir(tPath(pathname), mode);
     }
 
-    static native int mkdir(byte[] pathname, int mode);
+    private static native int mkdir(byte[] pathname, int mode);
 
     /* mkdirat */
 
@@ -120,7 +120,7 @@ public final class NativeDirs extends JNIBase {
         return mkdirat(dirfd, tPath(pathname), mode);
     }
 
-    static native int mkdirat(int dirfd, byte[] pathname, int mode);
+    private static native int mkdirat(int dirfd, byte[] pathname, int mode);
 
     /* rmdir */
 
@@ -132,7 +132,7 @@ public final class NativeDirs extends JNIBase {
         return rmdir(tPath(pathname));
     }
 
-    static native int rmdir(byte[] pathname);
+    private static native int rmdir(byte[] pathname);
 
     private NativeDirs() {
     }

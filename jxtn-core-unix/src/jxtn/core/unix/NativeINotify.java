@@ -81,7 +81,7 @@ public final class NativeINotify extends JNIBase {
 
     /* */
 
-    static final int DEFAULT_INOTIFY_BUFFER_SIZE = INotifyEvent.BUFFER_SIZE << 8;
+    private static final int DEFAULT_INOTIFY_BUFFER_SIZE = INotifyEvent.BUFFER_SIZE << 8;
 
     /* inotify_init */
 
@@ -101,7 +101,7 @@ public final class NativeINotify extends JNIBase {
         return add_watch(fd, tPath(pathname), mask);
     }
 
-    static native int add_watch(int fd, byte[] pathname, int mask);
+    private static native int add_watch(int fd, byte[] pathname, int mask);
 
     /* rm_watch */
 

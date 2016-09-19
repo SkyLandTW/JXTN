@@ -278,7 +278,7 @@ public final class NativePrctl extends JNIBase {
         }
     }
 
-    static native int prctl(int option, long arg2, long arg3, long arg4, long arg5);
+    private static native int prctl(int option, long arg2, long arg3, long arg4, long arg5);
 
     private NativePrctl() {
     }

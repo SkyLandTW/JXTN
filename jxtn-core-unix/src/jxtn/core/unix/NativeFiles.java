@@ -59,7 +59,7 @@ public final class NativeFiles extends JNIBase {
         return access(tPath(pathname), mode);
     }
 
-    static native int access(byte[] pathname, int mode);
+    private static native int access(byte[] pathname, int mode);
 
     /* chmod */
 
@@ -71,7 +71,7 @@ public final class NativeFiles extends JNIBase {
         return chmod(tPath(pathname), mode);
     }
 
-    static native int chmod(byte[] pathname, int mode);
+    private static native int chmod(byte[] pathname, int mode);
 
     /* chown */
 
@@ -83,7 +83,7 @@ public final class NativeFiles extends JNIBase {
         return chown(tPath(pathname), owner, group);
     }
 
-    static native int chown(byte[] pathname, int owner, int group);
+    private static native int chown(byte[] pathname, int owner, int group);
 
     /* creat */
 
@@ -95,7 +95,7 @@ public final class NativeFiles extends JNIBase {
         return creat(tPath(pathname), mode);
     }
 
-    static native int creat(byte[] pathname, int mode);
+    private static native int creat(byte[] pathname, int mode);
 
     /* fadvise */
 
@@ -118,7 +118,7 @@ public final class NativeFiles extends JNIBase {
         return faccessat(dirfd, tPath(pathname), mode, flags);
     }
 
-    static native int faccessat(int dirfd, byte[] pathname, int mode, int flags);
+    private static native int faccessat(int dirfd, byte[] pathname, int mode, int flags);
 
     /* fallocate */
 
@@ -138,11 +138,11 @@ public final class NativeFiles extends JNIBase {
         return fchmodat(dirfd, tPath(pathname), mode, flags);
     }
 
-    static native int fchmodat(int dirfd, byte[] pathname, int mode, int flags);
+    private static native int fchmodat(int dirfd, byte[] pathname, int mode, int flags);
 
     /* fchown */
 
-    static native int fchown(int fd, int owner, int group);
+    public static native int fchown(int fd, int owner, int group);
 
     /* fchownat */
 
@@ -154,7 +154,7 @@ public final class NativeFiles extends JNIBase {
         return fchownat(dirfd, tPath(pathname), owner, group, flags);
     }
 
-    static native int fchownat(int dirfd, byte[] pathname, int owner, int group, int flags);
+    private static native int fchownat(int dirfd, byte[] pathname, int owner, int group, int flags);
 
     /* ftruncate */
 
@@ -170,7 +170,7 @@ public final class NativeFiles extends JNIBase {
         return lchown(tPath(pathname), owner, group);
     }
 
-    static native int lchown(byte[] pathname, int owner, int group);
+    private static native int lchown(byte[] pathname, int owner, int group);
 
     /* link */
 
@@ -182,7 +182,7 @@ public final class NativeFiles extends JNIBase {
         return link(tPath(oldpath), tPath(newpath));
     }
 
-    static native int link(byte[] oldpath, byte[] newpath);
+    private static native int link(byte[] oldpath, byte[] newpath);
 
     /* linkat */
 
@@ -194,7 +194,7 @@ public final class NativeFiles extends JNIBase {
         return linkat(olddirfd, tPath(oldpath), newdirfd, tPath(newpath), flags);
     }
 
-    static native int linkat(int olddirfd, byte[] oldpath, int newdirfd, byte[] newpath, int flags);
+    private static native int linkat(int olddirfd, byte[] oldpath, int newdirfd, byte[] newpath, int flags);
 
     /* lseek */
 
@@ -241,7 +241,7 @@ public final class NativeFiles extends JNIBase {
         return open(tPath(pathname), flags, mode);
     }
 
-    static native int open(byte[] pathname, int flags, int mode);
+    private static native int open(byte[] pathname, int flags, int mode);
 
     /* openat */
 
@@ -253,7 +253,7 @@ public final class NativeFiles extends JNIBase {
         return openat(dirfd, tPath(pathname), flags, mode);
     }
 
-    static native int openat(int dirfd, byte[] pathname, int flags, int mode);
+    private static native int openat(int dirfd, byte[] pathname, int flags, int mode);
 
     /* pipe */
 
@@ -273,7 +273,7 @@ public final class NativeFiles extends JNIBase {
         return rename(tPath(oldpath), tPath(newpath));
     }
 
-    static native int rename(byte[] oldpath, byte[] newpath);
+    private static native int rename(byte[] oldpath, byte[] newpath);
 
     /* renameat */
 
@@ -285,7 +285,7 @@ public final class NativeFiles extends JNIBase {
         return renameat(olddirfd, tPath(oldpath), newdirfd, tPath(newpath));
     }
 
-    static native int renameat(int olddirfd, byte[] oldpath, int newdirfd, byte[] newpath);
+    private static native int renameat(int olddirfd, byte[] oldpath, int newdirfd, byte[] newpath);
 
     /* renameat2 */
 
@@ -301,7 +301,7 @@ public final class NativeFiles extends JNIBase {
         return renameat2(olddirfd, tPath(oldpath), newdirfd, tPath(newpath), flags);
     }
 
-    static native int renameat2(int olddirfd, byte[] oldpath, int newdirfd, byte[] newpath, int flags);
+    private static native int renameat2(int olddirfd, byte[] oldpath, int newdirfd, byte[] newpath, int flags);
 
     /* symlink */
 
@@ -313,7 +313,7 @@ public final class NativeFiles extends JNIBase {
         return symlink(tPath(target), tPath(linkpath));
     }
 
-    static native int symlink(byte[] target, byte[] linkpath);
+    private static native int symlink(byte[] target, byte[] linkpath);
 
     /* symlinkat */
 
@@ -325,7 +325,7 @@ public final class NativeFiles extends JNIBase {
         return symlinkat(tPath(target), newdirfd, tPath(linkpath));
     }
 
-    static native int symlinkat(byte[] target, int newdirfd, byte[] linkpath);
+    private static native int symlinkat(byte[] target, int newdirfd, byte[] linkpath);
 
     /* truncate */
 
@@ -337,7 +337,7 @@ public final class NativeFiles extends JNIBase {
         return truncate(tPath(pathname), length);
     }
 
-    static native int truncate(byte[] pathname, long length);
+    private static native int truncate(byte[] pathname, long length);
 
     /* unlink */
 
@@ -349,7 +349,7 @@ public final class NativeFiles extends JNIBase {
         return unlink(tPath(pathname));
     }
 
-    static native int unlink(byte[] pathname);
+    private static native int unlink(byte[] pathname);
 
     /* unlinkat */
 
@@ -361,7 +361,7 @@ public final class NativeFiles extends JNIBase {
         return unlinkat(dirfd, tPath(pathname), flags);
     }
 
-    static native int unlinkat(int dirfd, byte[] pathname, int flags);
+    private static native int unlinkat(int dirfd, byte[] pathname, int flags);
 
     private NativeFiles() {
     }

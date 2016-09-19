@@ -55,7 +55,7 @@ public final class NativeStat extends JNIBase {
         return ret;
     }
 
-    static native int stat(byte[] pathname, byte[] buf);
+    private static native int stat(byte[] pathname, byte[] buf);
 
     /* fstat */
 
@@ -68,7 +68,7 @@ public final class NativeStat extends JNIBase {
         return ret;
     }
 
-    static native int fstat(int fd, byte[] buf);
+    private static native int fstat(int fd, byte[] buf);
 
     /* fstatat */
 
@@ -89,7 +89,7 @@ public final class NativeStat extends JNIBase {
         return ret;
     }
 
-    static native int fstatat(int dirfd, byte[] pathname, byte[] buf, int flags);
+    private static native int fstatat(int dirfd, byte[] pathname, byte[] buf, int flags);
 
     /* lstat */
 
@@ -110,7 +110,7 @@ public final class NativeStat extends JNIBase {
         return ret;
     }
 
-    static native int lstat(byte[] pathname, byte[] buf);
+    private static native int lstat(byte[] pathname, byte[] buf);
 
     private NativeStat() {
     }

@@ -55,7 +55,7 @@ public final class NativeDirs2 extends JNIBase {
      * @param mode Mode of the directory as well as all parent directories
      * @return numbers of directories created, or -1 on error
      */
-    static native int mkdirs(byte[] pathname, int mode);
+    private static native int mkdirs(byte[] pathname, int mode);
 
     /* rmdirs */
 
@@ -77,7 +77,7 @@ public final class NativeDirs2 extends JNIBase {
      * @param mode Mode of the directory as well as all parent directories
      * @return numbers of directories created, or -1 on error
      */
-    static native int rmdirs(byte[] pathname);
+    private static native int rmdirs(byte[] pathname);
 
     private NativeDirs2() {
     }

@@ -40,7 +40,7 @@ public final class NativeFiles2 extends JNIBase {
         return copy(tPath(oldpath), tPath(newpath));
     }
 
-    static native int copy(byte[] oldpath, byte[] newpath);
+    private static native int copy(byte[] oldpath, byte[] newpath);
 
     /* copyat */
 
@@ -52,7 +52,7 @@ public final class NativeFiles2 extends JNIBase {
         return copyat(olddirfd, tPath(oldpath), newdirfd, tPath(newpath));
     }
 
-    static native int copyat(int olddirfd, byte[] oldpath, int newdirfd, byte[] newpath);
+    private static native int copyat(int olddirfd, byte[] oldpath, int newdirfd, byte[] newpath);
 
     private NativeFiles2() {
     }

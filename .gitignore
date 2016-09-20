@@ -1,6 +1,7 @@
-bin
-dep
-dist
+*/bin
+*/dep
+*/obj
 *.o
 *.sublime-workspace
-**/nbproject/private
+*/nbproject/private
+/dist

@@ -118,6 +118,10 @@ public final class NativeFiles extends JNIBase {
         return faccessat(dirfd, tPath(pathname), mode, flags);
     }
 
+    public static int faccessat(int dirfd, Dirent64 pathname, int mode, int flags) {
+        return faccessat(dirfd, pathname.d_name, mode, flags);
+    }
+
     private static native int faccessat(int dirfd, byte[] pathname, int mode, int flags);
 
     /* fallocate */
@@ -138,6 +142,10 @@ public final class NativeFiles extends JNIBase {
         return fchmodat(dirfd, tPath(pathname), mode, flags);
     }
 
+    public static int fchmodat(int dirfd, Dirent64 pathname, int mode, int flags) {
+        return fchmodat(dirfd, pathname.d_name, mode, flags);
+    }
+
     private static native int fchmodat(int dirfd, byte[] pathname, int mode, int flags);
 
     /* fchown */
@@ -152,6 +160,10 @@ public final class NativeFiles extends JNIBase {
 
     public static int fchownat(int dirfd, String pathname, int owner, int group, int flags) {
         return fchownat(dirfd, tPath(pathname), owner, group, flags);
+    }
+
+    public static int fchownat(int dirfd, Dirent64 pathname, int owner, int group, int flags) {
+        return fchownat(dirfd, pathname.d_name, owner, group, flags);
     }
 
     private static native int fchownat(int dirfd, byte[] pathname, int owner, int group, int flags);
@@ -192,6 +204,10 @@ public final class NativeFiles extends JNIBase {
 
     public static int linkat(int olddirfd, String oldpath, int newdirfd, String newpath, int flags) {
         return linkat(olddirfd, tPath(oldpath), newdirfd, tPath(newpath), flags);
+    }
+
+    public static int linkat(int olddirfd, Dirent64 oldpath, int newdirfd, Dirent64 newpath, int flags) {
+        return linkat(olddirfd, oldpath.d_name, newdirfd, newpath.d_name, flags);
     }
 
     private static native int linkat(int olddirfd, byte[] oldpath, int newdirfd, byte[] newpath, int flags);
@@ -253,6 +269,10 @@ public final class NativeFiles extends JNIBase {
         return openat(dirfd, tPath(pathname), flags, mode);
     }
 
+    public static int openat(int dirfd, Dirent64 pathname, int flags, int mode) {
+        return openat(dirfd, pathname.d_name, flags, mode);
+    }
+
     private static native int openat(int dirfd, byte[] pathname, int flags, int mode);
 
     /* pipe */
@@ -285,6 +305,10 @@ public final class NativeFiles extends JNIBase {
         return renameat(olddirfd, tPath(oldpath), newdirfd, tPath(newpath));
     }
 
+    public static int renameat(int olddirfd, Dirent64 oldpath, int newdirfd, Dirent64 newpath) {
+        return renameat(olddirfd, oldpath.d_name, newdirfd, newpath.d_name);
+    }
+
     private static native int renameat(int olddirfd, byte[] oldpath, int newdirfd, byte[] newpath);
 
     /* renameat2 */
@@ -299,6 +323,10 @@ public final class NativeFiles extends JNIBase {
 
     public static int renameat2(int olddirfd, String oldpath, int newdirfd, String newpath, int flags) {
         return renameat2(olddirfd, tPath(oldpath), newdirfd, tPath(newpath), flags);
+    }
+
+    public static int renameat2(int olddirfd, Dirent64 oldpath, int newdirfd, Dirent64 newpath, int flags) {
+        return renameat2(olddirfd, oldpath.d_name, newdirfd, newpath.d_name, flags);
     }
 
     private static native int renameat2(int olddirfd, byte[] oldpath, int newdirfd, byte[] newpath, int flags);
@@ -323,6 +351,10 @@ public final class NativeFiles extends JNIBase {
 
     public static int symlinkat(String target, int newdirfd, String linkpath) {
         return symlinkat(tPath(target), newdirfd, tPath(linkpath));
+    }
+
+    public static int symlinkat(Dirent64 target, int newdirfd, Dirent64 linkpath) {
+        return symlinkat(target.d_name, newdirfd, linkpath.d_name);
     }
 
     private static native int symlinkat(byte[] target, int newdirfd, byte[] linkpath);
@@ -359,6 +391,10 @@ public final class NativeFiles extends JNIBase {
 
     public static int unlinkat(int dirfd, String pathname, int flags) {
         return unlinkat(dirfd, tPath(pathname), flags);
+    }
+
+    public static int unlinkat(int dirfd, Dirent64 pathname, int flags) {
+        return unlinkat(dirfd, pathname.d_name, flags);
     }
 
     private static native int unlinkat(int dirfd, byte[] pathname, int flags);

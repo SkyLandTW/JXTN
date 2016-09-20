@@ -120,6 +120,10 @@ public final class NativeDirs extends JNIBase {
         return mkdirat(dirfd, tPath(pathname), mode);
     }
 
+    public static int mkdirat(int dirfd, Dirent64 pathname, int mode) {
+        return mkdirat(dirfd, pathname.d_name, mode);
+    }
+
     private static native int mkdirat(int dirfd, byte[] pathname, int mode);
 
     /* rmdir */

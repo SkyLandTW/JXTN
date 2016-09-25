@@ -27,7 +27,6 @@
 package jxtn.core.unix;
 
 import java.nio.ByteBuffer;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 
 /**
@@ -58,7 +57,7 @@ abstract class JNIBase {
     protected static byte[][] tArgs(String[] args) {
         byte[][] args_b = new byte[args.length][];
         for (int i = 0; i < args.length; i++) {
-            args_b[i] = args[i].getBytes(StandardCharsets.UTF_8);
+            args_b[i] = tName(args[i]);
         }
         return args_b;
     }

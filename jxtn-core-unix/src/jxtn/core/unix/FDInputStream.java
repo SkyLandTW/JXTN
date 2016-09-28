@@ -32,16 +32,18 @@ import java.io.InputStream;
 public final class FDInputStream extends InputStream {
 
     private final int fd;
+    private final boolean blocking;
     private final boolean keepOpen;
     private boolean closed;
 
-    public FDInputStream(int fd) {
-        this(fd, false);
+    public FDInputStream(int fd, boolean blocking) {
+        this(fd, blocking, false);
     }
 
-    public FDInputStream(int fd, boolean keepOpen) {
+    public FDInputStream(int fd, boolean blocking, boolean keepOpen) {
         assert fd >= 0;
         this.fd = fd;
+        this.blocking = blocking;
         this.keepOpen = keepOpen;
     }
 
@@ -59,7 +61,9 @@ public final class FDInputStream extends InputStream {
         if (off < 0 || off + len > b.length) {
             throw new IllegalArgumentException("b: " + (off + len));
         }
-        long ret = NativeIO.read(this.fd, b, off, len);
+        long ret = this.blocking
+                ? NativeIO.readb(this.fd, b, off, len)
+                : NativeIO.read(this.fd, b, off, len);
         if (ret == -1L) {
             throw new IOException("read: " + NativeErrno.errName());
         }

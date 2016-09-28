@@ -32,16 +32,18 @@ import java.io.OutputStream;
 public final class FDOutputStream extends OutputStream {
 
     private final int fd;
+    private final boolean blocking;
     private final boolean keepOpen;
     private boolean closed;
 
-    public FDOutputStream(int fd) {
-        this(fd, false);
+    public FDOutputStream(int fd, boolean blocking) {
+        this(fd, blocking, false);
     }
 
-    public FDOutputStream(int fd, boolean keepOpen) {
+    public FDOutputStream(int fd, boolean blocking, boolean keepOpen) {
         assert fd >= 0;
         this.fd = fd;
+        this.blocking = blocking;
         this.keepOpen = keepOpen;
     }
 
@@ -56,7 +58,9 @@ public final class FDOutputStream extends OutputStream {
         if (off < 0 || off + len > b.length) {
             throw new IllegalArgumentException("b: " + (off + len));
         }
-        long ret = NativeIO.write(this.fd, b, off, len);
+        long ret = this.blocking
+                ? NativeIO.writeb(this.fd, b, off, len)
+                : NativeIO.write(this.fd, b, off, len);
         if (ret == -1L) {
             throw new IOException("write: " + NativeErrno.errName());
         }

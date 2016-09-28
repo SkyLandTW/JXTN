@@ -31,6 +31,13 @@ It's intended for:
 - Process renaming
 - BSD Socket related calls
 
+#### Cautions
+
+- read/write/readv/writev relies on non-blocking I/O behavior to avoid buffer copying (NOT SAFE according to JNI spec),
+  blocking operations should use readb() and writeb() which resort to the standard method of copying C buffer to/from
+  Java buffer (GC may rearrange Java buffers during I/O waiting). If the caller is uncertain, readb/writeb should be
+  used instead for reliability.
+
 #### Build & Install
 
 1. Install JDK headers ("apt-get install openjdk-8-jdk")

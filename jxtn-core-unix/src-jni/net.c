@@ -27,6 +27,7 @@
 
 #define _GNU_SOURCE
 
+#include <string.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 
@@ -54,19 +55,33 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeNet_listen(JNIEnv *env, jclass 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeNet_accept(JNIEnv *env, jclass thisObj,
         jint sockfd, jbyteArray addr) {
     socklen_t addrlen = 0;
+    char addr_buf[128];
+    struct sockaddr* addr_tmp = NULL;
     if (addr != NULL) {
         addrlen = UI((*env)->GetArrayLength(env, addr));
+        addr_tmp = (struct sockaddr*) &addr_buf;
     }
-    return ERR(accept(sockfd, (struct sockaddr*) resolveBA(addr), &addrlen));
+    int ret = ERR(accept(sockfd, addr_tmp, &addrlen));
+    if (ret >= 0 && addr_tmp != NULL) {
+        memcpy(resolveBA(addr), addr_tmp, addrlen);
+    }
+    return ret;
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeNet_accept4(JNIEnv *env, jclass thisObj,
         jint sockfd, jbyteArray addr, jint flags) {
     socklen_t addrlen = 0;
+    char addr_buf[128];
+    struct sockaddr* addr_tmp = NULL;
     if (addr != NULL) {
         addrlen = UI((*env)->GetArrayLength(env, addr));
+        addr_tmp = (struct sockaddr*) &addr_buf;
     }
-    return ERR(accept4(sockfd, resolveBA(addr), &addrlen, flags));
+    int ret = ERR(accept4(sockfd, addr_tmp, &addrlen, flags));
+    if (ret >= 0 && addr_tmp != NULL) {
+        memcpy(resolveBA(addr), addr_tmp, addrlen);
+    }
+    return ret;
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeNet_getsockopt(JNIEnv *env, jclass thisObj,

@@ -25,7 +25,8 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-#include <malloc.h>
+#include <stdlib.h>
+#include <string.h>
 #include <sys/sendfile.h>
 #include <sys/uio.h>
 #include <unistd.h>
@@ -97,6 +98,15 @@ JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_read(JNIEnv *env, jclass th
     return ERRL(read(fd, buf, UL(count)));
 }
 
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_readb(JNIEnv *env, jclass thisObj,
+        int fd, jobject buf_base, jlong buf_offset, jlong count) {
+    void* tmp = malloc(UL(count));
+    long ret = ERRL(read(fd, tmp, UL(count)));
+    memcpy(resolve(buf_base, buf_offset), tmp, UL(count));
+    free(tmp);
+    return ret;
+}
+
 JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_readv(JNIEnv *env, jclass thisObj,
         int fd, jobjectArray iov_bases, jintArray iov_offs, jlongArray iov_lens) {
     if (iov_bases == NULL || iov_offs == NULL || iov_lens == NULL) {
@@ -127,6 +137,15 @@ JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_write(JNIEnv *env, jclass t
         int fd, jobject buf_base, jlong buf_offset, jlong count) {
     void* buf = resolve(buf_base, buf_offset);
     return ERRL(write(fd, buf, UL(count)));
+}
+
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_writeb(JNIEnv *env, jclass thisObj,
+        int fd, jobject buf_base, jlong buf_offset, jlong count) {
+    void* tmp = malloc(UL(count));
+    memcpy(tmp, resolve(buf_base, buf_offset), UL(count));
+    long ret = ERRL(write(fd, tmp, UL(count)));
+    free(tmp);
+    return ret;
 }
 
 JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_writev(JNIEnv *env, jclass thisObj,

@@ -117,6 +117,22 @@ public final class NativeIO extends JNIBase {
 
     private static native long read(int fd, Object buf_base, long buf_offset, long count);
 
+    /* readb (blocking read) */
+
+    public static long readb(int fd, ByteBuffer buf) {
+        return rBuffer(buf, readb(fd, buf.array(), buf.arrayOffset() + buf.position(), buf.remaining()));
+    }
+
+    public static long readb(int fd, byte[] buf_array) {
+        return readb(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET, buf_array.length);
+    }
+
+    public static long readb(int fd, byte[] buf_array, int buf_offset, int count) {
+        return readb(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET + buf_offset, count);
+    }
+
+    private static native long readb(int fd, Object buf_base, long buf_offset, long count);
+
     /* readv */
 
     public static long readv_arrays(int fd, List<byte[]> iovecs) {
@@ -150,6 +166,22 @@ public final class NativeIO extends JNIBase {
     }
 
     private static native long write(int fd, Object buf_base, long buf_offset, long count);
+
+    /* writeb (blocking write) */
+
+    public static long writeb(int fd, ByteBuffer buf) {
+        return rBuffer(buf, writeb(fd, buf.array(), buf.arrayOffset() + buf.position(), buf.remaining()));
+    }
+
+    public static long writeb(int fd, byte[] buf_array) {
+        return writeb(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET, buf_array.length);
+    }
+
+    public static long writeb(int fd, byte[] buf_array, int buf_offset, int count) {
+        return writeb(fd, (Object) buf_array, Unsafe.ARRAY_BYTE_BASE_OFFSET + buf_offset, count);
+    }
+
+    private static native long writeb(int fd, Object buf_base, long buf_offset, long count);
 
     /* writev */
 

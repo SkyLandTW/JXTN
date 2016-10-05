@@ -41,12 +41,12 @@ import java.nio.ByteBuffer;
  */
 public final class FastUTF8 {
 
-    private static final int UTF8_2B_MIN = 0b11000000;
-    private static final int UTF8_3B_MIN = 0b11100000;
-    private static final int UTF8_4B_MIN = 0b11110000;
-    private static final int UTF8_5B_MIN = 0b11111000;
-    private static final int UTF8_6B_MIN = 0b11111100;
-    private static final int UTF8_6B_MAX = 0b11111101;
+    public static final int UTF8_2B_MIN = 0b11000000;
+    public static final int UTF8_3B_MIN = 0b11100000;
+    public static final int UTF8_4B_MIN = 0b11110000;
+    public static final int UTF8_5B_MIN = 0b11111000;
+    public static final int UTF8_6B_MIN = 0b11111100;
+    public static final int UTF8_6B_MAX = 0b11111101;
 
     /**
      * Encode a single character to UTF-8 bytes
@@ -296,48 +296,20 @@ public final class FastUTF8 {
         return dPos - dstOffset;
     }
 
-    /**
-     * Verify whether characters in the given buffer are correct UTF-8 sequences.
-     *
-     * @param buffer buffer to check
-     * @return true if {@code buffer} is in UTF-8
-     */
     public static boolean verify(ByteBuffer buffer) {
         return verify(buffer.array(),
                 buffer.arrayOffset() + buffer.position(),
                 buffer.remaining());
     }
 
-    /**
-     * Verify whether characters in the given buffer are correct UTF-8 sequences.
-     *
-     * @param buffer buffer to check
-     * @return true if {@code buffer} is in UTF-8
-     */
     public static boolean verify(byte[] buffer) {
         return verify(buffer, 0, buffer.length);
     }
 
-    /**
-     * Verify whether characters in the given buffer are correct UTF-8 sequences.
-     *
-     * @param buffer buffer to check
-     * @param offset offset of contents in {@code buffer} to check
-     * @param length length of contents in {@code buffer} to check, from {@code offset}
-     * @return true if {@code buffer} is in UTF-8
-     */
     public static boolean verify(byte[] buffer, int offset, int length) {
+        // simplified from Google Profobuf, see https://en.wikipedia.org/wiki/UTF-8#Description
         int index = offset;
         int limit = offset + length;
-        while (index < limit && buffer[index] >= 0) {
-            index++;
-        }
-        return verifyNonASCII(buffer, index, limit);
-    }
-
-    private static boolean verifyNonASCII(byte[] buffer, int start, int limit) {
-        // simplified from Google Profobuf, see https://en.wikipedia.org/wiki/UTF-8#Description
-        int index = start;
         while (true) {
             byte firstByte;
             // skip ASCII
@@ -345,7 +317,7 @@ public final class FastUTF8 {
                 if (index >= limit) {
                     return true;
                 }
-            } while ((firstByte = buffer[index++]) >= 0);
+            } while ((firstByte = buffer[index++]) > 0);
             int firstChar = firstByte & 0xFF;
             //
             if (firstChar < UTF8_2B_MIN) {
@@ -415,10 +387,9 @@ public final class FastUTF8 {
         }
     }
 
-    private static boolean verifyUTF8Rest(byte b) {
+    public static boolean verifyUTF8Rest(byte b) {
         // see https://en.wikipedia.org/wiki/UTF-8#Description
         int hi = (b & 0xff) >>> 6;
         return hi == 0b10;
     }
-
 }

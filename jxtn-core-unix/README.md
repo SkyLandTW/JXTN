@@ -33,10 +33,13 @@ It's intended for:
 
 #### Cautions
 
-- read/write/readv/writev relies on non-blocking I/O behavior to avoid buffer copying (NOT SAFE according to JNI spec),
-  blocking operations should use readb() and writeb() which resort to the standard method of copying C buffer to/from
-  Java buffer (GC may rearrange Java buffers during I/O waiting). If the caller is uncertain, readb/writeb should be
-  used instead for reliability.
+- Several I/O functions have names such as "readNB" or "writeNB", the "NB" indicate non-blocking property of the fd
+  itself, which could eliminate the need of duplicating buffers (NOT SAFE according to JNI spec).
+  Blockable operations such as those on socket should use read() and write() which resort to the standard method of
+  copying C buffer to/from Java buffer (GC may rearrange Java buffers during I/O waiting). If the caller is uncertain,
+  the blocking version should be used instead for reliability.
+- Some operations such as *getdents64* or *readlink* never copy Java buffers. It's uncertain whether there would be
+  issues on slow FS like NFS or CIFS.
 
 #### Build & Install
 

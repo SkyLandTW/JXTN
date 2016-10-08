@@ -117,7 +117,7 @@ public final class NativeINotify extends JNIBase {
         byte[] inotify_ary = new byte[Math.max(bufferLength, INotifyEvent.BUFFER_SIZE)];
         long total = 0;
         long ret;
-        while ((ret = NativeIO.readb(fd, inotify_ary)) > 0) {
+        while ((ret = NativeIO.read(fd, inotify_ary)) > 0) {
             ByteBuffer inotify_buf = ByteBuffer.wrap(inotify_ary);
             inotify_buf.limit((int) ret);
             total += ret;

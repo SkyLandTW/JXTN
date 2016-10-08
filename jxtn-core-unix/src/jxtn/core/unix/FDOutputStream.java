@@ -59,8 +59,8 @@ public final class FDOutputStream extends OutputStream {
             throw new IllegalArgumentException("b: " + (off + len));
         }
         long ret = this.blocking
-                ? NativeIO.writeb(this.fd, b, off, len)
-                : NativeIO.write(this.fd, b, off, len);
+                ? NativeIO.write(this.fd, b, off, len)
+                : NativeIO.writeNB(this.fd, b, off, len);
         if (ret == -1L) {
             throw new IOException("write: " + NativeErrno.errName());
         }

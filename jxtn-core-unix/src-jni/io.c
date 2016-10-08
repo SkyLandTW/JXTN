@@ -38,13 +38,13 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeIO_close(JNIEnv *env, jclass th
     return ERR(close(fd));
 }
 
-JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_pread(JNIEnv *env, jclass thisObj,
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_preadNB(JNIEnv *env, jclass thisObj,
         int fd, jobject buf_base, jlong buf_offset, jlong count, jlong offset) {
     void* buf = resolve(buf_base, buf_offset);
     return ERRL(pread(fd, buf, UL(count), offset));
 }
 
-JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_preadv(JNIEnv *env, jclass thisObj,
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_preadvNB(JNIEnv *env, jclass thisObj,
         int fd, jobjectArray iov_bases, jintArray iov_offs, jlongArray iov_lens, jlong offset) {
     if (iov_bases == NULL || iov_offs == NULL || iov_lens == NULL) {
         return SETERR(EFAULT);
@@ -65,13 +65,13 @@ JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_preadv(JNIEnv *env, jclass 
     return ret;
 }
 
-JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_pwrite(JNIEnv *env, jclass thisObj,
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_pwriteNB(JNIEnv *env, jclass thisObj,
         int fd, jobject buf_base, jlong buf_offset, jlong count, jlong offset) {
     void* buf = resolve(buf_base, buf_offset);
     return ERRL(pwrite(fd, buf, UL(count), offset));
 }
 
-JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_pwritev(JNIEnv *env, jclass thisObj,
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_pwritevNB(JNIEnv *env, jclass thisObj,
         int fd, jobjectArray iov_bases, jintArray iov_offs, jlongArray iov_lens, jlong offset) {
     if (iov_bases == NULL || iov_offs == NULL || iov_lens == NULL) {
         return SETERR(EFAULT);
@@ -92,13 +92,13 @@ JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_pwritev(JNIEnv *env, jclass
     return ret;
 }
 
-JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_read(JNIEnv *env, jclass thisObj,
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_readNB(JNIEnv *env, jclass thisObj,
         int fd, jobject buf_base, jlong buf_offset, jlong count) {
     void* buf = resolve(buf_base, buf_offset);
     return ERRL(read(fd, buf, UL(count)));
 }
 
-JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_readb(JNIEnv *env, jclass thisObj,
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_read(JNIEnv *env, jclass thisObj,
         int fd, jobject buf_base, jlong buf_offset, jlong count) {
     void* tmp = malloc(UL(count));
     long ret = ERRL(read(fd, tmp, UL(count)));
@@ -107,7 +107,7 @@ JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_readb(JNIEnv *env, jclass t
     return ret;
 }
 
-JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_readv(JNIEnv *env, jclass thisObj,
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_readvNB(JNIEnv *env, jclass thisObj,
         int fd, jobjectArray iov_bases, jintArray iov_offs, jlongArray iov_lens) {
     if (iov_bases == NULL || iov_offs == NULL || iov_lens == NULL) {
         return SETERR(EFAULT);
@@ -133,13 +133,13 @@ JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_sendfile(JNIEnv *env, jclas
     return ERRL(sendfile(out_fd, in_fd, &offset, UL(count)));
 }
 
-JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_write(JNIEnv *env, jclass thisObj,
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_writeNB(JNIEnv *env, jclass thisObj,
         int fd, jobject buf_base, jlong buf_offset, jlong count) {
     void* buf = resolve(buf_base, buf_offset);
     return ERRL(write(fd, buf, UL(count)));
 }
 
-JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_writeb(JNIEnv *env, jclass thisObj,
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_write(JNIEnv *env, jclass thisObj,
         int fd, jobject buf_base, jlong buf_offset, jlong count) {
     void* tmp = malloc(UL(count));
     memcpy(tmp, resolve(buf_base, buf_offset), UL(count));
@@ -148,7 +148,7 @@ JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_writeb(JNIEnv *env, jclass 
     return ret;
 }
 
-JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_writev(JNIEnv *env, jclass thisObj,
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeIO_writevNB(JNIEnv *env, jclass thisObj,
         int fd, jobjectArray iov_bases, jintArray iov_offs, jlongArray iov_lens) {
     if (iov_bases == NULL || iov_offs == NULL || iov_lens == NULL) {
         return SETERR(EFAULT);

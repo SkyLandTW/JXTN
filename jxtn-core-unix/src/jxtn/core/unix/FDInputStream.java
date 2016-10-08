@@ -62,8 +62,8 @@ public final class FDInputStream extends InputStream {
             throw new IllegalArgumentException("b: " + (off + len));
         }
         long ret = this.blocking
-                ? NativeIO.readb(this.fd, b, off, len)
-                : NativeIO.read(this.fd, b, off, len);
+                ? NativeIO.read(this.fd, b, off, len)
+                : NativeIO.readNB(this.fd, b, off, len);
         if (ret == -1L) {
             throw new IOException("read: " + NativeErrno.errName());
         }

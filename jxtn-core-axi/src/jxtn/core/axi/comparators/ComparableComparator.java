@@ -39,10 +39,10 @@ import java.util.Comparator;
  * @param <T> 要比較的項目型態
  */
 public final class ComparableComparator<T extends Comparable<? super T>> implements Comparator<T> {
+
     @SuppressWarnings("rawtypes")
     public static final ComparableComparator instance = new ComparableComparator<>();
 
-    @SuppressWarnings("unchecked")
     public static <T extends Comparable<? super T>> ComparableComparator<T> getInstance() {
         return ComparableComparator.instance;
     }

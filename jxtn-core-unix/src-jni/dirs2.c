@@ -59,12 +59,14 @@ static int rmdirs(const char *pathname);
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs2_mkdirs(JNIEnv *env, jclass thisObj,
         jbyteArray pathname, jint mode) {
-    return ERR(mkdirs(resolveCS(pathname), UI(mode)));
+    char* c_pathname = ACOPY_CS(pathname);
+    return ERR(mkdirs(c_pathname, UI(mode)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs2_rmdirs(JNIEnv *env, jclass thisObj,
         jbyteArray pathname) {
-    return ERR(rmdirs(resolveCS(pathname)));
+    char* c_pathname = ACOPY_CS(pathname);
+    return ERR(rmdirs(c_pathname));
 }
 
 static int mkdirs(const char *pathname, mode_t mode) {

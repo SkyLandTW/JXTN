@@ -32,8 +32,10 @@
 
 JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeXAttr_getxattr(JNIEnv *env, jclass thisObj,
         jbyteArray path, jbyteArray name, jbyteArray value) {
+    char* c_path = ACOPY_CS(path);
+    char* c_name = ACOPY_CS(name);
     size_t size = value == NULL ? 0 : UL((*env)->GetArrayLength(env, value));
-    return ERRL(getxattr(resolveCS(path), resolveCS(name), resolveBA(value), size));
+    return ERRL(getxattr(c_path, c_name, resolveBA(value), size));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeXAttr_setxattr(JNIEnv *env, jclass thisObj,
@@ -41,14 +43,17 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeXAttr_setxattr(JNIEnv *env, jcl
     if (value == NULL) {
         return SETERR(EFAULT);
     }
+    char* c_path = ACOPY_CS(path);
+    char* c_name = ACOPY_CS(name);
     size_t size = UL((*env)->GetArrayLength(env, value));
-    return ERR(setxattr(resolveCS(path), resolveCS(name), resolveBA(value), size, flags));
+    return ERR(setxattr(c_path, c_name, resolveBA(value), size, flags));
 }
 
 JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeXAttr_fgetxattr(JNIEnv *env, jclass thisObj,
         jint filedes, jbyteArray name, jbyteArray value) {
+    char* c_name = ACOPY_CS(name);
     size_t size = value == NULL ? 0 : UL((*env)->GetArrayLength(env, value));
-    return ERRL(fgetxattr(filedes, resolveCS(name), resolveBA(value), size));
+    return ERRL(fgetxattr(filedes, c_name, resolveBA(value), size));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeXAttr_fsetxattr(JNIEnv *env, jclass thisObj,
@@ -56,14 +61,17 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeXAttr_fsetxattr(JNIEnv *env, jc
     if (value == NULL) {
         return SETERR(EFAULT);
     }
+    char* c_name = ACOPY_CS(name);
     size_t size = UL((*env)->GetArrayLength(env, value));
-    return ERR(fsetxattr(filedes, resolveCS(name), resolveBA(value), size, flags));
+    return ERR(fsetxattr(filedes, c_name, resolveBA(value), size, flags));
 }
 
 JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeXAttr_lgetxattr(JNIEnv *env, jclass thisObj,
         jbyteArray path, jbyteArray name, jbyteArray value) {
+    char* c_path = ACOPY_CS(path);
+    char* c_name = ACOPY_CS(name);
     size_t size = value == NULL ? 0 : UL((*env)->GetArrayLength(env, value));
-    return ERRL(lgetxattr(resolveCS(path), resolveCS(name), resolveBA(value), size));
+    return ERRL(lgetxattr(c_path, c_name, resolveBA(value), size));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeXAttr_lsetxattr(JNIEnv *env, jclass thisObj,
@@ -71,6 +79,8 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeXAttr_lsetxattr(JNIEnv *env, jc
     if (value == NULL) {
         return SETERR(EFAULT);
     }
+    char* c_path = ACOPY_CS(path);
+    char* c_name = ACOPY_CS(name);
     size_t size = UL((*env)->GetArrayLength(env, value));
-    return ERR(lsetxattr(resolveCS(path), resolveCS(name), resolveBA(value), size, flags));
+    return ERR(lsetxattr(c_path, c_name, resolveBA(value), size, flags));
 }

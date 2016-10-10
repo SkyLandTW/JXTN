@@ -33,7 +33,8 @@
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeStat_stat(JNIEnv *env, jclass thisObj,
         jbyteArray pathname, jbyteArray buf) {
-    return ERR(stat(resolveCS(pathname), (struct stat *) resolveBA(buf)));
+    char* c_pathname = ACOPY_CS(pathname);
+    return ERR(stat(c_pathname, (struct stat *) resolveBA(buf)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeStat_fstat(JNIEnv *env, jclass thisObj,
@@ -43,10 +44,12 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeStat_fstat(JNIEnv *env, jclass 
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeStat_fstatat(JNIEnv *env, jclass thisObj,
         jint dirfd, jbyteArray pathname, jbyteArray buf, int flags) {
-    return ERR(fstatat(dirfd, resolveCS(pathname), (struct stat *) resolveBA(buf), flags));
+    char* c_pathname = ACOPY_CS(pathname);
+    return ERR(fstatat(dirfd, c_pathname, (struct stat *) resolveBA(buf), flags));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeStat_lstat(JNIEnv *env, jclass thisObj,
         jbyteArray pathname, jbyteArray buf) {
-    return ERR(lstat(resolveCS(pathname), (struct stat *) resolveBA(buf)));
+    char* c_pathname = ACOPY_CS(pathname);
+    return ERR(lstat(c_pathname, (struct stat *) resolveBA(buf)));
 }

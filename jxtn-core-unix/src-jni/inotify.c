@@ -40,7 +40,8 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeINotify_init1(JNIEnv *env, jcla
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeINotify_add_1watch(JNIEnv *env, jclass thisObj,
         jint fd, jbyteArray pathname, jint mask) {
-    return ERR(inotify_add_watch(fd, resolveCS(pathname), UI(mask)));
+    char* c_pathname = ACOPY_CS(pathname);
+    return ERR(inotify_add_watch(fd, c_pathname, UI(mask)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeINotify_rm_1watch(JNIEnv *env, jclass thisObj,

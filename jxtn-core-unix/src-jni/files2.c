@@ -41,12 +41,16 @@ static int copyat(int olddirfd, const char* oldpath, int newdirfd, const char* n
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeFiles2_copy(JNIEnv *env, jclass thisObj,
         jbyteArray oldpath, jbyteArray newpath) {
-    return ERR(copyat(AT_FDCWD, resolveCS(oldpath), AT_FDCWD, resolveCS(newpath)));
+    char* c_oldpath = ACOPY_CS(oldpath);
+    char* c_newpath = ACOPY_CS(newpath);
+    return ERR(copyat(AT_FDCWD, c_oldpath, AT_FDCWD, c_newpath));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeFiles2_copyat(JNIEnv *env, jclass thisObj,
         jint olddirfd, jbyteArray oldpath, jint newdirfd, jbyteArray newpath) {
-    return ERR(copyat(olddirfd, resolveCS(oldpath), newdirfd, resolveCS(newpath)));
+    char* c_oldpath = ACOPY_CS(oldpath);
+    char* c_newpath = ACOPY_CS(newpath);
+    return ERR(copyat(olddirfd, c_oldpath, newdirfd, c_newpath));
 }
 
 static int copyat(int olddirfd, const char* oldpath, int newdirfd, const char* newpath) {

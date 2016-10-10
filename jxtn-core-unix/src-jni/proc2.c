@@ -53,13 +53,14 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc2_pexec(JNIEnv *env, jclass
     if (filename == NULL) {
         return SETERR(EFAULT);
     }
+    char* c_filename = ACOPY_CS(filename);
     // create C argv
     const int argv_len = argv == NULL ? 0 : (*env)->GetArrayLength(env, argv);
     char* argv_b[argv_len + 1];
     if (argv != NULL) {
         for (int i = 0; i < argv_len; i++) {
             jbyteArray arg = (jstring)(*env)->GetObjectArrayElement(env, argv, i);
-            argv_b[i] = (char*) resolveCS(arg);
+            argv_b[i] = ACOPY_CS(arg);
         }
     }
     argv_b[argv_len] = NULL;
@@ -70,14 +71,14 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc2_pexec(JNIEnv *env, jclass
     if (envp != NULL) {
         for (int i = 0; i < envp_len; i++) {
             jbyteArray evi = (jstring)(*env)->GetObjectArrayElement(env, envp, i);
-            envp_b[i] = (char*) resolveCS(evi);
+            envp_b[i] = ACOPY_CS(evi);
         }
         envp_b[envp_len] = NULL;
         child_environ = envp_b;
     } else {
         child_environ = environ;
     }
-    return ERR(pexec(fd_stdin, fd_stdout, fd_stderr, resolveCS(filename), argv_b, child_environ));
+    return ERR(pexec(fd_stdin, fd_stdout, fd_stderr, c_filename, argv_b, child_environ));
 }
 
 static void closefrom(int lowfd) {

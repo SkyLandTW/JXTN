@@ -33,12 +33,14 @@
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs_chdir(JNIEnv *env, jclass thisObj,
         jbyteArray path) {
-    return ERR(chdir(resolveCS(path)));
+    char* c_path = ACOPY_CS(path);
+    return ERR(chdir(c_path));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs_chroot(JNIEnv *env, jclass thisObj,
         jbyteArray path) {
-    return ERR(chroot(resolveCS(path)));
+    char* c_path = ACOPY_CS(path);
+    return ERR(chroot(c_path));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs_fchdir(JNIEnv *env, jclass thisObj,
@@ -57,16 +59,19 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs_getdents64(JNIEnv *env, jc
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs_mkdir(JNIEnv *env, jclass thisObj,
         jbyteArray pathname, jint mode) {
-    return ERR(mkdir(resolveCS(pathname), UI(mode)));
+    char* c_pathname = ACOPY_CS(pathname);
+    return ERR(mkdir(c_pathname, UI(mode)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs_mkdirat(JNIEnv *env, jclass thisObj,
         jint dirfd, jbyteArray pathname, jint mode) {
-    return ERR(mkdirat(dirfd, resolveCS(pathname), UI(mode)));
+    char* c_pathname = ACOPY_CS(pathname);
+    return ERR(mkdirat(dirfd, c_pathname, UI(mode)));
 }
 
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeDirs_rmdir(JNIEnv *env, jclass thisObj,
         jbyteArray pathname) {
-    return ERR(rmdir(resolveCS(pathname)));
+    char* c_pathname = ACOPY_CS(pathname);
+    return ERR(rmdir(c_pathname));
 }
 

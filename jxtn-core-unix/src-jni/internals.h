@@ -25,8 +25,10 @@
  * For more information, please refer to <http://unlicense.org/>
  */
 
-#include <jni.h>
+#include <alloca.h>
 #include <errno.h>
+#include <jni.h>
+#include <string.h>
 
 #define MAX(X,Y) ((X) > (Y) ? (X) : (Y))
 #define MIN(X,Y) ((X) < (Y) ? (X) : (Y))
@@ -124,6 +126,8 @@ static inline jlong SETERRL(int errnum) {
     return -1L;
 }
 
+#define ACOPY_CS(byteArray)       ({ size_t __len = byteArray == NULL ? 0L : UL((*env)->GetArrayLength(env, byteArray)); char* __var = byteArray == NULL ? NULL : (char*) alloca(__len); if (byteArray != NULL) memcpy(__var, resolveBA(byteArray), __len); __var; })
+
 /**
  * Resolve the data address from the given Java object and offset
  * <p>
@@ -163,22 +167,4 @@ static inline void* resolveBA(jbyteArray base) {
     void* base_ptr = *((void**) base);
     //
     return base_ptr + 16;
-}
-
-/**
- * Resolve the C string address from the given Java byte array
- *
- * @param base Java byte array, could be NULL
- * @return C string address
- * @see hotspot/src/share/vm/prims/unsafe.cpp, Unsafe_CopyMemory2
- */
-static inline const char* resolveCS(jbyteArray base) {
-    // hotspot/src/share/vm/runtime/jniHandles.hpp, JNIHandles::resolve (from "jobject" to "oop")
-    if (base == NULL) {
-        return NULL;
-    }
-    // hotspot/src/share/vm/prims/unsafe.cpp, index_oop_from_field_offset_long (from "oop" to data address)
-    void* base_ptr = *((void**) base);
-    //
-    return (const char*) (base_ptr + 16);
 }

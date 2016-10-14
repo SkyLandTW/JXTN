@@ -43,7 +43,16 @@ It's intended for:
 
 #### Build & Install
 
-1. Install JDK headers ("apt-get install openjdk-8-jdk")
+1. Install following headers:
+
+   - JDK headers: openjdk-8-jdk
+   - xattr headers: libattr1-dev
+   - PAM headers: libpam0g-dev
+
+   ```shell
+   apt-get install openjdk-8-jdk libattr1-dev libpam0g-dev
+   ```
+
 2. Set *JAVA_HOME* to the JDK directory
 3. Execute *make install* in the *jxtn-core-unix* directory
 4. Build the JAR file by ant

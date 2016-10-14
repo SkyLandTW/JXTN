@@ -2,7 +2,7 @@ vpath %.c ../src-jni
 
 CC = gcc
 CFLAGS = -ggdb3 -O2 -fPIC -Wall -Wconversion -Wc++-compat -Werror -std=gnu99 -I$$JAVA_HOME/include -I$$JAVA_HOME/include/linux
-LDFLAGS =
+LDFLAGS = -pie -Wl,-E -lpam
 
 DEPDIR := dep
 OBJDIR := obj
@@ -16,7 +16,7 @@ BIN = ../dist/libjxtn-core-unix.so
 all: $(BIN)
 
 install: $(BIN)
-	sudo install $(BIN) /usr/lib/jni/`basename $(BIN)`
+	sudo install -m 4754 $(BIN) /usr/lib/jni/`basename $(BIN)`
 
 -include $(DEP)
 

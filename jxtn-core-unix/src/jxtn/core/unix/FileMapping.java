@@ -73,8 +73,41 @@ public final class FileMapping {
         return wrap(source);
     }
 
+    public static NativeBuffer create(Path path, int prot, int flags)
+            throws IOException {
+        int rw = 0;
+        if ((prot & NativeMMap.PROT_READ) != 0 || (prot & NativeMMap.PROT_EXEC) != 0) {
+            if ((prot & NativeMMap.PROT_WRITE) != 0) {
+                rw = NativeFiles.O_RDWR;
+            } else {
+                rw = NativeFiles.O_RDONLY;
+            }
+        } else if ((prot & NativeMMap.PROT_WRITE) != 0) {
+            rw = NativeFiles.O_WRONLY;
+        }
+        int fd = NativeFiles.open(path, rw, 0);
+        if (fd == -1) {
+            throw new IOException(NativeErrno.errName());
+        }
+        long address, length;
+        try {
+            Out<Stat64> ostat = new Out<>();
+            if (NativeStat.fstat(fd, ostat) == -1) {
+                throw new IOException(NativeErrno.errName());
+            }
+            length = ostat.get().st_size;
+            address = NativeMMap.mmap(0L, length, prot, flags, fd, 0L);
+            if (address == NativeMMap.MAP_FAILED) {
+                throw new IOException(NativeErrno.errName());
+            }
+        } finally {
+            NativeIO.close(fd);
+        }
+        FileMappingFromUnix source = new FileMappingFromUnix(path, address, length);
+        return wrap(source);
+    }
+
     public static NativeBuffer tryCreate(Path path, int prot, int flags) {
-        String name = path.toString();
         int rw = 0;
         if ((prot & NativeMMap.PROT_READ) != 0 || (prot & NativeMMap.PROT_EXEC) != 0) {
             if ((prot & NativeMMap.PROT_WRITE) != 0) {
@@ -103,7 +136,7 @@ public final class FileMapping {
         } finally {
             NativeIO.close(fd);
         }
-        FileMappingFromUnix source = new FileMappingFromUnix(name, address, length);
+        FileMappingFromUnix source = new FileMappingFromUnix(path, address, length);
         return wrap(source);
     }
 
@@ -174,12 +207,12 @@ public final class FileMapping {
     }
 
     private static final class FileMappingFromUnix extends FileMappingSource {
-        private final String name;
+        private final Object source;
         private boolean closed;
 
-        public FileMappingFromUnix(String name, long address, long length) {
+        public FileMappingFromUnix(Object source, long address, long length) {
             super(address, length);
-            this.name = name;
+            this.source = source;
         }
 
         @Override
@@ -189,7 +222,7 @@ public final class FileMapping {
             }
             try {
                 if (NativeMMap.munmap(this.address, this.length) == -1) {
-                    System.err.println("munmap " + this.name + ": " + NativeErrno.errName());
+                    System.err.println("munmap " + this.source + ": " + NativeErrno.errName());
                 }
             } finally {
                 this.closed = true;
@@ -198,7 +231,7 @@ public final class FileMapping {
 
         @Override
         public String toString() {
-            return "mmap_" + this.name;
+            return "mmap_" + this.source;
         }
     }
 

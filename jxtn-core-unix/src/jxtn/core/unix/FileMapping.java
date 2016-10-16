@@ -91,11 +91,10 @@ public final class FileMapping {
         }
         long address, length;
         try {
-            Out<Stat64> ostat = new Out<>();
-            if (NativeStat.fstat(fd, ostat) == -1) {
+            length = NativeFiles.lseek(fd, 0, NativeFiles.SEEK_END);
+            if (length == -1L) {
                 throw new IOException(NativeErrno.errName());
             }
-            length = ostat.get().st_size;
             address = NativeMMap.mmap(0L, length, prot, flags, fd, 0L);
             if (address == NativeMMap.MAP_FAILED) {
                 throw new IOException(NativeErrno.errName());
@@ -124,11 +123,10 @@ public final class FileMapping {
         }
         long address, length;
         try {
-            Out<Stat64> ostat = new Out<>();
-            if (NativeStat.fstat(fd, ostat) == -1) {
+            length = NativeFiles.lseek(fd, 0, NativeFiles.SEEK_END);
+            if (length == -1L) {
                 return null;
             }
-            length = ostat.get().st_size;
             address = NativeMMap.mmap(0L, length, prot, flags, fd, 0L);
             if (address == NativeMMap.MAP_FAILED) {
                 return null;

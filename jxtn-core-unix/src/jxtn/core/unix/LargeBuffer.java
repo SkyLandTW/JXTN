@@ -121,4 +121,8 @@ public interface LargeBuffer {
     void putDoubleAt(long offset, double val);
 
     void putDataAt(long offset, byte[] data);
+
+    Long find(long limit, byte[] needle);
+
+    Long find(long offset, long limit, byte[] needle);
 }

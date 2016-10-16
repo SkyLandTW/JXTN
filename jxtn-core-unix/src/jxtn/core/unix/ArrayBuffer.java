@@ -353,6 +353,26 @@ public class ArrayBuffer implements LargeBuffer {
         System.arraycopy(data, 0, this.source, this.pointer + (int) offset, data.length);
     }
 
+    @Override
+    public final Long find(long limit, byte[] needle) {
+        int index = indexOf(this.source, this.pointer, (int) limit, needle, 0, needle.length);
+        if (index < 0) {
+            return null;
+        } else {
+            return (long) (index - this.pointer);
+        }
+    }
+
+    @Override
+    public final Long find(long offset, long limit, byte[] needle) {
+        int index = indexOf(this.source, this.pointer + (int) offset, (int) limit, needle, 0, needle.length);
+        if (index < 0) {
+            return null;
+        } else {
+            return (long) (index - this.pointer);
+        }
+    }
+
     public final ByteBuffer toByteBuffer() {
         ByteBuffer buffer = ByteBuffer.wrap(this.source, this.base, this.length);
         buffer.position((int) this.position());
@@ -428,5 +448,31 @@ public class ArrayBuffer implements LargeBuffer {
 
     private static void putDouble(byte[] b, int off, double val) {
         putLong(b, off, Double.doubleToLongBits(val));
+    }
+
+    private static int indexOf(
+            byte[] source, int sourceOffset, int sourceCount,
+            byte[] target, int targetOffset, int targetCount) {
+        if (targetCount == 0) {
+            return sourceOffset;
+        }
+        byte first = target[targetOffset];
+        int max = sourceOffset + (sourceCount - targetCount);
+        for (int i = sourceOffset; i <= max; i++) {
+            if (source[i] != first) {
+                while (++i <= max && source[i] != first) {
+                }
+            }
+            if (i <= max) {
+                int j = i + 1;
+                int end = j + targetCount - 1;
+                for (int k = targetOffset + 1; j < end && source[j] == target[k]; j++, k++) {
+                }
+                if (j == end) {
+                    return i;
+                }
+            }
+        }
+        return -1;
     }
 }

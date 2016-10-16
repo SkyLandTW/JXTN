@@ -363,6 +363,26 @@ public class NativeBuffer implements Closeable, LargeBuffer {
     }
 
     @Override
+    public final Long find(long limit, byte[] needle) {
+        long address = NativeString.memmem(this.pointer, limit, needle);
+        if (address == 0L) {
+            return null;
+        } else {
+            return address - this.pointer;
+        }
+    }
+
+    @Override
+    public final Long find(long offset, long limit, byte[] needle) {
+        long address = NativeString.memmem(this.pointer + offset, limit, needle);
+        if (address == 0L) {
+            return null;
+        } else {
+            return address - this.pointer;
+        }
+    }
+
+    @Override
     public final void close() {
         if (this.closed) {
             return;

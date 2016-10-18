@@ -106,6 +106,26 @@ public final class FileMapping {
         return wrap(source);
     }
 
+    public static NativeBuffer create(int fd, int prot, int flags)
+            throws IOException {
+        long length = NativeFiles.lseek(fd, 0, NativeFiles.SEEK_END);
+        if (length == -1L) {
+            throw new IOException(NativeErrno.errName());
+        }
+        return create(fd, 0L, length, prot, flags);
+    }
+
+    public static NativeBuffer create(int fd, long offset, long length, int prot, int flags)
+            throws IOException {
+        String name = "fd=" + fd;
+        long address = NativeMMap.mmap(0L, length, prot, flags, fd, offset);
+        if (address == NativeMMap.MAP_FAILED) {
+            throw new IOException(NativeErrno.errName());
+        }
+        FileMappingFromUnix source = new FileMappingFromUnix(name, address, length);
+        return wrap(source);
+    }
+
     public static NativeBuffer tryCreate(Path path, int prot, int flags) {
         int rw = 0;
         if ((prot & NativeMMap.PROT_READ) != 0 || (prot & NativeMMap.PROT_EXEC) != 0) {

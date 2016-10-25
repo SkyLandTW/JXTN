@@ -283,6 +283,17 @@ public final class NativeFiles extends JNIBase {
 
     public static native int pipe2(int[] pipefd, int flags);
 
+    /* readlink */
+    public static long readlink(Path pathname, byte[] buf) {
+        return readlink(tPath(pathname), buf);
+    }
+
+    public static long readlink(String pathname, byte[] buf) {
+        return readlink(tPath(pathname), buf);
+    }
+
+    private static native long readlink(byte[] pathname, byte[] buf);
+
     /* rename */
 
     public static int rename(Path oldpath, Path newpath) {

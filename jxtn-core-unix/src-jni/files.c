@@ -161,6 +161,16 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeFiles_pipe2(JNIEnv *env, jclass
     return ret;
 }
 
+JNIEXPORT jlong JNICALL Java_jxtn_core_unix_NativeFiles_readlink(JNIEnv *env, jclass thisObj,
+        jbyteArray pathname, jbyteArray buf) {
+    if (buf == NULL) {
+        return SETERR(EFAULT);
+    }
+    char* c_pathname = ACOPY_CS(pathname);
+    size_t bufsiz = UL((*env)->GetArrayLength(env, buf));
+    return ERRL(readlink(c_pathname, (char*) resolveBA(buf), bufsiz));
+}
+
 JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeFiles_rename(JNIEnv *env, jclass thisObj,
         jbyteArray oldpath, jbyteArray newpath) {
     char* c_oldpath = ACOPY_CS(oldpath);

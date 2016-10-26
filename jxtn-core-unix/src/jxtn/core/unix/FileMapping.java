@@ -126,6 +126,14 @@ public final class FileMapping {
         return wrap(source);
     }
 
+    public static NativeBuffer tryCreate(int fd, int prot, int flags) {
+        long length = NativeFiles.lseek(fd, 0, NativeFiles.SEEK_END);
+        if (length == -1L) {
+            return null;
+        }
+        return tryCreate(fd, 0L, length, prot, flags);
+    }
+
     public static NativeBuffer tryCreate(Path path, int prot, int flags) {
         int rw = 0;
         if ((prot & NativeMMap.PROT_READ) != 0 || (prot & NativeMMap.PROT_EXEC) != 0) {

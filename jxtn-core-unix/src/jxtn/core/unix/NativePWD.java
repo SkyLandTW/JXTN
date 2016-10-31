@@ -31,24 +31,17 @@ public final class NativePWD extends JNIBase {
     private static final int NGROUPS = 16;
     private static final int GROUP_NAME_SZ = 32;
 
-    public static int getgrouplist(String user, Out<String[]> groups_out) {
-        byte[][] raw_groups = new byte[NGROUPS][];
-        for (int i = 0; i < raw_groups.length; i++) {
-            raw_groups[i] = new byte[GROUP_NAME_SZ];
-        }
-        int ngroups = getgrouplist(tName(user), raw_groups);
-        if (ngroups == -1) {
-            return -1;
-        }
-        String[] str_groups = new String[ngroups];
-        for (int i = 0; i < ngroups; i++) {
-            str_groups[i] = CStrings.toString(raw_groups[i]);
-        }
-        groups_out.set(str_groups);
-        return ngroups;
+    /* getgrouplist */
+
+    public static int[] getgrouplist(String user) {
+        return getgrouplist(tName(user));
     }
 
-    private static native int getgrouplist(byte[] user, byte[][] groups);
+    private static native int[] getgrouplist(byte[] user);
+
+    /* getgrgid */
+
+    public static native String getgrgid(int gid);
 
     private NativePWD() {
     }

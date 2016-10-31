@@ -32,39 +32,36 @@
 
 #include "internals.h"
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativePWD_getgrouplist(JNIEnv *env, jclass thisObj,
-        jbyteArray user, jobjectArray groups) {
-    if (user == NULL || groups == NULL)
-        return SETERR(EFAULT);
+JNIEXPORT jintArray JNICALL Java_jxtn_core_unix_NativePWD_getgrouplist(JNIEnv *env, jclass thisObj,
+        jbyteArray user) {
+    if (user == NULL)
+        return NULL;
     char* c_user = ACOPY_CS(user);
     struct passwd pwd;
     struct passwd* pwnam_result;
     char pwnam_buf[512];
     if (getpwnam_r(c_user, &pwd, pwnam_buf, sizeof(pwnam_buf), &pwnam_result) == -1)
-        return ERR(-1);
-    gid_t gids[16];
-    int ngids = 16;
-    if (getgrouplist(c_user, pwd.pw_gid, gids, &ngids) == -1)
-        return ERR(-1);
-    const int groups_max = (*env)->GetArrayLength(env, groups);
-    for (int i = 0; i < MIN(ngids, groups_max); i++) {
-        struct group grp;
-        struct group* grgid_result;
-        char grgid_buf[512];
-        if (getgrgid_r(gids[i], &grp, grgid_buf, sizeof(grgid_buf), &grgid_result) == -1) {
-            jbyteArray out_group = (jbyteArray) (*env)->GetObjectArrayElement(env, groups, i);
-            int out_group_sz = (*env)->GetArrayLength(env, out_group);
-            snprintf((char*) resolveBA(out_group), UL(out_group_sz), "%d", gids[i]);
-        } else {
-            jbyteArray out_group = (jbyteArray) (*env)->GetObjectArrayElement(env, groups, i);
-            int out_group_sz = (*env)->GetArrayLength(env, out_group);
-            strncpy((char*) resolveBA(out_group), grp.gr_name, UL(out_group_sz));
-        }
+        return NULL;
+    gid_t groups[16];
+    int ngroups = 16;
+    if (getgrouplist(c_user, pwd.pw_gid, groups, &ngroups) == -1)
+        return NULL;
+    jintArray j_groups = (*env)->NewIntArray(env, ngroups);
+    jint* j_groups_ptr = (*env)->GetIntArrayElements(env, j_groups, 0);
+    for (int i = 0; i < ngroups; i++) {
+        j_groups_ptr[i] = SI(groups[i]);
     }
-    for (int i = ngids; i < groups_max; i++) {
-        jbyteArray out_group = (jbyteArray) (*env)->GetObjectArrayElement(env, groups, i);
-        int out_group_sz = (*env)->GetArrayLength(env, out_group);
-        memset(resolveBA(out_group), 0, UL(out_group_sz));
+    (*env)->ReleaseIntArrayElements(env, j_groups, j_groups_ptr, 0);
+    return j_groups;
+}
+
+JNIEXPORT jstring JNICALL Java_jxtn_core_unix_NativePWD_getgrgid(JNIEnv *env, jclass thisObj,
+        jint gid) {
+    struct group grp;
+    struct group* grgid_result;
+    char grgid_buf[512];
+    if (getgrgid_r(UI(gid), &grp, grgid_buf, sizeof(grgid_buf), &grgid_result) == -1) {
+        return NULL;
     }
-    return ngids;
+    return (*env)->NewStringUTF(env, grp.gr_name);
 }

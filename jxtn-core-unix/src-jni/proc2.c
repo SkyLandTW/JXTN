@@ -59,7 +59,7 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc2_pexec(JNIEnv *env, jclass
     char* argv_b[argv_len + 1];
     if (argv != NULL) {
         for (int i = 0; i < argv_len; i++) {
-            jbyteArray arg = (jstring)(*env)->GetObjectArrayElement(env, argv, i);
+            jbyteArray arg = (jbyteArray) (*env)->GetObjectArrayElement(env, argv, i);
             argv_b[i] = ACOPY_CS(arg);
         }
     }
@@ -70,7 +70,7 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc2_pexec(JNIEnv *env, jclass
     char ** child_environ;
     if (envp != NULL) {
         for (int i = 0; i < envp_len; i++) {
-            jbyteArray evi = (jstring)(*env)->GetObjectArrayElement(env, envp, i);
+            jbyteArray evi = (jbyteArray) (*env)->GetObjectArrayElement(env, envp, i);
             envp_b[i] = ACOPY_CS(evi);
         }
         envp_b[envp_len] = NULL;

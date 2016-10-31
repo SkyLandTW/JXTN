@@ -16,7 +16,7 @@ BIN = ../dist/libjxtn-core-unix.so
 all: $(BIN)
 
 install: $(BIN)
-	sudo install -m 4754 $(BIN) /usr/lib/jni/`basename $(BIN)`
+	sudo install -m 4754 $(BIN) /usr/java/packages/lib/amd64/`basename $(BIN)`
 
 -include $(DEP)
 

@@ -26,13 +26,14 @@
  */
 
 #include <signal.h>
+#include <sys/resource.h>
 #include <sys/syscall.h>
+#include <sys/time.h>
 #include <unistd.h>
 
 #include "internals.h"
 
-JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc_fork(JNIEnv *env, jclass thisObj
-        ) {
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc_fork(JNIEnv *env, jclass thisObj) {
     return ERR(fork());
 }
 
@@ -64,3 +65,17 @@ JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc_getuid(JNIEnv *env, jclass
     return SI(getuid());
 }
 
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc_nice(JNIEnv *env, jclass thisObj,
+        jint inc) {
+    return nice(inc);
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc_getpriority(JNIEnv *env, jclass thisObj,
+        jint which, jint who) {
+    return getpriority(which, UI(who));
+}
+
+JNIEXPORT jint JNICALL Java_jxtn_core_unix_NativeProc_setpriority(JNIEnv *env, jclass thisObj,
+        jint which, jint who, int prio) {
+    return setpriority(which, UI(who), prio);
+}

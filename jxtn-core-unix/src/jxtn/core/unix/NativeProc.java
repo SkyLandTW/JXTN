@@ -45,6 +45,16 @@ public final class NativeProc extends JNIBase {
 
     public static native int getuid();
 
+    public static native int nice(int inc);
+
+    public static final int PRIO_PROCESS = 0;
+    public static final int PRIO_PGRP = 1;
+    public static final int PRIO_USER = 2;
+
+    public static native int getpriority(int which, int who);
+
+    public static native int setpriority(int which, int who, int prio);
+
     private NativeProc() {
     }
 }

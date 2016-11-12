@@ -37,7 +37,6 @@ import java.nio.file.Path;
 abstract class JNIBase {
 
     static {
-        System.out.println(System.getProperty("java.library.path"));
         Runtime.getRuntime().loadLibrary("jxtn-core-unix");
     }
 

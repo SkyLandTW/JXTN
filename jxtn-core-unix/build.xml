@@ -32,6 +32,12 @@
         </javac>
     </target>
     <target name="dist" depends="compile" description="Package">
-        <jar jarfile="${dist}/${ant.project.name}.jar" basedir="${bin}" />
+        <jar jarfile="${dist}/${ant.project.name}.jar" basedir="${bin}">
+        	<manifest>
+        		<attribute name="Main-Class"
+        			value="jxtn.core.unix.unixMain" />
+        		<attribute name="Class-Path" value="${classpath-dist.name}" />
+        	</manifest>
+        </jar>
     </target>
 </project>

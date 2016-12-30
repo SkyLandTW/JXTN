@@ -27,14 +27,26 @@
 
 package jxtn.core.unix;
 
-public final class NetTrafficCapture extends JNIBase {
+public final class NativeNetCap extends JNIBase {
 
-	/* start */
-	public static native int start(String ifName);
+    public static native int openRaw();
 
-	/* receive */
-	public static native byte[] receive(int sockfd);
+    public static native int setPromiscuous(int sockfd, String ifName, boolean value);
 
-	private NetTrafficCapture() {
-	}
+    public static native int setReuseAddr(int sockfd);
+
+    public static native int setInterface(int sockfd, String ifName);
+
+    public static native int bindInterface(int sockfd, String ifName);
+
+    public static native int setRcvBuf(int sockfd, int size);
+
+    public static native int setRcvBufForce(int sockfd, int size);
+
+    public static native int setRcvTimeo(int sockfd, long sec, long usec);
+
+    public static native byte[] recvfrom(int sockfd);
+
+    private NativeNetCap() {
+    }
 }

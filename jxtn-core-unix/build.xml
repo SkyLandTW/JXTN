@@ -35,7 +35,7 @@
         <jar jarfile="${dist}/${ant.project.name}.jar" basedir="${bin}">
         	<manifest>
         		<attribute name="Main-Class"
-        			value="jxtn.core.unix.unixMain" />
+        			value="jxtn.core.unix.UnixTestMain" />
         		<attribute name="Class-Path" value="${classpath-dist.name}" />
         	</manifest>
         </jar>

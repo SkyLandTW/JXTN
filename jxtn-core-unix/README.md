@@ -57,4 +57,4 @@ It's intended for:
 3. Execute *make install* in the *jxtn-core-unix* directory
 4. Build the JAR file by ant
 
-*libjxtn-core-unix.so* will be installed into */usr/lib/jni/* by make
+*libjxtn-core-unix.so* will be installed into */usr/java/packages/lib/amd64/* by make

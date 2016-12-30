@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry excluding="**/*.c|**/*.h" including="**/*.java" kind="src" path="src">
 		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="/usr/lib/jni"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="/usr/java/packages/lib/amd64"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>

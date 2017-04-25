@@ -9,7 +9,7 @@ package org.controlsfx.control.textfield;
  * {@link AutoCompletionBinding}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.40.10.jar
+ * @version controlsfx-8.40.12.jar
  * @param <Z> 要建構的物件型態(需繼承{@link AutoCompletionBinding})
  * @param <B> 建構器本身的型態(需繼承{@link AutoCompletionBindingMaker})
  */
@@ -20,11 +20,23 @@ public class AutoCompletionBindingMaker<T extends java.lang.Object, Z extends Au
         implements AutoCompletionBindingMakerExt<T, Z, B>
 {
 
+    private boolean hasDelay;
+    private long valDelay;
+
     private boolean hasHideOnEscape;
     private boolean valHideOnEscape;
 
+    private boolean hasMaxWidth;
+    private double valMaxWidth;
+
+    private boolean hasMinWidth;
+    private double valMinWidth;
+
     private boolean hasOnAutoCompleted;
     private javafx.event.EventHandler<org.controlsfx.control.textfield.AutoCompletionBinding.AutoCompletionEvent<T>> valOnAutoCompleted;
+
+    private boolean hasPrefWidth;
+    private double valPrefWidth;
 
     private boolean hasUserInput;
     private java.lang.String valUserInput;
@@ -32,10 +44,25 @@ public class AutoCompletionBindingMaker<T extends java.lang.Object, Z extends Au
     private boolean hasVisibleRowCount;
     private int valVisibleRowCount;
 
+    private boolean bound1MaxWidth;
+    private boolean bound2MaxWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MaxWidth;
+    private javafx.beans.property.Property<Number> obsrv2MaxWidth;
+
+    private boolean bound1MinWidth;
+    private boolean bound2MinWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MinWidth;
+    private javafx.beans.property.Property<Number> obsrv2MinWidth;
+
     private boolean bound1OnAutoCompleted;
     private boolean bound2OnAutoCompleted;
     private javafx.beans.value.ObservableValue<? extends javafx.event.EventHandler<org.controlsfx.control.textfield.AutoCompletionBinding.AutoCompletionEvent<T>>> obsrv1OnAutoCompleted;
     private javafx.beans.property.Property<javafx.event.EventHandler<org.controlsfx.control.textfield.AutoCompletionBinding.AutoCompletionEvent<T>>> obsrv2OnAutoCompleted;
+
+    private boolean bound1PrefWidth;
+    private boolean bound2PrefWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1PrefWidth;
+    private javafx.beans.property.Property<Number> obsrv2PrefWidth;
 
     private boolean bound1VisibleRowCount;
     private boolean bound2VisibleRowCount;
@@ -46,22 +73,56 @@ public class AutoCompletionBindingMaker<T extends java.lang.Object, Z extends Au
     public void applyTo(Z instance)
     {
         super.applyTo(instance);
+        if (this.hasDelay)
+            instance.setDelay(this.valDelay);
         if (this.hasHideOnEscape)
             instance.setHideOnEscape(this.valHideOnEscape);
+        if (this.hasMaxWidth)
+            instance.setMaxWidth(this.valMaxWidth);
+        if (this.hasMinWidth)
+            instance.setMinWidth(this.valMinWidth);
         if (this.hasOnAutoCompleted)
             instance.setOnAutoCompleted(this.valOnAutoCompleted);
+        if (this.hasPrefWidth)
+            instance.setPrefWidth(this.valPrefWidth);
         if (this.hasUserInput)
             instance.setUserInput(this.valUserInput);
         if (this.hasVisibleRowCount)
             instance.setVisibleRowCount(this.valVisibleRowCount);
+        if (this.bound1MaxWidth)
+            instance.maxWidthProperty().bind(this.obsrv1MaxWidth);
+        if (this.bound2MaxWidth)
+            instance.maxWidthProperty().bindBidirectional(this.obsrv2MaxWidth);
+        if (this.bound1MinWidth)
+            instance.minWidthProperty().bind(this.obsrv1MinWidth);
+        if (this.bound2MinWidth)
+            instance.minWidthProperty().bindBidirectional(this.obsrv2MinWidth);
         if (this.bound1OnAutoCompleted)
             instance.onAutoCompletedProperty().bind(this.obsrv1OnAutoCompleted);
         if (this.bound2OnAutoCompleted)
             instance.onAutoCompletedProperty().bindBidirectional(this.obsrv2OnAutoCompleted);
+        if (this.bound1PrefWidth)
+            instance.prefWidthProperty().bind(this.obsrv1PrefWidth);
+        if (this.bound2PrefWidth)
+            instance.prefWidthProperty().bindBidirectional(this.obsrv2PrefWidth);
         if (this.bound1VisibleRowCount)
             instance.visibleRowCountProperty().bind(this.obsrv1VisibleRowCount);
         if (this.bound2VisibleRowCount)
             instance.visibleRowCountProperty().bindBidirectional(this.obsrv2VisibleRowCount);
+    }
+
+    /**
+     * 設定屬性{@link AutoCompletionBinding#setDelay(long)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B delay(long value)
+    {
+        this.hasDelay = true;
+        this.valDelay = value;
+        return (B) this;
     }
 
     /**
@@ -79,6 +140,34 @@ public class AutoCompletionBindingMaker<T extends java.lang.Object, Z extends Au
     }
 
     /**
+     * 設定屬性{@link AutoCompletionBinding#setMaxWidth(double)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B maxWidth(double value)
+    {
+        this.hasMaxWidth = true;
+        this.valMaxWidth = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AutoCompletionBinding#setMinWidth(double)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B minWidth(double value)
+    {
+        this.hasMinWidth = true;
+        this.valMinWidth = value;
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link AutoCompletionBinding#setOnAutoCompleted(javafx.event.EventHandler)}。
      *
      * @param value 新的屬性值
@@ -89,6 +178,20 @@ public class AutoCompletionBindingMaker<T extends java.lang.Object, Z extends Au
     {
         this.hasOnAutoCompleted = true;
         this.valOnAutoCompleted = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AutoCompletionBinding#setPrefWidth(double)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B prefWidth(double value)
+    {
+        this.hasPrefWidth = true;
+        this.valPrefWidth = value;
         return (B) this;
     }
 
@@ -117,6 +220,74 @@ public class AutoCompletionBindingMaker<T extends java.lang.Object, Z extends Au
     {
         this.hasVisibleRowCount = true;
         this.valVisibleRowCount = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AutoCompletionBinding#maxWidthProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MaxWidth = true;
+        this.obsrv1MaxWidth = source;
+        this.bound2MaxWidth = false;
+        this.obsrv2MaxWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AutoCompletionBinding#maxWidthProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMaxWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MaxWidth = false;
+        this.obsrv1MaxWidth = null;
+        this.bound2MaxWidth = true;
+        this.obsrv2MaxWidth = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AutoCompletionBinding#minWidthProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindMinWidth(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinWidth = true;
+        this.obsrv1MinWidth = source;
+        this.bound2MinWidth = false;
+        this.obsrv2MinWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AutoCompletionBinding#minWidthProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMinWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinWidth = false;
+        this.obsrv1MinWidth = null;
+        this.bound2MinWidth = true;
+        this.obsrv2MinWidth = source;
         return (B) this;
     }
 
@@ -151,6 +322,40 @@ public class AutoCompletionBindingMaker<T extends java.lang.Object, Z extends Au
         this.obsrv1OnAutoCompleted = null;
         this.bound2OnAutoCompleted = true;
         this.obsrv2OnAutoCompleted = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AutoCompletionBinding#prefWidthProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindPrefWidth(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PrefWidth = true;
+        this.obsrv1PrefWidth = source;
+        this.bound2PrefWidth = false;
+        this.obsrv2PrefWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link AutoCompletionBinding#prefWidthProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPrefWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1PrefWidth = false;
+        this.obsrv1PrefWidth = null;
+        this.bound2PrefWidth = true;
+        this.obsrv2PrefWidth = source;
         return (B) this;
     }
 

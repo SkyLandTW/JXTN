@@ -9,7 +9,7 @@ package org.controlsfx.control.spreadsheet;
  * {@link SpreadsheetColumn}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.40.10.jar
+ * @version controlsfx-8.40.12.jar
  * @param <Z> 要建構的物件型態(需繼承{@link SpreadsheetColumn})
  * @param <B> 建構器本身的型態(需繼承{@link SpreadsheetColumnMaker})
  */
@@ -23,11 +23,27 @@ public class SpreadsheetColumnMaker<Z extends SpreadsheetColumn, B extends Sprea
     private boolean hasFixed;
     private boolean valFixed;
 
+    private boolean hasMaxWidth;
+    private double valMaxWidth;
+
+    private boolean hasMinWidth;
+    private double valMinWidth;
+
     private boolean hasPrefWidth;
     private double valPrefWidth;
 
     private boolean hasResizable;
     private boolean valResizable;
+
+    private boolean bound1MaxWidth;
+    private boolean bound2MaxWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MaxWidth;
+    private javafx.beans.property.Property<Number> obsrv2MaxWidth;
+
+    private boolean bound1MinWidth;
+    private boolean bound2MinWidth;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1MinWidth;
+    private javafx.beans.property.Property<Number> obsrv2MinWidth;
 
     @Override
     public void applyTo(Z instance)
@@ -35,10 +51,22 @@ public class SpreadsheetColumnMaker<Z extends SpreadsheetColumn, B extends Sprea
         super.applyTo(instance);
         if (this.hasFixed)
             instance.setFixed(this.valFixed);
+        if (this.hasMaxWidth)
+            instance.setMaxWidth(this.valMaxWidth);
+        if (this.hasMinWidth)
+            instance.setMinWidth(this.valMinWidth);
         if (this.hasPrefWidth)
             instance.setPrefWidth(this.valPrefWidth);
         if (this.hasResizable)
             instance.setResizable(this.valResizable);
+        if (this.bound1MaxWidth)
+            instance.maxWidthProperty().bind(this.obsrv1MaxWidth);
+        if (this.bound2MaxWidth)
+            instance.maxWidthProperty().bindBidirectional(this.obsrv2MaxWidth);
+        if (this.bound1MinWidth)
+            instance.minWidthProperty().bind(this.obsrv1MinWidth);
+        if (this.bound2MinWidth)
+            instance.minWidthProperty().bindBidirectional(this.obsrv2MinWidth);
     }
 
     /**
@@ -52,6 +80,34 @@ public class SpreadsheetColumnMaker<Z extends SpreadsheetColumn, B extends Sprea
     {
         this.hasFixed = true;
         this.valFixed = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetColumn#setMaxWidth(double)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B maxWidth(double value)
+    {
+        this.hasMaxWidth = true;
+        this.valMaxWidth = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetColumn#setMinWidth(double)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B minWidth(double value)
+    {
+        this.hasMinWidth = true;
+        this.valMinWidth = value;
         return (B) this;
     }
 
@@ -80,6 +136,74 @@ public class SpreadsheetColumnMaker<Z extends SpreadsheetColumn, B extends Sprea
     {
         this.hasResizable = true;
         this.valResizable = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetColumn#maxWidthProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindMaxWidth(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MaxWidth = true;
+        this.obsrv1MaxWidth = source;
+        this.bound2MaxWidth = false;
+        this.obsrv2MaxWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetColumn#maxWidthProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMaxWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MaxWidth = false;
+        this.obsrv1MaxWidth = null;
+        this.bound2MaxWidth = true;
+        this.obsrv2MaxWidth = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetColumn#minWidthProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindMinWidth(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinWidth = true;
+        this.obsrv1MinWidth = source;
+        this.bound2MinWidth = false;
+        this.obsrv2MinWidth = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetColumn#minWidthProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalMinWidth(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1MinWidth = false;
+        this.obsrv1MinWidth = null;
+        this.bound2MinWidth = true;
+        this.obsrv2MinWidth = source;
         return (B) this;
     }
 }

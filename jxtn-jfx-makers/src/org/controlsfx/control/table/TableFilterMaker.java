@@ -9,7 +9,7 @@ package org.controlsfx.control.table;
  * {@link TableFilter}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.40.10.jar
+ * @version controlsfx-8.40.12.jar
  * @param <Z> 要建構的物件型態(需繼承{@link TableFilter})
  * @param <B> 建構器本身的型態(需繼承{@link TableFilterMaker})
  */
@@ -24,7 +24,10 @@ public class TableFilterMaker<T extends java.lang.Object, Z extends TableFilter<
     private java.util.Collection<T> valBackingList;
 
     private boolean hasColumnFilters;
-    private java.util.Collection<impl.org.controlsfx.table.ColumnFilter<T>> valColumnFilters;
+    private java.util.Collection<impl.org.controlsfx.table.ColumnFilter<T, ?>> valColumnFilters;
+
+    private boolean hasSearchStrategy;
+    private java.util.function.BiPredicate<java.lang.String, java.lang.String> valSearchStrategy;
 
     @Override
     public void applyTo(Z instance)
@@ -34,6 +37,8 @@ public class TableFilterMaker<T extends java.lang.Object, Z extends TableFilter<
             instance.getBackingList().addAll(this.valBackingList);
         if (this.hasColumnFilters)
             instance.getColumnFilters().addAll(this.valColumnFilters);
+        if (this.hasSearchStrategy)
+            instance.setSearchStrategy(this.valSearchStrategy);
     }
 
     /**
@@ -150,10 +155,10 @@ public class TableFilterMaker<T extends java.lang.Object, Z extends TableFilter<
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public final B columnFilters(java.util.Collection<? extends impl.org.controlsfx.table.ColumnFilter<T>> value)
+    public final B columnFilters(java.util.Collection<? extends impl.org.controlsfx.table.ColumnFilter<T, ?>> value)
     {
         this.hasColumnFilters = true;
-        this.valColumnFilters = (java.util.Collection<impl.org.controlsfx.table.ColumnFilter<T>>) value;
+        this.valColumnFilters = (java.util.Collection<impl.org.controlsfx.table.ColumnFilter<T, ?>>) value;
         return (B) this;
     }
 
@@ -165,7 +170,7 @@ public class TableFilterMaker<T extends java.lang.Object, Z extends TableFilter<
      */
     @SafeVarargs
     @SuppressWarnings("unchecked")
-    public final B columnFilters(impl.org.controlsfx.table.ColumnFilter<T>... value)
+    public final B columnFilters(impl.org.controlsfx.table.ColumnFilter<T, ?>... value)
     {
         this.hasColumnFilters = true;
         this.valColumnFilters = java.util.Arrays.asList(value);
@@ -179,7 +184,7 @@ public class TableFilterMaker<T extends java.lang.Object, Z extends TableFilter<
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B columnFiltersAdd(java.util.Collection<? extends impl.org.controlsfx.table.ColumnFilter<T>> value)
+    public final B columnFiltersAdd(java.util.Collection<? extends impl.org.controlsfx.table.ColumnFilter<T, ?>> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasColumnFilters = true;
@@ -197,7 +202,7 @@ public class TableFilterMaker<T extends java.lang.Object, Z extends TableFilter<
      */
     @SafeVarargs
     @SuppressWarnings("unchecked")
-    public final B columnFiltersAdd(impl.org.controlsfx.table.ColumnFilter<T>... value)
+    public final B columnFiltersAdd(impl.org.controlsfx.table.ColumnFilter<T, ?>... value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasColumnFilters = true;
@@ -214,13 +219,13 @@ public class TableFilterMaker<T extends java.lang.Object, Z extends TableFilter<
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B columnFiltersAddNonNull(java.util.Collection<? extends impl.org.controlsfx.table.ColumnFilter<T>> value)
+    public final B columnFiltersAddNonNull(java.util.Collection<? extends impl.org.controlsfx.table.ColumnFilter<T, ?>> value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasColumnFilters = true;
         if (this.valColumnFilters == null)
             this.valColumnFilters = new java.util.ArrayList<>(value.size());
-        for (impl.org.controlsfx.table.ColumnFilter<T> i : value)
+        for (impl.org.controlsfx.table.ColumnFilter<T, ?> i : value)
             if (i != null)
                 this.valColumnFilters.add(i);
         return (B) this;
@@ -234,29 +239,29 @@ public class TableFilterMaker<T extends java.lang.Object, Z extends TableFilter<
      */
     @SafeVarargs
     @SuppressWarnings("unchecked")
-    public final B columnFiltersAddNonNull(impl.org.controlsfx.table.ColumnFilter<T>... value)
+    public final B columnFiltersAddNonNull(impl.org.controlsfx.table.ColumnFilter<T, ?>... value)
     {
         java.util.Objects.requireNonNull(value);
         this.hasColumnFilters = true;
         if (this.valColumnFilters == null)
             this.valColumnFilters = new java.util.ArrayList<>(value.length);
-        for (impl.org.controlsfx.table.ColumnFilter<T> i : value)
+        for (impl.org.controlsfx.table.ColumnFilter<T, ?> i : value)
             if (i != null)
                 this.valColumnFilters.add(i);
         return (B) this;
     }
 
     /**
-     * 建構{@link TableFilter}物件。
+     * 設定屬性{@link TableFilter#setSearchStrategy(java.util.function.BiPredicate)}。
      *
-     * @return 新的{@link TableFilter}物件實體
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public TableFilter<T> build(javafx.scene.control.TableView<T> arg0)
+    public B searchStrategy(java.util.function.BiPredicate<java.lang.String, java.lang.String> value)
     {
-        TableFilter<T> instance = new TableFilter<T>(arg0);
-        this.applyTo((Z) instance);
-        this.doAfterBuild((Z) instance);
-        return instance;
+        this.hasSearchStrategy = true;
+        this.valSearchStrategy = value;
+        return (B) this;
     }
 }

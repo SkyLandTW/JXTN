@@ -9,7 +9,7 @@ package org.controlsfx.control.spreadsheet;
  * {@link SpreadsheetView}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.40.10.jar
+ * @version controlsfx-8.40.12.jar
  * @param <Z> 要建構的物件型態(需繼承{@link SpreadsheetView})
  * @param <B> 建構器本身的型態(需繼承{@link SpreadsheetViewMaker})
  */
@@ -41,6 +41,12 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
     private boolean hasGrid;
     private org.controlsfx.control.spreadsheet.Grid valGrid;
 
+    private boolean hasHBarValue;
+    private double valHBarValue;
+
+    private boolean hasPlaceholder;
+    private javafx.scene.Node valPlaceholder;
+
     private boolean hasRowHeaderWidth;
     private double valRowHeaderWidth;
 
@@ -50,10 +56,18 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
     private boolean hasShowRowHeader;
     private boolean valShowRowHeader;
 
+    private boolean hasVBarValue;
+    private double valVBarValue;
+
     private boolean bound1Editable;
     private boolean bound2Editable;
     private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Editable;
     private javafx.beans.property.Property<Boolean> obsrv2Editable;
+
+    private boolean bound1Placeholder;
+    private boolean bound2Placeholder;
+    private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1Placeholder;
+    private javafx.beans.property.Property<javafx.scene.Node> obsrv2Placeholder;
 
     private boolean bound1RowHeaderWidth;
     private boolean bound2RowHeaderWidth;
@@ -88,16 +102,26 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
             instance.setFixingRowsAllowed(this.valFixingRowsAllowed);
         if (this.hasGrid)
             instance.setGrid(this.valGrid);
+        if (this.hasHBarValue)
+            instance.setHBarValue(this.valHBarValue);
+        if (this.hasPlaceholder)
+            instance.setPlaceholder(this.valPlaceholder);
         if (this.hasRowHeaderWidth)
             instance.setRowHeaderWidth(this.valRowHeaderWidth);
         if (this.hasShowColumnHeader)
             instance.setShowColumnHeader(this.valShowColumnHeader);
         if (this.hasShowRowHeader)
             instance.setShowRowHeader(this.valShowRowHeader);
+        if (this.hasVBarValue)
+            instance.setVBarValue(this.valVBarValue);
         if (this.bound1Editable)
             instance.editableProperty().bind(this.obsrv1Editable);
         if (this.bound2Editable)
             instance.editableProperty().bindBidirectional(this.obsrv2Editable);
+        if (this.bound1Placeholder)
+            instance.placeholderProperty().bind(this.obsrv1Placeholder);
+        if (this.bound2Placeholder)
+            instance.placeholderProperty().bindBidirectional(this.obsrv2Placeholder);
         if (this.bound1RowHeaderWidth)
             instance.rowHeaderWidthProperty().bind(this.obsrv1RowHeaderWidth);
         if (this.bound2RowHeaderWidth)
@@ -484,6 +508,34 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
     }
 
     /**
+     * 設定屬性{@link SpreadsheetView#setHBarValue(double)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B hBarValue(double value)
+    {
+        this.hasHBarValue = true;
+        this.valHBarValue = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetView#setPlaceholder(javafx.scene.Node)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B placeholder(javafx.scene.Node value)
+    {
+        this.hasPlaceholder = true;
+        this.valPlaceholder = value;
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link SpreadsheetView#setRowHeaderWidth(double)}。
      *
      * @param value 新的屬性值
@@ -526,6 +578,20 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
     }
 
     /**
+     * 設定屬性{@link SpreadsheetView#setVBarValue(double)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B vBarValue(double value)
+    {
+        this.hasVBarValue = true;
+        this.valVBarValue = value;
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link SpreadsheetView#editableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
@@ -556,6 +622,40 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
         this.obsrv1Editable = null;
         this.bound2Editable = true;
         this.obsrv2Editable = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetView#placeholderProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindPlaceholder(javafx.beans.value.ObservableValue<? extends javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Placeholder = true;
+        this.obsrv1Placeholder = source;
+        this.bound2Placeholder = false;
+        this.obsrv2Placeholder = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetView#placeholderProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalPlaceholder(javafx.beans.property.Property<javafx.scene.Node> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Placeholder = false;
+        this.obsrv1Placeholder = null;
+        this.bound2Placeholder = true;
+        this.obsrv2Placeholder = source;
         return (B) this;
     }
 

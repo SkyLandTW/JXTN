@@ -9,7 +9,7 @@ package org.controlsfx.control.spreadsheet;
  * {@link SpreadsheetCellEditor.ListEditor}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.40.10.jar
+ * @version controlsfx-8.40.12.jar
  * @param <Z> 要建構的物件型態(需繼承{@link SpreadsheetCellEditor.ListEditor})
  * @param <B> 建構器本身的型態(需繼承{@link SpreadsheetCellEditor.ListEditorMaker})
  */

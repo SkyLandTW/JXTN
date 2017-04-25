@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link PopOver}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.40.10.jar
+ * @version controlsfx-8.40.12.jar
  * @param <Z> 要建構的物件型態(需繼承{@link PopOver})
  * @param <B> 建構器本身的型態(需繼承{@link PopOverMaker})
  */
@@ -19,6 +19,9 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
         extends javafx.scene.control.PopupControlMaker<Z, B>
         implements PopOverMakerExt<Z, B>
 {
+
+    private boolean hasAnimated;
+    private boolean valAnimated;
 
     private boolean hasArrowIndent;
     private double valArrowIndent;
@@ -41,11 +44,22 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
     private boolean hasDetached;
     private boolean valDetached;
 
+    private boolean hasFadeInDuration;
+    private javafx.util.Duration valFadeInDuration;
+
+    private boolean hasFadeOutDuration;
+    private javafx.util.Duration valFadeOutDuration;
+
     private boolean hasHeaderAlwaysVisible;
     private boolean valHeaderAlwaysVisible;
 
     private boolean hasTitle;
     private java.lang.String valTitle;
+
+    private boolean bound1Animated;
+    private boolean bound2Animated;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Animated;
+    private javafx.beans.property.Property<Boolean> obsrv2Animated;
 
     private boolean bound1ArrowIndent;
     private boolean bound2ArrowIndent;
@@ -82,6 +96,16 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
     private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Detached;
     private javafx.beans.property.Property<Boolean> obsrv2Detached;
 
+    private boolean bound1FadeInDuration;
+    private boolean bound2FadeInDuration;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.Duration> obsrv1FadeInDuration;
+    private javafx.beans.property.Property<javafx.util.Duration> obsrv2FadeInDuration;
+
+    private boolean bound1FadeOutDuration;
+    private boolean bound2FadeOutDuration;
+    private javafx.beans.value.ObservableValue<? extends javafx.util.Duration> obsrv1FadeOutDuration;
+    private javafx.beans.property.Property<javafx.util.Duration> obsrv2FadeOutDuration;
+
     private boolean bound1HeaderAlwaysVisible;
     private boolean bound2HeaderAlwaysVisible;
     private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1HeaderAlwaysVisible;
@@ -96,6 +120,8 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
     public void applyTo(Z instance)
     {
         super.applyTo(instance);
+        if (this.hasAnimated)
+            instance.setAnimated(this.valAnimated);
         if (this.hasArrowIndent)
             instance.setArrowIndent(this.valArrowIndent);
         if (this.hasArrowLocation)
@@ -110,10 +136,18 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
             instance.setDetachable(this.valDetachable);
         if (this.hasDetached)
             instance.setDetached(this.valDetached);
+        if (this.hasFadeInDuration)
+            instance.setFadeInDuration(this.valFadeInDuration);
+        if (this.hasFadeOutDuration)
+            instance.setFadeOutDuration(this.valFadeOutDuration);
         if (this.hasHeaderAlwaysVisible)
             instance.setHeaderAlwaysVisible(this.valHeaderAlwaysVisible);
         if (this.hasTitle)
             instance.setTitle(this.valTitle);
+        if (this.bound1Animated)
+            instance.animatedProperty().bind(this.obsrv1Animated);
+        if (this.bound2Animated)
+            instance.animatedProperty().bindBidirectional(this.obsrv2Animated);
         if (this.bound1ArrowIndent)
             instance.arrowIndentProperty().bind(this.obsrv1ArrowIndent);
         if (this.bound2ArrowIndent)
@@ -142,6 +176,14 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
             instance.detachedProperty().bind(this.obsrv1Detached);
         if (this.bound2Detached)
             instance.detachedProperty().bindBidirectional(this.obsrv2Detached);
+        if (this.bound1FadeInDuration)
+            instance.fadeInDurationProperty().bind(this.obsrv1FadeInDuration);
+        if (this.bound2FadeInDuration)
+            instance.fadeInDurationProperty().bindBidirectional(this.obsrv2FadeInDuration);
+        if (this.bound1FadeOutDuration)
+            instance.fadeOutDurationProperty().bind(this.obsrv1FadeOutDuration);
+        if (this.bound2FadeOutDuration)
+            instance.fadeOutDurationProperty().bindBidirectional(this.obsrv2FadeOutDuration);
         if (this.bound1HeaderAlwaysVisible)
             instance.headerAlwaysVisibleProperty().bind(this.obsrv1HeaderAlwaysVisible);
         if (this.bound2HeaderAlwaysVisible)
@@ -150,6 +192,20 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
             instance.titleProperty().bind(this.obsrv1Title);
         if (this.bound2Title)
             instance.titleProperty().bindBidirectional(this.obsrv2Title);
+    }
+
+    /**
+     * 設定屬性{@link PopOver#setAnimated(boolean)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B animated(boolean value)
+    {
+        this.hasAnimated = true;
+        this.valAnimated = value;
+        return (B) this;
     }
 
     /**
@@ -251,6 +307,34 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
     }
 
     /**
+     * 設定屬性{@link PopOver#setFadeInDuration(javafx.util.Duration)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B fadeInDuration(javafx.util.Duration value)
+    {
+        this.hasFadeInDuration = true;
+        this.valFadeInDuration = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#setFadeOutDuration(javafx.util.Duration)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B fadeOutDuration(javafx.util.Duration value)
+    {
+        this.hasFadeOutDuration = true;
+        this.valFadeOutDuration = value;
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link PopOver#setHeaderAlwaysVisible(boolean)}。
      *
      * @param value 新的屬性值
@@ -275,6 +359,40 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
     {
         this.hasTitle = true;
         this.valTitle = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#animatedProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindAnimated(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Animated = true;
+        this.obsrv1Animated = source;
+        this.bound2Animated = false;
+        this.obsrv2Animated = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#animatedProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalAnimated(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Animated = false;
+        this.obsrv1Animated = null;
+        this.bound2Animated = true;
+        this.obsrv2Animated = source;
         return (B) this;
     }
 
@@ -513,6 +631,74 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
         this.obsrv1Detached = null;
         this.bound2Detached = true;
         this.obsrv2Detached = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#fadeInDurationProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindFadeInDuration(javafx.beans.value.ObservableValue<? extends javafx.util.Duration> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FadeInDuration = true;
+        this.obsrv1FadeInDuration = source;
+        this.bound2FadeInDuration = false;
+        this.obsrv2FadeInDuration = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#fadeInDurationProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFadeInDuration(javafx.beans.property.Property<javafx.util.Duration> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FadeInDuration = false;
+        this.obsrv1FadeInDuration = null;
+        this.bound2FadeInDuration = true;
+        this.obsrv2FadeInDuration = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#fadeOutDurationProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindFadeOutDuration(javafx.beans.value.ObservableValue<? extends javafx.util.Duration> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FadeOutDuration = true;
+        this.obsrv1FadeOutDuration = source;
+        this.bound2FadeOutDuration = false;
+        this.obsrv2FadeOutDuration = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#fadeOutDurationProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFadeOutDuration(javafx.beans.property.Property<javafx.util.Duration> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1FadeOutDuration = false;
+        this.obsrv1FadeOutDuration = null;
+        this.bound2FadeOutDuration = true;
+        this.obsrv2FadeOutDuration = source;
         return (B) this;
     }
 

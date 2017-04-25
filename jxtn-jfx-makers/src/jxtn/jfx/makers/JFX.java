@@ -2866,6 +2866,28 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link org.controlsfx.control.PrefixSelectionChoiceBox}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.PrefixSelectionChoiceBoxMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <T extends java.lang.Object> org.controlsfx.control.PrefixSelectionChoiceBoxMaker<T, org.controlsfx.control.PrefixSelectionChoiceBox<T>, ?> prefixSelectionChoiceBox()
+    {
+        return new org.controlsfx.control.PrefixSelectionChoiceBoxMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.PrefixSelectionComboBox}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.PrefixSelectionComboBoxMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <T extends java.lang.Object> org.controlsfx.control.PrefixSelectionComboBoxMaker<T, org.controlsfx.control.PrefixSelectionComboBox<T>, ?> prefixSelectionComboBox()
+    {
+        return new org.controlsfx.control.PrefixSelectionComboBoxMaker();
+    }
+
+    /**
      * 建立新的{@link org.controlsfx.control.PropertySheet}建構器。
      *
      * @return 新的{@link org.controlsfx.control.PropertySheetMaker}
@@ -2984,6 +3006,17 @@ public final class JFX
     public static org.controlsfx.control.action.AnnotatedActionMaker<org.controlsfx.control.action.AnnotatedAction, ?> annotatedAction()
     {
         return new org.controlsfx.control.action.AnnotatedActionMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.action.AnnotatedCheckAction}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.action.AnnotatedCheckActionMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.action.AnnotatedCheckActionMaker<org.controlsfx.control.action.AnnotatedCheckAction, ?> annotatedCheckAction()
+    {
+        return new org.controlsfx.control.action.AnnotatedCheckActionMaker();
     }
 
     /**
@@ -3295,14 +3328,25 @@ public final class JFX
     }
 
     /**
-     * 建立新的{@link org.controlsfx.control.table.TableFilter}建構器。
+     * 建立新的{@link org.controlsfx.control.table.TableRowExpanderColumn}建構器。
      *
-     * @return 新的{@link org.controlsfx.control.table.TableFilterMaker}
+     * @return 新的{@link org.controlsfx.control.table.TableRowExpanderColumnMaker}
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static <T extends java.lang.Object> org.controlsfx.control.table.TableFilterMaker<T, org.controlsfx.control.table.TableFilter<T>, ?> tableFilter()
+    public static <S extends java.lang.Object> org.controlsfx.control.table.TableRowExpanderColumnMaker<S, org.controlsfx.control.table.TableRowExpanderColumn<S>, ?> tableRowExpanderColumn()
     {
-        return new org.controlsfx.control.table.TableFilterMaker();
+        return new org.controlsfx.control.table.TableRowExpanderColumnMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.table.TableRowExpanderColumn.TableRowDataFeatures}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.table.TableRowExpanderColumn_TableRowDataFeaturesMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <S extends java.lang.Object> org.controlsfx.control.table.TableRowExpanderColumn_TableRowDataFeaturesMaker<S, org.controlsfx.control.table.TableRowExpanderColumn.TableRowDataFeatures<S>, ?> tableRowExpanderColumn_TableRowDataFeatures()
+    {
+        return new org.controlsfx.control.table.TableRowExpanderColumn_TableRowDataFeaturesMaker();
     }
 
     /**

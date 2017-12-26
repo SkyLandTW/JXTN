@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link StatusBar}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.40.12.jar
+ * @version controlsfx-8.40.14.jar
  * @param <Z> 要建構的物件型態(需繼承{@link StatusBar})
  * @param <B> 建構器本身的型態(需繼承{@link StatusBarMaker})
  */
@@ -32,6 +32,9 @@ public class StatusBarMaker<Z extends StatusBar, B extends StatusBarMaker<Z, B>>
     private boolean hasRightItems;
     private java.util.Collection<javafx.scene.Node> valRightItems;
 
+    private boolean hasStyleText;
+    private java.lang.String valStyleText;
+
     private boolean hasText;
     private java.lang.String valText;
 
@@ -44,6 +47,11 @@ public class StatusBarMaker<Z extends StatusBar, B extends StatusBarMaker<Z, B>>
     private boolean bound2Progress;
     private javafx.beans.value.ObservableValue<? extends Number> obsrv1Progress;
     private javafx.beans.property.Property<Number> obsrv2Progress;
+
+    private boolean bound1StyleText;
+    private boolean bound2StyleText;
+    private javafx.beans.value.ObservableValue<? extends String> obsrv1StyleText;
+    private javafx.beans.property.Property<String> obsrv2StyleText;
 
     private boolean bound1Text;
     private boolean bound2Text;
@@ -62,6 +70,8 @@ public class StatusBarMaker<Z extends StatusBar, B extends StatusBarMaker<Z, B>>
             instance.setProgress(this.valProgress);
         if (this.hasRightItems)
             instance.getRightItems().addAll(this.valRightItems);
+        if (this.hasStyleText)
+            instance.setStyleText(this.valStyleText);
         if (this.hasText)
             instance.setText(this.valText);
         if (this.bound1Graphic)
@@ -72,6 +82,10 @@ public class StatusBarMaker<Z extends StatusBar, B extends StatusBarMaker<Z, B>>
             instance.progressProperty().bind(this.obsrv1Progress);
         if (this.bound2Progress)
             instance.progressProperty().bindBidirectional(this.obsrv2Progress);
+        if (this.bound1StyleText)
+            instance.styleTextProperty().bind(this.obsrv1StyleText);
+        if (this.bound2StyleText)
+            instance.styleTextProperty().bindBidirectional(this.obsrv2StyleText);
         if (this.bound1Text)
             instance.textProperty().bind(this.obsrv1Text);
         if (this.bound2Text)
@@ -317,6 +331,20 @@ public class StatusBarMaker<Z extends StatusBar, B extends StatusBarMaker<Z, B>>
     }
 
     /**
+     * 設定屬性{@link StatusBar#setStyleText(java.lang.String)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B styleText(java.lang.String value)
+    {
+        this.hasStyleText = true;
+        this.valStyleText = value;
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link StatusBar#setText(java.lang.String)}。
      *
      * @param value 新的屬性值
@@ -395,6 +423,40 @@ public class StatusBarMaker<Z extends StatusBar, B extends StatusBarMaker<Z, B>>
         this.obsrv1Progress = null;
         this.bound2Progress = true;
         this.obsrv2Progress = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link StatusBar#styleTextProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindStyleText(javafx.beans.value.ObservableValue<? extends String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1StyleText = true;
+        this.obsrv1StyleText = source;
+        this.bound2StyleText = false;
+        this.obsrv2StyleText = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link StatusBar#styleTextProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalStyleText(javafx.beans.property.Property<String> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1StyleText = false;
+        this.obsrv1StyleText = null;
+        this.bound2StyleText = true;
+        this.obsrv2StyleText = source;
         return (B) this;
     }
 

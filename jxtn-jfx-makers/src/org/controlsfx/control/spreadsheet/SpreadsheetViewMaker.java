@@ -9,7 +9,7 @@ package org.controlsfx.control.spreadsheet;
  * {@link SpreadsheetView}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.40.12.jar
+ * @version controlsfx-8.40.14.jar
  * @param <Z> 要建構的物件型態(需繼承{@link SpreadsheetView})
  * @param <B> 建構器本身的型態(需繼承{@link SpreadsheetViewMaker})
  */
@@ -23,8 +23,14 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
     private boolean hasColumns;
     private java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn> valColumns;
 
+    private boolean hasComparator;
+    private java.util.Comparator<javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell>> valComparator;
+
     private boolean hasEditable;
     private boolean valEditable;
+
+    private boolean hasFilteredRow;
+    private java.lang.Integer valFilteredRow;
 
     private boolean hasFixedColumns;
     private java.util.Collection<org.controlsfx.control.spreadsheet.SpreadsheetColumn> valFixedColumns;
@@ -44,6 +50,15 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
     private boolean hasHBarValue;
     private double valHBarValue;
 
+    private boolean hasHiddenColumns;
+    private java.util.BitSet valHiddenColumns;
+
+    private boolean hasHiddenRows;
+    private java.util.BitSet valHiddenRows;
+
+    private boolean hasItems;
+    private java.util.Collection<javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell>> valItems;
+
     private boolean hasPlaceholder;
     private javafx.scene.Node valPlaceholder;
 
@@ -59,10 +74,28 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
     private boolean hasVBarValue;
     private double valVBarValue;
 
+    private boolean hasZoomFactor;
+    private java.lang.Double valZoomFactor;
+
+    private boolean bound1Comparator;
+    private boolean bound2Comparator;
+    private javafx.beans.value.ObservableValue<? extends java.util.Comparator<? super javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell>>> obsrv1Comparator;
+    private javafx.beans.property.Property<java.util.Comparator<? super javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell>>> obsrv2Comparator;
+
     private boolean bound1Editable;
     private boolean bound2Editable;
     private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Editable;
     private javafx.beans.property.Property<Boolean> obsrv2Editable;
+
+    private boolean bound1HiddenColumns;
+    private boolean bound2HiddenColumns;
+    private javafx.beans.value.ObservableValue<? extends java.util.BitSet> obsrv1HiddenColumns;
+    private javafx.beans.property.Property<java.util.BitSet> obsrv2HiddenColumns;
+
+    private boolean bound1HiddenRows;
+    private boolean bound2HiddenRows;
+    private javafx.beans.value.ObservableValue<? extends java.util.BitSet> obsrv1HiddenRows;
+    private javafx.beans.property.Property<java.util.BitSet> obsrv2HiddenRows;
 
     private boolean bound1Placeholder;
     private boolean bound2Placeholder;
@@ -84,14 +117,23 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
     private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1ShowRowHeader;
     private javafx.beans.property.Property<Boolean> obsrv2ShowRowHeader;
 
+    private boolean bound1ZoomFactor;
+    private boolean bound2ZoomFactor;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1ZoomFactor;
+    private javafx.beans.property.Property<Number> obsrv2ZoomFactor;
+
     @Override
     public void applyTo(Z instance)
     {
         super.applyTo(instance);
         if (this.hasColumns)
             instance.getColumns().addAll(this.valColumns);
+        if (this.hasComparator)
+            instance.setComparator(this.valComparator);
         if (this.hasEditable)
             instance.setEditable(this.valEditable);
+        if (this.hasFilteredRow)
+            instance.setFilteredRow(this.valFilteredRow);
         if (this.hasFixedColumns)
             instance.getFixedColumns().addAll(this.valFixedColumns);
         if (this.hasFixedRows)
@@ -104,6 +146,12 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
             instance.setGrid(this.valGrid);
         if (this.hasHBarValue)
             instance.setHBarValue(this.valHBarValue);
+        if (this.hasHiddenColumns)
+            instance.setHiddenColumns(this.valHiddenColumns);
+        if (this.hasHiddenRows)
+            instance.setHiddenRows(this.valHiddenRows);
+        if (this.hasItems)
+            instance.getItems().addAll(this.valItems);
         if (this.hasPlaceholder)
             instance.setPlaceholder(this.valPlaceholder);
         if (this.hasRowHeaderWidth)
@@ -114,10 +162,24 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
             instance.setShowRowHeader(this.valShowRowHeader);
         if (this.hasVBarValue)
             instance.setVBarValue(this.valVBarValue);
+        if (this.hasZoomFactor)
+            instance.setZoomFactor(this.valZoomFactor);
+        if (this.bound1Comparator)
+            instance.comparatorProperty().bind(this.obsrv1Comparator);
+        if (this.bound2Comparator)
+            instance.comparatorProperty().bindBidirectional(this.obsrv2Comparator);
         if (this.bound1Editable)
             instance.editableProperty().bind(this.obsrv1Editable);
         if (this.bound2Editable)
             instance.editableProperty().bindBidirectional(this.obsrv2Editable);
+        if (this.bound1HiddenColumns)
+            instance.hiddenColumnsProperty().bind(this.obsrv1HiddenColumns);
+        if (this.bound2HiddenColumns)
+            instance.hiddenColumnsProperty().bindBidirectional(this.obsrv2HiddenColumns);
+        if (this.bound1HiddenRows)
+            instance.hiddenRowsProperty().bind(this.obsrv1HiddenRows);
+        if (this.bound2HiddenRows)
+            instance.hiddenRowsProperty().bindBidirectional(this.obsrv2HiddenRows);
         if (this.bound1Placeholder)
             instance.placeholderProperty().bind(this.obsrv1Placeholder);
         if (this.bound2Placeholder)
@@ -134,6 +196,10 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
             instance.showRowHeaderProperty().bind(this.obsrv1ShowRowHeader);
         if (this.bound2ShowRowHeader)
             instance.showRowHeaderProperty().bindBidirectional(this.obsrv2ShowRowHeader);
+        if (this.bound1ZoomFactor)
+            instance.zoomFactorProperty().bind(this.obsrv1ZoomFactor);
+        if (this.bound2ZoomFactor)
+            instance.zoomFactorProperty().bindBidirectional(this.obsrv2ZoomFactor);
     }
 
     /**
@@ -242,6 +308,20 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
     }
 
     /**
+     * 設定屬性{@link SpreadsheetView#setComparator(java.util.Comparator)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B comparator(java.util.Comparator<javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell>> value)
+    {
+        this.hasComparator = true;
+        this.valComparator = value;
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link SpreadsheetView#setEditable(boolean)}。
      *
      * @param value 新的屬性值
@@ -252,6 +332,20 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
     {
         this.hasEditable = true;
         this.valEditable = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetView#setFilteredRow(java.lang.Integer)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B filteredRow(java.lang.Integer value)
+    {
+        this.hasFilteredRow = true;
+        this.valFilteredRow = value;
         return (B) this;
     }
 
@@ -522,6 +616,139 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
     }
 
     /**
+     * 設定屬性{@link SpreadsheetView#setHiddenColumns(java.util.BitSet)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B hiddenColumns(java.util.BitSet value)
+    {
+        this.hasHiddenColumns = true;
+        this.valHiddenColumns = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetView#setHiddenRows(java.util.BitSet)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B hiddenRows(java.util.BitSet value)
+    {
+        this.hasHiddenRows = true;
+        this.valHiddenRows = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定集合屬性{@link SpreadsheetView#getItems}的內容。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     * @deprecated 屬性值並非{@link javafx.collections.ObservableList}
+     */
+    @Deprecated
+    @SuppressWarnings("unchecked")
+    public final B items(java.util.Collection<? extends javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell>> value)
+    {
+        this.hasItems = true;
+        this.valItems = (java.util.Collection<javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell>>) value;
+        return (B) this;
+    }
+
+    /**
+     * 設定集合屬性{@link SpreadsheetView#getItems}的內容。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B items(javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell>... value)
+    {
+        this.hasItems = true;
+        this.valItems = java.util.Arrays.asList(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SpreadsheetView#getItems}的內容。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B itemsAdd(java.util.Collection<? extends javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell>> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.size());
+        this.valItems.addAll(value);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SpreadsheetView#getItems}的內容。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B itemsAdd(javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell>... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.length);
+        this.valItems.addAll(java.util.Arrays.asList(value));
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SpreadsheetView#getItems}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B itemsAddNonNull(java.util.Collection<? extends javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell>> value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.size());
+        for (javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell> i : value)
+            if (i != null)
+                this.valItems.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 增加集合屬性{@link SpreadsheetView#getItems}的內容，排除null項目。
+     *
+     * @param value 新的集合內容
+     * @return 目前的建構器(this)
+     */
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    public final B itemsAddNonNull(javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell>... value)
+    {
+        java.util.Objects.requireNonNull(value);
+        this.hasItems = true;
+        if (this.valItems == null)
+            this.valItems = new java.util.ArrayList<>(value.length);
+        for (javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell> i : value)
+            if (i != null)
+                this.valItems.add(i);
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link SpreadsheetView#setPlaceholder(javafx.scene.Node)}。
      *
      * @param value 新的屬性值
@@ -592,6 +819,54 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
     }
 
     /**
+     * 設定屬性{@link SpreadsheetView#setZoomFactor(java.lang.Double)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B zoomFactor(java.lang.Double value)
+    {
+        this.hasZoomFactor = true;
+        this.valZoomFactor = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetView#comparatorProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindComparator(javafx.beans.value.ObservableValue<? extends java.util.Comparator<? super javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Comparator = true;
+        this.obsrv1Comparator = source;
+        this.bound2Comparator = false;
+        this.obsrv2Comparator = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetView#comparatorProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalComparator(javafx.beans.property.Property<java.util.Comparator<? super javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell>>> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Comparator = false;
+        this.obsrv1Comparator = null;
+        this.bound2Comparator = true;
+        this.obsrv2Comparator = source;
+        return (B) this;
+    }
+
+    /**
      * 設定屬性{@link SpreadsheetView#editableProperty}的連結。
      *
      * @param value 新的屬性連結(單向)
@@ -622,6 +897,74 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
         this.obsrv1Editable = null;
         this.bound2Editable = true;
         this.obsrv2Editable = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetView#hiddenColumnsProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindHiddenColumns(javafx.beans.value.ObservableValue<? extends java.util.BitSet> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1HiddenColumns = true;
+        this.obsrv1HiddenColumns = source;
+        this.bound2HiddenColumns = false;
+        this.obsrv2HiddenColumns = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetView#hiddenColumnsProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHiddenColumns(javafx.beans.property.Property<java.util.BitSet> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1HiddenColumns = false;
+        this.obsrv1HiddenColumns = null;
+        this.bound2HiddenColumns = true;
+        this.obsrv2HiddenColumns = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetView#hiddenRowsProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindHiddenRows(javafx.beans.value.ObservableValue<? extends java.util.BitSet> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1HiddenRows = true;
+        this.obsrv1HiddenRows = source;
+        this.bound2HiddenRows = false;
+        this.obsrv2HiddenRows = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetView#hiddenRowsProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalHiddenRows(javafx.beans.property.Property<java.util.BitSet> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1HiddenRows = false;
+        this.obsrv1HiddenRows = null;
+        this.bound2HiddenRows = true;
+        this.obsrv2HiddenRows = source;
         return (B) this;
     }
 
@@ -758,6 +1101,40 @@ public class SpreadsheetViewMaker<Z extends SpreadsheetView, B extends Spreadshe
         this.obsrv1ShowRowHeader = null;
         this.bound2ShowRowHeader = true;
         this.obsrv2ShowRowHeader = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetView#zoomFactorProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindZoomFactor(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ZoomFactor = true;
+        this.obsrv1ZoomFactor = source;
+        this.bound2ZoomFactor = false;
+        this.obsrv2ZoomFactor = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetView#zoomFactorProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalZoomFactor(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1ZoomFactor = false;
+        this.obsrv1ZoomFactor = null;
+        this.bound2ZoomFactor = true;
+        this.obsrv2ZoomFactor = source;
         return (B) this;
     }
 

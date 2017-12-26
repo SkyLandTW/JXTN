@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link MasterDetailPane}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.40.12.jar
+ * @version controlsfx-8.40.14.jar
  * @param <Z> 要建構的物件型態(需繼承{@link MasterDetailPane})
  * @param <B> 建構器本身的型態(需繼承{@link MasterDetailPaneMaker})
  */
@@ -31,6 +31,9 @@ public class MasterDetailPaneMaker<Z extends MasterDetailPane, B extends MasterD
 
     private boolean hasDividerPosition;
     private double valDividerPosition;
+
+    private boolean hasDividerSizeHint;
+    private double valDividerSizeHint;
 
     private boolean hasMasterNode;
     private javafx.scene.Node valMasterNode;
@@ -58,6 +61,11 @@ public class MasterDetailPaneMaker<Z extends MasterDetailPane, B extends MasterD
     private javafx.beans.value.ObservableValue<? extends Number> obsrv1DividerPosition;
     private javafx.beans.property.Property<Number> obsrv2DividerPosition;
 
+    private boolean bound1DividerSizeHint;
+    private boolean bound2DividerSizeHint;
+    private javafx.beans.value.ObservableValue<? extends Number> obsrv1DividerSizeHint;
+    private javafx.beans.property.Property<Number> obsrv2DividerSizeHint;
+
     private boolean bound1MasterNode;
     private boolean bound2MasterNode;
     private javafx.beans.value.ObservableValue<? extends javafx.scene.Node> obsrv1MasterNode;
@@ -80,6 +88,8 @@ public class MasterDetailPaneMaker<Z extends MasterDetailPane, B extends MasterD
             instance.setDetailSide(this.valDetailSide);
         if (this.hasDividerPosition)
             instance.setDividerPosition(this.valDividerPosition);
+        if (this.hasDividerSizeHint)
+            instance.setDividerSizeHint(this.valDividerSizeHint);
         if (this.hasMasterNode)
             instance.setMasterNode(this.valMasterNode);
         if (this.hasShowDetailNode)
@@ -100,6 +110,10 @@ public class MasterDetailPaneMaker<Z extends MasterDetailPane, B extends MasterD
             instance.dividerPositionProperty().bind(this.obsrv1DividerPosition);
         if (this.bound2DividerPosition)
             instance.dividerPositionProperty().bindBidirectional(this.obsrv2DividerPosition);
+        if (this.bound1DividerSizeHint)
+            instance.dividerSizeHintProperty().bind(this.obsrv1DividerSizeHint);
+        if (this.bound2DividerSizeHint)
+            instance.dividerSizeHintProperty().bindBidirectional(this.obsrv2DividerSizeHint);
         if (this.bound1MasterNode)
             instance.masterNodeProperty().bind(this.obsrv1MasterNode);
         if (this.bound2MasterNode)
@@ -163,6 +177,20 @@ public class MasterDetailPaneMaker<Z extends MasterDetailPane, B extends MasterD
     {
         this.hasDividerPosition = true;
         this.valDividerPosition = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MasterDetailPane#setDividerSizeHint(double)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B dividerSizeHint(double value)
+    {
+        this.hasDividerSizeHint = true;
+        this.valDividerSizeHint = value;
         return (B) this;
     }
 
@@ -327,6 +355,40 @@ public class MasterDetailPaneMaker<Z extends MasterDetailPane, B extends MasterD
         this.obsrv1DividerPosition = null;
         this.bound2DividerPosition = true;
         this.obsrv2DividerPosition = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MasterDetailPane#dividerSizeHintProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindDividerSizeHint(javafx.beans.value.ObservableValue<? extends Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1DividerSizeHint = true;
+        this.obsrv1DividerSizeHint = source;
+        this.bound2DividerSizeHint = false;
+        this.obsrv2DividerSizeHint = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link MasterDetailPane#dividerSizeHintProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalDividerSizeHint(javafx.beans.property.Property<Number> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1DividerSizeHint = false;
+        this.obsrv1DividerSizeHint = null;
+        this.bound2DividerSizeHint = true;
+        this.obsrv2DividerSizeHint = source;
         return (B) this;
     }
 

@@ -9,7 +9,7 @@ package org.controlsfx.control.spreadsheet;
  * {@link GridBase}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.40.12.jar
+ * @version controlsfx-8.40.14.jar
  * @param <Z> 要建構的物件型態(需繼承{@link GridBase})
  * @param <B> 建構器本身的型態(需繼承{@link GridBaseMaker})
  */
@@ -22,6 +22,9 @@ public class GridBaseMaker<Z extends GridBase, B extends GridBaseMaker<Z, B>>
 
     private boolean hasColumnHeaders;
     private java.util.Collection<java.lang.String> valColumnHeaders;
+
+    private boolean hasDisplaySelection;
+    private boolean valDisplaySelection;
 
     private boolean hasLocked;
     private java.lang.Boolean valLocked;
@@ -38,6 +41,11 @@ public class GridBaseMaker<Z extends GridBase, B extends GridBaseMaker<Z, B>>
     private boolean hasRows;
     private java.util.Collection<javafx.collections.ObservableList<org.controlsfx.control.spreadsheet.SpreadsheetCell>> valRows;
 
+    private boolean bound1DisplaySelection;
+    private boolean bound2DisplaySelection;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1DisplaySelection;
+    private javafx.beans.property.Property<Boolean> obsrv2DisplaySelection;
+
     private boolean bound1Locked;
     private boolean bound2Locked;
     private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1Locked;
@@ -49,6 +57,8 @@ public class GridBaseMaker<Z extends GridBase, B extends GridBaseMaker<Z, B>>
         super.applyTo(instance);
         if (this.hasColumnHeaders)
             instance.getColumnHeaders().addAll(this.valColumnHeaders);
+        if (this.hasDisplaySelection)
+            instance.setDisplaySelection(this.valDisplaySelection);
         if (this.hasLocked)
             instance.setLocked(this.valLocked);
         if (this.hasResizableRows)
@@ -59,6 +69,10 @@ public class GridBaseMaker<Z extends GridBase, B extends GridBaseMaker<Z, B>>
             instance.setRowHeightCallback(this.valRowHeightCallback);
         if (this.hasRows)
             instance.setRows(this.valRows);
+        if (this.bound1DisplaySelection)
+            instance.displaySelectionProperty().bind(this.obsrv1DisplaySelection);
+        if (this.bound2DisplaySelection)
+            instance.displaySelectionProperty().bindBidirectional(this.obsrv2DisplaySelection);
         if (this.bound1Locked)
             instance.lockedProperty().bind(this.obsrv1Locked);
         if (this.bound2Locked)
@@ -167,6 +181,20 @@ public class GridBaseMaker<Z extends GridBase, B extends GridBaseMaker<Z, B>>
         for (java.lang.String i : value)
             if (i != null)
                 this.valColumnHeaders.add(i);
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link GridBase#setDisplaySelection(boolean)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B displaySelection(boolean value)
+    {
+        this.hasDisplaySelection = true;
+        this.valDisplaySelection = value;
         return (B) this;
     }
 
@@ -328,6 +356,40 @@ public class GridBaseMaker<Z extends GridBase, B extends GridBaseMaker<Z, B>>
     {
         this.hasRows = true;
         this.valRows = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link GridBase#displaySelectionProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindDisplaySelection(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1DisplaySelection = true;
+        this.obsrv1DisplaySelection = source;
+        this.bound2DisplaySelection = false;
+        this.obsrv2DisplaySelection = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link GridBase#displaySelectionProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalDisplaySelection(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1DisplaySelection = false;
+        this.obsrv1DisplaySelection = null;
+        this.bound2DisplaySelection = true;
+        this.obsrv2DisplaySelection = source;
         return (B) this;
     }
 

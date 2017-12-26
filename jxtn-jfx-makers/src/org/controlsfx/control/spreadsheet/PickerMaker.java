@@ -9,7 +9,7 @@ package org.controlsfx.control.spreadsheet;
  * {@link Picker}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.40.12.jar
+ * @version controlsfx-8.40.14.jar
  * @param <Z> 要建構的物件型態(需繼承{@link Picker})
  * @param <B> 建構器本身的型態(需繼承{@link PickerMaker})
  */
@@ -134,48 +134,5 @@ public class PickerMaker<Z extends Picker, B extends PickerMaker<Z, B>>
             if (i != null)
                 this.valStyleClass.add(i);
         return (B) this;
-    }
-
-    /**
-     * 建構{@link Picker}物件。
-     *
-     * @return 新的{@link Picker}物件實體
-     */
-    @Override
-    @SuppressWarnings("unchecked")
-    public Picker build()
-    {
-        Picker instance = new Picker();
-        this.applyTo((Z) instance);
-        this.doAfterBuild((Z) instance);
-        return instance;
-    }
-
-    /**
-     * 建構{@link Picker}物件。
-     *
-     * @return 新的{@link Picker}物件實體
-     */
-    @SuppressWarnings("unchecked")
-    public Picker build(java.lang.String[] arg0)
-    {
-        Picker instance = new Picker(arg0);
-        this.applyTo((Z) instance);
-        this.doAfterBuild((Z) instance);
-        return instance;
-    }
-
-    /**
-     * 建構{@link Picker}物件。
-     *
-     * @return 新的{@link Picker}物件實體
-     */
-    @SuppressWarnings("unchecked")
-    public Picker build(java.util.Collection<java.lang.String> arg0)
-    {
-        Picker instance = new Picker(arg0);
-        this.applyTo((Z) instance);
-        this.doAfterBuild((Z) instance);
-        return instance;
     }
 }

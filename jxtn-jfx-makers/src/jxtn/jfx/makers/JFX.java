@@ -2921,6 +2921,17 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link org.controlsfx.control.SegmentedBar.Segment}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.SegmentedBar_SegmentMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.SegmentedBar_SegmentMaker<org.controlsfx.control.SegmentedBar.Segment, ?> segmentedBar_Segment()
+    {
+        return new org.controlsfx.control.SegmentedBar_SegmentMaker();
+    }
+
+    /**
      * 建立新的{@link org.controlsfx.control.SegmentedButton}建構器。
      *
      * @return 新的{@link org.controlsfx.control.SegmentedButtonMaker}
@@ -2973,6 +2984,39 @@ public final class JFX
     public static org.controlsfx.control.ToggleSwitchMaker<org.controlsfx.control.ToggleSwitch, ?> toggleSwitch()
     {
         return new org.controlsfx.control.ToggleSwitchMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.WorldMapView}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.WorldMapViewMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.WorldMapViewMaker<org.controlsfx.control.WorldMapView, ?> worldMapView()
+    {
+        return new org.controlsfx.control.WorldMapViewMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.WorldMapView.CountryView}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.WorldMapView_CountryViewMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.WorldMapView_CountryViewMaker<org.controlsfx.control.WorldMapView.CountryView, ?> worldMapView_CountryView()
+    {
+        return new org.controlsfx.control.WorldMapView_CountryViewMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.WorldMapView.Location}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.WorldMapView_LocationMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.WorldMapView_LocationMaker<org.controlsfx.control.WorldMapView.Location, ?> worldMapView_Location()
+    {
+        return new org.controlsfx.control.WorldMapView_LocationMaker();
     }
 
     /**
@@ -3083,6 +3127,17 @@ public final class JFX
     public static org.controlsfx.control.decoration.StyleClassDecorationMaker<org.controlsfx.control.decoration.StyleClassDecoration, ?> styleClassDecoration()
     {
         return new org.controlsfx.control.decoration.StyleClassDecorationMaker();
+    }
+
+    /**
+     * 建立新的{@link org.controlsfx.control.spreadsheet.FilterBase}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.spreadsheet.FilterBaseMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static org.controlsfx.control.spreadsheet.FilterBaseMaker<org.controlsfx.control.spreadsheet.FilterBase, ?> filterBase()
+    {
+        return new org.controlsfx.control.spreadsheet.FilterBaseMaker();
     }
 
     /**

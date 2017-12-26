@@ -21502,7 +21502,7 @@
       </property>
     </class>
   </jar>
-  <jar file="controlsfx-8.40.12.jar">
+  <jar file="controlsfx-8.40.14.jar">
     <class abstract="false" genericDeclaration="T extends java.lang.Object" genericDeclarationPrepend="T extends java.lang.Object, " genericName="BreadCrumbBar&lt;T&gt;" genericParam="T" genericParamPrepend="T, " name="BreadCrumbBar" package="org.controlsfx.control" super="javafx.scene.control.Control" superParam="" superParamPrepend="">
       <typeParameter name="T"/>
       <constructor access="public" name="org.controlsfx.control.BreadCrumbBar" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
@@ -22104,14 +22104,17 @@
       <method abstract="false" access="public" final="true" name="detailNodeProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.scene.Node&gt;" static="false"/>
       <method abstract="false" access="public" final="true" name="detailSideProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.geometry.Side&gt;" static="false"/>
       <method abstract="false" access="public" final="true" name="dividerPositionProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.DoubleProperty" static="false"/>
+      <method abstract="false" access="public" final="true" name="dividerSizeHintProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.DoubleProperty" static="false"/>
       <method abstract="false" access="public" final="true" name="getDetailNode" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.Node" static="false"/>
       <method abstract="false" access="public" final="true" name="getDetailSide" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.geometry.Side" static="false"/>
       <method abstract="false" access="public" final="true" name="getDividerPosition" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
+      <method abstract="false" access="public" final="true" name="getDividerSizeHint" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
       <method abstract="false" access="public" final="true" name="getMasterNode" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.Node" static="false"/>
       <method abstract="false" access="public" final="false" name="getUserAgentStylesheet" override="true" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
       <method abstract="false" access="public" final="true" name="isAnimated" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
       <method abstract="false" access="public" final="true" name="isShowDetailNode" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
       <method abstract="false" access="public" final="true" name="masterNodeProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.scene.Node&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="resetDividerPosition" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
       <method abstract="false" access="public" final="true" name="setAnimated" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="boolean arg0" public="true" returnType="void" static="false">
         <parameter genericType="boolean" name="arg0" type="boolean"/>
       </method>
@@ -22122,6 +22125,9 @@
         <parameter genericType="javafx.geometry.Side" name="arg0" type="javafx.geometry.Side"/>
       </method>
       <method abstract="false" access="public" final="true" name="setDividerPosition" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" returnType="void" static="false">
+        <parameter genericType="double" name="arg0" type="double"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setDividerSizeHint" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" returnType="void" static="false">
         <parameter genericType="double" name="arg0" type="double"/>
       </method>
       <method abstract="false" access="public" final="true" name="setMasterNode" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.Node arg0" public="true" returnType="void" static="false">
@@ -22152,6 +22158,12 @@
       <property genericParam="" genericType="double" name="dividerPosition" override="false" rawType="double" static="false">
         <getter abstract="false" access="public" final="true" name="getDividerPosition" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
         <setter abstract="false" access="public" final="true" genericParam="" genericType="double" index="" name="setDividerPosition" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" rawType="double" returnType="void" static="false">
+          <parameter genericType="double" name="arg0" type="double"/>
+        </setter>
+      </property>
+      <property genericParam="" genericType="double" name="dividerSizeHint" override="false" rawType="double" static="false">
+        <getter abstract="false" access="public" final="true" name="getDividerSizeHint" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="" genericType="double" index="" name="setDividerSizeHint" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" rawType="double" returnType="void" static="false">
           <parameter genericType="double" name="arg0" type="double"/>
         </setter>
       </property>
@@ -22400,6 +22412,7 @@
       <method abstract="false" access="public" final="true" name="arrowIndentProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.DoubleProperty" static="false"/>
       <method abstract="false" access="public" final="true" name="arrowLocationProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;org.controlsfx.control.PopOver.ArrowLocation&gt;" static="false"/>
       <method abstract="false" access="public" final="true" name="arrowSizeProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.DoubleProperty" static="false"/>
+      <method abstract="false" access="public" final="true" name="closeButtonEnabledProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.BooleanProperty" static="false"/>
       <method abstract="false" access="public" final="true" name="contentNodeProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.scene.Node&gt;" static="false"/>
       <method abstract="false" access="public" final="true" name="cornerRadiusProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.DoubleProperty" static="false"/>
       <method abstract="false" access="public" final="true" name="detach" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
@@ -22422,6 +22435,7 @@
         <parameter genericType="javafx.util.Duration" name="arg0" type="javafx.util.Duration"/>
       </method>
       <method abstract="false" access="public" final="true" name="isAnimated" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
+      <method abstract="false" access="public" final="true" name="isCloseButtonEnabled" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
       <method abstract="false" access="public" final="true" name="isDetachable" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
       <method abstract="false" access="public" final="true" name="isDetached" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
       <method abstract="false" access="public" final="true" name="isHeaderAlwaysVisible" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
@@ -22436,6 +22450,9 @@
       </method>
       <method abstract="false" access="public" final="true" name="setArrowSize" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" returnType="void" static="false">
         <parameter genericType="double" name="arg0" type="double"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setCloseButtonEnabled" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="boolean arg0" public="true" returnType="void" static="false">
+        <parameter genericType="boolean" name="arg0" type="boolean"/>
       </method>
       <method abstract="false" access="public" final="true" name="setContentNode" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.Node arg0" public="true" returnType="void" static="false">
         <parameter genericType="javafx.scene.Node" name="arg0" type="javafx.scene.Node"/>
@@ -22512,6 +22529,12 @@
           <parameter genericType="double" name="arg0" type="double"/>
         </setter>
       </property>
+      <property genericParam="" genericType="boolean" name="closeButtonEnabled" override="false" rawType="boolean" static="false">
+        <getter abstract="false" access="public" final="true" name="isCloseButtonEnabled" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="" genericType="boolean" index="" name="setCloseButtonEnabled" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="boolean arg0" public="true" rawType="boolean" returnType="void" static="false">
+          <parameter genericType="boolean" name="arg0" type="boolean"/>
+        </setter>
+      </property>
       <property genericParam="" genericType="javafx.scene.Node" name="contentNode" override="false" rawType="javafx.scene.Node" static="false">
         <getter abstract="false" access="public" final="true" name="getContentNode" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.Node" static="false"/>
         <setter abstract="false" access="public" final="true" genericParam="" genericType="javafx.scene.Node" index="" name="setContentNode" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.Node arg0" public="true" rawType="javafx.scene.Node" returnType="void" static="false">
@@ -22571,6 +22594,50 @@
     <class abstract="false" genericDeclaration="T extends java.lang.Object" genericDeclarationPrepend="T extends java.lang.Object, " genericName="PrefixSelectionComboBox&lt;T&gt;" genericParam="T" genericParamPrepend="T, " name="PrefixSelectionComboBox" package="org.controlsfx.control" super="javafx.scene.control.ComboBox" superParam="T" superParamPrepend="T, ">
       <typeParameter name="T"/>
       <constructor access="public" name="org.controlsfx.control.PrefixSelectionComboBox" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
+      <method abstract="false" access="public" final="true" name="backSpaceAllowedProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.BooleanProperty" static="false"/>
+      <method abstract="false" access="public" final="true" name="displayOnFocusedEnabledProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.BooleanProperty" static="false"/>
+      <method abstract="false" access="public" final="true" name="getLookup" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.util.function.BiFunction&lt;javafx.scene.control.ComboBox, java.lang.String, java.util.Optional&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="getTypingDelay" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="int" static="false"/>
+      <method abstract="false" access="public" final="true" name="isBackSpaceAllowed" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
+      <method abstract="false" access="public" final="true" name="isDisplayOnFocusedEnabled" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
+      <method abstract="false" access="public" final="true" name="lookupProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;java.util.function.BiFunction&lt;javafx.scene.control.ComboBox, java.lang.String, java.util.Optional&gt;&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="setBackSpaceAllowed" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="boolean arg0" public="true" returnType="void" static="false">
+        <parameter genericType="boolean" name="arg0" type="boolean"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setDisplayOnFocusedEnabled" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="boolean arg0" public="true" returnType="void" static="false">
+        <parameter genericType="boolean" name="arg0" type="boolean"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setLookup" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.util.function.BiFunction&lt;javafx.scene.control.ComboBox, java.lang.String, java.util.Optional&gt; arg0" public="true" returnType="void" static="false">
+        <parameter genericType="java.util.function.BiFunction&lt;javafx.scene.control.ComboBox, java.lang.String, java.util.Optional&gt;" name="arg0" type="java.util.function.BiFunction"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setTypingDelay" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="void" static="false">
+        <parameter genericType="int" name="arg0" type="int"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="typingDelayProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.IntegerProperty" static="false"/>
+      <property genericParam="" genericType="boolean" name="backSpaceAllowed" override="false" rawType="boolean" static="false">
+        <getter abstract="false" access="public" final="true" name="isBackSpaceAllowed" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="" genericType="boolean" index="" name="setBackSpaceAllowed" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="boolean arg0" public="true" rawType="boolean" returnType="void" static="false">
+          <parameter genericType="boolean" name="arg0" type="boolean"/>
+        </setter>
+      </property>
+      <property genericParam="" genericType="boolean" name="displayOnFocusedEnabled" override="false" rawType="boolean" static="false">
+        <getter abstract="false" access="public" final="true" name="isDisplayOnFocusedEnabled" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="" genericType="boolean" index="" name="setDisplayOnFocusedEnabled" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="boolean arg0" public="true" rawType="boolean" returnType="void" static="false">
+          <parameter genericType="boolean" name="arg0" type="boolean"/>
+        </setter>
+      </property>
+      <property genericParam="javafx.scene.control.ComboBox, java.lang.String, java.util.Optional" genericType="java.util.function.BiFunction&lt;javafx.scene.control.ComboBox, java.lang.String, java.util.Optional&gt;" name="lookup" override="false" rawType="java.util.function.BiFunction" static="false">
+        <getter abstract="false" access="public" final="true" name="getLookup" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.util.function.BiFunction&lt;javafx.scene.control.ComboBox, java.lang.String, java.util.Optional&gt;" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="javafx.scene.control.ComboBox, java.lang.String, java.util.Optional" genericType="java.util.function.BiFunction&lt;javafx.scene.control.ComboBox, java.lang.String, java.util.Optional&gt;" index="" name="setLookup" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.util.function.BiFunction&lt;javafx.scene.control.ComboBox, java.lang.String, java.util.Optional&gt; arg0" public="true" rawType="java.util.function.BiFunction" returnType="void" static="false">
+          <parameter genericType="java.util.function.BiFunction&lt;javafx.scene.control.ComboBox, java.lang.String, java.util.Optional&gt;" name="arg0" type="java.util.function.BiFunction"/>
+        </setter>
+      </property>
+      <property genericParam="" genericType="int" name="typingDelay" override="false" rawType="int" static="false">
+        <getter abstract="false" access="public" final="true" name="getTypingDelay" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="int" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="" genericType="int" index="" name="setTypingDelay" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" rawType="int" returnType="void" static="false">
+          <parameter genericType="int" name="arg0" type="int"/>
+        </setter>
+      </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="PropertySheet" genericParam="" genericParamPrepend="" name="PropertySheet" package="org.controlsfx.control" super="javafx.scene.control.Control" superParam="" superParamPrepend="">
       <constructor access="public" name="org.controlsfx.control.PropertySheet" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
@@ -22888,6 +22955,94 @@
         <getter abstract="false" access="public" final="false" name="getUserAgentStylesheet" override="true" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
       </property>
     </class>
+    <class abstract="false" genericDeclaration="T extends org.controlsfx.control.SegmentedBar$Segment" genericDeclarationPrepend="T extends org.controlsfx.control.SegmentedBar$Segment, " genericName="SegmentedBar&lt;T&gt;" genericParam="T" genericParamPrepend="T, " name="SegmentedBar" package="org.controlsfx.control" super="javafx.scene.control.Control" superParam="" superParamPrepend="">
+      <typeParameter name="T"/>
+      <constructor access="public" name="org.controlsfx.control.SegmentedBar" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
+      <method abstract="false" access="public" final="true" name="getInfoNodeFactory" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="getOrientation" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.geometry.Orientation" static="false"/>
+      <method abstract="false" access="public" final="true" name="getSegmentViewFactory" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="getSegments" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;T&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="getTotal" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
+      <method abstract="false" access="public" final="false" name="getUserAgentStylesheet" override="true" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
+      <method abstract="false" access="public" final="true" name="infoNodeFactoryProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.util.Callback&lt;T, javafx.scene.Node&gt;&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="orientationProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.geometry.Orientation&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="segmentViewFactoryProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.util.Callback&lt;T, javafx.scene.Node&gt;&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="segmentsProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ListProperty&lt;T&gt;" static="false"/>
+      <method abstract="false" access="public" final="false" name="setInfoNodeFactory" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.Callback&lt;T, javafx.scene.Node&gt; arg0" public="true" returnType="void" static="false">
+        <parameter genericType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" name="arg0" type="javafx.util.Callback"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setOrientation" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.geometry.Orientation arg0" public="true" returnType="void" static="false">
+        <parameter genericType="javafx.geometry.Orientation" name="arg0" type="javafx.geometry.Orientation"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setSegmentViewFactory" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.Callback&lt;T, javafx.scene.Node&gt; arg0" public="true" returnType="void" static="false">
+        <parameter genericType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" name="arg0" type="javafx.util.Callback"/>
+      </method>
+      <method abstract="false" access="public" final="false" name="setSegments" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;T&gt; arg0" public="true" returnType="void" static="false">
+        <parameter genericType="javafx.collections.ObservableList&lt;T&gt;" name="arg0" type="javafx.collections.ObservableList"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="totalProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ReadOnlyDoubleProperty" static="false"/>
+      <property genericParam="T, javafx.scene.Node" genericType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" name="infoNodeFactory" override="false" rawType="javafx.util.Callback" static="false">
+        <getter abstract="false" access="public" final="true" name="getInfoNodeFactory" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" static="false"/>
+        <setter abstract="false" access="public" final="false" genericParam="T, javafx.scene.Node" genericType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" index="" name="setInfoNodeFactory" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.Callback&lt;T, javafx.scene.Node&gt; arg0" public="true" rawType="javafx.util.Callback" returnType="void" static="false">
+          <parameter genericType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" name="arg0" type="javafx.util.Callback"/>
+        </setter>
+      </property>
+      <property genericParam="" genericType="javafx.geometry.Orientation" name="orientation" override="false" rawType="javafx.geometry.Orientation" static="false">
+        <getter abstract="false" access="public" final="true" name="getOrientation" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.geometry.Orientation" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="" genericType="javafx.geometry.Orientation" index="" name="setOrientation" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.geometry.Orientation arg0" public="true" rawType="javafx.geometry.Orientation" returnType="void" static="false">
+          <parameter genericType="javafx.geometry.Orientation" name="arg0" type="javafx.geometry.Orientation"/>
+        </setter>
+      </property>
+      <property genericParam="T, javafx.scene.Node" genericType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" name="segmentViewFactory" override="false" rawType="javafx.util.Callback" static="false">
+        <getter abstract="false" access="public" final="true" name="getSegmentViewFactory" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="T, javafx.scene.Node" genericType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" index="" name="setSegmentViewFactory" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.Callback&lt;T, javafx.scene.Node&gt; arg0" public="true" rawType="javafx.util.Callback" returnType="void" static="false">
+          <parameter genericType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" name="arg0" type="javafx.util.Callback"/>
+        </setter>
+      </property>
+      <property genericParam="T" genericType="javafx.collections.ObservableList&lt;T&gt;" name="segments" override="false" rawType="javafx.collections.ObservableList" static="false">
+        <getter abstract="false" access="public" final="true" name="getSegments" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;T&gt;" static="false"/>
+        <setter abstract="false" access="public" final="false" genericParam="T" genericType="javafx.collections.ObservableList&lt;T&gt;" index="" name="setSegments" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;T&gt; arg0" public="true" rawType="javafx.collections.ObservableList" returnType="void" static="false">
+          <parameter genericType="javafx.collections.ObservableList&lt;T&gt;" name="arg0" type="javafx.collections.ObservableList"/>
+        </setter>
+      </property>
+      <property genericParam="" genericType="double" name="total" override="false" rawType="double" static="false">
+        <getter abstract="false" access="public" final="true" name="getTotal" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
+      </property>
+      <property genericParam="" genericType="java.lang.String" name="userAgentStylesheet" override="true" rawType="java.lang.String" static="false">
+        <getter abstract="false" access="public" final="false" name="getUserAgentStylesheet" override="true" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
+      </property>
+    </class>
+    <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SegmentedBar.Segment" genericParam="" genericParamPrepend="" name="SegmentedBar.Segment" package="org.controlsfx.control" super="">
+      <constructor access="public" name="org.controlsfx.control.SegmentedBar$Segment" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" static="false">
+        <parameter genericType="double" name="arg0" type="double"/>
+      </constructor>
+      <constructor access="public" name="org.controlsfx.control.SegmentedBar$Segment" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="double arg0, java.lang.String arg1" public="true" static="false">
+        <parameter genericType="double" name="arg0" type="double"/>
+        <parameter genericType="java.lang.String" name="arg1" type="java.lang.String"/>
+      </constructor>
+      <method abstract="false" access="public" final="true" name="getText" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
+      <method abstract="false" access="public" final="true" name="getValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
+      <method abstract="false" access="public" final="true" name="setText" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.String arg0" public="true" returnType="void" static="false">
+        <parameter genericType="java.lang.String" name="arg0" type="java.lang.String"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setValue" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" returnType="void" static="false">
+        <parameter genericType="double" name="arg0" type="double"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="textProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.StringProperty" static="false"/>
+      <method abstract="false" access="public" final="true" name="valueProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.DoubleProperty" static="false"/>
+      <property genericParam="" genericType="java.lang.String" name="text" override="false" rawType="java.lang.String" static="false">
+        <getter abstract="false" access="public" final="true" name="getText" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="" genericType="java.lang.String" index="" name="setText" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.String arg0" public="true" rawType="java.lang.String" returnType="void" static="false">
+          <parameter genericType="java.lang.String" name="arg0" type="java.lang.String"/>
+        </setter>
+      </property>
+      <property genericParam="" genericType="double" name="value" override="false" rawType="double" static="false">
+        <getter abstract="false" access="public" final="true" name="getValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="" genericType="double" index="" name="setValue" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" rawType="double" returnType="void" static="false">
+          <parameter genericType="double" name="arg0" type="double"/>
+        </setter>
+      </property>
+    </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SegmentedButton" genericParam="" genericParamPrepend="" name="SegmentedButton" package="org.controlsfx.control" super="javafx.scene.control.Control" superParam="" superParamPrepend="">
       <constructor access="public" name="org.controlsfx.control.SegmentedButton" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
       <constructor access="public" name="org.controlsfx.control.SegmentedButton" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;javafx.scene.control.ToggleButton&gt; arg0" public="true" static="false">
@@ -23104,6 +23259,7 @@
       <method abstract="false" access="public" final="true" name="getLeftItems" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;javafx.scene.Node&gt;" static="false"/>
       <method abstract="false" access="public" final="true" name="getProgress" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
       <method abstract="false" access="public" final="true" name="getRightItems" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;javafx.scene.Node&gt;" static="false"/>
+      <method abstract="false" access="public" final="false" name="getStyleText" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
       <method abstract="false" access="public" final="true" name="getText" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
       <method abstract="false" access="public" final="false" name="getUserAgentStylesheet" override="true" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
       <method abstract="false" access="public" final="true" name="graphicProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.scene.Node&gt;" static="false"/>
@@ -23114,9 +23270,13 @@
       <method abstract="false" access="public" final="true" name="setProgress" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" returnType="void" static="false">
         <parameter genericType="double" name="arg0" type="double"/>
       </method>
+      <method abstract="false" access="public" final="false" name="setStyleText" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.String arg0" public="true" returnType="void" static="false">
+        <parameter genericType="java.lang.String" name="arg0" type="java.lang.String"/>
+      </method>
       <method abstract="false" access="public" final="true" name="setText" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.String arg0" public="true" returnType="void" static="false">
         <parameter genericType="java.lang.String" name="arg0" type="java.lang.String"/>
       </method>
+      <method abstract="false" access="public" final="true" name="styleTextProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.StringProperty" static="false"/>
       <method abstract="false" access="public" final="true" name="textProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.StringProperty" static="false"/>
       <property genericParam="" genericType="javafx.scene.Node" name="graphic" override="false" rawType="javafx.scene.Node" static="false">
         <getter abstract="false" access="public" final="true" name="getGraphic" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.Node" static="false"/>
@@ -23135,6 +23295,12 @@
       </property>
       <property genericParam="javafx.scene.Node" genericType="javafx.collections.ObservableList&lt;javafx.scene.Node&gt;" name="rightItems" override="false" rawType="javafx.collections.ObservableList" static="false">
         <getter abstract="false" access="public" final="true" name="getRightItems" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;javafx.scene.Node&gt;" static="false"/>
+      </property>
+      <property genericParam="" genericType="java.lang.String" name="styleText" override="false" rawType="java.lang.String" static="false">
+        <getter abstract="false" access="public" final="false" name="getStyleText" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
+        <setter abstract="false" access="public" final="false" genericParam="" genericType="java.lang.String" index="" name="setStyleText" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.String arg0" public="true" rawType="java.lang.String" returnType="void" static="false">
+          <parameter genericType="java.lang.String" name="arg0" type="java.lang.String"/>
+        </setter>
       </property>
       <property genericParam="" genericType="java.lang.String" name="text" override="false" rawType="java.lang.String" static="false">
         <getter abstract="false" access="public" final="true" name="getText" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
@@ -23189,6 +23355,159 @@
       </property>
       <property genericParam="" genericType="java.lang.String" name="userAgentStylesheet" override="true" rawType="java.lang.String" static="false">
         <getter abstract="false" access="public" final="false" name="getUserAgentStylesheet" override="true" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
+      </property>
+    </class>
+    <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="WorldMapView" genericParam="" genericParamPrepend="" name="WorldMapView" package="org.controlsfx.control" super="javafx.scene.control.Control" superParam="" superParamPrepend="">
+      <constructor access="public" name="org.controlsfx.control.WorldMapView" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
+      <method abstract="false" access="public" final="true" name="countriesProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ListProperty&lt;org.controlsfx.control.WorldMapView.Country&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="countrySelectionModeProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;org.controlsfx.control.WorldMapView.SelectionMode&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="countryViewFactoryProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.util.Callback&lt;org.controlsfx.control.WorldMapView.Country, org.controlsfx.control.WorldMapView.CountryView&gt;&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="getCountries" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Country&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="getCountrySelectionMode" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="org.controlsfx.control.WorldMapView.SelectionMode" static="false"/>
+      <method abstract="false" access="public" final="true" name="getCountryViewFactory" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.util.Callback&lt;org.controlsfx.control.WorldMapView.Country, org.controlsfx.control.WorldMapView.CountryView&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="getLocationSelectionMode" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="org.controlsfx.control.WorldMapView.SelectionMode" static="false"/>
+      <method abstract="false" access="public" final="true" name="getLocationViewFactory" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.util.Callback&lt;org.controlsfx.control.WorldMapView.Location, javafx.scene.Node&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="getLocations" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Location&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="getSelectedCountries" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Country&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="getSelectedLocations" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Location&gt;" static="false"/>
+      <method abstract="false" access="public" final="false" name="getUserAgentStylesheet" override="true" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
+      <method abstract="false" access="public" final="true" name="getZoomFactor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
+      <method abstract="false" access="public" final="true" name="isShowLocations" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
+      <method abstract="false" access="public" final="true" name="locationSelectionModeProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;org.controlsfx.control.WorldMapView.SelectionMode&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="locationViewFactoryProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.util.Callback&lt;org.controlsfx.control.WorldMapView.Location, javafx.scene.Node&gt;&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="locationsProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ListProperty&lt;org.controlsfx.control.WorldMapView.Location&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="selectedCountriesProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ListProperty&lt;org.controlsfx.control.WorldMapView.Country&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="selectedLocationsProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ListProperty&lt;org.controlsfx.control.WorldMapView.Location&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="setCountries" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Country&gt; arg0" public="true" returnType="void" static="false">
+        <parameter genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Country&gt;" name="arg0" type="javafx.collections.ObservableList"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setCountrySelectionMode" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.WorldMapView.SelectionMode arg0" public="true" returnType="void" static="false">
+        <parameter genericType="org.controlsfx.control.WorldMapView.SelectionMode" name="arg0" type="org.controlsfx.control.WorldMapView.SelectionMode"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setCountryViewFactory" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.Callback&lt;org.controlsfx.control.WorldMapView.Country, org.controlsfx.control.WorldMapView.CountryView&gt; arg0" public="true" returnType="void" static="false">
+        <parameter genericType="javafx.util.Callback&lt;org.controlsfx.control.WorldMapView.Country, org.controlsfx.control.WorldMapView.CountryView&gt;" name="arg0" type="javafx.util.Callback"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setLocationSelectionMode" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.WorldMapView.SelectionMode arg0" public="true" returnType="void" static="false">
+        <parameter genericType="org.controlsfx.control.WorldMapView.SelectionMode" name="arg0" type="org.controlsfx.control.WorldMapView.SelectionMode"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setLocationViewFactory" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.Callback&lt;org.controlsfx.control.WorldMapView.Location, javafx.scene.Node&gt; arg0" public="true" returnType="void" static="false">
+        <parameter genericType="javafx.util.Callback&lt;org.controlsfx.control.WorldMapView.Location, javafx.scene.Node&gt;" name="arg0" type="javafx.util.Callback"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setLocations" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Location&gt; arg0" public="true" returnType="void" static="false">
+        <parameter genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Location&gt;" name="arg0" type="javafx.collections.ObservableList"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setSelectedCountries" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Country&gt; arg0" public="true" returnType="void" static="false">
+        <parameter genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Country&gt;" name="arg0" type="javafx.collections.ObservableList"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setSelectedLocations" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Location&gt; arg0" public="true" returnType="void" static="false">
+        <parameter genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Location&gt;" name="arg0" type="javafx.collections.ObservableList"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setShowLocations" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="boolean arg0" public="true" returnType="void" static="false">
+        <parameter genericType="boolean" name="arg0" type="boolean"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="setZoomFactor" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" returnType="void" static="false">
+        <parameter genericType="double" name="arg0" type="double"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="showLocationsProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.BooleanProperty" static="false"/>
+      <method abstract="false" access="public" final="true" name="zoomFactorProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.DoubleProperty" static="false"/>
+      <property genericParam="org.controlsfx.control.WorldMapView.Country" genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Country&gt;" name="countries" override="false" rawType="javafx.collections.ObservableList" static="false">
+        <getter abstract="false" access="public" final="true" name="getCountries" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Country&gt;" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="org.controlsfx.control.WorldMapView.Country" genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Country&gt;" index="" name="setCountries" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Country&gt; arg0" public="true" rawType="javafx.collections.ObservableList" returnType="void" static="false">
+          <parameter genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Country&gt;" name="arg0" type="javafx.collections.ObservableList"/>
+        </setter>
+      </property>
+      <property genericParam="" genericType="org.controlsfx.control.WorldMapView.SelectionMode" name="countrySelectionMode" override="false" rawType="org.controlsfx.control.WorldMapView.SelectionMode" static="false">
+        <getter abstract="false" access="public" final="true" name="getCountrySelectionMode" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="org.controlsfx.control.WorldMapView.SelectionMode" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="" genericType="org.controlsfx.control.WorldMapView.SelectionMode" index="" name="setCountrySelectionMode" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.WorldMapView.SelectionMode arg0" public="true" rawType="org.controlsfx.control.WorldMapView.SelectionMode" returnType="void" static="false">
+          <parameter genericType="org.controlsfx.control.WorldMapView.SelectionMode" name="arg0" type="org.controlsfx.control.WorldMapView.SelectionMode"/>
+        </setter>
+      </property>
+      <property genericParam="org.controlsfx.control.WorldMapView.Country, org.controlsfx.control.WorldMapView.CountryView" genericType="javafx.util.Callback&lt;org.controlsfx.control.WorldMapView.Country, org.controlsfx.control.WorldMapView.CountryView&gt;" name="countryViewFactory" override="false" rawType="javafx.util.Callback" static="false">
+        <getter abstract="false" access="public" final="true" name="getCountryViewFactory" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.util.Callback&lt;org.controlsfx.control.WorldMapView.Country, org.controlsfx.control.WorldMapView.CountryView&gt;" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="org.controlsfx.control.WorldMapView.Country, org.controlsfx.control.WorldMapView.CountryView" genericType="javafx.util.Callback&lt;org.controlsfx.control.WorldMapView.Country, org.controlsfx.control.WorldMapView.CountryView&gt;" index="" name="setCountryViewFactory" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.Callback&lt;org.controlsfx.control.WorldMapView.Country, org.controlsfx.control.WorldMapView.CountryView&gt; arg0" public="true" rawType="javafx.util.Callback" returnType="void" static="false">
+          <parameter genericType="javafx.util.Callback&lt;org.controlsfx.control.WorldMapView.Country, org.controlsfx.control.WorldMapView.CountryView&gt;" name="arg0" type="javafx.util.Callback"/>
+        </setter>
+      </property>
+      <property genericParam="" genericType="org.controlsfx.control.WorldMapView.SelectionMode" name="locationSelectionMode" override="false" rawType="org.controlsfx.control.WorldMapView.SelectionMode" static="false">
+        <getter abstract="false" access="public" final="true" name="getLocationSelectionMode" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="org.controlsfx.control.WorldMapView.SelectionMode" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="" genericType="org.controlsfx.control.WorldMapView.SelectionMode" index="" name="setLocationSelectionMode" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.WorldMapView.SelectionMode arg0" public="true" rawType="org.controlsfx.control.WorldMapView.SelectionMode" returnType="void" static="false">
+          <parameter genericType="org.controlsfx.control.WorldMapView.SelectionMode" name="arg0" type="org.controlsfx.control.WorldMapView.SelectionMode"/>
+        </setter>
+      </property>
+      <property genericParam="org.controlsfx.control.WorldMapView.Location, javafx.scene.Node" genericType="javafx.util.Callback&lt;org.controlsfx.control.WorldMapView.Location, javafx.scene.Node&gt;" name="locationViewFactory" override="false" rawType="javafx.util.Callback" static="false">
+        <getter abstract="false" access="public" final="true" name="getLocationViewFactory" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.util.Callback&lt;org.controlsfx.control.WorldMapView.Location, javafx.scene.Node&gt;" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="org.controlsfx.control.WorldMapView.Location, javafx.scene.Node" genericType="javafx.util.Callback&lt;org.controlsfx.control.WorldMapView.Location, javafx.scene.Node&gt;" index="" name="setLocationViewFactory" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.Callback&lt;org.controlsfx.control.WorldMapView.Location, javafx.scene.Node&gt; arg0" public="true" rawType="javafx.util.Callback" returnType="void" static="false">
+          <parameter genericType="javafx.util.Callback&lt;org.controlsfx.control.WorldMapView.Location, javafx.scene.Node&gt;" name="arg0" type="javafx.util.Callback"/>
+        </setter>
+      </property>
+      <property genericParam="org.controlsfx.control.WorldMapView.Location" genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Location&gt;" name="locations" override="false" rawType="javafx.collections.ObservableList" static="false">
+        <getter abstract="false" access="public" final="true" name="getLocations" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Location&gt;" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="org.controlsfx.control.WorldMapView.Location" genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Location&gt;" index="" name="setLocations" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Location&gt; arg0" public="true" rawType="javafx.collections.ObservableList" returnType="void" static="false">
+          <parameter genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Location&gt;" name="arg0" type="javafx.collections.ObservableList"/>
+        </setter>
+      </property>
+      <property genericParam="org.controlsfx.control.WorldMapView.Country" genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Country&gt;" name="selectedCountries" override="false" rawType="javafx.collections.ObservableList" static="false">
+        <getter abstract="false" access="public" final="true" name="getSelectedCountries" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Country&gt;" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="org.controlsfx.control.WorldMapView.Country" genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Country&gt;" index="" name="setSelectedCountries" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Country&gt; arg0" public="true" rawType="javafx.collections.ObservableList" returnType="void" static="false">
+          <parameter genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Country&gt;" name="arg0" type="javafx.collections.ObservableList"/>
+        </setter>
+      </property>
+      <property genericParam="org.controlsfx.control.WorldMapView.Location" genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Location&gt;" name="selectedLocations" override="false" rawType="javafx.collections.ObservableList" static="false">
+        <getter abstract="false" access="public" final="true" name="getSelectedLocations" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Location&gt;" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="org.controlsfx.control.WorldMapView.Location" genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Location&gt;" index="" name="setSelectedLocations" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Location&gt; arg0" public="true" rawType="javafx.collections.ObservableList" returnType="void" static="false">
+          <parameter genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.WorldMapView.Location&gt;" name="arg0" type="javafx.collections.ObservableList"/>
+        </setter>
+      </property>
+      <property genericParam="" genericType="boolean" name="showLocations" override="false" rawType="boolean" static="false">
+        <getter abstract="false" access="public" final="true" name="isShowLocations" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="" genericType="boolean" index="" name="setShowLocations" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="boolean arg0" public="true" rawType="boolean" returnType="void" static="false">
+          <parameter genericType="boolean" name="arg0" type="boolean"/>
+        </setter>
+      </property>
+      <property genericParam="" genericType="java.lang.String" name="userAgentStylesheet" override="true" rawType="java.lang.String" static="false">
+        <getter abstract="false" access="public" final="false" name="getUserAgentStylesheet" override="true" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
+      </property>
+      <property genericParam="" genericType="double" name="zoomFactor" override="false" rawType="double" static="false">
+        <getter abstract="false" access="public" final="true" name="getZoomFactor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="" genericType="double" index="" name="setZoomFactor" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" rawType="double" returnType="void" static="false">
+          <parameter genericType="double" name="arg0" type="double"/>
+        </setter>
+      </property>
+    </class>
+    <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="WorldMapView.CountryView" genericParam="" genericParamPrepend="" name="WorldMapView.CountryView" package="org.controlsfx.control" super="javafx.scene.shape.SVGPath" superParam="" superParamPrepend="">
+      <constructor access="public" name="org.controlsfx.control.WorldMapView$CountryView" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.WorldMapView.Country arg0" public="true" static="false">
+        <parameter genericType="org.controlsfx.control.WorldMapView.Country" name="arg0" type="org.controlsfx.control.WorldMapView.Country"/>
+      </constructor>
+      <method abstract="false" access="public" final="true" name="getCountry" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="org.controlsfx.control.WorldMapView.Country" static="false"/>
+      <method abstract="false" access="public" final="false" name="getName" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
+      <property genericParam="" genericType="org.controlsfx.control.WorldMapView.Country" name="country" override="false" rawType="org.controlsfx.control.WorldMapView.Country" static="false">
+        <getter abstract="false" access="public" final="true" name="getCountry" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="org.controlsfx.control.WorldMapView.Country" static="false"/>
+      </property>
+      <property genericParam="" genericType="java.lang.String" name="name" override="false" rawType="java.lang.String" static="false">
+        <getter abstract="false" access="public" final="false" name="getName" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
+      </property>
+    </class>
+    <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="WorldMapView.Location" genericParam="" genericParamPrepend="" name="WorldMapView.Location" package="org.controlsfx.control" super="">
+      <constructor access="public" name="org.controlsfx.control.WorldMapView$Location" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="double arg0, double arg1" public="true" static="false">
+        <parameter genericType="double" name="arg0" type="double"/>
+        <parameter genericType="double" name="arg1" type="double"/>
+      </constructor>
+      <constructor access="public" name="org.controlsfx.control.WorldMapView$Location" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="java.lang.String arg0, double arg1, double arg2" public="true" static="false">
+        <parameter genericType="java.lang.String" name="arg0" type="java.lang.String"/>
+        <parameter genericType="double" name="arg1" type="double"/>
+        <parameter genericType="double" name="arg2" type="double"/>
+      </constructor>
+      <method abstract="false" access="public" final="true" name="getLatitude" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
+      <method abstract="false" access="public" final="true" name="getLongitude" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
+      <method abstract="false" access="public" final="true" name="getName" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
+      <property genericParam="" genericType="double" name="latitude" override="false" rawType="double" static="false">
+        <getter abstract="false" access="public" final="true" name="getLatitude" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
+      </property>
+      <property genericParam="" genericType="double" name="longitude" override="false" rawType="double" static="false">
+        <getter abstract="false" access="public" final="true" name="getLongitude" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
+      </property>
+      <property genericParam="" genericType="java.lang.String" name="name" override="false" rawType="java.lang.String" static="false">
+        <getter abstract="false" access="public" final="true" name="getName" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="Action" genericParam="" genericParamPrepend="" name="Action" package="org.controlsfx.control.action" super="">
@@ -23543,6 +23862,16 @@
         <parameter genericType="javafx.scene.Node" name="arg0" type="javafx.scene.Node"/>
       </method>
     </class>
+    <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="FilterBase" genericParam="" genericParamPrepend="" name="FilterBase" package="org.controlsfx.control.spreadsheet" super="">
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.FilterBase" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetView arg0, int arg1" public="true" static="false">
+        <parameter genericType="org.controlsfx.control.spreadsheet.SpreadsheetView" name="arg0" type="org.controlsfx.control.spreadsheet.SpreadsheetView"/>
+        <parameter genericType="int" name="arg1" type="int"/>
+      </constructor>
+      <method abstract="false" access="public" final="false" name="getMenuButton" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.MenuButton" static="false"/>
+      <property genericParam="" genericType="javafx.scene.control.MenuButton" name="menuButton" override="false" rawType="javafx.scene.control.MenuButton" static="false">
+        <getter abstract="false" access="public" final="false" name="getMenuButton" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.MenuButton" static="false"/>
+      </property>
+    </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="GridBase" genericParam="" genericParamPrepend="" name="GridBase" package="org.controlsfx.control.spreadsheet" super="">
       <constructor access="public" name="org.controlsfx.control.spreadsheet.GridBase" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="int arg0, int arg1" public="true" static="false">
         <parameter genericType="int" name="arg0" type="int"/>
@@ -23555,6 +23884,7 @@
       <method abstract="false" access="public" final="false" name="buildEventDispatchChain" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.event.EventDispatchChain arg0" public="true" returnType="javafx.event.EventDispatchChain" static="false">
         <parameter genericType="javafx.event.EventDispatchChain" name="arg0" type="javafx.event.EventDispatchChain"/>
       </method>
+      <method abstract="false" access="public" final="false" name="displaySelectionProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.BooleanProperty" static="false"/>
       <method abstract="false" access="public" final="false" name="getColumnCount" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="int" static="false"/>
       <method abstract="false" access="public" final="false" name="getColumnHeaders" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;java.lang.String&gt;" static="false"/>
       <method abstract="false" access="public" final="false" name="getRowCount" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="int" static="false"/>
@@ -23563,11 +23893,11 @@
         <parameter genericType="int" name="arg0" type="int"/>
       </method>
       <method abstract="false" access="public" final="false" name="getRows" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetCell&gt;&gt;" static="false"/>
-      <method abstract="false" access="public" final="false" name="getSpanType" override="false" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetView arg0, int arg1, int arg2" public="true" returnType="org.controlsfx.control.spreadsheet.SpreadsheetView.SpanType" static="false">
-        <parameter genericType="org.controlsfx.control.spreadsheet.SpreadsheetView" name="arg0" type="org.controlsfx.control.spreadsheet.SpreadsheetView"/>
+      <method abstract="false" access="public" final="false" name="isCellDisplaySelection" override="false" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="int arg0, int arg1" public="true" returnType="boolean" static="false">
+        <parameter genericType="int" name="arg0" type="int"/>
         <parameter genericType="int" name="arg1" type="int"/>
-        <parameter genericType="int" name="arg2" type="int"/>
       </method>
+      <method abstract="false" access="public" final="false" name="isDisplaySelection" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
       <method abstract="false" access="public" final="false" name="isLocked" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
       <method abstract="false" access="public" final="false" name="isRowResizable" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="boolean" static="false">
         <parameter genericType="int" name="arg0" type="int"/>
@@ -23577,10 +23907,18 @@
         <parameter genericType="javafx.event.EventType&lt;E&gt;" name="arg0" type="javafx.event.EventType"/>
         <parameter genericType="javafx.event.EventHandler&lt;E&gt;" name="arg1" type="javafx.event.EventHandler"/>
       </method>
+      <method abstract="false" access="public" final="false" name="setCellDisplaySelection" override="false" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="int arg0, int arg1, boolean arg2" public="true" returnType="void" static="false">
+        <parameter genericType="int" name="arg0" type="int"/>
+        <parameter genericType="int" name="arg1" type="int"/>
+        <parameter genericType="boolean" name="arg2" type="boolean"/>
+      </method>
       <method abstract="false" access="public" final="false" name="setCellValue" override="false" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="int arg0, int arg1, java.lang.Object arg2" public="true" returnType="void" static="false">
         <parameter genericType="int" name="arg0" type="int"/>
         <parameter genericType="int" name="arg1" type="int"/>
         <parameter genericType="java.lang.Object" name="arg2" type="java.lang.Object"/>
+      </method>
+      <method abstract="false" access="public" final="false" name="setDisplaySelection" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="boolean arg0" public="true" returnType="void" static="false">
+        <parameter genericType="boolean" name="arg0" type="boolean"/>
       </method>
       <method abstract="false" access="public" final="false" name="setLocked" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Boolean arg0" public="true" returnType="void" static="false">
         <parameter genericType="java.lang.Boolean" name="arg0" type="java.lang.Boolean"/>
@@ -23609,6 +23947,12 @@
       </property>
       <property genericParam="java.lang.String" genericType="javafx.collections.ObservableList&lt;java.lang.String&gt;" name="columnHeaders" override="false" rawType="javafx.collections.ObservableList" static="false">
         <getter abstract="false" access="public" final="false" name="getColumnHeaders" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;java.lang.String&gt;" static="false"/>
+      </property>
+      <property genericParam="" genericType="boolean" name="displaySelection" override="false" rawType="boolean" static="false">
+        <getter abstract="false" access="public" final="false" name="isDisplaySelection" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
+        <setter abstract="false" access="public" final="false" genericParam="" genericType="boolean" index="" name="setDisplaySelection" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="boolean arg0" public="true" rawType="boolean" returnType="void" static="false">
+          <parameter genericType="boolean" name="arg0" type="boolean"/>
+        </setter>
       </property>
       <property genericParam="" genericType="boolean" name="locked" override="false" rawType="boolean" static="false">
         <getter abstract="false" access="public" final="false" name="isLocked" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
@@ -23675,7 +24019,7 @@
         <getter abstract="false" access="public" final="false" name="getRow" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="int" static="false"/>
       </property>
     </class>
-    <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="Picker" genericParam="" genericParamPrepend="" name="Picker" package="org.controlsfx.control.spreadsheet" super="">
+    <class abstract="true" genericDeclaration="" genericDeclarationPrepend="" genericName="Picker" genericParam="" genericParamPrepend="" name="Picker" package="org.controlsfx.control.spreadsheet" super="">
       <constructor access="public" name="org.controlsfx.control.spreadsheet.Picker" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
       <constructor access="public" name="org.controlsfx.control.spreadsheet.Picker" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.String[] arg0" public="true" static="false">
         <parameter genericType="java.lang.String[]" name="arg0" type="java.lang.String[]"/>
@@ -23684,7 +24028,7 @@
         <parameter genericType="java.util.Collection&lt;java.lang.String&gt;" name="arg0" type="java.util.Collection"/>
       </constructor>
       <method abstract="false" access="public" final="true" name="getStyleClass" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;java.lang.String&gt;" static="false"/>
-      <method abstract="false" access="public" final="false" name="onClick" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
+      <method abstract="true" access="public" final="false" name="onClick" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
       <property genericParam="java.lang.String" genericType="javafx.collections.ObservableList&lt;java.lang.String&gt;" name="styleClass" override="false" rawType="javafx.collections.ObservableList" static="false">
         <getter abstract="false" access="public" final="true" name="getStyleClass" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;java.lang.String&gt;" static="false"/>
       </property>
@@ -23726,6 +24070,7 @@
       <method abstract="false" access="public" final="true" name="getFormat" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
       <method abstract="false" access="public" final="false" name="getGraphic" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.Node" static="false"/>
       <method abstract="false" access="public" final="true" name="getItem" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.Object" static="false"/>
+      <method abstract="false" access="public" final="false" name="getPopupItems" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.util.List&lt;javafx.scene.control.MenuItem&gt;" static="false"/>
       <method abstract="false" access="public" final="true" name="getRow" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="int" static="false"/>
       <method abstract="false" access="public" final="true" name="getRowSpan" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="int" static="false"/>
       <method abstract="false" access="public" final="false" name="getStyle" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
@@ -23733,6 +24078,7 @@
       <method abstract="false" access="public" final="true" name="getText" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
       <method abstract="false" access="public" final="false" name="getTooltip" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.util.Optional&lt;java.lang.String&gt;" static="false"/>
       <method abstract="false" access="public" final="false" name="graphicProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;javafx.scene.Node&gt;" static="false"/>
+      <method abstract="false" access="public" final="false" name="hasPopup" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
       <method abstract="false" access="public" final="true" name="hashCode" override="true" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="int" static="false"/>
       <method abstract="false" access="public" final="false" name="isCornerActivated" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetCell.CornerPosition arg0" public="true" returnType="boolean" static="false">
         <parameter genericType="org.controlsfx.control.spreadsheet.SpreadsheetCell.CornerPosition" name="arg0" type="org.controlsfx.control.spreadsheet.SpreadsheetCell.CornerPosition"/>
@@ -23758,6 +24104,9 @@
       </method>
       <method abstract="false" access="public" final="false" name="setGraphic" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.Node arg0" public="true" returnType="void" static="false">
         <parameter genericType="javafx.scene.Node" name="arg0" type="javafx.scene.Node"/>
+      </method>
+      <method abstract="false" access="public" final="false" name="setHasPopup" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="boolean arg0" public="true" returnType="void" static="false">
+        <parameter genericType="boolean" name="arg0" type="boolean"/>
       </method>
       <method abstract="false" access="public" final="true" name="setItem" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Object arg0" public="true" returnType="void" static="false">
         <parameter genericType="java.lang.Object" name="arg0" type="java.lang.Object"/>
@@ -23807,11 +24156,19 @@
           <parameter genericType="javafx.scene.Node" name="arg0" type="javafx.scene.Node"/>
         </setter>
       </property>
+      <property genericParam="" genericType="boolean" name="hasPopup" override="false" rawType="boolean" static="false">
+        <setter abstract="false" access="public" final="false" genericParam="" genericType="boolean" index="" name="setHasPopup" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="boolean arg0" public="true" rawType="boolean" returnType="void" static="false">
+          <parameter genericType="boolean" name="arg0" type="boolean"/>
+        </setter>
+      </property>
       <property genericParam="" genericType="java.lang.Object" name="item" override="false" rawType="java.lang.Object" static="false">
         <getter abstract="false" access="public" final="true" name="getItem" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.Object" static="false"/>
         <setter abstract="false" access="public" final="true" genericParam="" genericType="java.lang.Object" index="" name="setItem" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Object arg0" public="true" rawType="java.lang.Object" returnType="void" static="false">
           <parameter genericType="java.lang.Object" name="arg0" type="java.lang.Object"/>
         </setter>
+      </property>
+      <property genericParam="javafx.scene.control.MenuItem" genericType="java.util.List&lt;javafx.scene.control.MenuItem&gt;" name="popupItems" override="false" rawType="java.util.List" static="false">
+        <getter abstract="false" access="public" final="false" name="getPopupItems" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.util.List&lt;javafx.scene.control.MenuItem&gt;" static="false"/>
       </property>
       <property genericParam="" genericType="int" name="row" override="false" rawType="int" static="false">
         <getter abstract="false" access="public" final="true" name="getRow" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="int" static="false"/>
@@ -23858,7 +24215,11 @@
       <method abstract="true" access="public" final="false" name="getControlValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
       <method abstract="true" access="public" final="false" name="getEditor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.Control" static="false"/>
       <method abstract="false" access="public" final="false" name="getMaxHeight" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
-      <method abstract="true" access="public" final="false" name="startEdit" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Object arg0" public="true" returnType="void" static="false">
+      <method abstract="true" access="public" final="false" name="startEdit" override="false" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="java.lang.Object arg0, java.lang.String arg1" public="true" returnType="void" static="false">
+        <parameter genericType="java.lang.Object" name="arg0" type="java.lang.Object"/>
+        <parameter genericType="java.lang.String" name="arg1" type="java.lang.String"/>
+      </method>
+      <method abstract="false" access="public" final="false" name="startEdit" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Object arg0" public="true" returnType="void" static="false">
         <parameter genericType="java.lang.Object" name="arg0" type="java.lang.Object"/>
       </method>
       <property genericParam="" genericType="java.lang.String" name="controlValue" override="false" rawType="java.lang.String" static="false">
@@ -23880,8 +24241,9 @@
       <method abstract="false" access="public" final="false" name="getControlValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
       <method abstract="false" access="public" final="false" name="getEditor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.Control" static="false"/>
       <method abstract="false" access="public" final="false" name="getEditor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.DatePicker" static="false"/>
-      <method abstract="false" access="public" final="false" name="startEdit" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Object arg0" public="true" returnType="void" static="false">
+      <method abstract="false" access="public" final="false" name="startEdit" override="true" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="java.lang.Object arg0, java.lang.String arg1" public="true" returnType="void" static="false">
         <parameter genericType="java.lang.Object" name="arg0" type="java.lang.Object"/>
+        <parameter genericType="java.lang.String" name="arg1" type="java.lang.String"/>
       </method>
       <property genericParam="" genericType="java.lang.String" name="controlValue" override="false" rawType="java.lang.String" static="false">
         <getter abstract="false" access="public" final="false" name="getControlValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
@@ -23898,8 +24260,9 @@
       <method abstract="false" access="public" final="false" name="getControlValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
       <method abstract="false" access="public" final="false" name="getEditor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.Control" static="false"/>
       <method abstract="false" access="public" final="false" name="getEditor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.TextField" static="false"/>
-      <method abstract="false" access="public" final="false" name="startEdit" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Object arg0" public="true" returnType="void" static="false">
+      <method abstract="false" access="public" final="false" name="startEdit" override="true" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="java.lang.Object arg0, java.lang.String arg1" public="true" returnType="void" static="false">
         <parameter genericType="java.lang.Object" name="arg0" type="java.lang.Object"/>
+        <parameter genericType="java.lang.String" name="arg1" type="java.lang.String"/>
       </method>
       <property genericParam="" genericType="java.lang.String" name="controlValue" override="false" rawType="java.lang.String" static="false">
         <getter abstract="false" access="public" final="false" name="getControlValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
@@ -23916,8 +24279,9 @@
       <method abstract="false" access="public" final="false" name="getControlValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
       <method abstract="false" access="public" final="false" name="getEditor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.Control" static="false"/>
       <method abstract="false" access="public" final="false" name="getEditor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.TextField" static="false"/>
-      <method abstract="false" access="public" final="false" name="startEdit" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Object arg0" public="true" returnType="void" static="false">
+      <method abstract="false" access="public" final="false" name="startEdit" override="true" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="java.lang.Object arg0, java.lang.String arg1" public="true" returnType="void" static="false">
         <parameter genericType="java.lang.Object" name="arg0" type="java.lang.Object"/>
+        <parameter genericType="java.lang.String" name="arg1" type="java.lang.String"/>
       </method>
       <property genericParam="" genericType="java.lang.String" name="controlValue" override="false" rawType="java.lang.String" static="false">
         <getter abstract="false" access="public" final="false" name="getControlValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
@@ -23936,8 +24300,9 @@
       <method abstract="false" access="public" final="false" name="getControlValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
       <method abstract="false" access="public" final="false" name="getEditor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.ComboBox&lt;java.lang.String&gt;" static="false"/>
       <method abstract="false" access="public" final="false" name="getEditor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.Control" static="false"/>
-      <method abstract="false" access="public" final="false" name="startEdit" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Object arg0" public="true" returnType="void" static="false">
+      <method abstract="false" access="public" final="false" name="startEdit" override="true" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="java.lang.Object arg0, java.lang.String arg1" public="true" returnType="void" static="false">
         <parameter genericType="java.lang.Object" name="arg0" type="java.lang.Object"/>
+        <parameter genericType="java.lang.String" name="arg1" type="java.lang.String"/>
       </method>
       <property genericParam="" genericType="java.lang.String" name="controlValue" override="false" rawType="java.lang.String" static="false">
         <getter abstract="false" access="public" final="false" name="getControlValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
@@ -23954,8 +24319,9 @@
       <method abstract="false" access="public" final="false" name="getControlValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
       <method abstract="false" access="public" final="false" name="getEditor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.Control" static="false"/>
       <method abstract="false" access="public" final="false" name="getEditor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.TextField" static="false"/>
-      <method abstract="false" access="public" final="false" name="startEdit" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Object arg0" public="true" returnType="void" static="false">
+      <method abstract="false" access="public" final="false" name="startEdit" override="true" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="java.lang.Object arg0, java.lang.String arg1" public="true" returnType="void" static="false">
         <parameter genericType="java.lang.Object" name="arg0" type="java.lang.Object"/>
+        <parameter genericType="java.lang.String" name="arg1" type="java.lang.String"/>
       </method>
       <property genericParam="" genericType="java.lang.String" name="controlValue" override="false" rawType="java.lang.String" static="false">
         <getter abstract="false" access="public" final="false" name="getControlValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
@@ -23972,8 +24338,9 @@
       <method abstract="false" access="public" final="false" name="getControlValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
       <method abstract="false" access="public" final="false" name="getEditor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.Control" static="false"/>
       <method abstract="false" access="public" final="false" name="getEditor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.TextField" static="false"/>
-      <method abstract="false" access="public" final="false" name="startEdit" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Object arg0" public="true" returnType="void" static="false">
+      <method abstract="false" access="public" final="false" name="startEdit" override="true" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="java.lang.Object arg0, java.lang.String arg1" public="true" returnType="void" static="false">
         <parameter genericType="java.lang.Object" name="arg0" type="java.lang.Object"/>
+        <parameter genericType="java.lang.String" name="arg1" type="java.lang.String"/>
       </method>
       <property genericParam="" genericType="java.lang.String" name="controlValue" override="false" rawType="java.lang.String" static="false">
         <getter abstract="false" access="public" final="false" name="getControlValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
@@ -23991,8 +24358,9 @@
       <method abstract="false" access="public" final="false" name="getEditor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.Control" static="false"/>
       <method abstract="false" access="public" final="false" name="getEditor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.TextArea" static="false"/>
       <method abstract="false" access="public" final="false" name="getMaxHeight" override="true" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
-      <method abstract="false" access="public" final="false" name="startEdit" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Object arg0" public="true" returnType="void" static="false">
+      <method abstract="false" access="public" final="false" name="startEdit" override="true" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="java.lang.Object arg0, java.lang.String arg1" public="true" returnType="void" static="false">
         <parameter genericType="java.lang.Object" name="arg0" type="java.lang.Object"/>
+        <parameter genericType="java.lang.String" name="arg1" type="java.lang.String"/>
       </method>
       <property genericParam="" genericType="java.lang.String" name="controlValue" override="false" rawType="java.lang.String" static="false">
         <getter abstract="false" access="public" final="false" name="getControlValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
@@ -24241,7 +24609,9 @@
       </method>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SpreadsheetColumn" genericParam="" genericParamPrepend="" name="SpreadsheetColumn" package="org.controlsfx.control.spreadsheet" super="">
+      <method abstract="false" access="public" final="false" name="filterProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty" static="false"/>
       <method abstract="false" access="public" final="false" name="fitColumn" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
+      <method abstract="false" access="public" final="false" name="getFilter" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="org.controlsfx.control.spreadsheet.Filter" static="false"/>
       <method abstract="false" access="public" final="true" name="getMaxWidth" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
       <method abstract="false" access="public" final="true" name="getMinWidth" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
       <method abstract="false" access="public" final="false" name="getWidth" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
@@ -24249,6 +24619,9 @@
       <method abstract="false" access="public" final="false" name="isFixed" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
       <method abstract="false" access="public" final="true" name="maxWidthProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.DoubleProperty" static="false"/>
       <method abstract="false" access="public" final="true" name="minWidthProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.DoubleProperty" static="false"/>
+      <method abstract="false" access="public" final="false" name="setFilter" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.Filter arg0" public="true" returnType="void" static="false">
+        <parameter genericType="org.controlsfx.control.spreadsheet.Filter" name="arg0" type="org.controlsfx.control.spreadsheet.Filter"/>
+      </method>
       <method abstract="false" access="public" final="false" name="setFixed" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="boolean arg0" public="true" returnType="void" static="false">
         <parameter genericType="boolean" name="arg0" type="boolean"/>
       </method>
@@ -24267,6 +24640,12 @@
       <method abstract="false" access="public" final="true" name="widthProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ReadOnlyDoubleProperty" static="false"/>
       <property genericParam="" genericType="boolean" name="columnFixable" override="false" rawType="boolean" static="false">
         <getter abstract="false" access="public" final="false" name="isColumnFixable" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
+      </property>
+      <property genericParam="" genericType="org.controlsfx.control.spreadsheet.Filter" name="filter" override="false" rawType="org.controlsfx.control.spreadsheet.Filter" static="false">
+        <getter abstract="false" access="public" final="false" name="getFilter" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="org.controlsfx.control.spreadsheet.Filter" static="false"/>
+        <setter abstract="false" access="public" final="false" genericParam="" genericType="org.controlsfx.control.spreadsheet.Filter" index="" name="setFilter" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.Filter arg0" public="true" rawType="org.controlsfx.control.spreadsheet.Filter" returnType="void" static="false">
+          <parameter genericType="org.controlsfx.control.spreadsheet.Filter" name="arg0" type="org.controlsfx.control.spreadsheet.Filter"/>
+        </setter>
       </property>
       <property genericParam="" genericType="boolean" name="fixed" override="false" rawType="boolean" static="false">
         <getter abstract="false" access="public" final="false" name="isFixed" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
@@ -24314,28 +24693,61 @@
       <method abstract="false" access="public" final="false" name="areSpreadsheetColumnsFixable" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.util.List&lt;? extends org.controlsfx.control.spreadsheet.SpreadsheetColumn&gt; arg0" public="true" returnType="boolean" static="false">
         <parameter genericType="java.util.List&lt;? extends org.controlsfx.control.spreadsheet.SpreadsheetColumn&gt;" name="arg0" type="java.util.List"/>
       </method>
+      <method abstract="false" access="public" final="false" name="comparatorProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;java.util.Comparator&lt;? super javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetCell&gt;&gt;&gt;" static="false"/>
       <method abstract="false" access="public" final="false" name="copyClipboard" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
+      <method abstract="false" access="public" final="false" name="decrementZoom" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
       <method abstract="false" access="public" final="false" name="deleteSelectedCells" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
+      <method abstract="false" access="public" final="false" name="edit" override="false" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="int arg0, org.controlsfx.control.spreadsheet.SpreadsheetColumn arg1" public="true" returnType="void" static="false">
+        <parameter genericType="int" name="arg0" type="int"/>
+        <parameter genericType="org.controlsfx.control.spreadsheet.SpreadsheetColumn" name="arg1" type="org.controlsfx.control.spreadsheet.SpreadsheetColumn"/>
+      </method>
       <method abstract="false" access="public" final="true" name="editableProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.BooleanProperty" static="false"/>
       <method abstract="false" access="public" final="false" name="editingCellProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ReadOnlyObjectProperty&lt;javafx.scene.control.TablePosition&lt;javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetCell&gt;, ?&gt;&gt;" static="false"/>
       <method abstract="false" access="public" final="false" name="fixingColumnsAllowedProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ReadOnlyBooleanProperty" static="false"/>
       <method abstract="false" access="public" final="false" name="fixingRowsAllowedProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ReadOnlyBooleanProperty" static="false"/>
       <method abstract="false" access="public" final="false" name="getColumnPickers" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableMap&lt;java.lang.Integer, org.controlsfx.control.spreadsheet.Picker&gt;" static="false"/>
+      <method abstract="false" access="public" final="false" name="getColumnSpan" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetCell arg0" public="true" returnType="int" static="false">
+        <parameter genericType="org.controlsfx.control.spreadsheet.SpreadsheetCell" name="arg0" type="org.controlsfx.control.spreadsheet.SpreadsheetCell"/>
+      </method>
       <method abstract="false" access="public" final="true" name="getColumns" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetColumn&gt;" static="false"/>
+      <method abstract="false" access="public" final="false" name="getComparator" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.util.Comparator" static="false"/>
       <method abstract="false" access="public" final="false" name="getEditingCell" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.TablePosition&lt;javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetCell&gt;, ?&gt;" static="false"/>
       <method abstract="false" access="public" final="true" name="getEditor" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetCellType&lt;?&gt; arg0" public="true" returnType="java.util.Optional&lt;org.controlsfx.control.spreadsheet.SpreadsheetCellEditor&gt;" static="false">
         <parameter genericType="org.controlsfx.control.spreadsheet.SpreadsheetCellType&lt;?&gt;" name="arg0" type="org.controlsfx.control.spreadsheet.SpreadsheetCellType"/>
+      </method>
+      <method abstract="false" access="public" final="false" name="getFilteredRow" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="int" static="false"/>
+      <method abstract="false" access="public" final="false" name="getFilteredRow" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="int" static="false">
+        <parameter genericType="int" name="arg0" type="int"/>
+      </method>
+      <method abstract="false" access="public" final="false" name="getFilteredSourceIndex" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="int" static="false">
+        <parameter genericType="int" name="arg0" type="int"/>
       </method>
       <method abstract="false" access="public" final="false" name="getFixedColumns" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetColumn&gt;" static="false"/>
       <method abstract="false" access="public" final="false" name="getFixedRows" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;java.lang.Integer&gt;" static="false"/>
       <method abstract="false" access="public" final="true" name="getGrid" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="org.controlsfx.control.spreadsheet.Grid" static="false"/>
       <method abstract="false" access="public" final="false" name="getHBarValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
+      <method abstract="false" access="public" final="false" name="getHiddenColumns" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.util.BitSet" static="false"/>
+      <method abstract="false" access="public" final="false" name="getHiddenRows" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.util.BitSet" static="false"/>
+      <method abstract="false" access="public" final="false" name="getItems" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetCell&gt;&gt;" static="false"/>
+      <method abstract="false" access="public" final="false" name="getModelColumn" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="int" static="false">
+        <parameter genericType="int" name="arg0" type="int"/>
+      </method>
+      <method abstract="false" access="public" final="false" name="getModelRow" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="int" static="false">
+        <parameter genericType="int" name="arg0" type="int"/>
+      </method>
       <method abstract="false" access="public" final="true" name="getPlaceholder" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.Node" static="false"/>
       <method abstract="false" access="public" final="true" name="getRowHeaderWidth" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
       <method abstract="false" access="public" final="false" name="getRowHeight" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="double" static="false">
         <parameter genericType="int" name="arg0" type="int"/>
       </method>
       <method abstract="false" access="public" final="false" name="getRowPickers" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableMap&lt;java.lang.Integer, org.controlsfx.control.spreadsheet.Picker&gt;" static="false"/>
+      <method abstract="false" access="public" final="false" name="getRowSpan" override="false" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetCell arg0, int arg1" public="true" returnType="int" static="false">
+        <parameter genericType="org.controlsfx.control.spreadsheet.SpreadsheetCell" name="arg0" type="org.controlsfx.control.spreadsheet.SpreadsheetCell"/>
+        <parameter genericType="int" name="arg1" type="int"/>
+      </method>
+      <method abstract="false" access="public" final="false" name="getRowSpanFilter" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetCell arg0" public="true" returnType="int" static="false">
+        <parameter genericType="org.controlsfx.control.spreadsheet.SpreadsheetCell" name="arg0" type="org.controlsfx.control.spreadsheet.SpreadsheetCell"/>
+      </method>
       <method abstract="false" access="public" final="false" name="getSelectionModel" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="org.controlsfx.control.spreadsheet.SpreadsheetViewSelectionModel" static="false"/>
       <method abstract="false" access="public" final="false" name="getSpanType" override="false" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="int arg0, int arg1" public="true" returnType="org.controlsfx.control.spreadsheet.SpreadsheetView.SpanType" static="false">
         <parameter genericType="int" name="arg0" type="int"/>
@@ -24343,14 +24755,33 @@
       </method>
       <method abstract="false" access="public" final="false" name="getSpreadsheetViewContextMenu" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.ContextMenu" static="false"/>
       <method abstract="false" access="public" final="false" name="getVBarValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
+      <method abstract="false" access="public" final="false" name="getViewColumn" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="int" static="false">
+        <parameter genericType="int" name="arg0" type="int"/>
+      </method>
+      <method abstract="false" access="public" final="true" name="getZoomFactor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.Double" static="false"/>
       <method abstract="false" access="public" final="true" name="gridProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ReadOnlyObjectProperty&lt;org.controlsfx.control.spreadsheet.Grid&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="hiddenColumnsProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;java.util.BitSet&gt;" static="false"/>
+      <method abstract="false" access="public" final="true" name="hiddenRowsProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.ObjectProperty&lt;java.util.BitSet&gt;" static="false"/>
+      <method abstract="false" access="public" final="false" name="hideColumn" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetColumn arg0" public="true" returnType="void" static="false">
+        <parameter genericType="org.controlsfx.control.spreadsheet.SpreadsheetColumn" name="arg0" type="org.controlsfx.control.spreadsheet.SpreadsheetColumn"/>
+      </method>
+      <method abstract="false" access="public" final="false" name="hideRow" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="void" static="false">
+        <parameter genericType="int" name="arg0" type="int"/>
+      </method>
+      <method abstract="false" access="public" final="false" name="incrementZoom" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
       <method abstract="false" access="public" final="false" name="isColumnFixable" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="boolean" static="false">
+        <parameter genericType="int" name="arg0" type="int"/>
+      </method>
+      <method abstract="false" access="public" final="false" name="isColumnHidden" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="boolean" static="false">
         <parameter genericType="int" name="arg0" type="int"/>
       </method>
       <method abstract="false" access="public" final="true" name="isEditable" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
       <method abstract="false" access="public" final="false" name="isFixingColumnsAllowed" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
       <method abstract="false" access="public" final="false" name="isFixingRowsAllowed" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
       <method abstract="false" access="public" final="false" name="isRowFixable" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="boolean" static="false">
+        <parameter genericType="int" name="arg0" type="int"/>
+      </method>
+      <method abstract="false" access="public" final="false" name="isRowHidden" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="boolean" static="false">
         <parameter genericType="int" name="arg0" type="int"/>
       </method>
       <method abstract="false" access="public" final="true" name="isShowColumnHeader" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
@@ -24370,8 +24801,14 @@
       <method abstract="false" access="public" final="false" name="scrollToRow" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="void" static="false">
         <parameter genericType="int" name="arg0" type="int"/>
       </method>
+      <method abstract="false" access="public" final="false" name="setComparator" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.util.Comparator&lt;javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetCell&gt;&gt; arg0" public="true" returnType="void" static="false">
+        <parameter genericType="java.util.Comparator&lt;javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetCell&gt;&gt;" name="arg0" type="java.util.Comparator"/>
+      </method>
       <method abstract="false" access="public" final="true" name="setEditable" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="boolean arg0" public="true" returnType="void" static="false">
         <parameter genericType="boolean" name="arg0" type="boolean"/>
+      </method>
+      <method abstract="false" access="public" final="false" name="setFilteredRow" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Integer arg0" public="true" returnType="void" static="false">
+        <parameter genericType="java.lang.Integer" name="arg0" type="java.lang.Integer"/>
       </method>
       <method abstract="false" access="public" final="false" name="setFixingColumnsAllowed" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="boolean arg0" public="true" returnType="void" static="false">
         <parameter genericType="boolean" name="arg0" type="boolean"/>
@@ -24384,6 +24821,12 @@
       </method>
       <method abstract="false" access="public" final="false" name="setHBarValue" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" returnType="void" static="false">
         <parameter genericType="double" name="arg0" type="double"/>
+      </method>
+      <method abstract="false" access="public" final="false" name="setHiddenColumns" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.util.BitSet arg0" public="true" returnType="void" static="false">
+        <parameter genericType="java.util.BitSet" name="arg0" type="java.util.BitSet"/>
+      </method>
+      <method abstract="false" access="public" final="false" name="setHiddenRows" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.util.BitSet arg0" public="true" returnType="void" static="false">
+        <parameter genericType="java.util.BitSet" name="arg0" type="java.util.BitSet"/>
       </method>
       <method abstract="false" access="public" final="true" name="setPlaceholder" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.Node arg0" public="true" returnType="void" static="false">
         <parameter genericType="javafx.scene.Node" name="arg0" type="javafx.scene.Node"/>
@@ -24400,13 +24843,29 @@
       <method abstract="false" access="public" final="false" name="setVBarValue" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" returnType="void" static="false">
         <parameter genericType="double" name="arg0" type="double"/>
       </method>
+      <method abstract="false" access="public" final="true" name="setZoomFactor" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Double arg0" public="true" returnType="void" static="false">
+        <parameter genericType="java.lang.Double" name="arg0" type="java.lang.Double"/>
+      </method>
+      <method abstract="false" access="public" final="false" name="showColumn" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetColumn arg0" public="true" returnType="void" static="false">
+        <parameter genericType="org.controlsfx.control.spreadsheet.SpreadsheetColumn" name="arg0" type="org.controlsfx.control.spreadsheet.SpreadsheetColumn"/>
+      </method>
       <method abstract="false" access="public" final="true" name="showColumnHeaderProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.BooleanProperty" static="false"/>
+      <method abstract="false" access="public" final="false" name="showRow" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="void" static="false">
+        <parameter genericType="int" name="arg0" type="int"/>
+      </method>
       <method abstract="false" access="public" final="true" name="showRowHeaderProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.BooleanProperty" static="false"/>
+      <method abstract="false" access="public" final="true" name="zoomFactorProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.DoubleProperty" static="false"/>
       <property genericParam="java.lang.Integer, org.controlsfx.control.spreadsheet.Picker" genericType="javafx.collections.ObservableMap&lt;java.lang.Integer, org.controlsfx.control.spreadsheet.Picker&gt;" name="columnPickers" override="false" rawType="javafx.collections.ObservableMap" static="false">
         <getter abstract="false" access="public" final="false" name="getColumnPickers" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableMap&lt;java.lang.Integer, org.controlsfx.control.spreadsheet.Picker&gt;" static="false"/>
       </property>
       <property genericParam="org.controlsfx.control.spreadsheet.SpreadsheetColumn" genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetColumn&gt;" name="columns" override="false" rawType="javafx.collections.ObservableList" static="false">
         <getter abstract="false" access="public" final="true" name="getColumns" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetColumn&gt;" static="false"/>
+      </property>
+      <property genericParam="" genericType="java.util.Comparator" name="comparator" override="false" rawType="java.util.Comparator" static="false">
+        <getter abstract="false" access="public" final="false" name="getComparator" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.util.Comparator" static="false"/>
+        <setter abstract="false" access="public" final="false" genericParam="javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetCell&gt;" genericType="java.util.Comparator&lt;javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetCell&gt;&gt;" index="" name="setComparator" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.util.Comparator&lt;javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetCell&gt;&gt; arg0" public="true" rawType="java.util.Comparator" returnType="void" static="false">
+          <parameter genericType="java.util.Comparator&lt;javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetCell&gt;&gt;" name="arg0" type="java.util.Comparator"/>
+        </setter>
       </property>
       <property genericParam="" genericType="boolean" name="editable" override="false" rawType="boolean" static="false">
         <getter abstract="false" access="public" final="true" name="isEditable" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="boolean" static="false"/>
@@ -24416,6 +24875,12 @@
       </property>
       <property genericParam="javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetCell&gt;, ?" genericType="javafx.scene.control.TablePosition&lt;javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetCell&gt;, ?&gt;" name="editingCell" override="false" rawType="javafx.scene.control.TablePosition" static="false">
         <getter abstract="false" access="public" final="false" name="getEditingCell" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.control.TablePosition&lt;javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetCell&gt;, ?&gt;" static="false"/>
+      </property>
+      <property genericParam="" genericType="int" name="filteredRow" override="false" rawType="int" static="false">
+        <getter abstract="false" access="public" final="false" name="getFilteredRow" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="int" static="false"/>
+        <setter abstract="false" access="public" final="false" genericParam="" genericType="java.lang.Integer" index="" name="setFilteredRow" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Integer arg0" public="true" rawType="java.lang.Integer" returnType="void" static="false">
+          <parameter genericType="java.lang.Integer" name="arg0" type="java.lang.Integer"/>
+        </setter>
       </property>
       <property genericParam="org.controlsfx.control.spreadsheet.SpreadsheetColumn" genericType="javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetColumn&gt;" name="fixedColumns" override="false" rawType="javafx.collections.ObservableList" static="false">
         <getter abstract="false" access="public" final="false" name="getFixedColumns" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetColumn&gt;" static="false"/>
@@ -24446,6 +24911,21 @@
         <setter abstract="false" access="public" final="false" genericParam="" genericType="double" index="" name="setHBarValue" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" rawType="double" returnType="void" static="false">
           <parameter genericType="double" name="arg0" type="double"/>
         </setter>
+      </property>
+      <property genericParam="" genericType="java.util.BitSet" name="hiddenColumns" override="false" rawType="java.util.BitSet" static="false">
+        <getter abstract="false" access="public" final="false" name="getHiddenColumns" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.util.BitSet" static="false"/>
+        <setter abstract="false" access="public" final="false" genericParam="" genericType="java.util.BitSet" index="" name="setHiddenColumns" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.util.BitSet arg0" public="true" rawType="java.util.BitSet" returnType="void" static="false">
+          <parameter genericType="java.util.BitSet" name="arg0" type="java.util.BitSet"/>
+        </setter>
+      </property>
+      <property genericParam="" genericType="java.util.BitSet" name="hiddenRows" override="false" rawType="java.util.BitSet" static="false">
+        <getter abstract="false" access="public" final="false" name="getHiddenRows" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.util.BitSet" static="false"/>
+        <setter abstract="false" access="public" final="false" genericParam="" genericType="java.util.BitSet" index="" name="setHiddenRows" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.util.BitSet arg0" public="true" rawType="java.util.BitSet" returnType="void" static="false">
+          <parameter genericType="java.util.BitSet" name="arg0" type="java.util.BitSet"/>
+        </setter>
+      </property>
+      <property genericParam="javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetCell&gt;" genericType="javafx.collections.ObservableList&lt;javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetCell&gt;&gt;" name="items" override="false" rawType="javafx.collections.ObservableList" static="false">
+        <getter abstract="false" access="public" final="false" name="getItems" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.collections.ObservableList&lt;javafx.collections.ObservableList&lt;org.controlsfx.control.spreadsheet.SpreadsheetCell&gt;&gt;" static="false"/>
       </property>
       <property genericParam="" genericType="javafx.scene.Node" name="placeholder" override="false" rawType="javafx.scene.Node" static="false">
         <getter abstract="false" access="public" final="true" name="getPlaceholder" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.scene.Node" static="false"/>
@@ -24486,6 +24966,12 @@
           <parameter genericType="double" name="arg0" type="double"/>
         </setter>
       </property>
+      <property genericParam="" genericType="java.lang.Double" name="zoomFactor" override="false" rawType="java.lang.Double" static="false">
+        <getter abstract="false" access="public" final="true" name="getZoomFactor" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.Double" static="false"/>
+        <setter abstract="false" access="public" final="true" genericParam="" genericType="java.lang.Double" index="" name="setZoomFactor" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Double arg0" public="true" rawType="java.lang.Double" returnType="void" static="false">
+          <parameter genericType="java.lang.Double" name="arg0" type="java.lang.Double"/>
+        </setter>
+      </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SpreadsheetView.ColumnWidthEvent" genericParam="" genericParamPrepend="" name="SpreadsheetView.ColumnWidthEvent" package="org.controlsfx.control.spreadsheet" super="">
       <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetView$ColumnWidthEvent" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="int arg0, double arg1" public="true" static="false">
@@ -24523,8 +25009,6 @@
         <parameter genericType="org.controlsfx.control.spreadsheet.SpreadsheetColumn" name="arg1" type="org.controlsfx.control.spreadsheet.SpreadsheetColumn"/>
       </method>
       <method abstract="false" access="public" final="false" name="clearAndSelectLeftCell" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
-      <method abstract="false" access="public" final="false" name="clearAndSelectNextCell" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
-      <method abstract="false" access="public" final="false" name="clearAndSelectPreviousCell" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
       <method abstract="false" access="public" final="false" name="clearAndSelectRightCell" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
       <method abstract="false" access="public" final="true" name="clearSelection" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
       <method abstract="false" access="public" final="true" name="focus" override="false" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="int arg0, org.controlsfx.control.spreadsheet.SpreadsheetColumn arg1" public="true" returnType="void" static="false">

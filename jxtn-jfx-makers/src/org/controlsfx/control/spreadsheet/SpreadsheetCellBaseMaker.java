@@ -9,7 +9,7 @@ package org.controlsfx.control.spreadsheet;
  * {@link SpreadsheetCellBase}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.40.12.jar
+ * @version controlsfx-8.40.14.jar
  * @param <Z> 要建構的物件型態(需繼承{@link SpreadsheetCellBase})
  * @param <B> 建構器本身的型態(需繼承{@link SpreadsheetCellBaseMaker})
  */
@@ -31,6 +31,9 @@ public class SpreadsheetCellBaseMaker<Z extends SpreadsheetCellBase, B extends S
 
     private boolean hasGraphic;
     private javafx.scene.Node valGraphic;
+
+    private boolean hasHasPopup;
+    private boolean valHasPopup;
 
     private boolean hasItem;
     private java.lang.Object valItem;
@@ -79,6 +82,8 @@ public class SpreadsheetCellBaseMaker<Z extends SpreadsheetCellBase, B extends S
             instance.setFormat(this.valFormat);
         if (this.hasGraphic)
             instance.setGraphic(this.valGraphic);
+        if (this.hasHasPopup)
+            instance.setHasPopup(this.valHasPopup);
         if (this.hasItem)
             instance.setItem(this.valItem);
         if (this.hasRowSpan)
@@ -160,6 +165,20 @@ public class SpreadsheetCellBaseMaker<Z extends SpreadsheetCellBase, B extends S
     {
         this.hasGraphic = true;
         this.valGraphic = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetCellBase#setHasPopup(boolean)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B hasPopup(boolean value)
+    {
+        this.hasHasPopup = true;
+        this.valHasPopup = value;
         return (B) this;
     }
 

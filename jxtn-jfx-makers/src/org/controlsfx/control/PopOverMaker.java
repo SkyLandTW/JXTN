@@ -9,7 +9,7 @@ package org.controlsfx.control;
  * {@link PopOver}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.40.12.jar
+ * @version controlsfx-8.40.14.jar
  * @param <Z> 要建構的物件型態(需繼承{@link PopOver})
  * @param <B> 建構器本身的型態(需繼承{@link PopOverMaker})
  */
@@ -31,6 +31,9 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
 
     private boolean hasArrowSize;
     private double valArrowSize;
+
+    private boolean hasCloseButtonEnabled;
+    private boolean valCloseButtonEnabled;
 
     private boolean hasContentNode;
     private javafx.scene.Node valContentNode;
@@ -75,6 +78,11 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
     private boolean bound2ArrowSize;
     private javafx.beans.value.ObservableValue<? extends Number> obsrv1ArrowSize;
     private javafx.beans.property.Property<Number> obsrv2ArrowSize;
+
+    private boolean bound1CloseButtonEnabled;
+    private boolean bound2CloseButtonEnabled;
+    private javafx.beans.value.ObservableValue<? extends Boolean> obsrv1CloseButtonEnabled;
+    private javafx.beans.property.Property<Boolean> obsrv2CloseButtonEnabled;
 
     private boolean bound1ContentNode;
     private boolean bound2ContentNode;
@@ -128,6 +136,8 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
             instance.setArrowLocation(this.valArrowLocation);
         if (this.hasArrowSize)
             instance.setArrowSize(this.valArrowSize);
+        if (this.hasCloseButtonEnabled)
+            instance.setCloseButtonEnabled(this.valCloseButtonEnabled);
         if (this.hasContentNode)
             instance.setContentNode(this.valContentNode);
         if (this.hasCornerRadius)
@@ -160,6 +170,10 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
             instance.arrowSizeProperty().bind(this.obsrv1ArrowSize);
         if (this.bound2ArrowSize)
             instance.arrowSizeProperty().bindBidirectional(this.obsrv2ArrowSize);
+        if (this.bound1CloseButtonEnabled)
+            instance.closeButtonEnabledProperty().bind(this.obsrv1CloseButtonEnabled);
+        if (this.bound2CloseButtonEnabled)
+            instance.closeButtonEnabledProperty().bindBidirectional(this.obsrv2CloseButtonEnabled);
         if (this.bound1ContentNode)
             instance.contentNodeProperty().bind(this.obsrv1ContentNode);
         if (this.bound2ContentNode)
@@ -247,6 +261,20 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
     {
         this.hasArrowSize = true;
         this.valArrowSize = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#setCloseButtonEnabled(boolean)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B closeButtonEnabled(boolean value)
+    {
+        this.hasCloseButtonEnabled = true;
+        this.valCloseButtonEnabled = value;
         return (B) this;
     }
 
@@ -495,6 +523,40 @@ public class PopOverMaker<Z extends PopOver, B extends PopOverMaker<Z, B>>
         this.obsrv1ArrowSize = null;
         this.bound2ArrowSize = true;
         this.obsrv2ArrowSize = source;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#closeButtonEnabledProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindCloseButtonEnabled(javafx.beans.value.ObservableValue<? extends Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CloseButtonEnabled = true;
+        this.obsrv1CloseButtonEnabled = source;
+        this.bound2CloseButtonEnabled = false;
+        this.obsrv2CloseButtonEnabled = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link PopOver#closeButtonEnabledProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalCloseButtonEnabled(javafx.beans.property.Property<Boolean> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1CloseButtonEnabled = false;
+        this.obsrv1CloseButtonEnabled = null;
+        this.bound2CloseButtonEnabled = true;
+        this.obsrv2CloseButtonEnabled = source;
         return (B) this;
     }
 

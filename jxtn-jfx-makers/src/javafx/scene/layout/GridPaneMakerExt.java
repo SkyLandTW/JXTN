@@ -33,6 +33,7 @@ import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
 import javafx.scene.Node;
+
 import jxtn.jfx.makers.JFX;
 
 /**
@@ -268,6 +269,131 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
             Insets labelMargin = column == 0 ? margin : new Insets(
                     margin.getTop(), margin.getRight(), margin.getBottom(), margin.getLeft() * 2);
             Node fieldNode = JFX.textField()
+                    .GridPane_margin(margin)
+                    .GridPane_rowIndex(row).GridPane_columnIndex(column + 1)
+                    .GridPane_fillWidth(true).GridPane_fillHeight(true)
+                    .GridPane_halignment(HPos.LEFT)
+                    .GridPane_valignment(VPos.TOP)
+                    .GridPane_hgrow(Priority.ALWAYS)
+                    .bindBidirectionalText(source)
+                    .editable(true)
+                    .styleClass(styleClasses)
+                    .build();
+            this.self().childrenAdd(
+                    JFX.label()
+                            .GridPane_margin(labelMargin)
+                            .GridPane_rowIndex(row).GridPane_columnIndex(column + 0)
+                            .GridPane_fillWidth(true).GridPane_fillHeight(true)
+                            .GridPane_halignment(HPos.RIGHT)
+                            .GridPane_valignment(VPos.CENTER)
+                            .labelFor(fieldNode)
+                            .text(label)
+                            .ellipsisString(label)
+                            .afterBuild(lbl -> lbl.minWidthProperty().bind(lbl.prefWidthProperty()))
+                            .build(),
+                    fieldNode);
+        }
+        return this.self();
+    }
+
+    //////////////////////////////////////////////////////////////////////////
+    // 標籤及可輸入密碼欄位
+    //
+
+    /**
+     * 增加可輸入欄位
+     * <p>
+     * 每個欄位佔第一行及第二行：
+     * <ol>
+     * <li>第一行顯示標籤({@code label})，向右中對齊</li>
+     * <li>第二行顯示文字控制{@link javafx.scene.control.TextField}，向左上對齊，橫向填滿，連結資料{@code source}</li>
+     * </ol>
+     * </p>
+     *
+     * @param row 列號
+     * @param margin 邊界
+     * @param label 欄位標題
+     * @param source 資料來源
+     * @param styleClasses 輸入欄位樣式
+     * @return 自己
+     */
+    default B addPasswordRW(int row, Insets margin, String label, Property<String> source, String... styleClasses)
+    {
+        return this.addPasswordRWIf(true, row, 0, margin, label, source, styleClasses);
+    }
+
+    /**
+     * 增加可輸入欄位
+     * <p>
+     * 每個欄位佔第一行及第二行：
+     * <ol>
+     * <li>第一行顯示標籤({@code label})，向右中對齊</li>
+     * <li>第二行顯示文字控制{@link javafx.scene.control.TextField}，向左上對齊，橫向填滿，連結資料{@code source}</li>
+     * </ol>
+     * </p>
+     *
+     * @param row 列號
+     * @param column 行號
+     * @param margin 邊界
+     * @param label 欄位標題
+     * @param source 資料來源
+     * @param styleClasses 輸入欄位樣式
+     * @return 自己
+     */
+    default B addPasswordRW(int row, int column, Insets margin, String label, Property<String> source, String... styleClasses)
+    {
+        return this.addPasswordRWIf(true, row, column, margin, label, source, styleClasses);
+    }
+
+    /**
+     * 增加可輸入欄位
+     * <p>
+     * 每個欄位佔第一行及第二行：
+     * <ol>
+     * <li>第一行顯示標籤({@code label})，向右中對齊</li>
+     * <li>第二行顯示文字控制{@link javafx.scene.control.TextField}，向左上對齊，橫向填滿，連結資料{@code source}</li>
+     * </ol>
+     * </p>
+     *
+     * @param condition 條件，為true時才加入欄位
+     * @param row 列號
+     * @param margin 邊界
+     * @param label 欄位標題
+     * @param source 資料來源
+     * @param styleClasses 輸入欄位樣式
+     * @return 自己
+     */
+    default B addPasswordRWIf(boolean condition, int row, Insets margin, String label, Property<String> source, String... styleClasses)
+    {
+        return this.addPasswordRWIf(condition, row, 0, margin, label, source, styleClasses);
+    }
+
+    /**
+     * 增加可輸入欄位
+     * <p>
+     * 每個欄位佔第一行及第二行：
+     * <ol>
+     * <li>第一行顯示標籤({@code label})，向右中對齊</li>
+     * <li>第二行顯示文字控制{@link javafx.scene.control.TextField}，向左上對齊，橫向填滿，連結資料{@code source}</li>
+     * </ol>
+     * </p>
+     *
+     * @param condition 條件，為true時才加入欄位
+     * @param row 列號
+     * @param column 行號
+     * @param margin 邊界
+     * @param label 欄位標題
+     * @param source 資料來源
+     * @param styleClasses 輸入欄位樣式
+     * @return 自己
+     */
+    default B addPasswordRWIf(boolean condition, int row, int column, Insets margin, String label, Property<String> source, String... styleClasses)
+    {
+        if (condition)
+        {
+            Insets labelMargin = column == 0 ? margin : new Insets(
+                    margin.getTop(), margin.getRight(), margin.getBottom(), margin.getLeft() * 2);
+            Node fieldNode = JFX.passwordField()
                     .GridPane_margin(margin)
                     .GridPane_rowIndex(row).GridPane_columnIndex(column + 1)
                     .GridPane_fillWidth(true).GridPane_fillHeight(true)

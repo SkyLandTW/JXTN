@@ -9,7 +9,7 @@ package org.controlsfx.control.spreadsheet;
  * {@link SpreadsheetColumn}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.40.12.jar
+ * @version controlsfx-8.40.14.jar
  * @param <Z> 要建構的物件型態(需繼承{@link SpreadsheetColumn})
  * @param <B> 建構器本身的型態(需繼承{@link SpreadsheetColumnMaker})
  */
@@ -19,6 +19,9 @@ public class SpreadsheetColumnMaker<Z extends SpreadsheetColumn, B extends Sprea
         extends jxtn.jfx.makers.AbstractMaker<Z, B>
         implements SpreadsheetColumnMakerExt<Z, B>
 {
+
+    private boolean hasFilter;
+    private org.controlsfx.control.spreadsheet.Filter valFilter;
 
     private boolean hasFixed;
     private boolean valFixed;
@@ -35,6 +38,11 @@ public class SpreadsheetColumnMaker<Z extends SpreadsheetColumn, B extends Sprea
     private boolean hasResizable;
     private boolean valResizable;
 
+    private boolean bound1Filter;
+    private boolean bound2Filter;
+    private javafx.beans.value.ObservableValue<? extends Object> obsrv1Filter;
+    private javafx.beans.property.Property<Object> obsrv2Filter;
+
     private boolean bound1MaxWidth;
     private boolean bound2MaxWidth;
     private javafx.beans.value.ObservableValue<? extends Number> obsrv1MaxWidth;
@@ -49,6 +57,8 @@ public class SpreadsheetColumnMaker<Z extends SpreadsheetColumn, B extends Sprea
     public void applyTo(Z instance)
     {
         super.applyTo(instance);
+        if (this.hasFilter)
+            instance.setFilter(this.valFilter);
         if (this.hasFixed)
             instance.setFixed(this.valFixed);
         if (this.hasMaxWidth)
@@ -59,6 +69,10 @@ public class SpreadsheetColumnMaker<Z extends SpreadsheetColumn, B extends Sprea
             instance.setPrefWidth(this.valPrefWidth);
         if (this.hasResizable)
             instance.setResizable(this.valResizable);
+        if (this.bound1Filter)
+            instance.filterProperty().bind(this.obsrv1Filter);
+        if (this.bound2Filter)
+            instance.filterProperty().bindBidirectional(this.obsrv2Filter);
         if (this.bound1MaxWidth)
             instance.maxWidthProperty().bind(this.obsrv1MaxWidth);
         if (this.bound2MaxWidth)
@@ -67,6 +81,20 @@ public class SpreadsheetColumnMaker<Z extends SpreadsheetColumn, B extends Sprea
             instance.minWidthProperty().bind(this.obsrv1MinWidth);
         if (this.bound2MinWidth)
             instance.minWidthProperty().bindBidirectional(this.obsrv2MinWidth);
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetColumn#setFilter(org.controlsfx.control.spreadsheet.Filter)}。
+     *
+     * @param value 新的屬性值
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public B filter(org.controlsfx.control.spreadsheet.Filter value)
+    {
+        this.hasFilter = true;
+        this.valFilter = value;
+        return (B) this;
     }
 
     /**
@@ -136,6 +164,40 @@ public class SpreadsheetColumnMaker<Z extends SpreadsheetColumn, B extends Sprea
     {
         this.hasResizable = true;
         this.valResizable = value;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetColumn#filterProperty}的連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindFilter(javafx.beans.value.ObservableValue<? extends Object> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Filter = true;
+        this.obsrv1Filter = source;
+        this.bound2Filter = false;
+        this.obsrv2Filter = null;
+        return (B) this;
+    }
+
+    /**
+     * 設定屬性{@link SpreadsheetColumn#filterProperty}的雙向連結。
+     *
+     * @param value 新的屬性連結(單向)
+     * @return 目前的建構器(this)
+     */
+    @SuppressWarnings("unchecked")
+    public final B bindBidirectionalFilter(javafx.beans.property.Property<Object> source)
+    {
+        java.util.Objects.requireNonNull(source);
+        this.bound1Filter = false;
+        this.obsrv1Filter = null;
+        this.bound2Filter = true;
+        this.obsrv2Filter = source;
         return (B) this;
     }
 

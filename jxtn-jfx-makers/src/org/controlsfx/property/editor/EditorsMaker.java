@@ -9,7 +9,7 @@ package org.controlsfx.property.editor;
  * {@link Editors}建構器。
  *
  * @author JarReflectionDataLoader-1.0.0
- * @version controlsfx-8.40.12.jar
+ * @version controlsfx-8.40.14.jar
  * @param <Z> 要建構的物件型態(需繼承{@link Editors})
  * @param <B> 建構器本身的型態(需繼承{@link EditorsMaker})
  */

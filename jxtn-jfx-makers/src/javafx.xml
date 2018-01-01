@@ -3087,7 +3087,7 @@
     </class>
     <class abstract="false" genericDeclaration="T extends java.lang.Object" genericDeclarationPrepend="T extends java.lang.Object, " genericName="Axis.TickMark&lt;T&gt;" genericParam="T" genericParamPrepend="T, " name="Axis.TickMark" package="javafx.scene.chart" super="">
       <typeParameter name="T"/>
-      <constructor access="public" name="javafx.scene.chart.Axis$TickMark" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
+      <constructor access="public" name="javafx.scene.chart.Axis.TickMark" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
       <method abstract="false" access="public" final="true" name="getLabel" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
       <method abstract="false" access="public" final="true" name="getPosition" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
       <method abstract="false" access="public" final="true" name="getValue" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="T" static="false"/>
@@ -3433,10 +3433,10 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="NumberAxis.DefaultFormatter" genericParam="" genericParamPrepend="" name="NumberAxis.DefaultFormatter" package="javafx.scene.chart" super="">
-      <constructor access="public" name="javafx.scene.chart.NumberAxis$DefaultFormatter" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.chart.NumberAxis arg0" public="true" static="false">
+      <constructor access="public" name="javafx.scene.chart.NumberAxis.DefaultFormatter" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.chart.NumberAxis arg0" public="true" static="false">
         <parameter genericType="javafx.scene.chart.NumberAxis" name="arg0" type="javafx.scene.chart.NumberAxis"/>
       </constructor>
-      <constructor access="public" name="javafx.scene.chart.NumberAxis$DefaultFormatter" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.scene.chart.NumberAxis arg0, java.lang.String arg1, java.lang.String arg2" public="true" static="false">
+      <constructor access="public" name="javafx.scene.chart.NumberAxis.DefaultFormatter" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.scene.chart.NumberAxis arg0, java.lang.String arg1, java.lang.String arg2" public="true" static="false">
         <parameter genericType="javafx.scene.chart.NumberAxis" name="arg0" type="javafx.scene.chart.NumberAxis"/>
         <parameter genericType="java.lang.String" name="arg1" type="java.lang.String"/>
         <parameter genericType="java.lang.String" name="arg2" type="java.lang.String"/>
@@ -3521,7 +3521,7 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="PieChart.Data" genericParam="" genericParamPrepend="" name="PieChart.Data" package="javafx.scene.chart" super="">
-      <constructor access="public" name="javafx.scene.chart.PieChart$Data" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="java.lang.String arg0, double arg1" public="true" static="false">
+      <constructor access="public" name="javafx.scene.chart.PieChart.Data" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="java.lang.String arg0, double arg1" public="true" static="false">
         <parameter genericType="java.lang.String" name="arg0" type="java.lang.String"/>
         <parameter genericType="double" name="arg1" type="double"/>
       </constructor>
@@ -3858,12 +3858,12 @@
     <class abstract="false" genericDeclaration="X extends java.lang.Object, Y extends java.lang.Object" genericDeclarationPrepend="X extends java.lang.Object, Y extends java.lang.Object, " genericName="XYChart.Data&lt;X, Y&gt;" genericParam="X, Y" genericParamPrepend="X, Y, " name="XYChart.Data" package="javafx.scene.chart" super="">
       <typeParameter name="X"/>
       <typeParameter name="Y"/>
-      <constructor access="public" name="javafx.scene.chart.XYChart$Data" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
-      <constructor access="public" name="javafx.scene.chart.XYChart$Data" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="X arg0, Y arg1" public="true" static="false">
+      <constructor access="public" name="javafx.scene.chart.XYChart.Data" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
+      <constructor access="public" name="javafx.scene.chart.XYChart.Data" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="X arg0, Y arg1" public="true" static="false">
         <parameter genericType="X" name="arg0" type="java.lang.Object"/>
         <parameter genericType="Y" name="arg1" type="java.lang.Object"/>
       </constructor>
-      <constructor access="public" name="javafx.scene.chart.XYChart$Data" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="X arg0, Y arg1, java.lang.Object arg2" public="true" static="false">
+      <constructor access="public" name="javafx.scene.chart.XYChart.Data" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="X arg0, Y arg1, java.lang.Object arg2" public="true" static="false">
         <parameter genericType="X" name="arg0" type="java.lang.Object"/>
         <parameter genericType="Y" name="arg1" type="java.lang.Object"/>
         <parameter genericType="java.lang.Object" name="arg2" type="java.lang.Object"/>
@@ -3917,11 +3917,11 @@
     <class abstract="false" genericDeclaration="X extends java.lang.Object, Y extends java.lang.Object" genericDeclarationPrepend="X extends java.lang.Object, Y extends java.lang.Object, " genericName="XYChart.Series&lt;X, Y&gt;" genericParam="X, Y" genericParamPrepend="X, Y, " name="XYChart.Series" package="javafx.scene.chart" super="">
       <typeParameter name="X"/>
       <typeParameter name="Y"/>
-      <constructor access="public" name="javafx.scene.chart.XYChart$Series" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
-      <constructor access="public" name="javafx.scene.chart.XYChart$Series" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;javafx.scene.chart.XYChart.Data&lt;X, Y&gt;&gt; arg0" public="true" static="false">
+      <constructor access="public" name="javafx.scene.chart.XYChart.Series" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
+      <constructor access="public" name="javafx.scene.chart.XYChart.Series" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;javafx.scene.chart.XYChart.Data&lt;X, Y&gt;&gt; arg0" public="true" static="false">
         <parameter genericType="javafx.collections.ObservableList&lt;javafx.scene.chart.XYChart.Data&lt;X, Y&gt;&gt;" name="arg0" type="javafx.collections.ObservableList"/>
       </constructor>
-      <constructor access="public" name="javafx.scene.chart.XYChart$Series" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="java.lang.String arg0, javafx.collections.ObservableList&lt;javafx.scene.chart.XYChart.Data&lt;X, Y&gt;&gt; arg1" public="true" static="false">
+      <constructor access="public" name="javafx.scene.chart.XYChart.Series" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="java.lang.String arg0, javafx.collections.ObservableList&lt;javafx.scene.chart.XYChart.Data&lt;X, Y&gt;&gt; arg1" public="true" static="false">
         <parameter genericType="java.lang.String" name="arg0" type="java.lang.String"/>
         <parameter genericType="javafx.collections.ObservableList&lt;javafx.scene.chart.XYChart.Data&lt;X, Y&gt;&gt;" name="arg1" type="javafx.collections.ObservableList"/>
       </constructor>
@@ -4305,7 +4305,7 @@
     </class>
     <class abstract="false" genericDeclaration="T extends java.lang.Object" genericDeclarationPrepend="T extends java.lang.Object, " genericName="CheckBoxTreeItem.TreeModificationEvent&lt;T&gt;" genericParam="T" genericParamPrepend="T, " name="CheckBoxTreeItem.TreeModificationEvent" package="javafx.scene.control" super="">
       <typeParameter name="T"/>
-      <constructor access="public" name="javafx.scene.control.CheckBoxTreeItem$TreeModificationEvent" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.event.EventType&lt;? extends javafx.event.Event&gt; arg0, javafx.scene.control.CheckBoxTreeItem&lt;T&gt; arg1, boolean arg2" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.CheckBoxTreeItem.TreeModificationEvent" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.event.EventType&lt;? extends javafx.event.Event&gt; arg0, javafx.scene.control.CheckBoxTreeItem&lt;T&gt; arg1, boolean arg2" public="true" static="false">
         <parameter genericType="javafx.event.EventType&lt;? extends javafx.event.Event&gt;" name="arg0" type="javafx.event.EventType"/>
         <parameter genericType="javafx.scene.control.CheckBoxTreeItem&lt;T&gt;" name="arg1" type="javafx.scene.control.CheckBoxTreeItem"/>
         <parameter genericType="boolean" name="arg2" type="boolean"/>
@@ -5755,7 +5755,7 @@
     </class>
     <class abstract="false" genericDeclaration="T extends java.lang.Object" genericDeclarationPrepend="T extends java.lang.Object, " genericName="ListView.EditEvent&lt;T&gt;" genericParam="T" genericParamPrepend="T, " name="ListView.EditEvent" package="javafx.scene.control" super="">
       <typeParameter name="T"/>
-      <constructor access="public" name="javafx.scene.control.ListView$EditEvent" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="javafx.scene.control.ListView&lt;T&gt; arg0, javafx.event.EventType&lt;? extends javafx.scene.control.ListView.EditEvent&lt;T&gt;&gt; arg1, T arg2, int arg3" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.ListView.EditEvent" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="javafx.scene.control.ListView&lt;T&gt; arg0, javafx.event.EventType&lt;? extends javafx.scene.control.ListView.EditEvent&lt;T&gt;&gt; arg1, T arg2, int arg3" public="true" static="false">
         <parameter genericType="javafx.scene.control.ListView&lt;T&gt;" name="arg0" type="javafx.scene.control.ListView"/>
         <parameter genericType="javafx.event.EventType&lt;? extends javafx.scene.control.ListView.EditEvent&lt;T&gt;&gt;" name="arg1" type="javafx.event.EventType"/>
         <parameter genericType="T" name="arg2" type="java.lang.Object"/>
@@ -7217,16 +7217,16 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SpinnerValueFactory.DoubleSpinnerValueFactory" genericParam="" genericParamPrepend="" name="SpinnerValueFactory.DoubleSpinnerValueFactory" package="javafx.scene.control" super="javafx.scene.control.SpinnerValueFactory" superParam="java.lang.Double" superParamPrepend="java.lang.Double, ">
-      <constructor access="public" name="javafx.scene.control.SpinnerValueFactory$DoubleSpinnerValueFactory" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="double arg0, double arg1" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.SpinnerValueFactory.DoubleSpinnerValueFactory" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="double arg0, double arg1" public="true" static="false">
         <parameter genericType="double" name="arg0" type="double"/>
         <parameter genericType="double" name="arg1" type="double"/>
       </constructor>
-      <constructor access="public" name="javafx.scene.control.SpinnerValueFactory$DoubleSpinnerValueFactory" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="double arg0, double arg1, double arg2" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.SpinnerValueFactory.DoubleSpinnerValueFactory" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="double arg0, double arg1, double arg2" public="true" static="false">
         <parameter genericType="double" name="arg0" type="double"/>
         <parameter genericType="double" name="arg1" type="double"/>
         <parameter genericType="double" name="arg2" type="double"/>
       </constructor>
-      <constructor access="public" name="javafx.scene.control.SpinnerValueFactory$DoubleSpinnerValueFactory" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="double arg0, double arg1, double arg2, double arg3" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.SpinnerValueFactory.DoubleSpinnerValueFactory" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="double arg0, double arg1, double arg2, double arg3" public="true" static="false">
         <parameter genericType="double" name="arg0" type="double"/>
         <parameter genericType="double" name="arg1" type="double"/>
         <parameter genericType="double" name="arg2" type="double"/>
@@ -7273,16 +7273,16 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SpinnerValueFactory.IntegerSpinnerValueFactory" genericParam="" genericParamPrepend="" name="SpinnerValueFactory.IntegerSpinnerValueFactory" package="javafx.scene.control" super="javafx.scene.control.SpinnerValueFactory" superParam="java.lang.Integer" superParamPrepend="java.lang.Integer, ">
-      <constructor access="public" name="javafx.scene.control.SpinnerValueFactory$IntegerSpinnerValueFactory" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="int arg0, int arg1" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="int arg0, int arg1" public="true" static="false">
         <parameter genericType="int" name="arg0" type="int"/>
         <parameter genericType="int" name="arg1" type="int"/>
       </constructor>
-      <constructor access="public" name="javafx.scene.control.SpinnerValueFactory$IntegerSpinnerValueFactory" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="int arg0, int arg1, int arg2" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="int arg0, int arg1, int arg2" public="true" static="false">
         <parameter genericType="int" name="arg0" type="int"/>
         <parameter genericType="int" name="arg1" type="int"/>
         <parameter genericType="int" name="arg2" type="int"/>
       </constructor>
-      <constructor access="public" name="javafx.scene.control.SpinnerValueFactory$IntegerSpinnerValueFactory" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="int arg0, int arg1, int arg2, int arg3" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="int arg0, int arg1, int arg2, int arg3" public="true" static="false">
         <parameter genericType="int" name="arg0" type="int"/>
         <parameter genericType="int" name="arg1" type="int"/>
         <parameter genericType="int" name="arg2" type="int"/>
@@ -7330,7 +7330,7 @@
     </class>
     <class abstract="false" genericDeclaration="T extends java.lang.Object" genericDeclarationPrepend="T extends java.lang.Object, " genericName="SpinnerValueFactory.ListSpinnerValueFactory&lt;T&gt;" genericParam="T" genericParamPrepend="T, " name="SpinnerValueFactory.ListSpinnerValueFactory" package="javafx.scene.control" super="javafx.scene.control.SpinnerValueFactory" superParam="T" superParamPrepend="T, ">
       <typeParameter name="T"/>
-      <constructor access="public" name="javafx.scene.control.SpinnerValueFactory$ListSpinnerValueFactory" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;T&gt; arg0" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.SpinnerValueFactory.ListSpinnerValueFactory" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.collections.ObservableList&lt;T&gt; arg0" public="true" static="false">
         <parameter genericType="javafx.collections.ObservableList&lt;T&gt;" name="arg0" type="javafx.collections.ObservableList"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="decrement" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="void" static="false">
@@ -7418,7 +7418,7 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SplitPane.Divider" genericParam="" genericParamPrepend="" name="SplitPane.Divider" package="javafx.scene.control" super="">
-      <constructor access="public" name="javafx.scene.control.SplitPane$Divider" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
+      <constructor access="public" name="javafx.scene.control.SplitPane.Divider" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
       <method abstract="false" access="public" final="true" name="getPosition" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="double" static="false"/>
       <method abstract="false" access="public" final="true" name="positionProperty" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.beans.property.DoubleProperty" static="false"/>
       <method abstract="false" access="public" final="true" name="setPosition" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" returnType="void" static="false">
@@ -7895,7 +7895,7 @@
     <class abstract="false" genericDeclaration="S extends java.lang.Object, T extends java.lang.Object" genericDeclarationPrepend="S extends java.lang.Object, T extends java.lang.Object, " genericName="TableColumn.CellDataFeatures&lt;S, T&gt;" genericParam="S, T" genericParamPrepend="S, T, " name="TableColumn.CellDataFeatures" package="javafx.scene.control" super="">
       <typeParameter name="S"/>
       <typeParameter name="T"/>
-      <constructor access="public" name="javafx.scene.control.TableColumn$CellDataFeatures" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.scene.control.TableView&lt;S&gt; arg0, javafx.scene.control.TableColumn&lt;S, T&gt; arg1, S arg2" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.TableColumn.CellDataFeatures" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.scene.control.TableView&lt;S&gt; arg0, javafx.scene.control.TableColumn&lt;S, T&gt; arg1, S arg2" public="true" static="false">
         <parameter genericType="javafx.scene.control.TableView&lt;S&gt;" name="arg0" type="javafx.scene.control.TableView"/>
         <parameter genericType="javafx.scene.control.TableColumn&lt;S, T&gt;" name="arg1" type="javafx.scene.control.TableColumn"/>
         <parameter genericType="S" name="arg2" type="java.lang.Object"/>
@@ -7916,7 +7916,7 @@
     <class abstract="false" genericDeclaration="S extends java.lang.Object, T extends java.lang.Object" genericDeclarationPrepend="S extends java.lang.Object, T extends java.lang.Object, " genericName="TableColumn.CellEditEvent&lt;S, T&gt;" genericParam="S, T" genericParamPrepend="S, T, " name="TableColumn.CellEditEvent" package="javafx.scene.control" super="">
       <typeParameter name="S"/>
       <typeParameter name="T"/>
-      <constructor access="public" name="javafx.scene.control.TableColumn$CellEditEvent" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="javafx.scene.control.TableView&lt;S&gt; arg0, javafx.scene.control.TablePosition&lt;S, T&gt; arg1, javafx.event.EventType&lt;javafx.scene.control.TableColumn.CellEditEvent&lt;S, T&gt;&gt; arg2, T arg3" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.TableColumn.CellEditEvent" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="javafx.scene.control.TableView&lt;S&gt; arg0, javafx.scene.control.TablePosition&lt;S, T&gt; arg1, javafx.event.EventType&lt;javafx.scene.control.TableColumn.CellEditEvent&lt;S, T&gt;&gt; arg2, T arg3" public="true" static="false">
         <parameter genericType="javafx.scene.control.TableView&lt;S&gt;" name="arg0" type="javafx.scene.control.TableView"/>
         <parameter genericType="javafx.scene.control.TablePosition&lt;S, T&gt;" name="arg1" type="javafx.scene.control.TablePosition"/>
         <parameter genericType="javafx.event.EventType&lt;javafx.scene.control.TableColumn.CellEditEvent&lt;S, T&gt;&gt;" name="arg2" type="javafx.event.EventType"/>
@@ -8534,7 +8534,7 @@
     </class>
     <class abstract="false" genericDeclaration="S extends java.lang.Object" genericDeclarationPrepend="S extends java.lang.Object, " genericName="TableView.ResizeFeatures&lt;S&gt;" genericParam="S" genericParamPrepend="S, " name="TableView.ResizeFeatures" package="javafx.scene.control" super="javafx.scene.control.ResizeFeaturesBase" superParam="S" superParamPrepend="S, ">
       <typeParameter name="S"/>
-      <constructor access="public" name="javafx.scene.control.TableView$ResizeFeatures" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.scene.control.TableView&lt;S&gt; arg0, javafx.scene.control.TableColumn&lt;S, ?&gt; arg1, java.lang.Double arg2" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.TableView.ResizeFeatures" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.scene.control.TableView&lt;S&gt; arg0, javafx.scene.control.TableColumn&lt;S, ?&gt; arg1, java.lang.Double arg2" public="true" static="false">
         <parameter genericType="javafx.scene.control.TableView&lt;S&gt;" name="arg0" type="javafx.scene.control.TableView"/>
         <parameter genericType="javafx.scene.control.TableColumn&lt;S, ?&gt;" name="arg1" type="javafx.scene.control.TableColumn"/>
         <parameter genericType="java.lang.Double" name="arg2" type="java.lang.Double"/>
@@ -8551,7 +8551,7 @@
     </class>
     <class abstract="false" genericDeclaration="S extends java.lang.Object" genericDeclarationPrepend="S extends java.lang.Object, " genericName="TableView.TableViewFocusModel&lt;S&gt;" genericParam="S" genericParamPrepend="S, " name="TableView.TableViewFocusModel" package="javafx.scene.control" super="javafx.scene.control.TableFocusModel" superParam="S, javafx.scene.control.TableColumn&lt;S, ?&gt;" superParamPrepend="S, javafx.scene.control.TableColumn&lt;S, ?&gt;, ">
       <typeParameter name="S"/>
-      <constructor access="public" name="javafx.scene.control.TableView$TableViewFocusModel" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.control.TableView&lt;S&gt; arg0" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.TableView.TableViewFocusModel" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.control.TableView&lt;S&gt; arg0" public="true" static="false">
         <parameter genericType="javafx.scene.control.TableView&lt;S&gt;" name="arg0" type="javafx.scene.control.TableView"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="focus" override="true" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="void" static="false">
@@ -8590,7 +8590,7 @@
     </class>
     <class abstract="true" genericDeclaration="S extends java.lang.Object" genericDeclarationPrepend="S extends java.lang.Object, " genericName="TableView.TableViewSelectionModel&lt;S&gt;" genericParam="S" genericParamPrepend="S, " name="TableView.TableViewSelectionModel" package="javafx.scene.control" super="javafx.scene.control.TableSelectionModel" superParam="S" superParamPrepend="S, ">
       <typeParameter name="S"/>
-      <constructor access="public" name="javafx.scene.control.TableView$TableViewSelectionModel" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.control.TableView&lt;S&gt; arg0" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.TableView.TableViewSelectionModel" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.control.TableView&lt;S&gt; arg0" public="true" static="false">
         <parameter genericType="javafx.scene.control.TableView&lt;S&gt;" name="arg0" type="javafx.scene.control.TableView"/>
       </constructor>
       <method abstract="true" access="public" final="false" name="clearAndSelect" override="true" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="int arg0, javafx.scene.control.TableColumn&lt;S, ?&gt; arg1" public="true" returnType="void" static="false">
@@ -9494,21 +9494,21 @@
     </class>
     <class abstract="false" genericDeclaration="T extends java.lang.Object" genericDeclarationPrepend="T extends java.lang.Object, " genericName="TreeItem.TreeModificationEvent&lt;T&gt;" genericParam="T" genericParamPrepend="T, " name="TreeItem.TreeModificationEvent" package="javafx.scene.control" super="">
       <typeParameter name="T"/>
-      <constructor access="public" name="javafx.scene.control.TreeItem$TreeModificationEvent" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="javafx.event.EventType&lt;? extends javafx.event.Event&gt; arg0, javafx.scene.control.TreeItem&lt;T&gt; arg1" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.TreeItem.TreeModificationEvent" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="javafx.event.EventType&lt;? extends javafx.event.Event&gt; arg0, javafx.scene.control.TreeItem&lt;T&gt; arg1" public="true" static="false">
         <parameter genericType="javafx.event.EventType&lt;? extends javafx.event.Event&gt;" name="arg0" type="javafx.event.EventType"/>
         <parameter genericType="javafx.scene.control.TreeItem&lt;T&gt;" name="arg1" type="javafx.scene.control.TreeItem"/>
       </constructor>
-      <constructor access="public" name="javafx.scene.control.TreeItem$TreeModificationEvent" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.event.EventType&lt;? extends javafx.event.Event&gt; arg0, javafx.scene.control.TreeItem&lt;T&gt; arg1, T arg2" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.TreeItem.TreeModificationEvent" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.event.EventType&lt;? extends javafx.event.Event&gt; arg0, javafx.scene.control.TreeItem&lt;T&gt; arg1, T arg2" public="true" static="false">
         <parameter genericType="javafx.event.EventType&lt;? extends javafx.event.Event&gt;" name="arg0" type="javafx.event.EventType"/>
         <parameter genericType="javafx.scene.control.TreeItem&lt;T&gt;" name="arg1" type="javafx.scene.control.TreeItem"/>
         <parameter genericType="T" name="arg2" type="java.lang.Object"/>
       </constructor>
-      <constructor access="public" name="javafx.scene.control.TreeItem$TreeModificationEvent" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.event.EventType&lt;? extends javafx.event.Event&gt; arg0, javafx.scene.control.TreeItem&lt;T&gt; arg1, boolean arg2" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.TreeItem.TreeModificationEvent" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.event.EventType&lt;? extends javafx.event.Event&gt; arg0, javafx.scene.control.TreeItem&lt;T&gt; arg1, boolean arg2" public="true" static="false">
         <parameter genericType="javafx.event.EventType&lt;? extends javafx.event.Event&gt;" name="arg0" type="javafx.event.EventType"/>
         <parameter genericType="javafx.scene.control.TreeItem&lt;T&gt;" name="arg1" type="javafx.scene.control.TreeItem"/>
         <parameter genericType="boolean" name="arg2" type="boolean"/>
       </constructor>
-      <constructor access="public" name="javafx.scene.control.TreeItem$TreeModificationEvent" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="javafx.event.EventType&lt;? extends javafx.event.Event&gt; arg0, javafx.scene.control.TreeItem&lt;T&gt; arg1, java.util.List&lt;? extends javafx.scene.control.TreeItem&lt;T&gt;&gt; arg2, java.util.List&lt;? extends javafx.scene.control.TreeItem&lt;T&gt;&gt; arg3" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.TreeItem.TreeModificationEvent" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="javafx.event.EventType&lt;? extends javafx.event.Event&gt; arg0, javafx.scene.control.TreeItem&lt;T&gt; arg1, java.util.List&lt;? extends javafx.scene.control.TreeItem&lt;T&gt;&gt; arg2, java.util.List&lt;? extends javafx.scene.control.TreeItem&lt;T&gt;&gt; arg3" public="true" static="false">
         <parameter genericType="javafx.event.EventType&lt;? extends javafx.event.Event&gt;" name="arg0" type="javafx.event.EventType"/>
         <parameter genericType="javafx.scene.control.TreeItem&lt;T&gt;" name="arg1" type="javafx.scene.control.TreeItem"/>
         <parameter genericType="java.util.List&lt;? extends javafx.scene.control.TreeItem&lt;T&gt;&gt;" name="arg2" type="java.util.List"/>
@@ -9708,7 +9708,7 @@
     <class abstract="false" genericDeclaration="S extends java.lang.Object, T extends java.lang.Object" genericDeclarationPrepend="S extends java.lang.Object, T extends java.lang.Object, " genericName="TreeTableColumn.CellDataFeatures&lt;S, T&gt;" genericParam="S, T" genericParamPrepend="S, T, " name="TreeTableColumn.CellDataFeatures" package="javafx.scene.control" super="">
       <typeParameter name="S"/>
       <typeParameter name="T"/>
-      <constructor access="public" name="javafx.scene.control.TreeTableColumn$CellDataFeatures" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.scene.control.TreeTableView&lt;S&gt; arg0, javafx.scene.control.TreeTableColumn&lt;S, T&gt; arg1, javafx.scene.control.TreeItem&lt;S&gt; arg2" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.TreeTableColumn.CellDataFeatures" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.scene.control.TreeTableView&lt;S&gt; arg0, javafx.scene.control.TreeTableColumn&lt;S, T&gt; arg1, javafx.scene.control.TreeItem&lt;S&gt; arg2" public="true" static="false">
         <parameter genericType="javafx.scene.control.TreeTableView&lt;S&gt;" name="arg0" type="javafx.scene.control.TreeTableView"/>
         <parameter genericType="javafx.scene.control.TreeTableColumn&lt;S, T&gt;" name="arg1" type="javafx.scene.control.TreeTableColumn"/>
         <parameter genericType="javafx.scene.control.TreeItem&lt;S&gt;" name="arg2" type="javafx.scene.control.TreeItem"/>
@@ -9729,7 +9729,7 @@
     <class abstract="false" genericDeclaration="S extends java.lang.Object, T extends java.lang.Object" genericDeclarationPrepend="S extends java.lang.Object, T extends java.lang.Object, " genericName="TreeTableColumn.CellEditEvent&lt;S, T&gt;" genericParam="S, T" genericParamPrepend="S, T, " name="TreeTableColumn.CellEditEvent" package="javafx.scene.control" super="">
       <typeParameter name="S"/>
       <typeParameter name="T"/>
-      <constructor access="public" name="javafx.scene.control.TreeTableColumn$CellEditEvent" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="javafx.scene.control.TreeTableView&lt;S&gt; arg0, javafx.scene.control.TreeTablePosition&lt;S, T&gt; arg1, javafx.event.EventType&lt;javafx.scene.control.TreeTableColumn.CellEditEvent&lt;S, T&gt;&gt; arg2, T arg3" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.TreeTableColumn.CellEditEvent" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="javafx.scene.control.TreeTableView&lt;S&gt; arg0, javafx.scene.control.TreeTablePosition&lt;S, T&gt; arg1, javafx.event.EventType&lt;javafx.scene.control.TreeTableColumn.CellEditEvent&lt;S, T&gt;&gt; arg2, T arg3" public="true" static="false">
         <parameter genericType="javafx.scene.control.TreeTableView&lt;S&gt;" name="arg0" type="javafx.scene.control.TreeTableView"/>
         <parameter genericType="javafx.scene.control.TreeTablePosition&lt;S, T&gt;" name="arg1" type="javafx.scene.control.TreeTablePosition"/>
         <parameter genericType="javafx.event.EventType&lt;javafx.scene.control.TreeTableColumn.CellEditEvent&lt;S, T&gt;&gt;" name="arg2" type="javafx.event.EventType"/>
@@ -10093,7 +10093,7 @@
     </class>
     <class abstract="false" genericDeclaration="S extends java.lang.Object" genericDeclarationPrepend="S extends java.lang.Object, " genericName="TreeTableView.EditEvent&lt;S&gt;" genericParam="S" genericParamPrepend="S, " name="TreeTableView.EditEvent" package="javafx.scene.control" super="">
       <typeParameter name="S"/>
-      <constructor access="public" name="javafx.scene.control.TreeTableView$EditEvent" parameterCount="5" parametersCall="arg0, arg1, arg2, arg3, arg4" parametersDeclaration="javafx.scene.control.TreeTableView&lt;S&gt; arg0, javafx.event.EventType&lt;? extends javafx.scene.control.TreeTableView.EditEvent&gt; arg1, javafx.scene.control.TreeItem&lt;S&gt; arg2, S arg3, S arg4" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.TreeTableView.EditEvent" parameterCount="5" parametersCall="arg0, arg1, arg2, arg3, arg4" parametersDeclaration="javafx.scene.control.TreeTableView&lt;S&gt; arg0, javafx.event.EventType&lt;? extends javafx.scene.control.TreeTableView.EditEvent&gt; arg1, javafx.scene.control.TreeItem&lt;S&gt; arg2, S arg3, S arg4" public="true" static="false">
         <parameter genericType="javafx.scene.control.TreeTableView&lt;S&gt;" name="arg0" type="javafx.scene.control.TreeTableView"/>
         <parameter genericType="javafx.event.EventType&lt;? extends javafx.scene.control.TreeTableView.EditEvent&gt;" name="arg1" type="javafx.event.EventType"/>
         <parameter genericType="javafx.scene.control.TreeItem&lt;S&gt;" name="arg2" type="javafx.scene.control.TreeItem"/>
@@ -10121,7 +10121,7 @@
     </class>
     <class abstract="false" genericDeclaration="S extends java.lang.Object" genericDeclarationPrepend="S extends java.lang.Object, " genericName="TreeTableView.ResizeFeatures&lt;S&gt;" genericParam="S" genericParamPrepend="S, " name="TreeTableView.ResizeFeatures" package="javafx.scene.control" super="javafx.scene.control.ResizeFeaturesBase" superParam="javafx.scene.control.TreeItem&lt;S&gt;" superParamPrepend="javafx.scene.control.TreeItem&lt;S&gt;, ">
       <typeParameter name="S"/>
-      <constructor access="public" name="javafx.scene.control.TreeTableView$ResizeFeatures" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.scene.control.TreeTableView&lt;S&gt; arg0, javafx.scene.control.TreeTableColumn&lt;S, ?&gt; arg1, java.lang.Double arg2" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.TreeTableView.ResizeFeatures" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.scene.control.TreeTableView&lt;S&gt; arg0, javafx.scene.control.TreeTableColumn&lt;S, ?&gt; arg1, java.lang.Double arg2" public="true" static="false">
         <parameter genericType="javafx.scene.control.TreeTableView&lt;S&gt;" name="arg0" type="javafx.scene.control.TreeTableView"/>
         <parameter genericType="javafx.scene.control.TreeTableColumn&lt;S, ?&gt;" name="arg1" type="javafx.scene.control.TreeTableColumn"/>
         <parameter genericType="java.lang.Double" name="arg2" type="java.lang.Double"/>
@@ -10138,7 +10138,7 @@
     </class>
     <class abstract="false" genericDeclaration="S extends java.lang.Object" genericDeclarationPrepend="S extends java.lang.Object, " genericName="TreeTableView.TreeTableViewFocusModel&lt;S&gt;" genericParam="S" genericParamPrepend="S, " name="TreeTableView.TreeTableViewFocusModel" package="javafx.scene.control" super="javafx.scene.control.TableFocusModel" superParam="javafx.scene.control.TreeItem&lt;S&gt;, javafx.scene.control.TreeTableColumn&lt;S, ?&gt;" superParamPrepend="javafx.scene.control.TreeItem&lt;S&gt;, javafx.scene.control.TreeTableColumn&lt;S, ?&gt;, ">
       <typeParameter name="S"/>
-      <constructor access="public" name="javafx.scene.control.TreeTableView$TreeTableViewFocusModel" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.control.TreeTableView&lt;S&gt; arg0" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.TreeTableView.TreeTableViewFocusModel" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.control.TreeTableView&lt;S&gt; arg0" public="true" static="false">
         <parameter genericType="javafx.scene.control.TreeTableView&lt;S&gt;" name="arg0" type="javafx.scene.control.TreeTableView"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="focus" override="true" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="void" static="false">
@@ -10177,7 +10177,7 @@
     </class>
     <class abstract="true" genericDeclaration="S extends java.lang.Object" genericDeclarationPrepend="S extends java.lang.Object, " genericName="TreeTableView.TreeTableViewSelectionModel&lt;S&gt;" genericParam="S" genericParamPrepend="S, " name="TreeTableView.TreeTableViewSelectionModel" package="javafx.scene.control" super="javafx.scene.control.TableSelectionModel" superParam="javafx.scene.control.TreeItem&lt;S&gt;" superParamPrepend="javafx.scene.control.TreeItem&lt;S&gt;, ">
       <typeParameter name="S"/>
-      <constructor access="public" name="javafx.scene.control.TreeTableView$TreeTableViewSelectionModel" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.control.TreeTableView&lt;S&gt; arg0" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.TreeTableView.TreeTableViewSelectionModel" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.control.TreeTableView&lt;S&gt; arg0" public="true" static="false">
         <parameter genericType="javafx.scene.control.TreeTableView&lt;S&gt;" name="arg0" type="javafx.scene.control.TreeTableView"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="focus" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="int arg0" public="true" returnType="void" static="false">
@@ -10377,7 +10377,7 @@
     </class>
     <class abstract="false" genericDeclaration="T extends java.lang.Object" genericDeclarationPrepend="T extends java.lang.Object, " genericName="TreeView.EditEvent&lt;T&gt;" genericParam="T" genericParamPrepend="T, " name="TreeView.EditEvent" package="javafx.scene.control" super="">
       <typeParameter name="T"/>
-      <constructor access="public" name="javafx.scene.control.TreeView$EditEvent" parameterCount="5" parametersCall="arg0, arg1, arg2, arg3, arg4" parametersDeclaration="javafx.scene.control.TreeView&lt;T&gt; arg0, javafx.event.EventType&lt;? extends javafx.scene.control.TreeView.EditEvent&gt; arg1, javafx.scene.control.TreeItem&lt;T&gt; arg2, T arg3, T arg4" public="true" static="false">
+      <constructor access="public" name="javafx.scene.control.TreeView.EditEvent" parameterCount="5" parametersCall="arg0, arg1, arg2, arg3, arg4" parametersDeclaration="javafx.scene.control.TreeView&lt;T&gt; arg0, javafx.event.EventType&lt;? extends javafx.scene.control.TreeView.EditEvent&gt; arg1, javafx.scene.control.TreeItem&lt;T&gt; arg2, T arg3, T arg4" public="true" static="false">
         <parameter genericType="javafx.scene.control.TreeView&lt;T&gt;" name="arg0" type="javafx.scene.control.TreeView"/>
         <parameter genericType="javafx.event.EventType&lt;? extends javafx.scene.control.TreeView.EditEvent&gt;" name="arg1" type="javafx.event.EventType"/>
         <parameter genericType="javafx.scene.control.TreeItem&lt;T&gt;" name="arg2" type="javafx.scene.control.TreeItem"/>
@@ -12024,8 +12024,8 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="Light.Distant" genericParam="" genericParamPrepend="" name="Light.Distant" package="javafx.scene.effect" super="javafx.scene.effect.Light" superParam="" superParamPrepend="">
-      <constructor access="public" name="javafx.scene.effect.Light$Distant" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
-      <constructor access="public" name="javafx.scene.effect.Light$Distant" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="double arg0, double arg1, javafx.scene.paint.Color arg2" public="true" static="false">
+      <constructor access="public" name="javafx.scene.effect.Light.Distant" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
+      <constructor access="public" name="javafx.scene.effect.Light.Distant" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="double arg0, double arg1, javafx.scene.paint.Color arg2" public="true" static="false">
         <parameter genericType="double" name="arg0" type="double"/>
         <parameter genericType="double" name="arg1" type="double"/>
         <parameter genericType="javafx.scene.paint.Color" name="arg2" type="javafx.scene.paint.Color"/>
@@ -12054,8 +12054,8 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="Light.Point" genericParam="" genericParamPrepend="" name="Light.Point" package="javafx.scene.effect" super="javafx.scene.effect.Light" superParam="" superParamPrepend="">
-      <constructor access="public" name="javafx.scene.effect.Light$Point" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
-      <constructor access="public" name="javafx.scene.effect.Light$Point" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="double arg0, double arg1, double arg2, javafx.scene.paint.Color arg3" public="true" static="false">
+      <constructor access="public" name="javafx.scene.effect.Light.Point" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
+      <constructor access="public" name="javafx.scene.effect.Light.Point" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="double arg0, double arg1, double arg2, javafx.scene.paint.Color arg3" public="true" static="false">
         <parameter genericType="double" name="arg0" type="double"/>
         <parameter genericType="double" name="arg1" type="double"/>
         <parameter genericType="double" name="arg2" type="double"/>
@@ -12096,8 +12096,8 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="Light.Spot" genericParam="" genericParamPrepend="" name="Light.Spot" package="javafx.scene.effect" super="javafx.scene.effect.Light.Point" superParam="" superParamPrepend="">
-      <constructor access="public" name="javafx.scene.effect.Light$Spot" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
-      <constructor access="public" name="javafx.scene.effect.Light$Spot" parameterCount="5" parametersCall="arg0, arg1, arg2, arg3, arg4" parametersDeclaration="double arg0, double arg1, double arg2, double arg3, javafx.scene.paint.Color arg4" public="true" static="false">
+      <constructor access="public" name="javafx.scene.effect.Light.Spot" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
+      <constructor access="public" name="javafx.scene.effect.Light.Spot" parameterCount="5" parametersCall="arg0, arg1, arg2, arg3, arg4" parametersDeclaration="double arg0, double arg1, double arg2, double arg3, javafx.scene.paint.Color arg4" public="true" static="false">
         <parameter genericType="double" name="arg0" type="double"/>
         <parameter genericType="double" name="arg1" type="double"/>
         <parameter genericType="double" name="arg2" type="double"/>
@@ -20947,11 +20947,11 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="FileChooser.ExtensionFilter" genericParam="" genericParamPrepend="" name="FileChooser.ExtensionFilter" package="javafx.stage" super="">
-      <constructor access="public" name="javafx.stage.FileChooser$ExtensionFilter" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="java.lang.String arg0, java.lang.String[] arg1" public="true" static="false">
+      <constructor access="public" name="javafx.stage.FileChooser.ExtensionFilter" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="java.lang.String arg0, java.lang.String[] arg1" public="true" static="false">
         <parameter genericType="java.lang.String" name="arg0" type="java.lang.String"/>
         <parameter genericType="java.lang.String[]" name="arg1" type="java.lang.String[]"/>
       </constructor>
-      <constructor access="public" name="javafx.stage.FileChooser$ExtensionFilter" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="java.lang.String arg0, java.util.List&lt;java.lang.String&gt; arg1" public="true" static="false">
+      <constructor access="public" name="javafx.stage.FileChooser.ExtensionFilter" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="java.lang.String arg0, java.util.List&lt;java.lang.String&gt; arg1" public="true" static="false">
         <parameter genericType="java.lang.String" name="arg0" type="java.lang.String"/>
         <parameter genericType="java.util.List&lt;java.lang.String&gt;" name="arg1" type="java.util.List"/>
       </constructor>
@@ -21566,7 +21566,7 @@
     </class>
     <class abstract="false" genericDeclaration="TE extends java.lang.Object" genericDeclarationPrepend="TE extends java.lang.Object, " genericName="BreadCrumbBar.BreadCrumbActionEvent&lt;TE&gt;" genericParam="TE" genericParamPrepend="TE, " name="BreadCrumbBar.BreadCrumbActionEvent" package="org.controlsfx.control" super="">
       <typeParameter name="TE"/>
-      <constructor access="public" name="org.controlsfx.control.BreadCrumbBar$BreadCrumbActionEvent" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.control.TreeItem&lt;TE&gt; arg0" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.BreadCrumbBar.BreadCrumbActionEvent" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.scene.control.TreeItem&lt;TE&gt; arg0" public="true" static="false">
         <parameter genericType="javafx.scene.control.TreeItem&lt;TE&gt;" name="arg0" type="javafx.scene.control.TreeItem"/>
       </constructor>
       <field access="public" final="true" name="CRUMB_ACTION" public="true" static="true" type="javafx.event.EventType"/>
@@ -22390,7 +22390,7 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="PlusMinusSlider.PlusMinusEvent" genericParam="" genericParamPrepend="" name="PlusMinusSlider.PlusMinusEvent" package="org.controlsfx.control" super="javafx.scene.input.InputEvent" superParam="" superParamPrepend="">
-      <constructor access="public" name="org.controlsfx.control.PlusMinusSlider$PlusMinusEvent" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="java.lang.Object arg0, javafx.event.EventTarget arg1, javafx.event.EventType&lt;? extends javafx.scene.input.InputEvent&gt; arg2, double arg3" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.PlusMinusSlider.PlusMinusEvent" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="java.lang.Object arg0, javafx.event.EventTarget arg1, javafx.event.EventType&lt;? extends javafx.scene.input.InputEvent&gt; arg2, double arg3" public="true" static="false">
         <parameter genericType="java.lang.Object" name="arg0" type="java.lang.Object"/>
         <parameter genericType="javafx.event.EventTarget" name="arg1" type="javafx.event.EventTarget"/>
         <parameter genericType="javafx.event.EventType&lt;? extends javafx.scene.input.InputEvent&gt;" name="arg2" type="javafx.event.EventType"/>
@@ -22955,7 +22955,7 @@
         <getter abstract="false" access="public" final="false" name="getUserAgentStylesheet" override="true" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="java.lang.String" static="false"/>
       </property>
     </class>
-    <class abstract="false" genericDeclaration="T extends org.controlsfx.control.SegmentedBar$Segment" genericDeclarationPrepend="T extends org.controlsfx.control.SegmentedBar$Segment, " genericName="SegmentedBar&lt;T&gt;" genericParam="T" genericParamPrepend="T, " name="SegmentedBar" package="org.controlsfx.control" super="javafx.scene.control.Control" superParam="" superParamPrepend="">
+    <class abstract="false" genericDeclaration="T extends org.controlsfx.control.SegmentedBar.Segment" genericDeclarationPrepend="T extends org.controlsfx.control.SegmentedBar.Segment, " genericName="SegmentedBar&lt;T&gt;" genericParam="T" genericParamPrepend="T, " name="SegmentedBar" package="org.controlsfx.control" super="javafx.scene.control.Control" superParam="" superParamPrepend="">
       <typeParameter name="T"/>
       <constructor access="public" name="org.controlsfx.control.SegmentedBar" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
       <method abstract="false" access="public" final="true" name="getInfoNodeFactory" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="javafx.util.Callback&lt;T, javafx.scene.Node&gt;" static="false"/>
@@ -23013,10 +23013,10 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SegmentedBar.Segment" genericParam="" genericParamPrepend="" name="SegmentedBar.Segment" package="org.controlsfx.control" super="">
-      <constructor access="public" name="org.controlsfx.control.SegmentedBar$Segment" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.SegmentedBar.Segment" parameterCount="1" parametersCall="arg0" parametersDeclaration="double arg0" public="true" static="false">
         <parameter genericType="double" name="arg0" type="double"/>
       </constructor>
-      <constructor access="public" name="org.controlsfx.control.SegmentedBar$Segment" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="double arg0, java.lang.String arg1" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.SegmentedBar.Segment" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="double arg0, java.lang.String arg1" public="true" static="false">
         <parameter genericType="double" name="arg0" type="double"/>
         <parameter genericType="java.lang.String" name="arg1" type="java.lang.String"/>
       </constructor>
@@ -23475,7 +23475,7 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="WorldMapView.CountryView" genericParam="" genericParamPrepend="" name="WorldMapView.CountryView" package="org.controlsfx.control" super="javafx.scene.shape.SVGPath" superParam="" superParamPrepend="">
-      <constructor access="public" name="org.controlsfx.control.WorldMapView$CountryView" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.WorldMapView.Country arg0" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.WorldMapView.CountryView" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.WorldMapView.Country arg0" public="true" static="false">
         <parameter genericType="org.controlsfx.control.WorldMapView.Country" name="arg0" type="org.controlsfx.control.WorldMapView.Country"/>
       </constructor>
       <method abstract="false" access="public" final="true" name="getCountry" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="org.controlsfx.control.WorldMapView.Country" static="false"/>
@@ -23488,11 +23488,11 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="WorldMapView.Location" genericParam="" genericParamPrepend="" name="WorldMapView.Location" package="org.controlsfx.control" super="">
-      <constructor access="public" name="org.controlsfx.control.WorldMapView$Location" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="double arg0, double arg1" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.WorldMapView.Location" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="double arg0, double arg1" public="true" static="false">
         <parameter genericType="double" name="arg0" type="double"/>
         <parameter genericType="double" name="arg1" type="double"/>
       </constructor>
-      <constructor access="public" name="org.controlsfx.control.WorldMapView$Location" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="java.lang.String arg0, double arg1, double arg2" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.WorldMapView.Location" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="java.lang.String arg0, double arg1, double arg2" public="true" static="false">
         <parameter genericType="java.lang.String" name="arg0" type="java.lang.String"/>
         <parameter genericType="double" name="arg1" type="double"/>
         <parameter genericType="double" name="arg2" type="double"/>
@@ -23984,7 +23984,7 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="GridBase.MapBasedRowHeightFactory" genericParam="" genericParamPrepend="" name="GridBase.MapBasedRowHeightFactory" package="org.controlsfx.control.spreadsheet" super="">
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.GridBase$MapBasedRowHeightFactory" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.util.Map&lt;java.lang.Integer, java.lang.Double&gt; arg0" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.GridBase.MapBasedRowHeightFactory" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.util.Map&lt;java.lang.Integer, java.lang.Double&gt; arg0" public="true" static="false">
         <parameter genericType="java.util.Map&lt;java.lang.Integer, java.lang.Double&gt;" name="arg0" type="java.util.Map"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="call" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Integer arg0" public="true" returnType="java.lang.Double" static="false">
@@ -24233,7 +24233,7 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SpreadsheetCellEditor.DateEditor" genericParam="" genericParamPrepend="" name="SpreadsheetCellEditor.DateEditor" package="org.controlsfx.control.spreadsheet" super="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor" superParam="" superParamPrepend="">
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor$DateEditor" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetView arg0, javafx.util.StringConverter&lt;java.time.LocalDate&gt; arg1" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.DateEditor" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetView arg0, javafx.util.StringConverter&lt;java.time.LocalDate&gt; arg1" public="true" static="false">
         <parameter genericType="org.controlsfx.control.spreadsheet.SpreadsheetView" name="arg0" type="org.controlsfx.control.spreadsheet.SpreadsheetView"/>
         <parameter genericType="javafx.util.StringConverter&lt;java.time.LocalDate&gt;" name="arg1" type="javafx.util.StringConverter"/>
       </constructor>
@@ -24253,7 +24253,7 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SpreadsheetCellEditor.DoubleEditor" genericParam="" genericParamPrepend="" name="SpreadsheetCellEditor.DoubleEditor" package="org.controlsfx.control.spreadsheet" super="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor" superParam="" superParamPrepend="">
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor$DoubleEditor" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetView arg0" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.DoubleEditor" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetView arg0" public="true" static="false">
         <parameter genericType="org.controlsfx.control.spreadsheet.SpreadsheetView" name="arg0" type="org.controlsfx.control.spreadsheet.SpreadsheetView"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="end" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
@@ -24272,7 +24272,7 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SpreadsheetCellEditor.IntegerEditor" genericParam="" genericParamPrepend="" name="SpreadsheetCellEditor.IntegerEditor" package="org.controlsfx.control.spreadsheet" super="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor" superParam="" superParamPrepend="">
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor$IntegerEditor" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetView arg0" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.IntegerEditor" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetView arg0" public="true" static="false">
         <parameter genericType="org.controlsfx.control.spreadsheet.SpreadsheetView" name="arg0" type="org.controlsfx.control.spreadsheet.SpreadsheetView"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="end" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
@@ -24292,7 +24292,7 @@
     </class>
     <class abstract="false" genericDeclaration="R extends java.lang.Object" genericDeclarationPrepend="R extends java.lang.Object, " genericName="SpreadsheetCellEditor.ListEditor&lt;R&gt;" genericParam="R" genericParamPrepend="R, " name="SpreadsheetCellEditor.ListEditor" package="org.controlsfx.control.spreadsheet" super="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor" superParam="" superParamPrepend="">
       <typeParameter name="R"/>
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor$ListEditor" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetView arg0, java.util.List&lt;java.lang.String&gt; arg1" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.ListEditor" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetView arg0, java.util.List&lt;java.lang.String&gt; arg1" public="true" static="false">
         <parameter genericType="org.controlsfx.control.spreadsheet.SpreadsheetView" name="arg0" type="org.controlsfx.control.spreadsheet.SpreadsheetView"/>
         <parameter genericType="java.util.List&lt;java.lang.String&gt;" name="arg1" type="java.util.List"/>
       </constructor>
@@ -24312,7 +24312,7 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SpreadsheetCellEditor.ObjectEditor" genericParam="" genericParamPrepend="" name="SpreadsheetCellEditor.ObjectEditor" package="org.controlsfx.control.spreadsheet" super="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor" superParam="" superParamPrepend="">
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor$ObjectEditor" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetView arg0" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.ObjectEditor" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetView arg0" public="true" static="false">
         <parameter genericType="org.controlsfx.control.spreadsheet.SpreadsheetView" name="arg0" type="org.controlsfx.control.spreadsheet.SpreadsheetView"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="end" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
@@ -24331,7 +24331,7 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SpreadsheetCellEditor.StringEditor" genericParam="" genericParamPrepend="" name="SpreadsheetCellEditor.StringEditor" package="org.controlsfx.control.spreadsheet" super="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor" superParam="" superParamPrepend="">
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor$StringEditor" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetView arg0" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.StringEditor" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetView arg0" public="true" static="false">
         <parameter genericType="org.controlsfx.control.spreadsheet.SpreadsheetView" name="arg0" type="org.controlsfx.control.spreadsheet.SpreadsheetView"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="end" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
@@ -24350,7 +24350,7 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SpreadsheetCellEditor.TextAreaEditor" genericParam="" genericParamPrepend="" name="SpreadsheetCellEditor.TextAreaEditor" package="org.controlsfx.control.spreadsheet" super="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor" superParam="" superParamPrepend="">
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor$TextAreaEditor" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetView arg0" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellEditor.TextAreaEditor" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.SpreadsheetView arg0" public="true" static="false">
         <parameter genericType="org.controlsfx.control.spreadsheet.SpreadsheetView" name="arg0" type="org.controlsfx.control.spreadsheet.SpreadsheetView"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="end" override="false" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" returnType="void" static="false"/>
@@ -24408,8 +24408,8 @@
       </method>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SpreadsheetCellType.DateType" genericParam="" genericParamPrepend="" name="SpreadsheetCellType.DateType" package="org.controlsfx.control.spreadsheet" super="org.controlsfx.control.spreadsheet.SpreadsheetCellType" superParam="java.time.LocalDate" superParamPrepend="java.time.LocalDate, ">
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType$DateType" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType$DateType" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.StringConverter&lt;java.time.LocalDate&gt; arg0" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType.DateType" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType.DateType" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.StringConverter&lt;java.time.LocalDate&gt; arg0" public="true" static="false">
         <parameter genericType="javafx.util.StringConverter&lt;java.time.LocalDate&gt;" name="arg0" type="javafx.util.StringConverter"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="convertValue" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Object arg0" public="true" returnType="java.lang.Object" static="false">
@@ -24448,8 +24448,8 @@
       </method>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SpreadsheetCellType.DoubleType" genericParam="" genericParamPrepend="" name="SpreadsheetCellType.DoubleType" package="org.controlsfx.control.spreadsheet" super="org.controlsfx.control.spreadsheet.SpreadsheetCellType" superParam="java.lang.Double" superParamPrepend="java.lang.Double, ">
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType$DoubleType" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType$DoubleType" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.StringConverter&lt;java.lang.Double&gt; arg0" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType.DoubleType" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType.DoubleType" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.StringConverter&lt;java.lang.Double&gt; arg0" public="true" static="false">
         <parameter genericType="javafx.util.StringConverter&lt;java.lang.Double&gt;" name="arg0" type="javafx.util.StringConverter"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="convertValue" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Object arg0" public="true" returnType="java.lang.Double" static="false">
@@ -24488,8 +24488,8 @@
       </method>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SpreadsheetCellType.IntegerType" genericParam="" genericParamPrepend="" name="SpreadsheetCellType.IntegerType" package="org.controlsfx.control.spreadsheet" super="org.controlsfx.control.spreadsheet.SpreadsheetCellType" superParam="java.lang.Integer" superParamPrepend="java.lang.Integer, ">
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType$IntegerType" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType$IntegerType" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.converter.IntegerStringConverter arg0" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType.IntegerType" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType.IntegerType" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.converter.IntegerStringConverter arg0" public="true" static="false">
         <parameter genericType="javafx.util.converter.IntegerStringConverter" name="arg0" type="javafx.util.converter.IntegerStringConverter"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="convertValue" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Object arg0" public="true" returnType="java.lang.Integer" static="false">
@@ -24520,7 +24520,7 @@
       </method>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SpreadsheetCellType.ListType" genericParam="" genericParamPrepend="" name="SpreadsheetCellType.ListType" package="org.controlsfx.control.spreadsheet" super="org.controlsfx.control.spreadsheet.SpreadsheetCellType" superParam="java.lang.String" superParamPrepend="java.lang.String, ">
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType$ListType" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.util.List&lt;java.lang.String&gt; arg0" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType.ListType" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.util.List&lt;java.lang.String&gt; arg0" public="true" static="false">
         <parameter genericType="java.util.List&lt;java.lang.String&gt;" name="arg0" type="java.util.List"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="convertValue" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Object arg0" public="true" returnType="java.lang.Object" static="false">
@@ -24551,8 +24551,8 @@
       </method>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SpreadsheetCellType.ObjectType" genericParam="" genericParamPrepend="" name="SpreadsheetCellType.ObjectType" package="org.controlsfx.control.spreadsheet" super="org.controlsfx.control.spreadsheet.SpreadsheetCellType" superParam="java.lang.Object" superParamPrepend="java.lang.Object, ">
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType$ObjectType" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType$ObjectType" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.StringConverterWithFormat&lt;java.lang.Object&gt; arg0" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType.ObjectType" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType.ObjectType" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.control.spreadsheet.StringConverterWithFormat&lt;java.lang.Object&gt; arg0" public="true" static="false">
         <parameter genericType="org.controlsfx.control.spreadsheet.StringConverterWithFormat&lt;java.lang.Object&gt;" name="arg0" type="org.controlsfx.control.spreadsheet.StringConverterWithFormat"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="convertValue" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Object arg0" public="true" returnType="java.lang.Object" static="false">
@@ -24577,8 +24577,8 @@
       </method>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SpreadsheetCellType.StringType" genericParam="" genericParamPrepend="" name="SpreadsheetCellType.StringType" package="org.controlsfx.control.spreadsheet" super="org.controlsfx.control.spreadsheet.SpreadsheetCellType" superParam="java.lang.String" superParamPrepend="java.lang.String, ">
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType$StringType" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType$StringType" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.StringConverter&lt;java.lang.String&gt; arg0" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType.StringType" parameterCount="0" parametersCall="" parametersDeclaration="" public="true" static="false"/>
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetCellType.StringType" parameterCount="1" parametersCall="arg0" parametersDeclaration="javafx.util.StringConverter&lt;java.lang.String&gt; arg0" public="true" static="false">
         <parameter genericType="javafx.util.StringConverter&lt;java.lang.String&gt;" name="arg0" type="javafx.util.StringConverter"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="convertValue" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.lang.Object arg0" public="true" returnType="java.lang.Object" static="false">
@@ -24974,7 +24974,7 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SpreadsheetView.ColumnWidthEvent" genericParam="" genericParamPrepend="" name="SpreadsheetView.ColumnWidthEvent" package="org.controlsfx.control.spreadsheet" super="">
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetView$ColumnWidthEvent" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="int arg0, double arg1" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetView.ColumnWidthEvent" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="int arg0, double arg1" public="true" static="false">
         <parameter genericType="int" name="arg0" type="int"/>
         <parameter genericType="double" name="arg1" type="double"/>
       </constructor>
@@ -24989,7 +24989,7 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="SpreadsheetView.RowHeightEvent" genericParam="" genericParamPrepend="" name="SpreadsheetView.RowHeightEvent" package="org.controlsfx.control.spreadsheet" super="">
-      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetView$RowHeightEvent" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="int arg0, double arg1" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.spreadsheet.SpreadsheetView.RowHeightEvent" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="int arg0, double arg1" public="true" static="false">
         <parameter genericType="int" name="arg0" type="int"/>
         <parameter genericType="double" name="arg1" type="double"/>
       </constructor>
@@ -25142,7 +25142,7 @@
     </class>
     <class abstract="false" genericDeclaration="S extends java.lang.Object" genericDeclarationPrepend="S extends java.lang.Object, " genericName="TableRowExpanderColumn.TableRowDataFeatures&lt;S&gt;" genericParam="S" genericParamPrepend="S, " name="TableRowExpanderColumn.TableRowDataFeatures" package="org.controlsfx.control.table" super="">
       <typeParameter name="S"/>
-      <constructor access="public" name="org.controlsfx.control.table.TableRowExpanderColumn$TableRowDataFeatures" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.scene.control.TableRow&lt;S&gt; arg0, org.controlsfx.control.table.TableRowExpanderColumn&lt;S&gt; arg1, S arg2" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.table.TableRowExpanderColumn.TableRowDataFeatures" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="javafx.scene.control.TableRow&lt;S&gt; arg0, org.controlsfx.control.table.TableRowExpanderColumn&lt;S&gt; arg1, S arg2" public="true" static="false">
         <parameter genericType="javafx.scene.control.TableRow&lt;S&gt;" name="arg0" type="javafx.scene.control.TableRow"/>
         <parameter genericType="org.controlsfx.control.table.TableRowExpanderColumn&lt;S&gt;" name="arg1" type="org.controlsfx.control.table.TableRowExpanderColumn"/>
         <parameter genericType="S" name="arg2" type="java.lang.Object"/>
@@ -25272,7 +25272,7 @@
     </class>
     <class abstract="false" genericDeclaration="TE extends java.lang.Object" genericDeclarationPrepend="TE extends java.lang.Object, " genericName="AutoCompletionBinding.AutoCompletionEvent&lt;TE&gt;" genericParam="TE" genericParamPrepend="TE, " name="AutoCompletionBinding.AutoCompletionEvent" package="org.controlsfx.control.textfield" super="">
       <typeParameter name="TE"/>
-      <constructor access="public" name="org.controlsfx.control.textfield.AutoCompletionBinding$AutoCompletionEvent" parameterCount="1" parametersCall="arg0" parametersDeclaration="TE arg0" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.control.textfield.AutoCompletionBinding.AutoCompletionEvent" parameterCount="1" parametersCall="arg0" parametersDeclaration="TE arg0" public="true" static="false">
         <parameter genericType="TE" name="arg0" type="java.lang.Object"/>
       </constructor>
       <field access="public" final="true" name="AUTO_COMPLETED" public="true" static="true" type="javafx.event.EventType"/>
@@ -25369,16 +25369,16 @@
       </constructor>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="CommandLinksDialog.CommandLinksButtonType" genericParam="" genericParamPrepend="" name="CommandLinksDialog.CommandLinksButtonType" package="org.controlsfx.dialog" super="">
-      <constructor access="public" name="org.controlsfx.dialog.CommandLinksDialog$CommandLinksButtonType" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="java.lang.String arg0, boolean arg1" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.dialog.CommandLinksDialog.CommandLinksButtonType" parameterCount="2" parametersCall="arg0, arg1" parametersDeclaration="java.lang.String arg0, boolean arg1" public="true" static="false">
         <parameter genericType="java.lang.String" name="arg0" type="java.lang.String"/>
         <parameter genericType="boolean" name="arg1" type="boolean"/>
       </constructor>
-      <constructor access="public" name="org.controlsfx.dialog.CommandLinksDialog$CommandLinksButtonType" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="java.lang.String arg0, java.lang.String arg1, boolean arg2" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.dialog.CommandLinksDialog.CommandLinksButtonType" parameterCount="3" parametersCall="arg0, arg1, arg2" parametersDeclaration="java.lang.String arg0, java.lang.String arg1, boolean arg2" public="true" static="false">
         <parameter genericType="java.lang.String" name="arg0" type="java.lang.String"/>
         <parameter genericType="java.lang.String" name="arg1" type="java.lang.String"/>
         <parameter genericType="boolean" name="arg2" type="boolean"/>
       </constructor>
-      <constructor access="public" name="org.controlsfx.dialog.CommandLinksDialog$CommandLinksButtonType" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="java.lang.String arg0, java.lang.String arg1, javafx.scene.Node arg2, boolean arg3" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.dialog.CommandLinksDialog.CommandLinksButtonType" parameterCount="4" parametersCall="arg0, arg1, arg2, arg3" parametersDeclaration="java.lang.String arg0, java.lang.String arg1, javafx.scene.Node arg2, boolean arg3" public="true" static="false">
         <parameter genericType="java.lang.String" name="arg0" type="java.lang.String"/>
         <parameter genericType="java.lang.String" name="arg1" type="java.lang.String"/>
         <parameter genericType="javafx.scene.Node" name="arg2" type="javafx.scene.Node"/>
@@ -25494,10 +25494,10 @@
       </property>
     </class>
     <class abstract="false" genericDeclaration="" genericDeclarationPrepend="" genericName="Wizard.LinearFlow" genericParam="" genericParamPrepend="" name="Wizard.LinearFlow" package="org.controlsfx.dialog" super="">
-      <constructor access="public" name="org.controlsfx.dialog.Wizard$LinearFlow" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.util.Collection&lt;org.controlsfx.dialog.WizardPane&gt; arg0" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.dialog.Wizard.LinearFlow" parameterCount="1" parametersCall="arg0" parametersDeclaration="java.util.Collection&lt;org.controlsfx.dialog.WizardPane&gt; arg0" public="true" static="false">
         <parameter genericType="java.util.Collection&lt;org.controlsfx.dialog.WizardPane&gt;" name="arg0" type="java.util.Collection"/>
       </constructor>
-      <constructor access="public" name="org.controlsfx.dialog.Wizard$LinearFlow" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.dialog.WizardPane[] arg0" public="true" static="false">
+      <constructor access="public" name="org.controlsfx.dialog.Wizard.LinearFlow" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.dialog.WizardPane[] arg0" public="true" static="false">
         <parameter genericType="org.controlsfx.dialog.WizardPane[]" name="arg0" type="org.controlsfx.dialog.WizardPane[]"/>
       </constructor>
       <method abstract="false" access="public" final="false" name="advance" override="false" parameterCount="1" parametersCall="arg0" parametersDeclaration="org.controlsfx.dialog.WizardPane arg0" public="true" returnType="java.util.Optional&lt;org.controlsfx.dialog.WizardPane&gt;" static="false">

@@ -27,8 +27,6 @@
 
 package jxtn.core.fmpp;
 
-import fmpp.Engine;
-import fmpp.dataloaders.XmlDataLoader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
@@ -53,10 +51,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+
 import javax.xml.parsers.DocumentBuilderFactory;
-import jxtn.core.axi.collections.LinkLineIterator;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+
+import fmpp.Engine;
+import fmpp.dataloaders.XmlDataLoader;
+import jxtn.core.axi.collections.LinkLineIterator;
 
 /**
  * 以JAR檔類別結構作為資料來源的載入器
@@ -389,7 +392,7 @@ public class JarReflectionDataLoader extends XmlDataLoader {
 
     private Element describeConstructor(Document doc, Constructor constructor) {
         Element elem = doc.createElement("constructor");
-        elem.setAttribute("name", constructor.getName());
+        elem.setAttribute("name", constructor.getName().replace("$", "."));
         elem.setAttribute("parameterCount", Integer.toString(constructor.getParameterCount()));
         elem.setAttribute("public", Boolean.toString(constructor.isPublic()));
         elem.setAttribute("static", Boolean.toString(constructor.isStatic()));
@@ -521,7 +524,7 @@ public class JarReflectionDataLoader extends XmlDataLoader {
             return String.join(
                     ", ", Arrays.asList(typeParameters).map(p -> p.getName()
                             + (p.getBounds().length == 0 ? "" : " extends " + String.join("&",
-                                    Arrays.asList(p.getBounds()).map(b -> b.getTypeName())))));
+                                    Arrays.asList(p.getBounds()).map(b -> b.getTypeName().replace("$", "."))))));
         }
     }
 

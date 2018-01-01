@@ -52,8 +52,8 @@ public class WorldMapViewMaker<Z extends WorldMapView, B extends WorldMapViewMak
 
     private boolean bound1Countries;
     private boolean bound2Countries;
-    private javafx.beans.value.ObservableValue<? extends org.controlsfx.control.WorldMapView.Country> obsrv1Countries;
-    private javafx.beans.property.Property<org.controlsfx.control.WorldMapView.Country> obsrv2Countries;
+    private javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<org.controlsfx.control.WorldMapView.Country>> obsrv1Countries;
+    private javafx.beans.property.Property<javafx.collections.ObservableList<org.controlsfx.control.WorldMapView.Country>> obsrv2Countries;
 
     private boolean bound1CountrySelectionMode;
     private boolean bound2CountrySelectionMode;
@@ -77,18 +77,18 @@ public class WorldMapViewMaker<Z extends WorldMapView, B extends WorldMapViewMak
 
     private boolean bound1Locations;
     private boolean bound2Locations;
-    private javafx.beans.value.ObservableValue<? extends org.controlsfx.control.WorldMapView.Location> obsrv1Locations;
-    private javafx.beans.property.Property<org.controlsfx.control.WorldMapView.Location> obsrv2Locations;
+    private javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<org.controlsfx.control.WorldMapView.Location>> obsrv1Locations;
+    private javafx.beans.property.Property<javafx.collections.ObservableList<org.controlsfx.control.WorldMapView.Location>> obsrv2Locations;
 
     private boolean bound1SelectedCountries;
     private boolean bound2SelectedCountries;
-    private javafx.beans.value.ObservableValue<? extends org.controlsfx.control.WorldMapView.Country> obsrv1SelectedCountries;
-    private javafx.beans.property.Property<org.controlsfx.control.WorldMapView.Country> obsrv2SelectedCountries;
+    private javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<org.controlsfx.control.WorldMapView.Country>> obsrv1SelectedCountries;
+    private javafx.beans.property.Property<javafx.collections.ObservableList<org.controlsfx.control.WorldMapView.Country>> obsrv2SelectedCountries;
 
     private boolean bound1SelectedLocations;
     private boolean bound2SelectedLocations;
-    private javafx.beans.value.ObservableValue<? extends org.controlsfx.control.WorldMapView.Location> obsrv1SelectedLocations;
-    private javafx.beans.property.Property<org.controlsfx.control.WorldMapView.Location> obsrv2SelectedLocations;
+    private javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<org.controlsfx.control.WorldMapView.Location>> obsrv1SelectedLocations;
+    private javafx.beans.property.Property<javafx.collections.ObservableList<org.controlsfx.control.WorldMapView.Location>> obsrv2SelectedLocations;
 
     private boolean bound1ShowLocations;
     private boolean bound2ShowLocations;
@@ -124,6 +124,10 @@ public class WorldMapViewMaker<Z extends WorldMapView, B extends WorldMapViewMak
             instance.setShowLocations(this.valShowLocations);
         if (this.hasZoomFactor)
             instance.setZoomFactor(this.valZoomFactor);
+        if (this.bound1Countries)
+            instance.countriesProperty().bind(this.obsrv1Countries);
+        if (this.bound2Countries)
+            instance.countriesProperty().bindBidirectional(this.obsrv2Countries);
         if (this.bound1CountrySelectionMode)
             instance.countrySelectionModeProperty().bind(this.obsrv1CountrySelectionMode);
         if (this.bound2CountrySelectionMode)
@@ -140,6 +144,18 @@ public class WorldMapViewMaker<Z extends WorldMapView, B extends WorldMapViewMak
             instance.locationViewFactoryProperty().bind(this.obsrv1LocationViewFactory);
         if (this.bound2LocationViewFactory)
             instance.locationViewFactoryProperty().bindBidirectional(this.obsrv2LocationViewFactory);
+        if (this.bound1Locations)
+            instance.locationsProperty().bind(this.obsrv1Locations);
+        if (this.bound2Locations)
+            instance.locationsProperty().bindBidirectional(this.obsrv2Locations);
+        if (this.bound1SelectedCountries)
+            instance.selectedCountriesProperty().bind(this.obsrv1SelectedCountries);
+        if (this.bound2SelectedCountries)
+            instance.selectedCountriesProperty().bindBidirectional(this.obsrv2SelectedCountries);
+        if (this.bound1SelectedLocations)
+            instance.selectedLocationsProperty().bind(this.obsrv1SelectedLocations);
+        if (this.bound2SelectedLocations)
+            instance.selectedLocationsProperty().bindBidirectional(this.obsrv2SelectedLocations);
         if (this.bound1ShowLocations)
             instance.showLocationsProperty().bind(this.obsrv1ShowLocations);
         if (this.bound2ShowLocations)
@@ -297,7 +313,7 @@ public class WorldMapViewMaker<Z extends WorldMapView, B extends WorldMapViewMak
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindCountries(javafx.beans.value.ObservableValue<? extends org.controlsfx.control.WorldMapView.Country> source)
+    public final B bindCountries(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<org.controlsfx.control.WorldMapView.Country>> source)
     {
         java.util.Objects.requireNonNull(source);
         this.bound1Countries = true;
@@ -314,7 +330,7 @@ public class WorldMapViewMaker<Z extends WorldMapView, B extends WorldMapViewMak
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindBidirectionalCountries(javafx.beans.property.Property<org.controlsfx.control.WorldMapView.Country> source)
+    public final B bindBidirectionalCountries(javafx.beans.property.Property<javafx.collections.ObservableList<org.controlsfx.control.WorldMapView.Country>> source)
     {
         java.util.Objects.requireNonNull(source);
         this.bound1Countries = false;
@@ -467,7 +483,7 @@ public class WorldMapViewMaker<Z extends WorldMapView, B extends WorldMapViewMak
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindLocations(javafx.beans.value.ObservableValue<? extends org.controlsfx.control.WorldMapView.Location> source)
+    public final B bindLocations(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<org.controlsfx.control.WorldMapView.Location>> source)
     {
         java.util.Objects.requireNonNull(source);
         this.bound1Locations = true;
@@ -484,7 +500,7 @@ public class WorldMapViewMaker<Z extends WorldMapView, B extends WorldMapViewMak
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindBidirectionalLocations(javafx.beans.property.Property<org.controlsfx.control.WorldMapView.Location> source)
+    public final B bindBidirectionalLocations(javafx.beans.property.Property<javafx.collections.ObservableList<org.controlsfx.control.WorldMapView.Location>> source)
     {
         java.util.Objects.requireNonNull(source);
         this.bound1Locations = false;
@@ -501,7 +517,7 @@ public class WorldMapViewMaker<Z extends WorldMapView, B extends WorldMapViewMak
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindSelectedCountries(javafx.beans.value.ObservableValue<? extends org.controlsfx.control.WorldMapView.Country> source)
+    public final B bindSelectedCountries(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<org.controlsfx.control.WorldMapView.Country>> source)
     {
         java.util.Objects.requireNonNull(source);
         this.bound1SelectedCountries = true;
@@ -518,7 +534,7 @@ public class WorldMapViewMaker<Z extends WorldMapView, B extends WorldMapViewMak
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindBidirectionalSelectedCountries(javafx.beans.property.Property<org.controlsfx.control.WorldMapView.Country> source)
+    public final B bindBidirectionalSelectedCountries(javafx.beans.property.Property<javafx.collections.ObservableList<org.controlsfx.control.WorldMapView.Country>> source)
     {
         java.util.Objects.requireNonNull(source);
         this.bound1SelectedCountries = false;
@@ -535,7 +551,7 @@ public class WorldMapViewMaker<Z extends WorldMapView, B extends WorldMapViewMak
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindSelectedLocations(javafx.beans.value.ObservableValue<? extends org.controlsfx.control.WorldMapView.Location> source)
+    public final B bindSelectedLocations(javafx.beans.value.ObservableValue<? extends javafx.collections.ObservableList<org.controlsfx.control.WorldMapView.Location>> source)
     {
         java.util.Objects.requireNonNull(source);
         this.bound1SelectedLocations = true;
@@ -552,7 +568,7 @@ public class WorldMapViewMaker<Z extends WorldMapView, B extends WorldMapViewMak
      * @return 目前的建構器(this)
      */
     @SuppressWarnings("unchecked")
-    public final B bindBidirectionalSelectedLocations(javafx.beans.property.Property<org.controlsfx.control.WorldMapView.Location> source)
+    public final B bindBidirectionalSelectedLocations(javafx.beans.property.Property<javafx.collections.ObservableList<org.controlsfx.control.WorldMapView.Location>> source)
     {
         java.util.Objects.requireNonNull(source);
         this.bound1SelectedLocations = false;

@@ -62,7 +62,9 @@
   </#if>
 </#function>
 <#function getFXType fullType>
-  <#if fullType?contains("<")>
+  <#if fullType?contains("ListProperty<")>
+    <#return "javafx.collections.ObservableList<" + fullType?substring(fullType?index_of("<") + 1, fullType?length - 1) + ">">
+  <#elseif fullType?contains("<")>
     <#return fullType?substring(fullType?index_of("<") + 1, fullType?length - 1)>
   <#else>
     <#assign inner = fullType?substring(0, fullType?length - 8)>

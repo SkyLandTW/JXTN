@@ -2921,6 +2921,17 @@ public final class JFX
     }
 
     /**
+     * 建立新的{@link org.controlsfx.control.SegmentedBar}建構器。
+     *
+     * @return 新的{@link org.controlsfx.control.SegmentedBarMaker}
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <T extends org.controlsfx.control.SegmentedBar.Segment> org.controlsfx.control.SegmentedBarMaker<T, org.controlsfx.control.SegmentedBar<T>, ?> segmentedBar()
+    {
+        return new org.controlsfx.control.SegmentedBarMaker();
+    }
+
+    /**
      * 建立新的{@link org.controlsfx.control.SegmentedBar.Segment}建構器。
      *
      * @return 新的{@link org.controlsfx.control.SegmentedBar_SegmentMaker}

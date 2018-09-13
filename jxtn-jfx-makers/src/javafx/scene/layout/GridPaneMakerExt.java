@@ -31,9 +31,9 @@ import javafx.beans.property.Property;
 import javafx.beans.value.ObservableValue;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.geometry.VPos;
 import javafx.scene.Node;
-
 import jxtn.jfx.makers.JFX;
 
 /**
@@ -141,8 +141,9 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
     {
         if (condition)
         {
-            Insets labelMargin = column == 0 ? margin : new Insets(
-                    margin.getTop(), margin.getRight(), margin.getBottom(), margin.getLeft() * 2);
+            Insets labelMargin = column == 0 ? margin
+                    : new Insets(
+                            margin.getTop(), margin.getRight(), margin.getBottom(), margin.getLeft() * 2);
             Node fieldNode = JFX.textField()
                     .GridPane_margin(margin)
                     .GridPane_rowIndex(row).GridPane_columnIndex(column + 1)
@@ -266,8 +267,9 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
     {
         if (condition)
         {
-            Insets labelMargin = column == 0 ? margin : new Insets(
-                    margin.getTop(), margin.getRight(), margin.getBottom(), margin.getLeft() * 2);
+            Insets labelMargin = column == 0 ? margin
+                    : new Insets(
+                            margin.getTop(), margin.getRight(), margin.getBottom(), margin.getLeft() * 2);
             Node fieldNode = JFX.textField()
                     .GridPane_margin(margin)
                     .GridPane_rowIndex(row).GridPane_columnIndex(column + 1)
@@ -391,8 +393,9 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
     {
         if (condition)
         {
-            Insets labelMargin = column == 0 ? margin : new Insets(
-                    margin.getTop(), margin.getRight(), margin.getBottom(), margin.getLeft() * 2);
+            Insets labelMargin = column == 0 ? margin
+                    : new Insets(
+                            margin.getTop(), margin.getRight(), margin.getBottom(), margin.getLeft() * 2);
             Node fieldNode = JFX.passwordField()
                     .GridPane_margin(margin)
                     .GridPane_rowIndex(row).GridPane_columnIndex(column + 1)
@@ -510,32 +513,34 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
      */
     default B addFieldCustomIf(boolean condition, int row, int column, Insets margin, String label, Node fieldNode)
     {
-        if (condition)
+        /*if (condition)
         {
-            Insets labelMargin = column == 0 ? margin : new Insets(
-                    margin.getTop(), margin.getRight(), margin.getBottom(), margin.getLeft() * 2);
-            GridPane.setMargin(fieldNode, margin);
-            GridPane.setRowIndex(fieldNode, row);
-            GridPane.setColumnIndex(fieldNode, column + 1);
-            GridPane.setFillWidth(fieldNode, true);
-            GridPane.setFillHeight(fieldNode, true);
-            GridPane.setHgrow(fieldNode, Priority.ALWAYS);
-            GridPane.setHalignment(fieldNode, HPos.LEFT);
-            GridPane.setValignment(fieldNode, VPos.TOP);
-            this.self().childrenAdd(
-                    JFX.label()
-                            .GridPane_margin(labelMargin)
-                            .GridPane_rowIndex(row).GridPane_columnIndex(column + 0)
-                            .GridPane_fillWidth(true).GridPane_fillHeight(true)
-                            .GridPane_halignment(HPos.RIGHT)
-                            .GridPane_valignment(VPos.CENTER)
-                            .text(label)
-                            .ellipsisString(label)
-                            .labelFor(fieldNode)
-                            .afterBuild(lbl -> lbl.minWidthProperty().bind(lbl.prefWidthProperty()))
-                            .build(),
-                    fieldNode);
-        }
+            Insets labelMargin = column == 0 ? margin
+                    : new Insets(
+                            margin.getTop(), margin.getRight(), margin.getBottom(), margin.getLeft() * 2);*/
+        Insets labelMargin = margin;
+        GridPane.setMargin(fieldNode, margin);
+        GridPane.setRowIndex(fieldNode, row);
+        GridPane.setColumnIndex(fieldNode, column + 1);
+        GridPane.setFillWidth(fieldNode, true);
+        GridPane.setFillHeight(fieldNode, true);
+        GridPane.setHgrow(fieldNode, Priority.ALWAYS);
+        GridPane.setHalignment(fieldNode, HPos.LEFT);
+        GridPane.setValignment(fieldNode, VPos.TOP);
+        this.self().childrenAdd(
+                JFX.label()
+                        .GridPane_margin(labelMargin)
+                        .GridPane_rowIndex(row).GridPane_columnIndex(column + 0)
+                        .GridPane_fillWidth(true).GridPane_fillHeight(true)
+                        .GridPane_halignment(HPos.LEFT)
+                        .GridPane_valignment(VPos.CENTER)
+                        .text(label)
+                        .ellipsisString(label)
+                        .labelFor(fieldNode)
+                        .afterBuild(lbl -> lbl.minWidthProperty().bind(lbl.prefWidthProperty()))
+                        .build(),
+                fieldNode);
+        //}
         return this.self();
     }
 
@@ -630,17 +635,17 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
     {
         if (condition)
         {
-            Insets labelMargin = column == 0 ? margin : new Insets(
-                    margin.getTop(), margin.getRight(), margin.getBottom(), margin.getLeft() * 2);
+            Insets labelMargin = column == 0 ? margin
+                    : new Insets(
+                            margin.getTop(), margin.getRight(), margin.getBottom(), margin.getLeft() * 2);
             //
             GridPane.setMargin(labelNode, labelMargin);
             GridPane.setRowIndex(labelNode, row);
             GridPane.setColumnIndex(labelNode, column + 0);
             GridPane.setFillWidth(labelNode, true);
             GridPane.setFillHeight(labelNode, true);
-            GridPane.setHalignment(labelNode, HPos.RIGHT);
+            GridPane.setHalignment(labelNode, HPos.LEFT);
             GridPane.setValignment(labelNode, VPos.CENTER);
-            //
             GridPane.setMargin(fieldNode, margin);
             GridPane.setRowIndex(fieldNode, row);
             GridPane.setColumnIndex(fieldNode, column + 1);
@@ -651,6 +656,39 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
             GridPane.setValignment(fieldNode, VPos.TOP);
             this.self().childrenAdd(labelNode, fieldNode);
         }
+        return this.self();
+    }
+
+    default B addSimpleLabel(int row, int column, Insets margin, String label)
+    {
+        Insets labelMargin = margin;
+        this.self().childrenAdd(
+                JFX.label()
+                        .GridPane_margin(labelMargin)
+                        .GridPane_rowIndex(row).GridPane_columnIndex(column)
+                        .GridPane_fillWidth(true).GridPane_fillHeight(true)
+                        .text(label)
+                        .alignment(Pos.CENTER)
+                        .ellipsisString(label)
+                        .afterBuild(lbl -> lbl.minWidthProperty().bind(lbl.prefWidthProperty()))
+                        .build());
+        return this.self();
+    }
+
+    default B addSimpleButton(int row, int column, Insets margin, String label)
+    {
+        Insets labelMargin = margin;
+        this.self().childrenAdd(
+                JFX.button()
+                        .GridPane_margin(labelMargin)
+                        .GridPane_rowIndex(row).GridPane_columnIndex(column)
+                        .GridPane_halignment(HPos.CENTER)
+                        .GridPane_valignment(VPos.CENTER)
+                        .text(label)
+                        .alignment(Pos.CENTER)
+                        .ellipsisString(label)
+                        .afterBuild(lbl -> lbl.minWidthProperty().bind(lbl.prefWidthProperty()))
+                        .build());
         return this.self();
     }
 }

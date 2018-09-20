@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="jxtn-core-axi/src"/>
+	<classpathentry kind="src" path="jxtn-core-fmpp/src"/>
+	<classpathentry kind="src" path="jxtn-core-unix/src"/>
+	<classpathentry kind="src" path="jxtn-jfx-axi/src"/>
+	<classpathentry kind="src" path="jxtn-jfx-makers/src"/>
+	<classpathentry kind="src" path="jxtn-jfx-swt/src"/>
+	<classpathentry kind="lib" path="dist/jfx.axi.jar"/>
+	<classpathentry kind="lib" path="dist/jxtn-core-axi.jar"/>
+	<classpathentry kind="lib" path="dist/jxtn-core-fmpp.jar"/>
+	<classpathentry kind="lib" path="jxtn-core-fmpp/lib/fmpp.jar"/>
+	<classpathentry kind="lib" path="jxtn-core-fmpp/lib/freemarker.jar"/>
+	<classpathentry kind="lib" path="jxtn-jfx-makers/lib/controlsfx-8.40.14.jar"/>
+	<classpathentry kind="output" path="jxtn-core-axi/bin"/>
+</classpath>

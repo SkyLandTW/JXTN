@@ -529,6 +529,7 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
         GridPane.setValignment(fieldNode, VPos.TOP);
         this.self().childrenAdd(
                 JFX.label()
+                        .style("background-color: white;")
                         .GridPane_margin(labelMargin)
                         .GridPane_rowIndex(row).GridPane_columnIndex(column + 0)
                         .GridPane_fillWidth(true).GridPane_fillHeight(true)
@@ -670,7 +671,6 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
                         .text(label)
                         .alignment(Pos.CENTER)
                         .ellipsisString(label)
-                        .afterBuild(lbl -> lbl.minWidthProperty().bind(lbl.prefWidthProperty()))
                         .build());
         return this.self();
     }
@@ -687,6 +687,22 @@ public interface GridPaneMakerExt<Z extends GridPane, B extends GridPaneMaker<Z,
                         .text(label)
                         .alignment(Pos.CENTER)
                         .ellipsisString(label)
+                        .afterBuild(lbl -> lbl.minWidthProperty().bind(lbl.prefWidthProperty()))
+                        .build());
+        return this.self();
+    }
+
+    default B addSimpleTextArea(int row, int column, Insets margin, String label)
+    {
+        Insets labelMargin = margin;
+        this.self().childrenAdd(
+                JFX.textArea()
+                        .GridPane_margin(labelMargin)
+                        .GridPane_rowIndex(row).GridPane_columnIndex(column)
+                        .GridPane_halignment(HPos.CENTER)
+                        .GridPane_valignment(VPos.CENTER)
+                        .GridPane_vgrow(Priority.ALWAYS)
+                        .text(label)
                         .afterBuild(lbl -> lbl.minWidthProperty().bind(lbl.prefWidthProperty()))
                         .build());
         return this.self();
